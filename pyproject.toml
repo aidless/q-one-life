@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "q-one-life"
+version = "0.1.0"
+description = "A local personal ontology and review layer for the Q-One system."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Q-One contributors"}]
+dependencies = []
+
+[project.scripts]
+qone-life = "qone_life.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

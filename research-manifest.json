@@ -1,0 +1,23 @@
+{
+  "project": {
+    "title": "Q-One Life",
+    "domain": "local personal ontology and review workflows",
+    "status": "active",
+    "version": "0.1.0"
+  },
+  "research_question": "Can a dimension vector support reflection without collapsing a person's life into one score?",
+  "hypotheses": [
+    {
+      "id": "H1",
+      "text": "Explicit user-defined metric ranges make aggregation inspectable and revisable."
+    },
+    {
+      "id": "H2",
+      "text": "Separate dimensions and missingness prompts support better review than a single composite score."
+    }
+  ],
+  "loop": {"phase": "M1", "iteration": 1, "next_review": "after one review window"},
+  "experiments": [],
+  "artifacts": [],
+  "reviews": []
+}

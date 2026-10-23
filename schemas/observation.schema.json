@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/aidless/q-one-life/blob/main/schemas/observation.schema.json",
+  "title": "Q-One personal observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["domain", "metric", "value", "minimum", "maximum", "observed_at", "source"],
+  "properties": {
+    "observation_id": {"type": "string", "minLength": 1},
+    "domain": {"type": "string", "minLength": 1},
+    "metric": {"type": "string", "minLength": 1},
+    "value": {"type": "number"},
+    "minimum": {"type": "number"},
+    "maximum": {"type": "number"},
+    "observed_at": {"type": "string", "minLength": 1},
+    "source": {"type": "string", "minLength": 1},
+    "note": {"type": "string"},
+    "decision_id": {"type": ["string", "null"]}
+  }
+}

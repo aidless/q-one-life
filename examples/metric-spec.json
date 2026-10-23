@@ -1,0 +1,34 @@
+[
+  {
+    "domain": "energy",
+    "metric": "sleep_quality",
+    "minimum": 0,
+    "maximum": 10,
+    "weight": 1,
+    "target_count": 7
+  },
+  {
+    "domain": "learning",
+    "metric": "focused_hours",
+    "minimum": 0,
+    "maximum": 8,
+    "weight": 1,
+    "target_count": 5
+  },
+  {
+    "domain": "work",
+    "metric": "deep_work_blocks",
+    "minimum": 0,
+    "maximum": 4,
+    "weight": 1,
+    "target_count": 5
+  },
+  {
+    "domain": "recovery",
+    "metric": "recovery_minutes",
+    "minimum": 0,
+    "maximum": 120,
+    "weight": 1,
+    "target_count": 5
+  }
+]
