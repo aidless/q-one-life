@@ -43,7 +43,7 @@
 - [core检查](https://github.com/aidless/q-one-core/actions/runs/40081615967)
 - [agent检查](https://github.com/aidless/q-one-agent/actions/runs/40081643639)
 
-应用仓库自带对应工作流，最终远端结果以GitHub Actions为准。
+应用仓库的 Python 3.10/3.12 [自动检查已通过](https://github.com/aidless/q-one-life/actions/runs/40082366447)。各检查对应提交见 [远端回执](evidence/github-checks.json)，后续提交状态以 GitHub Actions 为准。
 
 ## 未完成与使用限制
 

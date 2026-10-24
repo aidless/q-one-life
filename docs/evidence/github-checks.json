@@ -1,0 +1,29 @@
+{
+  "verified_date": "2026-10-24",
+  "runs": [
+    {
+      "repository": "aidless/q-one-core",
+      "head_sha": "c3b18c975304e79637ff228b480dc2aff7fbc32b",
+      "run_id": 40081615967,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/aidless/q-one-core/actions/runs/40081615967"
+    },
+    {
+      "repository": "aidless/q-one-agent",
+      "head_sha": "79a951ac4e4f77239a227cfe28ffdc0fb30bc19f",
+      "run_id": 40081643639,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/aidless/q-one-agent/actions/runs/40081643639"
+    },
+    {
+      "repository": "aidless/q-one-life",
+      "head_sha": "2135f0943d245e4573909a1db908722cc1e0f9bc",
+      "run_id": 40082366447,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/aidless/q-one-life/actions/runs/40082366447"
+    }
+  ]
+}
