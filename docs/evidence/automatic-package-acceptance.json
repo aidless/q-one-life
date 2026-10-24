@@ -1,0 +1,55 @@
+{
+  "version": "0.3.0",
+  "date": "2026-10-24",
+  "synthetic_tests_only": true,
+  "python": "3.12.3",
+  "packages": {
+    "q-one-life": "0.3.0",
+    "fastapi": "0.115.6",
+    "uvicorn": "0.34.0",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.1",
+    "q-one-core": "0.2.0",
+    "q-one-agent": "0.2.0"
+  },
+  "checks": [
+    {
+      "package": "q-one-core",
+      "returncode": 0,
+      "output": "----------------------------------------------------------------------\nRan 12 tests in 0.208s\n\nOK\n"
+    },
+    {
+      "package": "q-one-agent",
+      "returncode": 0,
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.043s\n\nOK\n"
+    },
+    {
+      "package": "q-one-life",
+      "returncode": 0,
+      "output": "----------------------------------------------------------------------\nRan 31 tests in 5.212s\n\nOK\n"
+    }
+  ],
+  "source_sha256": {
+    "src/qone_life/planner.py": "6dfc0a2feb542b4fed4ae19ecd83ee0b3681be4312da551b6cee186e25fa81e6",
+    "src/qone_life/plan_runtime.py": "2d659d9adf37d8757895ccd4c9c3cb6369b94d41c9ef01efbceae8ed3692be57",
+    "src/qone_life/web.py": "a16a2efa5e4dc7606b81ffa887e3207ab170efdba95ca5f77d87674cf43631ad",
+    "src/qone_life/repository.py": "7aeaacae96174ed93773de93627378af94d21519e7daba7d249c9ef679562d84",
+    "src/qone_life/backup.py": "60544ed9e68552969af23bcaf5c66047ba341261bb00516547ff27759fd937c6",
+    "src/qone_life/static/app.js": "8d67f8d48ead4c605d6b7a48e0b2082f26bf95d313c2b888c98b1e9e9607a1d6",
+    "src/qone_life/static/index.html": "fe8b19bc0c18e0733fd40457065938a1cc2607ffba7e84d9bd485ea35f21dce7",
+    "src/qone_life/static/style.css": "c3e657914806e87e2570b8155b87a0d8a712fccf5ba5291a7dfd661f7961d275"
+  },
+  "installed_entry": {
+    "start": "passed",
+    "health": {
+      "status": "ok",
+      "version": "0.3.0",
+      "ledger_events": 0,
+      "storage": "local"
+    },
+    "goal_api": "passed",
+    "pause": "passed",
+    "asset_hash_matches_source": true,
+    "stop": "passed"
+  }
+}

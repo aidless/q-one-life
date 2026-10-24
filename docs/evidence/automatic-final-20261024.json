@@ -1,0 +1,100 @@
+{
+  "synthetic": true,
+  "trigger": "Startup with saved goal; no explicit model recommendation endpoint called",
+  "goals": [
+    {
+      "id": "G-75fde277785e4c1d9ef4bbf7060ab06d",
+      "title": "【合成验收】四周内完成Python入门项目",
+      "success_criterion": "独立写出一个能读取待办清单并输出今日任务的命令行工具，保存代码与使用说明。",
+      "priority": 5,
+      "domain": "learning",
+      "status": "active",
+      "deadline": null,
+      "created_at": "2026-10-24T09:57:52.121140+00:00",
+      "updated_at": "2026-10-24T09:57:52.121294+00:00"
+    }
+  ],
+  "run": {
+    "id": "R-fd2ffe059d2b41ecb529a82c0041211c",
+    "started_at": "2026-10-24T10:05:40.067956+00:00",
+    "status": "completed",
+    "kind": "real_model",
+    "purpose": "automatic_recommendation",
+    "provider": "ollama",
+    "model": "qwen3:8b",
+    "duration_ms": 98296.16,
+    "usage": {
+      "prompt_eval_count": 657,
+      "eval_count": 100,
+      "input_sha256": "80b12a6970349106283ff7d7eedf5ec0f5dc10b40dd50c7f5b392386136dd3a1"
+    },
+    "input_sha256": "80b12a6970349106283ff7d7eedf5ec0f5dc10b40dd50c7f5b392386136dd3a1",
+    "evidence_snapshot": [],
+    "input_snapshot": {
+      "date": "2026-10-24",
+      "available_minutes": 90,
+      "goals": [
+        {
+          "id": "G-75fde277785e4c1d9ef4bbf7060ab06d",
+          "title": "【合成验收】四周内完成Python入门项目",
+          "domain": "learning",
+          "success_criterion": "独立写出一个能读取待办清单并输出今日任务的命令行工具，保存代码与使用说明。",
+          "priority": 5,
+          "deadline": null
+        }
+      ],
+      "recent_completed_actions": [],
+      "recent_observations": [],
+      "evidence": [],
+      "candidates": [
+        {
+          "id": "goal:G-75fde277785e4c1d9ef4bbf7060ab06d",
+          "kind": "goal",
+          "goal_id": "G-75fde277785e4c1d9ef4bbf7060ab06d",
+          "task_id": null,
+          "title": "推进目标：【合成验收】四周内完成Python入门项目",
+          "reason": "目标尚未拆成待办；成功标准：独立写出一个能读取待办清单并输出今日任务的命令行工具，保存代码与使用说明。",
+          "domain": "learning",
+          "minutes": 25,
+          "revision": "9ed1934a98553d010ac242189c609e5dc0512d60ced99c9b02df0e3e411104ac",
+          "record_id": "P-e5d54c96e3a4e0bbf6eb4c47"
+        }
+      ],
+      "limits": {
+        "goals_included": 1,
+        "goals_total": 1,
+        "pending_tasks_total": 0
+      }
+    },
+    "items": [
+      {
+        "candidate_id": "goal:G-75fde277785e4c1d9ef4bbf7060ab06d",
+        "title": "编写读取待办清单并输出今日任务的命令行工具代码",
+        "reason": "目标要求独立写出工具，需先完成代码基础部分",
+        "minutes": 25
+      }
+    ]
+  },
+  "suggestions": [
+    {
+      "id": "P-e5d54c96e3a4e0bbf6eb4c47",
+      "kind": "goal",
+      "goal_id": "G-75fde277785e4c1d9ef4bbf7060ab06d",
+      "task_id": null,
+      "title": "编写读取待办清单并输出今日任务的命令行工具代码",
+      "reason": "目标要求独立写出工具，需先完成代码基础部分",
+      "domain": "learning",
+      "minutes": 25,
+      "revision": "9ed1934a98553d010ac242189c609e5dc0512d60ced99c9b02df0e3e411104ac",
+      "record_id": "P-e5d54c96e3a4e0bbf6eb4c47",
+      "candidate_id": "goal:G-75fde277785e4c1d9ef4bbf7060ab06d",
+      "source": "ollama:qwen3:8b",
+      "status": "active",
+      "input_sha256": "80b12a6970349106283ff7d7eedf5ec0f5dc10b40dd50c7f5b392386136dd3a1",
+      "run_id": "R-fd2ffe059d2b41ecb529a82c0041211c",
+      "created_at": "2026-10-24T10:07:18.392759+00:00",
+      "generated_at": "2026-10-24T10:07:18.392899+00:00",
+      "proposal_sha256": "860b3842992c3aac3243a2cc437e03eadf22c1a0cf6488cc670afd723f1f1b9c"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "synthetic": true,
+  "trigger": "Browser saved one goal; no decision or explicit recommendation request",
+  "goals": [
+    {
+      "id": "G-75fde277785e4c1d9ef4bbf7060ab06d",
+      "title": "【合成验收】四周内完成Python入门项目",
+      "success_criterion": "独立写出一个能读取待办清单并输出今日任务的命令行工具，保存代码与使用说明。",
+      "priority": 5,
+      "domain": "learning",
+      "status": "active",
+      "deadline": null,
+      "created_at": "2026-10-24T09:57:52.121140+00:00",
+      "updated_at": "2026-10-24T09:57:52.121294+00:00"
+    }
+  ],
+  "decisions": 0,
+  "planner": {
+    "enabled": true,
+    "provider": "ollama",
+    "status": "ready",
+    "error": null,
+    "date": "2026-10-24",
+    "generated_at": "2026-10-24T09:59:11.449224+00:00",
+    "input_sha256": "927a795a8e0310b53191075bcf69ec45a0c6049ae56839f6026b0421d83b1fc7",
+    "items": [
+      {
+        "id": "P-e5d54c96e3a4e0bbf6eb4c47",
+        "kind": "goal",
+        "goal_id": "G-75fde277785e4c1d9ef4bbf7060ab06d",
+        "task_id": null,
+        "title": "拆解目标为可完成的小步骤，例如：设计命令行工具的结构、编写读取待办清单的代码、测试并输出今日任务",
+        "reason": "目标尚未拆解为具体任务，需先明确步骤以推进项目",
+        "domain": "learning",
+        "minutes": 25,
+        "revision": "62367b52bc81eab9e52f833a92fc2a083b1b99d9c89fae67c7fbcb1586a21459",
+        "record_id": "P-e5d54c96e3a4e0bbf6eb4c47",
+        "candidate_id": "goal:G-75fde277785e4c1d9ef4bbf7060ab06d",
+        "source": "ollama:qwen3:8b",
+        "status": "active",
+        "input_sha256": "927a795a8e0310b53191075bcf69ec45a0c6049ae56839f6026b0421d83b1fc7",
+        "run_id": "R-ad61bda0021c40cd8d335a8864e01a1e",
+        "created_at": "2026-10-24T09:59:11.431876+00:00",
+        "generated_at": "2026-10-24T09:59:11.432032+00:00"
+      }
+    ],
+    "has_goals": true,
+    "has_candidates": true,
+    "available_minutes": 90,
+    "limits": {
+      "goals_included": 1,
+      "goals_total": 1,
+      "pending_tasks_total": 0
+    }
+  },
+  "runs": [
+    {
+      "id": "R-ad61bda0021c40cd8d335a8864e01a1e",
+      "started_at": "2026-10-24T09:57:52.142067+00:00",
+      "status": "completed",
+      "kind": "real_model",
+      "purpose": "automatic_recommendation",
+      "provider": "ollama",
+      "model": "qwen3:8b",
+      "duration_ms": 79274.92,
+      "usage": {
+        "prompt_eval_count": 587,
+        "eval_count": 120,
+        "input_sha256": "927a795a8e0310b53191075bcf69ec45a0c6049ae56839f6026b0421d83b1fc7"
+      },
+      "input_sha256": "927a795a8e0310b53191075bcf69ec45a0c6049ae56839f6026b0421d83b1fc7",
+      "evidence_snapshot": []
+    }
+  ]
+}

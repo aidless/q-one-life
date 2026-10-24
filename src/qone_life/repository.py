@@ -40,6 +40,8 @@ class Repository:
         with self.connect() as db:
             db.executescript('''
                 PRAGMA journal_mode=WAL;
+                CREATE TABLE IF NOT EXISTS goals(id TEXT PRIMARY KEY, payload TEXT NOT NULL);
+                CREATE TABLE IF NOT EXISTS suggestions(id TEXT PRIMARY KEY, payload TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS tasks(id TEXT PRIMARY KEY, payload TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS metrics(id TEXT PRIMARY KEY, payload TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS observations(id TEXT PRIMARY KEY, payload TEXT NOT NULL);
@@ -61,7 +63,7 @@ class Repository:
 
     @staticmethod
     def _table(table):
-        if table not in {"tasks", "metrics", "observations", "documents", "runs", "reviews"}:
+        if table not in {"tasks", "metrics", "observations", "documents", "runs", "reviews", "goals", "suggestions"}:
             raise ValueError("unknown record type")
         return table
 
@@ -187,3 +189,20 @@ class Repository:
         return [{"id": row["id"], "title": row["title"], "source": row["source"],
                  "excerpt": row["content"][:1800], "verified": False}
                 for _, row in ranked[:limit]]
+
+    def goal(self, raw, goal_id=None):
+        previous = self.get("goals", goal_id) if goal_id else {}
+        data = previous | raw
+        if not isinstance(data.get("title"), str) or not isinstance(data.get("success_criterion"), str):
+            raise ValueError("目标与完成标准必须为文本")
+        title, criterion = data["title"].strip(), data["success_criterion"].strip()
+        priority, domain = data.get("priority", 3), data.get("domain", "learning")
+        status = data.get("status", "active")
+        if not title or len(title) > 150 or not criterion or len(criterion) > 1000 or domain not in DOMAINS:
+            raise ValueError("请填写目标、可核查的完成标准和有效领域")
+        if type(priority) is not int or not 1 <= priority <= 5 or status not in {"active", "paused", "completed"}:
+            raise ValueError("目标优先级或状态无效")
+        return self.put("goals", {"id": goal_id or identifier("G"), "title": title, "success_criterion": criterion,
+            "priority": priority, "domain": domain, "status": status,
+            "deadline": timestamp(data["deadline"]) if data.get("deadline") else None,
+            "created_at": previous.get("created_at", now()), "updated_at": now()})

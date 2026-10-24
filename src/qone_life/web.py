@@ -9,6 +9,7 @@ import os
 import secrets
 import tempfile
 import threading
+from contextlib import asynccontextmanager
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -23,11 +24,15 @@ from qone_agent.runtime import ProviderError, is_loopback, public_context, run_m
 from qone_core.ledger import Ledger, LedgerError
 from qone_core.report import build_report
 from qone_core.service import DecisionService
+from .planner import Planner
+from .plan_runtime import generate_plan
 from .backup import TABLES, apply_pending, validate_backup
 from .repository import DOMAINS, Repository, identifier, now, timestamp
 
 STATIC = Path(__file__).parent / "static"
 DEFAULTS = {
+    "auto_recommend_enabled": True, "auto_recommend_provider": "ollama",
+    "auto_recommend_interval_minutes": 360, "daily_available_minutes": 90,
     "ollama_url": "http://127.0.0.1:11434", "ollama_model": "qwen3:8b",
     "cloud_url": "", "cloud_model": "", "cloud_key": "",
     "laya_checkpoint": "convaiinnovations/laya-multilingual",
@@ -36,7 +41,7 @@ DEFAULTS = {
 }
 
 
-def create_app(data_dir=None, *, model_runner=run_model):
+def create_app(data_dir=None, *, model_runner=run_model, plan_runner=generate_plan):
     directory = Path(data_dir or os.environ.get("QONE_HOME", Path.home() / ".local/share/q-one"))
     repository = Repository(directory)
     ledger = Ledger(directory / "decisions.jsonl")
@@ -45,7 +50,15 @@ def create_app(data_dir=None, *, model_runner=run_model):
     lock = threading.RLock()
     model_lock = threading.Lock()
     settings_path = directory / "settings.json"
-    app = FastAPI(title="Q-One 人生系统", version="0.2.0", docs_url="/api/docs", redoc_url=None)
+    @asynccontextmanager
+    async def lifespan(app):
+        app.state.planner.start()
+        try:
+            yield
+        finally:
+            app.state.planner.stop()
+
+    app = FastAPI(lifespan=lifespan, title="Q-One 人生系统", version="0.3.0", docs_url="/api/docs", redoc_url=None)
     app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost", "[::1]"])
     app.state.repository, app.state.ledger = repository, ledger
 
@@ -63,6 +76,17 @@ def create_app(data_dir=None, *, model_runner=run_model):
         current = settings()
         for key in DEFAULTS:
             if key in raw:
+                if key == "auto_recommend_enabled":
+                    if type(raw[key]) is not bool:
+                        raise ValueError("自动推荐开关必须为开或关")
+                    current[key] = raw[key]
+                    continue
+                if key in {"auto_recommend_interval_minutes", "daily_available_minutes"}:
+                    bounds = (15, 1440) if key == "auto_recommend_interval_minutes" else (5, 480)
+                    if type(raw[key]) is not int or not bounds[0] <= raw[key] <= bounds[1]:
+                        raise ValueError("自动推荐间隔或每日时间超出允许范围")
+                    current[key] = raw[key]
+                    continue
                 if not isinstance(raw[key], str):
                     raise ValueError("设置项必须为文本")
                 if key == "cloud_key" and raw[key] == "":
@@ -77,6 +101,8 @@ def create_app(data_dir=None, *, model_runner=run_model):
                     raise ValueError("模型基础地址需为有效HTTP地址，不能包含密码、查询参数或片段")
                 if not is_loopback(current[key]) and parsed.scheme != "https":
                     raise ValueError("远程模型地址必须使用HTTPS")
+        if current["auto_recommend_provider"] not in {"ollama", "laya"}:
+            raise ValueError("自动推荐请选择本地Ollama或Laya")
         if current["default_provider"] not in {"ollama", "laya", "cloud"}:
             raise ValueError("默认模型无效")
         if current["laya_device"] not in {"cpu", "cuda"}:
@@ -92,6 +118,9 @@ def create_app(data_dir=None, *, model_runner=run_model):
                 Path(temporary).unlink(missing_ok=True)
         return public_settings()
 
+    planner = Planner(repository, ledger, settings, model_lock, runner=plan_runner)
+    app.state.planner = planner
+
     @app.middleware("http")
     async def local_boundary(request: Request, call_next):
         if request.method in {"POST", "PUT", "PATCH", "DELETE"}:
@@ -106,6 +135,8 @@ def create_app(data_dir=None, *, model_runner=run_model):
             if len(body) > 4 * 1024 * 1024:
                 return JSONResponse({"detail": "单次数据不能超过4MB"}, status_code=413)
         response = await call_next(request)
+        if request.method in {"POST", "PATCH", "PUT", "DELETE"} and response.status_code < 400:
+            planner.notify()
         response.headers["X-Content-Type-Options"] = "nosniff"
         response.headers["Referrer-Policy"] = "no-referrer"
         response.headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'"
@@ -154,7 +185,7 @@ def create_app(data_dir=None, *, model_runner=run_model):
 
     @app.get("/api/health")
     def health():
-        return {"status": "ok", "version": "0.2.0", "ledger_events": ledger.verify(), "storage": "local"}
+        return {"status": "ok", "version": "0.3.0", "ledger_events": ledger.verify(), "storage": "local"}
 
     @app.get("/api/bootstrap")
     def bootstrap(days: int = 7):
@@ -162,7 +193,7 @@ def create_app(data_dir=None, *, model_runner=run_model):
             raise ValueError("请选择7、30或90天窗口")
         with lock:
             sync_tasks()
-            return {"decisions": public_decisions(), "tasks": repository.all("tasks"),
+            return {"goals": repository.all("goals"), "planner": planner.state(), "decisions": public_decisions(), "tasks": repository.all("tasks"),
                 "scores": repository.scores(days), "report": build_report(ledger), "domains": DOMAINS,
                 "documents": [{k: v for k, v in row.items() if k != "content"} for row in repository.all("documents")],
                 "reviews": repository.all("reviews"), "runs": repository.all("runs")[:30],
@@ -273,13 +304,46 @@ def create_app(data_dir=None, *, model_runner=run_model):
             repository.remove("tasks", "decision-" + decision_id)
             return ledger.get(decision_id)
 
+    @app.get("/api/planner")
+    def recommendation_feed():
+        return planner.state()
+
+    @app.post("/api/planner/refresh", status_code=202)
+    def refresh_recommendations(raw: dict):
+        with planner.lock:
+            planner.attempt_sha = None
+        planner.notify()
+        return {"queued": True}
+
+    @app.post("/api/planner/{record_id}/feedback")
+    def recommendation_feedback(record_id: str, raw: dict):
+        with lock:
+            if not isinstance(raw.get("proposal_sha256"), str):
+                raise ValueError("请使用当前页面中的推荐")
+            return planner.feedback(record_id, raw.get("action"), raw["proposal_sha256"])
+
+    @app.post("/api/goals", status_code=201)
+    def create_goal(raw: dict):
+        return repository.goal(raw)
+
+    @app.patch("/api/goals/{goal_id}")
+    def update_goal(goal_id: str, raw: dict):
+        with lock:
+            return repository.goal(raw, goal_id)
+
     @app.post("/api/tasks", status_code=201)
     def create_task(raw: dict):
         title = str(raw.get("title", "")).strip()
         domain = raw.get("domain", "work")
         if not title or len(title) > 300 or domain not in DOMAINS:
             raise ValueError("请填写有效的任务与领域")
-        return repository.put("tasks", {"id": identifier("T"), "title": title, "domain": domain,
+        goal_id = raw.get("goal_id") or None
+        if goal_id:
+            repository.get("goals", goal_id)
+        minutes, priority = raw.get("estimate_minutes", 25), raw.get("priority", 3)
+        if type(minutes) is not int or not 5 <= minutes <= 480 or type(priority) is not int or not 1 <= priority <= 5:
+            raise ValueError("任务时长或优先级无效")
+        return repository.put("tasks", {"goal_id": goal_id, "estimate_minutes": minutes, "priority": priority, "id": identifier("T"), "title": title, "domain": domain,
             "deadline": timestamp(raw["deadline"]) if raw.get("deadline") else None,
             "done": False, "created_at": now(), "decision_id": None})
 
@@ -289,7 +353,7 @@ def create_app(data_dir=None, *, model_runner=run_model):
             task = repository.get("tasks", task_id)
             if type(raw.get("done")) is not bool:
                 raise ValueError("任务状态应为完成或未完成")
-            return repository.put("tasks", task | {"done": raw["done"]})
+            return repository.put("tasks", task | {"done": raw["done"], "completed_at": now() if raw["done"] else None})
 
     @app.delete("/api/tasks/{task_id}")
     def delete_task(task_id: str):
@@ -373,9 +437,8 @@ def create_app(data_dir=None, *, model_runner=run_model):
     @app.get("/api/backup")
     def backup():
         with lock:
-            result = {"format": "q-one-backup-v1", "created_at": now(), "events": ledger.events(),
-                "tables": {name: repository.all(name) for name in
-                    ("tasks", "metrics", "observations", "documents", "runs", "reviews")}}
+            result = {"format": "q-one-backup-v2", "created_at": now(), "events": ledger.events(),
+                "tables": {name: repository.all(name) for name in TABLES}}
         return JSONResponse(result, headers={"Content-Disposition": 'attachment; filename="q-one-private-backup.json"'})
 
     @app.post("/api/restore")
@@ -394,6 +457,7 @@ def create_app(data_dir=None, *, model_runner=run_model):
                 handle.flush()
                 os.fsync(handle.fileno())
             apply_pending(directory, repository, ledger)
+        planner.input_sha = None
         return {"ok": True, "decisions": len(ledger.project_all())}
 
     @app.get("/")

@@ -1,0 +1,52 @@
+{
+  "synthetic": true,
+  "run": {
+    "id": "R-9fcd6673e5fb4989a6318a1e32b2b684",
+    "started_at": "2026-10-24T10:09:36.836299+00:00",
+    "status": "failed",
+    "kind": "real_model",
+    "purpose": "automatic_recommendation",
+    "provider": "ollama",
+    "error": "本地模型连接失败或超时，当前仍可查看明确标记的规则建议",
+    "input_sha256": "80b12a6970349106283ff7d7eedf5ec0f5dc10b40dd50c7f5b392386136dd3a1"
+  },
+  "planner": {
+    "enabled": true,
+    "provider": "ollama",
+    "status": "rules",
+    "error": "本地模型连接失败或超时，当前仍可查看明确标记的规则建议",
+    "date": "2026-10-24",
+    "generated_at": "2026-10-24T10:09:36.830145+00:00",
+    "input_sha256": "80b12a6970349106283ff7d7eedf5ec0f5dc10b40dd50c7f5b392386136dd3a1",
+    "items": [
+      {
+        "id": "P-e5d54c96e3a4e0bbf6eb4c47",
+        "kind": "goal",
+        "goal_id": "G-75fde277785e4c1d9ef4bbf7060ab06d",
+        "task_id": null,
+        "title": "推进目标：【合成验收】四周内完成Python入门项目",
+        "reason": "目标尚未拆成待办；成功标准：独立写出一个能读取待办清单并输出今日任务的命令行工具，保存代码与使用说明。",
+        "domain": "learning",
+        "minutes": 25,
+        "revision": "9ed1934a98553d010ac242189c609e5dc0512d60ced99c9b02df0e3e411104ac",
+        "record_id": "P-e5d54c96e3a4e0bbf6eb4c47",
+        "candidate_id": "goal:G-75fde277785e4c1d9ef4bbf7060ab06d",
+        "source": "rules",
+        "status": "active",
+        "input_sha256": "80b12a6970349106283ff7d7eedf5ec0f5dc10b40dd50c7f5b392386136dd3a1",
+        "run_id": null,
+        "created_at": "2026-10-24T10:09:36.830168+00:00",
+        "generated_at": "2026-10-24T10:09:36.830171+00:00",
+        "proposal_sha256": "1eb4ec07bfa2deb9273b6fa5cce470996cedb59058b065300c54f57657c5b03a"
+      }
+    ],
+    "has_goals": true,
+    "has_candidates": true,
+    "available_minutes": 90,
+    "limits": {
+      "goals_included": 1,
+      "goals_total": 1,
+      "pending_tasks_total": 0
+    }
+  }
+}

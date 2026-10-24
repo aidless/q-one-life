@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 — 2026-10-24
+
+- Made proactive recommendations the main product flow, starting from goals without a decision/baseline form.
+- Added automatic lifecycle scheduling, local Ollama generation, Laya candidate ranking, explicit rule fallback and bounded refresh.
+- Added daily time budgets, accept/dismiss feedback, next steps after completion, and stale-proposal/configuration guards.
+- Added goal management, automatic homepage updates, private input/output receipts and v1-compatible v2 backups.
+
+
 ## 0.2.0 — 2026-10-24
 
 - Added the complete Chinese personal workspace, local persistence and model integration.

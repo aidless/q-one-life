@@ -7,17 +7,20 @@ from tempfile import TemporaryDirectory
 
 from qone_core.ledger import Ledger
 from qone_core.service import DecisionService
-from .repository import DOMAINS, Repository, timestamp
+from .repository import DOMAINS, timestamp
 
-TABLES = {"tasks", "metrics", "observations", "documents", "runs", "reviews"}
+LEGACY_TABLES = {"tasks", "metrics", "observations", "documents", "runs", "reviews"}
+TABLES = LEGACY_TABLES | {"goals", "suggestions"}
 
 
 def validate_backup(raw):
-    if raw.get("format") != "q-one-backup-v1" or not isinstance(raw.get("events"), list):
+    if raw.get("format") not in {"q-one-backup-v1", "q-one-backup-v2"} or not isinstance(raw.get("events"), list):
         raise ValueError("备份格式无效")
     tables = raw.get("tables")
-    if not isinstance(tables, dict) or set(tables) != TABLES:
+    expected = LEGACY_TABLES if raw["format"] == "q-one-backup-v1" else TABLES
+    if not isinstance(tables, dict) or set(tables) != expected:
         raise ValueError("备份数据表不完整")
+    tables = {name: tables.get(name, []) for name in TABLES}
     json.dumps(raw, allow_nan=False)
     Ledger._verify_events(raw["events"])
     # Hash integrity alone does not establish valid application state transitions.
@@ -79,6 +82,24 @@ def validate_backup(raw):
     for review in tables["reviews"]:
         if not isinstance(review["text"], str) or review["days"] not in (7, 30, 90) or not isinstance(review["snapshot"], dict):
             raise ValueError("备份复盘无效")
+    goals = {g["id"]: g for g in tables["goals"]}
+    for goal in goals.values():
+        if (not isinstance(goal["title"], str) or not isinstance(goal["success_criterion"], str)
+                or goal["domain"] not in DOMAINS or goal["status"] not in {"active", "paused", "completed"}
+                or type(goal["priority"]) is not int or not 1 <= goal["priority"] <= 5):
+            raise ValueError("备份目标无效")
+        if goal.get("deadline"):
+            timestamp(goal["deadline"])
+    for task in tables["tasks"]:
+        if task.get("goal_id") and task["goal_id"] not in goals:
+            raise ValueError("备份任务引用的目标不存在")
+        if "estimate_minutes" in task and (type(task["estimate_minutes"]) is not int or not 5 <= task["estimate_minutes"] <= 480):
+            raise ValueError("备份任务时长无效")
+    for card in tables["suggestions"]:
+        if (card["kind"] not in {"goal", "task", "review"} or card["status"] not in {"active", "accepted", "dismissed"}
+                or not all(isinstance(card.get(k), str) for k in ("title", "reason", "candidate_id", "revision", "source"))
+                or type(card["minutes"]) is not int or not 5 <= card["minutes"] <= 480):
+            raise ValueError("备份推荐无效")
     return tables
 
 
@@ -88,11 +109,11 @@ def apply_pending(directory, repository, ledger):
     if not marker.exists():
         return
     raw = json.loads(marker.read_text())
-    validate_backup(raw)
+    tables = validate_backup(raw)
     with repository.connect() as db:
         for name in TABLES:
             db.executemany(f"INSERT INTO {name}(id,payload) VALUES(?,?) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload",
-                           [(r["id"], json.dumps(r, ensure_ascii=False, allow_nan=False)) for r in raw["tables"][name]])
+                           [(r["id"], json.dumps(r, ensure_ascii=False, allow_nan=False)) for r in tables[name]])
         temporary = directory / "restore.events.tmp"
         temporary.write_text("".join(json.dumps(e, ensure_ascii=False) + "\n" for e in raw["events"]))
         temporary.chmod(0o600)
