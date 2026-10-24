@@ -1,5 +1,7 @@
 # Q-One Life
 
+> 中文研究入口：[多学科融合实现路线](docs/SYNTHESIS_IMPLEMENTATION.zh-CN.md)。当前为初版原型，真实模型接入与端到端验收尚未完成。
+
 Q-One Life is the third repository in the Q-One system. It stores personal observations locally, maps them to user-defined dimensions, and produces review prompts. It keeps a vector of dimensions instead of a single “life score”.
 
 The included examples are only templates. A metric range, weight, and target count must be chosen by the user for a specific context; they are not universal measures of health, productivity, or worth.
@@ -15,9 +17,9 @@ An observation can optionally include a `decision_id` so a review can connect a 
 ## Quick start
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 . .venv/bin/activate
-python -m pip install -e .
+python3 -m pip install -e .
 
 qone-life --data-dir .life-data init
 qone-life --data-dir .life-data add-observation \
