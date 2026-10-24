@@ -1,45 +1,62 @@
-# Q-One Life
+# Q-One · 个人决策与复盘系统
 
-> 中文研究入口：[多学科融合实现路线](docs/SYNTHESIS_IMPLEMENTATION.zh-CN.md)。当前为初版原型，真实模型接入与端到端验收尚未完成。
+**把问题写清楚 → 保留自己的判断 → 参考模型 → 确认行动 → 记录结果 → 周期复盘。**
 
-Q-One Life is the third repository in the Q-One system. It stores personal observations locally, maps them to user-defined dimensions, and produces review prompts. It keeps a vector of dimensions instead of a single “life score”.
+这是本项目独立交付的一套完整个人应用，包含中文界面、本地数据存储、真实模型接口和备份恢复。`q-one-core`、`q-one-agent` 是它的内部依赖；三个仓库不代表用户要求的三个独立方案。其他 AI 的实现不在本次交付范围内。
 
-The included examples are only templates. A metric range, weight, and target count must be chosen by the user for a specific context; they are not universal measures of health, productivity, or worth.
+![中文个人工作台（合成验收数据）](docs/images/desktop.png)
 
-## Relationship to the other repositories
+## 在本机运行
 
-- [`q-one-core`](https://github.com/aidless/q-one-core) records bounded decisions and outcomes.
-- [`q-one-agent`](https://github.com/aidless/q-one-agent) produces human-reviewed recommendations.
-- `q-one-life` stores personal observations, reviews, and explicit exports.
-
-An observation can optionally include a `decision_id` so a review can connect a personal measurement to a core decision without copying the whole private context into the agent repository.
-
-## Quick start
+已实测 Linux + Python 3.12。代码要求 Python 3.10 及以上；Windows 原生并发文件锁尚未验证，建议使用 WSL。无需前端构建工具或在线账号。
 
 ```bash
-python3 -m venv .venv
-. .venv/bin/activate
-python3 -m pip install -e .
-
-qone-life --data-dir .life-data init
-qone-life --data-dir .life-data add-observation \
-  --domain energy --metric sleep_quality \
-  --value 7 --minimum 0 --maximum 10 \
-  --source self-report
-qone-life --data-dir .life-data score --spec-file examples/metric-spec.json
-qone-life --data-dir .life-data review --spec-file examples/metric-spec.json
-qone-life --data-dir .life-data export
-qone-life --data-dir .life-data verify
+git clone https://github.com/aidless/q-one-life.git
+cd q-one-life
+bash scripts/setup.sh
+bash scripts/run.sh
 ```
 
-The default export is redacted. Use `export --full` only when the destination is private and you have reviewed the fields.
+浏览器打开 **http://127.0.0.1:8765**。在启动窗口按 **Ctrl+C** 停止，下次运行数据会保留。安装脚本优先使用已安装的 uv，否则使用 pip；先安装固定提交的两个内部依赖，再安装本应用。默认运行环境位于 `~/.local/share/q-one-runtime/venv`，个人数据位于 `~/.local/share/q-one`，都在仓库外。
 
-## Scoring contract
+```bash
+# 自定义运行环境、数据目录或端口
+QONE_VENV="$HOME/.venvs/qone" bash scripts/setup.sh
+QONE_VENV="$HOME/.venvs/qone" QONE_HOME="$HOME/qone-private" bash scripts/run.sh --port 8766
+```
 
-Each metric is normalized to its declared range. Repeated observations are averaged for that metric. Dimensions report a score, observation count, target coverage, and missingness. The report intentionally sets `global_score` to `null`; a person is not reduced to one scalar.
+没有模型也能完整记录自己的判断、任务、观察和复盘。模型失败会显示错误并保留记录。
 
-The score is descriptive. It does not diagnose a condition, predict a life outcome, or establish causality. Keep the original observation and the metric definition so a later review can reproduce or revise the calculation.
+## 选择模型
 
-Read [docs/ONTOLOGY.md](docs/ONTOLOGY.md), [docs/SCORING.md](docs/SCORING.md), and [docs/PRIVACY.md](docs/PRIVACY.md) before adding integrations.
+- **Ollama**：安装并启动 [Ollama](https://docs.ollama.com/quickstart)，下载适合自己机器的模型。默认地址 `http://127.0.0.1:11434`、默认名称 `qwen3:8b`，可在设置页更换。Q-One 不自动启动、重启或安装共享模型服务。
+- **Laya**：可选安装 `"$HOME/.local/share/q-one-runtime/venv/bin/python" -m pip install 'laya==0.4.14'`。PyTorch 和权重可能占用数 GB，基础安装不包含它们。默认使用固定版本的多语言权重，每次推理通过独立进程加载、完成后释放内存。首次使用会从 Hugging Face 下载；离线时可填写完整权重目录。超过完整输入预算会报错，需缩短内容或换模型。
+- **云端兼容接口**：在设置页填写基础地址（通常以 `/v1` 结尾）、模型名和密钥，服务需支持 Chat Completions 与 JSON 输出。每次远程调用前会展示发送内容，并将确认绑定到当前内容、地址和模型；服务兼容性需实际验证。
 
-This repository is MIT licensed.
+本机验收已真实调用 Qwen3:8B 和 Laya；云端使用接口夹具验证协议，**尚未做真实云端调用**。Laya 的选择分数、生成模型自报的推荐强度都不是行动成功概率。全部最终选择由人确认。
+
+## 可以做什么
+
+- 决策：2—8 个选项、成功标准、回看时间、事前判断、模型建议、人工选择、结果与事件记录。
+- 行动：确认决策后自动加入任务，也可单独添加；任务完成勾选和决策结果分别记录。
+- 观察：指标定义固定，支持越高越好、越低越好、接近目标值；记录可更正、历史保留。7/30/90 天窗口分别统计数量、覆盖和范围内得分，缺失保持为空。
+- 资料：粘贴个人笔记，按关键词与中文二元词片段检索来源和正文片段。它是简易词法检索，未验证资料的真实性。
+- 复盘：保存自己的观察与下一步，同时冻结当时的指标及决策报告。决策报告是全部历史，观察按所选时间窗口统计。
+- 数据：默认本地保存；下载私有备份、导出移除自由文本的摘要、在空空间恢复。接口密钥不进入页面响应和备份。
+
+## 文档与验证
+
+- [完整蓝图、架构、流程和后续路线](docs/BLUEPRINT.zh-CN.md)
+- [详细使用文档与注意事项](docs/USER_GUIDE.zh-CN.md)
+- [当前版本验收记录与证据](docs/ACCEPTANCE.zh-CN.md)
+- [多学科融合研究路线](docs/SYNTHESIS_IMPLEMENTATION.zh-CN.md)
+- [论文与技术来源库](https://github.com/aidless/q-one-core/tree/main/literature)
+
+```bash
+# 已安装应用的环境中运行：应用测试使用明确标注的模型夹具
+python -m unittest discover -s tests -v
+```
+
+MIT 开源。第三方模型及依赖按各自许可证使用。本应用不训练新的基础模型，也不把一个人合成为一个“人生总分”。
+
+早期 `init / add-observation / score / review / export / verify` 命令仍保留，用于原有 `events.jsonl` 数据格式；网页使用独立的 SQLite 与决策账本，**不会自动导入旧 CLI 数据**。请分别备份，详情见使用文档。

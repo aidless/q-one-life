@@ -1,0 +1,72 @@
+{
+  "purpose": "synthetic connectivity smoke, not accuracy/calibration evidence",
+  "synthetic": true,
+  "request": {
+    "question": "【合成验收】今晚30分钟先做什么？",
+    "domain": "learning",
+    "success_criterion": "完成并保存一个Python练习",
+    "deadline": "2030-01-01T00:00:00Z",
+    "risk": "low",
+    "reversible": true,
+    "context": "已有练习题和开发环境，只剩30分钟。",
+    "options": [
+      {
+        "id": "a",
+        "label": "完成Python练习"
+      },
+      {
+        "id": "b",
+        "label": "整理书桌"
+      }
+    ],
+    "baseline_option_id": "a"
+  },
+  "recommendation": {
+    "auto_eligible": false,
+    "confidence": 0.2756,
+    "decision_id": "D-20261024-4a97b5",
+    "evidence_ids": [],
+    "gate_reasons": [
+      "low_confidence",
+      "insufficient_personal_calibration"
+    ],
+    "option_id": "a",
+    "rationale": "Laya根据当前问题与选项进行了类型化比较。它不生成解释；请对照成功标准核查，分数未在个人任务上校准。",
+    "requires_human": true,
+    "run_id": "R-5fee2806b0fc4cca8443698e44b67a86",
+    "source": "laya:convaiinnovations/laya-multilingual",
+    "success_probability": null
+  },
+  "run": {
+    "run_id": "R-5fee2806b0fc4cca8443698e44b67a86",
+    "provider": "laya",
+    "model": "convaiinnovations/laya-multilingual",
+    "duration_ms": 76557.32,
+    "input_sha256": "66c726aa2afbbaf8233cfe966da1a57f536efbd6d56262299afa6d7adb9bac0c",
+    "usage": {
+      "checkpoint": "convaiinnovations/laya-multilingual",
+      "revision": "1720e3e3357cfe1e281542e223f8273b0890ca34",
+      "laya_version": "0.4.14",
+      "usage": {
+        "input_tokens": 197,
+        "output_tokens": 0,
+        "state_tokens": 160,
+        "state_tokens_dropped": 0,
+        "truncated": false,
+        "truncated_questions": []
+      },
+      "probabilities": {
+        "a": 0.7988,
+        "b": 0.2012
+      },
+      "device": "cpu",
+      "output_kind": "choice"
+    },
+    "evidence_ids": [],
+    "id": "R-5fee2806b0fc4cca8443698e44b67a86",
+    "decision_id": "D-20261024-4a97b5",
+    "started_at": "2026-10-24T09:09:17.945364+00:00",
+    "status": "completed",
+    "kind": "real_model"
+  }
+}

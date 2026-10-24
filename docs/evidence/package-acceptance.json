@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-24",
+  "fresh_environment": true,
+  "python": "3.12.3",
+  "installer": "scripts/setup.sh (uv branch, fixed Git commits)",
+  "packages": {
+    "q-one-life": "0.2.0",
+    "q-one-core": "0.2.0",
+    "q-one-agent": "0.2.0",
+    "fastapi": "0.115.6",
+    "uvicorn": "0.34.0",
+    "httpx": "0.28.1",
+    "starlette": "0.41.3",
+    "pydantic": "2.14.1",
+    "certifi": "2026.10.23"
+  },
+  "tests": [
+    {
+      "package": "q-one-core",
+      "n": 12,
+      "status": "passed",
+      "output": "----------------------------------------------------------------------\nRan 12 tests in 0.333s\n\nOK\n"
+    },
+    {
+      "package": "q-one-agent",
+      "n": 7,
+      "status": "passed",
+      "output": "----------------------------------------------------------------------\nRan 7 tests in 0.040s\n\nOK\n"
+    },
+    {
+      "package": "q-one-life",
+      "n": 13,
+      "status": "passed",
+      "output": "----------------------------------------------------------------------\nRan 13 tests in 2.822s\n\nOK\n"
+    }
+  ],
+  "packaged_assets": {
+    "index.html": true,
+    "style.css": true,
+    "app.js": true
+  },
+  "installed_server": {
+    "start": "passed",
+    "health": {
+      "status": "ok",
+      "version": "0.2.0",
+      "ledger_events": 0,
+      "storage": "local"
+    },
+    "html": 200,
+    "javascript": 200,
+    "stop": "passed"
+  }
+}

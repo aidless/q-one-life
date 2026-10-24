@@ -79,6 +79,13 @@ def cmd_verify(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_serve(args):
+    import uvicorn
+    from .web import create_app
+    uvicorn.run(create_app(args.home), host=args.host, port=args.port, workers=1)
+    return 0
+
+
 def parser() -> argparse.ArgumentParser:
     root = argparse.ArgumentParser(prog="qone-life", description="Q-One local life layer")
     root.add_argument(
@@ -87,6 +94,12 @@ def parser() -> argparse.ArgumentParser:
         help="directory containing events.jsonl (default: .life-data)",
     )
     commands = root.add_subparsers(dest="command", required=True)
+
+    command = commands.add_parser("serve", help="启动中文个人工作台（仅本机）")
+    command.add_argument("--home", default=os.environ.get("QONE_HOME"), help="个人数据目录")
+    command.add_argument("--host", choices=["127.0.0.1", "localhost", "::1"], default="127.0.0.1")
+    command.add_argument("--port", type=int, default=8765)
+    command.set_defaults(handler=cmd_serve)
 
     command = commands.add_parser("init", help="create or verify a local life store")
     command.set_defaults(handler=cmd_init)

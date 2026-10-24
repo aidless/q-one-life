@@ -1,0 +1,80 @@
+{
+  "purpose": "synthetic connectivity smoke, not accuracy/calibration evidence",
+  "synthetic": true,
+  "request": {
+    "question": "【合成验收】今晚30分钟先做什么？",
+    "domain": "learning",
+    "success_criterion": "完成并保存一个Python练习",
+    "deadline": "2030-01-01T00:00:00Z",
+    "risk": "low",
+    "reversible": true,
+    "context": "已有练习题和开发环境，只剩30分钟。",
+    "options": [
+      {
+        "id": "a",
+        "label": "完成Python练习"
+      },
+      {
+        "id": "b",
+        "label": "整理书桌"
+      }
+    ],
+    "baseline_option_id": "a"
+  },
+  "recommendation": {
+    "auto_eligible": false,
+    "confidence": 1.0,
+    "decision_id": "D-20261024-5dd103",
+    "evidence_ids": [],
+    "gate_reasons": [
+      "insufficient_personal_calibration"
+    ],
+    "option_id": "a",
+    "rationale": "选项a直接符合成功标准，即完成并保存一个Python练习，且所需时间与剩余时间匹配。",
+    "requires_human": true,
+    "run_id": "R-6b898ba8e0d14eddbedab41b1eacea55",
+    "source": "ollama:qwen3:8b",
+    "success_probability": null
+  },
+  "run": {
+    "run_id": "R-6b898ba8e0d14eddbedab41b1eacea55",
+    "provider": "ollama",
+    "model": "qwen3:8b",
+    "duration_ms": 35031.58,
+    "input_sha256": "66c726aa2afbbaf8233cfe966da1a57f536efbd6d56262299afa6d7adb9bac0c",
+    "usage": {
+      "prompt_eval_count": 273,
+      "eval_count": 50
+    },
+    "evidence_ids": [],
+    "id": "R-6b898ba8e0d14eddbedab41b1eacea55",
+    "decision_id": "D-20261024-5dd103",
+    "started_at": "2026-10-24T09:08:28.818032+00:00",
+    "status": "completed",
+    "kind": "real_model"
+  },
+  "model_manifest": {
+    "name": "qwen3:8b",
+    "model": "qwen3:8b",
+    "modified_at": "2026-10-09T18:17:03.1013087-07:00",
+    "size": 5225388164,
+    "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "8.2B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 40960,
+      "embedding_length": 4096
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ]
+  }
+}

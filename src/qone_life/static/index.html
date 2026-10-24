@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#132d2a"><title>Q-One · 让每一次选择都有据可循</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%231d5148'/%3E%3Ctext x='9' y='28' fill='white' font-size='27' font-family='sans-serif'%3EQ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/static/style.css"><script defer src="/static/app.js"></script>
+</head>
+<body>
+<aside class="sidebar">
+<a class="brand" href="#overview"><span class="brand-icon">Q<span>·</span></span><div>Q-One<small>个人决策与复盘系统</small></div></a>
+<p class="nav-caption">我的工作台</p>
+<nav aria-label="主要导航">
+<button data-route="overview" class="active"><span>◈</span>今日总览</button>
+<button data-route="decisions"><span>◇</span>决策空间<span class="nav-count" id="decision-count">0</span></button>
+<button data-route="tasks"><span>☷</span>行动清单</button>
+<button data-route="metrics"><span>▥</span>观察与指标</button>
+<button data-route="review"><span>◷</span>周期复盘</button>
+</nav>
+<p class="nav-caption second-caption">我的资源</p>
+<nav aria-label="资源导航">
+<button data-route="knowledge"><span>▤</span>个人资料库</button>
+<button data-route="settings"><span>⚙</span>模型与设置</button>
+</nav>
+<div class="sidebar-bottom"><div class="local-dot"></div><div>数据保存在本机<small>你的记录，由你掌握</small></div><span>↗</span></div>
+</aside>
+<div class="app-shell">
+<header class="topbar"><button id="menu-toggle" class="icon-button" aria-label="展开导航">☰</button><div class="breadcrumb">工作台 <span>/</span> <strong id="breadcrumb-title">今日总览</strong></div><div class="topbar-right"><span class="local-pill"><i></i> 本地工作空间</span><span class="avatar">我</span></div></header>
+<main id="main" tabindex="-1"><div class="loading">正在打开你的工作空间…</div></main>
+<footer>Q-One <span>让记录成为证据，让选择回到自己手中。</span><span>个人版 · v0.2</span></footer>
+</div>
+<dialog id="dialog"><div class="dialog-heading"><h2 id="dialog-title"></h2><button class="icon-button close-dialog" aria-label="关闭">×</button></div><div id="dialog-body"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<template id="decision-form">
+<form id="create-decision" class="form-stack">
+<label>你正在做什么选择？<input name="question" required maxlength="500" placeholder="例如：明天上午先完成哪项工作？"></label>
+<div class="form-row"><label>所属领域<select name="domain"><option value="work">工作</option><option value="learning">学习</option><option value="energy">精力</option><option value="recovery">恢复</option><option value="other">其他</option></select></label><label>结果回看时间<input name="deadline" type="datetime-local" required></label></div>
+<label>怎样判断这次选择达到了目标？<input name="success_criterion" required maxlength="1500" placeholder="写下到时能够核实的标准，而非笼统的“做得更好”"></label>
+<label>备选方案 <small>每行一个，2—8个</small><textarea name="options" rows="3" required placeholder="完成论文初稿&#10;整理参考资料"></textarea></label>
+<label>看模型建议之前，你自己的选择是？<select name="baseline_option_id" required><option value="">先填写备选方案</option></select></label>
+<label>需要考虑的背景与约束 <small>可选</small><textarea name="context" rows="3" maxlength="15000" placeholder="可用时间、精力、依赖条件…"></textarea></label>
+<div class="form-row"><label>影响程度<select name="risk"><option value="low">较低 · 日常可调整</option><option value="medium">中等 · 需要权衡</option><option value="high">较高 · 需要谨慎</option></select></label><label class="check-label"><input name="reversible" type="checkbox" checked>这次选择可以调整</label></div>
+<div class="form-note">先保留你的判断，再参考建议。最终选择始终由你确认。</div><button type="submit" class="button primary full">保存选择，开始比较 <span>→</span></button>
+</form>
+</template>
+</body>
+</html>

@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "q-one-life"
-version = "0.1.0"
+version = "0.2.0"
 description = "A local personal ontology and review layer for the Q-One system."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "Q-One contributors"}]
-dependencies = []
+dependencies = ["fastapi==0.115.6", "uvicorn==0.34.0", "httpx==0.28.1", "q-one-core @ git+https://github.com/aidless/q-one-core.git@c3b18c975304e79637ff228b480dc2aff7fbc32b", "q-one-agent @ git+https://github.com/aidless/q-one-agent.git@79a951ac4e4f77239a227cfe28ffdc0fb30bc19f"]
 
 [project.scripts]
 qone-life = "qone_life.cli:main"
@@ -21,3 +21,6 @@ where = ["src"]
 [tool.ruff]
 line-length = 100
 target-version = "py310"
+
+[tool.setuptools.package-data]
+qone_life = ["static/*.html", "static/*.css", "static/*.js"]

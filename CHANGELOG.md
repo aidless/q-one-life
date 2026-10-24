@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 — 2026-10-24
+
+- Added the complete Chinese personal workspace, local persistence and model integration.
+- Added decisions, tasks, directional metrics, corrected observations, source retrieval and reviews.
+- Added private backup validation/recovery, redacted exports and model configuration.
+- Added install/start entry points, product documentation and acceptance evidence.
+
 ## Unreleased
 
 - Added source-linked Chinese research synthesis and implementation priorities.

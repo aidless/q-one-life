@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-24",
+  "python": "3.12.3",
+  "system": "Linux",
+  "runtime_packages": {
+    "fastapi": "0.115.6",
+    "uvicorn": "0.34.0",
+    "httpx": "0.28.1",
+    "starlette": "0.41.3",
+    "pydantic": "2.10.4",
+    "torch": "2.14.1",
+    "transformers": "5.17.0",
+    "laya": "0.4.14"
+  },
+  "source_sha256": {
+    "src/qone_life/web.py": "fae1aebb3d3071c8c137fd27077345386c89e3357c44442c6b88048cfe8e4642",
+    "src/qone_life/repository.py": "139a36b562f53b3a3729c132fa98fb51b2b243c99366bdad0e1f568344af595a",
+    "src/qone_life/backup.py": "d0b030038be7fd555a7de09feedac0de9970aeada6c5c36ab2b10c4839f75dcb",
+    "src/qone_life/cli.py": "4690460a1136a2fe2e12d2e94bd1dfabadc021be30b3e230e884107f7a6f55d3",
+    "src/qone_life/static/app.js": "47a68b75af7f8eb420fd9524bf0ff6e00d56164d0287652d5d8da03e367d72d6",
+    "src/qone_life/static/index.html": "222fd9158dba035be5c247bb9e45d388d0ddddc32b01e369626a80153467a7e3",
+    "src/qone_life/static/style.css": "baa54defec517e5f3492aee056cc0396dae67ed6ea038748a6b9ae9cd71ad6b9",
+    "../q-one-agent/src/qone_agent/runtime.py": "cd8e03c96ba908e5e63a8a06c2b2e8e5ea590d2ef4790d672a835d3108a2c9ba",
+    "../q-one-agent/src/qone_agent/laya_worker.py": "9b539155a63e10f7bc0fd84889368ab30cc95b3588419c65554cc81b41536e18"
+  },
+  "internal_commits": {
+    "core": "c3b18c975304e79637ff228b480dc2aff7fbc32b",
+    "agent": "79a951ac4e4f77239a227cfe28ffdc0fb30bc19f"
+  },
+  "scope": "Engineering acceptance on synthetic inputs; not scientific performance evidence"
+}
