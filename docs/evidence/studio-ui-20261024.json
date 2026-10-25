@@ -1,0 +1,40 @@
+{
+  "scope": "Synthetic browser acceptance; screenshots show rules, not model quality",
+  "desktop": {
+    "height": 1000,
+    "leadCount": 1,
+    "scrollWidth": 1585,
+    "source": "规则草案由你确认后安排",
+    "stepBounds": {
+      "bottom": 785.5,
+      "height": 110.96875,
+      "left": 269,
+      "right": 1206,
+      "top": 674.53125,
+      "width": 937,
+      "x": 269,
+      "y": 674.53125
+    },
+    "stepText": [
+      "对照任务描述，选出这次时间内能完成的一个具体部分；缺少材料时先记录依赖。",
+      "保存本次产出，并记录任务是否完成；未完成的部分继续保留。"
+    ],
+    "width": 1600
+  },
+  "mobile": {
+    "leadCount": 1,
+    "scrollWidth": 375,
+    "source": "规则草案由你确认后安排",
+    "width": 390
+  },
+  "interactions_verified": [
+    "first-use goal entry opens",
+    "mobile menu opens and collapses on navigation",
+    "goal form opens",
+    "reason disclosure expands",
+    "alternative disclosure expands",
+    "accepted instructions expand",
+    "accept reserves 25 minutes",
+    "completion persists without completing long-term goal"
+  ]
+}

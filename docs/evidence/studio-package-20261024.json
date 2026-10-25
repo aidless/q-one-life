@@ -1,0 +1,37 @@
+{
+  "release": "0.4.0",
+  "scope": "Engineering installation and UI assets; not model efficacy",
+  "python": "3.12.3",
+  "versions": {
+    "q-one-life": "0.4.0",
+    "q-one-core": "0.2.0",
+    "q-one-agent": "0.2.0",
+    "fastapi": "0.115.6",
+    "httpx": "0.28.1"
+  },
+  "isolated_noneditable_install": true,
+  "app_unittest": {
+    "tests_run": 35,
+    "failures": 0,
+    "errors": 0
+  },
+  "javascript_syntax": "passed",
+  "installed_http_health": {
+    "status": "ok",
+    "version": "0.4.0"
+  },
+  "installed_server_stop_verified": true,
+  "assets_sha256": {
+    "index.html": "4af36c3d8f4f2d35be5dc24ea7a0451bd4249c7193b83ef8e574cc44c549ae12",
+    "app.js": "e57f4ef455afd72960d54775dd0400a122b9944d1ac67734ee1f6bf293abe9c7",
+    "style.css": "8f741299f541857500f98204d2c541cfde2d9136d3bd60ccc44f23ab935b325d"
+  },
+  "source_sha256": {
+    "src/qone_life/planner.py": "d0056441912a5f1c300f7038cf39a43f7a48cc8f6e187036e5639e648de903b9",
+    "src/qone_life/plan_runtime.py": "9e20ac3397730a74c9741170c90926e81d5d513b88f35afa124bfec6af6b9d9f",
+    "src/qone_life/backup.py": "6e70ccf145c06db24b9877ab08e61287c40239f6930139691283b84cdd67a6c5",
+    "src/qone_life/web.py": "a9d123741ff780841b298c99ae83234ade9fa970385be0ee4a21489477b615b4"
+  },
+  "wheel_sha256": "624c46f33f5c590febad77cdba47ccad8cb82b0b0ebd9fd2f442d42b70f97dc8",
+  "final_patch": "Laya provenance text distinguishes model ranking from rule instructions; JavaScript syntax checked after this text-only change."
+}

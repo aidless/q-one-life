@@ -1,0 +1,53 @@
+{
+  "scenario": "Synthetic product goals; actual local failures, retained without replacement",
+  "observed_order_oldest_first": [
+    "qwen3:8b default request, failure with 120s timeout configured",
+    "qwen3:4b default request, failure with 120s timeout configured",
+    "qwen3:4b CPU-only request, failure with 240s timeout configured",
+    "qwen3:1.7b CPU-only request after prompt/input refinement, failure with 240s timeout configured"
+  ],
+  "gpu_probe": "nvidia-smi reported device handle unavailable; this is not a proven cause of every timeout",
+  "runs": [
+    {
+      "id": "R-8c43b7388a6a471d925aafec3b1921b2",
+      "started_at": "2026-10-25T06:41:37.561133+00:00",
+      "status": "failed",
+      "kind": "real_model",
+      "purpose": "automatic_recommendation",
+      "provider": "ollama",
+      "error": "本地模型连接失败或超时，当前仍可查看明确标记的规则建议",
+      "input_sha256": "6e1e6f11de631336a63fec7a283d8abe13553be4e2902bc76c3670821b507154"
+    },
+    {
+      "id": "R-e0660e3278394578a7fc64ae0828fa14",
+      "started_at": "2026-10-25T06:36:16.959278+00:00",
+      "status": "failed",
+      "kind": "real_model",
+      "purpose": "automatic_recommendation",
+      "provider": "ollama",
+      "error": "本地模型连接失败或超时，当前仍可查看明确标记的规则建议",
+      "input_sha256": "6e1e6f11de631336a63fec7a283d8abe13553be4e2902bc76c3670821b507154"
+    },
+    {
+      "id": "R-082686affac04ec3b264777f61707104",
+      "started_at": "2026-10-25T06:30:35.394362+00:00",
+      "status": "failed",
+      "kind": "real_model",
+      "purpose": "automatic_recommendation",
+      "provider": "ollama",
+      "error": "本地模型连接失败或超时，当前仍可查看明确标记的规则建议",
+      "input_sha256": "6e1e6f11de631336a63fec7a283d8abe13553be4e2902bc76c3670821b507154"
+    },
+    {
+      "id": "R-ae31f04429ad4808bd9deb511360eb1f",
+      "started_at": "2026-10-25T06:27:33.552155+00:00",
+      "status": "failed",
+      "kind": "real_model",
+      "purpose": "automatic_recommendation",
+      "provider": "ollama",
+      "error": "本地模型连接失败或超时，当前仍可查看明确标记的规则建议",
+      "input_sha256": "6e1e6f11de631336a63fec7a283d8abe13553be4e2902bc76c3670821b507154"
+    }
+  ],
+  "runs_order": "newest_first"
+}

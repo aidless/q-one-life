@@ -100,6 +100,9 @@ def validate_backup(raw):
                 or not all(isinstance(card.get(k), str) for k in ("title", "reason", "candidate_id", "revision", "source"))
                 or type(card["minutes"]) is not int or not 5 <= card["minutes"] <= 480):
             raise ValueError("备份推荐无效")
+        for key in ("first_step", "done_when"):
+            if key in card and (not isinstance(card[key], str) or not card[key].strip() or len(card[key]) > 600):
+                raise ValueError("备份推荐的行动说明无效")
     return tables
 
 

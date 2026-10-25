@@ -1,3 +1,3 @@
 """Q-One Life: local personal dimensions and review workflows."""
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"

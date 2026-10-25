@@ -58,7 +58,7 @@ def create_app(data_dir=None, *, model_runner=run_model, plan_runner=generate_pl
         finally:
             app.state.planner.stop()
 
-    app = FastAPI(lifespan=lifespan, title="Q-One 人生系统", version="0.3.0", docs_url="/api/docs", redoc_url=None)
+    app = FastAPI(lifespan=lifespan, title="Q-One 人生系统", version="0.4.0", docs_url="/api/docs", redoc_url=None)
     app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost", "[::1]"])
     app.state.repository, app.state.ledger = repository, ledger
 
@@ -185,7 +185,7 @@ def create_app(data_dir=None, *, model_runner=run_model, plan_runner=generate_pl
 
     @app.get("/api/health")
     def health():
-        return {"status": "ok", "version": "0.3.0", "ledger_events": ledger.verify(), "storage": "local"}
+        return {"status": "ok", "version": "0.4.0", "ledger_events": ledger.verify(), "storage": "local"}
 
     @app.get("/api/bootstrap")
     def bootstrap(days: int = 7):

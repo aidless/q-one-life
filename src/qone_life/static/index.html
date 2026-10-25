@@ -2,33 +2,33 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#132d2a"><title>Q-One · 让每一次选择都有据可循</title>
+<meta name="theme-color" content="#f5f4f0"><title>Q-One · 个人决策工作台</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%231d5148'/%3E%3Ctext x='9' y='28' fill='white' font-size='27' font-family='sans-serif'%3EQ%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/static/style.css"><script defer src="/static/app.js"></script>
 </head>
 <body>
 <aside class="sidebar">
-<a class="brand" href="#overview"><span class="brand-icon">Q<span>·</span></span><div>Q-One<small>个人自动推荐系统</small></div></a>
-<p class="nav-caption">我的工作台</p>
+<a class="brand" href="#overview"><span class="brand-icon">q<span>↗</span></span><div>Q-One<small>PERSONAL DECISION STUDIO</small></div></a>
+<p class="nav-caption">WORKSPACE</p>
 <nav aria-label="主要导航">
-<button data-route="overview" class="active"><span>◈</span>今日推荐</button>
+<button data-route="overview" class="active"><span>◈</span>今日简报</button>
 <button data-route="goals"><span>◎</span>我的目标</button>
 <button data-route="decisions"><span>◇</span>决策空间<span class="nav-count" id="decision-count">0</span></button>
 <button data-route="tasks"><span>☷</span>行动清单</button>
 <button data-route="metrics"><span>▥</span>观察与指标</button>
 <button data-route="review"><span>◷</span>周期复盘</button>
 </nav>
-<p class="nav-caption second-caption">我的资源</p>
+<p class="nav-caption second-caption">RESOURCES</p>
 <nav aria-label="资源导航">
 <button data-route="knowledge"><span>▤</span>个人资料库</button>
 <button data-route="settings"><span>⚙</span>模型与设置</button>
 </nav>
-<div class="sidebar-bottom"><div class="local-dot"></div><div>数据保存在本机<small>你的记录，由你掌握</small></div><span>↗</span></div>
+<div class="sidebar-note"><span>01 — 观察</span><span>02 — 选择</span><span>03 — 验证</span><p>让下一步，有据可循。</p></div><div class="sidebar-bottom"><div class="local-dot"></div><div>本地空间<small>数据保存在你的设备</small></div></div>
 </aside>
 <div class="app-shell">
-<header class="topbar"><button id="menu-toggle" class="icon-button" aria-label="展开导航">☰</button><div class="breadcrumb">工作台 <span>/</span> <strong id="breadcrumb-title">今日总览</strong></div><div class="topbar-right"><span class="local-pill"><i></i> 本地工作空间</span><span class="avatar">我</span></div></header>
+<header class="topbar"><button id="menu-toggle" class="icon-button" aria-label="展开导航">☰</button><div class="breadcrumb">个人空间 <span>/</span> <strong id="breadcrumb-title">今日简报</strong></div><div class="topbar-right"><span class="local-pill"><i></i> 本地工作空间</span><button class="quick-record" data-action="new-task">＋ 记录行动</button></div></header>
 <main id="main" tabindex="-1"><div class="loading">正在打开你的工作空间…</div></main>
-<footer>Q-One <span>让记录成为证据，让选择回到自己手中。</span><span>自动推荐版 · v0.3</span></footer>
+<footer>Q-One <span>观察 → 推荐 → 行动 → 回看</span><span>Decision Studio · v0.4</span></footer>
 </div>
 <dialog id="dialog"><div class="dialog-heading"><h2 id="dialog-title"></h2><button class="icon-button close-dialog" aria-label="关闭">×</button></div><div id="dialog-body"></div></dialog>
 <div id="toast" role="status" aria-live="polite"></div>

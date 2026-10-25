@@ -1,5 +1,6 @@
 """Explicit model fixtures test automatic behavior; live inference is recorded separately."""
 import json
+import os
 import tempfile
 import threading
 import unittest
@@ -24,7 +25,7 @@ HEADERS = {"X-QOne-Client": "web"}
 def fixture_plan(snapshot, config):
     c = snapshot["candidates"][0]
     return PlanResult([{"candidate_id": c["id"], "title": "完成并保存一个Python小练习", "reason": "为已有项目目标验证一个小步骤，仍需执行后回看",
-                        "minutes": min(25, snapshot["available_minutes"])}], "fixture", "explicit-test-fixture")
+                        "minutes": min(25, snapshot["available_minutes"]), "first_step": "创建hello.py，写入一行打印语句", "done_when": "运行文件后保存实际终端输出"}], "fixture", "explicit-test-fixture")
 
 
 class PlannerTests(unittest.TestCase):
@@ -157,6 +158,9 @@ class PlannerTests(unittest.TestCase):
             body = json.loads(request.content)
             calls.append(body)
             self.assertFalse(body["stream"])
+            context = json.loads(body["messages"][1]["content"])
+            self.assertNotIn("first_step", context["candidates"][0])
+            self.assertNotIn("record_id", context["candidates"][0])
             return httpx.Response(200, json={"message": {"content": json.dumps({"items": fixture_plan(snapshot, self.config).items})}})
         transport = httpx.MockTransport(handler)
         result = generate_plan(snapshot, self.config, transport=transport)
@@ -164,6 +168,58 @@ class PlannerTests(unittest.TestCase):
         with self.assertRaises(ProviderError):
             generate_plan(snapshot, self.config | {"ollama_url": "https://remote.invalid"}, transport=transport)
         self.assertEqual(len(calls), 1)
+
+    def test_action_details_are_validated_and_kept_in_the_accepted_task(self):
+        self.repo.goal(GOAL)
+        self.planner.tick()
+        card = self.planner.state()["items"][0]
+        self.planner.feedback(card["id"], "accept", card["proposal_sha256"])
+        stored = self.repo.all("tasks")[0]["focus_recommendation"]
+        self.assertEqual(stored["first_step"], "创建hello.py，写入一行打印语句")
+        self.assertEqual(stored["done_when"], "运行文件后保存实际终端输出")
+        snapshot = self.calls[0]
+        valid = fixture_plan(snapshot, self.config).items[0]
+        for key in ("first_step", "done_when"):
+            for bad in (True, [], "", "x" * 601):
+                with self.subTest(key=key, value=bad), self.assertRaises(ProviderError):
+                    validate_plan({"items": [valid | {key: bad}]}, snapshot)
+
+    def test_only_changing_the_first_step_invalidates_old_acceptance(self):
+        self.repo.goal(GOAL)
+        self.planner.tick()
+        old = self.planner.state()["items"][0]
+        def changed(snapshot, config):
+            result = fixture_plan(snapshot, config)
+            result.items[0]["first_step"] = "先打开终端，检查Python版本"
+            return result
+        self.planner.runner = changed
+        self.planner.tick(force=True)
+        latest = self.planner.state()["items"][0]
+        self.assertEqual(old["title"], latest["title"])
+        self.assertNotEqual(old["proposal_sha256"], latest["proposal_sha256"])
+        with self.assertRaisesRegex(ValueError, "已更新"):
+            self.planner.feedback(old["id"], "accept", old["proposal_sha256"])
+        self.assertFalse(self.repo.all("tasks"))
+
+    def test_live_adapter_rejects_a_vague_output_without_action_details(self):
+        self.repo.goal(GOAL)
+        snapshot = self.planner.snapshot()
+        item = fixture_plan(snapshot, self.config).items[0]
+        item.pop("first_step")
+        transport = httpx.MockTransport(lambda _: httpx.Response(200, json={"message": {"content": json.dumps({"items": [item]})}}))
+        with self.assertRaisesRegex(ProviderError, "第一步"):
+            generate_plan(snapshot, self.config, transport=transport)
+
+    def test_cpu_override_is_explicit_and_recorded(self):
+        self.repo.goal(GOAL)
+        snapshot = self.planner.snapshot()
+        def handler(request):
+            self.assertEqual(json.loads(request.content)["options"]["num_gpu"], 0)
+            return httpx.Response(200, json={"message": {"content": json.dumps({"items": fixture_plan(snapshot, self.config).items})}})
+        with patch.dict(os.environ, {"QONE_OLLAMA_CPU_ONLY": "1"}):
+            result = generate_plan(snapshot, self.config, transport=httpx.MockTransport(handler))
+        self.assertTrue(result.usage["cpu_only"])
+        self.assertEqual(result.usage["context_protocol"], "action-brief-v1")
 
     def test_laya_uses_real_adapter_contract_and_explicit_defer_alternative(self):
         self.repo.goal(GOAL)

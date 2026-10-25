@@ -1,0 +1,232 @@
+{
+  "scenario": "Synthetic goals; first real CPU call; before prompt and input refinement; not a recommendation-quality result",
+  "planner": {
+    "enabled": true,
+    "provider": "ollama",
+    "status": "ready",
+    "error": null,
+    "date": "2026-10-24",
+    "generated_at": "2026-10-25T06:34:09.504051+00:00",
+    "input_sha256": "6e1e6f11de631336a63fec7a283d8abe13553be4e2902bc76c3670821b507154",
+    "items": [
+      {
+        "id": "P-4b184cbb41f4f955e12d7c4c",
+        "kind": "task",
+        "task_id": "demo-acceptance-script",
+        "goal_id": "G-dcffe7b0b073480499d00b2bac45803b",
+        "title": "写出首次使用的三步验收脚本",
+        "reason": "尚未完成的任务；尚未设定期限；关联目标：发布 Q-One 的公开演示",
+        "domain": "work",
+        "first_step": "根据任务描述，写出三步验收脚本，明确每一步的预期输出和检查方式",
+        "done_when": "保存本次产出，并记录任务是否完成；未完成的部分继续保留。",
+        "minutes": 25,
+        "revision": "eeb67557eeaf96f78ce6378566390a5fbfb1c1bc04cec7a2e6996d2a9ed8ad85",
+        "record_id": "P-4b184cbb41f4f955e12d7c4c",
+        "candidate_id": "task:demo-acceptance-script",
+        "source": "ollama:qwen3:1.7b",
+        "status": "active",
+        "input_sha256": "6e1e6f11de631336a63fec7a283d8abe13553be4e2902bc76c3670821b507154",
+        "run_id": "R-6f0758994bd34fb5b750bd7f54d27e2f",
+        "created_at": "2026-10-25T06:34:09.491074+00:00",
+        "generated_at": "2026-10-25T06:34:09.491096+00:00",
+        "proposal_sha256": "7f04fc6c9aab88c02ead55d5f2d2712733f8821be6112f142c1c2c9a4ac0df6e"
+      },
+      {
+        "id": "P-e62e0fdb4230c6ce121675ff",
+        "kind": "goal",
+        "goal_id": "G-a39f97a026c940ffa6ba67319dafac11",
+        "task_id": null,
+        "title": "把推荐依据讲清楚",
+        "reason": "该目标还没有未完成的待办，先把下一步的验收范围写清楚。目标优先级 4/5。",
+        "first_step": "根据完成标准，写出一个具体的小成果，如推荐依据的简要说明，并说明如何检查其正确性",
+        "done_when": "保存一条具体的交付物描述和验收办法；这一步不代表整个目标完成。",
+        "domain": "work",
+        "minutes": 25,
+        "revision": "899d988b0fdcbeead7446974b21819ad43a0f4cf93fc4d32cf2bfd3d2885e659",
+        "record_id": "P-e62e0fdb4230c6ce121675ff",
+        "candidate_id": "goal:G-a39f97a026c940ffa6ba67319dafac11",
+        "source": "ollama:qwen3:1.7b",
+        "status": "active",
+        "input_sha256": "6e1e6f11de631336a63fec7a283d8abe13553be4e2902bc76c3670821b507154",
+        "run_id": "R-6f0758994bd34fb5b750bd7f54d27e2f",
+        "created_at": "2026-10-25T06:34:09.496913+00:00",
+        "generated_at": "2026-10-25T06:34:09.496946+00:00",
+        "proposal_sha256": "7068039bf2410c6f47571f7e58cf7bf5aba91dfd39ded0a59eb1f4008d0a1514"
+      },
+      {
+        "id": "P-f88b643f20b071d053a3838b",
+        "kind": "goal",
+        "goal_id": "G-e50ef64045084a449d200b36b721c83f",
+        "task_id": null,
+        "title": "完成一次产品反馈回看",
+        "reason": "该目标还没有未完成的待办，先把下一步的验收范围写清楚。目标优先级 3/5。",
+        "first_step": "根据完成标准，写出一个具体的小成果，如产品反馈的简要总结，并说明如何检查其正确性",
+        "done_when": "保存一条具体的交付物描述和验收办法；这一步不代表整个目标完成。",
+        "domain": "work",
+        "minutes": 25,
+        "revision": "7815705d42281bbdd1c01fc54487dbfb6ed0b4ce87c098c8f900853bb64459b9",
+        "record_id": "P-f88b643f20b071d053a3838b",
+        "candidate_id": "goal:G-e50ef64045084a449d200b36b721c83f",
+        "source": "ollama:qwen3:1.7b",
+        "status": "active",
+        "input_sha256": "6e1e6f11de631336a63fec7a283d8abe13553be4e2902bc76c3670821b507154",
+        "run_id": "R-6f0758994bd34fb5b750bd7f54d27e2f",
+        "created_at": "2026-10-25T06:34:09.499313+00:00",
+        "generated_at": "2026-10-25T06:34:09.499330+00:00",
+        "proposal_sha256": "d79b5019e935fb97fefb1ba4ac0b5133a77f8cd6afc8ea1dfcd9da8e57e83c4e"
+      }
+    ],
+    "has_goals": true,
+    "has_candidates": true,
+    "available_minutes": 75,
+    "limits": {
+      "goals_included": 3,
+      "goals_total": 3,
+      "pending_tasks_total": 1
+    }
+  },
+  "runs": [
+    {
+      "id": "R-6f0758994bd34fb5b750bd7f54d27e2f",
+      "started_at": "2026-10-25T06:33:01.863982+00:00",
+      "status": "completed",
+      "kind": "real_model",
+      "purpose": "automatic_recommendation",
+      "provider": "ollama",
+      "model": "qwen3:1.7b",
+      "duration_ms": 67621.46,
+      "usage": {
+        "prompt_eval_count": 1594,
+        "eval_count": 414,
+        "cpu_only": true,
+        "input_sha256": "6e1e6f11de631336a63fec7a283d8abe13553be4e2902bc76c3670821b507154"
+      },
+      "input_sha256": "6e1e6f11de631336a63fec7a283d8abe13553be4e2902bc76c3670821b507154",
+      "evidence_snapshot": [],
+      "input_snapshot": {
+        "date": "2026-10-24",
+        "available_minutes": 75,
+        "goals": [
+          {
+            "id": "G-dcffe7b0b073480499d00b2bac45803b",
+            "title": "发布 Q-One 的公开演示",
+            "domain": "work",
+            "success_criterion": "首次访问的人能添加目标、收到推荐并采纳为行动",
+            "priority": 5,
+            "deadline": null
+          },
+          {
+            "id": "G-a39f97a026c940ffa6ba67319dafac11",
+            "title": "把推荐依据讲清楚",
+            "domain": "work",
+            "success_criterion": "每条推荐都能查看第一步、完成标准和输入依据",
+            "priority": 4,
+            "deadline": null
+          },
+          {
+            "id": "G-e50ef64045084a449d200b36b721c83f",
+            "title": "完成一次产品反馈回看",
+            "domain": "work",
+            "success_criterion": "整理三个可复现的问题，按影响顺序处理",
+            "priority": 3,
+            "deadline": null
+          }
+        ],
+        "recent_completed_actions": [
+          {
+            "title": "明确公开演示的最小使用范围",
+            "goal_id": "G-dcffe7b0b073480499d00b2bac45803b"
+          }
+        ],
+        "recent_observations": [
+          {
+            "id": "M-988f839b5ce94b6dbd94ee809f01f64a",
+            "name": "产品专注时间",
+            "domain": "work",
+            "unit": "分钟",
+            "direction": "higher",
+            "latest_value": 15.0,
+            "n": 3,
+            "coverage": 0.42857142857142855
+          }
+        ],
+        "evidence": [],
+        "candidates": [
+          {
+            "id": "task:demo-acceptance-script",
+            "kind": "task",
+            "task_id": "demo-acceptance-script",
+            "goal_id": "G-dcffe7b0b073480499d00b2bac45803b",
+            "title": "写出首次使用的三步验收脚本",
+            "reason": "尚未完成的任务；尚未设定期限；关联目标：发布 Q-One 的公开演示",
+            "domain": "work",
+            "first_step": "对照任务描述，选出这次时间内能完成的一个具体部分；缺少材料时先记录依赖。",
+            "done_when": "保存本次产出，并记录任务是否完成；未完成的部分继续保留。",
+            "minutes": 25,
+            "revision": "eeb67557eeaf96f78ce6378566390a5fbfb1c1bc04cec7a2e6996d2a9ed8ad85",
+            "record_id": "P-4b184cbb41f4f955e12d7c4c"
+          },
+          {
+            "id": "goal:G-a39f97a026c940ffa6ba67319dafac11",
+            "kind": "goal",
+            "goal_id": "G-a39f97a026c940ffa6ba67319dafac11",
+            "task_id": null,
+            "title": "明确第一个交付物：把推荐依据讲清楚",
+            "reason": "该目标还没有未完成的待办，先把下一步的验收范围写清楚。目标优先级 4/5。",
+            "first_step": "对照完成标准，写下一个这次时间内可以交付的小成果，以及如何检查它。",
+            "done_when": "保存一条具体的交付物描述和验收办法；这一步不代表整个目标完成。",
+            "domain": "work",
+            "minutes": 25,
+            "revision": "899d988b0fdcbeead7446974b21819ad43a0f4cf93fc4d32cf2bfd3d2885e659",
+            "record_id": "P-e62e0fdb4230c6ce121675ff"
+          },
+          {
+            "id": "goal:G-e50ef64045084a449d200b36b721c83f",
+            "kind": "goal",
+            "goal_id": "G-e50ef64045084a449d200b36b721c83f",
+            "task_id": null,
+            "title": "明确第一个交付物：完成一次产品反馈回看",
+            "reason": "该目标还没有未完成的待办，先把下一步的验收范围写清楚。目标优先级 3/5。",
+            "first_step": "对照完成标准，写下一个这次时间内可以交付的小成果，以及如何检查它。",
+            "done_when": "保存一条具体的交付物描述和验收办法；这一步不代表整个目标完成。",
+            "domain": "work",
+            "minutes": 25,
+            "revision": "7815705d42281bbdd1c01fc54487dbfb6ed0b4ce87c098c8f900853bb64459b9",
+            "record_id": "P-f88b643f20b071d053a3838b"
+          }
+        ],
+        "limits": {
+          "goals_included": 3,
+          "goals_total": 3,
+          "pending_tasks_total": 1
+        }
+      },
+      "items": [
+        {
+          "candidate_id": "task:demo-acceptance-script",
+          "title": "写出首次使用的三步验收脚本",
+          "reason": "尚未完成的任务；尚未设定期限；关联目标：发布 Q-One 的公开演示",
+          "minutes": 25,
+          "first_step": "根据任务描述，写出三步验收脚本，明确每一步的预期输出和检查方式",
+          "done_when": "保存本次产出，并记录任务是否完成；未完成的部分继续保留。"
+        },
+        {
+          "candidate_id": "goal:G-a39f97a026c940ffa6ba67319dafac11",
+          "title": "把推荐依据讲清楚",
+          "reason": "该目标还没有未完成的待办，先把下一步的验收范围写清楚。目标优先级 4/5。",
+          "minutes": 25,
+          "first_step": "根据完成标准，写出一个具体的小成果，如推荐依据的简要说明，并说明如何检查其正确性",
+          "done_when": "保存一条具体的交付物描述和验收办法；这一步不代表整个目标完成。"
+        },
+        {
+          "candidate_id": "goal:G-e50ef64045084a449d200b36b721c83f",
+          "title": "完成一次产品反馈回看",
+          "reason": "该目标还没有未完成的待办，先把下一步的验收范围写清楚。目标优先级 3/5。",
+          "minutes": 25,
+          "first_step": "根据完成标准，写出一个具体的小成果，如产品反馈的简要总结，并说明如何检查其正确性",
+          "done_when": "保存一条具体的交付物描述和验收办法；这一步不代表整个目标完成。"
+        }
+      ]
+    }
+  ]
+}

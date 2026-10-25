@@ -76,21 +76,28 @@ class Planner:
                 reason += "；关联目标：" + linked["title"]
             candidates.append({"id": "task:" + task["id"], "kind": "task", "task_id": task["id"], "goal_id": task.get("goal_id"),
                 "title": task["title"][:200], "reason": reason, "domain": task["domain"],
+                "first_step": "对照任务描述，选出这次时间内能完成的一个具体部分；缺少材料时先记录依赖。",
+                "done_when": "保存本次产出，并记录任务是否完成；未完成的部分继续保留。",
                 "minutes": min(task.get("estimate_minutes", 25), config["daily_available_minutes"]),
                 "revision": digest({k: task.get(k) for k in ("title", "deadline", "priority", "goal_id", "done")})})
         linked_tasks = {t.get("goal_id") for t in tasks}
         for goal in goals[:4]:
             if goal["id"] in linked_tasks:
                 continue
-            title = "推进目标：" + goal["title"][:130]
+            completed = [t for t in all_tasks if t.get("goal_id") == goal["id"] and t["done"]]
+            title = ("核对下一项缺口：" if completed else "明确第一个交付物：") + goal["title"][:120]
             candidates.append({"id": "goal:" + goal["id"], "kind": "goal", "goal_id": goal["id"], "task_id": None,
-                "title": title, "reason": "目标尚未拆成待办；成功标准：" + goal["success_criterion"][:250],
+                "title": title, "reason": ("已有行动完成，需对照目标核对剩余缺口。" if completed else "该目标还没有未完成的待办，先把下一步的验收范围写清楚。") + "目标优先级 " + str(goal["priority"]) + "/5。",
+                "first_step": "对照完成标准，" + ("检查最近产出，写下一个尚未满足的条件。" if completed else "写下一个这次时间内可以交付的小成果，以及如何检查它。"),
+                "done_when": "保存一条具体的交付物描述和验收办法；这一步不代表整个目标完成。",
                 "domain": goal["domain"], "minutes": min(25, config["daily_available_minutes"]), "revision": digest({"goal": goal, "completed_actions": [{"id": t["id"], "title": t["title"]} for t in all_tasks if t.get("goal_id") == goal["id"] and t["done"]][:8]})})
         for state in self.ledger.project_all().values():
             if state["status"] == "decided" and datetime.fromisoformat(state["deadline"].replace("Z", "+00:00")) <= datetime.now(timezone.utc):
                 candidates.insert(0, {"id": "review:" + state["decision_id"], "kind": "review", "decision_id": state["decision_id"],
                     "task_id": None, "goal_id": None, "title": "回看：" + state["question"][:160],
                     "reason": "已到事前约定的回看时间，结果仍未记录", "domain": state["domain"], "minutes": 5,
+                    "first_step": "打开这次选择，对照事前标准填写实际结果。",
+                    "done_when": "保存一次结果回看；无法判断时明确记为未知。",
                     "revision": digest({"status": state["status"], "deadline": state["deadline"]})})
         # Preserve feedback without making it part of the model's private context.
         eligible = []
@@ -136,11 +143,12 @@ class Planner:
                 self.model_status, self.error = "idle", None
             return snapshot, input_sha
 
-    def _save(self, candidate, title, reason, minutes, source, input_sha, run_id=None):
+    def _save(self, candidate, title, reason, minutes, source, input_sha, run_id=None, detail=None):
         card = candidate | {"id": candidate["record_id"], "candidate_id": candidate["id"], "title": title, "reason": reason,
             "minutes": minutes, "source": source, "status": "active", "input_sha256": input_sha, "run_id": run_id,
             "created_at": now(), "generated_at": now()}
-        card["proposal_sha256"] = digest({k: card[k] for k in ("title", "reason", "minutes", "source", "revision", "input_sha256")})
+        card.update({key: (detail or {}).get(key) or candidate.get(key) or "具体内容待细化" for key in ("first_step", "done_when")})
+        card["proposal_sha256"] = digest({k: card[k] for k in ("title", "reason", "first_step", "done_when", "minutes", "source", "revision", "input_sha256")})
         self.repo.put("suggestions", card)
         return card
 
@@ -192,7 +200,7 @@ class Planner:
                     return
                 candidates = {c["id"]: c for c in snapshot["candidates"]}
                 self.cards = [self._save(candidates[item["candidate_id"]], item["title"], item["reason"], item["minutes"],
-                                         result.provider + ":" + result.model, input_sha, run_id) for item in items]
+                                         result.provider + ":" + result.model, input_sha, run_id, item) for item in items]
                 self.repo.put("runs", run)
                 self.generated_at, self.model_status, self.error = now(), "ready", None
         except ProviderError as exc:
