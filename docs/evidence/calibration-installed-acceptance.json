@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-25",
+  "synthetic": true,
+  "core_commit": "cf63131f6240d6418da7f9282f60f53d1e035a11",
+  "versions": {
+    "python": "3.12.3",
+    "q-one-core": "0.4.0",
+    "q-one-life": "0.6.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "checks": {
+    "installed_cli_shadow_replay": true,
+    "model_unchanged": true,
+    "comparison_unchanged": true,
+    "flag_requires_replay": true
+  },
+  "interval_method": "prequential_aci_shadow",
+  "used_for_recommendations": false,
+  "wheel_sha256": "08bee815fad9e2600a01cb2035ba145a5c91cb09611a8cacdfa5f0275213a651",
+  "experimental_adoption": "rejected_as_default_by_frozen_synthetic_shift_tests",
+  "claims_excluded": [
+    "real_person_benefit",
+    "calibrated_coverage",
+    "SOTA"
+  ]
+}

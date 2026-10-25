@@ -101,6 +101,19 @@ class SystemTests(unittest.TestCase):
             r=restored.post('/api/restore',json=backup); self.assertEqual(r.status_code,200,r.text)
             self.assertIsNone(restored.get('/api/system').json()['current'])
 
+    def test_calibration_shadow_does_not_modify_model_or_recommendations(self):
+        self.load(); before=self.feed(); current=self.client.get('/api/system').json()['current']
+        config={'method':'prequential_aci','step_size':0.01,'window':64,'min_samples':10}
+        result=self.client.post('/api/system/replay',json={'candidate_calibration':config})
+        self.assertEqual(result.status_code,200,result.text)
+        self.assertEqual(result.json()['interval_method'],'prequential_aci_shadow')
+        self.assertFalse(result.json()['used_for_recommendations'])
+        self.assertEqual(result.json()['purpose'],'shadow_interval_evaluation')
+        self.assertEqual(self.client.get('/api/system').json()['current'],current)
+        self.assertEqual([c['proposal_sha256'] for c in self.feed()['items']],[c['proposal_sha256'] for c in before['items']])
+        self.assertEqual(self.app.state.repository.all('tasks'),[])
+        self.assertEqual(self.client.post('/api/system/replay',json={'candidate_calibration':{'method':'unknown'}}).status_code,400)
+
     def test_simultaneous_acceptance_cannot_spend_budget_twice(self):
         self.load(); card=self.feed()['items'][0]; results=[]
         def accept():

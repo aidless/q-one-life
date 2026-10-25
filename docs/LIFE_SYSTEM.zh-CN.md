@@ -1,4 +1,4 @@
-# Q-One Life 0.5 使用与验收说明
+# Q-One Life 0.6 使用与验收说明
 
 本版接入可训练的人生状态与决策内核。详细设计见 [core内核文档](https://github.com/aidless/q-one-core/blob/main/docs/LIFE_KERNEL.zh-CN.md)，[技术进阶蓝图](https://github.com/aidless/q-one-core/blob/main/docs/ADVANCED_ROADMAP.zh-CN.md)。
 
@@ -85,3 +85,21 @@ schema_version: 1
 这些是工程检查。合成示例的预测优于保持不变基线，只说明在生成器指定机制下链路可训练、可重放。尚无真实个人数据的预测效果、真实推荐收益或因果证据。
 
 局限：只支持有限当前行动组合和固定预测窗口；没有长期潜在世界模型、连续时间调度器、自动因果发现或安全探索策略。涉及学习结果的过程底线不能验证时，系统拒绝自动选择。下一阶段应先建立真实个人模型与持续观察流程，再决定更深的时序模型。
+
+## 0.6：在线校准候选的影子评测
+
+系统增加了按时间回放的校准对照入口。它读取当前模型的历史记录，比较候选预测范围，**不会保存模型版本、改变推荐区间或产生任务**。候选在稳定合成场景改善，但未通过均值突变和噪声增大场景的采用条件；目前不进入默认推荐。
+
+```bash
+"$runtime" system-inspect --home /tmp/q-one-adaptive-example --replay --calibration-shadow
+```
+
+本地接口 `POST /api/system/replay` 支持：
+
+```json
+{"candidate_calibration":{"method":"prequential_aci","step_size":0.01,"window":64,"min_samples":10}}
+```
+
+结果标记 `purpose=shadow_interval_evaluation`、`used_for_recommendations=false`。同时报告有限区间数量、拒绝数量、经验覆盖、平均宽度和区间评分；密度评分仍对应原始Student-t分布。范围收窄不能单独作为采用理由，也不能把原内核在突变场景中的漏覆盖隐藏掉。
+
+[完整对照与采用决定](https://github.com/aidless/q-one-core/blob/main/docs/CALIBRATION_EVALUATION.zh-CN.md)包含固定协议、官方来源和负面结果。当前没有真实个人效果或覆盖保证。

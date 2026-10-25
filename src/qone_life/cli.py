@@ -102,10 +102,11 @@ def cmd_system_inspect(args):
     from .repository import now
     directory=Path(args.home or os.environ.get('QONE_HOME',Path.home()/'.local/share/q-one'))
     service=SystemService(Repository(directory))
+    if args.calibration_shadow and not args.replay:
+        raise LifeValidationError('--calibration-shadow需要同时使用--replay')
     if args.replay:
-        _,kernel=service.kernel()
-        if kernel is None or not hasattr(kernel,'replay'): raise LifeValidationError('尚未配置历史学习模型')
-        result=kernel.replay()
+        candidate={'method':'prequential_aci','step_size':0.01,'window':64,'min_samples':10} if args.calibration_shadow else None
+        result=service.replay(candidate)
     else:
         result=service.evaluate(args.as_of or now(),available_minutes=args.available_minutes)
     print(json.dumps(result,ensure_ascii=False,indent=2))
@@ -132,6 +133,7 @@ def parser() -> argparse.ArgumentParser:
     command.add_argument('--as-of')
     command.add_argument('--available-minutes',type=int,default=90)
     command.add_argument('--replay',action='store_true')
+    command.add_argument('--calibration-shadow',action='store_true',help='对照在线校准候选；不改变推荐或保存设置')
     command.set_defaults(handler=cmd_system_inspect)
 
     command = commands.add_parser("serve", help="启动中文个人工作台（仅本机）")

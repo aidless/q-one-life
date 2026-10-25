@@ -75,6 +75,18 @@ class SystemService:
                 'dimensions':kernel.model['dimensions'],'episode_count':len(kernel.model.get('episodes',[])),'state':kernel.snapshot(as_of,commitments=commitments),
                 'comparison':comparison,'daily_capacity_excluded_portfolios':over}
 
+    def replay(self, candidate_calibration=None):
+        _,kernel=self.kernel()
+        if kernel is None or not isinstance(kernel,AdaptiveKernel):
+            raise ModelError('当前模型尚未配置历史学习记录')
+        if candidate_calibration is not None:
+            # The candidate is isolated: no revision, task or production setting changes.
+            kernel=AdaptiveKernel(kernel.model|{'learning':kernel.config|{'calibration':candidate_calibration}})
+        result=kernel.replay()
+        result['used_for_recommendations']=False
+        result['purpose']='shadow_interval_evaluation' if candidate_calibration is not None else 'historical_prediction_review'
+        return result
+
     def planning_snapshot(self, *, today, available_minutes):
         # A stable decision epoch preserves reviewable proposals between UI polls.
         at=datetime.now(timezone.utc).replace(second=0,microsecond=0).isoformat()

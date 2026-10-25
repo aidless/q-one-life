@@ -84,3 +84,9 @@ MIT 开源。第三方模型及依赖按各自许可证使用。本应用不训�
 新增目标树、价值取舍、资源账户与历史变化预测，并接入首页推荐、完整资源承诺和v3备份。样本不足或方案无法区分时保持未知。合成体验文件不代表你的真实数据，也不证明真实推荐有效。
 
 [使用与接口说明](docs/LIFE_SYSTEM.zh-CN.md) · [合成模型](examples/adaptive.synthetic.json) · [内核设计](https://github.com/aidless/q-one-core/blob/main/docs/LIFE_KERNEL.zh-CN.md) · [进阶路线](https://github.com/aidless/q-one-core/blob/main/docs/ADVANCED_ROADMAP.zh-CN.md)
+
+## 0.6：校准候选影子评测
+
+可用本地接口或 `system-inspect --replay --calibration-shadow` 对照在线校准候选。候选在突变场景未通过采用条件，保持独立评测，不改变推荐或保存的模型。
+
+[使用说明](docs/LIFE_SYSTEM.zh-CN.md) · [技术来源、对照与未采用原因](https://github.com/aidless/q-one-core/blob/main/docs/CALIBRATION_EVALUATION.zh-CN.md)
