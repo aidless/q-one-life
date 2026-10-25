@@ -40,6 +40,7 @@ class Repository:
         with self.connect() as db:
             db.executescript('''
                 PRAGMA journal_mode=WAL;
+                CREATE TABLE IF NOT EXISTS system_revisions(id TEXT PRIMARY KEY, payload TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS goals(id TEXT PRIMARY KEY, payload TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS suggestions(id TEXT PRIMARY KEY, payload TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS tasks(id TEXT PRIMARY KEY, payload TEXT NOT NULL);
@@ -63,7 +64,7 @@ class Repository:
 
     @staticmethod
     def _table(table):
-        if table not in {"tasks", "metrics", "observations", "documents", "runs", "reviews", "goals", "suggestions"}:
+        if table not in {"tasks", "metrics", "observations", "documents", "runs", "reviews", "goals", "suggestions", "system_revisions"}:
             raise ValueError("unknown record type")
         return table
 

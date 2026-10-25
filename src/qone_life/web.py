@@ -58,7 +58,7 @@ def create_app(data_dir=None, *, model_runner=run_model, plan_runner=generate_pl
         finally:
             app.state.planner.stop()
 
-    app = FastAPI(lifespan=lifespan, title="Q-One 人生系统", version="0.4.0", docs_url="/api/docs", redoc_url=None)
+    app = FastAPI(lifespan=lifespan, title="Q-One 人生系统", version="0.5.0", docs_url="/api/docs", redoc_url=None)
     app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost", "[::1]"])
     app.state.repository, app.state.ledger = repository, ledger
 
@@ -185,7 +185,7 @@ def create_app(data_dir=None, *, model_runner=run_model, plan_runner=generate_pl
 
     @app.get("/api/health")
     def health():
-        return {"status": "ok", "version": "0.4.0", "ledger_events": ledger.verify(), "storage": "local"}
+        return {"status": "ok", "version": "0.5.0", "ledger_events": ledger.verify(), "storage": "local"}
 
     @app.get("/api/bootstrap")
     def bootstrap(days: int = 7):
@@ -303,6 +303,34 @@ def create_app(data_dir=None, *, model_runner=run_model, plan_runner=generate_pl
             decisions.abandon(decision_id, raw.get("reason", ""))
             repository.remove("tasks", "decision-" + decision_id)
             return ledger.get(decision_id)
+
+    @app.get("/api/system")
+    def get_system():
+        return {"current":planner.system.current()}
+
+    @app.post("/api/system", status_code=201)
+    def save_system(raw: dict):
+        if "parent_revision" not in raw or not isinstance(raw.get("model"),dict):
+            raise ValueError("需要model和parent_revision；首次导入的parent_revision为null")
+        with planner.lock:
+            result=planner.system.save(raw["model"],raw["parent_revision"])
+            planner.input_sha=None
+            return result
+
+    @app.post("/api/system/evaluate")
+    def evaluate_system(raw: dict):
+        with planner.lock:
+            result=planner.system.evaluate(raw.get("as_of",now()),available_minutes=raw.get("available_minutes",settings()["daily_available_minutes"]),
+                max_actions=raw.get("max_actions",3),horizon_days=raw.get("horizon_days"))
+            if result is None: raise ValueError("请先导入并声明人生模型")
+            return result
+
+    @app.post("/api/system/replay")
+    def replay_system(raw: dict):
+        with planner.lock:
+            _,kernel=planner.system.kernel()
+            if kernel is None or not hasattr(kernel,"replay"): raise ValueError("当前模型尚未配置历史学习记录")
+            return kernel.replay()
 
     @app.get("/api/planner")
     def recommendation_feed():
@@ -436,8 +464,8 @@ def create_app(data_dir=None, *, model_runner=run_model, plan_runner=generate_pl
 
     @app.get("/api/backup")
     def backup():
-        with lock:
-            result = {"format": "q-one-backup-v2", "created_at": now(), "events": ledger.events(),
+        with lock, planner.lock:
+            result = {"format": "q-one-backup-v3", "created_at": now(), "events": ledger.events(),
                 "tables": {name: repository.all(name) for name in TABLES}}
         return JSONResponse(result, headers={"Content-Disposition": 'attachment; filename="q-one-private-backup.json"'})
 
@@ -447,7 +475,7 @@ def create_app(data_dir=None, *, model_runner=run_model, plan_runner=generate_pl
             validate_backup(raw)
         except (KeyError, TypeError, AttributeError) as exc:
             raise ValueError("备份字段不完整或类型无效") from exc
-        with lock:
+        with lock, planner.lock:
             if ledger.events() or any(repository.all(name) for name in TABLES):
                 raise ValueError("只能恢复到空数据目录；现有记录不会被覆盖")
             marker = directory / "restore.pending.json"

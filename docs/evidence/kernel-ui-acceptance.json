@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-25",
+  "synthetic": true,
+  "method": "Actual browser UI interaction and accessibility/DOM state",
+  "checked": [
+    "Homepage identifies personal-history prediction and synthetic data",
+    "Disclosure shows user goal order, full resource cost, 96 supported records and 24 matching portfolios",
+    "Disclosure shows predicted change ranges and conditional interpretation",
+    "Goal page displays model goals instead of the unrelated basic-goal list",
+    "State page preserves numeric units, ordinal categories and original qualitative text",
+    "Model dialog identifies 8 dimensions, 5 measures, 96 synthetic episodes and an import entry point"
+  ],
+  "screenshot": null,
+  "screenshot_limitation": "Page.captureScreenshot timed out twice; no screenshot or visual layout proof claimed",
+  "persistence_and_import": "Separate API acceptance in tests/test_system.py",
+  "claims_excluded": ["real_person_data", "real_person_benefit", "visual_layout_certification"]
+}

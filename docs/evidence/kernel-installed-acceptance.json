@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-25",
+  "synthetic": true,
+  "installation": "isolated noneditable wheel and commit-pinned public dependencies",
+  "core_commit": "168c6883e82acef1834d5e63ac782a27e8ef04bc",
+  "runtime": {
+    "python": "3.12.3",
+    "q-one-core": "0.3.0",
+    "q-one-agent": "0.2.0",
+    "q-one-life": "0.5.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "fastapi": "0.115.6",
+    "httpx": "0.28.1"
+  },
+  "model_sha256": "5b291055ee3b74ca8d94ce5324a42c6556e75a3e687e0b0d52e28100dccec92e",
+  "wheel_sha256": "8361de580ab13968820a317d0b91f2ce3f9a316cfc6c41dea3b04a4e3390c1aa",
+  "selected_action_ids": [
+    "study"
+  ],
+  "replay_summary": {
+    "practice": {
+      "n": 76,
+      "unit": "条",
+      "mae": 0.771593633258285,
+      "no_change_mae": 6.288929943630089,
+      "mean_nlpd": 1.9613284878707948,
+      "observed_coverage": 1.0,
+      "mean_width": 9.14434992761748
+    },
+    "work": {
+      "n": 76,
+      "unit": "条",
+      "mae": 0.5251252896284689,
+      "no_change_mae": 4.607847497748729,
+      "mean_nlpd": 1.7991563094681955,
+      "observed_coverage": 1.0,
+      "mean_width": 7.855077736313322
+    }
+  },
+  "tests": {
+    "core": 28,
+    "application": 41,
+    "basis": "isolated Python 3.12 installed-package tests; engineering validation only"
+  },
+  "commands": [
+    "qone-life system-import --file examples/adaptive.synthetic.json --home /tmp/qone-kernel-installed-demo",
+    "qone-life system-inspect --home /tmp/qone-kernel-installed-demo --as-of 2026-10-25T00:00:00Z",
+    "qone-life system-inspect --home /tmp/qone-kernel-installed-demo --replay"
+  ],
+  "claims_excluded": [
+    "real_person_benefit",
+    "causal_effect",
+    "policy_value",
+    "calibrated_coverage"
+  ]
+}

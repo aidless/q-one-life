@@ -10,14 +10,15 @@ from qone_core.service import DecisionService
 from .repository import DOMAINS, timestamp
 
 LEGACY_TABLES = {"tasks", "metrics", "observations", "documents", "runs", "reviews"}
-TABLES = LEGACY_TABLES | {"goals", "suggestions"}
+V2_TABLES = LEGACY_TABLES | {"goals", "suggestions"}
+TABLES = V2_TABLES | {"system_revisions"}
 
 
 def validate_backup(raw):
-    if raw.get("format") not in {"q-one-backup-v1", "q-one-backup-v2"} or not isinstance(raw.get("events"), list):
+    if raw.get("format") not in {"q-one-backup-v1", "q-one-backup-v2", "q-one-backup-v3"} or not isinstance(raw.get("events"), list):
         raise ValueError("备份格式无效")
     tables = raw.get("tables")
-    expected = LEGACY_TABLES if raw["format"] == "q-one-backup-v1" else TABLES
+    expected = {"q-one-backup-v1":LEGACY_TABLES,"q-one-backup-v2":V2_TABLES,"q-one-backup-v3":TABLES}[raw["format"]]
     if not isinstance(tables, dict) or set(tables) != expected:
         raise ValueError("备份数据表不完整")
     tables = {name: tables.get(name, []) for name in TABLES}
@@ -96,13 +97,33 @@ def validate_backup(raw):
         if "estimate_minutes" in task and (type(task["estimate_minutes"]) is not int or not 5 <= task["estimate_minutes"] <= 480):
             raise ValueError("备份任务时长无效")
     for card in tables["suggestions"]:
-        if (card["kind"] not in {"goal", "task", "review"} or card["status"] not in {"active", "accepted", "dismissed"}
+        if (card["kind"] not in {"goal", "task", "review", "system"} or card["status"] not in {"active", "accepted", "dismissed"}
                 or not all(isinstance(card.get(k), str) for k in ("title", "reason", "candidate_id", "revision", "source"))
                 or type(card["minutes"]) is not int or not 5 <= card["minutes"] <= 480):
             raise ValueError("备份推荐无效")
         for key in ("first_step", "done_when"):
             if key in card and (not isinstance(card[key], str) or not card[key].strip() or len(card[key]) > 600):
                 raise ValueError("备份推荐的行动说明无效")
+    from .system import validate_revision_history
+    validate_revision_history(tables['system_revisions'])
+    versions={r['id']:r for r in tables['system_revisions']}
+    from qone_core.life.model import fingerprint
+    from qone_core.life.state import resource_key
+    for task in tables['tasks']:
+        if task.get('system_action_id'):
+            revision=versions.get(task.get('system_revision'))
+            if revision is None: raise ValueError('任务引用的人生模型版本不存在')
+            model=revision['model']; actions={a['id']:a for a in model['actions']}
+            action=actions.get(task['system_action_id']); resources={r['id']:r for r in model['resources']}
+            if action is None or task.get('system_action_sha256')!=fingerprint(action):
+                raise ValueError('任务引用的行动定义不一致')
+            expected=[{'resource_key':resource_key(resources[c['resource_id']]),'amount':c['amount']['upper'] if isinstance(c['amount'],dict) else c['amount']} for c in action.get('costs',[])]
+            if task.get('system_commitments')!=expected:
+                raise ValueError('任务承诺与事前行动资源定义不一致')
+        for c in task.get('system_commitments',[]):
+            if (not isinstance(c,dict) or not isinstance(c.get('resource_key'),str)
+                    or type(c.get('amount')) not in (int,float) or not math.isfinite(c['amount']) or c['amount']<0):
+                raise ValueError('备份中的资源承诺无效')
     return tables
 
 
@@ -116,7 +137,7 @@ def apply_pending(directory, repository, ledger):
     with repository.connect() as db:
         for name in TABLES:
             db.executemany(f"INSERT INTO {name}(id,payload) VALUES(?,?) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload",
-                           [(r["id"], json.dumps(r, ensure_ascii=False, allow_nan=False)) for r in tables[name]])
+                           [(r["id"], json.dumps(r, ensure_ascii=False, allow_nan=False)) for r in (reversed(tables[name]) if name=="system_revisions" else tables[name])])
         temporary = directory / "restore.events.tmp"
         temporary.write_text("".join(json.dumps(e, ensure_ascii=False) + "\n" for e in raw["events"]))
         temporary.chmod(0o600)

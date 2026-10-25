@@ -86,6 +86,32 @@ def cmd_serve(args):
     return 0
 
 
+def cmd_system_import(args):
+    from .repository import Repository
+    from .system import SystemService
+    directory=Path(args.home or os.environ.get('QONE_HOME',Path.home()/'.local/share/q-one'))
+    service=SystemService(Repository(directory))
+    result=service.save(_load_json(args.file),args.parent_revision)
+    print(json.dumps(result,ensure_ascii=False,indent=2))
+    return 0
+
+
+def cmd_system_inspect(args):
+    from .repository import Repository
+    from .system import SystemService
+    from .repository import now
+    directory=Path(args.home or os.environ.get('QONE_HOME',Path.home()/'.local/share/q-one'))
+    service=SystemService(Repository(directory))
+    if args.replay:
+        _,kernel=service.kernel()
+        if kernel is None or not hasattr(kernel,'replay'): raise LifeValidationError('尚未配置历史学习模型')
+        result=kernel.replay()
+    else:
+        result=service.evaluate(args.as_of or now(),available_minutes=args.available_minutes)
+    print(json.dumps(result,ensure_ascii=False,indent=2))
+    return 0
+
+
 def parser() -> argparse.ArgumentParser:
     root = argparse.ArgumentParser(prog="qone-life", description="Q-One local life layer")
     root.add_argument(
@@ -94,6 +120,19 @@ def parser() -> argparse.ArgumentParser:
         help="directory containing events.jsonl (default: .life-data)",
     )
     commands = root.add_subparsers(dest="command", required=True)
+
+    command = commands.add_parser('system-import',help='导入个人状态、目标、资源及学习记录')
+    command.add_argument('--file',required=True)
+    command.add_argument('--home')
+    command.add_argument('--parent-revision',default=None,help='更新时填写当前版本ID，首次留空')
+    command.set_defaults(handler=cmd_system_import)
+
+    command = commands.add_parser('system-inspect',help='比较方案或按历史时间回放预测')
+    command.add_argument('--home')
+    command.add_argument('--as-of')
+    command.add_argument('--available-minutes',type=int,default=90)
+    command.add_argument('--replay',action='store_true')
+    command.set_defaults(handler=cmd_system_inspect)
 
     command = commands.add_parser("serve", help="启动中文个人工作台（仅本机）")
     command.add_argument("--home", default=os.environ.get("QONE_HOME"), help="个人数据目录")

@@ -260,14 +260,14 @@ class PlannerTests(unittest.TestCase):
             self.assertTrue(state["items"])
         self.assertFalse(app.state.planner.thread.is_alive())
 
-    def test_v2_backup_roundtrip_and_legacy_v1_restore(self):
+    def test_v3_backup_roundtrip_and_legacy_v1_restore(self):
         app = create_app(self.temp.name)
         client = TestClient(app, base_url="http://localhost", headers=HEADERS)
         self.addCleanup(client.close)
         self.assertEqual(client.post("/api/goals", json=GOAL).status_code, 201)
         client.get("/api/bootstrap")  # Materialize the honest rules feed.
         backup = client.get("/api/backup").json()
-        self.assertEqual(backup["format"], "q-one-backup-v2")
+        self.assertEqual(backup["format"], "q-one-backup-v3")
         with tempfile.TemporaryDirectory() as folder:
             other = TestClient(create_app(folder), base_url="http://localhost", headers=HEADERS)
             self.addCleanup(other.close)

@@ -78,3 +78,9 @@ python -m unittest discover -s tests -v
 MIT 开源。第三方模型及依赖按各自许可证使用。本应用不训练新的基础模型，也不把一个人合成为一个“人生总分”。
 
 早期 `init / add-observation / score / review / export / verify` 命令仍保留，用于原有 `events.jsonl` 数据格式；网页使用独立的 SQLite 与决策账本，**不会自动导入旧 CLI 数据**。请分别备份，详情见使用文档。
+
+## 0.5：从个人状态到有条件推荐
+
+新增目标树、价值取舍、资源账户与历史变化预测，并接入首页推荐、完整资源承诺和v3备份。样本不足或方案无法区分时保持未知。合成体验文件不代表你的真实数据，也不证明真实推荐有效。
+
+[使用与接口说明](docs/LIFE_SYSTEM.zh-CN.md) · [合成模型](examples/adaptive.synthetic.json) · [内核设计](https://github.com/aidless/q-one-core/blob/main/docs/LIFE_KERNEL.zh-CN.md) · [进阶路线](https://github.com/aidless/q-one-core/blob/main/docs/ADVANCED_ROADMAP.zh-CN.md)

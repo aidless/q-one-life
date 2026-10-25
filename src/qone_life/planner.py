@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from qone_agent.runtime import ProviderError
 from .plan_runtime import generate_plan, validate_plan
 from .repository import identifier, now
+from .system import SystemService
 
 
 def digest(value):
@@ -32,6 +33,7 @@ class Planner:
         self.generated_at = None
         self.model_status = "idle"
         self.error = None
+        self.system = SystemService(repository, self.lock)
         self.last_attempt = 0
         self.attempt_sha = None
         self.attempt_config = None
@@ -59,6 +61,9 @@ class Planner:
         all_tasks = self.repo.all("tasks")
         reserved = sum(t.get("focus_minutes", t.get("estimate_minutes", 25)) for t in all_tasks if t.get("focus_date") == today)
         config["daily_available_minutes"] = max(0, config["daily_available_minutes"] - reserved)
+        advanced = self.system.planning_snapshot(today=today, available_minutes=config["daily_available_minutes"])
+        if advanced is not None:
+            return advanced
         goals = [g for g in self.repo.all("goals") if g["status"] == "active"]
         goals.sort(key=lambda g: (-g["priority"], g.get("deadline") or "9999"))
         active_ids = {g["id"] for g in goals}
@@ -78,7 +83,7 @@ class Planner:
                 "title": task["title"][:200], "reason": reason, "domain": task["domain"],
                 "first_step": "对照任务描述，选出这次时间内能完成的一个具体部分；缺少材料时先记录依赖。",
                 "done_when": "保存本次产出，并记录任务是否完成；未完成的部分继续保留。",
-                "minutes": min(task.get("estimate_minutes", 25), config["daily_available_minutes"]),
+                "minutes": task.get("estimate_minutes", 25),
                 "revision": digest({k: task.get(k) for k in ("title", "deadline", "priority", "goal_id", "done")})})
         linked_tasks = {t.get("goal_id") for t in tasks}
         for goal in goals[:4]:
@@ -120,13 +125,13 @@ class Planner:
         return {"date": today, "available_minutes": config["daily_available_minutes"],
             "goals": [{k: g[k] for k in ("id", "title", "domain", "success_criterion", "priority", "deadline")} for g in goals[:4]],
             "recent_completed_actions": [{"title": t["title"][:200], "goal_id": t.get("goal_id")} for t in all_tasks if t["done"]][:8],
-            "recent_observations": metrics, "evidence": evidence, "candidates": eligible[:8] if config["daily_available_minutes"] >= 5 else [],
+            "recent_observations": metrics, "evidence": evidence, "candidates": [c for c in eligible if c["minutes"] <= config["daily_available_minutes"]][:8] if config["daily_available_minutes"] >= 5 else [],
             "limits": {"goals_included": min(4, len(goals)), "goals_total": len(goals), "pending_tasks_total": len(tasks)}}
 
     def _prepare(self):
-        snapshot = self.snapshot()
-        input_sha = digest(snapshot)
         with self.lock:
+            snapshot = self.snapshot()
+            input_sha = digest(snapshot)
             if input_sha != self.input_sha:
                 self.current, self.input_sha = snapshot, input_sha
                 self.generated_at, self.error = now(), None
@@ -136,10 +141,14 @@ class Planner:
                 for candidate in snapshot["candidates"]:
                     if len(self.cards) == 3 or budget < 5:
                         break
-                    minutes = min(candidate["minutes"], budget)
-                    self.cards.append(self._save(candidate, candidate["title"], candidate["reason"], minutes, "rules", input_sha))
+                    if candidate["minutes"] > budget:
+                        continue
+                    minutes = candidate["minutes"]
+                    self.cards.append(self._save(candidate, candidate["title"], candidate["reason"], minutes, ("adaptive" if snapshot.get("system",{}).get("mode")=="adaptive" else "scenario") if snapshot.get("system") else "rules", input_sha))
                     budget -= minutes
-            if not snapshot["candidates"]:
+            if snapshot.get("system"):
+                self.model_status = "conditional" if self.cards else "needs_information"
+            elif not snapshot["candidates"]:
                 self.model_status, self.error = "idle", None
             return snapshot, input_sha
 
@@ -161,12 +170,12 @@ class Planner:
                 "date": snapshot["date"], "generated_at": self.generated_at, "input_sha256": self.input_sha,
                 "items": self.cards if config["auto_recommend_enabled"] else [],
                 "has_goals": bool(snapshot["goals"]), "has_candidates": bool(snapshot["candidates"]),
-                "available_minutes": snapshot["available_minutes"], "limits": snapshot["limits"]}
+                "available_minutes": snapshot["available_minutes"], "limits": snapshot["limits"], "system": snapshot.get("system")}
 
     def tick(self, force=False):
         snapshot, input_sha = self._prepare()
         config = self.settings()
-        if not config["auto_recommend_enabled"] or not snapshot["candidates"]:
+        if snapshot.get("system") or not config["auto_recommend_enabled"] or not snapshot["candidates"]:
             return
         # Account for configuration changes but never hash or send cloud credentials.
         config_sha = configuration_digest(config)
@@ -224,13 +233,16 @@ class Planner:
             if proposal_sha is not None and proposal_sha != card["proposal_sha256"]:
                 raise ValueError("这条推荐的内容已更新，请审阅后再采纳")
             if action == "accept" and card["kind"] != "review":
-                task_id = card.get("task_id") or "goal-action-" + digest({"goal": card["goal_id"], "stage": card["revision"], "date": self.current["date"]})[:24]
+                task_id = card.get("task_id") or "goal-action-" + digest({"goal": card["goal_id"], "stage": card["revision"], "system_action":card.get("system_action_id"), "date": self.current["date"]})[:24]
                 try:
                     task = self.repo.get("tasks", task_id)
                 except KeyError:
                     task = {"id": task_id, "title": card["title"], "domain": card["domain"], "done": False,
                         "deadline": None, "created_at": now(), "decision_id": None, "goal_id": card.get("goal_id"),
                         "estimate_minutes": card["minutes"], "priority": 3}
+                if card["kind"] == "system":
+                    task.update({k:card[k] for k in ("system_action_id","system_action_sha256","system_commitments","system_revision")})
+                    task["system_prediction"] = next(s for s in self.current["system"]["comparison"]["scenarios"] if s["id"]==card["system_scenario"])
                 self.repo.put("tasks", task | {"focus_date": self.current["date"], "focus_minutes": card["minutes"], "focus_recommendation": card})
             self.repo.put("suggestions", card | {"status": "accepted" if action == "accept" else "dismissed",
                 "feedback_date": self.current["date"]})

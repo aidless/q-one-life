@@ -38,6 +38,8 @@ def validate_plan(raw, snapshot):
             raise ProviderError("推荐依据无效")
         if type(minutes) is not int or not 5 <= minutes <= snapshot["available_minutes"]:
             raise ProviderError("推荐时长超出可用时间")
+        if candidate['kind'] in {'task','review'} and minutes != candidate['minutes']:
+            raise ProviderError('已有行动必须保留完整投入估计；请先明确拆分任务')
         detail = {}
         for key in ("first_step", "done_when"):
             value = row.get(key)
@@ -88,7 +90,7 @@ def generate_plan(snapshot, config, *, transport=None):
             raise ProviderError("Laya建议先核实约束；目前保留规则建议供你审阅")
         candidate = next(c for c in snapshot["candidates"] if c["id"] == selected)
         items = [{"candidate_id": selected, "title": candidate["title"], "reason": candidate["reason"] + "；Laya进行了类型化排序，未生成独立解释。",
-                  "minutes": min(candidate["minutes"], snapshot["available_minutes"]),
+                  "minutes": candidate["minutes"],
                   "first_step": candidate["first_step"], "done_when": candidate["done_when"]}]
         return PlanResult(items, "laya", result.model, result.duration_ms, result.usage)
     if provider != "ollama" or not is_loopback(config["ollama_url"]):
