@@ -1,0 +1,10 @@
+{
+  "checked_at_utc": "2026-10-26T03:20:14.752427+00:00",
+  "baseline_commit": "aebe90db9ae12680aea5ae3ad990ee9ff7f2c315",
+  "probe": "Isolated temporary local app, no private data",
+  "endpoint_status": {
+    "/api/system/outcomes/preview": 404,
+    "/api/system/outcomes": 404
+  },
+  "feedback_path": "Only full-model import; task acceptance/completion is not a learning outcome"
+}

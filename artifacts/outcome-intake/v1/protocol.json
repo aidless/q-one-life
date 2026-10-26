@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "frozen_at_utc": "2026-10-26T03:20:14.752684+00:00",
+  "baseline_commit": "aebe90db9ae12680aea5ae3ad990ee9ff7f2c315",
+  "authoritative_core_commit": "cf63131f6240d6418da7f9282f60f53d1e035a11",
+  "purpose": "Enable structured local outcome capture without hand-editing the full model; no prediction algorithm adoption or life-benefit claim",
+  "acceptance": [
+    "Read-only preview binds explicit outcome event time, fixed existing horizon, immutable fresh before-observation IDs, current action definitions and full resource inputs; missing/conflicting/corrected/range-valued baselines cannot be fabricated",
+    "Only explicit confirmed full action execution plus typed finite in-domain outcomes and provenance can create a learning episode; accepting/completing a task alone never creates labels",
+    "Server controls new observed-record knowledge timestamp; client cannot submit recorded_at, future outcome timestamps, guessed confidence or qualitative scores",
+    "Current revision compare-and-swap prevents concurrent lost updates; identical event retry is idempotent, changed event payload rejected; validation before all persistence",
+    "Next as-of fit uses new mature evidence; prediction before outcome registration unchanged; sparse data retains abstention and legacy prediction algorithm",
+    "Backup/restart preserves complete immutable revision chain, outcomes and resource commitments; outcomes do not silently spend/free planning resources",
+    "Actual browser form on isolated synthetic workspace records an outcome, reports invalid/missing data, and retains no fake observed values; no external inference or private-data export",
+    "Full existing suite plus targeted API/revision/temporal/backup tests; Python3.10/3.12 remote CI and installed wheel smoke test"
+  ],
+  "functional_adoption_gate": "All acceptance cases and existing regression checks pass. Performance/calibration adoption remains blocked; no scientific benefit inferred from endpoint success.",
+  "private_data_policy": "Synthetic inputs only in public artifacts. All future user observations stay in the existing local private data store/backup; no new telemetry or MLflow service.",
+  "baseline_source_sha256": {
+    "src/qone_life/system.py": "a4c33c91a25166fdc4be53cd8181eb4c7fe567441b77024227403d07b56ff8cc",
+    "src/qone_life/web.py": "4630042fcd44f9a45a5976ec27d676aae44a049767c62f59ed776c6e711c9f2b",
+    "src/qone_life/static/app.js": "6cf4b3e503e082c7fd2e01f403665c6e59be30381a36b5a0b89e2b946b802428",
+    "pyproject.toml": "a1f2049ae5cc1c7cc7b94fbf67bd1ad75f1874307ceeac82ef6b8dcdd0213254"
+  }
+}
