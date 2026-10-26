@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "name": "outcome-intake",
+  "version": 1,
+  "created_at_utc": "2026-10-26T03:50:46.478083+00:00",
+  "baseline_commit": "aebe90db9ae12680aea5ae3ad990ee9ff7f2c315",
+  "protocol_freeze_commit": "25a3a3603efe07916149a1d70dbe9f1a0d01751a",
+  "synthetic": true,
+  "source_sha256": {
+    "src/qone_life/outcomes.py": "8de2f2597482b0d95488a78504d84a94136f8207e0d39ff5e7fbc11057b5c507",
+    "src/qone_life/system.py": "5f0854199e1a4d17b67cee2601c314863608b22d5e0f4a46f45a5389bfd872f3",
+    "src/qone_life/web.py": "f406af31a9a2d503b708358424c6116c4453e01b105371aa59d12063e33b765c",
+    "src/qone_life/static/app.js": "0f863848483a8e2510b93896a300af78d7d1b83aa5d0772e6b12283c86d0de81",
+    "src/qone_life/static/style.css": "bb92f92cba6a0bfff45d00db24493535220e07ba107dd45e18b4c901e6682a34",
+    "src/qone_life/static/index.html": "5e5950c030448eb72a1b21d1302295870ed7bf70eda74e9c6de9bd37db292eb3",
+    "src/qone_life/__init__.py": "40f1bc46f61a574e0df7a95f48b2cdaa15ded263f03a84d7ce4852044bc0c63a",
+    "tests/test_outcomes.py": "c836c4c28ac458fde4f788dc885a75a94adb53fdb1e65bb4520b09de2db58bea",
+    "pyproject.toml": "531248df29a2aab3dfcc94d15178d0f466a25c6933bc4864de94b79f970cabf3",
+    "requirements.txt": "5a01c0dfbd0a6054aa23d9c5defa889962f8c0f447d4aaabe69e28f4343a39ea"
+  },
+  "files": {
+    "baseline.json": {
+      "sha256": "0a9f77a95857d90d9e6cdf12bbebd6c64e3443bfa007c05af2b88cfe36231532",
+      "bytes": 384
+    },
+    "browser-receipt.json": {
+      "sha256": "e3f27431874fc3bc74573ce0c301309e3b55cd76822ae334da8e56beafb4726c",
+      "bytes": 751
+    },
+    "browser-request.json": {
+      "sha256": "2fdd1577f4ef73b3a0e81a46e5609b18ea91a75921a8efd7067a4b9a07e72966",
+      "bytes": 622
+    },
+    "outcome-saved.png": {
+      "sha256": "b861418839b675bbec36dc5a6e7817188449e5c42793c4965c456d604a4859c1",
+      "bytes": 48758
+    },
+    "outcome-window-rejected.png": {
+      "sha256": "73a349a86960980c6100e6c32eb3dab9d3874a9d73b84fb44e9a6cada150c695",
+      "bytes": 37076
+    },
+    "protocol.json": {
+      "sha256": "d1603019af4ca11237851c3b74cef6cfc022ff94d16675eed1b730daa40b81da",
+      "bytes": 2620
+    },
+    "provenance.md": {
+      "sha256": "429472d552948bc7fa6ff382d5e496eaba31abcbaaa2576c6f8a4884cbae62c7",
+      "bytes": 4684
+    },
+    "results.json": {
+      "sha256": "d57a5241a86cc1f944eeef71c374858d539cf5e03eba37eef33b5e6633914b71",
+      "bytes": 2770
+    },
+    "synthetic-input.json.gz": {
+      "sha256": "3828da339bc3796cd8fda9653d8221ee780d110f74d09a171c350527d3b19ebc",
+      "bytes": 12559
+    }
+  }
+}

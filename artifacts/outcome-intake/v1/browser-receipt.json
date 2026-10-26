@@ -1,0 +1,22 @@
+{
+  "synthetic": true,
+  "private_records_used": false,
+  "episode_count_before": 96,
+  "episode_count_after": 97,
+  "episode_id": "outcome:cdb3a586-4750-4576-b841-89e884330583",
+  "new_revision": "1f62bc1d030582b09c4c5adca3d38e4f2d204f7a5875285279e1d703c86155e4",
+  "server_recorded_at": "2026-10-26T03:33:53.892001+00:00",
+  "outcome_observed_at": "2026-10-26T00:00:00+00:00",
+  "outcomes": {
+    "practice": 62.0,
+    "work": 41.0
+  },
+  "repeat_window_eligible": false,
+  "ui_saved_values_verified": true,
+  "ui_timezone": "America/Los_Angeles; 2026-10-25T17:00 equals 2026-10-26T00:00Z",
+  "limitations": [
+    "Functional acceptance only",
+    "Self-reported synthetic measurements",
+    "No personal benefit, causal or calibration claim"
+  ]
+}

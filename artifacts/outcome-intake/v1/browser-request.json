@@ -1,0 +1,20 @@
+{
+  "event_id": "cdb3a586-4750-4576-b841-89e884330583",
+  "parent_revision": "b0ebe291638dd9e9530ff89e0c79fe869fc3701d74d213e67471616159b95137",
+  "action_ids": [
+    "study"
+  ],
+  "observed_at": "2026-10-26T00:00:00+00:00",
+  "before": {
+    "energy": "current-energy",
+    "practice": "current-practice",
+    "work": "current-work"
+  },
+  "outcomes": {
+    "practice": 62.0,
+    "work": 41.0
+  },
+  "source": "SYNTHETIC browser acceptance: explicitly counted outcomes, not personal data",
+  "execution_confirmed": true,
+  "action_definition_sha256": "fb10a6f1425a878f7f0563bfd2366f3aab3f08cbfa7d8ae7e4cc280629dbc744"
+}

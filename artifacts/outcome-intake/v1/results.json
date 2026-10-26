@@ -1,0 +1,64 @@
+{
+  "checked_at_utc": "2026-10-26T03:50:46.476835+00:00",
+  "synthetic_only": true,
+  "functional_acceptance": "pass",
+  "prediction_algorithm_changed": false,
+  "personal_benefit_established": false,
+  "baseline_commit": "aebe90db9ae12680aea5ae3ad990ee9ff7f2c315",
+  "protocol_freeze_commit": "25a3a3603efe07916149a1d70dbe9f1a0d01751a",
+  "protocol_sha256": "d1603019af4ca11237851c3b74cef6cfc022ff94d16675eed1b730daa40b81da",
+  "installed_wheel_sha256": "011a83ce347c9c6eb5e03da65c221902a5ed5f1cb188bc522f2bd6965bbf5d59",
+  "wheel_sources_match_checkout": true,
+  "installed_acceptance": [
+    {
+      "environment": {
+        "module": "/tmp/qone-intake-installed310/lib/python3.10/site-packages/qone_life/__init__.py",
+        "version": "0.7.0",
+        "python": "3.10.22",
+        "libraries": {
+          "q-one-core": "0.4.0",
+          "q-one-agent": "0.2.0",
+          "numpy": "2.2.6",
+          "scipy": "1.15.3",
+          "fastapi": "0.115.6",
+          "httpx": "0.28.1"
+        }
+      },
+      "test_count": 52,
+      "passed": true,
+      "log_sha256": "61e0085b7382728783b84b42452c2ad3fda635804a74eb129a6cb5a91eb1c6c0"
+    },
+    {
+      "environment": {
+        "module": "/tmp/qone-intake-installed312/lib/python3.12/site-packages/qone_life/__init__.py",
+        "version": "0.7.0",
+        "python": "3.12.3",
+        "libraries": {
+          "q-one-core": "0.4.0",
+          "q-one-agent": "0.2.0",
+          "numpy": "2.5.4",
+          "scipy": "1.18.1",
+          "fastapi": "0.115.6",
+          "httpx": "0.28.1"
+        }
+      },
+      "test_count": 52,
+      "passed": true,
+      "log_sha256": "a6dfce58ab2e03655f6de90cfdaead0dc2199c2d73112580a5aadbd9d6f09190"
+    }
+  ],
+  "javascript_syntax": "node --check via stdin passed",
+  "accepted_cases": [
+    "new baseline observations followed by fixed-window outcome without model-data editing",
+    "mature label used in next fit and unavailable in past forecast",
+    "sparse history still abstains",
+    "full-execution attestation required; task completion alone creates no labels",
+    "invalid/future/spoofed/missing/corrected/interval/out-of-domain values rejected without partial writes",
+    "idempotent retries; changed events/overlapping windows/stale versions rejected",
+    "concurrent writes preserve exactly one complete result",
+    "backup and restart preserve hash chain, outcomes and resource commitments",
+    "new evidence immediately visible within a minute while repeated proposals remain stable"
+  ],
+  "browser_acceptance": "Submitted actual local form in isolated synthetic space; input numbers visible; duplicate-window rejection visible; screenshots archived",
+  "privacy": "No private life records, model inference, shared model-service change or new telemetry"
+}

@@ -4,9 +4,10 @@ import json
 import threading
 
 from qone_core.life import AdaptiveKernel, ScenarioKernel, ModelError
-from qone_core.life.model import fingerprint, number
+from qone_core.life.model import fingerprint, number, instant
 from qone_core.life.state import resource_key
 from .repository import now
+from .outcomes import preview as outcome_preview, canonical_request, append_outcome, canonical_observations, append_observations
 
 
 def kernel_for(model):
@@ -87,11 +88,68 @@ class SystemService:
         result['purpose']='shadow_interval_evaluation' if candidate_calibration is not None else 'historical_prediction_review'
         return result
 
+    def record_observations(self, raw):
+        request = canonical_observations(raw)
+        with self.lock:
+            revision, kernel = self.kernel()
+            if not isinstance(kernel, AdaptiveKernel):
+                raise ModelError('当前人生模型尚未定义历史学习测量')
+            existing = [o for o in kernel.model['observations'] if o.get('intake_event_id') == request['event_id']]
+            if existing:
+                digest = fingerprint({k: v for k, v in request.items() if k != 'parent_revision'})
+                if any(o.get('intake_request_sha256') != digest for o in existing):
+                    raise ModelError('这个登记ID已用于不同观察，不能覆盖已有记录')
+                return {'revision': revision['id'], 'unchanged': True, 'recorded_at': existing[0]['recorded_at']}
+            if revision['id'] != request['parent_revision']:
+                raise ModelError('人生模型已被更新，请重新读取；本次观察尚未保存')
+            received = datetime.now(timezone.utc).isoformat()
+            result = self.save(append_observations(kernel, request, received), request['parent_revision'])
+            return result | {'recorded_at': received, 'evidence_status': 'user_report_not_independently_verified'}
+
+    def preview_outcome(self, raw):
+        if not isinstance(raw, dict) or set(raw) != {'action_ids', 'observed_at'}:
+            raise ModelError('需要行动选择与实际结果测量时刻')
+        with self.lock:
+            revision, kernel = self.kernel()
+            if kernel is None:
+                raise ModelError('请先导入并声明人生模型')
+            result = outcome_preview(kernel, raw['action_ids'], raw['observed_at'],
+                                     datetime.now(timezone.utc).isoformat())
+            return result | {'revision': revision['id'], 'synthetic': bool(kernel.model.get('synthetic'))}
+
+    def record_outcome(self, raw):
+        request = canonical_request(raw)
+        with self.lock:
+            revision, kernel = self.kernel()
+            if not isinstance(kernel, AdaptiveKernel):
+                raise ModelError('当前人生模型尚未定义历史学习与结果窗口')
+            eid = 'outcome:' + request['event_id']
+            existing = next((e for e in kernel.episodes if e['id'] == eid), None)
+            if existing is not None:
+                expected = fingerprint({k: v for k, v in request.items() if k != 'parent_revision'})
+                if existing.get('intake_request_sha256') != expected:
+                    raise ModelError('这个登记ID已用于不同结果，不能覆盖或重复写入')
+                return {'revision': revision['id'], 'episode_id': eid, 'unchanged': True,
+                        'recorded_at': existing['recorded_at']}
+            if revision['id'] != request['parent_revision']:
+                raise ModelError('人生模型已被更新，请重新预览；本次结果尚未保存')
+            received = datetime.now(timezone.utc).isoformat()
+            model, eid = append_outcome(kernel, request, received)
+            result = self.save(model, request['parent_revision'])
+            return result | {'episode_id': eid, 'recorded_at': received,
+                             'evidence_status': 'user_report_not_independently_verified'}
+
     def planning_snapshot(self, *, today, available_minutes):
-        # A stable decision epoch preserves reviewable proposals between UI polls.
-        at=datetime.now(timezone.utc).replace(second=0,microsecond=0).isoformat()
+        # Keep proposals stable between polls, but never hide newly received
+        # evidence behind the minute boundary after a successful local intake.
+        clock = datetime.now(timezone.utc)
+        epoch = clock.replace(second=0, microsecond=0)
         revision,kernel=self.kernel()
         if kernel is None: return None
+        received = [instant(row['recorded_at']) for row in
+                    kernel.model['observations'] + kernel.model.get('episodes', [])
+                    if instant(row['recorded_at']) <= clock]
+        at = max([epoch] + received).isoformat()
         tasks=self.repo.all('tasks')
         excluded={t['system_action_id'] for t in tasks if t.get('system_action_id') and t.get('focus_date')==today}
         for row in self.repo.all('suggestions'):

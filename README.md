@@ -90,3 +90,9 @@ MIT 开源。第三方模型及依赖按各自许可证使用。本应用不训�
 可用本地接口或 `system-inspect --replay --calibration-shadow` 对照在线校准候选。候选在突变场景未通过采用条件，保持独立评测，不改变推荐或保存的模型。
 
 [使用说明](docs/LIFE_SYSTEM.zh-CN.md) · [技术来源、对照与未采用原因](https://github.com/aidless/q-one-core/blob/main/docs/CALIBRATION_EVALUATION.zh-CN.md)
+
+## 本地结果反馈 0.7
+
+在「观察与指标」登记当前数量观察和固定窗口的实际行动结果，后续推荐读取新证据，无需手改整份模型数据。事前信息缺失、部分执行、重复窗口或过期版本会拒绝保存；采纳/完成待办不会被当作结果标签。数据留在原有本地私有空间与备份中。
+
+[使用方式、时间约束与验证](docs/OUTCOME_INTAKE.zh-CN.md) · [功能基线、来源与合成验收](artifacts/outcome-intake/v1/)

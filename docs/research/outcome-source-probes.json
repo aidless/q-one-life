@@ -1,0 +1,90 @@
+{
+  "checked_date_utc": "2026-10-26",
+  "search_engine": "web.run and GitHub connector",
+  "search_total_hits": null,
+  "repositories": [
+    {
+      "repository": "mlflow/mlflow",
+      "commit": "6620852843727e89a185b117d8297756eb9f1f7b",
+      "license": "Apache-2.0",
+      "latest_software_release": {
+        "tag": "v3.17.2",
+        "url": "https://github.com/mlflow/mlflow/releases/tag/v3.17.2",
+        "published_at": "2026-10-21T03:51:13Z"
+      },
+      "read_files": [
+        {
+          "path": "mlflow/entities/assessment.py",
+          "lines": [
+            1,
+            140
+          ],
+          "blob_sha": "f0d483df65fbd6249011686184576cb90bd6231c"
+        },
+        {
+          "path": "LICENSE.txt",
+          "lines": [
+            1,
+            29
+          ],
+          "blob_sha": "db7cb10b5e330d56b40370bc178974ccabe71458"
+        }
+      ],
+      "third_party_executed": false,
+      "code_copied": false
+    },
+    {
+      "repository": "microsoft/agent-lightning",
+      "commit": "05c7fe133175653e48c990546a3509e52dc56512",
+      "license": "MIT",
+      "latest_software_release": {
+        "tag": "v1.0.2",
+        "url": "https://github.com/microsoft/agent-lightning/releases/tag/v1.0.2",
+        "published_at": "2026-09-29T08:28:15Z"
+      },
+      "read_files": [
+        {
+          "path": "README.md",
+          "lines": [
+            1,
+            115
+          ],
+          "blob_sha": "19c3c7ea416050772baeb4dffdf04293469360e7"
+        },
+        {
+          "path": "LICENSE",
+          "lines": [
+            1,
+            26
+          ],
+          "blob_sha": "72dc60d84b692387206266939bc34656bcba1e15"
+        }
+      ],
+      "third_party_executed": false,
+      "code_copied": false
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.mlflow.org/docs/latest/genai/assessments/feedback/",
+      "read": "Source types, expectation/feedback distinction, trace attachment, human feedback; first sections only",
+      "adoption": "Binding and provenance pattern only. LLM ratings are not personal-life measurement labels."
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.17528v1",
+      "title": "Agent Lightning v1.0: Towards Harnessed Agentic RL",
+      "read": "Verified title/authors/abstract and current official README; no full paper or benchmark reproduction",
+      "adoption": "Keep interaction/record collection separate from training; no RL training or reward transfer into personal decisions"
+    }
+  ],
+  "corrections": [
+    "MLflow model-catalog/latest is not the software version; inspected release list to identifyv3.17.2",
+    "Agent-lightning0.2 trace docs found in search were not treated as v1.0.2 documentation",
+    "MLflow LICENSE lookup404 corrected to LICENSE.txt after listing repository root"
+  ],
+  "limitations": [
+    "No third-party benchmark or real-life efficacy reproduced",
+    "Independent implementation of local capture, not MLflow/Agent-Lightning integration",
+    "Latest metadata and read HEAD recorded separately from release tags"
+  ]
+}

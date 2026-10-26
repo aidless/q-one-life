@@ -30,7 +30,7 @@ QONE_DEMO=1 "$runtime" serve --home /tmp/q-one-adaptive-example --port 8768
 "$runtime" system-inspect --home /tmp/q-one-adaptive-example --replay
 ```
 
-更新模型文件时，`system-import` 需要 `--parent-revision 当前版本ID`，防止覆盖并发更新。网页导入会自动携带读取时的版本。当前没有一键把普通待办变成可信训练数据的功能；后续观察需要按同一口径关联到实际执行记录。
+更新模型文件时，`system-import` 需要 `--parent-revision 当前版本ID`，防止覆盖并发更新。网页导入会自动携带读取时的版本。0.7版可以在观察页登记数量观察和明确确认的行动结果，自动关联已有事前证据；待办勾选本身仍不能变成训练标签。[操作流程与限制](OUTCOME_INTAKE.zh-CN.md)。
 
 ## 首页的行为变化
 

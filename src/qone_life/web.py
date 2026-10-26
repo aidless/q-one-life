@@ -58,7 +58,7 @@ def create_app(data_dir=None, *, model_runner=run_model, plan_runner=generate_pl
         finally:
             app.state.planner.stop()
 
-    app = FastAPI(lifespan=lifespan, title="Q-One 人生系统", version="0.6.0", docs_url="/api/docs", redoc_url=None)
+    app = FastAPI(lifespan=lifespan, title="Q-One 人生系统", version="0.7.0", docs_url="/api/docs", redoc_url=None)
     app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost", "[::1]"])
     app.state.repository, app.state.ledger = repository, ledger
 
@@ -315,6 +315,27 @@ def create_app(data_dir=None, *, model_runner=run_model, plan_runner=generate_pl
         with planner.lock:
             result=planner.system.save(raw["model"],raw["parent_revision"])
             planner.input_sha=None
+            return result
+
+    @app.post("/api/system/observations", status_code=201)
+    def record_system_observations(raw: dict):
+        with planner.lock:
+            result = planner.system.record_observations(raw)
+            if not result['unchanged']:
+                planner.input_sha = None
+            return result
+
+    @app.post("/api/system/outcomes/preview")
+    def preview_outcome(raw: dict):
+        with planner.lock:
+            return planner.system.preview_outcome(raw)
+
+    @app.post("/api/system/outcomes", status_code=201)
+    def record_outcome(raw: dict):
+        with planner.lock:
+            result = planner.system.record_outcome(raw)
+            if not result['unchanged']:
+                planner.input_sha = None
             return result
 
     @app.post("/api/system/evaluate")
