@@ -1,5 +1,5 @@
 # Internal packages are fixed to reviewed source commits.
-q-one-core[adaptive] @ git+https://github.com/aidless/q-one-core.git@cf63131f6240d6418da7f9282f60f53d1e035a11
+q-one-core[adaptive] @ git+https://github.com/aidless/q-one-core.git@c0c0309d0bfedcfc528337d2f71de64cee730b68
 q-one-agent @ git+https://github.com/aidless/q-one-agent.git@79a951ac4e4f77239a227cfe28ffdc0fb30bc19f
 fastapi==0.115.6
 uvicorn==0.34.0

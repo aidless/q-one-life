@@ -136,3 +136,46 @@ class SystemTests(unittest.TestCase):
         self.assertEqual([s['action_ids'] for s in comparison['scenarios']],[[]])
         self.assertNotIn(['study'],[s['action_ids'] for s in comparison['scenarios']])
         self.assertEqual(self.client.post('/api/system/evaluate',json={'available_minutes':-1}).status_code,400)
+
+    def test_late_conflicting_observation_changes_eligibility_and_replay_atomically(self):
+        revision=self.load()['revision']
+        initial=self.feed()
+        self.assertEqual(initial['items'][0]['system_forecast']['training_n'],96)
+        episode=self.model['episodes'][25]
+        old=next(o for o in self.model['observations'] if o['id']==episode['after']['practice'])
+        response=self.client.post('/api/system/observations',json={
+            'event_id':'historical-disagreement','parent_revision':revision,
+            'observed_at':old['observed_at'],'values':{'practice':old['value']+3},
+            'source':'SYNTHETIC second report; disagreement remains unresolved'})
+        self.assertEqual(response.status_code,201,response.text)
+        feed=self.feed(); forecast=feed['items'][0]['system_forecast']
+        self.assertEqual(forecast['training_n'],95)
+        evidence=forecast['training_evidence']
+        self.assertEqual(evidence['summary'],{'available_n':96,'trainable_n':95,'excluded_n':1})
+        self.assertEqual([e['episode_id'] for e in evidence['excluded_episodes']],['e25'])
+        self.assertEqual(self.app.state.repository.all('tasks'),[])
+        self.assertEqual(len(self.app.state.repository.all('system_revisions')),2)
+        replay=self.client.post('/api/system/replay',json={}).json()
+        self.assertEqual(len(replay['rows']),190)
+        self.assertEqual(replay['evidence_summary'],evidence['summary'])
+        self.assertNotIn('e25',{r['episode_id'] for r in replay['rows']})
+        # Replay is a read; original evidence and action definitions remain intact.
+        _,kernel=self.app.state.planner.system.kernel()
+        self.assertEqual(len(kernel.episodes),96)
+        self.assertEqual(kernel.index['actions']['study'],self.model['actions'][0])
+        self.assertEqual(self.calls,[])
+
+    def test_conflicting_history_never_counts_toward_minimum_learning_support(self):
+        self.model['episodes']=self.model['episodes'][:20]
+        old=next(o for o in self.model['observations'] if o['id']==self.model['episodes'][5]['after']['work'])
+        self.model['observations'].append(old|{'id':'disputed-small-history',
+            'value':old['value']+1,'recorded_at':AT,'source':'SYNTHETIC disagreement'})
+        self.load()
+        comparison=self.client.post('/api/system/evaluate',json={'as_of':AT}).json()['comparison']
+        for scenario in comparison['scenarios']:
+            forecast=scenario['forecast']
+            self.assertEqual(forecast['status'],'abstain')
+            self.assertEqual(forecast['training_n'],19)
+            self.assertIn({'code':'insufficient_history','n':19},forecast['issues'])
+        self.assertIsNone(comparison['preferred_id'])
+        self.assertEqual(self.calls,[])

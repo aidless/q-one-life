@@ -96,3 +96,9 @@ MIT 开源。第三方模型及依赖按各自许可证使用。本应用不训�
 在「观察与指标」登记当前数量观察和固定窗口的实际行动结果，后续推荐读取新证据，无需手改整份模型数据。事前信息缺失、部分执行、重复窗口或过期版本会拒绝保存；采纳/完成待办不会被当作结果标签。数据留在原有本地私有空间与备份中。
 
 [使用方式、时间约束与验证](docs/OUTCOME_INTAKE.zh-CN.md) · [功能基线、来源与合成验收](artifacts/outcome-intake/v1/)
+
+## 证据冲突门 0.7.1
+
+同一结果时点的未解决冲突或失效事前引用现在会在学习资格层被原子排除，首页会显示被排除的学习记录和原因；历史回放使用同一切点。原始输入、行动定义、资源承诺和人工授权保持不变。
+
+[核心规则、冻结反例与限制](https://github.com/aidless/q-one-core/blob/main/docs/EVIDENCE_GATE.zh-CN.md) · [安装后合成验收](docs/evidence/evidence-gate-installed-acceptance-20261026.json) · [对应内核提交](https://github.com/aidless/q-one-core/commit/c0c0309d0bfedcfc528337d2f71de64cee730b68)

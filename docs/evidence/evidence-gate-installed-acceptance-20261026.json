@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-26",
+  "synthetic": true,
+  "installation": "isolated noneditable wheel; public commit-pinned dependencies",
+  "runtime": {
+    "python": "3.12.3",
+    "q-one-life": "0.7.1",
+    "q-one-core": "0.4.1",
+    "q-one-agent": "0.2.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "fastapi": "0.115.6"
+  },
+  "pins": {
+    "q-one-core": "c0c0309d0bfedcfc528337d2f71de64cee730b68",
+    "q-one-agent": "79a951ac4e4f77239a227cfe28ffdc0fb30bc19f"
+  },
+  "wheel_sha256": "4dedb9f292dff6842916927b150408746bfdd8093336b6727402efc1b10b3239",
+  "installed_static_app_sha256": "8c60f48d9400e3c3084a4153e4f01ee69f03e8c95feca728def8a3aa87e8c6de",
+  "model_sha256": "5b291055ee3b74ca8d94ce5324a42c6556e75a3e687e0b0d52e28100dccec92e",
+  "health": {
+    "status": "ok",
+    "version": "0.7.1",
+    "ledger_events": 0,
+    "storage": "local"
+  },
+  "initial_training_n": 96,
+  "after_conflict": {
+    "training_n": 95,
+    "training_evidence": {
+      "summary": {
+        "available_n": 96,
+        "trainable_n": 95,
+        "excluded_n": 1
+      },
+      "excluded_episodes": [
+        {
+          "episode_id": "e25",
+          "issues": [
+            {
+              "field": "after",
+              "measure_id": "practice",
+              "observation_id": "e25-after-practice",
+              "code": "observation_conflict",
+              "conflicting_ids": [
+                "e25-after-practice",
+                "observation:installed-historical-disagreement:119d290ba00101ca"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "replay_rows": 190,
+    "replay_evidence_summary": {
+      "available_n": 96,
+      "trainable_n": 95,
+      "excluded_n": 1
+    },
+    "tasks_created": 0,
+    "model_episode_count": 96,
+    "action_definition_unchanged": true,
+    "model_calls": 0
+  },
+  "installed_tests": {
+    "application": 55,
+    "frontend_render": 1,
+    "result": "OK",
+    "basis": "Python 3.12 installed-package unittest plus isolated Node rendering check"
+  },
+  "server_smoke": {
+    "health_version": "0.7.1",
+    "bootstrap_ok": true,
+    "static_evidence_panel": true
+  },
+  "remote_core_ci": {
+    "head_sha": "b1f41dea59eb9d26b66e812f3fc167b83c23d7cf",
+    "run_id": 40457437405,
+    "conclusion": "success",
+    "python_versions": [
+      "3.10",
+      "3.12"
+    ],
+    "url": "https://github.com/aidless/q-one-core/actions/runs/40457437405"
+  },
+  "commands": [
+    "python3 -m pip wheel . --no-deps --wheel-dir <wheelhouse>",
+    "python3 -m venv <venv> && <venv>/bin/python -m pip install <wheel>",
+    "<venv>/bin/python -m unittest discover -s tests -v",
+    "node --input-type=module - < tests/test_app_render.mjs",
+    "<venv>/bin/qone-life serve --home <temp-home> --port 8877"
+  ],
+  "claims_excluded": [
+    "real_person_benefit",
+    "better_predictive_accuracy",
+    "causal_effect",
+    "calibrated_coverage",
+    "SOTA"
+  ]
+}

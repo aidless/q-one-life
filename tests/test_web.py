@@ -7,6 +7,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from fastapi.testclient import TestClient
 from qone_agent.runtime import ProviderError, RunResult
+from qone_life import __version__
 from qone_life.web import create_app
 
 HEADERS = {"X-QOne-Client": "web"}
@@ -86,6 +87,14 @@ class WebTests(unittest.TestCase):
         self.addCleanup(client.close)
         self.assertEqual(client.post("/api/tasks", json={"title": "x"}).status_code, 403)
         self.assertEqual(self.client.get("/api/health", headers={"Host": "evil.invalid"}).status_code, 400)
+
+    def test_health_and_api_metadata_use_package_version(self):
+        health = self.client.get("/api/health")
+        self.assertEqual(health.status_code, 200, health.text)
+        self.assertEqual(health.json()["version"], __version__)
+        openapi = self.client.get("/openapi.json")
+        self.assertEqual(openapi.status_code, 200, openapi.text)
+        self.assertEqual(openapi.json()["info"]["version"], __version__)
 
     def test_secret_is_never_returned_or_included_in_backup(self):
         settings = self.post("settings", {"cloud_key": "secret-unique"})

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.1 — 2026-10-26
+
+- Pinned the app to the evidence-gate core release (0.4.1).
+- Added end-to-end checks for atomic exclusion of conflicting outcome evidence without changing action definitions, resources, or recommendation authority.
+- Displayed the evidence denominators and exclusion reasons in the recommendation evidence panel.
+
 ## 0.3.0 — 2026-10-24
 
 - Made proactive recommendations the main product flow, starting from goals without a decision/baseline form.

@@ -103,3 +103,7 @@ schema_version: 1
 结果标记 `purpose=shadow_interval_evaluation`、`used_for_recommendations=false`。同时报告有限区间数量、拒绝数量、经验覆盖、平均宽度和区间评分；密度评分仍对应原始Student-t分布。范围收窄不能单独作为采用理由，也不能把原内核在突变场景中的漏覆盖隐藏掉。
 
 [完整对照与采用决定](https://github.com/aidless/q-one-core/blob/main/docs/CALIBRATION_EVALUATION.zh-CN.md)包含固定协议、官方来源和负面结果。当前没有真实个人效果或覆盖保证。
+
+## 0.7.1：证据冲突门
+
+当同一结果时点出现未解决的不同报告，或学习记录的事前引用不是行动开始时的当前状态，系统从训练、校准和历史回放中排除该记录，并显示 `available_n/trainable_n/excluded_n` 与逐条原因。排除不会改写行动定义、资源承诺或人工授权；低样本继续拒绝推荐。合成验收与边界见 [核心证据资格门](https://github.com/aidless/q-one-core/blob/main/docs/EVIDENCE_GATE.zh-CN.md)，安装后回执见[本应用验收](evidence/evidence-gate-installed-acceptance-20261026.json)。
