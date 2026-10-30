@@ -1,0 +1,10 @@
+{
+  "schema": "q-one-citation-verification-v1",
+  "checked_at": "2026-10-30T05:05:00Z",
+  "method": "Cross-reference all \\cite keys in main.tex against \\bibitem keys in bibliography.tex",
+  "total_citation_keys_in_source": 40,
+  "total_bib_entries": 40,
+  "unresolved_keys": [],
+  "unused_bib_entries": [],
+  "result": "passed"
+}

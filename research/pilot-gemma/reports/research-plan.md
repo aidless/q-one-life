@@ -11,7 +11,7 @@ Validation: valid=`True`, ready=`False`
 | claim-ledger | blocked | Claims must be registered and bound to evidence fields. |
 | evidence-recomputation | pending | A completed experiment is not a reproduced experiment. |
 | citation-verification | pending | A bibliography file is only a candidate until citations resolve. |
-| scientific-review | pending | Open Critical or Major findings block the package. |
+| scientific-review | verified | Open Critical or Major findings block the package. |
 | arxiv-package | blocked | Mechanical packageability is separate from scientific readiness. |
 | external-submission | locked | Upload, account use and publication require explicit user authorization. |
 
