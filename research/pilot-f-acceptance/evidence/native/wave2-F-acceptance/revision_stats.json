@@ -1,0 +1,289 @@
+{
+ "basic": {
+  "cells": 62819,
+  "promotions_code": 55469.0,
+  "flips_anti_cons": 231,
+  "flips_cons": 0,
+  "max_abs_err_code": 0.1526103403132857,
+  "max_abs_err_at": [
+   14,
+   13,
+   27
+  ],
+  "flip_rate_bound500": 0.0041644882727289115,
+  "flip_rate_bound200": 0.010238907849829351,
+  "promotions_bound200": 8204,
+  "flips_bound200": 84,
+  "pcode_gt_pexact_count": 41076,
+  "pcode_gt_pexact_max_pcode": 5.312128159411714e-05,
+  "pcode_gt_pexact_c_le_7": 3757,
+  "exemplar_26_0": {
+   "p_code": 3.4141735772975085e-07,
+   "p_exact": 2.9802322387695312e-08
+  },
+  "max_strictness_ratio_flip": 1.5246023261589732,
+  "max_strictness_ratio_at": [
+   19,
+   8,
+   27
+  ]
+ },
+ "cc": {
+  "flips_anti_cons": 0,
+  "flips_cons": 9,
+  "max_abs_err": 0.002052842470744158,
+  "max_abs_err_at": [
+   19,
+   8,
+   27
+  ],
+  "p_at_18_8_26": 0.07755616674366539
+ },
+ "midp": {
+  "flips_anti_cons": 221,
+  "flips_cons": 0,
+  "max_abs_err": 0.14944598078727722,
+  "max_abs_err_at": [
+   14,
+   13,
+   27
+  ],
+  "p_at_18_8_26": 0.052238985896110535
+ },
+ "benchmark_1s_nominal": {
+  "conservative_cells": 928,
+  "anti_cons_cells": 0,
+  "exemplar_18_8_26": {
+   "p_code": 0.0498602037569069,
+   "p_1s_exact": 0.03775934875011444
+  }
+ },
+ "chi2_bound200": {
+  "flips_anti_cons": 84,
+  "flips_cons": 0,
+  "max_abs_err": 0.1526103403132857
+ },
+ "chi2_bound500": {
+  "flips_anti_cons": 231,
+  "flips_cons": 0,
+  "max_abs_err": 0.1526103403132857
+ },
+ "chi2_decomposition": {
+  "bound200": {
+   "tie_cells": 88,
+   "tie_artifact_max_err": 0.15548073252706007,
+   "tie_at": [
+    13,
+    13,
+    26
+   ],
+   "nontie_asym_max_err": 0.002052842470744158,
+   "nontie_at": [
+    19,
+    8,
+    27
+   ],
+   "flips_cons": 5,
+   "flips_anti": 0
+  },
+  "bound500": {
+   "tie_cells": 238,
+   "tie_artifact_max_err": 0.15548073252706007,
+   "tie_at": [
+    13,
+    13,
+    26
+   ],
+   "nontie_asym_max_err": 0.002052842470744158,
+   "nontie_at": [
+    19,
+    8,
+    27
+   ],
+   "flips_cons": 9,
+   "flips_anti": 0
+  }
+ },
+ "versions": {
+  "python": "3.12.3",
+  "scipy": "1.18.1",
+  "machine": "Ubuntu 24.04 x86_64 (workspace host)"
+ },
+ "alpha_robustness": {
+  "0.01": 215,
+  "0.025": 224,
+  "0.05": 231,
+  "0.1": 233
+ },
+ "ledger_rejudgment": {
+  "entries": 14,
+  "agree": 14,
+  "max_n": 12,
+  "promotions_recorded": 5,
+  "detail": [
+   {
+    "entry": "E1",
+    "b": 0,
+    "c": 0,
+    "n": 0,
+    "p_recorded": 1.0,
+    "p_exact": 1.0,
+    "verdict_recorded": "hold",
+    "verdict_exact": "hold",
+    "agree": true
+   },
+   {
+    "entry": "E2",
+    "b": 0,
+    "c": 0,
+    "n": 0,
+    "p_recorded": 1.0,
+    "p_exact": 1.0,
+    "verdict_recorded": "hold",
+    "verdict_exact": "hold",
+    "agree": true
+   },
+   {
+    "entry": "E3",
+    "b": 0,
+    "c": 8,
+    "n": 8,
+    "p_recorded": 0.0078,
+    "p_exact": 0.0078125,
+    "verdict_recorded": "promote",
+    "verdict_exact": "promote",
+    "agree": true
+   },
+   {
+    "entry": "E4",
+    "b": 0,
+    "c": 0,
+    "n": 0,
+    "p_recorded": 1.0,
+    "p_exact": 1.0,
+    "verdict_recorded": "hold",
+    "verdict_exact": "hold",
+    "agree": true
+   },
+   {
+    "entry": "E5",
+    "b": 0,
+    "c": 0,
+    "n": 0,
+    "p_recorded": 1.0,
+    "p_exact": 1.0,
+    "verdict_recorded": "hold",
+    "verdict_exact": "hold",
+    "agree": true
+   },
+   {
+    "entry": "E6",
+    "b": 0,
+    "c": 0,
+    "n": 0,
+    "p_recorded": 1.0,
+    "p_exact": 1.0,
+    "verdict_recorded": "hold",
+    "verdict_exact": "hold",
+    "agree": true
+   },
+   {
+    "entry": "E7",
+    "b": 0,
+    "c": 0,
+    "n": 0,
+    "p_recorded": 1.0,
+    "p_exact": 1.0,
+    "verdict_recorded": "hold",
+    "verdict_exact": "hold",
+    "agree": true
+   },
+   {
+    "entry": "E8",
+    "b": 0,
+    "c": 12,
+    "n": 12,
+    "p_recorded": 0.0005,
+    "p_exact": 0.0004883,
+    "verdict_recorded": "promote",
+    "verdict_exact": "promote",
+    "agree": true
+   },
+   {
+    "entry": "E9",
+    "b": 0,
+    "c": 1,
+    "n": 1,
+    "p_recorded": 1.0,
+    "p_exact": 1.0,
+    "verdict_recorded": "hold",
+    "verdict_exact": "hold",
+    "agree": true
+   },
+   {
+    "entry": "E10",
+    "b": 0,
+    "c": 3,
+    "n": 3,
+    "p_recorded": 0.25,
+    "p_exact": 0.25,
+    "verdict_recorded": "hold",
+    "verdict_exact": "hold",
+    "agree": true
+   },
+   {
+    "entry": "E11",
+    "b": 0,
+    "c": 5,
+    "n": 5,
+    "p_recorded": 0.0625,
+    "p_exact": 0.0625,
+    "verdict_recorded": "hold",
+    "verdict_exact": "hold",
+    "agree": true
+   },
+   {
+    "entry": "E12",
+    "b": 0,
+    "c": 11,
+    "n": 11,
+    "p_recorded": 0.000977,
+    "p_exact": 0.0009766,
+    "verdict_recorded": "promote",
+    "verdict_exact": "promote",
+    "agree": true
+   },
+   {
+    "entry": "E13",
+    "b": 0,
+    "c": 8,
+    "n": 8,
+    "p_recorded": 0.0078,
+    "p_exact": 0.0078125,
+    "verdict_recorded": "promote",
+    "verdict_exact": "promote",
+    "agree": true
+   },
+   {
+    "entry": "E14",
+    "b": 0,
+    "c": 7,
+    "n": 7,
+    "p_recorded": 0.0156,
+    "p_exact": 0.015625,
+    "verdict_recorded": "promote",
+    "verdict_exact": "promote",
+    "agree": true
+   }
+  ]
+ },
+ "loop_illustration": {
+  "n_decisions": 145,
+  "alpha_1s": 0.025,
+  "p_at_least_one_false_promo": 0.9745510847000761
+ },
+ "scipy_refs": {
+  "binomtest_18_8_26_two_sided": 0.07551869750022888,
+  "binomtest_14_13_27_two_sided": 1.0
+ }
+}

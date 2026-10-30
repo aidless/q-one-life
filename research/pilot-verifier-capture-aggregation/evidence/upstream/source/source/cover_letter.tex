@@ -1,0 +1,138 @@
+% =============================================================
+% TMLR Cover Letter — PAPER6
+% Capture-Resilient Voting in Multi-LLM Verifier Ensembles
+% =============================================================
+\documentclass[11pt]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\signature{Anonymous (for double-blind review)}
+\address{Anonymous}
+
+\begin{document}
+
+\begin{letter}{TMLR Action Editor}
+
+\textbf{Subject:} Submission --- ``An Empirical Study of Aggregation
+Methods Under Verifier Capture in Multi-LLM Ensembles: When Does
+Majority Voting Fail, and Can We Beat It?''
+
+\bigskip
+
+Dear Action Editor,
+
+\bigskip
+
+We are pleased to submit our manuscript for consideration by TMLR.
+The paper presents an empirical benchmark of seven aggregation methods
+for multi-LLM verifier ensembles under three verifier-capture attacks,
+across four scenarios and three ensemble sizes.
+
+\bigskip
+
+\noindent\textbf{Central finding.} The headline result is
+\emph{negative}: no aggregation method we tested substantially
+outperforms plain majority voting under verifier capture, and several
+trust-score variants \emph{underperform} majority under strong capture.
+We argue this negative result is structural: a captured verifier is
+statistically indistinguishable from an honest verifier that happens
+to be wrong, so any rule that uses statistical deviation to identify
+capture cannot outperform a rule that ignores the distinction.
+
+\bigskip
+
+\noindent\textbf{Why TMLR.} TMLR is the right venue because (i) the
+contribution is a rigorous empirical benchmark with reproducible code,
+not a conference-length systems paper; (ii) the negative result is
+methodologically important for the growing community building LLM-judge
+ensembles, and TMLR's scope explicitly covers empirical studies of ML
+systems; and (iii) we release all code, attack implementations, and
+analysis scripts under a permissive licence, consistent with TMLR's
+reproducibility expectations.
+
+\bigskip
+
+\noindent\textbf{Contributions.}
+\begin{enumerate}
+\item A formal threat model for verifier capture, including a
+      definition of $\varepsilon$-capture-resilience that decouples
+      the adversary's per-verifier accuracy from its aggregate
+      influence, plus a deterministic lower bound (Theorem 1) showing
+      no rule can be $\varepsilon$-CR for $\varepsilon < 1/2$ when
+      $f \geq N/2$.
+\item A unified experimental protocol benchmarking seven aggregation
+      methods (majority, PBFT threshold, uniform-weighted mean, three
+      trust-score variants, and an adaptive hybrid) under three attack
+      families (prompt injection, rubric injection, majority-bias
+      mimicry) across $N \in \{5,7,10\}$ and $f \in \{1,2,3\}$, with
+      4,000 trials per cell and 5 seeds.
+\item A falsifiable prediction---that captured verifiers are
+      statistically indistinguishable from honest-but-wrong verifiers---
+      tested and supported across all scenarios, with nuanced exceptions
+      (trust-score weighting beats majority under prompt-injection
+      capture at low honest accuracy, but fails under majority-bias
+      mimicry).
+\item A small real-LLM validation pilot (8 LLM judges, 1,248 rubric
+      decisions from a published benchmark) consistent with the
+      synthetic-data trend; full real-trace benchmark is explicitly
+      scoped as future work.
+\end{enumerate}
+
+\bigskip
+
+\noindent\textbf{Reproducibility.} All code (crv.py, attacks.py,
+extended\_methods.py, benchmark.py, verify\_p6.py), synthetic
+generators, attack implementations, and analysis scripts are released
+under a permissive licence with an attached ResponsibleUse.md file.
+A full benchmark run (4 scenarios $\times$ 7 methods $\times$ 5 seeds,
+$T=1000$ rounds) takes approximately 4 minutes on a single CPU core
+and uses 50 MB of memory. SHA-256 hashes of all released artifacts
+are recorded in HASHES.txt.
+
+\bigskip
+
+\noindent\textbf{Dual-use and responsible release.} The benchmark
+implements three capture attacks; we have mitigated dual-use risk by
+(i) releasing only defensive benchmark code, not captured-verifier
+weights or fine-tuning scripts; (ii) attaching a ResponsibleUse.md
+file prohibiting offensive use; and (iii) demonstrating in the paper
+that these attacks have only small absolute effect against
+well-calibrated honest majorities, limiting practical upside for
+adversaries. The Broader Impact section discusses this in detail.
+
+\bigskip
+
+\noindent\textbf{Diff with prior submissions.} This is a fresh
+submission. We have not submitted this work elsewhere.
+
+\bigskip
+
+\noindent\textbf{Recommended reviewers.} We suggest the AE draw from
+the TMLR pool of reviewers with expertise in one or more of: LLM
+judging / verifier ensembles, Byzantine fault tolerance, adversarial
+robustness of ML systems, or calibration of probabilistic predictors.
+We provide three suggested reviewers in a separate file (anonymized
+for double-blind review).
+
+\bigskip
+
+\noindent\textbf{Conflicts of interest.} The authors declare no
+financial conflicts of interest. The authors maintain an open-source
+peer-review audit tool that is referenced as one of the motivating use
+cases; the tool is cited consistently with the rest of the literature
+and no special pleading is made for it.
+
+\bigskip
+
+We thank you for your time and look forward to your response.
+
+\bigskip
+
+Sincerely,
+
+\bigskip
+
+Anonymous (for double-blind review)
+
+\end{letter}
+\end{document}

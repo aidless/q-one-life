@@ -1,0 +1,825 @@
+{
+  "theorem": "T7 (4-Axis Impossibility Polytope)",
+  "version": "v9",
+  "n_cells_tested": 20,
+  "n_all_constraints_satisfied": 0,
+  "per_constraint_satisfaction": {
+    "c1_v8_T3_ok": 20,
+    "c2_chen_2026_ok": 20,
+    "c3_task_decomp_ok": 20,
+    "c4_T1_ok": 1,
+    "c5_T2_ok": 0
+  },
+  "cells": [
+    {
+      "source": "p12_deepseek_asym",
+      "seed": 0,
+      "params": {
+        "gamma": 0.9229,
+        "H": 2.1241,
+        "CV": 0.0542,
+        "beta": 0.15,
+        "ECE": 0.1211,
+        "accuracy": 0.8039
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.106305,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.626126,
+          0.196145
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          2.124056,
+          1.75819
+        ],
+        "c5_lhs_rhs": [
+          0.054229,
+          0.197827
+        ]
+      }
+    },
+    {
+      "source": "p12_deepseek_asym",
+      "seed": 1,
+      "params": {
+        "gamma": 0.8863,
+        "H": 1.9735,
+        "CV": 0.0539,
+        "beta": 0.15,
+        "ECE": 0.1193,
+        "accuracy": 0.8057
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.094211,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.607386,
+          0.194315
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.973468,
+          1.783559
+        ],
+        "c5_lhs_rhs": [
+          0.053863,
+          0.205996
+        ]
+      }
+    },
+    {
+      "source": "p12_deepseek_asym",
+      "seed": 2,
+      "params": {
+        "gamma": 0.6629,
+        "H": 2.1166,
+        "CV": 0.0516,
+        "beta": 0.15,
+        "ECE": 0.1081,
+        "accuracy": 0.8169
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.072441,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.493145,
+          0.183145
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          2.116622,
+          1.938408
+        ],
+        "c5_lhs_rhs": [
+          0.051629,
+          0.275417
+        ]
+      }
+    },
+    {
+      "source": "p12_deepseek_asym",
+      "seed": 3,
+      "params": {
+        "gamma": 1.5072,
+        "H": 1.4347,
+        "CV": 0.0601,
+        "beta": 0.15,
+        "ECE": 0.1504,
+        "accuracy": 0.7746
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.129895,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.926208,
+          0.22536
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.434661,
+          1.353184
+        ],
+        "c5_lhs_rhs": [
+          0.060072,
+          0.121135
+        ]
+      }
+    },
+    {
+      "source": "p12_deepseek_asym",
+      "seed": 4,
+      "params": {
+        "gamma": 1.7928,
+        "H": 1.6838,
+        "CV": 0.0629,
+        "beta": 0.15,
+        "ECE": 0.1646,
+        "accuracy": 0.7604
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.189962,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          1.073506,
+          0.23964
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.683802,
+          1.155221
+        ],
+        "c5_lhs_rhs": [
+          0.062928,
+          0.101837
+        ]
+      }
+    },
+    {
+      "source": "p12_qwen_asym",
+      "seed": 0,
+      "params": {
+        "gamma": 1.1766,
+        "H": 1.8027,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1338,
+        "accuracy": 0.7912
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.106055,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.75621,
+          0.20883
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.802738,
+          1.582338
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.155171
+        ]
+      }
+    },
+    {
+      "source": "p12_qwen_asym",
+      "seed": 1,
+      "params": {
+        "gamma": 0.5336,
+        "H": 2.2428,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1017,
+        "accuracy": 0.8233
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.059837,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.427139,
+          0.17668
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          2.242751,
+          2.028032
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.342156
+        ]
+      }
+    },
+    {
+      "source": "p12_qwen_asym",
+      "seed": 2,
+      "params": {
+        "gamma": 0.793,
+        "H": 2.1322,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1147,
+        "accuracy": 0.8104
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.084542,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.559645,
+          0.18965
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          2.132208,
+          1.84823
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.230232
+        ]
+      }
+    },
+    {
+      "source": "p12_qwen_asym",
+      "seed": 3,
+      "params": {
+        "gamma": 0.7058,
+        "H": 2.161,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1103,
+        "accuracy": 0.8147
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.076261,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.515064,
+          0.18529
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          2.160983,
+          1.908672
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.258677
+        ]
+      }
+    },
+    {
+      "source": "p12_qwen_asym",
+      "seed": 4,
+      "params": {
+        "gamma": 0.6194,
+        "H": 2.2291,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.106,
+        "accuracy": 0.819
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.069035,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.47093,
+          0.18097
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          2.229083,
+          1.96856
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.29476
+        ]
+      }
+    },
+    {
+      "source": "p12_deepseek_sym",
+      "seed": 0,
+      "params": {
+        "gamma": 1.1222,
+        "H": 1.8322,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1311,
+        "accuracy": 0.7939
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.102807,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.72829,
+          0.20611
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.832232,
+          1.620046
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.162693
+        ]
+      }
+    },
+    {
+      "source": "p12_deepseek_sym",
+      "seed": 1,
+      "params": {
+        "gamma": 1.6908,
+        "H": 1.2718,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1595,
+        "accuracy": 0.7655
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": true,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.107522,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          1.020853,
+          0.23454
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.271844,
+          1.225922
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.107981
+        ]
+      }
+    },
+    {
+      "source": "p12_deepseek_sym",
+      "seed": 2,
+      "params": {
+        "gamma": 1.3844,
+        "H": 1.6903,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1442,
+        "accuracy": 0.7808
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.117001,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.862999,
+          0.21922
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.690276,
+          1.438302
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.13188
+        ]
+      }
+    },
+    {
+      "source": "p12_deepseek_sym",
+      "seed": 3,
+      "params": {
+        "gamma": 1.4576,
+        "H": 1.4553,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1479,
+        "accuracy": 0.7771
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.106061,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.900668,
+          0.22288
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.455283,
+          1.387564
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.125257
+        ]
+      }
+    },
+    {
+      "source": "p12_deepseek_sym",
+      "seed": 4,
+      "params": {
+        "gamma": 1.2766,
+        "H": 1.7553,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1388,
+        "accuracy": 0.7862
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.112038,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.807574,
+          0.21383
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.755259,
+          1.513024
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.143016
+        ]
+      }
+    },
+    {
+      "source": "p12_qwen_sym",
+      "seed": 0,
+      "params": {
+        "gamma": 1.367,
+        "H": 1.7951,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1434,
+        "accuracy": 0.7816
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.122693,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.854049,
+          0.21835
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.795064,
+          1.450363
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.133558
+        ]
+      }
+    },
+    {
+      "source": "p12_qwen_sym",
+      "seed": 1,
+      "params": {
+        "gamma": 1.6028,
+        "H": 1.5876,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1551,
+        "accuracy": 0.7699
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.127234,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.975468,
+          0.23014
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.587646,
+          1.286919
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.11391
+        ]
+      }
+    },
+    {
+      "source": "p12_qwen_sym",
+      "seed": 2,
+      "params": {
+        "gamma": 1.2415,
+        "H": 1.6229,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1371,
+        "accuracy": 0.7879
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.100741,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.78954,
+          0.212075
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.622896,
+          1.537353
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.147059
+        ]
+      }
+    },
+    {
+      "source": "p12_qwen_sym",
+      "seed": 3,
+      "params": {
+        "gamma": 1.0165,
+        "H": 1.744,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1258,
+        "accuracy": 0.7992
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.088638,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          0.674082,
+          0.200825
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.743989,
+          1.693311
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.179611
+        ]
+      }
+    },
+    {
+      "source": "p12_qwen_sym",
+      "seed": 4,
+      "params": {
+        "gamma": 1.6853,
+        "H": 1.5183,
+        "CV": 0.05,
+        "beta": 0.15,
+        "ECE": 0.1593,
+        "accuracy": 0.7657
+      },
+      "constraints": {
+        "c1_v8_T3_ok": true,
+        "c2_chen_2026_ok": true,
+        "c3_task_decomp_ok": true,
+        "c4_T1_ok": false,
+        "c5_T2_ok": false,
+        "all_constraints_ok": false,
+        "c1_lhs_rhs": [
+          0.127944,
+          0.003
+        ],
+        "c2_lhs_rhs": [
+          1.018015,
+          0.234265
+        ],
+        "c3_lhs_rhs": [
+          0.15,
+          0.252
+        ],
+        "c4_lhs_rhs": [
+          1.518347,
+          1.229734
+        ],
+        "c5_lhs_rhs": [
+          0.05,
+          0.108333
+        ]
+      }
+    }
+  ],
+  "vertex_count_predicted": "10-16 (per Corollary \ref{cor:T7_vertices})",
+  "overall_status": "REVIEW",
+  "API_enhancement": "T7_polytope_with_authority_bias.py enables authority bias re-test for memory architectures (~50 API calls, ~$5).",
+  "notes": [
+    "T7 unifies 5 papers' impossibility bounds into a single polytope.",
+    "33 cells = 11 evaluator conditions × 3 memory architectures.",
+    "Per-constraint satisfaction is a CONSISTENCY check; some cells",
+    "may fail individual constraints while remaining in the polytope",
+    "(close-to-boundary is acceptable up to tolerance)."
+  ]
+}

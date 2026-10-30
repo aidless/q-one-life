@@ -1,0 +1,125 @@
+{
+  "schema": "q-one-revision-candidate-v1",
+  "generated_at": "2026-10-29T02:29:52.157627Z",
+  "status": "candidate",
+  "scope": "construct-validity wording correction only; canonical manuscript and all measured results preserved",
+  "canonical_source": {
+    "path": "source/main.tex",
+    "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+    "bytes": 220650
+  },
+  "candidate_source": {
+    "path": "revisions/2026-10-28-construct-validity-r1/source/main.tex",
+    "sha256": "842f7760f95aaa8bc3eb32fdc59933a54669157fd0b5e3a09f3375ea3ee12451",
+    "bytes": 221267
+  },
+  "diff": {
+    "path": "revisions/2026-10-28-construct-validity-r1/main.diff",
+    "sha256": "9352aa037213ed7998006c1fe52b641d1a29c7e6ce73f3a6e562e8a18a24a553",
+    "bytes": 56320
+  },
+  "report": {
+    "path": "revisions/2026-10-28-construct-validity-r1/REVISION_R1.md",
+    "sha256": "0c4b703035aaba39d12344bc62e036db769d00b2874a3b4feee424924aeadbbd",
+    "bytes": 5902
+  },
+  "evidence_bindings": {
+    "source_lineage": {
+      "path": "evidence/source-lineage.json",
+      "sha256": "20a2abc52d3b38e313f821b8a51e511593170813e7a63066f11fe486c7d2b01a",
+      "bytes": 21922
+    },
+    "independent_review": {
+      "path": "evidence/REVIEW_INDEPENDENT_2026-10-24.md",
+      "sha256": "8d815000775ad110354043854967c79044605deb1f6113a549a6cba13078c86e",
+      "bytes": 14729
+    },
+    "counterexample_reproduction": {
+      "path": "experiments/producer-baseline-counterexample/results/reproduction.json",
+      "sha256": "4e96412333a6634b5f3977fa71a447dd4e1cd743493aad113fabff98b3b6f84d",
+      "bytes": 3894
+    }
+  },
+  "verification": {
+    "mechanical_package_audit": {
+      "result": "passed",
+      "file_count": 11,
+      "package_sha256": "e8c168e73130a9f2f721e3c9b48fd2b80c3d0591732312007e46dc27e03df9f8",
+      "receipt": {
+        "path": "revisions/2026-10-28-construct-validity-r1/reports/package-audit.json",
+        "sha256": "b43fcd7db57b0faf638a057345b75c2fdd2d5b2d6d3239d6f6bf1bd6a9bf8e8d",
+        "bytes": 2679
+      }
+    },
+    "cleanroom_compile": {
+      "result": "passed",
+      "pages": 45,
+      "pdf_sha256": "4c2b1bcfb4db4022c8f22423b446f2ae4ec7cf47d2a29e7e272a40f8e5e82442",
+      "receipt": {
+        "path": "revisions/2026-10-28-construct-validity-r1/reports/cleanroom/receipt.json",
+        "sha256": "febe768d78cd457d07b5164f76dfbb6a6f771304729216fd6c80df6d1a5332a7",
+        "bytes": 12587
+      }
+    },
+    "ledger_reverse_coverage": {
+      "result": "passed",
+      "n_tokens": 353,
+      "n_bound": 350,
+      "n_excused": 3,
+      "n_unbound": 0,
+      "receipt": {
+        "path": "revisions/2026-10-28-construct-validity-r1/reports/ledger-reverse-coverage.json",
+        "sha256": "e13e76b5d2b34b707d08e45f2355bb104344e10369cae5fc25794cf1651e024c",
+        "bytes": 7028
+      }
+    },
+    "ledger_anchor_census": {
+      "result": null,
+      "receipt": {
+        "path": "revisions/2026-10-28-construct-validity-r1/reports/ledger-anchor-census.json",
+        "sha256": "3217e519c4ce1fa9247ed65b926cccd00b7223d14c5d17f9a5413469565aaf79",
+        "bytes": 746
+      }
+    },
+    "verdict_word_gate": {
+      "result": "PASS",
+      "checks": 136,
+      "receipt": {
+        "path": "revisions/2026-10-28-construct-validity-r1/reports/verdict-word-gate.json",
+        "sha256": "cd698d4a423735ecb7211c26d4a98ccb528f6627fbce8cdb08c61a124b949aa6",
+        "bytes": 18482
+      }
+    }
+  },
+  "superseded_working_drafts": [
+    {
+      "path": ".qone-revision-proposal/proposal.md",
+      "sha256": "4eb88f8e821e2ea2b5b7ba6241f167db12768617587fa72b5127fa4dcedc3906"
+    },
+    {
+      "path": ".qone-revision-proposal/position.txt",
+      "sha256": "bd790dfb6225e8565ca38c7d608e8611c4261bc40e9db28dd56b9437eb39688d"
+    },
+    {
+      "path": "drafts/abstract-edit.md",
+      "sha256": "e5a7d5139d53b9f2b7006464b6009eade29aa437afa1252268d80a4f8ce3b2f5"
+    },
+    {
+      "path": "drafts/intro-edit.md",
+      "sha256": "566baca3ecbd212f7a74da840f5fcb8b21c4b8a4e76445395d1357115adbaa90"
+    }
+  ],
+  "remaining_blockers": [
+    "C02 source identity remains unresolved because the canonical source differs from the native-manifest source.",
+    "C03 remains open; this candidate addresses only independent-review finding A1 wording.",
+    "A2 fixed-winner versus reselected-winner bootstrap semantics remain unresolved.",
+    "A3 k-fold common-support recomputation remains unresolved.",
+    "A4 threshold equality, confidence-interval decision semantics, and parameter/interface description remain unresolved.",
+    "No real disjoint-field leaderboard returning a positive verdict has been measured."
+  ],
+  "non_claims": [
+    "Compilation and gate passage do not establish scientific readiness or peer-review acceptance.",
+    "The synthetic counterexample is not validation of the native implementation and does not establish external validity.",
+    "This candidate does not close the independent method review or authorize arXiv upload."
+  ]
+}

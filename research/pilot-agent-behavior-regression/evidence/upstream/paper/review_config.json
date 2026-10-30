@@ -1,0 +1,21 @@
+{
+  "paper_id": "PAPER35_FRONT_DRIFT",
+  "tex": "F:\\Research\\PAPER35_FRONT_DRIFT\\main.tex",
+  "zip": "F:\\Research\\PAPER35_FRONT_DRIFT\\supplementary.zip",
+  "evidence_dirs": [
+    "F:\\Research\\PAPER35_FRONT_DRIFT\\evidence"
+  ],
+  "out_dir": "F:\\Research\\PAPER35_FRONT_DRIFT\\review_run",
+  "venue": "TMLR",
+  "llm": {
+    "rpc": "http://127.0.0.1:3081",
+    "roles": "all",
+    "converge": 1
+  },
+  "stages": {
+    "r6": true,
+    "prism": true,
+    "debate": true,
+    "r4_llm": true
+  }
+}

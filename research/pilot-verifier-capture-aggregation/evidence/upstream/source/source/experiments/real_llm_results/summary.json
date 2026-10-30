@@ -1,0 +1,54 @@
+{
+ "config": {
+  "n_questions": 20,
+  "n_seeds": 3,
+  "models": [
+   "qwen3:4b",
+   "qwen2.5-coder:7b",
+   "qwen2:7b",
+   "deepseek-r1:7b"
+  ],
+  "captured_slots": [
+   0,
+   1
+  ],
+  "note": "local Ollama verifiers, temp 0"
+ },
+ "per_method": {
+  "majority": {
+   "mean": 0.9167,
+   "std": 0.0471,
+   "n_seeds": 3
+  },
+  "bft_pbft": {
+   "mean": 0.9167,
+   "std": 0.0236,
+   "n_seeds": 3
+  },
+  "weighted_uniform": {
+   "mean": 0.9167,
+   "std": 0.0471,
+   "n_seeds": 3
+  },
+  "trust_mean": {
+   "mean": 0.9167,
+   "std": 0.0471,
+   "n_seeds": 3
+  },
+  "trust_median": {
+   "mean": 0.9167,
+   "std": 0.0471,
+   "n_seeds": 3
+  },
+  "kalman_trust": {
+   "mean": 0.9167,
+   "std": 0.0471,
+   "n_seeds": 3
+  },
+  "ATV": {
+   "mean": 0.9167,
+   "std": 0.0471,
+   "n_seeds": 3
+  }
+ }
+}

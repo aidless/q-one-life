@@ -1,0 +1,22 @@
+# attempt 1 — failed before measurement (no results file written)
+# command:
+#   python3 run_estimand_split.py --preregistration preregistration.json \
+#     --external-root '/home/liuzewen/F:\deepseek' --votes-dir /tmp/qone-a2-votes \
+#     --output results/run-1.json
+# prerequisite (preregistered command 1) passed: rebuilt vote tables match pinned sha256
+#
+Traceback (most recent call last):
+  File "run_estimand_split.py", line 476, in <module>
+    raise SystemExit(main())
+  File "run_estimand_split.py", line 314, in main
+    res = analyse(audit, df, have_prob, n_boot, seed)
+  File "run_estimand_split.py", line 167, in analyse
+    lb_boot[r["system"]] = boot_macro(S, N, W)
+  File "run_estimand_split.py", line 96, in boot_macro
+    out[valid] = np.nanmean(sl_mean[:, valid], axis=0)
+IndexError: boolean index did not match indexed array along axis 0; size of axis is 248 but size of corresponding boolean axis is 2000
+#
+# diagnosis: port of audit.py boot_macro allocated `out` with W.shape[1] (= number of
+# cases, 248) instead of W.shape[0] (= n_boot, 2000). The native function uses
+# np.full(args.n_boot, ...). No measurement was produced; the scientific parameters
+# (tasks, seeds, n_boot, tolerance, gates, controls) are unchanged by the fix.

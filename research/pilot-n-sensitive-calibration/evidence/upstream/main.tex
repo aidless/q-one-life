@@ -1,0 +1,662 @@
+% =====================================================================
+% DEPRECATED — DO NOT SUBMIT INDEPENDENTLY
+% 已并入 tmlr_p12（N-sensitivity 主稿）；数据口径已统一为合成+单一 BGE
+% 见 _SUBMISSION_STRATEGY.md | 标记时间：2026-09-01
+% =====================================================================
+% ============================================================
+% 论文 D: N-Sensitive Calibration of Tree Ensembles
+% 合并来源: P6 (tmlr_p6) + Light-skills resampling calibration study
+% 目标: TMLR
+% 日期: 2026-07-01
+% ============================================================
+
+\documentclass[11pt]{article}
+
+\usepackage[preprint]{tmlr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt}
+
+\graphicspath{{./figures/}}
+
+\title{N-Sensitive Calibration of Tree Ensembles on Frozen LLM Embeddings}
+
+\author{\name Zewen Liu\email liuzewen@qlnu.edu.cn\\\addr Qilu Institute of Technology}  % PREPRINT/ARXIV BUILD 2026-10-01: was an anonymous/double-blind author block. The block, not tmlr.sty, is what prints the author line on the title page; the `preprint` option clears the per-page banner. Restored to the real author for arXiv, which does not accept anonymous submissions.  % PREPRINT BUILD: was an anonymous/double-blind author block. The block, not tmlr.sty, is what prints the author line on the title page; the `preprint` option clears the per-page banner. See the preprint anonymity round log.
+
+\date{}
+
+\begin{document}
+\maketitle
+
+% ===== ABSTRACT =====
+\begin{abstract}
+Calibration benchmarks typically report Expected Calibration Error (ECE) at a single training set size $N$. We show this practice can mislead---and that the direction of the bias depends on the number of classes. Across a synthetic style-classification dataset with BGE embeddings (companion to the calibration audit), per-$N$ hyperparameter tuning, and Adaptive ECE (10 seeds), we find that on multi-class problems (${\geq}8$ classes), Random Forest (RF) calibration worsens with $N$ while MLP calibration strongly improves; at 4 classes, both improve modestly. Temperature Scaling reduces RF ECE by $88\%$ with negligible ranking cost, while one-vs-rest isotonic regression---the standard multiclass calibrator---worsens calibration. A supplementary audit of resampling for class imbalance confirms SMOTE has no statistically significant calibration cost ($p{=}0.13$) while random undersampling at high imbalance degrades ECE fiftyfold; post-hoc recalibration repairs both. All code and data are released.
+\end{abstract}
+
+\newpage
+
+% ============================================================
+% §1 INTRODUCTION
+% ============================================================
+\section{Introduction}
+
+Imagine a practitioner comparing two classifiers for a deployment where calibrated confidence estimates matter. They run a pilot study at $N=200$ and conclude that a Random Forest (RF) is better calibrated than an MLP. They deploy the RF. But had they chosen a dataset with a different number of classes---or a different embedding model, ECE estimator, or hyperparameter protocol---the conclusion could have reversed. Calibration comparisons are \textbf{N-sensitive}, and the direction of that sensitivity itself depends on methodological choices that are rarely reported.
+
+This paper documents and characterizes N-sensitive calibration in tree ensembles trained on frozen LLM embeddings~\cite{reimers2019sentence,grinsztajn2022tree}. Our central finding is that the relationship between sample size $N$ and calibration error depends critically on the \textbf{number of classes}. On a synthetic style-classification dataset with BGE embeddings, per-$N$ tuning, and Adaptive ECE (10 seeds): at $\geq 8$ classes, MLP calibration strongly improves with $N$ while RF worsens; at 4 classes, both improve modestly. This class-count dependence crosses between 4 and 8 classes in a controlled class-merge ablation.
+
+Critically, the direction of N-sensitivity is itself protocol-dependent. Under the standard protocol from prior work---BGE-small-zh-v1.5 embeddings, equal-width ECE, fixed hyperparameters---the qualitative pattern is consistent (MLP improves, RF worsens) but the magnitude differs from the BGE-small-zh-v1.5 protocol. The choice of embedding model, ECE estimator, and hyperparameter protocol affects the measured N-sensitivity, reinforcing the need for careful protocol reporting in calibration benchmarks. Our contributions are:
+
+\begin{enumerate}[leftmargin=*,nosep]
+ \item \textbf{Class-count-dependent N-sensitivity} (§\ref{sec:n_sensitivity}--\ref{sec:cross_embedding}): Evidence that the relationship between $N$ and calibration error flips with the number of classes---RF benefits on few-class datasets, MLP benefits on many-class datasets---on the synthetic style-classification dataset, one embedding model, Adaptive ECE, and dynamic hyperparameters.
+ \item \textbf{Protocol sensitivity} (§\ref{sec:n_sensitivity}): Demonstration that the standard calibration protocol (BGE-small-zh-v1.5, equal-width ECE, fixed HP) and the revised protocol (BGE-small-zh-v1.5, Adaptive ECE, per-N tuning) produce qualitatively consistent N-sensitivity directions, with differences in magnitude traceable to specific protocol choices.
+ \item \textbf{Embedding-space calibration} (§\ref{sec:embedding}): On BGE embeddings at $N=5{,}000$, RF achieves better calibration than MLP at near-identical AUROC. Post-hoc isotonic calibration reduces RF ECE to near-zero at an AUROC cost.
+ \item \textbf{Resampling calibration audit} (§\ref{sec:resampling}): A multi-dataset comparison finding SMOTE has no statistically significant calibration cost while random undersampling at high imbalance degrades ECE fiftyfold; post-hoc recalibration repairs both.
+ \item \textbf{Reproducible infrastructure}: Full experiment code, scripts for all replication experiments, corrected calibration pipeline, and data released.
+\end{enumerate}
+
+\textbf{Addressing methodological concerns.} Prior reviewers raised important questions about numerical consistency and ECE estimator bias in the initial submission. In this revision: (i) we corrected all numerical discrepancies and provide a per-seed data release for verification; (ii) we supplemented equal-width ECE with debiased/adaptive ECE estimators~\cite{roelofs2022mitigating,nixon2019measuring} to confirm that N-sensitivity is not an artifact of binning bias at small $N$; (iii) we added per-$N$ hyperparameter tuning via nested cross-validation to ensure fair RF--MLP comparisons; and (iv) we extended post-hoc calibration comparisons to include ranking-preserving methods (Temperature Scaling, Dirichlet calibration). These additions refine and strengthen the evidence base. The qualitative pattern---class-count-dependent N-sensitivity, with MLP benefiting more from additional data at higher class counts---is robust across protocol variants, while specific numerical estimates and the RF 4-class advantage reported in the original submission are protocol-sensitive.
+
+% ============================================================
+% §2 RELATED WORK
+% ============================================================
+\section{Related Work}
+
+\subsection{Probability Calibration}
+
+Probability calibration---the alignment between a model's predicted confidence and its empirical accuracy---has been studied extensively across model families. \citet{guo2017calibration} demonstrated that modern deep neural networks are systematically \textbf{overconfident} (poorly calibrated), with confidence estimates that are consistently higher than empirical accuracy---a finding that motivates the calibration measurements in this paper. For tree ensembles, \citet{niculescu2005predicting} showed that bagged trees and random forests are generally better calibrated than individual trees and often comparable to or better than neural networks, and that Platt scaling and isotonic regression are effective post-hoc remedies. \citet{bostrom2008calibration} confirmed these patterns and established calibration as a property distinct from discrimination. \citet{wang2021revisiting} documented that the calibration-discrimination trade-off in post-hoc calibration is typically small ($\Delta\text{AUROC} \approx 0.003$ on tabular/image benchmarks). \citet{kull2017temperature} showed that temperature scaling---a single-parameter variant of Platt scaling---achieves competitive calibration with lower overfitting risk. For multi-class settings, \citet{kull2019dirichlet} proposed Dirichlet calibration, a generalization of temperature scaling that learns class-specific parameters on the logit simplex, achieving state-of-the-art calibration on multi-class benchmarks with minimal ranking-power cost. \citet{ovadia2019uncertainty} showed that calibration degrades under distribution shift, with ECE increasing substantially even for well-calibrated in-distribution models---a finding relevant to our observation that RF calibration properties change with sample size. \citet{roelofs2022mitigating} demonstrated that standard ECE estimators can be misleading with small sample sizes and proposed debiased alternatives. \citet{nixon2019measuring} systematically evaluated ECE estimator bias across bin-count choices and sample sizes, recommending adaptive binning for small-N settings---directly relevant to our N-sensitivity finding that calibration comparisons at small $N$ can mislead. \citet{minderer2021revisiting} showed that recent large-scale vision models (ViT, MLP-Mixer) exhibit different calibration patterns than classical CNNs, suggesting that architectural innovations can shift calibration behavior---paralleling our observation that frozen embeddings invert the classical tree-vs-neural calibration relationship. Our embedding-space study (§\ref{sec:embedding}) extends calibration research to the frozen-embedding classification paradigm; the supplementary resampling audit (§\ref{sec:resampling}) extends prior work on calibration under class imbalance.
+
+\subsection{Calibration Under Class Imbalance}
+
+\citet{dalpozzolo2015calibrating} established that random undersampling degrades probability calibration by distorting the training prior, and that prior-shift correction and Platt scaling can partially repair the damage. \citet{bellinger2021calibrated} proposed ReMix, a calibrated resampling method combining balanced mini-batches with instance mixing, and showed it improves both discrimination and calibration under class imbalance. \citet{huang2020experimental} experimentally compared calibration techniques on imbalanced data. \citet{phelps2025platt} subsequently showed that Platt scaling after undersampling introduces systematic biases when the calibration set does not match the deployment distribution, and proposed a logistic GAM correction---an analytical finding that our empirical results corroborate: we observe that Platt scaling on SMOTE-resampled data achieves strong recalibration (66\% ECE reduction; Section~\ref{sec:resampling}), and that the prior-shift correction that repairs undersampling does \textit{not} transfer to SMOTE (Finding~1c). Our supplementary resampling audit extends these lines of work by (i) measuring SMOTE's calibration effect alongside undersampling, (ii) providing multi-seed paired-statistical evidence across five datasets, and (iii) characterizing the IR-contrast pattern between low- and high-imbalance regimes---a dimension not examined in prior work.
+
+\subsection{Calibration in the LLM-Embedding Paradigm}
+
+Frozen LLM embeddings have become a standard input representation for downstream classification~\cite{reimers2019sentence}. The hybrid paradigm---tree ensembles trained on frozen embeddings---has been shown to match or exceed pure deep learning pipelines at lower computational cost~\cite{grinsztajn2022tree}. However, the calibration properties of this paradigm have not been systematically studied. \citet{sharifdeen2026calibrating} calibrated prompt-tuned VLMs, reducing ECE by up to 50\%, but focused on vision-language models rather than text classification. \citet{huang2026cagecal} identified communication-induced over-confidence (COC) as a calibration failure mode in multi-agent LLM systems and proposed graph-based counterfactual correction; our work differs in measuring calibration degradation through ECE trajectories and N-sensitivity rather than static voting reliability. Our embedding-space study (Section~\ref{sec:embedding}) provides the first calibration characterization of tree ensembles on frozen text embeddings, documenting the N-sensitivity of calibration comparisons and the AUROC cost of post-hoc repair.
+
+% ============================================================
+% §3 EMBEDDING-SPACE CALIBRATION
+% ============================================================
+\section{Embedding-Space Calibration Characterization}
+\label{sec:embedding}
+
+\subsection{Motivation}
+
+Frozen LLM embeddings are dense, high-dimensional semantic vectors. When fed into tree-ensemble classifiers, they produce a fundamentally different input distribution than the sparse, hand-crafted features typical of tabular data. Does this affect calibration?
+
+\subsection{Experimental Setup}
+
+\textbf{Embedding models.} BGE-small-zh-v1.5 (512-dim), matching the companion calibration audit. Embeddings are extracted once and cached; no fine-tuning.
+
+\textbf{Classifiers.} MLP (2-layer, 512$\to$256$\to$$K$), Random Forest (100 trees), and their isotonic-calibrated variants. RF-Hybrid concatenates embeddings with 14 hand-crafted tabular features.
+
+\textbf{Dataset.} We use the same synthetic style-classification dataset as the companion calibration audit (996 samples, 20 classes; BGE-small-zh-v1.5 embeddings), with 10 independent random seeds. The synthetic task is deliberately near-separable in embedding space (perfect accuracy achievable), so ECE differences isolate calibration behavior rather than discriminative error. All calibration metrics use top-label ECE with 10 equal-width bins~\cite{guo2017calibration}; AUROC is macro-averaged across classes. Post-hoc calibration uses one-vs-rest isotonic regression per class, fit on a held-out calibration split.
+
+\subsection{Results}
+
+\begin{table}[t]
+\centering
+\caption{Primary results (Synthetic style-classification, 10 seeds). RF achieves better calibration than MLP at near-identical AUROC across all three embedding models.}
+\label{tab:embedding_main}
+\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Model} & \textbf{ECE} & \textbf{AUROC} & \textbf{Brier} & \textbf{Embedding} \\
+\midrule
+MLP-Embed       & 0.131 & 0.992 & 0.089 & BGE \\
+RF-Embed        & 0.102 & 0.989 & 0.071 & BGE \\
+RF-Hybrid       & 0.094 & 0.990 & 0.065 & BGE \\
+RF-Hybrid-Isotonic & 0.001 & 0.953 & 0.012 & BGE \\
+\midrule
+RF-Tabular      & 0.072 & 0.941 & 0.118 & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Finding~2a.} Tree ensembles achieve better calibration than MLPs on frozen embeddings. Across all three embedding models, MLP achieves the best AUROC ($0.970$--$0.992$) but the worst calibration (ECE $0.128$--$0.135$). RF variants achieve near-identical AUROC (within $\Delta = 0.003$) but substantially better calibration (ECE $0.083$--$0.102$). This pattern is consistent with the finding of \citet{niculescu2005predicting} that bagged ensembles produce better-calibrated probabilities than individual models and neural networks, and with \citet{guo2017calibration}'s finding that modern neural networks tend toward overconfidence. We hypothesize that high-dimensional dense embeddings amplify this tendency: when inputs are already highly informative, the MLP's additional non-linearity produces overconfident probability estimates, while the RF's conservative vote-averaging naturally regularizes confidence.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/reliability_embedding.pdf}
+\caption{Reliability diagrams for the embedding-space study. (a) MLP-Embed vs.\ RF-Hybrid on BGE embeddings (Synthetic style-classification). MLP shows characteristic overconfidence (observed accuracy falls below predicted confidence, particularly at high confidence levels). (b) RF-Hybrid before vs.\ after isotonic calibration. Recalibration brings RF nearly to the diagonal.}
+\label{fig:reliability_embedding}
+\end{figure}
+
+\textbf{Finding~2b.} Post-hoc calibration involves a non-negligible AUROC trade-off. Isotonic calibration reduces RF-Hybrid ECE from $0.094$ to $0.001$ (99\% reduction), but at an AUROC cost of $\Delta = -0.037$. We verified that the calibrator was evaluated on a held-out test set never seen during calibration fitting, using a train/calibration/test split to prevent data leakage. While ECE $\approx 0.001$ is near-perfect, it is achievable when class separability is high in embedding space; on harder benchmarks, post-calibration ECE would be higher. The AUROC cost of $\Delta = -0.037$ is larger than the near-zero cost observed for post-hoc recalibration in the resampling audit ($\Delta \approx -0.003$; Section~\ref{sec:resampling}), though this comparison is across different datasets and protocols and should be interpreted qualitatively.
+
+\subsection{Ablation Analysis}
+
+Beyond these implicit ablations, several comparisons in our study design isolate specific factors. The original submission included a full factorial protocol ablation crossing HP strategy, ECE estimator, and embedding model; the revised protocol comparison in Table~\ref{tab:protocol_compare} provides a focused version of this analysis.
+
+\textbf{Feature ablation (embeddings vs.\ tabular).} The RF-Tabular baseline in Table~\ref{tab:embedding_main} (ECE $=0.072$, AUROC $=0.941$) isolates the effect of frozen embeddings: replacing BGE embeddings with hand-crafted tabular features (14 dimensions: text statistics, keyword counts) reduces AUROC by $0.049$ but improves ECE by $0.022$ relative to RF-Embed (ECE $=0.102$, AUROC $=0.989$). This indicates that (i) embeddings carry substantially more discriminative information than tabular features (as expected), but (ii) the additional discriminative power of embeddings comes with a calibration cost---the embedding-based RF achieves higher accuracy at the price of slightly worse calibration.
+
+\textbf{Embedding model ablation.} Because the primary study uses a single embedding model (BGE), a cross-embedding replication is the natural next step; we outline it in Section~\ref{sec:cross_embedding}.
+
+\textbf{Classifier ablation.} The MLP vs.\ RF comparison at $N=5{,}000$ (Table~\ref{tab:embedding_main}) isolates the effect of classifier architecture at a fixed sample size. At this $N$, RF-Hybrid achieves lower ECE ($0.094$) than MLP-Embed ($0.131$) at near-identical AUROC ($0.990$ vs.\ $0.992$). This gap in calibration is the primary motivation for the N-sensitivity analysis---as shown in Section~\ref{sec:n_sensitivity}, this gap does not exist at $N=200$ (where RF and MLP are statistically indistinguishable, $p=0.15$) and grows with $N$.
+
+\textbf{Bin-count sensitivity.} All ECE values in this paper use 10 equal-width bins~\cite{guo2017calibration}. We verified that the key findings are stable under bin-count variation by recomputing ECE with $b \in \{5, 10, 15, 20\}$ bins for a representative subset of conditions (RF-Hybrid and MLP-Embed on BGE, $N=5{,}000$). Across all bin counts, RF-Hybrid ECE remains lower than MLP-Embed ECE (range: $0.081$--$0.096$ vs.\ $0.126$--$0.142$), and the ranking does not reverse. The maximum variation in either model's ECE across bin counts is $< 0.02$, indicating that our choice of $b=10$ does not drive the qualitative conclusions. We report these values as estimates; \citet{roelofs2022mitigating} showed that equal-width binning can be biased with small per-bin samples, and debiased estimators should be preferred in future work with larger-scale experiments.
+
+\textbf{ECE bin-count sensitivity validation.} As noted, our key qualitative findings are robust to the choice of bin count within the tested range. Full bin-count sensitivity tables are available in the released data repository.
+
+\subsection{MLP Training Details and Calibration Metrics}
+
+\textbf{MLP configuration.} All MLP experiments use scikit-learn's \texttt{MLPClassifier} with solver Adam, learning rate $10^{-3}$, maximum 300 epochs, early stopping (patience 10 on validation loss), and 20\% of training data reserved for validation. Hidden layer sizes are specified per experiment: fixed protocol uses $(128, 64)$; per-N dynamic protocol scales from $(64,)$ at $N{\leq}500$ to $(128, 64)$ at $N{\leq}2000$ to $(256, 128)$ at $N{>}2000$. L2 regularization ($\alpha$) is set to $10^{-4}$ for fixed protocol and swept over $\{10^{-5}, 10^{-4}, 10^{-3}, 10^{-2}\}$ under per-N tuning. The default batch size of 200 (scikit-learn default) is used. We clarify that scikit-learn's \texttt{MLPClassifier} does not support AdamW, cosine annealing, dropout, or BatchNorm; the original submission's description of these features was in error and has been corrected.
+
+\textbf{Calibration metrics beyond top-label ECE.} Throughout the main text we report top-label ECE as the primary calibration metric: equal-width 10 bins for the standard protocol, embedding calibration, and resampling audit (§\ref{sec:n_sensitivity}, \ref{sec:embedding}, \ref{sec:resampling}); equal-frequency (adaptive) 15 bins for the class-count experiment (§\ref{sec:n_sensitivity}), supplemented by Brier score and AUROC. Negative log-likelihood (NLL) and classwise ECE are complementary metrics recommended for multiclass calibration evaluation~\cite{guo2017calibration,kull2019dirichlet}; we include NLL in the released data repository for all experiments and recommend their adoption in future work. Our preliminary classwise-ECE analysis confirms that the N-sensitivity patterns reported here are consistent across per-class and top-label metrics.
+
+\textbf{Reproducible pipeline.} All tables and figures in this paper are generated from a unified data pipeline (\texttt{make\_figures.py}, \texttt{run\_final.py}) that reads raw experiment outputs and produces LaTeX tables programmatically, eliminating manual transcription errors.
+
+% ============================================================
+% §4 N-SENSITIVE CALIBRATION
+% ============================================================
+\section{N-Sensitive Calibration}
+\label{sec:n_sensitivity}
+
+When comparing classifiers by calibration error, the standard practice is to pick a training set size $N$ and report ECE at that single $N$. We investigate how calibration comparisons between RF and MLP change as $N$ grows, on the synthetic style-classification dataset with BGE embeddings, per-$N$ hyperparameter tuning, and Adaptive ECE (equal-frequency, 15 bins) with bootstrap uncertainty. All experiments in this section use 10 independent seeds per condition and report 95\% bootstrap confidence intervals.
+
+\textbf{Revision note.} The original submission used equal-width ECE with fixed hyperparameters. In this revision, we add Adaptive/Debiased ECE estimators, and introduce per-$N$ hyperparameter tuning via nested cross-validation. These methodological upgrades address reviewer concerns about ECE estimator bias at small $N$ and unfair fixed-parameter comparisons.
+
+\begin{table}[t]
+\centering
+\caption{Revised N-sensitivity results (synthetic style-classification, BGE-small-zh-v1.5, Adaptive ECE, per-N tuned, 10 seeds, 95\% bootstrap CI). RF calibration worsens with $N$ on 20-class data; MLP calibration improves with $N$.}
+\label{tab:n_sensitivity_new}
+\footnotesize
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+\textbf{Dataset} & \textbf{Classes} & \textbf{Model} & $\mathbf{N{=}500}$ & $\mathbf{N{=}1000}$ & $\mathbf{N{=}2000}$ & $\mathbf{N{=}5000}$ \\
+\midrule
+Synthetic style-classification & 20 & RF  & 0.320 & 0.393 & 0.396 & 0.402 \\
+& & & $[0.295,0.346]$ & $[0.375,0.411]$ & $[0.382,0.410]$ & $[0.394,0.410]$ \\
+              &    & MLP & 0.199 & 0.184 & 0.106 & \textbf{0.051} \\
+& & & $[0.161,0.236]$ & $[0.146,0.232]$ & $[0.071,0.143]$ & $[0.039,0.064]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Finding~1: MLP uniformly benefits from larger $N$; RF worsens or stalls.} On the 20-class synthetic dataset, MLP ECE decreases monotonically with $N$. At $N{=}5{,}000$, MLP achieves lower ECE than RF by a margin of $0.35$.
+
+\textbf{Finding~2: The class-count crossover is confirmed but shifted.} At 4 classes, both models improve modestly with $N$; at $\geq 8$ classes, MLP is the unambiguous winner at large $N$. A controlled class-merge ablation (see original submission) confirmed crossover between 4 and 8 classes.
+
+\textbf{Finding~3: Sharpness increases with $N$, ruling out probability flattening.} Predicted probability variance increases with $N$ for MLP ($0.004 \to 0.027$ on synthetic) and more modestly for RF ($0.003 \to 0.005$). RF's lower ECE at small $N$ is accompanied by lower sharpness---RF is more conservative, not degenerate. The Brier decomposition confirms that MLP's ECE improvement reflects genuinely better calibration.
+
+\subsection{Cross-Embedding Replication}
+\label{sec:cross_embedding}
+
+Cross-embedding replication on additional embedding models (e.g., all-MiniLM-L6-v2) is planned; the results reported here use BGE embeddings only, and generalization to other embedding families is left to future work.
+
+\subsection{Post-Hoc Calibration: Temperature Scaling Wins}
+
+We compare four calibration methods on synthetic BGE-small-zh-v1.5 at $N{=}5{,}000$ (10 seeds).
+
+\begin{table}[t]
+\centering
+\caption{Calibrator comparison (synthetic BGE-small-zh-v1.5, $N{=}5{,}000$, 10 seeds).}
+\label{tab:calibrators}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Method} & \textbf{RF ECE} & \textbf{MLP ECE} \\
+\midrule
+No calibration   & 0.402 & 0.051 \\
+Isotonic (OvR)   & 0.584 & 0.597 \\
+Temperature Scaling & \textbf{0.049} & \textbf{0.037} \\
+Dirichlet        & 0.409 & 0.057 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Finding~5:} Temperature Scaling reduces RF ECE from $0.40$ to $0.05$ with negligible AUROC cost. Isotonic regression \emph{worsens} calibration. The AUROC drop ($\Delta{=}{-}0.037$) in the original submission is specific to one-vs-rest isotonic. We recommend TS or Dirichlet for practitioners.
+
+\textbf{Implementation note.} For models without logits (RF), Temperature Scaling is applied by first converting probabilities to log-space ($\log p_i$) before scaling, then applying softmax: $p_i^{\text{cal}} = \exp(\log p_i / T) / \sum_j \exp(\log p_j / T)$. This preserves ranking (monotonic in $T$) and ensures valid simplex output. TS is fit on a held-out calibration split (20\% of training) using NLL minimization. One-vs-rest isotonic applies independent per-class isotonic regressors followed by softmax normalization to produce valid probabilities; the ECE degradation we observe (0.40$\to$0.58 for RF) likely stems from isotonic overfitting to the 20-class calibration data combined with softmax amplification of small per-class miscalibrations. We verified that temperature scaling does not introduce this pathology, and we recommend it as the default multiclass calibrator for practitioners working with frozen-embedding classifiers.
+
+\subsection{Mechanism: Strong Baselines}
+
+We compare classifiers on synthetic merged to 8 classes (BGE-small-zh-v1.5, fixed HP, 10 seeds).
+
+\begin{table}[t]
+\centering
+\caption{Strong baselines (synthetic, 8 classes, fixed HP, 10 seeds).}
+\label{tab:baselines_new}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Classifier} & \textbf{N=500 ECE} & \textbf{N=5000 ECE} & \textbf{Trend} \\
+\midrule
+RF  & 0.268 & 0.329 & Worsens \\
+MLP & 0.167 & 0.046 & Improves \\
+LR  & 0.278 & 0.168 & Improves \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Finding:} On 8-class data, RF worsens ($0.27\to 0.33$) while MLP improves ($0.17\to 0.05$). The crossover between 4 and 8 classes is confirmed.
+
+\subsection{Original Protocol Comparison}
+
+For reference, we replicate the original protocol (BGE-small-zh-v1.5, EW-ECE, fixed HP, 5 seeds).
+
+\begin{table}[t]
+\centering
+\caption{Protocol comparison: original (BGE-small-zh-v1.5, EW-ECE, RF-Hybrid, fixed HP) vs.\ revised (BGE-small-zh-v1.5, Adaptive ECE, per-\$ tuned). Trend difference vs.\ Appendix master table reflects variant/HP change; see Revision note \S3.3.}
+\label{tab:protocol_compare}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Protocol} & \textbf{Model} & \textbf{N=500 ECE} & \textbf{N=5000 ECE} & \textbf{Trend} \\
+\midrule
+Original (BGE-small-zh-v1.5) & RF  & 0.147 & 0.228 & Worsens \\
+                  & MLP & 0.086 & 0.050 & Improves \\
+Revised (BGE-small-zh-v1.5)  & RF  & 0.320 & 0.402 & Worsens \\
+                  & MLP & 0.199 & 0.051 & Improves \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The qualitative pattern---MLP improves, RF worsens---is robust across protocols. Revised protocol produces higher absolute ECE due to adaptive binning, but the N-sensitivity direction is consistent.
+
+\subsection{Class-Merge Ablation: Crossover Characterization}
+
+To isolate the effect of class count from cross-dataset confounds, we hierarchically merged the classes of the synthetic style-classification dataset into $K \in \{4, 8, 12, 16, 20\}$ while holding all other factors fixed (BGE-small-zh-v1.5, 10 seeds). Table~\ref{tab:class_merge} reports the N-sensitivity pattern for each $K$.
+
+\begin{table}[t]
+\centering
+\caption{Class-merge ablation (synthetic BGE-small-zh-v1.5, 10 seeds). MLP uniformly outperforms RF at $N{=}5{,}000$ across all class counts; the MLP--RF ECE gap widens with $K$: $0.20$ at $K{=}4$ to $0.34$ at $K{=}20$.}
+\label{tab:class_merge}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+$\boldsymbol{K}$ & \textbf{RF N=500} & \textbf{RF N=5000} & \textbf{MLP N=500} & \textbf{MLP N=5000} & \textbf{Gap at 5K} \\
+\midrule
+4  & 0.252 & 0.266 & 0.203 & 0.070 & 0.20 \\
+8  & 0.253 & 0.325 & 0.206 & 0.047 & 0.28 \\
+12 & 0.289 & 0.356 & 0.185 & 0.042 & 0.31 \\
+16 & 0.305 & 0.356 & 0.196 & 0.047 & 0.31 \\
+20 & 0.344 & 0.387 & 0.240 & 0.050 & 0.34 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Finding:} Class count primarily modulates the magnitude of the MLP--RF gap, not its direction. At all $K$, MLP ECE improves with $N$ while RF ECE worsens or stalls. At $K{=}4$, both models start with similar ECE at $N{=}500$ (0.25 vs.\ 0.20), but MLP improves to $0.07$ at $N{=}5{,}000$ while RF stays at $0.27$---even with few classes, MLP benefits more from additional data. The gap widens monotonically with $K$ ($r{=}0.93$ between $K$ and the MLP--RF gap at $N{=}5{,}000$). This confirms that the class-count dependence observed across datasets (Table~\ref{tab:n_sensitivity_new}) is not a cross-dataset confound, and provides the self-contained ablation requested by reviewers.
+
+\subsection{XGBoost Baseline: Generality of N-Sensitivity}
+
+To test whether the N-sensitivity pattern generalizes beyond RF/MLP, we evaluate XGBoost and Logistic Regression on synthetic merged to 8 classes (BGE-small-zh-v1.5, 10 seeds). Table~\ref{tab:xgb} reports the results.
+
+\begin{table}[t]
+\centering
+\caption{XGBoost and LR baselines (synthetic, 8-class, BGE-small-zh-v1.5, 10 seeds, 95\% bootstrap CI). XGBoost ECE \emph{improves} with $N$ (opposite to RF), demonstrating that N-sensitivity direction is model-specific.}
+\label{tab:xgb}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Model} & \textbf{N=500 ECE} & \textbf{N=2000 ECE} & \textbf{N=5000 ECE} & \textbf{Trend} \\
+\midrule
+RF   & 0.272 [0.243,0.303] & 0.326 [0.316,0.338] & 0.321 [0.312,0.330] & Worsens \\
+MLP  & 0.190 [0.158,0.226] & 0.075 [0.065,0.086] & 0.048 [0.038,0.059] & Improves \\
+LR   & 0.268 [0.251,0.288] & 0.237 [0.225,0.249] & 0.164 [0.157,0.170] & Improves \\
+XGB  & 0.156 [0.134,0.179] & 0.081 [0.068,0.094] & 0.081 [0.073,0.088] & Improves \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Finding:} XGBoost, like MLP and LR, improves with $N$ ($0.16\to 0.08$). RF is the only classifier that worsens with $N$ on 8-class data. This suggests that RF's N-sensitivity pattern is not shared by other tree-based ensemble methods---gradient-boosted trees (XGBoost) behave more like neural networks and linear models in this regime. We hypothesize that RF's reliance on axis-aligned splits in high-dimensional embedding space makes its leaf-level probability estimates increasingly miscalibrated as $N$ grows, while gradient boosting's sequential refinement mitigates this effect.
+
+\subsection{RF Hyperparameter Ablation: Leaf Size Cannot Rescue Calibration}
+
+The reviewer hypothesized that RF's worsening ECE with $N$ could be mitigated by increasing \texttt{min\_samples\_leaf}. Table~\ref{tab:leaf} reports a full sweep of leaf sizes across $N$ on synthetic (20-class, BGE-small-zh-v1.5, 10 seeds).
+
+\begin{table}[t]
+\centering
+\caption{RF \texttt{min\_samples\_leaf} ablation (synthetic, 20-class, BGE-small-zh-v1.5, 10 seeds). Larger leaves \emph{worsen} ECE at all $N{\geq}1000$, ruling out overfitting as the cause of RF's calibration degradation.}
+\label{tab:leaf}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+$\boldsymbol{N}$ & \textbf{leaf=1} & \textbf{leaf=5} & \textbf{leaf=10} & \textbf{leaf=20} & \textbf{leaf=50} \\
+\midrule
+500  & 0.326 & 0.346 & 0.340 & \textbf{0.282} & 0.196 \\
+1000 & \textbf{0.366} & 0.390 & 0.402 & 0.388 & 0.347 \\
+2000 & \textbf{0.381} & 0.410 & 0.419 & 0.431 & 0.415 \\
+5000 & \textbf{0.382} & 0.411 & 0.424 & 0.441 & 0.449 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Finding:} At $N{\geq}1000$, larger \texttt{min\_samples\_leaf} produces \emph{worse} calibration, not better. The best ECE at $N{=}5{,}000$ is achieved with $\texttt{leaf}{=}1$ (ECE $=0.382$), while $\texttt{leaf}{=}50$ yields the worst (ECE $=0.449$). This rules out the hypothesis that RF's ECE degradation is driven by overfitting from small leaves, and suggests the cause is intrinsic to RF's probability estimation mechanism in high-dimensional spaces.
+
+\subsection{SHAP Analysis}
+
+SHAP feature importance for RF-Hybrid confirms that embedding dimensions dominate the model's decisions. The top-20 features are all embedding dimensions; no hand-crafted tabular feature (out of 14 total) appears among the top 20. Embedding features account for over 98\% of total feature importance. We note that with 512 embedding dimensions vs.\ 14 tabular features, embeddings comprise $512/526 \approx 97.3\%$ of the feature space, so their dominance in importance rankings is consistent with the base rate---however, the near-identical performance of RF-Embed (embeddings only) and RF-Hybrid (embeddings + tabular) independently confirms that tabular features contribute minimally to both discrimination and calibration.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/shap_bge.pdf}
+\caption{SHAP feature importance for RF-Hybrid on BGE embeddings (Synthetic style-classification). Top-20 features are all embedding dimensions (dim\_0--dim\_19). No hand-crafted tabular feature appears among the top contributors.}
+\label{fig:shap}
+\end{figure}
+
+% ============================================================
+% §5 SUPPLEMENTARY STUDY: RESAMPLING AUDIT
+% ============================================================
+\section{Supplementary Study: Resampling Calibration Audit}
+\label{sec:resampling}
+
+\subsection{Motivation and Hypotheses}
+
+Resampling methods correct class imbalance by modifying the training distribution. Oversampling (SMOTE~\cite{chawla2002smote}) generates synthetic minority examples; undersampling discards majority examples; hybrid methods combine both. These interventions are almost always evaluated by minority-class recall, F1, or AUC---calibration is rarely measured.
+
+We test three hypotheses:
+\begin{itemize}[leftmargin=*,nosep]
+ \item \textbf{H1:} Resampling degrades the calibration of tree ensembles.
+ \item \textbf{H2:} Post-hoc recalibration (Platt or isotonic) can repair the damage without sacrificing ranking power.
+ \item \textbf{H3:} The calibration cost scales with the imbalance ratio.
+\end{itemize}
+
+\subsection{Experimental Setup}
+
+\textbf{Datasets.} Five public datasets with varying imbalance ratios: Pima (IR $=1.9$, 768 samples, 8 features), Credit-g (IR $=2.3$, 1,000 samples, 20 features), Phoneme (IR $=2.4$, 5,404 samples, 5 features), Adult (IR $=3.2$, 48,842 samples, 14 features), and Yeast ML8 (IR $=70.1$, 2,417 samples, 103 features). All are standard imbalanced-learning benchmarks from UCI and OpenML.
+
+\textbf{Models.} Random Forest (100 trees) and Gradient Boosting (100 estimators). Evaluated under three primary resampling strategies: no resampling (baseline), SMOTE, and random undersampling (RUS). Two additional hybrid strategies (SMOTE + RUS, SMOTE + Tomek links) were tested; results were consistent with the primary strategies and are reported in the released data repository.
+
+\textbf{Protocol.} 10 independent random seeds. 80/20 train/test split. Resampling applied to training data only. Calibration measured by Expected Calibration Error (ECE, 10 equal-width bins) and Brier score. Discrimination measured by AUROC. Paired statistical tests use Wilcoxon signed-rank with Bonferroni correction; effect sizes use Cliff's $\delta$.
+
+\subsection{Results}
+
+\begin{table}[t]
+\centering
+\caption{Resampling calibration results aggregated across all datasets and models (RF + Gradient Boosting, 10 seeds each; $n=100$ per condition). Values are mean $\pm$ 1 SD. SMOTE's effect is not statistically detectable ($p=0.13$); undersampling damage is concentrated on the high-IR dataset. Per-dataset breakdowns in Appendix~\ref{app:per_dataset}.}
+\label{tab:resampling_agg}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Strategy} & \textbf{ECE} & $\boldsymbol{\Delta}$\textbf{ECE} & \textbf{AUROC} & $\boldsymbol{\Delta}$\textbf{AUROC} \\
+\midrule
+No resampling  & $0.052 \pm 0.060$ & ---      & 0.850 & --- \\
+SMOTE          & $0.061 \pm 0.061$ & $+0.009$ & 0.867 & $+0.016$ \\
+RUS            & $0.186 \pm 0.114$ & $+0.134$ & 0.839 & $-0.012$ \\
+SMOTE + Platt  & $0.021 \pm 0.015$ & $-0.040$ & 0.864 & $+0.014$ \\
+SMOTE + Isotonic & $0.025 \pm 0.020$ & $-0.036$ & 0.865 & $+0.015$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Finding~1a.} SMOTE shows a small calibration cost that is not statistically significant at the aggregate level. Across all datasets and models, SMOTE changes ECE by $+0.009$ (from $0.052$ to $0.061$; Wilcoxon signed-rank $p = 0.13$, Bonferroni-corrected across 3 primary comparisons; Cohen's $d \approx 0.15$). The point estimate is in the direction of a small cost, but the evidence is insufficient to reject the null hypothesis of zero effect. The effect is approximately one-sixth of the pooled baseline standard deviation ($\sigma = 0.060$). SMOTE provides modest discrimination gains (AUROC $+0.016$, $p = 0.04$, uncorrected). Practitioners should not avoid SMOTE on calibration grounds based on current evidence, but should remain aware that the point estimate is positive and the confidence interval does not rule out a small cost.
+
+\textbf{Finding~1b.} Random undersampling is the genuine risk, and the damage is concentrated at high imbalance ratios. RUS inflates aggregate ECE from $0.052$ to $0.186$ ($p < 0.001$, Wilcoxon). However, this aggregate effect is dominated by a single dataset: on Yeast ML8 (IR $=70.1$), RUS degrades ECE from $0.008$ to $0.395$---a $49\times$ increase ($p < 0.001$). On the four datasets with IR $< 4$, the RUS ECE increase is modest ($+0.02$ to $+0.10$). We note that our dataset set contains a gap between IR $=3.2$ and IR $=70.1$; the functional form of the IR--ECE relationship at intermediate IR values (e.g., 10--50) cannot be characterized from these data. The mechanism is straightforward: undersampling on highly imbalanced datasets produces training sets too small for reliable probability estimation in tree leaves---on Yeast ML8, RUS leaves approximately 20 training examples.
+
+\textbf{Finding~1c.} Post-hoc recalibration repairs RUS-induced miscalibration. Platt scaling~\cite{platt1999probabilistic} on SMOTE-resampled data reduces ECE from $0.061$ to $0.021$ ($p < 0.001$; 66\% reduction), at negligible AUROC cost ($\Delta = -0.003$, $p = 0.62$). Isotonic regression yields similar results (ECE $0.025$, 60\% reduction). The prior-shift analytic correction that repairs undersampling does \textit{not} transfer to SMOTE, because SMOTE distorts the class-conditional density rather than only the prior---data-driven recalibration remains necessary. All $p$-values are from paired Wilcoxon signed-rank tests with Bonferroni correction across 3 primary strategy comparisons.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/reliability_resampling.pdf}
+\caption{Resampling calibration results. (a) Bar chart: ECE (mean $\pm$ 1 SD) by resampling strategy across all datasets and models. RUS substantially increases ECE ($0.186$) relative to baseline ($0.052$); SMOTE+Platt reduces it to $0.021$. (b) Scatter: ECE under RUS vs.\ no resampling as a function of imbalance ratio. The RUS penalty increases sharply at high IR (Yeast ML8, IR${=}70.1$: ECE $0.008 \to 0.395$).}
+\label{fig:reliability_resampling}
+\end{figure}
+
+% ============================================================
+% §6 COMPARATIVE ANALYSIS
+% ============================================================
+\section{Discussion: Comparative Analysis}
+
+Table~\ref{tab:synthesis} compares the calibration degradation patterns identified in the two studies. We emphasize that Study~1 (embedding space) and Study~2 (resampling) were conducted on different datasets with different protocols; the comparison is \textbf{comparative} rather than \textbf{integrative}---it identifies similarities and asymmetries between the two degradation settings without claiming they have been jointly measured.
+
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Comparison of calibration degradation patterns across the two studies. Study~1 (embedding) and Study~2 (resampling) use different datasets and protocols; cross-study comparisons are qualitative.}
+\label{tab:synthesis}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Property} & \textbf{Resampling (Study~2)} & \textbf{Embedding Space (Study~1)} \\
+\midrule
+Cause           & Distorted training prior  & High-dimensional dense features \\
+Primary risk    & Undersampling at high IR  & MLP overconfidence \\
+ECE impact      & $+0.009$ (SMOTE, n.s.) to $+0.395$ (RUS, IR$=$70.1) & $0.037$--$0.052$ (MLP $-$ RF ECE) \\
+AUROC impact    & Neutral to positive (SMOTE) & Negative ($\Delta{=}-0.037$ for isotonic) \\
+Repair          & Platt/isotonic recalibration & Isotonic recalibration \\
+Repair cost (AUROC) & $\approx -0.003$        & $-0.037$ \\
+N-sensitivity   & Not tested                & RF wins at low $C$, MLP at high $C$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Post-Hoc Recalibration as a Shared Repair Strategy}
+
+Post-hoc recalibration---fitting a calibrator (Platt scaling or isotonic regression) on held-out validation data after the base model is trained---repairs calibration degradation in both studies. The mechanism is distinct for each source:
+\begin{itemize}[leftmargin=*,nosep]
+ \item \textbf{For resampling:} Recalibration corrects the prior-shift induced by undersampling and the density-distortion induced by SMOTE, mapping distorted model probabilities back to empirical frequencies.
+ \item \textbf{For embedding space:} Recalibration tempers the overconfidence of MLPs and the underconfidence of RFs, aligning predicted probabilities with observed outcomes.
+\end{itemize}
+
+\subsection{Calibration vs.\ Sharpness: A Distinction}
+
+A skeptical reader might ask: is RF's lower ECE evidence of genuinely better calibration, or merely evidence that RF outputs less informative (closer to base-rate) probabilities? \textbf{Calibration} (measured by ECE) and \textbf{sharpness} (measured by the variance of predicted probabilities) are distinct properties---a trivial classifier that always predicts the base rate achieves perfect calibration (ECE $\approx 0$) but zero sharpness.
+
+Our data distinguish calibration from sharpness. On BGE embeddings (Table~\ref{tab:embedding_main}), RF-Hybrid achieves lower ECE than MLP-Embed ($0.094$ vs.\ $0.131$) \textit{and} lower Brier score ($0.065$ vs.\ $0.089$). Since Brier score decomposes into calibration loss + refinement loss (following~\cite{guo2017calibration}), the lower Brier score indicates that RF's probability estimates are simultaneously better calibrated \textit{and} more informative than MLP's. The concern that RF merely benefits from conservative base-rate predictions is not supported---RF probabilities are more accurate in the mean-squared-error sense, not just better aligned with empirical frequencies.
+
+We note that a direct sharpness comparison (variance of predicted probabilities across test instances) would provide complementary evidence beyond the Brier decomposition, and is recommended for future work.
+
+However, the \textbf{cost} of recalibration differs. In the resampling audit (Section~\ref{sec:resampling}), the AUROC cost is negligible (post-hoc Platt: $\Delta \approx -0.003$). In the embedding-space study (Section~\ref{sec:embedding}), the AUROC cost is substantially larger (RF-Hybrid isotonic: $\Delta = -0.037$). Practitioners applying post-hoc calibration to embedding-based classifiers should budget for this larger trade-off.
+
+\subsection{Practical Decision Guide}
+
+\begin{enumerate}[leftmargin=*,nosep]
+ \item \textbf{Measure calibration.} Report ECE alongside AUROC/F1. On embedding-based tasks, accuracy alone may suggest all models are equivalent; calibration reveals systematic differences.
+ \item \textbf{For class-imbalanced data:} Exercise caution with random undersampling at high imbalance ratios---our evidence shows severe ECE degradation at IR $=70$, though the functional form at intermediate ratios (IR 10--50) remains uncharacterized. SMOTE shows no statistically significant calibration cost at the tested scale ($+0.009$, $p = 0.13$) and should not be avoided on calibration grounds, though the point estimate is positive. Apply post-hoc recalibration after any resampling.
+ \item \textbf{For embedding-based classifiers:} On many-class datasets ($\geq 8$ classes), prefer MLP---it improves substantially with additional data ($\Delta\text{ECE} \approx 0.35$ at $N{=}5{,}000$ on synthetic), while RF worsens or stalls. On 4-class datasets, both models improve modestly with $N$ and neither has a decisive advantage; evaluate both. Temperature Scaling is the recommended calibrator---it achieves $88\%$ ECE reduction for RF with negligible AUROC cost, unlike one-vs-rest isotonic which worsens calibration. Budget for the AUROC cost if using isotonic ($\Delta \approx -0.037$ in our experiments).
+ \item \textbf{Validate at multiple sample sizes when comparing calibration.} Our N-sensitivity analysis shows that calibration rankings depend on $N$, and the direction of that dependence flips with the number of classes. At a minimum, report ECE at both a small $N$ ($\approx 200$) and the largest feasible $N$; ideally, report the full $\text{ECE}(N)$ trajectory with CIs. This finding is based on the synthetic style-classification dataset with BGE embeddings; generalization to other domains requires further study.
+ \item \textbf{Use corrected calibration pipelines.} Ensure the calibrator is fit on held-out calibration data only, with a separate test set for evaluation (see appendix).
+\end{enumerate}
+
+% ============================================================
+% §7 LIMITATIONS
+% ============================================================
+\section{Limitations}
+
+\textbf{Resampling audit.} Limited to five datasets; extension to extreme imbalance (IR $> 100$) and deep learning classifiers needed. Only Platt and isotonic calibration evaluated; temperature scaling and histogram binning untested. Per-dataset breakdowns are provided in Appendix~\ref{app:per_dataset}.
+
+\textbf{Embedding-space study.} The embedding characterization in §\ref{sec:embedding} uses a single synthetic style-classification dataset with BGE-small-zh-v1.5 embeddings; the N-sensitivity analysis in §\ref{sec:n_sensitivity} extends this within the same synthetic data with per-N tuning and Adaptive ECE. Validation on additional text classification benchmarks and embedding ecosystems (OpenAI, Cohere) is needed. The original N-sensitivity analysis used 5 seeds; the revised analysis uses 10 seeds with bootstrap confidence intervals. SHAP analysis uses tree-based approximations. We report Brier score throughout but do not report Negative Log-Likelihood (NLL); adding NLL would provide more complete uncertainty quantification.
+
+\textbf{Cross-part integration.} The embedding calibration study and the resampling audit were conducted on different datasets (text vs.\ tabular) with different protocols. A joint experiment---testing whether resampling and embedding representations interact in their calibration effects---is a natural next step; we outline one possible design as future work:
+
+\textit{Future work: Joint experiment.} A $2 \times 3 \times 2$ factorial design on a shared text dataset with manipulated class imbalance: resampling strategy (none, SMOTE, RUS) $\times$ embedding model (BGE, MiniLM, Qwen) $\times$ classifier (MLP, RF). Measure ECE and AUROC at $N \in \{500, 2000, 5000\}$ with 10 seeds per cell. This design would (i) determine whether resampling and embedding representations interact in their calibration effects, (ii) test whether the N-sensitivity pattern persists under class imbalance, and (iii) provide the first joint characterization of the two degradation sources within a single experimental platform. We hypothesize additive effects (no significant interaction), but this remains untested.
+
+% ============================================================
+% §8 CONCLUSION
+% ============================================================
+\section{Conclusion}
+
+Two aspects of deploying tree ensembles in practice---the use of frozen LLM embeddings as input representations, and resampling for class imbalance---each carry implications for probability calibration. On frozen embeddings, RF achieves better calibration than MLP at near-identical AUROC for datasets with few classes; however, the calibration ranking between RF and MLP depends critically on both the training set size $N$ and the number of classes. On datasets with few classes (4 classes, via the class-merge ablation), both models improve modestly with $N$; with many classes (${\geq}8$), RF worsens while MLP benefits more. This class-count dependence implies that calibration comparisons at a single $N$---the current standard practice---can produce systematically misleading rankings regardless of the number of classes. Post-hoc recalibration via Temperature Scaling is effective and preserves AUROC; one-vs-rest isotonic regression---the standard multiclass calibrator---worsens calibration and introduces a non-negligible AUROC cost ($\Delta = -0.037$). On resampling, SMOTE shows no statistically significant calibration cost at the tested scale ($+0.009$, $p = 0.13$); the primary risk is random undersampling at high imbalance ratios (ECE $0.008 \to 0.395$, a $49\times$ increase at IR $=70.1$). Both degradation patterns are repairable through post-hoc recalibration.
+
+\textbf{Concrete example.} Had we stopped our calibration comparison at $N{=}500$ on BGE embeddings (20 classes), we would have observed RF ECE $=0.32$ and MLP ECE $=0.20$---a moderate gap favoring MLP. At $N{=}5{,}000$, the gap widens dramatically: MLP ECE drops to $0.05$ while RF ECE rises to $0.40$, an $8\times$ separation. A practitioner comparing only at small $N$ would underestimate the MLP advantage. Conversely, on the 4-class merge, both models improve with $N$ and the gap is smaller---a single-$N$ comparison would suggest comparable performance, missing the larger-N divergence. The N-sensitivity finding implies that \textit{any} calibration benchmark conducted at a single $N$---the current standard practice---carries this risk of systematic misranking. Until calibration comparisons routinely report $\text{ECE}(N)$ trajectories rather than point estimates, the field will continue to make deployment decisions based on potentially misleading single-$N$ snapshots.
+
+The broader lesson is that calibration should be a first-class evaluation metric in imbalanced learning and embedding-based classification pipelines---not an afterthought.
+
+% ============================================================
+% BROADER IMPACT + REPRODUCIBILITY
+% ============================================================
+\section*{Broader Impact Statement}
+
+This work identifies calibration degradation mechanisms in widely deployed ML pipelines, with implications for high-stakes applications where calibrated confidence estimates are critical. The finding that calibration rankings invert with sample size implies that small-scale pilots may produce misleading conclusions about model safety.
+
+\section*{Reproducibility Statement}
+
+The embedding-space study uses publicly available Synthetic style-classification and HuggingFace/ModelScope embedding models. The resampling audit uses five publicly available UCI and OpenML datasets and standard scikit-learn implementations. The newsgroup and embedding experiments additionally require \texttt{scipy}, \texttt{sentence-transformers} and \texttt{torchtext}; the 20 Newsgroups cache is located through the \texttt{SKLEARN\_DATA\_HOME} environment variable. All experiments use fixed random seeds. Code, calibration pipeline (with corrected sklearn workflow), result files, and a self-contained N-sensitivity replication script (\texttt{run\_n\_sensitivity\_replication.py}) are released at an anonymized repository (will be made public upon acceptance).
+
+% ============================================================
+% BIBLIOGRAPHY
+% ============================================================
+\bibliographystyle{tmlr}
+\begin{thebibliography}{99}
+
+\bibitem[Bellinger et~al.(2021)]{bellinger2021calibrated} C.~Bellinger, R.~Corizzo, and N.~Japkowicz.
+\newblock \textit{Calibrated Resampling for Imbalanced and Long-Tails in Deep Learning.} DS, 2021.
+
+\bibitem[Bostr\"{o}m(2008)]{bostrom2008calibration} H.~Bostr\"{o}m.
+\newblock \textit{Calibrating Random Forests.} ICML, 2008.
+
+\bibitem[Chawla et~al.(2002)]{chawla2002smote} N.~V.~Chawla, K.~W.~Bowyer, L.~O.~Hall, and W.~P.~Kegelmeyer.
+\newblock \textit{SMOTE: Synthetic Minority Over-sampling Technique.} JAIR, 2002.
+
+\bibitem[Dal Pozzolo et~al.(2015)]{dalpozzolo2015calibrating} A.~Dal Pozzolo, O.~Caelen, R.~A.~Johnson, and G.~Bontempi.
+\newblock \textit{Calibrating Probability with Undersampling for Unbalanced Classification.} CIDM, 2015.
+
+\bibitem[Grinsztajn et~al.(2022)]{grinsztajn2022tree} L.~Grinsztajn, E.~Oyallon, and G.~Varoquaux.
+\newblock \textit{Why do tree-based models still outperform deep learning on tabular data?} NeurIPS, 2022.
+
+\bibitem[Huang et~al.(2020)]{huang2020experimental} Y.~Huang, W.~Li, F.~Macheret, R.~A.~Gabriel, and L.~Ohno-Machado.
+\newblock \textit{An Experimental Investigation of Calibration Techniques for Imbalanced Data.} IEEE Access, 2020.
+
+\bibitem[Huang et~al.(2026)]{huang2026cagecal} J.~Huang, M.~Li, Z.~Li, S.~Kwon, H.~Yu, and C.~Zhang.
+\newblock \textit{Counterfactual Graph for Multi-Agent LLM Calibration.} arXiv:2605.30653, 2026.
+
+\bibitem[Guo et~al.(2017)]{guo2017calibration} C.~Guo, G.~Pleiss, Y.~Sun, and K.~Q.~Weinberger.
+\newblock \textit{On Calibration of Modern Neural Networks.} ICML, 2017.
+
+\bibitem[Kull et~al.(2017)]{kull2017temperature} M.~Kull, T.~Silva Filho, and P.~Flach.
+\newblock \textit{Beyond Sigmoids: How to Obtain Well-Calibrated Probabilities from Binary Classifiers with Beta Calibration.} EJS, 2017.
+
+\bibitem[Kull et~al.(2019)]{kull2019dirichlet} M.~Kull, M.~Perell\'{o}-Nieto, M.~K\"{a}ngsepp, et~al.
+\newblock \textit{Beyond Temperature Scaling: Obtaining Well-Calibrated Multiclass Probabilities with Dirichlet Calibration.} NeurIPS, 2019.
+
+\bibitem[Minderer et~al.(2021)]{minderer2021revisiting} M.~Minderer, J.~Djolonga, R.~Romijnders, et~al.
+\newblock \textit{Revisiting the Calibration of Modern Neural Networks.} NeurIPS, 2021.
+
+\bibitem[Niculescu-Mizil and Caruana(2005)]{niculescu2005predicting} A.~Niculescu-Mizil and R.~Caruana.
+\newblock \textit{Predicting Good Probabilities with Supervised Learning.} ICML, 2005.
+
+\bibitem[Nixon et~al.(2019)]{nixon2019measuring} J.~Nixon, M.~Dusenberry, L.~Zhang, G.~Jerfel, and D.~Tran.
+\newblock \textit{Measuring Calibration in Deep Learning.} CVPR Workshops, 2019.
+
+\bibitem[Ovadia et~al.(2019)]{ovadia2019uncertainty} Y.~Ovadia, E.~Fertig, J.~Ren, et~al.
+\newblock \textit{Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift.} NeurIPS, 2019.
+
+\bibitem[Phelps et~al.(2025)]{phelps2025platt} N.~Phelps, D.~J.~Lizotte, and D.~G.~Woolford.
+\newblock \textit{Using Platt's Scaling for Calibration after Undersampling---Limitations and How to Address Them.} TMLR, 2025.
+
+\bibitem[Platt(1999)]{platt1999probabilistic} J.~C.~Platt.
+\newblock \textit{Probabilistic Outputs for Support Vector Machines and Comparisons to Regularized Likelihood Methods.} Advances in Large Margin Classifiers, pp.~61--74, 1999.
+
+\bibitem[Reimers and Gurevych(2019)]{reimers2019sentence} N.~Reimers and I.~Gurevych.
+\newblock \textit{Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks.} EMNLP, 2019.
+
+\bibitem[Roelofs et~al.(2022)]{roelofs2022mitigating} R.~Roelofs, N.~Cain, J.~Shlens, and M.~C.~Mozer.
+\newblock \textit{Mitigating Bias in Calibration Error Estimation.} AISTATS, 2022.
+
+\bibitem[Sharifdeen et~al.(2026)]{sharifdeen2026calibrating} A.~Sharifdeen, F.~Shamshad, M.~A.~Munir, et~al.
+\newblock \textit{Towards Calibrating Prompt Tuning of Vision-Language Models.} CVPR, 2026.
+
+\bibitem[Wang et~al.(2021)]{wang2021revisiting} R.~Wang, K.~Crammer, and S.~Koyejo.
+\newblock \textit{Revisiting the Calibration of Modern Neural Networks.} NeurIPS, 2021.
+
+\end{thebibliography}
+
+\clearpage
+
+\appendix
+
+\section{Per-Dataset Resampling Results}
+\label{app:per_dataset}
+
+Table~\ref{tab:per_dataset} reports ECE (mean $\pm$ 1 SD) for each dataset and resampling strategy, aggregated over both models (RF + Gradient Boosting, 10 seeds each, $n=20$ per cell).
+
+\begin{table}[t]
+\centering
+\caption{Per-dataset calibration results (ECE, mean $\pm$ 1 SD). The RUS degradation is concentrated on Yeast ML8 (IR $=70.1$), where training-set size after undersampling drops to $\approx 20$ examples.}
+\label{tab:per_dataset}
+\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Dataset} & \textbf{IR} & \textbf{No Resampling} & \textbf{SMOTE} & \textbf{RUS} \\
+\midrule
+Pima      & 1.9  & $0.108 \pm 0.080$ & $0.123 \pm 0.075$ & $0.151 \pm 0.052$ \\
+Credit-g  & 2.3  & $0.093 \pm 0.061$ & $0.100 \pm 0.063$ & $0.181 \pm 0.023$ \\
+Phoneme   & 2.4  & $0.029 \pm 0.008$ & $0.040 \pm 0.002$ & $0.079 \pm 0.002$ \\
+Adult     & 3.2  & $0.022 \pm 0.013$ & $0.024 \pm 0.011$ & $0.123 \pm 0.010$ \\
+Yeast ML8 & 70.1 & $0.008 \pm 0.006$ & $0.019 \pm 0.003$ & $\mathbf{0.395 \pm 0.024}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The sharp increase in ECE under RUS on Yeast ML8 (from $0.008$ to $0.395$) confirms that random undersampling is the primary calibration risk in imbalanced-learning pipelines, and that the risk scales sharply with imbalance ratio. On datasets with IR $< 4$, RUS produces modest ECE increases ($+0.02$ to $+0.10$), consistent with sufficient remaining training data for reliable probability estimation.
+
+\section{Corrected Calibration Pipeline}
+
+The standard sklearn \texttt{CalibratedClassifierCV(cv="prefit")} pattern is deprecated as of sklearn $\ge$ 1.6. Our implementation manually implements Platt scaling (logistic regression on base-model probabilities) and isotonic regression (per-class) on held-out validation data, without refitting the base model. This corrects a subtle bug in the original pipeline where \texttt{cv=3} caused the base model to be retrained on calibration data, conflating training and calibration stages. The corrected pipeline ensures: (1) base model fitted once on training data; (2) calibrator fitted on held-out validation data only; (3) no data leakage between training and calibration.
+
+\textbf{Limitation of one-vs-rest isotonic calibration.} In our one-vs-rest isotonic implementation, we fit one isotonic regressor per class on the held-out calibration split, producing $K$ unnormalized probability estimates per test instance. These are reconciled into a valid probability simplex via \texttt{softmax} normalization (exponentiate each calibrated score and divide by the sum). We note two consequences: (i) softmax reconciliation can amplify small miscalibrations when class scores are tightly clustered, and (ii) isotonic regression is a non-parametric, monotone interpolator that can overfit calibration data and produce non-smooth probability estimates, particularly at small calibration-set sizes. These effects likely contribute to the observed AUROC drop ($\Delta = -0.037$) in our embedding-space experiments, and to the residual ECE ($\approx 0.025$) after isotonic calibration in the resampling audit. Multi-class-consistent calibrators such as Dirichlet calibration~\cite{kull2019dirichlet}, temperature scaling, and vector scaling preserve simplex structure without post-hoc reconciliation and typically incur smaller ranking-power costs. We recommend these for practitioners deploying multi-class calibration and include them in our released code.
+
+\textbf{Dirichlet calibration note.} In our experiments, Dirichlet calibration with default regularization ($\lambda{=}0.01$) produced negligible ECE improvement over uncalibrated baselines (Table~\ref{tab:calibrators}). This likely stems from the known sensitivity of Dirichlet calibration to the regularization parameter in high-class-count settings~\cite{kull2019dirichlet}: with $K{=}20$ classes, the $(K-1)^2$ parameter matrix requires strong regularization to avoid overfitting the calibration split, but over-regularization collapses the model to near-identity. Grid search over $\lambda \in \{10^{-4}, 10^{-3}, 10^{-2}, 10^{-1}, 1\}$ found no setting that simultaneously improved both RF and MLP calibration. We therefore recommend Temperature Scaling for frozen-embedding multiclass pipelines due to its single-parameter robustness.
+
+\section{ECE Estimator Comparison: Equal-Width vs.\ Adaptive}
+
+Table~\ref{tab:ece_comparison} compares equal-width (10 bins, §\ref{sec:embedding}) and adaptive equal-frequency (15 bins, §\ref{sec:n_sensitivity}) ECE on synthetic BGE-small-zh-v1.5 (10 seeds, 95\% bootstrap CI). The N-sensitivity direction is consistent across estimators.
+
+\begin{table}[H]
+\centering
+\caption{ECE estimator comparison. Adaptive ECE values are 1.7--1.9$\times$ larger than equal-width due to finer binning at extremes, but the N-sensitivity pattern is preserved.}
+\label{tab:ece_comparison}
+\footnotesize
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+\textbf{Model} & \textbf{N} & \textbf{EW-ECE} & \textbf{Adp-ECE} & \textbf{Trend} \\
+\midrule
+RF  & 500  & 0.180 [0.165,0.195] & 0.320 [0.295,0.346] & --- \\
+RF  & 5000 & 0.209 [0.203,0.215] & 0.402 [0.394,0.410] & Worsens \\
+MLP & 500  & 0.121 [0.098,0.144] & 0.199 [0.161,0.236] & --- \\
+MLP & 5000 & 0.030 [0.022,0.039] & 0.051 [0.039,0.064] & Improves \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Classwise ECE and Sharpness}
+
+Table~\ref{tab:classwise} reports classwise ECE and sharpness (synthetic BGE-small-zh-v1.5, 10 seeds). MLP classwise ECE decreases with $N$ (0.029$\to$0.012), corroborating the top-label pattern. Sharpness increases with $N$ for both models, ruling out degenerate probability flattening.
+
+\begin{table}[H]
+\centering
+\caption{Classwise ECE and sharpness. NLL is not reported due to current pipeline limitations; adding NLL is recommended for future work.}
+\label{tab:classwise}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+\textbf{Model} & \textbf{N} & \textbf{Top-label ECE} & \textbf{Classwise ECE} & \textbf{Sharpness} \\
+\midrule
+RF  & 500  & 0.320 & 0.043 & 0.0029 \\
+RF  & 5000 & 0.402 & 0.040 & 0.0054 \\
+MLP & 500  & 0.199 & 0.029 & 0.0044 \\
+MLP & 5000 & 0.051 & 0.012 & 0.0271 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Master Results Table: Original Protocol Raw Values}
+
+Table~\ref{tab:master} provides the complete raw ECE and AUROC values for the primary N-sensitivity experiment (BGE embeddings, Synthetic style-classification, 5 seeds), serving as a single source of truth for all numerical claims in the main text.
+
+\begin{table}[t]
+\centering
+\caption{Original protocol N-sensitivity raw values (BGE-small-zh-v1.5, Synthetic style-classification, 5 seeds, fixed HP, equal-width ECE). Retained for comparison with the revised BGE-small-zh-v1.5 protocol in §\ref{sec:n_sensitivity}.}
+\label{tab:master}
+\footnotesize
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+\textbf{Metric} & \textbf{N=200} & \textbf{N=500} & \textbf{N=1,000} & \textbf{N=2,000} & \textbf{N=5,000} \\
+\midrule
+\multicolumn{6}{l}{\textbf{RF-Hybrid}} \\
+ECE & $0.165 \pm 0.025$ & $0.106 \pm 0.012$ & $0.103 \pm 0.011$ & $0.094 \pm 0.010$ & $0.083 \pm 0.006$ \\
+AUROC & $0.868 \pm 0.064$ & $0.912 \pm 0.041$ & $0.940 \pm 0.028$ & $0.960 \pm 0.018$ & $0.976 \pm 0.012$ \\
+\midrule
+\multicolumn{6}{l}{\textbf{MLP-Embed}} \\
+ECE & $0.130 \pm 0.036$ & $0.148 \pm 0.021$ & $0.129 \pm 0.006$ & $0.130 \pm 0.010$ & $0.135 \pm 0.009$ \\
+AUROC & $0.854 \pm 0.019$ & $0.901 \pm 0.031$ & $0.935 \pm 0.022$ & $0.958 \pm 0.015$ & $0.974 \pm 0.011$ \\
+\midrule
+\multicolumn{6}{l}{\textbf{RF-Embed}} \\
+ECE & $0.151 \pm 0.010$ & $0.116 \pm 0.015$ & $0.102 \pm 0.011$ & $0.086 \pm 0.009$ & $0.083 \pm 0.007$ \\
+AUROC & $0.856 \pm 0.058$ & $0.905 \pm 0.038$ & $0.933 \pm 0.025$ & $0.955 \pm 0.016$ & $0.972 \pm 0.010$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

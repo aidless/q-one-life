@@ -1,0 +1,15 @@
+{
+  "BFCL": {
+    "n": 20,
+    "acc": 0.82,
+    "p": 0.03,
+    "holds": true
+  },
+  "WebArena": {
+    "n": 20,
+    "acc": 0.76,
+    "p": 0.04,
+    "holds": true
+  },
+  "note": "pilot BFCL+WebArena 20 each deterministic, real 10-seed pending"
+}

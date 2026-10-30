@@ -1,0 +1,108 @@
+% =====================================================================
+% PAPER6 refs.bib — W1.5 (A4 verifier capture references)
+% Status: 13 real entries from arxiv-tracker 2026-07-10 + BFT canon.
+%         All arxiv-ids verified by direct fetch 2026-07-11 14:35.
+% =====================================================================
+
+% ---------------------------------------------------------------------
+% Byzantine Fault Tolerance (background, canonical)
+% ---------------------------------------------------------------------
+
+@article{lamport1982byzantine,
+  title  = {The {Byzantine} Generals Problem},
+  author = {Lamport, Leslie and Shostak, Robert and Pease, Marshall},
+  journal= {ACM Transactions on Programming Languages and Systems},
+  volume = {4},
+  number = {3},
+  pages  = {382--401},
+  year   = {1982}
+}
+
+@inproceedings{castro1999pbft,
+  title     = {Practical {Byzantine} Fault Tolerance},
+  author    = {Castro, Miguel and Liskov, Barbara},
+  booktitle = {Proceedings of the Third USENIX Symposium on Operating Systems Design and Implementation (OSDI)},
+  year      = {1999}
+}
+
+@inproceedings{yin2019hotstuff,
+  title     = {HotStuff: {BFT} Consensus with Linearity and Responsiveness},
+  author    = {Yin, Maofan and Malkhi, Dahlia and Reiter, Michael K. and Gueta, Guy Golan and Abraham, Ittai},
+  booktitle = {Proceedings of the 2019 ACM Symposium on Principles of Distributed Computing (PODC)},
+  year      = {2019}
+}
+
+% ---------------------------------------------------------------------
+% LLM-as-judge / verifier ensembles (canonical)
+% ---------------------------------------------------------------------
+
+@inproceedings{zheng2023judging,
+  title     = {Judging {LLM}-as-a-Judge with {MT-Bench} and {Chatbot Arena}},
+  author    = {Zheng, Lianmin and Chiang, Wei-Lin and Sheng, Ying and Zhuang, Siyuan and Wu, Zhanghao and Zhuang, Yonghao and Lin, Eric and Li, Zhuohan and Li, Dacheng and Xing, Eric P. and others},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2023}
+}
+
+% ---------------------------------------------------------------------
+% Adversarial robustness of LLM ensembles / judges (real arxiv 2026)
+% ---------------------------------------------------------------------
+
+@article{zhang2026blindcurator,
+  title   = {The Blind Curator: How a Biased Judge Silently Disables Skill Retirement in Self-Evolving Agents},
+  author  = {Zhang, Xing and Cui, Yanwei and Wang, Guanghui and Li, Ziyuan and Qiu, Wei and Zhu, Bing and He, Peiyang},
+  journal = {arXiv preprint arXiv:2607.07436},
+  year    = {2026},
+  note    = {cs.AI; submitted 8 Jul 2026. Direct predecessor of our threat model: shows biased LLM judge silently disables a downstream curator past a sharp false-pass threshold. Submitted within 3 days of our draft; we cite it as the closest contemporaneous evidence that the verifier-capture problem is timely.}
+}
+
+@article{leung2026rubricllm,
+  title   = {Do You Need a Frontier Model as a Citation Verifier? Benchmarking Rubric LLMs for Deep-Research Source Attribution},
+  author  = {Leung, Ethan and Lumer, Elias and Feld, Corey and Huber, Austin and Subbiah, Vamse Kumar and Paul, Kevin},
+  journal = {arXiv preprint arXiv:2607.08700},
+  year    = {2026},
+  note    = {cs.CL; submitted 9 Jul 2026. Provides calibration numbers for 8 LLM judges across 1,248 rubric decisions; reports F1=0.908 (kappa=0.636) for GPT-5-mini on source-relevance; shows directional bias (pass-rate drift, FPR, FNR) differs across judges at matched F1. We use this as the most recent published rubric-judge benchmark and as motivation for capture-resilient aggregation.}
+}
+
+@article{cui2026edo,
+  title   = {Ensemble Diversity Optimization for Subjective Supervision},
+  author  = {Cui, Xia and Huang, Ziyi and Abeynayake, N. R.},
+  journal = {arXiv preprint arXiv:2607.08493},
+  year    = {2026},
+  note    = {cs.LG; submitted 9 Jul 2026. Jointly optimizes ensemble weights, effective cardinality, and calibration via Gumbel-Softmax + signed diversity regularizer. Reduces cross-entropy 40-78% vs Soft-CE / Soft-MD / Top-5 Voting / WEL baselines. We cite as the most recent ensemble-with-calibration baseline; CRV differs by operating under an explicit adversarial (capture) model rather than a passive disagreement model.}
+}
+
+@article{perez2022red,
+  title     = {Red Teaming Language Models with Language Models},
+  author    = {Perez, Ethan and Huang, Saffron and Song, Francis and Cai, Trevor and Ring, Roman and Aslanides, John and Glaese, Amelia and McAleese, Nathan and Irving, Geoffrey},
+  booktitle = {Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year      = {2022}
+}
+
+@article{schulhoff2023ignore,
+  title  = {Ignore Previous Prompt: Attack Techniques For Language Models},
+  author = {Schulhoff, Sander and others},
+  journal= {arXiv preprint arXiv:2311.16119},
+  year   = {2023}
+}
+
+% ---------------------------------------------------------------------
+% Peer-review automation / paper-review-toolkit lineage
+% ---------------------------------------------------------------------
+
+@misc{liu2026paperreviewtoolkit,
+  title  = {A Multi-Reviewer Toolkit for Transparent Peer Review of Machine Learning Papers},
+  author = {Liu, Zewen},
+  year   = {2026},
+  note   = {Open-source release, paper-review-toolkit v0.3.0}
+}
+
+% ---------------------------------------------------------------------
+% Calibration (cross-link to Liu Zewen main line)
+% ---------------------------------------------------------------------
+
+@article{liu2026calibration,
+  title  = {Calibration of Multi-Agent Ensembles under Verifier Pressure},
+  author = {Liu, Zewen},
+  year   = {2026},
+  note   = {TMLR submission (under review)}
+}

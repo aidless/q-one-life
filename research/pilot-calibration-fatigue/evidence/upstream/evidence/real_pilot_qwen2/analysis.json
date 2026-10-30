@@ -1,0 +1,20 @@
+{
+  "model": "qwen2:7b",
+  "n_questions": 20,
+  "repeats_per_question": 5,
+  "results": {
+    "low_temp": {
+      "mean_conf_CV": 0.0031,
+      "conf_correct_coupling": 0.0011,
+      "n_scored": 100
+    },
+    "high_temp": {
+      "mean_conf_CV": 0.006,
+      "conf_correct_coupling": 0.168,
+      "n_scored": 100
+    }
+  },
+  "note": "REAL local pilot (Ollama qwen2:7b): temperature as noise intervention. Direction-level support only; NOT a replication of the 60-condition grid.",
+  "wall_clock_s": 1200.2,
+  "finding": "Two real findings: (1) noise direction confirmed — temperature intervention doubles self-eval CV; (2) coupling requires evaluator variance to manifest: at temp0.3 the model emits near-constant confidence (CV~0), so measured coupling collapses to ~0 regardless of true calibration; at temp1.0 coupling becomes visible (0.168). Implication for the paper's tradeoff narrative: any coupling comparison across interventions must first verify the intervention preserves non-degenerate evaluator variance."
+}

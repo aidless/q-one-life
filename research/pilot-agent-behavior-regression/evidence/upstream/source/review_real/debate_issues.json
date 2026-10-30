@@ -1,0 +1,32 @@
+[
+  {
+    "sev": "Major",
+    "text": "The methodology section is not clearly defined or detailed. It is essential to provide a detailed description of the experimental setup, including the specific steps taken to ensure reproducibility and the statistical methods used to analyze the data.",
+    "role": "methodology"
+  },
+  {
+    "sev": "Major",
+    "text": "实验设计缺乏详细的实验步骤和参数设置，难以复现。",
+    "role": "experiment"
+  },
+  {
+    "sev": "Major",
+    "text": "缺少对实验结果的详细分析和讨论，特别是对不同模型之间行为差异的解释不足。",
+    "role": "experiment"
+  },
+  {
+    "sev": "Major",
+    "text": "The paper does not provide detailed information on how the experiments were conducted, which is crucial for reproducibility. Specific details such as the exact environment setup, software versions, and any dependencies are missing.",
+    "role": "reproducibility"
+  },
+  {
+    "sev": "Major",
+    "text": "The paper lacks specific details on how the Behavior Drift Score (BDS) was calculated and validated. This is essential for reproducibility.",
+    "role": "reproducibility"
+  },
+  {
+    "sev": "Major",
+    "text": "未充分讨论伦理问题，特别是关于模型行为的可预测性和一致性对用户的影响。",
+    "role": "ethics"
+  }
+]

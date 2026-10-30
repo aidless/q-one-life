@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\PAPER35_FRONT_DRIFT\\main.tex",
+    "rpc": "http://127.0.0.1:11435",
+    "timestamp": "2026-09-02T13:15:32+00:00",
+    "roles": [
+      "reproducibility"
+    ],
+    "rounds": 1
+  },
+  "roles": {
+    "reproducibility": {
+      "status": "ok",
+      "issues": [
+        {
+          "severity": "major",
+          "location": "Introduction, Section 1",
+          "description": "The paper does not provide detailed information on how the experiments were conducted, which is crucial for reproducibility. Specific details such as the exact environment setup, software versions, and any dependencies are missing.",
+          "suggestion": "Provide a detailed reproducibility protocol in the paper, including the exact environment setup, software versions, and any dependencies. Include the code and data used in the supplementary material."
+        },
+        {
+          "severity": "major",
+          "location": "Abstract and Section 1",
+          "description": "The paper lacks specific details on how the Behavior Drift Score (BDS) was calculated and validated. This is essential for reproducibility.",
+          "suggestion": "Provide a detailed explanation of the calculation and validation process of the Behavior Drift Score (BDS). Include the specific steps and any assumptions made in the supplementary material."
+        },
+        {
+          "severity": "minor",
+          "location": "Abstract and Section 1",
+          "description": "The paper does not include a detailed description of the 100-scenario behavioral regression suite, which could be improved for clarity and reproducibility.",
+          "suggestion": "Provide a more detailed description of the 100-scenario behavioral regression suite, including the exact scenarios and their generation process, in the supplementary material."
+        }
+      ],
+      "overall_assessment": "The paper presents an interesting and important contribution to the field of agent behavior testing. However, it lacks detailed information necessary for reproducibility. The authors should provide more detailed protocols and steps to ensure that other researchers can replicate the experiments.",
+      "score": 6
+    }
+  },
+  "stable_issues": [],
+  "summary": {
+    "verdict": "PASS",
+    "critical": 0,
+    "major": 2,
+    "minor": 1
+  }
+}

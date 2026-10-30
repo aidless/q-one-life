@@ -1,0 +1,643 @@
+{
+  "checks": [
+    {
+      "candidate": 0,
+      "expected": 0.333,
+      "match": true,
+      "recomputed": 0.333,
+      "task": "T002"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.333,
+      "match": true,
+      "recomputed": 0.333,
+      "task": "T002"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T002"
+    },
+    {
+      "candidate": 0,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T003"
+    },
+    {
+      "candidate": 1,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T003"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T003"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.667,
+      "match": true,
+      "recomputed": 0.667,
+      "task": "T005"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.667,
+      "match": true,
+      "recomputed": 0.667,
+      "task": "T005"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.667,
+      "match": true,
+      "recomputed": 0.667,
+      "task": "T005"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.6,
+      "match": true,
+      "recomputed": 0.6,
+      "task": "T015"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.6,
+      "match": true,
+      "recomputed": 0.6,
+      "task": "T015"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.6,
+      "match": true,
+      "recomputed": 0.6,
+      "task": "T015"
+    },
+    {
+      "candidate": 0,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T038"
+    },
+    {
+      "candidate": 1,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T038"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T038"
+    },
+    {
+      "candidate": 0,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T040"
+    },
+    {
+      "candidate": 1,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T040"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T040"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T041"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T041"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T041"
+    },
+    {
+      "candidate": 0,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T043"
+    },
+    {
+      "candidate": 1,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T043"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T043"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T047"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T047"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T047"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T052"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T052"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T052"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T055"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T055"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T055"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T056"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T056"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T056"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T059"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T059"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T059"
+    },
+    {
+      "candidate": 0,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T061"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T061"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T061"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T067"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T067"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T067"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T074"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T074"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T074"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T077"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T077"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T077"
+    },
+    {
+      "candidate": 0,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T080"
+    },
+    {
+      "candidate": 1,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T080"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T080"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T085"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T085"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T085"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T088"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T088"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T088"
+    },
+    {
+      "candidate": 0,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T091"
+    },
+    {
+      "candidate": 1,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T091"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T091"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T097"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T097"
+    },
+    {
+      "candidate": 2,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T097"
+    },
+    {
+      "candidate": 0,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T114"
+    },
+    {
+      "candidate": 1,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T114"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T114"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T129"
+    },
+    {
+      "candidate": 1,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T129"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T129"
+    },
+    {
+      "candidate": 0,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T134"
+    },
+    {
+      "candidate": 1,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T134"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T134"
+    },
+    {
+      "candidate": 0,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T135"
+    },
+    {
+      "candidate": 1,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T135"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T135"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T138"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T138"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T138"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T140"
+    },
+    {
+      "candidate": 1,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T140"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T140"
+    },
+    {
+      "candidate": 0,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T152"
+    },
+    {
+      "candidate": 1,
+      "expected": 0.0,
+      "match": true,
+      "recomputed": 0.0,
+      "task": "T152"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T152"
+    },
+    {
+      "candidate": 0,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T156"
+    },
+    {
+      "candidate": 1,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T156"
+    },
+    {
+      "candidate": 2,
+      "expected": 1.0,
+      "match": true,
+      "recomputed": 1.0,
+      "task": "T156"
+    }
+  ],
+  "evaluator_sha256": "f17ca0dd59af2a32f5fec0d5467a5eea92b47029df7fa4af49ccb863fd6fbc43",
+  "expected_scores": 90,
+  "manifest_sha256": "0e194df33bb95cc627a4b2613bcaaeb40f210fc47d9477abcaf336d6b9de9114",
+  "mismatch_count": 0,
+  "mismatches": [],
+  "missing_file_count": 0,
+  "missing_files": [],
+  "recomputed_scores": 90,
+  "source_sha256": "6a5275a85358c7e2e42fc16db1fdd746f7ba8e4d249e8e91b4fa26b18f530b55"
+}

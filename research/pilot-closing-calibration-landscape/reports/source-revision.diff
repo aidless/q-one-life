@@ -1,0 +1,255 @@
+--- a/paper/main.tex
++++ b/source/main.tex
+@@ -25,7 +25,7 @@
+ 
+ \graphicspath{{./figures/}{../figures/}}
+ 
+-\title{Closing the Calibration Landscape: \\ A Multi-Evaluator Ensemble That Reduces Coupling \\ Without Increasing Noise}
++\title{Closing the Calibration Landscape: \\ A Reproducibility Failure Analysis of Multi-Evaluator \\ Ensembles for Coupling Reduction}
+ 
+ \author{\name Zewen Liu\email liuzewen@qlnu.edu.cn\\\addr Qilu Institute of Technology}  % PREPRINT/ARXIV BUILD 2026-10-01: was an anonymous/double-blind author block. The block, not tmlr.sty, is what prints the author line on the title page; the `preprint` option clears the per-page banner. Restored to the real author for arXiv, which does not accept anonymous submissions.  % PREPRINT BUILD: was an anonymous/double-blind author block. The block, not tmlr.sty, is what prints the author line on the title page; the `preprint` option clears the per-page banner. See the preprint anonymity round log.
+ 
+@@ -35,18 +35,18 @@
+ \maketitle
+ 
+ \begin{abstract}
+-Six prior studies have mapped a possible calibration landscape in multi-agent LLM systems. This paper tests whether multi-evaluator ensembles (TEE) can be combined with confidence-gated TTRL (CG). The archived simulation aggregate (15 seeds) reports standard, CG, and CG+TEE $\gamma_{T\to V}$ means of 0.143, 0.719, and 0.574, with corresponding CV values 0.192, 0.134, and 0.174. However, the separately archived real-API run records $\gamma=0$ and entropy $H=1$ for both CG conditions, consistent with confidence-parser fallback rather than a validated mitigation. Because the result artifacts are internally inconsistent, we do not claim a 39.2\% reduction or a populated favorable regime. Instead, this paper is a reproducibility and failure-analysis report: it separates evaluator reliability from evaluator bias and specifies the provenance and parser checks required for a valid rerun. We release the code and all conflicting artifacts.
++Six prior studies have mapped a possible calibration landscape in multi-agent LLM systems. This paper examines whether multi-evaluator ensembles (TEE) can be combined with confidence-gated TTRL (CG). The archived simulation aggregate (15 seeds) records standard, CG, and CG+TEE $\gamma_{T\to V}$ means of 0.143, 0.719, and 0.574, with CV values 0.192, 0.134, and 0.174. The per-seed records reproduce the three gamma means, but no tested per-seed definition reproduces the CV values. Separately, the real-API run records $\gamma=0$ and entropy $H=1$ for both CG conditions on all 15 seeds. The archived executor contains a silent $0.5$ confidence fallback, the result files do not record model identity or parser success, and the real run is therefore degenerate rather than a test of TEE. Because the result artifacts are internally inconsistent, we do not claim a 39.2\% reduction or a populated favorable regime. This is a reproducibility and failure-analysis report: it separates what the archive can verify from what a valid rerun must still establish. We release the code and all conflicting artifacts.
+ \end{abstract}
+ 
+ \newpage
+ 
+ \section{Introduction}
+ 
+-Multi-agent LLM systems are increasingly deployed for evaluation, reasoning, and collaborative problem-solving~\cite{zheng2023judging,chiang2024chatbot,li2023camel,wu2024autogen,snell2024scaling}. When evaluator feedback drives agent adaptation in closed loops, evaluator biases propagate into agent strategy distributions---evaluator preference coupling~\cite{liu2026epc}. Six prior studies have mapped the landscape of these effects. The Contagion Tensor~\cite{liu2026tensor} established the mathematical framework. BOUNDARY\_SYNC~\cite{liu2026boundarysync} provided the causal measurement protocol. The diagnostic audit~\cite{liu2026audit} surveyed 11 evaluator--agent conditions. The temporal dynamics study~\cite{liu2026temporal} revealed coupling growth with communication rounds. And the calibration effects study~\cite{liu2026caleffects} established that confidence-gated TTRL (CG) reduces coupling by 35--37\% while increasing measurement noise (CV) by 8.5\%.
++Multi-agent LLM systems are increasingly deployed for evaluation, reasoning, and collaborative problem-solving~\cite{zheng2023judging,chiang2024chatbot,li2023camel,wu2024autogen,snell2024scaling}. When evaluator feedback drives agent adaptation in closed loops, evaluator biases propagate into agent strategy distributions---evaluator preference coupling~\cite{liu2026epc}. Six prior studies have mapped the landscape of these effects. The Contagion Tensor~\cite{liu2026tensor} established the mathematical framework. BOUNDARY\_SYNC~\cite{liu2026boundarysync} provided the causal measurement protocol. The diagnostic audit~\cite{liu2026audit} surveyed 11 evaluator--agent conditions. The temporal dynamics study~\cite{liu2026temporal} revealed coupling growth with communication rounds. The calibration effects study~\cite{liu2026caleffects} reports that confidence-gated TTRL (CG) reduces coupling by 35--37\% while increasing measurement noise (CV) by 8.5\%; the current archive does not reproduce those estimates.
+ 
+ Together, these studies define a \textbf{calibration landscape}~\cite{liu2026caleffects}: an 11-condition survey identifying an empty favorable regime $\{\gamma < 0.2, \CV(N{=}5) < 0.3\}$. No existing evaluator configuration occupies this region. The calibration effects study formalized this as the \textbf{Calibration Tradeoff Hypothesis}: calibration methods that reduce $\gamma$ will simultaneously increase CV, because they improve per-decision accuracy without strengthening the evaluator's directional signal---a pattern consistent with broader findings that better calibration does not guarantee better decisions in static settings~\cite{guo2017calibration,he2026paradox}.
+ 
+-This paper tests that hypothesis. We combine confidence-gated TTRL (CG)---the only method demonstrated to significantly reduce coupling---with multi-evaluator ensembles (TEE)---a proven variance-reduction strategy~\cite{messing2026tee}. TEE decomposes evaluation error and identifies multi-judge ensembles as effective for reducing measurement noise, consistent with classical results on estimator averaging~\cite{bubeck2012regret}. The logic is straightforward: CG reduces $\gamma$; TEE reduces CV. If CG+TEE reduces $\gamma$ \textit{without} increasing CV, the tradeoff is method-specific, not structural.
++This paper examines that hypothesis. We combine confidence-gated TTRL (CG), which prior work reports as reducing coupling, with multi-evaluator ensembles (TEE), a candidate variance-reduction strategy~\cite{messing2026tee}. TEE decomposes evaluation error and identifies multi-judge ensembles as effective for reducing measurement noise, consistent with classical results on estimator averaging~\cite{bubeck2012regret}. The motivating logic was straightforward: CG might reduce $\gamma$; TEE might reduce CV. If CG+TEE reduced $\gamma$ \textit{without} increasing CV, the tradeoff would be method-specific rather than structural.
+ 
+ The archived artifacts do not support a definitive TEE effect: the simulation aggregate and real-API run disagree, and the latter degenerates to uniform strategy weights under CG. Multi-evaluator ensembles may address evaluator \textit{reliability} without removing evaluator \textit{bias}, but this distinction requires a valid rerun. Negative and failed results of this kind have recognized value in ML research~\cite{dodge2019reproducibility} when provenance is explicit.
+ 
+@@ -54,7 +54,7 @@
+ 
+ We briefly summarize the calibration landscape framework from~\cite{liu2026caleffects}. The landscape maps evaluator configurations on two dimensions: evaluator preference coupling ($\gamma$---lower is better) and measurement reliability ($\CV(N{=}5)$---lower is better). The current evaluator frontier is bimodal: conditions cluster at either the low-$\gamma$, high-CV corner (e.g., DeepSeek self-evaluation: $\gamma{=}0.033$, CV${=}2.42$) or the high-$\gamma$, low-CV corner (e.g., Ablation max: $\gamma{=}1.038$, CV${=}0.157$). No condition occupies $\{\gamma < 0.2, \CV < 0.3\}$.
+ 
+-Confidence-gated TTRL moves conditions leftward on the landscape ($\gamma \downarrow 35$--$37\%$~\cite{liu2026caleffects}) but also rightward ($\CV \uparrow 8.5\%$). The TEE framework~\cite{messing2026tee} moves conditions downward (reduces CV) by aggregating multiple independent evaluator judgments. The distinction between evaluator bias and measurement noise connects to broader calibration research~\cite{guo2017calibration,niculescu2005predicting,kull2017temperature} and ECE estimator methodology~\cite{kumar2019verified,nixon2019measuring,roelofs2022mitigating}.
++Prior work reports that confidence-gated TTRL moves conditions leftward on the landscape ($\gamma \downarrow 35$--$37\%$~\cite{liu2026caleffects}) but also rightward ($\CV \uparrow 8.5\%$). The TEE framework proposes that aggregating multiple independent evaluator judgments can reduce CV~\cite{messing2026tee}. The distinction between evaluator bias and measurement noise connects to broader calibration research~\cite{guo2017calibration,niculescu2005predicting,kull2017temperature} and ECE estimator methodology~\cite{kumar2019verified,nixon2019measuring,roelofs2022mitigating}.
+ 
+ \section{Related Work}
+ 
+@@ -62,7 +62,7 @@
+ 
+ \textbf{Multi-agent LLM systems.} LLM-based evaluation~\cite{zheng2023judging,chiang2024chatbot} is increasingly deployed in multi-agent settings~\cite{li2023camel,wu2024autogen}. Evaluator bias---position bias, verbosity bias, self-preference---is well-documented. The EPC framework~\cite{liu2026epc} extended this to closed-loop adaptation. The Contagion Tensor~\cite{liu2026tensor}, BOUNDARY\_SYNC~\cite{liu2026boundarysync}, and diagnostic audit~\cite{liu2026audit} provided measurement tools. Temporal dynamics~\cite{liu2026temporal} revealed coupling growth with rounds.
+ 
+-\textbf{Evaluation reliability.} Dodge et al.~\cite{dodge2019reproducibility} showed that resampling variance can exceed reported improvements. Sclar et al.~\cite{sclar2024quantifying} quantified prompt sensitivity. The TEE framework~\cite{messing2026tee} and SNR approach~\cite{heineman2025snr} proposed variance reduction. Test-time compute scaling~\cite{snell2024scaling} showed monotonic improvement with inference steps. The bandit-theoretic foundation of TTRL connects to exponential-weight algorithms~\cite{bubeck2012regret}. Our finding---TEE reduces noise but not bias---adds to this literature by distinguishing evaluator reliability from evaluator bias.
++\textbf{Evaluation reliability.} Dodge et al.~\cite{dodge2019reproducibility} showed that resampling variance can exceed reported improvements. Sclar et al.~\cite{sclar2024quantifying} quantified prompt sensitivity. The TEE framework~\cite{messing2026tee} and SNR approach~\cite{heineman2025snr} proposed variance reduction. Test-time compute scaling~\cite{snell2024scaling} showed monotonic improvement with inference steps. The bandit-theoretic foundation of TTRL connects to exponential-weight algorithms~\cite{bubeck2012regret}. The current archive cannot identify whether TEE changes evaluator reliability, evaluator bias, or both.
+ 
+ \begin{hypothesis}[Calibration Tradeoff]
+ In TTRL-based agent adaptation, calibration methods that reduce $\gamma$ will simultaneously increase $\CV$, because calibration improves per-decision accuracy without strengthening the evaluator's directional signal. The hypothesis is falsified if a method satisfies \textit{both} $\Delta\gamma < 0$ (significant) \textit{and} $\Delta\CV \leq 0$ in a single joint experiment with $N \geq 15$.
+@@ -72,7 +72,7 @@
+ 
+ \subsection{Confidence-Gated TTRL (CG)}
+ 
+-CG replaces the binary evaluator judgment in standard TTRL with a continuous confidence score $c_t \in [0,1]$, updating strategy weights via an additive rule $w \mathrel{+}= \alpha_{\text{win}} \cdot (2c_t - 1)$ with sliding-window isotonic calibration on evaluator probability outputs~\cite{liu2026caleffects}. CG has been shown to reduce coupling by 35--37\% ($N{=}15$, bootstrap CIs non-overlapping) while increasing CV by $+8.5\%$ in simulation.
++CG replaces the binary evaluator judgment in standard TTRL with a continuous confidence score $c_t \in [0,1]$, updating strategy weights via an additive rule $w \mathrel{+}= \alpha_{\text{win}} \cdot (2c_t - 1)$ with sliding-window isotonic calibration on evaluator probability outputs~\cite{liu2026caleffects}. Prior work reports a 35--37\% coupling reduction under this protocol, but the current archive does not reproduce that effect.
+ 
+ \subsection{Multi-Evaluator Ensemble (TEE)}
+ 
+@@ -89,15 +89,15 @@
+ 
+ \subsection{Experimental Design}
+ 
+-Within-subjects ($N{=}15$, $R{=}30$). DeepSeek-V4-Pro executor, GLM5.2 evaluator --- a pairing stated here and in the run notes: the $N{=}15$ artifacts record \texttt{n\_seeds}, \texttt{n\_rounds}, \texttt{k\_tee}, \texttt{alpha} and \texttt{tau}, and no model identity, so the executor/evaluator pair is not recoverable from the data files (\S\ref{sec:perseed}). Each seed runs three conditions: (1) Standard TTRL (binary pairwise, asymmetric multiplicative update), (2) CG alone (confidence-gated, additive update, single evaluator), (3) CG+TEE (confidence-gated, additive update, $K{=}3$ TEE-aggregated). Simultaneously recorded: $\gamma_{T\to V}$, $\gamma_{V\to T}$, $H$, $\CV(N{=}5)$ (bootstrap, $B{=}5000$). Each seed runs three conditions: (1) Standard TTRL (binary pairwise, asymmetric multiplicative update), (2) CG alone (confidence-gated, additive update, single evaluator), (3) CG+TEE (confidence-gated, additive update, $K{=}3$ TEE-aggregated). Simultaneously recorded: $\gamma_{T\to V}$, $\gamma_{V\to T}$, $H$, $\CV(N{=}5)$ (bootstrap, $B{=}5000$).
++Within-subjects ($N{=}15$, $R{=}30$). The run notes name DeepSeek-V4-Pro as executor and GLM5.2 as evaluator, but the $N{=}15$ result artifacts record only \texttt{n\_seeds}, \texttt{n\_rounds}, \texttt{k\_tee}, \texttt{alpha} and \texttt{tau}, not model identity. Each seed nominally runs three conditions: (1) Standard TTRL (binary pairwise, asymmetric multiplicative update), (2) CG alone (confidence-gated, additive update, single evaluator), and (3) CG+TEE (confidence-gated, additive update, $K{=}3$ TEE-aggregated). The files contain $\gamma_{T\to V}$, $\gamma_{V\to T}$ and $H$; the claimed CV field is present only as an aggregate and is not recoverable from the per-seed records (\S\ref{sec:perseed}).
+ 
+ \section{Results}
+ 
+-The within-subjects experiment ($N{=}15$) reveals three findings. Table~\ref{tab:results} summarizes the aggregate results with bootstrap 95\% confidence intervals.
++The archive contains three mutually incompatible result families. Table~\ref{tab:results} separates the simulation aggregate from the degenerate real-API run.
+ 
+ \begin{table}[H]
+ \centering
+-\caption{CG+TEE results ($N{=}15$ within-subjects). The aggregates are the recorded ones; the reading is from the per-seed records behind them (\S\ref{sec:perseed}, Table~\ref{tab:perarm}). Both confidence-gated arms sit \emph{above} the standard arm: $\gamma_{T\to V}$ rises from 0.143 to 0.719 under CG and to 0.574 under CG+TEE, a $4.3\times$ and $3.0\times$ increase on the per-seed mean, not a reduction. The CV column is reproduced only from the aggregate file: no per-seed field in the archive yields it under four tested definitions, so no CV claim is made here.}
++\caption{Archived CG+TEE outputs ($N{=}15$ nominal). The gamma aggregates are reproduced from the simulation per-seed records, but the CV values are not. Both confidence-gated simulation arms sit \emph{above} the standard arm: $\gamma_{T\to V}$ rises from 0.143 to 0.719 under CG and to 0.574 under CG+TEE. The real-API row records a degenerate parser-fallback state rather than a substantive TEE result.}
+ \label{tab:results}
+ \begin{tabular}{@{}lcccc@{}}
+ \toprule
+@@ -111,40 +111,40 @@
+ \end{tabular}
+ \end{table}
+ 
+-\textbf{Finding 1: the archived artifacts disagree, and the direction is not the one the summary states.} The simulation aggregate reports $\gamma_{T\to V}=0.143$ (standard), 0.719 (CG), and 0.574 (CG+TEE) --- an increase under both gated arms, visible seed by seed in \S\ref{sec:perseed} --- whereas the real-API artifact records zero coupling and $H=1$ for both CG conditions on all 15 seeds. No mitigation effect is claimed.
++\textbf{Finding 1: the archived artifacts disagree.} The simulation aggregate reports $\gamma_{T\to V}=0.143$ (standard), 0.719 (CG), and 0.574 (CG+TEE), an increase under both gated arms and visible seed by seed in \S\ref{sec:perseed}. The real-API artifact records zero coupling and $H=1$ for both CG conditions on all 15 seeds. The separate \texttt{cg\_tee\_final\_results.json} artifact reports yet another triplet. No mitigation effect is claimed.
+ 
+-\textbf{Finding 2: TEE cannot be evaluated as a bias intervention from the current package.} The simulation aggregate is descriptive; the real-API parser fallback makes CG and CG+TEE degenerate. Averaging repeated calls may reduce noise without removing shared model bias, but that hypothesis requires a corrected rerun.
++\textbf{Finding 2: TEE cannot be evaluated as a bias intervention from the current package.} The simulation aggregate is descriptive, while the real-API CG and CG+TEE arms degenerate. The archived executor silently maps confidence-parse failures to $0.5$, which produces zero updates. Whether TEE reduces bias, noise, both, or neither therefore remains untested.
+ 
+-\textbf{Finding 3: the CV comparison is also artifact-dependent.} The simulation aggregate gives CV values 0.192, 0.134, and 0.174 for standard, CG, and CG+TEE, respectively; the real-API artifact contains no valid CV estimate. These values are reported descriptively, not as a confirmatory TEE effect.
++\textbf{Finding 3: the CV comparison is not reproducible.} The simulation aggregate records CV values 0.192, 0.134, and 0.174 for standard, CG, and CG+TEE, respectively, but four tested per-seed definitions fail to reproduce them and the real-API artifact contains no valid CV estimate. These values are artifact records, not confirmatory evidence of a TEE effect.
+ 
+-\textbf{Implication.} TEE addresses evaluator \textit{reliability} (CV) but not evaluator \textit{bias} ($\gamma$). The coupling--noise tradeoff remains unresolved. Future work should test evaluator \textit{calibration} interventions that directly correct bias, rather than reliability interventions that only average it.
++\textbf{Implication.} The current package does not establish whether TEE changes evaluator reliability or bias. The coupling--noise tradeoff remains unresolved, and a valid test requires non-degenerate confidence parsing, recorded model identity, seed-level CV outputs, and a preregistered aggregation rule.
+ 
+ \section{Discussion}
+ 
+-\subsection{Why TEE Doesn't Reduce Coupling}
++\subsection{Why the Current Artifacts Cannot Identify a TEE Effect}
+ 
+-The core assumption behind CG+TEE was that multi-evaluator aggregation would strengthen the evaluator's directional signal, reducing both bias and noise. The data refute the bias-reduction component. The most plausible explanation is that GLM5.2's three independent calls are not independent in the relevant sense: they share the same model weights, the same training data, and the same position bias (win\_rate = 0.000 in prior work). Averaging three biased judgments produces a biased average.
++The core assumption behind CG+TEE was that multi-evaluator aggregation would strengthen the evaluator's directional signal, reducing both bias and noise. The current real-API archive cannot test that assumption: both confidence-gated arms collapse to uniform weights, so the recorded zero coupling is a property of the fallback path rather than a measured mitigation or null effect. A silent parse default can therefore masquerade as numerical success in one coordinate and failure in another.
+ 
+-This is consistent with the TEE framework's own analysis~\cite{messing2026tee}: TEE reduces \textit{random} error (sampling variance across evaluator calls) but not \textit{systematic} error (evaluator bias). Coupling is driven by systematic evaluator preferences, not by random judgment noise. Similarly, SNR-based filtering~\cite{heineman2025snr} and prompt-sensitivity analysis~\cite{sclar2024quantifying} address variance but not bias---a broader pattern in LLM evaluation methodology. An alternative explanation---that the additive CG update rule itself prevents further $\gamma$ reduction regardless of evaluator quality---cannot be ruled out without testing TEE with a non-CG update rule.
++The TEE framework distinguishes random measurement error from systematic evaluator bias~\cite{messing2026tee}; that distinction remains a useful target for future work. SNR-based filtering~\cite{heineman2025snr} and prompt-sensitivity analysis~\cite{sclar2024quantifying} likewise motivate separating variance from bias. The present archive does not identify either component. Nor can it rule out an interaction between the additive CG update rule and evaluator quality.
+ 
+ \subsection{What Would Close the Landscape}
+ 
+-The results clarify what is needed to populate the empty favorable regime: an intervention that reduces evaluator \textit{bias} ($\gamma$), not evaluator \textit{noise} (CV). What the artifact supports is narrower than the caption this section replaces: confidence gating did not reduce bias here at all --- on these 15 seeds it raised $\gamma_{T\to V}$ by a factor of 4.3 --- while the one measured reduction of about 39\% belongs to evaluator \emph{calibration} (\texttt{cg\_tee\_final\_results.json}, uncalibrated vs calibrated $\gamma_{T\to V}$), which is listed below rather than claimed as a result of this run. Candidates include: evaluator calibration (correcting the evaluator's probability outputs before they enter TTRL), multi-model ensembles (using \textit{different} evaluator models, not just multiple calls to the same model), and baseline protocol redesign (replacing the fixed baseline with randomized alternatives to break position bias).
++The results clarify what a valid study would need: non-degenerate confidence parsing, model and endpoint identity in every result file, seed-level variance records, and an aggregation rule fixed before analysis. The simulation artifact shows a large direction reversal relative to the original hypothesis, but its CV values remain unreproducible. The 39.2\% scalar exists only in a separate \texttt{cg\_tee\_final\_results.json} comparison between its uncalibrated and calibrated blocks; that artifact has unresolved provenance and does not support either a CG or a TEE conclusion. Candidate interventions remain evaluator calibration, multi-model ensembles using \textit{different} evaluator models, and baseline redesign to break position bias.
+ 
+ \subsection{Limitations}
+ 
+-(1) Single executor/evaluator pair (DeepSeek-V4-Pro + GLM5.2). The finding that TEE does not reduce coupling may not generalize to evaluators with lower position bias. GLM5.2's extreme position bias (win\_rate = 0.000 in prior work) means its three calls are highly correlated; TEE may be more effective for evaluators with independent judgment noise. (2) $K{=}3$ is standard but the TEE benefit scales with $\sqrt{K}$ under independent errors; larger ensembles could show different behavior. (3) $N{=}15$ provides adequate power for $\gamma$ comparison (CIs distinguish standard from CG alone) but wider CIs for CG vs.\ CG+TEE. (4) The experiment does not test multi-model ensembles (different evaluator models), which may reduce bias where single-model ensembles cannot. (5) The coupling--noise tradeoff hypothesis remains unresolved---our null result rules out one plausible intervention but does not identify the solution.
++(1) The run notes name a single executor/evaluator pair, but the result files do not record or authenticate it. (2) $K{=}3$ is only the nominal design; no parser-valid real-API ensemble was observed, so no scaling claim can be made. (3) $N{=}15$ is the nominal archive size, not evidence of adequate power, because the confidence-gated real-API arms contain no valid outcome estimates. (4) The archive does not test multi-model ensembles with different evaluator models. (5) The coupling--noise tradeoff remains unresolved; this package does not establish a TEE null result.
+ 
+ \section{Conclusion}
+ 
+-We tested whether multi-evaluator ensembles (TEE) could be combined with confidence-gated TTRL (CG). The current package is a qualified reproducibility failure: simulation and real-API artifacts disagree, and the real run degenerates under parser fallback. The coupling--noise tradeoff therefore remains unresolved. A valid rerun must log parser success, model endpoint, per-seed outputs, and condition-level summaries before practical recommendations are made.
++We examined whether multi-evaluator ensembles (TEE) could be combined with confidence-gated TTRL (CG). The current package is a reproducibility failure: simulation and real-API artifacts disagree, the real run degenerates under parser fallback, and the CV values are not recoverable from per-seed records. The coupling--noise tradeoff therefore remains unresolved. A valid rerun must log parser success, model endpoint, per-seed outputs, and condition-level summaries before practical recommendations are made.
+ 
+ \section*{Broader Impact Statement}
+ 
+-This work provides a qualified negative result: multi-evaluator ensembles (TEE) reduce measurement noise but do not reduce evaluator bias in closed-loop LLM systems. The finding has direct implications for practitioners: to reduce evaluator preference coupling, invest in evaluator \textit{calibration} or \textit{multi-model} ensembles rather than repeated sampling of the same biased evaluator. The null result prevents wasted effort on a plausible but ineffective mitigation strategy. More broadly, the work contributes to a growing recognition that evaluator reliability (CV) and evaluator bias ($\gamma$) are distinct properties requiring distinct interventions---a distinction with implications for the design of LLM-based evaluation pipelines beyond the EPC framework.
++This work does not establish a TEE effect in either direction. It documents a reproducibility failure that prevents treating repeated evaluator sampling as evidence of bias reduction, noise reduction, or a null result. The practical implication is procedural: parser success, model identity, and per-seed outputs must be audited before a closed-loop evaluator experiment is interpreted. More broadly, the work illustrates why evaluator reliability (CV) and evaluator bias ($\gamma$) must be measured separately rather than inferred from a single aggregate.
+ 
+ \section*{Reproducibility Statement}
+-All experiments use official API endpoints with fixed model versions. Code and data released upon acceptance.
++The archived $N{=}15$ result files do not record model identity or parser-success rates. A corrected rerun must pin endpoint, model version, prompts, seeds, parser outcomes, and condition-level summaries, and retain the resulting per-seed records. Code and data remain under the provenance limits recorded in this paper.
+ 
+ % Explicit TMLR style declaration for the self-contained bibliography block.
+ \bibliographystyle{tmlr}
+@@ -256,10 +256,3 @@
+ \end{thebibliography}
+ 
+ \end{document}
+-Every artefact-backed number on this page is re-derived by one command, recorded here so a
+-reader can re-run it and get the same count at the same minute:
+-\texttt{python3 tools/carrier\_receipts.py -{}-run runs/tmlr-closing-landscape}, which re-executes
+-each row of \texttt{source/evidence/CARRIER\_RECEIPTS.json} against the artefact it names and prints one tally. As of
+-2026-09-30T08:18Z that reading is \textbf{11 receipts, 0 failing, 0 not-verifiable}.
+-A number that stops reproducing is a defect in the archive rather than a rounding
+-difference, and the gate names the row that stopped reproducing.
+--- a/paper/sections/evidence_inventory.tex
++++ b/source/sections/evidence_inventory.tex
+@@ -1,48 +1,50 @@
+ \section{Evidence and Reproducibility Inventory}\label{sec:evidenceinventory}
+-This section states what the accompanying artifact actually contains, as read by \texttt{tools/\hspace{0pt}deepen\_\hspace{0pt}run.py} at build time, and where that falls short of the claims made earlier in the paper. It is generated: every row is a filename, a byte count, a hash prefix, or a key read from a file in the archive. No value in this section was typed by hand, and no experiment is reported here that was not already present in the artifact.
+ 
+-\paragraph{Artifact classes.} The archive holds 10 machine-readable result file(s), 2 graphic file(s), 0 script(s), 7 file(s) that describe the manuscript rather than an experiment, and 0 file(s) whose own text says they were extracted from the manuscript. The last class is excluded from the carrier test below: a number copied out of \texttt{main.tex} cannot certify \texttt{main.tex}.
++The candidate overlay audits the five review-packet source versions, one
++additional source mirror, and the five result artifacts that dominate the
++paper. The audit does not treat a value as supported merely because it appears
++in a JSON file. It also checks whether the value can be regenerated from a
++lower-level record and whether the run identity and parser state are present.
+ 
+ \begin{table}[ht]\centering\small
+-\caption{Machine-readable artifacts, as read from the archive. \texttt{sha256} is truncated to 16 hex characters; re-derive with \texttt{sha256sum} on the file named in the first column.}
++\caption{Primary evidence artifacts retained with the overlay. Full SHA-256
++values are recorded in the Research Factory receipt; prefixes appear in the
++repository receipt rather than in the manuscript.}
+ \label{tab:artifactinventory}
+-\begin{tabular}{p{4.5cm} rr p{5.2cm}}\toprule
+-File & bytes & sha256[:16] & top-level keys / recorded scalars \\\midrule
+-\texttt{main.pdf} & 191847 & \texttt{1a53d8eca651c95c} & \footnotesize \\
+-\texttt{evidence/\hspace{0pt}cg\_\hspace{0pt}tee\_\hspace{0pt}results.json} & 1244 & \texttt{74701ae3da718caa} & \footnotesize experiment, date, config, aggregate, hypothesis\_test\\
+-\texttt{evidence/\hspace{0pt}cg\_\hspace{0pt}tee\_\hspace{0pt}final\_\hspace{0pt}results.json} & 7965 & \texttt{e1153039f313c54b} & \footnotesize uncalibrated, calibrated, cg\_tee\\
+-\texttt{evidence/\hspace{0pt}cg\_\hspace{0pt}tee\_\hspace{0pt}checkpoint.json} & 7900 & \texttt{3497c1480103d606} & \footnotesize completed\_seeds, seeds\\
+-\texttt{evidence/\hspace{0pt}cg\_\hspace{0pt}tee\_\hspace{0pt}real\_\hspace{0pt}results.json} & 6219 & \texttt{4b535e1f4d23b5d0} & \footnotesize completed\_seeds, results\\
+-\texttt{arxiv\_\hspace{0pt}submit/\hspace{0pt}main.pdf} & 354137 & \texttt{3f2ca9ab0f6e6ada} & \footnotesize \\
+-\texttt{experiments/\hspace{0pt}results/\hspace{0pt}cg\_\hspace{0pt}tee\_\hspace{0pt}local\_\hspace{0pt}smoke.json} & 2239 & \texttt{7b26f1f3d8e5a736} & \footnotesize config, results, aggregate, parse\_failures, degenerate\_check\\
+-\texttt{experiments/\hspace{0pt}results/\hspace{0pt}cg\_\hspace{0pt}tee\_\hspace{0pt}real\_\hspace{0pt}checkpoint.json} & 6219 & \texttt{4b535e1f4d23b5d0} & \footnotesize completed\_seeds, results\\
+-\texttt{experiments/\hspace{0pt}results/\hspace{0pt}cg\_\hspace{0pt}tee\_\hspace{0pt}results.json} & 1244 & \texttt{74701ae3da718caa} & \footnotesize experiment, date, config, aggregate, hypothesis\_test\\
+-\texttt{experiments/\hspace{0pt}results/\hspace{0pt}cg\_\hspace{0pt}tee\_\hspace{0pt}final\_\hspace{0pt}results.json} & 7965 & \texttt{e1153039f313c54b} & \footnotesize uncalibrated, calibrated, cg\_tee\\
+-\texttt{experiments/\hspace{0pt}results/\hspace{0pt}cg\_\hspace{0pt}tee\_\hspace{0pt}checkpoint.json} & 7900 & \texttt{3497c1480103d606} & \footnotesize completed\_seeds, seeds\\
+-\texttt{experiments/\hspace{0pt}results/\hspace{0pt}cg\_\hspace{0pt}tee\_\hspace{0pt}real\_\hspace{0pt}results.json} & 6219 & \texttt{4b535e1f4d23b5d0} & \footnotesize completed\_seeds, results\\
++\begin{tabular}{p{5.6cm} r p{4.4cm}}\toprule
++Artifact & bytes & role \\\midrule
++\texttt{evidence/cg\_tee\_checkpoint.json} & 7900 & 15-seed simulation records \\
++\texttt{evidence/cg\_tee\_results.json} & 1244 & recorded simulation aggregate \\
++\texttt{evidence/cg\_tee\_final\_results.json} & 7965 & separate final/calibration family \\
++\texttt{evidence/cg\_tee\_real\_results.json} & 6219 & degenerate real-API run \\
++\texttt{experiments/results/cg\_tee\_local\_smoke.json} & 2239 & 3-seed parser-fixed smoke run \\
+ \bottomrule\end{tabular}\end{table}
+ 
+-\paragraph{Claim-to-carrier register.} The abstract, the bold body text and the contributions list print 6 distinct numeric token(s). For each, the tool searched every data and script file in the archive for the value (comma- and thousands-variants included).
+-
+-\begin{table}[ht]\centering\small
+-\caption{Headline numbers and where they come from. 1 of 6 have a machine-readable carrier in this archive; 5 do not, and are listed as \texttt{NO\_CARRIER} rather than being repeated as if supported.}
+-\label{tab:claimcarrier}
+-\begin{tabular}{lrl}\toprule
+-Number & mentions in claims & carrier found in \\\midrule
+-\texttt{0.134} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+-\\
+-\texttt{0.143} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+-\\
+-\texttt{0.192} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+-\\
+-\texttt{0.574} & 1 & \texttt{evidence/\hspace{0pt}cg\_\hspace{0pt}tee\_\hspace{0pt}final\_\hspace{0pt}results.json}
+-\\
+-\texttt{0.719} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+-\\
+-\texttt{39.2} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+-\\
+-\bottomrule\end{tabular}\end{table}
+-
+-\paragraph{What this register commits to.} The 5 \texttt{NO\_CARRIER} value(s) above are quoted in this paper's own prose but do not appear in any result file shipped with it. Until the raw records are added, those sentences are reporting an observation whose per-observation data is not in the archive; the paper does not claim otherwise here.
+-
+-\paragraph{How to re-check this section.} Run \texttt{python3 tools/\hspace{0pt}deepen\_\hspace{0pt}run.py <run> --write}; the generated file is \texttt{paper/\hspace{0pt}sections/\hspace{0pt}evidence\_\hspace{0pt}inventory.tex} and the same facts appear in \texttt{figures/\hspace{0pt}EVIDENCE\_\hspace{0pt}RECORD.md}. Both are reproducible from the archive alone, with no network access.
++\paragraph{Recomputed checks.}
++All three simulation $\gamma_{T\to V}$ means reproduce exactly from the 15
++per-seed values: standard $=0.143$, CG $=0.719$, and CG+TEE $=0.574$.
++The real-API standard arm also matches the uncalibrated block of the separate
++final-results artifact. These checks establish arithmetic consistency across
++specific files, not agreement across the whole package.
++
++\paragraph{Failed checks.}
++The recorded CV values $0.192$, $0.134$, and $0.174$ do not reproduce from
++per-seed gamma or entropy values under the tested sample and population
++variance definitions. All 15 real-API CG and CG+TEE records contain $\gamma=0$
++and $H=1$. The archived executor maps confidence-parse failures to $0.5$, which
++produces a zero update. No $N{=}15$ result file records executor/evaluator
++identity or a parser-success rate.
++
++\paragraph{Carrier receipts.}
++The archived carrier manifest contains 11 rows. Every row resolves to its named
++JSON locator and matching printed manuscript token, so the numbers are
++transcription-consistent. Carrier success is not scientific validity: for
++example, the $0.000$ real-API gamma values have a carrier precisely because the
++run is degenerate.
++
++\paragraph{What the paper can claim.}
++The paper can claim that the recorded simulation means are recomputable, that
++the real-API CG arms are degenerate, that the CV column lacks a per-seed
++carrier, and that the 39.2\% scalar belongs to a different, unresolved artifact
++family. It cannot claim that TEE reduces noise or bias, or that the current
++archive establishes a TEE null result.
+--- a/paper/sections/per_seed_evidence.tex
++++ b/source/sections/per_seed_evidence.tex
+@@ -15,13 +15,13 @@
+ 
+ \begin{figure}[ht]\centering
+ \includegraphics[width=0.94\linewidth]{fig_cg_tee_seeds.pdf}
+-\caption{Panel A: all 15 per-seed $\gamma_{T\to V}$ values for the three simulation arms, with arm means dashed. Both confidence-gated arms lie above the standard arm on every seed. Panel B: the two places a reduction actually appears --- the uncalibrated versus calibrated blocks of \texttt{cg\_tee\_final\_results.json}, and the real-API CG arms, which record $\gamma=0$ and $H=1$ on all 15 seeds. Generated from \texttt{evidence/cg\_tee\_checkpoint.json}, \texttt{cg\_tee\_final\_results.json} and \texttt{cg\_tee\_real\_results.json}.}
++\caption{Panel A: all 15 per-seed $\gamma_{T\to V}$ values for the three simulation arms, with arm means dashed. Both confidence-gated arms lie above the standard arm on every simulation seed. Panel B: two numerically lower outputs that are not valid mitigation evidence --- the uncalibrated versus calibrated blocks of \texttt{cg\_tee\_final\_results.json}, whose provenance is unresolved, and the real-API CG arms, which are parser-degenerate with $\gamma=0$ and $H=1$ on all 15 seeds. Generated from \texttt{evidence/cg\_tee\_checkpoint.json}, \texttt{cg\_tee\_final\_results.json} and \texttt{cg\_tee\_real\_results.json}.}
+ \label{fig:perseed}
+ \end{figure}
+ 
+ \noindent\textbf{The direction is the opposite of the caption's.} Standard $\gamma_{T\to V}$ averages 0.143, CG alone 0.719 (a 403\% increase, seed by seed) and CG+TEE 0.574 (301\%). The aggregate file encodes the same fact as \texttt{delta\_gamma\_pct} of -433.4 under a \emph{reduction} sign convention, so a negative percentage is an increase in coupling. Read either way, the gated arms do not reduce coupling in this artifact.
+ 
+-\noindent\textbf{Where a 39\% reduction does exist.} 90 ordered pairs of the 10 scalars recomputable from these files were tested against a 39\% reduction; 2 land within half a point. The one that is not an accident of two unrelated quantities is $\gamma_{T\to V}$ between the uncalibrated and calibrated blocks of \texttt{cg\_tee\_final\_results.json} (39.2\%), which is a \emph{calibration} intervention --- one of the candidates the Discussion names as the way forward --- and not confidence gating. The 39\% is therefore attached to the wrong method, and the calibration comparison is the one this artifact does support.
++\noindent\textbf{Where the 39\% scalar comes from.} The 39.2\% value is the $\gamma_{T\to V}$ difference between the uncalibrated and calibrated blocks of \texttt{cg\_tee\_final\_results.json}. It is not a CG+TEE estimate. Even for the calibration contrast, the artifact's provenance and model identity are unresolved, so the number is a recorded scalar rather than a validated intervention effect.
+ 
+ \noindent\textbf{The CV column has no per-seed carrier.} The recorded \texttt{cv} values are 0.192, 0.134, 0.174. Four definitions were tried against them (sample and population coefficient of variation, and the standard deviation, of \texttt{gamma} and of \texttt{H}), with nearest gaps 0.030, 0.016, 0.029. None reproduces the recorded number, and the direction in which a smaller \texttt{cv} is an improvement is not stated anywhere in the artifact. A claim that TEE ``improves CV'' is therefore not checkable from this archive, and is not repeated here.
+ 

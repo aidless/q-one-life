@@ -1,0 +1,580 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-agent-behavior-regression-testing-for-lo-1f724f2bff",
+  "title": "Agent Behavior Regression Testing for Local LLM Systems: Seed Reproducibility and Cross-Model Heterogeneity across 100 Scenarios",
+  "status": "revision",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression",
+  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/main.tex",
+  "manuscript": {
+    "path": "source/main.tex",
+    "sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "3848f1c9d9b5ec5490a048649f1887a888d43ed34fd4d31afe008e0d1ac93ee9",
+      "state": "verified",
+      "origin": "Paper 35 Research Factory overlay",
+      "description": "Canonical source identity plus the current overlay revision."
+    },
+    {
+      "path": "evidence/variant-reconciliation.json",
+      "sha256": "f773b2a8775745c701c3459fd045de455f4d3ecc0f3524e61a4282fff4bd2a0a",
+      "state": "verified",
+      "origin": "Paper 35 Research Factory overlay",
+      "description": "Canonical, legacy, ingest-drift, submission and backup source versions reconciled."
+    },
+    {
+      "path": "evidence/upstream/paper/main.tex",
+      "sha256": "d1eac66806754899440a12bb30446c3944ed230191a077b1bbd331a2ae7a02f0",
+      "state": "verified",
+      "origin": "Portfolio representative paper/main.tex",
+      "description": "Canonical upstream source retained byte-for-byte."
+    },
+    {
+      "path": "evidence/upstream/paper/CLAIM_LEDGER.md",
+      "sha256": "d1a5bfe2377ae73ef4e81f37ea79e0553fd5b960f61530afd1b4e7fb42d56349",
+      "state": "verified",
+      "origin": "Upstream paper project",
+      "description": "Native C01..C11 claim ledger retained for semantic comparison."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/CARRIER_RECEIPTS.json",
+      "sha256": "df8d2f040480f1d383886fa4a088780d1c9b350c601fd797a18883f7bff0808a",
+      "state": "verified",
+      "origin": "Upstream paper project",
+      "description": "Frozen numerical carrier receipts produced before the overlay."
+    },
+    {
+      "path": "evidence/carrier-audit.json",
+      "sha256": "e5e637b6d089d6f114a50ef3b9a8e95b476b6c5c200699ce78c1bf63f3f8f5c0",
+      "state": "verified",
+      "origin": "Paper 35 Research Factory overlay",
+      "description": "Independent re-execution of every frozen carrier receipt."
+    },
+    {
+      "path": "evidence/native-audit.json",
+      "sha256": "601609a6ce858f8d79d38c250ed66edb5abda226e7f65bcd522ad037f95cfed0",
+      "state": "verified",
+      "origin": "Paper 35 Research Factory overlay",
+      "description": "Evidence-boundary, citation, manifest, carrier and template checks."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence_manifest.json",
+      "sha256": "0cb73da658aa4af4346b1da8ff14fddc2bb4ca1413fea20f50158e224f0269c6",
+      "state": "candidate",
+      "origin": "Upstream paper project",
+      "description": "Upstream release manifest; 62 entries are absent from the delivered tree."
+    },
+    {
+      "path": "evidence/upstream/paper/experiments/full_run/_manifest.json",
+      "sha256": "115951347ada1b5e845a72de4a725af042a94322008ffe6e523af438a254fbfd",
+      "state": "candidate",
+      "origin": "Upstream paper project",
+      "description": "Declares 1,200 full-run cells; raw cell files are absent."
+    },
+    {
+      "path": "evidence/upstream/paper/review_real/summary.json",
+      "sha256": "ef63bea9a3e2892d825b203abc8bd9a6968d6a0a94b6b738745a7433691c5ae0",
+      "state": "verified",
+      "origin": "Upstream paper project",
+      "description": "Upstream role-review summary records 6 Major and 21 Minor findings."
+    },
+    {
+      "path": "evidence/upstream/paper/review_real/debate/debate.json",
+      "sha256": "befa987451f3e48aba4f2f6dc290a7cb01997e68cdfe6a48e730fbd8a19eefa2",
+      "state": "verified",
+      "origin": "Upstream paper project",
+      "description": "Frozen debate retains 5 Major findings after rebuttal."
+    },
+    {
+      "path": "reports/claim-ledger-verification.md",
+      "sha256": "e58590dd981b9affcbf5819d43d8cef9b6de013b0adda0a3be52de729de8f7bb",
+      "state": "verified",
+      "origin": "Paper 35 Research Factory overlay",
+      "description": "Six-column overlay claim-ledger verification report."
+    },
+    {
+      "path": "reports/source-revision.json",
+      "sha256": "173a0116e5947240e90a89013e843e24b0899388b7fe05b104efd73471d4d75f",
+      "state": "verified",
+      "origin": "Paper 35 Research Factory overlay",
+      "description": "Overlay-only revision binding for source hygiene and scope changes."
+    },
+    {
+      "path": "reports/source-revision.diff",
+      "sha256": "0590174f3ae1d3d8223318885284f5b7930f7f11f95f5b09cf360850a6abbff5",
+      "state": "verified",
+      "origin": "Paper 35 Research Factory overlay",
+      "description": "Exact upstream-to-overlay source diff."
+    },
+    {
+      "path": "reports/cleanroom/receipt.json",
+      "sha256": "1201396dc74a58c0b150fd2ac0ab4b0443ca580116d2a398b61665bdb89525fb",
+      "state": "verified",
+      "origin": "Paper 35 Research Factory overlay",
+      "description": "Two-run isolated compile receipt."
+    },
+    {
+      "path": "reports/package-audit.json",
+      "sha256": "f73a0b9a3407ade772d55e72077cbe778d4bfac1753c6f3a637d0ef5607d4c07",
+      "state": "verified",
+      "origin": "Paper 35 Research Factory overlay",
+      "description": "Mechanical nine-file arXiv source-tree audit."
+    },
+    {
+      "path": "reports/package/package-receipt.json",
+      "sha256": "eb689142f9ff916b1c7f5730a524fb8d75186e628847708d74ed3740247a3001",
+      "state": "verified",
+      "origin": "Paper 35 Research Factory overlay",
+      "description": "Deterministic candidate archive and extraction compile receipt."
+    },
+    {
+      "path": "reports/package/paper35-arxiv-candidate.tar.gz",
+      "sha256": "76d6a55900454c65c76cd9456f2da52fdb69c3d2e1290b882d5d4f9254eb8a81",
+      "state": "verified",
+      "origin": "Paper 35 Research Factory overlay",
+      "description": "Internal candidate archive; not upload-authorized."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Canonical scenario suite composition",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Declared 1,200-cell full-run design",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/paper/experiments/full_run/_manifest.json",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "location": "Frozen aggregate cross-seed result",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "location": "Frozen aggregate cross-model result",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "location": "Frozen category heterogeneity result",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "location": "Pairing count for the Wilcoxon comparison",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "BDS token-distribution proxy scope",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "Frontier, future or temporal generalization",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C09",
+      "location": "Causal amplification from the chain pilot",
+      "state": "inconclusive",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "Model-family interchangeability",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "location": "Prospective deployment-drift prediction",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "paper35-carrier-recomputation",
+      "state": "reproduced",
+      "receipt": "evidence/carrier-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper35-cleanroom-compile",
+      "state": "reproduced",
+      "receipt": "reports/cleanroom/receipt.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper35-candidate-archive",
+      "state": "reproduced",
+      "receipt": "reports/package/package-receipt.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper35-raw-cell-recount",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper35-metric-sensitivity",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper35-independent-review",
+      "state": "blocked",
+      "receipt": "evidence/upstream/paper/review_real/summary.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper35-metadata-license",
+      "state": "blocked",
+      "receipt": "reports/package/package-receipt.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "paper35-role-review-r6",
+      "kind": "method",
+      "state": "open",
+      "critical": 0,
+      "major": 6,
+      "receipt": "evidence/upstream/paper/review_real/summary.json"
+    },
+    {
+      "review_id": "paper35-debate",
+      "kind": "statistics",
+      "state": "open",
+      "critical": 0,
+      "major": 5,
+      "receipt": "evidence/upstream/paper/review_real/debate/debate.json"
+    }
+  ],
+  "package": {
+    "state": "compiled",
+    "files": [
+      {
+        "path": "source/main.tex",
+        "sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553"
+      },
+      {
+        "path": "source/math_commands.tex",
+        "sha256": "9d655842e74bf55f241770197793507d27f178abef4132378b8333e391a6a0e0"
+      },
+      {
+        "path": "source/refs.bib",
+        "sha256": "b9d61a346848450930d0d4befe86312a494bb78afb74ca2f092ccc3a05d41c09"
+      },
+      {
+        "path": "source/tmlr.bst",
+        "sha256": "306fd454cf40771bee01293eeb98d2c1cd5f4e11ed0cd7296b335f354fc45206"
+      },
+      {
+        "path": "source/tmlr.sty",
+        "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002"
+      },
+      {
+        "path": "source/figures/bds_determinism_duality.png",
+        "sha256": "ce268cf89d2589fb2eb7feb0e38f5b67838e03448705472d122c513b14373969"
+      },
+      {
+        "path": "source/figures/bds_heatmap.png",
+        "sha256": "4d7e13b113a4c0b9a034107e661761639a652f1cce0391df34d7adfbfce9c153"
+      },
+      {
+        "path": "source/figures/fig_heterogeneity.pdf",
+        "sha256": "b869d18ae269fc8db32402bd13d2b57cb838a4a82af22160573fce6605c4595a"
+      },
+      {
+        "path": "source/figures/fig_reproducibility.pdf",
+        "sha256": "7639293707562c13127c86700f7d167ac8490d8a0b484364b6a4755e28e537f8"
+      },
+      {
+        "path": "reports/cleanroom/receipt.json",
+        "sha256": "1201396dc74a58c0b150fd2ac0ab4b0443ca580116d2a398b61665bdb89525fb"
+      },
+      {
+        "path": "reports/cleanroom/main.pdf",
+        "sha256": "34e160a576d9f3f5b1d20b3c5f36eb6cde3a93050212954e267b281e387739df"
+      },
+      {
+        "path": "reports/package/package-receipt.json",
+        "sha256": "eb689142f9ff916b1c7f5730a524fb8d75186e628847708d74ed3740247a3001"
+      },
+      {
+        "path": "reports/package/paper35-arxiv-candidate.tar.gz",
+        "sha256": "76d6a55900454c65c76cd9456f2da52fdb69c3d2e1290b882d5d4f9254eb8a81"
+      },
+      {
+        "path": "reports/package/archive-cleanroom/receipt.json",
+        "sha256": "b5deaac31f98a1e5cb8d8322deb8151d45847388c511e96195d1e56ad14c59c6"
+      },
+      {
+        "path": "reports/package/archive-cleanroom/main.pdf",
+        "sha256": "34e160a576d9f3f5b1d20b3c5f36eb6cde3a93050212954e267b281e387739df"
+      }
+    ],
+    "blockers": [
+      "The full-run manifest declares 1,200 cells, but all 12 raw full-run JSONL files are missing.",
+      "The upstream evidence_manifest.json has 62 missing entries, including six full-run analysis files and the raw full-run cells.",
+      "The upstream review remains open with 6 Major and 21 Minor findings; the debate retains 5 Major findings.",
+      "BDS sensitivity to tokenization, top-K, smoothing and response length has not been independently audited.",
+      "The multi-agent chain result is descriptive; causal amplification and hierarchical power have not been established.",
+      "Final author, category, abstract, license and upload authorization remain user decisions."
+    ]
+  },
+  "gate_receipts": [
+    {
+      "gate_id": "paper35-source-identity",
+      "scope": "reproducibility",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "3848f1c9d9b5ec5490a048649f1887a888d43ed34fd4d31afe008e0d1ac93ee9",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "Canonical and overlay source hashes are bound explicitly."
+    },
+    {
+      "gate_id": "paper35-variant-reconciliation",
+      "scope": "reproducibility",
+      "state": "passed",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "f773b2a8775745c701c3459fd045de455f4d3ecc0f3524e61a4282fff4bd2a0a",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "All materially different source versions are retained and identified."
+    },
+    {
+      "gate_id": "paper35-scenario-suite",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "601609a6ce858f8d79d38c250ed66edb5abda226e7f65bcd522ad037f95cfed0",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "The canonical suite contains 100 scenarios with the recorded category counts."
+    },
+    {
+      "gate_id": "paper35-declared-cell-manifest",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/upstream/paper/experiments/full_run/_manifest.json",
+      "receipt_sha256": "115951347ada1b5e845a72de4a725af042a94322008ffe6e523af438a254fbfd",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "The manifest declares 1,200 cells; this is not a raw-cell recount."
+    },
+    {
+      "gate_id": "paper35-carrier-recomputation",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/carrier-audit.json",
+      "receipt_sha256": "e5e637b6d089d6f114a50ef3b9a8e95b476b6c5c200699ce78c1bf63f3f8f5c0",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "All eight frozen numerical carrier receipts pass."
+    },
+    {
+      "gate_id": "paper35-citation-resolution",
+      "scope": "citations",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "601609a6ce858f8d79d38c250ed66edb5abda226e7f65bcd522ad037f95cfed0",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "All 13 citation keys resolve to local bibitems."
+    },
+    {
+      "gate_id": "paper35-cleanroom-compile",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/cleanroom/receipt.json",
+      "receipt_sha256": "1201396dc74a58c0b150fd2ac0ab4b0443ca580116d2a398b61665bdb89525fb",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "Two isolated compiles produced byte-identical 12-page PDFs."
+    },
+    {
+      "gate_id": "paper35-package-audit",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/package-audit.json",
+      "receipt_sha256": "f73a0b9a3407ade772d55e72077cbe778d4bfac1753c6f3a637d0ef5607d4c07",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "The nine-file source tree passes the mechanical arXiv audit."
+    },
+    {
+      "gate_id": "paper35-candidate-archive",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/package/package-receipt.json",
+      "receipt_sha256": "eb689142f9ff916b1c7f5730a524fb8d75186e628847708d74ed3740247a3001",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "The archive rebuild is deterministic and extracts to a 12-page compile."
+    },
+    {
+      "gate_id": "paper35-raw-cell-recount",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "601609a6ce858f8d79d38c250ed66edb5abda226e7f65bcd522ad037f95cfed0",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "All 12 full-run raw JSONL files are missing; raw-cell recount cannot be performed."
+    },
+    {
+      "gate_id": "paper35-paper-evidence-manifest",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "601609a6ce858f8d79d38c250ed66edb5abda226e7f65bcd522ad037f95cfed0",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "The upstream release manifest has 62 missing entries."
+    },
+    {
+      "gate_id": "paper35-metric-sensitivity",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "601609a6ce858f8d79d38c250ed66edb5abda226e7f65bcd522ad037f95cfed0",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "No independent sensitivity audit exists for tokenization, top-K, smoothing or response length."
+    },
+    {
+      "gate_id": "paper35-scientific-review",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/upstream/paper/review_real/summary.json",
+      "receipt_sha256": "ef63bea9a3e2892d825b203abc8bd9a6968d6a0a94b6b738745a7433691c5ae0",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "The upstream review records 6 Major findings; the debate retains 5."
+    },
+    {
+      "gate_id": "paper35-metadata-license",
+      "scope": "other",
+      "state": "blocked",
+      "receipt": "reports/package/package-receipt.json",
+      "receipt_sha256": "eb689142f9ff916b1c7f5730a524fb8d75186e628847708d74ed3740247a3001",
+      "source_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "summary": "Final author, category, abstract, license and upload authorization remain unconfirmed."
+    }
+  ],
+  "measurements": [
+    {
+      "name": "scenario_count",
+      "value": 100,
+      "unit": "scenarios",
+      "definition": "Canonical JSONL scenario count.",
+      "source": "evidence/native-audit.json#counts.scenarios",
+      "state": "observed"
+    },
+    {
+      "name": "declared_full_run_cells",
+      "value": 1200,
+      "unit": "cells",
+      "definition": "Cells declared by the full-run manifest; raw cells are missing.",
+      "source": "evidence/upstream/paper/experiments/full_run/_manifest.json#total_cells",
+      "state": "blocked"
+    },
+    {
+      "name": "full_run_raw_files_present",
+      "value": 0,
+      "unit": "files",
+      "definition": "Present full-run raw JSONL files out of 12 named by the manifest.",
+      "source": "evidence/native-audit.json#counts.full_run_raw_files",
+      "state": "blocked"
+    },
+    {
+      "name": "multi_agent_raw_files_present",
+      "value": 12,
+      "unit": "files",
+      "definition": "Present cloud-extension raw JSONL files.",
+      "source": "evidence/native-audit.json#counts.multi_agent_raw_files",
+      "state": "observed"
+    },
+    {
+      "name": "cross_model_mean_recomputed",
+      "value": 7.154734,
+      "unit": "BDS",
+      "definition": "Mean recomputed from the 100-row frozen cross-model CSV.",
+      "source": "evidence/native-audit.json#observed.cross_model_mean_recomputed",
+      "state": "observed"
+    },
+    {
+      "name": "carrier_receipts_passed",
+      "value": 8,
+      "unit": "checks",
+      "definition": "Frozen numerical carrier receipts passing re-execution.",
+      "source": "evidence/carrier-audit.json#summary.passed",
+      "state": "observed"
+    },
+    {
+      "name": "cleanroom_pdf_pages",
+      "value": 12,
+      "unit": "pages",
+      "definition": "Pages in the deterministic clean-room PDF.",
+      "source": "reports/cleanroom/receipt.json#pdf.pages",
+      "state": "observed"
+    },
+    {
+      "name": "candidate_archive_bytes",
+      "value": 154412,
+      "unit": "bytes",
+      "definition": "Size of the deterministic internal candidate archive.",
+      "source": "reports/package/package-receipt.json#archive.bytes",
+      "state": "observed"
+    }
+  ],
+  "notes": [
+    "The upstream canonical source is preserved byte-for-byte.",
+    "The overlay removes template contamination, narrows unsupported claims and records missing raw evidence.",
+    "Only C01 and C07 are verified; aggregate-result claims remain candidate pending raw-cell replay.",
+    "The candidate archive is internal and is not authorized for upload."
+  ]
+}

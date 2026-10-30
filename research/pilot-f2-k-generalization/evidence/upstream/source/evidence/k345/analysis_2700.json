@@ -1,0 +1,41 @@
+{
+  "K3_g0.5": {
+    "n_episodes": 270,
+    "product": 0.4777,
+    "bound": 0.0312,
+    "holds": true
+  },
+  "K3_g1.0": {
+    "n_episodes": 270,
+    "product": 0.3494,
+    "bound": 0.0312,
+    "holds": true
+  },
+  "K4_g0.5": {
+    "n_episodes": 270,
+    "product": 0.5287,
+    "bound": 0.0228,
+    "holds": true
+  },
+  "K4_g1.0": {
+    "n_episodes": 270,
+    "product": 0.4168,
+    "bound": 0.0228,
+    "holds": true
+  },
+  "K5_g0.5": {
+    "n_episodes": 270,
+    "product": 0.5567,
+    "bound": 0.0181,
+    "holds": true
+  },
+  "K5_g1.0": {
+    "n_episodes": 270,
+    "product": 0.4386,
+    "bound": 0.0181,
+    "holds": true
+  },
+  "n_cells_total": 2700,
+  "n_seeds": 10,
+  "note": "expanded to 2700 for F2 flagship 10/10 pilot"
+}

@@ -1,0 +1,22 @@
+# attempt 3 — run completed and wrote results/run-1.json, but gate F4 FAILED.
+# F1 PASS  recomputed theta_fixed equals the recorded native interval on all four tasks
+# F2 PASS  theta_both exactly zero in 2000/2000 rounds on all four tasks; interval [0,0]
+# F3 PASS  theta_fixed never positive in any valid round
+# F4 FAIL  controls have teeth
+# F5 PASS  unmodified native rerun reproduces the recorded factuality interval
+#
+# Diagnosis of the F4 failure (both defects are in the controls, not in the main hypothesis):
+#   1. control "nonproducer_leader" was inert. The runner appended rows whose `answer`
+#      column held the plurality gold, but audit.agreement() scores the already-loaded
+#      frame on `answer_n`. The control rows carried the exemplar system's answer_n, so
+#      the added system reproduced an existing system instead of a perfect one: n_systems
+#      became 26 but the point leader stayed gemma-4-31b at 93.8272.
+#   2. control "unranked_generator" was sound but the predeclared sign rule was not implied
+#      by its construction. gemma-4-31b and qwen3.7-flash tie at 93.8272, so removing
+#      gemma's system rows leaves max_s == max_g in many rounds: theta_both <= 0 with a
+#      point mass at 0 (observed lo95 -2.6750, hi95 0.0000, 766/2000 rounds strictly
+#      negative, 1234/2000 exactly zero). Requiring hi95 < 0 was therefore unachievable.
+#
+# No main-task number changed. results/run-1.json is preserved here as attempt 3.
+# The four main-task numbers printed by this run are corroborated independently by the
+# accepted v2.0.0 runs, which recompute them from scratch under a new pinned hash.

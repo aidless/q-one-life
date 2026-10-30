@@ -1,0 +1,188 @@
+{
+  "schema": "q-one-revision-candidate-v1",
+  "generated_at": "2026-10-29T05:47:47.344211Z",
+  "status": "candidate",
+  "scope": "A3 joint-support and A4 threshold/interface integration built on candidate R2; canonical manuscript and all measured source data preserved",
+  "parent_candidate_source": {
+    "path": "revisions/2026-10-29-estimand-split-r2/source/main.tex",
+    "sha256": "fc24f8effef7c6f90c6dca6a52ea967adcec60bf7b79408c817b3a8561930c0f",
+    "bytes": 221814
+  },
+  "parent_candidate_manifest": {
+    "path": "revisions/2026-10-29-estimand-split-r2/revision-manifest.json",
+    "sha256": "db7df4ba6cf7f95fcbf351f9058871e033a34ef02e401dce9589f85928802c18",
+    "bytes": 6065
+  },
+  "canonical_source": {
+    "path": "source/main.tex",
+    "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+    "bytes": 220650
+  },
+  "candidate_source": {
+    "path": "source/main.tex",
+    "sha256": "a9eef802faa6ef80f7916626a28aade11f1922701fb1f3b24b2f3780a69e0bb6",
+    "bytes": 223325
+  },
+  "diff_against_parent": {
+    "path": "main.diff",
+    "sha256": "42e40ab0b040c12bb2982ca204aae464c41e15ecee7fa9d116e911d297ec6a14",
+    "bytes": 24970
+  },
+  "diff_against_canonical": {
+    "path": "main-vs-canonical.diff",
+    "sha256": "0264a11ff93671948625934844fc993e2436a0bb1e9f6c1ffa570f0ea3503e40",
+    "bytes": 78290
+  },
+  "report": {
+    "path": "REVISION_R3.md",
+    "sha256": "55bd86bba618532410ef53f6a22ae1b316713ade7d32db1ba30e156d4cbdb6ca",
+    "bytes": 6007
+  },
+  "candidate_inputs": {
+    "ledger_overlay": {
+      "path": "evidence/paper-ledger-overlay.json",
+      "sha256": "7ff57a361f0a174e81ecf18652cadca9df7c9ee039ebf4a8917c36667f572fc3",
+      "bytes": 314255
+    },
+    "verdict_registry_overlay": {
+      "path": "evidence/verdict-claims-overlay.json",
+      "sha256": "7f1c9b157edd4246811c61695b4899fc81c46e6417491293bfd8698d130c078d",
+      "bytes": 37215
+    },
+    "gate_runner": {
+      "path": "run_candidate_gates.py",
+      "sha256": "411cd00c54dc96e8e0d8e4cde31708276b7fda9eb4fdae68677cbc1222e1eed2",
+      "bytes": 6671
+    },
+    "overlay_readme": {
+      "path": "evidence/README.md",
+      "sha256": "412ce20ce9bc888212af6536d8813934724cad956da6a3a9205173b3ddf178b9",
+      "bytes": 1621
+    }
+  },
+  "evidence_bindings": {
+    "a3_preregistration": {
+      "path": "experiments/kfold-common-support-a3/preregistration.json",
+      "sha256": "bacdf9e09372d8382460a7712893989fb04a56d921fa3cddcf3cacbac2462133",
+      "bytes": 8516
+    },
+    "a3_runner": {
+      "path": "experiments/kfold-common-support-a3/run_common_support.py",
+      "sha256": "9669db5401f31b10a450eafd0762ddd9bafdec77737a3d30a420ec85f977b012",
+      "bytes": 23603
+    },
+    "a3_reproduction": {
+      "path": "experiments/kfold-common-support-a3/results/reproduction.json",
+      "sha256": "c2f1ebde69c98427acf685759e168b751700e7d88dff51c6221715d337d47b88",
+      "bytes": 7063
+    },
+    "a4_preregistration": {
+      "path": "experiments/threshold-interface-a4/preregistration.json",
+      "sha256": "de1cb0d656c92537444bd950fa8d357282f4ec13e489c6688f5413da9a48fabd",
+      "bytes": 7843
+    },
+    "a4_runner": {
+      "path": "experiments/threshold-interface-a4/run_threshold_interface.py",
+      "sha256": "c996fc7b8be09ee8e0aaf58abfb1ecb86003a8e39bfa4b4ee3bcce5dcc456971",
+      "bytes": 22624
+    },
+    "a4_reproduction": {
+      "path": "experiments/threshold-interface-a4/results/reproduction.json",
+      "sha256": "f98e5004bc953751f7a2c05c446206a87780af7202ad9acba77e62181c2a69a9",
+      "bytes": 4072
+    },
+    "source_lineage": {
+      "path": "evidence/source-lineage.json",
+      "sha256": "20a2abc52d3b38e313f821b8a51e511593170813e7a63066f11fe486c7d2b01a",
+      "bytes": 21922
+    },
+    "independent_review": {
+      "path": "evidence/REVIEW_INDEPENDENT_2026-10-24.md",
+      "sha256": "8d815000775ad110354043854967c79044605deb1f6113a549a6cba13078c86e",
+      "bytes": 14729
+    }
+  },
+  "verification": {
+    "mechanical_package_audit": {
+      "result": "passed",
+      "file_count": 11,
+      "package_sha256": "b375e0877d7ce4f2330d5c31a21dfef3797b3e88140e7ac41bc4fbcb9f83ade6",
+      "receipt": {
+        "path": "reports/package-audit.json",
+        "sha256": "26e8583840f2326b57c04c22ebad8a45123910f92df5e92fa03cc78193e7a588",
+        "bytes": 2677
+      }
+    },
+    "cleanroom_compile": {
+      "result": "passed",
+      "pages": 46,
+      "pdf_sha256": "439708174a052cf6163b0c9af26b1f9961492396dc567a259233ca37f4d3396e",
+      "deterministic": true,
+      "receipt": {
+        "path": "reports/cleanroom/receipt.json",
+        "sha256": "0254ad16dcb835138323a9567ad172d4eaf41cf527145d5c8625abb3ad47a39b",
+        "bytes": 12242
+      }
+    },
+    "ledger_reverse_coverage": {
+      "result": "passed",
+      "n_tokens": 355,
+      "n_bound": 352,
+      "n_excused": 3,
+      "n_unbound": 0,
+      "receipt": {
+        "path": "reports/ledger-reverse-coverage.json",
+        "sha256": "50bc1168961c0522ad80a9a56f47ee118bbd0fdb384d5cfda20724480b1712fd",
+        "bytes": 7028
+      }
+    },
+    "ledger_anchor_census": {
+      "result": "GREEN",
+      "anchor_missing_count": 0,
+      "ambiguous_membership_count": 0,
+      "receipt": {
+        "path": "reports/ledger-anchor-census.json",
+        "sha256": "39b66daff59bb4394e56ef5e8196d95849941ac8934c30f59cf920efa36d727c",
+        "bytes": 746
+      }
+    },
+    "verdict_word_gate": {
+      "result": "PASS",
+      "checks": 137,
+      "passed": 137,
+      "receipt": {
+        "path": "reports/verdict-word-gate.json",
+        "sha256": "10dbc52e004a7a8caa422f2a23b89899d87d1be48223507bbe61c674d380eaaa",
+        "bytes": 18598
+      }
+    },
+    "candidate_gate_summary": {
+      "result": "passed",
+      "receipt": {
+        "path": "reports/candidate-gates-summary.json",
+        "sha256": "d1c212dfcee851ec5a9281fa7cf34b5fb9e9106a3f2d2142e4335d12b0da7e8f",
+        "bytes": 7336
+      }
+    }
+  },
+  "superseded_working_drafts": [],
+  "remaining_blockers": [
+    "C02 source identity remains unresolved because the canonical source differs from the native-manifest source.",
+    "C03 remains open; R3 integrates A3/A4 sub-questions but does not close the independent method review.",
+    "The review MDE terminology and generator-independence objections remain open.",
+    "No real disjoint-field leaderboard returning a positive verdict has been measured.",
+    "Author metadata, licence, and upload authorization remain user decisions."
+  ],
+  "non_claims": [
+    "R3 is an internal candidate and does not overwrite the canonical manuscript or prior candidates.",
+    "Compilation, gate passage, and evidence binding do not establish scientific readiness or peer-review acceptance.",
+    "A3 preference support is 54 items and descriptive only.",
+    "A4 is synthetic interface evidence, not an external leaderboard measurement.",
+    "This candidate does not authorize an arXiv upload."
+  ],
+  "review_request": {
+    "path": "REVIEW_REQUEST_R3.md",
+    "sha256": "b8eaf83c2e28da1b9f330b7a8a9d985b5e2f3e7329ec446acce5b043a2ceaae2",
+    "bytes": 6444
+  }
+}

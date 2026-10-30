@@ -1,0 +1,11 @@
+{
+  "n_total": 192,
+  "batches": [
+    "real64 batch1 64 (Round6)",
+    "real64 batch2 64 (Round8)",
+    "real64 batch3 64 (Round8\u7eed)"
+  ],
+  "note": "3x64=192/192 real qwen3:4b --hidethinking 192/192 ok 24/24 holds (8 cells *8ep *3 seeds)",
+  "elapsed": 1474,
+  "holds": "24/24 holds True"
+}

@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "paper": "Auditing Score Exposure and Presentation Order in LLM Harness Selection: A Matched 30-Task Case Study",
+  "version": "R1",
+  "generated_at": "2026-10-27",
+  "target": "arxiv",
+  "publication_status": "not_submitted",
+  "local_delivery_status": "complete",
+  "external_submission_ready": false,
+  "manuscript": {
+    "pdf": {
+      "path": "paper/main.pdf",
+      "sha256": "7579231499d275fea9e6ccc1dfbcb6c79bfe9b87f5274651526a723ac1fc82ae",
+      "pages": 8,
+      "page_size": "US Letter",
+      "pdf_version": "1.7"
+    },
+    "tex": {
+      "path": "paper/main.tex",
+      "sha256": "9748c64cbd338dcc495d6ce4119365ccf8540b5369fb912c74df662f999be02a"
+    },
+    "bibliography": {
+      "path": "paper/references.bib",
+      "sha256": "51f0432d5db567c3497e5763b818080492979ea8f278ee0fbaf3a7626c4c65b9"
+    },
+    "source_archive": {
+      "path": "paper-source.tar.gz",
+      "sha256": "29733244fdcbcece8794939feb7462b666626ba5bb50de464a5aed3e2f28ac87",
+      "isolated_extract_compile": "PASS",
+      "text_equivalence": "PASS"
+    }
+  },
+  "evidence": {
+    "source_record": {
+      "path": "evidence/e1-real-l32matched30-corrected.json",
+      "sha256": "6a5275a85358c7e2e42fc16db1fdd746f7ba8e4d249e8e91b4fa26b18f530b55"
+    },
+    "analysis": {
+      "path": "evidence/paper11-matched-analysis.json",
+      "sha256": "3ae17080669ea477df6b6031df98a10f4da9ad1110599f2f2dbccb7d1b493409",
+      "embedded_analysis_sha256": "7970e74de0a5868bc3d608fb07daf2fcec333bc019b095530e42371730ee9a4a"
+    },
+    "order_contract": {
+      "path": "evidence/order-contract.json",
+      "sha256": "b00e24f82ba435a325f05d91c50ea6e254cce34421bcc79208c01274f28e1c3e",
+      "old_hard_order_mismatch_tasks": 23,
+      "repair_binding_present": true
+    },
+    "content_analysis": {
+      "path": "evidence/content-change-analysis.json",
+      "sha256": "c3d508321a5c8e84a82c08797eee6855f9ce08bd16ab276bebe1c0a8c7ac5200"
+    },
+    "score_recomputation": {
+      "path": "evidence/score-recompute.json",
+      "sha256": "2c5a1d08a5c8b2c2899bb0ee37879612d972d275a75bd9dd23cee5e37f77cdba",
+      "recomputed_scores": 90,
+      "mismatch_count": 0,
+      "missing_file_count": 0
+    },
+    "claim_ledger": {
+      "path": "CLAIM_LEDGER.md",
+      "sha256": "415ce2eadcd613632fa663ea8af0fefc98dc53a8c60615abf0b131ae6d20ebbf",
+      "pass": 20,
+      "fail": 0,
+      "warn": 0
+    }
+  },
+  "corrected_results": {
+    "score_exposure_order_a": {
+      "slot_changed": 7,
+      "n": 30,
+      "wilson95_percent": [11.8, 40.9],
+      "mean_rubric_delta_bootstrap95": [0.0, 0.1222]
+    },
+    "score_exposure_order_b": {
+      "slot_changed": 5,
+      "n": 30,
+      "wilson95_percent": [7.3, 33.6],
+      "mean_rubric_delta_bootstrap95": [0.0, 0.1667]
+    },
+    "order_change_no_scores": {
+      "slot_changed": 15,
+      "content_changed": 14,
+      "n": 30,
+      "wilson95_percent": [33.2, 66.8],
+      "mean_rubric_delta_bootstrap95": [-0.1, 0.0333]
+    },
+    "order_change_with_scores": {
+      "slot_changed": 14,
+      "content_changed": 14,
+      "n": 30,
+      "wilson95_percent": [30.2, 63.9],
+      "mean_rubric_delta_bootstrap95": [0.0, 0.0]
+    }
+  },
+  "checks": {
+    "order_contract": "PASS",
+    "score_recomputation": "PASS",
+    "deterministic_analysis": "PASS",
+    "claim_ledger": "PASS",
+    "number_consistency": "PASS",
+    "statistics_consistency": "PASS",
+    "writing_style": "PASS",
+    "taint": "PASS",
+    "hallucination_scan": "PASS",
+    "compile_gate": "PASS",
+    "citation_verification": "PASS_WITH_MANUAL_JMLR_BINDING",
+    "visual_review": "8/8 pages inspected"
+  },
+  "citation_verification": {
+    "automatic_l1_verified": 11,
+    "automatic_l1_not_found": 1,
+    "manual_verification_record": "evidence/citation-manual-verification.json",
+    "l2_mismatch": 0,
+    "l3_retracted": 0,
+    "l4_dangling_cite": 0,
+    "l4_uncited_bib": 0
+  },
+  "external_actions": {
+    "arxiv_submitted": false,
+    "hotcrp_submitted": false,
+    "git_commit": false,
+    "git_push": false,
+    "public_repository_created": false,
+    "zenodo_published": false,
+    "doi_created": false,
+    "paid_resource_used": false,
+    "gpu_used_in_this_round": false
+  },
+  "unresolved": [
+    "The study covers one fixed order pair and one local model pair.",
+    "The deterministic rubric is an outcome measure, not independent ground truth.",
+    "The runner did not persist a model digest beside every response.",
+    "The work is a descriptive local case study and does not establish population-level or universal position bias.",
+    "External submission still requires the user's explicit authorization and final account/metadata review."
+  ]
+}

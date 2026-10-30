@@ -1,0 +1,8 @@
+# F submission checksums — regenerated 2026-10-26 after abstract<=1920-ASCII fix
+# verify_f_v2 79/79; three main.tex byte-identical; tarball compiles standalone (14 pages, 0 errors)
+fa39921e8f592ae2924ebb8b461045ed36410d179626d3be12bbb727b2874e15  f-acceptance-tmlr/main_tmlr.pdf
+4adbe428e04fdd75fc9d29e7a08e90b6befae996089713a3ded8e536150d5121  f-acceptance-tmlr/main.pdf
+4c59377876dfe6136c24dd016bca1111918e09a5ecbdf1a4109801795394f797  f-acceptance-tmlr/main.tex
+45e9d99c118d82276ddd2e6cb32f6220d639e1617092209cadd59823c7eef228  f-acceptance-arxiv/main.pdf
+4c59377876dfe6136c24dd016bca1111918e09a5ecbdf1a4109801795394f797  f-acceptance-arxiv/main.tex
+e8cd984356840a6ce5a4228174c917d742ca2a724e3610c86cbf1d3a84a07742  f-acceptance-arxiv.tar.gz

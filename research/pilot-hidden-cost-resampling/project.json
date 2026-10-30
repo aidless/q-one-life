@@ -1,0 +1,613 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-the-hidden-cost-of-resampling-how-imbala-36f86aadfa",
+  "title": "The Hidden Cost of Resampling: How Imbalance Correction Degrades Probability Calibration in Tree Ensembles",
+  "status": "archived",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\\\deepseek/q-one-life/research/pilot-hidden-cost-resampling",
+  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex",
+  "manuscript": {
+    "path": "evidence/upstream/main.tex",
+    "sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "66a870226d800e7dabf78682a07adfa18f78f3f8ed7f2a5ccb7197cb7af2d6f4",
+      "state": "verified",
+      "origin": "P16 Research Factory overlay",
+      "description": "Canonical source identity, deprecation banner and retained archive references."
+    },
+    {
+      "path": "evidence/variant-reconciliation.json",
+      "sha256": "fb0d85ebebb66c19e6801ecf53f951f7ad1230662b607707bf8ac4a3544640e7",
+      "state": "verified",
+      "origin": "P16 Research Factory overlay",
+      "description": "Seven distinct source hashes, scope conflict and p12 merge-target search."
+    },
+    {
+      "path": "evidence/audit.json",
+      "sha256": "53e2c6b84e4a88927c998681cf9854b8e461ba02e940d9553732e7925ad249fb",
+      "state": "verified",
+      "origin": "P16 Research Factory overlay",
+      "description": "Snapshot recomputation, isotonic analysis, significance recount, carrier semantics and text conflicts."
+    },
+    {
+      "path": "evidence/claim-values.json",
+      "sha256": "f0d6a92cf0af37766f903ffdbfb2310c55ac73fa8bde08baa75d8f8de032bd93",
+      "state": "verified",
+      "origin": "P16 Research Factory overlay",
+      "description": "Scalar values extracted from the deterministic audit for ledger verification."
+    },
+    {
+      "path": "evidence/upstream/main.tex",
+      "sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "state": "verified",
+      "origin": "P16 canonical source",
+      "description": "Canonical source retained byte-for-byte."
+    },
+    {
+      "path": "evidence/upstream/MERGED_INTO_tmlr_p12_20260921.md",
+      "sha256": "602a71863690ea0b44a662c4c09cede706977e9e62feb159f1e4259ac6a8b071",
+      "state": "verified",
+      "origin": "P16 upstream archive marker",
+      "description": "Author instruction not to submit, upload, repackage or edit the side shell."
+    },
+    {
+      "path": "evidence/upstream/REVIEW_CARD.md",
+      "sha256": "e1d90bd0b9be585f1178c26d0cf3dcd5b2e41af8d26b5317287657e674072b77",
+      "state": "candidate",
+      "origin": "P16 upstream review record",
+      "description": "Retained 2/8 D-veto review card."
+    },
+    {
+      "path": "evidence/upstream/REVIEW_R16_summary.md",
+      "sha256": "1497e1ea0e811e8ad6a0a5cc7b5e33a3e967a77775290732768cc30413abc69d",
+      "state": "candidate",
+      "origin": "P16 upstream review record",
+      "description": "R16 summary requiring Major Revision."
+    },
+    {
+      "path": "evidence/upstream/claims.yaml",
+      "sha256": "d681c580ba1b67bd4694e6256606fef13e330cba414ea8bae8cf38b552927c02",
+      "state": "candidate",
+      "origin": "P16 upstream source",
+      "description": "Native claim ledger retained as upstream context, not accepted as factory truth."
+    },
+    {
+      "path": "evidence/upstream/manuscript_anonymity.json",
+      "sha256": "6840ea0868c8aec2d2a3d9a2615e907b165f7501b9daeb968e042d0f388496eb",
+      "state": "candidate",
+      "origin": "P16 upstream metadata",
+      "description": "Recorded anonymity metadata; conflicts with the named source author block."
+    },
+    {
+      "path": "evidence/upstream/CARRIER_RECEIPTS.json",
+      "sha256": "c8270fe419b6495ebb829aa8addc51f3123b7b868c6d5191cdca6566a5460461",
+      "state": "candidate",
+      "origin": "P16 upstream evidence",
+      "description": "Fifty-seven mechanically accepted carrier receipts used for semantic audit."
+    },
+    {
+      "path": "evidence/upstream/tmlr_p12_main.tex",
+      "sha256": "b406b923bde2bb8b6323d8079ed5edf33f9826056439bd081dcc11d731cb339f",
+      "state": "candidate",
+      "origin": "P16 merge-target source",
+      "description": "Pinned tmlr_p12 source used to test merge provenance."
+    },
+    {
+      "path": "evidence/upstream/supplementary/newsgroups_20260627_195431.json",
+      "sha256": "6e5c4fc51e8c63b87ce92b73367fa7a16a83b50a07ca732f1631df8e4142855a",
+      "state": "candidate",
+      "origin": "P16 upstream supplementary result",
+      "description": "Main ten-seed snapshot used for table recomputation."
+    },
+    {
+      "path": "evidence/upstream/supplementary/n_sensitivity_newsgroups_20260627_191332.json",
+      "sha256": "983311c620371b7f763b84c4878e21c5af18a44f762c310552db1ccd74417919",
+      "state": "candidate",
+      "origin": "P16 upstream supplementary result",
+      "description": "Five-point N-sensitivity archive used for table and correlation recomputation."
+    },
+    {
+      "path": "evidence/upstream/supplementary/newsgroups_20260627_200316.json",
+      "sha256": "f1ef8266b030e2e3e79dc160fc76eadf6dde1b3a9fc9453598b7558194860486",
+      "state": "candidate",
+      "origin": "P16 upstream supplementary result",
+      "description": "Retained supplementary snapshot."
+    },
+    {
+      "path": "evidence/upstream/supplementary/newsgroups_20260627_203029.json",
+      "sha256": "22233c913364aa8253eda4214fff7446cb489b8b22ebf1430181b702afce7fb6",
+      "state": "candidate",
+      "origin": "P16 upstream supplementary result",
+      "description": "Retained supplementary snapshot."
+    },
+    {
+      "path": "evidence/upstream/supplementary/newsgroups_20260627_203749.json",
+      "sha256": "c8693ce1ae4f902ee1d6c61eec02fb117877c6feedc04720b5e58e91d45a1cc5",
+      "state": "candidate",
+      "origin": "P16 upstream supplementary result",
+      "description": "Retained supplementary snapshot."
+    },
+    {
+      "path": "reports/audit.md",
+      "sha256": "c4de47b448a9479b046b424ef9c100cf93e8c4c799bb0e003111dc6c97b2b32e",
+      "state": "verified",
+      "origin": "P16 Research Factory overlay",
+      "description": "Human-readable archival and evidence audit."
+    },
+    {
+      "path": "reports/claim-ledger-verification.md",
+      "sha256": "9492d5c5b32a05d3062a45d4b776ae9fdf26e52d5a255581c6a511b78e210bee",
+      "state": "verified",
+      "origin": "P16 Research Factory overlay",
+      "description": "Generated claim-ledger verification report."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "source identity",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "location": "deprecation banner",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "location": "variant reconciliation",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "location": "archive marker",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "location": "merge destination provenance",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "location": "dataset-scope reconciliation",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "title and content scope",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "main snapshot ECE recomputation",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C09",
+      "location": "main snapshot AUROC comparison",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "main snapshot Brier comparison",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "location": "isotonic recomputation",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "location": "pairwise significance recount",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "location": "N-sensitivity table",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "location": "N-sensitivity correlations",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "location": "carrier semantic binding",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "location": "anonymity metadata conflict",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "location": "internal manuscript conflicts",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "location": "retained review",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "location": "final disposition",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "p16-main-snapshot-recompute",
+      "state": "reproduced",
+      "receipt": "evidence/audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p16-isotonic-recompute",
+      "state": "reproduced",
+      "receipt": "evidence/audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p16-pairwise-recount",
+      "state": "reproduced",
+      "receipt": "evidence/audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p16-n-sensitivity-recompute",
+      "state": "reproduced",
+      "receipt": "evidence/audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p16-carrier-semantic-audit",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "p16-retained-review",
+      "kind": "method",
+      "state": "open",
+      "critical": 4,
+      "major": 1,
+      "receipt": "evidence/upstream/REVIEW_CARD.md"
+    },
+    {
+      "review_id": "p16-merge-provenance",
+      "kind": "reproduction",
+      "state": "open",
+      "critical": 1,
+      "major": 0,
+      "receipt": "evidence/variant-reconciliation.json"
+    }
+  ],
+  "package": {
+    "state": "not-started",
+    "files": [],
+    "blockers": [
+      "Canonical source explicitly forbids independent submission",
+      "Archive marker forbids upload, repackaging and source edits",
+      "Named p12 merge target contains no study-specific data, model or result terms",
+      "Synthetic six-class canonical scope conflicts with the eight-class Newsgroups snapshot",
+      "The title promises resampling although no SMOTE or undersampling experiment is present",
+      "Snapshot AUROC and Brier values contradict the printed table",
+      "Isotonic reduction is 24.86 percent rather than 99 percent",
+      "Only 10 of 15 Bonferroni-corrected tests remain significant",
+      "42 of 57 carrier receipts bind the value to the wrong semantic quantity, model, run or role",
+      "Anonymity metadata conflicts with the named source author",
+      "Retained review is 2/8 D veto / reject and R16 requires Major Revision"
+    ]
+  },
+  "measurements": [
+    {
+      "name": "canonical_sha256",
+      "value": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "unit": "sha256",
+      "definition": "SHA-256 of the canonical paper/main.tex.",
+      "source": "evidence/source_record.json",
+      "state": "observed"
+    },
+    {
+      "name": "source_variant_count",
+      "value": 7,
+      "unit": "files",
+      "definition": "Retained source files with mutually distinct hashes.",
+      "source": "evidence/variant-reconciliation.json",
+      "state": "observed"
+    },
+    {
+      "name": "canonical_samples",
+      "value": 996,
+      "unit": "samples",
+      "definition": "Sample count stated for the synthetic canonical scope.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "canonical_classes",
+      "value": 6,
+      "unit": "classes",
+      "definition": "Class count stated for the synthetic canonical scope.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "main_snapshot_samples",
+      "value": 1000,
+      "unit": "samples",
+      "definition": "Sample count in the 195431 Newsgroups snapshot.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "main_snapshot_classes",
+      "value": 8,
+      "unit": "classes",
+      "definition": "Class count in the 195431 Newsgroups snapshot.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "p12_study_term_matches",
+      "value": 0,
+      "unit": "matches",
+      "definition": "Study-specific data, model or result term matches in the pinned p12 target.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "p12_n_sensitivity_mentions",
+      "value": 45,
+      "unit": "matches",
+      "definition": "Occurrences of N-sensitivity in the pinned p12 target.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "carrier_total",
+      "value": 57,
+      "unit": "receipts",
+      "definition": "Rows in CARRIER_RECEIPTS.json.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "carrier_semantic_mismatch",
+      "value": 42,
+      "unit": "receipts",
+      "definition": "Mechanical PASS receipts whose semantic quantity, model, run or role does not match.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "isotonic_ece_reduction_pct",
+      "value": 24.855178298516655,
+      "unit": "percent",
+      "definition": "RF-Hybrid ECE reduction from the ten-seed snapshot.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "pairwise_corrected_significant",
+      "value": 10,
+      "unit": "tests",
+      "definition": "Bonferroni-significant pairwise tests among 15.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "review_card_score",
+      "value": "2/8",
+      "unit": "score",
+      "definition": "Retained review-card score with D veto / reject.",
+      "source": "evidence/upstream/REVIEW_CARD.md",
+      "state": "observed"
+    }
+  ],
+  "gate_receipts": [
+    {
+      "gate_id": "p16-source-identity",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "66a870226d800e7dabf78682a07adfa18f78f3f8ed7f2a5ccb7197cb7af2d6f4",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "Canonical and retained overlay copies are byte-identical."
+    },
+    {
+      "gate_id": "p16-variant-reconciliation",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "fb0d85ebebb66c19e6801ecf53f951f7ad1230662b607707bf8ac4a3544640e7",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "Seven retained source files have seven distinct hashes."
+    },
+    {
+      "gate_id": "p16-deprecation-marker",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "53e2c6b84e4a88927c998681cf9854b8e461ba02e940d9553732e7925ad249fb",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "The canonical source explicitly says DO NOT SUBMIT INDEPENDENTLY."
+    },
+    {
+      "gate_id": "p16-archive-marker",
+      "scope": "review",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "66a870226d800e7dabf78682a07adfa18f78f3f8ed7f2a5ccb7197cb7af2d6f4",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "The retained archive marker forbids independent submission, upload and repackaging."
+    },
+    {
+      "gate_id": "p16-merge-provenance",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "fb0d85ebebb66c19e6801ecf53f951f7ad1230662b607707bf8ac4a3544640e7",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "The named p12 target has 45 N-sensitivity mentions but zero study-specific data, model or result terms."
+    },
+    {
+      "gate_id": "p16-dataset-scope",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "53e2c6b84e4a88927c998681cf9854b8e461ba02e940d9553732e7925ad249fb",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "Canonical six-class synthetic scope conflicts with the eight-class Newsgroups snapshot."
+    },
+    {
+      "gate_id": "p16-main-table",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "53e2c6b84e4a88927c998681cf9854b8e461ba02e940d9553732e7925ad249fb",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "Snapshot AUROC and Brier values contradict the printed table."
+    },
+    {
+      "gate_id": "p16-isotonic-result",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "53e2c6b84e4a88927c998681cf9854b8e461ba02e940d9553732e7925ad249fb",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "The ECE reduction is 24.86 percent rather than 99 percent; AUROC changes by -0.037834."
+    },
+    {
+      "gate_id": "p16-pairwise-significance",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "53e2c6b84e4a88927c998681cf9854b8e461ba02e940d9553732e7925ad249fb",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "Only 10 of 15 Bonferroni-corrected tests remain significant, not 12."
+    },
+    {
+      "gate_id": "p16-n-sensitivity",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "53e2c6b84e4a88927c998681cf9854b8e461ba02e940d9553732e7925ad249fb",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "One rounded table cell and the two reported correlations disagree with the archive."
+    },
+    {
+      "gate_id": "p16-carrier-bindings",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "53e2c6b84e4a88927c998681cf9854b8e461ba02e940d9553732e7925ad249fb",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "All 57 receipts mechanically pass, but 42 bind the value to the wrong quantity, model, run or role."
+    },
+    {
+      "gate_id": "p16-anonymity-metadata",
+      "scope": "other",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "53e2c6b84e4a88927c998681cf9854b8e461ba02e940d9553732e7925ad249fb",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "The anonymity record conflicts with the named author and preprint option in the source."
+    },
+    {
+      "gate_id": "p16-review",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/upstream/REVIEW_CARD.md",
+      "receipt_sha256": "e1d90bd0b9be585f1178c26d0cf3dcd5b2e41af8d26b5317287657e674072b77",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "The retained review is 2/8 D veto / reject and R16 requires Major Revision."
+    },
+    {
+      "gate_id": "p16-candidate-package",
+      "scope": "package",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "53e2c6b84e4a88927c998681cf9854b8e461ba02e940d9553732e7925ad249fb",
+      "source_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+      "summary": "No package was created for a deprecated side shell with unresolved provenance."
+    }
+  ],
+  "notes": [
+    "agent-proposed, not human publication approval",
+    "The archive marker proves author intent to merge, not completion of the merge.",
+    "Snapshot recomputation is an archival audit, not new external validation.",
+    "Mechanical carrier PASS is not semantic evidence binding.",
+    "No candidate package, upload, account action or publication occurred."
+  ]
+}

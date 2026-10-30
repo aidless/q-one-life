@@ -1,0 +1,24 @@
+\begin{tabular}{p{2.15cm}p{2.5cm}p{2.4cm}p{3.55cm}}
+\toprule
+Ruler & Gold source & What the floor is & What a verdict means \\
+\midrule
+Leave-one-out &
+judge consensus (2+ models) &
+accuracy of a gold generator with its own votes removed, the \emph{maximum}
+over generators, since a leader must clear every generator rather than the
+average of them &
+whether the top of this leaderboard can be read at all \\[2pt]
+External human gold &
+human annotation &
+\emph{undefined}; we report the median annotator instead &
+whether the leader beats a typical annotator \\[2pt]
+Latent variable (Dawid--Skene) &
+raw label matrix (no consensus label) &
+the agreement of the \emph{weakest} annotator with the truth the model fits,
+i.e.\ the minimum over annotators --- the opposite order statistic to
+\eqref{eq:loo}, which is a maximum over generators --- under a model that does
+not assume majority vote is truth &
+nothing: it feeds no verdict rule, only the signed comparison of
+\S\ref{sec:ds} \\
+\bottomrule
+\end{tabular}

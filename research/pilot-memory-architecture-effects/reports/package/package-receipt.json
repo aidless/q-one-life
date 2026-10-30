@@ -1,0 +1,98 @@
+{
+  "schema": "q-one-arxiv-candidate-package-v1",
+  "generated_at": "2026-10-28T07:27:32.219195Z",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/source",
+    "main_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+    "package_sha256": "24ddf025b470c4b304b378a492e858a55cfa8f0e9f119e129189e19039d56ba1",
+    "file_count": 10
+  },
+  "archive": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/reports/package/memory-architecture-arxiv-candidate.tar.gz",
+    "sha256": "6a2eea0b03eedd2d27b3ee4f7914217fa1f31e981a6f67d30493c1bbb8ad5e2d",
+    "bytes": 69974,
+    "repeat_sha256": "6a2eea0b03eedd2d27b3ee4f7914217fa1f31e981a6f67d30493c1bbb8ad5e2d",
+    "deterministic": true
+  },
+  "entries": [
+    {
+      "path": "LICENSE",
+      "sha256": "c9c310685017f06b77000b05a0fd7fce152aa31ad8b25f71067fa3ffd73d0391",
+      "bytes": 267
+    },
+    {
+      "path": "main.tex",
+      "sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+      "bytes": 79014
+    },
+    {
+      "path": "math_commands.tex",
+      "sha256": "9d655842e74bf55f241770197793507d27f178abef4132378b8333e391a6a0e0",
+      "bytes": 5039
+    },
+    {
+      "path": "refs.bib",
+      "sha256": "429ec67d7b023dd3dfa79a64788621d45a5150c06c25de30eb14287fbf5efbba",
+      "bytes": 13692
+    },
+    {
+      "path": "tmlr.bst",
+      "sha256": "306fd454cf40771bee01293eeb98d2c1cd5f4e11ed0cd7296b335f354fc45206",
+      "bytes": 26969
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    },
+    {
+      "path": "code/run_grid_v4flash.py",
+      "sha256": "c7f13e8a7b8adcda2acb7c568fcdbf2240a02c7bb957bf6b555e7318d9cc89d3",
+      "bytes": 12605
+    },
+    {
+      "path": "figures/dose_response_curves.pdf",
+      "sha256": "b49b5ba29e84e691e836684ec39a057e41b95af4208a493d702d003abc541236",
+      "bytes": 16820
+    },
+    {
+      "path": "figures/ece_dose_response.pdf",
+      "sha256": "dc46cbaa4ec211cf473159154c9b9cc71616239046c40be9acb7c45d81957c1f",
+      "bytes": 17261
+    },
+    {
+      "path": "figures/reduction_heatmap.pdf",
+      "sha256": "98d80903a6aa0f4e74d6d122aff4ccbd7356335e4076d6673bac516c6cc7ebfe",
+      "bytes": 22084
+    }
+  ],
+  "extract_compile": {
+    "exit_code": 0,
+    "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/reports/package/archive-cleanroom/receipt.json",
+    "receipt_sha256": "07719d67fbb18601a3f90e628fbbf3adf56cacba0bf1b17520cf63c8ce379ad9",
+    "pdf_pages": 26,
+    "pdf_sha256": "285455b8fca25e0d98c283e072aff4ff4bd82302483a68de6cbd698d6ac1e5f5",
+    "command_stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/reports/package/archive-cleanroom/build.stdout.log",
+    "command_stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/reports/package/archive-cleanroom/build.stderr.log"
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "ready_for_upload": false,
+  "blockers": [
+    "Authority-marker results are output-length responses, not validated authority bias.",
+    "The retained external-judge audit covers 120 samples, not the full response population.",
+    "Round-4 raw per-seed logs are not retained in this overlay; only the validation aggregate is bound.",
+    "Several exploratory carrier values remain missing or header-only.",
+    "Independent method and statistics review remains open.",
+    "Author, category, abstract, license and upload authorization remain user decisions.",
+    "This is an internal candidate archive; no arXiv upload was performed.",
+    "Author, category, license, abstract and final metadata remain user decisions.",
+    "A compiling archive does not establish scientific readiness or independent review."
+  ],
+  "notes": [
+    "The archive uses sorted entries and normalized owner, mode and mtime.",
+    "The archive was extracted into a separate temporary directory before compilation."
+  ]
+}

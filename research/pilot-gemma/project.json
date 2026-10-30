@@ -1,0 +1,235 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-your-tool-selection-benchmark-may-be-sco-85ad80aa80",
+  "title": "Your Tool-Selection Benchmark May Be Scoring Wrong Calls as Correct",
+  "status": "revision",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-gemma",
+  "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/GEMMA_REVISED.md",
+  "manuscript": {
+    "path": "source/GEMMA_REVISED.md",
+    "sha256": "aa25d33d83b55c4bff5716f2777f420b182122faf93b26a78694b5ce9c5ea798",
+    "published_source_sha256": "2ad3ce3d05303adc2adce3444c1e7d4ccf640d242b90499cd9f9d1d5022092d8",
+    "matches_published_source": false,
+    "source_url": "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/your-tool-selection-benchmark-may-be-scoring-wrong"
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "7fd25bc944b9668f441da7a300f849deafddc1d0486cc3adb3e77d9103606dae",
+      "state": "candidate",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/GEMMA_REVISED.md",
+      "description": "Q-One source identity record; this is not manuscript recomputation."
+    },
+    {
+      "path": "evidence/sources.json",
+      "sha256": "a7ab230d9c0b26be4948f84be11ace1dba4acb730747a63dfa7c24bd6ef9fa46",
+      "state": "candidate",
+      "origin": "user-supplied source references",
+      "description": "External evidence pointers retained from the scaffold."
+    },
+    {
+      "path": "evidence/publication_receipt_20261016.json",
+      "sha256": "140654c72cb0b6ce2fe9f39889c29cc870b8359709e76d1d4b9ba73cdab022be",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/publication_receipt_20261016.json",
+      "description": "Authenticated Kaggle remote publication and public-companion receipt."
+    },
+    {
+      "path": "evidence/toolselect_recompute.json",
+      "sha256": "81cc1740608072590509b63cfff967129b7c358e103817fae6fe2b41cc8185ee",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/toolselect-redownload-v3-20261016/recompute_out_20260925.json",
+      "description": "Per-registry archive counts and text-classification buckets."
+    },
+    {
+      "path": "evidence/toolselect_cross_model_analysis.json",
+      "sha256": "32324a38b9d754b1b9e25dec9cd01b9fba87a5d302e95177f74b3e6b78e997da",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/toolselect-redownload-v3-20261016/cross-model-probe/analysis.json",
+      "description": "Descriptive cross-model probe counts; not a capability ranking."
+    },
+    {
+      "path": "evidence/toolselect_replay_audit.json",
+      "sha256": "b3239588c4f30e2b6c4bcc2072b8b383b20ae5d343d6b6a992b7b825a978201f",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/toolselect-redownload-v3-20261016/replay_audit_20261014.json",
+      "description": "Archive row, signature and text-decision recomputation."
+    },
+    {
+      "path": "evidence/toolselect_evidence_manifest.json",
+      "sha256": "fd698fd084412a6e895475bb77b1d41dcbf9492a26e599cda796ffa32b127fee",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/toolselect-redownload-v3-20261016/evidence_manifest.json",
+      "description": "Byte-level inventory of the public replay package."
+    },
+    {
+      "path": "evidence/execution_replay_result.json",
+      "sha256": "4ee0ff33978382b8a27f320a963378a3762f751f7a42b7aba6e35f7fb3b7d084",
+      "state": "candidate",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/toolselect-notebook-v3-20261016/outputs/execution-replay/result.json",
+      "description": "Engineering replay result; model_calls and network_calls are zero."
+    },
+    {
+      "path": "evidence/manuscript_identity.json",
+      "sha256": "851611348198b731843591611778dbf7d3ff65e6d23b881252e0ea019d16abdd",
+      "state": "blocked",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/GEMMA_REVISED.md + publication_receipt_20261016.json",
+      "description": "Local and remote manuscript source hashes differ."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Abstract; sections 3-4",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Section 3",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "location": "Section 4",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "location": "Section 5",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "location": "Publication status",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "location": "Manuscript identity",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md",
+        "evidence/manuscript_identity_recovered.json"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "Section 5",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "Limitations",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "toolselect-archive-replay",
+      "state": "completed",
+      "receipt": "evidence/toolselect_replay_audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "toolselect-cross-model-probe",
+      "state": "completed",
+      "receipt": "evidence/toolselect_cross_model_analysis.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "toolselect-engineering-execution-replay",
+      "state": "completed",
+      "receipt": "evidence/execution_replay_result.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [],
+  "package": {
+    "state": "not-started",
+    "files": [],
+    "blockers": [
+      "The local manuscript hash differs from the current remote published source hash.",
+      "No arXiv source tree, bibliography, cover metadata, or compiled PDF has been prepared from the current source.",
+      "The archive replay establishes record-level text discrepancies, not tool execution correctness.",
+      "The 48-row cross-model probe is descriptive and does not establish a model ranking.",
+      "arXiv upload requires a separate user authorization and account action."
+    ]
+  },
+  "measurements": [
+    {
+      "name": "archive_rows",
+      "value": 450,
+      "unit": "records",
+      "definition": "Rows in the preserved tool-selection archive.",
+      "source": "evidence/toolselect_replay_audit.json#archive_rows",
+      "state": "observed"
+    },
+    {
+      "name": "distinct_registry_record_pairs",
+      "value": 75,
+      "unit": "signatures",
+      "definition": "Distinct registry-size and complete-record pairs.",
+      "source": "evidence/toolselect_replay_audit.json#distinct_registry_record_pairs",
+      "state": "observed"
+    },
+    {
+      "name": "fresh_probe_rows",
+      "value": 48,
+      "unit": "responses",
+      "definition": "Fresh preserved outputs from two local models.",
+      "source": "evidence/toolselect_cross_model_analysis.json#rows",
+      "state": "observed"
+    },
+    {
+      "name": "verified_claims",
+      "value": 7,
+      "unit": "claims",
+      "definition": "Claims with matching evidence fields in this overlay.",
+      "source": "reports/claim-ledger-verification.md",
+      "state": "observed"
+    },
+    {
+      "name": "blocked_claims",
+      "value": 1,
+      "unit": "claims",
+      "definition": "Claims explicitly withheld from strong manuscript assertions.",
+      "source": "reports/claim-ledger-verification.md",
+      "state": "observed"
+    }
+  ],
+  "notes": [
+    "Kaggle remote contentState is PUBLISHED and the submitted banner was verified.",
+    "No official award, final ranking, population error rate, or tool-execution result is established.",
+    "The local Markdown is an older source version than the current remote receipt."
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "schema": "q-one-cleanroom-compile-v1",
+  "generated_at": "2026-10-27T14:31:12.748720Z",
+  "project_root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper11",
+  "source": {
+    "main_tex": "source/main.tex",
+    "main_tex_sha256": "9748c64cbd338dcc495d6ce4119365ccf8540b5369fb912c74df662f999be02a",
+    "references_bib_sha256": "51f0432d5db567c3497e5763b818080492979ea8f278ee0fbaf3a7626c4c65b9",
+    "generated_values_sha256": "88350d5d14550389500b5c47977c5067e1f93cd5fd781f31de0375ca844fe468",
+    "figure_sha256": "d1449f3abbe71b26c18d9fe6398269de54776281317b24bf70b029b433728bfa"
+  },
+  "commands": [
+    "pdflatex -interaction=nonstopmode -halt-on-error main.tex",
+    "bibtex main",
+    "pdflatex -interaction=nonstopmode -halt-on-error main.tex",
+    "pdflatex -interaction=nonstopmode -halt-on-error main.tex"
+  ],
+  "exit_codes": {
+    "pdflatex_pass1": 0,
+    "bibtex": 0,
+    "pdflatex_pass2": 0,
+    "pdflatex_pass3": 0,
+    "cleanroom_dir": "/tmp/qone-paper11-cleanroom.1R1aM1"
+  },
+  "outputs": [
+    {
+      "path": "reports/cleanroom/main.pdf",
+      "sha256": "eb00f6ab1a1279ab458cae2a0e0e31e85d0b928dabfbf3e95ee9112ff305916d",
+      "bytes": 203009
+    },
+    {
+      "path": "reports/cleanroom/main.bbl",
+      "sha256": "a2468bbd6b52b115965c8b17b0f7b0eb30a421806d16c79b71c3cc53a3aa5dc4",
+      "bytes": 4048
+    }
+  ],
+  "pdf": {
+    "pages": 8,
+    "page_size": "612 x 792 pts (letter)",
+    "pdf_version": "1.7",
+    "bytes": 203009
+  },
+  "logs": [
+    {
+      "path": "reports/cleanroom/bibtex.log",
+      "sha256": "2a461c53cf420e8a4ee94a25f371f30a1384411b573bb0c9d37fdc3f85386f38",
+      "warnings": []
+    },
+    {
+      "path": "reports/cleanroom/main.log",
+      "sha256": "3b95dd2cba6c8973b060f8dd2ae73d045394b4fc3984903df2c86314560c2c66",
+      "warnings": [
+        "Underfull \\hbox (badness 2591) in paragraph at lines 20--24",
+        "Underfull \\hbox (badness 2035) in paragraph at lines 20--24"
+      ]
+    },
+    {
+      "path": "reports/cleanroom/pass1.log",
+      "sha256": "e5604fb1115a168bd02475ce605b6d4fff3ded1d86336f86e1e2275fdec073d5",
+      "warnings": []
+    },
+    {
+      "path": "reports/cleanroom/pass2.log",
+      "sha256": "08ff62c8ed13bd2b0937f31eb2ac93cad6d2ab4592479f7888e7b3e534e14875",
+      "warnings": [
+        "Underfull \\hbox (badness 2591) in paragraph at lines 20--24",
+        "Underfull \\hbox (badness 2035) in paragraph at lines 20--24"
+      ]
+    },
+    {
+      "path": "reports/cleanroom/pass3.log",
+      "sha256": "d96be928853fabdbc97e69e15036cb93694790e303a09118d240d5278361731c",
+      "warnings": [
+        "Underfull \\hbox (badness 2591) in paragraph at lines 20--24",
+        "Underfull \\hbox (badness 2035) in paragraph at lines 20--24"
+      ]
+    }
+  ],
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "pdftex": "pdfTeX 3.141592653-2.6-1.40.29",
+    "texlive": "2026"
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "The compile ran in an isolated temporary directory copied from the overlay source.",
+    "The PDF hash can change because pdfTeX embeds build time; source hashes are the identity anchor.",
+    "A successful compile is not a scientific-readiness or upload authorization."
+  ]
+}

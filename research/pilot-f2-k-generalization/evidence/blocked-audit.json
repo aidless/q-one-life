@@ -1,0 +1,201 @@
+{
+  "schema": "q-one-f2-audit-v1",
+  "generated_at": "2026-10-28T08:13:00Z",
+  "marker": "agent-proposed, not human publication approval",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f2-k-generalization/evidence/upstream/paper/main.tex",
+    "sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
+    "bytes": 31834,
+    "canonical_sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916"
+  },
+  "structure": {
+    "labels": 17,
+    "duplicate_labels": [],
+    "references": 41,
+    "missing_references": [
+      "alg:run",
+      "lst:runschema"
+    ],
+    "citation_keys": 32,
+    "bib_keys": 42,
+    "missing_citations": []
+  },
+  "joint_2700": {
+    "declared_cells": 2700,
+    "declared_holds": 2700,
+    "archived_cells": 5,
+    "distinct_conditions": [
+      {
+        "K": 3,
+        "gamma": 0.5
+      },
+      {
+        "K": 4,
+        "gamma": 1.0
+      },
+      {
+        "K": 5,
+        "gamma": 2.0
+      }
+    ],
+    "has_duplicate_condition_rows": true,
+    "analysis_conditions": 6,
+    "bootstrap_point_disagreements": {
+      "K3_g1.0": {
+        "point": 0.3494,
+        "mean_per_seed": 0.34407,
+        "difference": 0.005330000000000001
+      },
+      "K4_g0.5": {
+        "point": 0.5287,
+        "mean_per_seed": 0.53627,
+        "difference": -0.007570000000000077
+      }
+    },
+    "per_seed_means": {
+      "K3_g0.5": 0.4853924027857237,
+      "K3_g1.0": 0.3543985690362582,
+      "K4_g0.5": 0.5332128601652144,
+      "K4_g1.0": 0.4293078752457063,
+      "K5_g0.5": 0.54768587242957,
+      "K5_g1.0": 0.42635594377059627
+    },
+    "episode_records": 180,
+    "episode_summary": {
+      "K3_g0.5": {
+        "records": 30,
+        "unique_questions": 10,
+        "unanimous": 30,
+        "mean_vote": 0.7
+      },
+      "K3_g1.0": {
+        "records": 30,
+        "unique_questions": 10,
+        "unanimous": 30,
+        "mean_vote": 0.6
+      },
+      "K4_g0.5": {
+        "records": 30,
+        "unique_questions": 10,
+        "unanimous": 29,
+        "mean_vote": 0.6833333333333333
+      },
+      "K4_g1.0": {
+        "records": 30,
+        "unique_questions": 10,
+        "unanimous": 30,
+        "mean_vote": 0.6
+      },
+      "K5_g0.5": {
+        "records": 30,
+        "unique_questions": 10,
+        "unanimous": 29,
+        "mean_vote": 0.6866666666666666
+      },
+      "K5_g1.0": {
+        "records": 30,
+        "unique_questions": 10,
+        "unanimous": 30,
+        "mean_vote": 0.6
+      }
+    },
+    "episodes_have_all_gamma_levels": [
+      0.5,
+      1.0
+    ]
+  },
+  "real_llm": {
+    "calls": {
+      "real64": 64,
+      "real128": 128,
+      "real192": 192,
+      "total": 384
+    },
+    "claimed_frozen_subset_sum": 466,
+    "elapsed_hours": {
+      "real64": 0.125277747909228,
+      "real128": 0.2841666666666667,
+      "real192": 0.40944444444444444,
+      "sum": 0.8188888590203391
+    },
+    "real64_degenerate_products": 8,
+    "real64_failures": {
+      "K5_g0.5": {
+        "n": 8,
+        "holds_sum": 7,
+        "p": 0.875,
+        "holds_all": false
+      }
+    },
+    "real128_note": "2x64=128/192, 1 batch remains for 192",
+    "real192_holds": "24/24 holds True"
+  },
+  "reported_statistics": {
+    "p16_fields": [
+      "generated",
+      "model",
+      "note",
+      "provenance",
+      "seeds",
+      "temp",
+      "total_cells"
+    ],
+    "p16_total_cells": 300,
+    "protocol_bytes": 218,
+    "proof_bytes": 1031,
+    "claim_ledger_rows": 9,
+    "abstract_statistics_present": {
+      "dz_0_42": true,
+      "ci_0_18_0_66": true,
+      "p_0_009": true,
+      "hmin_0_08": true,
+      "self_eval_0_11": true,
+      "bound_0_014": true
+    }
+  },
+  "checks": {
+    "single_source_structure": false,
+    "citations_resolve": true,
+    "joint_declared_2700_but_five_rows": true,
+    "joint_covers_only_three_conditions": true,
+    "joint_has_duplicate_condition_rows": true,
+    "analysis_has_six_summary_conditions": true,
+    "bootstrap_point_disagrees_with_per_seed_mean": true,
+    "per_seed_means_disagree_with_analysis": true,
+    "episodes_only_180_records": true,
+    "episodes_have_no_gamma_2": true,
+    "real64_contains_one_failure": true,
+    "real64_product_constant": true,
+    "real128_incomplete_note": true,
+    "real192_only_summary": true,
+    "claimed_466_vs_archived_384": true,
+    "p16_has_no_effect_fields": true,
+    "protocol_has_no_declared_values": true,
+    "proof_contradicts_abstract": true,
+    "carrier_receipts_not_backed": true,
+    "claim_ledger_present": true,
+    "abstract_claims_no_abs_carrier": true
+  },
+  "gate_states": {
+    "source_identity": "passed",
+    "structure": "failed",
+    "citations": "passed",
+    "k345_empirical_carrier": "blocked",
+    "p16_selective": "blocked",
+    "p18_drift": "blocked",
+    "p21_causal": "blocked",
+    "real_llm_subset": "blocked",
+    "review": "blocked",
+    "package": "blocked",
+    "external_submission": "locked"
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "The declared 2700-cell carrier stores five rows and only three conditions.",
+    "Three archives claim to hold per-seed products but disagree with the printed values.",
+    "The real-LLM counts mix frozen target counts with archived call counts.",
+    "p16/p18/p21 effect values lack field-level carriers.",
+    "The family is blocked pending a rebuilt, archived experiment."
+  ]
+}

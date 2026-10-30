@@ -1,0 +1,357 @@
+{
+  "schema": "q-one-p15-calibration-archive-audit-v1",
+  "generated_at": "2026-10-28T00:00:00Z",
+  "marker": "agent-proposed, not human publication approval",
+  "family_id": "qf-n-sensitive-calibration-of-tree-ensemble-623d15100e",
+  "project_id": "qp-tmlr-resampling-calibration-632b05b06c33",
+  "canonical": {
+    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
+    "sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+    "bytes": 66342,
+    "deprecated_banner_present": true,
+    "deprecated_banner": "% =====================================================================\n% DEPRECATED — DO NOT SUBMIT INDEPENDENTLY\n% 已并入 tmlr_p12（N-sensitivity 主稿）；数据口径已统一为合成+单一 BGE\n% 见 _SUBMISSION_STRATEGY.md | 标记时间：2026-09-01\n% =====================================================================\n% ============================================================\n% 论文 D: N-Sensitive Calibration of Tree Ensembles\n% 合并来源: P6 (tmlr_p6) + Light-skills resampling calibration study"
+  },
+  "variants": {
+    "count": 7,
+    "distinct_hashes": 7,
+    "all_distinct": true,
+    "rows": [
+      {
+        "name": "legacy_source",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/main.tex",
+        "sha256": "ae5c304410e6d15551e7c159dd0846c5609a5a0611bc1632d2d7d1cadb6821ab",
+        "bytes": 65927,
+        "synthetic_style_mentions": 16,
+        "three_real_dataset_mentions": 0,
+        "smote_mentions": 29
+      },
+      {
+        "name": "canonical_preprint",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
+        "sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+        "bytes": 66342,
+        "synthetic_style_mentions": 16,
+        "three_real_dataset_mentions": 0,
+        "smote_mentions": 29
+      },
+      {
+        "name": "ingest_backup",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex.bak_20261001T0205Z_preprint",
+        "sha256": "6df16f28659c8b62087a030f955e0803a31a3b41c67dc2e01c9e84e09bcc1bf3",
+        "bytes": 65827,
+        "synthetic_style_mentions": 16,
+        "three_real_dataset_mentions": 0,
+        "smote_mentions": 29
+      },
+      {
+        "name": "arxiv_clean",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_clean/main.tex",
+        "sha256": "cb160331ce870cc2bb4b16dbbdee6f39ffce044ed0c50f60aa1729069c54d681",
+        "bytes": 68320,
+        "synthetic_style_mentions": 0,
+        "three_real_dataset_mentions": 4,
+        "smote_mentions": 29
+      },
+      {
+        "name": "arxiv_final",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_final/main.tex",
+        "sha256": "a5b77bee3c20dde329c6eb3ad2f9e7cefbc4ea671014fca8d44f1944ded41358",
+        "bytes": 68343,
+        "synthetic_style_mentions": 0,
+        "three_real_dataset_mentions": 4,
+        "smote_mentions": 29
+      },
+      {
+        "name": "arxiv_upload",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/main.tex",
+        "sha256": "d0f359fad259fd49ebc68f40e9cd32f961ac0f5ab1d72a70faf71b8585752b0d",
+        "bytes": 68341,
+        "synthetic_style_mentions": 0,
+        "three_real_dataset_mentions": 4,
+        "smote_mentions": 29
+      },
+      {
+        "name": "submission_variant",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/submission_variant/main.tex",
+        "sha256": "fd79004ab1ab00c438d9c617acdf54e258f95855c66bfcb0b825486b6469e16b",
+        "bytes": 65917,
+        "synthetic_style_mentions": 16,
+        "three_real_dataset_mentions": 0,
+        "smote_mentions": 29
+      }
+    ]
+  },
+  "merge_target": {
+    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p12/paper/main.tex",
+    "sha256": "b406b923bde2bb8b6323d8079ed5edf33f9826056439bd081dcc11d731cb339f",
+    "terms": {
+      "N-Sensitive Calibration of Tree Ensembles": 0,
+      "SMOTE": 0,
+      "random undersampling": 0,
+      "resampling calibration audit": 0,
+      "frozen LLM embeddings": 0,
+      "synthetic style-classification": 0
+    },
+    "study_terms_found": 0,
+    "explicit_p15_study_present": false,
+    "archive_marker_says_merged": true
+  },
+  "review": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-n-sensitive-calibration/evidence/upstream/REVIEW_CARD.md",
+    "sha256": "8b67f261fbbac236b2815c7de906c530ade0c7d3142949a171a08794189e7872",
+    "score": "5/10",
+    "disposition": "并入 tmlr_p12",
+    "major_findings": 2,
+    "source_excerpt": "# REVIEW CARD — RESAMPLING_CALIBRATION（2026-09-04）\n\n## 题目\nN-Sensitive Calibration of Tree Ensembles on Frozen LLM Embeddings\n\n## 裁决：5/10（B-）→ **并入 tmlr_p12**（方向与校准族不同：树集成 N-敏感性）\n- A 证据 6：头注 DEPRECATED 并入 p12；修正 sklearn 管线 bug、补 adaptive ECE/per-N 调参，修订诚实。\n- B 兴趣 5。\n- C 清晰 6：类合并消融+多协议对比+50 种子。\n- D：内部数字口径不统一。\n\n## Major\n1. abstract \"TS 减少 RF ECE 88%\" OK 但 Finding 2a 正文 \"ECE 0.128–0.135\" vs 表 0.131 表述不一致；\"RF 优于 MLP\"（N=5000 单点）与 N-敏感性\"MLP 大胜 0.35\"并置易误导。\n2. Tab embedding_main caption 称 \"across all thr"
+  },
+  "e1": {
+    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/supplementary/E1_full.json",
+    "sha256": "ede4bce3b85e8aef120109488eb8b09c45e2753e5d7bdf9cd37fe5e4e8840a06",
+    "rows": 240,
+    "pair_count": 6,
+    "summary": {
+      "20ng": {
+        "RF": {
+          "n500": {
+            "N": 500,
+            "seeds": 10,
+            "ece_adaptive_mean": 0.32007200398151836,
+            "delta_to_5000": 0.08201963731899409
+          },
+          "n5000": {
+            "N": 5000,
+            "seeds": 10,
+            "ece_adaptive_mean": 0.40209164130051245,
+            "delta_from_500": 0.08201963731899409
+          }
+        },
+        "MLP": {
+          "n500": {
+            "N": 500,
+            "seeds": 10,
+            "ece_adaptive_mean": 0.1986644749902189,
+            "delta_to_5000": -0.14774074858501554
+          },
+          "n5000": {
+            "N": 5000,
+            "seeds": 10,
+            "ece_adaptive_mean": 0.050923726405203346,
+            "delta_from_500": -0.14774074858501554
+          }
+        }
+      },
+      "ag_news": {
+        "RF": {
+          "n500": {
+            "N": 500,
+            "seeds": 10,
+            "ece_adaptive_mean": 0.35574,
+            "delta_to_5000": -0.04854745206423605
+          },
+          "n5000": {
+            "N": 5000,
+            "seeds": 10,
+            "ece_adaptive_mean": 0.30719254793576395,
+            "delta_from_500": -0.04854745206423605
+          }
+        },
+        "MLP": {
+          "n500": {
+            "N": 500,
+            "seeds": 10,
+            "ece_adaptive_mean": 0.3607946293652058,
+            "delta_to_5000": -0.3292341560304165
+          },
+          "n5000": {
+            "N": 5000,
+            "seeds": 10,
+            "ece_adaptive_mean": 0.03156047333478928,
+            "delta_from_500": -0.3292341560304165
+          }
+        }
+      },
+      "dbpedia": {
+        "RF": {
+          "n500": {
+            "N": 500,
+            "seeds": 10,
+            "ece_adaptive_mean": 0.56623,
+            "delta_to_5000": 0.01659755878308089
+          },
+          "n5000": {
+            "N": 5000,
+            "seeds": 10,
+            "ece_adaptive_mean": 0.5828275587830809,
+            "delta_from_500": 0.01659755878308089
+          }
+        },
+        "MLP": {
+          "n500": {
+            "N": 500,
+            "seeds": 10,
+            "ece_adaptive_mean": 0.39061077280342577,
+            "delta_to_5000": -0.36182988863289356
+          },
+          "n5000": {
+            "N": 5000,
+            "seeds": 10,
+            "ece_adaptive_mean": 0.028780884170532223,
+            "delta_from_500": -0.36182988863289356
+          }
+        }
+      }
+    }
+  },
+  "e6": {
+    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/supplementary/E6_class_merge.json",
+    "sha256": "fc3a8fb677b0d9f321d10b4ee9f0770d518365f6235d730046939aa8d41ed627",
+    "rows": 400,
+    "summary": {
+      "4": {
+        "500": {
+          "RF": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.2520210277777778
+          },
+          "MLP": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.20322735318541527
+          }
+        },
+        "5000": {
+          "RF": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.26615115150545127
+          },
+          "MLP": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.07023410770595073
+          }
+        },
+        "gap_mlp_minus_rf_n5000": -0.19591704379950053
+      },
+      "8": {
+        "500": {
+          "RF": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.25248275403026044
+          },
+          "MLP": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.20643253475427628
+          }
+        },
+        "5000": {
+          "RF": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.3249856154192134
+          },
+          "MLP": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.04740828532129527
+          }
+        },
+        "gap_mlp_minus_rf_n5000": -0.27757733009791813
+      },
+      "12": {
+        "500": {
+          "RF": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.28894847715889765
+          },
+          "MLP": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.18478296898305416
+          }
+        },
+        "5000": {
+          "RF": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.3558048392930482
+          },
+          "MLP": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.04172100085467101
+          }
+        },
+        "gap_mlp_minus_rf_n5000": -0.31408383843837717
+      },
+      "16": {
+        "500": {
+          "RF": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.30477409981811987
+          },
+          "MLP": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.19605744641274214
+          }
+        },
+        "5000": {
+          "RF": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.35630238478077497
+          },
+          "MLP": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.04709125373661518
+          }
+        },
+        "gap_mlp_minus_rf_n5000": -0.3092111310441598
+      },
+      "20": {
+        "500": {
+          "RF": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.3443657386543625
+          },
+          "MLP": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.24003841581940652
+          }
+        },
+        "5000": {
+          "RF": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.38689843731516854
+          },
+          "MLP": {
+            "seeds": 10,
+            "ece_adaptive_mean": 0.0500061053454876
+          }
+        },
+        "gap_mlp_minus_rf_n5000": -0.33689233196968094
+      }
+    },
+    "k4_both_improve_claim_supported": false
+  },
+  "carrier_receipts": {
+    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/evidence/CARRIER_RECEIPTS.json",
+    "sha256": "245f9a95c3b98207b4a88fa6d435aa423595437160b83207abe65ddd91038de7",
+    "total": 201,
+    "verdicts": {
+      "ABSENT": 42,
+      "PASS": 159
+    },
+    "absent_verdict_count": 42,
+    "absent_verdict_artifacts": {
+      "source/arxiv_upload/supplementary/E1_full.json": 26,
+      "source/arxiv_upload/supplementary/E6_class_merge.json": 10,
+      "source/revision_experiments/results/E8_rf_leaf_ablation.json": 6
+    }
+  },
+  "resampling_headline_fields": {
+    "smote_p_0_13": true,
+    "yeast_ir_70_1": false,
+    "rus_0_395": false,
+    "posthoc_0_003": false,
+    "smote_0_061": false
+  },
+  "decision": {
+    "disposition": "merge_archive",
+    "status": "archived",
+    "independent_package_created": false,
+    "uploaded": false,
+    "reason": "The canonical source is explicitly deprecated and marked merged into tmlr_p12; no independent package is appropriate. The merge target does not textually contain this study, so merge provenance remains an unresolved conflict rather than a verified merge."
+  }
+}

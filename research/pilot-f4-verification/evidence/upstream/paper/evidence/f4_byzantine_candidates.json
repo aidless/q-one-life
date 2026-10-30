@@ -1,0 +1,163 @@
+{
+  "generated_utc": "2026-09-30T16:35Z",
+  "purpose": "Candidate prior work for the Byzantine-robustness line that tmlr-f4-verification's Related Work lacks. Raised by the 7B reviewer: 'Lack of comparison with specific prior work on Byzantine voting (Sec 2)'. Verified: refs.bib contains ONE byzantine entry (lamport1982, the 1982 problem statement) and ZERO consensus entries, for a paper whose method is weighted voting with f Byzantine verifiers.",
+  "status": "CANDIDATES — none is cited yet",
+  "why_not_cited": "Every record below was retrieved from arXiv and its abstract read, which is enough to judge relevance and NOT enough to cite responsibly. Adding a reference requires having read the paper's method and result, and a bib entry whose fields came from a search API rather than from the PDF is exactly the fabrication this project has spent the day preventing. A human reads the HIGH ones and adds the entries.",
+  "retrieval": "python3 tools/arxiv_fetch.py search <query> --max N  (arXiv reachable, 2026-09-30)",
+  "candidates": [
+    {
+      "arxiv_id": "2202.02085",
+      "title": "SignSGD: Fault-Tolerance to Blind and Byzantine Adversaries",
+      "authors": [
+        "Jason Akoun",
+        "Sebastien Meyer"
+      ],
+      "published": "2022-02-04",
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "abstract": "Distributed learning has become a necessity for training ever-growing models by sharing calculation among several devices. However, some of the devices can be faulty, deliberately or not, preventing the proper convergence. As a matter of fact, the baseline distributed SGD algorithm does not converge in the presence of one Byzantine adversary. In this article we focus on the more robust SignSGD algorithm derived from SGD. We provide an upper bound for the convergence rate of SignSGD proving that this new version is robust to Byzantine adversaries. We implemented SignSGD along with Byzantine strategies attempting to crush the learning process. Therefore, we provide empirical observations from our experiments to support our theory. Our code is available on GitHub https://github.com/jasonakoun/signsgd-fault-tolerance and our experiments are reproducible by using the provided parameters.",
+      "relevance": "HIGH",
+      "why": "Byzantine-robust aggregation with a convergence bound under a fraction of Byzantine devices, plus reproducible code. The closest existing method line to f4's weighted-vote-over-f-Byzantine-verifiers setting."
+    },
+    {
+      "arxiv_id": "2506.01989",
+      "title": "Coded Robust Aggregation for Distributed Learning under Byzantine Attacks",
+      "authors": [
+        "Chengxi Li",
+        "Ming Xiao",
+        "Mikael Skoglund"
+      ],
+      "published": "2025-05-17",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "abstract": "In this paper, we investigate the problem of distributed learning (DL) in the presence of Byzantine attacks. For this problem, various robust bounded aggregation (RBA) rules have been proposed at the central server to mitigate the impact of Byzantine attacks. However, current DL methods apply RBA rules for the local gradients from the honest devices and the disruptive information from Byzantine devices, and the learning performance degrades significantly when the local gradients of different devices vary considerably from each other. To overcome this limitation, we propose a new DL method to cope with Byzantine attacks based on coded robust aggregation (CRA-DL). Before training begins, the training data are allocated to the devices redundantly. During training, in each iteration, the honest devices transmit coded gradients to the server computed from the allocated training data, and the server then aggregates the information received from both honest and Byzantine devices using RBA rules. In this way, the global gradient can be approximately recovered at the server to update the global model. Compared with current DL methods applying RBA rules, the improvement of CRA-DL is attributed to the fact that the coded gradients sent by the honest devices are closer to each other. This closeness enhances the robustness of the aggregation against Byzantine attacks, since Byzantine messages tend to be significantly different from those of honest devices in this case. We theoretically analyze the convergence performance of CRA-DL. Finally, we present numerical results to verify the superiority of the proposed method over existing baselines, showing its enhanced learning performance under Byzantine attacks.",
+      "relevance": "MEDIUM",
+      "why": "Coded robust aggregation for distributed learning; a newer robustness mechanism, useful as a forward reference rather than a baseline."
+    },
+    {
+      "arxiv_id": "2302.07173",
+      "title": "An Experimental Study of Byzantine-Robust Aggregation Schemes in Federated Learning",
+      "authors": [
+        "Shenghui Li",
+        "Edith C. -H. Ngai",
+        "Thiemo Voigt"
+      ],
+      "published": "2023-02-14",
+      "categories": [
+        "cs.LG"
+      ],
+      "abstract": "Byzantine-robust federated learning aims at mitigating Byzantine failures during the federated training process, where malicious participants may upload arbitrary local updates to the central server to degrade the performance of the global model. In recent years, several robust aggregation schemes have been proposed to defend against malicious updates from Byzantine clients and improve the robustness of federated learning. These solutions were claimed to be Byzantine-robust, under certain assumptions. Other than that, new attack strategies are emerging, striving to circumvent the defense schemes. However, there is a lack of systematic comparison and empirical study thereof. In this paper, we conduct an experimental study of Byzantine-robust aggregation schemes under different attacks using two popular algorithms in federated learning, FedSGD and FedAvg . We first survey existing Byzantine attack strategies and Byzantine-robust aggregation schemes that aim to defend against Byzantine attacks. We also propose a new scheme, ClippedClustering , to enhance the robustness of a clustering-based scheme by automatically clipping the updates. Then we provide an experimental evaluation of eight aggregation schemes in the scenario of five different Byzantine attacks. Our results show that these aggregation schemes sustain relatively high accuracy in some cases but are ineffective in others. In particular, our proposed ClippedClustering successfully defends against most attacks under independent and IID local datasets. However, when the local datasets are Non-IID, the performance of all the aggregation schemes significantly decreases. With Non-IID data, some of these aggregation schemes fail even in the complete absence of Byzantine clients. We conclude that the robustness of all the aggregation schemes is limited, highlighting the need for new defense strategies, in particular for Non-IID datasets.",
+      "relevance": "HIGH",
+      "why": "Experimental comparison of Byzantine-robust aggregation rules — the 'empirical study' shape f4's Related Work lacks, and a baseline table to position against."
+    },
+    {
+      "arxiv_id": "2609.29709",
+      "title": "Three Ways Classical Test Theory Misleads for LLM Judges",
+      "authors": [
+        "Louis Yiven Zhu"
+      ],
+      "published": "2026-08-31",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "stat.ME"
+      ],
+      "abstract": "An LLM judge scores a bank of responses against a rubric, and the reliability comes back at $0.52$. What has been measured? Judge evaluation has begun borrowing reliability statistics from classical test theory, usually without stating the measurement design each statistic assumes, and we show that three widely portable ones mean something different for a judge than for a test because the judge setting rearranges the roles those designs rest on. First, an internal-consistency coefficient computed over rubric elements contains no scorer facet. Holding one judge's measured error rate fixed at $4.72\\%$, KR-20 still ranges from $0.01$ to $0.68$ as the item bank is redesigned around it, and varying judge error moves the coefficient by a comparable amount, so item design and judge error are not separately identified and no single value can be read as a property of the judge. Second, the dependability index $Φ(λ)$ is a ratio of variance components, and the classification probability with which it is sometimes identified differs from it by $0.25$-$0.43$ on our bank and by $0.17$-$0.30$ on simulated data where the underlying model holds exactly. Third, Livingston-Lewis accuracy is indexed to an examinee's own true score on the same instrument, so scoring it against external gold conflates judge unreliability with criterion invalidity. Reviewing the three closest judge-evaluation papers, we found no published instance of these errors, which makes the caution prospective. A coefficient that cannot be attributed to the judge nonetheless travels downstream into deployment decisions and disclosure documents. We therefore close with four reporting lines that keep the attribution attached to the number.",
+      "relevance": "HIGH",
+      "why": "Classical test theory applied to LLM judges. Bears directly on f4's trust-weighted aggregation, which assumes comparable judge behaviour across verifiers."
+    },
+    {
+      "arxiv_id": "2502.18036",
+      "title": "Harnessing Multiple Large Language Models: A Survey on LLM Ensemble",
+      "authors": [
+        "Zhijun Chen",
+        "Xiaodong Lu",
+        "Jingzheng Li",
+        "Pengpeng Chen",
+        "Zhuoran Li",
+        "Kai Sun",
+        "Yuankai Luo",
+        "Qianren Mao",
+        "Ming Li",
+        "Likang Xiao",
+        "Dingqi Yang",
+        "Xiao Huang",
+        "Yikun Ban",
+        "Hailong Sun",
+        "Philip S. Yu"
+      ],
+      "published": "2025-02-25",
+      "categories": [
+        "cs.CL"
+      ],
+      "abstract": "LLM Ensemble -- which involves the comprehensive use of multiple large language models (LLMs), each aimed at handling user queries during downstream inference, to benefit from their individual strengths -- has gained substantial attention recently. The widespread availability of LLMs, coupled with their varying strengths and out-of-the-box usability, has profoundly advanced the field of LLM Ensemble. This paper presents the first systematic review of recent developments in LLM Ensemble. First, we introduce our taxonomy of LLM Ensemble and discuss several related research problems. Then, we provide a more in-depth classification of the methods under the broad categories of \"ensemble-before-inference, ensemble-during-inference, ensemble-after-inference'', and review all relevant methods. Finally, we introduce related benchmarks and applications, summarize existing studies, and suggest several future research directions. A curated list of papers on LLM Ensemble is available at https://github.com/junchenzhi/Awesome-LLM-Ensemble.",
+      "relevance": "MEDIUM",
+      "why": "Survey of LLM ensembles. Positions multi-judge aggregation generally; useful for the 'agent and voting line' framing rather than for a bound."
+    },
+    {
+      "arxiv_id": "2402.10059",
+      "title": "Partial Synchrony for Free? New Upper Bounds for Byzantine Agreement",
+      "authors": [
+        "Pierre Civit",
+        "Muhammad Ayaz Dzulfikar",
+        "Seth Gilbert",
+        "Rachid Guerraoui",
+        "Jovan Komatovic",
+        "Manuel Vidigueira",
+        "Igor Zablotchi"
+      ],
+      "published": "2024-02-15",
+      "categories": [
+        "cs.DC"
+      ],
+      "abstract": "Byzantine agreement allows n processes to decide on a common value, in spite of arbitrary failures. The seminal Dolev-Reischuk bound states that any deterministic solution to Byzantine agreement exchanges Omega(n^2) bits. In synchronous networks, solutions with optimal O(n^2) bit complexity, optimal fault tolerance, and no cryptography have been established for over three decades. However, these solutions lack robustness under adverse network conditions. Therefore, research has increasingly focused on Byzantine agreement for partially synchronous networks. Numerous solutions have been proposed for the partially synchronous setting. However, these solutions are notoriously hard to prove correct, and the most efficient cryptography-free algorithms still require O(n^3) exchanged bits in the worst case. In this paper, we introduce Oper, the first generic transformation of deterministic Byzantine agreement algorithms from synchrony to partial synchrony. Oper requires no cryptography, is optimally resilient (n >= 3t+1, where t is the maximum number of failures), and preserves the worst-case per-process bit complexity of the transformed synchronous algorithm. Leveraging Oper, we present the first partially synchronous Byzantine agreement algorithm that (1) achieves optimal O(n^2) bit complexity, (2) requires no cryptography, and (3) is optimally resilient (n >= 3t+1), thus showing that the Dolev-Reischuk bound is tight even in partial synchrony. Moreover, we adapt Oper for long values and obtain several new partially synchronous algorithms with improved complexity and weaker (or completely absent) cryptographic assumptions.",
+      "relevance": "LOW",
+      "why": "Byzantine agreement upper bounds under partial synchrony. Correct literature but about consensus protocols, not judge aggregation — cite only if the Introduction's N=3f+1 framing is being made explicit."
+    },
+    {
+      "arxiv_id": "1507.06165",
+      "title": "Asynchronous Byzantine Agreement with Optimal Resilience and Linear Complexity",
+      "authors": [
+        "Cheng Wang"
+      ],
+      "published": "2015-07-22",
+      "categories": [
+        "cs.DC"
+      ],
+      "abstract": "Given a system with $n > 3t + 1$ processes, where $t$ is the tolerated number of faulty ones, we present a fast asynchronous Byzantine agreement protocol that can reach agreement in $O(t)$ expected running time. This improves the $O(n^2)$ expected running time of Abraham, Dolev, and Halpern [PODC 2008]. Furthermore, if $n = (3 + \\varepsilon) t$ for any $\\varepsilon > 0$, our protocol can reach agreement in $O (1 / \\varepsilon)$ expected running time. This improves the result of Feldman and Micali [STOC 1988] (with constant expected running time when $n > 4 t$).",
+      "relevance": "LOW",
+      "why": "Asynchronous Byzantine agreement with optimal resilience. Same as above: canonical, adjacent, not a method comparison."
+    },
+    {
+      "arxiv_id": "2607.05391",
+      "title": "LLM-as-a-Verifier: A General-Purpose Verification Framework",
+      "authors": [
+        "Jacky Kwok",
+        "Shulu Li",
+        "Pranav Atreya",
+        "Yuejiang Liu",
+        "Yixing Jiang",
+        "Chelsea Finn",
+        "Marco Pavone",
+        "Ion Stoica",
+        "Azalia Mirhoseini"
+      ],
+      "published": "2026-07-06",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA",
+        "cs.RO"
+      ],
+      "abstract": "Scaling pre-training, post-training, and test-time compute have become the central paradigms for improving the capabilities of LLMs. In this work, we identify verification, the ability to determine the correctness of a solution, as a new scaling axis. To unlock this and demonstrate its effectiveness, we introduce LLM-as-a-Verifier, a general-purpose verification framework that provides fine-grained feedback for agentic tasks without requiring additional training. Unlike standard LM judges that prompt LLMs to produce discrete scores for candidate solutions, LLM-as-a-Verifier computes the expectation over the distribution of scoring token logits to generate continuous scores. This probabilistic formulation enables verification to scale along multiple dimensions: (1) score granularity, (2) repeated evaluation, and (3) criteria decomposition. In particular, we show that scaling the scoring granularity leads to better separation between positive and negative solutions, resulting in more calibrated comparisons. Moreover, scaling repeated evaluation and criteria decomposition consistently lead to additional gains in verification accuracy through variance and complexity reduction. We further introduce a cost-efficient ranking algorithm for selecting the best solution among candidates using the verifier's continuous scores. LLM-as-a-Verifier achieves state-of-the-art performance on Terminal-Bench V2 (86.5%), SWE-Bench Verified (78.2%), RoboRewardBench (87.4%), and MedAgentBench (73.3%). Beyond verification, the fine-grained signals from LLM-as-a-Verifier can also serve as a proxy for estimating task progress. We build an extension for Claude Code, enabling developers to monitor and improve their own agentic systems. Finally, we show that LLM-as-a-Verifier can provide dense feedback for RL, improving the sample efficiency of SAC and GRPO on robotics and mathematical reasoning benchmarks.",
+      "relevance": "MEDIUM",
+      "why": "LLM-as-a-verifier framework. Same problem family, adjacent method; a positioning citation for Sec 2."
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "schema": "q-one-preregistration-v1",
+  "experiment_id": "noise-floor-kfold-common-support-a3",
+  "version": "1.0.0",
+  "frozen_at": "2026-10-29T04:37:11Z",
+  "status": "frozen_before_execution",
+  "scope": {
+    "kind": "deterministic_recomputation_on_existing_evidence",
+    "target": "the LOO_on_kfold_domain margin reported by EC63 and independent review finding A3",
+    "external_validity": "none claimed; the four m25 carriers are a fixed public construction",
+    "manuscript_or_native_repository_modification": false,
+    "new_data_collection": false
+  },
+  "review_binding": {
+    "path": "../../../evidence/REVIEW_INDEPENDENT_2026-10-24.md",
+    "sha256": "8d815000775ad110354043854967c79044605deb1f6113a549a6cba13078c86e",
+    "finding": "A3"
+  },
+  "research_question": "Is the non-zero LOO_on_kfold_domain margin in EC63 a clean k-fold-versus-LOO effect, or is it produced because generator-specific missing LOO gold changes each generator's scoring denominator?",
+  "hypotheses": {
+    "H0": "The non-zero LOO margin on the k-fold domain is a feature of the LOO-versus-k-fold comparison that persists when every generator is scored on one support where the main gold, every generator's own LOO gold, every fold gold, and every generator/system answer are defined.",
+    "H1": "The non-zero reported LOO margin is a support leak: on the joint support required by Proposition 4, the plurality LOO labels equal the full gold labels, every generator and system has the same scored items, the LOO margin is exactly zero, and the bootstrap identity is zero in every valid round; a k-fold margin can remain non-zero on the same support.",
+    "decision_rule": "Reject H0 and accept H1 only if F1-F5 all pass in two byte-identical accepted runs."
+  },
+  "support_definitions": {
+    "S_k": "the main-gold support intersected with every generator's fold-gold support, exactly as reconstructed by followup_ec63_kfold.py",
+    "S_loo": "the main-gold support intersected with every generator's own leave-one-out gold support",
+    "S_actor": "the intersection of item rows for every generator and every ranked system",
+    "S_joint": "S_k intersected with S_loo and S_actor; all LOO and k-fold arm scores for the primary test are computed on this one set",
+    "scoring_policy": "for the primary joint-support test, a generator or system scored set must equal S_joint exactly; missing LOO gold is not silently replaced by an actor-specific denominator"
+  },
+  "bootstrap": {
+    "n_boot": 2000,
+    "seed": 20261001,
+    "cluster": "case",
+    "percentile": [
+      2.5,
+      97.5
+    ],
+    "k_fold": 4,
+    "source": "native audit.py and followup_common.py conventions"
+  },
+  "native_pin": {
+    "external_git_head": "ab40e28abcb2a97e13242d0dab5584d42a15f94e",
+    "files": [
+      {
+        "path": "tools/bench-noise-floor/audit.py",
+        "sha256": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b"
+      },
+      {
+        "path": "tools/bench-noise-floor/followup_common.py",
+        "sha256": "66aeb942b6bb8526f4467d244b9a04bad4d4023eaaf95b87aef0c1307912ee54"
+      },
+      {
+        "path": "tools/bench-noise-floor/followup_ec63_kfold.py",
+        "sha256": "e0528fa164e2b7de63fb9711686c9f1882f083d170fa777251f878f0301ee5fb"
+      },
+      {
+        "path": "tools/bench-noise-floor/make_m25_votes.py",
+        "sha256": "defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236"
+      },
+      {
+        "path": "papers/bench_noise_floor/evidence/strict_review_followup/EC63_kfold_vs_loo.json",
+        "sha256": "f80712e34f86e71fd75d71d3c6224dfd0af466bccef244ae9c23cd31e6a62b50"
+      }
+    ]
+  },
+  "native_inputs": [
+    {
+      "path": "papers/bench_noise_floor/evidence/m25_factuality.json",
+      "sha256": "e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c"
+    },
+    {
+      "path": "papers/bench_noise_floor/evidence/m25_coherence.json",
+      "sha256": "e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc"
+    },
+    {
+      "path": "papers/bench_noise_floor/evidence/m25_relevance.json",
+      "sha256": "6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d"
+    },
+    {
+      "path": "papers/bench_noise_floor/evidence/m25_preference.json",
+      "sha256": "53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1"
+    }
+  ],
+  "recorded_expectations": {
+    "tolerance_points": 1e-09,
+    "tasks": {
+      "factuality": {
+        "kfold_margin": 0.6198347107438025,
+        "loo_on_kfold_domain_margin": 0.0625442122879889,
+        "loo_leader_macro": 94.00826446280992,
+        "loo_floor_macro": 93.94572025052193
+      },
+      "coherence": {
+        "kfold_margin": 3.960396039603964,
+        "loo_on_kfold_domain_margin": 0.47111581387146373,
+        "loo_leader_macro": 83.16831683168317,
+        "loo_floor_macro": 82.69720101781171,
+        "kfold_domain_size": 404,
+        "independent_review_note": "The review named leader 83.1683, floor 82.6972 and margin 0.4711; these three values are the reproduced symptom."
+      },
+      "relevance": {
+        "kfold_margin": 0.5112474437627839,
+        "loo_on_kfold_domain_margin": 0.005238191022158389,
+        "loo_leader_macro": 97.4437627811861,
+        "loo_floor_macro": 97.43852459016394
+      },
+      "preference": {
+        "kfold_margin": 1.5841584158415856,
+        "loo_on_kfold_domain_margin": 0.01538400852037114,
+        "loo_leader_macro": 97.42574257425743,
+        "loo_floor_macro": 97.41035856573706
+      }
+    }
+  },
+  "gates": [
+    {
+      "id": "F1_recorded_leak_reproduced",
+      "rule": "The runner reconstructs the recorded k-fold and leaky LOO point values on all four tasks within 1e-9, including the coherence domain size 404 and a non-zero coherence LOO margin greater than 0.1 points."
+    },
+    {
+      "id": "F2_loo_label_identity_on_joint_support",
+      "rule": "For every task and every generator/item pair in S_joint where both full gold and LOO gold are defined, the labels are identical; at least one pair is checked per task and the mismatch count is zero."
+    },
+    {
+      "id": "F3_joint_support_margin_zero",
+      "rule": "For each task on S_joint, every floor scored set equals S_joint, the leaderboard scored set equals S_joint, the leader is a generator, and max_system macro minus max_generator LOO macro is exactly zero within 1e-9 points."
+    },
+    {
+      "id": "F4_bootstrap_identity_degenerate",
+      "rule": "For each task on S_joint, the reselected-leader-minus-reselected-floor statistic is exactly zero in every valid case-cluster bootstrap round and its percentile interval is [0, 0]."
+    },
+    {
+      "id": "F5_kfold_control_has_teeth",
+      "rule": "The coherence k-fold margin on the same S_joint is non-zero by more than 0.001 points, showing that aligning the support does not mechanically force every margin to zero."
+    }
+  ],
+  "falsification_condition": "H1 is rejected if any gate fails. In particular, a persistent non-zero LOO point margin on S_joint, a label mismatch, an actor-specific scored set, a non-degenerate identity bootstrap, or a zero k-fold control would count against H1.",
+  "stopping_rule": "Run the frozen implementation exactly twice with the same command and output paths results/run-1.json and results/run-2.json. If the two files are not byte-identical, stop with a reproducibility failure and do not reinterpret either run. No task, seed, support definition, tolerance, or gate may be changed within version 1.0.0; any change requires a new preregistration version or a preserved attempt.",
+  "execution": {
+    "command": "python run_common_support.py --external-root '/home/liuzewen/F:\\deepseek' --preregistration preregistration.json --output results/run-1.json",
+    "repeat_command": "the same command with results/run-2.json",
+    "accepted_output": "q-one-a3-common-support-v1 with decision.status=passed"
+  },
+  "implementation": {
+    "path": "run_common_support.py",
+    "sha256": "9669db5401f31b10a450eafd0762ddd9bafdec77737a3d30a420ec85f977b012"
+  },
+  "non_claims": [
+    "This experiment is a deterministic recomputation on four fixed m25 constructions; it is not an external-validity study.",
+    "A zero LOO margin on the joint support does not prove k-fold restores ranking validity or closes independent review finding A4.",
+    "A non-zero k-fold margin on the joint support does not establish a scientifically usable positive verdict.",
+    "No manuscript, author, licence, account, or upload state is changed."
+  ]
+}

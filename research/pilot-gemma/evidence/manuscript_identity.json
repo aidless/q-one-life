@@ -1,0 +1,7 @@
+{
+  "local_sha256": "aa25d33d83b55c4bff5716f2777f420b182122faf93b26a78694b5ce9c5ea798",
+  "remote_source_sha256": "2ad3ce3d05303adc2adce3444c1e7d4ccf640d242b90499cd9f9d1d5022092d8",
+  "matches_published_source": false,
+  "source_url": "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/your-tool-selection-benchmark-may-be-scoring-wrong",
+  "note": "The local revised Markdown is an older source version than the current remote receipt."
+}

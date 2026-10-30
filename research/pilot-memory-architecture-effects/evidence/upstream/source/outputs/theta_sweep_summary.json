@@ -1,0 +1,13 @@
+{
+  "sweep_theta": [
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "sweep_n_seeds": 5,
+  "sweep_p": 0.5,
+  "pairwise": [],
+  "chosen_theta": 0.1,
+  "chosen_theta_reason": "θ = 0.1 minimises mean Γ across the 5-seed sweep at p=0.5, balancing recall (in-topic biased memories retained) against precision (off-topic biased memories filtered). The choice is refuted if any other value in {0.05, 0.1, 0.2, 0.3} gives a strictly lower Γ on the full DeepSeek dose-response curve."
+}

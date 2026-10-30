@@ -1,0 +1,189 @@
+{
+  "root": "F:\\Research\\MERGED_FLAGSHIPS\\F4_Verification",
+  "created": "2026-08-22T16:50:47+00:00",
+  "files": [
+    {
+      "path": "evidence/protocol.md",
+      "size": 145,
+      "sha256": "fbe6caea4a7ed10d4c94e679cbd486391b7a95b65b954b0b7eb4bfaa76da18b3",
+      "modified": "2026-08-22T16:50:34+00:00"
+    },
+    {
+      "path": "LITERATURE_REVIEW.md",
+      "size": 7265,
+      "sha256": "2aea2cd1d7d68afaf4ceaa6a30945744030c14ec5e00810bd0e648d876034e12",
+      "modified": "2026-08-22T16:48:05+00:00"
+    },
+    {
+      "path": "main.aux",
+      "size": 142,
+      "sha256": "c6bd086917b02aa14dbc896c2ad91b1052d805ec27a210a4d35bd11587bcfc29",
+      "modified": "2026-08-22T16:50:35+00:00"
+    },
+    {
+      "path": "main.bbl",
+      "size": 275,
+      "sha256": "8e5c0a84578475116bd7e34d81ab6a955fa410c276f07902a2ba9c41ed532db6",
+      "modified": "2026-08-22T16:33:19+00:00"
+    },
+    {
+      "path": "main.blg",
+      "size": 934,
+      "sha256": "5da998f1b13663e496f6aed127642ed5c9207eefda2c43603d8c4908a4758ebe",
+      "modified": "2026-08-22T16:33:19+00:00"
+    },
+    {
+      "path": "main.log",
+      "size": 13850,
+      "sha256": "3737684894e2a234e4f96c870311ca297b9943991926439855867160814aabe0",
+      "modified": "2026-08-22T16:50:35+00:00"
+    },
+    {
+      "path": "main.pdf",
+      "size": 131528,
+      "sha256": "535bc87b8126c8290099dd1f97d403f35bf89c528bd1e68b2259972958f7643c",
+      "modified": "2026-08-22T16:50:35+00:00"
+    },
+    {
+      "path": "main.tex",
+      "size": 3054,
+      "sha256": "a4a9f922382bb7ced332af9f7cefa43d70aae980dbe7c77f4486719b3221bec7",
+      "modified": "2026-08-22T16:50:34+00:00"
+    },
+    {
+      "path": "main.toc",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modified": "2026-08-22T16:50:35+00:00"
+    },
+    {
+      "path": "main_full.aux",
+      "size": 183,
+      "sha256": "b4fa4554e8a29be5a4d3646597bc9d1407309de1b45665a2940dd9fededf545d",
+      "modified": "2026-08-22T16:37:31+00:00"
+    },
+    {
+      "path": "main_full.bbl",
+      "size": 275,
+      "sha256": "8e5c0a84578475116bd7e34d81ab6a955fa410c276f07902a2ba9c41ed532db6",
+      "modified": "2026-08-22T16:37:30+00:00"
+    },
+    {
+      "path": "main_full.blg",
+      "size": 944,
+      "sha256": "7dff40be8ff099ec9e8df493cc1eeb42c32a7a7f00e4721cd4a92053804cf75d",
+      "modified": "2026-08-22T16:37:30+00:00"
+    },
+    {
+      "path": "main_full.log",
+      "size": 15307,
+      "sha256": "8d000aa4b335dbea5909bf9d91303cd82c9960e6cb359f1fc4eb54b1e9e1d254",
+      "modified": "2026-08-22T16:37:31+00:00"
+    },
+    {
+      "path": "main_full.pdf",
+      "size": 131697,
+      "sha256": "f1dac7e80c2873e76fe5b20357d18f5aebcaa533295f959ba00bb5893903f6d1",
+      "modified": "2026-08-22T16:37:31+00:00"
+    },
+    {
+      "path": "main_full.tex",
+      "size": 3054,
+      "sha256": "a4a9f922382bb7ced332af9f7cefa43d70aae980dbe7c77f4486719b3221bec7",
+      "modified": "2026-08-22T16:50:34+00:00"
+    },
+    {
+      "path": "main_full.toc",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modified": "2026-08-22T16:37:31+00:00"
+    },
+    {
+      "path": "refs.bib",
+      "size": 128,
+      "sha256": "cd2fb1cb1ed857b2fac9aa5d4040d4b551b8b7bf5e15b7ea07e3df67f7c5a0b3",
+      "modified": "2026-08-22T16:24:44+00:00"
+    },
+    {
+      "path": "REVIEW_R2_patch.md",
+      "size": 823,
+      "sha256": "9a81f2674e05377c9153cb73b725a4501954c57ee7abafdfcc837a4358cdba3e",
+      "modified": "2026-08-22T16:48:46+00:00"
+    },
+    {
+      "path": "reviews/ten_review_cloud_R901.json",
+      "size": 929,
+      "sha256": "4c413d5cf06b8c2ccbea5155ac8306634af877809805eafbec77745036acb005",
+      "modified": "2026-08-22T16:27:36+00:00"
+    },
+    {
+      "path": "tmlr.bst",
+      "size": 26969,
+      "sha256": "306fd454cf40771bee01293eeb98d2c1cd5f4e11ed0cd7296b335f354fc45206",
+      "modified": "2026-07-10T03:34:01+00:00"
+    },
+    {
+      "path": "tmlr.sty",
+      "size": 6560,
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "modified": "2026-06-29T14:27:05+00:00"
+    },
+    {
+      "path": "evidence/baselines/baselines.json",
+      "sha256": "be6f0c999b6de8a942966baad16f61d31a4052b3f9fb862b024e4e425392a0df",
+      "size": 257
+    },
+    {
+      "path": "evidence/baselines/real40.json",
+      "sha256": "35b3cbdfda20c0a71aa3def745a086c827afc668b0325fc45b37e20d4cb09c83",
+      "size": 354
+    },
+    {
+      "path": "reviews/ten_review_real_final_R10_F4_Verification.json",
+      "sha256": "3403f75e913b335302429204b6b0f395507deeb834d64fac9109d5989f1c2b6e",
+      "size": 178
+    },
+    {
+      "path": "reviews/ten_review_real_final_R11_F4_Verification.json",
+      "sha256": "6de4569d936405845cf92651b200938128c4db407d04b0bae0f6bb4b15709b9c",
+      "size": 173
+    },
+    {
+      "path": "reviews/ten_review_real_final_R12_F4_Verification.json",
+      "sha256": "af279b5b455f0f9826fd61009e43e69aaae0daae4e1fb81514d5bb8be1df73e4",
+      "size": 172
+    },
+    {
+      "path": "reviews/ten_review_real_final2_R13_F4_Verification.json",
+      "sha256": "a5f4bea6cbdb96d4aa6884d543957fe1eae75ffbda23d823f0357f6ff683c30a",
+      "size": 172
+    },
+    {
+      "path": "reviews/ten_review_real_final3_R14_F4_Verification.json",
+      "sha256": "e1ad3fc6d2c05286b1e5ff4912cf824526d98b5fdc7cdf749e417c9c567278a5",
+      "size": 172
+    },
+    {
+      "path": "reviews/ten_review_real_final_R15_F4_Verification.json",
+      "sha256": "b68f31e1444eaefe7173490ab8f8350189da90a4d70bedbd6b6c91631993fab6",
+      "size": 172
+    },
+    {
+      "path": "reviews/ten_review_real_final_R16_F4_Verification.json",
+      "sha256": "ead745c0c92d8be0e34548d5da4ebfae62b82d80339a46e35720a234f37fefaa",
+      "size": 172
+    },
+    {
+      "path": "reviews/ten_review_real_final_R17_F4_Verification.json",
+      "sha256": "188bf836d1c42b281efca9f903abb2f96e964d9a4e954bc643527c3d746f6b67",
+      "size": 171
+    },
+    {
+      "path": "results/analysis.json",
+      "n_cells": 270,
+      "n_seeds": 10,
+      "note": "P2 synthetic three-arm"
+    }
+  ],
+  "updated": "2026-08-24T11:46:11.391747"
+}

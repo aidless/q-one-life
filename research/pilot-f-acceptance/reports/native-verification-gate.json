@@ -1,0 +1,100 @@
+{
+  "schema": "q-one-native-verification-gate-v1",
+  "gate_id": "f-acceptance-native-verification",
+  "generated_at": "2026-10-27T15:08:59.880111Z",
+  "state": "passed",
+  "scope": "numbers",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source/main.tex",
+    "sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
+    "sha256_after": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
+    "stable_during_run": true
+  },
+  "command": [
+    "/home/liuzewen/.cache/qone-desktop-runtime-20261027/bin/python",
+    "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/evidence/native/wave2-F-acceptance/verify_f_v2.py",
+    "--tex",
+    "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source/main.tex"
+  ],
+  "runs": [
+    {
+      "exit_code": 0,
+      "stdout": "reports/native-verification/verify-run1.log",
+      "stderr": "reports/native-verification/verify-run1.err"
+    },
+    {
+      "exit_code": 0,
+      "stdout": "reports/native-verification/verify-run2.log",
+      "stderr": "reports/native-verification/verify-run2.err"
+    }
+  ],
+  "checks": {
+    "passed": 79,
+    "failed": 0,
+    "deterministic_stdout": true
+  },
+  "inputs": [
+    {
+      "path": "evidence/native/wave2-F-acceptance/verify_f_v2.py",
+      "sha256": "a50eda283b756ea2a6afe93de7f758615f0e5b20ede9de223dd3d86bebf8f69a"
+    },
+    {
+      "path": "evidence/native/wave2-F-acceptance/revision_stats.json",
+      "sha256": "daa982b94ba3d032444146c719177ee23ceb36069459c2db909b5ac3e76e1a41"
+    },
+    {
+      "path": "evidence/native/wave2-F-acceptance/dynamic_audit_frozen200.json",
+      "sha256": "9c003251597e07d83331a3066d1f6c586a01fe5824062e6b26671108a9022693"
+    },
+    {
+      "path": "evidence/native/wave2-F-acceptance/flip_band.json",
+      "sha256": "6a44cd51cb9584e1c0ef23ffb284e96d4f67997bbdc4a7fc9aab7d140f3649a1"
+    },
+    {
+      "path": "evidence/native/wave2-F-acceptance/unknown48_full_audit.json",
+      "sha256": "c0ce73807cdef5eea945402430845df0bb34b790c2b8a9951e2cfb155c166703"
+    },
+    {
+      "path": "evidence/native/wave2-F-acceptance/github_survey/raw/classification.json",
+      "sha256": "d161d97cabac4777843c604a31ea609dce5fc494080de6758c7ace76add0c8b8"
+    },
+    {
+      "path": "evidence/native/wave2-F-acceptance/github_survey/raw/classification-readjudicated.json",
+      "sha256": "1d3b1f67ccfbac3b51f2b072180c06515b98c6dc9155ae0a771cd6286c305d96"
+    },
+    {
+      "path": "evidence/native/data/f02_gate_inventory.json",
+      "sha256": "62229f38c0685f4556f92e1a67dcf67834d30ebb2cd3bd6bd64af906ad69bfc7"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "reports/native-verification/verify-run1.log",
+      "sha256": "5fe74aaf05027ffbdcb48a296b1ef1b880c29e211601d5434da1b813136fc2a0",
+      "bytes": 123
+    },
+    {
+      "path": "reports/native-verification/verify-run1.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "reports/native-verification/verify-run2.log",
+      "sha256": "5fe74aaf05027ffbdcb48a296b1ef1b880c29e211601d5434da1b813136fc2a0",
+      "bytes": 123
+    },
+    {
+      "path": "reports/native-verification/verify-run2.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39"
+  },
+  "notes": [
+    "The copied verifier loaded all evidence from inside the overlay.",
+    "A passing numeric verifier does not close the independent-review gate."
+  ]
+}

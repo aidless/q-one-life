@@ -1,0 +1,88 @@
+paper: PAPER35_FRONT_DRIFT
+claims:
+- id: C01
+  statement: The canonical suite has 100 scenarios across six behavior categories.
+  value: suite
+  tol: 0
+  evidence:
+    file: evidence/protocol.md
+- id: C02
+  statement: The canonical suite has 100 scenarios.
+  value: 100
+  tol: 0
+  evidence:
+    file: experiments/full_run/_manifest.json
+    path: scenarios_count
+- id: C02b
+  statement: The full run covers 1200 cells.
+  value: 1200
+  tol: 0
+  evidence:
+    file: experiments/full_run/_manifest.json
+    path: total_cells
+- id: C02b
+  statement: The full run covers 1200 cells.
+  value: 1200
+  tol: 0
+  evidence:
+    file: experiments/full_run/_manifest.json
+    path: total_cells
+- id: C03
+  statement: 'Across the tested local models, cross-seed BDS stays low: the largest
+    per-model mean is 0.0295 (qwen2_7b, n=100).'
+  evidence:
+    file: experiments/full_run/analysis/full_run_analysis.json
+    path: q1_seed_reproducibility.qwen2_7b.mean_bds
+  value: 0.029507500928217904
+  tol: 1.0e-09
+- id: C04
+  statement: Cross-model BDS q2_overall mean is 7.1547.
+  value: 7.1547
+  tol: 0
+  evidence:
+    file: experiments/full_run/analysis/full_run_stats_20260813.json
+    path: q2_overall.mean
+- id: C04b
+  statement: Cross-model minus cross-seed BDS difference is 7.1374.
+  value: 7.1374
+  tol: 0
+  evidence:
+    file: experiments/full_run/analysis/full_run_stats_20260813.json
+    path: seed_vs_cross.mean_diff
+- id: C04b
+  statement: Cross-model minus cross-seed BDS difference is 7.1374.
+  value: 7.1374
+  tol: 0
+  evidence:
+    file: experiments/full_run/analysis/full_run_stats_20260813.json
+    path: seed_vs_cross.mean_diff
+- id: C05
+  statement: 'Heterogeneity varies by category: tool-use (T) is lowest at 4.476 and
+    multilingual (X) highest at 9.419 cross-model mean BDS.'
+  evidence:
+    file: experiments/full_run/analysis/full_run_analysis.json
+    path: q2_cross_model.by_category.T.mean_bds
+  value: 4.476091700350247
+  tol: 1.0e-09
+- id: C06
+  statement: The reported Wilcoxon comparison is based on paired per-scenario differences.
+  value: 100.0
+  tol: 0
+  evidence:
+    file: experiments/full_run/analysis/full_run_stats_20260813.json
+    path: seed_vs_cross.n_paired
+- id: C07
+  statement: The BDS metric is defined in the shipped protocol (protocol.md) and computed
+    by the shipped evaluator (scripts/bds_evaluator.py).
+  value: true
+  tol: 0
+  evidence:
+    file: delivered_files.json
+    path: files.protocol_md.present
+- id: C07b
+  statement: The BDS evaluator script ships with this run.
+  value: true
+  tol: 0
+  evidence:
+    file: delivered_files.json
+    path: files.bds_evaluator_py.present

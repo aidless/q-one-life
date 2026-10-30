@@ -1,0 +1,369 @@
+{
+  "schema": 1,
+  "source_run_id": "l32matched30-corrected",
+  "source_sha256": "6a5275a85358c7e2e42fc16db1fdd746f7ba8e4d249e8e91b4fa26b18f530b55",
+  "analysis_sha256": "7970e74de0a5868bc3d608fb07daf2fcec333bc019b095530e42371730ee9a4a",
+  "n_tasks": 30,
+  "candidate_count": 3,
+  "generator_model": "llama3.2:3b",
+  "selector_model": "qwen2.5:7b",
+  "source_provenance": {
+    "corrected_mapping": {
+      "order_a": [
+        "honest",
+        "hard_a"
+      ],
+      "order_b": [
+        "honest_shuffled",
+        "hard"
+      ]
+    },
+    "hard_pick_changed_by_repair_tasks": 11,
+    "old_hard_order_differed_from_order_b_tasks": 23,
+    "original_source": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/notes/e1-real-l32matched30.json",
+    "original_source_sha256": "525af66d7917b8141fe13ad3175de11efa613bcf041613cdab038ac73abe1b4a",
+    "response_records": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/repaired-hard-responses",
+    "run_root": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30",
+    "runner": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/notes/e1_real_selector.py",
+    "runner_sha256": "475ed665bbe3a21d46e3382737fe2d9d1e4eb3337b1e3b9c6e85df185955707b",
+    "scope": "Only the hard arm was recalled; all other arm outcomes were reused byte-for-byte.",
+    "task_count": 30
+  },
+  "inference": {
+    "choice_interval": "Wilson score, 95%",
+    "score_delta_interval": "paired-task percentile bootstrap, 95%",
+    "bootstrap_draws": 20000,
+    "bootstrap_seed": 20261027
+  },
+  "design": {
+    "factorial": "2 (candidate order A/B) x 2 (score hidden/visible)",
+    "score_exposure_order_a": {
+      "without_score": "honest",
+      "with_score": "hard_a",
+      "candidate_order": "order A"
+    },
+    "score_exposure_order_b": {
+      "without_score": "honest_shuffled",
+      "with_score": "hard",
+      "candidate_order": "order B"
+    },
+    "order_change_no_scores": {
+      "orders": [
+        "order A",
+        "order B"
+      ],
+      "score_visibility": "hidden in both arms"
+    },
+    "order_change_with_scores": {
+      "orders": [
+        "order A",
+        "order B"
+      ],
+      "score_visibility": "visible in both arms"
+    },
+    "omitted_diagonal": {
+      "arms": [
+        "honest",
+        "hard"
+      ],
+      "reason": "Score exposure and candidate order both change."
+    },
+    "intervention": "The four observed arms form a 2x2 factorial for one order pair.",
+    "boundary": "One order pair is sampled; this is not a permutation-balanced estimate."
+  },
+  "pairs": {
+    "score_exposure_order_a": {
+      "left": "honest",
+      "right": "hard_a",
+      "n_tasks": 30,
+      "n_choice_pairs": 30,
+      "invalid_choice_pairs": 0,
+      "n_score_pairs": 30,
+      "missing_selected_scores": 0,
+      "choice_changed": 7,
+      "choice_changed_rate": 0.23333333333333334,
+      "choice_changed_percent": 23.333333333333332,
+      "choice_changed_wilson95": [
+        0.11792388144489496,
+        0.40928326158122164
+      ],
+      "choice_changed_wilson95_low": 0.11792388144489496,
+      "choice_changed_wilson95_high": 0.40928326158122164,
+      "choice_changed_wilson95_percent": [
+        11.792388144489497,
+        40.92832615812216
+      ],
+      "choice_changed_wilson95_percent_low": 11.792388144489497,
+      "choice_changed_wilson95_percent_high": 40.92832615812216,
+      "score_increased": 2,
+      "score_unchanged": 28,
+      "score_decreased": 0,
+      "mean_selected_score_delta": 0.04443333333333333,
+      "mean_selected_score_delta_bootstrap95": [
+        0.0,
+        0.1222
+      ],
+      "mean_selected_score_delta_bootstrap95_low": 0.0,
+      "mean_selected_score_delta_bootstrap95_high": 0.1222
+    },
+    "score_exposure_order_b": {
+      "left": "honest_shuffled",
+      "right": "hard",
+      "n_tasks": 30,
+      "n_choice_pairs": 30,
+      "invalid_choice_pairs": 0,
+      "n_score_pairs": 30,
+      "missing_selected_scores": 0,
+      "choice_changed": 5,
+      "choice_changed_rate": 0.16666666666666666,
+      "choice_changed_percent": 16.666666666666668,
+      "choice_changed_wilson95": [
+        0.0733654237184855,
+        0.3356435050641603
+      ],
+      "choice_changed_wilson95_low": 0.0733654237184855,
+      "choice_changed_wilson95_high": 0.3356435050641603,
+      "choice_changed_wilson95_percent": [
+        7.336542371848551,
+        33.56435050641603
+      ],
+      "choice_changed_wilson95_percent_low": 7.336542371848551,
+      "choice_changed_wilson95_percent_high": 33.56435050641603,
+      "score_increased": 2,
+      "score_unchanged": 28,
+      "score_decreased": 0,
+      "mean_selected_score_delta": 0.06666666666666667,
+      "mean_selected_score_delta_bootstrap95": [
+        0.0,
+        0.16666666666666666
+      ],
+      "mean_selected_score_delta_bootstrap95_low": 0.0,
+      "mean_selected_score_delta_bootstrap95_high": 0.16666666666666666
+    },
+    "order_change_no_scores": {
+      "left": "honest",
+      "right": "honest_shuffled",
+      "n_tasks": 30,
+      "n_choice_pairs": 30,
+      "invalid_choice_pairs": 0,
+      "n_score_pairs": 30,
+      "missing_selected_scores": 0,
+      "choice_changed": 15,
+      "choice_changed_rate": 0.5,
+      "choice_changed_percent": 50.0,
+      "choice_changed_wilson95": [
+        0.33154125640533766,
+        0.6684587435946623
+      ],
+      "choice_changed_wilson95_low": 0.33154125640533766,
+      "choice_changed_wilson95_high": 0.6684587435946623,
+      "choice_changed_wilson95_percent": [
+        33.15412564053376,
+        66.84587435946622
+      ],
+      "choice_changed_wilson95_percent_low": 33.15412564053376,
+      "choice_changed_wilson95_percent_high": 66.84587435946622,
+      "score_increased": 1,
+      "score_unchanged": 28,
+      "score_decreased": 1,
+      "mean_selected_score_delta": -0.022233333333333334,
+      "mean_selected_score_delta_bootstrap95": [
+        -0.1,
+        0.0333
+      ],
+      "mean_selected_score_delta_bootstrap95_low": -0.1,
+      "mean_selected_score_delta_bootstrap95_high": 0.0333
+    },
+    "order_change_with_scores": {
+      "left": "hard_a",
+      "right": "hard",
+      "n_tasks": 30,
+      "n_choice_pairs": 30,
+      "invalid_choice_pairs": 0,
+      "n_score_pairs": 30,
+      "missing_selected_scores": 0,
+      "choice_changed": 14,
+      "choice_changed_rate": 0.4666666666666667,
+      "choice_changed_percent": 46.666666666666664,
+      "choice_changed_wilson95": [
+        0.30232388907699753,
+        0.638577003801267
+      ],
+      "choice_changed_wilson95_low": 0.30232388907699753,
+      "choice_changed_wilson95_high": 0.638577003801267,
+      "choice_changed_wilson95_percent": [
+        30.232388907699754,
+        63.8577003801267
+      ],
+      "choice_changed_wilson95_percent_low": 30.232388907699754,
+      "choice_changed_wilson95_percent_high": 63.8577003801267,
+      "score_increased": 0,
+      "score_unchanged": 30,
+      "score_decreased": 0,
+      "mean_selected_score_delta": 0.0,
+      "mean_selected_score_delta_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "mean_selected_score_delta_bootstrap95_low": 0.0,
+      "mean_selected_score_delta_bootstrap95_high": 0.0
+    }
+  },
+  "instrument_checks": {
+    "score_exposed_arms_choose_a_top_scored_candidate": 60,
+    "score_exposed_arm_slots_checked": 60,
+    "score_exposed_arm_slots_invalid": 0,
+    "nontied_score_exposed_arms_choose_a_top_scored_candidate": 12,
+    "nontied_score_exposed_arm_slots_checked": 12,
+    "all_candidates_tied_tasks": 24,
+    "tasks_with_nontrivial_score_variation": 6
+  },
+  "score_variation_strata": {
+    "score_exposure_order_a": {
+      "all_candidates_tied": {
+        "left": "honest",
+        "right": "hard_a",
+        "n_tasks": 24,
+        "n_choice_pairs": 24,
+        "invalid_choice_pairs": 0,
+        "n_score_pairs": 24,
+        "missing_selected_scores": 0,
+        "choice_changed": 5,
+        "choice_changed_rate": 0.20833333333333334,
+        "choice_changed_percent": 20.833333333333332,
+        "choice_changed_wilson95": [
+          0.09244825352851857,
+          0.40470453253188665
+        ],
+        "choice_changed_wilson95_low": 0.09244825352851857,
+        "choice_changed_wilson95_high": 0.40470453253188665,
+        "choice_changed_wilson95_percent": [
+          9.244825352851857,
+          40.470453253188666
+        ],
+        "choice_changed_wilson95_percent_low": 9.244825352851857,
+        "choice_changed_wilson95_percent_high": 40.470453253188666,
+        "score_increased": 0,
+        "score_unchanged": 24,
+        "score_decreased": 0,
+        "mean_selected_score_delta": 0.0,
+        "mean_selected_score_delta_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "mean_selected_score_delta_bootstrap95_low": 0.0,
+        "mean_selected_score_delta_bootstrap95_high": 0.0
+      },
+      "not_all_tied": {
+        "left": "honest",
+        "right": "hard_a",
+        "n_tasks": 6,
+        "n_choice_pairs": 6,
+        "invalid_choice_pairs": 0,
+        "n_score_pairs": 6,
+        "missing_selected_scores": 0,
+        "choice_changed": 2,
+        "choice_changed_rate": 0.3333333333333333,
+        "choice_changed_percent": 33.333333333333336,
+        "choice_changed_wilson95": [
+          0.09677141110578041,
+          0.700006684861608
+        ],
+        "choice_changed_wilson95_low": 0.09677141110578041,
+        "choice_changed_wilson95_high": 0.700006684861608,
+        "choice_changed_wilson95_percent": [
+          9.677141110578042,
+          70.0006684861608
+        ],
+        "choice_changed_wilson95_percent_low": 9.677141110578042,
+        "choice_changed_wilson95_percent_high": 70.0006684861608,
+        "score_increased": 2,
+        "score_unchanged": 4,
+        "score_decreased": 0,
+        "mean_selected_score_delta": 0.22216666666666665,
+        "mean_selected_score_delta_bootstrap95": [
+          0.0,
+          0.5555
+        ],
+        "mean_selected_score_delta_bootstrap95_low": 0.0,
+        "mean_selected_score_delta_bootstrap95_high": 0.5555
+      }
+    },
+    "score_exposure_order_b": {
+      "all_candidates_tied": {
+        "left": "honest_shuffled",
+        "right": "hard",
+        "n_tasks": 24,
+        "n_choice_pairs": 24,
+        "invalid_choice_pairs": 0,
+        "n_score_pairs": 24,
+        "missing_selected_scores": 0,
+        "choice_changed": 3,
+        "choice_changed_rate": 0.125,
+        "choice_changed_percent": 12.5,
+        "choice_changed_wilson95": [
+          0.04344334080123444,
+          0.31003881270500067
+        ],
+        "choice_changed_wilson95_low": 0.04344334080123444,
+        "choice_changed_wilson95_high": 0.31003881270500067,
+        "choice_changed_wilson95_percent": [
+          4.344334080123444,
+          31.003881270500067
+        ],
+        "choice_changed_wilson95_percent_low": 4.344334080123444,
+        "choice_changed_wilson95_percent_high": 31.003881270500067,
+        "score_increased": 0,
+        "score_unchanged": 24,
+        "score_decreased": 0,
+        "mean_selected_score_delta": 0.0,
+        "mean_selected_score_delta_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "mean_selected_score_delta_bootstrap95_low": 0.0,
+        "mean_selected_score_delta_bootstrap95_high": 0.0
+      },
+      "not_all_tied": {
+        "left": "honest_shuffled",
+        "right": "hard",
+        "n_tasks": 6,
+        "n_choice_pairs": 6,
+        "invalid_choice_pairs": 0,
+        "n_score_pairs": 6,
+        "missing_selected_scores": 0,
+        "choice_changed": 2,
+        "choice_changed_rate": 0.3333333333333333,
+        "choice_changed_percent": 33.333333333333336,
+        "choice_changed_wilson95": [
+          0.09677141110578041,
+          0.700006684861608
+        ],
+        "choice_changed_wilson95_low": 0.09677141110578041,
+        "choice_changed_wilson95_high": 0.700006684861608,
+        "choice_changed_wilson95_percent": [
+          9.677141110578042,
+          70.0006684861608
+        ],
+        "choice_changed_wilson95_percent_low": 9.677141110578042,
+        "choice_changed_wilson95_percent_high": 70.0006684861608,
+        "score_increased": 2,
+        "score_unchanged": 4,
+        "score_decreased": 0,
+        "mean_selected_score_delta": 0.3333333333333333,
+        "mean_selected_score_delta_bootstrap95": [
+          0.0,
+          0.6666666666666666
+        ],
+        "mean_selected_score_delta_bootstrap95_low": 0.0,
+        "mean_selected_score_delta_bootstrap95_high": 0.6666666666666666
+      }
+    }
+  },
+  "claim_boundary": [
+    "The result describes this frozen task sample and these two local models.",
+    "The factorial separates score exposure from two fixed order permutations; it does not establish response quality or benchmark validity.",
+    "The deterministic rubric is a source of scores and not an independent ground truth.",
+    "No general model, benchmark, or causal-population claim follows."
+  ]
+}

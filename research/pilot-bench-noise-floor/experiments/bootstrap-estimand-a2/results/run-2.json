@@ -1,0 +1,2206 @@
+{
+  "bootstrap": {
+    "cluster": "case",
+    "n_boot": 2000,
+    "seed": 20261001,
+    "unit": "points"
+  },
+  "controls": {
+    "nonproducer_leader": {
+      "floor_loo_macro_u": 93.82716049382715,
+      "floor_per_generator": [
+        {
+          "judge": "claude-haiku",
+          "loo_macro": 84.64646464646465,
+          "loo_macro_u": 86.21399176954732,
+          "macro": 85.14056224899599
+        },
+        {
+          "judge": "claude-opus-4-7",
+          "loo_macro": 91.27789046653145,
+          "loo_macro_u": 92.5925925925926,
+          "macro": 91.76706827309236
+        },
+        {
+          "judge": "claude-sonnet",
+          "loo_macro": 89.0020366598778,
+          "loo_macro_u": 89.91769547325103,
+          "macro": 89.5582329317269
+        },
+        {
+          "judge": "deepseek-v4-flash",
+          "loo_macro": 88.21138211382113,
+          "loo_macro_u": 89.30041152263375,
+          "macro": 88.75502008032129
+        },
+        {
+          "judge": "deepseek-v4-flash-ds",
+          "loo_macro": 89.40936863543789,
+          "loo_macro_u": 90.3292181069959,
+          "macro": 89.95983935742971
+        },
+        {
+          "judge": "deepseek-v4-pro",
+          "loo_macro": 87.55102040816325,
+          "loo_macro_u": 88.27160493827161,
+          "macro": 88.15261044176707
+        },
+        {
+          "judge": "gemini-3.7-flash",
+          "loo_macro": 89.59183673469387,
+          "loo_macro_u": 90.3292181069959,
+          "macro": 90.16064257028113
+        },
+        {
+          "judge": "gemini-flash",
+          "loo_macro": 88.8211382113821,
+          "loo_macro_u": 89.91769547325103,
+          "macro": 89.35742971887551
+        },
+        {
+          "judge": "gemma-4-31b",
+          "loo_macro": 92.6829268292683,
+          "loo_macro_u": 93.82716049382715,
+          "macro": 93.17269076305222
+        },
+        {
+          "judge": "glm-5.2",
+          "loo_macro": 88.00813008130082,
+          "loo_macro_u": 89.09465020576131,
+          "macro": 88.55421686746988
+        },
+        {
+          "judge": "kimi-k3",
+          "loo_macro": 90.65040650406505,
+          "loo_macro_u": 91.76954732510289,
+          "macro": 91.16465863453816
+        },
+        {
+          "judge": "llama-3.3-70b",
+          "loo_macro": 87.5251509054326,
+          "loo_macro_u": 89.50617283950618,
+          "macro": 87.95180722891565
+        },
+        {
+          "judge": "llama-4-maverick",
+          "loo_macro": 85.36585365853658,
+          "loo_macro_u": 86.41975308641975,
+          "macro": 85.94377510040161
+        },
+        {
+          "judge": "llama-4-scout",
+          "loo_macro": 78.98989898989899,
+          "loo_macro_u": 80.45267489711934,
+          "macro": 79.51807228915662
+        },
+        {
+          "judge": "llama3-8b",
+          "loo_macro": 73.18548387096774,
+          "loo_macro_u": 74.69135802469135,
+          "macro": 73.69477911646585
+        },
+        {
+          "judge": "magistral-small",
+          "loo_macro": 72.03219315895373,
+          "loo_macro_u": 73.66255144032921,
+          "macro": 72.48995983935743
+        },
+        {
+          "judge": "mistral-medium",
+          "loo_macro": 82.22222222222221,
+          "loo_macro_u": 83.7448559670782,
+          "macro": 82.73092369477911
+        },
+        {
+          "judge": "mistral-small",
+          "loo_macro": 72.17741935483872,
+          "loo_macro_u": 73.66255144032921,
+          "macro": 72.69076305220884
+        },
+        {
+          "judge": "qwen",
+          "loo_macro": 86.66666666666667,
+          "loo_macro_u": 88.27160493827161,
+          "macro": 87.14859437751004
+        },
+        {
+          "judge": "qwen-3.6-flash",
+          "loo_macro": 90.36144578313254,
+          "loo_macro_u": 92.5925925925926,
+          "macro": 90.76305220883533
+        },
+        {
+          "judge": "qwen3-14b",
+          "loo_macro": 85.77235772357723,
+          "loo_macro_u": 86.83127572016461,
+          "macro": 86.34538152610442
+        },
+        {
+          "judge": "qwen3-32b",
+          "loo_macro": 82.66129032258065,
+          "loo_macro_u": 84.36213991769547,
+          "macro": 83.13253012048193
+        },
+        {
+          "judge": "qwen3-8b",
+          "loo_macro": 83.5010060362173,
+          "loo_macro_u": 85.39094650205762,
+          "macro": 83.93574297188755
+        },
+        {
+          "judge": "qwen3.7-flash",
+          "loo_macro": 91.75050301810866,
+          "loo_macro_u": 93.82716049382715,
+          "macro": 92.16867469879519
+        },
+        {
+          "judge": "qwen3.8-27b-hf",
+          "loo_macro": 82.41308793456032,
+          "loo_macro_u": 82.92181069958848,
+          "macro": 82.73092369477911
+        }
+      ],
+      "leaderboard": [
+        {
+          "macro": 100.0,
+          "n": 486,
+          "system": "qone-control-nonproducer"
+        },
+        {
+          "macro": 93.82716049382715,
+          "n": 486,
+          "system": "gemma-4-31b"
+        },
+        {
+          "macro": 93.82716049382715,
+          "n": 486,
+          "system": "qwen3.7-flash"
+        },
+        {
+          "macro": 92.5925925925926,
+          "n": 486,
+          "system": "claude-opus-4-7"
+        },
+        {
+          "macro": 92.5925925925926,
+          "n": 486,
+          "system": "qwen-3.6-flash"
+        },
+        {
+          "macro": 91.76954732510289,
+          "n": 486,
+          "system": "kimi-k3"
+        },
+        {
+          "macro": 90.3292181069959,
+          "n": 486,
+          "system": "deepseek-v4-flash-ds"
+        },
+        {
+          "macro": 90.3292181069959,
+          "n": 486,
+          "system": "gemini-3.7-flash"
+        },
+        {
+          "macro": 89.91769547325103,
+          "n": 486,
+          "system": "claude-sonnet"
+        },
+        {
+          "macro": 89.91769547325103,
+          "n": 486,
+          "system": "gemini-flash"
+        },
+        {
+          "macro": 89.50617283950618,
+          "n": 486,
+          "system": "llama-3.3-70b"
+        },
+        {
+          "macro": 89.30041152263375,
+          "n": 486,
+          "system": "deepseek-v4-flash"
+        },
+        {
+          "macro": 89.09465020576131,
+          "n": 486,
+          "system": "glm-5.2"
+        },
+        {
+          "macro": 88.27160493827161,
+          "n": 486,
+          "system": "deepseek-v4-pro"
+        },
+        {
+          "macro": 88.27160493827161,
+          "n": 486,
+          "system": "qwen"
+        },
+        {
+          "macro": 86.83127572016461,
+          "n": 486,
+          "system": "qwen3-14b"
+        },
+        {
+          "macro": 86.41975308641975,
+          "n": 486,
+          "system": "llama-4-maverick"
+        },
+        {
+          "macro": 86.21399176954732,
+          "n": 486,
+          "system": "claude-haiku"
+        },
+        {
+          "macro": 85.39094650205762,
+          "n": 486,
+          "system": "qwen3-8b"
+        },
+        {
+          "macro": 84.36213991769547,
+          "n": 486,
+          "system": "qwen3-32b"
+        },
+        {
+          "macro": 83.7448559670782,
+          "n": 486,
+          "system": "mistral-medium"
+        },
+        {
+          "macro": 82.92181069958848,
+          "n": 486,
+          "system": "qwen3.8-27b-hf"
+        },
+        {
+          "macro": 80.45267489711934,
+          "n": 486,
+          "system": "llama-4-scout"
+        },
+        {
+          "macro": 74.69135802469135,
+          "n": 486,
+          "system": "llama3-8b"
+        },
+        {
+          "macro": 73.66255144032921,
+          "n": 486,
+          "system": "magistral-small"
+        },
+        {
+          "macro": 73.66255144032921,
+          "n": 486,
+          "system": "mistral-small"
+        }
+      ],
+      "leaderboard_domain_size": 486,
+      "loo_domain_size": 486,
+      "n_generators": 25,
+      "n_systems": 26,
+      "point_leader": "qone-control-nonproducer",
+      "point_leader_macro": 100.0,
+      "point_leader_max_macro": 100.0,
+      "theta_both_interval": {
+        "crosses_zero": false,
+        "hi95": 7.346938775510203,
+        "lo95": 3.271983640081799,
+        "max": 9.053497942386834,
+        "min": 1.6359918200409052,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 0,
+        "n_positive_rounds": 2000,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 0
+      },
+      "theta_both_point": 6.172839506172849,
+      "theta_fixed_interval": {
+        "crosses_zero": false,
+        "hi95": 7.346938775510203,
+        "lo95": 3.271983640081799,
+        "max": 9.053497942386834,
+        "min": 1.6359918200409052,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 0,
+        "n_positive_rounds": 2000,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 0
+      },
+      "theta_fixed_point": 6.172839506172849
+    },
+    "unranked_generator": {
+      "floor_loo_macro_u": 93.82716049382715,
+      "floor_per_generator": [
+        {
+          "judge": "claude-haiku",
+          "loo_macro": 84.64646464646465,
+          "loo_macro_u": 86.21399176954732,
+          "macro": 85.14056224899599
+        },
+        {
+          "judge": "claude-opus-4-7",
+          "loo_macro": 91.27789046653145,
+          "loo_macro_u": 92.5925925925926,
+          "macro": 91.76706827309236
+        },
+        {
+          "judge": "claude-sonnet",
+          "loo_macro": 89.0020366598778,
+          "loo_macro_u": 89.91769547325103,
+          "macro": 89.5582329317269
+        },
+        {
+          "judge": "deepseek-v4-flash",
+          "loo_macro": 88.21138211382113,
+          "loo_macro_u": 89.30041152263375,
+          "macro": 88.75502008032129
+        },
+        {
+          "judge": "deepseek-v4-flash-ds",
+          "loo_macro": 89.40936863543789,
+          "loo_macro_u": 90.3292181069959,
+          "macro": 89.95983935742971
+        },
+        {
+          "judge": "deepseek-v4-pro",
+          "loo_macro": 87.55102040816325,
+          "loo_macro_u": 88.27160493827161,
+          "macro": 88.15261044176707
+        },
+        {
+          "judge": "gemini-3.7-flash",
+          "loo_macro": 89.59183673469387,
+          "loo_macro_u": 90.3292181069959,
+          "macro": 90.16064257028113
+        },
+        {
+          "judge": "gemini-flash",
+          "loo_macro": 88.8211382113821,
+          "loo_macro_u": 89.91769547325103,
+          "macro": 89.35742971887551
+        },
+        {
+          "judge": "gemma-4-31b",
+          "loo_macro": 92.6829268292683,
+          "loo_macro_u": 93.82716049382715,
+          "macro": 93.17269076305222
+        },
+        {
+          "judge": "glm-5.2",
+          "loo_macro": 88.00813008130082,
+          "loo_macro_u": 89.09465020576131,
+          "macro": 88.55421686746988
+        },
+        {
+          "judge": "kimi-k3",
+          "loo_macro": 90.65040650406505,
+          "loo_macro_u": 91.76954732510289,
+          "macro": 91.16465863453816
+        },
+        {
+          "judge": "llama-3.3-70b",
+          "loo_macro": 87.5251509054326,
+          "loo_macro_u": 89.50617283950618,
+          "macro": 87.95180722891565
+        },
+        {
+          "judge": "llama-4-maverick",
+          "loo_macro": 85.36585365853658,
+          "loo_macro_u": 86.41975308641975,
+          "macro": 85.94377510040161
+        },
+        {
+          "judge": "llama-4-scout",
+          "loo_macro": 78.98989898989899,
+          "loo_macro_u": 80.45267489711934,
+          "macro": 79.51807228915662
+        },
+        {
+          "judge": "llama3-8b",
+          "loo_macro": 73.18548387096774,
+          "loo_macro_u": 74.69135802469135,
+          "macro": 73.69477911646585
+        },
+        {
+          "judge": "magistral-small",
+          "loo_macro": 72.03219315895373,
+          "loo_macro_u": 73.66255144032921,
+          "macro": 72.48995983935743
+        },
+        {
+          "judge": "mistral-medium",
+          "loo_macro": 82.22222222222221,
+          "loo_macro_u": 83.7448559670782,
+          "macro": 82.73092369477911
+        },
+        {
+          "judge": "mistral-small",
+          "loo_macro": 72.17741935483872,
+          "loo_macro_u": 73.66255144032921,
+          "macro": 72.69076305220884
+        },
+        {
+          "judge": "qwen",
+          "loo_macro": 86.66666666666667,
+          "loo_macro_u": 88.27160493827161,
+          "macro": 87.14859437751004
+        },
+        {
+          "judge": "qwen-3.6-flash",
+          "loo_macro": 90.36144578313254,
+          "loo_macro_u": 92.5925925925926,
+          "macro": 90.76305220883533
+        },
+        {
+          "judge": "qwen3-14b",
+          "loo_macro": 85.77235772357723,
+          "loo_macro_u": 86.83127572016461,
+          "macro": 86.34538152610442
+        },
+        {
+          "judge": "qwen3-32b",
+          "loo_macro": 82.66129032258065,
+          "loo_macro_u": 84.36213991769547,
+          "macro": 83.13253012048193
+        },
+        {
+          "judge": "qwen3-8b",
+          "loo_macro": 83.5010060362173,
+          "loo_macro_u": 85.39094650205762,
+          "macro": 83.93574297188755
+        },
+        {
+          "judge": "qwen3.7-flash",
+          "loo_macro": 91.75050301810866,
+          "loo_macro_u": 93.82716049382715,
+          "macro": 92.16867469879519
+        },
+        {
+          "judge": "qwen3.8-27b-hf",
+          "loo_macro": 82.41308793456032,
+          "loo_macro_u": 82.92181069958848,
+          "macro": 82.73092369477911
+        }
+      ],
+      "leaderboard": [
+        {
+          "macro": 93.82716049382715,
+          "n": 486,
+          "system": "qwen3.7-flash"
+        },
+        {
+          "macro": 92.5925925925926,
+          "n": 486,
+          "system": "claude-opus-4-7"
+        },
+        {
+          "macro": 92.5925925925926,
+          "n": 486,
+          "system": "qwen-3.6-flash"
+        },
+        {
+          "macro": 91.76954732510289,
+          "n": 486,
+          "system": "kimi-k3"
+        },
+        {
+          "macro": 90.3292181069959,
+          "n": 486,
+          "system": "deepseek-v4-flash-ds"
+        },
+        {
+          "macro": 90.3292181069959,
+          "n": 486,
+          "system": "gemini-3.7-flash"
+        },
+        {
+          "macro": 89.91769547325103,
+          "n": 486,
+          "system": "claude-sonnet"
+        },
+        {
+          "macro": 89.91769547325103,
+          "n": 486,
+          "system": "gemini-flash"
+        },
+        {
+          "macro": 89.50617283950618,
+          "n": 486,
+          "system": "llama-3.3-70b"
+        },
+        {
+          "macro": 89.30041152263375,
+          "n": 486,
+          "system": "deepseek-v4-flash"
+        },
+        {
+          "macro": 89.09465020576131,
+          "n": 486,
+          "system": "glm-5.2"
+        },
+        {
+          "macro": 88.27160493827161,
+          "n": 486,
+          "system": "deepseek-v4-pro"
+        },
+        {
+          "macro": 88.27160493827161,
+          "n": 486,
+          "system": "qwen"
+        },
+        {
+          "macro": 86.83127572016461,
+          "n": 486,
+          "system": "qwen3-14b"
+        },
+        {
+          "macro": 86.41975308641975,
+          "n": 486,
+          "system": "llama-4-maverick"
+        },
+        {
+          "macro": 86.21399176954732,
+          "n": 486,
+          "system": "claude-haiku"
+        },
+        {
+          "macro": 85.39094650205762,
+          "n": 486,
+          "system": "qwen3-8b"
+        },
+        {
+          "macro": 84.36213991769547,
+          "n": 486,
+          "system": "qwen3-32b"
+        },
+        {
+          "macro": 83.7448559670782,
+          "n": 486,
+          "system": "mistral-medium"
+        },
+        {
+          "macro": 82.92181069958848,
+          "n": 486,
+          "system": "qwen3.8-27b-hf"
+        },
+        {
+          "macro": 80.45267489711934,
+          "n": 486,
+          "system": "llama-4-scout"
+        },
+        {
+          "macro": 74.69135802469135,
+          "n": 486,
+          "system": "llama3-8b"
+        },
+        {
+          "macro": 73.66255144032921,
+          "n": 486,
+          "system": "magistral-small"
+        },
+        {
+          "macro": 73.66255144032921,
+          "n": 486,
+          "system": "mistral-small"
+        }
+      ],
+      "leaderboard_domain_size": 486,
+      "loo_domain_size": 486,
+      "n_generators": 25,
+      "n_systems": 24,
+      "point_leader": "qwen3.7-flash",
+      "point_leader_macro": 93.82716049382715,
+      "point_leader_max_macro": 93.82716049382715,
+      "theta_both_interval": {
+        "crosses_zero": true,
+        "hi95": 0.0,
+        "lo95": -2.6750350006363797,
+        "max": 0.0,
+        "min": -4.907975460122693,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 766,
+        "n_positive_rounds": 0,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 1234
+      },
+      "theta_both_point": 0.0,
+      "theta_fixed_interval": {
+        "crosses_zero": true,
+        "hi95": 0.0,
+        "lo95": -3.7531887755102016,
+        "max": 0.0,
+        "min": -6.418219461697728,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 1121,
+        "n_positive_rounds": 0,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 879
+      },
+      "theta_fixed_point": 0.0
+    }
+  },
+  "estimands": {
+    "theta_both": "macro of the per-round best leaderboard system minus macro of the per-round best generator; this is the Proposition 4 identity statistic",
+    "theta_fixed": "macro of the point-estimate winner (fixed across rounds) minus macro of the per-round best generator; this is what the native tool prints as margin_ci"
+  },
+  "gates": [
+    {
+      "detail": "recomputed fixed-winner statistic equals the recorded native margin point estimate, ceiling, and 95% interval for all four m25 tasks",
+      "id": "F1_fidelity_vs_recorded_native",
+      "pass": true
+    },
+    {
+      "detail": "theta_both is exactly zero in every valid bootstrap round and its percentile interval is the degenerate [0, 0] on all four m25 tasks",
+      "id": "F2_identity_replicate_invariance",
+      "pass": true
+    },
+    {
+      "detail": "theta_fixed is never positive in any valid round: the frozen winner cannot exceed the per-round best generator",
+      "id": "F3_fixed_winner_never_positive",
+      "pass": true
+    },
+    {
+      "detail": "non-producer control: injected system scores exactly 100.0 on U, is the point leader, and theta_both is strictly positive with a non-degenerate interval; unranked-generator control: theta_both is strictly negative in at least one round with lo95 < 0 <= hi95, so the [0,0] degeneracy of the main condition is not automatic",
+      "id": "F4_controls_have_teeth",
+      "pass": true
+    },
+    {
+      "detail": "an unmodified rerun of the native tool on the rebuilt table reproduces the recorded margin interval",
+      "id": "F5_native_rerun_matches_recorded",
+      "pass": true
+    }
+  ],
+  "hash_checks": [
+    {
+      "actual": "927143dd6727272311e67c4468d1bedaf131dc119d40546aae7c993d52b8d2d0",
+      "expected": "927143dd6727272311e67c4468d1bedaf131dc119d40546aae7c993d52b8d2d0",
+      "label": "runner",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/run_estimand_split.py"
+    },
+    {
+      "actual": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b",
+      "expected": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b",
+      "label": "native_audit",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/audit.py"
+    },
+    {
+      "actual": "defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236",
+      "expected": "defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236",
+      "label": "make_m25_votes",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/make_m25_votes.py"
+    },
+    {
+      "actual": "5199cf0678aa1cd5d13f5532fb9ae43cd0ae7938c7cc97dd56bc26f8be37d0df",
+      "expected": "5199cf0678aa1cd5d13f5532fb9ae43cd0ae7938c7cc97dd56bc26f8be37d0df",
+      "label": "judgesense_factuality",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_factuality.csv"
+    },
+    {
+      "actual": "712b93677ba4322d62ee97e82b9a0bec123a537265760e06dee9fd6d4bba7d52",
+      "expected": "712b93677ba4322d62ee97e82b9a0bec123a537265760e06dee9fd6d4bba7d52",
+      "label": "judgesense_factuality_judges",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_factuality_judges.csv"
+    },
+    {
+      "actual": "6dc1024a80d78273c66e8684106f9a3dcc00bebbfacab5eaff9df48f519542e5",
+      "expected": "6dc1024a80d78273c66e8684106f9a3dcc00bebbfacab5eaff9df48f519542e5",
+      "label": "judgesense_coherence",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_coherence.csv"
+    },
+    {
+      "actual": "b2186be3a97eeeb8d7220f633160f621b65cc6144fc8a4b8b53fab8a16cf424f",
+      "expected": "b2186be3a97eeeb8d7220f633160f621b65cc6144fc8a4b8b53fab8a16cf424f",
+      "label": "judgesense_coherence_judges",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_coherence_judges.csv"
+    },
+    {
+      "actual": "699746a6e5c592495ddbfe3ac1f5aef1472676d7de1beb10d03f09bbe2f591a9",
+      "expected": "699746a6e5c592495ddbfe3ac1f5aef1472676d7de1beb10d03f09bbe2f591a9",
+      "label": "judgesense_relevance",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_relevance.csv"
+    },
+    {
+      "actual": "a15cdbc5d2e08687a4c9b7662dea9cf2a06866234d779967d9f169860bbdc919",
+      "expected": "a15cdbc5d2e08687a4c9b7662dea9cf2a06866234d779967d9f169860bbdc919",
+      "label": "judgesense_relevance_judges",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_relevance_judges.csv"
+    },
+    {
+      "actual": "c746e7523b817256d56354384fb88307b2af9256ff90983cced39a8ae0df5bf4",
+      "expected": "c746e7523b817256d56354384fb88307b2af9256ff90983cced39a8ae0df5bf4",
+      "label": "judgesense_preference",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_preference.csv"
+    },
+    {
+      "actual": "62555a863a784ca28430a3d9f8278f80da1f63e63640019df973d81649224781",
+      "expected": "62555a863a784ca28430a3d9f8278f80da1f63e63640019df973d81649224781",
+      "label": "judgesense_preference_judges",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_preference_judges.csv"
+    },
+    {
+      "actual": "6c78ab5dd51475e078a200404e1ac1d2b73dd015c77afca81f7ad992471670f7",
+      "expected": "6c78ab5dd51475e078a200404e1ac1d2b73dd015c77afca81f7ad992471670f7",
+      "label": "m25_summary",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/m25_summary.json"
+    },
+    {
+      "actual": "e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c",
+      "expected": "e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c",
+      "label": "m25_factuality",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/m25_factuality.json"
+    },
+    {
+      "actual": "e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc",
+      "expected": "e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc",
+      "label": "m25_coherence",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/m25_coherence.json"
+    },
+    {
+      "actual": "6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d",
+      "expected": "6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d",
+      "label": "m25_relevance",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/m25_relevance.json"
+    },
+    {
+      "actual": "53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1",
+      "expected": "53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1",
+      "label": "m25_preference",
+      "match": true,
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/m25_preference.json"
+    },
+    {
+      "actual": "529b3290ef633ed1b4b269ff4c2106e1584587cf27c1172d46b51da75dc56282",
+      "expected": "529b3290ef633ed1b4b269ff4c2106e1584587cf27c1172d46b51da75dc56282",
+      "label": "factuality_m25",
+      "match": true,
+      "path": "/tmp/qone-a2-votes/judgesense_factuality_m25.csv"
+    },
+    {
+      "actual": "7eb3329d0541c47efd6806073ca6d63f35f3d49d59a78564f90ccd35d604766f",
+      "expected": "7eb3329d0541c47efd6806073ca6d63f35f3d49d59a78564f90ccd35d604766f",
+      "label": "coherence_m25",
+      "match": true,
+      "path": "/tmp/qone-a2-votes/judgesense_coherence_m25.csv"
+    },
+    {
+      "actual": "9dc299d7d69a7ef27e0f3726971f4c5edf020d2ab5a06cc688b5b1821bf4ae10",
+      "expected": "9dc299d7d69a7ef27e0f3726971f4c5edf020d2ab5a06cc688b5b1821bf4ae10",
+      "label": "relevance_m25",
+      "match": true,
+      "path": "/tmp/qone-a2-votes/judgesense_relevance_m25.csv"
+    },
+    {
+      "actual": "46f6fe31948f547745d775254c9d17812113acb18cf9e1ea654e066537dce5c9",
+      "expected": "46f6fe31948f547745d775254c9d17812113acb18cf9e1ea654e066537dce5c9",
+      "label": "preference_m25",
+      "match": true,
+      "path": "/tmp/qone-a2-votes/judgesense_preference_m25.csv"
+    }
+  ],
+  "native_rerun": {
+    "ceiling_loo_macro": 93.8272,
+    "command": [
+      "/home/liuzewen/.cache/qone-life-venv/bin/python",
+      "-u",
+      "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/audit.py",
+      "/tmp/qone-a2-votes/judgesense_factuality_m25.csv",
+      "--gold",
+      "majority",
+      "--n-boot",
+      "2000",
+      "--json",
+      "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/results/native-rerun-factuality.json"
+    ],
+    "json": "native-rerun-factuality.json",
+    "log": "native-rerun-factuality.log",
+    "margin_ci": {
+      "crosses_zero": true,
+      "hi95": 0.0,
+      "lo95": -3.9018,
+      "n_boot": 2000,
+      "n_dropped_rounds": 0,
+      "n_valid_rounds": 2000,
+      "seed": 20261001,
+      "unit": "points"
+    },
+    "margin_vs_floor": 0.0,
+    "matches_recorded": true,
+    "ran": true,
+    "returncode": 0,
+    "task": "factuality",
+    "verdict": "UNREADABLE"
+  },
+  "preregistration": {
+    "path": "preregistration.json",
+    "sha256": "a58bf0b93419d4465c9b93b9f4e1ec055f9ba5f5cc31e21a85fa870fcf565484"
+  },
+  "schema": "q-one-bootstrap-estimand-split-v1",
+  "status": "completed",
+  "tasks": {
+    "coherence": {
+      "fidelity_vs_recorded": {
+        "ceiling_matches": true,
+        "ci_hi_matches": true,
+        "ci_lo_matches": true,
+        "margin_fixed_point_matches": true,
+        "n_valid_rounds_matches": true
+      },
+      "floor_loo_macro_u": 81.12359550561797,
+      "floor_per_generator": [
+        {
+          "judge": "claude-haiku",
+          "loo_macro": 58.700209643605874,
+          "loo_macro_u": 62.92134831460674,
+          "macro": 61.601642710472284
+        },
+        {
+          "judge": "claude-opus-4-7",
+          "loo_macro": 67.84232365145229,
+          "loo_macro_u": 73.48314606741573,
+          "macro": 70.84188911704312
+        },
+        {
+          "judge": "claude-sonnet",
+          "loo_macro": 40.79497907949791,
+          "loo_macro_u": 43.82022471910113,
+          "macro": 43.53182751540041
+        },
+        {
+          "judge": "deepseek-v4-flash",
+          "loo_macro": 60.337552742616026,
+          "loo_macro_u": 64.26966292134831,
+          "macro": 63.860369609856264
+        },
+        {
+          "judge": "deepseek-v4-flash-ds",
+          "loo_macro": 56.935817805383024,
+          "loo_macro_u": 61.79775280898876,
+          "macro": 59.753593429158116
+        },
+        {
+          "judge": "deepseek-v4-pro",
+          "loo_macro": 59.03361344537815,
+          "loo_macro_u": 63.146067415730336,
+          "macro": 62.217659137576995
+        },
+        {
+          "judge": "gemini-3.7-flash",
+          "loo_macro": 65.625,
+          "loo_macro_u": 70.78651685393258,
+          "macro": 68.58316221765914
+        },
+        {
+          "judge": "gemini-flash",
+          "loo_macro": 63.38912133891213,
+          "loo_macro_u": 68.08988764044945,
+          "macro": 66.11909650924025
+        },
+        {
+          "judge": "gemma-4-31b",
+          "loo_macro": 61.16910229645094,
+          "loo_macro_u": 65.84269662921348,
+          "macro": 64.27104722792608
+        },
+        {
+          "judge": "glm-5.2",
+          "loo_macro": 62.73684210526316,
+          "loo_macro_u": 66.96629213483146,
+          "macro": 65.91375770020534
+        },
+        {
+          "judge": "kimi-k3",
+          "loo_macro": 75.36534446764091,
+          "loo_macro_u": 81.12359550561797,
+          "macro": 78.4394250513347
+        },
+        {
+          "judge": "llama-3.3-70b",
+          "loo_macro": 62.55230125523013,
+          "loo_macro_u": 67.19101123595506,
+          "macro": 65.70841889117042
+        },
+        {
+          "judge": "llama-4-maverick",
+          "loo_macro": 61.49068322981367,
+          "loo_macro_u": 66.74157303370787,
+          "macro": 64.47638603696099
+        },
+        {
+          "judge": "llama-4-scout",
+          "loo_macro": 55.601659751037346,
+          "loo_macro_u": 60.22471910112359,
+          "macro": 58.31622176591375
+        },
+        {
+          "judge": "llama3-8b",
+          "loo_macro": 54.24430641821946,
+          "loo_macro_u": 58.876404494382015,
+          "macro": 57.08418891170432
+        },
+        {
+          "judge": "magistral-small",
+          "loo_macro": 39.24843423799583,
+          "loo_macro_u": 42.247191011235955,
+          "macro": 41.889117043121146
+        },
+        {
+          "judge": "mistral-medium",
+          "loo_macro": 44.70338983050847,
+          "loo_macro_u": 47.41573033707866,
+          "macro": 48.25462012320328
+        },
+        {
+          "judge": "mistral-small",
+          "loo_macro": 38.23529411764706,
+          "loo_macro_u": 40.89887640449438,
+          "macro": 41.067761806981515
+        },
+        {
+          "judge": "qwen",
+          "loo_macro": 46.496815286624205,
+          "loo_macro_u": 49.21348314606742,
+          "macro": 49.69199178644764
+        },
+        {
+          "judge": "qwen-3.6-flash",
+          "loo_macro": 49.896480331262936,
+          "loo_macro_u": 54.157303370786515,
+          "macro": 52.772073921971256
+        },
+        {
+          "judge": "qwen3-14b",
+          "loo_macro": 57.684210526315795,
+          "loo_macro_u": 61.573033707865164,
+          "macro": 60.57494866529775
+        },
+        {
+          "judge": "qwen3-32b",
+          "loo_macro": 35.924369747899156,
+          "loo_macro_u": 38.42696629213483,
+          "macro": 38.809034907597535
+        },
+        {
+          "judge": "qwen3-8b",
+          "loo_macro": 56.158663883089766,
+          "loo_macro_u": 60.449438202247194,
+          "macro": 58.932238193018485
+        },
+        {
+          "judge": "qwen3.7-flash",
+          "loo_macro": 55.18672199170125,
+          "loo_macro_u": 59.7752808988764,
+          "macro": 58.31622176591375
+        },
+        {
+          "judge": "qwen3.8-27b-hf",
+          "loo_macro": 65.26315789473685,
+          "loo_macro_u": 69.66292134831461,
+          "macro": 68.58316221765914
+        }
+      ],
+      "leaderboard": [
+        {
+          "macro": 81.12359550561797,
+          "n": 445,
+          "system": "kimi-k3"
+        },
+        {
+          "macro": 73.48314606741573,
+          "n": 445,
+          "system": "claude-opus-4-7"
+        },
+        {
+          "macro": 70.78651685393258,
+          "n": 445,
+          "system": "gemini-3.7-flash"
+        },
+        {
+          "macro": 69.66292134831461,
+          "n": 445,
+          "system": "qwen3.8-27b-hf"
+        },
+        {
+          "macro": 68.08988764044945,
+          "n": 445,
+          "system": "gemini-flash"
+        },
+        {
+          "macro": 67.19101123595506,
+          "n": 445,
+          "system": "llama-3.3-70b"
+        },
+        {
+          "macro": 66.96629213483146,
+          "n": 445,
+          "system": "glm-5.2"
+        },
+        {
+          "macro": 66.74157303370787,
+          "n": 445,
+          "system": "llama-4-maverick"
+        },
+        {
+          "macro": 65.84269662921348,
+          "n": 445,
+          "system": "gemma-4-31b"
+        },
+        {
+          "macro": 64.26966292134831,
+          "n": 445,
+          "system": "deepseek-v4-flash"
+        },
+        {
+          "macro": 63.146067415730336,
+          "n": 445,
+          "system": "deepseek-v4-pro"
+        },
+        {
+          "macro": 62.92134831460674,
+          "n": 445,
+          "system": "claude-haiku"
+        },
+        {
+          "macro": 61.79775280898876,
+          "n": 445,
+          "system": "deepseek-v4-flash-ds"
+        },
+        {
+          "macro": 61.573033707865164,
+          "n": 445,
+          "system": "qwen3-14b"
+        },
+        {
+          "macro": 60.449438202247194,
+          "n": 445,
+          "system": "qwen3-8b"
+        },
+        {
+          "macro": 60.22471910112359,
+          "n": 445,
+          "system": "llama-4-scout"
+        },
+        {
+          "macro": 59.7752808988764,
+          "n": 445,
+          "system": "qwen3.7-flash"
+        },
+        {
+          "macro": 58.876404494382015,
+          "n": 445,
+          "system": "llama3-8b"
+        },
+        {
+          "macro": 54.157303370786515,
+          "n": 445,
+          "system": "qwen-3.6-flash"
+        },
+        {
+          "macro": 49.21348314606742,
+          "n": 445,
+          "system": "qwen"
+        },
+        {
+          "macro": 47.41573033707866,
+          "n": 445,
+          "system": "mistral-medium"
+        },
+        {
+          "macro": 43.82022471910113,
+          "n": 445,
+          "system": "claude-sonnet"
+        },
+        {
+          "macro": 42.247191011235955,
+          "n": 445,
+          "system": "magistral-small"
+        },
+        {
+          "macro": 40.89887640449438,
+          "n": 445,
+          "system": "mistral-small"
+        },
+        {
+          "macro": 38.42696629213483,
+          "n": 445,
+          "system": "qwen3-32b"
+        }
+      ],
+      "leaderboard_domain_size": 445,
+      "loo_domain_size": 445,
+      "n_generators": 25,
+      "n_systems": 25,
+      "point_leader": "kimi-k3",
+      "point_leader_macro": 81.12359550561797,
+      "point_leader_max_macro": 81.12359550561797,
+      "recorded_native": {
+        "ceiling_loo_macro": 81.1236,
+        "loo_domain_size": 445,
+        "margin_ci": {
+          "crosses_zero": true,
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "n_valid_rounds": 2000,
+          "seed": 20261001,
+          "unit": "points"
+        },
+        "margin_vs_floor": 0.0,
+        "verdict": "UNREADABLE"
+      },
+      "theta_both_interval": {
+        "crosses_zero": true,
+        "hi95": 0.0,
+        "lo95": 0.0,
+        "max": 0.0,
+        "min": 0.0,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 0,
+        "n_positive_rounds": 0,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 2000
+      },
+      "theta_both_point": 0.0,
+      "theta_fixed_interval": {
+        "crosses_zero": true,
+        "hi95": 0.0,
+        "lo95": 0.0,
+        "max": 0.0,
+        "min": -1.3667425968109437,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 8,
+        "n_positive_rounds": 0,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 1992
+      },
+      "theta_fixed_point": 0.0
+    },
+    "factuality": {
+      "fidelity_vs_recorded": {
+        "ceiling_matches": true,
+        "ci_hi_matches": true,
+        "ci_lo_matches": true,
+        "margin_fixed_point_matches": true,
+        "n_valid_rounds_matches": true
+      },
+      "floor_loo_macro_u": 93.82716049382715,
+      "floor_per_generator": [
+        {
+          "judge": "claude-haiku",
+          "loo_macro": 84.64646464646465,
+          "loo_macro_u": 86.21399176954732,
+          "macro": 85.14056224899599
+        },
+        {
+          "judge": "claude-opus-4-7",
+          "loo_macro": 91.27789046653145,
+          "loo_macro_u": 92.5925925925926,
+          "macro": 91.76706827309236
+        },
+        {
+          "judge": "claude-sonnet",
+          "loo_macro": 89.0020366598778,
+          "loo_macro_u": 89.91769547325103,
+          "macro": 89.5582329317269
+        },
+        {
+          "judge": "deepseek-v4-flash",
+          "loo_macro": 88.21138211382113,
+          "loo_macro_u": 89.30041152263375,
+          "macro": 88.75502008032129
+        },
+        {
+          "judge": "deepseek-v4-flash-ds",
+          "loo_macro": 89.40936863543789,
+          "loo_macro_u": 90.3292181069959,
+          "macro": 89.95983935742971
+        },
+        {
+          "judge": "deepseek-v4-pro",
+          "loo_macro": 87.55102040816325,
+          "loo_macro_u": 88.27160493827161,
+          "macro": 88.15261044176707
+        },
+        {
+          "judge": "gemini-3.7-flash",
+          "loo_macro": 89.59183673469387,
+          "loo_macro_u": 90.3292181069959,
+          "macro": 90.16064257028113
+        },
+        {
+          "judge": "gemini-flash",
+          "loo_macro": 88.8211382113821,
+          "loo_macro_u": 89.91769547325103,
+          "macro": 89.35742971887551
+        },
+        {
+          "judge": "gemma-4-31b",
+          "loo_macro": 92.6829268292683,
+          "loo_macro_u": 93.82716049382715,
+          "macro": 93.17269076305222
+        },
+        {
+          "judge": "glm-5.2",
+          "loo_macro": 88.00813008130082,
+          "loo_macro_u": 89.09465020576131,
+          "macro": 88.55421686746988
+        },
+        {
+          "judge": "kimi-k3",
+          "loo_macro": 90.65040650406505,
+          "loo_macro_u": 91.76954732510289,
+          "macro": 91.16465863453816
+        },
+        {
+          "judge": "llama-3.3-70b",
+          "loo_macro": 87.5251509054326,
+          "loo_macro_u": 89.50617283950618,
+          "macro": 87.95180722891565
+        },
+        {
+          "judge": "llama-4-maverick",
+          "loo_macro": 85.36585365853658,
+          "loo_macro_u": 86.41975308641975,
+          "macro": 85.94377510040161
+        },
+        {
+          "judge": "llama-4-scout",
+          "loo_macro": 78.98989898989899,
+          "loo_macro_u": 80.45267489711934,
+          "macro": 79.51807228915662
+        },
+        {
+          "judge": "llama3-8b",
+          "loo_macro": 73.18548387096774,
+          "loo_macro_u": 74.69135802469135,
+          "macro": 73.69477911646585
+        },
+        {
+          "judge": "magistral-small",
+          "loo_macro": 72.03219315895373,
+          "loo_macro_u": 73.66255144032921,
+          "macro": 72.48995983935743
+        },
+        {
+          "judge": "mistral-medium",
+          "loo_macro": 82.22222222222221,
+          "loo_macro_u": 83.7448559670782,
+          "macro": 82.73092369477911
+        },
+        {
+          "judge": "mistral-small",
+          "loo_macro": 72.17741935483872,
+          "loo_macro_u": 73.66255144032921,
+          "macro": 72.69076305220884
+        },
+        {
+          "judge": "qwen",
+          "loo_macro": 86.66666666666667,
+          "loo_macro_u": 88.27160493827161,
+          "macro": 87.14859437751004
+        },
+        {
+          "judge": "qwen-3.6-flash",
+          "loo_macro": 90.36144578313254,
+          "loo_macro_u": 92.5925925925926,
+          "macro": 90.76305220883533
+        },
+        {
+          "judge": "qwen3-14b",
+          "loo_macro": 85.77235772357723,
+          "loo_macro_u": 86.83127572016461,
+          "macro": 86.34538152610442
+        },
+        {
+          "judge": "qwen3-32b",
+          "loo_macro": 82.66129032258065,
+          "loo_macro_u": 84.36213991769547,
+          "macro": 83.13253012048193
+        },
+        {
+          "judge": "qwen3-8b",
+          "loo_macro": 83.5010060362173,
+          "loo_macro_u": 85.39094650205762,
+          "macro": 83.93574297188755
+        },
+        {
+          "judge": "qwen3.7-flash",
+          "loo_macro": 91.75050301810866,
+          "loo_macro_u": 93.82716049382715,
+          "macro": 92.16867469879519
+        },
+        {
+          "judge": "qwen3.8-27b-hf",
+          "loo_macro": 82.41308793456032,
+          "loo_macro_u": 82.92181069958848,
+          "macro": 82.73092369477911
+        }
+      ],
+      "leaderboard": [
+        {
+          "macro": 93.82716049382715,
+          "n": 486,
+          "system": "gemma-4-31b"
+        },
+        {
+          "macro": 93.82716049382715,
+          "n": 486,
+          "system": "qwen3.7-flash"
+        },
+        {
+          "macro": 92.5925925925926,
+          "n": 486,
+          "system": "claude-opus-4-7"
+        },
+        {
+          "macro": 92.5925925925926,
+          "n": 486,
+          "system": "qwen-3.6-flash"
+        },
+        {
+          "macro": 91.76954732510289,
+          "n": 486,
+          "system": "kimi-k3"
+        },
+        {
+          "macro": 90.3292181069959,
+          "n": 486,
+          "system": "deepseek-v4-flash-ds"
+        },
+        {
+          "macro": 90.3292181069959,
+          "n": 486,
+          "system": "gemini-3.7-flash"
+        },
+        {
+          "macro": 89.91769547325103,
+          "n": 486,
+          "system": "claude-sonnet"
+        },
+        {
+          "macro": 89.91769547325103,
+          "n": 486,
+          "system": "gemini-flash"
+        },
+        {
+          "macro": 89.50617283950618,
+          "n": 486,
+          "system": "llama-3.3-70b"
+        },
+        {
+          "macro": 89.30041152263375,
+          "n": 486,
+          "system": "deepseek-v4-flash"
+        },
+        {
+          "macro": 89.09465020576131,
+          "n": 486,
+          "system": "glm-5.2"
+        },
+        {
+          "macro": 88.27160493827161,
+          "n": 486,
+          "system": "deepseek-v4-pro"
+        },
+        {
+          "macro": 88.27160493827161,
+          "n": 486,
+          "system": "qwen"
+        },
+        {
+          "macro": 86.83127572016461,
+          "n": 486,
+          "system": "qwen3-14b"
+        },
+        {
+          "macro": 86.41975308641975,
+          "n": 486,
+          "system": "llama-4-maverick"
+        },
+        {
+          "macro": 86.21399176954732,
+          "n": 486,
+          "system": "claude-haiku"
+        },
+        {
+          "macro": 85.39094650205762,
+          "n": 486,
+          "system": "qwen3-8b"
+        },
+        {
+          "macro": 84.36213991769547,
+          "n": 486,
+          "system": "qwen3-32b"
+        },
+        {
+          "macro": 83.7448559670782,
+          "n": 486,
+          "system": "mistral-medium"
+        },
+        {
+          "macro": 82.92181069958848,
+          "n": 486,
+          "system": "qwen3.8-27b-hf"
+        },
+        {
+          "macro": 80.45267489711934,
+          "n": 486,
+          "system": "llama-4-scout"
+        },
+        {
+          "macro": 74.69135802469135,
+          "n": 486,
+          "system": "llama3-8b"
+        },
+        {
+          "macro": 73.66255144032921,
+          "n": 486,
+          "system": "magistral-small"
+        },
+        {
+          "macro": 73.66255144032921,
+          "n": 486,
+          "system": "mistral-small"
+        }
+      ],
+      "leaderboard_domain_size": 486,
+      "loo_domain_size": 486,
+      "n_generators": 25,
+      "n_systems": 25,
+      "point_leader": "gemma-4-31b",
+      "point_leader_macro": 93.82716049382715,
+      "point_leader_max_macro": 93.82716049382715,
+      "recorded_native": {
+        "ceiling_loo_macro": 93.8272,
+        "loo_domain_size": 486,
+        "margin_ci": {
+          "crosses_zero": true,
+          "hi95": 0.0,
+          "lo95": -3.9018,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "n_valid_rounds": 2000,
+          "seed": 20261001,
+          "unit": "points"
+        },
+        "margin_vs_floor": 0.0,
+        "verdict": "UNREADABLE"
+      },
+      "theta_both_interval": {
+        "crosses_zero": true,
+        "hi95": 0.0,
+        "lo95": 0.0,
+        "max": 0.0,
+        "min": 0.0,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 0,
+        "n_positive_rounds": 0,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 2000
+      },
+      "theta_both_point": 0.0,
+      "theta_fixed_interval": {
+        "crosses_zero": true,
+        "hi95": 0.0,
+        "lo95": -3.901839581701557,
+        "max": 0.0,
+        "min": -7.024793388429762,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 1145,
+        "n_positive_rounds": 0,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 855
+      },
+      "theta_fixed_point": 0.0
+    },
+    "preference": {
+      "fidelity_vs_recorded": {
+        "ceiling_matches": true,
+        "ci_hi_matches": true,
+        "ci_lo_matches": true,
+        "margin_fixed_point_matches": true,
+        "n_valid_rounds_matches": true
+      },
+      "floor_loo_macro_u": 97.26027397260275,
+      "floor_per_generator": [
+        {
+          "judge": "claude-haiku",
+          "loo_macro": 90.27237354085604,
+          "loo_macro_u": 90.8023483365949,
+          "macro": 90.38461538461539
+        },
+        {
+          "judge": "claude-opus-4-7",
+          "loo_macro": 91.66666666666666,
+          "loo_macro_u": 92.85714285714286,
+          "macro": 91.77215189873418
+        },
+        {
+          "judge": "claude-sonnet",
+          "loo_macro": 40.0,
+          "loo_macro_u": 41.269841269841265,
+          "macro": 42.64705882352941
+        },
+        {
+          "judge": "deepseek-v4-flash",
+          "loo_macro": 92.66409266409266,
+          "loo_macro_u": 93.9334637964775,
+          "macro": 92.6923076923077
+        },
+        {
+          "judge": "deepseek-v4-flash-ds",
+          "loo_macro": 90.48543689320388,
+          "loo_macro_u": 91.19373776908023,
+          "macro": 90.57692307692308
+        },
+        {
+          "judge": "deepseek-v4-pro",
+          "loo_macro": 91.29593810444874,
+          "loo_macro_u": 92.3679060665362,
+          "macro": 91.34615384615384
+        },
+        {
+          "judge": "gemini-3.7-flash",
+          "loo_macro": 90.48543689320388,
+          "loo_macro_u": 91.19373776908023,
+          "macro": 90.57692307692308
+        },
+        {
+          "judge": "gemini-flash",
+          "loo_macro": 94.9317738791423,
+          "loo_macro_u": 95.30332681017613,
+          "macro": 95.0
+        },
+        {
+          "judge": "gemma-4-31b",
+          "loo_macro": 95.72815533980582,
+          "loo_macro_u": 96.4774951076321,
+          "macro": 95.76923076923077
+        },
+        {
+          "judge": "glm-5.2",
+          "loo_macro": 87.81431334622823,
+          "loo_macro_u": 88.84540117416829,
+          "macro": 87.88461538461539
+        },
+        {
+          "judge": "kimi-k3",
+          "loo_macro": 93.7864077669903,
+          "loo_macro_u": 94.52054794520548,
+          "macro": 93.84615384615384
+        },
+        {
+          "judge": "llama-3.3-70b",
+          "loo_macro": 89.70873786407768,
+          "loo_macro_u": 90.41095890410958,
+          "macro": 89.8076923076923
+        },
+        {
+          "judge": "llama-4-maverick",
+          "loo_macro": 90.27237354085604,
+          "loo_macro_u": 90.8023483365949,
+          "macro": 90.38461538461539
+        },
+        {
+          "judge": "llama-4-scout",
+          "loo_macro": 86.40776699029125,
+          "loo_macro_u": 87.08414872798434,
+          "macro": 86.53846153846155
+        },
+        {
+          "judge": "llama3-8b",
+          "loo_macro": 79.02912621359224,
+          "loo_macro_u": 79.6477495107632,
+          "macro": 79.23076923076923
+        },
+        {
+          "judge": "magistral-small",
+          "loo_macro": 72.28682170542635,
+          "loo_macro_u": 72.99412915851272,
+          "macro": 72.5
+        },
+        {
+          "judge": "mistral-medium",
+          "loo_macro": 89.90291262135922,
+          "loo_macro_u": 90.60665362035225,
+          "macro": 90.0
+        },
+        {
+          "judge": "mistral-small",
+          "loo_macro": 74.2248062015504,
+          "loo_macro_u": 74.95107632093934,
+          "macro": 74.42307692307692
+        },
+        {
+          "judge": "qwen",
+          "loo_macro": 89.126213592233,
+          "loo_macro_u": 89.82387475538161,
+          "macro": 89.23076923076924
+        },
+        {
+          "judge": "qwen-3.6-flash",
+          "loo_macro": 94.97098646034816,
+          "loo_macro_u": 96.08610567514677,
+          "macro": 95.0
+        },
+        {
+          "judge": "qwen3-14b",
+          "loo_macro": 86.7704280155642,
+          "loo_macro_u": 87.279843444227,
+          "macro": 86.92307692307692
+        },
+        {
+          "judge": "qwen3-32b",
+          "loo_macro": 91.24513618677042,
+          "loo_macro_u": 91.78082191780823,
+          "macro": 91.34615384615384
+        },
+        {
+          "judge": "qwen3-8b",
+          "loo_macro": 81.3953488372093,
+          "loo_macro_u": 82.1917808219178,
+          "macro": 81.53846153846153
+        },
+        {
+          "judge": "qwen3.7-flash",
+          "loo_macro": 96.31782945736434,
+          "loo_macro_u": 97.26027397260275,
+          "macro": 96.34615384615385
+        },
+        {
+          "judge": "qwen3.8-27b-hf",
+          "loo_macro": 89.74854932301741,
+          "loo_macro_u": 90.8023483365949,
+          "macro": 89.8076923076923
+        }
+      ],
+      "leaderboard": [
+        {
+          "macro": 97.26027397260275,
+          "n": 511,
+          "system": "qwen3.7-flash"
+        },
+        {
+          "macro": 96.4774951076321,
+          "n": 511,
+          "system": "gemma-4-31b"
+        },
+        {
+          "macro": 96.08610567514677,
+          "n": 511,
+          "system": "qwen-3.6-flash"
+        },
+        {
+          "macro": 95.30332681017613,
+          "n": 511,
+          "system": "gemini-flash"
+        },
+        {
+          "macro": 94.52054794520548,
+          "n": 511,
+          "system": "kimi-k3"
+        },
+        {
+          "macro": 93.9334637964775,
+          "n": 511,
+          "system": "deepseek-v4-flash"
+        },
+        {
+          "macro": 92.85714285714286,
+          "n": 308,
+          "system": "claude-opus-4-7"
+        },
+        {
+          "macro": 92.3679060665362,
+          "n": 511,
+          "system": "deepseek-v4-pro"
+        },
+        {
+          "macro": 91.78082191780823,
+          "n": 511,
+          "system": "qwen3-32b"
+        },
+        {
+          "macro": 91.19373776908023,
+          "n": 511,
+          "system": "deepseek-v4-flash-ds"
+        },
+        {
+          "macro": 91.19373776908023,
+          "n": 511,
+          "system": "gemini-3.7-flash"
+        },
+        {
+          "macro": 90.8023483365949,
+          "n": 511,
+          "system": "claude-haiku"
+        },
+        {
+          "macro": 90.8023483365949,
+          "n": 511,
+          "system": "llama-4-maverick"
+        },
+        {
+          "macro": 90.8023483365949,
+          "n": 511,
+          "system": "qwen3.8-27b-hf"
+        },
+        {
+          "macro": 90.60665362035225,
+          "n": 511,
+          "system": "mistral-medium"
+        },
+        {
+          "macro": 90.41095890410958,
+          "n": 511,
+          "system": "llama-3.3-70b"
+        },
+        {
+          "macro": 89.82387475538161,
+          "n": 511,
+          "system": "qwen"
+        },
+        {
+          "macro": 88.84540117416829,
+          "n": 511,
+          "system": "glm-5.2"
+        },
+        {
+          "macro": 87.279843444227,
+          "n": 511,
+          "system": "qwen3-14b"
+        },
+        {
+          "macro": 87.08414872798434,
+          "n": 511,
+          "system": "llama-4-scout"
+        },
+        {
+          "macro": 82.1917808219178,
+          "n": 511,
+          "system": "qwen3-8b"
+        },
+        {
+          "macro": 79.6477495107632,
+          "n": 511,
+          "system": "llama3-8b"
+        },
+        {
+          "macro": 74.95107632093934,
+          "n": 511,
+          "system": "mistral-small"
+        },
+        {
+          "macro": 72.99412915851272,
+          "n": 511,
+          "system": "magistral-small"
+        },
+        {
+          "macro": 41.269841269841265,
+          "n": 63,
+          "system": "claude-sonnet"
+        }
+      ],
+      "leaderboard_domain_size": 511,
+      "loo_domain_size": 511,
+      "n_generators": 25,
+      "n_systems": 25,
+      "point_leader": "qwen3.7-flash",
+      "point_leader_macro": 97.26027397260275,
+      "point_leader_max_macro": 97.26027397260275,
+      "recorded_native": {
+        "ceiling_loo_macro": 97.2603,
+        "loo_domain_size": 511,
+        "margin_ci": {
+          "crosses_zero": true,
+          "hi95": 0.0,
+          "lo95": -1.7309,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "n_valid_rounds": 2000,
+          "seed": 20261001,
+          "unit": "points"
+        },
+        "margin_vs_floor": 0.0,
+        "verdict": "UNDECIDABLE_DOMAIN_MISMATCH"
+      },
+      "theta_both_interval": {
+        "crosses_zero": true,
+        "hi95": 0.0,
+        "lo95": 0.0,
+        "max": 0.0,
+        "min": 0.0,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 0,
+        "n_positive_rounds": 0,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 2000
+      },
+      "theta_both_point": 0.0,
+      "theta_fixed_interval": {
+        "crosses_zero": true,
+        "hi95": 0.0,
+        "lo95": -1.7309362934362984,
+        "max": 0.0,
+        "min": -3.508771929824561,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 531,
+        "n_positive_rounds": 0,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 1469
+      },
+      "theta_fixed_point": 0.0
+    },
+    "relevance": {
+      "fidelity_vs_recorded": {
+        "ceiling_matches": true,
+        "ci_hi_matches": true,
+        "ci_lo_matches": true,
+        "margin_fixed_point_matches": true,
+        "n_valid_rounds_matches": true
+      },
+      "floor_loo_macro_u": 96.85916919959473,
+      "floor_per_generator": [
+        {
+          "judge": "claude-haiku",
+          "loo_macro": 89.05622489959839,
+          "loo_macro_u": 89.86828774062816,
+          "macro": 89.45783132530121
+        },
+        {
+          "judge": "claude-opus-4-7",
+          "loo_macro": 89.44723618090453,
+          "loo_macro_u": 90.17223910840933,
+          "macro": 89.85943775100401
+        },
+        {
+          "judge": "claude-sonnet",
+          "loo_macro": 50.0,
+          "loo_macro_u": 50.253292806484296,
+          "macro": 50.30120481927711
+        },
+        {
+          "judge": "deepseek-v4-flash",
+          "loo_macro": 94.48345035105315,
+          "loo_macro_u": 95.44072948328267,
+          "macro": 94.87951807228916
+        },
+        {
+          "judge": "deepseek-v4-flash-ds",
+          "loo_macro": 94.96981891348088,
+          "loo_macro_u": 95.6433637284701,
+          "macro": 95.28112449799197
+        },
+        {
+          "judge": "deepseek-v4-pro",
+          "loo_macro": 94.66800804828975,
+          "loo_macro_u": 95.33941236068895,
+          "macro": 95.08032128514057
+        },
+        {
+          "judge": "gemini-3.7-flash",
+          "loo_macro": 94.36052366565961,
+          "loo_macro_u": 94.93414387031407,
+          "macro": 94.77911646586345
+        },
+        {
+          "judge": "gemini-flash",
+          "loo_macro": 87.86359077231694,
+          "loo_macro_u": 88.75379939209726,
+          "macro": 88.15261044176707
+        },
+        {
+          "judge": "gemma-4-31b",
+          "loo_macro": 86.72032193158954,
+          "loo_macro_u": 87.33535967578521,
+          "macro": 86.94779116465864
+        },
+        {
+          "judge": "glm-5.2",
+          "loo_macro": 94.87437185929647,
+          "loo_macro_u": 95.6433637284701,
+          "macro": 95.28112449799197
+        },
+        {
+          "judge": "kimi-k3",
+          "loo_macro": 96.17706237424547,
+          "loo_macro_u": 96.85916919959473,
+          "macro": 96.5863453815261
+        },
+        {
+          "judge": "llama-3.3-70b",
+          "loo_macro": 86.73366834170855,
+          "loo_macro_u": 87.43667679837893,
+          "macro": 87.04819277108435
+        },
+        {
+          "judge": "llama-4-maverick",
+          "loo_macro": 92.47743229689067,
+          "loo_macro_u": 93.41438703140831,
+          "macro": 92.8714859437751
+        },
+        {
+          "judge": "llama-4-scout",
+          "loo_macro": 83.73493975903614,
+          "loo_macro_u": 84.49848024316108,
+          "macro": 84.13654618473896
+        },
+        {
+          "judge": "llama3-8b",
+          "loo_macro": 86.72032193158954,
+          "loo_macro_u": 87.33535967578521,
+          "macro": 87.14859437751004
+        },
+        {
+          "judge": "magistral-small",
+          "loo_macro": 85.02512562814071,
+          "loo_macro_u": 85.71428571428571,
+          "macro": 85.4417670682731
+        },
+        {
+          "judge": "mistral-medium",
+          "loo_macro": 86.93467336683418,
+          "loo_macro_u": 87.63931104356637,
+          "macro": 87.34939759036145
+        },
+        {
+          "judge": "mistral-small",
+          "loo_macro": 83.90342052313883,
+          "loo_macro_u": 84.49848024316108,
+          "macro": 84.33734939759037
+        },
+        {
+          "judge": "qwen",
+          "loo_macro": 92.16867469879519,
+          "loo_macro_u": 93.00911854103343,
+          "macro": 92.570281124498
+        },
+        {
+          "judge": "qwen-3.6-flash",
+          "loo_macro": 91.46586345381526,
+          "loo_macro_u": 92.2998986828774,
+          "macro": 91.86746987951807
+        },
+        {
+          "judge": "qwen3-14b",
+          "loo_macro": 93.28657314629258,
+          "loo_macro_u": 94.32624113475178,
+          "macro": 93.67469879518072
+        },
+        {
+          "judge": "qwen3-32b",
+          "loo_macro": 88.96690070210632,
+          "loo_macro_u": 89.86828774062816,
+          "macro": 89.35742971887551
+        },
+        {
+          "judge": "qwen3-8b",
+          "loo_macro": 88.16449348044132,
+          "loo_macro_u": 89.05775075987842,
+          "macro": 88.55421686746988
+        },
+        {
+          "judge": "qwen3.7-flash",
+          "loo_macro": 92.27683049147443,
+          "loo_macro_u": 93.21175278622087,
+          "macro": 92.67068273092369
+        },
+        {
+          "judge": "qwen3.8-27b-hf",
+          "loo_macro": 94.47791164658635,
+          "loo_macro_u": 95.33941236068895,
+          "macro": 94.87951807228916
+        }
+      ],
+      "leaderboard": [
+        {
+          "macro": 96.85916919959473,
+          "n": 987,
+          "system": "kimi-k3"
+        },
+        {
+          "macro": 95.6433637284701,
+          "n": 987,
+          "system": "deepseek-v4-flash-ds"
+        },
+        {
+          "macro": 95.6433637284701,
+          "n": 987,
+          "system": "glm-5.2"
+        },
+        {
+          "macro": 95.44072948328267,
+          "n": 987,
+          "system": "deepseek-v4-flash"
+        },
+        {
+          "macro": 95.33941236068895,
+          "n": 987,
+          "system": "deepseek-v4-pro"
+        },
+        {
+          "macro": 95.33941236068895,
+          "n": 987,
+          "system": "qwen3.8-27b-hf"
+        },
+        {
+          "macro": 94.93414387031407,
+          "n": 987,
+          "system": "gemini-3.7-flash"
+        },
+        {
+          "macro": 94.32624113475178,
+          "n": 987,
+          "system": "qwen3-14b"
+        },
+        {
+          "macro": 93.41438703140831,
+          "n": 987,
+          "system": "llama-4-maverick"
+        },
+        {
+          "macro": 93.21175278622087,
+          "n": 987,
+          "system": "qwen3.7-flash"
+        },
+        {
+          "macro": 93.00911854103343,
+          "n": 987,
+          "system": "qwen"
+        },
+        {
+          "macro": 92.2998986828774,
+          "n": 987,
+          "system": "qwen-3.6-flash"
+        },
+        {
+          "macro": 90.17223910840933,
+          "n": 987,
+          "system": "claude-opus-4-7"
+        },
+        {
+          "macro": 89.86828774062816,
+          "n": 987,
+          "system": "claude-haiku"
+        },
+        {
+          "macro": 89.86828774062816,
+          "n": 987,
+          "system": "qwen3-32b"
+        },
+        {
+          "macro": 89.05775075987842,
+          "n": 987,
+          "system": "qwen3-8b"
+        },
+        {
+          "macro": 88.75379939209726,
+          "n": 987,
+          "system": "gemini-flash"
+        },
+        {
+          "macro": 87.63931104356637,
+          "n": 987,
+          "system": "mistral-medium"
+        },
+        {
+          "macro": 87.43667679837893,
+          "n": 987,
+          "system": "llama-3.3-70b"
+        },
+        {
+          "macro": 87.33535967578521,
+          "n": 987,
+          "system": "gemma-4-31b"
+        },
+        {
+          "macro": 87.33535967578521,
+          "n": 987,
+          "system": "llama3-8b"
+        },
+        {
+          "macro": 85.71428571428571,
+          "n": 987,
+          "system": "magistral-small"
+        },
+        {
+          "macro": 84.49848024316108,
+          "n": 987,
+          "system": "llama-4-scout"
+        },
+        {
+          "macro": 84.49848024316108,
+          "n": 987,
+          "system": "mistral-small"
+        },
+        {
+          "macro": 50.253292806484296,
+          "n": 987,
+          "system": "claude-sonnet"
+        }
+      ],
+      "leaderboard_domain_size": 987,
+      "loo_domain_size": 987,
+      "n_generators": 25,
+      "n_systems": 25,
+      "point_leader": "kimi-k3",
+      "point_leader_macro": 96.85916919959473,
+      "point_leader_max_macro": 96.85916919959473,
+      "recorded_native": {
+        "ceiling_loo_macro": 96.8592,
+        "loo_domain_size": 987,
+        "margin_ci": {
+          "crosses_zero": true,
+          "hi95": 0.0,
+          "lo95": -0.7071,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "n_valid_rounds": 2000,
+          "seed": 20261001,
+          "unit": "points"
+        },
+        "margin_vs_floor": 0.0,
+        "verdict": "UNREADABLE"
+      },
+      "theta_both_interval": {
+        "crosses_zero": true,
+        "hi95": 0.0,
+        "lo95": 0.0,
+        "max": 0.0,
+        "min": 0.0,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 0,
+        "n_positive_rounds": 0,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 2000
+      },
+      "theta_both_point": 0.0,
+      "theta_fixed_interval": {
+        "crosses_zero": true,
+        "hi95": 0.0,
+        "lo95": -0.7070885804455109,
+        "max": 0.0,
+        "min": -2.131979695431474,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 280,
+        "n_positive_rounds": 0,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 1720
+      },
+      "theta_fixed_point": 0.0
+    }
+  }
+}

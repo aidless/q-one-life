@@ -1,0 +1,34 @@
+# Converted from CLAIM_LEDGER.md on 2026-09-26. Every value below is read from the
+# JSON carrier named in its evidence block, NOT from the markdown table.
+# CONFLICT: the markdown ledger's C01 row says "n=90 seed=3 P_mean 0.2502"; the carrier
+# results/analysis.json says n_cells=270, n_seeds=10, P_mean=0.2493. The carrier wins;
+# the ledger row is stale and is reported for human adjudication.
+claims:
+  - id: C01
+    statement: Pilot grid averages P_mean 0.2493 over 270 cells and 10 seeds.
+    value: 0.2493
+    tol: 0.0001
+    evidence:
+      file: results/analysis.json
+      path: P_mean
+  - id: C02
+    statement: The pilot grid spans 270 cells.
+    value: 270
+    tol: 0
+    evidence:
+      file: results/analysis.json
+      path: n_cells
+  - id: C03
+    statement: The pilot grid uses 10 seeds per cell.
+    value: 10
+    tol: 0
+    evidence:
+      file: results/analysis.json
+      path: n_seeds
+  - id: C04
+    statement: Across-seed standard deviation of P is 0.0289.
+    value: 0.0289
+    tol: 0.0001
+    evidence:
+      file: results/analysis.json
+      path: P_std

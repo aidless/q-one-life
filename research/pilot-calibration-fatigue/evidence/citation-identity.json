@@ -1,0 +1,73 @@
+{
+  "schema": "q-one-p17-citation-identity-v1",
+  "retrieved_at": "2026-10-28T12:02:28.116074+00:00",
+  "sources": [
+    {
+      "url": "https://arxiv.org/abs/2605.00914",
+      "http_status": 200,
+      "page_sha256": "e226f6f7d310d93efaa9d72f9c04cac97ec7a0943ddba8b6a6685e06e4efd75d",
+      "metadata": {
+        "citation_title": [
+          "The Cost of Consensus: Isolated Self-Correction Prevails Over Unguided Homogeneous Multi-Agent Debate"
+        ],
+        "citation_author": [
+          "Bertalanič, Blaž",
+          "Fortuna, Carolina"
+        ],
+        "citation_doi": [
+          "10.1145/3786335.3813137"
+        ],
+        "citation_date": [
+          "2026/04/29"
+        ],
+        "citation_online_date": [
+          "2026/04/29"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2605.00914"
+        ],
+        "citation_arxiv_id": [
+          "2605.00914"
+        ]
+      },
+      "local_bib": "refs_added.bib"
+    },
+    {
+      "url": "https://aclanthology.org/D19-1224/",
+      "http_status": 200,
+      "page_sha256": "eb14c2fa4f61804d4478fc67f02283bd58f0d8d0616e1ee879b6b219e27e40c8",
+      "metadata": {
+        "citation_title": [
+          "Show Your Work: Improved Reporting of Experimental Results"
+        ],
+        "citation_author": [
+          "Jesse Dodge",
+          "Suchin Gururangan",
+          "Dallas Card",
+          "Roy Schwartz",
+          "Noah A. Smith"
+        ],
+        "citation_conference_title": [
+          "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)"
+        ],
+        "citation_publication_date": [
+          "2019/11"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/D19-1224.pdf"
+        ],
+        "citation_firstpage": [
+          "2185"
+        ],
+        "citation_lastpage": [
+          "2194"
+        ],
+        "citation_doi": [
+          "10.18653/v1/D19-1224"
+        ]
+      },
+      "local_bib": "references.bib"
+    }
+  ],
+  "scope": "Primary arXiv/ACL metadata verifies identity of two references only; other cited works and claim support remain open. HTML meta attributes parsed by HTMLParser; no author or title inferred from a filename."
+}

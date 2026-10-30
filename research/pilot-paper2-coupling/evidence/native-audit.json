@@ -1,0 +1,89 @@
+{
+  "schema": "q-one-paper2-native-claim-audit-v1",
+  "generated_at": "2026-10-27T15:36:00Z",
+  "source": {
+    "manuscript_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+    "upstream_manuscript_sha256": "379e1632302e979ded0c0462eeba32a07fa82653796ca72d4f9f55e46f8d5cec",
+    "native_ledger_sha256": "1bee799e68f47403407db1b586a2d17bcc5b0c4fe81b8a56144a656140da8208"
+  },
+  "counts": {
+    "native_claims": 14,
+    "theory_tex_files": 6,
+    "experiment_json_files": 6,
+    "scope_files": 11,
+    "cite_keys": 7,
+    "bibitems": 7,
+    "scope_heldout_mentions": 9,
+    "heldout_data_files": 0,
+    "proof_audit_receipts": 0,
+    "review_critical": 0,
+    "review_major": 5,
+    "carrier_receipts_passed": 176,
+    "carrier_receipts_failed": 0,
+    "bound_decision_rows": 11,
+    "table_numbers": 66
+  },
+  "observed": {
+    "native_claim_ids": [
+      "P2-C1",
+      "P2-C2",
+      "P2-C3",
+      "P2-C4",
+      "P2-C5",
+      "P2-C6",
+      "P2-C7",
+      "P2-C8",
+      "P2-C9",
+      "P2-C10",
+      "P2-C11",
+      "P2-C12",
+      "P2-C13",
+      "P2-C14"
+    ],
+    "june_snapshot_n": 8,
+    "june_zero_coupling_rate": 1.0,
+    "frozen_p_bootstrap": 1.0,
+    "scope_p012_present": true,
+    "meta_review_decision": "Major Revisions",
+    "heldout_files": [],
+    "proof_audit_files": []
+  },
+  "checks": {
+    "native_claim_count_is_14": true,
+    "theory_files_present": true,
+    "experiment_outputs_present": true,
+    "scope_files_present": true,
+    "all_citations_have_local_bibitems": true,
+    "june_snapshot_n_is_8": true,
+    "june_snapshot_zero_coupling": true,
+    "native_p012_matches_frozen_json": false,
+    "heldout_data_file_present": false,
+    "proof_audit_receipt_present": false,
+    "meta_review_reports_major_revisions": true,
+    "template_hygiene_clear": true
+  },
+  "template_checks": {
+    "placeholder_repository": 0,
+    "internal_code_paper4": 0,
+    "duplicate_reproducibility_heading": 1,
+    "duplicate_reproducibility_short_heading": 0,
+    "anonymous_release_claims": 0
+  },
+  "gate_states": {
+    "carrier_recomputation": "passed",
+    "citation_resolution": "passed",
+    "source_identity": "passed",
+    "held_out_validation": "blocked",
+    "independent_proof_audit": "blocked",
+    "scientific_review": "blocked",
+    "metadata_and_license": "blocked",
+    "external_submission": "locked"
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "A hedged claim is not automatically a verified claim.",
+    "A future-work statement is not held-out evidence.",
+    "The paper remains review_pending until proof, held-out validation, independent review, metadata and license gates close."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "note": "Existence record for files this run claims to deliver. Keys are dot-free slugs because the claim-path grammar splits on \".\" and the real file names contain dots.",
+  "files": {
+    "protocol_md": {
+      "path": "protocol.md",
+      "present": true,
+      "bytes": 4868,
+      "md5": "287a5fbcef31dcbe4dcbb821a604ae7f"
+    },
+    "bds_evaluator_py": {
+      "path": "scripts/bds_evaluator.py",
+      "present": true,
+      "bytes": 6858,
+      "md5": "1c5fb90dd7d31c13374ad8441a2c5ac6"
+    }
+  }
+}

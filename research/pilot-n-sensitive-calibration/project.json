@@ -1,0 +1,406 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-n-sensitive-calibration-of-tree-ensemble-623d15100e",
+  "title": "N-Sensitive Calibration of Tree Ensembles on Frozen LLM Embeddings",
+  "status": "archived",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\\\deepseek/q-one-life/research/pilot-n-sensitive-calibration",
+  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
+  "manuscript": {
+    "path": "evidence/upstream/main.tex",
+    "sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "9c5bf9f7a65b597558026869be34ecb292cc822d5ea3b6e527bbf8b1a99a6f2b",
+      "state": "verified",
+      "origin": "P15 Research Factory overlay",
+      "description": "Canonical source identity, deprecation banner and retained archive marker."
+    },
+    {
+      "path": "evidence/variant-reconciliation.json",
+      "sha256": "e66b58adc058e59b971da9be4f790b402dc3ccdac4785cf48d80b6a080f074f9",
+      "state": "verified",
+      "origin": "P15 Research Factory overlay",
+      "description": "Seven source variants, dataset-scope conflict and merge-target reconciliation."
+    },
+    {
+      "path": "evidence/audit.json",
+      "sha256": "b0261f1d8e78d8af69bdbc07603d69f170f5080b67d4d2df3f5a60d0dec43f7f",
+      "state": "verified",
+      "origin": "P15 Research Factory overlay",
+      "description": "E1 and E6 recomputation, carrier verdicts, resampling field audit and merge-target search."
+    },
+    {
+      "path": "evidence/claim-values.json",
+      "sha256": "0450345fb918b86b4d4dacefeb3c8f80b7cfba9b8b61ae4da19be23cb3ce53c4",
+      "state": "verified",
+      "origin": "P15 Research Factory overlay",
+      "description": "Scalar values extracted from the audit for exact ledger verification."
+    },
+    {
+      "path": "evidence/upstream/main.tex",
+      "sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+      "state": "verified",
+      "origin": "P15 canonical source",
+      "description": "Canonical source retained byte-for-byte."
+    },
+    {
+      "path": "evidence/upstream/MERGED_INTO_tmlr_p12_20260921.md",
+      "sha256": "6769dd47973659b881bd2931df0aee1c999f236c7beb851478bd216523230cda",
+      "state": "verified",
+      "origin": "P15 upstream archive marker",
+      "description": "Primary-author instruction not to submit or repackage the side shell."
+    },
+    {
+      "path": "evidence/upstream/REVIEW_CARD.md",
+      "sha256": "8b67f261fbbac236b2815c7de906c530ade0c7d3142949a171a08794189e7872",
+      "state": "verified",
+      "origin": "P15 upstream source",
+      "description": "Retained 5/10 review and merge recommendation."
+    },
+    {
+      "path": "evidence/upstream/REVIEW_R16_summary.md",
+      "sha256": "d735d5ed4cc4ef5e259f58952d9a741f83354c48c9826e8e336b678b7f967051",
+      "state": "candidate",
+      "origin": "P15 upstream source",
+      "description": "R16 review summary with unresolved major blockers."
+    },
+    {
+      "path": "evidence/upstream/claims.yaml",
+      "sha256": "a29a2add0cf88eb7fdea7c5b7668248dbbca2ba38cf91e4e6905fc83d25872ba",
+      "state": "candidate",
+      "origin": "P15 upstream source",
+      "description": "Native claim ledger; records C02-C06 as inconclusive."
+    },
+    {
+      "path": "reports/claim-ledger-verification.md",
+      "sha256": "8838fd7837850926714fe218940f8d9017bfae5fdb3c9754767b67cd5f77db9f",
+      "state": "verified",
+      "origin": "P15 Research Factory overlay",
+      "description": "15 PASS / 0 FAIL / 4 WARN ledger report."
+    },
+    {
+      "path": "reports/audit.md",
+      "sha256": "3e779efac0f11c4fd1e0bf7dec4d6a7c6c58fd3e27c76885fc902386d80a69c1",
+      "state": "verified",
+      "origin": "P15 Research Factory overlay",
+      "description": "Human-readable archive and evidence audit."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "source identity",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "location": "deprecation banner",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "location": "archive marker",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "location": "merge destination provenance",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "location": "dataset scope reconciliation",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "location": "E1 recomputation",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "20ng adaptive ECE values",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "ag_news adaptive ECE values",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C09",
+      "location": "dbpedia adaptive ECE values",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "E6 K=4 counterexample",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "location": "resampling headline carriers",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "location": "201-row carrier receipt count",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "location": "unverdicted receipt distribution",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "location": "retained review",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "location": "final disposition",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "p15-e1-adaptive-ece",
+      "state": "reproduced",
+      "receipt": "evidence/audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p15-e6-class-merge",
+      "state": "reproduced",
+      "receipt": "evidence/audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p15-resampling-audit-carriers",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "p15-retained-review",
+      "kind": "method",
+      "state": "open",
+      "critical": 0,
+      "major": 2,
+      "receipt": "evidence/upstream/REVIEW_CARD.md"
+    },
+    {
+      "review_id": "p15-merge-provenance",
+      "kind": "reproduction",
+      "state": "open",
+      "critical": 1,
+      "major": 0,
+      "receipt": "evidence/variant-reconciliation.json"
+    }
+  ],
+  "package": {
+    "state": "not-started",
+    "files": [],
+    "blockers": [
+      "Canonical source explicitly forbids independent submission",
+      "Named merge target does not contain the study terms",
+      "Synthetic canonical scope conflicts with three-real-dataset arXiv copies",
+      "E6 K=4 contradicts the abstract four-class sentence",
+      "Resampling headline values lack named result fields",
+      "42 carrier receipts have no verdict",
+      "Retained review has two open Major findings"
+    ]
+  },
+  "measurements": [
+    {
+      "name": "canonical_sha256",
+      "value": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+      "unit": "sha256",
+      "definition": "SHA-256 of the canonical paper/main.tex.",
+      "source": "evidence/source_record.json",
+      "state": "observed"
+    },
+    {
+      "name": "source_variant_count",
+      "value": 7,
+      "unit": "files",
+      "definition": "Retained source files with mutually distinct hashes.",
+      "source": "evidence/variant-reconciliation.json",
+      "state": "observed"
+    },
+    {
+      "name": "e1_rows",
+      "value": 240,
+      "unit": "rows",
+      "definition": "Per-seed E1 archive rows.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "e6_rows",
+      "value": 400,
+      "unit": "rows",
+      "definition": "Per-seed E6 archive rows.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "carrier_total",
+      "value": 201,
+      "unit": "receipts",
+      "definition": "Rows in CARRIER_RECEIPTS.json.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "carrier_absent_verdict",
+      "value": 42,
+      "unit": "receipts",
+      "definition": "Receipts without a verdict field.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "merge_target_study_terms",
+      "value": 0,
+      "unit": "matches",
+      "definition": "Study-specific term matches in the named TMLR P12 target.",
+      "source": "evidence/audit.json",
+      "state": "observed"
+    }
+  ],
+  "gate_receipts": [
+    {
+      "gate_id": "p15-source-identity",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "9c5bf9f7a65b597558026869be34ecb292cc822d5ea3b6e527bbf8b1a99a6f2b",
+      "source_sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+      "summary": "Canonical and retained copy are byte-identical."
+    },
+    {
+      "gate_id": "p15-variant-reconciliation",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "e66b58adc058e59b971da9be4f790b402dc3ccdac4785cf48d80b6a080f074f9",
+      "source_sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+      "summary": "Seven distinct source hashes recorded without overwriting upstream bytes."
+    },
+    {
+      "gate_id": "p15-e1-recompute",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "b0261f1d8e78d8af69bdbc07603d69f170f5080b67d4d2df3f5a60d0dec43f7f",
+      "source_sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+      "summary": "E1 contains 240 rows and six reproducible dataset/classifier pairs."
+    },
+    {
+      "gate_id": "p15-e6-recompute",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "b0261f1d8e78d8af69bdbc07603d69f170f5080b67d4d2df3f5a60d0dec43f7f",
+      "source_sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+      "summary": "E6 contains 400 rows; K=4 RF and MLP means recompute exactly."
+    },
+    {
+      "gate_id": "p15-merge-provenance",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "e66b58adc058e59b971da9be4f790b402dc3ccdac4785cf48d80b6a080f074f9",
+      "source_sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+      "summary": "The named p12 target contains zero study-specific terms."
+    },
+    {
+      "gate_id": "p15-resampling-fields",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "b0261f1d8e78d8af69bdbc07603d69f170f5080b67d4d2df3f5a60d0dec43f7f",
+      "source_sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+      "summary": "Printed resampling headline values lack named fields in the result archive."
+    },
+    {
+      "gate_id": "p15-carrier-verdicts",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "b0261f1d8e78d8af69bdbc07603d69f170f5080b67d4d2df3f5a60d0dec43f7f",
+      "source_sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+      "summary": "42 of 201 carrier receipts have no verdict."
+    },
+    {
+      "gate_id": "p15-candidate-package",
+      "scope": "package",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "b0261f1d8e78d8af69bdbc07603d69f170f5080b67d4d2df3f5a60d0dec43f7f",
+      "source_sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+      "summary": "No package was created for a deprecated side shell."
+    }
+  ],
+  "notes": [
+    "agent-proposed, not human publication approval",
+    "The archive marker proves author intent to merge, not completion of the merge.",
+    "E1 and E6 recomputation is descriptive, not a new external validation.",
+    "No candidate package, upload, account action or publication occurred."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "q-one-manuscript-identity-v1",
+  "local_path": "ARC_REVISED.md",
+  "local_sha256": "a07872cc4710944b6c76084ff89091316d409da5605552c2b201f3648d348c95",
+  "remote_source_sha256": "a1ff847e3361d8c6b2b21578e559baf5ab11d768c8f617bae97765691f9fd660",
+  "matches_published_source": false,
+  "remote_url": "https://www.kaggle.com/competitions/arc-prize-2026-paper-track/writeups/one-rung-at-a-time-attributing-an-arc-agi-3-submi",
+  "remote_content_state": "PUBLISHED",
+  "remote_updated_at": "2026-10-16T01:18:29.049Z",
+  "interpretation": "A mismatch means the local Markdown copy is not byte-identical to the source recorded by the published remote receipt."
+}

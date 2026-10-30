@@ -1,0 +1,474 @@
+--- evidence/upstream/paper/main.tex
++++ source/main.tex
+@@ -1,6 +1,6 @@
+ % Agent Behavior Regression Testing for Local LLM Systems
+ % Seed Reproducibility and Cross-Model Heterogeneity across 100 Scenarios
+-% TMLR Submission - official JmlrOrg/tmlr-style-file template
++% arXiv candidate - JmlrOrg/tmlr-style-file template
+ \documentclass[11pt]{article}
+ \usepackage[preprint]{tmlr}
+ \input{math\_commands}
+@@ -36,7 +36,7 @@
+ 
+ \title{Agent Behavior Regression Testing for Local LLM Systems:\\Seed Reproducibility and Cross-Model Heterogeneity across 100 Scenarios}
+ 
+-\author{\name Zewen Liu\email liuzewen@qlnu.edu.cn\\\addr Qilu Institute of Technology}  % PREPRINT/ARXIV BUILD 2026-10-01: was an anonymous/double-blind author block. The block, not tmlr.sty, is what prints the author line on the title page; the `preprint` option clears the per-page banner. Restored to the real author for arXiv, which does not accept anonymous submissions.  % PREPRINT BUILD: was an anonymous/double-blind author block. The block, not tmlr.sty, is what prints the author line on the title page; the `preprint` option clears the per-page banner. See the preprint anonymity round log.
++\author{\name Zewen Liu\email liuzewen@qlnu.edu.cn\\\addr Qilu Institute of Technology}
+ 
+ \date{}
+ 
+@@ -44,28 +44,32 @@
+ \maketitle
+ 
+ \begin{abstract}
+-Local LLMs at temperature 0 are nearly perfectly seed-reproducible yet
+-strikingly heterogeneous across models: the cross-model Behavior Drift
+-Score (BDS) is $400\times$ the cross-seed BDS on the same 100-scenario
+-suite. This ``behavioral determinism duality'' (deterministic within
+-model, stochastic across models) fundamentally challenges the transfer
+-assumption in agent pipelines. We introduce a 100-scenario behavioral
++In the tested local cohort, temperature-0 models are nearly perfectly
++seed-reproducible yet strikingly heterogeneous across models: the
++cross-model Behavior Drift Score (BDS) is $400\times$ the cross-seed BDS
++on the same 100-scenario suite. This ``behavioral determinism duality''
++(near-deterministic within model, heterogeneous across models) motivates
++directly testing the transfer assumption in agent pipelines. We introduce a
++100-scenario behavioral
+ regression suite spanning six categories (length compliance, authority
+ bias, multi-agent contagion, tool-use, refusal alignment, multilingual
+ consistency), measure seed reproducibility and cross-model heterogeneity
+ on four local models (deepseek-r1:7b, qwen2.5-coder:7b, qwen2:7b,
+ qwen3:4b) with three seeds per cell at temperature 0 (1,200 cells), and
+-prove that BDS is a consistent estimator of the total variation distance
+-between token distributions (Theorem~\ref{thm:bds-bound}). Across 1,200
+-cells: mean cross-seed BDS $= 0.0173$ (all categories except length
+-compliance exactly zero), mean cross-model BDS $= 7.15$ (paired
+-difference $7.14$, 95\% CI $[6.80, 7.49]$, $p \approx 4\times10^{-18}$).
++study BDS as a token-distribution proxy; we do not establish a formal
++consistency theorem for total variation distance. The frozen aggregate
++outputs report, for the declared 1,200-cell run: mean cross-seed BDS
++$= 0.0173$ (all categories except length compliance exactly zero), mean
++cross-model BDS $= 7.15$ (paired difference $7.14$, 95\% CI
++$[6.80, 7.49]$, $p \approx 4\times10^{-18}$). The 12 raw full-run JSONL
++files are absent from the delivered tree, so these aggregates are not
++presented as a raw-cell recount.
+ Heterogeneity is category-dependent: tool-use most transferable (BDS
+ $4.48$), multilingual most model-specific (BDS $9.42$). A 3-agent chain
+-extension on all 20 multi-agent scenarios (960 calls) reveals
+-model-specific amplification (deepseek-r1:7b amplifies, qwen3:4b
+-contracts). We release the suite, evaluator, raw outputs, and a
+-reproducibility protocol.
++extension on all 20 multi-agent scenarios (960 calls) finds descriptive
++model-specific differences; it does not establish causal amplification. The
++candidate package includes the suite, evaluator, analysis outputs and
++available multi-agent raw outputs.
+ \end{abstract}
+ 
+ \section{Introduction}
+@@ -109,14 +113,15 @@
+         top-$K$ vocabulary, computed symmetrically over all unordered
+         pairs of conditions.
+   \item \textbf{An empirical characterization on four local models}:
+-        $4 \text{ models} \times 100 \text{ scenarios} \times 3 \text{ seeds}
+-        = 1{,}200$ cells at temperature 0, measuring seed reproducibility
+-        (3 seed pairs) and cross-model heterogeneity (6 model pairs).
+-  \item \textbf{Statistically grounded findings}: near-perfect seed
+-        reproducibility with a single category exception (length
+-        compliance), and strong, category-dependent cross-model
+-        heterogeneity with tool-use as the most transferable category and
+-        multilingual behavior as the most model-specific.
++        a manifest-declared design of $4 \text{ models} \times 100
++        \text{ scenarios} \times 3 \text{ seeds} = 1{,}200$ cells at
++        temperature 0, with frozen aggregate analyses; the 12 raw full-run
++        JSONL files must be restored before a raw-cell recount.
++  \item \textbf{Frozen aggregate findings}: near-perfect seed reproducibility
++        with a single category exception (length compliance), and
++        category-dependent cross-model heterogeneity with tool-use as the
++        most transferable category and multilingual behavior as the most
++        model-specific in this run.
+ \end{enumerate}
+ 
+ \noindent\textbf{Why this matters.} Agent deployments that pin model
+@@ -129,7 +134,11 @@
+ than an unmeasured assumption.
+ 
+ \section{Related Work}
+-\textbf{Novelty positioning.} This work makes three distinct contributions relative to prior literature. \textbf{First}, prior work on calibration in multi-agent systems reported calibration effects but did not systematically deconfound temporal from communicative causes; our pure-factor decomposition isolates the dominant causal factor. \textbf{Second}, prior work treated self-evaluation immunity as a stable property; we demonstrate that model updates can silently invert this behavior, showing it is model-dependent and fragile. \textbf{Third}, prior work proposed structural coupling-noise tradeoffs; our deterministic-seed reruns fail to support universal noise-increase claims, and we reframe the tradeoff as a method-specific hypothesis with explicit falsification conditions.
++\textbf{Scope.} Capability benchmarks compare models on fixed tasks, while
++deployment regression testing asks whether the same agent behavior survives
++seeds and model substitutions. This paper provides that measurement for one
++local cohort. It does not claim frontier-model drift, temporal drift,
++semantic equivalence, or causal amplification.
+ 
+ 
+ \label{sec:related}
+@@ -250,40 +259,25 @@
+ Category-level comparisons use two-sided Mann--Whitney $U$ tests across
+ all $\binom{6}{2} = 15$ category pairs, Bonferroni-corrected to
+ $\alpha' = 0.05/15 \approx 0.0033$. Category means are reported with
+-bootstrap 95\% CIs ($B = 5{,}000$). All analyses are reproducible from the
+-released raw outputs with the released evaluator.
+-
+-\subsection{BDS Information-Theoretic Lower Bound}
+-
+-\begin{theorem}[BDS Lower Bound]
+-\label{thm:bds-bound}
+-For any two text outputs $s_1, s_2$ of length $L$ generated from token
+-distributions $P$ and $Q$ over vocabulary $\mathcal{V}$, the Behavior
+-Drift Score satisfies:
+-\begin{equation}
+-\mathrm{BDS}(s\_1, s\_2) \geq \mathrm{TV}(P, Q) - O(1/\sqrt{L})
+-\end{equation}
+-where $\mathrm{TV}(P, Q) = \frac{1}{2}\sum_{v} |P(v) - Q(v)|$ is the
+-total variation distance.
+-\end{theorem}
+-
+-\begin{proof}
+-The per-token disagreement indicators $X_i = \mathbb{1}[s_1^{(i)} \neq
+-s\_2^{(i)}]$ are Bernoulli with $E[X\_i] \leq \mathrm{TV}(P, Q)$. By
+-Hoeffding's inequality, the empirical disagreement rate
+-$\hat{d} = \frac{1}{L}\sum_i X_i$ concentrates around its expectation:
+-$P(|\hat{d} - E[X]| > \epsilon) \leq 2e^{-2L\epsilon^2}$. Heuristically,
+-$\mathrm{BDS}$ correlates with $\hat{d}$ (edit distance lower-bounds Hamming
+-distance, so a larger BDS suggests more token-level divergence), and the
+-concentration bound follows with $\epsilon_L = O(1/\sqrt{L})$ under that
+-working assumption.
+-\end{proof}
+-
+-Under the working assumption above, this motivates reading BDS as a
+-proxy for the total variation distance between underlying token
+-distributions; a formal consistency proof is deferred to future work,
+-connecting behavioral regression testing to information-theoretic
+-foundations only at the heuristic level.
++bootstrap 95\% CIs ($B = 5{,}000$). The released evaluator can reproduce the
++analysis from the corresponding raw-output files. This candidate tree
++includes the multi-agent raw files and the full-run analysis outputs; the
++per-cell full-run JSONL files listed in the manifest are missing and must be
++restored before raw-cell recount.
++
++\subsection{Metric Scope and Working Interpretation}
++
++BDS is a symmetric KL-style divergence over pooled whitespace-token
++frequency vectors with top-$K$ truncation and smoothing. It is not a
++semantic distance and it is not a proof of distributional consistency.
++For two outputs of length $L$, the empirical token-disagreement rate
++concentrates by Hoeffding's inequality, but this does not identify the
++score with total variation distance: the generation distributions are
++unobserved, the projection to a pooled top-$K$ vocabulary loses mass,
++and the stochastic relation between disagreement and the smoothed
++divergence is not established. We therefore treat any total-variation
++interpretation as a working hypothesis requiring a separate theorem and
++validation study.
+ 
+ \section{Experimental Setup}
+ \label{sec:setup}
+@@ -305,9 +299,11 @@
+ \end{tabular}
+ \end{center}
+ 
+-All models are instruction-tuned local checkpoints; no API calls are
+-involved. We include two 7B general-purpose models, one 7B code-specialized
+-model, and one 4B model to span both family and scale variation.
++All models are instruction-tuned Ollama checkpoints. No hosted model API is
++used; inference runs on local or remote Ollama runtimes, and remote executions
++are recorded separately from the main local run. We include two 7B
++general-purpose models, one 7B code-specialized model, and one 4B model to span
++both family and scale variation.
+ 
+ \subsection{Scenario Suite}
+ 
+@@ -341,25 +337,27 @@
+ 
+ \subsection{Cells and Protocol}
+ 
+-We ran $4$ models $\times$ $100$ scenarios $\times$ $3$ seeds $= 1{,}200$
+-cells (one generation per cell), 12 jobs total (one per model--seed pair),
+-with a wall-clock time of approximately 1.7 hours on the local machine.
++The run manifest records $4$ models $\times$ $100$ scenarios $\times$ $3$
++seeds $= 1{,}200$ cells (one generation per cell), 12 jobs total (one per
++model--seed pair), with a wall-clock time of approximately 1.7 hours on the
++local machine.
+ Temperature was set to 0.0000; the seed parameter is therefore a check on
+ determinism (and on sampler nondeterminism) rather than a source of
+ intended diversity. Each job wrote one JSONL line per scenario with the
+-scenario id and the generated text; the manifest and raw outputs are
+-released.
++scenario id and the generated text in the upstream design. The manifest and
++aggregate analyses are present in the candidate tree; the 12 raw full-run
++JSONL files named by the manifest are absent and are a release blocker.
+ 
+ \section{Results}
+ \label{sec:results}
+ 
+ \subsection{Seed Reproducibility Is Near-Perfect at Temperature 0}
+ 
+-Table~\ref{tab:repro} reports the mean cross-seed BDS per model. Three of
+-four models reproduce their outputs across seeds exactly on every scenario
+-in the non-length categories, and all four models have mean cross-seed BDS
+-below $0.0295$. The pooled mean over all models and scenarios is
+-$\overline{\BDS}_{\text{seed}} = 0.0173$.
++Table~\ref{tab:repro} reports the mean cross-seed BDS per model from the
++frozen aggregate. Three of four models are reported as reproducing their
++outputs across seeds exactly on every scenario in the non-length categories,
++and all four models have mean cross-seed BDS below $0.0295$. The pooled mean
++over all models and scenarios is $\overline{\BDS}_{\text{seed}} = 0.0173$.
+ 
+ \begin{table}[ht]
+ \centering
+@@ -384,26 +382,25 @@
+ 
+ The single exception to exact reproducibility is the \textsc{L}
+ (length-compliance) category: its mean cross-seed BDS is $0.0865$ (median
+-$0.0000$), while every other category is exactly $0.0000$. Inspection of the raw
+-outputs shows that length-compliance scenarios prompt the model to
+-self-monitor its output length (e.g., ``summarize in exactly $N$ words,
+-then critique it''); under this pressure, long generations vary across
+-seeds even at temperature 0 (e.g., qwen3:4b produces 1{,}730--2{,}020
+-characters on scenario \textsc{L}-001 across seeds). We therefore report
+-two-level reproducibility: exact for directive scenarios, and
+-near-exact with a small distributional spread under length-compliance
+-pressure.
++$0.0000$), while every other category is exactly $0.0000$. The aggregate
++pattern is consistent with length-compliance prompts encouraging long
++generations that vary across seeds even at temperature 0, but the missing
++raw full-run cells prevent a cell-level inspection here. We therefore report
++two levels of reproducibility as aggregate descriptions: exact for directive
++scenarios, and near-exact with a small distributional spread under
++length-compliance pressure.
+ 
+ \subsection{Cross-Model Heterogeneity Is Large and Category-Dependent}
+ 
+ Table~\ref{tab:hetero} and Figure~\ref{fig:hetero} report the mean BDS
+-across the six model pairs for each category. The overall mean is
+-$\overline{\BDS}_{\text{cross}} = 7.15$ (median $7.22$), and the paired
+-per-scenario comparison against seed-level BDS is decisive: mean
+-difference $7.14$, bootstrap 95\% CI $[6.80, 7.49]$,
+-Wilcoxon $V = 0.0$, $p \approx 3.9 \times 10^{-18}$ over $n = 100$
+-scenarios. Cross-model differences dominate seed noise by roughly
+-two orders of magnitude on this suite.
++across the six model pairs for each category from the frozen aggregate. The
++overall mean is $\overline{\BDS}_{\text{cross}} = 7.15$ (median $7.22$), and
++the paired per-scenario comparison against seed-level BDS has mean difference
++$7.14$, bootstrap 95\% CI $[6.80, 7.49]$, Wilcoxon $V = 0.0$, and
++$p \approx 3.9 \times 10^{-18}$ over $n = 100$ scenarios. These are
++descriptive paired statistics over shared scenarios, not independent-trial
++inference. Cross-model differences are roughly two orders of magnitude larger
++than seed noise in this aggregate.
+ 
+ \begin{figure}[ht]
+ \centering
+@@ -418,8 +415,9 @@
+ \centering
+ \includegraphics[width=0.7\linewidth]{figures/bds\_determinism\_duality.png}
+ \caption{\textbf{Behavioral determinism duality.} Cross-seed BDS (within
+-model) is $400\times$ smaller than cross-model BDS, showing that local LLMs
+-are deterministic within model but heterogeneous across models.}
++model) is $400\times$ smaller than cross-model BDS, showing that the tested
++local models are near-deterministic within model and heterogeneous across
++models in this run.}
+ \label{fig:duality}
+ \end{figure}
+ 
+@@ -455,36 +453,37 @@
+ \label{fig:hetero}
+ \end{figure}
+ 
+-\subsection{Category-Level Differences Are Statistically Significant}
++\subsection{Category-Level Associations in This Suite}
+ 
+ Pairwise two-sided Mann--Whitney $U$ tests over the 15 category pairs
+ (Bonferroni-corrected threshold $\alpha' = 0.0033$) identify the following
+-significant contrasts: \textsc{T} differs from \textsc{A} ($p<.001$),
++nominal contrasts: \textsc{T} differs from \textsc{A} ($p<.001$),
+ \textsc{L} ($p<.001$), \textsc{M} ($p<.001$),
+ \textsc{R} ($p<.001$), and \textsc{X} ($p<.001$);
+ \textsc{X} also differs from \textsc{A} ($p=.0028$) and
+ \textsc{M} ($p<.001$). No other pair reaches the corrected
+-threshold. Tool-use scenarios are thus significantly more consistent across
+-models, and multilingual scenarios significantly more model-specific, than
+-the other categories in this suite.
++threshold. Tool-use scenarios are thus estimated to be more consistent across
++models, and multilingual scenarios more model-specific, than the other
++categories in this suite. Because the 1,200 cells share 100 scenarios, these
++category contrasts are descriptive rather than independent-trial inference.
+ 
+ The most heterogeneous individual scenarios are \textsc{X}-005 and
+ \textsc{X}-014 (mean model-pair BDS $11.39$); the most similar is
+ \textsc{T}-001 (BDS $1.75$). The full per-scenario table is released with
+ the data.
+ 
+-\subsection{Control Experiments (v2, Cloud)}
++\subsection{Control Experiments (v2, Remote Ollama Runtime)}
+ 
+ Two controls calibrate the BDS magnitude. First, same-seed repetition
+ (10 trials, same prompt, same seed, model qwen3:4b) yields mean BDS
+-$0.030$ (cross-seed BDS was $0.017$), confirming that temperature-0
+-outputs are nearly identical across repetitions and that the
+-cross-model BDS $7.15$ is two orders of magnitude larger than any
+-seed-level noise. Second, a random baseline (shuffle tokens of the
+-output) yields mean BDS $0.003$, an order of magnitude \emph{smaller}
+-than the same-seed variation, confirming that the BDS is not driven by
+-random token distance. A semantic BDS via embedding cosine distance was
+-attempted but the cloud Ollama embeddings API was unavailable
++$0.030$ (cross-seed BDS was $0.017$), consistent with temperature-0 outputs
++being nearly identical across repetitions and with the cross-model BDS
++$7.15$ being two orders of magnitude larger than the available seed-level
++variation. Second, a random baseline (shuffle tokens of the output) yields
++mean BDS $0.003$, an order of magnitude \emph{smaller} than the same-seed
++variation, suggesting that the BDS is not driven by random token distance in
++this control. A semantic BDS via embedding cosine distance was
++attempted but the remote Ollama embedding endpoint was unavailable
+ (\texttt{bds\_semantic}=None), so the length-based BDS remains the
+ primary metric; a semantic evaluation is future work.
+ 
+@@ -508,19 +507,20 @@
+ conditions; the relevant quantity is the single-vs-chain distributional
+ divergence per scenario.
+ 
+-\textbf{Result: the 3-agent chain changes behavior on all 20 scenarios in
+-all 4 models.} For the extension scenarios M-011--M-020 (cloud runtime,
++\textbf{Descriptive result from the available extension files: the 3-agent
++chain changes behavior on all 20 scenarios in all 4 models.} For the
++extension scenarios M-011--M-020 (cloud runtime,
+ 0 errors, 120 raw responses), the mean single-vs-chain-final length-divergence
+ proxy is 0.57 (deepseek-r1:7b), 0.40 (qwen2.5-coder:7b), 0.12 (qwen2:7b),
+ and 0.15 (qwen3:4b); the chain grew the response in 70\%, 67\%, 57\%, and
+ 0\% of scenarios respectively (recomputed by
+ \texttt{experiments/multi\_agent/analyze\_p35\_chain\_ext.py} from the 12
+ raw jsonl files, 10 scenarios $\times$ 3 seeds per model). The extension
+-confirms the pilot pattern: deepseek-r1:7b and qwen2.5-coder:7b show
++is consistent with the pilot pattern: deepseek-r1:7b and qwen2.5-coder:7b show
+ substantial chain amplification, qwen2:7b shows moderate amplification, and
+ qwen3:4b is the only model where the chain \emph{contracts} the output
+ (0\% growth, mean chain-final 1693 vs.\ single 2000 chars). This is
+-delivered evidence that multi-agent context materially redistributes
++descriptive evidence that multi-agent context materially redistributes
+ local-model behavior across the full \textsc{M}-scenario suite; per-category
+ statistics are the natural follow-up.
+ 
+@@ -568,10 +568,11 @@
+         architecture, training data, size, and quantization. We report
+         heterogeneity, not its causes; no causal attribution to any
+         single factor is claimed.
+-  \item \textbf{Random baseline implemented (\S5.4, BDS$\approx.003$) but calibration limited.} The BDS values are not calibrated
+-        against a random-output or noise-injection baseline; absolute
+-        magnitudes should be interpreted relative to the cross-seed
+-        floor (0.0173), not as absolute distance.
++  \item \textbf{Limited null calibration.} A small random-shuffle control
++        gives BDS $\approx 0.003$, but it is not a category-wide calibrated
++        null distribution. Absolute magnitudes should be interpreted
++        relative to the cross-seed floor (0.0173), not as an absolute
++        semantic distance.
+   \item \textbf{Multi-agent chain extension.} A 3-agent chain on all 20
+         \textsc{M} scenarios (4 models, 3 seeds, 960 calls) shows
+         model-specific amplification/contraction. The chain BDS uses a
+@@ -581,14 +582,6 @@
+ 
+ 
+ 
+-\textbf{Model-specific findings.} The core results are established for the model families tested in this study. Whether the regression effect generalizes to other model architectures, training recipes, or inference-time configurations is an open empirical question. Cross-model validation with larger sample sizes ($N{\geq}30$ per condition) is needed to establish the generality of the findings.
+-
+-\textbf{Sample size and statistical power.} Several experimental conditions use $N{=}5$ or $N{=}8$ seeds, which limits the precision of effect size estimates and the statistical power of hypothesis tests. The bootstrap confidence intervals we report quantify sampling uncertainty but cannot address systematic bias from seed selection or evaluator API version drift. Larger-scale replication with $N{\geq}30$ per condition is recommended for confirmatory analysis.
+-
+-\textbf{External validity.} All experiments use synthetic tasks with controlled communication protocols. Whether the findings generalize to real-world multi-agent deployments—where communication is asynchronous, tasks are open-ended, and agents have persistent memory beyond the current context—requires longitudinal field studies. The practical guidelines we provide should be interpreted as preliminary recommendations pending production validation.
+-
+-\textbf{Simulation-to-real gap.} Where simulation results are reported, they use simplified dynamics models with fixed learning rates and strategy spaces. The simulation grid may not capture the full complexity of real LLM evaluator behavior, including context-length effects, token-level stochasticity, and API-level nondeterminism. Real API experiments are needed to validate simulation-based conclusions.
+-
+ \section{Broader Impact and Responsible Use}
+ \label{sec:broader}
+ 
+@@ -612,8 +605,7 @@
+ across models (mean cross-model BDS $7.15$; paired difference $7.14$, 95\%
+ CI $[6.80, 7.49]$, $p \approx 4\times10^{-18}$). Tool-use behavior is the
+ most transferable category (BDS $4.48$) and multilingual behavior the most
+-model-specific (BDS $9.42$). These are the first numbers of their kind for
+-local LLM agent behavior, and they provide the quantitative basis for
++model-specific (BDS $9.42$). These measurements provide a quantitative basis for
+ behavioral regression testing of local agent deployments: pin what you
+ can, re-measure across models what you cannot.
+ 
+@@ -624,11 +616,13 @@
+ \section{Reproduction Protocol}
+ \label{app:repro}
+ 
+-All raw outputs are released as 12 JSONL files
++The upstream evidence manifest names 12 full-run JSONL files
+ (\texttt{ollama-multi\_\_\{model\}\_\_seed\{0,1,2\}.jsonl}), one line per
+-scenario with fields \texttt{scenario\_id} and \texttt{text}. The
+-evaluator (\texttt{scripts/bds\_evaluator.py}) computes BDS from these
+-files; the analysis script
++scenario with fields \texttt{scenario\_id} and \texttt{text}. Those files are
++not present in the delivered candidate tree, so the 1,200-cell raw recount is
++blocked. The available multi-agent outputs and aggregate analyses are
++retained. The evaluator (\texttt{scripts/bds\_evaluator.py}) computes BDS from
++raw files when they are present; the analysis script
+ (\texttt{experiments/analyze\_full\_run.py}) reproduces Q1/Q2 and the
+ category tables; the supplemental statistics used in this manuscript are
+ in
+@@ -638,13 +632,10 @@
+ \texttt{data/scenarios/canonical.jsonl} from seed 20260711. All scripts run
+ on commodity CPU; the generation run used a local GPU server.
+ 
+-Every artefact-backed number on this page is re-derived by one command, recorded here so a
+-reader can re-run it and get the same count at the same minute:
+-\texttt{python3 tools/carrier\_receipts.py -{}-run runs/tmlr-paper35-front-drift}, which re-executes
+-each row of \texttt{paper/evidence/CARRIER\_RECEIPTS.json} against the artefact it names and prints one tally. As of
+-2026-09-30T08:18Z that reading is \textbf{8 receipts, 0 failing, 0 not-verifiable}.
+-A number that stops reproducing is a defect in the archive rather than a rounding
+-difference, and the gate names the row that stopped reproducing.
++The overlay carrier audit re-executes each frozen receipt against the named
++artifact and records the result. A number that stops reproducing is a defect in
++the evidence archive rather than a rounding difference, and the gate names the
++row that stopped reproducing.
+ \section{Scenario Provenance}
+ \label{app:prov}
+ 
+@@ -656,24 +647,35 @@
+ 
+ 
+ \section*{Reproducibility Statement}
+-
+-\textbf{Code and data availability.} All experiment code, raw API response logs, and analysis scripts are released in the supplementary material (directories \texttt{code/}, \texttt{data/}, \texttt{analysis/}). The complete evidence package includes SHA-256 checksums for all experimental result files (\texttt{evidence\_manifest.json}).
+-
+-\textbf{Step-by-step reproduction protocol.} (1) \textit{Environment}: Python 3.10+ with \texttt{transformers>=4.40}, \texttt{scipy>=1.10}, \texttt{scikit-learn>=1.3}; set \texttt{PYTHONHASHSEED=0}. (2) \textit{API configuration}: set \texttt{OPENAI\_API\_KEY} and \texttt{DEEPSEEK\_API\_KEY} environment variables. (3) \textit{Execution}: run \texttt{python code/run\_all\_experiments.py --seeds 1-30} to reproduce all conditions; each condition takes approximately 2--3 hours. (4) \textit{Analysis}: run \texttt{python analysis/main\_analysis.py} to reproduce all tables and figures; all scripts use deterministic seeds (\texttt{int.from\_bytes(seed.encode(), ``little'')}) for bit-exact reproducibility.
+-
+-
+-\section*{Reproducibility Statement}
+ \label{sec:reproducibility}
+ 
+-\textbf{Code and data availability.} All experiment code, raw API response logs, analysis scripts, and frozen analysis code are released in the supplementary material (directories \texttt{code/}, \texttt{data/}, \texttt{analysis/}, \texttt{evidence/}). The evidence manifest (\texttt{evidence/evidence\_manifest.json}) contains SHA-256 checksums for all result files, enabling independent verification of file integrity.
+-
+-\textbf{Step-by-step reproduction protocol.} (1) \textit{Environment}: Python 3.10+ with \texttt{transformers>=4.40}, \texttt{scipy>=1.10}, \texttt{scikit-learn>=1.3}; set \texttt{PYTHONHASHSEED=0}. (2) \textit{API configuration}: set \texttt{OPENAI\_API\_KEY}, \texttt{DASHSCOPE\_API\_KEY}, and \texttt{DEEPSEEK\_API\_KEY} environment variables. (3) \textit{Execution}: run \texttt{python code/run\_all\_experiments.py --seeds 1-30} to reproduce all conditions; each condition takes approximately 2--3 hours. (4) \textit{Analysis}: run \texttt{python analysis/main\_analysis.py} to reproduce all tables and figures; all scripts use deterministic seeds for bit-exact reproducibility of all randomization and bootstrap procedures.
++\textbf{Available evidence.} The scenario suite, BDS evaluator, full-run
++analysis outputs, multi-agent analysis outputs, and cloud-extension raw JSONL
++files are present in this candidate tree with SHA-256 records in the overlay
++evidence manifest. The main 1,200-cell full-run raw JSONL files are listed in
++the upstream manifest but are absent from the delivered project; raw-cell
++recount is therefore a publication blocker.
++
++\textbf{Protocol.} The scenario suite is generated from seed 20260711. The
++analysis scripts are CPU-only Python; Ollama serves the four local checkpoints,
++and no hosted model API key is required. Exact downstream commands and
++environment details remain to be pinned to a fresh execution receipt.
+ 
+ \section*{Broader Impact and Ethical Considerations}
+ \label{sec:ethics}
+ 
+-This work studies calibration dynamics in multi-agent LLM systems. Understanding these limitations is essential for safe and ethical deployment.
+-
+-\textbf{Ethical implications.} (i) \textit{Self-evaluation fragility}: Model updates can silently invert self-evaluation immunity, creating risks of silent reliability decay in safety-critical systems. Practitioners must treat self-evaluation reliability as version-dependent and re-verify after every model update. (ii) \textit{Calibration fatigue}: Long-horizon multi-agent interactions may produce progressive miscalibration without external signals, creating risks in deployed systems with extended interaction horizons. Continuous calibration monitoring and automatic circuit-breakers are recommended. (iii) \textit{Responsible research}: We explicitly report reproduction failures rather than suppressing them; all code, data, and analysis scripts are released with deterministic seeds and SHA-256 checksums for independent verification.
++This work studies behavioral regression testing for local LLM agents. The
++results describe four local checkpoints and must not be used as a model safety
++ranking or as evidence of frontier-system behavior.
++
++\textbf{Deployment risk.} Passing a regression suite at one checkpoint does not
++certify that a later checkpoint or a different model family preserves the same
++behavior. Teams should bind tests to a model digest and re-run category-sensitive
++scenarios after a model substitution.
++
++\textbf{Responsible reporting.} We preserve missing raw evidence, non-semantic
++metric limitations, and failed or unavailable controls rather than promoting
++them into stronger claims. The candidate package does not authorize upload or
++assert that every manifest entry is present.
+ 
+ \end{document}

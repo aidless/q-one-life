@@ -1,0 +1,164 @@
+{
+  "model": "K=11, BT preference P(win)=sigmoid(gamma), multiplicative x1.08/x0.96",
+  "gamma_grid": [
+    {
+      "gamma": 0.05,
+      "s": 0.5125,
+      "N5": {
+        "E_gamma_hat": 0.0825,
+        "Var_gamma_hat": 0.00033,
+        "CR_bound": 0.8005,
+        "Var_over_CR": 0.0004
+      },
+      "N10": {
+        "E_gamma_hat": 0.1162,
+        "Var_gamma_hat": 0.000701,
+        "CR_bound": 0.4003,
+        "Var_over_CR": 0.0018
+      },
+      "N30": {
+        "E_gamma_hat": 0.1995,
+        "Var_gamma_hat": 0.002185,
+        "CR_bound": 0.1334,
+        "Var_over_CR": 0.0164
+      }
+    },
+    {
+      "gamma": 0.1,
+      "s": 0.525,
+      "N5": {
+        "E_gamma_hat": 0.0824,
+        "Var_gamma_hat": 0.000335,
+        "CR_bound": 0.802,
+        "Var_over_CR": 0.0004
+      },
+      "N10": {
+        "E_gamma_hat": 0.1161,
+        "Var_gamma_hat": 0.0007,
+        "CR_bound": 0.401,
+        "Var_over_CR": 0.0017
+      },
+      "N30": {
+        "E_gamma_hat": 0.1996,
+        "Var_gamma_hat": 0.002182,
+        "CR_bound": 0.1337,
+        "Var_over_CR": 0.0163
+      }
+    },
+    {
+      "gamma": 0.25,
+      "s": 0.5622,
+      "N5": {
+        "E_gamma_hat": 0.0823,
+        "Var_gamma_hat": 0.000336,
+        "CR_bound": 0.8126,
+        "Var_over_CR": 0.0004
+      },
+      "N10": {
+        "E_gamma_hat": 0.1158,
+        "Var_gamma_hat": 0.000721,
+        "CR_bound": 0.4063,
+        "Var_over_CR": 0.0018
+      },
+      "N30": {
+        "E_gamma_hat": 0.1998,
+        "Var_gamma_hat": 0.002136,
+        "CR_bound": 0.1354,
+        "Var_over_CR": 0.0158
+      }
+    },
+    {
+      "gamma": 0.5,
+      "s": 0.6225,
+      "N5": {
+        "E_gamma_hat": 0.0825,
+        "Var_gamma_hat": 0.000342,
+        "CR_bound": 0.8511,
+        "Var_over_CR": 0.0004
+      },
+      "N10": {
+        "E_gamma_hat": 0.1162,
+        "Var_gamma_hat": 0.000736,
+        "CR_bound": 0.4255,
+        "Var_over_CR": 0.0017
+      },
+      "N30": {
+        "E_gamma_hat": 0.1999,
+        "Var_gamma_hat": 0.002151,
+        "CR_bound": 0.1418,
+        "Var_over_CR": 0.0152
+      }
+    },
+    {
+      "gamma": 1.0,
+      "s": 0.7311,
+      "N5": {
+        "E_gamma_hat": 0.0821,
+        "Var_gamma_hat": 0.000338,
+        "CR_bound": 1.0172,
+        "Var_over_CR": 0.0003
+      },
+      "N10": {
+        "E_gamma_hat": 0.1155,
+        "Var_gamma_hat": 0.00071,
+        "CR_bound": 0.5086,
+        "Var_over_CR": 0.0014
+      },
+      "N30": {
+        "E_gamma_hat": 0.1991,
+        "Var_gamma_hat": 0.0022,
+        "CR_bound": 0.1695,
+        "Var_over_CR": 0.013
+      }
+    },
+    {
+      "gamma": 2.0,
+      "s": 0.8808,
+      "N5": {
+        "E_gamma_hat": 0.0822,
+        "Var_gamma_hat": 0.000336,
+        "CR_bound": 1.9049,
+        "Var_over_CR": 0.0002
+      },
+      "N10": {
+        "E_gamma_hat": 0.1162,
+        "Var_gamma_hat": 0.000648,
+        "CR_bound": 0.9524,
+        "Var_over_CR": 0.0007
+      },
+      "N30": {
+        "E_gamma_hat": 0.1994,
+        "Var_gamma_hat": 0.002163,
+        "CR_bound": 0.3175,
+        "Var_over_CR": 0.0068
+      }
+    },
+    {
+      "gamma": 3.0,
+      "s": 0.9526,
+      "N5": {
+        "E_gamma_hat": 0.0822,
+        "Var_gamma_hat": 0.000341,
+        "CR_bound": 4.4271,
+        "Var_over_CR": 0.0001
+      },
+      "N10": {
+        "E_gamma_hat": 0.1159,
+        "Var_gamma_hat": 0.000642,
+        "CR_bound": 2.2135,
+        "Var_over_CR": 0.0003
+      },
+      "N30": {
+        "E_gamma_hat": 0.1992,
+        "Var_gamma_hat": 0.002263,
+        "CR_bound": 0.7378,
+        "Var_over_CR": 0.0031
+      }
+    }
+  ],
+  "n_grid": [
+    5,
+    10,
+    30
+  ]
+}

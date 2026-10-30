@@ -1,0 +1,13 @@
+[
+  {
+    "value": "0.720",
+    "line": "paper/main.tex:493",
+    "artifact": "source/evidence/main_results/benchmark_table.json",
+    "locator": "aggregate[1][\"S4: high-honest, strong-attack\"]",
+    "quantity": "S4",
+    "dp": 3,
+    "note": "row index 1 is method=bft_pbft, the line the table prints at source/main.tex:493; addressed by index because the selector grammar has no by-name row filter -- noted as a schema limit, not hidden",
+    "nth_numeric": 4,
+    "printed_count": 1
+  }
+]

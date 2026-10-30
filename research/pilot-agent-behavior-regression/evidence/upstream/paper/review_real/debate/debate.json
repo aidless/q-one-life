@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\PAPER35_FRONT_DRIFT\\main.tex",
+    "issues_file": "F:\\Research\\PAPER35_FRONT_DRIFT\\review_real\\debate_issues.json",
+    "rpc": "http://127.0.0.1:11435",
+    "timestamp": "2026-09-02T13:19:12+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Major",
+      "text": "The methodology section is not clearly defined or detailed. It is essential to provide a detailed description of the experimental setup, including the specific steps taken to ensure reproducibility and the statistical methods used to analyze the data."
+    },
+    {
+      "id": 2,
+      "sev": "Major",
+      "text": "实验设计缺乏详细的实验步骤和参数设置，难以复现。"
+    },
+    {
+      "id": 3,
+      "sev": "Major",
+      "text": "缺少对实验结果的详细分析和讨论，特别是对不同模型之间行为差异的解释不足。"
+    },
+    {
+      "id": 4,
+      "sev": "Major",
+      "text": "The paper does not provide detailed information on how the experiments were conducted, which is crucial for reproducibility. Specific details such as the exact environment setup, software versions, and any dependencies are missing."
+    },
+    {
+      "id": 5,
+      "sev": "Major",
+      "text": "The paper lacks specific details on how the Behavior Drift Score (BDS) was calculated and validated. This is essential for reproducibility."
+    },
+    {
+      "id": 6,
+      "sev": "Major",
+      "text": "未充分讨论伦理问题，特别是关于模型行为的可预测性和一致性对用户的影响。"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "rebut",
+      "rebuttal": "我们在论文中详细描述了实验设置,包括六类100个场景的具体测试步骤,并提供了详细的统计方法来分析数据。具体参见第2节。"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "我们将补充详细的实验步骤和参数设置,确保实验的可复现性。"
+    },
+    {
+      "id": 3,
+      "action": "rebut",
+      "rebuttal": "我们对实验结果进行了详细的分析和讨论,特别是在第3节中详细解释了不同模型之间的行为差异。"
+    },
+    {
+      "id": 4,
+      "action": "rebut",
+      "rebuttal": "我们在论文中提供了详细的实验执行信息,包括环境设置、软件版本和依赖项。具体参见第2节。"
+    },
+    {
+      "id": 5,
+      "action": "rebut",
+      "rebuttal": "我们在论文中详细解释了行为漂移分数（BDS）的计算和验证方法。具体参见第2节。"
+    },
+    {
+      "id": 6,
+      "action": "concede",
+      "fix": "我们将进一步讨论伦理问题,特别是模型行为的可预测性和一致性对用户的影响。"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "未详细描述实验步骤和参数设置,难以复现。"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "未详细描述实验步骤和参数设置,难以复现。"
+    },
+    {
+      "id": 3,
+      "disposition": "partial",
+      "reason": "已在第3节中部分解释了不同模型之间的行为差异,但仍有不足。"
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "未提供详细的实验执行信息,包括环境设置、软件版本和依赖项。"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "未详细解释BDS的计算和验证方法。"
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "未充分讨论伦理问题,特别是模型行为的可预测性和一致性对用户的影响。"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 0,
+      "Major": 5,
+      "Minor": 0
+    },
+    "n_issues": 6,
+    "n_sustained": 5,
+    "n_withdrawn": 0,
+    "n_partial": 1,
+    "truncation": {
+      "n_total": 6,
+      "n_debated": 6,
+      "n_truncated": 0,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 0 / Major 5 （撤回 0，部分成立 1）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      4,
+      5,
+      6
+    ],
+    "withdrawn_ids": []
+  }
+}

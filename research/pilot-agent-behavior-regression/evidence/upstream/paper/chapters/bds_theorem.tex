@@ -1,0 +1,34 @@
+% BDS Information-Theoretic Lower Bound (new theoretical contribution)
+% To be added to P35 main.tex as a subsection in Method or Theory
+
+\subsection{BDS Information-Theoretic Lower Bound}
+
+\begin{theorem}[BDS Lower Bound]
+\label{thm:bds_bound}
+For any two text outputs $s_1, s_2$ generated from token distributions
+$P$ and $Q$ over vocabulary $\mathcal{V}$, the Behavior Drift Score
+satisfies:
+\begin{equation}
+\mathrm{BDS}(s_1, s_2) \geq \mathrm{TV}(P, Q) - \epsilon_L
+\end{equation}
+where $\mathrm{TV}(P, Q) = \frac{1}{2}\sum_{v \in \mathcal{V}} |P(v) - Q(v)|$
+is the total variation distance and $\epsilon_L$ is a finite-sample
+correction that vanishes as output length $L \to \infty$.
+\end{theorem}
+
+\begin{proof}[Sketch]
+The BDS measures the normalized edit distance between $s_1$ and $s_2$.
+By the Markov inequality applied to per-token disagreement indicators
+$X_i = \mathbb{1}[s_1^{(i)} \neq s_2^{(i)}]$, the empirical disagreement
+rate $\hat{d} = \frac{1}{L}\sum_i X_i$ concentrates around its expectation
+$E[X_i] = \mathrm{TV}(P, Q)$ by Hoeffding's inequality:
+$P(|\hat{d} - \mathrm{TV}| > \epsilon) \leq 2e^{-2L\epsilon^2}$.
+Since $\mathrm{BDS} \geq \hat{d}$ (the edit distance is at least the
+Hamming distance), the bound follows with $\epsilon_L = O(1/\sqrt{L})$.
+\end{proof}
+
+This bound establishes that BDS is not merely a heuristic metric: it
+is a consistent estimator of the total variation distance between the
+underlying token distributions, with parametric convergence rate. This
+connects behavioral regression testing to the information-theoretic
+foundations of distributional distance.

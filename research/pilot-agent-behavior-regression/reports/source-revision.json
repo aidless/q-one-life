@@ -1,0 +1,38 @@
+{
+  "schema": "q-one-paper35-source-revision-v1",
+  "generated_at": "2026-10-27T16:45:00Z",
+  "upstream": {
+    "path": "evidence/upstream/paper/main.tex",
+    "sha256": "d1eac66806754899440a12bb30446c3944ed230191a077b1bbd331a2ae7a02f0",
+    "bytes": 36921,
+    "lines": 679
+  },
+  "overlay": {
+    "path": "source/main.tex",
+    "sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+    "bytes": 32735,
+    "lines": 681
+  },
+  "diff_receipt": {
+    "path": "reports/source-revision.diff",
+    "sha256": "0590174f3ae1d3d8223318885284f5b7930f7f11f95f5b09cf360850a6abbff5",
+    "changed_canonical_lines": 147,
+    "changed_overlay_lines": 149
+  },
+  "change_scope": [
+    "Removed stale calibration, memory, simulation-to-real and unrelated template passages.",
+    "Replaced the unsupported formal total-variation consistency theorem with an explicit token-frequency proxy and working interpretation.",
+    "Bounded the multi-agent result to descriptive model-specific differences rather than causal amplification.",
+    "Replaced unsupported raw-release and statistical-significance language with declared-design and aggregate descriptions.",
+    "Removed duplicate Reproducibility sections and replaced off-topic ethics text with study-specific limitations.",
+    "Recorded that the 1,200-cell raw JSONL files are absent and that raw-cell recount is blocked.",
+    "Reconciled all 13 citation keys with the local bibliography."
+  ],
+  "claim_impact": "No claim was promoted; unsupported or incomplete claims remain candidate, inconclusive or blocked.",
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "The upstream bytes remain available for exact reversion and comparison.",
+    "The revision does not close raw-cell recount, independent review, metadata or license gates."
+  ]
+}

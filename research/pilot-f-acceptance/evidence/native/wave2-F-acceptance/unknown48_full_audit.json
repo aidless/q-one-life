@@ -1,0 +1,755 @@
+[
+  {
+    "path": "gsm8k-self-evolve/scripts/ablation_gate.py",
+    "name": "paired_mcnemar",
+    "lineno": 355,
+    "kind": "sig(comparison_dec,want_r1_below,baseline_name)",
+    "approx_signals": [],
+    "exact_signals": [
+      "exact"
+    ],
+    "calls_to": [
+      "int",
+      "len",
+      "mcnemar_two_sided"
+    ],
+    "verdict": "non-gate-shape"
+  },
+  {
+    "path": "gsm8k-self-evolve/scripts/audit_gate_rules.py",
+    "name": "paired_mcnemar",
+    "lineno": 242,
+    "kind": "sig(comparison_dec,want_r1_below,baseline_name)",
+    "approx_signals": [],
+    "exact_signals": [
+      "exact"
+    ],
+    "calls_to": [
+      "int",
+      "len",
+      "mcnemar_two_sided"
+    ],
+    "verdict": "non-gate-shape"
+  },
+  {
+    "path": "gsm8k-self-evolve/tests/test_frontier.py",
+    "name": "test_mcnemar_exact_known_values",
+    "lineno": 35,
+    "verdict": "not-a-gate(test/selftest)",
+    "calls_to": [
+      "mcnemar_exact",
+      "round"
+    ]
+  },
+  {
+    "path": "gsm8k-self-evolve/tests/test_frontier.py",
+    "name": "test_mcnemar_is_symmetric",
+    "lineno": 43,
+    "verdict": "not-a-gate(test/selftest)",
+    "calls_to": [
+      "mcnemar_exact"
+    ]
+  },
+  {
+    "path": "gsm8k-self-evolve/tests/test_retention_report.py",
+    "name": "test_mcnemar_matches_the_canonical_evokit_implementation",
+    "lineno": 29,
+    "verdict": "not-a-gate(test/selftest)",
+    "calls_to": [
+      "approx",
+      "canonical",
+      "insert",
+      "mcnemar_two_sided",
+      "str"
+    ]
+  },
+  {
+    "path": "gsm8k-self-evolve/tests/test_evokit.py",
+    "name": "test_mcnemar_round2_values",
+    "lineno": 5,
+    "verdict": "not-a-gate(test/selftest)",
+    "calls_to": [
+      "abs",
+      "mcnemar_two_sided"
+    ]
+  },
+  {
+    "path": "gsm8k-self-evolve/tests/test_evokit.py",
+    "name": "test_mcnemar_empty",
+    "lineno": 8,
+    "verdict": "not-a-gate(test/selftest)",
+    "calls_to": [
+      "mcnemar_two_sided"
+    ]
+  },
+  {
+    "path": "gsm8k-self-evolve/tests/test_gate_rules.py",
+    "name": "test_mcnemar_agreement_with_evokit",
+    "lineno": 155,
+    "verdict": "not-a-gate(test/selftest)",
+    "calls_to": [
+      "abs",
+      "decide",
+      "max",
+      "mcnemar_two_sided",
+      "mk_pool"
+    ]
+  },
+  {
+    "path": "dsh-research-local/scripts/verify_claims.py",
+    "name": "recompute_mcnemar",
+    "lineno": 139,
+    "kind": "sig(base,data_artifact)",
+    "approx_signals": [],
+    "exact_signals": [
+      "exact"
+    ],
+    "calls_to": [
+      "exact_mcnemar_p",
+      "join",
+      "len",
+      "load_paired_binary",
+      "sum",
+      "zip"
+    ],
+    "verdict": "non-gate-shape"
+  },
+  {
+    "path": "paper_promotion_gate/scripts/power_analysis.py",
+    "name": "power_mcnemar",
+    "lineno": 168,
+    "kind": "sig(n_discordant,or_,alpha)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom"
+    ],
+    "calls_to": [
+      "_binom_crit",
+      "_binom_sf"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "paper_promotion_gate/scripts/power_analysis.py",
+    "name": "n_mcnemar",
+    "lineno": 195,
+    "kind": "sig(or_,alpha,power,p_discordant)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "int",
+      "power_mcnemar",
+      "range"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "paper_promotion_gate/scripts/power_analysis.py",
+    "name": "or_mcnemar",
+    "lineno": 213,
+    "kind": "sig(n_discordant,alpha,power)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "power_mcnemar",
+      "range",
+      "sqrt"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "paper_promotion_gate/scripts/stats.py",
+    "name": "exact_mcnemar",
+    "lineno": 30,
+    "kind": "sig(b,c,alternative)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom",
+      "exact"
+    ],
+    "calls_to": [
+      "_binom_cdf_ge",
+      "float",
+      "max",
+      "min"
+    ],
+    "verdict": "audited-dynamic",
+    "static_note": "p-value gate with extra param (alternative); body signals exact=['binom', 'exact'] approx=[]",
+    "note": "3-param (b,c,alternative=two-sided default); dynamic audit at n<=200 via default arg",
+    "decision_flips": 0,
+    "max_abs_error": 1.3955503419538218e-13,
+    "is_exact": true,
+    "output_rounded": true
+  },
+  {
+    "path": "paper_workflow_kb/scripts/power_analysis.py",
+    "name": "power_mcnemar",
+    "lineno": 168,
+    "kind": "sig(n_discordant,or_,alpha)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom"
+    ],
+    "calls_to": [
+      "_binom_crit",
+      "_binom_sf"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "paper_workflow_kb/scripts/power_analysis.py",
+    "name": "n_mcnemar",
+    "lineno": 195,
+    "kind": "sig(or_,alpha,power,p_discordant)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "int",
+      "power_mcnemar",
+      "range"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "paper_workflow_kb/scripts/power_analysis.py",
+    "name": "or_mcnemar",
+    "lineno": 213,
+    "kind": "sig(n_discordant,alpha,power)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "power_mcnemar",
+      "range",
+      "sqrt"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "paper_workflow_kb/scripts/stats.py",
+    "name": "exact_mcnemar",
+    "lineno": 30,
+    "kind": "sig(b,c,alternative)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom",
+      "exact"
+    ],
+    "calls_to": [
+      "_binom_cdf_ge",
+      "float",
+      "max",
+      "min"
+    ],
+    "verdict": "audited-dynamic",
+    "static_note": "p-value gate with extra param (alternative); body signals exact=['binom', 'exact'] approx=[]",
+    "note": "3-param (b,c,alternative=two-sided default); dynamic audit at n<=200 via default arg",
+    "decision_flips": 0,
+    "max_abs_error": 1.3955503419538218e-13,
+    "is_exact": true,
+    "output_rounded": true
+  },
+  {
+    "path": "ai-researcher/scripts/w8_faithful_cot.py",
+    "name": "mcnemar_two_sided",
+    "lineno": 242,
+    "kind": "sig(b,c)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "append",
+      "exp",
+      "log",
+      "max",
+      "min",
+      "range"
+    ],
+    "verdict": "audited-dynamic",
+    "decision_flips": 0,
+    "max_abs_error": 9.248157795127554e-14,
+    "is_exact": true,
+    "output_rounded": true,
+    "audited_path": "ai-researcher/scripts/w8_faithful_cot.py"
+  },
+  {
+    "path": "paper_joint_mem_forget/scripts/power_analysis.py",
+    "name": "power_mcnemar",
+    "lineno": 168,
+    "kind": "sig(n_discordant,or_,alpha)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom"
+    ],
+    "calls_to": [
+      "_binom_crit",
+      "_binom_sf"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "paper_joint_mem_forget/scripts/power_analysis.py",
+    "name": "n_mcnemar",
+    "lineno": 195,
+    "kind": "sig(or_,alpha,power,p_discordant)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "int",
+      "power_mcnemar",
+      "range"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "paper_joint_mem_forget/scripts/power_analysis.py",
+    "name": "or_mcnemar",
+    "lineno": 213,
+    "kind": "sig(n_discordant,alpha,power)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "power_mcnemar",
+      "range",
+      "sqrt"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "paper_joint_mem_forget/scripts/stats.py",
+    "name": "exact_mcnemar",
+    "lineno": 30,
+    "kind": "sig(b,c,alternative)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom",
+      "exact"
+    ],
+    "calls_to": [
+      "_binom_cdf_ge",
+      "float",
+      "max",
+      "min"
+    ],
+    "verdict": "audited-dynamic",
+    "static_note": "p-value gate with extra param (alternative); body signals exact=['binom', 'exact'] approx=[]",
+    "note": "3-param (b,c,alternative=two-sided default); dynamic audit at n<=200 via default arg",
+    "decision_flips": 0,
+    "max_abs_error": 1.3955503419538218e-13,
+    "is_exact": true,
+    "output_rounded": true
+  },
+  {
+    "path": "paper_joint_mem_forget_formal/release/supplement/scripts/analysis.py",
+    "name": "mcnemar_exact",
+    "lineno": 42,
+    "kind": "sig(b,c)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom",
+      "exact"
+    ],
+    "calls_to": [
+      "cdf",
+      "min"
+    ],
+    "verdict": "audited-dynamic",
+    "decision_flips": 0,
+    "max_abs_error": 1.3322676295501878e-15,
+    "is_exact": true,
+    "output_rounded": true,
+    "audited_path": "paper_joint_mem_forget_formal/release/supplement/scripts/analysis.py"
+  },
+  {
+    "path": "paper_joint_mem_forget_formal/release/supplement/scripts/analysis_v4.py",
+    "name": "mcnemar_exact",
+    "lineno": 43,
+    "kind": "sig(b,c)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom",
+      "exact"
+    ],
+    "calls_to": [
+      "cdf",
+      "min"
+    ],
+    "verdict": "audited-dynamic",
+    "decision_flips": 0,
+    "max_abs_error": 1.3322676295501878e-15,
+    "is_exact": true,
+    "output_rounded": true,
+    "audited_path": "paper_joint_mem_forget_formal/release/supplement/scripts/analysis_v4.py"
+  },
+  {
+    "path": "paper_joint_mem_forget_formal/scripts/analysis.py",
+    "name": "mcnemar_exact",
+    "lineno": 42,
+    "kind": "sig(b,c)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom",
+      "exact"
+    ],
+    "calls_to": [
+      "cdf",
+      "min"
+    ],
+    "verdict": "audited-dynamic",
+    "decision_flips": 0,
+    "max_abs_error": 1.3322676295501878e-15,
+    "is_exact": true,
+    "output_rounded": true,
+    "audited_path": "paper_joint_mem_forget_formal/scripts/analysis.py"
+  },
+  {
+    "path": "paper_joint_mem_forget_formal/scripts/analysis_v4.py",
+    "name": "mcnemar_exact",
+    "lineno": 43,
+    "kind": "sig(b,c)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom",
+      "exact"
+    ],
+    "calls_to": [
+      "cdf",
+      "min"
+    ],
+    "verdict": "audited-dynamic",
+    "decision_flips": 0,
+    "max_abs_error": 1.3322676295501878e-15,
+    "is_exact": true,
+    "output_rounded": true,
+    "audited_path": "paper_joint_mem_forget_formal/scripts/analysis_v4.py"
+  },
+  {
+    "path": "tools/bench-noise-floor/selftest.py",
+    "name": "case_mcnemar_unequal_items",
+    "lineno": 322,
+    "verdict": "not-a-gate(test/selftest)",
+    "calls_to": [
+      "_ragged",
+      "write_csv"
+    ]
+  },
+  {
+    "path": "tools/bench-noise-floor/selftest.py",
+    "name": "case_two_slices_mcnemar",
+    "lineno": 424,
+    "verdict": "not-a-gate(test/selftest)",
+    "calls_to": [
+      "append",
+      "range",
+      "write_csv"
+    ]
+  },
+  {
+    "path": "tools/bench-noise-floor/.bak-20261004T2215Z/selftest.py",
+    "name": "case_mcnemar_unequal_items",
+    "lineno": 213,
+    "verdict": "not-a-gate(test/selftest)",
+    "calls_to": [
+      "_ragged",
+      "write_csv"
+    ]
+  },
+  {
+    "path": "tools/bench-noise-floor/.bak-20261004T2215Z/selftest.py",
+    "name": "case_two_slices_mcnemar",
+    "lineno": 307,
+    "verdict": "not-a-gate(test/selftest)",
+    "calls_to": [
+      "append",
+      "range",
+      "write_csv"
+    ]
+  },
+  {
+    "path": "artifacts/bench-noise-floor-paper-v1/v2/bench-noise-floor/selftest.py",
+    "name": "case_mcnemar_unequal_items",
+    "lineno": 213,
+    "verdict": "not-a-gate(test/selftest)",
+    "calls_to": [
+      "_ragged",
+      "write_csv"
+    ]
+  },
+  {
+    "path": "artifacts/bench-noise-floor-paper-v1/v2/bench-noise-floor/selftest.py",
+    "name": "case_two_slices_mcnemar",
+    "lineno": 307,
+    "verdict": "not-a-gate(test/selftest)",
+    "calls_to": [
+      "append",
+      "range",
+      "write_csv"
+    ]
+  },
+  {
+    "path": "papers/engram_vs_kv/scripts/power_analysis.py",
+    "name": "power_mcnemar",
+    "lineno": 168,
+    "kind": "sig(n_discordant,or_,alpha)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom"
+    ],
+    "calls_to": [
+      "_binom_crit",
+      "_binom_sf"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "papers/engram_vs_kv/scripts/power_analysis.py",
+    "name": "n_mcnemar",
+    "lineno": 195,
+    "kind": "sig(or_,alpha,power,p_discordant)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "int",
+      "power_mcnemar",
+      "range"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "papers/engram_vs_kv/scripts/power_analysis.py",
+    "name": "or_mcnemar",
+    "lineno": 213,
+    "kind": "sig(n_discordant,alpha,power)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "power_mcnemar",
+      "range",
+      "sqrt"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "papers/engram_vs_kv/scripts/stats.py",
+    "name": "exact_mcnemar",
+    "lineno": 30,
+    "kind": "sig(b,c,alternative)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom",
+      "exact"
+    ],
+    "calls_to": [
+      "_binom_cdf_ge",
+      "float",
+      "max",
+      "min"
+    ],
+    "verdict": "audited-dynamic",
+    "static_note": "p-value gate with extra param (alternative); body signals exact=['binom', 'exact'] approx=[]",
+    "note": "3-param (b,c,alternative=two-sided default); dynamic audit at n<=200 via default arg",
+    "decision_flips": 0,
+    "max_abs_error": 1.3955503419538218e-13,
+    "is_exact": true,
+    "output_rounded": true
+  },
+  {
+    "path": "papers/async_rl_2bit/scripts/power_analysis.py",
+    "name": "power_mcnemar",
+    "lineno": 168,
+    "kind": "sig(n_discordant,or_,alpha)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom"
+    ],
+    "calls_to": [
+      "_binom_crit",
+      "_binom_sf"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "papers/async_rl_2bit/scripts/power_analysis.py",
+    "name": "n_mcnemar",
+    "lineno": 195,
+    "kind": "sig(or_,alpha,power,p_discordant)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "int",
+      "power_mcnemar",
+      "range"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "papers/async_rl_2bit/scripts/power_analysis.py",
+    "name": "or_mcnemar",
+    "lineno": 213,
+    "kind": "sig(n_discordant,alpha,power)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "power_mcnemar",
+      "range",
+      "sqrt"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "papers/async_rl_2bit/scripts/stats.py",
+    "name": "exact_mcnemar",
+    "lineno": 30,
+    "kind": "sig(b,c,alternative)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom",
+      "exact"
+    ],
+    "calls_to": [
+      "_binom_cdf_ge",
+      "float",
+      "max",
+      "min"
+    ],
+    "verdict": "audited-dynamic",
+    "static_note": "p-value gate with extra param (alternative); body signals exact=['binom', 'exact'] approx=[]",
+    "note": "3-param (b,c,alternative=two-sided default); dynamic audit at n<=200 via default arg",
+    "decision_flips": 0,
+    "max_abs_error": 1.3955503419538218e-13,
+    "is_exact": true,
+    "output_rounded": true
+  },
+  {
+    "path": "papers/csa2_robust/scripts/power_analysis.py",
+    "name": "power_mcnemar",
+    "lineno": 168,
+    "kind": "sig(n_discordant,or_,alpha)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom"
+    ],
+    "calls_to": [
+      "_binom_crit",
+      "_binom_sf"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "papers/csa2_robust/scripts/power_analysis.py",
+    "name": "n_mcnemar",
+    "lineno": 195,
+    "kind": "sig(or_,alpha,power,p_discordant)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "int",
+      "power_mcnemar",
+      "range"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "papers/csa2_robust/scripts/power_analysis.py",
+    "name": "or_mcnemar",
+    "lineno": 213,
+    "kind": "sig(n_discordant,alpha,power)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "power_mcnemar",
+      "range",
+      "sqrt"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "papers/csa2_robust/scripts/stats.py",
+    "name": "exact_mcnemar",
+    "lineno": 30,
+    "kind": "sig(b,c,alternative)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom",
+      "exact"
+    ],
+    "calls_to": [
+      "_binom_cdf_ge",
+      "float",
+      "max",
+      "min"
+    ],
+    "verdict": "audited-dynamic",
+    "static_note": "p-value gate with extra param (alternative); body signals exact=['binom', 'exact'] approx=[]",
+    "note": "3-param (b,c,alternative=two-sided default); dynamic audit at n<=200 via default arg",
+    "decision_flips": 0,
+    "max_abs_error": 1.3955503419538218e-13,
+    "is_exact": true,
+    "output_rounded": true
+  },
+  {
+    "path": "papers/agent_effort/scripts/power_analysis.py",
+    "name": "power_mcnemar",
+    "lineno": 168,
+    "kind": "sig(n_discordant,or_,alpha)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom"
+    ],
+    "calls_to": [
+      "_binom_crit",
+      "_binom_sf"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "papers/agent_effort/scripts/power_analysis.py",
+    "name": "n_mcnemar",
+    "lineno": 195,
+    "kind": "sig(or_,alpha,power,p_discordant)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "int",
+      "power_mcnemar",
+      "range"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "papers/agent_effort/scripts/power_analysis.py",
+    "name": "or_mcnemar",
+    "lineno": 213,
+    "kind": "sig(n_discordant,alpha,power)",
+    "approx_signals": [],
+    "exact_signals": [],
+    "calls_to": [
+      "power_mcnemar",
+      "range",
+      "sqrt"
+    ],
+    "verdict": "not-a-gate(power-analysis)"
+  },
+  {
+    "path": "papers/agent_effort/scripts/stats.py",
+    "name": "exact_mcnemar",
+    "lineno": 30,
+    "kind": "sig(b,c,alternative)",
+    "approx_signals": [],
+    "exact_signals": [
+      "binom",
+      "exact"
+    ],
+    "calls_to": [
+      "_binom_cdf_ge",
+      "float",
+      "max",
+      "min"
+    ],
+    "verdict": "audited-dynamic",
+    "static_note": "p-value gate with extra param (alternative); body signals exact=['binom', 'exact'] approx=[]",
+    "note": "3-param (b,c,alternative=two-sided default); dynamic audit at n<=200 via default arg",
+    "decision_flips": 0,
+    "max_abs_error": 1.3955503419538218e-13,
+    "is_exact": true,
+    "output_rounded": true
+  }
+]

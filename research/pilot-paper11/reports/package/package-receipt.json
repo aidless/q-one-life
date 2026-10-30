@@ -1,0 +1,65 @@
+{
+  "schema": "q-one-arxiv-candidate-package-v1",
+  "generated_at": "2026-10-27T14:34:23.066082Z",
+  "archive": "reports/package/paper11-arxiv-candidate.tar.gz",
+  "archive_sha256": "17b0c88c46e0b69fdabc2c3af75cf713ef0d23916b53f7f66e26be1362e3ae8a",
+  "archive_bytes": 30025,
+  "entries": [
+    {
+      "path": "figures/factorial-audit.pdf",
+      "sha256": "d1449f3abbe71b26c18d9fe6398269de54776281317b24bf70b029b433728bfa",
+      "bytes": 18589
+    },
+    {
+      "path": "generated_values.tex",
+      "sha256": "88350d5d14550389500b5c47977c5067e1f93cd5fd781f31de0375ca844fe468",
+      "bytes": 3654
+    },
+    {
+      "path": "main.bbl",
+      "sha256": "a2468bbd6b52b115965c8b17b0f7b0eb30a421806d16c79b71c3cc53a3aa5dc4",
+      "bytes": 4048
+    },
+    {
+      "path": "main.tex",
+      "sha256": "9748c64cbd338dcc495d6ce4119365ccf8540b5369fb912c74df662f999be02a",
+      "bytes": 24016
+    },
+    {
+      "path": "references.bib",
+      "sha256": "51f0432d5db567c3497e5763b818080492979ea8f278ee0fbaf3a7626c4c65b9",
+      "bytes": 4751
+    }
+  ],
+  "extract_compile_exit_codes": {
+    "archive_extract": "/tmp/qone-paper11-package-check.bJYztH",
+    "pdflatex_pass1": 0,
+    "bibtex": 0,
+    "pdflatex_pass2": 0,
+    "pdflatex_pass3": 0
+  },
+  "compiled_pdf": {
+    "path": "reports/package/archive-main.pdf",
+    "sha256": "aeb8fbf59a86f6f4997a162ee4915f3919037287f5129e82e65a951fed01c09c",
+    "bytes": 203009
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "pdftex": "pdfTeX 3.141592653-2.6-1.40.29"
+  },
+  "ready_for_upload": false,
+  "blockers": [
+    "User authorization has not been given for an arXiv account action.",
+    "Final title, authors, category, abstract and license require user confirmation.",
+    "This receipt proves the archive extracts and compiles; it does not prove scientific acceptance."
+  ],
+  "notes": [
+    "The tar archive was created with normalized mtime and ownership metadata.",
+    "The archive was extracted into a separate temporary directory before compilation."
+  ],
+  "deterministic_rebuild": {
+    "repeat_archive_sha256": "17b0c88c46e0b69fdabc2c3af75cf713ef0d23916b53f7f66e26be1362e3ae8a",
+    "identical": true,
+    "method": "same source files, sorted names, normalized mtime and ownership"
+  }
+}

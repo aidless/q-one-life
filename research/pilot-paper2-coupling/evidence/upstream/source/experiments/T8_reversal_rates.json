@@ -1,0 +1,203 @@
+{
+  "theorem": "T8 (N-Sensitivity Expected Reversal Rate via Bayesian Posterior Collapse)",
+  "version": "v9",
+  "c_min_low_ref": 0.003,
+  "n_claims": 11,
+  "n_N_levels": 6,
+  "n_total_rows": 66,
+  "calibration_table": [
+    {
+      "N": 2,
+      "E_RR_bound": 0.0553,
+      "stable_claim": "Yes"
+    },
+    {
+      "N": 5,
+      "E_RR_bound": 0.035,
+      "stable_claim": "Strong yes"
+    },
+    {
+      "N": 8,
+      "E_RR_bound": 0.0277,
+      "stable_claim": "Strong yes"
+    },
+    {
+      "N": 15,
+      "E_RR_bound": 0.0202,
+      "stable_claim": "Strong yes"
+    },
+    {
+      "N": 30,
+      "E_RR_bound": 0.0143,
+      "stable_claim": "Strong yes"
+    },
+    {
+      "N": 100,
+      "E_RR_bound": 0.0078,
+      "stable_claim": "Strong yes"
+    }
+  ],
+  "N_min_formula_table": [
+    {
+      "rho_target": 0.05,
+      "delta_claim": 0.1,
+      "N_min_required": 0.2
+    },
+    {
+      "rho_target": 0.05,
+      "delta_claim": 0.21,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.05,
+      "delta_claim": 0.5,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.05,
+      "delta_claim": 1.0,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.1,
+      "delta_claim": 0.1,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.1,
+      "delta_claim": 0.21,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.1,
+      "delta_claim": 0.5,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.1,
+      "delta_claim": 1.0,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.3,
+      "delta_claim": 0.1,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.3,
+      "delta_claim": 0.21,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.3,
+      "delta_claim": 0.5,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.3,
+      "delta_claim": 1.0,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.5,
+      "delta_claim": 0.1,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.5,
+      "delta_claim": 0.21,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.5,
+      "delta_claim": 0.5,
+      "N_min_required": 0.0
+    },
+    {
+      "rho_target": 0.5,
+      "delta_claim": 1.0,
+      "N_min_required": 0.0
+    }
+  ],
+  "falsifiability_check": {
+    "n_high_RR_at_N5": 7,
+    "n_med_RR_at_N8": 7,
+    "pass": true,
+    "criteria": ">=4 claims RR>=0.5 at N=5 AND >=3 claims RR>=0.3 at N=8"
+  },
+  "headline_claims_summary": [
+    {
+      "claim_id": "P1-C1",
+      "paper": "PAPER1",
+      "delta_claim": 0.005,
+      "claim": "Strategy consensus: agents converge to JSD < 0.2 within 30 rounds"
+    },
+    {
+      "claim_id": "P1-C2",
+      "paper": "PAPER1",
+      "delta_claim": 0.005,
+      "claim": "Calibration contagion: ΔECE > 0.05 in sync conditions"
+    },
+    {
+      "claim_id": "P2-C1",
+      "paper": "PAPER2",
+      "delta_claim": 0.003,
+      "claim": "γ·H·CV ≥ 0.003 at N=30 (v8 impossibility product)"
+    },
+    {
+      "claim_id": "P2-C2",
+      "paper": "PAPER2",
+      "delta_claim": 0.05,
+      "claim": "γ-H tradeoff: Pearson r < -0.5 across conditions"
+    },
+    {
+      "claim_id": "P3-C1",
+      "paper": "PAPER3",
+      "delta_claim": 0.01,
+      "claim": "90.8% temporal vs 9.2% sync ΔECE decomposition"
+    },
+    {
+      "claim_id": "P3-C2",
+      "paper": "PAPER3",
+      "delta_claim": 0.1,
+      "claim": "Self-eval coupling γ > 1.0 (DeepSeek-V4-Pro)"
+    },
+    {
+      "claim_id": "P4-C1",
+      "paper": "PAPER4",
+      "delta_claim": 0.005,
+      "claim": "N-sensitivity reversal rate > 0.5 at N=5"
+    },
+    {
+      "claim_id": "P4-C2",
+      "paper": "PAPER4",
+      "delta_claim": 0.1,
+      "claim": "Qwen γ ranking flips across LR modes"
+    },
+    {
+      "claim_id": "P5-C1",
+      "paper": "PAPER5",
+      "delta_claim": 0.01,
+      "claim": "Architecture crossover at p=0.8 (RAG vs Summarization)"
+    },
+    {
+      "claim_id": "P5-C2",
+      "paper": "PAPER5",
+      "delta_claim": 0.05,
+      "claim": "Authority bias +107% on Qwen Summarization"
+    },
+    {
+      "claim_id": "P5-C3",
+      "paper": "PAPER5",
+      "delta_claim": 0.01,
+      "claim": "Length bias Γ < 0.5 on DeepSeek RAG"
+    }
+  ],
+  "overall_status": "CONSISTENT",
+  "notes": [
+    "T8 says: E[RR(N)] >= min(1, c_min^(low) / Delta_claim) * sqrt(30/N).",
+    "c_min^(low) = sigma_w / (||w_0||_2 * sqrt(N_0)) at N_0=30 = 0.003 (v8).",
+    "11 headline claims across 5 papers, 6 N levels, 100 virtual replications.",
+    "Bootstrap proxy uses prior-induced posterior variance; see remark in T8."
+  ]
+}

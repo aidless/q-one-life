@@ -1,0 +1,333 @@
+{
+  "bootstrap": {
+    "cluster": "case",
+    "n_boot": 2000,
+    "seed": 20261001
+  },
+  "cases": {
+    "above_delta": {
+      "exit_code": 0,
+      "fixture_rows": 60,
+      "fixture_sha256": "87b01c3e97ecb249ac214b8797865bc9ba135e562918845406bbb24ff6ca19a6",
+      "result": {
+        "ceiling_loo_macro": 80.0,
+        "delta_threshold_points": null,
+        "loo_measure": "self_reproduction",
+        "margin_ci": {
+          "crosses_zero": true,
+          "hi95": 20.0,
+          "lo95": 0.0,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "n_valid_rounds": 2000,
+          "seed": 20261001,
+          "unit": "points"
+        },
+        "margin_vs_floor": 20.0,
+        "n_items": 10,
+        "same_domain_as_floor": true,
+        "verdict": "READABLE"
+      },
+      "spec": {
+        "expected_floor_points": 80.0,
+        "expected_implementation_verdict": "READABLE",
+        "expected_leader_points": 100.0,
+        "expected_point_margin": 19.999999999999996,
+        "kind": "balanced_four_generator",
+        "leader_correct": 10,
+        "leader_name": "sys-top",
+        "n_disagree": 8,
+        "n_items": 10
+      },
+      "stderr": "",
+      "stdout": "[0] audit.py sha256 = 2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b\n==============================================================================\nbench-noise-floor  |  gold=majority  |  items=10  slices=1\n==============================================================================\n\n[1] 金标构成与 judge 分歧诊断\n  judges: generator-1, generator-2, generator-3, generator-4\n  items=10  有分歧 items=8 (80.0%)  无任何一致项=0\n    generator-1                  平均自报置信度 0.9000  (n=10)\n    generator-2                  平均自报置信度 0.9000  (n=10)\n    generator-3                  平均自报置信度 0.9000  (n=10)\n    generator-4                  平均自报置信度 0.9000  (n=10)\n\n[2] 噪声下限 —— judge 打自己参与生成的金标\n  generator-1                  macro= 80.00%  micro= 80.00%   留一法 macro=80.00%  (n=10)  同域U=80.00%\n  generator-2                  macro= 80.00%  micro= 80.00%   留一法 macro=80.00%  (n=10)  同域U=80.00%\n  generator-3                  macro= 80.00%  micro= 80.00%   留一法 macro=80.00%  (n=10)  同域U=80.00%\n  generator-4                  macro= 80.00%  micro= 80.00%   留一法 macro=80.00%  (n=10)  同域U=80.00%\n  => 含自身口径下限（偏高侧）        = 80.00%   （min=80.00%，含自身把自己抬分 ⇒ 是**保守偏高**的一侧）\n  => 真留一法口径下限（eq:loo）     = 80.00%   <== 用这个判榜\n  [支撑提示] 全部 4 个生成器的留一计分行数 <30 —— 地板由极薄的支撑算出，读数本身不可引用。\n  => 两 judge 互差 = 0.00 个百分点（两 judge 完全一致（0.00 点），这把金标内部自洽，噪声下限仍非零是因为judge 要和自己共同构造的答案对齐）\n\n[3] 榜单（system 打同一把金标，与地板同域 U）\n  system                                      macro    micro      n     未测  Δmacro-micro\n  sys-top                                   100.00%  100.00%     10      0          0.00\n  sys-low                                     0.00%    0.00%     10      0          0.00\n  榜首 sys-top macro=100.00%  全榜跨度 macro=100.00 / micro=100.00 个百分点\n\n[4] 配对 bootstrap（2000 次重采样，按 case 整簇重采样；点估计与 CI 同为 macro 口径）\n  对比                                                   Δmacro            95%CI(点)   McNemar p\n  sys-low vs sys-top                                  -100.00   [-100.00,-100.00]      0.0020   显著\n  => 对榜首 0/1 组是统计平局（1 组可区分）\n\n[4b] margin 的配对 bootstrap（2000 次，与 [4] 同一批 case 抽样）\n  margin 点估计 = +20.00 点   95%CI = [+0.00, +20.00]\n  => CI 跨 0：'榜首越过地板' 这一结论在这套抽样下并不稳健，判决应按可下结论的**下界**（+0.00 点）解读，而不是点估计。\n\n[5] 结论\n  VERDICT = READABLE（榜首超出下限 20.00 点）\n    但 margin 的 95%CI [+0.00, +20.00] 跨 0：点估计为正不等于'榜首确实越过地板'稳健成立。\n    注意：这只说明榜首没被这把尺子挡住，仍须报 CI、macro/micro 两口径、以及与第二名的配对检验。\n\n[6] 校准（system 自报概率 vs 是否命中金标）\n  sys-top                                  ECE=0.1000  Brier=0.0100  conf=0.9000 vs acc=1.0000  (低估, n=10)\n  sys-low                                  ECE=0.9000  Brier=0.8100  conf=0.9000 vs acc=0.0000  (高估, n=10)\n\n[JSON] -> <OUTPUT>\n"
+    },
+    "below_delta": {
+      "exit_code": 0,
+      "fixture_rows": 2400,
+      "fixture_sha256": "add31b3a07897e06d2c7ff9bb3fd5e16af08b9651c6ebc23721c6e5cceb52782",
+      "result": {
+        "ceiling_loo_macro": 98.5,
+        "delta_threshold_points": null,
+        "loo_measure": "self_reproduction",
+        "margin_ci": {
+          "crosses_zero": true,
+          "hi95": 1.5,
+          "lo95": -0.25,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "n_valid_rounds": 2000,
+          "seed": 20261001,
+          "unit": "points"
+        },
+        "margin_vs_floor": 1.25,
+        "n_items": 400,
+        "same_domain_as_floor": true,
+        "verdict": "MARGINAL"
+      },
+      "spec": {
+        "expected_floor_points": 98.5,
+        "expected_implementation_verdict": "MARGINAL",
+        "expected_leader_points": 99.75,
+        "expected_point_margin": 1.2500000000000067,
+        "kind": "balanced_four_generator",
+        "leader_correct": 399,
+        "leader_name": "sys-top",
+        "n_disagree": 24,
+        "n_items": 400
+      },
+      "stderr": "",
+      "stdout": "[0] audit.py sha256 = 2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b\n==============================================================================\nbench-noise-floor  |  gold=majority  |  items=400  slices=1\n==============================================================================\n\n[1] 金标构成与 judge 分歧诊断\n  judges: generator-1, generator-2, generator-3, generator-4\n  items=400  有分歧 items=24 (6.0%)  无任何一致项=0\n    generator-1                  平均自报置信度 0.9000  (n=400)\n    generator-2                  平均自报置信度 0.9000  (n=400)\n    generator-3                  平均自报置信度 0.9000  (n=400)\n    generator-4                  平均自报置信度 0.9000  (n=400)\n\n[2] 噪声下限 —— judge 打自己参与生成的金标\n  generator-1                  macro= 98.50%  micro= 98.50%   留一法 macro=98.50%  (n=400)  同域U=98.50%\n  generator-2                  macro= 98.50%  micro= 98.50%   留一法 macro=98.50%  (n=400)  同域U=98.50%\n  generator-3                  macro= 98.50%  micro= 98.50%   留一法 macro=98.50%  (n=400)  同域U=98.50%\n  generator-4                  macro= 98.50%  micro= 98.50%   留一法 macro=98.50%  (n=400)  同域U=98.50%\n  => 含自身口径下限（偏高侧）        = 98.50%   （min=98.50%，含自身把自己抬分 ⇒ 是**保守偏高**的一侧）\n  => 真留一法口径下限（eq:loo）     = 98.50%   <== 用这个判榜\n  => 两 judge 互差 = 0.00 个百分点（两 judge 完全一致（0.00 点），这把金标内部自洽，噪声下限仍非零是因为judge 要和自己共同构造的答案对齐）\n\n[3] 榜单（system 打同一把金标，与地板同域 U）\n  system                                      macro    micro      n     未测  Δmacro-micro\n  sys-top                                    99.75%   99.75%    400      0          0.00\n  sys-low                                     0.00%    0.00%    400      0          0.00\n  榜首 sys-top macro=99.75%  全榜跨度 macro=99.75 / micro=99.75 个百分点\n\n[4] 配对 bootstrap（2000 次重采样，按 case 整簇重采样；点估计与 CI 同为 macro 口径）\n  对比                                                   Δmacro            95%CI(点)   McNemar p\n  sys-low vs sys-top                                   -99.75    [-100.00,-99.25]      0.0000   显著\n  => 对榜首 0/1 组是统计平局（1 组可区分）\n\n[4b] margin 的配对 bootstrap（2000 次，与 [4] 同一批 case 抽样）\n  margin 点估计 = +1.25 点   95%CI = [-0.25, +1.50]\n  => CI 跨 0：'榜首越过地板' 这一结论在这套抽样下并不稳健，判决应按可下结论的**下界**（-0.25 点）解读，而不是点估计。\n\n[5] 结论\n  VERDICT = MARGINAL\n    噪声下限 98.50% 距榜首 99.75% 仅 1.25 点\n    榜首勉强越过下限，但它与下限之间的余量小于常规波动；只报榜首名次、不报 CI 是误导。\n\n[6] 校准（system 自报概率 vs 是否命中金标）\n  sys-top                                  ECE=0.0975  Brier=0.0120  conf=0.9000 vs acc=0.9975  (低估, n=400)\n  sys-low                                  ECE=0.9000  Brier=0.8100  conf=0.9000 vs acc=0.0000  (高估, n=400)\n\n[JSON] -> <OUTPUT>\n"
+    },
+    "ci_crossing_zero": {
+      "exit_code": 0,
+      "fixture_rows": 3300,
+      "fixture_sha256": "3621100c9327c137f88d6044e132e7e08ee8f025fdf16716c0c7d4b5e6e80021",
+      "result": {
+        "ceiling_loo_macro": 77.2727,
+        "delta_threshold_points": null,
+        "loo_measure": "self_reproduction",
+        "margin_ci": {
+          "crosses_zero": true,
+          "hi95": 21.124,
+          "lo95": -100.0,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "n_valid_rounds": 2000,
+          "seed": 20261001,
+          "unit": "points"
+        },
+        "margin_vs_floor": 13.6364,
+        "n_items": 550,
+        "same_domain_as_floor": true,
+        "verdict": "READABLE"
+      },
+      "spec": {
+        "expected_ci_lower_below_zero": -100.0,
+        "expected_floor_points": 281.8181818181818,
+        "expected_implementation_verdict": "READABLE",
+        "expected_leader_points": 90.9090909090909,
+        "expected_margin_ci_crosses_zero": true,
+        "expected_point_margin": -190.9090909090909,
+        "kind": "ci_crossing_case_cluster",
+        "n_items": 550,
+        "negative_singleton_cases": 50,
+        "positive_case_items": 500
+      },
+      "stderr": "",
+      "stdout": "[0] audit.py sha256 = 2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b\n==============================================================================\nbench-noise-floor  |  gold=majority  |  items=550  slices=1\n==============================================================================\n\n[1] 金标构成与 judge 分歧诊断\n  judges: generator-1, generator-2, generator-3, generator-4\n  items=550  有分歧 items=500 (90.9%)  无任何一致项=0\n    generator-1                  平均自报置信度 0.9000  (n=550)\n    generator-2                  平均自报置信度 0.9000  (n=550)\n    generator-3                  平均自报置信度 0.9000  (n=550)\n    generator-4                  平均自报置信度 0.9000  (n=550)\n\n[2] 噪声下限 —— judge 打自己参与生成的金标\n  generator-1                  macro= 77.27%  micro= 77.27%   留一法 macro=77.27%  (n=550)  同域U=77.27%\n  generator-2                  macro= 77.27%  micro= 77.27%   留一法 macro=77.27%  (n=550)  同域U=77.27%\n  generator-3                  macro= 77.27%  micro= 77.27%   留一法 macro=77.27%  (n=550)  同域U=77.27%\n  generator-4                  macro= 77.27%  micro= 77.27%   留一法 macro=77.27%  (n=550)  同域U=77.27%\n  => 含自身口径下限（偏高侧）        = 77.27%   （min=77.27%，含自身把自己抬分 ⇒ 是**保守偏高**的一侧）\n  => 真留一法口径下限（eq:loo）     = 77.27%   <== 用这个判榜\n  => 两 judge 互差 = 0.00 个百分点（两 judge 完全一致（0.00 点），这把金标内部自洽，噪声下限仍非零是因为judge 要和自己共同构造的答案对齐）\n\n[3] 榜单（system 打同一把金标，与地板同域 U）\n  system                                      macro    micro      n     未测  Δmacro-micro\n  sys-top                                    90.91%   90.91%    550      0          0.00\n  sys-low                                     9.09%    9.09%    550      0          0.00\n  榜首 sys-top macro=90.91%  全榜跨度 macro=81.82 / micro=81.82 个百分点\n\n[4] 配对 bootstrap（2000 次重采样，按 case 整簇重采样；点估计与 CI 同为 macro 口径）\n  对比                                                   Δmacro            95%CI(点)   McNemar p\n  sys-low vs sys-top                                   -81.82    [-93.80,+100.00]      0.0000   平局\n  => 对榜首 1/1 组是统计平局（0 组可区分）\n\n[4b] margin 的配对 bootstrap（2000 次，与 [4] 同一批 case 抽样）\n  margin 点估计 = +13.64 点   95%CI = [-100.00, +21.12]\n  => CI 跨 0：'榜首越过地板' 这一结论在这套抽样下并不稳健，判决应按可下结论的**下界**（-100.00 点）解读，而不是点估计。\n\n[5] 结论\n  VERDICT = READABLE（榜首超出下限 13.64 点）\n    但 margin 的 95%CI [-100.00, +21.12] 跨 0：点估计为正不等于'榜首确实越过地板'稳健成立。\n    注意：这只说明榜首没被这把尺子挡住，仍须报 CI、macro/micro 两口径、以及与第二名的配对检验。\n\n[6] 校准（system 自报概率 vs 是否命中金标）\n  sys-top                                  ECE=0.0091  Brier=0.0827  conf=0.9000 vs acc=0.9091  (低估, n=550)\n  sys-low                                  ECE=0.8091  Brier=0.7373  conf=0.9000 vs acc=0.0909  (高估, n=550)\n\n[JSON] -> <OUTPUT>\n"
+    },
+    "domain_mismatch_control": {
+      "exit_code": 0,
+      "fixture_rows": 55,
+      "fixture_sha256": "5cae41b603293ffb97a0f93540b0ca5a99b9fcc1e2ad2d9f7d74e78cdc51ae66",
+      "result": {
+        "ceiling_loo_macro": 100.0,
+        "delta_threshold_points": null,
+        "loo_measure": "self_reproduction",
+        "margin_ci": {
+          "crosses_zero": true,
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "n_valid_rounds": 2000,
+          "seed": 20261001,
+          "unit": "points"
+        },
+        "margin_vs_floor": 0.0,
+        "n_items": 10,
+        "same_domain_as_floor": false,
+        "verdict": "UNDECIDABLE_DOMAIN_MISMATCH"
+      },
+      "spec": {
+        "expected_verdict": "UNDECIDABLE_DOMAIN_MISMATCH",
+        "full_system_items": 10,
+        "kind": "domain_membership_mismatch",
+        "n_items": 10,
+        "sparse_system_items": 5
+      },
+      "stderr": "",
+      "stdout": "[0] audit.py sha256 = 2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b\n==============================================================================\nbench-noise-floor  |  gold=majority  |  items=10  slices=1\n==============================================================================\n\n[1] 金标构成与 judge 分歧诊断\n  judges: generator-1, generator-2, generator-3, generator-4\n  items=10  有分歧 items=0 (0.0%)  无任何一致项=0\n    generator-1                  平均自报置信度 0.9000  (n=10)\n    generator-2                  平均自报置信度 0.9000  (n=10)\n    generator-3                  平均自报置信度 0.9000  (n=10)\n    generator-4                  平均自报置信度 0.9000  (n=10)\n\n[2] 噪声下限 —— judge 打自己参与生成的金标\n  generator-1                  macro=100.00%  micro=100.00%   留一法 macro=100.00%  (n=10)  同域U=100.00%\n  generator-2                  macro=100.00%  micro=100.00%   留一法 macro=100.00%  (n=10)  同域U=100.00%\n  generator-3                  macro=100.00%  micro=100.00%   留一法 macro=100.00%  (n=10)  同域U=100.00%\n  generator-4                  macro=100.00%  micro=100.00%   留一法 macro=100.00%  (n=10)  同域U=100.00%\n  => 含自身口径下限（偏高侧）        = 100.00%   （min=100.00%，含自身把自己抬分 ⇒ 是**保守偏高**的一侧）\n  => 真留一法口径下限（eq:loo）     = 100.00%   <== 用这个判榜\n  [支撑提示] 全部 4 个生成器的留一计分行数 <30 —— 地板由极薄的支撑算出，读数本身不可引用。\n  => 两 judge 互差 = 0.00 个百分点（两 judge 完全一致（0.00 点），这把金标内部自洽，噪声下限仍非零是因为judge 要和自己共同构造的答案对齐）\n\n[3] 榜单（system 打同一把金标，与地板同域 U）\n  system                                      macro    micro      n     未测  Δmacro-micro\n  sys-top                                   100.00%  100.00%     10      0          0.00\n  sys-sparse                                100.00%  100.00%      5      0          0.00\n  榜首 sys-top macro=100.00%  全榜跨度 macro=0.00 / micro=0.00 个百分点\n\n[4] 配对 bootstrap（2000 次重采样，按 case 整簇重采样；点估计与 CI 同为 macro 口径）\n  对比                                                   Δmacro            95%CI(点)   McNemar p\n  sys-sparse vs sys-top                                  0.00       [+0.00,+0.00]      1.0000   平局  [丢弃 2/2000 轮无定义重采样]\n  => 对榜首 1/1 组是统计平局（0 组可区分）\n\n[4b] margin 的配对 bootstrap（2000 次，与 [4] 同一批 case 抽样）\n  margin 点估计 = +0.00 点   95%CI = [+0.00, +0.00]\n  => CI 跨 0：'榜首越过地板' 这一结论在这套抽样下并不稳健，判决应按可下结论的**下界**（+0.00 点）解读，而不是点估计。\n\n[5] 结论\n  VERDICT = UNDECIDABLE_DOMAIN_MISMATCH\n    地板在 10 题上算，榜首在 10 题上算：两者不是同一个分母，margin 无意义。\n    成员差异：仅榜单侧有 0 题、仅地板侧有 5 题\n    不在地板题集上的 system：sys-sparse（判据是题集成员相等，不是题数相等）\n    且各 system 的计分题数不一致（[5, 10]） —— 连榜单内部都不是同一个分母。\n    请改用 --tie-rule 让两种口径的分母一致，或在论文里同时报出两侧分母。\n  [附] 全榜跨度仅 0.00 点，且 1/1 组对榜首平局 -> 报『第 N 名』不如报『与榜首不可区分的一组』。\n\n[6] 校准（system 自报概率 vs 是否命中金标）\n  sys-top                                  ECE=0.1000  Brier=0.0100  conf=0.9000 vs acc=1.0000  (低估, n=10)\n  sys-sparse                               ECE=0.1000  Brier=0.0100  conf=0.9000 vs acc=1.0000  (低估, n=5)\n\n[JSON] -> <OUTPUT>\n"
+    },
+    "equality_delta": {
+      "exit_code": 0,
+      "fixture_rows": 300,
+      "fixture_sha256": "88a8b94596d00a68cbcd2879169ceb15706ab0d2f203f174a8e29309490d30ad",
+      "result": {
+        "ceiling_loo_macro": 98.0,
+        "delta_threshold_points": null,
+        "loo_measure": "self_reproduction",
+        "margin_ci": {
+          "crosses_zero": true,
+          "hi95": 2.0,
+          "lo95": 0.0,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "n_valid_rounds": 2000,
+          "seed": 20261001,
+          "unit": "points"
+        },
+        "margin_vs_floor": 2.0,
+        "n_items": 50,
+        "same_domain_as_floor": true,
+        "verdict": "READABLE"
+      },
+      "spec": {
+        "expected_floor_points": 98.0,
+        "expected_formula_verdict": "MARGINAL",
+        "expected_implementation_verdict": "READABLE",
+        "expected_leader_points": 100.0,
+        "expected_point_margin": 2.0000000000000018,
+        "kind": "balanced_four_generator",
+        "leader_correct": 50,
+        "leader_name": "sys-top",
+        "n_disagree": 4,
+        "n_items": 50
+      },
+      "stderr": "",
+      "stdout": "[0] audit.py sha256 = 2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b\n==============================================================================\nbench-noise-floor  |  gold=majority  |  items=50  slices=1\n==============================================================================\n\n[1] 金标构成与 judge 分歧诊断\n  judges: generator-1, generator-2, generator-3, generator-4\n  items=50  有分歧 items=4 (8.0%)  无任何一致项=0\n    generator-1                  平均自报置信度 0.9000  (n=50)\n    generator-2                  平均自报置信度 0.9000  (n=50)\n    generator-3                  平均自报置信度 0.9000  (n=50)\n    generator-4                  平均自报置信度 0.9000  (n=50)\n\n[2] 噪声下限 —— judge 打自己参与生成的金标\n  generator-1                  macro= 98.00%  micro= 98.00%   留一法 macro=98.00%  (n=50)  同域U=98.00%\n  generator-2                  macro= 98.00%  micro= 98.00%   留一法 macro=98.00%  (n=50)  同域U=98.00%\n  generator-3                  macro= 98.00%  micro= 98.00%   留一法 macro=98.00%  (n=50)  同域U=98.00%\n  generator-4                  macro= 98.00%  micro= 98.00%   留一法 macro=98.00%  (n=50)  同域U=98.00%\n  => 含自身口径下限（偏高侧）        = 98.00%   （min=98.00%，含自身把自己抬分 ⇒ 是**保守偏高**的一侧）\n  => 真留一法口径下限（eq:loo）     = 98.00%   <== 用这个判榜\n  => 两 judge 互差 = 0.00 个百分点（两 judge 完全一致（0.00 点），这把金标内部自洽，噪声下限仍非零是因为judge 要和自己共同构造的答案对齐）\n\n[3] 榜单（system 打同一把金标，与地板同域 U）\n  system                                      macro    micro      n     未测  Δmacro-micro\n  sys-top                                   100.00%  100.00%     50      0          0.00\n  sys-low                                     0.00%    0.00%     50      0          0.00\n  榜首 sys-top macro=100.00%  全榜跨度 macro=100.00 / micro=100.00 个百分点\n\n[4] 配对 bootstrap（2000 次重采样，按 case 整簇重采样；点估计与 CI 同为 macro 口径）\n  对比                                                   Δmacro            95%CI(点)   McNemar p\n  sys-low vs sys-top                                  -100.00   [-100.00,-100.00]      0.0000   显著\n  => 对榜首 0/1 组是统计平局（1 组可区分）\n\n[4b] margin 的配对 bootstrap（2000 次，与 [4] 同一批 case 抽样）\n  margin 点估计 = +2.00 点   95%CI = [+0.00, +2.00]\n  => CI 跨 0：'榜首越过地板' 这一结论在这套抽样下并不稳健，判决应按可下结论的**下界**（+0.00 点）解读，而不是点估计。\n\n[5] 结论\n  VERDICT = READABLE（榜首超出下限 2.00 点）\n    但 margin 的 95%CI [+0.00, +2.00] 跨 0：点估计为正不等于'榜首确实越过地板'稳健成立。\n    注意：这只说明榜首没被这把尺子挡住，仍须报 CI、macro/micro 两口径、以及与第二名的配对检验。\n\n[6] 校准（system 自报概率 vs 是否命中金标）\n  sys-top                                  ECE=0.1000  Brier=0.0100  conf=0.9000 vs acc=1.0000  (低估, n=50)\n  sys-low                                  ECE=0.9000  Brier=0.8100  conf=0.9000 vs acc=0.0000  (高估, n=50)\n\n[JSON] -> <OUTPUT>\n"
+    },
+    "floor_degenerate_control": {
+      "exit_code": 0,
+      "fixture_rows": 40,
+      "fixture_sha256": "18b583b08c4dee205454c24f2067e41a18a26f6cd3fb78a3b5a9a42d1f7a34ec",
+      "result": {
+        "ceiling_loo_macro": 100.0,
+        "delta_threshold_points": null,
+        "loo_measure": "inter_generator_agreement",
+        "margin_ci": {
+          "crosses_zero": true,
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "n_valid_rounds": 2000,
+          "seed": 20261001,
+          "unit": "points"
+        },
+        "margin_vs_floor": 0.0,
+        "n_items": 10,
+        "same_domain_as_floor": true,
+        "verdict": "UNDECIDABLE_FLOOR_DEGENERATE"
+      },
+      "spec": {
+        "expected_verdict": "UNDECIDABLE_FLOOR_DEGENERATE",
+        "kind": "two_generator_floor",
+        "n_generators": 2,
+        "n_items": 10
+      },
+      "stderr": "",
+      "stdout": "[0] audit.py sha256 = 2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b\n==============================================================================\nbench-noise-floor  |  gold=majority  |  items=10  slices=1\n==============================================================================\n\n[1] 金标构成与 judge 分歧诊断\n  judges: generator-1, generator-2\n  items=10  有分歧 items=0 (0.0%)  无任何一致项=0\n    generator-1                  平均自报置信度 0.9000  (n=10)\n    generator-2                  平均自报置信度 0.9000  (n=10)\n    置信度不对称比 = 1.000x\n\n[2] 噪声下限 —— judge 打自己参与生成的金标\n  generator-1                  macro=100.00%  micro=100.00%   留一法 macro=100.00%  (n=10)  同域U=100.00%\n  generator-2                  macro=100.00%  micro=100.00%   留一法 macro=100.00%  (n=10)  同域U=100.00%\n  => 含自身口径下限（偏高侧）        = 100.00%   （min=100.00%，含自身把自己抬分 ⇒ 是**保守偏高**的一侧）\n  => 真留一法口径下限（eq:loo）     = 100.00%   <== 用这个判榜\n     [定义退化的声明] m=2 < 3：剔除 g 自己那一票后只剩 1 个生成器，c^- 的金标退化成「另一个生成器的答案」。此时这个量是**生成器之间的一致率**，不是 c 的自复现率，性质与 m≥3 不同，必须显式标注后才可引用。\n  [支撑提示] 全部 2 个生成器的留一计分行数 <30 —— 地板由极薄的支撑算出，读数本身不可引用。\n  => 两 judge 互差 = 0.00 个百分点（两 judge 完全一致（0.00 点），这把金标内部自洽，噪声下限仍非零是因为judge 要和自己共同构造的答案对齐）\n\n[3] 榜单（system 打同一把金标，与地板同域 U）\n  system                                      macro    micro      n     未测  Δmacro-micro\n  sys-top                                   100.00%  100.00%     10      0          0.00\n  sys-low                                     0.00%    0.00%     10      0          0.00\n  榜首 sys-top macro=100.00%  全榜跨度 macro=100.00 / micro=100.00 个百分点\n\n[4] 配对 bootstrap（2000 次重采样，按 case 整簇重采样；点估计与 CI 同为 macro 口径）\n  对比                                                   Δmacro            95%CI(点)   McNemar p\n  sys-low vs sys-top                                  -100.00   [-100.00,-100.00]      0.0020   显著\n  => 对榜首 0/1 组是统计平局（1 组可区分）\n\n[4b] margin 的配对 bootstrap（2000 次，与 [4] 同一批 case 抽样）\n  margin 点估计 = +0.00 点   95%CI = [+0.00, +0.00]\n  => CI 跨 0：'榜首越过地板' 这一结论在这套抽样下并不稳健，判决应按可下结论的**下界**（+0.00 点）解读，而不是点估计。\n\n[5] 结论\n  VERDICT = UNDECIDABLE_FLOOR_DEGENERATE\n    留一法地板在 m=2 < 3 个生成器下退化：剔除生成器 g 自己那一票后只剩另一个生成器，量到的是生成器之间的**一致率**，不是金标生成过程的自复现率。\n    该地板 = 100.00%（各生成器同值，max 规则空转）；榜首 100.00%，点差 +0.00 点。\n    我们不在这个量上判 READABLE / UNREADABLE / MARGINAL：一致率高只说明两个生成器彼此投合，不说明榜首是否强于生成该金标的过程。要判决需至少 3 个生成器。\n    供参考（不作判决依据）：margin 95%CI = [+0.00, +0.00]\n\n[6] 校准（system 自报概率 vs 是否命中金标）\n  sys-top                                  ECE=0.1000  Brier=0.0100  conf=0.9000 vs acc=1.0000  (低估, n=10)\n  sys-low                                  ECE=0.9000  Brier=0.8100  conf=0.9000 vs acc=0.0000  (高估, n=10)\n\n[JSON] -> <OUTPUT>\n"
+    },
+    "no_reading_control": {
+      "exit_code": 0,
+      "fixture_rows": 7,
+      "fixture_sha256": "d019fbe0b6ce5bc971c36aff73855749dfb5486a53c3dd7645977dd2422b058e",
+      "result": {
+        "ceiling_loo_macro": 0.0,
+        "delta_threshold_points": null,
+        "loo_measure": "self_reproduction",
+        "margin_ci": null,
+        "margin_vs_floor": NaN,
+        "n_items": 1,
+        "same_domain_as_floor": false,
+        "verdict": "UNDECIDABLE_NO_READING"
+      },
+      "spec": {
+        "expected_verdict": "UNDECIDABLE_NO_READING",
+        "kind": "unresolved_gold_no_reading",
+        "n_items": 1,
+        "votes": {
+          "X": 2,
+          "Y": 2,
+          "Z": 1
+        }
+      },
+      "stderr": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/audit.py:1872: RuntimeWarning: Mean of empty slice\n  m0 = float(np.nanmean(np.divide(num0, den0,\n",
+      "stdout": "[0] audit.py sha256 = 2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b\n==============================================================================\nbench-noise-floor  |  gold=majority  |  items=1  slices=1\n==============================================================================\n\n[1] 金标构成与 judge 分歧诊断\n  judges: generator-1, generator-2, generator-3, generator-4, generator-5\n  items=1  有分歧 items=1 (100.0%)  无任何一致项=0\n    generator-1                  平均自报置信度 0.9000  (n=1)\n    generator-2                  平均自报置信度 0.9000  (n=1)\n    generator-3                  平均自报置信度 0.9000  (n=1)\n    generator-4                  平均自报置信度 0.9000  (n=1)\n    generator-5                  平均自报置信度 0.9000  (n=1)\n\n[2] 噪声下限 —— judge 打自己参与生成的金标\n  generator-1                  macro=   nan%  micro=   nan%   留一法 macro=0.00%  (n=1)\n  generator-2                  macro=   nan%  micro=   nan%   留一法 macro=0.00%  (n=1)\n  generator-3                  macro=   nan%  micro=   nan%   留一法 macro=0.00%  (n=1)\n  generator-4                  macro=   nan%  micro=   nan%   留一法 macro=0.00%  (n=1)\n  generator-5                  macro=   nan%  micro=   nan%   留一法 macro=nan%  (n=0)\n  => 含自身口径下限（偏高侧）        = nan%   （min=nan%，含自身把自己抬分 ⇒ 是**保守偏高**的一侧）\n  => 真留一法口径下限（eq:loo）     = 0.00%   <== 用这个判榜\n  [支撑提示] 全部 5 个生成器的留一计分行数 <30 —— 地板由极薄的支撑算出，读数本身不可引用。\n  => 两 judge 互差 = nan 个百分点（同一批题、同一把尺，差这么多 = 金标构造本身就带噪）\n\n[3] 榜单（system 打同一把金标）\n  system                                      macro    micro      n     未测  Δmacro-micro\n  sys-top                                      nan%     nan%      0      1           nan\n  sys-low                                      nan%     nan%      0      1           nan\n  => 金标覆盖：0/2 行被计分（2 行所在 item 无金标，**已剔除而非记全错**，逐系统见「未测」列）\n  榜首 sys-top macro=nan%  全榜跨度 macro=nan / micro=nan 个百分点\n\n[4] 配对 bootstrap（2000 次重采样，按 case 整簇重采样；点估计与 CI 同为 macro 口径）\n  对比                                                   Δmacro            95%CI(点)   McNemar p\n  sys-low                                  无有效重采样轮次，无法给 CI（2000/2000 轮无定义）\n  => 对榜首 1/1 组是统计平局（0 组可区分）\n\n[5] 结论\n  VERDICT = UNDECIDABLE_NO_READING\n    地板 = 0.0，榜首 = nan：两侧任一不是数，就不是『跨过了下限』也不是『没跨过』，而是这把尺子本次没有读数。常见成因：顶票并列的题按 unmeasured 全部不进金标，剩下的题不足以定义 c^-，或系统行全部落在无金标题上（覆盖 0 行）。\n\n[6] 校准（system 自报概率 vs 是否命中金标）\n  [WARN] system 行没有可用的 answer_prob。\n\n[JSON] -> <OUTPUT>\n"
+    }
+  },
+  "decision": {
+    "hypothesis": "H1_interface_semantics_mismatch",
+    "narrow_conclusion": "The pinned native CLI has no delta parameter and hard-codes 2.0 points. A synthetic fixture with a derived point margin of exactly 2.0 is classified READABLE, while the manuscript's explicit equality instruction is MARGINAL. A separate fixture has point margin >2.0 and a case-bootstrap interval crossing zero and is still classified READABLE. Fail-closed domain, floor-degeneracy and no-reading fixtures remain refusals.",
+    "non_claims": [
+      "These are deterministic synthetic interface fixtures, not external leaderboard measurements.",
+      "The experiment identifies interface semantics; it does not measure ranking validity.",
+      "The experiment does not establish that a different threshold would improve scientific validity.",
+      "No manuscript, author, licence, account, or upload state is changed."
+    ],
+    "status": "passed"
+  },
+  "experiment_id": "noise-floor-threshold-interface-a4",
+  "gates": {
+    "F1_threshold_is_not_a_cli_parameter": {
+      "evidence": {
+        "delta_invocation_exit_code": 2,
+        "delta_invocation_rejected": true,
+        "delta_invocation_stderr": "usage: audit.py [-h] [--gold {majority,mean_prob,both}] [--loo] [--no-loo]\n                [--n-boot N_BOOT] [--bins BINS] [--json JSON]\n                [--judges-file JUDGES_FILE] [--gold-file GOLD_FILE]\n                [--tie-rule {unmeasured,lexicographic}]\n                csv\naudit.py: error: unrecognized arguments: --delta 2.0",
+        "hardcoded_decision_branch_present": true,
+        "hardcoded_threshold_metadata_present": true,
+        "help_exit_code": 0,
+        "help_has_delta_option": false,
+        "help_has_tie_rule_option": true
+      },
+      "passed": true
+    },
+    "F2_equality_branch_mismatch_reproduced": {
+      "derived_raw_margin_points": 2.0000000000000018,
+      "implementation_verdict": "READABLE",
+      "json_margin_points": 2.0,
+      "manuscript_equality_instruction": "MARGINAL",
+      "passed": true
+    },
+    "F3_graded_branch_controls": {
+      "above_delta": {
+        "margin_points": 20.0,
+        "verdict": "READABLE"
+      },
+      "below_delta": {
+        "margin_points": 1.25,
+        "verdict": "MARGINAL"
+      },
+      "passed": true
+    },
+    "F4_confidence_interval_is_not_gating": {
+      "margin_ci": {
+        "crosses_zero": true,
+        "hi95": 21.124,
+        "lo95": -100.0,
+        "n_boot": 2000,
+        "n_dropped_rounds": 0,
+        "n_valid_rounds": 2000,
+        "seed": 20261001,
+        "unit": "points"
+      },
+      "margin_points": 13.6364,
+      "passed": true,
+      "verdict": "READABLE"
+    },
+    "F5_fail_closed_controls": {
+      "domain_mismatch": "UNDECIDABLE_DOMAIN_MISMATCH",
+      "floor_degenerate": "UNDECIDABLE_FLOOR_DEGENERATE",
+      "no_reading": "UNDECIDABLE_NO_READING",
+      "passed": true
+    }
+  },
+  "implementation": {
+    "path": "run_threshold_interface.py",
+    "sha256": "c996fc7b8be09ee8e0aaf58abfb1ecb86003a8e39bfa4b4ee3bcce5dcc456971"
+  },
+  "native": {
+    "audit_path": "tools/bench-noise-floor/audit.py",
+    "audit_sha256": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b",
+    "external_root_name": "F:\\deepseek",
+    "head": "ab40e28abcb2a97e13242d0dab5584d42a15f94e"
+  },
+  "preregistration": {
+    "path": "preregistration.json",
+    "sha256": "de1cb0d656c92537444bd950fa8d357282f4ec13e489c6688f5413da9a48fabd",
+    "version": "1.0.0"
+  },
+  "schema": "q-one-a4-threshold-interface-v1"
+}

@@ -1,0 +1,128 @@
+{
+  "schema": "q-one-p9-evidence-audit-v1",
+  "generated_at": "2026-10-28T06:20:02.562549Z",
+  "marker": "agent-proposed, not human publication approval",
+  "source_sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
+  "driver": {
+    "path": "/home/liuzewen/qone-life-work/research/pilot-calibrating-evaluator/evidence/upstream/calibrated_ttrl.py",
+    "sha256": "ece3ec6bf301274d7edf5552618e33385bb3f533b8bba7fa6092669e98b57e29",
+    "functions": [
+      "api_call",
+      "compute_gamma",
+      "compute_jsd",
+      "ds_gen",
+      "gpt4o_confidence",
+      "gpt4o_eval",
+      "run_comparison",
+      "train_calibrated",
+      "train_standard"
+    ],
+    "argparse_flags": [
+      "--n-seeds",
+      "--rounds",
+      "--evaluator",
+      "--batch"
+    ],
+    "advertised_but_not_accepted_flags": [
+      "--evaluator",
+      "--batch"
+    ]
+  },
+  "scale": {
+    "printed_rounds": 2400,
+    "realized_rounds": 1200,
+    "printed_executor_calls": 2400,
+    "realized_executor_calls": 2400,
+    "printed_evaluator_calls": 3600,
+    "realized_evaluator_calls": 1800,
+    "rounds_shortfall": 1200,
+    "evaluator_calls_shortfall": 1800,
+    "derivation": "2 modes x 5 seeds x 4 phases x 30 rounds = 1200 rounds; evaluator calls = 1 per standard round + 2 per calibrated round."
+  },
+  "printed_result_values": {
+    "uncalibrated_gamma_tv": 0.924,
+    "uncalibrated_gamma_vt": 1.58,
+    "calibrated_gamma_tv": 0.744,
+    "calibrated_gamma_vt": 0.806,
+    "uncalibrated_jsd_tv": 0.196,
+    "uncalibrated_jsd_vt": 0.341,
+    "calibrated_jsd_tv": 0.108,
+    "calibrated_jsd_vt": 0.113
+  },
+  "result_archive": {
+    "expected_path": "experiments/calibrated_ttrl.json",
+    "present": false,
+    "per_seed_records": 0,
+    "headline_percentage_carriers_present": false,
+    "related_archives_found": [
+      {
+        "path": "/data3/Research/experiments/e4_glm_era_backup_20260808/e4_n15_results.json",
+        "sha256": "46debed467a0cd76ce0586674d1a43858791ce598833a274f2e4c76a355c6d89",
+        "n_seeds": 15,
+        "note": null,
+        "classification": "related calibration archive; not the missing P9 N=5 DeepSeek-V4-Pro/GLM5.2 output"
+      },
+      {
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper3/paper/evidence_package/e4_30seed_calibrated.json",
+        "sha256": "286e9147c05cb67659567248f56228a3684c42b7a86dd84b4eef09903474f263",
+        "n_seeds": 30,
+        "note": "E4 30-seed expansion (run6 complete 2026-08-08 14:39; evaluator gpt-5.6-luna).",
+        "classification": "related calibration archive; not the missing P9 N=5 DeepSeek-V4-Pro/GLM5.2 output"
+      }
+    ]
+  },
+  "controls": {
+    "length_normalized": {
+      "claimed": true,
+      "driver_mentions": 0,
+      "seed_level_output_present": false
+    },
+    "symmetric_lr": {
+      "claimed": true,
+      "driver_mentions": 0,
+      "seed_level_output_present": false
+    },
+    "metric_reuse": {
+      "calibrated_gamma_tv_reused_in_control_claim": true,
+      "calibrated_gamma_vt_reused_in_control_claim": true,
+      "independent_control_means_present": false
+    }
+  },
+  "model_identity": {
+    "manuscript_executor": "DeepSeek-V4-Pro",
+    "manuscript_evaluator": "GLM5.2",
+    "driver_executor": "deepseek-chat",
+    "driver_evaluator": "gpt-4o",
+    "driver_endpoint": "https://www.dmxapi.com/v1/chat/completions",
+    "identity_match": false
+  },
+  "mechanism_statistics": {
+    "claimed_uncertain_fraction": 0.31,
+    "claimed_tv_confidence_mean": 0.64,
+    "claimed_tv_confidence_sd": 0.12,
+    "claimed_vt_confidence_mean": 0.58,
+    "claimed_vt_confidence_sd": 0.14,
+    "raw_confidence_records_present": false
+  },
+  "citations": {
+    "bibitems": 17,
+    "unique_bibitems": 17,
+    "citation_occurrences": 29,
+    "unique_citation_keys": 17,
+    "missing_bibitems": [],
+    "uncited_bibitems": [],
+    "mechanical_parse_passed": true,
+    "semantic_support_verified": false
+  },
+  "review": {
+    "upstream_decision": "3/8 D veto; do not submit before raw evidence",
+    "critical_findings": 3,
+    "major_findings": 4,
+    "source_path": "evidence/upstream/REVIEW_CARD.md"
+  },
+  "package": {
+    "created": false,
+    "uploaded": false,
+    "reason": "Disposition is merge/archive; no independent candidate package is appropriate."
+  }
+}

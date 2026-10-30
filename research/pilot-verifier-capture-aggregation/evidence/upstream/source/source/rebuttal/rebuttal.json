@@ -1,0 +1,21 @@
+{
+  "paper_id": "PAPER6_CONSOLIDATED",
+  "created_at": "2026-09-02T10:48:46+00:00",
+  "review_results": {
+    "r6": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0,
+      "status": "PASS"
+    },
+    "r6b": {
+      "P": 9,
+      "R": 9,
+      "I": 9,
+      "S": 9,
+      "min": 9,
+      "status": "PASS"
+    }
+  },
+  "status": "completed"
+}

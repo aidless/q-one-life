@@ -1,0 +1,146 @@
+{
+  "schema": "q-one-native-ledger-audit-v1",
+  "generated_at": "2026-10-27T14:45:05.717563Z",
+  "ledger": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/evidence/native-paper-ledger.json",
+  "ledger_sha256": "47d5b7d66e8ece9ac21f6c82089f4883405689e6428fce1e70eb936236252063",
+  "workspace_root": "/home/liuzewen/F:\\deepseek",
+  "mechanically_valid": true,
+  "scientific_ready": false,
+  "counts": {
+    "entries_total": 569,
+    "field_bound_total": 472,
+    "field_verified": 472,
+    "field_waiver": 8,
+    "named_derivation": 78,
+    "unbound_register": 8,
+    "unrecoverable_retraction": 3
+  },
+  "issues": [],
+  "verified_entries_sample": [
+    {
+      "key": "bench_noise_floor.decision.tie_items",
+      "value": 436,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_majority.json",
+      "field": "gold_tie_items"
+    },
+    {
+      "key": "bench_noise_floor.decision.loo_domain_size",
+      "value": 1520,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_majority.json",
+      "field": "loo_domain_size"
+    },
+    {
+      "key": "bench_noise_floor.decision.leader_n",
+      "value": 1084,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_majority.json",
+      "field": "leaderboard_scored_items"
+    },
+    {
+      "key": "bench_noise_floor.decision.leader_unscored",
+      "value": 436,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_majority.json",
+      "field": "leaderboard[0].n_items_unscored"
+    },
+    {
+      "key": "bench_noise_floor.decision.loo_floor",
+      "value": 70.23,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_majority.json",
+      "field": "ceiling_loo_macro"
+    },
+    {
+      "key": "bench_noise_floor.decision.leader_macro_default",
+      "value": 86.4846,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_majority.json",
+      "field": "leaderboard[0].macro"
+    },
+    {
+      "key": "bench_noise_floor.register.refused.decision.margin_default_rule",
+      "value": 16.2546,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_majority.json",
+      "field": "margin_vs_floor"
+    },
+    {
+      "key": "bench_noise_floor.register.refused.decision.margin_ci_lo_default_rule",
+      "value": 12.3524,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_majority.json",
+      "field": "margin_ci.lo95"
+    },
+    {
+      "key": "bench_noise_floor.register.refused.decision.margin_ci_hi_default_rule",
+      "value": 20.2663,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_majority.json",
+      "field": "margin_ci.hi95"
+    },
+    {
+      "key": "bench_noise_floor.decision.lex.leader_macro",
+      "value": 73.1927,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_lexicographic.json",
+      "field": "leaderboard[0].macro"
+    },
+    {
+      "key": "bench_noise_floor.decision.lex.leader_n",
+      "value": 1520,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_lexicographic.json",
+      "field": "leaderboard_scored_items"
+    },
+    {
+      "key": "bench_noise_floor.decision.lex.loo_floor",
+      "value": 70.23,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_lexicographic.json",
+      "field": "ceiling_loo_macro"
+    },
+    {
+      "key": "bench_noise_floor.register.decision.lex_inclusive_floor",
+      "value": 86.89,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_lexicographic.json",
+      "field": "ceiling_inclusive_macro"
+    },
+    {
+      "key": "bench_noise_floor.decision.lex.margin",
+      "value": 2.9627,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_lexicographic.json",
+      "field": "margin_vs_floor"
+    },
+    {
+      "key": "bench_noise_floor.decision.lex.margin_ci_lo",
+      "value": -0.1434,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_lexicographic.json",
+      "field": "margin_ci.lo95"
+    },
+    {
+      "key": "bench_noise_floor.decision.lex.margin_ci_hi",
+      "value": 6.269,
+      "source": "papers/bench_noise_floor/evidence/jev_decision_lexicographic.json",
+      "field": "margin_ci.hi95"
+    },
+    {
+      "key": "bench_noise_floor.question.corpus_items",
+      "value": 14292,
+      "source": "papers/bench_noise_floor/evidence/jev_question_lexicographic.json",
+      "field": "methods.majority.n_items"
+    },
+    {
+      "key": "bench_noise_floor.question.lex.loo_domain_size",
+      "value": 12406,
+      "source": "papers/bench_noise_floor/evidence/jev_question_lexicographic.json",
+      "field": "methods.majority.loo_domain_size"
+    },
+    {
+      "key": "bench_noise_floor.question.tie_items",
+      "value": 799,
+      "source": "papers/bench_noise_floor/evidence/jev_question_lexicographic.json",
+      "field": "methods.majority.gold_tie_items"
+    },
+    {
+      "key": "bench_noise_floor.question.floor",
+      "value": 89.48,
+      "source": "papers/bench_noise_floor/evidence/jev_question_lexicographic.json",
+      "field": "methods.majority.ceiling_loo_macro"
+    }
+  ],
+  "notes": [
+    "Named derivations are retained as candidates; this audit does not execute them.",
+    "Field waivers and unrecoverable retractions are not silently converted to verified.",
+    "A mechanically valid native ledger does not establish scientific readiness."
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "accepted_runs": [
+    {
+      "bytes": 21063,
+      "path": "results/run-1.json",
+      "sha256": "93455b86334d9345f220b0e93b4a4067783f1ff0846d2af0bd93dac1695e6391"
+    },
+    {
+      "bytes": 21063,
+      "path": "results/run-2.json",
+      "sha256": "93455b86334d9345f220b0e93b4a4067783f1ff0846d2af0bd93dac1695e6391"
+    }
+  ],
+  "byte_identical": true,
+  "decision": {
+    "conclusion": "On the four m25 carriers, the non-zero LOO_on_kfold_domain margin is reproduced and is eliminated only after every generator is restricted to the joint main-gold, LOO-gold, k-fold-gold and actor-row support. The leaky comparison is therefore not a clean k-fold-versus-LOO effect. A non-zero k-fold margin on the joint support shows that the support fix does not force every comparison to zero.",
+    "hypothesis": "H1_support_artifact",
+    "non_claims": [
+      "This is a recomputation on four fixed m25 constructions, not an external-validity study.",
+      "The result does not show that k-fold restores ranking validity.",
+      "The result does not rewrite the canonical manuscript or close independent review finding A4.",
+      "The result does not authorize an arXiv upload."
+    ],
+    "status": "passed"
+  },
+  "experiment_id": "noise-floor-kfold-common-support-a3",
+  "gates": {
+    "F1_recorded_leak_reproduced": {
+      "all_task_fidelity": true,
+      "coherence_reported_domain_size": 404,
+      "coherence_reported_margin": 0.47111581387146373,
+      "passed": true
+    },
+    "F2_loo_label_identity_on_joint_support": {
+      "mismatches": 0,
+      "pairs": 47200,
+      "passed": true
+    },
+    "F3_joint_support_margin_zero": {
+      "passed": true,
+      "task_domains": {
+        "coherence": 383,
+        "factuality": 477,
+        "preference": 54,
+        "relevance": 974
+      },
+      "task_margins": {
+        "coherence": 0.0,
+        "factuality": 0.0,
+        "preference": 0.0,
+        "relevance": 0.0
+      }
+    },
+    "F4_bootstrap_identity_degenerate": {
+      "intervals": {
+        "coherence": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 2000
+        },
+        "factuality": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 2000
+        },
+        "preference": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 2000
+        },
+        "relevance": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 2000
+        }
+      },
+      "passed": true
+    },
+    "F5_kfold_control_has_teeth": {
+      "coherence_kfold_joint_interval": {
+        "hi95": 4.545454545454541,
+        "lo95": 1.3088150861892187,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 0,
+        "n_positive_rounds": 2000,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 0
+      },
+      "coherence_kfold_joint_margin": 2.872062663185389,
+      "passed": true
+    }
+  },
+  "generated_at": "2026-10-29T04:42:41.165059Z",
+  "implementation": {
+    "path": "run_common_support.py",
+    "sha256": "9669db5401f31b10a450eafd0762ddd9bafdec77737a3d30a420ec85f977b012"
+  },
+  "narrow_conclusion": "On the four fixed m25 carriers, the non-zero LOO_on_kfold_domain margin is eliminated on the joint main-gold, LOO-gold, fold-gold and actor support; the LOO identity is zero in 2000/2000 rounds, while a non-zero k-fold control remains.",
+  "non_claims": [
+    "This is not an external-validity study.",
+    "This does not show that k-fold restores ranking validity.",
+    "Preference joint support is only 54 items and is descriptive only.",
+    "This does not close independent review finding A4 or authorize arXiv upload."
+  ],
+  "preregistration": {
+    "path": "preregistration.json",
+    "sha256": "bacdf9e09372d8382460a7712893989fb04a56d921fa3cddcf3cacbac2462133"
+  },
+  "report": {
+    "bytes": 3983,
+    "path": "results/REPORT.md",
+    "sha256": "07c6bc5de88144658d4bbbdb9e4904a324afd49fe680f17478d21f3d7d519efe"
+  },
+  "schema": "q-one-experiment-reproduction-v1",
+  "status": "reproduced",
+  "task_summary": {
+    "coherence": {
+      "joint_domain": 383,
+      "kfold_joint_margin": 2.872062663185389,
+      "kfold_joint_theta_both_interval": {
+        "hi95": 4.545454545454541,
+        "lo95": 1.3088150861892187,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 0,
+        "n_positive_rounds": 2000,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 0
+      },
+      "kfold_minus_loo_domain": 21,
+      "kfold_reported_domain": 404,
+      "label_mismatches": 0,
+      "label_pairs": 9575,
+      "loo_all_domain": 445,
+      "loo_joint_margin": 0.0,
+      "reported_leaky_loo_margin": 0.47111581387146373
+    },
+    "factuality": {
+      "joint_domain": 477,
+      "kfold_joint_margin": 0.0,
+      "kfold_joint_theta_both_interval": {
+        "hi95": 0.8511091956630232,
+        "lo95": -0.4166666666666652,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 231,
+        "n_positive_rounds": 1368,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 401
+      },
+      "kfold_minus_loo_domain": 7,
+      "kfold_reported_domain": 484,
+      "label_mismatches": 0,
+      "label_pairs": 11925,
+      "loo_all_domain": 486,
+      "loo_joint_margin": 0.0,
+      "reported_leaky_loo_margin": 0.0625442122879889
+    },
+    "preference": {
+      "joint_domain": 54,
+      "kfold_joint_margin": 1.8518518518518619,
+      "kfold_joint_theta_both_interval": {
+        "hi95": 5.555555555555558,
+        "lo95": 0.0,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 0,
+        "n_positive_rounds": 878,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 1122
+      },
+      "kfold_minus_loo_domain": 5,
+      "kfold_reported_domain": 505,
+      "label_mismatches": 0,
+      "label_pairs": 1350,
+      "loo_all_domain": 511,
+      "loo_joint_margin": 0.0,
+      "reported_leaky_loo_margin": 0.01538400852037114
+    },
+    "relevance": {
+      "joint_domain": 974,
+      "kfold_joint_margin": 0.6160164271047108,
+      "kfold_joint_theta_both_interval": {
+        "hi95": 1.1351909184726505,
+        "lo95": -0.10277492291880241,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 86,
+        "n_positive_rounds": 1825,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 89
+      },
+      "kfold_minus_loo_domain": 4,
+      "kfold_reported_domain": 978,
+      "label_mismatches": 0,
+      "label_pairs": 24350,
+      "loo_all_domain": 987,
+      "loo_joint_margin": 0.0,
+      "reported_leaky_loo_margin": 0.005238191022158389
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "q-one-evidence-sources-v1",
+  "generated_at": "2026-10-27T14:18:11.898781Z",
+  "sources": [
+    {
+      "path": "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/f-acceptance-tmlr/SUBMISSION_GAP.md",
+      "sha256": "808cf176e99f4abc3007b4f6913494776131b6e7aea6b77c184395c1cf427491",
+      "state": "candidate"
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/f-acceptance-arxiv.tar.gz",
+      "sha256": "e8cd984356840a6ce5a4228174c917d742ca2a724e3610c86cbf1d3a84a07742",
+      "state": "candidate"
+    }
+  ],
+  "missing": []
+}

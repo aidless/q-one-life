@@ -1,0 +1,106 @@
+{
+  "schema": "q-one-research-plan-v1",
+  "generated_at": "2026-10-27T15:11:32.034563Z",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance",
+  "paper_id": "qf-the-name-is-the-contract-a-promotion-gat-afdfe0105b",
+  "title": "The Name Is the Contract:\\\\ A Promotion Gate Called mcnemar\\_exact Is Not Exact ---\\\\ and, Against the Two-Sided Exact Reference,\\\\ Every Flip Favors Promotion",
+  "target": "arxiv",
+  "validation_valid": true,
+  "validation_ready": false,
+  "gate_summary": {
+    "receipts": 4,
+    "passed_numeric": 1,
+    "bound_numeric_to_current_source": 1,
+    "unbound_passed_numeric": [],
+    "failed_or_blocked": [
+      "f-acceptance-review-response"
+    ]
+  },
+  "stages": [
+    {
+      "stage": "source-identity",
+      "state": "candidate",
+      "details": "The local source hash is checked; publication identity is separate."
+    },
+    {
+      "stage": "claim-ledger",
+      "state": "blocked",
+      "details": "Claims must be registered and bound to evidence fields."
+    },
+    {
+      "stage": "evidence-recomputation",
+      "state": "verified",
+      "details": "Native gates passed: 1; bound to the current source: 1. A completed experiment is not a reproduced experiment."
+    },
+    {
+      "stage": "citation-verification",
+      "state": "candidate",
+      "details": "A bibliography file is only a candidate until citations resolve."
+    },
+    {
+      "stage": "scientific-review",
+      "state": "blocked",
+      "details": "Open Critical or Major findings block the package."
+    },
+    {
+      "stage": "arxiv-package",
+      "state": "blocked",
+      "details": "Mechanical packageability is separate from scientific readiness."
+    },
+    {
+      "stage": "external-submission",
+      "state": "locked",
+      "details": "Upload, account use and publication require explicit user authorization."
+    }
+  ],
+  "next_actions": [
+    {
+      "action_id": "close_inconclusive_claims",
+      "priority": "P0",
+      "owner": "agent",
+      "reason": "Claims are not verified: C10.",
+      "done_when": "Each claim is verified, explicitly hedged with missing evidence, or removed."
+    },
+    {
+      "action_id": "close_scientific_review",
+      "priority": "P0",
+      "owner": "agent",
+      "reason": "Open review findings remain: f-acceptance-final-review-20261026.",
+      "done_when": "No open Critical or Major finding remains against the current hashes."
+    },
+    {
+      "action_id": "remove_or_repair_blocked_claims",
+      "priority": "P0",
+      "owner": "agent",
+      "reason": "Blocked claims cannot enter strong prose: C11.",
+      "done_when": "Blocked claims are absent from manuscript assertions or repaired."
+    },
+    {
+      "action_id": "repair_failed_native_gates",
+      "priority": "P0",
+      "owner": "agent",
+      "reason": "Native gate receipts failed: f-acceptance-review-response.",
+      "done_when": "Each failed gate is repaired or explicitly blocked in the manuscript scope."
+    },
+    {
+      "action_id": "resolve_package_blockers",
+      "priority": "P1",
+      "owner": "agent",
+      "reason": "The package manifest contains unresolved blockers.",
+      "done_when": "The source tree, bibliography, compiled PDF and hashes are complete."
+    },
+    {
+      "action_id": "external_submission_gate",
+      "priority": "external",
+      "owner": "user",
+      "reason": "Q-One cannot perform an account-level arXiv action on its own.",
+      "done_when": "The user explicitly authorizes upload and checks metadata, license and author list."
+    }
+  ],
+  "global_readiness_score": null,
+  "notes": [
+    "No global score is produced.",
+    "Unknown is not zero.",
+    "A mechanical package check is not scientific readiness."
+  ]
+}

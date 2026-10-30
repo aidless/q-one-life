@@ -1,0 +1,66 @@
+{
+  "schema": "q-one-research-evidence-manifest-v1",
+  "generated_at": "2026-10-27T13:51:31.901254Z",
+  "paper_id": "arc-paper-track-2026",
+  "files": [
+    {
+      "path": "ARC_REVISED.md",
+      "sha256": "a07872cc4710944b6c76084ff89091316d409da5605552c2b201f3648d348c95",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/ARC_REVISED.md",
+      "origin_sha256": "a07872cc4710944b6c76084ff89091316d409da5605552c2b201f3648d348c95"
+    },
+    {
+      "path": "evidence/claims_verified.json",
+      "sha256": "0fd252f90da685965d68cb50c86214cb71e3c9b84af931b5b1087b27de82702b",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/claims_verified.json",
+      "origin_sha256": "0fd252f90da685965d68cb50c86214cb71e3c9b84af931b5b1087b27de82702b"
+    },
+    {
+      "path": "evidence/arc_pins_verified.json",
+      "sha256": "3296b443c9129d584185aaf59d6df500d6f77b83d90957c3383cd8382c8d55cc",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/arc_pins_verified.json",
+      "origin_sha256": "3296b443c9129d584185aaf59d6df500d6f77b83d90957c3383cd8382c8d55cc"
+    },
+    {
+      "path": "evidence/audit.json",
+      "sha256": "99d588d5eabc4622914d1ce0d88e8e971f771b137e7ce7a26081942368df6719",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/audit.json",
+      "origin_sha256": "99d588d5eabc4622914d1ce0d88e8e971f771b137e7ce7a26081942368df6719"
+    },
+    {
+      "path": "evidence/source_evidence_manifest.json",
+      "sha256": "3d20b0c2b5510d2f28625a5255e2335d08c2d775b123669bc447391fe196fb6d",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/evidence_manifest.json",
+      "origin_sha256": "3d20b0c2b5510d2f28625a5255e2335d08c2d775b123669bc447391fe196fb6d"
+    },
+    {
+      "path": "evidence/publication_receipt_20261016.json",
+      "sha256": "140654c72cb0b6ce2fe9f39889c29cc870b8359709e76d1d4b9ba73cdab022be",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/publication_receipt_20261016.json",
+      "origin_sha256": "140654c72cb0b6ce2fe9f39889c29cc870b8359709e76d1d4b9ba73cdab022be"
+    },
+    {
+      "path": "evidence/arc_lineage_audit.json",
+      "sha256": "4e36488adeb00206a1abb2906796a31d236849c56ff501f96279aac871f4ac84",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/arc-notebook-update-20261015/outputs/arc_lineage_audit.json",
+      "origin_sha256": "4e36488adeb00206a1abb2906796a31d236849c56ff501f96279aac871f4ac84"
+    },
+    {
+      "path": "evidence/public_game_set.json",
+      "sha256": "fc29000ae5a3579c8f51bd5fc74eb0e8585b99458b7477d83c7f199d119ed267",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/arc-submission-sources/arc3-duck-prefcache-v1/arc3-duck-prefcache-v1.ipynb",
+      "origin_sha256": "e53788bed53c014951342d9c2517ee59137cfe820f73084f3892268c9be0bdc4"
+    },
+    {
+      "path": "evidence/manuscript_identity.json",
+      "sha256": "a9afa31ced52001eb2c717e8aa7aa1e6d651b1ba1b09daf1f81f70edee8d80ce",
+      "origin": "derived from local manuscript and remote publication receipt",
+      "origin_sha256": null
+    }
+  ],
+  "notes": [
+    "Claim references are relative to this project root.",
+    "The source notebook in public_game_set.json is identified by its pinned SHA-256.",
+    "The local Markdown manuscript and remote published source hash do not match."
+  ]
+}

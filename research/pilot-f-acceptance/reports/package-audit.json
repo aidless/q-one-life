@@ -1,0 +1,56 @@
+{
+  "schema": "q-one-arxiv-package-audit-v1",
+  "generated_at": "2026-10-27T15:09:00.839456Z",
+  "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source",
+  "main_file": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source/main.tex",
+  "mechanical_pass": true,
+  "ready_for_upload": false,
+  "upload_blocker": "Mechanical packaging does not establish scientific readiness, license, metadata correctness, or user authorization.",
+  "blockers": [],
+  "warnings": [],
+  "file_count": 6,
+  "visible_suffixes": {
+    ".bbl": 1,
+    ".bib": 1,
+    ".bst": 1,
+    ".sty": 2,
+    ".tex": 1
+  },
+  "files": [
+    {
+      "path": "fancyhdr.sty",
+      "sha256": "3d2922548e0e5f1a6c5676eda6ebb6dc20d7d305b4d8c2be5f1c833fb1084e6d",
+      "bytes": 17086
+    },
+    {
+      "path": "main.bbl",
+      "sha256": "75596e9b25be8b9fb6b63dfe2f4ce556ab3ecba8c78f3d217292e057d58dc551",
+      "bytes": 5716
+    },
+    {
+      "path": "main.bib",
+      "sha256": "d9c73ccb66b43d13792323379248c1806817bc936237cf45b379597be5f6abc1",
+      "bytes": 5465
+    },
+    {
+      "path": "main.tex",
+      "sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
+      "bytes": 54638
+    },
+    {
+      "path": "tmlr.bst",
+      "sha256": "306fd454cf40771bee01293eeb98d2c1cd5f4e11ed0cd7296b335f354fc45206",
+      "bytes": 26969
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    }
+  ],
+  "package_sha256": "bdeea2c323eea75a6a3e0bf5b8674abd48deca6819001254e7704be5318bcd5f",
+  "notes": [
+    "This is a source-tree audit, not a clean-room LaTeX compile.",
+    "The package hash covers the sorted path/hash manifest, not tar bytes."
+  ]
+}

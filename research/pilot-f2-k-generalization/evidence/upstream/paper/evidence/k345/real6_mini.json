@@ -1,0 +1,86 @@
+{
+  "K3_g0.5": {
+    "n": 5,
+    "p": 1.0,
+    "product": 0.35,
+    "bound": 0.0312,
+    "holds": true,
+    "holds_detail": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "K3_g1.0": {
+    "n": 5,
+    "p": 1.0,
+    "product": 0.35,
+    "bound": 0.0312,
+    "holds": true,
+    "holds_detail": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "K4_g0.5": {
+    "n": 5,
+    "p": 1.0,
+    "product": 0.35,
+    "bound": 0.0228,
+    "holds": true,
+    "holds_detail": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "K4_g1.0": {
+    "n": 5,
+    "p": 1.0,
+    "product": 0.35,
+    "bound": 0.0228,
+    "holds": true,
+    "holds_detail": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "K5_g0.5": {
+    "n": 5,
+    "p": 1.0,
+    "product": 0.35,
+    "bound": 0.0181,
+    "holds": true,
+    "holds_detail": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "K5_g1.0": {
+    "n": 5,
+    "p": 1.0,
+    "product": 0.35,
+    "bound": 0.0181,
+    "holds": true,
+    "holds_detail": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  }
+}

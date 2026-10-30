@@ -1,0 +1,43 @@
+{
+  "observations": [
+    {
+      "submission": 56637376,
+      "date": "2026-09-28",
+      "notebook": "arc3-duck-replica-v1",
+      "source_version": 353467451,
+      "score": 3.38
+    },
+    {
+      "submission": 56656333,
+      "date": "2026-09-29",
+      "notebook": "arc3-duck-7450-v1",
+      "source_version": 353563241,
+      "score": 4.01
+    },
+    {
+      "submission": 56691079,
+      "date": "2026-09-30",
+      "notebook": "arc3-duck-prefcache-v1",
+      "source_version": 353733188,
+      "score": 4.24
+    },
+    {
+      "submission": 56820768,
+      "date": "2026-10-04",
+      "notebook": "arc3-duck-7450-v1",
+      "source_version": 353563241,
+      "score": 3.08
+    }
+  ],
+  "adjacent_differences": [
+    0.63,
+    0.23
+  ],
+  "same_source_version_score_span": 0.93,
+  "private_source_bytes_bundled": false,
+  "agent_evaluation_performed": false,
+  "new_official_score": false,
+  "causal_component_gain_established": false,
+  "noise_distribution_established": false,
+  "final_official_top5": false
+}

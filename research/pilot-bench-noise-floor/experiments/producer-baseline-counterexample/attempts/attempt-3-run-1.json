@@ -1,0 +1,314 @@
+{
+  "all_expected_signatures_met": false,
+  "conditions": [
+    {
+      "checks": {
+        "all_delete_one_orders_stable": true,
+        "gate_reading_matches": true,
+        "ranked_relation_matches": true,
+        "signature_all_delete_one_orders_stable": true,
+        "signature_gate_readable": true,
+        "signature_paired_first_only_correct": true,
+        "signature_paired_second_only_correct": true,
+        "signature_producer_floor": true,
+        "signature_system_accuracies": true,
+        "signature_system_accuracy_A": true,
+        "signature_system_accuracy_B": true
+      },
+      "condition_id": "perfect-producer-refuses-stable-order",
+      "delete_one_stability": {
+        "all_defined_deletions_stable": true,
+        "defined": 700,
+        "deletions": 700,
+        "max_first_minus_second": 0.4005722460658083,
+        "min_first_minus_second": 0.3991416309012876,
+        "stable": 700,
+        "undefined": 0
+      },
+      "expected_gate_readable": false,
+      "expected_relation": "first_gt_second",
+      "expected_signature_met": true,
+      "full_gold_matches_truth": true,
+      "gate_readable": false,
+      "gold_rule": "strict majority of three producer labels",
+      "leader": "A",
+      "leader_score": 0.9,
+      "margin": -0.09999999999999998,
+      "margin_threshold": 0.02,
+      "n_items": 700,
+      "observed_relation": "first_gt_second",
+      "paired_comparison": {
+        "both_correct": 350,
+        "discordant": 280,
+        "first_only_correct": 280,
+        "neither_correct": 70,
+        "one_sided_sign_test_p": 5.147557589468029e-85,
+        "second_only_correct": 0,
+        "test_note": "Exact sign-test tail under the predeclared item-exchangeability null; the p-value is supporting evidence for the constructed ordering, not an external leaderboard estimate.",
+        "two_sided_sign_test_p": 1.0295115178936058e-84
+      },
+      "predeclared_signature_checks": {
+        "signature_all_delete_one_orders_stable": true,
+        "signature_gate_readable": true,
+        "signature_paired_first_only_correct": true,
+        "signature_paired_second_only_correct": true,
+        "signature_producer_floor": true,
+        "signature_system_accuracies": true,
+        "signature_system_accuracy_A": true,
+        "signature_system_accuracy_B": true
+      },
+      "producer_floor": 1.0,
+      "producer_loo_scores": {
+        "g1": {
+          "accuracy": 1.0,
+          "correct": 700,
+          "loo_gold_ties": 0,
+          "scored": 700
+        },
+        "g2": {
+          "accuracy": 1.0,
+          "correct": 700,
+          "loo_gold_ties": 0,
+          "scored": 700
+        },
+        "g3": {
+          "accuracy": 1.0,
+          "correct": 700,
+          "loo_gold_ties": 0,
+          "scored": 700
+        }
+      },
+      "ranked_pair": [
+        "A",
+        "B"
+      ],
+      "role": "critical_counterexample",
+      "system_scores": {
+        "A": {
+          "accuracy": 0.9,
+          "correct": 630,
+          "scored": 700
+        },
+        "B": {
+          "accuracy": 0.5,
+          "correct": 350,
+          "scored": 700
+        }
+      }
+    },
+    {
+      "checks": {
+        "all_delete_one_orders_stable": true,
+        "gate_reading_matches": true,
+        "ranked_relation_matches": true,
+        "signature_all_delete_one_orders_stable": true,
+        "signature_full_gold_matches_truth": true,
+        "signature_gate_readable": true,
+        "signature_paired_first_only_correct": false,
+        "signature_paired_second_only_correct": true,
+        "signature_producer_floor": true,
+        "signature_system_accuracies": true,
+        "signature_system_accuracy_A": true,
+        "signature_system_accuracy_B": true
+      },
+      "condition_id": "imperfect-producers-positive-gate-control",
+      "delete_one_stability": {
+        "all_defined_deletions_stable": true,
+        "defined": 700,
+        "deletions": 700,
+        "max_first_minus_second": 0.4005722460658083,
+        "min_first_minus_second": 0.3991416309012876,
+        "stable": 700,
+        "undefined": 0
+      },
+      "expected_gate_readable": true,
+      "expected_relation": "first_gt_second",
+      "expected_signature_met": false,
+      "full_gold_matches_truth": true,
+      "gate_readable": true,
+      "gold_rule": "strict majority of three producer labels",
+      "leader": "A",
+      "leader_score": 0.9,
+      "margin": 0.09999999999999998,
+      "margin_threshold": 0.02,
+      "n_items": 700,
+      "observed_relation": "first_gt_second",
+      "paired_comparison": {
+        "both_correct": 350,
+        "discordant": 280,
+        "first_only_correct": 280,
+        "neither_correct": 70,
+        "one_sided_sign_test_p": 5.147557589468029e-85,
+        "second_only_correct": 0,
+        "test_note": "Exact sign-test tail under the predeclared item-exchangeability null; the p-value is supporting evidence for the constructed ordering, not an external leaderboard estimate.",
+        "two_sided_sign_test_p": 1.0295115178936058e-84
+      },
+      "predeclared_signature_checks": {
+        "signature_all_delete_one_orders_stable": true,
+        "signature_full_gold_matches_truth": true,
+        "signature_gate_readable": true,
+        "signature_paired_first_only_correct": false,
+        "signature_paired_second_only_correct": true,
+        "signature_producer_floor": true,
+        "signature_system_accuracies": true,
+        "signature_system_accuracy_A": true,
+        "signature_system_accuracy_B": true
+      },
+      "producer_floor": 0.8,
+      "producer_loo_scores": {
+        "g1": {
+          "accuracy": 0.8,
+          "correct": 400,
+          "loo_gold_ties": 200,
+          "scored": 500
+        },
+        "g2": {
+          "accuracy": 0.8,
+          "correct": 400,
+          "loo_gold_ties": 200,
+          "scored": 500
+        },
+        "g3": {
+          "accuracy": 0.8,
+          "correct": 400,
+          "loo_gold_ties": 200,
+          "scored": 500
+        }
+      },
+      "ranked_pair": [
+        "A",
+        "B"
+      ],
+      "role": "positive_control",
+      "system_scores": {
+        "A": {
+          "accuracy": 0.9,
+          "correct": 630,
+          "scored": 700
+        },
+        "B": {
+          "accuracy": 0.5,
+          "correct": 350,
+          "scored": 700
+        }
+      }
+    },
+    {
+      "checks": {
+        "all_delete_one_orders_stable": true,
+        "gate_reading_matches": true,
+        "ranked_relation_matches": true,
+        "signature_all_delete_one_orders_stable": true,
+        "signature_gate_readable": true,
+        "signature_paired_first_only_correct": true,
+        "signature_paired_second_only_correct": true,
+        "signature_producer_floor": true,
+        "signature_system_accuracies": true,
+        "signature_system_accuracy_A": true,
+        "signature_system_accuracy_B": true
+      },
+      "condition_id": "reversed-order-negative-control",
+      "delete_one_stability": {
+        "all_defined_deletions_stable": true,
+        "defined": 700,
+        "deletions": 700,
+        "max_first_minus_second": -0.3991416309012876,
+        "min_first_minus_second": -0.4005722460658083,
+        "stable": 700,
+        "undefined": 0
+      },
+      "expected_gate_readable": false,
+      "expected_relation": "first_lt_second",
+      "expected_signature_met": true,
+      "full_gold_matches_truth": true,
+      "gate_readable": false,
+      "gold_rule": "strict majority of three producer labels",
+      "leader": "B",
+      "leader_score": 0.9,
+      "margin": -0.09999999999999998,
+      "margin_threshold": 0.02,
+      "n_items": 700,
+      "observed_relation": "first_lt_second",
+      "paired_comparison": {
+        "both_correct": 350,
+        "discordant": 280,
+        "first_only_correct": 0,
+        "neither_correct": 70,
+        "one_sided_sign_test_p": 5.147557589468029e-85,
+        "second_only_correct": 280,
+        "test_note": "Exact sign-test tail under the predeclared item-exchangeability null; the p-value is supporting evidence for the constructed ordering, not an external leaderboard estimate.",
+        "two_sided_sign_test_p": 1.0295115178936058e-84
+      },
+      "predeclared_signature_checks": {
+        "signature_all_delete_one_orders_stable": true,
+        "signature_gate_readable": true,
+        "signature_paired_first_only_correct": true,
+        "signature_paired_second_only_correct": true,
+        "signature_producer_floor": true,
+        "signature_system_accuracies": true,
+        "signature_system_accuracy_A": true,
+        "signature_system_accuracy_B": true
+      },
+      "producer_floor": 1.0,
+      "producer_loo_scores": {
+        "g1": {
+          "accuracy": 1.0,
+          "correct": 700,
+          "loo_gold_ties": 0,
+          "scored": 700
+        },
+        "g2": {
+          "accuracy": 1.0,
+          "correct": 700,
+          "loo_gold_ties": 0,
+          "scored": 700
+        },
+        "g3": {
+          "accuracy": 1.0,
+          "correct": 700,
+          "loo_gold_ties": 0,
+          "scored": 700
+        }
+      },
+      "ranked_pair": [
+        "A",
+        "B"
+      ],
+      "role": "negative_control",
+      "system_scores": {
+        "A": {
+          "accuracy": 0.5,
+          "correct": 350,
+          "scored": 700
+        },
+        "B": {
+          "accuracy": 0.9,
+          "correct": 630,
+          "scored": 700
+        }
+      }
+    }
+  ],
+  "design": {
+    "gate_rule": "leader_score - producer_floor >= margin_threshold",
+    "margin_threshold": 0.02,
+    "n_items": 700,
+    "randomness": "none; every label and error block is deterministic",
+    "seed": null
+  },
+  "experiment_id": "noise-floor-producer-baseline-necessity-counterexample",
+  "frozen_inputs": {
+    "implementation_sha256": "b615e6dd785b853f0cb0eded1cbe7f6246de9809602353f9fa4dbb428e4a440e",
+    "manuscript_sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+    "preregistration_sha256": "651569ff9e586b8c616d78f0b6c9064961ceb79aee5bf17a613e110d04ee60ff"
+  },
+  "hypothesis_decision": "H1_not_supported",
+  "interpretation_limits": [
+    "This is a synthetic logical witness, not a study of real leaderboard prevalence.",
+    "The result does not show that the producer floor is uninformative in every benchmark.",
+    "The result does not establish any model's accuracy on a real task.",
+    "Sign-test p-values describe the constructed item sample only."
+  ],
+  "narrow_conclusion": "The frozen experiment did not reproduce the predeclared counterexample signature.",
+  "schema": "q-one-counterexample-receipt-v1"
+}

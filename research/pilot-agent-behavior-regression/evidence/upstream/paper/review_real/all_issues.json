@@ -1,0 +1,191 @@
+[
+  {
+    "severity": "major",
+    "location": "Introduction, Section 1",
+    "description": "The methodology section is not clearly defined or detailed. It is essential to provide a detailed description of the experimental setup, including the specific steps taken to ensure reproducibility and the statistical methods used to analyze the data.",
+    "suggestion": "Expand the methodology section to include detailed descriptions of the experimental setup, including the specific steps taken to ensure reproducibility, the tools and software used, and the statistical methods employed for data analysis. Include any relevant code snippets or scripts used in the experiments.",
+    "role": "methodology"
+  },
+  {
+    "severity": "minor",
+    "location": "Introduction, Section 1",
+    "description": "The paper could benefit from a more detailed explanation of the Behavior Drift Score (BDS) and its calculation.",
+    "suggestion": "Provide a more detailed explanation of the Behavior Drift Score (BDS) and its calculation. Include the specific formula or algorithm used to compute the BDS and any assumptions made in its calculation.",
+    "role": "methodology"
+  },
+  {
+    "severity": "minor",
+    "location": "Introduction, Section 1",
+    "description": "The paper could include a more detailed discussion of the statistical tests used to determine the significance of the cross-model heterogeneity.",
+    "suggestion": "Include a more detailed discussion of the statistical tests used to determine the significance of the cross-model heterogeneity. Provide the specific tests used and their results.",
+    "role": "methodology"
+  },
+  {
+    "severity": "minor",
+    "location": "Abstract, 第2行",
+    "description": "使用了非标准的数学符号，如$400\times$，建议使用标准的数学表达式，如$400 \times$。",
+    "suggestion": "将$400\times$改为$400 \times$。",
+    "role": "statistics"
+  },
+  {
+    "severity": "minor",
+    "location": "Abstract, 第10行",
+    "description": "使用了非标准的数学符号，如$7.14$，建议使用标准的数学表达式，如$7.14$。",
+    "suggestion": "将$7.14$改为$7.14$。",
+    "role": "statistics"
+  },
+  {
+    "severity": "minor",
+    "location": "Abstract, 第11行",
+    "description": "使用了非标准的数学符号，如$4\times10^{-18}$，建议使用标准的数学表达式，如$4 \times 10^{-18}$。",
+    "suggestion": "将$4\times10^{-18}$改为$4 \times 10^{-18}$。",
+    "role": "statistics"
+  },
+  {
+    "severity": "minor",
+    "location": "Introduction, 第5行",
+    "description": "使用了非标准的数学符号，如$4 \text{ models} \times 100 \text{ scenarios} \times 3 \text{ seeds}$，建议使用标准的数学表达式，如$4 \text{ models} \times 100 \text{ scenarios} \times 3 \text{ seeds}$。",
+    "suggestion": "保持原样，但确保所有数学表达式都使用标准格式。",
+    "role": "statistics"
+  },
+  {
+    "severity": "minor",
+    "location": "Introduction, 第6行",
+    "description": "使用了非标准的数学符号，如$1{,}200$，建议使用标准的数学表达式，如$1,200$。",
+    "suggestion": "将$1{,}200$改为$1,200$。",
+    "role": "statistics"
+  },
+  {
+    "severity": "minor",
+    "location": "Introduction, 第13行",
+    "description": "使用了非标准的数学符号，如$3 \text{ seed pairs}$，建议使用标准的数学表达式，如$3 \text{ seed pairs}$。",
+    "suggestion": "保持原样，但确保所有数学表达式都使用标准格式。",
+    "role": "statistics"
+  },
+  {
+    "severity": "minor",
+    "location": "Introduction, 第14行",
+    "description": "使用了非标准的数学符号，如$6 \text{ model pairs}$，建议使用标准的数学表达式，如$6 \text{ model pairs}$。",
+    "suggestion": "保持原样，但确保所有数学表达式都使用标准格式。",
+    "role": "statistics"
+  },
+  {
+    "severity": "major",
+    "location": "实验部分",
+    "description": "实验设计缺乏详细的实验步骤和参数设置，难以复现。",
+    "suggestion": "详细说明实验的具体步骤、使用的参数和环境配置，确保实验的可复现性。",
+    "role": "experiment"
+  },
+  {
+    "severity": "major",
+    "location": "实验部分",
+    "description": "缺少对实验结果的详细分析和讨论，特别是对不同模型之间行为差异的解释不足。",
+    "suggestion": "增加对实验结果的详细分析和讨论，解释不同模型之间的行为差异，提供更多的实验结果支持。",
+    "role": "experiment"
+  },
+  {
+    "severity": "minor",
+    "location": "实验部分",
+    "description": "实验结果的统计分析部分略显简略。",
+    "suggestion": "增加统计分析的详细程度，例如提供更多的统计指标和图表来支持实验结果。",
+    "role": "experiment"
+  },
+  {
+    "severity": "minor",
+    "location": "Introduction",
+    "description": "The paper does not explicitly discuss the novelty of the Behavioral Drift Score (BDS) compared to existing measures of model behavior consistency.",
+    "suggestion": "The authors should compare the BDS with existing measures of model behavior consistency, such as token distribution similarity measures, and discuss any unique contributions of the BDS.",
+    "role": "novelty"
+  },
+  {
+    "severity": "minor",
+    "location": "Introduction",
+    "description": "The paper does not provide a detailed comparison of the 100-scenario suite with existing benchmark suites.",
+    "suggestion": "The authors should include a comparison of the 100-scenario suite with existing benchmark suites to highlight its unique value and novelty.",
+    "role": "novelty"
+  },
+  {
+    "severity": "major",
+    "location": "Introduction, Section 1",
+    "description": "The paper does not provide detailed information on how the experiments were conducted, which is crucial for reproducibility. Specific details such as the exact environment setup, software versions, and any dependencies are missing.",
+    "suggestion": "Provide a detailed reproducibility protocol in the paper, including the exact environment setup, software versions, and any dependencies. Include the code and data used in the supplementary material.",
+    "role": "reproducibility"
+  },
+  {
+    "severity": "major",
+    "location": "Abstract and Section 1",
+    "description": "The paper lacks specific details on how the Behavior Drift Score (BDS) was calculated and validated. This is essential for reproducibility.",
+    "suggestion": "Provide a detailed explanation of the calculation and validation process of the Behavior Drift Score (BDS). Include the specific steps and any assumptions made in the supplementary material.",
+    "role": "reproducibility"
+  },
+  {
+    "severity": "minor",
+    "location": "Abstract and Section 1",
+    "description": "The paper does not include a detailed description of the 100-scenario behavioral regression suite, which could be improved for clarity and reproducibility.",
+    "suggestion": "Provide a more detailed description of the 100-scenario behavioral regression suite, including the exact scenarios and their generation process, in the supplementary material.",
+    "role": "reproducibility"
+  },
+  {
+    "severity": "minor",
+    "location": "Abstract, 第1行",
+    "description": "首字母大写不一致，建议统一首字母大写。",
+    "suggestion": "将首字母大写统一，例如：Local Llm Systems at Temperature 0 Are Nearly Perfectly Seed-Reproducible Yet",
+    "role": "writing"
+  },
+  {
+    "severity": "minor",
+    "location": "Abstract, 第2行",
+    "description": "术语未定义，建议在首次出现时定义或解释。",
+    "suggestion": "在首次出现时定义或解释术语，例如：Behavior Drift Score (BDS) 是衡量不同模型之间行为差异的指标。",
+    "role": "writing"
+  },
+  {
+    "severity": "minor",
+    "location": "Abstract, 第3行",
+    "description": "句子结构较为复杂，建议简化。",
+    "suggestion": "简化句子结构，例如：This fundamentally challenges the transfer assumption in agent pipelines.",
+    "role": "writing"
+  },
+  {
+    "severity": "minor",
+    "location": "Abstract, 第4行",
+    "description": "术语未定义，建议在首次出现时定义或解释。",
+    "suggestion": "在首次出现时定义或解释术语，例如：Behavioral Regression Suite 是用于测试模型行为稳定性的测试套件。",
+    "role": "writing"
+  },
+  {
+    "severity": "minor",
+    "location": "Introduction, 第2段",
+    "description": "句子结构较为复杂，建议简化。",
+    "suggestion": "简化句子结构，例如：Both assumptions are typically left implicit, and neither is routinely measured.",
+    "role": "writing"
+  },
+  {
+    "severity": "minor",
+    "location": "Introduction, 第3段",
+    "description": "列举项目点时，建议使用一致的格式。",
+    "suggestion": "使用一致的格式，例如：我们贡献了：1. 一个包含六个类别的100场景行为回归套件；2. 行为漂移分数（BDS）；3. 四个本地模型上的实证表征；4. 统计上可靠的结果。",
+    "role": "writing"
+  },
+  {
+    "severity": "minor",
+    "location": "Introduction, 第4段",
+    "description": "句子结构较为复杂，建议简化。",
+    "suggestion": "简化句子结构，例如：我们的结果量化了在常见套件上不同种子和不同模型家族之间行为的变化程度，给部署团队提供了一个具体的测试标准。",
+    "role": "writing"
+  },
+  {
+    "severity": "minor",
+    "location": "Related Work, 第2段",
+    "description": "句子结构较为复杂，建议简化。",
+    "suggestion": "简化句子结构，例如：Prior work in this corpus has shown that evaluator bias propagates across agents through memory, and that communication can shift calibration in multi-agent loops.",
+    "role": "writing"
+  },
+  {
+    "severity": "major",
+    "location": "Introduction",
+    "description": "未充分讨论伦理问题，特别是关于模型行为的可预测性和一致性对用户的影响。",
+    "suggestion": "在论文中增加关于伦理问题的讨论，特别是在模型行为的可预测性和一致性对用户可能产生的影响方面。例如，讨论模型行为的不一致性可能会对用户信任度和系统可靠性造成的影响。",
+    "role": "ethics"
+  }
+]

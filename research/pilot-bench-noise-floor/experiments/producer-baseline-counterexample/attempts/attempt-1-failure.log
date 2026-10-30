@@ -1,0 +1,6 @@
+attempt=1
+timestamp=2026-10-28T13:31:00Z
+command=python3 run_counterexample.py --preregistration preregistration.json --output results/run-1.json
+exit_code=2
+stderr=ERROR: strict-majority helper requires an odd number of labels
+measurement_emitted=false

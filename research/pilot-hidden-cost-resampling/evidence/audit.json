@@ -1,0 +1,460 @@
+{
+  "schema": "q-one-p16-hidden-cost-audit-v1",
+  "generated_at": "2026-10-28T00:00:00Z",
+  "marker": "agent-proposed, not human publication approval",
+  "family_id": "qf-the-hidden-cost-of-resampling-how-imbala-36f86aadfa",
+  "project_id": "qp-tmlr-tmlr-p6-60e62c7566d9",
+  "canonical": {
+    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex",
+    "sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+    "bytes": 31020,
+    "overlay_copy_sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+    "byte_identical_to_overlay": true,
+    "deprecated_banner_present": true,
+    "banner": "% =====================================================================\n% DEPRECATED — DO NOT SUBMIT INDEPENDENTLY\n% 已并入 tmlr_p12（N-sensitivity 主稿）；本稿为合成数据口径（已重写）\n% 见 _SUBMISSION_STRATEGY.md | 标记时间：2026-09-01\n% ====================================================================="
+  },
+  "variants": {
+    "retained_files": 7,
+    "distinct_hashes": 7,
+    "all_distinct": true,
+    "rows": [
+      {
+        "name": "canonical",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex",
+        "sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+        "bytes": 31020
+      },
+      {
+        "name": "preprint_backup",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex.bak_20261001T0205Z_preprint",
+        "sha256": "19841614898fb7d3e9395317a86869cabacb4a2e54e8dbba8017e3f1077b5a77",
+        "bytes": 30505
+      },
+      {
+        "name": "legacy_research_mirror",
+        "path": "/home/liuzewen/.research/tmlr-p6/main.tex",
+        "sha256": "43a99463a761a8017ed216b796430165f2bb617890c59e112f0ec78bae9ae5b4",
+        "bytes": 28659
+      },
+      {
+        "name": "aris_backup",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/.aris/backup/main.tex.before_literal_cites",
+        "sha256": "40034f4c7e441530884687110190d13f4979738d498c3b823d098c7de19db881",
+        "bytes": 28708
+      },
+      {
+        "name": "ingest_drift",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/.aris/ingest_drift/20260928T102343Z/main.tex",
+        "sha256": "9bfa00a53f33435b01ae476845a60e5287added13e320216d3cce93ab78e6bc7",
+        "bytes": 28030
+      },
+      {
+        "name": "submission_variant",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/source/submission_variant/main.tex",
+        "sha256": "4749f683712e6c732640675d5d89cff0b6b21ba754501beef8f2acca411ade9b",
+        "bytes": 28528
+      },
+      {
+        "name": "source_mirror",
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/source/main.tex",
+        "sha256": "28514cb27f23149087749a1789935d6791e887ca233196b9ee7f9f0c80585a0a",
+        "bytes": 28516
+      }
+    ],
+    "excluded_duplicates": [
+      {
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/arxiv/main.tex",
+        "sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
+        "duplicate_of": "canonical"
+      },
+      {
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/source/submission_variant/main.tex",
+        "sha256": "4749f683712e6c732640675d5d89cff0b6b21ba754501beef8f2acca411ade9b",
+        "duplicate_of": "submission_variant"
+      },
+      {
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/.aris/backup/main.tex.before_literal_cites_20260929T1833Z",
+        "sha256": "40034f4c7e441530884687110190d13f4979738d498c3b823d098c7de19db881",
+        "duplicate_of": "aris_backup"
+      }
+    ]
+  },
+  "merge_target": {
+    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p12/paper/main.tex",
+    "sha256": "b406b923bde2bb8b6323d8079ed5edf33f9826056439bd081dcc11d731cb339f",
+    "overlay_copy_sha256": "b406b923bde2bb8b6323d8079ed5edf33f9826056439bd081dcc11d731cb339f",
+    "byte_identical_to_overlay": true,
+    "term_counts": {
+      "hidden cost of resampling": 0,
+      "imbalance correction": 0,
+      "probability calibration": 0,
+      "tree ensembles": 0,
+      "isotonic": 0,
+      "class imbalance": 0,
+      "SMOTE": 0,
+      "random undersampling": 0,
+      "frozen embeddings": 0,
+      "BGE-small-zh-v1.5": 0,
+      "synthetic style-classification": 0,
+      "RF-Hybrid": 0,
+      "MLP-Embed": 0,
+      "N-sensitivity": 45
+    },
+    "study_term_matches": 0,
+    "n_sensitivity_mentions": 45,
+    "marker_says_merged": true,
+    "merge_provenance_closed": false
+  },
+  "review": {
+    "card_sha256": "e1d90bd0b9be585f1178c26d0cf3dcd5b2e41af8d26b5317287657e674072b77",
+    "card_score": "2/8",
+    "card_disposition": "D veto / reject",
+    "r16_sha256": "1497e1ea0e811e8ad6a0a5cc7b5e33a3e967a77775290732768cc30413abc69d",
+    "r16_requires_major_revision": true,
+    "card_requires_reject": true
+  },
+  "source_scope": {
+    "canonical": {
+      "dataset": "synthetic style-classification",
+      "embedding": "BGE-small-zh-v1.5",
+      "samples": 996,
+      "classes": 6,
+      "seeds": 10
+    },
+    "main_snapshot": {
+      "dataset": "newsgroups",
+      "embedding_key": "minilm-en",
+      "embedding_name": "sentence-transformers/all-MiniLM-L6-v2",
+      "n_samples": 1000,
+      "n_seeds": 10,
+      "num_classes": 8
+    },
+    "n_sensitivity": {
+      "dataset": "newsgroups",
+      "embedding_model": "bge-zh",
+      "n_seeds": 5,
+      "sample_sizes": [
+        200,
+        500,
+        1000,
+        2000,
+        5000
+      ]
+    },
+    "conflict": true
+  },
+  "main_table": {
+    "MLP-Embed": {
+      "snapshot": {
+        "ece": 0.140982293418553,
+        "auroc": 0.8667479548110635,
+        "accuracy": 0.6616915422885572
+      },
+      "seed_mean": {
+        "ece": 0.140982293418553,
+        "auroc": 0.8667479548110635,
+        "brier": 0.5751793531958962,
+        "accuracy": 0.6616915422885572
+      },
+      "accuracy_seed_min": 0.6318407960199005,
+      "accuracy_seed_max": 0.6965174129353234
+    },
+    "RF-Embed": {
+      "snapshot": {
+        "ece": 0.09570733937161496,
+        "auroc": 0.8777659827728002,
+        "accuracy": 0.6975124378109453
+      },
+      "seed_mean": {
+        "ece": 0.09570733937161496,
+        "auroc": 0.8777659827728,
+        "brier": 0.4579114351274139,
+        "accuracy": 0.6975124378109453
+      },
+      "accuracy_seed_min": 0.6417910447761194,
+      "accuracy_seed_max": 0.7711442786069652
+    },
+    "RF-Hybrid": {
+      "snapshot": {
+        "ece": 0.08985444402642398,
+        "auroc": 0.875383413409514,
+        "accuracy": 0.6880597014925373
+      },
+      "seed_mean": {
+        "ece": 0.08985444402642398,
+        "auroc": 0.8753834134095139,
+        "brier": 0.4617148059638974,
+        "accuracy": 0.6880597014925374
+      },
+      "accuracy_seed_min": 0.6268656716417911,
+      "accuracy_seed_max": 0.7661691542288557
+    },
+    "RF-Tabular": {
+      "snapshot": {
+        "ece": 0.06063809840821364,
+        "auroc": 0.6601408258667705,
+        "accuracy": 0.41044776119402987
+      },
+      "seed_mean": {
+        "ece": 0.06063809840821364,
+        "auroc": 0.6601408258667705,
+        "brier": 0.6968101165984253,
+        "accuracy": 0.41044776119402987
+      },
+      "accuracy_seed_min": 0.373134328358209,
+      "accuracy_seed_max": 0.46766169154228854
+    }
+  },
+  "isotonic": {
+    "ece_before": 0.08985444402642398,
+    "ece_after": 0.06752096175451545,
+    "ece_reduction": 0.022333482271908525,
+    "ece_reduction_pct": 24.855178298516655,
+    "auroc_before": 0.875383413409514,
+    "auroc_after": 0.8375490845344761,
+    "auroc_change": -0.037834328875037904
+  },
+  "significance": {
+    "pairs": 15,
+    "raw_significant": 12,
+    "corrected_significant": 10,
+    "raw_only": [
+      {
+        "model_a": "MLP-Embed-Isotonic",
+        "model_b": "RF-Hybrid",
+        "p_value": 0.00390625,
+        "p_value_corrected": 0.05859375
+      },
+      {
+        "model_a": "RF-Embed",
+        "model_b": "RF-Hybrid",
+        "p_value": 0.037109375,
+        "p_value_corrected": 0.556640625
+      }
+    ]
+  },
+  "n_sensitivity": {
+    "MLP-Embed": {
+      "values": [
+        0.13034137185214362,
+        0.14760075455420826,
+        0.12936533813379864,
+        0.13043876558088202,
+        0.1344939665479044
+      ],
+      "rounded": [
+        0.13,
+        0.148,
+        0.129,
+        0.13,
+        0.134
+      ],
+      "r_linear": -0.120090684746609,
+      "r_log10": -0.1381582522818755
+    },
+    "RF-Hybrid": {
+      "values": [
+        0.165175159019829,
+        0.10571825469756697,
+        0.10298372233621404,
+        0.0935344421655844,
+        0.08322735145295354
+      ],
+      "rounded": [
+        0.165,
+        0.106,
+        0.103,
+        0.094,
+        0.083
+      ],
+      "r_linear": -0.6661508837234755,
+      "r_log10": -0.8844131423159208
+    },
+    "RF-Embed": {
+      "values": [
+        0.1504933576108253,
+        0.11578354231667917,
+        0.10173865336470182,
+        0.0859865766645183,
+        0.08340219320546492
+      ],
+      "rounded": [
+        0.15,
+        0.116,
+        0.102,
+        0.086,
+        0.083
+      ],
+      "r_linear": -0.7341928932708033,
+      "r_log10": -0.9486492084413694
+    }
+  },
+  "carrier_receipts": {
+    "total": 57,
+    "verdicts": {
+      "PASS": 57
+    },
+    "all_mechanical_pass": true,
+    "semantic_mismatch_count": 42,
+    "semantic_mismatch_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      36,
+      37,
+      44,
+      46,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ],
+    "semantic_mismatch_categories": {
+      "printed_quantity_differs_from_bound_quantity": 33,
+      "wrong_model_run_label": 3,
+      "wrong_snapshot_or_seed": 6
+    },
+    "examples": [
+      {
+        "index": 3,
+        "printed": 0.037,
+        "role": "isotonic AUROC cost",
+        "bound": "results.2000.pairwise_tests_ece[1].mean_diff",
+        "quantity": "mean_diff",
+        "problem": "ECE pairwise mean difference, not AUROC"
+      },
+      {
+        "index": 4,
+        "printed": 0.003,
+        "role": "tabular AUROC comparator",
+        "bound": "pairwise_tests_ece[14].mean_diff",
+        "quantity": "mean_diff",
+        "problem": "unrelated ECE comparison; comparator has no carrier"
+      },
+      {
+        "index": 11,
+        "printed": 0.992,
+        "role": "MLP AUROC",
+        "bound": "results.500.seed_results[3].metrics[2].metrics.reliability.bin_conf[9]",
+        "quantity": "bin_conf",
+        "problem": "reliability bin confidence, not AUROC"
+      },
+      {
+        "index": 14,
+        "printed": 0.989,
+        "role": "RF-Embed AUROC",
+        "bound": "results.200.seed_results[1].metrics[2].metrics.reliability.bin_conf[9]",
+        "quantity": "bin_conf",
+        "problem": "reliability bin confidence, not AUROC"
+      },
+      {
+        "index": 17,
+        "printed": 0.99,
+        "role": "RF-Hybrid AUROC",
+        "bound": "results.1000.seed_results[4].metrics[2].metrics.reliability.bin_conf[9]",
+        "quantity": "bin_conf",
+        "problem": "reliability bin confidence, not AUROC"
+      },
+      {
+        "index": 18,
+        "printed": 0.065,
+        "role": "RF-Hybrid Brier",
+        "bound": "results.500.aggregated.MLP-Embed.accuracy_std",
+        "quantity": "accuracy_std",
+        "problem": "MLP accuracy standard deviation, not Brier"
+      },
+      {
+        "index": 20,
+        "printed": 0.941,
+        "role": "RF-Tabular AUROC",
+        "bound": "results.1000.seed_results[4].metrics[0].metrics.reliability.bin_acc[7]",
+        "quantity": "bin_acc",
+        "problem": "one reliability bin accuracy, not AUROC"
+      },
+      {
+        "index": 21,
+        "printed": 0.118,
+        "role": "RF-Tabular Brier",
+        "bound": "results.200.seed_results[1].metrics[2].metrics.per_class_ece.ece_class_3",
+        "quantity": "ece_class_",
+        "problem": "one class ECE, not Brier"
+      },
+      {
+        "index": 46,
+        "printed": 0.078,
+        "role": "MLP Pearson r",
+        "bound": "results.200.aggregated.RF-Hybrid.accuracy_std",
+        "quantity": "accuracy_std",
+        "problem": "RF-Hybrid accuracy standard deviation, not correlation"
+      },
+      {
+        "index": 50,
+        "printed": 1.5,
+        "role": "BGE v1.5",
+        "bound": "results.200.seed_results[0].metrics[2].metrics.train_time_s",
+        "quantity": "train_time_s",
+        "problem": "seed training time, not model version"
+      }
+    ],
+    "mechanical_pass_is_sufficient": false
+  },
+  "anonymity": {
+    "recorded_author_is_anonymous": true,
+    "canonical_author_is_named": true,
+    "canonical_real_identity_present": true,
+    "canonical_preprint_option": true,
+    "conflict": true
+  },
+  "text_checks": {
+    "title_resampling_occurrences": 1,
+    "smote_occurrences": 0,
+    "undersampling_occurrences": 0,
+    "imbalance_occurrences": 2,
+    "newsgroups_occurrences": 2,
+    "synthetic_occurrences": 18,
+    "limitations_headings": 2,
+    "says_no_sample_size_sweep": true,
+    "has_sample_size_table": true,
+    "says_all_models_perfect_accuracy": true,
+    "claims_corrected_12_of_15": true,
+    "corrected_12_of_15_supported": false
+  },
+  "decision": {
+    "disposition": "merge_archive",
+    "status": "archived",
+    "independent_package_created": false,
+    "uploaded": false,
+    "reason": "The canonical source forbids independent submission; the p12 target shares N-sensitivity vocabulary but not the study data or numbers; table scopes conflict; and mechanical carrier PASS does not establish semantic binding."
+  }
+}

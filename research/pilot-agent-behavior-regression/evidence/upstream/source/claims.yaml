@@ -1,0 +1,43 @@
+paper: PAPER35_FRONT_DRIFT
+claims:
+- id: C01
+  statement: The canonical suite has 100 scenarios across six behavior categories.
+  value: suite
+  tol: 0
+  evidence:
+    file: evidence/protocol.md
+- id: C02
+  statement: The main local run has four models, 100 scenarios, and three seeds (1,200
+    cells).
+  value: 100; 1200
+  tol: 0
+  evidence:
+    file: experiments/full_run/_manifest.json
+    path: scenarios_count / total_cells
+- id: C03
+  statement: Temperature-0 cross-seed BDS is low in the tested local models.
+  evidence:
+    file: experiments/full_run/analysis/full_run_analysis.json
+- id: C04
+  statement: Cross-model BDS is larger than cross-seed BDS in the tested suite.
+  value: 7.1547; 7.1374
+  tol: 0
+  evidence:
+    file: experiments/full_run/analysis/full_run_stats_20260813.json
+    path: q2_overall.mean / seed_vs_cross.mean_diff
+- id: C05
+  statement: Heterogeneity varies by scenario category, with tool-use lower and multilingual
+    higher in this run.
+  evidence:
+    file: experiments/full_run/analysis/full_run_analysis.json
+- id: C06
+  statement: The reported Wilcoxon comparison is based on paired per-scenario differences.
+  value: 100.0
+  tol: 0
+  evidence:
+    file: experiments/full_run/analysis/full_run_stats_20260813.json
+    path: seed_vs_cross.n_paired
+- id: C07
+  statement: BDS is a whitespace-token distribution metric, not a semantic distance.
+  evidence:
+    file: protocol.md; scripts/bds_evaluator.py

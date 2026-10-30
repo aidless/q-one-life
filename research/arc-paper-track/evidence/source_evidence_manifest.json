@@ -1,0 +1,19 @@
+{
+  "updated_at_utc": "2026-10-14T08:47:22.156353+00:00",
+  "files_sha256": {
+    "ARC_REVISED.md": "a07872cc4710944b6c76084ff89091316d409da5605552c2b201f3648d348c95",
+    "GEMMA_REVISED.md": "aa25d33d83b55c4bff5716f2777f420b182122faf93b26a78694b5ce9c5ea798",
+    "audit.json": "99d588d5eabc4622914d1ce0d88e8e971f771b137e7ce7a26081942368df6719",
+    "publication_receipt_20261014.json": "8f31b187b6f8433240e67317104b532b8a53a7e919192b172c0da31251bb97f4",
+    "toolselect_dataset_update_receipt.json": "8dc038373735cdbb065b9b3bcc3ec972919f6436b1123b1b39c4ab9609ca1246",
+    "toolselect-notebook-v2/verification_receipt.json": "c26e8f25f0dda9d0987d175b2dc56b581bcd4e9c4758aafaffbd86698c438e12",
+    "audit_records.py": "5335dcca919a0bb154610a6458479b387db66538a4f6440691682da3a52c5f52",
+    "cross-model-probe/records.jsonl": "607a28dc60d4892f135634ae25d3663eaa981bcc8203aee3f71657104db4bb9d",
+    "cross-model-probe/protocol.json": "b75c27e330f56ffc5ca88bf3f61cf3745351c4f55145a49d341a0310b5e4ea4c",
+    "cross-model-probe/analysis.json": "32324a38b9d754b1b9e25dec9cd01b9fba87a5d302e95177f74b3e6b78e997da",
+    "ARC_PUBLISHED_DOM_20261014.txt": "01bb6057c8f4d299d4d1a9408ed5fe593d4536fb672a6a9085922515b5d6943d",
+    "GEMMA_PUBLISHED_DOM_20261014.txt": "97aaef8b08caca0de1c6109c419cf2b6bea6716b2b2215e36a938ad0fa361155",
+    "ARC_PUBLISHED_20261014.png": "efa26db4a0f734fcada1906736ee5b81599bc980abb8ab29fd70378e6e85d45e",
+    "GEMMA_PUBLISHED_20261014.png": "5e0c0147a805dba23906250b752bb7bcfed40fdeb65fb17b17c5ae4955cced01"
+  }
+}

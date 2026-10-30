@@ -1,0 +1,249 @@
+{
+  "schema": "q-one-preregistration-v1",
+  "experiment_id": "noise-floor-producer-baseline-necessity-counterexample",
+  "version": "1.1.0",
+  "frozen_at": "2026-10-28T13:28:00Z",
+  "amended_at": "2026-10-28T13:32:00Z",
+  "status": "frozen_before_execution",
+  "amendments": [
+    {
+      "attempt": 1,
+      "failed_before_measurement": true,
+      "issue": "The strict-majority helper rejected the two remaining producers in leave-one-out gold construction.",
+      "evidence": "attempts/attempt-1-failure.log",
+      "superseded_preregistration": {
+        "path": "attempts/attempt-1-preregistration.json",
+        "sha256": "128fc8b1dc40af862c1a2f7030420c92e8716f1cd9fb31c67ff9f209b8b82a9a"
+      },
+      "superseded_implementation": {
+        "path": "attempts/attempt-1-run_counterexample.py",
+        "sha256": "99603ffc13b46cc4d905d86ed40f310823de1e5c21890788b18f58e3fe644c9b"
+      },
+      "change": "Allow strict majority over any non-empty label count; with two labels, disagreement remains undefined.",
+      "scientific_parameters_changed": false
+    }
+  ],
+  "scope": {
+    "kind": "deterministic_synthetic_witness",
+    "target": "construct validity of a producer-baseline readability gate",
+    "external_validity": "not estimated",
+    "manuscript_or_native_repository_modification": false
+  },
+  "manuscript": {
+    "path": "../../source/main.tex",
+    "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca"
+  },
+  "research_question": "Is clearing a producer leave-one-out baseline a necessary condition for every top ordering that is deterministic and stable under single-item deletion?",
+  "hypotheses": {
+    "H0": "For the declared producer-baseline gate, every top ordering that is deterministic and stable under every single-item deletion must clear the producer floor.",
+    "H1": "There exists a finite synthetic construction in which the top ordering is deterministic and stable under every single-item deletion, yet the producer-baseline gate refuses.",
+    "decision_rule": "Reject H0 if the critical and both control conditions exactly match their predeclared signatures in two byte-identical runs."
+  },
+  "design": {
+    "n_items": 1000,
+    "truth_label": 0,
+    "wrong_label": 1,
+    "producers_per_condition": 3,
+    "gold_rule": "strict majority of the three producer labels",
+    "producer_floor": "maximum producer accuracy against the strict-majority gold formed from the other two producers",
+    "leaderboard_score": "candidate accuracy against the full strict-majority gold",
+    "gate_rule": "leader_score - producer_floor >= margin_threshold",
+    "margin_threshold": 0.02,
+    "randomness": "none",
+    "seeds": null
+  },
+  "conditions": [
+    {
+      "condition_id": "perfect-producer-refuses-stable-order",
+      "role": "critical_counterexample",
+      "producers": {
+        "g1": {
+          "error_blocks": []
+        },
+        "g2": {
+          "error_blocks": []
+        },
+        "g3": {
+          "error_blocks": []
+        }
+      },
+      "systems": {
+        "A": {
+          "error_blocks": [
+            [
+              900,
+              1000
+            ]
+          ]
+        },
+        "B": {
+          "error_blocks": [
+            [
+              500,
+              1000
+            ]
+          ]
+        }
+      },
+      "ranked_pair": [
+        "A",
+        "B"
+      ],
+      "expected_relation": "first_gt_second",
+      "expected_gate_readable": false,
+      "predeclared_signature": {
+        "producer_floor": 1.0,
+        "system_accuracies": {
+          "A": 0.9,
+          "B": 0.5
+        },
+        "all_delete_one_orders_stable": true,
+        "paired_discordance": {
+          "first_only_correct": 400,
+          "second_only_correct": 0
+        },
+        "gate_readable": false
+      }
+    },
+    {
+      "condition_id": "imperfect-producers-positive-gate-control",
+      "role": "positive_control",
+      "producers": {
+        "g1": {
+          "error_blocks": [
+            [
+              0,
+              200
+            ]
+          ]
+        },
+        "g2": {
+          "error_blocks": [
+            [
+              200,
+              400
+            ]
+          ]
+        },
+        "g3": {
+          "error_blocks": [
+            [
+              400,
+              600
+            ]
+          ]
+        }
+      },
+      "systems": {
+        "A": {
+          "error_blocks": [
+            [
+              600,
+              700
+            ]
+          ]
+        },
+        "B": {
+          "error_blocks": [
+            [
+              500,
+              1000
+            ]
+          ]
+        }
+      },
+      "ranked_pair": [
+        "A",
+        "B"
+      ],
+      "expected_relation": "first_gt_second",
+      "expected_gate_readable": true,
+      "predeclared_signature": {
+        "full_gold_matches_truth": true,
+        "producer_floor": 0.8,
+        "system_accuracies": {
+          "A": 0.9,
+          "B": 0.5
+        },
+        "all_delete_one_orders_stable": true,
+        "gate_readable": true
+      }
+    },
+    {
+      "condition_id": "reversed-order-negative-control",
+      "role": "negative_control",
+      "producers": {
+        "g1": {
+          "error_blocks": []
+        },
+        "g2": {
+          "error_blocks": []
+        },
+        "g3": {
+          "error_blocks": []
+        }
+      },
+      "systems": {
+        "A": {
+          "error_blocks": [
+            [
+              500,
+              1000
+            ]
+          ]
+        },
+        "B": {
+          "error_blocks": [
+            [
+              900,
+              1000
+            ]
+          ]
+        }
+      },
+      "ranked_pair": [
+        "A",
+        "B"
+      ],
+      "expected_relation": "first_lt_second",
+      "expected_gate_readable": false,
+      "predeclared_signature": {
+        "producer_floor": 1.0,
+        "system_accuracies": {
+          "A": 0.5,
+          "B": 0.9
+        },
+        "all_delete_one_orders_stable": true,
+        "gate_readable": false
+      }
+    }
+  ],
+  "primary_endpoint": "Whether the critical condition refuses while the A-minus-B ordering is stable under all 1,000 single-item deletions and has 400 one-way versus 0 reverse paired observations.",
+  "falsification_condition": "H1 is not supported if any control signature fails, if the critical gate is readable, if the ordering changes under any defined single-item deletion, or if the paired discordance is not 400 versus 0.",
+  "stopping_rule": "Execute the frozen runner exactly twice. If the two result files are not byte-identical, stop with a reproducibility failure and do not reinterpret either run.",
+  "analysis_plan": {
+    "pairing": "A and B are compared on the same strict-majority gold item set.",
+    "stability": "Delete each item once, recompute both accuracies on the remaining 999 items, and require the predeclared relation in every defined deletion.",
+    "paired_test": "Report the exact one-sided sign-test tail 2^-d where d is the number of discordant items, conditional on the predeclared item-exchangeability null.",
+    "gate_check": "Apply the same numeric margin threshold to every condition.",
+    "no_optional_stopping": true,
+    "no_metric_substitution": true
+  },
+  "implementation": {
+    "path": "run_counterexample.py",
+    "sha256": "b4f1e4cd6849415232af21a81ddb1a2e6fd0dbf748cee0e0a935fd830f347f31"
+  },
+  "commands": [
+    "python3 run_counterexample.py --preregistration preregistration.json --output results/run-1.json",
+    "python3 run_counterexample.py --preregistration preregistration.json --output results/run-2.json",
+    "cmp -s results/run-1.json results/run-2.json",
+    "sha256sum results/run-1.json results/run-2.json"
+  ],
+  "interpretation_limits": [
+    "A successful run rejects the broad necessity interpretation only in the declared synthetic construction.",
+    "It does not estimate the prevalence of this pattern in public leaderboards.",
+    "It does not show that producer leave-one-out scores are uninformative in all settings.",
+    "It does not establish the manuscript's publication readiness, novelty, acceptance, or arXiv authorization.",
+    "It does not replace an external gold-pool study for the manuscript's empirical claim."
+  ]
+}

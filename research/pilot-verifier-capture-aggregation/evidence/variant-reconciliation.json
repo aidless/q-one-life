@@ -1,0 +1,103 @@
+{
+  "schema": "q-one-paper6-variant-reconciliation-v1",
+  "generated_at": "2026-10-27T17:08:00Z",
+  "family_id": "qf-an-empirical-study-of-aggregation-method-819da8c6b1",
+  "portfolio_project_id": "qp-tmlr-paper6-consolidated-adcff53fb253",
+  "canonical": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/paper/main.tex",
+    "sha256": "42fe9b13f6a17af326f346aaa1afb7228fa1e8f4478126fadbce0fc7cea80cc3",
+    "bytes": 57721,
+    "lines": 1062,
+    "role": "canonical",
+    "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/paper/main.tex",
+    "byte_identical_to_canonical": true,
+    "changed_canonical_lines": 0
+  },
+  "overlay": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source/main.tex",
+    "sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+    "bytes": 47351,
+    "lines": 976,
+    "role": "overlay",
+    "byte_identical_to_canonical": false,
+    "changed_canonical_lines": 207,
+    "changed_overlay_lines": 121
+  },
+  "variants": [
+    {
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/variants/legacy/main.tex",
+      "sha256": "97d208fdf72a6fcb95a60f1ce920abd3d950f9dde84a4bc324a6c397f671b462",
+      "bytes": 54449,
+      "lines": 1015,
+      "role": "legacy",
+      "byte_identical_to_canonical": false,
+      "changed_canonical_lines": 57,
+      "changed_variant_lines": 10
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/variants/ingest-drift/main.tex",
+      "sha256": "d0e6b64ac3d5cd2052a23504e65aeb47d6dd2c91685c8a3678e4e296890409a5",
+      "bytes": 56601,
+      "lines": 1055,
+      "role": "ingest_drift",
+      "byte_identical_to_canonical": false,
+      "changed_canonical_lines": 8,
+      "changed_variant_lines": 1
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/variants/submission-variant/main.tex",
+      "sha256": "4a903e5b46b836fe1ffa719022b5fb5f4a8acbeb414ba4e4ecbea34bbd0772fc",
+      "bytes": 54180,
+      "lines": 1010,
+      "role": "submission_variant",
+      "byte_identical_to_canonical": false,
+      "changed_canonical_lines": 56,
+      "changed_variant_lines": 4
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/source/source/main.tex",
+      "sha256": "58d36d9c38f4e3ddf514539ccba4970258565ddd66fa57b581cf8d9dad1f5b1f",
+      "bytes": 55166,
+      "lines": 1009,
+      "role": "source_copy",
+      "byte_identical_to_canonical": false,
+      "changed_canonical_lines": 57,
+      "changed_variant_lines": 4
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/source/source/.backups/20260926T091950Z/main.tex",
+      "sha256": "eddb22d76dd99ba9eeeb35511f132679079dd6e3657a5908259b01e84ede019f",
+      "bytes": 54135,
+      "lines": 1009,
+      "role": "source_backup_20260926_091950",
+      "byte_identical_to_canonical": false,
+      "changed_canonical_lines": 55,
+      "changed_variant_lines": 2
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/source/source/.backups/20260926T061948Z/main.tex",
+      "sha256": "57516d199caeef3e6eca550f7b67a84971b995af7a06a9a61ae8f3b47e5d36e4",
+      "bytes": 54190,
+      "lines": 1010,
+      "role": "source_backup_20260926_061948",
+      "byte_identical_to_canonical": false,
+      "changed_canonical_lines": 55,
+      "changed_variant_lines": 3
+    }
+  ],
+  "decision": {
+    "canonical_source": "paper/main.tex",
+    "basis": [
+      "The portfolio representative is the canonical project.",
+      "arxiv/main.tex is byte-identical to the canonical source.",
+      "Legacy, ingest-drift, submission and backup copies remain immutable history.",
+      "The overlay is a scoped revision with a separate hash."
+    ],
+    "superseded_copies_remain_immutable": true,
+    "final_disposition": "unreviewed"
+  },
+  "notes": [
+    "Identity and provenance only, not scientific validity.",
+    "No existing variant was overwritten."
+  ]
+}

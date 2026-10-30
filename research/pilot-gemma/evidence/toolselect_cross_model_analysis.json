@@ -1,0 +1,29 @@
+{
+  "models": [
+    {
+      "model": "qwen2.5:1.5b-instruct-q4_K_M",
+      "conditions": 24,
+      "requested_returned_model_match": true,
+      "flat_contract_tool_correct": 22,
+      "flat_contract_arguments_correct": 21,
+      "format_variant_or_missing_flat_tool": 0,
+      "substring_false_positives_valid_wrong_selected_tool": 1,
+      "identifier_false_positives_valid_wrong_selected_tool": 0
+    },
+    {
+      "model": "llama3.2:1b",
+      "conditions": 24,
+      "requested_returned_model_match": true,
+      "flat_contract_tool_correct": 10,
+      "flat_contract_arguments_correct": 7,
+      "format_variant_or_missing_flat_tool": 6,
+      "substring_false_positives_valid_wrong_selected_tool": 3,
+      "identifier_false_positives_valid_wrong_selected_tool": 0
+    }
+  ],
+  "rows": 48,
+  "distinct_requests": 6,
+  "format_discrepancies_are_not_semantic_errors": true,
+  "no_tool_execution": true,
+  "no_inferential_pvalues": true
+}

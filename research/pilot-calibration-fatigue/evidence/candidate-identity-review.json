@@ -1,0 +1,31 @@
+{
+  "schema": "q-one-p17-candidate-identity-review-v1",
+  "input": "evidence/local-carrier-search.json",
+  "candidates": [
+    {
+      "path": "/data3/Research/CALIBRATION_MERGED/evidence/finding1_rerun_qwen25_7b_pilot/a28_calibration_contagion_results.json",
+      "sha256": "533f59ae21a04e46daa1df09acbc572829a46ca6c30dc7ef56681833a06f9307",
+      "models": [
+        "qwen2.5:7b"
+      ],
+      "is_gpt4o": false,
+      "state": "not_historical_gpt4o_carrier"
+    },
+    {
+      "path": "/data3/Research/CALIBRATION_MERGED/evidence/finding1_rerun_qwen32b/finding1_eight_conditions.json",
+      "sha256": "318065e25fc78cc24c27c202d171fe3dbae5f9ad279a159f9a77ad06089dd98f",
+      "models": [],
+      "is_gpt4o": false,
+      "state": "not_historical_gpt4o_carrier"
+    },
+    {
+      "path": "/data3/Research/CALIBRATION_MERGED/evidence/finding1_rerun_qwen38_27b/finding1_eight_conditions.json",
+      "sha256": "607d064c0abde6e64dc11874ba7bd3b31d2f2409f7ddf98898007763c01bf960",
+      "models": [],
+      "is_gpt4o": false,
+      "state": "not_historical_gpt4o_carrier"
+    }
+  ],
+  "decision": "No candidate identifies GPT-4o. Qwen candidates remain bounded cross-model reruns and cannot restore historical 90.8% or Finding-2 values.",
+  "scope": "Identity review only; does not validate Qwen values or claim support."
+}

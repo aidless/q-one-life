@@ -1,0 +1,429 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-the-name-is-the-contract-a-promotion-gat-afdfe0105b",
+  "title": "The Name Is the Contract:\\\\ A Promotion Gate Called mcnemar\\_exact Is Not Exact ---\\\\ and, Against the Two-Sided Exact Reference,\\\\ Every Flip Favors Promotion",
+  "status": "review_pending",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance",
+  "origin": "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/f-acceptance-arxiv/main.tex",
+  "manuscript": {
+    "path": "source/main.tex",
+    "sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "62eef42430e6ddbf029f142bb3f12e43acf4cc7db8c7e23e1c36b0a36b771658",
+      "state": "verified",
+      "origin": "Q-One scaffold source identity",
+      "description": "Upstream source identity plus the current overlay revision binding."
+    },
+    {
+      "path": "evidence/sources.json",
+      "sha256": "3fb3378e52e888a400d15678d05ae69dfd044b8946578be516b9651211ea71a6",
+      "state": "candidate",
+      "origin": "Q-One scaffold evidence pointers",
+      "description": "Original external evidence pointers retained as candidate provenance."
+    },
+    {
+      "path": "evidence/upstream/main.tex",
+      "sha256": "4c59377876dfe6136c24dd016bca1111918e09a5ecbdf1a4109801795394f797",
+      "state": "verified",
+      "origin": "agent-verifiability/manuscript/f-acceptance-arxiv/main.tex",
+      "description": "Byte-identical upstream baseline retained before the overlay revision."
+    },
+    {
+      "path": "evidence/upstream/main.bib",
+      "sha256": "d9c73ccb66b43d13792323379248c1806817bc936237cf45b379597be5f6abc1",
+      "state": "verified",
+      "origin": "agent-verifiability/manuscript/f-acceptance-arxiv/main.bib",
+      "description": "Upstream bibliography retained with the baseline source."
+    },
+    {
+      "path": "evidence/reviews/FINAL_REVIEW_2026-10-26.md",
+      "sha256": "178ee90091b110f30c3206a7e3ac0c7a110fe7caa76dff636d163ee8ed7dee4e",
+      "state": "verified",
+      "origin": "agent-verifiability/manuscript/FINAL_REVIEW_2026-10-26.md",
+      "description": "Final review of the pre-fix source; not an independent review of the overlay revision."
+    },
+    {
+      "path": "evidence/reviews/SUBMISSION_CHECKLIST_2026-10-25.md",
+      "sha256": "c36753a82cf176d4d6c37cfb0080878aa34f274032e26f587b9d09850a04f042",
+      "state": "candidate",
+      "origin": "agent-verifiability/manuscript/SUBMISSION_CHECKLIST_2026-10-25.md",
+      "description": "Historical submission checklist with later review-fix updates."
+    },
+    {
+      "path": "evidence/reviews/F-SUBMISSION-SHA256SUMS.txt",
+      "sha256": "1ceff407ec168d50e39083f460002aa068e17772f488562f5ddbba4b40e33fad",
+      "state": "candidate",
+      "origin": "agent-verifiability/manuscript/F-SUBMISSION-SHA256SUMS.txt",
+      "description": "Historical package checksum receipt."
+    },
+    {
+      "path": "evidence/native/wave2-F-acceptance/revision_stats.json",
+      "sha256": "daa982b94ba3d032444146c719177ee23ceb36069459c2db909b5ac3e76e1a41",
+      "state": "verified",
+      "origin": "agent-verifiability/wave2-F-acceptance/revision_stats.json",
+      "description": "Frozen statistical recomputation data used by the native verifier."
+    },
+    {
+      "path": "evidence/native/wave2-F-acceptance/dynamic_audit_frozen200.json",
+      "sha256": "9c003251597e07d83331a3066d1f6c586a01fe5824062e6b26671108a9022693",
+      "state": "verified",
+      "origin": "agent-verifiability/wave2-F-acceptance/dynamic_audit_frozen200.json",
+      "description": "Frozen dynamic-audit results for the surveyed implementations."
+    },
+    {
+      "path": "evidence/native/wave2-F-acceptance/flip_band.json",
+      "sha256": "6a44cd51cb9584e1c0ef23ffb284e96d4f67997bbdc4a7fc9aab7d140f3649a1",
+      "state": "verified",
+      "origin": "agent-verifiability/wave2-F-acceptance/flip_band.json",
+      "description": "Exact-p distribution of the 231 decision flips."
+    },
+    {
+      "path": "evidence/native/wave2-F-acceptance/unknown48_full_audit.json",
+      "sha256": "c0ce73807cdef5eea945402430845df0bb34b790c2b8a9951e2cfb155c166703",
+      "state": "verified",
+      "origin": "agent-verifiability/wave2-F-acceptance/unknown48_full_audit.json",
+      "description": "Full audit of the 48 unknown function definitions."
+    },
+    {
+      "path": "evidence/native/wave2-F-acceptance/github_survey/raw/classification.json",
+      "sha256": "d161d97cabac4777843c604a31ea609dce5fc494080de6758c7ace76add0c8b8",
+      "state": "verified",
+      "origin": "agent-verifiability/wave2-F-acceptance/github_survey/raw/classification.json",
+      "description": "Public-code survey classification table."
+    },
+    {
+      "path": "evidence/native/wave2-F-acceptance/github_survey/raw/classification-readjudicated.json",
+      "sha256": "1d3b1f67ccfbac3b51f2b072180c06515b98c6dc9155ae0a771cd6286c305d96",
+      "state": "verified",
+      "origin": "agent-verifiability/wave2-F-acceptance/github_survey/raw/classification-readjudicated.json",
+      "description": "Readjudicated exact-named implementation sample."
+    },
+    {
+      "path": "evidence/native/data/f02_gate_inventory.json",
+      "sha256": "62229f38c0685f4556f92e1a67dcf67834d30ebb2cd3bd6bd64af906ad69bfc7",
+      "state": "verified",
+      "origin": "agent-verifiability/data/f02_gate_inventory.json",
+      "description": "Frozen 118-implementation inventory."
+    },
+    {
+      "path": "reports/native-verification-gate.json",
+      "sha256": "625e7de36fdedcdff73883ed45ba2e9a02d136a015d72a196dfc2a29c8073531",
+      "state": "verified",
+      "origin": "reports/native-verification-gate.json",
+      "description": "Two-run native verifier receipt: 79 checks, 0 failures."
+    },
+    {
+      "path": "reports/package-audit.json",
+      "sha256": "5b96de404454aa4760603d4e3ed7cefe952fa9454ebf9f16c56f7f87b9a4b035",
+      "state": "verified",
+      "origin": "reports/package-audit.json",
+      "description": "Mechanical six-file arXiv source-tree audit."
+    },
+    {
+      "path": "reports/cleanroom/receipt.json",
+      "sha256": "2a9f7b467dda8577398757fc5e1df5ebba14d55c02b947f58f903cdf96f452ee",
+      "state": "verified",
+      "origin": "reports/cleanroom/receipt.json",
+      "description": "Two-run isolated compile: deterministic 14-page PDF."
+    },
+    {
+      "path": "reports/review-response-audit.json",
+      "sha256": "d70651192d64f78163dbbe174c71fa73211b21916fa04ab14e0924d0068327df",
+      "state": "candidate",
+      "origin": "reports/review-response-audit.json",
+      "description": "Machine-readable review-response audit; only independent re-review remains open."
+    },
+    {
+      "path": "reports/flip-disjointness.json",
+      "sha256": "1eec4f2505e5b84fe9ae3de33a04bc6f415eba2436711f91f11d86f88ca57386",
+      "state": "verified",
+      "origin": "reports/flip-disjointness.json",
+      "description": "Cell-level proof that the 231 uncorrected and 9 continuity-corrected flips are disjoint."
+    },
+    {
+      "path": "reports/source-revision.json",
+      "sha256": "d67408e015d988722864722822cb67b746d5373fab6453cfb01ae79a94d5af15",
+      "state": "verified",
+      "origin": "reports/source-revision.json",
+      "description": "Overlay-only bibliography-order revision bound to the upstream baseline."
+    },
+    {
+      "path": "reports/package/package-receipt.json",
+      "sha256": "79acc07cef24c7880aedb5ed28e0b4149ae49772ee05a370cb882f4141217d82",
+      "state": "verified",
+      "origin": "reports/package/package-receipt.json",
+      "description": "Deterministic candidate archive receipt with extraction compile."
+    },
+    {
+      "path": "reports/package/f-acceptance-arxiv-candidate.tar.gz",
+      "sha256": "cf23a62a2c2066a934bea529b6aa97d993df0b78d048c42ceb6ce96620de213a",
+      "state": "verified",
+      "origin": "reports/package/f-acceptance-arxiv-candidate.tar.gz",
+      "description": "Internal six-file candidate archive; not upload-authorized."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Abstract and Section 3",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/native-verification-gate.json"]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Section 3 decision-bound table",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/native-verification-gate.json"]
+    },
+    {
+      "claim_id": "C03",
+      "location": "Abstract and continuity-correction comparison",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/native-verification-gate.json"]
+    },
+    {
+      "claim_id": "C04",
+      "location": "Mid-p and one-sided-reference comparisons",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/native-verification-gate.json"]
+    },
+    {
+      "claim_id": "C05",
+      "location": "Alpha robustness, threshold band, and strictness ratio",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/native-verification-gate.json"]
+    },
+    {
+      "claim_id": "C06",
+      "location": "Ledger rejudgment",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/native-verification-gate.json"]
+    },
+    {
+      "claim_id": "C07",
+      "location": "Workspace and public-code survey",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/native-verification-gate.json"]
+    },
+    {
+      "claim_id": "C08",
+      "location": "Dynamic implementation audit",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/native-verification-gate.json"]
+    },
+    {
+      "claim_id": "C09",
+      "location": "Verification and package build",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/native-verification-gate.json",
+        "reports/cleanroom/receipt.json"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "Local response to the final review",
+      "state": "candidate",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/review-response-audit.json"]
+    },
+    {
+      "claim_id": "C11",
+      "location": "Independent review closure",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/reviews/FINAL_REVIEW_2026-10-26.md",
+        "reports/review-response-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "location": "Internal candidate archive",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/package/package-receipt.json"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "location": "Continuity-correction comparison",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/flip-disjointness.json"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "f-acceptance-revision-statistics",
+      "state": "completed",
+      "receipt": "evidence/native/wave2-F-acceptance/revision_stats.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "f-acceptance-native-verification",
+      "state": "reproduced",
+      "receipt": "reports/native-verification-gate.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "f-acceptance-cleanroom-compile",
+      "state": "reproduced",
+      "receipt": "reports/cleanroom/receipt.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "f-acceptance-final-review-20261026",
+      "kind": "method",
+      "state": "open",
+      "critical": 0,
+      "major": 1,
+      "receipt": "evidence/reviews/FINAL_REVIEW_2026-10-26.md"
+    }
+  ],
+  "package": {
+    "state": "compiled",
+    "files": [
+      {
+        "path": "source/main.tex",
+        "sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef"
+      },
+      {
+        "path": "source/main.bib",
+        "sha256": "d9c73ccb66b43d13792323379248c1806817bc936237cf45b379597be5f6abc1"
+      },
+      {
+        "path": "source/main.bbl",
+        "sha256": "75596e9b25be8b9fb6b63dfe2f4ce556ab3ecba8c78f3d217292e057d58dc551"
+      },
+      {
+        "path": "source/tmlr.sty",
+        "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002"
+      },
+      {
+        "path": "source/tmlr.bst",
+        "sha256": "306fd454cf40771bee01293eeb98d2c1cd5f4e11ed0cd7296b335f354fc45206"
+      },
+      {
+        "path": "source/fancyhdr.sty",
+        "sha256": "3d2922548e0e5f1a6c5676eda6ebb6dc20d7d305b4d8c2be5f1c833fb1084e6d"
+      },
+      {
+        "path": "reports/cleanroom/receipt.json",
+        "sha256": "2a9f7b467dda8577398757fc5e1df5ebba14d55c02b947f58f903cdf96f452ee"
+      },
+      {
+        "path": "reports/cleanroom/main.pdf",
+        "sha256": "d6c4c8e8081448fb4d43d545d5609d271656e0e2b12045ab96b58b2fc4888fae"
+      },
+      {
+        "path": "reports/package/package-receipt.json",
+        "sha256": "79acc07cef24c7880aedb5ed28e0b4149ae49772ee05a370cb882f4141217d82"
+      },
+      {
+        "path": "reports/package/f-acceptance-arxiv-candidate.tar.gz",
+        "sha256": "cf23a62a2c2066a934bea529b6aa97d993df0b78d048c42ceb6ce96620de213a"
+      },
+      {
+        "path": "reports/package/archive-cleanroom/main.pdf",
+        "sha256": "d6c4c8e8081448fb4d43d545d5609d271656e0e2b12045ab96b58b2fc4888fae"
+      }
+    ],
+    "blockers": [
+      "The current source has not been independently re-reviewed after the final-review fixes.",
+      "Final author, category, abstract, license and upload authorization remain user decisions."
+    ]
+  },
+  "gate_receipts": [
+    {
+      "gate_id": "f-acceptance-native-verification",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "reports/native-verification-gate.json",
+      "receipt_sha256": "625e7de36fdedcdff73883ed45ba2e9a02d136a015d72a196dfc2a29c8073531",
+      "source_sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
+      "summary": "The overlay-local verifier passed 79 checks twice with identical output."
+    },
+    {
+      "gate_id": "f-acceptance-cleanroom-compile",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/cleanroom/receipt.json",
+      "receipt_sha256": "2a9f7b467dda8577398757fc5e1df5ebba14d55c02b947f58f903cdf96f452ee",
+      "source_sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
+      "summary": "Two isolated compiles produced byte-identical 14-page PDFs."
+    },
+    {
+      "gate_id": "f-acceptance-review-response",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "reports/review-response-audit.json",
+      "receipt_sha256": "d70651192d64f78163dbbe174c71fa73211b21916fa04ab14e0924d0068327df",
+      "source_sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
+      "summary": "Independent re-review remains unresolved; all local review-response checks now pass."
+    },
+    {
+      "gate_id": "f-acceptance-candidate-archive",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/package/package-receipt.json",
+      "receipt_sha256": "79acc07cef24c7880aedb5ed28e0b4149ae49772ee05a370cb882f4141217d82",
+      "source_sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
+      "summary": "The archive rebuilt deterministically and its extraction compiled to 14 pages."
+    }
+  ],
+  "measurements": [
+    {
+      "name": "native_verifier_checks",
+      "value": 79,
+      "unit": "checks",
+      "definition": "Assertions passed by the overlay-local verifier.",
+      "source": "reports/native-verification-gate.json#checks.passed",
+      "state": "observed"
+    },
+    {
+      "name": "cleanroom_pdf_pages",
+      "value": 14,
+      "unit": "pages",
+      "definition": "Pages in the deterministic clean-room PDF.",
+      "source": "reports/cleanroom/receipt.json#pdf.pages",
+      "state": "observed"
+    },
+    {
+      "name": "source_package_files",
+      "value": 6,
+      "unit": "files",
+      "definition": "Files admitted by the mechanical source-tree audit.",
+      "source": "reports/cleanroom/receipt.json#source.file_count",
+      "state": "observed"
+    },
+    {
+      "name": "candidate_archive_bytes",
+      "value": 35355,
+      "unit": "bytes",
+      "definition": "Size of the deterministic internal candidate archive.",
+      "source": "reports/package/package-receipt.json#archive.bytes",
+      "state": "observed"
+    }
+  ],
+  "notes": [
+    "The overlay contains a copied upstream source plus separately copied frozen evidence.",
+    "The overlay-local verifier fixes one weak non-gate count assertion; the upstream verifier was not modified.",
+    "The overlay fixed bibliography order and retained a cell-level disjointness receipt.",
+    "The local review response remains open only because no independent re-review is bound to this source.",
+    "The internal candidate archive recompiles from extraction but is not authorized for upload.",
+    "No upload, account action, license choice, author change or publication claim was made."
+  ]
+}

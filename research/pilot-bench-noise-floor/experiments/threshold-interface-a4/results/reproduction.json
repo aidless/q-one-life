@@ -1,0 +1,103 @@
+{
+  "accepted_runs": [
+    {
+      "bytes": 35743,
+      "path": "results/run-1.json",
+      "sha256": "d2fedc88b0ae81f782c8169cfe8c66103871a389db644476a4b47735e049727c"
+    },
+    {
+      "bytes": 35743,
+      "path": "results/run-2.json",
+      "sha256": "d2fedc88b0ae81f782c8169cfe8c66103871a389db644476a4b47735e049727c"
+    }
+  ],
+  "byte_identical": true,
+  "decision": {
+    "hypothesis": "H1_interface_semantics_mismatch",
+    "narrow_conclusion": "The pinned native CLI has no delta parameter and hard-codes 2.0 points. A synthetic fixture with a derived point margin of exactly 2.0 is classified READABLE, while the manuscript's explicit equality instruction is MARGINAL. A separate fixture has point margin >2.0 and a case-bootstrap interval crossing zero and is still classified READABLE. Fail-closed domain, floor-degeneracy and no-reading fixtures remain refusals.",
+    "non_claims": [
+      "These are deterministic synthetic interface fixtures, not external leaderboard measurements.",
+      "The experiment identifies interface semantics; it does not measure ranking validity.",
+      "The experiment does not establish that a different threshold would improve scientific validity.",
+      "No manuscript, author, licence, account, or upload state is changed."
+    ]
+  },
+  "experiment_id": "noise-floor-threshold-interface-a4",
+  "gates": {
+    "F1_threshold_is_not_a_cli_parameter": {
+      "evidence": {
+        "delta_invocation_exit_code": 2,
+        "delta_invocation_rejected": true,
+        "delta_invocation_stderr": "usage: audit.py [-h] [--gold {majority,mean_prob,both}] [--loo] [--no-loo]\n                [--n-boot N_BOOT] [--bins BINS] [--json JSON]\n                [--judges-file JUDGES_FILE] [--gold-file GOLD_FILE]\n                [--tie-rule {unmeasured,lexicographic}]\n                csv\naudit.py: error: unrecognized arguments: --delta 2.0",
+        "hardcoded_decision_branch_present": true,
+        "hardcoded_threshold_metadata_present": true,
+        "help_exit_code": 0,
+        "help_has_delta_option": false,
+        "help_has_tie_rule_option": true
+      },
+      "passed": true
+    },
+    "F2_equality_branch_mismatch_reproduced": {
+      "derived_raw_margin_points": 2.0000000000000018,
+      "implementation_verdict": "READABLE",
+      "json_margin_points": 2.0,
+      "manuscript_equality_instruction": "MARGINAL",
+      "passed": true
+    },
+    "F3_graded_branch_controls": {
+      "above_delta": {
+        "margin_points": 20.0,
+        "verdict": "READABLE"
+      },
+      "below_delta": {
+        "margin_points": 1.25,
+        "verdict": "MARGINAL"
+      },
+      "passed": true
+    },
+    "F4_confidence_interval_is_not_gating": {
+      "margin_ci": {
+        "crosses_zero": true,
+        "hi95": 21.124,
+        "lo95": -100.0,
+        "n_boot": 2000,
+        "n_dropped_rounds": 0,
+        "n_valid_rounds": 2000,
+        "seed": 20261001,
+        "unit": "points"
+      },
+      "margin_points": 13.6364,
+      "passed": true,
+      "verdict": "READABLE"
+    },
+    "F5_fail_closed_controls": {
+      "domain_mismatch": "UNDECIDABLE_DOMAIN_MISMATCH",
+      "floor_degenerate": "UNDECIDABLE_FLOOR_DEGENERATE",
+      "no_reading": "UNDECIDABLE_NO_READING",
+      "passed": true
+    }
+  },
+  "implementation": {
+    "bytes": 22624,
+    "path": "run_threshold_interface.py",
+    "sha256": "c996fc7b8be09ee8e0aaf58abfb1ecb86003a8e39bfa4b4ee3bcce5dcc456971"
+  },
+  "native": {
+    "audit_path": "tools/bench-noise-floor/audit.py",
+    "audit_sha256": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b",
+    "external_root_name": "F:\\deepseek",
+    "head": "ab40e28abcb2a97e13242d0dab5584d42a15f94e"
+  },
+  "preregistration": {
+    "bytes": 7843,
+    "path": "preregistration.json",
+    "sha256": "de1cb0d656c92537444bd950fa8d357282f4ec13e489c6688f5413da9a48fabd"
+  },
+  "report": {
+    "bytes": 4414,
+    "path": "results/REPORT.md",
+    "sha256": "37181f44053f9994056a9a0791f0c56d50f95dfedf50bc52566d36caabda9eb6"
+  },
+  "schema": "q-one-experiment-reproduction-v1",
+  "status": "reproduced"
+}

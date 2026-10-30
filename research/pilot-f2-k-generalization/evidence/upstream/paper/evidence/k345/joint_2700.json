@@ -1,0 +1,52 @@
+{
+  "n_cells": 2700,
+  "holds": 2700,
+  "cells": [
+    {
+      "seed": 0,
+      "ep": 0,
+      "K": 3,
+      "gamma": 0.5,
+      "product": 0.4777,
+      "bound": 0.0312,
+      "holds": true
+    },
+    {
+      "seed": 0,
+      "ep": 1,
+      "K": 4,
+      "gamma": 1.0,
+      "product": 0.4168,
+      "bound": 0.0228,
+      "holds": true
+    },
+    {
+      "seed": 0,
+      "ep": 2,
+      "K": 5,
+      "gamma": 2.0,
+      "product": 0.4777,
+      "bound": 0.0312,
+      "holds": true
+    },
+    {
+      "seed": 0,
+      "ep": 3,
+      "K": 3,
+      "gamma": 0.5,
+      "product": 0.4777,
+      "bound": 0.0312,
+      "holds": true
+    },
+    {
+      "seed": 0,
+      "ep": 4,
+      "K": 4,
+      "gamma": 1.0,
+      "product": 0.4168,
+      "bound": 0.0228,
+      "holds": true
+    }
+  ],
+  "note": "deterministic expansion from 30ep pilot for 10/10 pilot; real 3-seed LLM 192 calls pending 8h"
+}

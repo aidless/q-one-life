@@ -1,0 +1,321 @@
+{
+  "completed_seeds": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14"
+  ],
+  "results": {
+    "0": {
+      "standard": {
+        "gamma_TV": 1.0111,
+        "gamma_VT": 0.4823,
+        "H_T": 0.9195,
+        "H_V": 0.8894
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "1": {
+      "standard": {
+        "gamma_TV": 0.8053,
+        "gamma_VT": 0.9747,
+        "H_T": 0.8812,
+        "H_V": 0.9166
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "2": {
+      "standard": {
+        "gamma_TV": 1.239,
+        "gamma_VT": 1.0842,
+        "H_T": 0.89,
+        "H_V": 0.8671
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "3": {
+      "standard": {
+        "gamma_TV": 0.9894,
+        "gamma_VT": 1.0534,
+        "H_T": 0.9024,
+        "H_V": 0.9044
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "4": {
+      "standard": {
+        "gamma_TV": 1.2763,
+        "gamma_VT": 1.3466,
+        "H_T": 0.8839,
+        "H_V": 0.8992
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "5": {
+      "standard": {
+        "gamma_TV": 0.7753,
+        "gamma_VT": 0.6676,
+        "H_T": 0.8952,
+        "H_V": 0.8373
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "6": {
+      "standard": {
+        "gamma_TV": 0.979,
+        "gamma_VT": 1.0553,
+        "H_T": 0.9701,
+        "H_V": 0.8723
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "7": {
+      "standard": {
+        "gamma_TV": 0.9302,
+        "gamma_VT": 0.846,
+        "H_T": 0.9198,
+        "H_V": 0.9232
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "8": {
+      "standard": {
+        "gamma_TV": 0.8603,
+        "gamma_VT": 0.756,
+        "H_T": 0.9222,
+        "H_V": 0.9076
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "9": {
+      "standard": {
+        "gamma_TV": 0.8799,
+        "gamma_VT": 0.9737,
+        "H_T": 0.8568,
+        "H_V": 0.8993
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "10": {
+      "standard": {
+        "gamma_TV": 1.077,
+        "gamma_VT": 1.0428,
+        "H_T": 0.9312,
+        "H_V": 0.8546
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "11": {
+      "standard": {
+        "gamma_TV": 1.3735,
+        "gamma_VT": 1.034,
+        "H_T": 0.863,
+        "H_V": 0.8378
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "12": {
+      "standard": {
+        "gamma_TV": 0.9943,
+        "gamma_VT": 1.1048,
+        "H_T": 0.8456,
+        "H_V": 0.9027
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "13": {
+      "standard": {
+        "gamma_TV": 0.7941,
+        "gamma_VT": 0.7778,
+        "H_T": 0.9299,
+        "H_V": 0.8776
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    },
+    "14": {
+      "standard": {
+        "gamma_TV": 0.8792,
+        "gamma_VT": 0.8631,
+        "H_T": 0.8535,
+        "H_V": 0.9462
+      },
+      "cg_alone": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      },
+      "cg_tee": {
+        "gamma_TV": 0.0,
+        "gamma_VT": 0.0,
+        "H_T": 1.0,
+        "H_V": 1.0
+      }
+    }
+  }
+}

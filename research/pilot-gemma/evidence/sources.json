@@ -1,0 +1,32 @@
+{
+  "schema": "q-one-evidence-sources-v1",
+  "generated_at": "2026-10-27T14:18:14.488114Z",
+  "sources": [
+    {
+      "path": "/home/liuzewen/kaggle-control-20261013/paper-evidence/publication_receipt_20261016.json",
+      "sha256": "140654c72cb0b6ce2fe9f39889c29cc870b8359709e76d1d4b9ba73cdab022be",
+      "state": "candidate"
+    },
+    {
+      "path": "/home/liuzewen/kaggle-control-20261013/paper-evidence/toolselect-redownload-v3-20261016/recompute_out_20260925.json",
+      "sha256": "81cc1740608072590509b63cfff967129b7c358e103817fae6fe2b41cc8185ee",
+      "state": "candidate"
+    },
+    {
+      "path": "/home/liuzewen/kaggle-control-20261013/paper-evidence/toolselect-redownload-v3-20261016/cross-model-probe/analysis.json",
+      "sha256": "32324a38b9d754b1b9e25dec9cd01b9fba87a5d302e95177f74b3e6b78e997da",
+      "state": "candidate"
+    },
+    {
+      "path": "/home/liuzewen/kaggle-control-20261013/paper-evidence/toolselect-redownload-v3-20261016/replay_audit_20261014.json",
+      "sha256": "b3239588c4f30e2b6c4bcc2072b8b383b20ae5d343d6b6a992b7b825a978201f",
+      "state": "candidate"
+    },
+    {
+      "path": "/home/liuzewen/kaggle-control-20261013/paper-evidence/toolselect-redownload-v3-20261016/evidence_manifest.json",
+      "sha256": "fd698fd084412a6e895475bb77b1d41dcbf9492a26e599cda796ffa32b127fee",
+      "state": "candidate"
+    }
+  ],
+  "missing": []
+}

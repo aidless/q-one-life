@@ -1,0 +1,47 @@
+{
+  "schema": "q-one-p9-source-record-v1",
+  "generated_at": "2026-10-28T06:20:02.562549Z",
+  "marker": "agent-proposed, not human publication approval",
+  "source": {
+    "canonical_origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/main.tex",
+    "overlay_copy": "evidence/upstream/main.tex",
+    "sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
+    "bytes": 22514,
+    "title": "Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?",
+    "family_id": "qf-calibrating-the-evaluator-does-probabili-6544cd664a",
+    "project_id": "qp-tmlr-tmlr-p9-a9f202b5304f"
+  },
+  "arxiv": {
+    "query_id": "2606.31371",
+    "status": "verified_identity",
+    "request_count": 1,
+    "retry_count": 0,
+    "http_status": 200,
+    "queried_at": "2026-10-28T06:14:42Z",
+    "response_path": "evidence/arxiv-identity-2606.31371.xml",
+    "response_sha256": "0282cfb9892c7df04a239e77f5d80c1fa6baa5c78edc066f9b5cf6b49ef22632",
+    "response_bytes": 2679,
+    "headers_path": "evidence/arxiv-identity-2606.31371.headers.txt",
+    "headers_sha256": "37aba0cda265003b031e22175b02b93a6a94930f7ad495e372706da57e127dd3",
+    "total_results": 1,
+    "entry_id": "http://arxiv.org/abs/2606.31371v1",
+    "version": "v1",
+    "title": "Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?",
+    "title_matches_source": true,
+    "authors": [
+      "Zewen Liu"
+    ],
+    "author_count": 1,
+    "published": "2026-06-30T09:03:24Z",
+    "updated": "2026-06-30T09:03:24Z",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "primary_category": "cs.LG",
+    "comment": "7 pages, 2 tables",
+    "abstract": "When large language model (LLM) agents adapt their behavior through evaluator feedback, systematic evaluator biases propagate into the agent's learned strategy distribution - a phenomenon termed evaluator preference coupling. Prior work has documented this coupling and established a diagnostic framework (EPC) to measure it, but has not investigated whether calibration techniques can mitigate the effect. We present the first study of evaluator calibration as mitigation: applying probability calibration to the evaluator's pairwise judgments to reduce spurious preference propagation. In a controlled within-subjects experiment (N=5) comparing standard binary TTRL (win/loss) with confidence-calibrated TTRL (probability-weighted updates) using DeepSeek-V4-Pro as executor and GLM5.2 as evaluator, we find that calibration reduces the coupling coefficient gamma by 20-49% and Jensen-Shannon divergence by 45-67%. A symmetric-LR control confirms the effect is not due to reduced update asymmetry. We release the calibrated TTRL protocol and recommend it as a lightweight mitigation for LLM-as-judge deployment pipelines.",
+    "boundary": "This verifies remote identity only. It does not validate the experimental results or authorize upload."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "p17-ece-definition-inputs-v1",
+  "files": [
+    {
+      "path": "evidence/recovery/joint_experiment_T30.py.compute_ece.txt",
+      "sha256": "d4a0955f7e47f08562eabcb2fb9bc5dc2ef3c1f43765341219c7885f77229a92",
+      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/joint_experiment_T30.py",
+      "origin_sha256": "22ad166333ac4902d88b2e72b089a79aeec882897939d124b361f1c1db54498a",
+      "start_line": 310,
+      "scope": "Static extraction only; original API driver not executed. Default ECE_BINS=10."
+    },
+    {
+      "path": "evidence/recovery/joint_experiment_T50.py.compute_ece.txt",
+      "sha256": "d4a0955f7e47f08562eabcb2fb9bc5dc2ef3c1f43765341219c7885f77229a92",
+      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/joint_experiment_T50.py",
+      "origin_sha256": "255127a6d59af8f9567869a79e217fb283f8abfba88713759e2b50c19fbaba41",
+      "start_line": 310,
+      "scope": "Static extraction only; original API driver not executed. Default ECE_BINS=10."
+    },
+    {
+      "path": "evidence/recovery/joint_experiment_T50_cloud.py.compute_ece.txt",
+      "sha256": "d4a0955f7e47f08562eabcb2fb9bc5dc2ef3c1f43765341219c7885f77229a92",
+      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/joint_experiment_T50_cloud.py",
+      "origin_sha256": "5fe5640f2b7c1aee9135a3a558475901c1f63a3e12901e72f41dbfc78dd58bd5",
+      "start_line": 309,
+      "scope": "Static extraction only; original API driver not executed. Default ECE_BINS=10."
+    }
+  ]
+}

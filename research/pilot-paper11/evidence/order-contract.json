@@ -1,0 +1,676 @@
+{
+  "factorial_mapping_present": true,
+  "hard_seed_required_by_factorial": "honest_shuffled",
+  "hard_seed_used_by_original_runner": "hard",
+  "n_tasks": 30,
+  "old_hard_order_match_tasks": 7,
+  "old_hard_order_mismatch_tasks": 23,
+  "order_a_and_b_differ_tasks": 26,
+  "order_a_and_b_same_tasks": 4,
+  "repair_binding_present": true,
+  "runner_sha256": "475ed665bbe3a21d46e3382737fe2d9d1e4eb3337b1e3b9c6e85df185955707b",
+  "source_runner_order_mapping": "hard_mode_seed",
+  "source_sha256": "6a5275a85358c7e2e42fc16db1fdd746f7ba8e4d249e8e91b4fa26b18f530b55",
+  "task_orders": [
+    {
+      "old_hard_order": [
+        1,
+        0,
+        2
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        2,
+        0,
+        1
+      ],
+      "order_b": [
+        1,
+        2,
+        0
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 1,
+      "task": "T002"
+    },
+    {
+      "old_hard_order": [
+        0,
+        2,
+        1
+      ],
+      "old_hard_order_matches_order_b": true,
+      "order_a": [
+        0,
+        2,
+        1
+      ],
+      "order_b": [
+        0,
+        2,
+        1
+      ],
+      "orders_differ": false,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 0,
+      "task": "T003"
+    },
+    {
+      "old_hard_order": [
+        0,
+        2,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        2,
+        0,
+        1
+      ],
+      "order_b": [
+        1,
+        2,
+        0
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 1,
+      "task": "T005"
+    },
+    {
+      "old_hard_order": [
+        0,
+        2,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        2,
+        0,
+        1
+      ],
+      "order_b": [
+        2,
+        1,
+        0
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 2,
+      "task": "T015"
+    },
+    {
+      "old_hard_order": [
+        0,
+        2,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        1,
+        2,
+        0
+      ],
+      "order_b": [
+        2,
+        1,
+        0
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 2,
+      "task": "T038"
+    },
+    {
+      "old_hard_order": [
+        2,
+        1,
+        0
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        0,
+        1,
+        2
+      ],
+      "order_b": [
+        1,
+        2,
+        0
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 1,
+      "task": "T040"
+    },
+    {
+      "old_hard_order": [
+        2,
+        0,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        2,
+        0,
+        1
+      ],
+      "order_b": [
+        1,
+        2,
+        0
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 0,
+      "task": "T041"
+    },
+    {
+      "old_hard_order": [
+        2,
+        1,
+        0
+      ],
+      "old_hard_order_matches_order_b": true,
+      "order_a": [
+        2,
+        1,
+        0
+      ],
+      "order_b": [
+        2,
+        1,
+        0
+      ],
+      "orders_differ": false,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 1,
+      "task": "T043"
+    },
+    {
+      "old_hard_order": [
+        2,
+        0,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        2,
+        1,
+        0
+      ],
+      "order_b": [
+        0,
+        1,
+        2
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 1,
+      "task": "T047"
+    },
+    {
+      "old_hard_order": [
+        1,
+        0,
+        2
+      ],
+      "old_hard_order_matches_order_b": true,
+      "order_a": [
+        2,
+        1,
+        0
+      ],
+      "order_b": [
+        1,
+        0,
+        2
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 1,
+      "task": "T052"
+    },
+    {
+      "old_hard_order": [
+        0,
+        2,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        0,
+        2,
+        1
+      ],
+      "order_b": [
+        1,
+        2,
+        0
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 1,
+      "task": "T055"
+    },
+    {
+      "old_hard_order": [
+        2,
+        0,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        2,
+        0,
+        1
+      ],
+      "order_b": [
+        0,
+        1,
+        2
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 2,
+      "task": "T056"
+    },
+    {
+      "old_hard_order": [
+        2,
+        0,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        0,
+        1,
+        2
+      ],
+      "order_b": [
+        1,
+        2,
+        0
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 0,
+      "task": "T059"
+    },
+    {
+      "old_hard_order": [
+        2,
+        0,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        0,
+        1,
+        2
+      ],
+      "order_b": [
+        1,
+        0,
+        2
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 0,
+      "task": "T061"
+    },
+    {
+      "old_hard_order": [
+        2,
+        0,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        1,
+        2,
+        0
+      ],
+      "order_b": [
+        0,
+        2,
+        1
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 0,
+      "task": "T067"
+    },
+    {
+      "old_hard_order": [
+        2,
+        1,
+        0
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        1,
+        0,
+        2
+      ],
+      "order_b": [
+        0,
+        2,
+        1
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 0,
+      "task": "T074"
+    },
+    {
+      "old_hard_order": [
+        2,
+        1,
+        0
+      ],
+      "old_hard_order_matches_order_b": true,
+      "order_a": [
+        1,
+        2,
+        0
+      ],
+      "order_b": [
+        2,
+        1,
+        0
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 2,
+      "task": "T077"
+    },
+    {
+      "old_hard_order": [
+        2,
+        1,
+        0
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        2,
+        1,
+        0
+      ],
+      "order_b": [
+        2,
+        0,
+        1
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 1,
+      "task": "T080"
+    },
+    {
+      "old_hard_order": [
+        2,
+        0,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        1,
+        2,
+        0
+      ],
+      "order_b": [
+        1,
+        2,
+        0
+      ],
+      "orders_differ": false,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 2,
+      "task": "T085"
+    },
+    {
+      "old_hard_order": [
+        0,
+        2,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        1,
+        0,
+        2
+      ],
+      "order_b": [
+        2,
+        0,
+        1
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 1,
+      "task": "T088"
+    },
+    {
+      "old_hard_order": [
+        1,
+        2,
+        0
+      ],
+      "old_hard_order_matches_order_b": true,
+      "order_a": [
+        0,
+        1,
+        2
+      ],
+      "order_b": [
+        1,
+        2,
+        0
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 2,
+      "task": "T091"
+    },
+    {
+      "old_hard_order": [
+        0,
+        1,
+        2
+      ],
+      "old_hard_order_matches_order_b": true,
+      "order_a": [
+        2,
+        1,
+        0
+      ],
+      "order_b": [
+        0,
+        1,
+        2
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 2,
+      "task": "T097"
+    },
+    {
+      "old_hard_order": [
+        1,
+        2,
+        0
+      ],
+      "old_hard_order_matches_order_b": true,
+      "order_a": [
+        0,
+        1,
+        2
+      ],
+      "order_b": [
+        1,
+        2,
+        0
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 1,
+      "task": "T114"
+    },
+    {
+      "old_hard_order": [
+        2,
+        1,
+        0
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        2,
+        0,
+        1
+      ],
+      "order_b": [
+        0,
+        2,
+        1
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 2,
+      "task": "T129"
+    },
+    {
+      "old_hard_order": [
+        0,
+        1,
+        2
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        0,
+        2,
+        1
+      ],
+      "order_b": [
+        1,
+        2,
+        0
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 1,
+      "task": "T134"
+    },
+    {
+      "old_hard_order": [
+        2,
+        1,
+        0
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        0,
+        2,
+        1
+      ],
+      "order_b": [
+        2,
+        0,
+        1
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 1,
+      "task": "T135"
+    },
+    {
+      "old_hard_order": [
+        0,
+        1,
+        2
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        0,
+        2,
+        1
+      ],
+      "order_b": [
+        2,
+        0,
+        1
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 2,
+      "task": "T138"
+    },
+    {
+      "old_hard_order": [
+        2,
+        1,
+        0
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        0,
+        2,
+        1
+      ],
+      "order_b": [
+        2,
+        0,
+        1
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 2,
+      "task": "T140"
+    },
+    {
+      "old_hard_order": [
+        0,
+        2,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        0,
+        1,
+        2
+      ],
+      "order_b": [
+        0,
+        1,
+        2
+      ],
+      "orders_differ": false,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 2,
+      "task": "T152"
+    },
+    {
+      "old_hard_order": [
+        2,
+        0,
+        1
+      ],
+      "old_hard_order_matches_order_b": false,
+      "order_a": [
+        2,
+        0,
+        1
+      ],
+      "order_b": [
+        1,
+        0,
+        2
+      ],
+      "orders_differ": true,
+      "repair_check": "PASS",
+      "repaired_hard_pick": 0,
+      "task": "T156"
+    }
+  ]
+}

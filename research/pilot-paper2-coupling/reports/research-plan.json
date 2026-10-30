@@ -1,0 +1,112 @@
+{
+  "schema": "q-one-research-plan-v1",
+  "generated_at": "2026-10-27T15:41:28.325171Z",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling",
+  "paper_id": "qf-a-conditional-coupling-diversity-precisi-7336590fb7",
+  "title": "A Conditional Coupling--Diversity--Precision Bound for TTRL-Based LLM Evaluation",
+  "target": "arxiv",
+  "validation_valid": true,
+  "validation_ready": false,
+  "gate_summary": {
+    "receipts": 10,
+    "passed_numeric": 2,
+    "bound_numeric_to_current_source": 2,
+    "unbound_passed_numeric": [],
+    "passed_citations": 1,
+    "bound_citations_to_current_source": 1,
+    "unbound_passed_citations": [],
+    "failed_or_blocked": [
+      "paper2-proof-audit",
+      "paper2-heldout-validation",
+      "paper2-scientific-review",
+      "paper2-metadata-license"
+    ]
+  },
+  "stages": [
+    {
+      "stage": "source-identity",
+      "state": "candidate",
+      "details": "The local source hash is checked; publication identity is separate."
+    },
+    {
+      "stage": "claim-ledger",
+      "state": "blocked",
+      "details": "Claims must be registered and bound to evidence fields."
+    },
+    {
+      "stage": "evidence-recomputation",
+      "state": "blocked",
+      "details": "Native gates passed: 2; bound to the current source: 2. A completed experiment is not a reproduced experiment."
+    },
+    {
+      "stage": "citation-verification",
+      "state": "verified",
+      "details": "A bibliography file is only a candidate until citations resolve."
+    },
+    {
+      "stage": "scientific-review",
+      "state": "blocked",
+      "details": "Open Critical or Major findings block the package."
+    },
+    {
+      "stage": "arxiv-package",
+      "state": "blocked",
+      "details": "Mechanical packageability is separate from scientific readiness."
+    },
+    {
+      "stage": "external-submission",
+      "state": "locked",
+      "details": "Upload, account use and publication require explicit user authorization."
+    }
+  ],
+  "next_actions": [
+    {
+      "action_id": "close_inconclusive_claims",
+      "priority": "P0",
+      "owner": "agent",
+      "reason": "Claims are not verified: C01, C02, C03, C04, C05, C06, C07, C08, C09, C10, C13.",
+      "done_when": "Each claim is verified, explicitly hedged with missing evidence, or removed."
+    },
+    {
+      "action_id": "close_scientific_review",
+      "priority": "P0",
+      "owner": "agent",
+      "reason": "Open review findings remain: paper2-role-review-r6, paper2-multi-reviewer-meta-review.",
+      "done_when": "No open Critical or Major finding remains against the current hashes."
+    },
+    {
+      "action_id": "remove_or_repair_blocked_claims",
+      "priority": "P0",
+      "owner": "agent",
+      "reason": "Blocked claims cannot enter strong prose: C11, C14.",
+      "done_when": "Blocked claims are absent from manuscript assertions or repaired."
+    },
+    {
+      "action_id": "repair_failed_native_gates",
+      "priority": "P0",
+      "owner": "agent",
+      "reason": "Native gate receipts failed: paper2-proof-audit, paper2-heldout-validation, paper2-scientific-review, paper2-metadata-license.",
+      "done_when": "Each failed gate is repaired or explicitly blocked in the manuscript scope."
+    },
+    {
+      "action_id": "resolve_package_blockers",
+      "priority": "P1",
+      "owner": "agent",
+      "reason": "The package manifest contains unresolved blockers.",
+      "done_when": "The source tree, bibliography, compiled PDF and hashes are complete."
+    },
+    {
+      "action_id": "external_submission_gate",
+      "priority": "external",
+      "owner": "user",
+      "reason": "Q-One cannot perform an account-level arXiv action on its own.",
+      "done_when": "The user explicitly authorizes upload and checks metadata, license and author list."
+    }
+  ],
+  "global_readiness_score": null,
+  "notes": [
+    "No global score is produced.",
+    "Unknown is not zero.",
+    "A mechanical package check is not scientific readiness."
+  ]
+}

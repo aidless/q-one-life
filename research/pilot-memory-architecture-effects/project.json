@@ -1,0 +1,529 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-memory-architecture-effects-on-output-le-0ea84705a9",
+  "title": "Memory Architecture Effects on Output-Length Responses under Controlled Multi-Agent Contamination",
+  "status": "review_pending",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects",
+  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/paper/main.tex",
+  "manuscript": {
+    "path": "source/main.tex",
+    "sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "4253c5998afb3e87e284ac27700a3bff5b8e95e854e2ed0875afae91847b5fc3",
+      "state": "verified",
+      "origin": "P12 Research Factory overlay",
+      "description": "Canonical and overlay source identity."
+    },
+    {
+      "path": "evidence/variant-reconciliation.json",
+      "sha256": "7fd02845ef67dd633a4a214c8a0bbe64088dc309e5abb5d107b16d2a206ba154",
+      "state": "verified",
+      "origin": "P12 Research Factory overlay",
+      "description": "Four packet variants and one source mirror."
+    },
+    {
+      "path": "evidence/native-audit.json",
+      "sha256": "79fcfe1a7da80775f4155202098d50c4219856a5f14555e6154642656be58797",
+      "state": "verified",
+      "origin": "P12 Research Factory overlay",
+      "description": "Structural, R1, v4-flash, Qwen, Round-4, judge and carrier audit."
+    },
+    {
+      "path": "evidence/claim-values.json",
+      "sha256": "de958a8bf3b385d3d32b38bbb269785ce5d40d98b1914c82497a113dcd71bf66",
+      "state": "verified",
+      "origin": "P12 Research Factory overlay",
+      "description": "Scalar aliases extracted from the independent audit for claim-ledger checks."
+    },
+    {
+      "path": "evidence/upstream/paper/main.tex",
+      "sha256": "f926cae5baf4a3a9ac4cbba11d6cce8ecf6206187ea25306f620550d7a7b2bd8",
+      "state": "verified",
+      "origin": "Portfolio representative paper/main.tex",
+      "description": "Canonical upstream source retained byte-for-byte."
+    },
+    {
+      "path": "evidence/upstream/paper/CLAIM_LEDGER.md",
+      "sha256": "68d0dd7b87ea80d2d74b937e1766ce60bb1d394997f216c2e33d1698c5f3a76a",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Native claim ledger retained for comparison."
+    },
+    {
+      "path": "evidence/upstream/paper/REVIEW_CARD.md",
+      "sha256": "bf24c9e6b06dddb7afb8c387c9fa348931e599cd140dbce148a7f85983453d66",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Rework review card retained as the open-review blocker."
+    },
+    {
+      "path": "evidence/upstream/paper/ARIS_EVIDENCE_VERDICT.md",
+      "sha256": "964426c22284cde0006eb47c15c8d0bac82d9e1e688b42ba3eb53c0fb6c5aa65",
+      "state": "verified",
+      "origin": "Upstream ARIS audit",
+      "description": "Carrier and template audit ledger."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/r1_v4chat_dose_response_per_seed.json",
+      "sha256": "2be92a279a3b2ec264d97538decf1372de085e93c71fd3b3331930763319cb21",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Ninety R1 V4-Chat per-seed records."
+    },
+    {
+      "path": "evidence/upstream/evidence/analyses/r1_dose_response_contrasts.json",
+      "sha256": "bc903013fe41f9d55e61bdece0eaf52498d828c37020f50699331a00f356c6e2",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Nine predeclared R1 contrasts."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/p5_grid_v4flash_20260807.json",
+      "sha256": "d37612a00324bbab5301538e134f4820f171ba6fc3ea3ebcfcecc62c85c8b99c",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Rebuilt 18-cell v4-flash grid."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/recomputed_cell_means_FIXED.json",
+      "sha256": "cf8ee5460d18f532269485b20ccfecde3d05ea03d069360ef049a38a259ff6dc",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Qwen and Round-3 per-cell means."
+    },
+    {
+      "path": "evidence/upstream/evidence/analyses/round4_validation_20260808.json",
+      "sha256": "ac41db7d3374f28b1bc55b4219fb9fd7970c6e3bfdaa722344ef54e5c2ef4bee",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Round-4 1,080-file / 36-cell validation aggregate."
+    },
+    {
+      "path": "evidence/upstream/evidence/analyses/p5_third_model_direction_20260809.json",
+      "sha256": "edf3013bace026b27ad132cc17f51b5e4837ee05ded5aa907986bfda4b7c9bc2",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "R1, Qwen and Round-4 direction check."
+    },
+    {
+      "path": "evidence/upstream/source/outputs/external_judge_summary.json",
+      "sha256": "9ec938520e53edf032664e1f9614dbba1af950f37b809d1889b12e5f6a9f7f75",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "120-response external-judge calibration audit."
+    },
+    {
+      "path": "evidence/upstream/source/outputs/theta_sweep_summary.json",
+      "sha256": "65c0b0203e452e203618b4a643652bfbd83985068d3b2e1c14ee87c090e0c98e",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Five-seed RAG threshold sweep."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/protocol.md",
+      "sha256": "e18c511f057bad9ea4439539c948407068a63d7ad3920ea67c62fcdf9f341897",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Frozen collection and analysis protocol."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/prereg_freeze_hashes.json",
+      "sha256": "aecd99e619fe88429329923820cb06bb83a9ea55dfc94cbc6087fd487f572492",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Preregistration hash record."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/OSF_registration_P5_bc.md",
+      "sha256": "9540e2d372e8ba9cefea72107f22d52c2f2ba522924a3b395734be3d75bad6dd",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "OSF-ready preregistration text."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/evidence_manifest.json",
+      "sha256": "9fd5a550df4812edbe742e450a5d3e0eef2d31213647183ea5e150a2a239b996",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Upstream evidence manifest; not all entries are promoted here."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/CARRIER_RECEIPTS.json",
+      "sha256": "a9c284f79cfaf4e914429e9cfa04ec59f37e22682d061611c79393116547005b",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Seven executable carrier rows."
+    },
+    {
+      "path": "reports/source-revision.json",
+      "sha256": "2a9e9c12a421aabd8e5497c659818a7e7ced72d81f37cb9698ab8d2f1f1ab600",
+      "state": "verified",
+      "origin": "P12 Research Factory overlay",
+      "description": "Source revision metadata."
+    },
+    {
+      "path": "reports/source-revision.diff",
+      "sha256": "5be693ad74570ab7d07773955ea4fe3e522b7ea45468ee0054fad45e27bec900",
+      "state": "verified",
+      "origin": "P12 Research Factory overlay",
+      "description": "Canonical-to-overlay diff."
+    },
+    {
+      "path": "reports/package-audit.json",
+      "sha256": "d82d99d39c5d8b4c3c580906f2ad81a9e932a3a80654bc31986f216cf357839d",
+      "state": "verified",
+      "origin": "P12 Research Factory overlay",
+      "description": "Mechanical ten-file arXiv package audit."
+    },
+    {
+      "path": "reports/cleanroom/receipt.json",
+      "sha256": "71f99b40f218ec57daaa790fc9a21b3c49f9c84a05903245e153ffadc3cae969",
+      "state": "verified",
+      "origin": "P12 Research Factory overlay",
+      "description": "Two-run 26-page isolated compile receipt."
+    },
+    {
+      "path": "reports/package/package-receipt.json",
+      "sha256": "b7b72c8c24f01d00ff4da975565d1a42c1be1d935f2beaa71f5126ac6922ee10",
+      "state": "verified",
+      "origin": "P12 Research Factory overlay",
+      "description": "Deterministic archive and extracted compile receipt."
+    },
+    {
+      "path": "reports/package/memory-architecture-arxiv-candidate.tar.gz",
+      "sha256": "6a2eea0b03eedd2d27b3ee4f7914217fa1f31e981a6f67d30493c1bbb8ad5e2d",
+      "state": "verified",
+      "origin": "P12 Research Factory overlay",
+      "description": "Internal candidate archive; not upload-authorized."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Source variant identity",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/variant-reconciliation.json"]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Overlay structure",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C03",
+      "location": "R1 archive size",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C04",
+      "location": "R1 canonical contrast",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C05",
+      "location": "R1 low-contamination contrast",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C06",
+      "location": "R1 selected means",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C07",
+      "location": "v4-flash grid",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C08",
+      "location": "Qwen authority means",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C09",
+      "location": "Round-4 aggregate metadata",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C10",
+      "location": "Round-4 reversal",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C11",
+      "location": "External judge boundary",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C12",
+      "location": "Theta selection",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C13",
+      "location": "Carrier tool tally",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C14",
+      "location": "Citation resolution",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C15",
+      "location": "Clean-room compile",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/cleanroom/receipt.json"]
+    },
+    {
+      "claim_id": "C16",
+      "location": "Candidate archive",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/package/package-receipt.json"]
+    },
+    {
+      "claim_id": "C17",
+      "location": "Authority-bias validity",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C18",
+      "location": "Round-4 raw rerun availability",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C19",
+      "location": "Independent review closure",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/upstream/paper/REVIEW_CARD.md"]
+    },
+    {
+      "claim_id": "C20",
+      "location": "Upload authorization",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/package/package-receipt.json"]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "p12-r1-per-seed",
+      "state": "reproduced",
+      "receipt": "evidence/upstream/source/evidence/r1_v4chat_dose_response_per_seed.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p12-v4flash-grid",
+      "state": "completed",
+      "receipt": "evidence/upstream/source/evidence/p5_grid_v4flash_20260807.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p12-round4-aggregate",
+      "state": "completed",
+      "receipt": "evidence/upstream/evidence/analyses/round4_validation_20260808.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p12-round4-raw-rerun",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "p12-method-and-construct-review",
+      "kind": "method",
+      "state": "open",
+      "critical": 2,
+      "major": 3,
+      "receipt": "evidence/upstream/paper/REVIEW_CARD.md"
+    },
+    {
+      "review_id": "p12-statistics-review",
+      "kind": "statistics",
+      "state": "open",
+      "critical": 0,
+      "major": 2,
+      "receipt": "evidence/upstream/paper/REVIEW_CARD.md"
+    }
+  ],
+  "package": {
+    "state": "compiled",
+    "files": [
+      {
+        "path": "reports/package/memory-architecture-arxiv-candidate.tar.gz",
+        "sha256": "6a2eea0b03eedd2d27b3ee4f7914217fa1f31e981a6f67d30493c1bbb8ad5e2d"
+      },
+      {
+        "path": "reports/package/package-receipt.json",
+        "sha256": "b7b72c8c24f01d00ff4da975565d1a42c1be1d935f2beaa71f5126ac6922ee10"
+      }
+    ],
+    "blockers": [
+      "Authority-marker endpoint is not validated authority bias",
+      "Round-4 raw per-seed logs are absent from the overlay",
+      "Seven carrier receipts do not cover every exploratory value",
+      "Independent method review is open",
+      "Independent statistics review is open",
+      "Final metadata, license, author list and upload authorization remain user decisions"
+    ]
+  },
+  "measurements": [
+    {
+      "name": "r1_appendix_minus_summarization_p0.8",
+      "value": 0.07267473904552715,
+      "unit": "gamma",
+      "definition": "Paired difference at the canonical R1 p=0.8 cell.",
+      "source": "evidence/native-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "r1_canonical_p_raw",
+      "value": 0.004732175701544176,
+      "unit": "p",
+      "definition": "Two-sided paired t-test p-value at the canonical R1 contrast.",
+      "source": "evidence/native-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "round4_v4flash_reversal",
+      "value": 0.2024,
+      "unit": "gamma",
+      "definition": "Round-4 Summarization-minus-Append-Only aggregate difference.",
+      "source": "evidence/native-audit.json",
+      "state": "observed"
+    }
+  ],
+  "gate_receipts": [
+    {
+      "gate_id": "p12-source-identity",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "4253c5998afb3e87e284ac27700a3bff5b8e95e854e2ed0875afae91847b5fc3",
+      "source_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+      "summary": "Canonical and overlay source identity are pinned."
+    },
+    {
+      "gate_id": "p12-variant-reconciliation",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "7fd02845ef67dd633a4a214c8a0bbe64088dc309e5abb5d107b16d2a206ba154",
+      "source_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+      "summary": "Four packet variants and one mirror are reconciled."
+    },
+    {
+      "gate_id": "p12-r1-contrasts",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "79fcfe1a7da80775f4155202098d50c4219856a5f14555e6154642656be58797",
+      "source_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+      "summary": "All nine R1 paired contrasts recompute from 90 per-seed records."
+    },
+    {
+      "gate_id": "p12-v4flash",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "79fcfe1a7da80775f4155202098d50c4219856a5f14555e6154642656be58797",
+      "source_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+      "summary": "The 18-cell v4-flash selected values match."
+    },
+    {
+      "gate_id": "p12-round4",
+      "scope": "numbers",
+      "state": "candidate",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "79fcfe1a7da80775f4155202098d50c4219856a5f14555e6154642656be58797",
+      "source_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+      "summary": "Round-4 aggregate and reversal match; raw logs remain missing."
+    },
+    {
+      "gate_id": "p12-authority-validity",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "79fcfe1a7da80775f4155202098d50c4219856a5f14555e6154642656be58797",
+      "source_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+      "summary": "Authority markers remain an output-length proxy."
+    },
+    {
+      "gate_id": "p12-citations",
+      "scope": "citations",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "79fcfe1a7da80775f4155202098d50c4219856a5f14555e6154642656be58797",
+      "source_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+      "summary": "All 35 citation keys resolve."
+    },
+    {
+      "gate_id": "p12-carrier-transcription",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "79fcfe1a7da80775f4155202098d50c4219856a5f14555e6154642656be58797",
+      "source_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+      "summary": "Upstream carrier tool reports seven PASS."
+    },
+    {
+      "gate_id": "p12-cleanroom",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/cleanroom/receipt.json",
+      "receipt_sha256": "71f99b40f218ec57daaa790fc9a21b3c49f9c84a05903245e153ffadc3cae969",
+      "source_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+      "summary": "Two isolated compiles produce identical 26-page PDFs."
+    },
+    {
+      "gate_id": "p12-candidate-archive",
+      "scope": "package",
+      "state": "candidate",
+      "receipt": "reports/package/package-receipt.json",
+      "receipt_sha256": "b7b72c8c24f01d00ff4da975565d1a42c1be1d935f2beaa71f5126ac6922ee10",
+      "source_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+      "summary": "Deterministic internal archive exists; upload is not authorized."
+    },
+    {
+      "gate_id": "p12-independent-review",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/upstream/paper/REVIEW_CARD.md",
+      "receipt_sha256": "bf24c9e6b06dddb7afb8c387c9fa348931e599cd140dbce148a7f85983453d66",
+      "source_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+      "summary": "No current-hash independent review is closed."
+    }
+  ],
+  "notes": [
+    "agent-proposed, not human publication approval",
+    "The overlay removes unrelated calibration and template content.",
+    "R1 per-seed evidence is the confirmatory core.",
+    "Authority-marker results remain descriptive output-length responses.",
+    "The candidate archive is internal and not upload-authorized.",
+    "No upload, account action, or publication action was performed."
+  ]
+}

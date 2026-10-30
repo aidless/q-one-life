@@ -1,0 +1,62 @@
+{
+  "schema": "q-one-arxiv-candidate-package-v1",
+  "generated_at": "2026-10-27T15:37:26.866482Z",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/source",
+    "main_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+    "package_sha256": "5b26ddb738d0139f373119c6d50880db78269a2dc4d79943db17693bdd38483f",
+    "file_count": 3
+  },
+  "archive": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/reports/package/paper2-arxiv-candidate.tar.gz",
+    "sha256": "561f551d8aa85c4a4fc923110d4a5443d440fcedb545e3164847461924e2d4c5",
+    "bytes": 24110,
+    "repeat_sha256": "561f551d8aa85c4a4fc923110d4a5443d440fcedb545e3164847461924e2d4c5",
+    "deterministic": true
+  },
+  "entries": [
+    {
+      "path": "main.tex",
+      "sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+      "bytes": 52445
+    },
+    {
+      "path": "refs.bib",
+      "sha256": "ec8031ca836fc60f1836350ea15478961769a221b8eb7627f991ae73c0546ad2",
+      "bytes": 12793
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    }
+  ],
+  "extract_compile": {
+    "exit_code": 0,
+    "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/reports/package/archive-cleanroom/receipt.json",
+    "receipt_sha256": "978107f5d140ddc0fba8c587ce6c681a29f447c02ef39a76291518526e2bd7cd",
+    "pdf_pages": 14,
+    "pdf_sha256": "c1ba59060845f7c2f02668cc9cb9dc26c8804b99dd607432778b35cc66a4c403",
+    "command_stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/reports/package/archive-cleanroom/build.stdout.log",
+    "command_stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/reports/package/archive-cleanroom/build.stderr.log"
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "ready_for_upload": false,
+  "blockers": [
+    "Independent proof audit is not bound to the current source.",
+    "Held-out 30-40 condition validation is absent.",
+    "The native p=0.12 drift claim conflicts with the frozen p_bootstrap=1.0 evidence.",
+    "The T7 satisfied-cell count differs between native scope text and the frozen output.",
+    "Meta-review still reports Major Revisions.",
+    "This is an internal candidate archive; no arXiv upload was performed.",
+    "Author, category, license, abstract and final metadata remain user decisions.",
+    "A compiling archive does not establish scientific readiness or independent review."
+  ],
+  "notes": [
+    "The archive uses sorted entries and normalized owner, mode and mtime.",
+    "The archive was extracted into a separate temporary directory before compilation."
+  ]
+}

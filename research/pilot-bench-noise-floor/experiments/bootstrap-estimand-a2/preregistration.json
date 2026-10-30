@@ -1,0 +1,313 @@
+{
+  "schema": "q-one-preregistration-v1",
+  "experiment_id": "noise-floor-bootstrap-estimand-split",
+  "version": "2.0.0",
+  "frozen_at": "2026-10-29T03:54:42Z",
+  "status": "frozen_before_execution",
+  "scope": {
+    "kind": "deterministic_recomputation_on_existing_evidence",
+    "target": "the estimand of the margin bootstrap interval reported for the m25 arm (independent review finding A2)",
+    "external_validity": "none claimed; the four m25 carriers are a fixed public construction",
+    "manuscript_or_native_repository_modification": false,
+    "new_data_collection": false
+  },
+  "manuscript": {
+    "path": "../../source/main.tex",
+    "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca"
+  },
+  "research_question": "Is the bootstrap interval that the native tool prints for the m25 margin an interval for the Proposition 4 identity statistic max_s acc(s) - max_g LOO(g), or is it an interval for a different estimand (fixed point-estimate winner minus the per-round best generator)?",
+  "hypotheses": {
+    "H0": "The printed interval is an interval for the Proposition 4 identity statistic; under the m25 construction the identity would then show non-zero uncertainty, and the interval would be replicate-consistent with the identity.",
+    "H1": "The printed interval is an interval for a different statistic. Under Proposition 4's hypotheses the identity statistic is replicate-invariant (exactly zero in every admissible resampling round, degenerate interval [0,0]); the printed interval belongs to the fixed-winner comparison, whose negative lower bound is produced by the asymmetric selection (winner frozen, floor re-selected).",
+    "decision_rule": "Reject H0 and accept H1 only if F1-F5 all pass in two byte-identical runs."
+  },
+  "estimands": {
+    "theta_fixed": "macro of the point-estimate winner (fixed across rounds) minus macro of the per-round best generator",
+    "theta_both": "macro of the per-round best leaderboard system minus macro of the per-round best generator"
+  },
+  "theory": {
+    "proposition_4_identity": "On the shared leave-one-out domain U, a plurality leave-one-out reduction never re-labels an item; for a generator that is also a ranked system, its ballot against c^-_g and against c coincide on U. Therefore macro_c(g) equals macro_{c^-_g}(g) for every resampling weight vector, so max over the ranked generating pool of macro_c equals max over generators of macro_loo in every round.",
+    "corollary": "theta_both(b) == 0 exactly for every bootstrap round b, hence its percentile interval is the degenerate [0,0]; theta_fixed(b) <= 0 in every round because the frozen winner is one of the terms in the per-round maximum."
+  },
+  "bootstrap": {
+    "n_boot": 2000,
+    "seed": 20261001,
+    "cluster": "case",
+    "unit": "points",
+    "percentile": [
+      2.5,
+      97.5
+    ],
+    "source": "native audit.py [4]/[4b] convention"
+  },
+  "tasks": [
+    "factuality",
+    "coherence",
+    "relevance",
+    "preference"
+  ],
+  "controls": {
+    "task": "factuality",
+    "nonproducer_leader": {
+      "role": "positive-sign control",
+      "construction": "append one role=system actor whose raw answer and normalized answer_n both equal the plurality gold label on every item; it is not a gold generator, so Proposition 4 hypothesis (ii) fails; the runner verifies the injected system scores exactly 100.0 on U and becomes the point leader",
+      "actor": "qone-control-nonproducer",
+      "expected_sign": "theta_both strictly positive with a non-degenerate interval"
+    },
+    "unranked_generator": {
+      "role": "negative-sign control",
+      "construction": "drop the role=system rows of the recorded point-estimate leader; the generator stays in the gold pool but leaves the ranked field, so Proposition 4 hypothesis (ii) fails in the other direction",
+      "actor": "gemma-4-31b",
+      "expected_sign": "theta_both weakly negative with at least one strictly negative round and lo95 < 0 <= hi95"
+    }
+  },
+  "predeclared_expectations": {
+    "theta_fixed_intervals_matching_recorded": {
+      "factuality": {
+        "lo95": -3.9018,
+        "hi95": 0.0
+      },
+      "coherence": {
+        "lo95": 0.0,
+        "hi95": 0.0
+      },
+      "relevance": {
+        "lo95": -0.7071,
+        "hi95": 0.0
+      },
+      "preference": {
+        "lo95": -1.7309,
+        "hi95": 0.0
+      }
+    },
+    "theta_both_intervals": {
+      "all_four_tasks": {
+        "lo95": 0.0,
+        "hi95": 0.0,
+        "all_rounds_zero": true
+      }
+    },
+    "tolerance_points": 0.001,
+    "controls": {
+      "nonproducer_leader": {
+        "injected_macro_on_U": 100.0,
+        "theta_both_lo95": "strictly positive"
+      },
+      "unranked_generator": {
+        "theta_both_lo95": "strictly negative",
+        "theta_both_hi95": "<= 0",
+        "strict_negative_rounds": "at least one"
+      }
+    }
+  },
+  "gates": [
+    {
+      "id": "F1_fidelity_vs_recorded_native",
+      "rule": "recomputed theta_fixed point estimate, ceiling, and 95% interval equal the recorded native evidence within 0.001 points for all four tasks"
+    },
+    {
+      "id": "F2_identity_replicate_invariance",
+      "rule": "theta_both is exactly zero in 100% of valid rounds and its percentile interval is [0,0] on all four tasks"
+    },
+    {
+      "id": "F3_fixed_winner_never_positive",
+      "rule": "theta_fixed is never positive in any valid round on any task"
+    },
+    {
+      "id": "F4_controls_have_teeth",
+      "rule": "non-producer control: injected system macro on U is exactly 100.0, it is the point leader, and the theta_both interval is strictly positive and non-degenerate; unranked-generator control: at least one strictly negative round and lo95 < 0 <= hi95, so the [0,0] degeneracy is not automatic"
+    },
+    {
+      "id": "F5_native_rerun_matches_recorded",
+      "rule": "an unmodified rerun of audit.py on the rebuilt tables reproduces the recorded margin interval for the factuality task"
+    }
+  ],
+  "falsification_condition": "H1 is not supported if any gate fails: if theta_both is not exactly zero in every valid round, if the recomputed fixed-winner interval does not reproduce the recorded native interval, if a control yields a degenerate interval, or if the native rerun diverges from the recorded evidence.",
+  "stopping_rule": "Execute the frozen runner exactly twice. If results/run-1.json and results/run-2.json are not byte-identical, stop with a reproducibility failure and do not reinterpret either run. A gate failure is reported as a failure; no parameter, task, seed, or tolerance may be changed inside this version. Any change requires a new attempt directory with its own frozen preregistration.",
+  "no_optional_stopping": true,
+  "no_metric_substitution": true,
+  "implementation": {
+    "path": "run_estimand_split.py",
+    "sha256": "927143dd6727272311e67c4468d1bedaf131dc119d40546aae7c993d52b8d2d0"
+  },
+  "native_tool": {
+    "path": "tools/bench-noise-floor/audit.py",
+    "sha256": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b"
+  },
+  "native_inputs": [
+    [
+      "make_m25_votes",
+      "tools/bench-noise-floor/make_m25_votes.py",
+      "defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236"
+    ],
+    [
+      "judgesense_factuality",
+      "tools/bench-noise-floor/examples/judgesense_factuality.csv",
+      "5199cf0678aa1cd5d13f5532fb9ae43cd0ae7938c7cc97dd56bc26f8be37d0df"
+    ],
+    [
+      "judgesense_factuality_judges",
+      "tools/bench-noise-floor/examples/judgesense_factuality_judges.csv",
+      "712b93677ba4322d62ee97e82b9a0bec123a537265760e06dee9fd6d4bba7d52"
+    ],
+    [
+      "judgesense_coherence",
+      "tools/bench-noise-floor/examples/judgesense_coherence.csv",
+      "6dc1024a80d78273c66e8684106f9a3dcc00bebbfacab5eaff9df48f519542e5"
+    ],
+    [
+      "judgesense_coherence_judges",
+      "tools/bench-noise-floor/examples/judgesense_coherence_judges.csv",
+      "b2186be3a97eeeb8d7220f633160f621b65cc6144fc8a4b8b53fab8a16cf424f"
+    ],
+    [
+      "judgesense_relevance",
+      "tools/bench-noise-floor/examples/judgesense_relevance.csv",
+      "699746a6e5c592495ddbfe3ac1f5aef1472676d7de1beb10d03f09bbe2f591a9"
+    ],
+    [
+      "judgesense_relevance_judges",
+      "tools/bench-noise-floor/examples/judgesense_relevance_judges.csv",
+      "a15cdbc5d2e08687a4c9b7662dea9cf2a06866234d779967d9f169860bbdc919"
+    ],
+    [
+      "judgesense_preference",
+      "tools/bench-noise-floor/examples/judgesense_preference.csv",
+      "c746e7523b817256d56354384fb88307b2af9256ff90983cced39a8ae0df5bf4"
+    ],
+    [
+      "judgesense_preference_judges",
+      "tools/bench-noise-floor/examples/judgesense_preference_judges.csv",
+      "62555a863a784ca28430a3d9f8278f80da1f63e63640019df973d81649224781"
+    ]
+  ],
+  "derived_vote_tables": [
+    [
+      "factuality_m25",
+      "judgesense_factuality_m25.csv",
+      "529b3290ef633ed1b4b269ff4c2106e1584587cf27c1172d46b51da75dc56282"
+    ],
+    [
+      "coherence_m25",
+      "judgesense_coherence_m25.csv",
+      "7eb3329d0541c47efd6806073ca6d63f35f3d49d59a78564f90ccd35d604766f"
+    ],
+    [
+      "relevance_m25",
+      "judgesense_relevance_m25.csv",
+      "9dc299d7d69a7ef27e0f3726971f4c5edf020d2ab5a06cc688b5b1821bf4ae10"
+    ],
+    [
+      "preference_m25",
+      "judgesense_preference_m25.csv",
+      "46f6fe31948f547745d775254c9d17812113acb18cf9e1ea654e066537dce5c9"
+    ]
+  ],
+  "recorded_evidence": [
+    [
+      "m25_summary",
+      "papers/bench_noise_floor/evidence/m25_summary.json",
+      "6c78ab5dd51475e078a200404e1ac1d2b73dd015c77afca81f7ad992471670f7"
+    ],
+    [
+      "m25_factuality",
+      "papers/bench_noise_floor/evidence/m25_factuality.json",
+      "e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c"
+    ],
+    [
+      "m25_coherence",
+      "papers/bench_noise_floor/evidence/m25_coherence.json",
+      "e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc"
+    ],
+    [
+      "m25_relevance",
+      "papers/bench_noise_floor/evidence/m25_relevance.json",
+      "6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d"
+    ],
+    [
+      "m25_preference",
+      "papers/bench_noise_floor/evidence/m25_preference.json",
+      "53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1"
+    ]
+  ],
+  "native_rerun": {
+    "task": "factuality",
+    "command": "python3 audit.py <rebuilt factuality table> --gold majority --n-boot 2000 --json <results/native-rerun-factuality.json>"
+  },
+  "commands": [
+    "python3 tools/bench-noise-floor/make_m25_votes.py --out-dir <votes-dir> --task all",
+    "python3 run_estimand_split.py --preregistration preregistration.json --external-root <native-root> --votes-dir <votes-dir> --output results/run-1.json",
+    "python3 run_estimand_split.py --preregistration preregistration.json --external-root <native-root> --votes-dir <votes-dir> --output results/run-2.json",
+    "cmp -s results/run-1.json results/run-2.json",
+    "sha256sum preregistration.json run_estimand_split.py results/run-1.json results/run-2.json"
+  ],
+  "interpretation_limits": [
+    "A passing run shows that the printed interval and the identity statistic are different estimands on the four m25 carriers; it does not show that the native tool is wrong to print the fixed-winner comparison, only that the label must be split.",
+    "It does not validate the native implementation outside the reachable code path exercised here.",
+    "It does not establish statistical validity of the READABLE/MARGINAL/UNREADABLE thresholds, which is a separate review finding (A4).",
+    "It does not establish manuscript publication readiness, novelty, acceptance, or arXiv authorization.",
+    "The two controls are experiment-internal constructions, not leaderboard measurements and not manuscript results."
+  ],
+  "amended_at": "2026-10-29T03:54:42Z",
+  "amendments": [
+    {
+      "attempt": 1,
+      "failed_before_measurement": true,
+      "issue": "Port of audit.py boot_macro allocated the output array with W.shape[1] (number of cases, 248) instead of W.shape[0] (n_boot, 2000); the native function uses np.full(args.n_boot, ...).",
+      "evidence": "attempts/attempt-1-protocol-failure.log",
+      "superseded_preregistration": {
+        "path": "attempts/attempt-1-preregistration.json",
+        "sha256": "03751dc96ec6fc702927c7e8d86589fe453b966abaf112d57d71e3d139ff50ba"
+      },
+      "superseded_implementation": {
+        "path": "attempts/attempt-1-run_estimand_split.py",
+        "sha256": "2e097c0744d0ea7f1e491b99828ecfaa7376d3a55a84a216a9d6b40da8406d47"
+      },
+      "change": "Allocate the bootstrap output array with n_boot instead of n_case.",
+      "scientific_parameters_changed": false
+    },
+    {
+      "attempt": 2,
+      "failed_before_measurement": true,
+      "issue": "The runner read control actor names from a flat key absent from the frozen preregistration; the preregistration nests them under controls.nonproducer_leader.actor and controls.unranked_generator.actor.",
+      "evidence": "attempts/attempt-2-protocol-failure.log",
+      "superseded_preregistration": {
+        "path": "attempts/attempt-2-preregistration.json",
+        "sha256": "692a7d19f5194d4f50354df4cea00d727d503c5bdb8c55b2904d2f8b8e49ba76"
+      },
+      "superseded_implementation": {
+        "path": "attempts/attempt-2-run_estimand_split.py",
+        "sha256": "c59239ae13f26fe8cc0afb91cfef76a1e13fda4b78d4c98cc5c97a29a06bb5b7"
+      },
+      "change": "Read both control actor names from the nested keys the preregistration already declares.",
+      "scientific_parameters_changed": false
+    },
+    {
+      "attempt": 3,
+      "failed_before_measurement": false,
+      "failed_gate": "F4_controls_have_teeth",
+      "issue": "Two control defects. (1) The injected non-producer system was inert: the runner set the raw answer column while audit.agreement scores the loaded frame on answer_n, so the added system reproduced an existing system (n_systems 26, point leader unchanged at 93.8272). (2) The unranked-generator control was sound but its predeclared sign rule was not implied: gemma-4-31b and qwen3.7-flash tie at 93.8272, so removing gemma leaves max_s == max_g in many rounds and theta_both has a point mass at 0 (lo95 -2.6750, hi95 0.0000, 766/2000 strictly negative).",
+      "evidence": "attempts/attempt-3-protocol-failure.log",
+      "superseded_result": {
+        "path": "attempts/attempt-3-run-1.json",
+        "sha256": "1c7b6ac4076159c7af0d0742d9478247e993c52355231ef5af49e522f35e7201",
+        "accepted_as_evidence": false
+      },
+      "superseded_preregistration": {
+        "path": "attempts/attempt-3-preregistration.json",
+        "sha256": "76a17354eb6dd3f8592f635b3960d7473bd5823561360a3f124da3c46c92b1cd",
+        "archived": false,
+        "note": "The v1.2.0 preregistration file was overwritten when v2.0.0 was frozen before it could be copied into attempts/. Its sha256 is recorded inside attempts/attempt-3-run-1.json, which is preserved, so the identity of the frozen preregistration is still auditable."
+      },
+      "superseded_implementation": {
+        "path": "attempts/attempt-3-run_estimand_split.py",
+        "sha256": "bc48fc91b5727b2b385c5845232b5887a4574007453b45f98cc261895ac951cf",
+        "archived": false,
+        "note": "Same bookkeeping defect as the preregistration: the v1.2.0 runner was patched in place. Its sha256 is recorded in attempts/attempt-3-run-1.json as the runner expected/actual hash check."
+      },
+      "change": "Inject the gold label into the normalized answer column the scorer reads; expose the control leaderboard; predeclare the construction check (injected system scores exactly 100.0 on U and is the point leader); replace the unachievable strictly-negative upper bound with lo95 < 0 <= hi95 plus at least one strictly negative round.",
+      "scientific_parameters_changed": false,
+      "reason_for_parameter_change": "No main-condition parameter changed. Only the two falsifiability controls and their sign rules were corrected, because the original control construction was inert and the original sign rule was structurally unachievable."
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+--- evidence/upstream/paper/main.tex
++++ source/main.tex
+@@ -1,12 +1,12 @@
+ % ============================================================
+-% TMLR submission — Consolidated Paper 2
+-% Title: The Impossibility Triangle of LLM Evaluation:
+-%   A Formal Characterization of the Bias-Reliability-Coupling Tradeoff
++% arXiv candidate - Consolidated Paper 2
++% Title: A Conditional Coupling--Diversity--Precision Bound for
++%   TTRL-Based LLM Evaluation
+ %
+ % Consolidated from 3 prior manuscripts in this research line.
+ % ============================================================
+ \documentclass[11pt]{article}
+-\usepackage[preprint]{tmlr}  % official anonymous double-blind submission form (no option)
++\usepackage[preprint]{tmlr}
+ \usepackage{amsthm}
+ \newtheorem{proposition}{Proposition}
+ \newtheorem{definition}{Definition}
+@@ -23,7 +23,7 @@
+ \usepackage{xcolor}
+ \setlength{\emergencystretch}{2em}
+ 
+-\author{\name Zewen Liu\email liuzewen@qlnu.edu.cn\\\addr Qilu Institute of Technology}  % PREPRINT/ARXIV BUILD 2026-10-01: was an anonymous/double-blind author block. The block, not tmlr.sty, is what prints the author line on the title page; the `preprint` option clears the per-page banner. Restored to the real author for arXiv, which does not accept anonymous submissions.  % PREPRINT BUILD: was an anonymous/double-blind author block. The block, not tmlr.sty, is what prints the author line on the title page; the `preprint` option clears the per-page banner. See the preprint anonymity round log.
++\author{\name Zewen Liu\email liuzewen@qlnu.edu.cn\\\addr Qilu Institute of Technology}
+ 
+ \title{A Conditional Coupling--Diversity--Precision Bound for TTRL-Based LLM Evaluation}
+ 
+@@ -33,14 +33,14 @@
+ We study a conditional coupling--diversity--precision bound for a specified TTRL observation model. The primary theoretical estimand is the coefficient of variation of a regular estimator of a scalar coupling parameter $\gamma$ under independent Bernoulli observations with logistic success probability. Under this model, the Cramer--Rao inequality yields a precision floor. A positive product bound additionally requires a compact parameter space and an assumed positive lower bound on strategy entropy; it is not a universal impossibility theorem for arbitrary evaluators or protocols. Empirically, all eleven condition rows are reconstructed from the persisted per-repetition archives under a single estimator (per-repetition mean $\gamma$; full-archive $\mathrm{CV}$, with five-seed subsample ranges), so the consolidated paper supports complete $\gamma$/CV condition-level verification on the reconstruction. The observed grid contains no point in the region $\{\gamma<0.2,\mathrm{CV}<0.3\}$; this emptiness is robust to threshold perturbations under the full-archive $\mathrm{CV}$ estimator (both low-$\gamma$ rows have full-archive $\mathrm{CV} \geq 2.3$); five-seed subsample $\mathrm{CV}$s can be lower, so subset-level emptiness is estimator-dependent. Chatbot Arena correlations are observational external associations rather than validation of the TTRL bound. The contribution is therefore a checkable conditional model, an explicit theory-to-estimator map, and a list of robustness tests required before broader generalization.
+ 
+ 
+-\textbf{Reproducibility and ethics.} All experiments use deterministic seeds (PYTHONHASHSEED=0) with GPT-4o, DeepSeek, and Qwen models; full experimental protocols, code, raw API logs, and analysis scripts are released in the supplementary material with SHA-256 checksums. This work studies evaluation dynamics in LLM systems; ethical implications include silent reliability decay in safety-critical systems and the need for version-dependent evaluation verification.\end{abstract}
++\textbf{Reproducibility and ethics.} The analysis combines persisted API archives with deterministic reanalysis and records SHA-256 checksums for the frozen evidence used by the reported numerical checks. Public code and license metadata remain submission-time decisions and are not asserted here. This work studies evaluation dynamics in LLM systems; ethical implications include silent reliability decay in safety-critical systems and the need for version-dependent evaluation verification.\end{abstract}
+ 
+ 
+ 
+ 
+ When large language models serve as evaluators in adaptive systems, their biases propagate into agent strategy distributions through Test-Time Reinforcement Learning (TTRL). This evaluator preference coupling creates a measured tradeoff: the source-study five-row table spans $\gamma \in [0.033, 1.038]$ and $\mathrm{CV}(N{=}5) \in [0.157, 2.42]$, while the archive-based reconstruction (Table~\ref{tab:recon}) spans $\gamma \in [0.033, 1.176]$ and full-archive $\mathrm{CV} \in [0.196, 5.477]$: stronger evaluator signal produces more stable measurements (Ablation max: $\gamma = 1.038$, $\mathrm{CV}(N{=}5) = 0.157$) but introduces more bias (lower strategy diversity); weaker evaluator signal preserves strategy diversity (DS Self-Eval: $H = 0.999$) but produces noisy, unreliable measurements ($\mathrm{CV}(N{=}5) = 2.42$, a $15.4\times$ inflation).
+ 
+-\textbf{Version note.} This manuscript is the conditional-bound canonical version of the coupling--diversity--precision analysis. An earlier draft (impossibility\_triangle) framed the result as a universal impossibility theorem; that framing was not supported by the assumptions (the bound requires a compact parameter space and a positive lower bound on strategy entropy) and has been corrected here. The impossibility\_triangle draft is retained as a historical version and is not submitted independently; its title has been updated to ``conditional bound'' to reflect the corrected framing.
++\textbf{Scope note.} The result is conditional on the stated logistic observation model. A universal impossibility claim for arbitrary evaluators or protocols would require assumptions that are not established here, including a compact parameter space and a positive lower bound on strategy entropy.
+ 
+ We ask when a coupling--diversity--precision product has a positive lower bound. Proposition~\ref{thm:impossibility} answers this only for the stated logistic observation model and entropy-floor assumption. The empirical grid is used to illustrate that conditional result, not to establish it.
+ 
+@@ -370,9 +370,9 @@
+ 
+ \begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{Use within-condition designs.} Between-condition comparisons confound evaluator identity with protocol parameters. Within-condition designs varying $\alpha_{\text{eval}}$ provide cleaner causal evidence.
+- \item \textbf{Use $N \geq 20$ seeds.} The decision-boundary simulation reported in the companion N-sensitivity paper (PAPER4, decision-boundary simulation figure) shows that at $N{=}5$ the false-positive probability for a decision-boundary conclusion is 13\%; at $N{=}30$ it drops below 2\%.
++ \item \textbf{Use $N \geq 20$ seeds.} The decision-boundary simulation reported in a companion N-sensitivity study shows that at $N{=}5$ the false-positive probability for a decision-boundary conclusion is 13\%; at $N{=}30$ it drops below 2\%.
+  \item \textbf{Use $T \geq 30$ rounds.} Strategy distributions require $T \geq 30$ to approach steady state. Pilot studies with $T < 15$ will observe near-uniform weights regardless of evaluator strength.
+- \item \textbf{Report $\gamma$, $H$, and $\mathrm{CV}$ jointly.} The impossibility triangle implies that reporting only one metric provides an incomplete picture.
++ \item \textbf{Report $\gamma$, $H$, and $\mathrm{CV}$ jointly.} The conditional product bound implies that reporting only one metric provides an incomplete picture.
+ \end{enumerate}
+ 
+ \noindent\textbf{Bound-guided sample allocation (decision case).} The conditional precision floor $\mathrm{CV}(N) \ge 1/(\gamma\sqrt{N s(\gamma)(1-s(\gamma))})$ can be inverted to set confirmatory sample sizes before collection (script and output provided in supplementary material). Targeting $\mathrm{CV}{=}0.30$ (the boundary of the empty favorable regime) yields the required seed counts: for the high-coupling conditions ($\gamma \in [0.72, 1.18]$) the bound demands $N \geq 45$--$96$, for the intermediate conditions ($\gamma \approx 0.19$--$0.99$) $N \geq 53$--$1{,}289$, and for the self-evaluation conditions ($\gamma \leq 0.19$) $N \geq 1{,}289$--$40{,}333$. A naive ``$n{=}5$ seeds suffice'' rule is therefore rejected for all eleven conditions at this target; even the most favorable condition requires $N \geq 44$ when the bound applies. Because the coverage probe above shows that the logit estimator violates the bound's regularity conditions in $10/21$ probed cells (small $N$ or boundary $s(\gamma)$), the inverted $N$ is a valid planning minimum only in the regular-estimator regime; in the failure cells the bound is non-tight in the opposite direction (empirical CV below the floor), so the inversion there would be unreliable and the planner should verify empirically before using it. This changes an allocation decision: an evaluator planner who uses the bound pre-registers $N$ from the floor rather than from an experience rule, and for low-$\gamma$ candidates either budgets the larger $N$ or demotes them to exploratory status. Because Proposition~2 shows the floor can be non-tight (the proxy variance may far exceed the Bernoulli floor), the inverted $N$ is a conservative reading of the required sample size: in the failure regime the inversion should be treated as the planning minimum and verified empirically before confirmatory use; in the regular-estimator regime it is conservative, in the failure regime the inversion is unreliable and should not be used for planning. This only strengthens the rejection of the $n{=}5$ heuristic, whose shortfall the bound already exposes. We confirm the allocation gain with a ranking simulation on the Chatbot Arena archive (20 models; script provided in supplementary material): recovering the full-sample top-5 model set, the $n{=}100$ per-model heuristic achieves $76.9\%$ set-overlap, while the bound-guided allocation (per-model $n^*$ from the inverted Bernoulli SE at $\mathrm{SE}{=}0.03$) achieves $88.1\%$ ($+11.2$ percentage points) at $2.72\times$ the observations; exact top-5 order recovery rises from $0.7\%$ to $2.7\%$. The bound therefore trades a predictable observation budget for materially more stable ranking decisions, whereas the heuristic under-samples the low-variance leaders and over-samples the high-variance tail.
+@@ -392,7 +392,7 @@
+ 
+ \textbf{What we know.} A positive product floor follows under the explicit logistic model and entropy-floor assumption. The reproduced empirical grid shows a negative $\gamma$--$H$ association and no point in the selected favorable region. It does not establish that a different evaluator, protocol, estimator, or threshold cannot populate that region. Chatbot Arena results are observational associations with different estimands.
+ 
+-\textbf{What we don't know.} Whether the triangle extends beyond TTRL to other adaptation mechanisms (e.g., prompt tuning, RLHF). Whether the favorable regime $\{\gamma < 0.2, \mathrm{CV} < 0.3\}$ can be populated by multi-model ensembles or calibration interventions. A complementary perspective on what we don't know comes from recent bounded-memory testbeds for long-horizon agents~\cite{cheng2026agenticsts}: while our impossibility triangle constrains the measurement side, the memory-contract view of \citet{cheng2026agenticsts} constrains the agent side, and their interaction (does an explicit memory contract help populate the favorable regime?) is unexplored. Self-evolving rubrics for skill use~\cite{zhu2026skillcoach} and explicit agent abstention signals~\cite{luo2026abstention} are two additional axes that could shift the triangle's empirical location and warrant investigation.
++\textbf{What we don't know.} Whether the conditional relation extends beyond TTRL to other adaptation mechanisms (e.g., prompt tuning, RLHF). Whether the favorable regime $\{\gamma < 0.2, \mathrm{CV} < 0.3\}$ can be populated by multi-model ensembles or calibration interventions. A complementary perspective on what we don't know comes from recent bounded-memory testbeds for long-horizon agents~\cite{cheng2026agenticsts}: while our conditional product bound constrains the measurement side, the memory-contract view of \citet{cheng2026agenticsts} constrains the agent side, and their interaction (does an explicit memory contract help populate the favorable regime?) is unexplored. Self-evolving rubrics for skill use~\cite{zhu2026skillcoach} and explicit agent abstention signals~\cite{luo2026abstention} are two additional axes that could shift the empirical location of the bound and warrant investigation.
+ 
+ \subsection{Limitations} The theoretical results assume binary observations and multiplicative reweighting. The empirical validation uses a limited set of LLM families. The GPT-4o version drift finding is based on two snapshots; continuous monitoring is needed to characterize drift dynamics. The reported $\mathrm{CV}(N{=}5)$ values are seed-subset dependent (five-seed subsample ranges: DS $\times$ Qwen $[0.587, 2.236]$; Ablation max $[0.145, 0.511]$), and the empirical $\gamma$ proxy tracks JSD nearly perfectly (Spearman $0.998$), so the theory-to-estimator gap is quantitative rather than merely qualitative.
+ 
+@@ -412,18 +412,7 @@
+ 
+ \section*{Broader Impact}
+ 
+-The impossibility triangle has implications for the safety of LLM-based evaluation systems, with quantitative magnitudes drawn from the 11-conditions dataset: systems optimized for measurement reliability (high $\gamma$, e.g., Ablation max $\gamma = 1.038$, $\mathrm{CV}(N{=}5) = 0.157$) produce stable measurements (low $\mathrm{CV}$) but introduce measurable evaluator preference bias; systems optimized for unbiasedness (low $\gamma$, e.g., DS Self-Eval $\gamma = 0.033$, $\mathrm{CV}(N{=}5) = 2.42$) produce unbiased estimates but with substantially higher measurement noise (CV inflated by $15.4\times$ relative to Ablation max). The ``may'' framing of these safety claims is operationalized as: a high-coupling system introduces systematic bias if the induced $\Delta H$ (entropy drop from baseline) exceeds $0.05$ at $T{=}30$; a low-coupling system produces unreliable measurements if $\mathrm{CV} \geq 1.0$ at $N{=}5$. In high-stakes applications where evaluation drives model selection, the tradeoff must be explicitly managed, with a falsifiable rule: model selection decisions that change the evaluator must be re-validated against the new evaluator's $\gamma$ profile, and the rule is refuted if a re-evaluation under a new evaluator produces $|\Delta\text{accuracy}| \leq 0.01$ across a fixed benchmark (which would imply the bias has no measurable impact on selection).
+-
+-\section*{Reproducibility}
+-
+-All experiments use official API endpoints with fixed model versions. The standardized protocol, reference snapshot, and analysis code are released under the MIT License at \texttt{an anonymous repository available at acceptance}. The release contains:
+-\begin{itemize}[leftmargin=*,nosep]
+-  \item the provided analysis code, which recomputes the $\gamma H\mathrm{CV}$ product for the 11 evaluator--agent conditions and classifies each condition using Table~\ref{tab:frontier};
+-  \item a deterministic TTRL simulator script with $K{=}11$ strategies and configurable $\alpha_{\text{eval}}$;
+-  \item the CV estimator code, which evaluates the Cramer--Rao and tight continuous-weight bounds; and
+-  \item the Arena loader script, which reproduces the Chatbot Arena entropy--decisiveness analysis.
+-\end{itemize}
+-The offline data used in this paper (the Chatbot Arena sample, the convergence pilot, and the 11-condition table) are available from the authors upon request, and the in-package evidence JSONs reproduce every reported table. All scripts use a fixed default seed of 42 and expose a \texttt{--seed} option. Raw per-seed observations for the 11-condition summary (approximately 3 GB of API logs) are available from the corresponding author. The short-window robustness claim is refuted if any 30-day sub-window yields $|r| < 0.5$ with $p \geq 0.05$, or if a 50\% model-retention resample produces a 95\% confidence interval spanning zero.
++The conditional product bound has implications for the safety of LLM-based evaluation systems, with quantitative magnitudes drawn from the 11-condition dataset: systems optimized for measurement reliability (high $\gamma$, e.g., Ablation max $\gamma = 1.038$, $\mathrm{CV}(N{=}5) = 0.157$) produce stable measurements (low $\mathrm{CV}$) but introduce measurable evaluator preference bias; systems optimized for unbiasedness (low $\gamma$, e.g., DS Self-Eval $\gamma = 0.033$, $\mathrm{CV}(N{=}5) = 2.42$) produce unbiased estimates but with substantially higher measurement noise (CV inflated by $15.4\times$ relative to Ablation max). The ``may'' framing of these safety claims is operationalized as: a high-coupling system introduces systematic bias if the induced $\Delta H$ (entropy drop from baseline) exceeds $0.05$ at $T{=}30$; a low-coupling system produces unreliable measurements if $\mathrm{CV} \geq 1.0$ at $N{=}5$. In high-stakes applications where evaluation drives model selection, the tradeoff must be explicitly managed, with a falsifiable rule: model selection decisions that change the evaluator must be re-validated against the new evaluator's $\gamma$ profile, and the rule is refuted if a re-evaluation under a new evaluator produces $|\Delta\text{accuracy}| \leq 0.01$ across a fixed benchmark (which would imply the bias has no measurable impact on selection).
+ 
+ % Explicit style declaration for the self-contained anonymous bibliography.
+ \bibliographystyle{tmlr}
+@@ -475,24 +464,19 @@
+ 
+ 
+ \section*{Reproducibility Statement}
+-
+-\textbf{Code and data availability.} All experiment code, raw API response logs, and analysis scripts are released in the supplementary material (directories \texttt{code/}, \texttt{data/}, \texttt{analysis/}). The complete evidence package includes SHA-256 checksums for all experimental result files (\texttt{evidence\_manifest.json}).
+-
+-\textbf{Step-by-step reproduction protocol.} (1) \textit{Environment}: Python 3.10+ with \texttt{transformers>=4.40}, \texttt{scipy>=1.10}, \texttt{scikit-learn>=1.3}; set \texttt{PYTHONHASHSEED=0}. (2) \textit{API configuration}: set \texttt{OPENAI\_API\_KEY} and \texttt{DEEPSEEK\_API\_KEY} environment variables. (3) \textit{Execution}: run \texttt{python code/run\_all\_experiments.py --seeds 1-30} to reproduce all conditions; each condition takes approximately 2--3 hours. (4) \textit{Analysis}: run \texttt{python analysis/main\_analysis.py} to reproduce all tables and figures; all scripts use deterministic seeds (\texttt{int.from\_bytes(seed.encode(), ``little'')}) for bit-exact reproducibility.
+-
+-
+-\section*{Reproducibility Statement}
+ \label{sec:reproducibility}
+ 
+-\textbf{Code and data availability.} All experiment code, raw API response logs, analysis scripts, and frozen analysis code are released in the supplementary material (directories \texttt{code/}, \texttt{data/}, \texttt{analysis/}, \texttt{evidence/}). The evidence manifest (\texttt{evidence/evidence\_manifest.json}) contains SHA-256 checksums for all result files, enabling independent verification of file integrity.
+-
+-\textbf{Step-by-step reproduction protocol.} (1) \textit{Environment}: Python 3.10+ with \texttt{transformers>=4.40}, \texttt{scipy>=1.10}, \texttt{scikit-learn>=1.3}; set \texttt{PYTHONHASHSEED=0}. (2) \textit{API configuration}: set \texttt{OPENAI\_API\_KEY}, \texttt{DASHSCOPE\_API\_KEY}, and \texttt{DEEPSEEK\_API\_KEY} environment variables. (3) \textit{Execution}: run \texttt{python code/run\_all\_experiments.py --seeds 1-30} to reproduce all conditions; each condition takes approximately 2--3 hours. (4) \textit{Analysis}: run \texttt{python analysis/main\_analysis.py} to reproduce all tables and figures; all scripts use deterministic seeds for bit-exact reproducibility of all randomization and bootstrap procedures.
++\textbf{Frozen evidence.} The numerical checks in this candidate are bound to a frozen evidence bundle with SHA-256 checksums. The audit distinguishes persisted API archives, deterministic reanalysis, and assumptions that remain outside the observed data.
++
++\textbf{Open metadata.} This candidate does not assert that raw API logs, a public code repository, or a release license are already available. Those are submission-time decisions and must be bound to exact artifacts before the manuscript is uploaded.
+ 
+ \section*{Broader Impact and Ethical Considerations}
+ \label{sec:ethics}
+ 
+-This work studies calibration dynamics in multi-agent LLM systems. Understanding these limitations is essential for safe and ethical deployment.
+-
+-\textbf{Ethical implications.} (i) \textit{Self-evaluation fragility}: Model updates can silently invert self-evaluation immunity, creating risks of silent reliability decay in safety-critical systems. Practitioners must treat self-evaluation reliability as version-dependent and re-verify after every model update. (ii) \textit{Calibration fatigue}: Long-horizon multi-agent interactions may produce progressive miscalibration without external signals, creating risks in deployed systems with extended interaction horizons. Continuous calibration monitoring and automatic circuit-breakers are recommended. (iii) \textit{Responsible research}: We explicitly report reproduction failures rather than suppressing them; all code, data, and analysis scripts are released with deterministic seeds and SHA-256 checksums for independent verification.
++This work studies how evaluator coupling affects measurement reliability in TTRL-style systems. The results are conditional on the stated model and should not be read as a certification that any evaluator is universally safe.
++
++\textbf{Evaluation risk.} A model or API update can change the empirical coupling signal without an obvious change to the protocol. Practitioners should therefore bind evaluation results to model snapshots and re-run version-sensitive comparisons instead of treating a single-snapshot result as durable evidence.
++
++\textbf{Responsible reporting.} We preserve negative results, estimator failures, and unresolved assumptions rather than converting them into stronger universal claims. The candidate package also distinguishes verified numerical checks from metadata and independent-review gates that remain open.
+ 
+ \end{document}

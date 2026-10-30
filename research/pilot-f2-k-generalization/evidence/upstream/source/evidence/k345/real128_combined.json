@@ -1,0 +1,9 @@
+{
+  "n_total": 128,
+  "batches": [
+    "real64 batch1 64",
+    "real64 batch2 64"
+  ],
+  "note": "2x64=128/192, 1 batch remains for 192",
+  "elapsed": 1023
+}

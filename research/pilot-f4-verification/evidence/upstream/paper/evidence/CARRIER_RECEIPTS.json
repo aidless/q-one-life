@@ -1,0 +1,613 @@
+[
+  {
+    "value": "44",
+    "line": "paper/main.tex:155",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "op": "sum",
+    "over": "records[*].b",
+    "where": {
+      "seed": [
+        42,
+        43,
+        44
+      ]
+    },
+    "quantity": "b",
+    "dp": 0,
+    "note": "f4-seed-rows-recomputed",
+    "printed_count": 2,
+    "expect": 3
+  },
+  {
+    "value": "12",
+    "line": "paper/main.tex:154",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "op": "sum",
+    "over": "records[*].c",
+    "where": {
+      "seed": [
+        42,
+        43,
+        44
+      ]
+    },
+    "quantity": "c",
+    "dp": 0,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 4,
+    "printed_count": 1,
+    "expect": 3
+  },
+  {
+    "value": "56",
+    "line": "paper/main.tex:155",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "op": "sum",
+    "over": "records[*].n_d",
+    "where": {
+      "seed": [
+        42,
+        43,
+        44
+      ]
+    },
+    "quantity": "n_d",
+    "dp": 0,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 6,
+    "printed_count": 1,
+    "expect": 3
+  },
+  {
+    "value": "17.16",
+    "line": "paper/main.tex:155",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "formula": "chi2_mcnemar",
+    "quantity": "chi2",
+    "dp": 2,
+    "inputs": {
+      "b": {
+        "op": "sum",
+        "over": "records[*].b",
+        "where": {
+          "seed": [
+            42,
+            43,
+            44
+          ]
+        }
+      },
+      "c": {
+        "op": "sum",
+        "over": "records[*].c",
+        "where": {
+          "seed": [
+            42,
+            43,
+            44
+          ]
+        }
+      }
+    },
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 10,
+    "printed_count": 1
+  },
+  {
+    "value": "0.107",
+    "line": "paper/main.tex:155",
+    "artifact": "paper/evidence/f4_table2_seed_rows.json",
+    "locator": "rows.pooled.RD",
+    "quantity": "RD",
+    "dp": 3,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 7,
+    "printed_count": 1
+  },
+  {
+    "value": "0.058",
+    "line": "paper/main.tex:155",
+    "artifact": "paper/evidence/f4_table2_seed_rows.json",
+    "locator": "rows.pooled.ci_lo",
+    "quantity": "ci_lo",
+    "dp": 3,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 8,
+    "printed_count": 1
+  },
+  {
+    "value": "0.156",
+    "line": "paper/main.tex:155",
+    "artifact": "paper/evidence/f4_table2_seed_rows.json",
+    "locator": "rows.pooled.ci_hi",
+    "quantity": "ci_hi",
+    "dp": 3,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 9,
+    "printed_count": 1
+  },
+  {
+    "value": "2.09e-5",
+    "line": "paper/main.tex:155",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "formula": "sign_test_p",
+    "side": "two",
+    "quantity": "p",
+    "dp": 2,
+    "inputs": {
+      "b": {
+        "op": "sum",
+        "over": "records[*].b",
+        "where": {
+          "seed": [
+            42,
+            43,
+            44
+          ]
+        }
+      },
+      "c": {
+        "op": "sum",
+        "over": "records[*].c",
+        "where": {
+          "seed": [
+            42,
+            43,
+            44
+          ]
+        }
+      }
+    },
+    "note": "f4-seed-rows-recomputed"
+  },
+  {
+    "value": "14",
+    "line": "paper/main.tex:153",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "op": "sum",
+    "over": "records[*].b",
+    "where": {
+      "seed": [
+        42
+      ]
+    },
+    "quantity": "b",
+    "dp": 0,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 4,
+    "printed_count": 1,
+    "expect": 1
+  },
+  {
+    "value": "5",
+    "line": "paper/main.tex:155",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "op": "sum",
+    "over": "records[*].c",
+    "where": {
+      "seed": [
+        42
+      ]
+    },
+    "quantity": "c",
+    "dp": 0,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 13,
+    "printed_count": 1,
+    "expect": 1
+  },
+  {
+    "value": "19",
+    "line": "paper/main.tex:156",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "op": "sum",
+    "over": "records[*].n_d",
+    "where": {
+      "seed": [
+        42
+      ]
+    },
+    "quantity": "n_d",
+    "dp": 0,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 4,
+    "printed_count": 1,
+    "expect": 1
+  },
+  {
+    "value": "3.37",
+    "line": "paper/main.tex:156",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "formula": "chi2_mcnemar",
+    "quantity": "chi2",
+    "dp": 2,
+    "inputs": {
+      "b": {
+        "op": "sum",
+        "over": "records[*].b",
+        "where": {
+          "seed": [
+            42
+          ]
+        }
+      },
+      "c": {
+        "op": "sum",
+        "over": "records[*].c",
+        "where": {
+          "seed": [
+            42
+          ]
+        }
+      }
+    },
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 8,
+    "printed_count": 1
+  },
+  {
+    "value": "0.030",
+    "line": "paper/main.tex:156",
+    "artifact": "paper/evidence/f4_table2_seed_rows.json",
+    "locator": "rows.42.RD",
+    "quantity": "RD",
+    "dp": 3,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 5,
+    "printed_count": 1
+  },
+  {
+    "value": "0.002",
+    "line": "paper/main.tex:156",
+    "artifact": "paper/evidence/f4_table2_seed_rows.json",
+    "locator": "rows.42.ci_lo",
+    "quantity": "ci_lo",
+    "dp": 3,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 6,
+    "printed_count": 1
+  },
+  {
+    "value": "0.058",
+    "line": "paper/main.tex:155",
+    "artifact": "paper/evidence/f4_table2_seed_rows.json",
+    "locator": "rows.42.ci_hi",
+    "quantity": "ci_hi",
+    "dp": 3,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 8,
+    "printed_count": 1
+  },
+  {
+    "value": "0.064",
+    "line": "paper/main.tex:156",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "formula": "sign_test_p",
+    "side": "two",
+    "quantity": "p",
+    "dp": 2,
+    "inputs": {
+      "b": {
+        "op": "sum",
+        "over": "records[*].b",
+        "where": {
+          "seed": [
+            42
+          ]
+        }
+      },
+      "c": {
+        "op": "sum",
+        "over": "records[*].c",
+        "where": {
+          "seed": [
+            42
+          ]
+        }
+      }
+    },
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 9,
+    "printed_count": 1
+  },
+  {
+    "value": "16",
+    "line": "paper/main.tex:157",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "op": "sum",
+    "over": "records[*].b",
+    "where": {
+      "seed": [
+        43
+      ]
+    },
+    "quantity": "b",
+    "dp": 0,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 2,
+    "printed_count": 1,
+    "expect": 1
+  },
+  {
+    "value": "3",
+    "line": "paper/main.tex:154",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "op": "sum",
+    "over": "records[*].c",
+    "where": {
+      "seed": [
+        43
+      ]
+    },
+    "quantity": "c",
+    "dp": 0,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 12,
+    "printed_count": 1,
+    "expect": 1
+  },
+  {
+    "value": "19",
+    "line": "paper/main.tex:156",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "op": "sum",
+    "over": "records[*].n_d",
+    "where": {
+      "seed": [
+        43
+      ]
+    },
+    "quantity": "n_d",
+    "dp": 0,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 4,
+    "printed_count": 1,
+    "expect": 1
+  },
+  {
+    "value": "7.58",
+    "line": "paper/main.tex:157",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "formula": "chi2_mcnemar",
+    "quantity": "chi2",
+    "dp": 2,
+    "inputs": {
+      "b": {
+        "op": "sum",
+        "over": "records[*].b",
+        "where": {
+          "seed": [
+            43
+          ]
+        }
+      },
+      "c": {
+        "op": "sum",
+        "over": "records[*].c",
+        "where": {
+          "seed": [
+            43
+          ]
+        }
+      }
+    },
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 8,
+    "printed_count": 1
+  },
+  {
+    "value": "0.043",
+    "line": "paper/main.tex:157",
+    "artifact": "paper/evidence/f4_table2_seed_rows.json",
+    "locator": "rows.43.RD",
+    "quantity": "RD",
+    "dp": 3,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 5,
+    "printed_count": 1
+  },
+  {
+    "value": "0.015",
+    "line": "paper/main.tex:157",
+    "artifact": "paper/evidence/f4_table2_seed_rows.json",
+    "locator": "rows.43.ci_lo",
+    "quantity": "ci_lo",
+    "dp": 3,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 6,
+    "printed_count": 1
+  },
+  {
+    "value": "0.072",
+    "line": "paper/main.tex:157",
+    "artifact": "paper/evidence/f4_table2_seed_rows.json",
+    "locator": "rows.43.ci_hi",
+    "quantity": "ci_hi",
+    "dp": 3,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 7,
+    "printed_count": 1
+  },
+  {
+    "value": "0.0044",
+    "line": "paper/main.tex:157",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "formula": "sign_test_p",
+    "side": "two",
+    "quantity": "p",
+    "dp": 2,
+    "inputs": {
+      "b": {
+        "op": "sum",
+        "over": "records[*].b",
+        "where": {
+          "seed": [
+            43
+          ]
+        }
+      },
+      "c": {
+        "op": "sum",
+        "over": "records[*].c",
+        "where": {
+          "seed": [
+            43
+          ]
+        }
+      }
+    },
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 9,
+    "printed_count": 1
+  },
+  {
+    "value": "14",
+    "line": "paper/main.tex:156",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "op": "sum",
+    "over": "records[*].b",
+    "where": {
+      "seed": [
+        44
+      ]
+    },
+    "quantity": "b",
+    "dp": 0,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 2,
+    "printed_count": 1,
+    "expect": 1
+  },
+  {
+    "value": "4",
+    "line": "paper/main.tex:158",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "op": "sum",
+    "over": "records[*].c",
+    "where": {
+      "seed": [
+        44
+      ]
+    },
+    "quantity": "c",
+    "dp": 0,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 3,
+    "printed_count": 1,
+    "expect": 1
+  },
+  {
+    "value": "18",
+    "line": "paper/main.tex:158",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "op": "sum",
+    "over": "records[*].n_d",
+    "where": {
+      "seed": [
+        44
+      ]
+    },
+    "quantity": "n_d",
+    "dp": 0,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 4,
+    "printed_count": 1,
+    "expect": 1
+  },
+  {
+    "value": "4.50",
+    "line": "paper/main.tex:158",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "formula": "chi2_mcnemar",
+    "quantity": "chi2",
+    "dp": 2,
+    "inputs": {
+      "b": {
+        "op": "sum",
+        "over": "records[*].b",
+        "where": {
+          "seed": [
+            44
+          ]
+        }
+      },
+      "c": {
+        "op": "sum",
+        "over": "records[*].c",
+        "where": {
+          "seed": [
+            44
+          ]
+        }
+      }
+    },
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 8,
+    "printed_count": 1
+  },
+  {
+    "value": "0.033",
+    "line": "paper/main.tex:158",
+    "artifact": "paper/evidence/f4_table2_seed_rows.json",
+    "locator": "rows.44.RD",
+    "quantity": "RD",
+    "dp": 3,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 5,
+    "printed_count": 1
+  },
+  {
+    "value": "0.006",
+    "line": "paper/main.tex:158",
+    "artifact": "paper/evidence/f4_table2_seed_rows.json",
+    "locator": "rows.44.ci_lo",
+    "quantity": "ci_lo",
+    "dp": 3,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 6,
+    "printed_count": 1
+  },
+  {
+    "value": "0.061",
+    "line": "paper/main.tex:158",
+    "artifact": "paper/evidence/f4_table2_seed_rows.json",
+    "locator": "rows.44.ci_hi",
+    "quantity": "ci_hi",
+    "dp": 3,
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 7,
+    "printed_count": 1
+  },
+  {
+    "value": "0.031",
+    "line": "paper/main.tex:158",
+    "artifact": "paper/evidence/per_seed_b_c.jsonl",
+    "formula": "sign_test_p",
+    "side": "two",
+    "quantity": "p",
+    "dp": 2,
+    "inputs": {
+      "b": {
+        "op": "sum",
+        "over": "records[*].b",
+        "where": {
+          "seed": [
+            44
+          ]
+        }
+      },
+      "c": {
+        "op": "sum",
+        "over": "records[*].c",
+        "where": {
+          "seed": [
+            44
+          ]
+        }
+      }
+    },
+    "note": "f4-seed-rows-recomputed",
+    "nth_numeric": 9,
+    "printed_count": 1
+  }
+]

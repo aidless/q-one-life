@@ -1,0 +1,211 @@
+{
+  "schema": "q-one-cleanroom-compile-v1",
+  "generated_at": "2026-10-28T07:27:32.056459Z",
+  "source": {
+    "path": "/tmp/qone-archive-build-drpn8o9p/extracted",
+    "main_file": "main.tex",
+    "main_sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+    "package_sha256": "24ddf025b470c4b304b378a492e858a55cfa8f0e9f119e129189e19039d56ba1",
+    "file_count": 10
+  },
+  "commands": [
+    [
+      "latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "main.tex"
+    ],
+    [
+      "latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "main.tex"
+    ]
+  ],
+  "runs": [
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "environment": {
+        "SOURCE_DATE_EPOCH": "946684800",
+        "FORCE_SOURCE_DATE": "1"
+      },
+      "exit_code": 0,
+      "workdir": "/tmp/qone-cleanroom-cpi1h51k/run-1",
+      "stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/reports/package/archive-cleanroom/pass1.stdout.log",
+      "stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/reports/package/archive-cleanroom/pass1.stderr.log",
+      "main_log": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/reports/package/archive-cleanroom/pass1.main.log",
+      "warnings": [
+        "Underfull \\vbox (badness 6708) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 1248) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 1286) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 473--473",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 473--473",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 473--473",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 473--474",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 474--474",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 474--474",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 474--474",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 474--475",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 475--475",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 475--475",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 475--475",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 477--477",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 477--477",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 477--477",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 477--477",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Underfull \\hbox (badness 4981) in paragraph at lines 562--563",
+        "Underfull \\hbox (badness 6348) in paragraph at lines 562--563"
+      ]
+    },
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "environment": {
+        "SOURCE_DATE_EPOCH": "946684800",
+        "FORCE_SOURCE_DATE": "1"
+      },
+      "exit_code": 0,
+      "workdir": "/tmp/qone-cleanroom-cpi1h51k/run-2",
+      "stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/reports/package/archive-cleanroom/pass2.stdout.log",
+      "stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/reports/package/archive-cleanroom/pass2.stderr.log",
+      "main_log": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/reports/package/archive-cleanroom/pass2.main.log",
+      "warnings": [
+        "Underfull \\vbox (badness 6708) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 1248) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 1286) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 473--473",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 473--473",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 473--473",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 473--474",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 474--474",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 474--474",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 474--474",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 474--475",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 475--475",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 475--475",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 475--475",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 477--477",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 477--477",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 477--477",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 477--477",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Underfull \\hbox (badness 4981) in paragraph at lines 562--563",
+        "Underfull \\hbox (badness 6348) in paragraph at lines 562--563"
+      ]
+    }
+  ],
+  "exit_codes": [
+    0,
+    0
+  ],
+  "outputs": [
+    {
+      "path": "archive-cleanroom/main.pdf",
+      "sha256": "285455b8fca25e0d98c283e072aff4ff4bd82302483a68de6cbd698d6ac1e5f5",
+      "bytes": 458050
+    },
+    {
+      "path": "archive-cleanroom/main-repeat.pdf",
+      "sha256": "285455b8fca25e0d98c283e072aff4ff4bd82302483a68de6cbd698d6ac1e5f5",
+      "bytes": 458050
+    },
+    {
+      "path": "archive-cleanroom/main.bbl",
+      "sha256": "748eb0d94d5ac256b0aea9bd99aa2b79185728227ae1020fe6e1bf84980e6c62",
+      "bytes": 12082
+    },
+    {
+      "path": "archive-cleanroom/main-repeat.bbl",
+      "sha256": "748eb0d94d5ac256b0aea9bd99aa2b79185728227ae1020fe6e1bf84980e6c62",
+      "bytes": 12082
+    },
+    {
+      "path": "archive-cleanroom/pdfinfo.txt",
+      "sha256": "3d6b3c9a710c91cb89ef53560399670a8d48947e31b560242d45e4fc723eacaf",
+      "bytes": 546
+    },
+    {
+      "path": "archive-cleanroom/pass1.stdout.log",
+      "sha256": "5e9c202683063bab9e9bf7088fe128cfb35e38c54bd9cf97e3c55840eb9b25c1",
+      "bytes": 61071
+    },
+    {
+      "path": "archive-cleanroom/pass2.stdout.log",
+      "sha256": "5e9c202683063bab9e9bf7088fe128cfb35e38c54bd9cf97e3c55840eb9b25c1",
+      "bytes": 61071
+    },
+    {
+      "path": "archive-cleanroom/pass1.stderr.log",
+      "sha256": "c97f5bcaa897d781a91c796ec78661f1565816ded1ec9a2c41614f2c3f277c48",
+      "bytes": 278
+    },
+    {
+      "path": "archive-cleanroom/pass2.stderr.log",
+      "sha256": "c97f5bcaa897d781a91c796ec78661f1565816ded1ec9a2c41614f2c3f277c48",
+      "bytes": 278
+    },
+    {
+      "path": "archive-cleanroom/pass1.main.log",
+      "sha256": "99e6095c701dd0e62759f90121adea13f1d2e36c25991ddfcd52af78b47dda03",
+      "bytes": 33350
+    },
+    {
+      "path": "archive-cleanroom/pass2.main.log",
+      "sha256": "99e6095c701dd0e62759f90121adea13f1d2e36c25991ddfcd52af78b47dda03",
+      "bytes": 33350
+    }
+  ],
+  "pdf": {
+    "pages": 26,
+    "sha256_run1": "285455b8fca25e0d98c283e072aff4ff4bd82302483a68de6cbd698d6ac1e5f5",
+    "sha256_run2": "285455b8fca25e0d98c283e072aff4ff4bd82302483a68de6cbd698d6ac1e5f5",
+    "deterministic": true
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "latexmk": [
+      "Latexmk, John Collins, 9 March 2026. Version 4.88"
+    ]
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "Only files admitted by the mechanical package audit were copied.",
+    "Two independent clean directories were compiled with a fixed source epoch.",
+    "A successful compile is not scientific readiness or upload authorization."
+  ]
+}

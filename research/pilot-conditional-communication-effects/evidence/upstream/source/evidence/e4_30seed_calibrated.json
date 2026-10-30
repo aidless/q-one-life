@@ -1,0 +1,16 @@
+{
+ "n_seeds": 30,
+ "uncalibrated": {
+  "gTV": 1.0811,
+  "gVT": 1.0454,
+  "jsd_TV": 0.2095,
+  "jsd_VT": 0.1926
+ },
+ "calibrated": {
+  "gTV": 0.7485,
+  "gVT": 0.7386,
+  "jsd_TV": 0.0986,
+  "jsd_VT": 0.1001
+ },
+ "note": "E4 30-seed expansion (run6 complete 2026-08-08 14:39; evaluator gpt-5.6-luna)."
+}

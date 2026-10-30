@@ -1,0 +1,189 @@
+{
+  "n_tokens": 353,
+  "n_bound": 350,
+  "n_excused": 3,
+  "n_unbound": 0,
+  "unbound": {},
+  "excused": {
+    "13.3": {
+      "count": 1,
+      "reason": "§5.5 的**具名差**：73.19% 是同一系统在强制口径下的读数，86.48% 是它在宽松口径下的读数，13.3 = 86.4846 − 73.1927（选择效应）。两个操作数各自有台账绑定（decision.leader_macro_default=86.4846、decision.lex.leader_macro=73.1927），差本身没有独立载体 —— 它是一次减法，不是一次测量。不给它造 derived 公式的原因：减法跨两个载体文件（jev_decision_majority.json 与 jev_decision_lexicographic.json），而 derived 公式只拿到单一 source。2026-10-25 反向覆盖轮。"
+    },
+    "0.001": {
+      "count": 1,
+      "reason": "§5.3（sec:agg）E-C#39 的显著性阈值式表述 p < 0.001：阈值本身不是测量读数，该句的两个操作数 t(8) = -14.90 与 df = 8 已按台账绑定（bench_noise_floor.followup_ec39.question_majority.*）。EC39 载体存的精确 p = 4.0574e-07（p_two_sided_str = 4.06e-07）：低于 1e-4 的浮点数 repr 进 e 记数法后，数字闸 _field_close 的 decimals 口径（repr 按 '.' 切、指数段计入位数）结构性无法按 field 绑定（round(got, 6) = 0 ≠ v），因此正文按阈值式印出并在此声明其非测量值身份；p < 0.001 可由已绑定的 t(8) = -14.90、df = 8 与载体精确 p 复算。2026-10-22，严格评审后续整合轮（E-C#39）。"
+    },
+    "0.60": {
+      "count": 2,
+      "reason": "§5.5/§sec:calibrated 的**注册阈值**，不是测量读数：P3 预注册写「AUC ≥ 0.70 且 95% 区间下界高于 0.60」，§sec:calibrated 两处（判据复核段与「one of which sits below the registered 0.60 floor」）都在引用这个阈值。阈值的两个操作数都有台账绑定：AUC 点估计 calibrated.primary_auc=0.686 与 区间下界 calibrated.primary_auc_boot_lo=0.53；判据本身在 evidence/calibrated/PREREG.json （success_criteria）里逐字写着。2026-10-25 反向覆盖轮。"
+    }
+  },
+  "appendix": {
+    "present": true,
+    "n_tokens": 30,
+    "live": 20,
+    "archive": 8,
+    "declared_unrecoverable": {
+      "1.9": {
+        "count": 2,
+        "entry": "bench_noise_floor.retracted.sweep.bias_n150",
+        "reason": "产生 1.9 的那一代 sweep 归档件不在发布里，盘上也没有任何文件含这个值；只在附录 A 作为撤回值保存"
+      },
+      "5.77": {
+        "count": 2,
+        "entry": "bench_noise_floor.retracted.external.preference_margin_prealign",
+        "reason": "同域对齐前的那一代 audit_preference 归档件不在发布里；归档件里出现的 5.77 是问题板另一系统的差值，属于撞号"
+      }
+    },
+    "unreadable": {},
+    "unbound": {},
+    "per_token": {
+      "0.0": {
+        "count": 1,
+        "status": "live"
+      },
+      "0.00": {
+        "count": 1,
+        "status": "live"
+      },
+      "0.0033": {
+        "count": 1,
+        "status": "live"
+      },
+      "0.0048": {
+        "count": 1,
+        "status": "live"
+      },
+      "0.1023": {
+        "count": 1,
+        "status": "live"
+      },
+      "0.14": {
+        "count": 1,
+        "status": "live"
+      },
+      "0.5": {
+        "count": 1,
+        "status": "live"
+      },
+      "0.5276": {
+        "count": 1,
+        "status": "live"
+      },
+      "0.943": {
+        "count": 1,
+        "status": "archive",
+        "entry": "bench_noise_floor.retracted.sweep.rho_min",
+        "source": "papers/bench_noise_floor/evidence/archived_v2__ds_sweep.json",
+        "field": "aggregate.spearman_rho_min"
+      },
+      "1.40": {
+        "count": 1,
+        "status": "archive",
+        "entry": "bench_noise_floor.retracted.ds.relevance_delta",
+        "source": "papers/bench_noise_floor/evidence/archived_v2__ds_relevance.json",
+        "field": "floor.delta"
+      },
+      "1.57": {
+        "count": 1,
+        "status": "live"
+      },
+      "1.6037": {
+        "count": 3,
+        "status": "live"
+      },
+      "1.9": {
+        "count": 2,
+        "status": "declared_unrecoverable"
+      },
+      "11897": {
+        "count": 1,
+        "status": "archive",
+        "entry": "bench_noise_floor.retracted.question.meanprob_leader_n_truncated",
+        "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_both.json",
+        "field": "methods.mean_prob.leaderboard[0].n"
+      },
+      "1520": {
+        "count": 1,
+        "status": "live"
+      },
+      "2.9412": {
+        "count": 1,
+        "status": "live"
+      },
+      "2.96": {
+        "count": 1,
+        "status": "live"
+      },
+      "5.77": {
+        "count": 2,
+        "status": "declared_unrecoverable"
+      },
+      "6.25": {
+        "count": 1,
+        "status": "archive",
+        "entry": "bench_noise_floor.retracted.ds.preference_delta",
+        "source": "papers/bench_noise_floor/evidence/archived_v2__ds_preference.json",
+        "field": "floor.delta"
+      },
+      "6.27": {
+        "count": 1,
+        "status": "live"
+      },
+      "70.23": {
+        "count": 1,
+        "status": "live"
+      },
+      "73.19": {
+        "count": 1,
+        "status": "live"
+      },
+      "79.59": {
+        "count": 1,
+        "status": "archive",
+        "entry": "bench_noise_floor.retracted.question.meanprob_ci_hi_truncated",
+        "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_both.json",
+        "field": "methods.mean_prob.margin_ci.hi95"
+      },
+      "8.97": {
+        "count": 3,
+        "status": "archive",
+        "entry": "bench_noise_floor.retracted.question.meanprob_leader_truncated",
+        "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_both.json",
+        "field": "methods.mean_prob.leaderboard[0].macro"
+      },
+      "80.51": {
+        "count": 2,
+        "status": "archive",
+        "entry": "bench_noise_floor.retracted.question.margin_meanprob_truncated",
+        "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_lexicographic.json",
+        "field": "methods.mean_prob.margin_vs_floor"
+      },
+      "80.97": {
+        "count": 1,
+        "status": "live"
+      },
+      "81.1236": {
+        "count": 2,
+        "status": "live"
+      },
+      "81.36": {
+        "count": 1,
+        "status": "archive",
+        "entry": "bench_noise_floor.retracted.question.meanprob_ci_lo_truncated",
+        "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_both.json",
+        "field": "methods.mean_prob.margin_ci.lo95"
+      },
+      "82.5737": {
+        "count": 1,
+        "status": "live"
+      },
+      "89.48": {
+        "count": 1,
+        "status": "live"
+      }
+    }
+  },
+  "schema": "ledger-reverse-coverage/1",
+  "rule": "正文里印出的测量数必须有台账绑定；没有的必须出现在 allowlist 并写明理由。附录 A 的撤回值另成一档：现行读数 / 归档件当场可重读 / 显式声明不可重读。"
+}

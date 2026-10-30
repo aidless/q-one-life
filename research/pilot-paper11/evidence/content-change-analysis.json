@@ -1,0 +1,36 @@
+{
+  "candidate_manifest_sha256": "6b3aebf400871477dcd33e41d08ac44866a1e3b62ae368102e1c221277b42649",
+  "duplicate_answer_tasks": 5,
+  "n_tasks": 30,
+  "pairs": {
+    "order_change_no_scores": {
+      "content_changed": 14,
+      "invalid": 0,
+      "n_tasks": 30,
+      "same_content_different_slot": 1,
+      "slot_changed": 15
+    },
+    "order_change_with_scores": {
+      "content_changed": 14,
+      "invalid": 0,
+      "n_tasks": 30,
+      "same_content_different_slot": 0,
+      "slot_changed": 14
+    },
+    "score_exposure_order_a": {
+      "content_changed": 7,
+      "invalid": 0,
+      "n_tasks": 30,
+      "same_content_different_slot": 0,
+      "slot_changed": 7
+    },
+    "score_exposure_order_b": {
+      "content_changed": 5,
+      "invalid": 0,
+      "n_tasks": 30,
+      "same_content_different_slot": 0,
+      "slot_changed": 5
+    }
+  },
+  "source_sha256": "6a5275a85358c7e2e42fc16db1fdd746f7ba8e4d249e8e91b4fa26b18f530b55"
+}

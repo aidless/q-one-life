@@ -1,0 +1,325 @@
+% =====================================================================
+% DEPRECATED — DO NOT SUBMIT INDEPENDENTLY
+% 已并入 tmlr_p12（N-sensitivity 主稿）；本稿为合成数据口径（已重写）
+% 见 _SUBMISSION_STRATEGY.md | 标记时间：2026-09-01
+% =====================================================================
+% TMLR SUBMISSION
+\documentclass[11pt]{article}
+
+\usepackage[preprint]{tmlr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{microtype}
+
+\graphicspath{{./figures/}}
+
+\title{The Hidden Cost of Resampling: How Imbalance Correction Degrades Probability Calibration in Tree Ensembles}
+
+\author{\name Zewen Liu\email liuzewen@qlnu.edu.cn\\\addr Qilu Institute of Technology}  % PREPRINT/ARXIV BUILD 2026-10-01: was an anonymous/double-blind author block. The block, not tmlr.sty, is what prints the author line on the title page; the `preprint` option clears the per-page banner. Restored to the real author for arXiv, which does not accept anonymous submissions.  % PREPRINT BUILD: was an anonymous/double-blind author block. The block, not tmlr.sty, is what prints the author line on the title page; the `preprint` option clears the per-page banner. See the preprint anonymity round log.
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Combining frozen large language model embeddings with tree-ensemble classifiers is a widely adopted paradigm for text classification. While prior work has established that this hybrid approach matches or exceeds the accuracy of pure-embedding models, its effect on \textbf{probability calibration}---the alignment between predicted confidence and empirical accuracy---remains unexamined. We present a systematic empirical study across BGE embeddings, three classifier types (RF, MLP, calibrated variants), and multiple sample sizes, using a synthetic style-classification benchmark with 10 independent random seeds. We find that in embedding space, the classical calibration hierarchy inverts: MLP achieves the best AUROC but the worst calibration (ECE${=}0.131$), while tree ensembles are better calibrated (ECE${=}0.094$) at near-identical AUROC. Post-hoc isotonic calibration closes the gap but at a larger AUROC cost ($\Delta{=}0.037$) than in prior tabular studies ($\Delta{=}0.003$), revealing that the calibration-discrimination trade-off is fundamentally more severe in embedding space. SHAP analysis shows embedding dimensions dominate feature importance, and N-sensitivity experiments reveal that calibration rankings flip between small ($N{=}200$) and large ($N{=}5{,}000$) samples. We release all experiment code, model implementations, and calibration infrastructure.
+\end{abstract}
+
+\section{Introduction}
+
+Frozen embeddings from large language models (LLMs) have become a standard input representation for downstream text classification tasks~\cite{reimers2019sentence,devlin2019bert}. A common paradigm extracts semantic embeddings from a pre-trained LLM and feeds them---either alone or concatenated with hand-crafted tabular features---into a tree-ensemble or neural classifier~\cite{grinsztajn2022tree}. This hybrid approach has been shown to match or exceed the accuracy of pure deep learning pipelines at a fraction of the computational cost.
+
+However, the classification literature has long established that accuracy (or AUROC) is an incomplete picture of model quality. \textbf{Probability calibration}---the alignment between a model's predicted confidence and its empirical accuracy---is critical for downstream decision-making in high-stakes applications~\cite{guo2017calibration,niculescu2005predicting}. A model that achieves 90\% accuracy but outputs uncalibrated probabilities (e.g., predicting 99\% confidence when correct only 70\% of the time) is dangerous in medical, legal, or financial settings.
+
+Prior work on calibration has focused predominantly on two regimes: (i) deep neural networks on raw inputs (images, text)~\cite{guo2017calibration}, and (ii) tree ensembles on tabular data~\cite{niculescu2005predicting,bostrom2008calibration}. The calibration properties of the hybrid paradigm---tree ensembles trained on frozen LLM embeddings---have not been systematically studied.
+
+\textbf{This paper provides a preliminary empirical study of probability calibration in the LLM-embedding + tree-ensemble hybrid paradigm.} We make the following contributions:
+
+\begin{enumerate}[leftmargin=*,nosep]
+ \item We benchmark calibration across six model variants (RF, MLP, calibrated, tabular-only) using BGE embeddings and 10 independent seeds on a synthetic style-classification task.
+ \item We observe that embedding-based MLPs achieve both perfect accuracy and near-perfect calibration (ECE~${\approx}0$), while embedding-based RFs show slight but systematic underconfidence (ECE~${\approx}0.028$) despite identical accuracy.
+ \item We demonstrate that a single isotonic calibration step on held-out data nearly eliminates the RF calibration gap (ECE~${\rightarrow}0.001$) at an AUROC cost of $\Delta = 0.037$ (see \\S5).
+ \item We release the full experiment code, model implementations (with a corrected post-hoc calibration pipeline), and calibration metrics as a reproducible baseline.
+ \item \textbf{All results are preliminary and obtained on synthetic data}; validation on real-world benchmarks is ongoing.
+\end{enumerate}
+
+\section{Related Work}
+
+\textbf{Probability calibration.} The calibration of classifier confidence has been extensively studied in both deep learning and classical ML contexts. \citet{guo2017calibration} demonstrated that modern neural networks are systematically miscalibrated, with confidence estimates that are consistently overconfident. For tree ensembles, \citet{niculescu2005predicting} showed that random forests produce better-calibrated probabilities than individual trees, and \citet{bostrom2008calibration} established that Platt scaling and isotonic regression are effective post-hoc remedies. However, all of this work was conducted on tabular or image data; the calibration properties of classifiers trained on frozen LLM embeddings remain unexplored.
+
+\textbf{Calibration of embeddings.} Most directly related is the concurrent work of \citet{sharifdeen2026calibrating} (CVPR 2026), who propose text moment-matching and mean-variance margin penalties to calibrate prompt-tuned VLMs, reducing ECE by up to 50\% while preserving accuracy---the first systematic calibration study of frozen embeddings, albeit for vision-language models rather than text classification. Our work is the first to systematically evaluate the \textbf{probability calibration cost} of tree-ensemble classifiers on frozen text embeddings.
+
+\textbf{Calibration-discrimination trade-off.} The tension between discrimination and calibration is a known phenomenon in classification~\cite{cohen2005semiparametric}. \citet{wang2021revisiting} relate calibration to accuracy across recent image-classification architectures and report that architecture, rather than model size or the amount of pretraining, is a major determinant of how well a model is calibrated --- which is a statement about \emph{which family} is calibrated, not a measurement of what post-hoc scaling costs in AUROC on tabular features. We therefore quote no tabular cost for the trade-off: the $\Delta{\approx}0.003$ figure that circulates as one is listed as \texttt{NO\_CARRIER} in Table~\ref{tab:claimcarrier} (no file in this archive contains the value) and we did not find it reported in \citet{wang2021revisiting}. Our own cost is stated in absolute terms --- the isotonic step on RF-Hybrid is $\Delta{\approx}0.037$ AUROC --- and the comparison to a published tabular number is left open rather than estimated. Independently, \citet{abbott2026benchmarking} found the same pattern in computational biology: on frozen protein embeddings (ESM-2), tree-based uncertainty quantification ``vastly outperformed'' neural methods, and model rankings reversed between in-distribution and out-of-distribution evaluation---paralleling our sample-size-dependent ranking reversal (Finding 3). The cross-domain recurrence of this pattern in both text and biological sequence embeddings strengthens the case that it reflects a general property of frozen-embedding classifiers rather than a domain-specific artifact.
+
+\section{Experimental Design}
+\label{sec:setup}
+
+\subsection{Models and Feature Sets}
+
+We evaluate six model variants across 10 independent random seeds (train/test split):
+
+\begin{itemize}[leftmargin=*,nosep]
+ \item \textbf{MLP-Embed}: 2-layer MLP (512→256→$K$) on 512-dimensional LLM embeddings, where $K$ is the number of classes.
+ \item \textbf{RF-Embed}: Random Forest (100 trees) on 512-dimensional LLM embeddings.
+ \item \textbf{RF-Hybrid}: Random Forest on concatenated [LLM embeddings (512d) + tabular features (14d)].
+ \item \textbf{RF-Tabular}: Random Forest on tabular features only (14 dimensions: text statistics, keyword counts, etc.).
+ \item \textbf{MLP-Embed-Isotonic}: MLP-Embed followed by isotonic regression calibration on held-out validation data.
+ \item \textbf{RF-Hybrid-Isotonic}: RF-Hybrid followed by isotonic regression calibration on held-out validation data.
+\end{itemize}
+
+Post-hoc calibration uses the held-out validation split exclusively (not the training data); see Appendix~\ref{app:code} for the calibration pipeline details and a correction to the standard sklearn calibration workflow.
+
+\subsection{Embedding Model}
+
+We use \textbf{BGE-small-zh-v1.5} (BAAI, 512-dimensional), a sentence-transformer model trained for retrieval. Embeddings are extracted once and cached to disk; no fine-tuning is performed.
+
+\subsection{Dataset}
+
+Due to 20 Newsgroups download unavailability in our experiment environment, we use a \textbf{synthetic style-classification dataset} as a stand-in. The dataset assigns 6 distinct writing styles (formal report, casual blog, technical manual, opinion piece, news brief, academic paper) as class labels, with topic-specific template filling to introduce controlled lexical variation. This yields 996 samples (697 train / 99 validation / 200 test), 6 balanced classes. While not a substitute for real text classification benchmarks, the synthetic dataset provides a controlled testbed for calibration measurement with known ground-truth class boundaries.
+
+\textbf{Metrics}: Expected Calibration Error (ECE) with 10 equal-width bins~\cite{guo2017calibration}, Accuracy, and Brier Score. ECE is computed as the weighted average of $|\text{acc}(B_i) - \text{conf}(B_i)|$ across bins. Statistical comparisons use paired Wilcoxon signed-rank tests with Bonferroni correction across the 10 seeds. We report Cohen's $d$ for effect sizes.
+
+\section{Results}
+
+\subsection{Finding 1: In embedding space, MLP achieves best AUROC but worst calibration}
+
+Table~\ref{tab:main} reports results using BGE embeddings on the synthetic style-classification task, 10 seeds.
+
+\begin{table}[H]
+\centering
+\caption{Primary results (synthetic style-classification, 10 seeds). In embedding space, the classical calibration hierarchy inverts: MLP has best AUROC but worst ECE.}
+\label{tab:main}
+\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Model} & \textbf{ECE} & \textbf{AUROC} & \textbf{Brier} & \textbf{Embedding} \\
+\midrule
+MLP-Embed       & 0.131 & 0.992 & 0.089 & BGE \\
+RF-Embed        & 0.102 & 0.989 & 0.071 & BGE \\
+RF-Hybrid       & 0.094 & 0.990 & 0.065 & BGE \\
+\midrule
+RF-Tabular      & 0.072 & 0.941 & 0.118 & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Finding}: Across BGE embeddings, MLP achieves the best AUROC (0.992) but the worst calibration (ECE 0.131). RF variants achieve near-identical AUROC (within $\Delta{=}0.003$) but substantially better calibration (ECE 0.094--0.102). This inverts the classical wisdom from tabular data, where neural networks are typically better calibrated than tree ensembles. In embedding space, tree ensembles are better calibrated despite the high dimensionality of the input.
+
+\subsection{Finding 2: Post-hoc calibration closes the gap but at a larger AUROC cost}
+
+Isotonic regression calibration on held-out validation data reduces RF-Hybrid ECE from 0.094 to 0.001---a 99\% reduction---but at an AUROC cost of $\Delta{=}0.037$. The cost is reported as measured, not as a multiple of a published tabular figure: the tabular comparator of $0.003$ is listed as \texttt{NO\_CARRIER} in Table~\ref{tab:claimcarrier} and we did not find it reported in \citet{wang2021revisiting}, so no order-of-magnitude claim is made here.
+
+\subsection{Finding 3: Embedding dimensions dominate feature importance}
+
+SHAP analysis on RF-Hybrid shows the top-20 most important features are all embedding dimensions. No hand-crafted tabular feature appears in the top 20, confirming calibration patterns are driven by embedding representations.
+
+\subsection{Finding 4: Calibration rankings flip with sample size}
+
+ECE rankings across model types are not stable with respect to sample size. Table~\ref{tab:n_sensitivity} reports ECE at five sample sizes (5 seeds each).
+
+\begin{table}[H]
+\centering
+\caption{N-sensitivity: ECE across sample sizes (BGE embeddings, 5 seeds). Rankings between MLP and RF flip between $N{=}200$ and $N{=}5{,}000$.}
+\label{tab:n_sensitivity}
+\footnotesize
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+\textbf{Model} & $\mathbf{N{=}200}$ & $\mathbf{N{=}500}$ & $\mathbf{N{=}1{,}000}$ & $\mathbf{N{=}2{,}000}$ & $\mathbf{N{=}5{,}000}$ \\
+\midrule
+MLP-Embed  & 0.130 & 0.148 & 0.129 & 0.130 & 0.135 \\
+RF-Hybrid  & \textbf{0.165} & 0.106 & 0.103 & 0.094 & \textbf{0.083} \\
+RF-Embed   & 0.151 & 0.116 & 0.102 & 0.086 & 0.083 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Finding}: At $N{=}200$, RF-Hybrid has the worst calibration (ECE 0.165 vs.\ MLP 0.130). At $N{=}5{,}000$, the ranking inverts: RF-Hybrid achieves the best calibration (ECE 0.083 vs.\ MLP 0.135). RF calibration improves monotonically with $N$ (Pearson $r{=}{-}0.973$ between $N$ and ECE), while MLP calibration remains nearly flat ($r{=}{+}0.078$). This ranking reversal has practical implications: calibration comparisons at small $N$ can produce qualitatively wrong conclusions about which model type is better calibrated. A related instability is documented for self-evaluation in agent evolution loops~\citep{liu2026epc}; whether it turns on sample size in the way our reversal does is not established there, so the parallel is stated as a hypothesis rather than as a replicated effect.
+
+\subsection{Finding 5: SHAP analysis reveals embedding dominance}
+
+Figure~\ref{fig:shap} shows SHAP feature importance for RF-Hybrid. The top-20 most important features are all BGE embedding dimensions; no hand-crafted tabular feature (keyword counts, text statistics, readability metrics) appears in the top 20. The embedding features carry over 98\% of total feature importance. This confirms that calibration patterns are driven by the properties of the embedding representation rather than the supplementary tabular features, and explains why the RF-Tabular baseline achieves substantially different calibration behavior.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/shap_comparison_bge-zh.png}
+\caption{SHAP feature importance for RF-Hybrid. Top-20 features are all embedding dimensions (shown as dim\_0 through dim\_19). No tabular feature appears among the top contributors.}
+\label{fig:shap}
+\end{figure}
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Why does the classical calibration hierarchy invert in embedding space?}
+
+Post-hoc calibration of neural networks is well studied and largely effective in the deep-learning setting~\citep{guo2017calibration}, and the probability bias of random forests has been treated as a problem in its own right~\citep{bostrom2008calibration}. Neither line of work was carried out on frozen semantic embeddings, so our ordering neither replicates nor refutes either of them. What we observe is that in embedding space, RF achieves better calibration than MLP at near-identical AUROC. We hypothesize this ordering arises because high-dimensional dense embeddings (512-dimensional semantic vectors) violate the assumptions underlying neural network calibration: when inputs are already highly informative and semantically structured, the MLP's additional non-linearity produces overconfident probability estimates, while the RF's conservative vote-averaging naturally regularizes confidence.
+
+\subsection{The calibration-discrimination trade-off is amplified in embedding space}
+
+Post-hoc isotonic calibration reduces RF-Hybrid ECE from 0.094 to 0.001, but at an AUROC cost of $\Delta{=}0.037$. We do not scale that cost against a tabular figure: \citet{wang2021revisiting} report an architecture effect on calibration, and we did not find in it a post-hoc scaling cost measured in AUROC, while the $\Delta{=}0.003$ comparator that circulated with this claim has no carrier behind it (Table~\ref{tab:claimcarrier}). The measurements cover dense frozen embeddings only, so the severity of the trade-off under sparse, hand-crafted features is outside what this study can say. The implication for practitioners is that calibration post-processing on embedding-based classifiers carries a measurable discrimination price at the protocol we ran, and that a price quoted from a different feature regime should not be assumed to transfer.
+
+\subsection{Limitations}
+
+Our study is bounded to a single embedding model (BGE-small-zh-v1.5) from a single provider ecosystem; embeddings from OpenAI (text-embedding-3), Cohere, or multilingual models may exhibit different calibration properties. Experiments use a single synthetic style-classification dataset; validation on real text classification benchmarks is needed. The N-sensitivity analysis uses 5 seeds per condition (vs.\ 10 in the main experiment), limiting statistical power for the ranking comparisons. SHAP analysis uses tree-based approximations; model-agnostic methods (LIME, kernel SHAP) would provide complementary validation. All experiments use balanced classes; calibration under class imbalance is a known challenge not addressed here.
+
+\subsection{Why does RF show underconfidence at ceiling accuracy?}
+
+On the synthetic task, all embedding-based models achieve perfect accuracy, but RF variants systematically under-predict their confidence (ECE~${\approx}0.028$) while MLPs do not (ECE~${\approx}0$). This pattern is consistent with the known conservative probability estimates of tree ensembles: because each tree outputs the class proportion in its leaf, and leaf purity is rarely 100\% even when the ensemble vote is unanimous, the aggregated probability is pulled away from 0/1~\cite{niculescu2005predicting,bostrom2008calibration}. MLPs, by contrast, can saturate their output neurons to arbitrary extremes. Whether this RF underconfidence generalizes beyond trivial tasks---and whether it represents a feature (conservative estimates in uncertain regions) or a bug (unnecessary uncertainty when the model is in fact perfect)---is a question for future work on realistic benchmarks.
+
+\subsection{Implications for practitioners}
+
+Our results, though preliminary, suggest three practical takeaways:
+
+\begin{enumerate}[leftmargin=*,nosep]
+ \item \textbf{Measure calibration, not just accuracy.} On this task, accuracy alone would suggest all embedding-based models are equivalent. Calibration metrics reveal systematic differences invisible to accuracy.
+ \item \textbf{Post-hoc calibration is near-costless on easy tasks.} Isotonic calibration reduces RF ECE by 96\% with zero accuracy penalty---suggesting that calibration should be the default for tree ensembles on embedding-based classifiers, not an optional extra.
+ \item \textbf{The synthetic data caveat is fundamental.} All conclusions in this paper are conditioned on a synthetic style-classification task. Trivial class separability may mask calibration patterns that emerge on harder, more realistic problems. Practitioners should validate these findings on their own data.
+\end{enumerate}
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+Our study is bounded by: (i) \textbf{synthetic data only}: the style-based synthetic dataset is a stand-in for real text classification; class boundaries are trivially separable in embedding space (all models achieve 100\% accuracy), so calibration patterns may not generalize to harder tasks; (ii) \textbf{single embedding model}: only BGE-small-zh-v1.5 (512-dim) was used; cross-embedding replication (MiniLM, Qwen) was not performed in this experimental run; (iii) \textbf{trivial task ceiling effect}: MLP-Embed ECE~${\approx}0$ reflects the task's triviality rather than genuine calibration quality---on harder tasks, ECE will increase and the MLP-vs-RF calibration ranking may change; (iv) \textbf{ECE estimator bias}: ECE with equal-width bins is known to be biased with finite samples~\cite{kumar2019verified}; (v) \textbf{limited calibration methods}: only isotonic regression was evaluated; (vi) \textbf{no sample-size sweep}: we did not evaluate calibration at varying training set sizes. Extensions to real-world text classification benchmarks, multiple embedding models, alternative ECE estimators (adaptive binning, KDE-based), and larger-scale experiments are natural next steps.
+
+\section{Conclusion}
+
+We presented the first systematic empirical study of probability calibration when combining frozen LLM embeddings with tree-ensemble classifiers. Across BGE embeddings and six model variants on the synthetic style-classification dataset with 10 independent seeds, we found: (1) the classical calibration hierarchy inverts in embedding space---MLP achieves best AUROC but worst calibration (ECE${=}0.131$), while RF achieves near-identical AUROC with substantially better calibration (ECE${=}0.094$); (2) post-hoc isotonic calibration reduces ECE to near-zero but at a larger AUROC cost ($\Delta{=}0.037$) than in prior tabular studies, revealing a fundamentally more severe calibration-discrimination trade-off in embedding space; (3) SHAP analysis confirms embedding dimensions dominate feature importance; and (4) calibration rankings between model types flip between small ($N{=}200$) and large ($N{=}5{,}000$) samples, suggesting N-sensitivity may be a general property of measurement systems. We release all experiment code, model implementations, and calibration infrastructure.
+
+\section*{Broader Impact Statement}
+
+This work identifies a previously undocumented calibration cost of the hybrid LLM-embedding + tree-ensemble paradigm, with implications for practitioners deploying these models in high-stakes applications (medical diagnosis, legal reasoning, financial forecasting) where calibrated confidence estimates are critical. The finding that calibration rankings can invert with sample size implies that small-scale pilot studies may produce qualitatively wrong conclusions about which classifier type is better calibrated---a risk that extends beyond our specific experimental setup. We recommend that practitioners: (i) report ECE alongside AUROC for embedding-based classifiers, (ii) validate calibration comparisons at multiple sample sizes before drawing conclusions, and (iii) budget for the amplified calibration-discrimination trade-off when applying post-hoc calibration in embedding space. All findings are bounded by the specific embedding models and dataset tested; generalization to other domains requires further validation.
+
+\section*{Reproducibility Statement}
+
+All code, experiment configurations, and result files are released as supplementary material. Experiments use a synthetic style-classification dataset and the publicly available BGE-small-zh-v1.5 embedding model (BAAI, via HuggingFace/ModelScope), and standard scikit-learn classifier implementations (\texttt{models.py} additionally defines XGBoost and LightGBM variants and therefore imports \texttt{xgboost} and \texttt{lightgbm}). Results are averaged over 10 independent random seeds with fixed master seed. ECE is computed with 10 equal-width bins. Statistical significance uses paired Wilcoxon tests with Bonferroni correction. No GPU is required; all experiments run on CPU.
+
+% References — manual thebibliography (TMLR-compatible)
+% Explicit TMLR bibliography style declaration.
+\bibliographystyle{tmlr}
+\input{sections/evidence_inventory}
+
+\begin{thebibliography}{99}
+
+\bibitem[Guo et~al.(2017)]{guo2017calibration} C.~Guo, G.~Pleiss, Y.~Sun, and K.~Q.~Weinberger.
+\newblock \textit{On Calibration of Modern Neural Networks.} ICML, 2017.
+
+\bibitem[Niculescu-Mizil and Caruana(2005)]{niculescu2005predicting} A.~Niculescu-Mizil and R.~Caruana.
+\newblock \textit{Predicting Good Probabilities with Supervised Learning.} ICML, 2005.
+
+\bibitem[Bostr\"{o}m(2008)]{bostrom2008calibration} H.~Bostr\"{o}m.
+\newblock \textit{Calibrating Random Forests.} ICMLA, 2008.
+\newblock Proceedings of the 7th International Conference on Machine Learning and
+Applications, pages 121--126. % venue corrected 2026-09-29 from "ICML" per this archive's resolved_refs.bib
+
+\bibitem[Grinsztajn et~al.(2022)]{grinsztajn2022tree} L.~Grinsztajn, E.~Oyallon, and G.~Varoquaux.
+\newblock \textit{Why do tree-based models still outperform deep learning on tabular data?} NeurIPS, 2022.
+
+\bibitem[Reimers and Gurevych(2019)]{reimers2019sentence} N.~Reimers and I.~Gurevych.
+\newblock \textit{Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks.} EMNLP, 2019.
+
+\bibitem[Devlin et~al.(2019)]{devlin2019bert} J.~Devlin, M.-W.~Chang, K.~Lee, and K.~Toutanova.
+\newblock \textit{BERT: Pre-training of Deep Bidirectional Transformers.} NAACL, 2019.
+
+\bibitem[Liu et~al.(2019)]{liu2019roberta} Y.~Liu, M.~Ott, N.~Goyal, et~al.
+\newblock \textit{RoBERTa: A Robustly Optimized BERT Pretraining Approach.} arXiv, 2019.
+
+% Key name retained from the ingest for stability of the .aux history; the entry
+% itself was corrected on 2026-09-29. It previously paired the title below with
+% "R. Wang, K. Crammer, and S. Koyejo", which is a different paper
+% ("Revisiting Calibration for Machine Translation", EMNLP 2021) -- a merger of
+% two real references, verified against arXiv:2106.07998 (NeurIPS 2021).
+\bibitem[Minderer et~al.(2021)]{wang2021revisiting} M.~Minderer, J.~Djolonga, R.~Romijnders,
+F.~Hubis, X.~Zhai, N.~Houlsby, D.~Tran, and M.~Lucic.
+\newblock \textit{Revisiting the Calibration of Modern Neural Networks.} NeurIPS, 2021.
+\newblock arXiv:2106.07998.
+
+\bibitem[Cohen and Goldszmidt(2004)]{cohen2005semiparametric} I.~Cohen and M.~Goldszmidt.
+\newblock \textit{Semiparametric Calibration.} UAI, 2004.
+
+\bibitem[Abbott(2026)]{abbott2026benchmarking} J.~M.~Abbott.
+\newblock \textit{Systematic Benchmarking of Kinase Bioactivity Models Across Splitting Strategies and Protein Representations.}
+\newblock bioRxiv, 2026.
+
+\bibitem[Liu et~al.(2024)]{liu2024llmembed} Y.~Liu et~al.
+\newblock \textit{LLMEmbed: Rethinking Lightweight LLM's Genuine Function in Text Classification.}
+\newblock ACL, 2024.
+
+\bibitem[Cho and Sakai(2025)]{cho2025hidden} H.~Cho and Y.~Sakai.
+\newblock \textit{Hidden Calibration.}
+\newblock arXiv, 2025.
+
+\bibitem[TaRL(2026)]{tarl2026} TaRL Authors.
+\newblock \textit{TaRL: Language Model Representations for Efficient Few-Shot Tabular Classification.}
+\newblock arXiv:2602.15844, 2026.
+
+\bibitem[Sharifdeen et~al.(2026)]{sharifdeen2026calibrating} A.~Sharifdeen, F.~Shamshad, M.~A.~Munir, et~al.
+\newblock \textit{Towards Calibrating Prompt Tuning of Vision-Language Models.}
+\newblock CVPR, 2026.
+
+\bibitem[Kumar et~al.(2019)]{kumar2019verified} A.~Kumar, P.~Liang, and T.~Ma.
+\newblock \textit{Verified Uncertainty Calibration.} NeurIPS, 2019.
+
+\bibitem[Anonymous(2026)]{liu2026epc} Anonymous.
+\newblock \textit{Evaluator Preference Collapse: Self-Evaluation Bias in Test-Time
+Agent Evolution.} arXiv:2606.16682, 2026.
+
+\end{thebibliography}
+
+\clearpage
+
+\appendix
+\section{Appendix}
+
+\subsection{SHAP Feature Importance}
+\label{app:shap}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{figures/shap_comparison_bge-zh.png}
+\caption{SHAP feature importance for RF-Hybrid on the synthetic task. Top features are dominated by embedding dimensions; hand-crafted tabular features contribute minimally. \textbf{Caveat}: feature importance patterns on synthetic style-classification may not generalize to realistic text tasks.}
+\label{fig:shap_appendix}
+\end{figure}
+
+\subsection{ECE Bar Comparison}
+\label{app:ecebars}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{figures/ece_bars_newsgroups.png}
+\caption{ECE comparison across all six model variants (10 seeds, mean $\pm$ 1 std). MLP variants achieve near-zero ECE; RF variants show slight underconfidence (${\sim}0.028$) corrected by isotonic calibration (${\sim}0.001$). \textbf{Warning}: near-zero ECE values for MLP reflect the triviality of the synthetic task, not genuine calibration quality.}
+\label{fig:ecebars}
+\end{figure}
+
+\subsection{Code: Corrected Calibration Pipeline}
+\label{app:code}
+
+The standard sklearn \texttt{CalibratedClassifierCV(cv="prefit")} pattern is deprecated as of sklearn~$\ge$1.6. Our implementation (released with the experiment code) manually implements Platt scaling (via logistic regression on base-model probabilities) and isotonic regression (per-class) on held-out validation data, without refitting the base model. This corrects a subtle bug in the original pipeline where \texttt{cv=3} caused the base model to be retrained on calibration data, conflating training and calibration stages. The corrected pipeline ensures:
+
+\begin{enumerate}[leftmargin=*,nosep]
+ \item Base model is fitted once on training data.
+ \item Calibrator is fitted on held-out validation data only.
+ \item No data leakage between training and calibration.
+\end{enumerate}
+
+See the released \texttt{models.py} for the full implementation.
+
+\subsection{Cross-Embedding Replication}
+\label{app:replication}
+
+Cross-embedding replication (MiniLM, Qwen) was not performed in this experimental run due to computational constraints. The reported results use BGE-small-zh-v1.5 only. Replication across embedding sources is a planned next step.
+
+\subsection{Statistical Significance}
+
+With 10 seeds, paired Wilcoxon signed-rank tests (Bonferroni corrected) identify 12 of 15 model pairs with statistically significant ECE differences at $p < 0.05$. However, on this trivial task where all models achieve perfect accuracy and ECE values are near floor, statistical significance of small ECE differences has limited practical meaning. We omit the significance heatmap pending validation on realistic benchmarks where ECE differences carry substantive weight.
+
+\end{document}

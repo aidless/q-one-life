@@ -1,0 +1,183 @@
+{
+  "schema": "q-one-cleanroom-compile-v1",
+  "generated_at": "2026-10-28T12:06:30.471118Z",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/source",
+    "main_file": "main.tex",
+    "main_sha256": "9010a8883bff1b547e31aa10cd29d209fff2a0c261a7ba8423cd0bd7e420e338",
+    "package_sha256": "9a41b87e90dd114763f3d2e3dbd047fbabcbf41e02f60bc03be738ca9d370754",
+    "file_count": 8
+  },
+  "commands": [
+    [
+      "latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "main.tex"
+    ],
+    [
+      "latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "main.tex"
+    ]
+  ],
+  "runs": [
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "environment": {
+        "SOURCE_DATE_EPOCH": "946684800",
+        "FORCE_SOURCE_DATE": "1"
+      },
+      "exit_code": 0,
+      "workdir": "/tmp/qone-cleanroom-5hf2v__n/run-1",
+      "stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/reports/cleanroom-internal-20261028/pass1.stdout.log",
+      "stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/reports/cleanroom-internal-20261028/pass1.stderr.log",
+      "main_log": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/reports/cleanroom-internal-20261028/pass1.main.log",
+      "warnings": [
+        "Underfull \\hbox (badness 1348) in paragraph at lines 45--45",
+        "Underfull \\vbox (badness 2460) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Overfull \\hbox (72.90508pt too wide) in paragraph at lines 390--403",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Overfull \\hbox (37.03342pt too wide) in paragraph at lines 437--447",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 1755) has occurred while \\output is active []",
+        "Underfull \\hbox (badness 1655) in paragraph at lines 713--714",
+        "Underfull \\hbox (badness 1152) in paragraph at lines 713--714"
+      ]
+    },
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "environment": {
+        "SOURCE_DATE_EPOCH": "946684800",
+        "FORCE_SOURCE_DATE": "1"
+      },
+      "exit_code": 0,
+      "workdir": "/tmp/qone-cleanroom-5hf2v__n/run-2",
+      "stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/reports/cleanroom-internal-20261028/pass2.stdout.log",
+      "stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/reports/cleanroom-internal-20261028/pass2.stderr.log",
+      "main_log": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/reports/cleanroom-internal-20261028/pass2.main.log",
+      "warnings": [
+        "Underfull \\hbox (badness 1348) in paragraph at lines 45--45",
+        "Underfull \\vbox (badness 2460) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Overfull \\hbox (72.90508pt too wide) in paragraph at lines 390--403",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Overfull \\hbox (37.03342pt too wide) in paragraph at lines 437--447",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 1755) has occurred while \\output is active []",
+        "Underfull \\hbox (badness 1655) in paragraph at lines 713--714",
+        "Underfull \\hbox (badness 1152) in paragraph at lines 713--714"
+      ]
+    }
+  ],
+  "exit_codes": [
+    0,
+    0
+  ],
+  "outputs": [
+    {
+      "path": "cleanroom-internal-20261028/main.pdf",
+      "sha256": "de132dc53ab7d86d7a81de86e57ef28aaf02c097fdcebebda05ffa66c3692f7e",
+      "bytes": 502412
+    },
+    {
+      "path": "cleanroom-internal-20261028/main-repeat.pdf",
+      "sha256": "de132dc53ab7d86d7a81de86e57ef28aaf02c097fdcebebda05ffa66c3692f7e",
+      "bytes": 502412
+    },
+    {
+      "path": "cleanroom-internal-20261028/main.bbl",
+      "sha256": "606341407dfa6a9fa0a4d0a275614d79f1cdc7f2976a230c912222332729f344",
+      "bytes": 8751
+    },
+    {
+      "path": "cleanroom-internal-20261028/main-repeat.bbl",
+      "sha256": "606341407dfa6a9fa0a4d0a275614d79f1cdc7f2976a230c912222332729f344",
+      "bytes": 8751
+    },
+    {
+      "path": "cleanroom-internal-20261028/pdfinfo.txt",
+      "sha256": "36b9cc7a2f73c98749b0df1842c3d37e5c88c6ea4397f4aa3438085637a9eb46",
+      "bytes": 546
+    },
+    {
+      "path": "cleanroom-internal-20261028/pass1.stdout.log",
+      "sha256": "7509540d85fa91f858db61b1d96b7c14a2f0133efc55128738336b1bb61e713b",
+      "bytes": 60595
+    },
+    {
+      "path": "cleanroom-internal-20261028/pass2.stdout.log",
+      "sha256": "7509540d85fa91f858db61b1d96b7c14a2f0133efc55128738336b1bb61e713b",
+      "bytes": 60595
+    },
+    {
+      "path": "cleanroom-internal-20261028/pass1.stderr.log",
+      "sha256": "d758bc32c3633e500295369e8ec78bd2f78fa3ba45e13858d0e2877efe7b0c34",
+      "bytes": 226
+    },
+    {
+      "path": "cleanroom-internal-20261028/pass2.stderr.log",
+      "sha256": "d758bc32c3633e500295369e8ec78bd2f78fa3ba45e13858d0e2877efe7b0c34",
+      "bytes": 226
+    },
+    {
+      "path": "cleanroom-internal-20261028/pass1.main.log",
+      "sha256": "c84e45d447f8015033e5e6409b48d1270581e4e8c0dd32e09d04be16caa30859",
+      "bytes": 34552
+    },
+    {
+      "path": "cleanroom-internal-20261028/pass2.main.log",
+      "sha256": "c84e45d447f8015033e5e6409b48d1270581e4e8c0dd32e09d04be16caa30859",
+      "bytes": 34552
+    }
+  ],
+  "pdf": {
+    "pages": 26,
+    "sha256_run1": "de132dc53ab7d86d7a81de86e57ef28aaf02c097fdcebebda05ffa66c3692f7e",
+    "sha256_run2": "de132dc53ab7d86d7a81de86e57ef28aaf02c097fdcebebda05ffa66c3692f7e",
+    "deterministic": true
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "latexmk": [
+      "Latexmk, John Collins, 9 March 2026. Version 4.88"
+    ]
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "Only files admitted by the mechanical package audit were copied.",
+    "Two independent clean directories were compiled with a fixed source epoch.",
+    "A successful compile is not scientific readiness or upload authorization."
+  ]
+}

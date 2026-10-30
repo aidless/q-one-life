@@ -1,0 +1,73 @@
+{
+  "schema": "q-one-review-response-audit-v1",
+  "generated_at": "2026-10-27T15:09:01.652556Z",
+  "source": {
+    "path": "source/main.tex",
+    "sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef"
+  },
+  "review_receipt": {
+    "path": "evidence/reviews/FINAL_REVIEW_2026-10-26.md",
+    "sha256": "178ee90091b110f30c3206a7e3ac0c7a110fe7caa76dff636d163ee8ed7dee4e"
+  },
+  "state": "open",
+  "checks": {
+    "ledger_population": {
+      "state": "passed",
+      "observed": {
+        "entries": 14,
+        "agree": 14,
+        "promotions": 5,
+        "max_n": 12
+      }
+    },
+    "paired_binomial_scope": {
+      "state": "passed",
+      "observed": {
+        "inventory_count": 118,
+        "not_gate": 36,
+        "paired_binomial": 82
+      }
+    },
+    "rerun_delta": {
+      "state": "passed"
+    },
+    "continuity_disjoint": {
+      "state": "passed",
+      "observed": {
+        "uncorrected_anti_conservative": 231,
+        "continuity_corrected_conservative": 9,
+        "intersection": 0
+      }
+    },
+    "archive_language": {
+      "state": "passed"
+    },
+    "citation_metadata": {
+      "state": "passed"
+    },
+    "exit_table_order": {
+      "state": "passed",
+      "observed": {
+        "midrule": 60,
+        "scan_row": 442
+      }
+    },
+    "bibliography_before_appendix": {
+      "state": "passed",
+      "observed": {
+        "bibliography_at": 49988,
+        "appendix_at": 50034
+      }
+    },
+    "independent_re_review_current_source": {
+      "state": "blocked",
+      "note": "The retained 2026-10-26 final review predates the current source; no independent re-review is bound to this hash."
+    }
+  },
+  "failed": [],
+  "candidate": [],
+  "blocked": [
+    "independent_re_review_current_source"
+  ],
+  "disposition": "Local fixes are partially verified. The current source is an internal revision candidate, not an independently closed submission."
+}

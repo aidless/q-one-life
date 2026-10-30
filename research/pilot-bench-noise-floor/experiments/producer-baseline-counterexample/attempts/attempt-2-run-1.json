@@ -1,0 +1,258 @@
+{
+  "all_expected_signatures_met": true,
+  "conditions": [
+    {
+      "checks": {
+        "all_delete_one_orders_stable": true,
+        "gate_reading_matches": true,
+        "ranked_relation_matches": true
+      },
+      "condition_id": "perfect-producer-refuses-stable-order",
+      "delete_one_stability": {
+        "all_defined_deletions_stable": true,
+        "defined": 1000,
+        "deletions": 1000,
+        "max_first_minus_second": 0.4004004004004004,
+        "min_first_minus_second": 0.3993993993993994,
+        "stable": 1000,
+        "undefined": 0
+      },
+      "expected_gate_readable": false,
+      "expected_relation": "first_gt_second",
+      "expected_signature_met": true,
+      "full_gold_matches_truth": true,
+      "gate_readable": false,
+      "gold_rule": "strict majority of three producer labels",
+      "leader": "A",
+      "leader_score": 0.9,
+      "margin": -0.09999999999999998,
+      "margin_threshold": 0.02,
+      "n_items": 1000,
+      "observed_relation": "first_gt_second",
+      "paired_comparison": {
+        "both_correct": 500,
+        "discordant": 400,
+        "first_only_correct": 400,
+        "neither_correct": 100,
+        "one_sided_sign_test_p": 3.8725919148493183e-121,
+        "second_only_correct": 0,
+        "test_note": "Exact sign-test tail under the predeclared item-exchangeability null; the p-value is supporting evidence for the constructed ordering, not an external leaderboard estimate.",
+        "two_sided_sign_test_p": 7.745183829698637e-121
+      },
+      "producer_floor": 1.0,
+      "producer_loo_scores": {
+        "g1": {
+          "accuracy": 1.0,
+          "correct": 1000,
+          "loo_gold_ties": 0,
+          "scored": 1000
+        },
+        "g2": {
+          "accuracy": 1.0,
+          "correct": 1000,
+          "loo_gold_ties": 0,
+          "scored": 1000
+        },
+        "g3": {
+          "accuracy": 1.0,
+          "correct": 1000,
+          "loo_gold_ties": 0,
+          "scored": 1000
+        }
+      },
+      "ranked_pair": [
+        "A",
+        "B"
+      ],
+      "role": "critical_counterexample",
+      "system_scores": {
+        "A": {
+          "accuracy": 0.9,
+          "correct": 900,
+          "scored": 1000
+        },
+        "B": {
+          "accuracy": 0.5,
+          "correct": 500,
+          "scored": 1000
+        }
+      }
+    },
+    {
+      "checks": {
+        "all_delete_one_orders_stable": true,
+        "gate_reading_matches": true,
+        "ranked_relation_matches": true
+      },
+      "condition_id": "imperfect-producers-positive-gate-control",
+      "delete_one_stability": {
+        "all_defined_deletions_stable": true,
+        "defined": 1000,
+        "deletions": 1000,
+        "max_first_minus_second": 0.4004004004004004,
+        "min_first_minus_second": 0.3993993993993994,
+        "stable": 1000,
+        "undefined": 0
+      },
+      "expected_gate_readable": true,
+      "expected_relation": "first_gt_second",
+      "expected_signature_met": true,
+      "full_gold_matches_truth": true,
+      "gate_readable": true,
+      "gold_rule": "strict majority of three producer labels",
+      "leader": "A",
+      "leader_score": 0.9,
+      "margin": 0.2333333333333334,
+      "margin_threshold": 0.02,
+      "n_items": 1000,
+      "observed_relation": "first_gt_second",
+      "paired_comparison": {
+        "both_correct": 500,
+        "discordant": 400,
+        "first_only_correct": 400,
+        "neither_correct": 100,
+        "one_sided_sign_test_p": 3.8725919148493183e-121,
+        "second_only_correct": 0,
+        "test_note": "Exact sign-test tail under the predeclared item-exchangeability null; the p-value is supporting evidence for the constructed ordering, not an external leaderboard estimate.",
+        "two_sided_sign_test_p": 7.745183829698637e-121
+      },
+      "producer_floor": 0.6666666666666666,
+      "producer_loo_scores": {
+        "g1": {
+          "accuracy": 0.6666666666666666,
+          "correct": 400,
+          "loo_gold_ties": 400,
+          "scored": 600
+        },
+        "g2": {
+          "accuracy": 0.6666666666666666,
+          "correct": 400,
+          "loo_gold_ties": 400,
+          "scored": 600
+        },
+        "g3": {
+          "accuracy": 0.6666666666666666,
+          "correct": 400,
+          "loo_gold_ties": 400,
+          "scored": 600
+        }
+      },
+      "ranked_pair": [
+        "A",
+        "B"
+      ],
+      "role": "positive_control",
+      "system_scores": {
+        "A": {
+          "accuracy": 0.9,
+          "correct": 900,
+          "scored": 1000
+        },
+        "B": {
+          "accuracy": 0.5,
+          "correct": 500,
+          "scored": 1000
+        }
+      }
+    },
+    {
+      "checks": {
+        "all_delete_one_orders_stable": true,
+        "gate_reading_matches": true,
+        "ranked_relation_matches": true
+      },
+      "condition_id": "reversed-order-negative-control",
+      "delete_one_stability": {
+        "all_defined_deletions_stable": true,
+        "defined": 1000,
+        "deletions": 1000,
+        "max_first_minus_second": -0.3993993993993994,
+        "min_first_minus_second": -0.4004004004004004,
+        "stable": 1000,
+        "undefined": 0
+      },
+      "expected_gate_readable": false,
+      "expected_relation": "first_lt_second",
+      "expected_signature_met": true,
+      "full_gold_matches_truth": true,
+      "gate_readable": false,
+      "gold_rule": "strict majority of three producer labels",
+      "leader": "B",
+      "leader_score": 0.9,
+      "margin": -0.09999999999999998,
+      "margin_threshold": 0.02,
+      "n_items": 1000,
+      "observed_relation": "first_lt_second",
+      "paired_comparison": {
+        "both_correct": 500,
+        "discordant": 400,
+        "first_only_correct": 0,
+        "neither_correct": 100,
+        "one_sided_sign_test_p": 3.8725919148493183e-121,
+        "second_only_correct": 400,
+        "test_note": "Exact sign-test tail under the predeclared item-exchangeability null; the p-value is supporting evidence for the constructed ordering, not an external leaderboard estimate.",
+        "two_sided_sign_test_p": 7.745183829698637e-121
+      },
+      "producer_floor": 1.0,
+      "producer_loo_scores": {
+        "g1": {
+          "accuracy": 1.0,
+          "correct": 1000,
+          "loo_gold_ties": 0,
+          "scored": 1000
+        },
+        "g2": {
+          "accuracy": 1.0,
+          "correct": 1000,
+          "loo_gold_ties": 0,
+          "scored": 1000
+        },
+        "g3": {
+          "accuracy": 1.0,
+          "correct": 1000,
+          "loo_gold_ties": 0,
+          "scored": 1000
+        }
+      },
+      "ranked_pair": [
+        "A",
+        "B"
+      ],
+      "role": "negative_control",
+      "system_scores": {
+        "A": {
+          "accuracy": 0.5,
+          "correct": 500,
+          "scored": 1000
+        },
+        "B": {
+          "accuracy": 0.9,
+          "correct": 900,
+          "scored": 1000
+        }
+      }
+    }
+  ],
+  "design": {
+    "gate_rule": "leader_score - producer_floor >= margin_threshold",
+    "margin_threshold": 0.02,
+    "n_items": 1000,
+    "randomness": "none; every label and error block is deterministic",
+    "seed": null
+  },
+  "experiment_id": "noise-floor-producer-baseline-necessity-counterexample",
+  "frozen_inputs": {
+    "implementation_sha256": "b4f1e4cd6849415232af21a81ddb1a2e6fd0dbf748cee0e0a935fd830f347f31",
+    "manuscript_sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+    "preregistration_sha256": "94db23c7f8c220cacb86798fd4531ed8c49c55a825769854ae59e046a6bf903d"
+  },
+  "hypothesis_decision": "reject_H0_in_declared_synthetic_condition",
+  "interpretation_limits": [
+    "This is a synthetic logical witness, not a study of real leaderboard prevalence.",
+    "The result does not show that the producer floor is uninformative in every benchmark.",
+    "The result does not establish any model's accuracy on a real task.",
+    "Sign-test p-values describe the constructed item sample only."
+  ],
+  "narrow_conclusion": "The declared producer-baseline gate can refuse a top ordering that is deterministic and stable under every single-item deletion. Therefore clearance of that gate is not a necessary condition for every resolvable top ordering, and the gate cannot by itself be read as a general ranking noise bound.",
+  "schema": "q-one-counterexample-receipt-v1"
+}

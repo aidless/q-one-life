@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\PAPER35_FRONT_DRIFT\\main.tex",
+    "rpc": "http://127.0.0.1:11435",
+    "timestamp": "2026-09-02T13:18:01+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 9,
+      "justification": "{\n  \"score\": 9,\n  \"justification\": \"论文针对局部LLM系统的代理行为回归测试具有重要性，且与TMLR的目标读者群高度契合，提供了详细的实验和统计结果，填补了现有研究的空白。\",\n  \"top_weakness\": \"虽然问题重要，但最后一句话断开，可能影响结论完整性。\",\n  \"evidence\": \"Any such deployment rests on t",
+      "top_weakness": "",
+      "evidence": "",
+      "parse": "regex"
+    },
+    "R": {
+      "status": "ok",
+      "score": 7,
+      "justification": "{\n  \"score\": 7,\n  \"justification\": \"虽然论文提供了详细的实验设计和统计分析，但在对照组和基线公平性方面没有明确说明，这可能影响结果的可靠性。\",\n  \"top_weakness\": \"缺乏对照组和基线公平性说明。\",\n  \"evidence\": \"Across 1,200 cells: mean cross-seed BDS $= 0.0173$ (all ca",
+      "top_weakness": "",
+      "evidence": "",
+      "parse": "regex"
+    },
+    "I": {
+      "status": "ok",
+      "score": 7,
+      "justification": "```json\n{\"score\": 7, \"justification\": \"该工作对社区贡献了一套行为回归测试套件，以及相关的衡量指标，对于评估本地LLM的行为一致性具有重要价值。\", \"top_weakness\": \"虽然提出了新的衡量指标和测试套件，但未详细探讨这些结果对实际应用的具体影响和改进措施。\", \"evidence\": \"Across 1,200 cells: mean cross",
+      "top_weakness": "",
+      "evidence": "",
+      "parse": "regex"
+    },
+    "S": {
+      "status": "ok",
+      "score": 8,
+      "justification": "论文在描述实验结果时较为克制,但对模型之间的行为差异有所夸大,尤其是在工具使用方面的描述。",
+      "top_weakness": "对工具使用行为的描述可能有所夸大。",
+      "evidence": "tool-use most transferable (BDS 4.48), multilingual most model-specific (BDS 9.42).",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "PASS",
+    "scores": {
+      "P": 9,
+      "R": 7,
+      "I": 7,
+      "S": 8
+    },
+    "overall": 7,
+    "weakest": "R(严谨性)",
+    "detail": "四维均 > 6（min=7，短板纪律不平均）"
+  }
+}

@@ -1,0 +1,979 @@
+{
+ "population": {
+  "sourcegraph_q_mcnemar_count_all": {
+   "line_matches": 17335,
+   "files": 5746,
+   "raw": "sg-mcnemar_count_all.sse + sg-mcnemar_count_all.parsed.json"
+  },
+  "sourcegraph_q_mcnemar_exact_count_all": {
+   "line_matches": 1020,
+   "files": 277,
+   "code_ext_files": 179,
+   "def_like_files": 86,
+   "raw": "sg-mcnemar_exact_count_all.sse + parsed.json"
+  },
+  "grepapp_q_mcnemar": {
+   "file_hits": 1873,
+   "raw": "grepapp-mcnemar.browser-evidence.json"
+  },
+  "grepapp_q_mcnemar_exact": {
+   "file_hits": 105,
+   "raw": "grepapp-mcnemar_exact.browser-evidence.json"
+  }
+ },
+ "def_sample": {
+  "files_scanned": 78,
+  "defs": 88,
+  "verdicts": {
+   "exact": 61,
+   "test-pins-exact-values": 2,
+   "exact-no-promise-name": 2,
+   "approx-honest-name": 3,
+   "exact-delegate": 4,
+   "non-computing-wrapper": 1,
+   "exact-wrapper": 5,
+   "no-def-line": 3,
+   "test-not-implementation": 5,
+   "dispatcher-honest": 1,
+   "counts-only-no-promise": 1
+  },
+  "implementation_defs": 81,
+  "implementation_exact_named": 68,
+  "implementation_exact_named_verdicts": {
+   "exact": 61,
+   "exact-delegate": 4,
+   "non-computing-wrapper": 1,
+   "exact-wrapper": 2
+  }
+ },
+ "counterexamples": [],
+ "rows": [
+  {
+   "file": "1CatAI__1Cat-vLLM__benchmarks__compare_sm70_dflash2_quality_matrix.py",
+   "def_line_no": 79,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "BichengWang__multi-agents__agent__bench__report.py",
+   "def_line_no": 39,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "BichengWang__multi-agents__tests__bench__test_report.py",
+   "def_line_no": 35,
+   "fn": "test_mcnemar_exact_matches_binomial_tail",
+   "name_promises_exact": true,
+   "verdict": "test-pins-exact-values",
+   "evidence": "test file, not implementation; asserts mcnemar_exact(8,2)==112/1024, (9,0)==2/512 etc. (test_report.py:35-47, read)",
+   "tags": []
+  },
+  {
+   "file": "Ch3nOff__dual-loop-controller__eval_results__archive_deprecated__scripts__benchmark_glm4_20_suite.py",
+   "def_line_no": 78,
+   "fn": "mcnemar_exact_pvalue",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "Ch3nOff__dual-loop-controller__eval_results__archive_deprecated__scripts__eval_multistep_reasoning.py",
+   "def_line_no": 82,
+   "fn": "mcnemar_exact_pvalue",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "Cryptic-LEY__gmp-agent__gmp-api__eval__critic_metrics.py",
+   "def_line_no": 218,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "Cygnux-Labs__Tracekit__tracekit__why__replay.py",
+   "def_line_no": 153,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "General-Instinct__InstinctFlash__instinctflash__verify__certify.py",
+   "def_line_no": 171,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "GottZ__ctx__go__internal__evalscore__paired.go",
+   "def_line_no": 43,
+   "fn": null,
+   "name_promises_exact": false,
+   "verdict": "exact-no-promise-name",
+   "evidence": "func McNemar (no exact promise); body = gonum distuv.Binomial{N,P:0.5}.CDF(k) = exact binomial CDF (paired.go:43, read)",
+   "tags": []
+  },
+  {
+   "file": "GottZ__ctx__go__internal__evalscore__paired.go",
+   "def_line_no": 72,
+   "fn": null,
+   "name_promises_exact": false,
+   "verdict": "exact-no-promise-name",
+   "evidence": "same file, gonum binomial CDF helper (paired.go:72, read)",
+   "tags": []
+  },
+  {
+   "file": "Gurp-S__XEYO__python__evals__changedetect__stats.py",
+   "def_line_no": 58,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "Gurp-S__XEYO__python__evals__changedetect__stats.py",
+   "def_line_no": 74,
+   "fn": "mcnemar_normal",
+   "name_promises_exact": false,
+   "verdict": "approx-honest-name",
+   "evidence": "tags=approx-normal(erf/norm/2*(1-)",
+   "tags": [
+    "approx-normal(erf/norm/2*(1-)"
+   ]
+  },
+  {
+   "file": "Kiln-AI__Kiln__libs__server__kiln_server__statistics_lib.py",
+   "def_line_no": 425,
+   "fn": "mcnemar_exact_p",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "Kiln-AI__Kiln__libs__server__kiln_server__statistics_lib.py",
+   "def_line_no": 447,
+   "fn": "mcnemar_chi2_cc",
+   "name_promises_exact": false,
+   "verdict": "approx-honest-name",
+   "evidence": "tags=approx-chi2,approx-normal(erf/norm/2*(1-)",
+   "tags": [
+    "approx-chi2",
+    "approx-normal(erf/norm/2*(1-)"
+   ]
+  },
+  {
+   "file": "Lumen-Labs__brainapi2__benchmarks__locomo__metrics.py",
+   "def_line_no": 330,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "Miosa-osa__OSA__bench__headtohead__paired.py",
+   "def_line_no": 35,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact-delegate",
+   "evidence": "same delegate: bench/report/stats.py:130-145 exact comb sums (verified)",
+   "tags": []
+  },
+  {
+   "file": "Miosa-osa__OSA__bench__modelsweep__paired.py",
+   "def_line_no": 55,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact-delegate",
+   "evidence": "same delegate: bench/report/stats.py:130-145 exact comb sums (verified)",
+   "tags": []
+  },
+  {
+   "file": "Miosa-osa__OSA__bench__recoverybench__delta_report.py",
+   "def_line_no": 66,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "Miosa-osa__OSA__bench__scaffold__paired.py",
+   "def_line_no": 63,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact-delegate",
+   "evidence": "calls bench/report/stats.py _binom_cdf_le/_binom_sf_ge = math.comb exact sums (stats.py:130-145, fetched+verified)",
+   "tags": []
+  },
+  {
+   "file": "NVIDIA__SkillEvaluator__src__skillevaluator__reporting__html.py",
+   "def_line_no": 617,
+   "fn": "_sanitize_tier3_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "non-computing-wrapper",
+   "evidence": "sanitizer/formatter in report html.py — no p-value computation in body",
+   "tags": []
+  },
+  {
+   "file": "NVIDIA__SkillEvaluator__src__skillevaluator__tier3__harbor__collector.py",
+   "def_line_no": 4587,
+   "fn": "_mcnemar_exact_probability",
+   "name_promises_exact": true,
+   "verdict": "exact-wrapper",
+   "evidence": "thin wrapper over _mcnemar_exact_probability (collector.py:4587, exact Fraction binomial tail); verified",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "NVIDIA__SkillEvaluator__src__skillevaluator__tier3__harbor__collector.py",
+   "def_line_no": 4688,
+   "fn": "_mcnemar_exact_p_value",
+   "name_promises_exact": true,
+   "verdict": "exact-wrapper",
+   "evidence": "thin wrapper over _mcnemar_exact_probability (collector.py:4587, exact Fraction binomial tail); verified",
+   "tags": []
+  },
+  {
+   "file": "NVIDIA__SkillEvaluator__src__skillevaluator__tier3__harbor__collector.py",
+   "def_line_no": 4693,
+   "fn": "_minimum_attainable_mcnemar_probability",
+   "name_promises_exact": false,
+   "verdict": "exact-wrapper",
+   "evidence": "thin wrapper over _mcnemar_exact_probability (collector.py:4587, exact Fraction binomial tail); verified",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "NVIDIA__SkillEvaluator__src__skillevaluator__tier3__harbor__collector.py",
+   "def_line_no": 4700,
+   "fn": "_minimum_attainable_mcnemar_p_value",
+   "name_promises_exact": false,
+   "verdict": "exact-wrapper",
+   "evidence": "thin wrapper over _mcnemar_exact_probability (collector.py:4587, exact Fraction binomial tail); verified",
+   "tags": []
+  },
+  {
+   "file": "OpenAgentsInc__openagents__training__compiled-functions__compare.py",
+   "def_line_no": 23,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "PKUDigitalHealth__ECG-R1__scripts__evaluation__modality_missing__evaluate-main__comparisons__mcnemar__mcnemar.py",
+   "def_line_no": null,
+   "fn": null,
+   "name_promises_exact": false,
+   "verdict": "no-def-line",
+   "evidence": "SG def-like heuristic flagged file but no def captured in body scan",
+   "tags": [
+    "NO-DEF-FOUND"
+   ]
+  },
+  {
+   "file": "SodaMem__SodaMem__benchmarking__run_s500.py",
+   "def_line_no": 664,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "SodaMem__SodaMem__benchmarking__tests__test_benchmarking_anchor.py",
+   "def_line_no": 163,
+   "fn": "test_mcnemar_exact_itself_is_unchanged",
+   "name_promises_exact": true,
+   "verdict": "test-pins-exact-values",
+   "evidence": "test file; asserts mcnemar_exact(5,0)==0.0625=2/32 (test_benchmarking_anchor.py:163-169, read)",
+   "tags": []
+  },
+  {
+   "file": "TaewoooPark__Motifcode__packages__eval__polyglot-bench__compare.py",
+   "def_line_no": 68,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "TianyuCodings__NanoJev__scripts__summarize_appo_supervision.py",
+   "def_line_no": 39,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "Trampoline-AI__predict-rlm__src__rlm_gepa__reporting__stats.py",
+   "def_line_no": 1891,
+   "fn": "_mcnemar_exact_p",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "WingedGuardian__GENesis-AGI__src__genesis__eval__stats.py",
+   "def_line_no": 168,
+   "fn": "_mcnemar_exact_two_sided",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "WingedGuardian__GENesis-AGI__tests__test_eval__test_stats.py",
+   "def_line_no": 12,
+   "fn": "test_mcnemar_exact_known_values",
+   "name_promises_exact": true,
+   "verdict": "test-not-implementation",
+   "evidence": "test file — excluded from implementation population; not body-verified",
+   "tags": []
+  },
+  {
+   "file": "ZeKaiNie__universal-examprep-skill__full__scripts__retrieval_evaluation.py",
+   "def_line_no": 836,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "air-embodied-brain__Zetta-Embodiment__scripts__experiments__analyze_paired_results.py",
+   "def_line_no": 66,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "amd2g2zz__kunglao-agent__scripts__bench_analyze.py",
+   "def_line_no": 40,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "amd2g2zz__kunglao-agent__tests__test_bench_analyze.py",
+   "def_line_no": 12,
+   "fn": "test_mcnemar_exact_known_table",
+   "name_promises_exact": true,
+   "verdict": "test-not-implementation",
+   "evidence": "test file — excluded from implementation population; not body-verified",
+   "tags": []
+  },
+  {
+   "file": "amd2g2zz__kunglao-agent__tests__test_bench_analyze.py",
+   "def_line_no": 17,
+   "fn": "test_mcnemar_exact_balanced_is_one",
+   "name_promises_exact": true,
+   "verdict": "test-not-implementation",
+   "evidence": "test file — excluded from implementation population; not body-verified",
+   "tags": []
+  },
+  {
+   "file": "antoinezambelli__forge__tests__eval__significance.py",
+   "def_line_no": 64,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "log-space exact binomial tail (lgamma-based, no comb token so untagged by classifier); verified by direct read of significance.py:64-88",
+   "tags": []
+  },
+  {
+   "file": "antoinezambelli__forge__tests__eval__significance.py",
+   "def_line_no": 89,
+   "fn": "mcnemar_asymptotic",
+   "name_promises_exact": false,
+   "verdict": "approx-honest-name",
+   "evidence": "tags=approx-normal(erf/norm/2*(1-)",
+   "tags": [
+    "approx-normal(erf/norm/2*(1-)"
+   ]
+  },
+  {
+   "file": "antoinezambelli__forge__tests__eval__significance.py",
+   "def_line_no": 99,
+   "fn": "mcnemar_pvalue",
+   "name_promises_exact": false,
+   "verdict": "dispatcher-honest",
+   "evidence": "mcnemar_pvalue: exact branch (b+c<=25) -> mcnemar_exact, else mcnemar_asymptotic; both branches separately named (significance.py:99, read)",
+   "tags": []
+  },
+  {
+   "file": "ashishsinha1602__schemagate__benchmarks__rerank_eval.py",
+   "def_line_no": 39,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "bespokelabsai__nimble__nimble__evaluation__compare_public.py",
+   "def_line_no": 28,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "bnsd55__jevmlx__jevmlx__evalmetrics.py",
+   "def_line_no": 696,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "bojieli__ai-agent-book__chapter10__multi-role-transfer__run_comparison.py",
+   "def_line_no": 121,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "borghei__Claude-Skills__engineering__agent-harness__scripts__eval_diff.py",
+   "def_line_no": 56,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "cyberlife-coder__VelesDB__crates__velesdb-memory__examples__locomo__analysis__stats.py",
+   "def_line_no": 6,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "cyberlife-coder__VelesDB__crates__velesdb-memory__examples__locomo__analysis__stats.py",
+   "def_line_no": 20,
+   "fn": "mcnemar_by_category",
+   "name_promises_exact": false,
+   "verdict": "exact-wrapper",
+   "evidence": "mcnemar_by_category wraps mcnemar_exact (stats.py:6, scipy binomtest two-sided exact); verified",
+   "tags": []
+  },
+  {
+   "file": "datadog-labs__agent-skills__agent-observability__agent-observability-build-eval-from-annotations__references__scoring.py",
+   "def_line_no": 40,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "datumbox__datumbox-framework__datumbox-framework-core__src__main__java__com__datumbox__framework__core__statistics__nonparametrics__relatedsamples__McNemar.java",
+   "def_line_no": null,
+   "fn": null,
+   "name_promises_exact": false,
+   "verdict": "no-def-line",
+   "evidence": "SG def-like heuristic flagged file but no def captured in body scan",
+   "tags": [
+    "NO-DEF-FOUND"
+   ]
+  },
+  {
+   "file": "elder-plinius__OBLITERATUS__obliteratus__concepts__statistics.py",
+   "def_line_no": 42,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "ggozad__haiku.rag__evaluations__evaluations__pairing.py",
+   "def_line_no": 15,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact-delegate",
+   "evidence": "delegates to _two_sided_binomial (pairing.py:7) = sum(comb(n,i))/2**n (fetched+verified)",
+   "tags": []
+  },
+  {
+   "file": "hanamorix__companion-emergence__brain__memory__judge_eval.py",
+   "def_line_no": 173,
+   "fn": "mcnemar_exact_p",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "huggingface__evaluate__comparisons__mcnemar__mcnemar.py",
+   "def_line_no": null,
+   "fn": null,
+   "name_promises_exact": false,
+   "verdict": "no-def-line",
+   "evidence": "SG def-like heuristic flagged file but no def captured in body scan",
+   "tags": [
+    "NO-DEF-FOUND"
+   ]
+  },
+  {
+   "file": "jaredpalmer__kev__scripts__jevbench_paired.py",
+   "def_line_no": 35,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "jianzhou0420__AgentCanvas__coding-agent__stdrun.py",
+   "def_line_no": 125,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "jiayuqi7813__DeepSeek-V4-Flash-0731-CRACK-2x-DGX-Spark__scripts__compare_behavior.py",
+   "def_line_no": 27,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "jiayuqi7813__DeepSeek-V4-Flash-0731-CRACK-2x-DGX-Spark__scripts__compare_capability.py",
+   "def_line_no": 36,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "jiayuqi7813__DeepSeek-V4-Flash-0731-CRACK-2x-DGX-Spark__scripts__compare_judgments.py",
+   "def_line_no": 33,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "jonashertner__opencaselaw__benchmarks__swiss_legal_rag_bench__statistical_analysis.py",
+   "def_line_no": 52,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "juyterman1000__entroly__benchmarks__agentic_tasks_run.py",
+   "def_line_no": 493,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "juyterman1000__entroly__benchmarks__compression_frontier.py",
+   "def_line_no": 557,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "juyterman1000__entroly__benchmarks__model_recovery.py",
+   "def_line_no": 538,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "juyterman1000__entroly__benchmarks__neural_evidence_frontier.py",
+   "def_line_no": 60,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "juyterman1000__entroly__benchmarks__neural_query_shift.py",
+   "def_line_no": 50,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "liberomax__LIBERO-MAX__src__libero_max__results.py",
+   "def_line_no": 218,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "no-human-ai__no_human__src__no_human__eval__bench_compare.py",
+   "def_line_no": 340,
+   "fn": "mcnemar_exact_p",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "no-magic-ai__no-magic__03-systems__microcot.py",
+   "def_line_no": 781,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "notque__vexjoy-agent__scripts__routing-ab-test.py",
+   "def_line_no": 731,
+   "fn": "_mcnemar_exact_p",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "royshil__scoresight__ocr_eval__metrics.py",
+   "def_line_no": 294,
+   "fn": "mcnemar_exact_p",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "rtk-ai__icm__bench__amb__rejudge_strict.py",
+   "def_line_no": 324,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "rzc156__dreamforge__src__dreamforge__stats.py",
+   "def_line_no": 90,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "log-space exact tail via _log_binom_pmf, stats.py:90 (fetched+verified)",
+   "tags": []
+  },
+  {
+   "file": "strands-labs__strands-decider__evaluation__jevbench__paired.py",
+   "def_line_no": 53,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "udaysharmadev__Gravitas__benchmarks__runner__compare.py",
+   "def_line_no": 30,
+   "fn": "mcnemar_exact_p",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "vegetableleaf__ClashAI__pipeline__e1_score.py",
+   "def_line_no": 78,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "vllm-project__semantic-router__src__training__model_classifier__modality_routing_classifier__label_audit__audit_lib__stats.py",
+   "def_line_no": 39,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "volcengine__OpenViking__benchmark__memory_organization__grader.py",
+   "def_line_no": 218,
+   "fn": "mcnemar_exact_p_value",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "vukrosic__glm-5.3-flash-from-scratch__scripts__analyze_rl_variants.py",
+   "def_line_no": 12,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "w1u2d3i4__multitown__multitown__semantic_model_probe.py",
+   "def_line_no": 339,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "weave-os__router__bench__weave_bench__stats.py",
+   "def_line_no": 99,
+   "fn": "mcnemar",
+   "name_promises_exact": false,
+   "verdict": "counts-only-no-promise",
+   "evidence": "def mcnemar() builds counts dataclass only; no p-value computed in function; name makes no exact promise (stats.py:99, read)",
+   "tags": []
+  },
+  {
+   "file": "xinxuxin__keystone-bench__keystone__metrics.py",
+   "def_line_no": 29,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "yail259__frankensurf__scripts__searchbench.py",
+   "def_line_no": 218,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "yail259__frankensurf__tests__test_searchbench.py",
+   "def_line_no": 162,
+   "fn": "test_mcnemar_exact_matches_known_values",
+   "name_promises_exact": true,
+   "verdict": "test-not-implementation",
+   "evidence": "test file — excluded from implementation population; not body-verified",
+   "tags": []
+  },
+  {
+   "file": "youngbryan97__aura__core__learning__semantic_method_overlap.py",
+   "def_line_no": 45,
+   "fn": "_mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "ypollak2__llm-router__scripts__g1_synthetic_evidence.py",
+   "def_line_no": 208,
+   "fn": "mcnemar_exact",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "ypollak2__llm-router__scripts__release__eval_gate.py",
+   "def_line_no": 80,
+   "fn": "mcnemar_exact_p",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  },
+  {
+   "file": "ypollak2__llm-router__tests__test_release_eval_gate.py",
+   "def_line_no": 335,
+   "fn": "test_mcnemar_exact_known_values",
+   "name_promises_exact": true,
+   "verdict": "test-not-implementation",
+   "evidence": "test file — excluded from implementation population; not body-verified",
+   "tags": []
+  },
+  {
+   "file": "zhangrldndx__offerclaw__rag_eval_metrics.py",
+   "def_line_no": 293,
+   "fn": "mcnemar_exact_p",
+   "name_promises_exact": true,
+   "verdict": "exact",
+   "evidence": "tags=exact-binom/comb",
+   "tags": [
+    "exact-binom/comb"
+   ]
+  }
+ ]
+}

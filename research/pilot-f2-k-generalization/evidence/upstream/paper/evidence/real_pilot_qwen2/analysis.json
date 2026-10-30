@@ -1,0 +1,35 @@
+{
+  "model": "qwen2:7b",
+  "n_questions": 20,
+  "seeds": [
+    20260901,
+    20260902,
+    20260903
+  ],
+  "err_rate_per_seed": {
+    "K=1": {
+      "20260901": 0.05,
+      "20260902": 0.05,
+      "20260903": 0.05
+    },
+    "K=3": {
+      "20260901": 0.05,
+      "20260902": 0.05,
+      "20260903": 0.05
+    },
+    "K=5": {
+      "20260901": 0.05,
+      "20260902": 0.05,
+      "20260903": 0.05
+    }
+  },
+  "err_rate_mean": {
+    "K=1": 0.05000000000000001,
+    "K=3": 0.05000000000000001,
+    "K=5": 0.05000000000000001
+  },
+  "monotone_nonincreasing": true,
+  "note": "REAL local pilot (Ollama qwen2:7b): majority-vote error rate as C_min proxy. Direction-level support only; does NOT reproduce the 2700-cell joint bound protocol.",
+  "wall_clock_s": 1579.4,
+  "finding": "Floor effect: single-sample error already at 5% (1/20), leaving no headroom for ensemble improvement; monotonicity holds trivially. A discriminative task battery (target single-sample error ~30-50%) is required before any K-contrast claim can be supported."
+}

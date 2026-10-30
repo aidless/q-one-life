@@ -1,0 +1,21 @@
+{
+  "paper_id": "PAPER6_CONSOLIDATED",
+  "tex": "F:\\Research\\PAPER6_CONSOLIDATED\\main.tex",
+  "zip": "F:\\Research\\PAPER6_CONSOLIDATED\\supplementary.zip",
+  "evidence_dirs": [
+    "F:\\Research\\PAPER6_CONSOLIDATED\\evidence"
+  ],
+  "out_dir": "F:\\Research\\PAPER6_CONSOLIDATED\\review_run",
+  "venue": "TMLR",
+  "llm": {
+    "rpc": "http://127.0.0.1:3081",
+    "roles": "all",
+    "converge": 1
+  },
+  "stages": {
+    "r6": true,
+    "prism": true,
+    "debate": true,
+    "r4_llm": true
+  }
+}

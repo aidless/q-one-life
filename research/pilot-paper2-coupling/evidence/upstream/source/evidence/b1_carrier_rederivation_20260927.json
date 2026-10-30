@@ -1,0 +1,269 @@
+{
+ "dispatch": "b1w1-tmlr-paper2-consolidated-20260926T174617Z",
+ "date": "2026-09-27",
+ "flagged_total": 23,
+ "backed": [
+  "2.72",
+  "0.9790",
+  "0.9360",
+  "0.9977",
+  "0.9997",
+  "0.9963",
+  "7.305",
+  "6.333",
+  "2.550",
+  "1.009",
+  "0.690",
+  "0.953",
+  "3.10"
+ ],
+ "unbacked": [
+  "4.40",
+  "6.794",
+  "6.015",
+  "2.422",
+  "1.007",
+  "0.426",
+  "-3.37",
+  "-1.61",
+  "0.969",
+  "0.9999"
+ ],
+ "artifact_sha256": {
+  "p2_bound_vs_heuristic_20260808.json": "fcd7d01212f63c7f9ceec0d11cc162a74d46eb1b63f3ae89a71662953066d062",
+  "p2_bound_decision_case_20260808.json": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
+  "p2_sampling_theorem_sim_20260808.json": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387"
+ },
+ "entries": [
+  {
+   "paper_value": "2.72",
+   "paper_line": "L373",
+   "carrier": "p2_bound_vs_heuristic_20260808.json",
+   "json_path_or_cell": "/total_ratio",
+   "recomputed_or_found": 2.717,
+   "rule": "R3: round(bound_total/heur_total, 2) == 2.72",
+   "agrees": true,
+   "note": "bound_total=5434, heur_total=2000, 5434/2000=2.7170 -> 2.72"
+  },
+  {
+   "paper_value": "0.9790",
+   "paper_line": "L262",
+   "carrier": "p2_bound_decision_case_20260808.json",
+   "json_path_or_cell": "/rows/7/gamma (condition='Ablation no-s0')",
+   "recomputed_or_found": 0.979,
+   "rule": "R1: render 0.979 at 4 dp == '0.9790'",
+   "agrees": true,
+   "note": "provenance caveat: raw archive mm_epc_ablation_no_s0.json not archived; this derived artifact carries the value"
+  },
+  {
+   "paper_value": "0.9360",
+   "paper_line": "L266",
+   "carrier": "p2_bound_decision_case_20260808.json",
+   "json_path_or_cell": "/rows/10/gamma (condition='DS self-eval r30')",
+   "recomputed_or_found": 0.936,
+   "rule": "R1: render 0.936 at 4 dp == '0.9360'",
+   "agrees": true,
+   "note": "provenance caveat: raw archive mm_epc_ds_selfeval_r30.json not archived; this derived artifact carries the value"
+  },
+  {
+   "paper_value": "0.9977",
+   "paper_line": "L212, L242",
+   "carrier": "Table tab:triangle-11 rows (source/main.tex L231-235)",
+   "json_path_or_cell": "five (gamma,H) pairs",
+   "recomputed_or_found": -0.9977,
+   "rule": "R3: Pearson r from the five table rows, rounded to 4 dp",
+   "agrees": true,
+   "note": "recomputed r=-0.997686, p=0.000134 (paper 0.0001 at 4dp); cross-checked against REVIEW_CARD_source_project.md manual check"
+  },
+  {
+   "paper_value": "0.9997",
+   "paper_line": "L242",
+   "carrier": "Table tab:triangle-11 rows",
+   "json_path_or_cell": "LOO leave-one-condition-out min",
+   "recomputed_or_found": -0.9997,
+   "rule": "R3: min LOO r rounded to 4 dp",
+   "agrees": true,
+   "note": ""
+  },
+  {
+   "paper_value": "0.9963",
+   "paper_line": "L242",
+   "carrier": "Table tab:triangle-11 rows",
+   "json_path_or_cell": "LOO leave-one-condition-out max",
+   "recomputed_or_found": -0.9963,
+   "rule": "R3: max LOO r rounded to 4 dp",
+   "agrees": true,
+   "note": ""
+  },
+  {
+   "paper_value": "7.305",
+   "paper_line": "L152",
+   "carrier": "closed form 1/(gamma*sqrt(N*s*(1-s))) of Proposition 1 (no data dependency)",
+   "json_path_or_cell": "cell (0.05,30)",
+   "recomputed_or_found": 7.30525,
+   "rule": "R3 if round==paper else R2 (1-ULP slack)",
+   "agrees": true,
+   "note": "recomputed=7.305250; delta=0.000250"
+  },
+  {
+   "paper_value": "6.333",
+   "paper_line": "L152",
+   "carrier": "closed form 1/(gamma*sqrt(N*s*(1-s))) of Proposition 1 (no data dependency)",
+   "json_path_or_cell": "cell (0.1,10)",
+   "recomputed_or_found": 6.332463,
+   "rule": "R3 if round==paper else R2 (1-ULP slack)",
+   "agrees": true,
+   "note": "recomputed=6.332463; delta=0.000537"
+  },
+  {
+   "paper_value": "2.550",
+   "paper_line": "L152",
+   "carrier": "closed form 1/(gamma*sqrt(N*s*(1-s))) of Proposition 1 (no data dependency)",
+   "json_path_or_cell": "cell (0.25,10)",
+   "recomputed_or_found": 2.549612,
+   "rule": "R3 if round==paper else R2 (1-ULP slack)",
+   "agrees": true,
+   "note": "recomputed=2.549612; delta=0.000388"
+  },
+  {
+   "paper_value": "1.009",
+   "paper_line": "L152",
+   "carrier": "closed form 1/(gamma*sqrt(N*s*(1-s))) of Proposition 1 (no data dependency)",
+   "json_path_or_cell": "cell (1.0,5)",
+   "recomputed_or_found": 1.008579,
+   "rule": "R3 if round==paper else R2 (1-ULP slack)",
+   "agrees": true,
+   "note": "recomputed=1.008579; delta=0.000421"
+  },
+  {
+   "paper_value": "0.690",
+   "paper_line": "L152",
+   "carrier": "closed form 1/(gamma*sqrt(N*s*(1-s))) of Proposition 1 (no data dependency)",
+   "json_path_or_cell": "cell (2.0,5)",
+   "recomputed_or_found": 0.690087,
+   "rule": "R3 if round==paper else R2 (1-ULP slack)",
+   "agrees": true,
+   "note": "recomputed=0.690087; delta=0.000087"
+  },
+  {
+   "paper_value": "0.953",
+   "paper_line": "L152",
+   "carrier": "p2_sampling_theorem_sim_20260808.json (and closed form s(3.0))",
+   "json_path_or_cell": "/gamma_grid[6].s",
+   "recomputed_or_found": 0.9526,
+   "rule": "R3: round(artifact s=0.9526 to 3 dp) == 0.953; closed form s(3.0)=0.952574",
+   "agrees": true,
+   "note": ""
+  },
+  {
+   "paper_value": "3.10",
+   "paper_line": "L476, L484",
+   "carrier": "requirements_source_project.txt",
+   "json_path_or_cell": "line 3 comment '# Python 3.10+'",
+   "recomputed_or_found": "Python 3.10+",
+   "rule": "R1 exact string",
+   "agrees": true,
+   "note": "constraint string, not a measurement"
+  },
+  {
+   "paper_value": "4.40",
+   "paper_line": "L476, L484",
+   "carrier": "requirements_source_project.txt (searched; absent)",
+   "json_path_or_cell": "no transformers pin found",
+   "recomputed_or_found": null,
+   "rule": "R1",
+   "agrees": false,
+   "note": "UNBACKED: paper requires transformers>=4.40; project requirements.txt has no transformers entry; not a measurement"
+  },
+  {
+   "paper_value": "6.794",
+   "paper_line": "L152",
+   "carrier": null,
+   "json_path_or_cell": null,
+   "recomputed_or_found": null,
+   "rule": "n/a",
+   "agrees": false,
+   "note": "UNBACKED: coverage-probe simulation (5000 runs/cell, logit estimator) script and output not archived; grep across /data3/Research/PAPER2_CONSOLIDATED (all text types) hits only main.tex/main_nb.tex and reports/ (which restate the paper)"
+  },
+  {
+   "paper_value": "6.015",
+   "paper_line": "L152",
+   "carrier": null,
+   "json_path_or_cell": null,
+   "recomputed_or_found": null,
+   "rule": "n/a",
+   "agrees": false,
+   "note": "UNBACKED: same missing coverage-probe output"
+  },
+  {
+   "paper_value": "2.422",
+   "paper_line": "L152",
+   "carrier": null,
+   "json_path_or_cell": null,
+   "recomputed_or_found": null,
+   "rule": "n/a",
+   "agrees": false,
+   "note": "UNBACKED: same missing coverage-probe output"
+  },
+  {
+   "paper_value": "1.007",
+   "paper_line": "L152",
+   "carrier": null,
+   "json_path_or_cell": null,
+   "recomputed_or_found": null,
+   "rule": "n/a",
+   "agrees": false,
+   "note": "UNBACKED: same missing coverage-probe output"
+  },
+  {
+   "paper_value": "0.426",
+   "paper_line": "L152",
+   "carrier": null,
+   "json_path_or_cell": null,
+   "recomputed_or_found": null,
+   "rule": "n/a",
+   "agrees": false,
+   "note": "UNBACKED: same missing coverage-probe output"
+  },
+  {
+   "paper_value": "-3.37",
+   "paper_line": "L152",
+   "carrier": null,
+   "json_path_or_cell": null,
+   "recomputed_or_found": null,
+   "rule": "n/a",
+   "agrees": false,
+   "note": "UNBACKED: closed form logit(1/30)=-3.3673 reproduces the rendering, but the positive-coupling rate 1/30 itself has no archived carrier (mm_epc_multi_seed_ds_final.json absent)"
+  },
+  {
+   "paper_value": "-1.61",
+   "paper_line": "L152",
+   "carrier": null,
+   "json_path_or_cell": null,
+   "recomputed_or_found": null,
+   "rule": "n/a",
+   "agrees": false,
+   "note": "UNBACKED: closed form logit(5/30)=-1.6094 reproduces the rendering, but the rate 5/30 has no archived carrier"
+  },
+  {
+   "paper_value": "0.969",
+   "paper_line": "L276",
+   "carrier": null,
+   "json_path_or_cell": null,
+   "recomputed_or_found": null,
+   "rule": "n/a",
+   "agrees": false,
+   "note": "UNBACKED: per-seed gamma-JSD pair file gamma_jsd_correlation.json is referenced by experiments/T1_pinsker_fit.py line 79 but is not archived; no artifact contains 0.969/0.998/n=152"
+  },
+  {
+   "paper_value": "0.9999",
+   "paper_line": "L348",
+   "carrier": null,
+   "json_path_or_cell": null,
+   "recomputed_or_found": null,
+   "rule": "n/a",
+   "agrees": false,
+   "note": "UNBACKED: convergence-dynamics simulation output (H(0)) not archived; protocol.md L263 only restates paper values (circular)"
+  }
+ ]
+}

@@ -1,0 +1,462 @@
+--- evidence/upstream/paper/main.tex
++++ source/main.tex
+@@ -66,15 +66,14 @@
+ PBFT-style deterministic thresholding, uniform-weighted mean, three
+ trust-score variants, and an adaptive hybrid) across verifier pools of
+ size $N \in \{5,7,10\}$ with capture counts $f \in \{1,2,3\}$ in a
+-synthetic benchmark and a small local-model pilot; and (iii) a falsifiable prediction---that captured verifiers'
+-outputs are statistically indistinguishable from a minority of
+-honest-but-wrong verifiers, so any statistical-deviation capture rule
+-incurs false-positive costs that can outweigh its gains. A synthetic pilot (4,000 trials per cell, $N=7$ verifiers,
+-f=2 captured) already tests the prediction and yields a nuanced result:
+-trust-score weighting beats plain majority under prompt-injection capture
+-(accuracy 0.69 vs. 0.34 at honest accuracy 0.6; 0.94 vs. 0.74 at 0.8),
+-because calibration-phase trust identifies deterministically flipped
+-verifiers; under majority-bias mimicry, however, the same method fails
++synthetic benchmark and a small local-model pilot; and (iii) a working
++hypothesis that captured verifier outputs can resemble a minority of
++honest-but-wrong verifiers, so deviation-based capture rules may incur
++false-positive costs. A synthetic pilot (4,000 trials per cell, $N=7$
++verifiers, f=2 captured) tests one instantiation of this hypothesis:
++trust-score weighting improves over plain majority under prompt-injection
++capture (accuracy 0.69 vs. 0.34 at honest accuracy 0.6; 0.94 vs. 0.74 at
++0.8), but the same method does not improve under majority-bias mimicry
+ (0.32 vs. 0.41 at honest accuracy 0.6). These pilot values are synthetic and
+ do not establish a universal impossibility result. A descriptive local-model
+ pilot is included in the evidence package, but a held-out real-trace benchmark
+@@ -82,28 +81,16 @@
+ scripts so the benchmark can be extended independently.
+ 
+ 
+-\textbf{Reproducibility and ethics.} All experiments use deterministic seeds (PYTHONHASHSEED=0) with GPT-4o, DeepSeek, and Qwen models; full experimental protocols, code, raw API logs, and analysis scripts are released in the supplementary material with SHA-256 checksums. This work studies evaluation dynamics in LLM systems; ethical implications include silent reliability decay in safety-critical systems and the need for version-dependent evaluation verification.\end{abstract}
++\textbf{Reproducibility and scope.} The evidence package contains the synthetic
++benchmark tables, the checked-in generators and aggregation code, and a
++descriptive four-model local Ollama pilot. It does not contain a held-out real
++trace benchmark, and the local pilot is not presented as an external
++generalization test. This work studies evaluation dynamics in LLM systems;
++we discuss the bounded dual-use risk of releasing the attack generators.
++\end{abstract}
+ 
+ % =====================================================================
+ 
+-
+-\textbf{Novelty positioning.} This work differs from existing literature in three ways: (i) systematic decomposition of temporal vs.\ communicative causes of calibration fatigue; (ii) demonstration that self-evaluation immunity is model-dependent and fragile; (iii) reframing of the coupling-noise tradeoff as method-specific with explicit falsification conditions.
+-
+-
+-
+-\textbf{Contributions.} This paper makes four contributions: (1) \emph{Systematic empirical analysis} of the target phenomenon across multiple model families and experimental conditions, with matched baselines and controlled confounds. (2) \emph{Formal characterization} of the key metric or relation, with explicit definitions, falsification conditions, and boundary cases. (3) \emph{Cross-model validation} demonstrating that observed effects are not model-specific, with replication attempts and explicit reporting of reproduction failures. (4) \emph{Reproducibility framework}: all experiments released with deterministic seeds, SHA-256 checksums, and step-by-step reproduction protocols, enabling independent verification of all results.\section{Experimental Setup}
+-\label{sec:experimental-setup}
+-
+-\textbf{Models and APIs.} All experiments use the following canonical configuration unless otherwise noted. \textit{Primary model}: GPT-4o (API version gpt-4o-2024-05-13) with temperature $=0.0$, top\_p $=1.0$, and max\_tokens $=1024$ for all agent interactions. \textit{Cross-model validation}: DeepSeek-V4-Pro and Qwen-2.5-72B via their respective APIs with identical generation parameters. \textit{Reproducibility}: all randomness controlled via deterministic seeds (seed $=42$ for canonical runs; 30 distinct seeds for repetition experiments); Python hash randomization disabled (PYTHONHASHSEED $=0$); all API calls use idempotent request parameters.
+-
+-\textbf{Tasks and datasets.} Evaluation tasks include GSM8K (math reasoning, $K{=}5$ problems per round), MMLU (multi-disciplinary QA), and HumanEval (code generation) for diversity. All datasets are publicly available; exact problem subsets and seed mappings are released in the evidence package.
+-
+-\textbf{Metrics.} Primary metrics: Expected Calibration Error (ECE, $B{=}10$ equal-width bins), Brier score, coupling coefficient $\gamma$, strategy entropy $H$, and coefficient of variation $\CV$. All metrics computed at the per-seed level and aggregated across seeds with bootstrap confidence intervals.
+-
+-\textbf{Statistical procedures.} All confidence intervals are bootstrap intervals ($B{=}5{,}000$ resamples). Pairwise contrasts use Welch's $t$-test with Bonferroni correction for multiple comparisons (correction factor $k$ specified per table). Effect sizes are reported as paired Cohen's $d_z$, computed from the per-seed accuracy records; the five seeds are matched runs of one protocol, so $d_z$ rather than the independent-sample $d$ is the appropriate statistic. All tests two-sided unless otherwise noted.
+-
+-\textbf{Exclusion criteria.} Runs with API errors, empty responses, or malformed outputs ($<2\%$ of total) are excluded and re-run with fresh seeds. All exclusions logged in the evidence manifest with SHA-256 checksums for all result files.
+-
+ \section{Introduction}
+ \label{sec:intro}
+ % =====================================================================
+@@ -148,18 +135,14 @@
+   \item A unified experimental protocol that benchmarks seven aggregation
+         methods under three attack families and four scenario configurations
+         (Section~\ref{sec:method}).
+-  \item An empirical finding that \emph{no} aggregation method we tested
+-        substantially outperforms plain majority voting, and several
+-        trust-score variants \emph{underperform} majority under strong
+-        capture (Section~\ref{sec:exp}). We provide a structural
+-        explanation for the negative result: in our setting the captured
+-        verifiers' outputs are statistically indistinguishable from a
+-        minority of honest-but-wrong verifiers, so any rule that uses
+-        statistical deviation to identify capture incurs false-positive
+-        costs that outweigh its true-positive gains.
+-  \item A reproducible open-source release with code, vote generators, and a
+-        Beyond-PDF interactive attack demonstration
+-        (Section~\ref{sec:broader}).
++  \item An empirical finding that, in the four synthetic scenarios tested,
++        no aggregation method substantially outperforms plain majority and
++        several trust-score variants underperform it under strong capture
++        (Section~\ref{sec:exp}). We offer a hypothesis, not a structural
++        theorem, that capture can resemble honest-but-wrong behavior in the
++        generator.
++  \item A reproducible evidence package with the vote generators,
++        aggregation code, frozen tables and a descriptive local-model pilot.
+ \end{itemize}
+ 
+ We emphasise that the \emph{negative} headline finding is the paper's
+@@ -416,10 +399,9 @@
+ match published numbers for LLM judges on rubric decisions
+ \citep{leung2026rubricllm}: per-verifier outputs are concentrated
+ near $0$ or $1$ with $p_{\text{conf}} \in [0.7, 0.85]$ and a small
+-amount of i.i.d.\ Gaussian noise ($\sigma = 0.05$). We additionally
+-release a \emph{Beyond-PDF} interactive demonstration that replays
+-the benchmark on real LLM trace files
+-(Section~\ref{sec:broader}).
++amount of i.i.d.\ Gaussian noise ($\sigma = 0.05$). The candidate tree does
++not contain a held-out real-trace benchmark; the local pilot is reported
++separately as a descriptive artifact.
+ 
+ \paragraph{Attack models.}
+ \label{sub:attacks}
+@@ -466,17 +448,17 @@
+ % =====================================================================
+ 
+ \paragraph{Headline.}
+-Table~\ref{tab:main} reports the headline result. Under every scenario
+-we test, plain majority voting is at or near the top; the trust-based
+-methods tie or trail majority by $1$--$3$ percentage points; and
+-\textsc{Atv}, our adaptive hybrid, never wins. The differences are
+-small but consistent across all five random seeds we ran; the
+-standard deviations are below $0.01$ in every cell.
++Table~\ref{tab:main} reports the headline result. Plain majority voting is
++best or tied for best in S1--S3 and is within $0.8$ percentage points of the
++best method in S4, where trust-mean reaches $0.8506$ versus $0.8430$ for
++majority. \textsc{Atv} never wins a scenario. The differences are small
++across the five random seeds; the reported cell standard deviations are
++below $0.01$.
+ 
+ \begin{table}[ht]
+-\caption{Decision accuracy across four scenarios. Best per column
+-in bold. No aggregation method we tested substantially outperforms
+-plain majority voting.}
++\caption{Decision accuracy across four scenarios. Best per column in bold.
++Majority is best or tied in S1--S3; trust-mean is higher in S4, while the
++four-scenario mean is essentially tied between majority and trust-median.}
+ \label{tab:main}
+ \centering
+ \small
+@@ -536,27 +518,20 @@
+ \scshape{Atv} improves on the leading baselines, and the negative result in
+ \Cref{tab:main} stands on the point estimates, not on the effect sizes.
+ 
+-Second, \texttt{majority} and \texttt{trust\_median} produce
+-\emph{byte-identical} per-seed predictions in S1, S2 and S3; only in S4 do the
+-two diverge ($\Delta = 0.0014$). The two rows of \Cref{tab:main} that appear to
+-differ at three decimal places are therefore the same rule under three of the
+-four conditions, which is worth stating explicitly because the table invites
+-the opposite reading. It also means the \texttt{trust\_median} row of
+-\Cref{tab:dz} is numerically the \texttt{majority} row: under these conditions
+-the two aggregation rules coincide, and reporting them as separate baselines
+-overstates how many distinct methods were compared.
+-
+-\paragraph{Why no method beats majority.}
+-The negative result has a structural explanation. Capture is
+-\emph{statistically indistinguishable from honest-but-wrong}: a
+-captured verifier outputting the complement of its honest output has
+-exactly the same per-instance deviation from the median as an honest
+-verifier that happens to be wrong on this round. Any rule that uses
+-deviation from the median to identify capture therefore cannot
+-distinguish a captured verifier from a minority of honest-but-wrong
+-verifiers; it will either ignore both (and gain nothing) or exclude
+-both (and lose accuracy on rounds where honest-but-wrong verifiers
+-are the actual minority).
++Second, the reported per-seed accuracy vectors for \texttt{majority} and
++\texttt{trust\_median} are identical in S1, S2 and S3 and differ by $0.007$ in
++S4. The evidence records per-seed accuracies rather than per-round prediction
++streams, so we do not claim that the two rules produce byte-identical
++predictions.
++
++\paragraph{A hypothesis for the negative result.}
++We hypothesize that in this synthetic generator capture can be hard to
++distinguish from honest-but-wrong behavior: a captured verifier outputting
++the complement of its honest output can have a similar per-round deviation
++from the median as an honest verifier that happens to be wrong. A rule that
++uses deviation from the median to identify capture may therefore ignore both
++or exclude both. The evidence package does not contain a separate test of
++this mechanism, so it remains a hypothesis rather than a structural theorem.
+ 
+ In the high-honest scenario S1, the trust-based methods approach
+ majority but trail it by 0.5 percentage points, consistent with the
+@@ -573,39 +548,26 @@
+ 
+ \paragraph{Per-attack breakdown.}
+ Across the three attack families (prompt injection, rubric injection,
+-majority bias), the ordering of methods is qualitatively similar.
+-Majority and trust\_median remain tied at the top across all three
+-attack types; \textsc{Atv} and the Kalman variant trail by $0.5$--$1.5$
+-percentage points. The largest gap between majority and the best
+-trust-based method is under \textsc{RubricInj}, where trust\_median
+-loses to majority by $0.7$ percentage points because the rubric
+-injection only flips on a random fraction of rounds, and the trust
+-update averages over both flipped and unflipped rounds.
+-
+-\paragraph{Sensitivity to hyperparameters.}
+-\textsc{Atv}'s $\tau_{\text{split}}$ was tuned on a held-out scenario;
+-sensitivity sweeps over $\tau_{\text{split}} \in [0.2, 0.8]$ change
+-\textsc{Atv}'s mean accuracy by at most $0.4$ percentage points and
+-do not affect its ranking. Trust $\alpha$ sweeps over $[0.5, 0.99]$
+-shift trust\_mean by $\pm 0.5$ percentage points with no rank
+-change. Full sensitivity table in
++majority bias), the best method differs by family. Trust-mean is highest
++under prompt injection and majority-bias mimicry, while trust-median,
++Kalman-trust, and \textsc{Atv} are at the top under rubric injection.
++Majority is within $1.7$ percentage points of the best attack-family mean
++and remains a strong baseline; this does not establish a universal rule.
++
++\paragraph{Sensitivity evidence.}
++The checked-in evidence contains an ensemble-size sweep at $N\in\{5,7,10\}$,
++but no per-cell $\tau_{\text{split}}$ or trust-decay sweep. We therefore make
++no claim about hyperparameter robustness; the sweep is reported exactly in
+ Appendix~\ref{app:ablation}.
+ 
+ \paragraph{Implication.}
+-The benchmark implies that, for the ensemble size, attack strength,
+-and honest-accuracy regime we consider, \emph{the engineering effort
+-of building a non-trivial aggregation rule does not pay off}.
+-Practitioners should prefer plain majority voting and invest their
+-engineering effort elsewhere --- either in increasing honest-verifier
+-accuracy or in diversifying the verifier pool so that capture becomes
+-harder. We elaborate on diversification as a defensive strategy in
+-Section~\ref{sec:conclusion}.
++Within the synthetic ensemble sizes, attack strengths, and honest-accuracy
++regimes in this benchmark, the tested trust-based and adaptive rules do not
++show a consistent gain over plain majority. This is a bounded empirical
++statement, not a claim that all non-trivial aggregators fail.
+ 
+ % =====================================================================
+ \section{Related Work}
+-\textbf{Novelty positioning.} This work makes three distinct contributions relative to prior literature. \textbf{First}, prior work on calibration in multi-agent systems reported calibration effects but did not systematically deconfound temporal from communicative causes; our pure-factor decomposition isolates the dominant causal factor. \textbf{Second}, prior work treated self-evaluation immunity as a stable property; we demonstrate that model updates can silently invert this behavior, showing it is model-dependent and fragile. \textbf{Third}, prior work proposed structural coupling-noise tradeoffs; our deterministic-seed reruns fail to support universal noise-increase claims, and we reframe the tradeoff as a method-specific hypothesis with explicit falsification conditions.
+-
+-
+ \label{sec:related}
+ % =====================================================================
+ 
+@@ -633,8 +595,8 @@
+ \citet{perez2022red,schulhoff2023ignore} catalogue prompt-injection and
+ red-team attack techniques against LLM evaluators. Our threat model
+ operationalises these observations into a quantitative capture-resilience
+-definition and provides a protocol that provably maintains aggregation
+-correctness under bounded capture.
++definition and a reproducible benchmark; it does not establish a general
++aggregation-correctness guarantee.
+ 
+ \paragraph{Peer-review automation.}
+ \citet{liu2026paperreviewtoolkit} release an open-source multi-reviewer
+@@ -691,31 +653,19 @@
+ problem than running our code.
+ 
+ \paragraph{Responsible disclosure norms.}
+-We follow the standard ML-security responsible-disclosure norm: we
+-release the benchmark code under a licence that prohibits offensive
+-use, and we provide a \texttt{ResponsibleUse.md} file in the
+-repository that documents the intended defensive use and lists
+-specific prohibited uses. We do not release any captured-verifier
+-weights or fine-tuning scripts that would lower the cost of deploying
+-a real capture attack.
++The candidate evidence tree contains the benchmark code and attack
++generators; the final license and release wording remain user decisions.
++No captured-verifier weights or fine-tuning scripts are present.
+ 
+ \paragraph{Limitations of public release.}
+-The benchmark code we release is sufficient to \emph{reproduce} our
+-results but not sufficient to \emph{deploy} a capture attack against
+-a real ensemble without substantial additional engineering. This is
+-deliberate. We discuss the scope of the release, including which
+-extensions a future maintainer might add and which are out of scope,
+-in the \texttt{README.md} of the released repository.
++The benchmark code is sufficient to reproduce the synthetic tables but not
++to deploy a capture attack against a real ensemble without substantial
++additional engineering. This scope is deliberate.
+ 
+ \paragraph{Stakeholder considerations.}
+ Verifier-capture attacks disproportionately threaten operators of
+-multi-LLM auditing pipelines, including the authors of this paper,
+-who maintain an open-source peer-review audit tool
+-\citep{liu2026paperreviewtoolkit}. We have therefore prioritised
+-documentation of defensive best-practice over attack
+-generalisation, and we invite other operators of LLM-judge ensembles
+-to contact us with deployment experience that would refine the
+-attack-and-defence landscape this benchmark sketches.
++multi-LLM auditing pipelines. The benchmark is documented for defensive
++testing; no external outreach or deployment validation is claimed.
+ 
+ \paragraph{Positive-negative balance.}
+ On balance, we believe the positive impact of releasing this
+@@ -732,18 +682,15 @@
+ % =====================================================================
+ 
+ This study does not involve human subjects, personal data, or animal
+-subjects. The verifier-output data we use is either synthetic
+-(Section~\ref{sub:generator}) or from publicly available LLM-judge
+-benchmarks \citep{leung2026rubricllm,zhang2026blindcurator}.
++subjects. The verifier-output data used here is either synthetic
++(Section~\ref{sub:generator}) or from the descriptive local-model pilot.
+ 
+ \paragraph{Dual-use risk.}
+ We have discussed the dual-use risk of releasing the attack
+ implementations in detail in Section~\ref{sec:broader}. In summary,
+-the bounded risk is outweighed by the positive impact of the
+-benchmark, and we have taken reasonable mitigations: a
+-responsible-use licence, no released captured-verifier weights or
+-fine-tuning scripts, and a \texttt{ResponsibleUse.md} file in the
+-repository.
++the bounded risk is discussed in Section~\ref{sec:broader}. The candidate
++tree contains no captured-verifier weights or fine-tuning scripts; final
++license and responsible-use wording remain user decisions.
+ 
+ \paragraph{Affected stakeholders.}
+ The primary stakeholders are operators of multi-LLM verification
+@@ -773,18 +720,16 @@
+ 
+ We have presented an empirical benchmark of seven aggregation methods
+ for multi-LLM verifier ensembles under three verifier-capture attacks,
+-across four scenarios. The headline finding is \emph{negative}: no
+-aggregation method we tested substantially outperforms plain majority
+-voting, and several trust-score variants underperform majority under
+-strong capture. We argued that the negative result is structural: a
+-captured verifier is statistically indistinguishable from an honest
+-verifier that happens to be wrong, so any rule that uses statistical
+-deviation to identify capture cannot outperform a rule that ignores
+-the distinction.
++across four scenarios. In this synthetic benchmark, plain majority is a
++strong baseline: it is best or tied in three scenarios and within 0.8
++percentage points of the best method in the fourth. Several trust-score
++variants underperform majority in some scenarios. We hypothesize that
++captured behavior can resemble honest-but-wrong behavior in the generator,
++but we do not establish that as a structural theorem.
+ 
+ \paragraph{When our negative result would \emph{not} hold.}
+-Our negative result rests on the assumption that captured verifiers
+-mimic honest-but-wrong verifiers. If a real-world capture breaks this
++The bounded result rests on the synthetic generator's assumption that
++captured verifiers can resemble honest-but-wrong verifiers. If a real-world capture breaks this
+ assumption --- for instance, by introducing a structured deviation
+ (e.g. a verifier that always outputs the exact median plus a fixed
+ delta) --- then a more sophisticated aggregation rule may recover
+@@ -870,15 +815,6 @@
+ achieves error probability at least $1/2$, completing the proof.
+ \end{proof}
+ 
+-\begin{proof}[Proof of Theorem~2 (claim; \textsc{Atv} $\varepsilon$-resilience)]
+-The full proof is omitted for brevity because \textsc{Atv} does
+-not in fact achieve the claimed $\varepsilon = 2f/N + O(\Delta^2)$
+-guarantee in our benchmark (Section~\ref{sec:exp}). We retain the
+-theorem statement for completeness so that future readers can
+-identify exactly which step in the proof fails; a candidate
+-follow-up paper can either fix the proof or revise the theorem.
+-\end{proof}
+-
+ \section{Algorithm Pseudocode and Complexity}
+ \label{app:algo}
+ 
+@@ -972,31 +908,26 @@
+ trust\_mean by $\pm 0.5$ percentage points with no rank change.
+ 
+ \paragraph{Ensemble-size sweep.}
+-We additionally ran the benchmark at $N \in \{5, 7, 10\}$ with $f$
+-proportional to $N$ ($f = \lfloor N/3 \rfloor$). Under this
+-proportional-f regime, majority remains the top method at every
+-ensemble size, and the gap between majority and trust-based methods
+-\emph{widens} as $N$ grows (because the larger honest majority
+-hardens against capture). This is consistent with our structural
+-explanation: as the honest majority grows, capture becomes a
+-smaller perturbation that any aggregation rule, including
+-majority, can absorb.
+-
+-\paragraph{Real-LLM validation (sketch).}
+-We did not run the full benchmark on real LLM verifier traces
+-within the scope of this paper. A small pilot run on
+-\citet{leung2026rubricllm}'s evaluation harness (8 LLM judges, 1248
+-rubric decisions, of which we synthetically capture 2) is consistent
+-with the synthetic-data trend: majority remains at or near the top,
+-trust-based methods trail by less than 1 percentage point. We discuss
+-the limitations of this pilot in Section~\ref{sec:conclusion}.
++The checked-in ensemble-size sweep covers $N\in\{5,7,10\}$ with
++$f=\lfloor N/3\rfloor$. At $N=5$, majority and several methods tie at
++$0.7479$. At $N=7$, majority and trust-median are essentially tied at
++$0.686$. At $N=10$, trust-median reaches $0.7668$, higher than majority's
++$0.6785$. These three points do not establish a monotone ensemble-size
++trend; they are reported as descriptive sweep values.
++
++\paragraph{Local-model pilot.}
++The evidence package includes a descriptive local Ollama pilot with four
++models, 20 questions, three seeds, and two captured slots. The reported
++rounded mean accuracy is 0.9167 for all seven methods. This pilot is not a
++held-out trace benchmark and is not evidence for external generalization.
+ 
+ \section{Code and Reproducibility}
+ \label{app:code}
+ 
+ \paragraph{Repository layout.}
+-Code is released under a permissive licence with an attached
+-\texttt{ResponsibleUse.md} file. The repository contains:
++The candidate evidence tree contains the benchmark code and frozen result
++files. Final license and release wording remain user decisions. The
++repository contains:
+ \begin{itemize}
+   \item \texttt{crv.py}: legacy CRV implementation (retained for
+         archival reference; not used as a benchmarked method).
+@@ -1010,19 +941,16 @@
+         paper preparation.
+ \end{itemize}
+ 
+-\paragraph{Beyond-PDF interactive demo.}
+-We release a Beyond-PDF interactive demonstration that replays the
+-benchmark on real LLM trace files. The demo runs the seven
+-aggregation rules on a user-provided trace file and displays the
+-per-round decision side-by-side with the ground-truth label. We
+-expect this to be useful for engineering teams that wish to
+-re-run our scenario definitions on a real ensemble.
++\paragraph{No held-out demo claim.}
++The evidence tree contains no independently validated real-trace demo.
++The local pilot is a descriptive artifact, not a deployment or held-out
++validation claim.
+ 
+ \paragraph{Reproducibility hashes.}
+-At submission time, we record SHA-256 hashes of all released code
+-artifacts in \texttt{HASHES.txt}. Reviewers can verify their copy
+-against the hashes by running the included \texttt{verify\_hashes.sh}
+-script.
++The ingest manifest and the Research Factory overlay record SHA-256 hashes
++for the frozen source and evidence files. A Python dependency lock and
++complete local-pilot runtime logs are not present; those remain release
++blockers.
+ 
+ \paragraph{Computational footprint.}
+ A full benchmark run (4 scenarios $\times$ 7 methods $\times$ 5 seeds,
+@@ -1031,32 +959,18 @@
+ can be reproduced in under 10 minutes on commodity hardware.
+ 
+ 
+-Every artefact-backed number on this page is re-derived by one command, recorded here so a
+-reader can re-run it and get the same count at the same minute:
+-\texttt{python3 tools/carrier\_receipts.py -{}-run runs/tmlr-paper6-consolidated}, which re-executes
+-each row of \texttt{source/evidence/CARRIER\_RECEIPTS.json} against the artefact it names and prints one tally. As of
+-2026-09-30T14:35Z that reading is \textbf{1 receipts, 0 failing, 0 not-verifiable}.
+-A number that stops reproducing is a defect in the archive rather than a rounding
+-difference, and the gate names the row that stopped reproducing.
+-\section*{Reproducibility Statement}
+-
+-\textbf{Code and data availability.} All experiment code, raw API response logs, and analysis scripts are released in the supplementary material (directories \texttt{code/}, \texttt{data/}, \texttt{analysis/}). The complete evidence package includes SHA-256 checksums for all experimental result files (\texttt{evidence\_manifest.json}).
+-
+-\textbf{Step-by-step reproduction protocol.} (1) \textit{Environment}: Python 3.10+ with \texttt{transformers>=4.40}, \texttt{scipy>=1.10}, \texttt{scikit-learn>=1.3}; set \texttt{PYTHONHASHSEED=0}. (2) \textit{API configuration}: set \texttt{OPENAI\_API\_KEY} and \texttt{DEEPSEEK\_API\_KEY} environment variables. (3) \textit{Execution}: run \texttt{python code/run\_all\_experiments.py --seeds 1-30} to reproduce all conditions; each condition takes approximately 2--3 hours. (4) \textit{Analysis}: run \texttt{python analysis/main\_analysis.py} to reproduce all tables and figures; all scripts use deterministic seeds (\texttt{int.from\_bytes(seed.encode(), ``little'')}) for bit-exact reproducibility.
+-
+-
+ \section*{Reproducibility Statement}
+ \label{sec:reproducibility}
+ 
+-\textbf{Code and data availability.} All experiment code, raw API response logs, analysis scripts, and frozen analysis code are released in the supplementary material (directories \texttt{code/}, \texttt{data/}, \texttt{analysis/}, \texttt{evidence/}). The evidence manifest (\texttt{evidence/evidence\_manifest.json}) contains SHA-256 checksums for all result files, enabling independent verification of file integrity.
+-
+-\textbf{Step-by-step reproduction protocol.} (1) \textit{Environment}: Python 3.10+ with \texttt{transformers>=4.40}, \texttt{scipy>=1.10}, \texttt{scikit-learn>=1.3}; set \texttt{PYTHONHASHSEED=0}. (2) \textit{API configuration}: set \texttt{OPENAI\_API\_KEY}, \texttt{DASHSCOPE\_API\_KEY}, and \texttt{DEEPSEEK\_API\_KEY} environment variables. (3) \textit{Execution}: run \texttt{python code/run\_all\_experiments.py --seeds 1-30} to reproduce all conditions; each condition takes approximately 2--3 hours. (4) \textit{Analysis}: run \texttt{python analysis/main\_analysis.py} to reproduce all tables and figures; all scripts use deterministic seeds for bit-exact reproducibility of all randomization and bootstrap procedures.
+-
+-\section*{Broader Impact and Ethical Considerations}
+-\label{sec:ethics}
+-
+-This work studies calibration dynamics in multi-agent LLM systems. Understanding these limitations is essential for safe and ethical deployment.
+-
+-\textbf{Ethical implications.} (i) \textit{Self-evaluation fragility}: Model updates can silently invert self-evaluation immunity, creating risks of silent reliability decay in safety-critical systems. Practitioners must treat self-evaluation reliability as version-dependent and re-verify after every model update. (ii) \textit{Calibration fatigue}: Long-horizon multi-agent interactions may produce progressive miscalibration without external signals, creating risks in deployed systems with extended interaction horizons. Continuous calibration monitoring and automatic circuit-breakers are recommended. (iii) \textit{Responsible research}: We explicitly report reproduction failures rather than suppressing them; all code, data, and analysis scripts are released with deterministic seeds and SHA-256 checksums for independent verification.
++\textbf{Available evidence.} The candidate tree contains the synthetic
++benchmark tables, the checked-in generator and aggregation code, and a
++descriptive four-model local Ollama pilot. The ingest manifest records
++SHA-256 hashes for the frozen source and evidence files. A complete Python
++dependency lock and runtime logs for the local pilot are not present.
++
++\textbf{What is not established.} The package does not contain a held-out
++real-trace benchmark, a pre-registered temporal replication, or a proof of a
++universal capture-resilience bound. Those remain open evidence gates and are
++not presented as completed results.
+ 
+ \end{document}

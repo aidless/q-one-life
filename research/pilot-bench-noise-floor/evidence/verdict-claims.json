@@ -1,0 +1,599 @@
+{
+ "schema": "verdict-claims/1",
+ "updated": "2026-10-24",
+ "note": "判决词反向闸的注册表。窗（window）是正文的逐字节子串，改正文会让窗漂移并判红，这是有意的：与行号凭据同族，宁可红也不许悄悄过期。",
+ "code": {
+  "file": "../../tools/bench-noise-floor/audit.py",
+  "expect": [
+   "READABLE",
+   "MARGINAL",
+   "UNREADABLE",
+   "UNDECIDABLE_DOMAIN_MISMATCH",
+   "UNDECIDABLE_FLOOR_DEGENERATE",
+   "UNDECIDABLE_NO_READING",
+   "NOT_COMPARABLE",
+   "ABOVE_MEDIAN_ACTOR",
+   "NEAR_MEDIAN_ACTOR",
+   "AT_OR_BELOW_MEDIAN_ACTOR"
+  ]
+ },
+ "carriers": [
+  {
+   "id": "m25_counts",
+   "file": "evidence/m25_summary.json",
+   "pointer": "verdict_counts",
+   "counts": true
+  },
+  {
+   "id": "m25_tasks",
+   "file": "evidence/m25_summary.json",
+   "task_map": "tasks"
+  },
+  {
+   "id": "decision_unmeas",
+   "file": "evidence/jev_decision_majority.json",
+   "pointer": "verdict"
+  },
+  {
+   "id": "decision_forced",
+   "file": "evidence/jev_decision_lexicographic.json",
+   "pointer": "verdict"
+  },
+  {
+   "id": "question_unmeas_maj",
+   "file": "evidence/audit_both.json",
+   "pointer": "methods.majority.verdict"
+  },
+  {
+   "id": "question_forced_maj",
+   "file": "evidence/jev_question_lexicographic.json",
+   "pointer": "methods.majority.verdict"
+  },
+  {
+   "id": "human_fact",
+   "file": "evidence/audit_factuality.json",
+   "pointer": "verdict"
+  },
+  {
+   "id": "human_coh",
+   "file": "evidence/audit_coherence.json",
+   "pointer": "verdict"
+  },
+  {
+   "id": "human_rel",
+   "file": "evidence/audit_relevance.json",
+   "pointer": "verdict"
+  },
+  {
+   "id": "human_pref",
+   "file": "evidence/audit_preference.json",
+   "pointer": "verdict"
+  },
+  {
+   "id": "wd_m25_coh",
+   "file": "evidence/pre-tiefix__m25_summary.json",
+   "pointer": "tasks.coherence.verdict",
+   "status": "withdrawn"
+  },
+  {
+   "id": "wd_m25_rel",
+   "file": "evidence/pre-tiefix__m25_summary.json",
+   "pointer": "tasks.relevance.verdict",
+   "status": "withdrawn"
+  },
+  {
+   "id": "wd_m25_tasks",
+   "file": "evidence/pre-tiefix__m25_summary.json",
+   "task_map": "tasks",
+   "status": "withdrawn"
+  },
+  {
+   "id": "panel_summary",
+   "file": "evidence/panel_summary.json",
+   "pointer": "verdict",
+   "status": "live"
+  },
+  {
+   "id": "ea_poolA_608",
+   "file": "evidence/positive_control_truthfulqa/ea_real_2judge_608.json",
+   "pointer": "verdict",
+   "status": "live"
+  },
+  {
+   "id": "ea_poolB_unambig206",
+   "file": "evidence/positive_control_truthfulqa/ea_null_and_power.json",
+   "pointer": "reference_unambiguous_n357.pools.pools.pool_3judge_common_206.verdict",
+   "status": "live"
+  },
+  {
+   "id": "ea_unambig357",
+   "file": "evidence/positive_control_truthfulqa/ea_unambig_2judge357.json",
+   "pointer": "verdict",
+   "status": "live"
+  },
+  {
+   "id": "ea_null_full608",
+   "file": "evidence/positive_control_truthfulqa/ea_null_and_power.json",
+   "pointer": "reference_full_n608.pools.pools.pool_2judge_plus_3baselines.verdict",
+   "status": "live"
+  }
+ ],
+ "spans": [
+  {
+   "id": "span-algorithm",
+   "start": "\\begin{algorithm}",
+   "end": "\\end{algorithm}",
+   "expect_tokens": [
+    "READABLE",
+    "MARGINAL",
+    "UNREADABLE",
+    "UNDECIDABLE_DOMAIN_MISMATCH",
+    "UNDECIDABLE_FLOOR_DEGENERATE",
+    "UNDECIDABLE_NO_READING"
+   ],
+   "note": "算法浮动的返回集合必须等于审计器的 LOO 链词表；代码加分支而论文不跟就红。"
+  },
+  {
+   "id": "span-alphabet",
+   "start": "\\subsection{The output alphabet",
+   "end": "\\subsection{Three rulers",
+   "expect_tokens": [
+    "READABLE",
+    "MARGINAL",
+    "UNREADABLE",
+    "UNDECIDABLE_DOMAIN_MISMATCH",
+    "UNDECIDABLE_FLOOR_DEGENERATE",
+    "UNDECIDABLE_NO_READING",
+    "NOT_COMPARABLE",
+    "ABOVE_MEDIAN_ACTOR",
+    "NEAR_MEDIAN_ACTOR",
+    "AT_OR_BELOW_MEDIAN_ACTOR"
+   ],
+   "note": "词表小节必须逐词列出现读代码词表（含外部金标链的三个 median 词与 NOT_COMPARABLE）；10-19 第二条链改名后同步。"
+  },
+  {
+   "id": "span-ec63-limits",
+   "start": "The floor is a construction, and the one we ship is one of them.",
+   "end": "is stated so that a reader can replace it.",
+   "expect_tokens": [
+    "UNREADABLE",
+    "MARGINAL",
+    "READABLE"
+   ],
+   "note": "10-24 新增 Limitations 段的 k-fold 地板读数(#63)。三个词是 EC63_kfold_vs_loo.json 的 tasks[*].kfold.verdict 现读值(MARGINAL/READABLE/MARGINAL),该载体的 tasks 是**列表**、本器的 pointer 只走字典,故用 span 登记词集而不绑 pointer;数值本身已由 paper-ledger 的 14 条 EC63 字段绑定逐项核对。"
+  },
+  {
+   "id": "span-poscontrol-null",
+   "start": "erence it invented. On the unambiguous reference it returned $\\mathrm{ABOVE\\_MEDIAN\\_ACTOR}$ in $42$ of $80$ pools, a nu",
+   "end": " least one comparison in $4$ runs while the verdict returned $\\mathrm{ABOVE\\_MEDIAN\\_ACTOR}$ in $14$; of those $14$ verd",
+   "expect_tokens": [
+    "ABOVE_MEDIAN_ACTOR"
+   ],
+   "note": "10-24 §5.5 零假设两段(42/80 与 14/20):词形 ABOVE_MEDIAN_ACTOR 是零假设池链的返回词,但零假设池文件(ea_synth_freq_summary_unambig.json / ea_synth_null_multiplicity_unambig.json)只暴露 counts、不暴露 verdict 字段,故按 span 登记词集;频次数字本身由 paper-ledger 绑定。"
+  },
+  {
+   "id": "span-ajb",
+   "start": "On 3,200 boards across the four arms the calibrated rule returns",
+   "end": "because \\texttt{READABLE} never fires.",
+   "expect_tokens": [
+    "MARGINAL",
+    "READABLE",
+    "UNREADABLE"
+   ],
+   "note": "10-25 P4 不相交榜部署（§sec:ajb 结果段）：该段印的三个词形恰是这三档。不相交臂的判决是「拒绝」，所以窗里只有 UNREADABLE/MARGINAL 两种读数加一处 READABLE 否定句；若正文把某块写成认证，这里会多出第四个词形并红。"
+  }
+ ],
+ "claims": [
+  {
+   "id": "abstract-m25-counts",
+   "kind": "counts",
+   "window": "A 25-generator human-gold construction does return verdicts:\nthree unreadable readings, each with the leader at its own floor, plus one domain refusal",
+   "note": "10-15 第二轮评审 R2-M1：摘要那句改成「恒等式」口径后重新切窗，counts 仍绑 m25 四档 verdict。10-19 摘要压缩到 312 词后窗口重切一次：旧窗是「noise floor for the leaderboard … the same」那一段，新窗从「On a 25-generator construction」起、到「plus one domain refusal」止，仍同时含 three/one 两个数词、unreadable 这个词形与 requires 串 25-generator。 10-24 P3 集成再切一次：摘要句改为「A 25-generator human-gold construction does return verdicts…each with the leader at its own floor」，counts 绑定不变（three→UNREADABLE、one→UNDECIDABLE_DOMAIN_MISMATCH、requires 25-generator）。 10-25 P4 集成第三次重切：摘要句去掉了 unreadable 的 \\emph{} 壳（为压 1,920 字节上限），窗口按新字节重取；counts 绑定不变。",
+   "carrier": "m25_counts",
+   "counts_map": {
+    "three": "UNREADABLE",
+    "one": "UNDECIDABLE_DOMAIN_MISMATCH"
+   },
+   "requires": "25-generator"
+  },
+  {
+   "id": "tab2-row-decision",
+   "kind": "current",
+   "window": "decision (1,524) & 2 & \\texttt{DOMAIN\\_MISMATCH} (refusal) & not identified at $m=2$ \\\\",
+   "note": "Table 2 第一行的 refusal 词回指留一链在 unmeasured 口径下的判决字段。",
+   "carrier": "decision_unmeas"
+  },
+  {
+   "id": "tab2-row-question",
+   "kind": "current",
+   "window": "question (14,292) & 2 & \\texttt{DOMAIN\\_MISMATCH} (refusal) & not identified at $m=2$ \\\\",
+   "note": "同上，问题语料。",
+   "carrier": "question_unmeas_maj"
+  },
+  {
+   "id": "tab2-row-m25",
+   "kind": "counts",
+   "window": "human gold, 25-model gold & 25 & $3\\times$ \\texttt{UNREADABLE}, $1\\times$ \\texttt{DOMAIN\\_MISMATCH} & four values printed, none accepted as a floor (\\S\\ref{sec:ds}) \\\\",
+   "note": "Table 2 最后一格的 3×/1× 计数回指 verdict_counts。 | 2026-10-17 R1-m3：该格从「no floor reported」改成「four values printed, none accepted as a floor」，因为同一篇稿子的表 3 确实印了四个值，而表 3 的列名也不再叫 floor；窗随文本重钉（窗漂移必红是这道闸的既有判据）。",
+   "carrier": "m25_counts",
+   "counts_map": {
+    "3": "UNREADABLE",
+    "1": "UNDECIDABLE_DOMAIN_MISMATCH"
+   }
+  },
+  {
+   "id": "tab2-caption-m25",
+   "kind": "per_task",
+   "window": "The \\emph{25-model gold} row is the construction of \\S\\ref{sec:m25}: its verdicts are \\texttt{UNREADABLE} on\nfactuality, coherence and relevance, each at a margin of exactly $0.00$ points, and a\n\\texttt{DOMAIN\\_MISMATCH} refusal on preference --- refused by the domain gate rather than by its floor, whose",
+   "note": "10-15 R1-M5：表注里 preference 那句改成\"被同域闸拒而非被地板拒\"，窗跟着重切。",
+   "carrier": "m25_tasks",
+   "map": {
+    "factuality": "UNREADABLE",
+    "coherence": "UNREADABLE",
+    "relevance": "UNREADABLE",
+    "preference": "UNDECIDABLE_DOMAIN_MISMATCH"
+   }
+  },
+  {
+   "id": "def-invariant-degenerate",
+   "kind": "definitional",
+   "window": "The ruler returns $\\mathrm{UNDECIDABLE\\_FLOOR\\_DEGENERATE}$ and reports the per-generator values it would have compared (Algorithm~\\ref{alg:ruler}).",
+   "note": "§2 不变式里对退化判据的陈述。",
+   "expect_tokens": [
+    "UNDECIDABLE_FLOOR_DEGENERATE"
+   ]
+  },
+  {
+   "id": "def-invariant-mismatch",
+   "kind": "definitional",
+   "window": "Where membership differs the ruler returns $\\mathrm{UNDECIDABLE\\_DOMAIN\\_MISMATCH}$, because the terms were measured over different item sets and their difference is not an estimate of anything; \\S\\ref{sec:unreadable} is the case where this gate, rather than the floor, is the finding.",
+   "note": "§2 不变式里对同分母判据的陈述。",
+   "expect_tokens": [
+    "UNDECIDABLE_DOMAIN_MISMATCH"
+   ]
+  },
+  {
+   "id": "def-rule-failure-modes",
+   "kind": "definitional",
+   "window": "Two failure modes are named: $\\mathrm{UNREADABLE}$ when the floor exceeds or equals the leader, and $\\mathrm{MARGINAL}$ when the leader clears the floor by less than $\\delta$.",
+   "note": "§4 判据式旁边的两档失败模式定义。 ｜10-17 R1-m1：命名句补上「或等于」，与算法第 10 行含等号一致；窗随正文同形平移。",
+   "expect_tokens": [
+    "UNREADABLE",
+    "MARGINAL"
+   ]
+  },
+  {
+   "id": "def-refusal-emission",
+   "kind": "definitional",
+   "window": "The tool emits $\\mathrm{UNDECIDABLE\\_DOMAIN\\_MISMATCH}$ when the floor and the leaderboard fail to share a denominator, and $\\mathrm{UNDECIDABLE\\_FLOOR\\_DEGENERATE}$ when the gold has fewer than three generators and the leave-one-out quantity is therefore not the reproduction rate \\eqref{eq:loo} was defined to be.",
+   "note": "§4 里两个 refusal 的定义句。",
+   "expect_tokens": [
+    "UNDECIDABLE_DOMAIN_MISMATCH",
+    "UNDECIDABLE_FLOOR_DEGENERATE"
+   ]
+  },
+  {
+   "id": "def-scale-words",
+   "kind": "definitional",
+   "window": "Neither is a point on the $\\mathrm{UNREADABLE}$--$\\mathrm{MARGINAL}$--$\\mathrm{READABLE}$ scale: what a refusal withholds is the verdict, not the readings.",
+   "note": "§4：refusal 不在三档尺上。",
+   "expect_tokens": [
+    "UNREADABLE",
+    "MARGINAL",
+    "READABLE"
+   ]
+  },
+  {
+   "id": "def-checklist",
+   "kind": "definitional",
+   "window": "label the output with one of \\texttt{READABLE}, \\texttt{MARGINAL}, \\texttt{UNREADABLE}, or the\nnamed refusal",
+   "note": "评审清单里要求作者自标的词表。",
+   "expect_tokens": [
+    "READABLE",
+    "MARGINAL",
+    "UNREADABLE"
+   ]
+  },
+  {
+   "id": "def-counterfactual-marginal",
+   "kind": "definitional",
+   "window": "At this power the $\\delta$-tier verdict carries no statistical force on any of the four tasks: the four $\\mathrm{ABOVE\\_MEDIAN\\_ACTOR}$ readings printed above rest on margins far above $\\delta$, which is why the resolution problem does not void them of itself, but a corpus whose leader-margin happened to land near $2.0$ would be declared undecidable by us, not $\\mathrm{MARGINAL}$.",
+   "note": "§5.4 的反事实：低功效语料上我们会判 undecidable 而不是 MARGINAL。 ｜10-17 R1-m4：本小节刚说过这四个读数不读作判决。 ｜ 10-19 第二条链改名后窗口重切、词集随改名同步。",
+   "expect_tokens": [
+    "ABOVE_MEDIAN_ACTOR",
+    "MARGINAL"
+   ],
+   "requires": "would be declared"
+  },
+  {
+   "id": "def-zero-margin",
+   "kind": "definitional",
+   "window": "is strict, so a margin of zero has not cleared anything and reads\n$\\mathrm{UNREADABLE}$.",
+   "note": "§5.5：margin=0 按严格判据读成 UNREADABLE，这是判据陈述不是读数。",
+   "expect_tokens": [
+    "UNREADABLE"
+   ],
+   "requires": "strict"
+  },
+  {
+   "id": "def-positive-control",
+   "kind": "definitional",
+   "window": "The suite is also the positive control that keeps this section's refusals from being the instrument's only possible output: a construction with four gold generators, where the leader clears the leave-one-out floor by a wide margin, asserts that the ruler returns $\\mathrm{READABLE}$ (case 8 of \\ids{selftest.py}, captured in \\ids{evidence/log\\_selftests.txt}",
+   "note": "§6 正向对照断言尺能返回 READABLE（夹具自己设定池与余量）。",
+   "expect_tokens": [
+    "READABLE"
+   ],
+   "requires": "positive control"
+  },
+  {
+   "id": "def-unfalsifiable",
+   "kind": "definitional",
+   "window": "Without that case the same suite would stay green on a ruler that refuses everything it is given, and every $\\mathrm{UNDECIDABLE}$ in this paper would be unfalsifiable by construction.",
+   "note": "§6：没有正控则每个 UNDECIDABLE 都不可否证。",
+   "expect_tokens": [
+    "UNDECIDABLE"
+   ]
+  },
+  {
+   "id": "def-readable-arm-limits",
+   "kind": "definitional",
+   "window": "The $\\mathrm{READABLE}$ arm of \\eqref{eq:rule} is exercised in exactly one place here: the test suite's positive control (\\S\\ref{sec:nonvacuity}), whose generator pool and margin the fixture itself sets.",
+   "note": "§8 局限：READABLE 这一臂只在哪里被走过。",
+   "expect_tokens": [
+    "READABLE"
+   ]
+  },
+  {
+   "id": "def-m25-second-place",
+   "kind": "definitional",
+   "window": "The $m=25$ judge-generated board of \\S\\ref{sec:m25}, whose gold we imposed, was built to be a second place and is not one: after the corrections described there, every decidable arm of it sits at a margin of exactly zero, which is the branch that reads $\\mathrm{UNREADABLE}$.",
+   "note": "§8 局限：m=25 构造现在每一臂都落在 margin=0。",
+   "expect_tokens": [
+    "UNREADABLE"
+   ],
+   "requires": "margin of exactly zero"
+  },
+  {
+   "id": "def-readable-arm-conclusion",
+   "kind": "definitional",
+   "window": "It has now been pointed at one public leaderboard of the shape it was built for: a preregistered disjoint-field deployment (\\S\\ref{sec:ajb}) whose six judges and five contestants share no members returns a refusal on all 3,200 boards and certifies none, because the judge pool's best member aligns with the external ruler better than the contestant field's best member does. So the $\\mathrm{READABLE}$ arm of \\eqref{eq:rule} still fires only on the test suite's positive control, and a positive wild reading is the next measurement, not a finding of this paper. A preregistered calibrated variant of the floor does return certifications on the released panel --- the corrected rule certifies on 1,242 of 9,568 measurable resampled boards where the uncorrected rule certifies on none, and on the configurations that leave a true external margin the false-certification rate is between 0.000 and 0.069 --- but the certified quantity is the variant's own debiased alignment (\\S\\ref{sec:calibrated}), on a pool whose contestants are its judges. % 参考文献：本稿引用的每一条都经外部核验（元数据来自 Crossref/OpenAlex/arXiv % 返回值，不凭记忆补写），核验过程与未核验清单见 notes_refs.md；2026-10-11 % 追加的 7 条（Goodhart 1984 / Hennessy-Goodhart 2023 / Bradley-Terry 1952 / % Chatbot Arena 2403.04132 / RLHF 2203.02155 / DPO 2305.18290 / Campbell 2011）同样 % 逐条核验，其中 Goodhart 1975 Courakis 版、Strathern 1997 note 7、Elo 1978 原书、 % Campbell 1976 章节形态检索不到可索引记录，一律不写，只作为不可引记录留在 % refs.bib 的 F 段注释与 notes_refs.md 里。 % 少数条目（Fleiss 1971 的题名、Gilson 等 ChatGPT-as-annotator 的检索失败、 % Surech 等 \"good-enough\" 标注者数量的说法）在核验中未通过，因此正文不引。 % 参考文献手写而非 \\bibliography{refs}：refs.bib 每条都带一句中文 % 「本条支撑本文哪句话」的注释，若用 bibtex + plain 样式，note 字段会被排进 % 参考文献列表，中文在 pdflatex 下无法编译；手写 thebibliography 让那些注释 % 留在 .bib 里（核验记录另见 notes_refs.md），正文只出现英文字段。\n\\input{bibliography}\n\\appendix\n\\section{Withdrawn figures}\n\\label{app:withdrawn}",
+   "note": "§9 结论里的同一句限定。 | 10-25 P4 集成：结论段改写（不再声称「从未指向过」），窗按新字节重钉；词集不变（READABLE 仍只出现在那句否定里）。",
+   "expect_tokens": [
+    "READABLE"
+   ],
+   "requires": "only on the test suite"
+  },
+  {
+   "id": "cur-human-released-readable",
+   "kind": "current",
+   "window": "The four human-gold reports of \\S\\ref{sec:human} carry \\texttt{ABOVE\\_MEDIAN\\_ACTOR} in their released files; that word belongs to the second chain's own alphabet (\\S\\ref{sec:alphabet}), whose reference is the median of the ranked field rather than a leave-one-out floor, so it is not the arm of \\eqref{eq:rule} either, and after the rename it can no longer be quoted as if it were.",
+   "note": "§8：外部金标链在四份发布报告里确实印着 READABLE（词表小节的披露回指载体）。 ｜ 10-19 第二条链改名后窗口重切。",
+   "carrier": "human_fact"
+  },
+  {
+   "id": "cur-external-chain",
+   "kind": "current",
+   "window": "The tool reports $\\mathrm{UNDECIDABLE\\_DOMAIN\\_MISMATCH}$ and names the mismatch rather than producing a number.",
+   "note": "§5.1：留一链在 unmeasured 口径下的现读判决。",
+   "carrier": "decision_unmeas"
+  },
+  {
+   "id": "cur-degenerate-chain",
+   "kind": "current",
+   "window": "The tool reports $\\mathrm{UNDECIDABLE\\_FLOOR\\_DEGENERATE}$ and declines to convert a high agreement rate between two generators into a claim that the leader is or is not readable.",
+   "note": "§5.1：强制口径下的退化判决。",
+   "carrier": "decision_forced"
+  },
+  {
+   "id": "cur-question-unmeas",
+   "kind": "current",
+   "window": "The leaderboard is scored on the $11,586$ that carry a label inside it, and the tool reports $\\mathrm{UNDECIDABLE\\_DOMAIN\\_MISMATCH}$ for both definitions.",
+   "note": "10-15 §5.2 该行/题数口径改写，窗重切到当前句子尾。",
+   "carrier": "question_unmeas_maj"
+  },
+  {
+   "id": "cur-question-forced",
+   "kind": "current",
+   "window": "Under the forced rule every two-annotation item is labelled, taking the labelled set to $13,104$ and the leaderboard's own scored set to $12,330$, while the floor stays on the same $12,406$-item leave-one-out intersection, so the two terms do not end up on one denominator after all: the instrument returns $\\mathrm{UNDECIDABLE\\_DOMAIN\\_MISMATCH}$ under both definitions.",
+   "note": "§5.2：强制口径下仍然域失配。",
+   "carrier": "question_forced_maj"
+  },
+  {
+   "id": "cur-no-better-than",
+   "kind": "current",
+   "window": "better than $\\mathrm{UNREADABLE}$ on a judge-generated board once the gold rule is stated honestly; internally\nthe ranking is still resolvable ($8$, $0$, $4$ and $2$ of the $24$ case-clustered comparisons against the leader",
+   "note": "§5.5：模型造金标这块板上尺子最好的读数。",
+   "carrier": "m25_tasks"
+  },
+  {
+   "id": "wd-decision-readable-70",
+   "kind": "withdrawn",
+   "window": "An earlier version of this section reported a leave-one-out floor of $70.23\\%$, a leader at $73.19\\%$ and a margin of $+2.96$ points with a verdict of $\\mathrm{READABLE}$. Those numbers are withdrawn.",
+   "note": "§5.1 旧读数 READABLE(+2.96)。",
+   "requires": "withdrawn",
+   "no_carrier_reason": "这一版判决由 pre-tiefix 之前的判据打出，当时没有归档 decision 载体的判决字段；留档的是它的三个数字（70.23/73.19/+2.96）在台账里，词本身没有载体。"
+  },
+  {
+   "id": "wd-decision-delta0",
+   "kind": "withdrawn",
+   "window": "an earlier version claimed that at $\\delta = 0.0$ the decision corpus would remain $\\mathrm{READABLE}$, which was both unverified and in tension with the interval that the same section reported.",
+   "note": "§5.1 旧句：delta=0 时仍 READABLE。",
+   "requires": "earlier version",
+   "no_carrier_reason": "同一族：那句从未有载体，撤回的是主张不是读数。"
+  },
+  {
+   "id": "wd-question-unreadable",
+   "kind": "withdrawn",
+   "window": "An earlier version of this sentence recorded the corpus as $\\mathrm{UNREADABLE}$ under this rule, which is the error this paper exists to describe: a refused comparison is not the negative end of the scale, and a leader sitting below a floor measured on another item set has not been shown to sit below anything.",
+   "note": "§5.2 旧句：把 refusal 印成 UNREADABLE。",
+   "requires": "earlier version",
+   "no_carrier_reason": "撤回的是当时那个词；载体（jev_question_lexicographic）现在写的是 UNDECIDABLE_DOMAIN_MISMATCH，反过来绑会假红。"
+  },
+  {
+   "id": "wd-m25-marginals-in-text",
+   "kind": "withdrawn",
+   "window": "An earlier version of this section reported\n$\\mathrm{MARGINAL}$ on coherence at $+1.6037$ points $[0.5276,\\ 2.9412]$ and $\\mathrm{MARGINAL}$ on relevance at\n$+0.1023$; those readings are withdrawn in Appendix~\\ref{app:withdrawn}, and the reason is the first of the two\ndisclosures below.",
+   "note": "§5.5 正文里那句旧读数，逐词绑 pre-tiefix 载体。",
+   "carrier": "wd_m25_coh",
+   "requires": "An earlier version",
+   "back": 0
+  },
+  {
+   "id": "wd-appendix-decision-item",
+   "kind": "withdrawn",
+   "window": "\\item \\textbf{Decision corpus, $\\mathrm{READABLE}$ by $+2.96$ points.} The first\nversion reported a leave-one-out floor of $70.23\\%$, a leader at $73.19\\%$ and a\nverdict of $\\mathrm{READABLE}$. The tie rule behind it resolved 436 of 1,520\nitems by sorting the two answers as strings, an arbitrary rule that also moved\nthe leader. Withdrawn in \\S\\ref{sec:unreadable}.",
+   "note": "附录 A 第一条：旧 decision 读数。",
+   "requires": "Withdrawn in",
+   "no_carrier_reason": "同上，decision 的旧判决字段没有归档。"
+  },
+  {
+   "id": "wd-appendix-decision-delta",
+   "kind": "withdrawn",
+   "window": "stated that at $\\delta=0.0$ the corpus would remain $\\mathrm{READABLE}$. The\nclaim was not recomputed against the corpus and stood in tension with the\ninterval the same section reported.",
+   "note": "附录 A 的 delta=0 主张。",
+   "requires": "claim was not recomputed",
+   "no_carrier_reason": "撤的是主张。"
+  },
+  {
+   "id": "wd-appendix-question",
+   "kind": "withdrawn",
+   "window": "\\item \\textbf{Question corpus $\\mathrm{UNREADABLE}$ under the forced tie rule.} Reported at $-1.57$ points; withdrawn as $\\mathrm{UNDECIDABLE\\_DOMAIN\\_MISMATCH}$ (\\S\\ref{sec:both}).",
+   "note": "附录 A：问题语料那格撤回。",
+   "requires": "withdrawn as",
+   "no_carrier_reason": "撤的是当时那个词；现载体写 UNDECIDABLE_DOMAIN_MISMATCH。"
+  },
+  {
+   "id": "wd-appendix-m25-per-task",
+   "kind": "per_task",
+   "window": "\\item \\textbf{The four verdicts of the $m=25$ construction, \\S\\ref{sec:m25}, as first reported.} The registered readings were $\\mathrm{UNREADABLE}$ at $-0.0033$ on factuality, $\\mathrm{MARGINAL}$ at $+1.6037$ $[0.5276,2.9412]$ on coherence, $\\mathrm{MARGINAL}$ at $+0.1023$ on relevance and a refused $-0.0048$ on preference. Two defects produced them, both in the gold rule rather than in the data. The tie test was $\\max(c)\\cdot 2 = \\sum(c)$, which recognises only an exact two-way split: on 19 items whose largest vote count was shared with a third answer holding the remainder, the gold fell to the lexicographic order of the answer strings --- the very rule this paper refuses to adjudicate with --- while the same test voided 5 items",
+   "note": "附录 A：四档旧读数逐词绑 pre-tiefix 载体（这一格是真能绑的）。",
+   "carrier": "wd_m25_tasks",
+   "requires": "as first reported",
+   "map": {
+    "factuality": "UNREADABLE",
+    "coherence": "MARGINAL",
+    "relevance": "MARGINAL",
+    "preference": "UNDECIDABLE_DOMAIN_MISMATCH"
+   },
+   "expect_status": "withdrawn"
+  },
+  {
+   "id": "wd-appendix-equality-marginal",
+   "kind": "withdrawn",
+   "window": "\\item \\textbf{``$\\mathrm{MARGINAL}$ includes the case where the leader equals the floor.''} The declared rule is a strict inequality, $\\max_s \\mathrm{acc}_c(s) > \\mathrm{floor}_c + \\delta$; a margin of zero is not a clearance by a small amount but no clearance at all. The chain tested $\\mathrm{ceiling} > \\mathrm{top}$ first and fell through to $\\mathrm{top} - \\mathrm{ceiling} < \\delta$ otherwise, so equality printed $\\mathrm{MARGINAL}$. This only became visible because the corrected tie rule made equality the common case.",
+   "note": "附录 A：旧链把 margin=0 印成 MARGINAL 这条缺陷本身。",
+   "requires": "fell through",
+   "no_carrier_reason": "描述的是已修掉的判决链，没有当代码可绑。"
+  },
+  {
+   "id": "def-narrow-interval-below-floor",
+   "kind": "definitional",
+   "window": "That is the sampling half of what we ask a report to carry, and it is a different quantity from ours: an interval can be narrow around a score that sits at or below the floor, in which case \\eqref{eq:rule} reads \\texttt{UNREADABLE} with a well-estimated margin. The ruler adds the level, not the bar.",
+   "expect_tokens": [
+    "UNREADABLE"
+   ],
+   "requires": "different quantity",
+   "note": "§3 Power-resolution 条目里那句反事实：区间窄不等于越过地板。判据陈述，无载体。"
+  },
+  {
+   "id": "tab2-row-panel",
+   "kind": "current",
+   "window": "public judge panel, votes released & 17 & \\texttt{UNREADABLE} at margin $0.00$ & not fitted on this panel \\\\ \\bottomrule",
+   "carrier": "panel_summary",
+   "note": "Table 2 新增的公开面板那一行：判决词必须等于 panel_summary.verdict。"
+  },
+  {
+   "id": "tab2-caption-panel",
+   "kind": "definitional",
+   "window": "margin there is also $0.0$ --- and therefore not drawn in Figure~\\ref{fig:verdicts}. The \\emph{public judge panel} row is \\S\\ref{sec:panel}, the one reading whose votes were\npublished by somebody else and the one we report as not reproducible offline, because we cite those votes\nrather than redistribute them. Those two rows are alike in the way that matters most: in both, the ranked field",
+   "expect_tokens": [],
+   "requires": "not reproducible offline",
+   "note": "表注里那句授权口径，不含判决词；登记是为了让「删掉这句」变成窗漂移而不是静默消失。"
+  },
+  {
+   "id": "cur-panel-related",
+   "kind": "current",
+   "window": "The panel release is the nearest thing to one, and \\S\\ref{sec:panel} runs the ruler on it: it returns \\texttt{UNREADABLE} with the floor equal to the leader's own score, at a margin of exactly zero,",
+   "carrier": "panel_summary",
+   "note": "10-15 R2-M1：这句改成「Proposition 4 的实例」，判决词仍在窗内、仍绑 panel_summary.verdict。"
+  },
+  {
+   "id": "cur-panel-reading",
+   "kind": "current",
+   "window": "What comes back is \\texttt{UNREADABLE} at a margin of exactly $0.00$ points. The floor is $91.4993\\%$; the\nleader, \\ids{OpenHermes-2.5-Mistral-7B}, scores $91.4993\\%$; the paired interval of their difference is\n$[-0.744,\\ 0.00]$, whose upper end is zero, so no resampling of this panel puts the leader above the level\nit must clear.",
+   "carrier": "panel_summary",
+   "expect_tokens": [
+    "UNREADABLE"
+   ],
+   "note": "§5.5b 的判决句：词与 margin 都回指面板摘要。"
+  },
+  {
+   "id": "def-panel-overlap-limit",
+   "kind": "definitional",
+   "window": "\\S\\ref{sec:panel} repeats the measurement on a panel whose votes were published by its own authors, which removes the suspicion that the zero margin is an artefact of \\emph{who} imposed the gold, but not the suspicion that it is an artefact of the pool grading itself, because on that panel too the ranked field is the generating pool;",
+   "expect_tokens": [],
+   "requires": "grading itself",
+   "note": "局限 18 前半：面板那一档仍是自评构型，句里没有判决词形。"
+  },
+  {
+   "id": "def-readable-arm-panel-limit",
+   "kind": "definitional",
+   "window": "the public panel of \\S\\ref{sec:panel} is a real released panel, and it is measured, but its contestants are its judges, so it exercises the \\texttt{UNREADABLE} arm on third-party votes and still leaves the \\texttt{READABLE} arm unfired outside the fixture. A preregistered calibrated variant of the floor (\\S\\ref{sec:calibrated}) does return certifications on this panel --- 1,242 of 9,568 measurable resampled boards at the declared threshold, against none uncorrected --- but the quantity it certifies is the variant's own debiased alignment, measured on the same self-grading pool with the external ruler entering through calibration and scoring only. A preregistered disjoint-field deployment (\\S\\ref{sec:ajb}) does measure the configuration named below, on a released panel whose six judges and five contestants share no members: there the corrected rule returns \\texttt{UNREADABLE} or \\texttt{MARGINAL} on all 3,200 boards and certifies none, so the disjoint case is measured and its measurement is a refusal rather than a certification.",
+   "expect_tokens": [
+    "UNREADABLE",
+    "MARGINAL",
+    "READABLE"
+   ],
+   "requires": "unfired outside the fixture",
+   "note": "局限 18：面板量到的是 UNREADABLE 臂，READABLE 臂仍在夹具之外没有响过。 10-25 P4 集成：窗口延伸到 §sec:calibrated 与 §sec:ajb 两句，词集加 MARGINAL（不相交部署的拒绝词）。"
+  },
+  {
+   "id": "def-prop4-unreachable-tiers",
+   "kind": "definitional",
+   "window": "the floor equals the leader's own score, the margin of \\eqref{eq:rule} is zero on any corpus of this shape at any sample size, and neither $\\mathrm{MARGINAL}$ nor $\\mathrm{READABLE}$ is reachable",
+   "expect_tokens": [
+    "MARGINAL",
+    "READABLE"
+   ],
+   "note": "10-15 R2-M1 落地的 Proposition 4：这句说 MARGINAL 与 READABLE 两档在该形状上不可达，是规则的定义式陈述，不是某条载体的读数。"
+  },
+  {
+   "id": "def-readable-words-external",
+   "kind": "definitional",
+   "window": "the four $\\mathrm{ABOVE\\_MEDIAN\\_ACTOR}$ readings printed above rest on margins far above $\\delta$, which is why the resolution problem does not void them of itself, but a corpus whose leader-margin happened to land near $2.0$ would be declared undecidable by us, not $\\mathrm{MARGINAL}$.",
+   "expect_tokens": [
+    "ABOVE_MEDIAN_ACTOR",
+    "MARGINAL"
+   ],
+   "requires": "does not void them of itself",
+   "carrier": "human_fact",
+   "note": "10-17 第三轮：这里印的是 E3 四档 verdict 字段现读的 READABLE，不是新判决；窗注册后该词才有落点。四档载体 human_fact/human_coh/human_rel/human_pref 的 verdict 在 10-19 改名后都是 ABOVE_MEDIAN_ACTOR。 ｜ 10-19 第二条链改名后窗口重切。"
+  },
+  {
+   "id": "gap-readable-words-no-interval",
+   "kind": "definitional",
+   "window": "Third, the four $\\mathrm{ABOVE\\_MEDIAN\\_ACTOR}$ readings of \\S\\ref{sec:human} rest on margins between the leader and the median annotator",
+   "expect_tokens": [
+    "ABOVE_MEDIAN_ACTOR"
+   ],
+   "requires": "leader and the median annotator",
+   "carrier": "human_fact",
+   "note": "10-17 R1-M2：缺口条里引用同一批 verdict 字段，点名的是「那一对照没有配对区间」这条边界，不是新的判决。 ｜ 10-19 第二条链改名后窗口重切。"
+  },
+  {
+   "id": "poscontrol-above-median-1",
+   "kind": "current",
+   "window": "4\\%$, so the margin is $+10.36$ points and the chain returns $\\mathrm{ABOVE\\_MEDIAN\\_ACTOR}$. The two real judges sit at",
+   "note": "10-24 E-A 正控小节(§5.5)新增的 ABOVE_MEDIAN_ACTOR 读数:每个出现点单独登记并绑到它自己那一个载体(池A 608 / 池B 206 / 无歧义 357 / 全 608 零假设子研究同池)。",
+   "carrier": "ea_poolA_608"
+  },
+  {
+   "id": "poscontrol-above-median-2",
+   "kind": "current",
+   "window": "an is $57.42\\%$, the margin $+24.65$, and the token is again $\\mathrm{ABOVE\\_MEDIAN\\_ACTOR}$ --- this time with the Holm",
+   "note": "10-24 E-A 正控小节(§5.5):窗内说的是剔除 251 个双命中对后的 357 对池(leader 82.07、median 57.42、margin +24.65),绑它自己的载体。",
+   "carrier": "ea_unambig357"
+  }
+ ],
+ "blind_expected": 7
+}

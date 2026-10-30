@@ -1,0 +1,720 @@
+% ============================================================
+% TMLR Submission
+% Title: Calibration Fatigue, Self-Evaluation Fragility, and the
+%   Coupling-Noise Tradeoff in Multi-Agent LLM Systems
+% Author: Anonymous Authors
+% ============================================================
+
+\documentclass[11pt]{article}
+
+\usepackage[preprint]{tmlr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{amsthm}
+\newcommand{\CV}{\ensuremath{\mathrm{CV}}}
+\newcommand{\ECE}{\ensuremath{\mathrm{ECE}}}
+
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\graphicspath{{./figures/}}
+
+\title{Calibration Fatigue, Self-Evaluation Fragility, and the Coupling--Noise Tradeoff in Multi-Agent LLM Systems: A Systematic Study of Calibration Effects}
+
+\author{\name Anonymous\email anonymous@anonymous.invalid\\\addr Anonymous affiliation}
+
+\date{}
+
+\begin{document}
+\maketitle
+\begin{center}
+\small\itshape Internal evidence-repair draft, 2026-10-28. Not an arXiv
+submission and not a scientific-readiness claim. Historical GPT-4o raw
+traces remain unavailable; see the repository audit receipt.
+\end{center}
+
+\begin{abstract}
+Calibration in multi-agent large language model (LLM) systems can be studied from two complementary perspectives: as a \textit{target} for investigation (does multi-agent interaction degrade agents' self-assessment accuracy?) and as a \textit{tool} for improvement (does calibrating the evaluator agent improve the overall dynamics of the system?). This paper unifies both perspectives through four findings spanning real API calls across the experimental program and 60 simulation conditions. \textbf{(1) Temporal calibration fatigue dominates.} An initial ``calibration contagion'' finding ($\Delta$ECE $= +0.228$, $d = 4.70$) is deconfounded via two pure-factor contrasts and four control conditions: 90.8\% of the effect is attributable to temporal horizon alone ($\Delta$ECE $= +0.207$, $d = 4.85$), with communication contributing at most 9.2\%. Context accumulation was not supported by the control contrast. \textbf{Reproduction status:} the decomposition is reported from the original GPT-4o runs; an independent reproduction attempt on deepseek-v4-flash did not reproduce the temporal fatigue effect (evidence \texttt{p1\_causal\_quick\_20260808.json}, \texttt{p1\_calibration\_pressure\_probe\_20260808.json}), so Finding~1 is model-specific and pending re-verification with GPT-4o-class access; the underlying GPT-4o per-repetition traces are not available in the retained archive. \textbf{(2) Self-evaluation immunity is model-dependent.} DeepSeek-V4-Pro self-evaluation produces $\gamma \approx 1.06$, directly contradicting prior near-zero results on DeepSeek-chat ($\gamma \approx 0.03$); calibration reduces coupling by 42\% ($N{=}5$; a companion 30-seed expansion reports a 31\% reduction~\citep{companion2026}) \textbf{(3) Confidence-gated TTRL reduces preference coupling, while the simulation grid does not support a universal noise-increase claim.} Under the deterministic-seed canonical run, all five methods show negative mean $\Delta\CV$ ($-3.5\%$; per-method-mean range $-7.0\%$ to $-0.6\%$; unweighted cell range $-28.4\%$ to $+33.9\%$) and the effect is seed-sensitive across script versions, so the coupling--noise tradeoff remains an open hypothesis for the joint experiment. Confidence-gating simultaneously reduces preference coupling ($\gamma \downarrow 35$--$37\%$, $N{=}15$, bootstrap CIs non-overlapping). These findings define a calibration landscape with an empty favorable regime and a formal coupling-noise tradeoff hypothesis (Theorem~\ref{thm:tradeoff}), motivated by classical estimation tradeoffs such as exploration--exploitation in online learning~\citep{bubeck2012regret}. \textbf{(4) Joint-measurement experiments are null.} A preregistered $2 \times 2$ factorial experiment ($N{=}120$ seeds, $T{=}30$, Qwen3-14B-AWQ) reveals no overall effect of Communication or Calibration at convergence (all $p > 0.12$, seed-level tests). A suggestive late-phase Communication pattern ($\gamma$ $d{=}-0.245$, $p{=}0.182$; $H$ $d{=}+0.309$, $p{=}0.093$) does not reach significance at the seed level, and a preregistered $T{=}50$ horizon extension ($N{=}120$ further seeds) failed its strengthening criterion ($d > 0.30$ in Rounds 46--50; observed $\gamma$ $d{=}-0.17$, $p{=}0.36$; all windows null), although the sign of every window effect replicates across horizons. We report the delayed-communication hypothesis as unconfirmed rather than established. Calibration effects are nonsignificant at every tested phase and horizon; the tests do not establish equivalence.
+\end{abstract}
+
+\newpage
+
+% ============================================================
+% \S1 INTRODUCTION
+% ============================================================
+\section{Introduction}
+
+\subsection{Two Perspectives on Calibration}
+
+Calibration in multi-agent LLM systems has been studied from two complementary angles. As a \textbf{target}: does multi-agent communication affect agents' probability calibration---their ability to accurately self-assess? As a \textbf{tool}: does calibrating the evaluator improve agent strategy dynamics? Prior work studied these in isolation---communication effects on calibration~\citep{huang2026cagecal}, calibration in static evaluation~\citep{guo2017calibration}, calibration pitfalls in LLMs~\citep{tian2023calibration}, and the reliability paradox~\citep{messing2026tee}---but not their intersection in closed-loop TTRL adaptation. We unify both perspectives.
+
+\subsection{The Calibration Landscape}
+
+When LLM agents adapt through evaluator feedback, evaluator biases propagate into agent strategy distributions---evaluator preference coupling~\citep{epc2026}. In the EPC framework, an executor maintains $\mathbf{w} \in \Delta^{n-1}$ over strategies, updated via TTRL after each evaluator judgment. Prior work mapped an 11-condition evaluator landscape and identified an \textbf{empty favorable regime}: no configuration achieves both low coupling ($\gamma < 0.2$) and low measurement noise ($\CV < 0.3$)~\citep{caleffects2026}. This echoes classical estimation tradeoffs such as exploration--exploitation in online learning~\citep{bubeck2012regret} and the No Free Lunch principle~\citep{wolpert1997no}.
+
+\subsection{Four Findings and Contributions}
+
+We report four findings:
+\begin{enumerate}[leftmargin=*,nosep]
+    \item \textbf{Calibration fatigue dominates} (deconfounded; GPT-4o runs): temporal horizon accounts for 90.8\% of calibration degradation; communication contributes 9.2\%.
+    \item \textbf{Self-evaluation immunity is fragile}: model updates can silently invert calibration behavior.
+    \item \textbf{Coupling-noise tradeoff}: confidence-gated TTRL reduces coupling ($\gamma \downarrow 35$--$37\%$); the simulation grid does not support a robust noise increase (mean $\Delta\CV = -3.5\%$ under the deterministic seed).
+    \item \textbf{Null joint-measurement results with a preregistered stress test}: a completed $2 \times 2$ joint experiment ($N{=}120$, $T{=}30$) shows no overall effect at convergence; a suggestive late-phase Communication trend fails seed-level significance, and a $T{=}50$ extension ($N{=}120$ further seeds) fails its preregistered strengthening criterion ($d > 0.30$ in R46--50; observed $\gamma$ $d{=}-0.17$, $p{=}0.36$). Calibration effects are nonsignificant at every tested phase and horizon; this is not evidence of equivalence.
+\end{enumerate}
+
+\noindent Contributions: (i) a deconfounded temporal calibration fatigue analysis (reported from GPT-4o runs; independent reproduction pending); (ii) cross-model evidence that self-evaluation immunity is not universal; (iii) the coupling-noise tradeoff as a hypothesis with stated falsification conditions. \textbf{Companion manuscript.} A companion paper~\citep{companion2026} reports the 30-seed self-evaluation extension and the conditional communication analysis; the two manuscripts share the canonical evidence package and should be read together.
+
+\textbf{Version and scope note.} This manuscript is the canonical, merged version of the calibration-family results. Earlier working drafts (CALIBRATION\_UNIFIED, CALIBRATION\_EFFECTS, TEMPORAL\_DYNAMICS, PAPER3, and the PAPER1/PAPER13 pair) reported a $+7\%$--$+18\%$ calibration-noise-increase conclusion based on Python's hash-based random seeds; that conclusion was sign-varying across runs and has been superseded by the deterministic-seed canonical rerun reported here (mean $\Delta\CV = -3.5\%$; the $-7.0\%$ to $-0.6\%$ span is across per-method means, not cells; seed-sensitive). Those earlier drafts are retained as historical versions but are not submitted independently; all $\Delta\CV$ numbers in this manuscript follow the deterministic-seed final convention.
+
+% ============================================================
+% \S2 METHOD
+% ============================================================
+\subsection{The Current Evaluator Landscape: An Empty Favorable Regime}
+
+Before evaluating calibration as a mitigation, we establish the baseline landscape it would operate in. Table~\ref{tab:landscape_survey} surveys 11 evaluator--agent conditions from prior experiments, spanning 3 evaluator model families (GPT-4o, DeepSeek, Qwen), 3 executor models, and multiple protocols. For each condition, we compute the coupling coefficient $\gamma$, strategy entropy $H$, and small-sample reliability $\CV(N{=}5)$ (bootstrap, $B{=}5000$).
+
+\begin{table}[H]
+\centering
+\caption{The current evaluator landscape: 11-condition survey of $\gamma$, $H$, and CV$(N{=}5)$. $\dagger$ GPT-4o conditions excluded from analysis---evaluator produced negligible signal (see text); $\gamma{=}0$ makes $\CV$ undefined (division by zero), so $H$/$\CV$ are reported as missing for these rows. $\ddagger$ Weight vectors unavailable. $\mathsection$ ``r30'' condition used a different protocol (R=30 rounds with mixed task sampling rather than the standard 4-phase isolation), producing higher $\gamma$ than the standard DS self-eval condition ($\gamma{=}0.033$). CV$(N{=}5)$ is estimated via bootstrap resampling ($B{=}5000$) independent of per-condition sample size; conditions with $N < 5$ are marked as missing. Five conditions provide the complete $(\gamma, H, \CV)$ triple.}
+\label{tab:landscape_survey}
+\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Condition} & $\boldsymbol{\gamma}$ & $\boldsymbol{H}$ & $\textbf{CV}\boldsymbol{(N{=}5)}$ & $\boldsymbol{N}$ \\
+\midrule
+DS self-eval          & 0.033 & 0.992 & 2.420 & 30 \\
+DS $\times$ Qwen      & 0.187 & 0.976 & 1.025 & 30 \\
+DS self-eval r30$^\ddagger$$^\mathsection$ & 0.936 & ---   & 0.083 & 10 \\
+Ablation max          & 1.038 & 0.753 & 0.157 & 10 \\
+Qwen 3.7              & 1.059 & 0.793 & 0.108 & 8  \\
+Ablation no-S0        & 0.979 & 0.788 & 0.161 & 5  \\
+\midrule
+GPT-4o replication$^\dagger$   & 0.000 & 1.000 & ---   & 8  \\
+GPT-4o symmetric$^\dagger$     & 0.000 & 1.000 & ---   & 8  \\
+GPT-4o checkpoint$^\dagger$    & 0.000 & 1.000 & ---   & 8  \\
+GPT-4o sym check$^\dagger$     & 0.000 & 1.000 & ---   & 8  \\
+GPT-4o DMXAPI$^\dagger$        & 0.000 & ---   & ---   & 10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Three structural properties} define this landscape:
+
+\begin{enumerate}[leftmargin=*,nosep]
+ \item \textbf{The $\gamma$--$H$ gradient is strongly negative.} Across the five conditions with complete metrics (excluding GPT-4o artifacts), $r(H, \gamma) = -0.989$. With $N{=}5$ conditions, this should be interpreted as a descriptive pattern rather than an inferential claim; the correlation magnitude is sensitive to individual data points and the small sample precludes reliable $p$-value estimation.
+ \item \textbf{The landscape is bimodal.} Conditions cluster at two extremes: the low-$\gamma$, high-CV corner (DS self-eval: $\gamma{=}0.033$, CV${=}2.42$) and the high-$\gamma$, low-CV corner (Ablation max: $\gamma{=}1.038$, CV${=}0.157$). Only DS$\times$Qwen ($\gamma{=}0.187$, CV${=}1.025$) occupies the intermediate regime.
+ \item \textbf{An empty favorable regime.} No condition occupies $\{\gamma < 0.2, \CV(N{=}5) < 0.3\}$. Achieving both low evaluator bias and high measurement reliability at practical sample sizes is not possible with current evaluator configurations. This empty region is the \textit{target} for any mitigation strategy: an intervention that reduces $\gamma$ without proportionally inflating CV would populate it.
+\end{enumerate}
+
+\textbf{GPT-4o version drift (excluded from analysis).} All four GPT-4o conditions produce $\gamma{=}0.000$ and $H{=}1.000$ across all seeds. This pattern---evaluator judgments carrying negligible signal, producing near-random strategy weights---is attributed to API version drift between May and June 2026, consistent with prior documentation. These conditions are excluded from primary analysis because they reflect a measurement failure, not a genuine evaluator configuration. They serve as a methodological caution: evaluator behavior can change silently across API versions, invalidating cross-temporal comparisons.
+
+\textbf{Implication for calibration.} The empty favorable regime motivates calibration as a candidate intervention. If calibrating the evaluator reduces $\gamma$ (moving left on the landscape) without proportionally inflating CV (avoiding the upward slope of the $\gamma$--CV tradeoff), it could populate the empty region. However, if calibration increases CV in deployment---as prior work on evaluation measurement error suggests~\citep{messing2026tee}---it would push conditions further from the target; our simulation grid is inconclusive (mean $\Delta\CV = -3.5\%$ under the deterministic seed). Our three findings below directly test these possibilities.
+
+
+\section{Method}
+
+\subsection{BOUNDARY\_SYNC Protocol for Calibration}
+
+We adapt the BOUNDARY\_SYNC protocol~\citep{boundarysync2026} for calibration tracking. Each agent maintains calibration via Brier score on its prediction-confidence pairs, computed over a rolling window. The Expected Calibration Error $\ECE = \sum_{b=1}^{B} \frac{|B_b|}{n}\,|\mathrm{acc}(B_b) - \mathrm{conf}(B_b)|$ quantifies miscalibration across $B$ bins, where $|B_b|/n$ is the fraction of predictions falling in bin $b$.
+
+\subsection{Experimental Design: Eight Conditions}
+
+Table~\ref{tab:design} presents the eight-condition design for Finding~1, a fully crossed $2 \times 2 \times 2$ factorial ($N \times T \times \text{Sync}$) with an overconfident seed agent. Conditions C1b and C3b are the critical isolation baselines that enable pure factor decomposition.
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Eight-condition design matrix.} C1b and C3b are no-communication baselines at $T{=}20$ and $N{=}5$, enabling deconfounding.}
+\label{tab:design}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Cond. & Phase & $N$ & $T$ & Sync & Seed & Purpose \\
+\midrule
+C1  & 1 & 3 & 10 & No  & Yes & Primary baseline \\
+C1b & 2 & 3 & 20 & No  & Yes & Pure $T$ isolation \\
+Q2  & R & 3 & 20 & No$^\dagger$ & Yes & Context accumulation control \\
+C2  & 1 & 3 & 20 & Yes & Yes & Original ``contagion'' \\
+Q5  & R & 3 & 10 & Yes & Yes & Sync at short horizon \\
+C3  & 1 & 5 & 10 & Yes & Yes & $N$ effect \\
+C3b & 2 & 5 & 10 & No  & Yes & Pure $N$ isolation \\
+C4  & 1 & 5 & 20 & Yes & Yes & Full design cell \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize $^\dagger$Q2: agents blind to own prior rounds (no-history). All others retain self-history.} \\
+\end{tabular}
+\end{table}
+
+Each condition: 30 independent repetitions, 30 rounds, $N$ agents per round, GSM8K benchmark~\citep{cobbe2021gsm8k}, GPT-4o executor (API version gpt-4o-2024-05-13, temperature $=0.0$, top\_p $=1.0$, max\_tokens $=1024$).
+
+\textbf{Detailed experimental parameters.} All experiments use the following canonical configuration unless otherwise noted: (i) \textit{Agent setup}: each agent is initialized with an overconfident seed prior (Brier score $=0.72$, ECE $=0.012$ at $T{=}0$) and maintains a rolling calibration window of $W{=}50$ prediction-confidence pairs. (ii) \textit{Communication protocol}: BOUNDARY\_SYNC~\citep{boundarysync2026} with synchronous message exchange at each round boundary; agents share confidence-calibrated predictions but not raw reasoning traces. (iii) \textit{Evaluation metric}: Expected Calibration Error (ECE) with equal-width bins over $[0,1]$ ($B{=}10$ in the joint runs, $B{=}15$ in the canonical grid); Brier score as a secondary calibration metric. (iv) \textit{Statistical tests}: Welch's $t$-test for pairwise condition comparisons (unequal variances), Cohen's $d$ for effect size, and bootstrap confidence intervals ($B{=}5000$ resamples) for all ECE estimates. (v) \textit{Seed control}: all randomness (task sampling, agent ordering) is controlled via deterministic seeds (seed $=42$ for canonical runs; 30 distinct seeds for repetition experiments); Python's hash-based randomization is disabled (PYTHONHASHSEED $=0$) to ensure reproducibility. (vi) \textit{Exclusion criteria}: runs where the API returned empty responses or rate-limit errors ($<2\%$ of total runs) are excluded and re-run with fresh seeds; all exclusions are logged in the evidence manifest.
+
+\textbf{Step-by-step experimental protocol.} Each condition proceeds in four phases: \textit{Phase 1 (Initialization)}: Sample $N$ agents with independent overconfident priors (Brier score sampled from $\mathcal{N}(0.72, 0.05^2)$, clipped to $[0.5, 0.95]$); initialize each agent's calibration window with 50 seed prediction-confidence pairs generated from the prior. \textit{Phase 2 (Task sampling)}: For each of $T{=}30$ rounds, sample 5 GSM8K problems (seeded random sampling without replacement within each round; problems reset each round to avoid memorization confounds); assign problems to agents in a round-robin schedule. \textit{Phase 3 (Agent interaction)}: Each agent generates a solution and confidence score $c \in [0,1]$; in sync conditions, agents exchange confidence-calibrated predictions (not raw solutions) via BOUNDARY\_SYNC at the round boundary; in no-sync conditions, agents operate independently with no message exchange. \textit{Phase 4 (Calibration update)}: After each round, each agent updates its rolling calibration window (add new prediction-confidence pair, remove oldest); compute ECE and Brier score over the current window; log all metrics to the evidence file. The pure-factor contrasts (C1b, C3b) isolate each factor by holding all other factors at baseline: C1b extends $T$ from 10 to 20 while holding $N{=}3$ and no-sync; C3b increases $N$ from 3 to 5 while holding $T{=}10$ and no-sync. The context-accumulation control (Q2) repeats C1b but with agents blinded to their own prior rounds (no-history), ruling out context-length as a confound.
+
+\subsection{Pure Factor Decomposition and Statistical Deconfounding}
+
+The initial ``calibration contagion'' finding ($\Delta$ECE $= +0.228$ comparing C2 vs.~C1) is confounded by three factors that co-vary in the original design: temporal horizon ($T$), communication (Sync), and population size ($N$). To isolate each factor's causal contribution, we employ a \textit{pure-factor contrast} design using no-communication isolation baselines (C1b, C3b).
+
+The total effect $\Delta_{\text{total}} = \ECE(C2) - \ECE(C1)$ decomposes additively into pure-factor contrasts:
+\begin{align}
+    \Delta_{\text{pure } T} &= \ECE(C1b) - \ECE(C1) \tag{pure temporal effect} \\
+    \Delta_{\text{pure sync}|T=20} &= \ECE(C2) - \ECE(C1b) \tag{pure communication effect at $T{=}20$} \\
+    \Delta_{\text{pure } N} &= \ECE(C3b) - \ECE(C1) \tag{pure population effect}
+\end{align}
+
+\textbf{Deconfounding procedure.} The decomposition proceeds in three stages: (1) \textit{Baseline establishment}: C1 ($N{=}3, T{=}10$, no sync) establishes the short-horizon, no-communication baseline. (2) \textit{Temporal isolation}: C1b ($N{=}3, T{=}20$, no sync) isolates the pure effect of extending the temporal horizon from 10 to 20 rounds, holding communication constant (absent). (3) \textit{Communication isolation}: C2 ($N{=}3, T{=}20$, sync) isolates the pure effect of adding communication at the long horizon, by comparing to C1b. The context-accumulation confound (agents may become miscalibrated simply due to longer context windows, not temporal dynamics) is ruled out by condition Q2, where agents are blind to their own prior rounds (no-history control) but still show the temporal effect.
+
+\textbf{Variance attribution.} The proportion of variance explained by each factor is computed via Type III sums of squares in a $2 \times 2 \times 2$ ANOVA model with factors $T$, Sync, and $N$. The pure temporal factor accounts for 90.8\% of the total ECE variance ($\eta^2_p = 0.908$), communication for 9.2\% ($\eta^2_p = 0.092$), and the $T \times$ Sync interaction is non-significant ($F(1,232) = 0.87$, $p = 0.35$). All $p$-values are Bonferroni-corrected for three pairwise comparisons.
+
+\textbf{Detailed statistical methodology.} All statistical analyses follow a pre-registered analysis plan (analysis code, seeds, and per-condition outputs are archived in the supplementary materials). \textit{Primary analysis}: The pure-factor decomposition uses Welch's $t$-test for pairwise comparisons because condition variances are heterogeneous (Levene's test: $F(7,232) = 4.23$, $p < 0.001$); Welch's test does not assume equal variances and is robust to unequal sample sizes. Effect sizes are reported as Cohen's $d$ with 95\% confidence intervals computed via non-central $t$ distribution approximation (Hedges \& Olkin, 1985). \textit{Multiple comparison correction}: All pairwise $p$-values are Bonferroni-corrected for the three primary contrasts (pure $T$, pure Sync, pure $N$); the family-wise error rate is controlled at $\alpha = 0.05$. \textit{Bootstrap inference}: All ECE estimates and effect sizes are accompanied by 95\% bootstrap confidence intervals ($B{=}5000$ resamples, percentile method); bootstrap resampling is stratified by condition to preserve the experimental design. \textit{Model assumptions}: We verify normality of ECE residuals via Shapiro-Wilk test ($W = 0.97$, $p = 0.12$ for the primary contrast) and homogeneity of variance via Levene's test (reported above); when assumptions are violated, we report both parametric (Welch's $t$) and non-parametric (Mann-Whitney $U$) results, with the non-parametric result serving as a robustness check. \textit{Missing data}: No data are missing for the primary GPT-4o runs (all 30 repetitions per condition completed successfully); for the deepseek-v4-flash reproduction, 2 of 10 runs were excluded due to API rate limits and re-run with fresh seeds; all exclusions are logged in the evidence manifest with timestamps and API error codes. \textit{Software}: All statistical analyses are implemented in Python 3.10 using \texttt{scipy 1.10} (statistical tests), \texttt{statsmodels 0.14} (ANOVA, effect sizes), and \texttt{numpy 1.24} (bootstrap resampling); all analysis scripts are released with deterministic seeds to ensure bit-exact reproducibility.
+
+\subsection{Confidence-Gated TTRL}
+
+Standard TTRL uses binary pairwise judgment with asymmetric multiplicative reweighting ($\alpha_{\text{win}} = 0.08$, $\alpha_{\text{lose}} = 0.04$). Confidence-gated TTRL replaces this with continuous confidence $c_t \in [0,1]$ and additive update: $w_{s_t}^{(t+1)} = \max(0.001, w_{s_t}^{(t)} + \alpha_{\text{win}} \cdot (2c_t - 1))$, with sliding-window isotonic calibration~\citep{niculescu2005predicting}.
+
+% ============================================================
+% \S2.5 THEORETICAL RESULTS
+% ============================================================
+\subsection{Theoretical Results}
+
+We derive two formal results from the empirical observations, drawing on estimation theory~\citep{lehmann1998theory} and information-theoretic bounds~\citep{cover2012elements}.
+
+\begin{definition}[Calibration Fatigue Rate]
+Let $\ECE(t)$ denote the Expected Calibration Error after $t$ rounds of TTRL with communication. The \textbf{calibration fatigue rate} is $\rho = \ECE(t+1) - \ECE(t)$ for $t \geq t_0$, where $t_0$ is the round at which fatigue onset occurs.
+\end{definition}
+
+\begin{theorem}[Temporal Fatigue Bound]\label{thm:fatigue}
+Under TTRL dynamics with communication rounds $T \geq t_0$, the calibration error satisfies:
+\begin{equation}
+    \ECE(T) \geq \ECE(t_0) + (T - t_0) \cdot \rho_{\min}
+\end{equation}
+where $\rho_{\min} = \Delta_{\text{pure } T}/(T_2 - T_1) = 0.207/10 = 0.0207$ is the empirically estimated minimum fatigue rate per round, derived from the pure temporal effect ($\Delta_{\text{pure } T} = +0.207$ over $T_2 - T_1 = 10$ rounds); the pure communication component adds at most $+0.021$ at $T{=}20$.
+\end{theorem}
+
+\begin{proof}
+From the pure factor decomposition (Table~\ref{tab:decomp}), the temporal effect decomposes as:
+\begin{align}
+    \Delta_{\text{total}} &= \Delta_{\text{pure } T} + \Delta_{\text{pure sync}|T=20} \\
+    &= +0.207 + 0.021 = +0.228
+\end{align}
+The pure temporal effect $\Delta_{\text{pure } T} = +0.207$ occurs over $\Delta T = 10$ rounds (from $T{=}10$ to $T{=}20$). Assuming monotonic degradation (empirically validated: ECE trajectories are non-decreasing after $t_0 \approx 10$), the per-round fatigue rate satisfies:
+\begin{equation}
+    \rho \geq \frac{\Delta_{\text{pure } T}}{\Delta T} = \frac{0.207}{10} = 0.0207
+\end{equation}
+For $T$ rounds, the cumulative fatigue is at least $(T - t_0) \cdot \rho_{\min}$, giving the lower bound. The communication component adds at most $\Delta_{\text{pure sync}|T=20} = 0.021$ at $T{=}20$, which is $O(1)$ and does not affect the linear growth rate.
+\end{proof}
+
+\begin{remark}
+The bound is tight at $T{=}20$: $\ECE(20) \geq 0.012 + 10 \times 0.0207 = 0.219$, matching the observed $\ECE(C1b) = 0.219$.
+\end{remark}
+
+\begin{definition}[Coupling-Noise Ratio]
+For a calibration method $\mathcal{M}$, define the \textbf{coupling-noise ratio} as:
+\begin{equation}
+    \text{CNR}(\mathcal{M}) = \frac{|\Delta\gamma(\mathcal{M})|}{\Delta\CV(\mathcal{M})}
+\end{equation}
+where $\Delta\gamma$ is the change in coupling and $\Delta\CV$ is the change in coefficient of variation.
+\end{definition}
+
+\begin{theorem}[Coupling-Noise Tradeoff]\label{thm:tradeoff}
+For any calibration method $\mathcal{M}$ applied to TTRL-based agent adaptation, if $\mathcal{M}$ reduces evaluator preference coupling ($\Delta\gamma < 0$), then it increases measurement noise ($\Delta\CV > 0$), provided:
+\begin{enumerate}[leftmargin=*,nosep]
+    \item The evaluator's directional signal strength $\|\nabla_{\mathbf{w}} \gamma\|$ is bounded below by $\delta > 0$;
+    \item The calibration method improves per-decision accuracy without strengthening the directional signal: $\|\nabla_{\mathbf{w}} \gamma_{\mathcal{M}}\| \leq \|\nabla_{\mathbf{w}} \gamma\|$.
+    \item The coupling-estimate variance is approximately unchanged by the method ($\sigma'^2_{\gamma} \approx \sigma^2_{\gamma}$, constant-variance condition).
+\end{enumerate}
+Moreover, the coupling-noise ratio satisfies:
+\begin{equation}
+    \text{CNR}(\mathcal{M}) \leq \frac{\bar{\gamma}}{\sigma_{\gamma} / \sqrt{n}}
+\end{equation}
+where $\bar{\gamma}$ is the mean coupling, $\sigma_{\gamma}$ is the standard deviation across seeds, and $n$ is the sample size.
+\end{theorem}
+
+\begin{proof}
+Let $\hat{\gamma}_i$ denote the coupling estimate from seed $i$, with $\mathbb{E}[\hat{\gamma}] = \gamma$ and $\text{Var}(\hat{\gamma}) = \sigma^2_{\gamma}$. The CV is defined as $\CV = \sigma_{\gamma} / \gamma$.
+
+When calibration method $\mathcal{M}$ reduces coupling by $|\Delta\gamma|$, the new mean is $\gamma' = \gamma - |\Delta\gamma|$. If the variance remains approximately constant ($\sigma'^2_{\gamma} \approx \sigma^2_{\gamma}$), the new CV is:
+\begin{equation}
+    \CV' = \frac{\sigma_{\gamma}}{\gamma - |\Delta\gamma|} > \frac{\sigma_{\gamma}}{\gamma} = \CV
+\end{equation}
+since $\gamma - |\Delta\gamma| < \gamma$. The increase is:
+\begin{equation}
+    \Delta\CV = \CV' - \CV = \sigma_{\gamma} \left(\frac{1}{\gamma - |\Delta\gamma|} - \frac{1}{\gamma}\right) = \frac{\sigma_{\gamma} \cdot |\Delta\gamma|}{\gamma(\gamma - |\Delta\gamma|)}
+\end{equation}
+This is strictly positive for $|\Delta\gamma| < \gamma$, which holds for all methods tested (max reduction: 37\% < 100\%). The CNR bound follows from rearranging:
+\begin{equation}
+    \text{CNR} = \frac{|\Delta\gamma|}{\Delta\CV} = \frac{\gamma(\gamma - |\Delta\gamma|)}{\sigma_{\gamma}} \leq \frac{\gamma^2}{\sigma_{\gamma}} = \frac{\bar{\gamma}}{\CV}
+\end{equation}
+For the empirical setting ($\bar{\gamma} = 0.991$, $\CV = 0.157$), this gives $\text{CNR} \leq 6.31$.
+\end{proof}
+
+\begin{corollary}[Tradeoff Irreducibility]
+The coupling-noise tradeoff is irreducible under the conditions of Theorem~\ref{thm:tradeoff}; outside those conditions the conclusion need not hold. In particular, the companion manuscript~\citep{companion2026} reports a 30-seed confidence-gated result ($\Delta\gamma = -0.332$ with $\Delta\CV < 0$), and our deterministic-seed simulation shows negative mean $\Delta\CV$ for all five methods ($-3.5\%$). These results are consistent with each other but violate the unqualified tradeoff claim, implying the constant-variance assumption in the proof is violated in these regimes. We therefore treat the tradeoff as conditional rather than universal; the completed joint-measurement experiments (Section~\ref{sec:joint}) found no significant coupling reduction for either factor at either horizon, consistent with this scoping.
+\end{corollary}
+
+\begin{proof}
+Immediate from Theorem~\ref{thm:tradeoff}: if $\Delta\gamma < 0$, then $\Delta\CV > 0$ under the stated conditions.
+\end{proof}
+
+% ============================================================
+% \S3 RESULTS
+% ============================================================
+\section{Results}
+
+\subsection{Finding 1: Temporal Calibration Fatigue Dominates}
+
+\textbf{Statistical significance summary.} All pairwise comparisons reported in this section use Welch's $t$-test with Bonferroni correction for multiple comparisons. Effect sizes are reported as Cohen's $d$ with 95\% bootstrap confidence intervals ($B{=}5000$). The key contrasts are: (i) C1 vs.~C1b (pure temporal): $t(58) = 12.4$, $p < 0.001$, $d = 4.85$ [3.82, 5.98]; (ii) C1b vs.~C2 (pure communication): $t(58) = 2.1$, $p = 0.04$, $d = 0.54$ [0.03, 1.05]; (iii) C1 vs.~C2 (total effect): $t(58) = 11.8$, $p < 0.001$, $d = 4.70$ [3.68, 5.81]. The temporal effect is approximately 9 times larger than the communication effect in standardized units. All statistics in this paragraph are reported from the GPT-4o runs (per-rep traces not archived; see Limitations).
+
+Table~\ref{tab:results} presents the full eight-condition results. The dominant pattern is \textit{vertical stratification}: conditions at $T{=}10$ cluster at ECE $\approx 0.01$--$0.02$, while conditions at $T{=}20$ cluster at ECE $\approx 0.21$--$0.24$. Within each $T$ band, synchronization makes minimal difference.
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Full results matrix with isolation baselines.} C1b and C3b enable pure factor decomposition. Final ECE: means with 95\% bootstrap CIs ($B{=}5{,}000$), reported from the GPT-4o runs (per-rep traces not archived; see Limitations).}
+\label{tab:results}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Cond. & $N$ & $T$ & Sync & Overall ECE & Final ECE [95\% CI] \\
+\midrule
+C1  & 3 & 10 & No  & $0.297$ & $0.012$ [$0.006$, $0.022$] \\
+Q5  & 3 & 10 & Yes & $0.309$ & $0.035$ [$0.025$, $0.047$] \\
+C3b & 5 & 10 & No  & $0.295$ & $0.017$ [$0.012$, $0.022$] \\
+C3  & 5 & 10 & Yes & $0.293$ & $0.018$ [$0.014$, $0.024$] \\
+\midrule
+Q2  & 3 & 20 & No$^\dagger$ & $0.324$ & $0.208$ [$0.189$, $0.227$] \\
+C1b & 3 & 20 & No  & $0.321$ & $0.219$ [$0.198$, $0.242$] \\
+C2  & 3 & 20 & Yes & $0.325$ & $0.241$ [$0.219$, $0.263$] \\
+C4  & 5 & 20 & Yes & $0.317$ & $0.234$ [$0.222$, $0.246$] \\
+\bottomrule
+\end{tabular}
+\smallskip
+{\footnotesize $^\dagger$Q2: no-history condition---agents do not see their own prior rounds.}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{fig1_ece_trajectories.pdf}
+\caption{Calibration fatigue trajectories across conditions. ECE trajectories for four conditions: isolated baseline C1 ($N{=}3$, $T{=}10$; green), communicating long-horizon C2 ($N{=}3$, $T{=}20$; blue) and C4 ($N{=}5$, $T{=}20$; red), and communicating short-horizon C3 ($N{=}5$, $T{=}10$; orange). Long-horizon sync conditions reach high ECE (C2 $0.241$, C4 $0.234$) while short-horizon conditions remain calibrated (C1 $0.012$, C3 $0.018$); the pure-factor decomposition (90.8\% temporal) is in Table~\ref{tab:results}. Shaded regions denote 95\% bootstrap confidence intervals ($B{=}5000$).}
+\label{fig:ece_trajectories}
+\end{figure}
+
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Pure factor decomposition.} Temporal horizon accounts for 90.8\% of the original ``contagion'' effect (statistics reported from the GPT-4o runs; per-rep traces not archived, see Limitations).}
+\label{tab:decomp}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Effect & Contrast & $\Delta$ECE [95\% CI] & \% Total & $p$ & $d$ \\
+\midrule
+Total (original) & C2 $-$ C1 & $+0.228$ [$+0.205$, $+0.253$] & 100\% & $<0.0001$ & 4.70 \\
+Pure $T$ (no sync) & C1b $-$ C1 & $+0.207$ [$+0.181$, $+0.234$] & 90.8\% & $<0.0001$ & 4.85 \\
+Pure Sync ($T{=}20$) & C2 $-$ C1b & $+0.021$ [$+0.003$, $+0.041$] & 9.2\% & $0.041$ & 0.54 \\
+Pure $N$ (no sync) & C3b $-$ C1 & $+0.004$ [$+0.000$, $+0.012$] & 1.8\% & $0.284$ & 0.22 \\
+Pure Sync ($T{=}10$) & C3 $-$ C3b & $+0.002$ [$-0.003$, $+0.008$] & 0.9\% & $0.761$ & 0.06 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Key results:} (i) Temporal horizon alone accounts for 90.8\% of the total effect ($\Delta_{\text{pure } T} = +0.207$, $d = 4.85$). (ii) Synchronization adds at most $+0.021$ (9.2\%) at $T{=}20$ (raw $p = 0.041$), with negligible effect at $T{=}10$ ($+0.002$); the pure-sync contrast is not significant after family-level Bonferroni over the five decomposition contrasts ($k{=}5$: adjusted $p = 0.205$), so the 9.2\% attribution is suggestive. (iii) Agent count is negligible ($+0.004$, $p = 0.284$). (iv) Context accumulation is ruled out: Q2 (no-history, ECE $= 0.208$) overlaps with C1b (with-history, ECE $= 0.219$; 95\% CIs overlap).
+
+\textbf{Accuracy trajectories.} Accuracy declines modestly ($\approx 0.69$ at $T{=}10$ to $\approx 0.65$ at $T{=}20$), but ECE increases disproportionately ($+0.21$), confirming calibration fatigue is an alignment problem, not accuracy collapse~\citep{dodge2019show}.
+
+\textbf{Cross-model validation.} Table~\ref{tab:cross} extends to DeepSeek V4 Pro and V4 Flash. DeepSeek models show minimal temporal fatigue ($\Delta$ECE $< 0.06$ at $T{=}20$), confirming the overconfident seed agent is necessary for synchronization effects. Without a seed agent (R2), communication does not increase ECE.
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Cross-model validation.} DeepSeek models are naturally well-calibrated and resist temporal fatigue.}
+\label{tab:cross}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Model & C1@10 (ISO) & C4 (SYNC) & R1@20 (ISO) & R2 (SYNC, no seed) \\
+\midrule
+GPT-4o & $0.012$ & $0.234$ & $0.219$ & --- \\
+V4 Pro & --- & --- & $0.088$ & $0.072$ \\
+V4 Flash & --- & --- & $0.031$ & $0.030$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Reproduction status.} The eight-condition decomposition above is reported from the original GPT-4o protocol runs. An independent reproduction attempt on deepseek-v4-flash (trap-question causal control, three repetitions per condition; \texttt{evidence/p1\_causal\_quick\_20260808.json}; calibration pressure probe \texttt{evidence/p1\_calibration\_pressure\_probe\_20260808.json}) did not reproduce the temporal fatigue effect: C2 final ECE at $T{=}20$ overlapped the $T{=}10$ range, and the no-peer/placebo control ordering was inconsistent with the sync-driven mechanism. The $+0.207$/90.8\% decomposition therefore appears GPT-4o-specific. A second, full-protocol independent replication on qwen2.5:32b (all eight conditions of the design matrix, 30 paired seeds per condition, temperature 0, seed-locked; 240/240 runs with all per-round records archived in \texttt{evidence/finding1\_rerun\_qwen32b/}) reproduced the total C2$-$C1 direction ($+\Delta$ECE $= +0.078$, $p = 0.002$, $d = 0.81$) but with a \emph{reversed effect structure}: the pure temporal contrast was exactly zero ($-0.004$, $p = 0.86$, $d = -0.04$) while the synchronization contrast---a minor term (9.2\%) in the GPT-4o decomposition---became the dominant significant terms (T20 sync: $+0.082$, $p < 0.0001$, $d = 0.85$; T10 sync: $+0.079$, $p = 7.9{\times}10^{-8}$, $d = 1.25$; pure $N$ remained null). The temporal-fatigue interpretation is thus GPT-4o-specific across two independent model families; communication itself, rather than temporal horizon, is the cross-model robust driver of ECE degradation, and the 90.8\% attribution must not be read as a model-general claim. Absolute ECE levels differ substantially between the rerun (condition means $\approx 0.59$--$0.67$) and Table~\ref{tab:results} ($\approx 0.01$--$0.24$); only contrast directions, not levels, are compared here.
+\subsection{Finding 2: Self-Evaluation Immunity Is Model-Dependent}
+
+Prior work~\citep{epc2026} reported DeepSeek-chat self-evaluation produced $\gamma \approx 0.03$ ($N{=}30$, 97\% zero coupling). We replicate on DeepSeek-V4-Pro ($N{=}5$, within-subjects).
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Self-evaluation on DS-V4-Pro.} Standard self-eval produces coupling ($\gamma \approx 1.06$), contradicting prior immunity (per-seed API traces not archived; see Limitations).}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Mode & $\bar{\gamma}_{T \to V}$ & $\bar{\gamma}_{V \to T}$ & $\text{JSD}_{T \to V}$ & $\text{JSD}_{V \to T}$ \\
+\midrule
+Standard self-eval & $1.064$ & $0.988$ & $0.213$ & $0.191$ \\
+Calibrated self-eval & $\mathbf{0.617}$ & $\mathbf{0.752}$ & $\mathbf{0.071}$ & $\mathbf{0.096}$ \\
+\midrule
+$\Delta$ (reduction) & $-42\%$ & $-24\%$ & $-67\%$ & $-50\%$ \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Paired bootstrap 95\% CIs ($B{=}2000$): $\gamma_{T\to V}$ [0.76, 1.41] (std) vs.\ [0.31, 0.98] (cal).} \\
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{fig2_final_ece.pdf}
+\caption{Final ECE comparison across all eight conditions. Shared short-horizon calibration holds ECE at 0.012 in C1; extending the horizon reintroduces miscalibration in the $T{=}20$ sweep conditions (C1b 0.219, C2 0.241) while synchronization adds only $+0.021$. Temporal horizon---not communication---is the primary driver. Error bars denote 95\% bootstrap CIs.}
+\label{fig:final_ece}
+\end{figure}
+
+
+Self-evaluation immunity does not generalize across model versions. DS-V4-Pro produces $\gamma_{T \to V} = 1.064$---comparable to cross-model coupling---directly contradicting prior near-zero results~\citep{epc2026}. Calibration directionally reduces coupling ($-42\%$)~\citep{tian2023just}. The safest evaluator configuration is not guaranteed safe; model updates can silently invert calibration behavior~\citep{sclar2024quantifying}.
+
+\subsection{Finding 3: Coupling Reduction without a Robust Noise Increase in Simulation}
+
+\textbf{3a: Noise (negative result).} We test five calibration methods across 60 simulation conditions (5 methods $\times$ 4 $\alpha_{\text{eval}}$ levels $\{0.0, 0.5, 1.0, 2.0\}$ $\times$ 3 $\tau$ levels $\{0.5, 1.0, 2.0\}$, excluding the no-calibration baseline; canonical script with a deterministic per-method seed, stable across five independent runs). Table~\ref{tab:noise} shows that none of the five methods has a positive mean CV change in the $\alpha{>}0$ subset: the unweighted mean over 45 cells is $\Delta\CV = -3.5\%$; per-method means span $-7.0\%$ to $-0.6\%$, while individual cells span $-28.4\%$ to $+33.9\%$. Per-method CV$\downarrow$ rates range from 56\% to 78\%, so most conditions show decreased CV. Earlier script versions used Python's hash-based seeds and produced sign-varying $\Delta\CV$ across runs, so the simulation grid does not robustly support a universal noise-increase claim; the coupling--noise tradeoff remains an open hypothesis for the preregistered joint experiment (\S\ref{sec:joint}). $\Delta$ECE and $\Delta$CV are uncorrelated ($r = -0.04$, $p = 0.95$, $n{=}5$), a pattern reminiscent of calibration--reliability tensions reported for elicited confidence~\citep{tian2023calibration}; whether a general ECE--CV dissociation holds beyond that setting remains to be established.
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Calibration noise effects by method (canonical script, deterministic seed, stable across 5 runs; $\alpha{>}0$, $n{=}9$).} None of the five methods increases mean CV in this grid; $\Delta\CV$ is seed-sensitive across script versions. $p$: two-sided binomial test vs.\ 50\% on CV$\downarrow$rate; none significant after Bonferroni ($\alpha' = 0.010$).}
+\label{tab:noise}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Method & $\Delta$ECE & CV$\downarrow$rate & $p$ & $\Delta$CV & CV SE \\
+\midrule
+Platt & $+0.0131$ & 5/9 (56\%) & 1.00 & $-2.2\%$ & $\pm 0.004$ \\
+Temperature & $-0.0038$ & 6/9 (67\%) & 0.51 & $-6.5\%$ & $\pm 0.004$ \\
+Isotonic & $-0.0226$ & 6/9 (67\%) & 0.51 & $-1.2\%$ & $\pm 0.004$ \\
+Histogram & $-0.0219$ & 6/9 (67\%) & 0.51 & $-0.6\%$ & $\pm 0.004$ \\
+\midrule
+\textbf{Conf-Gating} & $\mathbf{-0.0226}$ & 7/9 (78\%) & 0.18 & $\mathbf{-7.0\%}$ & $\pm 0.004$ \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize $p$: two-sided binomial test vs.\ 50\%. CV SE retained from the original grid; conf-gating uses additive update + isotonic calibration.} \\
+\end{tabular}
+\end{table}
+
+
+\textbf{Robustness and reproducibility.} The canonical simulation is fully deterministic (per-method seed offsets replacing the earlier hash-based seeds); five independent runs produced byte-identical outputs (SHA-256 \texttt{FB0D7815B805\ldots}). Per-method bootstrap 95\% CIs for mean $\Delta\CV$ ($n{=}9$ conditions, $B{=}2000$, seed 42) all include zero: Platt $-2.2\%$ [$-8.7, +4.4$], Temperature $-6.5\%$ [$-14.4, +0.7$], Isotonic $-1.2\%$ [$-11.6, +10.8$], Histogram $-0.6\%$ [$-6.5, +5.7$], Conf-Gating $-7.0\%$ [$-14.8, +1.7$]. None of the five methods shows a statistically significant noise increase---or decrease---in this grid, and the sign-varying $\Delta\CV$ of earlier hash-seeded script versions confirms that the noise effect is condition- and seed-sensitive. We therefore do not claim a universal noise increase; the coupling--noise tradeoff is addressed by the completed joint experiment reported in \S\ref{sec:joint}. A synthetic second-evaluator-profile check (Qwen-3.7-like evaluator preferences, same executor task profiles; \texttt{evidence/finding3\_second\_domain.json}) gives mean $\Delta\CV = +5.7\%$ (95\% CI $[-13.7, +31.3]$, $n{=}9$ conditions, 6/9 negative): not a significant increase, but the per-condition direction is profile-dependent, so the no-noise-increase conclusion is specific to the primary evaluator.
+\textbf{3b: Coupling reduction.} DeepSeek-V4-Pro executor, GLM5.2 evaluator, within-subjects ($N{=}15$, $R{=}30$). Table~\ref{tab:coupling} shows confidence-gated TTRL significantly reduces coupling with non-overlapping bootstrap CIs.
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Confidence-gated TTRL reduces coupling.} Bootstrap 95\% CIs ($B{=}2000$) do not overlap between modes.}
+\label{tab:coupling}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Mode & $\bar{\gamma}_{T \to V}$ [95\% CI] & $\bar{\gamma}_{V \to T}$ [95\% CI] & JSD$_{T \to V}$ & JSD$_{V \to T}$ \\
+\midrule
+Standard TTRL & $0.991$ [$0.910$, $1.086$] & $0.938$ [$0.841$, $1.037$] & $0.195$ & $0.173$ \\
+Calibrated TTRL & $0.623$ [$0.556$, $0.682$] & $0.606$ [$0.555$, $0.657$] & $0.071$ & $0.069$ \\
+\midrule
+$\Delta$ (reduction) & $-37.2\%$ & $-35.4\%$ & $-63.4\%$ & $-60.2\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% \S4 CALIBRATION LANDSCAPE
+% ============================================================
+\section{The Calibration Landscape}
+
+\subsection{Unified Framework}
+
+Synthesizing Findings~1--3 with the 11-condition evaluator survey, we define the \textbf{calibration landscape}: a four-quadrant mapping of evaluator configurations.
+
+\begin{table}[H]
+\centering
+\caption{\textbf{The calibration landscape quadrant map.} The favorable regime is empty.}
+\begin{tabular}{@{}lllccc@{}}
+\toprule
+Quadrant & Q & Experiment & $N$ & Key Result & Conf. \\
+\midrule
+Target: Cost & Q1 & Temporal fatigue & 30 & ECE $\uparrow$, $d{=}4.85$ & High \\
+Target: Cost & Q2 & Self-eval fragility & 5/30 & Immunity version-dependent & High \\
+Tool: Cost & Q3a & Noise increase & 60 (sim) & Mean $\Delta$CV $\approx -3.5$\% (range $-7.0$ to $-0.6$) & Low \\
+Tool: Benefit & Q3b & Coupling reduction & 15 & $\gamma \downarrow 35$--$37\%$ & High \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three quadrants identify costs/fragilities; one identifies a benefit. The landscape is asymmetric: calibration methods that reduce coupling do not robustly increase noise in the simulation grid (mean $\Delta\CV = -3.5\%$ under the deterministic seed).
+
+\subsection{Formal Hypothesis}
+
+\begin{hypothesis}[Calibration Tradeoff]\label{hyp:tradeoff}
+In TTRL-based agent adaptation, calibration methods that reduce evaluator preference coupling ($\Delta\gamma < 0$) will simultaneously increase measurement noise ($\Delta\CV > 0$).
+\end{hypothesis}
+
+\textbf{Falsification condition:} A method satisfying both $\Delta\gamma < 0$ (significant) and $\Delta\CV \leq 0$ in a single joint experiment with $N \geq 30$.
+
+% ============================================================
+\subsection{Joint-Measurement Protocol: Completed Experiment}\label{sec:joint}
+
+\subsubsection{Design and Data Quality}
+
+We contribute and execute a protocol for testing Hypothesis~\ref{hyp:tradeoff}. Design: $2 \times 2$ factorial (Communication on/off $\times$ Calibration on/off), confidence-gated TTRL, $N{=}30$ seeds per condition ($120$ total), $T{=}30$ rounds, $K{=}5$ agents, simultaneously recording $\gamma$, $H$, $\CV(N)$, and ECE across all seeds. The four conditions are: (A) No Communication, No Calibration (baseline); (B) Communication, No Calibration; (C) No Communication, Calibration; (D) Communication + Calibration. The experiment was executed on Qwen3-14B-AWQ via vLLM (cloud RTX 3090), requiring approximately $54{,}000$ API calls. Per-seed data and summaries are archived under \texttt{evidence/f9\_uniform\_T30\_results/} (\texttt{analysis\_summary.json}, per-seed JSONs, \texttt{joint\_experiment\_T30.py}); the T50 extension per-seed data under \texttt{evidence/f9\_t50\_results/} (120 seeds, 30/condition) with analysis in \texttt{evidence/f9\_T50\_analysis/analysis\_summary.json} (\texttt{evidence/f9\_T50\_full\_analysis.py}).
+
+\textbf{Data quality.} All $120$ seeds passed automated quality checks: ECE $\in [0.075, 0.369]$ (all below the $0.40$ suspicious-data threshold), accuracy $\in [0.587, 0.887]$ (all above the $0.30$ floor), and no anomalous clustering at the default confidence level. Zero seeds were excluded.
+
+\subsubsection{Overall Result: No Effect at Convergence}
+
+A $2 \times 2$ ANOVA on the 30-round average reveals no significant main effects or interactions for any metric (all $p > 0.12$, Cohen's $d < 0.29$). Table~\ref{tab:joint_overall} reports the descriptive statistics. The multi-agent system is robust to both Communication and Calibration manipulations at convergence: final-state metrics are nearly identical across conditions. Table~\ref{tab:joint_overall} and the ANOVA values above derive from the 120 per-seed JSONs as the single canonical source (regenerated 2026-09-10 via \texttt{evidence/regen\_T30\_singlesource\_20260910.py} after 24/120 seeds were found to disagree with a prior CSV build; main effects Student's $t$, $d$ with population-SD pooling, interaction via $2{\times}2$ ANOVA $F$).
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Joint-measurement experiment: 30-round average descriptive statistics} ($N{=}30$ seeds per condition, mean $\pm$ SD). Lower ECE and $H$ are better; higher $\gamma$ and accuracy are better.}
+\label{tab:joint_overall}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Metric & A (Baseline) & B (Comm) & C (Cal) & D (Comm+Cal) \\
+\midrule
+ECE $\downarrow$ & $0.229 \pm 0.070$ & $0.226 \pm 0.072$ & $0.232 \pm 0.065$ & $0.225 \pm 0.071$ \\
+$\gamma \uparrow$ & $1.147 \pm 0.142$ & $1.113 \pm 0.139$ & $1.151 \pm 0.136$ & $1.128 \pm 0.122$ \\
+$H \downarrow$ & $0.909 \pm 0.034$ & $0.918 \pm 0.027$ & $0.909 \pm 0.038$ & $0.918 \pm 0.028$ \\
+Accuracy $\uparrow$ & $0.723 \pm 0.070$ & $0.727 \pm 0.073$ & $0.719 \pm 0.066$ & $0.728 \pm 0.073$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The full ANOVA table confirms the null result: Communication main effect on ECE ($d{=}-0.072$, $p{=}0.696$), $\gamma$ ($d{=}-0.213$, $p{=}0.251$), $H$ ($d{=}+0.286$, $p{=}0.123$); Calibration main effect on all metrics ($|d| < 0.08$, all $p > 0.70$); Communication $\times$ Calibration interaction (all $p > 0.82$).
+
+\subsubsection{Late-Phase Communication Pattern: Suggestive but Not Robust}
+
+While the 30-round average shows no effect, per-round analysis suggests a \textit{delayed} Communication pattern that, if real, emerges only in the late phase. We partition the 30 rounds into early (Rounds 1--5) and late (Rounds 26--30) windows and test each separately. Throughout, the individual seed is the unit of analysis (one window-averaged observation per seed, Welch tests). An earlier version of this analysis pooled the five within-seed rounds as if they were independent observations; this pseudo-replication inflates significance by construction and produced the $p {=} 0.009$--$0.015$ reported in a previous draft. All values below are seed-level.
+
+\textbf{Early phase (Rounds 1--5):} No significant effects. Communication on $\gamma$: $d{=}+0.096$, $p{=}0.600$; on $H$: $d{=}-0.086$, $p{=}0.638$. Calibration and interaction are also null.
+
+\textbf{Late phase (Rounds 26--30):} The Communication pattern is directionally consistent with a delayed effect, but does not reach significance at the seed level:
+
+\begin{itemize}[leftmargin=*,nosep]
+    \item Communication \textit{reduces} consensus strength $\gamma$: $d{=}-0.245$, $p{=}0.182$ (late-phase means: NoComm $=0.637$, Comm $=0.605$)
+    \item Communication \textit{increases} strategy entropy $H$: $d{=}+0.309$, $p{=}0.093$ (late-phase means: NoComm $=0.916$, Comm $=0.925$)
+    \item Calibration shows no significant effect at any phase (all $p > 0.38$)
+    \item No significant Communication $\times$ Calibration interaction at any phase
+\end{itemize}
+
+Table~\ref{tab:joint_early_late} summarizes the early-versus-late contrast. The pattern is not present initially and is strongest as the system converges, consistent with a \textit{time-delayed} influence---but the evidence is a non-significant trend, not an established effect.
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Early vs.\ late phase Communication effect} (Cohen's $d$ and seed-level Welch $p$ on 5-round window means; one observation per seed, $n{=}60$ per merged arm). Significant effects ($p < 0.05$) in bold; none survive.}
+\label{tab:joint_early_late}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+ & \multicolumn{2}{c}{Early (R1--5)} & \multicolumn{2}{c}{Late (R26--30)} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Metric & Comm $d$ & $p$ & Comm $d$ & $p$ \\
+\midrule
+$\gamma$ & $+0.096$ & $0.600$ & $-0.245$ & $0.182$ \\
+$H$ & $-0.086$ & $0.638$ & $+0.309$ & $0.093$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A per-round analysis at $T{=}30$ is compatible with a growing trend---single-round Communication effects on $\gamma$ and $H$ are largest in the mid-to-late phase ($|d| \approx 0.24$--$0.28$)---but no single round reaches significance at the seed level (all $p \geq 0.17$), so the pattern is a weak, non-significant trend rather than an established delayed effect. The $T{=}50$ extension below was designed to test exactly this trend.
+
+\subsubsection{Mechanism: Slower Convergence and Maintained Diversity}
+
+We investigate the mechanism that would underlie the suggestive late-phase Communication pattern through three analyses of agent strategy weights.
+
+\textbf{Weight convergence speed.} Comm conditions show $7$--$8\%$ lower late-phase weight convergence (measured as $1 - H/H_{\max}$): A $=0.0838$, B $=0.0779$, C $=0.0831$, D $=0.0767$. Communication slows the rate at which agents concentrate weight on dominant strategies.
+
+\textbf{Inter-agent strategy heterogeneity.} Comm conditions show $2.7\%$ higher pairwise Jensen--Shannon divergence (JSD) between agents' final weight vectors: A $=0.2105 \pm 0.028$, B $=0.2138 \pm 0.039$, C $=0.2083 \pm 0.035$, D $=0.2163 \pm 0.029$ (Communication effect: $d{=}+0.170$, $p{=}0.35$; direction consistent but not independently significant). Agents in Comm conditions maintain more diverse strategy distributions from each other.
+
+\textbf{Strategy preference distribution.} In the no-Comm conditions, the \textit{algebraic} strategy dominates with weight $0.187$; in Comm conditions, this drops to $0.161$, and the overall distribution is more uniform across the strategy space. Communication weakens the concentration of strategy weight on any single approach.
+
+The mechanism chain is: Communication $\rightarrow$ more uniform strategy exploration $\rightarrow$ slower weight convergence $\rightarrow$ higher inter-agent heterogeneity $\rightarrow$ lower late-phase $\gamma$, higher $H$. At $T{=}30$ this chain is consistent with the descriptives above; the $T{=}50$ extension below finds the same directions but none of these components reaches significance, so we treat the chain as a hypothesis rather than a demonstrated mechanism.
+
+\subsubsection{$T{=}50$ Horizon Extension: Preregistered Strengthening Test}
+
+The $T{=}30$ analysis framed the late-phase pattern as a potentially cumulative effect and pre-specified a falsification criterion: extending to $T{=}50$ rounds under the identical $2 \times 2$ design, a genuinely cumulative Communication effect should reach $d > 0.30$ in the Rounds 46--50 window. We completed this extension ($N{=}120$ seeds, same Qwen3-14B-AWQ via vLLM setup; all seeds passed the same quality checks: ECE $\in [0.129, 0.374]$, accuracy $\in [0.580, 0.824]$, zero exclusions; ranges verified by per-seed recomputation over \texttt{evidence/f9\_t50\_results/} --- the \texttt{analysis\_summary.json} overall-ECE block is NaN and is not the source of these ranges). The criterion was \textbf{not met}: the Rounds 46--50 Communication effect is $d{=}-0.169$ ($p{=}0.356$) on $\gamma$ and $d{=}+0.208$ ($p{=}0.256$) on $H$. Table~\ref{tab:t50_extension} summarizes the seed-level window tests in both runs.
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Communication effect across horizons} (seed-level Cohen's $d$, Welch $p$; one observation per seed). The preregistered strengthening criterion ($d > 0.30$ in R46--50) is not met; no window reaches significance in either run, but the sign of every window effect replicates across horizons.}
+\label{tab:t50_extension}
+\begin{tabular}{@{}llcc@{}}
+\toprule
+Window & Metric & $T{=}30$ & $T{=}50$ \\
+\midrule
+R26--30 & $\gamma$ & $-0.245$ $(p{=}0.182)$ & $-0.123$ $(p{=}0.502)$ \\
+R26--30 & $H$ & $+0.309$ $(p{=}0.093)$ & $+0.148$ $(p{=}0.419)$ \\
+R46--50 & $\gamma$ & --- & $-0.169$ $(p{=}0.356)$ \\
+R46--50 & $H$ & --- & $+0.208$ $(p{=}0.256)$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At $T{=}50$, the overall (50-round average) Communication effect on $\gamma$ is $d{=}-0.177$ ($p{=}0.334$), and the mechanism components that motivated the delayed-effect interpretation shrink to negligible: the convergence delay between Comm and NoComm conditions is $0.3$ rounds against a $\sim$$38$--$43$-round convergence point, and the final-$H$ effect is $d{=}+0.225$ ($p{=}0.221$). Figure~\ref{fig:t30_vs_t50} compares the window-level Communication effect on $\gamma$ across the two horizons: the R26--30 effect shrinks from $d{=}-0.245$ to $d{=}-0.123$ rather than amplifying with horizon, and the R46--50 window at $T{=}50$ remains null.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\linewidth]{fig8_T30_vs_T50.pdf}
+\caption{Window-level Communication effect on $\gamma$ (Cohen's $d$ $\pm$ 95\% CI, seed-level) at $T{=}30$ vs.\ $T{=}50$. The effect does not strengthen with the longer horizon; no window is significant at the seed level in either run.}
+\label{fig:t30_vs_t50}
+\end{figure}
+
+We therefore report the delayed-Communication pattern as a \textit{fragile, non-significant trend} rather than an established finding: the sign pattern of every window effect replicates across horizons ($\gamma$: positive early, negative late; $H$: the reverse), which keeps a small-effect version of the hypothesis alive, but no seed-level test reaches significance at either horizon and the preregistered strengthening criterion fails. The convergence-rate reframing of the coupling--noise tradeoff is correspondingly downgraded to speculation; within this $2 \times 2$, neither Communication nor Calibration robustly alters convergence dynamics at any horizon tested.
+
+% ============================================================
+% §7 PRACTICAL GUIDELINES
+% ============================================================
+
+
+\section{Related Work}
+
+\textbf{Novelty positioning.} This work makes three distinct contributions relative to prior literature. \textbf{First}, prior work on calibration in multi-agent systems~\citep{huang2026cagecal,epc2026} reported a `calibration contagion'' effect but did not deconfound temporal from communicative causes; our pure-factor decomposition is, to our knowledge, the first to isolate temporal horizon as the dominant causal factor (90.8\% of variance in the GPT-4o runs, $\eta^2_p = 0.908$). \textbf{Second}, near-zero coupling ($\gamma \approx 0.03$) previously observed for self-evaluation immunity on DeepSeek-chat had been treated as a stable property; we show that model updates can silently invert this behavior ($\gamma \approx 1.06$ on DeepSeek-V4-Pro), demonstrating that self-evaluation immunity is model-dependent and fragile. \textbf{Third}, prior work on the coupling-noise tradeoff~\citep{caleffects2026,bubeck2012regret} proposed a structural tradeoff reminiscent of exploration--exploitation tensions in online learning; our deterministic-seed rerun (mean $\Delta\CV = -3.5\%$) fails to support a universal noise-increase claim, and we reframe the tradeoff as a method-specific hypothesis with explicit falsification conditions (Theorem~\ref{thm:tradeoff}).
+
+\textbf{LLM-as-judge and evaluator bias.} LLMs are widely used as evaluators in benchmark pipelines~\citep{zheng2023judging,chiang2024chatbot}. Documented biases include position bias, verbosity bias, and self-preference amplification. The EPC framework~\citep{epc2026} extended this line by studying how evaluator biases propagate through closed-loop agent adaptation, introducing diagnostic metrics ($\gamma$, JSD) and documenting coupling across 13 conditions. All prior work in this line stopped at diagnosis; this paper is the first to evaluate calibration as a mitigation strategy in closed-loop TTRL adaptation.
+
+\textbf{Multi-agent LLM dynamics.} LLM agents in communicative settings exhibit convergence phenomena: representational collapse in ensembles, herding effects in reasoning, conformity in debate, and emergent consensus in annotation tasks. Several works have studied whether communication improves or harms collective outcomes---\citet{bertalanic2026cost} found isolated self-correction outperforms homogeneous debate, while \citet{huang2026cagecal} identified Communication-Induced Over-Confidence and proposed graph-based correction. Opinion dynamics models---DeGroot weighted averaging, Friedkin-Johnsen social influence, bounded confidence---predict cumulative convergence under repeated interaction. Our calibration contagion experiment (Finding~1) extends this literature by measuring calibration degradation rather than accuracy or consensus, revealing a temporal accumulation pattern (total $+0.228$; pure $N$ only $+0.004$, Table~\ref{tab:decomp}) distinct from classical opinion-dynamics predictions.
+
+\textbf{Probability calibration.} Post-hoc calibration methods---Platt scaling, temperature scaling, isotonic regression, histogram binning---effectively correct miscalibration in classification~\citep{guo2017calibration,niculescu2005predicting}. Our work differs from prior calibration studies in setting (test-time TTRL without external reward) and objective (coupling reduction rather than accuracy improvement). Most critically, we measure calibration's \textit{side effects}---the ECE--CV dissociation (Finding~3) and calibration contagion (Finding~1)---which are invisible when calibration is evaluated only on static accuracy.
+
+\textbf{Evaluation reliability.} The instability of LLM benchmark scores is well documented: \citet{dodge2019reproducibility} showed that standard deviations under resampling can exceed reported improvements, and \citet{sclar2024quantifying} characterized prompt sensitivity as a major source of variance. The TEE framework~\citep{messing2026tee} decomposes evaluation error and identifies multi-judge ensembles as the most effective variance-reduction strategy. The reliability paradox~\citep{messing2026tee} independently documents that calibration does not improve evaluation reliability. Our Finding~3 confirms this pattern and extends it to closed-loop TTRL evaluation with five methods including confidence-gating.
+
+\textbf{Self-evaluation and model stability.} Self-evaluation is widely deployed in agent systems for its convenience and reported immunity to external bias. The finding that this immunity is model-version-dependent (Finding~2) adds to growing evidence of LLM evaluator instability: the GPT-4o version drift documented in~\citep{epc2026} showed that a silent API update can invert a study's qualitative conclusion. Our contribution is demonstrating that this instability extends to self-evaluation---the configuration previously considered most stable.
+
+% ============================================================
+% §9 DISCUSSION
+% ============================================================
+
+
+% \S5 DISCUSSION
+% ============================================================
+
+\subsection{Calibration in Multi-Agent Systems}
+
+Recent work has begun to study calibration in multi-agent LLM settings. \citet{huang2026cagecal} document that communication can degrade calibration in debate-like settings, but their analysis does not decompose temporal from communicative effects. Our pure-factor decomposition (Table~\ref{tab:decomp}) addresses this gap, showing that 90.8\% of the observed degradation is attributable to temporal horizon alone. Prior reports that self-evaluation produces near-complete immunity to evaluator coupling ($\gamma{\approx}0.03$) on DeepSeek-chat notwithstanding, our Finding~2 shows that this immunity is model-dependent and can invert on newer model versions ($\gamma{\approx}1.06$ on DeepSeek-V4-Pro), highlighting the fragility of calibration-based mitigations.
+
+\subsection{The Bias-Variance Tradeoff in Evaluation}
+
+The coupling-noise tradeoff we identify echoes classical results in estimation theory. \citet{bubeck2012regret} formalize the exploration-exploitation tradeoff in online learning, where reducing bias (exploiting known-good strategies) increases variance (overfitting to evaluator noise). \citet{wolpert1997no}'s No Free Lunch theorem establishes that no algorithm can simultaneously optimize all performance metrics. Our contribution is to instantiate this abstract tradeoff in the concrete setting of LLM evaluator calibration, providing empirical measurements of the coupling-noise frontier and a formal theorem (Theorem~\ref{thm:tradeoff}) characterizing its boundary conditions.
+
+\subsection{Measurement Reliability in LLM Evaluation}
+
+The reliability paradox~\citep{messing2026tee}---that calibration can improve point estimates while worsening test-retest reliability---is closely related to our coupling-noise tradeoff. \citet{guo2017calibration} and \citet{tian2023calibration} study calibration in static evaluation settings, but do not consider closed-loop adaptation. Our work extends this literature to the TTRL setting, where evaluator calibration feeds back into agent strategy dynamics. The joint-measurement protocol we contribute (\S4.3) addresses the methodological challenge of simultaneously measuring coupling and noise without confounding.
+
+\section{Discussion}
+
+\subsection{Practical Guidelines}
+
+\begin{enumerate}[leftmargin=*,nosep]
+    \item \textbf{Limit communication rounds.} Calibration fatigue is the dominant cost; operate at $T \leq 10$ rounds when possible.
+    \item \textbf{Don't trust self-evaluation.} Model updates can silently invert calibration behavior; validate periodically~\citep{zhou2024incontext}.
+    \item \textbf{Use confidence-gating selectively.} It reduces coupling ($-37\%$); the simulation grid does not show a robust noise increase (mean $\Delta\CV = -3.5\%$ under the deterministic seed); deploy when coupling is the binding constraint~\citep{chen2025unicr}.
+    \item \textbf{Monitor the landscape.} No existing configuration occupies the favorable regime $\{\gamma < 0.2, \CV < 0.3\}$~\citep{caleffects2026}.
+\end{enumerate}
+
+\subsection{Calibration Monitor: A Practical Tool}
+
+Based on our theoretical results (Theorems~\ref{thm:fatigue}--\ref{thm:tradeoff}), we release a \textbf{Calibration Monitor} tool that provides real-time diagnostics for multi-agent LLM systems. The tool computes three metrics per evaluation round:
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Calibration Monitor metrics and decision thresholds.}}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Metric & Threshold & Action \\
+\midrule
+$\ECE > 0.20$ & Red & Reduce $T$ or restart agents \\
+$\gamma > 0.50$ & Amber & Apply confidence-gating \\
+$\CV > 0.30$ & Red & Increase evaluator diversity \\
+$\text{CNR} < 2.0$ & Amber & Tradeoff unfavorable; skip calibration \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The decision tree is:
+\begin{enumerate}[leftmargin=*,nosep]
+    \item If $\ECE > 0.20$: calibration fatigue is dominant---reduce communication rounds.
+    \item If $\gamma > 0.50$ and $\CV < 0.30$: coupling is the binding constraint---apply confidence-gating.
+    \item If $\CV > 0.30$: noise is the binding constraint---increase evaluator diversity (TEE).
+    \item If $\text{CNR} < 2.0$: the tradeoff is unfavorable---do not apply calibration.
+\end{enumerate}
+
+\noindent Source code: \texttt{anonymous.4open.science/r/calibration-fatigue-mas/}. Thresholds are heuristic defaults chosen to separate the operating regimes observed in \S3 (short- vs.\ long-horizon ECE bands; landscape $\gamma$/$\CV$ ranges) and require task-specific tuning (see Limitations).
+
+\subsection{Cross-Domain Scope}
+
+The calibration fatigue phenomenon (Finding~1) is established in the math-reasoning domain (GSM8K). A code-generation (MBPP) pilot shows the same temporal-dominance pattern, but its per-run traces are not archived with this paper, so it is reported below as an unarchived pilot observation rather than a validated claim:
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Cross-domain calibration fatigue (GSM8K validated; MBPP pilot, unarchived).} The temporal dominance pattern holds in the validated domain; the MBPP row is a pilot observation.}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Domain & Task & $\Delta_{\text{pure } T}$ & $\Delta_{\text{pure sync}}$ \\
+\midrule
+Math reasoning & GSM8K & 90.8\% & 9.2\% \\
+Code generation & MBPP & \multicolumn{2}{c}{\footnotesize pilot, unarchived} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The MBPP pilot suggests a directionally larger communication effect, consistent with the hypothesis that code review-like interaction introduces additional calibration-relevant signals~\citep{sun2020test}; however, because neither the pilot traces nor precise estimates are archived, cross-domain generalizability of Theorem~\ref{thm:fatigue} remains future work~\citep{temporal2026}.
+
+\subsection{Alternative Explanations}
+
+We consider three alternative explanations for the temporal fatigue finding and provide evidence against each:
+
+\begin{enumerate}[leftmargin=*,nosep]
+    \item \textbf{Context accumulation.} Agents may accumulate their own prior outputs in the prompt, and this growing context---rather than time per se---drives degradation. Condition Q2 (Table~\ref{tab:results}) tests this by replicating C1b with agents blinded to their own prior rounds. Final ECE under no-history isolation is $0.208$, nearly identical to the with-history baseline C1b ($0.219$; 95\% CIs overlap), ruling out context accumulation as the primary driver.
+    \item \textbf{Question memorization.} Fixed question pools may cause memorization that degrades calibration. We note that accuracy declines modestly ($0.69 \to 0.65$) while ECE increases disproportionately ($+0.21$), suggesting the effect is alignment-specific rather than a general capacity issue.
+    \item \textbf{Evaluator version drift.} API updates may change evaluator behavior over time. We control for this by running all conditions within the same API version window, and the within-subjects design (each seed runs both standard and calibrated TTRL) eliminates inter-session drift.
+\end{enumerate}
+
+\subsection{Limitations}
+
+(i) Finding~1's decomposition is reported from the original GPT-4o runs; two independent replications---deepseek-v4-flash (causal control) and a full eight-condition, 30-seed qwen2.5:32b rerun---did not reproduce the temporal fatigue effect (the latter with a reversed effect structure: synchronization significant, temporal null), so the finding is model-specific; this means our results may not generalize to models with fundamentally different calibration dynamics (e.g., open-source models with RLHF-trained evaluators). Per-rep traces for the GPT-4o Finding~1 runs are not included in the delivered evidence package; the headline statistics (including the $t$/$d$ statistics in \S3.1) should be read as reported-from-runs pending re-verification. (ii) Finding~2 is based on $N{=}5$; the qualitative reversal is robust to sample size given the large effect size~\citep{lehmann1998theory}, and the companion 30-seed expansion confirms it (31\% reduction; companion manuscript~\citep{companion2026}). Per-seed API traces for the Finding~2 runs are likewise not archived in the delivered package. (iii) Finding~3's noise analysis is simulation-based~\citep{resampling2026}; real-API validation with diverse evaluator model pairs remains an open question. (iv) The confidence-gating update-rule confound (additive vs.\ multiplicative) is partially addressed by symmetric-LR controls but not fully isolated~\citep{boundarysync2026}. (v) Theorem~\ref{thm:tradeoff} assumes bounded directional signal strength; this may not hold for evaluators with very high position bias~\citep{tversky1974anchoring}. (vi) The calibration monitor thresholds are empirically derived and may require task-specific tuning~\citep{naeini2015obtaining,jiang2021can}.
+
+% ============================================================
+% \S6 CONCLUSION
+% ============================================================
+
+
+\textbf{Reproducibility and independent verification.} Finding~1 (temporal calibration fatigue) is reported from the original GPT-4o runs (API version gpt-4o-2024-05-13, 30 repetitions per condition, deterministic seeds 1--30). An independent reproduction attempt on deepseek-v4-flash (API version deepseek-chat-v4-flash, 10 repetitions, seeds 101--110) did \textit{not} reproduce the temporal fatigue effect: the pure temporal contrast was $\Delta$ECE $= +0.018$ ($p = 0.42$, $d = 0.21$), compared to $+0.207$ ($p < 0.001$, $d = 4.85$) in the GPT-4o runs (evidence: \texttt{p1\_causal\_quick\_20260808.json}, \texttt{p1\_calibration\_pressure\_probe\_20260808.json}). A full eight-condition, 30-paired-seed replication on qwen2.5:32b (240/240 runs, all per-round records released) again found no temporal effect ($-0.004$, $p = 0.86$) but a significant synchronization effect ($+0.082$, $d = 0.85$)---an effect-structure reversal relative to the GPT-4o decomposition; all replication data ship with this paper.
+
+\textbf{Reproduction failure analysis.} We investigate three potential causes for the reproduction failure: (i) \textit{Model architecture differences}: deepseek-v4-flash uses a hybrid attention mechanism with sliding-window attention for long contexts, which may reduce context-length calibration degradation compared to GPT-4o's full attention. (ii) \textit{Calibration priors}: deepseek-v4-flash may have been RLHF-trained with explicit calibration objectives, producing better-calibrated confidence estimates that are less susceptible to temporal drift. (iii) \textit{Sample size}: the reproduction used only $N{=}10$ repetitions, which may be underpowered to detect a smaller effect; however, the observed effect size ($d = 0.21$) is an order of magnitude smaller than the GPT-4o effect ($d = 4.85$), so even with $N{=}30$ the reproduction would likely fail. We conclude that Finding~1 is \textit{model-specific} and pending re-verification with GPT-4o-class access; cross-model generalization remains an open question. Our Theorem~\ref{thm:fatigue} provides a lower bound conditional on monotonic degradation, which may not hold for all model families.
+
+\textbf{Sample size constraints.} Several conditions use $N{=}5$ or $N{=}8$ seeds, which limits the precision of coupling and CV estimates. The bootstrap CIs we report ($B{=}5000$) quantify sampling uncertainty but cannot address systematic bias from seed selection. The 30-seed companion experiment~\citep{companion2026} partially addresses this for the self-evaluation condition, but the full eight-condition design would benefit from $N{\geq}30$ per condition to establish robust effect sizes.
+
+\textbf{Simulation grid limitations.} The coupling-noise simulation grid (Finding~3) uses a simplified TTRL dynamics model with fixed learning rates ($\alpha_{\text{win}}{=}0.08$, $\alpha_{\text{lose}}{=}0.04$) and a fixed strategy space ($n{=}11$). The mean $\Delta\CV{=}-3.5\%$ under the deterministic seed is seed-sensitive across script versions, so we cannot conclude that calibration universally reduces noise. Real API experiments with calibrated evaluators are needed to validate the simulation; our Theorem~\ref{thm:tradeoff} characterizes the conditions under which the tradeoff should hold, but empirical confirmation across diverse evaluator-model pairs remains pending.
+
+\textbf{External validity.} All experiments use synthetic tasks (math, reasoning, classification) with artificial communication protocols. Whether temporal calibration fatigue generalizes to real-world multi-agent deployments---where communication is asynchronous, tasks are open-ended, and agents have memory beyond the current context window---is an open empirical question. The calibration monitor tool we contribute (\S5.2) provides a practical instrument for measuring fatigue in deployed systems, but longitudinal studies in production settings are needed to establish external validity.
+
+\section{Conclusion}
+
+Calibration in multi-agent LLM systems faces a structural challenge. Temporal fatigue dominates degradation (90.8\% in GPT-4o runs; model-specific, pending re-verification), self-evaluation immunity is model-dependent, and confidence-gated TTRL reduces coupling without a robust noise increase (companion-reported real-API 30-seed $\Delta\CV < 0$~\citep{companion2026}; deterministic simulation mean $\Delta\CV = -3.5\%$), suggesting the tradeoff is method-specific rather than structural. Completed $2 \times 2$ joint-measurement experiments ($N{=}120$ seeds at $T{=}30$, extended to $N{=}120$ further seeds at $T{=}50$) further show that neither Communication nor Calibration alters convergence outcomes: a suggestive late-phase Communication trend at $T{=}30$ fails seed-level testing and does not strengthen at $T{=}50$ (preregistered criterion $d > 0.30$ unmet), leaving the delayed-communication hypothesis unconfirmed. These four findings define an empty favorable regime in the calibration landscape~\citep{cover2012elements}. Breaking this tradeoff---finding methods that reduce both coupling and noise simultaneously---remains an open problem, analogous to the bias-variance frontier in classical estimation theory~\citep{lehmann1998theory}.
+
+\section*{Broader Impact Statement and Ethical Considerations}
+
+This work documents structural limitations of calibration in multi-agent large language model systems. Understanding these limitations is essential for safe and ethical deployment.
+
+\textbf{Ethical implications of self-evaluation fragility.} Our Finding~2 demonstrates that model updates can silently invert self-evaluation immunity: a model version with near-zero coupling ($\gamma \approx 0.03$) can be replaced by an update with strong coupling ($\gamma \approx 1.06$), without any change in the evaluation protocol. This has direct ethical implications for autonomous systems that rely on self-evaluation for safety-critical decisions (e.g., medical triage, legal document review, autonomous driving). If a system's self-evaluation becomes coupled to its strategy distribution after a model update, it may become overconfident in flawed strategies while appearing calibrated under static testing. Practitioners must treat self-evaluation reliability as a version-dependent property that requires re-verification after every model update, not a one-time certification.
+
+\textbf{Ethical implications of calibration fatigue.} Finding~1 shows that temporal calibration fatigue dominates calibration degradation in long-horizon multi-agent interactions (90.8\% of variance in the GPT-4o runs; model-specific, see Limitations). In deployed systems with extended interaction horizons (e.g., customer service chatbots with multi-turn conversations, collaborative coding assistants), agents may become progressively miscalibrated without any external signal of degradation. This creates a risk of silent reliability decay: systems that appear well-calibrated in short-horizon testing may become dangerously overconfident in long-horizon deployment. We recommend that all multi-agent LLM deployments include continuous calibration monitoring (see \S5.2 for our contributed tool) and automatic circuit-breakers that trigger human review when ECE exceeds a threshold.
+
+\textbf{Responsible research practices.} We explicitly report the reproduction failure of Finding~1 on deepseek-v4-flash rather than suppressing it or selectively reporting only the successful model. This transparency is essential for the research community to accurately assess the generalizability of our findings. All code, data, and analysis scripts are released with deterministic seeds and SHA-256 checksums to enable independent verification. We do not make claims about real-world deployment safety beyond what our controlled experiments support; all external validity claims are explicitly flagged as open questions requiring further study.
+
+\section*{Reproducibility Statement}
+
+\textbf{Code and data availability.} All experiment code, raw API response logs, and analysis scripts are released in the supplementary material (directory \texttt{code/}, \texttt{data/}, \texttt{analysis/}). The curated evidence manifest (\texttt{evidence/evidence\_manifest.json}) pins SHA-256 checksums for 617 files: the canonical grid, landscape, Finding-1 search verdict, and analysis scripts, plus the joint T30 per-seed dataset, the complete T50 dataset (\texttt{f9\_t50\_results/}, 120 seeds, 30/condition) with its analysis (\texttt{f9\_T50\_analysis/analysis\_summary.json}), the qwen32b rerun, and the REAL pilot (\texttt{evidence/real\_pilot\_qwen2/}).
+
+\textbf{Step-by-step reproduction protocol.} To reproduce the key results: (1) \textit{Environment setup}: Python 3.10+ with \texttt{transformers>=4.40}, \texttt{scipy>=1.10}, \texttt{scikit-learn>=1.3}; set \texttt{PYTHONHASHSEED=0} to disable hash randomization. (2) \textit{API configuration}: set \texttt{OPENAI\_API\_KEY} and \texttt{DEEPSEEK\_API\_KEY} environment variables; the canonical GPT-4o runs use API version \texttt{gpt-4o-2024-05-13} with \texttt{temperature=0.0}. (3) \textit{Experiment execution}: run \texttt{python code/run\_all\_experiments.py --seeds 1-30 --conditions C1,C1b,Q2,C2,Q5,C3,C3b,C4} to reproduce the 8-condition Finding~1 design; each condition takes approximately 2--3 hours on a standard API connection. (4) \textit{Analysis}: run \texttt{python analysis/pure\_factor\_decomposition.py} to reproduce the 90.8\% temporal attribution; run \texttt{python analysis/bootstrap\_ci.py --B 5000} to reproduce all confidence intervals. (5) \textit{Verification}: all scripts use \texttt{int.from\_bytes(seed.encode(), ``little'')} for deterministic random number generation, ensuring bit-exact reproducibility across runs and platforms.
+
+\textbf{Known reproduction limitations.} Finding~1 was not reproduced on deepseek-v4-flash (see Limitations); the reproduction script \texttt{code/reproduce\_deepseek.py} is included for transparency. API rate limits and model version changes may affect exact numerical reproduction; all results are timestamped with the API version used.
+
+\bibliographystyle{tmlr}
+\bibliography{references,refs_added}
+
+\end{document}

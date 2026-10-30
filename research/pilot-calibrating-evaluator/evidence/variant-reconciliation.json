@@ -1,0 +1,101 @@
+{
+  "schema": "q-one-p9-variant-reconciliation-v1",
+  "generated_at": "2026-10-28T06:20:02.562549Z",
+  "marker": "agent-proposed, not human publication approval",
+  "family_id": "qf-calibrating-the-evaluator-does-probabili-6544cd664a",
+  "canonical": {
+    "path": "/home/liuzewen/qone-life-work/research/pilot-calibrating-evaluator/evidence/upstream/main.tex",
+    "bytes": 22514,
+    "sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
+    "role": "canonical_overlay_copy"
+  },
+  "variants": [
+    {
+      "path": "/home/liuzewen/.research/tmlr-p9/main.tex",
+      "bytes": 21006,
+      "sha256": "c54fb21ece89bf495c01e010244c92b8397ea147adef1597e305dc7ecc66df13",
+      "role": "historical_research_copy",
+      "title": "Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?"
+    },
+    {
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/p9-pilot/paper/main.tex",
+      "bytes": 21668,
+      "sha256": "1d28c90a3b87db310876ab684b5fcb77fccd67a3aabfe437f8ad3529c173e272",
+      "role": "pilot_run_copy",
+      "title": "Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?"
+    },
+    {
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/main.tex",
+      "bytes": 22514,
+      "sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
+      "role": "canonical_run_copy",
+      "title": "Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?"
+    },
+    {
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/.aris/ingest_drift/20260928T102343Z/main.tex",
+      "bytes": 21153,
+      "sha256": "88158c30b72e386ac0405fc0ebbcec2dd0d219001d59dd776724096a4b8b368b",
+      "role": "ingest_drift_copy",
+      "title": "Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?"
+    },
+    {
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/arxiv/main.tex",
+      "bytes": 20561,
+      "sha256": "384a9200ac88765c5a8879f9271955a0289d1cd70276f27e1d28cd76cfa0a40f",
+      "role": "arxiv_build_copy",
+      "title": "Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?"
+    },
+    {
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/submission_variant/main.tex",
+      "bytes": 21143,
+      "sha256": "30db8c6720b10fbfeb9058af829b596d23dbc0060bf440354032a8b724120f9a",
+      "role": "submission_variant",
+      "title": "Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?"
+    }
+  ],
+  "variant_count": 6,
+  "distinct_variant_hashes": 6,
+  "merge_target": {
+    "target_family_id": "qf-calibration-fatigue-self-evaluation-frag-3c06d49517",
+    "current_source": {
+      "path": "/home/liuzewen/qone-life-work/research/pilot-calibrating-evaluator/evidence/merge-target/CALIBRATION_MERGED_main.tex",
+      "bytes": 98922,
+      "sha256": "09ad579249cae4d966944bf4ae33ecd81648318f9ee02384bab8d86e3673fa1a"
+    },
+    "current_source_p9_protocol_marker": true,
+    "current_source_marker_line": 755,
+    "current_source_marks_p9_protocol_deposit_only": true,
+    "expected_snapshot_source": {
+      "path": "/home/liuzewen/qone-life-work/research/pilot-calibrating-evaluator/evidence/merge-target/CALIBRATION_MERGED_FULL_snapshot_main.tex",
+      "bytes": 81637,
+      "sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4"
+    },
+    "expected_snapshot_matches_expected_sha256": true,
+    "expected_snapshot_contains_explicit_p9_marker": false,
+    "supplementary_archives": [
+      {
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/inventory/evidence_bundles/tmlr-calibration-merged.zip",
+        "bytes": 10116279,
+        "sha256": "a98570b797a24035cc3a22e33938c263fc96b46ba223647470388dfa834925ce",
+        "entries": 895,
+        "main_tex_entries": []
+      },
+      {
+        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/supplementary_tmlr-calibration-merged.zip",
+        "bytes": 10116279,
+        "sha256": "a98570b797a24035cc3a22e33938c263fc96b46ba223647470388dfa834925ce",
+        "entries": 895,
+        "main_tex_entries": []
+      }
+    ],
+    "archive_contains_main_tex": false
+  },
+  "decision": {
+    "disposition": "merge_archive",
+    "status": "archived",
+    "target": "Calibration Fatigue calibration landscape",
+    "merge_scope": "Appendix B protocol deposit only; no head-line result promotion.",
+    "independent_package_created": false,
+    "reason": "The archived driver contradicts the printed scale, lacks both controls and per-seed outputs, and the current merge target explicitly treats P9 as a protocol deposit."
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "schema": "q-one-arxiv-candidate-package-v1",
+  "generated_at": "2026-10-27T15:15:06.742416Z",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source",
+    "main_sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+    "package_sha256": "a54d44b673a702f06d8814387e45f6d05ec1f8c98487eb717b9713c6b1c0a04b",
+    "file_count": 11
+  },
+  "archive": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/package/noise-floor-arxiv-candidate.tar.gz",
+    "sha256": "74218ff9f262a8a57383875faf229a93cbd6a0cf45a2738e17571b1e11900c75",
+    "bytes": 107492,
+    "repeat_sha256": "74218ff9f262a8a57383875faf229a93cbd6a0cf45a2738e17571b1e11900c75",
+    "deterministic": true
+  },
+  "entries": [
+    {
+      "path": "bibliography.tex",
+      "sha256": "3f5f5ddde88b7ec071246ecee90ff5b0ddf56f88c05b7faaee0d0395d950c119",
+      "bytes": 11095
+    },
+    {
+      "path": "main.tex",
+      "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+      "bytes": 220650
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    },
+    {
+      "path": "figures/fig_verdicts.pdf",
+      "sha256": "a2ff38204013ebca8198a39c6b6bb7193caa4ec3004a6b5f5b43b949a98cd354",
+      "bytes": 26835
+    },
+    {
+      "path": "tables/table_ajb.tex",
+      "sha256": "4eb25cbab41522f9eda7eb06ff33fa0158e03b541033624b17e5d411c4a5a19f",
+      "bytes": 548
+    },
+    {
+      "path": "tables/table_both.tex",
+      "sha256": "4716dc20e4f3da8a4c0e9afa8dcd7b17bc79843157d8b3cfa2faf1fcf576a980",
+      "bytes": 664
+    },
+    {
+      "path": "tables/table_calibrated.tex",
+      "sha256": "7ff2c6e07a9fab6ed3985a10be3bc7d0ac7f8958d8fe192ad805700197d9a9cd",
+      "bytes": 1039
+    },
+    {
+      "path": "tables/table_denominators.tex",
+      "sha256": "0a2d6347c75e5d44cc3ef322a8f937e2e4afb18899a23c9d1522b056da2e8538",
+      "bytes": 1128
+    },
+    {
+      "path": "tables/table_ds.tex",
+      "sha256": "1766942de728bd5f4f056671c53ca2b104d97f8b1fc2d020c98bf59812b1dece",
+      "bytes": 466
+    },
+    {
+      "path": "tables/table_power.tex",
+      "sha256": "9a34009ed5b4493405b77673019d1183b521924c265d2b1f90e9af8c818411f5",
+      "bytes": 544
+    },
+    {
+      "path": "tables/table_rulers.tex",
+      "sha256": "e9617c04fdbf1c4120b58c16a0ba483127ca009fb05aea8ea399f7b704fc50ba",
+      "bytes": 1011
+    }
+  ],
+  "extract_compile": {
+    "exit_code": 0,
+    "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/package/archive-cleanroom/receipt.json",
+    "receipt_sha256": "09d1d8f7acf3f300e43976122759e90bfedf5c4b2df9e737364f1b058303d3f1",
+    "pdf_pages": 45,
+    "pdf_sha256": "94f1b3ab5bd879f33c9c596c1ad615e675951ddad3a485eb786e853dbb430818",
+    "command_stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/package/archive-cleanroom/build.stdout.log",
+    "command_stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/package/archive-cleanroom/build.stderr.log"
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "ready_for_upload": false,
+  "blockers": [
+    "The current source differs from the source hash recorded by the native manifest.",
+    "The producer-baseline conceptual-validity issue remains open.",
+    "Final author, category, abstract, license and upload authorization remain user decisions.",
+    "This is an internal candidate archive; no arXiv upload was performed.",
+    "Author, category, license, abstract and final metadata remain user decisions.",
+    "A compiling archive does not establish scientific readiness or independent review."
+  ],
+  "notes": [
+    "The archive uses sorted entries and normalized owner, mode and mtime.",
+    "The archive was extracted into a separate temporary directory before compilation."
+  ]
+}

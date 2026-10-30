@@ -1,0 +1,147 @@
+{
+  "schema": "q-one-revision-candidate-v1",
+  "generated_at": "2026-10-29T04:23:36.926317Z",
+  "status": "candidate",
+  "scope": "A2 estimand-split wording correction built on candidate R1; canonical manuscript and all measured results preserved",
+  "parent_candidate_source": {
+    "path": "revisions/2026-10-28-construct-validity-r1/source/main.tex",
+    "sha256": "842f7760f95aaa8bc3eb32fdc59933a54669157fd0b5e3a09f3375ea3ee12451",
+    "bytes": 221267
+  },
+  "canonical_source": {
+    "path": "source/main.tex",
+    "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+    "bytes": 220650
+  },
+  "candidate_source": {
+    "path": "revisions/2026-10-29-estimand-split-r2/source/main.tex",
+    "sha256": "fc24f8effef7c6f90c6dca6a52ea967adcec60bf7b79408c817b3a8561930c0f",
+    "bytes": 221814
+  },
+  "diff_against_parent": {
+    "path": "revisions/2026-10-29-estimand-split-r2/main.diff",
+    "sha256": "390e9d7f9a8f7c0e99705f5d102d074e7e221aa57d11adf21a209b5d241b6d62",
+    "bytes": 3824
+  },
+  "diff_against_canonical": {
+    "path": "revisions/2026-10-29-estimand-split-r2/main-vs-canonical.diff",
+    "sha256": "a7ba05d9ceab85cd7e7564a3e7a50bce9f54e339a895886ffc8b44c307c891c8",
+    "bytes": 59893
+  },
+  "report": {
+    "path": "revisions/2026-10-29-estimand-split-r2/REVISION_R2.md",
+    "sha256": "1af52f2bd80b296880792843366ddc437a333b0279f86d41b4d3458ae83233cf",
+    "bytes": 4984
+  },
+  "evidence_bindings": {
+    "a2_preregistration": {
+      "path": "experiments/bootstrap-estimand-a2/preregistration.json",
+      "sha256": "a58bf0b93419d4465c9b93b9f4e1ec055f9ba5f5cc31e21a85fa870fcf565484",
+      "bytes": 16148
+    },
+    "a2_runner": {
+      "path": "experiments/bootstrap-estimand-a2/run_estimand_split.py",
+      "sha256": "927143dd6727272311e67c4468d1bedaf131dc119d40546aae7c993d52b8d2d0",
+      "bytes": 23593
+    },
+    "a2_run_1": {
+      "path": "experiments/bootstrap-estimand-a2/results/run-1.json",
+      "sha256": "4b0d65068f78015a4b5014f28e87b4d49b62db555d04598bee4e47cc5dade408",
+      "bytes": 63028
+    },
+    "a2_run_2": {
+      "path": "experiments/bootstrap-estimand-a2/results/run-2.json",
+      "sha256": "4b0d65068f78015a4b5014f28e87b4d49b62db555d04598bee4e47cc5dade408",
+      "bytes": 63028
+    },
+    "a2_native_rerun": {
+      "path": "experiments/bootstrap-estimand-a2/results/native-rerun-factuality.json",
+      "sha256": "e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c",
+      "bytes": 14209
+    },
+    "a2_report": {
+      "path": "experiments/bootstrap-estimand-a2/results/REPORT.md",
+      "sha256": "86ea70406748878ea91dbde8d70b778cafb9e271789dc8e2ec957a17e2e2bca3",
+      "bytes": 3108
+    },
+    "source_lineage": {
+      "path": "evidence/source-lineage.json",
+      "sha256": "20a2abc52d3b38e313f821b8a51e511593170813e7a63066f11fe486c7d2b01a",
+      "bytes": 21922
+    },
+    "independent_review": {
+      "path": "evidence/REVIEW_INDEPENDENT_2026-10-24.md",
+      "sha256": "8d815000775ad110354043854967c79044605deb1f6113a549a6cba13078c86e",
+      "bytes": 14729
+    }
+  },
+  "verification": {
+    "mechanical_package_audit": {
+      "result": "passed",
+      "file_count": 11,
+      "package_sha256": "3099b91d985a4d546300e70e767a5b9f9ba892361b9c2cf66adb8ad69fde923f",
+      "receipt": {
+        "path": "revisions/2026-10-29-estimand-split-r2/reports/package-audit.json",
+        "sha256": "3921b0073d0eae29b037693e93046a6c577e0ed74afc89cc88fc39f42037ec5f",
+        "bytes": 2671
+      }
+    },
+    "cleanroom_compile": {
+      "result": "passed",
+      "pages": 45,
+      "pdf_sha256": "17842993a95fbe699ae1cba90b249a3cf1750878b56211f114af0e1385ede0a7",
+      "receipt": {
+        "path": "revisions/2026-10-29-estimand-split-r2/reports/cleanroom/receipt.json",
+        "sha256": "524d9f014298bc191a958aa50f6bfc1bd1fb420263ba194d7a8d1721cdca2d60",
+        "bytes": 12561
+      }
+    },
+    "ledger_reverse_coverage": {
+      "result": "passed",
+      "n_tokens": 353,
+      "n_bound": 350,
+      "n_excused": 3,
+      "n_unbound": 0,
+      "receipt": {
+        "path": "revisions/2026-10-29-estimand-split-r2/reports/ledger-reverse-coverage.json",
+        "sha256": "e13e76b5d2b34b707d08e45f2355bb104344e10369cae5fc25794cf1651e024c",
+        "bytes": 7028
+      }
+    },
+    "ledger_anchor_census": {
+      "result": "GREEN",
+      "anchor_missing_count": 0,
+      "ambiguous_membership_count": 0,
+      "receipt": {
+        "path": "revisions/2026-10-29-estimand-split-r2/reports/ledger-anchor-census.json",
+        "sha256": "3217e519c4ce1fa9247ed65b926cccd00b7223d14c5d17f9a5413469565aaf79",
+        "bytes": 746
+      }
+    },
+    "verdict_word_gate": {
+      "result": "PASS",
+      "checks": 136,
+      "withdrawn_without_carrier": 7,
+      "receipt": {
+        "path": "revisions/2026-10-29-estimand-split-r2/reports/verdict-word-gate.json",
+        "sha256": "484adc31195305c68f3bda68d6c6065f833956935376c4fe5a957c57e3d5452b",
+        "bytes": 16693
+      }
+    }
+  },
+  "superseded_working_drafts": [],
+  "remaining_blockers": [
+    "C02 source identity remains unresolved because the canonical source differs from the native-manifest source.",
+    "C03 remains open; R2 corrects two A2-related sentences and does not close the independent method review.",
+    "A3 k-fold common-support recomputation remains unresolved.",
+    "A4 threshold equality, confidence-interval decision semantics, and parameter/interface description remain unresolved.",
+    "No real disjoint-field leaderboard returning a positive verdict has been measured.",
+    "Author metadata, licence, and upload authorization remain user decisions."
+  ],
+  "non_claims": [
+    "R2 is an internal candidate and does not overwrite the canonical manuscript or candidate R1.",
+    "Compilation, gate passage, and the A2 recomputation do not establish scientific readiness or peer-review acceptance.",
+    "The A2 experiment splits an estimand; it does not validate every native implementation path and does not close A3 or A4.",
+    "This candidate does not authorize an arXiv upload."
+  ]
+}

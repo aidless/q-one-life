@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\PAPER6_CONSOLIDATED\\main.tex",
+    "rpc": "http://127.0.0.1:11435",
+    "timestamp": "2026-09-02T13:08:41+00:00",
+    "roles": [
+      "experiment"
+    ],
+    "rounds": 1
+  },
+  "roles": {
+    "experiment": {
+      "status": "ok",
+      "issues": [
+        {
+          "severity": "major",
+          "location": "Section 3.1, page 4",
+          "description": "实验设计中缺乏对不同攻击类型的详细描述，仅提到三种攻击家族：prompt-injection, rubric-injection, and majority-bias mimicry attacks。需要提供每个攻击类型的详细定义和具体实现方法。",
+          "suggestion": "详细描述每种攻击类型的定义和具体实现方法，确保实验设计的透明性和可重复性。"
+        },
+        {
+          "severity": "major",
+          "location": "Section 3.2, page 5",
+          "description": "实验结果中未提供足够的统计分析和置信区间，仅报告了准确率等指标。需要进行更详细的统计分析，包括置信区间和显著性检验。",
+          "suggestion": "增加统计分析部分，提供置信区间和显著性检验结果，以增强实验结果的可信度。"
+        },
+        {
+          "severity": "minor",
+          "location": "Section 4, page 6",
+          "description": "实验结果部分未详细说明实验的具体步骤和参数设置，可能影响读者的可重复性。",
+          "suggestion": "增加实验步骤和参数设置的详细描述，确保实验的可重复性。"
+        }
+      ],
+      "overall_assessment": "论文在实验设计和结果报告方面存在一些问题，特别是在攻击类型定义和统计分析方面。总体来说，实验设计合理，但需要进一步完善。",
+      "score": 7
+    }
+  },
+  "stable_issues": [],
+  "summary": {
+    "verdict": "PASS",
+    "critical": 0,
+    "major": 2,
+    "minor": 1
+  }
+}

@@ -1,0 +1,12 @@
+台账条目 569 条 · 正文 953 行
+
+A1 锚点带该数、却在正文找不到的条目（可执行信号）: 0
+A2 数仍在正文、只是锚点短语/措辞对不上（不是缺陷）: 92
+
+B 声称「工具不报某个读数」的句子: 2  —— 每一句都要与工具实际输出对账
+    line  100 [refuses to report one] the fourth is whether the floor and the leaderboard are computed on the same items: a difference between a floor measured on one d
+    line  347 [do not read a verdict] we do not read a verdict off these two numbers: the released report carries their difference and its interval as reference, which 
+
+C 值在源文件里出现于多个字段、因而集合成员匹配看不见标签互换的条目: 0 / 478 条 JSON 出处
+
+判定: GREEN  (A1 0 条正文无此数 / C 欠账 0 条未绑 field，已绑 472 条；显式豁免 8 条)

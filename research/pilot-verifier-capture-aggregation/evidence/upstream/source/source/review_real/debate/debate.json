@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\PAPER6_CONSOLIDATED\\main.tex",
+    "issues_file": "F:\\Research\\PAPER6_CONSOLIDATED\\review_real\\debate_issues.json",
+    "rpc": "http://127.0.0.1:11435",
+    "timestamp": "2026-09-02T13:10:41+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Major",
+      "text": "方法论描述不够详细，缺乏对现有研究的深入分析和对比。"
+    },
+    {
+      "id": 2,
+      "sev": "Major",
+      "text": "实验设计中缺乏对不同攻击类型的详细描述，仅提到三种攻击家族：prompt-injection, rubric-injection, and majority-bias mimicry attacks。需要提供每个攻击类型的详细定义和具体实现方法。"
+    },
+    {
+      "id": 3,
+      "sev": "Major",
+      "text": "实验结果中未提供足够的统计分析和置信区间，仅报告了准确率等指标。需要进行更详细的统计分析，包括置信区间和显著性检验。"
+    },
+    {
+      "id": 4,
+      "sev": "Major",
+      "text": "The paper does not provide a clear and specific definition of the term 'plain majority voting' in the context of the aggregation methods. This could lead to confusion for readers."
+    },
+    {
+      "id": 5,
+      "sev": "Major",
+      "text": "未提供具体的复现步骤或代码链接，影响论文的可复现性。"
+    },
+    {
+      "id": 6,
+      "sev": "Major",
+      "text": "未详细说明合成基准的具体实现细节。"
+    },
+    {
+      "id": 7,
+      "sev": "Major",
+      "text": "未详细讨论伦理问题，特别是关于如何确保研究结果不会被滥用或误用。"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "rebut",
+      "rebuttal": "我们在方法论部分详细描述了三种攻击类型:prompt-injection, rubric-injection, and majority-bias mimicry attacks,并提供了每个攻击类型的定义和实现方法（参见第2节）。"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "我们将提供每个攻击类型的详细定义和具体实现方法,以增强实验设计的完整性。"
+    },
+    {
+      "id": 3,
+      "action": "rebut",
+      "rebuttal": "我们已经在实验结果中提供了准确率等指标,并进行了初步的统计分析（参见第4节）。为了进一步增强统计分析的严谨性,我们将计算置信区间和进行显著性检验。"
+    },
+    {
+      "id": 4,
+      "action": "rebut",
+      "rebuttal": "我们在第2节中定义了'plain majority voting',并解释了其在聚合方法中的具体含义。"
+    },
+    {
+      "id": 5,
+      "action": "concede",
+      "fix": "我们将提供详细的复现步骤和代码链接,以提高论文的可复现性。"
+    },
+    {
+      "id": 6,
+      "action": "concede",
+      "fix": "我们将详细说明合成基准的具体实现细节。"
+    },
+    {
+      "id": 7,
+      "action": "rebut",
+      "rebuttal": "我们在讨论部分详细讨论了伦理问题,特别是关于如何确保研究结果不会被滥用或误用（参见第5节）。"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "作者回应仅提到已在第2节提供定义,但未明确指出已提供每个攻击类型的详细定义和实现方法。"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "作者承诺提供详细定义和实现方法,但未在当前版本中看到。"
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "作者回应称已在实验结果中提供了初步统计分析,但未提供置信区间和显著性检验。"
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "作者回应已在第2节定义了'plain majority voting',但未明确指出定义的具体位置。"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "作者回应承诺提供复现步骤和代码链接,但未在当前版本中看到。"
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "作者回应承诺详细说明合成基准的具体实现细节,但未在当前版本中看到。"
+    },
+    {
+      "id": 7,
+      "disposition": "sustained",
+      "reason": "作者回应已在讨论部分讨论了伦理问题,但未详细说明如何确保研究结果不会被滥用或误用。"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 0,
+      "Major": 7,
+      "Minor": 0
+    },
+    "n_issues": 7,
+    "n_sustained": 7,
+    "n_withdrawn": 0,
+    "n_partial": 0,
+    "truncation": {
+      "n_total": 7,
+      "n_debated": 7,
+      "n_truncated": 0,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 0 / Major 7 （撤回 0，部分成立 0）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "withdrawn_ids": []
+  }
+}

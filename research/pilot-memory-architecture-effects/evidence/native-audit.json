@@ -1,0 +1,300 @@
+{
+  "schema": "q-one-memory-architecture-audit-v1",
+  "generated_at": "2026-10-28T07:31:24.349069Z",
+  "marker": "agent-proposed, not human publication approval",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/source/main.tex",
+    "sha256": "b2190494ca8db597c947d35259a7373772881da22d6a60d96753974dbe756216",
+    "bytes": 79014,
+    "canonical_sha256": "f926cae5baf4a3a9ac4cbba11d6cce8ecf6206187ea25306f620550d7a7b2bd8"
+  },
+  "structure": {
+    "labels": 24,
+    "duplicate_labels": [],
+    "references": 26,
+    "citation_keys": 35,
+    "bib_keys": 35,
+    "missing_citations": [],
+    "novelty_blocks": 1,
+    "reproducibility_sections": 1
+  },
+  "r1": {
+    "records": 90,
+    "contrast_count": 9,
+    "n_seeds_per_contrast": [
+      10
+    ],
+    "cells": {
+      "0.2|Append-Only": {
+        "n": 10,
+        "mean": 0.4203701436385292,
+        "sd": 0.14242401994334092
+      },
+      "0.5|Append-Only": {
+        "n": 10,
+        "mean": 0.3848425815038802,
+        "sd": 0.08819156719365785
+      },
+      "0.8|Append-Only": {
+        "n": 10,
+        "mean": 0.2661380511310935,
+        "sd": 0.05529299004032546
+      },
+      "0.2|RAG+Filter": {
+        "n": 10,
+        "mean": 0.3032633906301305,
+        "sd": 0.0981459920807605
+      },
+      "0.5|RAG+Filter": {
+        "n": 10,
+        "mean": 0.3148415415407158,
+        "sd": 0.09242715024552149
+      },
+      "0.8|RAG+Filter": {
+        "n": 10,
+        "mean": 0.2456712419488281,
+        "sd": 0.04621868657858143
+      },
+      "0.2|Summarization": {
+        "n": 10,
+        "mean": 0.41330066247505776,
+        "sd": 0.12136917121142304
+      },
+      "0.5|Summarization": {
+        "n": 10,
+        "mean": 0.316458350819407,
+        "sd": 0.1003660510107252
+      },
+      "0.8|Summarization": {
+        "n": 10,
+        "mean": 0.19346331208556639,
+        "sd": 0.06484853279938363
+      }
+    },
+    "contrasts": [
+      {
+        "rate": 0.2,
+        "architecture_a": "Append-Only",
+        "architecture_b": "RAG+Filter",
+        "n": 10,
+        "mean_diff_a_minus_b": 0.11710675300839864,
+        "t": 3.0499498759396038,
+        "p_raw": 0.013794022864770371,
+        "d_z": 0.964478835731713
+      },
+      {
+        "rate": 0.2,
+        "architecture_a": "Append-Only",
+        "architecture_b": "Summarization",
+        "n": 10,
+        "mean_diff_a_minus_b": 0.007069481163471433,
+        "t": 0.15574055824554522,
+        "p_raw": 0.8796747220182325,
+        "d_z": 0.049249488812203986
+      },
+      {
+        "rate": 0.2,
+        "architecture_a": "Summarization",
+        "architecture_b": "RAG+Filter",
+        "n": 10,
+        "mean_diff_a_minus_b": 0.11003727184492722,
+        "t": 2.3399862025961347,
+        "p_raw": 0.044021272028697926,
+        "d_z": 0.7399686093571997
+      },
+      {
+        "rate": 0.5,
+        "architecture_a": "Append-Only",
+        "architecture_b": "RAG+Filter",
+        "n": 10,
+        "mean_diff_a_minus_b": 0.07000103996316437,
+        "t": 1.9150958158252533,
+        "p_raw": 0.0877429313976304,
+        "d_z": 0.6056064715466136
+      },
+      {
+        "rate": 0.5,
+        "architecture_a": "Append-Only",
+        "architecture_b": "Summarization",
+        "n": 10,
+        "mean_diff_a_minus_b": 0.06838423068447312,
+        "t": 1.6583026044741276,
+        "p_raw": 0.13163218117768888,
+        "d_z": 0.5244013279927573
+      },
+      {
+        "rate": 0.5,
+        "architecture_a": "Summarization",
+        "architecture_b": "RAG+Filter",
+        "n": 10,
+        "mean_diff_a_minus_b": 0.0016168092786912613,
+        "t": 0.028544949857607443,
+        "p_raw": 0.9778504681025114,
+        "d_z": 0.009026705724533858
+      },
+      {
+        "rate": 0.8,
+        "architecture_a": "Append-Only",
+        "architecture_b": "RAG+Filter",
+        "n": 10,
+        "mean_diff_a_minus_b": 0.020466809182265462,
+        "t": 0.9202523300254284,
+        "p_raw": 0.38144509929635223,
+        "d_z": 0.29100933849573113
+      },
+      {
+        "rate": 0.8,
+        "architecture_a": "Append-Only",
+        "architecture_b": "Summarization",
+        "n": 10,
+        "mean_diff_a_minus_b": 0.07267473904552715,
+        "t": 3.7252353785030614,
+        "p_raw": 0.004732175701544176,
+        "d_z": 1.1780228616309127
+      },
+      {
+        "rate": 0.8,
+        "architecture_a": "Summarization",
+        "architecture_b": "RAG+Filter",
+        "n": 10,
+        "mean_diff_a_minus_b": -0.05220792986326169,
+        "t": -2.073734627093756,
+        "p_raw": 0.06795164536445963,
+        "d_z": -0.6557724684376189
+      }
+    ],
+    "contrast_mismatches": [],
+    "canonical_r1_contrast": {
+      "rate": 0.8,
+      "architecture_a": "Append-Only",
+      "architecture_b": "Summarization",
+      "n": 10,
+      "mean_diff_a_minus_b": 0.07267473904552715,
+      "t": 3.7252353785030614,
+      "p_raw": 0.004732175701544176,
+      "d_z": 1.1780228616309127
+    },
+    "selected_cells": {
+      "p0.2|Append-Only": {
+        "n": 10,
+        "mean": 0.4203701436385292,
+        "sd": 0.14242401994334092
+      },
+      "p0.2|RAG+Filter": {
+        "n": 10,
+        "mean": 0.3032633906301305,
+        "sd": 0.0981459920807605
+      },
+      "p0.8|Append-Only": {
+        "n": 10,
+        "mean": 0.2661380511310935,
+        "sd": 0.05529299004032546
+      },
+      "p0.8|Summarization": {
+        "n": 10,
+        "mean": 0.19346331208556639,
+        "sd": 0.06484853279938363
+      }
+    }
+  },
+  "v4flash": {
+    "cells": 18,
+    "selected_means": {
+      "authority|Append-Only|p0.5": 0.5209,
+      "authority|Summarization|p0.8": 0.5208,
+      "authority|RAG+Filter|p0.8": 0.6067,
+      "length|Append-Only|p0.8": 2.385
+    }
+  },
+  "qwen_authority": {
+    "summarization_mean": 0.5438641898144788,
+    "append_only_mean": 0.8017628644639855,
+    "construct_status": "descriptive output-length response; not validated authority bias"
+  },
+  "round4": {
+    "files": 1080,
+    "cells": 36,
+    "schema_ok": true,
+    "raw_per_seed_logs_retained": false,
+    "replication": {
+      "deepseek-v4-flash": {
+        "n": 30,
+        "diff_sum_app": 0.2024,
+        "p_raw": 0.0001
+      },
+      "deepseek-v4-pro": {
+        "n": 30,
+        "diff_sum_app": 0.0007,
+        "p_raw": 0.9944
+      }
+    },
+    "all_cell_n": [
+      30
+    ]
+  },
+  "external_judge": {
+    "total_judged": 120,
+    "max_abs_delta_ece": 0.006249999999999978,
+    "scope": "calibration-bound audit only"
+  },
+  "theta_sweep": {
+    "sweep_theta": [
+      0.05,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "sweep_n_seeds": 5,
+    "sweep_p": 0.5,
+    "pairwise": [],
+    "chosen_theta": 0.1,
+    "chosen_theta_reason": "θ = 0.1 minimises mean Γ across the 5-seed sweep at p=0.5, balancing recall (in-topic biased memories retained) against precision (off-topic biased memories filtered). The choice is refuted if any other value in {0.05, 0.1, 0.2, 0.3} gives a strictly lower Γ on the full DeepSeek dose-response curve."
+  },
+  "carrier_receipts": {
+    "count": 7,
+    "upstream_tool_result": {
+      "command": "python3 tools/carrier_receipts.py --run runs/tmlr-paper5-consolidated",
+      "tally": "PASS=7 FAIL=0 NOT_VERIFIABLE=0"
+    }
+  },
+  "checks": {
+    "source_structure_clean": true,
+    "citation_keys_resolve": true,
+    "no_template_scripts": true,
+    "r1_has_nine_contrasts_and_n10": true,
+    "r1_contrasts_recompute": true,
+    "r1_canonical_contrast_significant": true,
+    "v4flash_18_cells_n10": true,
+    "v4flash_carrier_values_match": true,
+    "qwen_authority_means_match": true,
+    "round4_complete_aggregate": true,
+    "round4_reversal_matches": true,
+    "third_model_direction_matches": true,
+    "external_judge_sample_120": true,
+    "external_judge_delta_small": true,
+    "theta_sweep": true,
+    "carrier_receipts_count": true,
+    "authority_construct_validity_incomplete": true
+  },
+  "gate_states": {
+    "source_identity": "passed",
+    "structure": "passed",
+    "citations": "passed",
+    "r1_confirmatory": "passed",
+    "qwen_authority": "candidate",
+    "round4_factorial": "passed",
+    "construct_validity": "blocked",
+    "independent_review": "blocked",
+    "package": "candidate",
+    "external_submission": "locked"
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "R1 contains 90 per-seed records and the nine predeclared contrasts recompute.",
+    "The current overlay removes unrelated calibration and template blocks.",
+    "The authority-marker arm remains a descriptive output-length response.",
+    "Round-4 is available only as aggregate validation in the retained package.",
+    "No upload or external account action was performed."
+  ]
+}

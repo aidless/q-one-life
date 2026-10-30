@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\PAPER6_CONSOLIDATED\\main.tex",
+    "rpc": "http://127.0.0.1:11435",
+    "timestamp": "2026-09-02T13:08:22+00:00",
+    "roles": [
+      "statistics"
+    ],
+    "rounds": 1
+  },
+  "roles": {
+    "statistics": {
+      "status": "ok",
+      "issues": [
+        {
+          "severity": "minor",
+          "location": "第2段",
+          "description": "在描述统计显著性时，建议明确指出统计显著性的具体标准或阈值，以便读者能够更好地理解结果的可靠性。",
+          "suggestion": "在描述统计显著性时，明确指出统计显著性的具体标准或阈值，例如：‘在我们的实验中，我们使用显著性水平α=0.05来判断统计显著性。’"
+        },
+        {
+          "severity": "minor",
+          "location": "第4段",
+          "description": "在定义ε-捕获鲁棒性时，建议提供一个具体的数学表达式或公式，以便读者能够更清晰地理解定义。",
+          "suggestion": "提供一个具体的数学表达式或公式来定义ε-捕获鲁棒性，例如：‘ε-捕获鲁棒性定义为：对于任意ε>0，存在一个δ>0，使得当verifiers中的比例为f时，即使有ε比例的verifiers被俘获，最终决策的错误率不超过δ。’"
+        },
+        {
+          "severity": "minor",
+          "location": "第6段",
+          "description": "在描述实验结果时，建议提供具体的统计显著性检验结果，以增强结果的可信度。",
+          "suggestion": "提供具体的统计显著性检验结果，例如：‘在信任评分加权方法下，准确率为0.69，显著性水平为α=0.05，p值为0.01。’"
+        }
+      ],
+      "overall_assessment": "论文整体结构清晰，内容丰富，但在统计显著性定义和实验结果的具体数值展示方面有待改进。",
+      "score": 8
+    }
+  },
+  "stable_issues": [],
+  "summary": {
+    "verdict": "PASS",
+    "critical": 0,
+    "major": 0,
+    "minor": 3
+  }
+}

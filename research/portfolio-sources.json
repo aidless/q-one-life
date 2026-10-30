@@ -1,0 +1,43 @@
+{
+  "schema": "q-one-portfolio-sources-v1",
+  "roots": [
+    "/home/liuzewen/F:\\deepseek",
+    "/home/liuzewen/.research",
+    "/home/liuzewen/kaggle-control-20261013/paper-evidence",
+    "/home/liuzewen/WorkBuddy",
+    "/home/liuzewen/arxiv-publication",
+    "/home/liuzewen/arxiv-polish-20261013",
+    "/home/liuzewen/Projects/agi-paper-pipeline"
+  ],
+  "exclude_dirs": [
+    ".cache",
+    ".codex",
+    ".git",
+    ".local",
+    ".npm",
+    ".nvm",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv"
+  ],
+  "exclude_path_fragments": [
+    "/.agent-memory/world-sota-3lines/repro/",
+    "/.dsh/attachments/",
+    "/.research/opencode_archive/",
+    "/.workbuddy/skills/",
+    "/Projects/agi-paper-pipeline/backups/",
+    "/_scratch/",
+    "/demo/papers/",
+    "/fixtures/",
+    "/templates/"
+  ],
+  "writeup_globs": [
+    "*_REVISED.md",
+    "paper*-full-draft*.md"
+  ],
+  "max_depth": 9
+}

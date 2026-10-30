@@ -1,0 +1,8 @@
+attempt=2
+timestamp=2026-10-28T13:34:00Z
+command=two byte-identical executions
+exit_code=0
+observed_hypothesis_decision=reject_H0_in_declared_synthetic_condition
+protocol_audit=failed
+reason=positive control producer floor was 0.6666666666666666, not the preregistered 0.8; runner did not check the exact predeclared numeric signature
+accepted_as_evidence=false

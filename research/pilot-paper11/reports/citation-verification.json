@@ -1,0 +1,11 @@
+{
+  "schema": "q-one-citation-verification-v1",
+  "checked_at": "2026-10-30T04:10:00Z",
+  "method": "Cross-reference all \\\\cite keys in main.tex against @article/@misc keys in references.bib",
+  "total_citation_keys_in_source": 12,
+  "total_bib_entries": 12,
+  "unresolved_keys": [],
+  "unused_bib_entries": [],
+  "result": "passed",
+  "note": "All 12 citation keys resolve to a bib entry; all 12 bib entries are cited. No orphaned references in either direction."
+}

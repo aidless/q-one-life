@@ -1,0 +1,82 @@
+{
+  "schema": "q-one-arxiv-candidate-package-v1",
+  "generated_at": "2026-10-28T06:43:25.287526Z",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/source",
+    "main_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+    "package_sha256": "38f19fc050d92d9132c3de46aaac555b402150e2fabd7abf2e999e3a86970927",
+    "file_count": 7
+  },
+  "archive": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/reports/package/closing-landscape-arxiv-candidate.tar.gz",
+    "sha256": "e733492836fc96e95e08938cb8c5cc349ba88883a9aea206a3a5e396c8fbe525",
+    "bytes": 33167,
+    "repeat_sha256": "e733492836fc96e95e08938cb8c5cc349ba88883a9aea206a3a5e396c8fbe525",
+    "deterministic": true
+  },
+  "entries": [
+    {
+      "path": "LICENSE",
+      "sha256": "c9c310685017f06b77000b05a0fd7fce152aa31ad8b25f71067fa3ffd73d0391",
+      "bytes": 267
+    },
+    {
+      "path": "main.bbl",
+      "sha256": "8e5c0a84578475116bd7e34d81ab6a955fa410c276f07902a2ba9c41ed532db6",
+      "bytes": 275
+    },
+    {
+      "path": "main.tex",
+      "sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "bytes": 22515
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    },
+    {
+      "path": "figures/fig_cg_tee_seeds.pdf",
+      "sha256": "d13a0a5baaafa91b47db77fde48f36c48e31a596d507185049ac56ef07a3c6d4",
+      "bytes": 28007
+    },
+    {
+      "path": "sections/evidence_inventory.tex",
+      "sha256": "4ce1b1674c87b12bb8fff9cd78cc62769d9c416ec425358577a785d7e939a8f4",
+      "bytes": 2851
+    },
+    {
+      "path": "sections/per_seed_evidence.tex",
+      "sha256": "f8ed7029208d5287c41e63676c64328c18474e2a0034938abc63006d76fc8acd",
+      "bytes": 5329
+    }
+  ],
+  "extract_compile": {
+    "exit_code": 0,
+    "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/reports/package/archive-cleanroom/receipt.json",
+    "receipt_sha256": "cb7b87a6819f51fac3f2362c7c9dfb5e0de1a6d6fea4a6fc6380ff2afa9ff24c",
+    "pdf_pages": 10,
+    "pdf_sha256": "a9c68281d4f99608b48b473d867bb354d31073f1f1e6dc559dfadfd57bd24d3a",
+    "command_stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/reports/package/archive-cleanroom/build.stdout.log",
+    "command_stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/reports/package/archive-cleanroom/build.stderr.log"
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "ready_for_upload": false,
+  "blockers": [
+    "Simulation CV values are not reproducible from per-seed records.",
+    "The real-API confidence-gated arms are parser-degenerate on all 15 seeds.",
+    "The N=15 artifacts do not record model identity or parser success.",
+    "Independent method and statistics review remains open.",
+    "Author, category, abstract, license and upload authorization remain user decisions.",
+    "This is an internal candidate archive; no arXiv upload was performed.",
+    "Author, category, license, abstract and final metadata remain user decisions.",
+    "A compiling archive does not establish scientific readiness or independent review."
+  ],
+  "notes": [
+    "The archive uses sorted entries and normalized owner, mode and mtime.",
+    "The archive was extracted into a separate temporary directory before compilation."
+  ]
+}

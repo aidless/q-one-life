@@ -1,0 +1,20 @@
+# attempt 2 — failed before accepted measurement (results/run-1.json not written)
+# The four main-task computations completed and printed:
+#   factuality  theta_fixed_point=+0.000000  fixed_ci=[-3.9018,+0.0000]  both_ci=[+0.0000,+0.0000]
+#   coherence   theta_fixed_point=+0.000000  fixed_ci=[+0.0000,+0.0000]  both_ci=[+0.0000,+0.0000]
+#   relevance   theta_fixed_point=+0.000000  fixed_ci=[-0.7071,+0.0000]  both_ci=[+0.0000,+0.0000]
+#   preference  theta_fixed_point=+0.000000  fixed_ci=[-1.7309,+0.0000]  both_ci=[+0.0000,+0.0000]
+# but the run aborted before writing the output file:
+#
+Traceback (most recent call last):
+  File "run_estimand_split.py", line 476, in <module>
+    raise SystemExit(main())
+  File "run_estimand_split.py", line 343, in main
+    c1 = control_nonproducer_leader(df, audit, prereg["controls"]["nonproducer_actor"])
+KeyError: 'nonproducer_actor'
+#
+# diagnosis: the runner read the control actor names from a flat key that the frozen
+# preregistration does not define; the preregistration nests them under
+# controls.nonproducer_leader.actor and controls.unranked_generator.actor.
+# The printed main-task numbers are NOT evidence: no result file was produced, and
+# this run is superseded. Scientific parameters are unchanged by the fix.

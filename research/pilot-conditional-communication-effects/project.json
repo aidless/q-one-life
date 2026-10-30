@@ -1,0 +1,435 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-conditional-communication-effects-in-mul-ad96998074",
+  "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
+  "status": "blocked",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-conditional-communication-effects",
+  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex",
+  "manuscript": {
+    "path": "evidence/upstream/paper/main.tex",
+    "sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "94a09def39ee229c627de6c78ef6011ddc0aa8f89556b12ceca28809813ac147",
+      "state": "verified",
+      "origin": "P11 Research Factory overlay",
+      "description": "Canonical source identity and copy hash."
+    },
+    {
+      "path": "evidence/variant-reconciliation.json",
+      "sha256": "b43f515934148d68d92871304a997dbae23bbdd204bb1421f2e38b3773ae48f8",
+      "state": "verified",
+      "origin": "P11 Research Factory overlay",
+      "description": "Seven packet variants plus one source mirror, all distinct."
+    },
+    {
+      "path": "evidence/blocked-audit.json",
+      "sha256": "a9bb83d739b5baba00582988b002e03dea4c5c53499b43d1ef84db3e48fc2ef6",
+      "state": "verified",
+      "origin": "P11 Research Factory overlay",
+      "description": "Structural, joint-ANOVA, Face-1, E4, held-out and landscape audit."
+    },
+    {
+      "path": "evidence/upstream/paper/main.tex",
+      "sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "state": "verified",
+      "origin": "Portfolio representative paper/main.tex",
+      "description": "Canonical upstream source retained byte-for-byte."
+    },
+    {
+      "path": "evidence/upstream/paper/refs.bib",
+      "sha256": "f45f6c0c161e62749e1a0a29d87f021d673d0946081f4e07b26a4f2644dd2b6f",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Canonical 40-key bibliography."
+    },
+    {
+      "path": "evidence/upstream/paper/CLAIM_LEDGER.md",
+      "sha256": "574550c3c930cd0c0d922f349fab3815c08fb07ecdcbcdf94b42afbad4a46afd",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Native claim ledger retained for comparison."
+    },
+    {
+      "path": "evidence/upstream/paper/REVIEW_CARD.md",
+      "sha256": "d480e2ba024debf3bf7b6f61225583df8a0fd9bbf3e65d89bb326583541e4079",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Rework review card retaining critical lineage and presentation findings."
+    },
+    {
+      "path": "evidence/upstream/source/review_real/summary.json",
+      "sha256": "3dc9455bd107958dd2d3944e619bfe2b1e65aa02be517b1cb6491239e353e13b",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Review summary with 6 Major and 7 Minor findings."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/joint_full_F_v10_results.json",
+      "sha256": "3ec617f11406cb821494baed33ee87b2bc80378ddad16a7b745a1cbdf938f2f4",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Joint experiment metadata, sessions and stored ANOVA block."
+    },
+    {
+      "path": "evidence/audits/joint-anova-rerun.json",
+      "sha256": "5f0d920318c22399024b5526b09e0e6da1e09832cc823d7e957755c5b05b36d1",
+      "state": "verified",
+      "origin": "P11 Research Factory overlay",
+      "description": "Fresh exact recomputation of the joint ANOVA block."
+    },
+    {
+      "path": "evidence/audits/joint-anova-recompute.json",
+      "sha256": "441a38a0b91b7e916e81506ff93fb2a9f304ecc5f9e1a112030b4cd420885d52",
+      "state": "verified",
+      "origin": "Upstream audit",
+      "description": "Prior exact-reachability audit retained for comparison."
+    },
+    {
+      "path": "evidence/EVIDENCE_PLAN.md",
+      "sha256": "b4d0b642ecaa690e14ff576f89d615a140328c319d748c5dbfb62cca8d18faec",
+      "state": "verified",
+      "origin": "Upstream run",
+      "description": "Class A-G carrier gap analysis for 24 headline values."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/FINDING1_DATA_SEARCH_VERDICT.md",
+      "sha256": "096d549e35d7817ab312d5728193f8c3346f565b5b319209f4ef404715c57891",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Eight-round search record for the missing GPT-4o per-repetition ECE rows."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/e4_n15_results.json",
+      "sha256": "2bae1d72c36f221df35ef2cac98bea7d0f7d9455fde506053db74265adcb1e64",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Thirty-seed per-arm E4 records."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/e4_30seed_calibrated.json",
+      "sha256": "286e9147c05cb67659567248f56228a3684c42b7a86dd84b4eef09903474f263",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Thirty-seed E4 aggregate used for the coupling reduction."
+    },
+    {
+      "path": "evidence/upstream/evidence/landscape_5conditions.json",
+      "sha256": "b42649590a502db28f65c31ae73f7181fb5d6eaf26a4c3ca2a0f9f4572ae45d2",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Five complete landscape triples."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/analyses/p1_heldout_v4pro_20260813.json",
+      "sha256": "f995e06c2f5f52c6a0e9c2e289c2d72a134436629f66dab52ce957b498d2f8e2",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Three-seed DeepSeek-V4-Pro held-out probe."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/CARRIER_RECEIPTS.json",
+      "sha256": "67259140b4468da470050d858d5aefae6367a699f535f4e4fb63dbf29eb76dd7",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "282-row carrier receipt matrix retained but not promoted as fully verified."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Source variant identity",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/variant-reconciliation.json"]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Current source structure",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/blocked-audit.json"]
+    },
+    {
+      "claim_id": "C03",
+      "location": "Citation resolution",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/blocked-audit.json"]
+    },
+    {
+      "claim_id": "C04",
+      "location": "Balanced joint ANOVA",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/blocked-audit.json"]
+    },
+    {
+      "claim_id": "C05",
+      "location": "Stored joint ANOVA",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/blocked-audit.json"]
+    },
+    {
+      "claim_id": "C06",
+      "location": "Legacy source mirror",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/variants/paper13-source-mirror/main.tex"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "Joint experiment metadata",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/paper/evidence/joint_full_F_v10_results.json"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "Face-1 CAF carrier",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/blocked-audit.json"]
+    },
+    {
+      "claim_id": "C09",
+      "location": "GPT-4o temporal decomposition",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/source/evidence/FINDING1_DATA_SEARCH_VERDICT.md"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "DeepSeek-V4-Pro held-out probe",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/blocked-audit.json"]
+    },
+    {
+      "claim_id": "C11",
+      "location": "E4 30-seed coupling reduction",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/blocked-audit.json"]
+    },
+    {
+      "claim_id": "C12",
+      "location": "Five-condition landscape",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/blocked-audit.json"]
+    },
+    {
+      "claim_id": "C13",
+      "location": "Independent review closure",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/upstream/paper/REVIEW_CARD.md"]
+    },
+    {
+      "claim_id": "C14",
+      "location": "Package and upload readiness",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/variant-reconciliation.json"]
+    },
+    {
+      "claim_id": "C15",
+      "location": "Legacy ANOVA removed from current paper",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/blocked-audit.json"]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "p11-joint-anova-recompute",
+      "state": "reproduced",
+      "receipt": "evidence/audits/joint-anova-rerun.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p11-face1-caf-raw",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p11-temporal-per-repetition",
+      "state": "blocked",
+      "receipt": "evidence/upstream/source/evidence/FINDING1_DATA_SEARCH_VERDICT.md",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p11-heldout-v4pro-probe",
+      "state": "completed",
+      "receipt": "evidence/upstream/source/evidence/analyses/p1_heldout_v4pro_20260813.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "p11-lineage-and-structure-review",
+      "kind": "method",
+      "state": "open",
+      "critical": 2,
+      "major": 5,
+      "receipt": "evidence/upstream/paper/REVIEW_CARD.md"
+    },
+    {
+      "review_id": "p11-statistics-review",
+      "kind": "statistics",
+      "state": "open",
+      "critical": 0,
+      "major": 6,
+      "receipt": "evidence/upstream/source/review_real/summary.json"
+    }
+  ],
+  "package": {
+    "state": "not-started",
+    "files": [],
+    "blockers": [
+      "Face-1 CAF has no raw per-seed carrier",
+      "GPT-4o temporal decomposition lacks per-repetition rows",
+      "Stored joint ANOVA is not derivable from its sessions",
+      "Legacy source mirror carries 8.16/7.84/15.37",
+      "Independent review remains open",
+      "Metadata, license and upload authorization remain user decisions"
+    ]
+  },
+  "measurements": [
+    {
+      "name": "balanced_f_alpha",
+      "value": 6.609756097560974,
+      "unit": "F",
+      "definition": "Documented balanced-subset alpha main effect.",
+      "source": "evidence/blocked-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "stored_f_alpha",
+      "value": 8.16,
+      "unit": "F",
+      "definition": "Carrier-reported alpha main effect not derivable from sessions.",
+      "source": "evidence/blocked-audit.json",
+      "state": "blocked"
+    },
+    {
+      "name": "e4_gTV_reduction",
+      "value": 30.76496161317176,
+      "unit": "percent",
+      "definition": "Thirty-seed uncalibrated-to-calibrated gamma_TV reduction.",
+      "source": "evidence/blocked-audit.json",
+      "state": "observed"
+    }
+  ],
+  "gate_receipts": [
+    {
+      "gate_id": "p11-source-identity",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "94a09def39ee229c627de6c78ef6011ddc0aa8f89556b12ceca28809813ac147",
+      "source_sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "summary": "Canonical paper13 source is pinned."
+    },
+    {
+      "gate_id": "p11-variant-reconciliation",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "b43f515934148d68d92871304a997dbae23bbdd204bb1421f2e38b3773ae48f8",
+      "source_sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "summary": "Seven packet variants and one mirror are reconciled."
+    },
+    {
+      "gate_id": "p11-source-structure",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "a9bb83d739b5baba00582988b002e03dea4c5c53499b43d1ef84db3e48fc2ef6",
+      "source_sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "summary": "Title, author, labels and references are structurally clean."
+    },
+    {
+      "gate_id": "p11-citations",
+      "scope": "citations",
+      "state": "passed",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "a9bb83d739b5baba00582988b002e03dea4c5c53499b43d1ef84db3e48fc2ef6",
+      "source_sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "summary": "All 40 citation keys resolve."
+    },
+    {
+      "gate_id": "p11-balanced-anova",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "a9bb83d739b5baba00582988b002e03dea4c5c53499b43d1ef84db3e48fc2ef6",
+      "source_sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "summary": "Documented balanced ANOVA reproduces 6.61/2.95/2.22."
+    },
+    {
+      "gate_id": "p11-stored-anova",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/audits/joint-anova-rerun.json",
+      "receipt_sha256": "5f0d920318c22399024b5526b09e0e6da1e09832cc823d7e957755c5b05b36d1",
+      "source_sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "summary": "Stored 8.16/7.845/15.37 is not derivable from the delivered sessions."
+    },
+    {
+      "gate_id": "p11-face1-caf",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "a9bb83d739b5baba00582988b002e03dea4c5c53499b43d1ef84db3e48fc2ef6",
+      "source_sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "summary": "Printed Face-1 CAF endpoints have no retained numeric-leaf carrier."
+    },
+    {
+      "gate_id": "p11-temporal-decomposition",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/upstream/source/evidence/FINDING1_DATA_SEARCH_VERDICT.md",
+      "receipt_sha256": "096d549e35d7817ab312d5728193f8c3346f565b5b319209f4ef404715c57891",
+      "source_sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "summary": "GPT-4o per-repetition ECE rows were never archived."
+    },
+    {
+      "gate_id": "p11-e4-heldout",
+      "scope": "reproducibility",
+      "state": "passed",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "a9bb83d739b5baba00582988b002e03dea4c5c53499b43d1ef84db3e48fc2ef6",
+      "source_sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "summary": "E4 30-seed reduction and held-out probe recompute."
+    },
+    {
+      "gate_id": "p11-landscape",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "a9bb83d739b5baba00582988b002e03dea4c5c53499b43d1ef84db3e48fc2ef6",
+      "source_sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "summary": "Five-condition correlations recompute."
+    },
+    {
+      "gate_id": "p11-independent-review",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/upstream/paper/REVIEW_CARD.md",
+      "receipt_sha256": "d480e2ba024debf3bf7b6f61225583df8a0fd9bbf3e65d89bb326583541e4079",
+      "source_sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "summary": "No current-hash review closes the Critical or Major findings."
+    }
+  ],
+  "notes": [
+    "agent-proposed, not human publication approval",
+    "P11 is blocked pending raw CAF and GPT-4o per-repetition calibration evidence.",
+    "The current canonical paper is retained byte-for-byte as the reference source.",
+    "No package or upload was created."
+  ]
+}

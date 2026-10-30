@@ -1,0 +1,20 @@
+{
+  "model": "qwen3:4b",
+  "temp": 0,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "total_cells": 300,
+  "provenance": "cloud Ollama monthly",
+  "generated": "2026-08-22",
+  "note": "10-seed extension; paired dz and bootstrap 95% CI recomputed; sample-descriptive hedge retained"
+}

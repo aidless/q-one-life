@@ -1,0 +1,688 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-merged-flagship-f4-verification-trust-sc-88e8c3c2ce",
+  "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
+  "status": "blocked",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\\\deepseek/q-one-life/research/pilot-f4-verification",
+  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
+  "manuscript": {
+    "path": "evidence/upstream/paper/main.tex",
+    "sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "e0c72bd37c2870115cb1416469ed127ccd1b7a68ac1327560b1e607b204e9bf6",
+      "state": "verified",
+      "origin": "P14 Research Factory overlay",
+      "description": "Canonical source identity and byte-identical audit copy."
+    },
+    {
+      "path": "evidence/variant-reconciliation.json",
+      "sha256": "156a2e979638b0bee200667b51eab6ffd4314cb03cff89fae12bdcec85561966",
+      "state": "verified",
+      "origin": "P14 Research Factory overlay",
+      "description": "Three packet variants plus one mirror, all distinct."
+    },
+    {
+      "path": "evidence/blocked-audit.json",
+      "sha256": "577eebe43f2e5dcdbfccba7bb0c2f0a7942dc9397454675bdf367866eb5b244d",
+      "state": "verified",
+      "origin": "P14 Research Factory overlay",
+      "description": "Structural, pilot-grid, headline, table, manifest, baseline and review audit."
+    },
+    {
+      "path": "evidence/claim-values.json",
+      "sha256": "d0218f0ad1727ec53228bd15d82bd60905d97aca40df3ec63f34e8c362428e50",
+      "state": "verified",
+      "origin": "P14 Research Factory overlay",
+      "description": "Scalar values extracted from the blocked audit for exact ledger verification."
+    },
+    {
+      "path": "evidence/upstream/EVIDENCE_PLAN.md",
+      "sha256": "264de664d267d394430b76c9e4be38d628826f567e50ad133d6bbd65d7e2a08e",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Upstream carrier-gap analysis for 20 flagged numbers."
+    },
+    {
+      "path": "evidence/upstream/ARIS_EVIDENCE_VERDICT.md",
+      "sha256": "6a28abfc70888d6a9cf1b9c27034b8e8265a42801af67e833feb0819ea775326",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Upstream failed evidence verdict with carrier and table findings."
+    },
+    {
+      "path": "evidence/upstream/ARIS_REVIEW_ROUND_1.md",
+      "sha256": "7f7b19f7a81f1bc27eddef5d2a8bcb3378e6e0197b0e501827c83e3b41be0f4a",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Independent review round that produced a blocking verdict."
+    },
+    {
+      "path": "evidence/upstream/figures/EVIDENCE_RECORD.md",
+      "sha256": "a71bbcfda0a063325c5c2bef618c3d10d217d584b9332a8a858b7078e1967e2c",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Upstream generated artifact inventory and carrier register."
+    },
+    {
+      "path": "evidence/upstream/figures/MANIFEST_AUDIT.json",
+      "sha256": "a866afd84419a55cad94d8efced9a2735981b093206affacb75eaadf63797007",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "32-entry manifest re-hash and path-resolution audit."
+    },
+    {
+      "path": "evidence/upstream/figures/REPRO_CLAIMS.json",
+      "sha256": "9cefaf62a404bfd7f5ec81072b09a0e2c6c2e064bd7f3b64bf9253568fcc80d6",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Upstream reproducibility claim status."
+    },
+    {
+      "path": "evidence/upstream/paper/CLAIM_LEDGER.md",
+      "sha256": "02dd01d8ef699d19b520a641513c7436eca196e805e86da0a77c27b4e8233083",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Native one-row ledger retained for stale-value comparison."
+    },
+    {
+      "path": "evidence/upstream/paper/REVIEW_CARD.md",
+      "sha256": "1a8d27ffbc8d63fbd8895aaa4ccc5947f36b94ef31394bc26a2fbe75cdc0a2f5",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Retained 1/10 rejection review."
+    },
+    {
+      "path": "evidence/upstream/paper/claims.yaml",
+      "sha256": "7a479b422634d20d8d4ac2103ea2c172be66c48a29c6dbbc34ea9329365cc29a",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Native machine-readable claims for the 270-cell pilot."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/CARRIER_RECEIPTS.json",
+      "sha256": "9031eee31c01702f08f58e25272ef87aa257b5a734e45d5934c34fbd4e003bec",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "32 carrier receipts; 30 pass and 2 are NOT_VERIFIABLE."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/baselines/baselines.json",
+      "sha256": "be6f0c999b6de8a942966baad16f61d31a4052b3f9fb862b024e4e425392a0df",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Archived pilot BFCL and WebArena accuracies."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/baselines/real40.json",
+      "sha256": "35b3cbdfda20c0a71aa3def745a086c827afc668b0325fc45b37e20d4cb09c83",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Archived real40 baseline with both families at zero."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/cells.jsonl",
+      "sha256": "254d9c6c7ca7e749b4f7761089f36033e16c4d7cf62c75daccf81b08ec3953ad",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "270-cell pilot with 10 seeds; summary recomputes."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/f4_byzantine_candidates.json",
+      "sha256": "5e4137a54f68888f303254e517ef54422d1021efd6692e178c9a75a7a36a34e0",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Literature candidates retained without promotion."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/f4_table2_seed_rows.json",
+      "sha256": "5446f3ea0809f87740081aa748c58b9c1d2d18b6fa51c050a0765d293e5842ab",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Seed-row derivations for the pooled and per-seed rows."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/per_seed_b_c.jsonl",
+      "sha256": "ae825d152bb49c0b2486be7e432752407539487be68e16204b9ccf5e62503b41",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Primary ten-seed b/c records."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/protocol.md",
+      "sha256": "fbe6caea4a7ed10d4c94e679cbd486391b7a95b65b954b0b7eb4bfaa76da18b3",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Three-line runtime protocol; does not carry the declared tables."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence_manifest.json",
+      "sha256": "ac7b06cb52c2244d12b2da5cfbfcfd8e13241ea43a6719fa538d58d205045eb1",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Native 32-entry manifest with stale or absent entries."
+    },
+    {
+      "path": "evidence/upstream/paper/main.tex",
+      "sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Canonical source retained byte-for-byte."
+    },
+    {
+      "path": "evidence/upstream/paper/refs.bib",
+      "sha256": "e28552040b53ec234128963329226a4d529201e10f534b3b6ab365b9e899adee",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Canonical 42-key bibliography."
+    },
+    {
+      "path": "evidence/upstream/paper/results/analysis.json",
+      "sha256": "565c5822a20700bc926d647599885f072cb17df47e233453e4fa2e4b9b10c576",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Archived pilot summary."
+    },
+    {
+      "path": "evidence/upstream/paper/sections/baselines_audit.tex",
+      "sha256": "69aa04f005c9cc8737bfc08d4f69cb670c31f2875254626581dee486019fd087",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Generated baseline audit included by the manuscript."
+    },
+    {
+      "path": "evidence/upstream/paper/sections/evidence_inventory.tex",
+      "sha256": "a49227e13a396641fcc2765ebd33326fbb8a25216ee6a4164f8ac60be6449e8e",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Generated artifact and headline-carrier inventory."
+    },
+    {
+      "path": "evidence/upstream/paper/sections/manifest_audit.tex",
+      "sha256": "052703bf3e27dd01f7276f744612ef996341a3502a7eecbec37dca165dfaf0f1",
+      "state": "candidate",
+      "origin": "Upstream F4 run",
+      "description": "Generated manifest audit included by the manuscript."
+    },
+    {
+      "path": "reports/blocked-audit.md",
+      "sha256": "ffce8902d4e0408019162e15ef8ba6ffe1e374584ef6b0827a93f138b98691f3",
+      "state": "verified",
+      "origin": "P14 Research Factory overlay",
+      "description": "Human-readable blocked audit."
+    },
+    {
+      "path": "reports/claim-ledger-verification.md",
+      "sha256": "1c153d6eb7c05619fc396c6c133bcf35d3d93fd2bffbd3aa8ecb170084df3f9f",
+      "state": "verified",
+      "origin": "P14 Research Factory overlay",
+      "description": "21 PASS / 0 FAIL / 15 WARN ledger report."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Source variant identity",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Source structure",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "location": "Citation resolution",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "location": "Pilot cell count and seed coverage",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "location": "Pilot mean and dispersion",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "location": "Declared 18k composition",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "Archived 18k observations",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "Frozen 192/144/90/40 splits",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C09",
+      "location": "Per-family GPU runtime",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "2700 tightness holds",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "location": "0.686 mean majority bound",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "location": "Friedman and Nemenyi statistics",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "location": "Gate-count consistency",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "location": "F4 table statistic recomputation",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "location": "F4 risk-difference denominator",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "location": "Finance and Mimicry intervals",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "location": "Manifest closure",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "location": "Carrier receipt closure",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "location": "BFCL and WebArena baselines",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "location": "Canonical and arXiv author identity",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "location": "Native ledger, review and package state",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "p14-270-cell-pilot",
+      "state": "reproduced",
+      "receipt": "evidence/blocked-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p14-18k-trial-carrier",
+      "state": "blocked",
+      "receipt": "evidence/claim-values.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p14-192-144-90-40-splits",
+      "state": "blocked",
+      "receipt": "evidence/claim-values.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p14-2700-holds",
+      "state": "blocked",
+      "receipt": "evidence/claim-values.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "p14-empirical-integrity-review",
+      "kind": "reproduction",
+      "state": "open",
+      "critical": 6,
+      "major": 4,
+      "receipt": "evidence/upstream/ARIS_REVIEW_ROUND_1.md"
+    },
+    {
+      "review_id": "p14-statistics-review",
+      "kind": "statistics",
+      "state": "open",
+      "critical": 2,
+      "major": 8,
+      "receipt": "evidence/upstream/paper/REVIEW_CARD.md"
+    }
+  ],
+  "package": {
+    "state": "not-started",
+    "files": [],
+    "blockers": [
+      "18,000 declared trials are not archived as per-observation records",
+      "The 192/144/90/40 frozen split bundle is absent",
+      "The 2,700 tightness holds have no carrier",
+      "Four GPU-hours lack per-family runtime receipts",
+      "Four of eight F4 table rows disagree with their own counts",
+      "Two risk-difference denominators and two copied intervals conflict",
+      "The manifest has 7 mismatches and 5 absent entries",
+      "Two of 32 carrier receipts are NOT_VERIFIABLE",
+      "Printed baselines disagree with archived baselines",
+      "Canonical and arXiv author metadata differ",
+      "The retained review is a rejection and no current-hash review exists"
+    ]
+  },
+  "measurements": [
+    {
+      "name": "pilot_cells",
+      "value": 270,
+      "unit": "cells",
+      "definition": "Rows in cells.jsonl.",
+      "source": "evidence/blocked-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "pilot_seeds",
+      "value": 10,
+      "unit": "seeds",
+      "definition": "Distinct seed values in cells.jsonl.",
+      "source": "evidence/blocked-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "declared_trials",
+      "value": 18000,
+      "unit": "trials",
+      "definition": "Sum of the four manuscript family counts.",
+      "source": "evidence/blocked-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "archived_trials",
+      "value": 270,
+      "unit": "observations",
+      "definition": "Retained per-cell pilot records.",
+      "source": "evidence/blocked-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "carrier_pass",
+      "value": 30,
+      "unit": "receipts",
+      "definition": "Rows returning PASS from the carrier gate.",
+      "source": "evidence/blocked-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "carrier_not_verifiable",
+      "value": 2,
+      "unit": "receipts",
+      "definition": "Rows returning NOT_VERIFIABLE from the carrier gate.",
+      "source": "evidence/blocked-audit.json",
+      "state": "observed"
+    }
+  ],
+  "gate_receipts": [
+    {
+      "gate_id": "p14-source-identity",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "e0c72bd37c2870115cb1416469ed127ccd1b7a68ac1327560b1e607b204e9bf6",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "Canonical and audit-copy source hashes are identical."
+    },
+    {
+      "gate_id": "p14-variant-reconciliation",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "156a2e979638b0bee200667b51eab6ffd4314cb03cff89fae12bdcec85561966",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "Four retained source versions have four distinct hashes."
+    },
+    {
+      "gate_id": "p14-structure",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "577eebe43f2e5dcdbfccba7bb0c2f0a7942dc9397454675bdf367866eb5b244d",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "15 labels and 28 references resolve."
+    },
+    {
+      "gate_id": "p14-citations",
+      "scope": "citations",
+      "state": "passed",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "577eebe43f2e5dcdbfccba7bb0c2f0a7942dc9397454675bdf367866eb5b244d",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "All 42 citation keys resolve."
+    },
+    {
+      "gate_id": "p14-pilot-grid",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "577eebe43f2e5dcdbfccba7bb0c2f0a7942dc9397454675bdf367866eb5b244d",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "The 270-cell pilot and its summary recompute."
+    },
+    {
+      "gate_id": "p14-headline-carriers",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "577eebe43f2e5dcdbfccba7bb0c2f0a7942dc9397454675bdf367866eb5b244d",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "18k trials, 2700 holds and three headline statistics lack carriers."
+    },
+    {
+      "gate_id": "p14-splits",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/claim-values.json",
+      "receipt_sha256": "d0218f0ad1727ec53228bd15d82bd60905d97aca40df3ec63f34e8c362428e50",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "No explicitly named 192/144/90/40 split bundle is present."
+    },
+    {
+      "gate_id": "p14-gpu-hours",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/claim-values.json",
+      "receipt_sha256": "d0218f0ad1727ec53228bd15d82bd60905d97aca40df3ec63f34e8c362428e50",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "Four declared GPU-hours have zero per-family runtime carriers."
+    },
+    {
+      "gate_id": "p14-f4-table",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "577eebe43f2e5dcdbfccba7bb0c2f0a7942dc9397454675bdf367866eb5b244d",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "Four of eight rows disagree and two intervals are copied."
+    },
+    {
+      "gate_id": "p14-manifest",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "577eebe43f2e5dcdbfccba7bb0c2f0a7942dc9397454675bdf367866eb5b244d",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "Manifest is 19 match / 7 mismatch / 5 absent / 1 no hash."
+    },
+    {
+      "gate_id": "p14-carrier-receipts",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "577eebe43f2e5dcdbfccba7bb0c2f0a7942dc9397454675bdf367866eb5b244d",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "Carrier gate is 30 PASS / 0 FAIL / 2 NOT_VERIFIABLE."
+    },
+    {
+      "gate_id": "p14-baselines",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "577eebe43f2e5dcdbfccba7bb0c2f0a7942dc9397454675bdf367866eb5b244d",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "Printed baselines disagree with both retained baseline files."
+    },
+    {
+      "gate_id": "p14-author-metadata",
+      "scope": "other",
+      "state": "blocked",
+      "receipt": "evidence/claim-values.json",
+      "receipt_sha256": "d0218f0ad1727ec53228bd15d82bd60905d97aca40df3ec63f34e8c362428e50",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "Canonical and arXiv author identity differ."
+    },
+    {
+      "gate_id": "p14-review",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/upstream/paper/REVIEW_CARD.md",
+      "receipt_sha256": "1a8d27ffbc8d63fbd8895aaa4ccc5947f36b94ef31394bc26a2fbe75cdc0a2f5",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "Retained review is a rejection; no current-hash review exists."
+    },
+    {
+      "gate_id": "p14-package",
+      "scope": "package",
+      "state": "blocked",
+      "receipt": "evidence/claim-values.json",
+      "receipt_sha256": "d0218f0ad1727ec53228bd15d82bd60905d97aca40df3ec63f34e8c362428e50",
+      "source_sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "summary": "No package was created and no upload occurred."
+    }
+  ],
+  "notes": [
+    "agent-proposed, not human publication approval",
+    "P14 is blocked on empirical integrity, not merely prose.",
+    "The 270-cell pilot is retained as a bounded result.",
+    "No package or upload was created."
+  ]
+}

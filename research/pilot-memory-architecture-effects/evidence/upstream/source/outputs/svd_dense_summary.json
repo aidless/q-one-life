@@ -1,0 +1,19 @@
+{
+  "condition_id": "D-R-DENSE-05",
+  "n_seeds_run": 5,
+  "n_seeds_target": 5,
+  "n_rounds": 30,
+  "gamma_temporal_values": [
+    34.4093010681705,
+    46.18040858401214,
+    15.734732038348614,
+    21.888609730977798,
+    14.551575322653592
+  ],
+  "gamma_temporal_mean": 26.55292534883253,
+  "gamma_ci95_low": 16.492244890596442,
+  "gamma_ci95_high": 37.73705177171111,
+  "theta": 0.3,
+  "svd_components": 64,
+  "p": 0.5
+}

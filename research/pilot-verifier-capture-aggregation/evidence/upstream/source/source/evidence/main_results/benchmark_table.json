@@ -1,0 +1,742 @@
+{
+ "config": {
+  "T": 1000,
+  "N": 7,
+  "f": 2,
+  "n_seeds": 5,
+  "seed0": 0,
+  "scenarios": [
+   "S1: high-honest, weak-attack",
+   "S2: med-honest, weak-attack",
+   "S3: med-honest, strong-attack",
+   "S4: high-honest, strong-attack"
+  ],
+  "methods": [
+   "majority",
+   "bft_pbft",
+   "weighted_uniform",
+   "trust_mean",
+   "trust_median",
+   "kalman_trust",
+   "ATV"
+  ]
+ },
+ "aggregate": [
+  {
+   "method": "majority",
+   "S1: high-honest, weak-attack": 0.8886,
+   "S1: high-honest, weak-attack_std": 0.0039,
+   "S2: med-honest, weak-attack": 0.5528,
+   "S2: med-honest, weak-attack_std": 0.0094,
+   "S3: med-honest, strong-attack": 0.4592,
+   "S3: med-honest, strong-attack_std": 0.0112,
+   "S4: high-honest, strong-attack": 0.843,
+   "S4: high-honest, strong-attack_std": 0.008,
+   "mean": 0.6859
+  },
+  {
+   "method": "bft_pbft",
+   "S1: high-honest, weak-attack": 0.7768,
+   "S1: high-honest, weak-attack_std": 0.0122,
+   "S2: med-honest, weak-attack": 0.5216,
+   "S2: med-honest, weak-attack_std": 0.0152,
+   "S3: med-honest, strong-attack": 0.4584,
+   "S3: med-honest, strong-attack_std": 0.0137,
+   "S4: high-honest, strong-attack": 0.72,
+   "S4: high-honest, strong-attack_std": 0.0041,
+   "mean": 0.6192
+  },
+  {
+   "method": "weighted_uniform",
+   "S1: high-honest, weak-attack": 0.804,
+   "S1: high-honest, weak-attack_std": 0.0085,
+   "S2: med-honest, weak-attack": 0.4836,
+   "S2: med-honest, weak-attack_std": 0.011,
+   "S3: med-honest, strong-attack": 0.3646,
+   "S3: med-honest, strong-attack_std": 0.0138,
+   "S4: high-honest, strong-attack": 0.7292,
+   "S4: high-honest, strong-attack_std": 0.0025,
+   "mean": 0.5954
+  },
+  {
+   "method": "trust_mean",
+   "S1: high-honest, weak-attack": 0.8828,
+   "S1: high-honest, weak-attack_std": 0.0046,
+   "S2: med-honest, weak-attack": 0.5214,
+   "S2: med-honest, weak-attack_std": 0.0119,
+   "S3: med-honest, strong-attack": 0.4316,
+   "S3: med-honest, strong-attack_std": 0.0131,
+   "S4: high-honest, strong-attack": 0.8506,
+   "S4: high-honest, strong-attack_std": 0.0077,
+   "mean": 0.6716
+  },
+  {
+   "method": "trust_median",
+   "S1: high-honest, weak-attack": 0.8886,
+   "S1: high-honest, weak-attack_std": 0.0039,
+   "S2: med-honest, weak-attack": 0.5528,
+   "S2: med-honest, weak-attack_std": 0.0094,
+   "S3: med-honest, strong-attack": 0.4592,
+   "S3: med-honest, strong-attack_std": 0.0112,
+   "S4: high-honest, strong-attack": 0.8444,
+   "S4: high-honest, strong-attack_std": 0.0074,
+   "mean": 0.6863
+  },
+  {
+   "method": "kalman_trust",
+   "S1: high-honest, weak-attack": 0.8824,
+   "S1: high-honest, weak-attack_std": 0.0058,
+   "S2: med-honest, weak-attack": 0.5354,
+   "S2: med-honest, weak-attack_std": 0.0108,
+   "S3: med-honest, strong-attack": 0.4462,
+   "S3: med-honest, strong-attack_std": 0.0109,
+   "S4: high-honest, strong-attack": 0.842,
+   "S4: high-honest, strong-attack_std": 0.0073,
+   "mean": 0.6765
+  },
+  {
+   "method": "ATV",
+   "S1: high-honest, weak-attack": 0.8826,
+   "S1: high-honest, weak-attack_std": 0.0042,
+   "S2: med-honest, weak-attack": 0.5268,
+   "S2: med-honest, weak-attack_std": 0.0111,
+   "S3: med-honest, strong-attack": 0.4382,
+   "S3: med-honest, strong-attack_std": 0.0114,
+   "S4: high-honest, strong-attack": 0.8456,
+   "S4: high-honest, strong-attack_std": 0.0069,
+   "mean": 0.6733
+  }
+ ],
+ "per_seed": {
+  "majority": {
+   "S1: high-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.888
+    },
+    {
+     "seed": 1,
+     "acc": 0.894
+    },
+    {
+     "seed": 2,
+     "acc": 0.884
+    },
+    {
+     "seed": 3,
+     "acc": 0.885
+    },
+    {
+     "seed": 4,
+     "acc": 0.892
+    }
+   ],
+   "S2: med-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.558
+    },
+    {
+     "seed": 1,
+     "acc": 0.567
+    },
+    {
+     "seed": 2,
+     "acc": 0.546
+    },
+    {
+     "seed": 3,
+     "acc": 0.553
+    },
+    {
+     "seed": 4,
+     "acc": 0.54
+    }
+   ],
+   "S3: med-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.44
+    },
+    {
+     "seed": 1,
+     "acc": 0.471
+    },
+    {
+     "seed": 2,
+     "acc": 0.461
+    },
+    {
+     "seed": 3,
+     "acc": 0.455
+    },
+    {
+     "seed": 4,
+     "acc": 0.469
+    }
+   ],
+   "S4: high-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.855
+    },
+    {
+     "seed": 1,
+     "acc": 0.833
+    },
+    {
+     "seed": 2,
+     "acc": 0.837
+    },
+    {
+     "seed": 3,
+     "acc": 0.849
+    },
+    {
+     "seed": 4,
+     "acc": 0.841
+    }
+   ]
+  },
+  "bft_pbft": {
+   "S1: high-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.764
+    },
+    {
+     "seed": 1,
+     "acc": 0.793
+    },
+    {
+     "seed": 2,
+     "acc": 0.767
+    },
+    {
+     "seed": 3,
+     "acc": 0.79
+    },
+    {
+     "seed": 4,
+     "acc": 0.77
+    }
+   ],
+   "S2: med-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.513
+    },
+    {
+     "seed": 1,
+     "acc": 0.548
+    },
+    {
+     "seed": 2,
+     "acc": 0.507
+    },
+    {
+     "seed": 3,
+     "acc": 0.529
+    },
+    {
+     "seed": 4,
+     "acc": 0.511
+    }
+   ],
+   "S3: med-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.437
+    },
+    {
+     "seed": 1,
+     "acc": 0.476
+    },
+    {
+     "seed": 2,
+     "acc": 0.469
+    },
+    {
+     "seed": 3,
+     "acc": 0.459
+    },
+    {
+     "seed": 4,
+     "acc": 0.451
+    }
+   ],
+   "S4: high-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.713
+    },
+    {
+     "seed": 1,
+     "acc": 0.72
+    },
+    {
+     "seed": 2,
+     "acc": 0.725
+    },
+    {
+     "seed": 3,
+     "acc": 0.723
+    },
+    {
+     "seed": 4,
+     "acc": 0.719
+    }
+   ]
+  },
+  "weighted_uniform": {
+   "S1: high-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.817
+    },
+    {
+     "seed": 1,
+     "acc": 0.807
+    },
+    {
+     "seed": 2,
+     "acc": 0.805
+    },
+    {
+     "seed": 3,
+     "acc": 0.791
+    },
+    {
+     "seed": 4,
+     "acc": 0.8
+    }
+   ],
+   "S2: med-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.497
+    },
+    {
+     "seed": 1,
+     "acc": 0.492
+    },
+    {
+     "seed": 2,
+     "acc": 0.483
+    },
+    {
+     "seed": 3,
+     "acc": 0.481
+    },
+    {
+     "seed": 4,
+     "acc": 0.465
+    }
+   ],
+   "S3: med-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.342
+    },
+    {
+     "seed": 1,
+     "acc": 0.363
+    },
+    {
+     "seed": 2,
+     "acc": 0.381
+    },
+    {
+     "seed": 3,
+     "acc": 0.36
+    },
+    {
+     "seed": 4,
+     "acc": 0.377
+    }
+   ],
+   "S4: high-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.732
+    },
+    {
+     "seed": 1,
+     "acc": 0.729
+    },
+    {
+     "seed": 2,
+     "acc": 0.726
+    },
+    {
+     "seed": 3,
+     "acc": 0.727
+    },
+    {
+     "seed": 4,
+     "acc": 0.732
+    }
+   ]
+  },
+  "trust_mean": {
+   "S1: high-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.885
+    },
+    {
+     "seed": 1,
+     "acc": 0.889
+    },
+    {
+     "seed": 2,
+     "acc": 0.878
+    },
+    {
+     "seed": 3,
+     "acc": 0.877
+    },
+    {
+     "seed": 4,
+     "acc": 0.885
+    }
+   ],
+   "S2: med-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.528
+    },
+    {
+     "seed": 1,
+     "acc": 0.536
+    },
+    {
+     "seed": 2,
+     "acc": 0.511
+    },
+    {
+     "seed": 3,
+     "acc": 0.528
+    },
+    {
+     "seed": 4,
+     "acc": 0.504
+    }
+   ],
+   "S3: med-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.412
+    },
+    {
+     "seed": 1,
+     "acc": 0.443
+    },
+    {
+     "seed": 2,
+     "acc": 0.432
+    },
+    {
+     "seed": 3,
+     "acc": 0.423
+    },
+    {
+     "seed": 4,
+     "acc": 0.448
+    }
+   ],
+   "S4: high-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.859
+    },
+    {
+     "seed": 1,
+     "acc": 0.84
+    },
+    {
+     "seed": 2,
+     "acc": 0.843
+    },
+    {
+     "seed": 3,
+     "acc": 0.857
+    },
+    {
+     "seed": 4,
+     "acc": 0.854
+    }
+   ]
+  },
+  "trust_median": {
+   "S1: high-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.888
+    },
+    {
+     "seed": 1,
+     "acc": 0.894
+    },
+    {
+     "seed": 2,
+     "acc": 0.884
+    },
+    {
+     "seed": 3,
+     "acc": 0.885
+    },
+    {
+     "seed": 4,
+     "acc": 0.892
+    }
+   ],
+   "S2: med-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.558
+    },
+    {
+     "seed": 1,
+     "acc": 0.567
+    },
+    {
+     "seed": 2,
+     "acc": 0.546
+    },
+    {
+     "seed": 3,
+     "acc": 0.553
+    },
+    {
+     "seed": 4,
+     "acc": 0.54
+    }
+   ],
+   "S3: med-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.44
+    },
+    {
+     "seed": 1,
+     "acc": 0.471
+    },
+    {
+     "seed": 2,
+     "acc": 0.461
+    },
+    {
+     "seed": 3,
+     "acc": 0.455
+    },
+    {
+     "seed": 4,
+     "acc": 0.469
+    }
+   ],
+   "S4: high-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.856
+    },
+    {
+     "seed": 1,
+     "acc": 0.836
+    },
+    {
+     "seed": 2,
+     "acc": 0.839
+    },
+    {
+     "seed": 3,
+     "acc": 0.85
+    },
+    {
+     "seed": 4,
+     "acc": 0.841
+    }
+   ]
+  },
+  "kalman_trust": {
+   "S1: high-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.884
+    },
+    {
+     "seed": 1,
+     "acc": 0.891
+    },
+    {
+     "seed": 2,
+     "acc": 0.875
+    },
+    {
+     "seed": 3,
+     "acc": 0.877
+    },
+    {
+     "seed": 4,
+     "acc": 0.885
+    }
+   ],
+   "S2: med-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.542
+    },
+    {
+     "seed": 1,
+     "acc": 0.548
+    },
+    {
+     "seed": 2,
+     "acc": 0.523
+    },
+    {
+     "seed": 3,
+     "acc": 0.542
+    },
+    {
+     "seed": 4,
+     "acc": 0.522
+    }
+   ],
+   "S3: med-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.43
+    },
+    {
+     "seed": 1,
+     "acc": 0.458
+    },
+    {
+     "seed": 2,
+     "acc": 0.45
+    },
+    {
+     "seed": 3,
+     "acc": 0.437
+    },
+    {
+     "seed": 4,
+     "acc": 0.456
+    }
+   ],
+   "S4: high-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.852
+    },
+    {
+     "seed": 1,
+     "acc": 0.833
+    },
+    {
+     "seed": 2,
+     "acc": 0.835
+    },
+    {
+     "seed": 3,
+     "acc": 0.848
+    },
+    {
+     "seed": 4,
+     "acc": 0.842
+    }
+   ]
+  },
+  "ATV": {
+   "S1: high-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.884
+    },
+    {
+     "seed": 1,
+     "acc": 0.889
+    },
+    {
+     "seed": 2,
+     "acc": 0.877
+    },
+    {
+     "seed": 3,
+     "acc": 0.879
+    },
+    {
+     "seed": 4,
+     "acc": 0.884
+    }
+   ],
+   "S2: med-honest, weak-attack": [
+    {
+     "seed": 0,
+     "acc": 0.533
+    },
+    {
+     "seed": 1,
+     "acc": 0.539
+    },
+    {
+     "seed": 2,
+     "acc": 0.516
+    },
+    {
+     "seed": 3,
+     "acc": 0.535
+    },
+    {
+     "seed": 4,
+     "acc": 0.511
+    }
+   ],
+   "S3: med-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.42
+    },
+    {
+     "seed": 1,
+     "acc": 0.448
+    },
+    {
+     "seed": 2,
+     "acc": 0.438
+    },
+    {
+     "seed": 3,
+     "acc": 0.433
+    },
+    {
+     "seed": 4,
+     "acc": 0.452
+    }
+   ],
+   "S4: high-honest, strong-attack": [
+    {
+     "seed": 0,
+     "acc": 0.854
+    },
+    {
+     "seed": 1,
+     "acc": 0.836
+    },
+    {
+     "seed": 2,
+     "acc": 0.839
+    },
+    {
+     "seed": 3,
+     "acc": 0.851
+    },
+    {
+     "seed": 4,
+     "acc": 0.848
+    }
+   ]
+  }
+ }
+}

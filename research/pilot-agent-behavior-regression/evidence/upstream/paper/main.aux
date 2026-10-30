@@ -1,0 +1,109 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\citation{zhao2023survey,liu2023lost}
+\citation{hendrycks2021mmlu}
+\citation{liang2022helm}
+\citation{chen2021humaneval}
+\citation{guo2017calibration,kadavath2022language}
+\citation{liu2026memorycontagion}
+\citation{du2024improving,li2023camel,liang2023multiagent}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\newlabel{sec:intro@cref}{{[section][1][]1}{[1][1][]1}{}{}{}}
+\citation{hendrycks2021mmlu,liang2022helm,chen2021humaneval}
+\citation{chiang2024chatbot}
+\citation{guo2017calibration}
+\citation{kadavath2022language}
+\citation{liu2026memorycontagion}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{2}{Related Work}{section.2}{}}
+\newlabel{sec:related@cref}{{[section][2][]2}{[1][2][]2}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Snapshot Benchmarks and Longitudinal Measurement}{2}{subsection.2.1}\protected@file@percent }
+\citation{du2024improving,li2023camel,liang2023multiagent}
+\citation{park2023generative,liu2026memorycontagion}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Calibration, Bias, and Memory in Agent Systems}{3}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Agent Dynamics and Multi-Agent Systems}{3}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Method: Behavior Drift Score}{3}{section.3}\protected@file@percent }
+\newlabel{sec:method}{{3}{3}{Method: Behavior Drift Score}{section.3}{}}
+\newlabel{sec:method@cref}{{[section][3][]3}{[1][3][]3}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Definition}{3}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Two Stability Quantities}{3}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why three seeds.}{4}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Statistical Protocol}{4}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}BDS Information-Theoretic Lower Bound}{4}{subsection.3.4}\protected@file@percent }
+\newlabel{thm:bds-bound}{{1}{4}{BDS Lower Bound}{theorem.1}{}}
+\newlabel{thm:bds-bound@cref}{{[theorem][1][]1}{[1][4][]4}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{5}{section.4}\protected@file@percent }
+\newlabel{sec:setup}{{4}{5}{Experimental Setup}{section.4}{}}
+\newlabel{sec:setup@cref}{{[section][4][]4}{[1][4][]5}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Model Cohort}{5}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Scenario Suite}{5}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Scenario suite composition.} All 100 scenarios are generated deterministically from a fixed seed.}}{5}{table.1}\protected@file@percent }
+\newlabel{tab:suite}{{1}{5}{\textbf {Scenario suite composition.} All 100 scenarios are generated deterministically from a fixed seed}{table.1}{}}
+\newlabel{tab:suite@cref}{{[table][1][]1}{[1][5][]5}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Cells and Protocol}{5}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{6}{section.5}\protected@file@percent }
+\newlabel{sec:results}{{5}{6}{Results}{section.5}{}}
+\newlabel{sec:results@cref}{{[section][5][]5}{[1][5][]6}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Seed Reproducibility Is Near-Perfect at Temperature 0}{6}{subsection.5.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Seed reproducibility (Q1).} Mean BDS over the three seed pairs at temperature 0, over 100 scenarios per model. Lower is more reproducible; 0.0000 means identical outputs across all three seeds on all scenarios.}}{6}{table.2}\protected@file@percent }
+\newlabel{tab:repro}{{2}{6}{\textbf {Seed reproducibility (Q1).} Mean BDS over the three seed pairs at temperature 0, over 100 scenarios per model. Lower is more reproducible; 0.0000 means identical outputs across all three seeds on all scenarios}{table.2}{}}
+\newlabel{tab:repro@cref}{{[table][2][]2}{[1][5][]6}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Cross-Model Heterogeneity Is Large and Category-Dependent}{6}{subsection.5.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Cross-model heterogeneity (Q2).} Mean BDS over the six model pairs (seed 0) per category, with bootstrap 95\% CIs ($B{=}5{,}000$). \emph  {T} (tool-use) is the most transferable category and \emph  {X} (multilingual) the most model-specific.}}{6}{table.3}\protected@file@percent }
+\newlabel{tab:hetero}{{3}{6}{\textbf {Cross-model heterogeneity (Q2).} Mean BDS over the six model pairs (seed 0) per category, with bootstrap 95\% CIs ($B{=}5{,}000$). \emph {T} (tool-use) is the most transferable category and \emph {X} (multilingual) the most model-specific}{table.3}{}}
+\newlabel{tab:hetero@cref}{{[table][3][]3}{[1][6][]6}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {Cross-model BDS by category.} Tool-use scenarios show the lowest cross-model BDS (most transferable); multilingual scenarios show the highest (most model-specific).}}{7}{figure.1}\protected@file@percent }
+\newlabel{fig:heatmap}{{1}{7}{\textbf {Cross-model BDS by category.} Tool-use scenarios show the lowest cross-model BDS (most transferable); multilingual scenarios show the highest (most model-specific)}{figure.1}{}}
+\newlabel{fig:heatmap@cref}{{[figure][1][]1}{[1][6][]7}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Behavioral determinism duality.} Cross-seed BDS (within model) is $400\times $ smaller than cross-model BDS, showing that local LLMs are deterministic within model but heterogeneous across models.}}{7}{figure.2}\protected@file@percent }
+\newlabel{fig:duality}{{2}{7}{\textbf {Behavioral determinism duality.} Cross-seed BDS (within model) is $400\times $ smaller than cross-model BDS, showing that local LLMs are deterministic within model but heterogeneous across models}{figure.2}{}}
+\newlabel{fig:duality@cref}{{[figure][2][]2}{[1][6][]7}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Category-Level Differences Are Statistically Significant}{7}{subsection.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Cross-model heterogeneity by category.} Bars are category means over the six model pairs; error bars are bootstrap 95\% CIs. The dashed line is the overall mean (7.15).}}{8}{figure.3}\protected@file@percent }
+\newlabel{fig:hetero}{{3}{8}{\textbf {Cross-model heterogeneity by category.} Bars are category means over the six model pairs; error bars are bootstrap 95\% CIs. The dashed line is the overall mean (7.15)}{figure.3}{}}
+\newlabel{fig:hetero@cref}{{[figure][3][]3}{[1][6][]8}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Control Experiments (v2, Cloud)}{8}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Multi-Agent Chain Divergence (Full M-Scenario Suite)}{8}{subsection.5.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Seed reproducibility at temperature 0.} Mean cross-seed BDS per model over 100 scenarios. All models are below 0.03; deepseek-r1:7b is exactly reproducible on all scenarios.}}{9}{figure.4}\protected@file@percent }
+\newlabel{fig:repro}{{4}{9}{\textbf {Seed reproducibility at temperature 0.} Mean cross-seed BDS per model over 100 scenarios. All models are below 0.03; deepseek-r1:7b is exactly reproducible on all scenarios}{figure.4}{}}
+\newlabel{fig:repro@cref}{{[figure][4][]4}{[1][8][]9}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{9}{section.6}\protected@file@percent }
+\newlabel{sec:discussion}{{6}{9}{Discussion}{section.6}{}}
+\newlabel{sec:discussion@cref}{{[section][6][]6}{[1][9][]9}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Implications for Behavioral Regression Testing}{9}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Limitations}{9}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Broader Impact and Responsible Use}{10}{section.7}\protected@file@percent }
+\newlabel{sec:broader}{{7}{10}{Broader Impact and Responsible Use}{section.7}{}}
+\newlabel{sec:broader@cref}{{[section][7][]7}{[1][10][]10}{}{}{}}
+\bibstyle{tmlr}
+\bibdata{refs}
+\bibcite{chen2021humaneval}{{1}{2021}{{Chen et~al.}}{{Chen, Tworek, Jun, Yuan, Pinto, Kaplan, Edwards, Burda, Joseph, Brockman, et~al.}}}
+\bibcite{chiang2024chatbot}{{2}{2024}{{Chiang et~al.}}{{Chiang, Zheng, Sheng, Angelopoulos, Li, Li, Zhang, Zhu, Jordan, Gonzalez, et~al.}}}
+\bibcite{du2024improving}{{3}{2024}{{Du et~al.}}{{Du, Li, Torralba, Tenenbaum, and Mordatch}}}
+\bibcite{guo2017calibration}{{4}{2017}{{Guo et~al.}}{{Guo, Pleiss, Sun, and Weinberger}}}
+\bibcite{hendrycks2021mmlu}{{5}{2021}{{Hendrycks et~al.}}{{Hendrycks, Burns, Basart, Zou, Mazeika, Song, and Steinhardt}}}
+\bibcite{kadavath2022language}{{6}{2022}{{Kadavath et~al.}}{{Kadavath, Conerly, Askell, Henighan, Drain, Perez, Schiefer, Hatfield-Dodds, DasSarma, Tran-Johnson, et~al.}}}
+\bibcite{li2023camel}{{7}{2023}{{Li et~al.}}{{Li, Hammerschmidt, Roumeliotis, Liu, Qi, et~al.}}}
+\bibcite{liang2022helm}{{8}{2023{a}}{{Liang et~al.}}{{Liang, Bommasani, Lee, Tsipras, Soylu, Yasunaga, Zhang, Narayanan, Wu, et~al.}}}
+\bibcite{liang2023multiagent}{{9}{2023{b}}{{Liang et~al.}}{{Liang, He, Tan, Chen, et~al.}}}
+\bibcite{liu2023lost}{{10}{2023}{{Liu et~al.}}{{Liu, Lin, Hewitt, Paranjape, Bevilacqua, Petroni, and Liang}}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{11}{section.8}\protected@file@percent }
+\newlabel{sec:conclusion}{{8}{11}{Conclusion}{section.8}{}}
+\newlabel{sec:conclusion@cref}{{[section][8][]8}{[1][11][]11}{}{}{}}
+\bibcite{park2023generative}{{11}{2023}{{Park et~al.}}{{Park, O'Brien, Cai, Morris, Liang, and Bernstein}}}
+\bibcite{liu2026memorycontagion}{{12}{2026}{{Zhang}}{{}}}
+\bibcite{zhao2023survey}{{13}{2023}{{Zhao et~al.}}{{Zhao, Zhou, Li, Tang, Xia, Zeng, Lv, Feng, et~al.}}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Reproduction Protocol}{12}{appendix.A}\protected@file@percent }
+\newlabel{app:repro}{{A}{12}{Reproduction Protocol}{appendix.A}{}}
+\newlabel{app:repro@cref}{{[section][1][]A}{[1][12][]12}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Scenario Provenance}{12}{appendix.B}\protected@file@percent }
+\newlabel{app:prov}{{B}{12}{Scenario Provenance}{appendix.B}{}}
+\newlabel{app:prov@cref}{{[section][2][]B}{[1][12][]12}{}{}{}}
+\newlabel{sec:reproducibility}{{B}{13}{Reproducibility Statement}{section*.4}{}}
+\newlabel{sec:reproducibility@cref}{{[section][2][]B}{[1][13][]13}{}{}{}}
+\newlabel{sec:ethics}{{B}{13}{Broader Impact and Ethical Considerations}{section*.5}{}}
+\newlabel{sec:ethics@cref}{{[section][2][]B}{[1][13][]13}{}{}{}}
+\gdef \@abspage@last{13}

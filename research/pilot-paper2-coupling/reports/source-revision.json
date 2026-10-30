@@ -1,0 +1,31 @@
+{
+  "schema": "q-one-paper2-source-revision-v1",
+  "generated_at": "2026-10-27T15:37:00Z",
+  "upstream": {
+    "path": "evidence/upstream/paper/main.tex",
+    "sha256": "379e1632302e979ded0c0462eeba32a07fa82653796ca72d4f9f55e46f8d5cec"
+  },
+  "overlay": {
+    "path": "source/main.tex",
+    "sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+    "changed_diff_lines": 54
+  },
+  "diff_receipt": {
+    "path": "reports/source-revision.diff",
+    "sha256": "524c673dae41f0ec127daa7b1fe07f49e16f25387fe09cf911342eb4ae67086b"
+  },
+  "change_scope": [
+    "Removed stale TMLR anonymity comments and a superseded title comment.",
+    "Replaced unverified release, raw-log and public-repository claims with qualified evidence metadata.",
+    "Removed a duplicate Reproducibility Statement section.",
+    "Replaced off-topic calibration-fatigue ethics text with text specific to evaluator coupling.",
+    "Replaced internal manuscript codes and impossibility-triangle wording with scoped terminology."
+  ],
+  "claim_impact": "none",
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "This revision does not close proof, held-out validation, independent review, metadata or license gates.",
+    "The upstream bytes remain available for exact reversion and comparison."
+  ]
+}

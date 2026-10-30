@@ -1,0 +1,286 @@
+{
+  "q1": "Cannot verify",
+  "q1_reason": "The paper lacks significant experimental evidence, including baselines, significance tests, error bars, and confidence intervals.",
+  "q2": "Yes",
+  "q2_reason": "The topic is relevant to researchers interested in LLM ensembles and voting mechanisms.",
+  "score": 6,
+  "verdict": "Accept",
+  "changes": "1. Add missing baselines for comparison.\n2. Include significance tests, error bars, and confidence intervals.\n3. Provide detailed random seeds and other reproduction details.\n4. Clearly justify the novelty of proposed methods compared to existing work.\n\nSTRENGTHS: The paper addresses an important problem in LLM ensemble voting and proposes several aggregation rules.",
+  "strengths": "The paper addresses an important problem in LLM ensemble voting and proposes several aggregation rules.",
+  "format_degraded": false,
+  "consistency": {
+    "level": "WARN",
+    "flags": [
+      {
+        "level": "WARN",
+        "code": "FLAG_POLICY_ENFORCED",
+        "msg": "红旗未获论文回应：unfixable=[] fixable=['overclaim', 'limited-novelty', 'no-significance', 'reproducibility-gap', 'missing-baseline', 'theory-soundness', '变量定义完整性', 'clarity-writing', 'vague-explanation', 'structure-issue']，按 enforce（fixable→弱接受区，门 77）处理"
+      }
+    ]
+  },
+  "chunk_flags": [
+    "overclaim",
+    "limited-novelty",
+    "no-significance",
+    "reproducibility-gap",
+    "missing-baseline",
+    "theory-soundness",
+    "变量定义完整性",
+    "clarity-writing",
+    "vague-explanation",
+    "structure-issue",
+    "假设声明未讨论",
+    "变量定义完整性未讨论"
+  ],
+  "flag_policy": "enforce",
+  "flag_sections": {
+    "overclaim": "Introduction",
+    "limited-novelty": "Background",
+    "no-significance": "Algorithm Pseudocode and Complexity",
+    "reproducibility-gap": "Algorithm Pseudocode and Complexity",
+    "missing-baseline": "Introduction",
+    "theory-soundness": "Introduction",
+    "变量定义完整性": "Introduction",
+    "clarity-writing": "Introduction",
+    "vague-explanation": "Background",
+    "structure-issue": "Related Work"
+  },
+  "flag_spans": {
+    "overclaim": [
+      2861,
+      2880
+    ],
+    "limited-novelty": [
+      7964,
+      15960
+    ],
+    "no-significance": [
+      39858,
+      46391
+    ],
+    "reproducibility-gap": [
+      39858,
+      46391
+    ],
+    "missing-baseline": [
+      0,
+      7964
+    ],
+    "theory-soundness": [
+      0,
+      7964
+    ],
+    "变量定义完整性": [
+      0,
+      7964
+    ],
+    "clarity-writing": [
+      0,
+      7964
+    ],
+    "vague-explanation": [
+      7964,
+      15960
+    ],
+    "structure-issue": [
+      23901,
+      31866
+    ]
+  },
+  "bound_flags": {
+    "overclaim": {
+      "label": "overclaim",
+      "objects": [
+        "synthetic benchmark",
+        "small local-model pilot"
+      ],
+      "target": "A synthetic pilot (4,000 trials per cell, $N=7$ verifiers, f=2 captured) already tests the prediction and yields a nuanced result: trust-score weighting beats plain majority under prompt-injection capture (accuracy 0.69 vs. 0.34 at honest accuracy 0.6; 0.94 vs. 0.74 at 0.8), because calibration-phase trust identifies deterministically flipped verifiers; under majority-bias mimicry, however, the same method fails (0.32 vs. 0.41 at honest accuracy 0.6). These pilot values are synthetic and do not establish a universal impossibility result.",
+      "spans": [
+        [
+          2861,
+          2880
+        ],
+        [
+          2887,
+          2910
+        ]
+      ]
+    },
+    "limited-novelty": {
+      "label": "limited-novelty",
+      "objects": [],
+      "target": "The seventh is Atv, an adaptive hybrid we proposed as a candidate that we expected to combine the strengths of soft weighting and outlier robustness.",
+      "spans": []
+    },
+    "no-significance": {
+      "label": "no-significance",
+      "objects": [],
+      "target": "",
+      "spans": []
+    },
+    "reproducibility-gap": {
+      "label": "reproducibility-gap",
+      "objects": [],
+      "target": "",
+      "spans": []
+    },
+    "missing-baseline": {
+      "label": "missing-baseline",
+      "objects": [],
+      "target": "",
+      "spans": []
+    },
+    "theory-soundness": {
+      "label": "theory-soundness",
+      "objects": [],
+      "target": "假设声明不足（<3 处 assume/suppose/let...be）：理论结论的前提条件不明确",
+      "spans": []
+    },
+    "变量定义完整性": {
+      "label": "变量定义完整性",
+      "objects": [],
+      "target": "变量定义模式不足（denotes/represents/where...is <2 处）：符号可能未定义即使用",
+      "spans": []
+    },
+    "clarity-writing": {
+      "label": "clarity-writing",
+      "objects": [],
+      "target": "Verifier capture differs from the classical single-verifier hallucination or bias problem in two important ways.",
+      "spans": []
+    },
+    "vague-explanation": {
+      "label": "vague-explanation",
+      "objects": [],
+      "target": "The seventh is \\textsc{Atv}, an adaptive hybrid we proposed as a candidate that we expected to combine the strengths of soft weighting and outlier robustness.",
+      "spans": []
+    },
+    "structure-issue": {
+      "label": "structure-issue",
+      "objects": [],
+      "target": "In the strong-attack scenarios S3 and S4, the trust-based methods gain an apparent advantage in some columns (S4 for trust_mean) but lose it in others (S2 for all trust-based methods). The advantage in S4 disappears when averaged across all four scenarios: the mean column is dominated by majority and trust_median, both at $0.686$.",
+      "spans": []
+    }
+  },
+  "empirical_check": {
+    "exp_sections": 1,
+    "tables": 0,
+    "result_tables": 4,
+    "figures": 0,
+    "empirical_words": 17,
+    "stat_words": 0
+  },
+  "empirical": true,
+  "risk": {
+    "risk": 6.0,
+    "band": "高",
+    "features": {
+      "unfixable": 0,
+      "fixable": 12,
+      "raw_median": 5,
+      "empirical": true
+    }
+  },
+  "meta": {
+    "final": "重点复核区（高风险，需人工终判）",
+    "confidence": "低",
+    "uncertainty": [
+      "拒绝风险 6.0（高）：多红旗 + 原始分偏离众数带，需人工复核",
+      "Q1 未确认：证据缺口存在但判定为可修复"
+    ],
+    "signals": {
+      "score": 6,
+      "verdict": "Accept",
+      "risk": 6.0,
+      "band": "高",
+      "empirical": true
+    }
+  },
+  "model": "qwen2.5:7b",
+  "chunked": true,
+  "n_chunks": 6,
+  "chunk_notes": [
+    "[excerpt 1/6] EVIDENCE: Yes\nFLAGS: [\"overclaim\", \"weak_motivation\"]\nNOTE: The abstract claims broad applicability but the excerpt only discusses synthetic and local-model pilots.\n\n{\n  \"flag_type\": \"overclaim\",\n  \"target_claim\": \"A synthetic pilot (4,000 trials per cell, $N=7$ verifiers, f=2 captured) already tests the prediction and yields a nuanced result: trust-score weighting beats plain majority under promp",
+    "[excerpt 2/6] EVIDENCE: Yes\nFLAGS: [\"limited_novelty\", \"weak_related_work\"]\nNOTE: The paper introduces aggregation rules for LLM ensembles and benchmarks them, but the contributions appear incremental compared to existing work.\n\n{\n  \"flag_type\": \"limited_novelty\",\n  \"target_claim\": \"The seventh is Atv, an adaptive hybrid we proposed as a candidate that we expected to combine the strengths of soft weighting and ",
+    "[excerpt 3/6] EVIDENCE: Yes\nFLAGS: [\"limited_novelty\", \"weak_related_work\"]\nNOTE: The excerpt presents various voting methods and their performance, but does not strongly justify why these are novel or compare them extensively to existing work.\n\n{\n  \"flag_type\": \"limited_novelty\",\n  \"target_claim\": \"The negative result has a structural explanation. Capture is statistically indistinguishable from honest-but-wron",
+    "[excerpt 4/6] EVIDENCE: Yes\nFLAGS: [\"overclaim\", \"limited_novelty\", \"weak_related_work\"]\nNOTE: The excerpt discusses experimental results and implications, but there are concerns about overclaiming, limited novelty, and weak related work.\n\n{\n  \"flag_type\": \"overclaim\",\n  \"target_claim\": \"The benchmark implies that, for the ensemble size, attack strength, and honest-accuracy regime we consider, the engineering e",
+    "[excerpt 5/6] EVIDENCE: Yes\nFLAGS: [\"limited_novelty\", \"weak_related_work\"]\nNOTE: The excerpt discusses the limitations and future work of the benchmark, as well as a proof of a capture lower bound.\n\n{\n  \"flag_type\": \"limited_novelty\",\n  \"target_claim\": \"no aggregation method we tested substantially outperforms plain majority voting, and several trust-score variants underperform majority under strong capture\",\n",
+    "[excerpt 6/6] EVIDENCE: Yes\nFLAGS: [\"no_significance\", \"reproducibility_gap\"]\nNOTE: The excerpt describes experiments and pseudocode but lacks significance tests, error bars, or confidence intervals; it also omits key reproduction details like random seeds.\n\nExplanation:\n- `no_significance`: The table reports accuracies without any significance test, p-value, error bar, or confidence interval.\n- `reproducibilit"
+  ],
+  "elapsed_s": 348.5,
+  "theory_check": {
+    "checked": true,
+    "n_rules": 5,
+    "passed": 3,
+    "flags": [
+      {
+        "id": "ASSUMPTIONS",
+        "name": "假设声明",
+        "weight": "黄旗",
+        "hits": 2,
+        "min": 3,
+        "passed": false,
+        "msg": "假设声明不足（<3 处 assume/suppose/let...be）：理论结论的前提条件不明确",
+        "fix": "明确列出定理/引理的完整假设条件（Lipschitz、凸性、正则性等），并说明违反时结论如何变化",
+        "anchor": null
+      },
+      {
+        "id": "SYMBOL_DEFS",
+        "name": "变量定义完整性",
+        "weight": "黄旗",
+        "hits": 1,
+        "min": 2,
+        "passed": false,
+        "msg": "变量定义模式不足（denotes/represents/where...is <2 处）：符号可能未定义即使用",
+        "fix": "为每个首次出现的数学符号给出显式定义（格式：'where X denotes ...'）",
+        "anchor": null
+      }
+    ],
+    "summary": "理论完备性：3/5 项通过，发现 2 项缺口"
+  },
+  "actions": {
+    "cards": {
+      "fact_consistency": {
+        "action": "review_priority",
+        "evidence": "7 项可定位证据缺口",
+        "escalation": "human_decision",
+        "calibration_status": "unvalidated",
+        "note": "示例: overclaim"
+      },
+      "reproducibility": {
+        "action": "review_priority",
+        "evidence": "1 项复现性披露缺口",
+        "escalation": "none",
+        "calibration_status": "unvalidated",
+        "note": ""
+      },
+      "theory_completeness": {
+        "action": "review_priority",
+        "evidence": "2 项理论完备性缺口",
+        "escalation": "human_theory_reviewer",
+        "calibration_status": "unvalidated",
+        "note": "缺口: ['假设声明', '变量定义完整性']"
+      },
+      "literature_novelty": {
+        "action": "question_only",
+        "evidence": "新颖性需领域语境与专家判断，自动信号已验证无效（v5.4）",
+        "escalation": "human_decision",
+        "calibration_status": "unvalidated",
+        "note": "仅生成作者可回答的追问"
+      },
+      "final_decision": {
+        "action": "abstain",
+        "evidence": "最终接收/拒绝建议当前不得自动化（无论文级 final decision 基准）",
+        "escalation": "human_decision",
+        "calibration_status": "unvalidated",
+        "note": "最多按证据缺口排序人工复核优先级"
+      }
+    },
+    "paper_route": {
+      "action": "review_priority",
+      "reason": "存在 7 项可定位证据缺口，需人工复核；最终决策 abstain（['final_decision']）",
+      "abstain_conditions": [
+        "final_decision"
+      ]
+    }
+  }
+}

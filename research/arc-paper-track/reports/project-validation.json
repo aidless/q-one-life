@@ -1,0 +1,34 @@
+{
+  "schema": "q-one-research-validation-v1",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/arc-paper-track",
+  "paper_id": "arc-paper-track-2026",
+  "valid": true,
+  "ready": false,
+  "status": "revision",
+  "package_state": "not-started",
+  "errors": [],
+  "warnings": [],
+  "blocked_claims": [
+    "C10"
+  ],
+  "unresolved_reviews": [],
+  "package_blockers": [
+    "The local Markdown manuscript does not match the source hash recorded by the current remote publication receipt.",
+    "No arXiv source tree, BibTeX package, cover metadata, or compiled PDF has been prepared from the verified claims.",
+    "The official scoring-methodology source needed by C09 is not captured locally."
+  ],
+  "claim_ids": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "C11"
+  ],
+  "global_readiness_score": null
+}

@@ -1,0 +1,35 @@
+{
+ "config": {
+  "T": 1000,
+  "n_seeds": 5
+ },
+ "results": {
+  "N5_f1": {
+   "majority": 0.7479,
+   "bft_pbft": 0.7479,
+   "weighted_uniform": 0.7258,
+   "trust_mean": 0.7464,
+   "trust_median": 0.7479,
+   "kalman_trust": 0.7472,
+   "ATV": 0.747
+  },
+  "N7_f2": {
+   "majority": 0.6859,
+   "bft_pbft": 0.6192,
+   "weighted_uniform": 0.5954,
+   "trust_mean": 0.6716,
+   "trust_median": 0.6863,
+   "kalman_trust": 0.6765,
+   "ATV": 0.6733
+  },
+  "N10_f3": {
+   "majority": 0.6785,
+   "bft_pbft": 0.6026,
+   "weighted_uniform": 0.5771,
+   "trust_mean": 0.6602,
+   "trust_median": 0.7668,
+   "kalman_trust": 0.6552,
+   "ATV": 0.6593
+  }
+ }
+}

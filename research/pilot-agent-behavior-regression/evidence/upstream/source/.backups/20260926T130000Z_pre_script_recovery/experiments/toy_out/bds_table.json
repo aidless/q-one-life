@@ -1,0 +1,36 @@
+{
+  "rows": [
+    {
+      "model_alias": "m1",
+      "scenario_id": "L-001",
+      "bds": 5.765365124603933
+    },
+    {
+      "model_alias": "m1",
+      "scenario_id": "L-002",
+      "bds": 1.0964575133351075
+    },
+    {
+      "model_alias": "m1",
+      "scenario_id": "M-001",
+      "bds": 2.0191815224703666
+    },
+    {
+      "model_alias": "m1",
+      "scenario_id": "R-001",
+      "bds": 2.6863124650759325
+    },
+    {
+      "model_alias": "m1",
+      "scenario_id": "T-001",
+      "bds": 3.383469092016926
+    }
+  ],
+  "summary": {
+    "m1": {
+      "mean_bds": 2.9901571435004533,
+      "median_bds": 2.6863124650759325,
+      "n_scenarios": 5
+    }
+  }
+}

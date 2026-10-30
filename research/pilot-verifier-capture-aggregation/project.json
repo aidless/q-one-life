@@ -1,0 +1,623 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-an-empirical-study-of-aggregation-method-819da8c6b1",
+  "title": "An Empirical Study of Aggregation Methods Under Verifier Capture in Multi-LLM Ensembles: When Does Majority Voting Fail, and Can We Beat It?",
+  "status": "revision",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation",
+  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/paper/main.tex",
+  "manuscript": {
+    "path": "source/main.tex",
+    "sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "8efafd54ba4278391bca9c9b6079d8cb653b12bbc266b52fce81499bb96e3dde",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Canonical, overlay and superseded source identity."
+    },
+    {
+      "path": "evidence/variant-reconciliation.json",
+      "sha256": "2c1332534705db29b13c0411a96eb48a288ef04471ff7750b8a95844e9894226",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Canonical, legacy, ingest-drift, submission and backup versions reconciled."
+    },
+    {
+      "path": "evidence/upstream/paper/main.tex",
+      "sha256": "42fe9b13f6a17af326f346aaa1afb7228fa1e8f4478126fadbce0fc7cea80cc3",
+      "state": "verified",
+      "origin": "Portfolio representative paper/main.tex",
+      "description": "Canonical upstream source retained byte-for-byte."
+    },
+    {
+      "path": "evidence/upstream/source/CLAIM_LEDGER.md",
+      "sha256": "3ddbd284170377e137a80b669610f447c0340b9156706b5be8185320b395fd30",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Native claim ledger retained for semantic comparison."
+    },
+    {
+      "path": "evidence/upstream/source/source/attacks.py",
+      "sha256": "d9c6807cbf832e7df7b454b1936a021416fe6c8180da3ffede70fe215c1f5432",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Implemented attack families."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/main_results/benchmark_table.json",
+      "sha256": "b2f7c090edfd86d7cf32a03bd404bc9ed1572dc74ada043a5027af67b7b9fbd2",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Frozen per-seed and aggregate benchmark table."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/main_results/per_attack_table.json",
+      "sha256": "094cca8a5cc3e28830f6db0db6c1f36d64d7c9b647bd985cc353472f6b6abb9a",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Frozen per-attack table."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/main_results/ensemble_sweep.json",
+      "sha256": "b34475d34fea23aca5ae2649484b7e8979fc66c5a9cf473bd0a76d72cd4691de",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Frozen N=5/N=7/N=10 sweep."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/pilot_results/summary_v2.json",
+      "sha256": "9d28fc528d8a1d44f612305a25d2d919baf6ec267ea867d22f298bee42afdca3",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Synthetic pilot summary."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/real_llm_results/summary.json",
+      "sha256": "764af6e6fae035a6f612c64e770950834271c03b2222d00bafb332d857064001",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Descriptive local pilot summary."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/real_llm_results/cells.json",
+      "sha256": "a4e9c087d27c6a3f5f6945fff5f4d3762179f8e6d8b3c6bbf4ac30c17b00473e",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Descriptive local pilot cells."
+    },
+    {
+      "path": "evidence/native-audit.json",
+      "sha256": "a2a0939a1ad6eacc6b09356e94f6dbfbfc03fefcdcea5addfa96314735ed87fd",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Recomputed aggregate, local pilot, citation and hygiene audit."
+    },
+    {
+      "path": "evidence/carrier-audit.json",
+      "sha256": "986174950cef4965accbd695f8ee6f079466306c14c80737ecf17128db019701",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Recomputed frozen numeric carrier receipt."
+    },
+    {
+      "path": "evidence/upstream/source/evidence_manifest.json",
+      "sha256": "09a9e63ac2271d1305b70bd4ff4cd714a3090549c8496fcf85edd17ba1948bd8",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Upstream evidence manifest; 11 entries absent."
+    },
+    {
+      "path": "evidence/upstream/source/review_real_summary.json",
+      "sha256": "8686973edf86b7aa1199372b33cdfd85a3452351d12f6f4b25ce032b659669e5",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Upstream review summary with 7 Major and 12 Minor findings."
+    },
+    {
+      "path": "evidence/upstream/source/source/review_real/debate_issues.json",
+      "sha256": "8a845ff3faaa6da20984a16e84b4db8575a709cb3d9c99ef7eaa5265ee3deb40",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Upstream debate issue list."
+    },
+    {
+      "path": "reports/claim-ledger-verification.md",
+      "sha256": "552ed444ba9673b2177f73373aec36d90dcaafad4be8488009967d16515e6c5e",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Six-column claim ledger verification report."
+    },
+    {
+      "path": "reports/evidence-audit.md",
+      "sha256": "e2a88d725ffc4351091b6404876c0cd28466915a508b52c576b9511f71beeec9",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Human-readable evidence audit."
+    },
+    {
+      "path": "reports/carrier-audit.md",
+      "sha256": "da4b7d3f5f5f16431089f7038089f888b46ddcd257f413af88aebbe0c55d954a",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Human-readable carrier audit."
+    },
+    {
+      "path": "reports/source-revision.json",
+      "sha256": "fcce699c3ca04b3e868470d2fd0e431c65c385287a517d9a2879872c474beb78",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Overlay revision binding."
+    },
+    {
+      "path": "reports/source-revision.diff",
+      "sha256": "79c7e88e98672ef768d5586ac3aa29d747646ff3df9486ea72fc0f77e0b705ef",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Exact canonical-to-overlay diff."
+    },
+    {
+      "path": "reports/cleanroom/receipt.json",
+      "sha256": "39a90d538b947bfdd4b3990e0127f83d9a4fe2f884967592a1d57ea7b44c6f32",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Two-run isolated compile receipt."
+    },
+    {
+      "path": "reports/package-audit.json",
+      "sha256": "ee48e22216dac256977fcb468d3aa68622c4ff05aecfdb173247d5a069cd7541",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Mechanical five-file arXiv audit."
+    },
+    {
+      "path": "reports/package/package-receipt.json",
+      "sha256": "823b00f2d408e142912accf403f81ac825a66bd5b1a1fc8ec07f1d096633a3ef",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Deterministic archive and extraction compile receipt."
+    },
+    {
+      "path": "reports/package/paper6-arxiv-candidate.tar.gz",
+      "sha256": "c0e51c1b59d278a6eaa5c54637ec33e37b907640c7232f41038f580b453c6103",
+      "state": "verified",
+      "origin": "Paper 6 Research Factory overlay",
+      "description": "Internal candidate archive; not upload-authorized."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Synthetic benchmark configuration",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/paper/evidence/main_results/benchmark_table.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Scenario-wise majority comparison",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/paper/evidence/main_results/benchmark_table.json"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "location": "Implemented attack families",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/source/source/attacks.py"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "location": "Synthetic pilot trial count and attack conditions",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/paper/evidence/pilot_results/summary_v2.json"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "location": "Local pilot configuration",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/paper/evidence/real_llm_results/summary.json"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "location": "Local pilot rounded accuracy",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/paper/evidence/real_llm_results/summary.json"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "Universal structural negative result",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "ATV epsilon-resilience theorem",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C09",
+      "location": "Deployed real-LLM generalization",
+      "state": "inconclusive",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "Ensemble-size sweep values",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/paper/evidence/main_results/ensemble_sweep.json"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "location": "Hyperparameter robustness",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "paper6-synthetic-recompute",
+      "state": "reproduced",
+      "receipt": "evidence/native-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper6-local-pilot-recompute",
+      "state": "reproduced",
+      "receipt": "evidence/native-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper6-carrier-recompute",
+      "state": "reproduced",
+      "receipt": "evidence/carrier-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper6-cleanroom-compile",
+      "state": "reproduced",
+      "receipt": "reports/cleanroom/receipt.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper6-candidate-archive",
+      "state": "reproduced",
+      "receipt": "reports/package/package-receipt.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper6-heldout-trace",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper6-hyperparameter-sweep",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "paper6-role-review-r6",
+      "kind": "method",
+      "state": "open",
+      "critical": 0,
+      "major": 7,
+      "receipt": "evidence/upstream/source/review_real_summary.json"
+    },
+    {
+      "review_id": "paper6-debate-issues",
+      "kind": "statistics",
+      "state": "open",
+      "critical": 0,
+      "major": 7,
+      "receipt": "evidence/upstream/source/source/review_real/debate_issues.json"
+    }
+  ],
+  "package": {
+    "state": "compiled",
+    "files": [
+      {
+        "path": "source/main.tex",
+        "sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331"
+      },
+      {
+        "path": "source/math_commands.tex",
+        "sha256": "9d655842e74bf55f241770197793507d27f178abef4132378b8333e391a6a0e0"
+      },
+      {
+        "path": "source/refs.bib",
+        "sha256": "2e08d1889d7d8da29949c655bec95b39cf174baf23cab422c0c06e4f4f6dbd9a"
+      },
+      {
+        "path": "source/tmlr.sty",
+        "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002"
+      },
+      {
+        "path": "source/tmlr.bst",
+        "sha256": "306fd454cf40771bee01293eeb98d2c1cd5f4e11ed0cd7296b335f354fc45206"
+      },
+      {
+        "path": "reports/cleanroom/receipt.json",
+        "sha256": "39a90d538b947bfdd4b3990e0127f83d9a4fe2f884967592a1d57ea7b44c6f32"
+      },
+      {
+        "path": "reports/cleanroom/main.pdf",
+        "sha256": "8426989b0436128efe3c0d3bc88d876d124c712cb4b9c401ae3b5d1273c42be4"
+      },
+      {
+        "path": "reports/package/package-receipt.json",
+        "sha256": "823b00f2d408e142912accf403f81ac825a66bd5b1a1fc8ec07f1d096633a3ef"
+      },
+      {
+        "path": "reports/package/paper6-arxiv-candidate.tar.gz",
+        "sha256": "c0e51c1b59d278a6eaa5c54637ec33e37b907640c7232f41038f580b453c6103"
+      },
+      {
+        "path": "reports/package/archive-cleanroom/receipt.json",
+        "sha256": "f21f5df37e1ceba3656b3e09b3ff7b79c0f49cdbc41f6d47b038d919479290c2"
+      },
+      {
+        "path": "reports/package/archive-cleanroom/main.pdf",
+        "sha256": "8426989b0436128efe3c0d3bc88d876d124c712cb4b9c401ae3b5d1273c42be4"
+      }
+    ],
+    "blockers": [
+      "The evidence is a synthetic benchmark plus a descriptive four-model local pilot; no held-out real-trace benchmark exists.",
+      "The upstream evidence manifest has 11 missing entries.",
+      "No per-cell tau or alpha hyperparameter sweep is present; the ensemble-size sweep is only three descriptive points.",
+      "The native claim that majority is strongest in all scenarios is contradicted by S4, where trust-mean is 0.0076 higher.",
+      "The universal negative-result claim and the ATV epsilon-resilience theorem remain unresolved.",
+      "The upstream review remains open with 7 Major and 12 Minor findings.",
+      "Final author, category, abstract, license and upload authorization remain user decisions."
+    ]
+  },
+  "gate_receipts": [
+    {
+      "gate_id": "paper6-source-identity",
+      "scope": "reproducibility",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "8efafd54ba4278391bca9c9b6079d8cb653b12bbc266b52fce81499bb96e3dde",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "Canonical, overlay and variant hashes are bound."
+    },
+    {
+      "gate_id": "paper6-variant-reconciliation",
+      "scope": "reproducibility",
+      "state": "passed",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "2c1332534705db29b13c0411a96eb48a288ef04471ff7750b8a95844e9894226",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "Legacy, ingest, submission and backup versions are identified."
+    },
+    {
+      "gate_id": "paper6-synthetic-benchmark",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "a2a0939a1ad6eacc6b09356e94f6dbfbfc03fefcdcea5addfa96314735ed87fd",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "Per-seed means recompute for all 4 scenarios and 7 methods."
+    },
+    {
+      "gate_id": "paper6-local-pilot",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "a2a0939a1ad6eacc6b09356e94f6dbfbfc03fefcdcea5addfa96314735ed87fd",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "All seven local methods recompute to 0.9167 from 3 cells."
+    },
+    {
+      "gate_id": "paper6-citations",
+      "scope": "citations",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "a2a0939a1ad6eacc6b09356e94f6dbfbfc03fefcdcea5addfa96314735ed87fd",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "All cited keys resolve to refs.bib."
+    },
+    {
+      "gate_id": "paper6-carrier",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/carrier-audit.json",
+      "receipt_sha256": "986174950cef4965accbd695f8ee6f079466306c14c80737ecf17128db019701",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "The frozen carrier receipt matches its source line."
+    },
+    {
+      "gate_id": "paper6-cleanroom-compile",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/cleanroom/receipt.json",
+      "receipt_sha256": "39a90d538b947bfdd4b3990e0127f83d9a4fe2f884967592a1d57ea7b44c6f32",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "Two isolated compiles produced byte-identical 15-page PDFs."
+    },
+    {
+      "gate_id": "paper6-package-audit",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/package-audit.json",
+      "receipt_sha256": "ee48e22216dac256977fcb468d3aa68622c4ff05aecfdb173247d5a069cd7541",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "The five-file source tree passes the mechanical arXiv audit."
+    },
+    {
+      "gate_id": "paper6-candidate-archive",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/package/package-receipt.json",
+      "receipt_sha256": "823b00f2d408e142912accf403f81ac825a66bd5b1a1fc8ec07f1d096633a3ef",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "The archive is deterministic and extracts to a 15-page compile."
+    },
+    {
+      "gate_id": "paper6-heldout-trace",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "a2a0939a1ad6eacc6b09356e94f6dbfbfc03fefcdcea5addfa96314735ed87fd",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "No held-out real-trace benchmark exists."
+    },
+    {
+      "gate_id": "paper6-hyperparameter-sweep",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "a2a0939a1ad6eacc6b09356e94f6dbfbfc03fefcdcea5addfa96314735ed87fd",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "No per-cell tau or alpha sweep exists."
+    },
+    {
+      "gate_id": "paper6-manifest",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/upstream/source/evidence_manifest.json",
+      "receipt_sha256": "09a9e63ac2271d1305b70bd4ff4cd714a3090549c8496fcf85edd17ba1948bd8",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "The upstream manifest has 11 missing entries."
+    },
+    {
+      "gate_id": "paper6-universal-result",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "a2a0939a1ad6eacc6b09356e94f6dbfbfc03fefcdcea5addfa96314735ed87fd",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "Universal structural and ATV theorem claims are not established."
+    },
+    {
+      "gate_id": "paper6-scientific-review",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/upstream/source/review_real_summary.json",
+      "receipt_sha256": "8686973edf86b7aa1199372b33cdfd85a3452351d12f6f4b25ce032b659669e5",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "The upstream review has 7 Major findings."
+    },
+    {
+      "gate_id": "paper6-metadata-license",
+      "scope": "other",
+      "state": "blocked",
+      "receipt": "reports/package/package-receipt.json",
+      "receipt_sha256": "823b00f2d408e142912accf403f81ac825a66bd5b1a1fc8ec07f1d096633a3ef",
+      "source_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "summary": "Final author, category, abstract, license and upload authorization remain unconfirmed."
+    }
+  ],
+  "measurements": [
+    {
+      "name": "synthetic_scenarios",
+      "value": 4,
+      "unit": "scenarios",
+      "definition": "Frozen synthetic benchmark scenarios.",
+      "source": "evidence/upstream/paper/evidence/main_results/benchmark_table.json#config.scenarios[]",
+      "state": "observed"
+    },
+    {
+      "name": "aggregation_methods",
+      "value": 7,
+      "unit": "methods",
+      "definition": "Distinct aggregation implementations.",
+      "source": "evidence/native-audit.json#counts.methods",
+      "state": "observed"
+    },
+    {
+      "name": "synthetic_seeds",
+      "value": 5,
+      "unit": "seeds",
+      "definition": "Frozen per-scenario seed count.",
+      "source": "evidence/native-audit.json#counts.seeds",
+      "state": "observed"
+    },
+    {
+      "name": "rounds_per_cell",
+      "value": 1000,
+      "unit": "rounds",
+      "definition": "Synthetic rounds per scenario/seed cell.",
+      "source": "evidence/native-audit.json#counts.rounds",
+      "state": "observed"
+    },
+    {
+      "name": "local_pilot_questions",
+      "value": 20,
+      "unit": "questions",
+      "definition": "Local Ollama pilot questions per seed.",
+      "source": "evidence/upstream/paper/evidence/real_llm_results/summary.json#config.n_questions",
+      "state": "observed"
+    },
+    {
+      "name": "carrier_receipts_passed",
+      "value": 1,
+      "unit": "checks",
+      "definition": "Frozen numeric carrier receipt passing source and value checks.",
+      "source": "evidence/carrier-audit.json#summary.passed",
+      "state": "observed"
+    },
+    {
+      "name": "cleanroom_pdf_pages",
+      "value": 15,
+      "unit": "pages",
+      "definition": "Pages in the deterministic clean-room PDF.",
+      "source": "reports/cleanroom/receipt.json#pdf.pages",
+      "state": "observed"
+    },
+    {
+      "name": "candidate_archive_bytes",
+      "value": 26848,
+      "unit": "bytes",
+      "definition": "Size of the deterministic internal candidate archive.",
+      "source": "reports/package/package-receipt.json#archive.bytes",
+      "state": "observed"
+    }
+  ],
+  "notes": [
+    "Canonical source is preserved byte-for-byte.",
+    "The overlay removes template contamination and bounds unsupported claims.",
+    "The local pilot is descriptive and is not held-out real-trace validation.",
+    "The internal candidate archive is not upload-authorized."
+  ]
+}

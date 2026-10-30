@@ -1,0 +1,52 @@
+\section{Evidence and Reproducibility Inventory}\label{sec:evidenceinventory}
+This section states what the accompanying artifact actually contains, as read by \texttt{tools/deepen\_run.py} at build time, and where that falls short of the claims made earlier in the paper. It is generated: every row is a filename, a byte count, a hash prefix, or a key read from a file in the archive. No value in this section was typed by hand, and no experiment is reported here that was not already present in the artifact.
+
+\paragraph{Artifact classes.} The archive holds 3 machine-readable result file(s), 3 graphic file(s), 0 script(s), 46 file(s) that describe the manuscript rather than an experiment, and 0 file(s) whose own text says they were extracted from the manuscript. The last class is excluded from the carrier test below: a number copied out of \texttt{main.tex} cannot certify \texttt{main.tex}.
+
+\begin{table}[ht]\centering\small
+\caption{Machine-readable artifacts, as read from the archive. \texttt{sha256} is truncated to 16 hex characters; re-derive with \texttt{sha256sum} on the file named in the first column.}
+\label{tab:artifactinventory}
+\begin{tabular}{p{5.6cm} rr p{5.2cm}}\toprule
+File & bytes & sha256[:16] & top-level keys / recorded scalars \\\midrule
+\texttt{100\_\hspace{0pt}suggestions.pdf} & 13929 & \texttt{c6d721513584dea1} & \footnotesize \\
+\texttt{main\_\hspace{0pt}full.pdf} & 131697 & \texttt{f1dac7e80c2873e7} & \footnotesize \\
+\texttt{main.pdf} & 341454 & \texttt{6f885cfb59cb5029} & \footnotesize \\
+\texttt{results/\hspace{0pt}analysis.json} & 343 & \texttt{565c5822a20700bc} & \footnotesize n\_cells, n\_seeds, P\_mean, P\_std, P\_CI95, grid\_results | n\_cells=270; n\_seeds=10; P\_mean=0.2493\\
+\texttt{evidence/\hspace{0pt}baselines/\hspace{0pt}baselines.json} & 257 & \texttt{be6f0c999b6de8a9} & \footnotesize BFCL, WebArena, note\\
+\texttt{evidence/\hspace{0pt}baselines/\hspace{0pt}real40.json} & 354 & \texttt{35b3cbdfda20c0a7} & \footnotesize n\_total, elapsed, results | n\_total=40; elapsed=210.24787712097168\\
+\bottomrule\end{tabular}\end{table}
+
+\paragraph{Claim-to-carrier register.} The abstract, the bold body text and the contributions list print 11 distinct numeric token(s). For each, the tool searched every data and script file in the archive for the value (comma- and thousands-variants included).
+
+\begin{table}[ht]\centering\small
+\caption{Headline numbers and where they come from. 0 of 11 have a machine-readable carrier in this archive; 11 do not, and are listed as \texttt{NO\_CARRIER} rather than being repeated as if supported.}
+\label{tab:claimcarrier}
+\begin{tabular}{lrl}\toprule
+Number & mentions in claims & carrier found in \\\midrule
+\texttt{192/144} & 2 & \textbf{NO\_CARRIER} (no data file contains this value)
+\\
+\texttt{90/40} & 2 & \textbf{NO\_CARRIER} (no data file contains this value)
+\\
+\texttt{0.002} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+\\
+\texttt{0.32} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+\\
+\texttt{0.41} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+\\
+\texttt{0.686} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+\\
+\texttt{0/11} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+\\
+\texttt{1.47} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+\\
+\texttt{10/10} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+\\
+\texttt{4.00} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+\\
+\texttt{6.0} & 1 & \textbf{NO\_CARRIER} (no data file contains this value)
+\\
+\bottomrule\end{tabular}\end{table}
+
+\paragraph{What this register commits to.} The 11 \texttt{NO\_CARRIER} value(s) above are quoted in this paper's own prose but do not appear in any result file shipped with it. Until the raw records are added, those sentences are reporting an observation whose per-observation data is not in the archive; the paper does not claim otherwise here.
+
+\paragraph{How to re-check this section.} Run \texttt{python3 tools/deepen\_run.py <run> --write}; the generated file is \texttt{paper/sections/evidence\_inventory.tex} and the same facts appear in \texttt{figures/EVIDENCE\_RECORD.md}. Both are reproducible from the archive alone, with no network access.

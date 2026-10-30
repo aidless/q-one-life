@@ -1,0 +1,306 @@
+{
+  "q1": "Cannot verify",
+  "q1_reason": "The paper lacks significant evidence for its claims, including missing baselines and no significance tests.",
+  "q2": "Yes",
+  "q2_reason": "The work is relevant to researchers interested in local LLM systems and behavioral testing.",
+  "score": 6,
+  "verdict": "Accept",
+  "changes": "None\n\nSTRENGTHS: Introduces a new behavioral regression suite for local LLMs.",
+  "strengths": "Introduces a new behavioral regression suite for local LLMs.",
+  "format_degraded": false,
+  "consistency": {
+    "level": "WARN",
+    "flags": [
+      {
+        "level": "WARN",
+        "code": "FLAG_POLICY_ENFORCED",
+        "msg": "红旗未获论文回应：unfixable=[] fixable=['weak-related-work', 'limited-novelty', 'no-significance', 'limited-dataset-coverage', 'missing-baseline', 'theory-soundness', '变量定义完整性', 'clarity-writing', 'confusion', 'mitigation by construction, but a full semantic-drift analysis is future work.', 'The cross-model BDS comparison is observational: models differ simultaneously in architecture, training data, size, and quantization.']，按 enforce（fixable→弱接受区，门 77）处理"
+      }
+    ]
+  },
+  "chunk_flags": [
+    "weak-related-work",
+    "limited-novelty",
+    "no-significance",
+    "limited-dataset-coverage",
+    "missing-baseline",
+    "theory-soundness",
+    "变量定义完整性",
+    "clarity-writing",
+    "confusion",
+    "mitigation by construction, but a full semantic-drift analysis is future work.",
+    "The cross-model BDS comparison is observational: models differ simultaneously in architecture, training data, size, and quantization.",
+    "假设声明未讨论",
+    "变量定义完整性未讨论",
+    "对抗性/反例讨论未讨论"
+  ],
+  "flag_policy": "enforce",
+  "flag_sections": {
+    "weak-related-work": "Introduction",
+    "limited-novelty": "Method: Behavior Drift Score",
+    "no-significance": "Cross-Model Heterogeneity Is Large and Category-Dependent",
+    "limited-dataset-coverage": "Cross-Model Heterogeneity Is Large and Category-Dependent",
+    "missing-baseline": "Introduction",
+    "theory-soundness": "Introduction",
+    "变量定义完整性": "Introduction",
+    "clarity-writing": "Introduction",
+    "confusion": "Method: Behavior Drift Score",
+    "mitigation by construction, but a full semantic-drift analysis is future work.": "Broader Impact and Responsible Use",
+    "The cross-model BDS comparison is observational: models differ simultaneously in architecture, training data, size, and quantization.": "Broader Impact and Responsible Use"
+  },
+  "flag_spans": {
+    "weak-related-work": [
+      0,
+      7988
+    ],
+    "limited-novelty": [
+      12380,
+      12437
+    ],
+    "no-significance": [
+      15984,
+      23983
+    ],
+    "limited-dataset-coverage": [
+      15984,
+      23983
+    ],
+    "missing-baseline": [
+      0,
+      7988
+    ],
+    "theory-soundness": [
+      0,
+      7988
+    ],
+    "变量定义完整性": [
+      0,
+      7988
+    ],
+    "clarity-writing": [
+      0,
+      7988
+    ],
+    "confusion": [
+      7988,
+      8059
+    ],
+    "mitigation by construction, but a full semantic-drift analysis is future work.": [
+      23983,
+      28216
+    ],
+    "The cross-model BDS comparison is observational: models differ simultaneously in architecture, training data, size, and quantization.": [
+      23983,
+      28216
+    ]
+  },
+  "bound_flags": {
+    "weak-related-work": {
+      "label": "weak-related-work",
+      "objects": [],
+      "target": "To our knowledge, no prior work runs the same 100 behavioral scenarios across multiple local models with seeded replication and reports both reproducibility and heterogeneity statistics.",
+      "spans": []
+    },
+    "limited-novelty": {
+      "label": "limited-novelty",
+      "objects": [],
+      "target": "Four local models served through Ollama at temperature 0:",
+      "spans": [
+        [
+          12380,
+          12437
+        ]
+      ]
+    },
+    "no-significance": {
+      "label": "no-significance",
+      "objects": [],
+      "target": "",
+      "spans": []
+    },
+    "limited-dataset-coverage": {
+      "label": "limited-dataset-coverage",
+      "objects": [],
+      "target": "",
+      "spans": []
+    },
+    "missing-baseline": {
+      "label": "missing-baseline",
+      "objects": [],
+      "target": "",
+      "spans": []
+    },
+    "theory-soundness": {
+      "label": "theory-soundness",
+      "objects": [],
+      "target": "假设声明不足（<3 处 assume/suppose/let...be）：理论结论的前提条件不明确",
+      "spans": []
+    },
+    "变量定义完整性": {
+      "label": "变量定义完整性",
+      "objects": [],
+      "target": "变量定义模式不足（denotes/represents/where...is <2 处）：符号可能未定义即使用",
+      "spans": []
+    },
+    "clarity-writing": {
+      "label": "clarity-writing",
+      "objects": [],
+      "target": "The cross-model Behavior Drift Score (BDS) is $400\times$ the cross-seed BDS on the same 100-scenario suite.",
+      "spans": []
+    },
+    "confusion": {
+      "label": "confusion",
+      "objects": [],
+      "target": "baseline against which multi-agent amplification can later be measured.",
+      "spans": [
+        [
+          7988,
+          8059
+        ]
+      ]
+    },
+    "mitigation by construction, but a full semantic-drift analysis is future work.": {
+      "label": "mitigation by construction, but a full semantic-drift analysis is future work.",
+      "objects": [],
+      "target": "",
+      "spans": []
+    },
+    "The cross-model BDS comparison is observational: models differ simultaneously in architecture, training data, size, and quantization.": {
+      "label": "The cross-model BDS comparison is observational: models differ simultaneously in architecture, training data, size, and quantization.",
+      "objects": [],
+      "target": "",
+      "spans": []
+    }
+  },
+  "empirical_check": {
+    "exp_sections": 2,
+    "tables": 0,
+    "result_tables": 0,
+    "figures": 0,
+    "empirical_words": 0,
+    "stat_words": 0
+  },
+  "empirical": true,
+  "risk": {
+    "risk": 7.0,
+    "band": "高",
+    "features": {
+      "unfixable": 0,
+      "fixable": 14,
+      "raw_median": 5,
+      "empirical": true
+    }
+  },
+  "meta": {
+    "final": "重点复核区（高风险，需人工终判）",
+    "confidence": "低",
+    "uncertainty": [
+      "拒绝风险 7.0（高）：多红旗 + 原始分偏离众数带，需人工复核",
+      "Q1 未确认：证据缺口存在但判定为可修复"
+    ],
+    "signals": {
+      "score": 6,
+      "verdict": "Accept",
+      "risk": 7.0,
+      "band": "高",
+      "empirical": true
+    }
+  },
+  "model": "qwen2.5:7b",
+  "chunked": true,
+  "n_chunks": 4,
+  "chunk_notes": [
+    "[excerpt 1/4] EVIDENCE: Yes\nFLAGS: [\"weak_related_work\", \"limited_novelty\"]\nNOTE: The paper introduces a new behavioral regression suite but does not extensively compare it to existing work.\n\n{\n  \"flag_type\": \"weak_related_work\",\n  \"target_claim\": \"To our knowledge, no prior work runs the same 100 behavioral scenarios across multiple local models with seeded replication and reports both reproducibility and hete",
+    "[excerpt 2/4] EVIDENCE: Yes\nFLAGS: [\"limited_novelty\", \"weak_related_work\"]\nNOTE: The method and experiments are described in detail but appear to be incremental with respect to existing work on behavioral testing of language models.\n\n{\n  \"flag_type\": \"limited_novelty\",\n  \"target_claim\": \"Four local models served through Ollama at temperature 0:\",\n  \"comparison_object\": null,\n  \"dataset\": null,\n  \"note\": \"The m",
+    "[excerpt 3/4] EVIDENCE: Yes\nFLAGS: [\"no_significance\", \"limited_dataset_coverage\"]\nNOTE: The excerpt provides statistical tests and metrics but lacks significance tests or error bars.\n\n{\n  \"flags\": [\n    {\n      \"flag_type\": \"no_significance\",\n      \"target_claim\": \"Wilcoxon $V = 0.0$, $p \\approx 3.9 \\times 10^{-18}$ over $n = 100$ scenarios.\",\n      \"comparison_object\": null,\n      \"dataset\": null,\n      \"note",
+    "[excerpt 4/4] EVIDENCE: Yes\nFLAGS: [\"no_significance\", \"weak_related_work\", \"limited_novelty\"]\nNOTE: The excerpt discusses the limitations and future work of the study, as well as its broader impact.\n\n{\n  \"flags\": [\n    {\n      \"flag_type\": \"no_significance\",\n      \"target_claim\": \"mean cross-model BDS $7.15$; paired difference $7.14$, 95\\% CI $[6.80, 7.49]$, $p \\approx 4\\times10^{-18}$\",\n      \"comparison_obje"
+  ],
+  "elapsed_s": 313.3,
+  "theory_check": {
+    "checked": true,
+    "n_rules": 5,
+    "passed": 2,
+    "flags": [
+      {
+        "id": "ASSUMPTIONS",
+        "name": "假设声明",
+        "weight": "黄旗",
+        "hits": 2,
+        "min": 3,
+        "passed": false,
+        "msg": "假设声明不足（<3 处 assume/suppose/let...be）：理论结论的前提条件不明确",
+        "fix": "明确列出定理/引理的完整假设条件（Lipschitz、凸性、正则性等），并说明违反时结论如何变化",
+        "anchor": null
+      },
+      {
+        "id": "SYMBOL_DEFS",
+        "name": "变量定义完整性",
+        "weight": "黄旗",
+        "hits": 0,
+        "min": 2,
+        "passed": false,
+        "msg": "变量定义模式不足（denotes/represents/where...is <2 处）：符号可能未定义即使用",
+        "fix": "为每个首次出现的数学符号给出显式定义（格式：'where X denotes ...'）",
+        "anchor": null
+      },
+      {
+        "id": "ADVERSARIAL",
+        "name": "对抗性/反例讨论",
+        "weight": "建议",
+        "hits": 0,
+        "min": 1,
+        "passed": false,
+        "msg": "缺乏反例/最坏情形讨论：未说明理论在哪些情形下不成立或退化",
+        "fix": "加入反例或最坏情形分析，说明结论的失效边界",
+        "anchor": null
+      }
+    ],
+    "summary": "理论完备性：2/5 项通过，发现 3 项缺口"
+  },
+  "actions": {
+    "cards": {
+      "fact_consistency": {
+        "action": "review_priority",
+        "evidence": "10 项可定位证据缺口",
+        "escalation": "human_decision",
+        "calibration_status": "unvalidated",
+        "note": "示例: weak-related-work"
+      },
+      "reproducibility": {
+        "action": "question_only",
+        "evidence": "未发现披露缺口，可追问代码/种子",
+        "escalation": "author_question",
+        "calibration_status": "unvalidated",
+        "note": ""
+      },
+      "theory_completeness": {
+        "action": "review_priority",
+        "evidence": "3 项理论完备性缺口",
+        "escalation": "human_theory_reviewer",
+        "calibration_status": "unvalidated",
+        "note": "缺口: ['假设声明', '变量定义完整性', '对抗性/反例讨论']"
+      },
+      "literature_novelty": {
+        "action": "question_only",
+        "evidence": "新颖性需领域语境与专家判断，自动信号已验证无效（v5.4）",
+        "escalation": "human_decision",
+        "calibration_status": "unvalidated",
+        "note": "仅生成作者可回答的追问"
+      },
+      "final_decision": {
+        "action": "abstain",
+        "evidence": "最终接收/拒绝建议当前不得自动化（无论文级 final decision 基准）",
+        "escalation": "human_decision",
+        "calibration_status": "unvalidated",
+        "note": "最多按证据缺口排序人工复核优先级"
+      }
+    },
+    "paper_route": {
+      "action": "review_priority",
+      "reason": "存在 10 项可定位证据缺口，需人工复核；最终决策 abstain（['final_decision']）",
+      "abstain_conditions": [
+        "final_decision"
+      ]
+    }
+  }
+}

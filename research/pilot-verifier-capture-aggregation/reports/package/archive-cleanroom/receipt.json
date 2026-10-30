@@ -1,0 +1,191 @@
+{
+  "schema": "q-one-cleanroom-compile-v1",
+  "generated_at": "2026-10-27T17:03:25.958042Z",
+  "source": {
+    "path": "/tmp/qone-archive-build-5mwo7bpw/extracted",
+    "main_file": "main.tex",
+    "main_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+    "package_sha256": "252dad210ec608195b5bb65224f9eacd826bf1c6298262ddd80aed349705b210",
+    "file_count": 5
+  },
+  "commands": [
+    [
+      "latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "main.tex"
+    ],
+    [
+      "latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "main.tex"
+    ]
+  ],
+  "runs": [
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "environment": {
+        "SOURCE_DATE_EPOCH": "946684800",
+        "FORCE_SOURCE_DATE": "1"
+      },
+      "exit_code": 0,
+      "workdir": "/tmp/qone-cleanroom-l28qnmlx/run-1",
+      "stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/archive-cleanroom/pass1.stdout.log",
+      "stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/archive-cleanroom/pass1.stderr.log",
+      "main_log": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/archive-cleanroom/pass1.main.log",
+      "warnings": [
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "Underfull \\hbox (badness 1314) in paragraph at lines 934--937",
+        "LaTeX Font Warning: Some font shapes were not available, defaults substituted."
+      ]
+    },
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "environment": {
+        "SOURCE_DATE_EPOCH": "946684800",
+        "FORCE_SOURCE_DATE": "1"
+      },
+      "exit_code": 0,
+      "workdir": "/tmp/qone-cleanroom-l28qnmlx/run-2",
+      "stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/archive-cleanroom/pass2.stdout.log",
+      "stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/archive-cleanroom/pass2.stderr.log",
+      "main_log": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/archive-cleanroom/pass2.main.log",
+      "warnings": [
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined",
+        "Underfull \\hbox (badness 1314) in paragraph at lines 934--937",
+        "LaTeX Font Warning: Some font shapes were not available, defaults substituted."
+      ]
+    }
+  ],
+  "exit_codes": [
+    0,
+    0
+  ],
+  "outputs": [
+    {
+      "path": "archive-cleanroom/main.pdf",
+      "sha256": "8426989b0436128efe3c0d3bc88d876d124c712cb4b9c401ae3b5d1273c42be4",
+      "bytes": 383473
+    },
+    {
+      "path": "archive-cleanroom/main-repeat.pdf",
+      "sha256": "8426989b0436128efe3c0d3bc88d876d124c712cb4b9c401ae3b5d1273c42be4",
+      "bytes": 383473
+    },
+    {
+      "path": "archive-cleanroom/main.bbl",
+      "sha256": "f38bd233ea24b4a9af4f93cccdf2c69e5e7aa8110d88db676b3bac92dd707511",
+      "bytes": 4651
+    },
+    {
+      "path": "archive-cleanroom/main-repeat.bbl",
+      "sha256": "f38bd233ea24b4a9af4f93cccdf2c69e5e7aa8110d88db676b3bac92dd707511",
+      "bytes": 4651
+    },
+    {
+      "path": "archive-cleanroom/pdfinfo.txt",
+      "sha256": "ca99b35e7cb54605a7a4d278519b90bb2a4af6ffb6fa956f762b48742498d14f",
+      "bytes": 546
+    },
+    {
+      "path": "archive-cleanroom/pass1.stdout.log",
+      "sha256": "5fba949f43458cb549c7c96c4706945e650653afd371148d06e4acadcf3d7ae9",
+      "bytes": 58071
+    },
+    {
+      "path": "archive-cleanroom/pass2.stdout.log",
+      "sha256": "5fba949f43458cb549c7c96c4706945e650653afd371148d06e4acadcf3d7ae9",
+      "bytes": 58071
+    },
+    {
+      "path": "archive-cleanroom/pass1.stderr.log",
+      "sha256": "c97f5bcaa897d781a91c796ec78661f1565816ded1ec9a2c41614f2c3f277c48",
+      "bytes": 278
+    },
+    {
+      "path": "archive-cleanroom/pass2.stderr.log",
+      "sha256": "c97f5bcaa897d781a91c796ec78661f1565816ded1ec9a2c41614f2c3f277c48",
+      "bytes": 278
+    },
+    {
+      "path": "archive-cleanroom/pass1.main.log",
+      "sha256": "4f1b958ed04b3f8d2cb8497536fe252fd5031cc663dbb957e5df3889ee060f19",
+      "bytes": 33551
+    },
+    {
+      "path": "archive-cleanroom/pass2.main.log",
+      "sha256": "4f1b958ed04b3f8d2cb8497536fe252fd5031cc663dbb957e5df3889ee060f19",
+      "bytes": 33551
+    }
+  ],
+  "pdf": {
+    "pages": 15,
+    "sha256_run1": "8426989b0436128efe3c0d3bc88d876d124c712cb4b9c401ae3b5d1273c42be4",
+    "sha256_run2": "8426989b0436128efe3c0d3bc88d876d124c712cb4b9c401ae3b5d1273c42be4",
+    "deterministic": true
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "latexmk": [
+      "Latexmk, John Collins, 9 March 2026. Version 4.88"
+    ]
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "Only files admitted by the mechanical package audit were copied.",
+    "Two independent clean directories were compiled with a fixed source epoch.",
+    "A successful compile is not scientific readiness or upload authorization."
+  ]
+}

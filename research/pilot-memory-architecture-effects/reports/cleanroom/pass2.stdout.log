@@ -1,0 +1,1000 @@
+Rc files read (in order):
+  NONE
+Latexmk: This is Latexmk, John Collins, 9 March 2026. Version 4.88.
+No existing .aux file, so I'll make a simple one, and require run of *latex.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Category 'other':
+  Rerun of 'pdflatex' forced or previously required:
+    Reason or flag: 'Initial setup'
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/size11.clo)) (./tmlr.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/eso-pic/eso-pic.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty)) (./math_commands.tex (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/tools/bm.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/url/url.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/cleveref/cleveref.sty)
+==> First Aid for cleveref.sty applied!
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/algorithms/algorithm.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/float/float.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/ifthen.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/algorithms/algorithmic.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def) (./main.aux) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+
+LaTeX Warning: Reference `sec:limitations' on page 1 undefined on input line 50.
+
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd) [1{/home/liuzewen/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+
+Package natbib Warning: Citation `brown2020language' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `touvron2023llama' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `zhao2023survey' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `du2024improving' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `li2023camel' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `liang2023multiagent' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `park2023generative' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `kaplan2020scaling' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `wei2022emergent' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `wei2022chain' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `ouyang2022training' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `christiano2017deep' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `ouyang2022training' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `lee2023rlaif' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `bai2022constitutional' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `bertalanic2026cost' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `huang2026cagecal' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `ma2026implicitbias' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `ma2026implicitbias' on page 2 undefined on input line 69.
+
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd)
+Underfull \vbox (badness 1509) has occurred while \output is active [2{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+
+LaTeX Warning: Reference `sec:limitations' on page 3 undefined on input line 84.
+
+
+Package natbib Warning: Citation `park2023generative' on page 3 undefined on input line 97.
+
+
+Package natbib Warning: Citation `park2023generative' on page 3 undefined on input line 97.
+
+
+Package natbib Warning: Citation `packer2023memgpt' on page 3 undefined on input line 97.
+
+
+Package natbib Warning: Citation `lewis2020rag' on page 3 undefined on input line 99.
+
+
+LaTeX Warning: Reference `sec:experimental-setup' on page 3 undefined on input line 99.
+
+
+Package natbib Warning: Citation `izacard2022fusion' on page 3 undefined on input line 99.
+
+
+Package natbib Warning: Citation `izacard2022fusion' on page 3 undefined on input line 99.
+
+
+Package natbib Warning: Citation `asai2023selfrag' on page 3 undefined on input line 99.
+
+
+Package natbib Warning: Citation `jiang2023active' on page 3 undefined on input line 99.
+
+
+Package natbib Warning: Citation `cheng2026agenticsts' on page 3 undefined on input line 101.
+
+[3]
+
+Package natbib Warning: Citation `park2023generative' on page 4 undefined on input line 105.
+
+
+Package natbib Warning: Citation `guo2017calibration' on page 4 undefined on input line 105.
+
+
+Package natbib Warning: Citation `kadavath2022language' on page 4 undefined on input line 105.
+
+
+Package natbib Warning: Citation `liang2023multiagent' on page 4 undefined on input line 105.
+
+
+Package natbib Warning: Citation `bertalanic2026cost' on page 4 undefined on input line 107.
+
+
+Package natbib Warning: Citation `huang2026cagecal' on page 4 undefined on input line 107.
+
+
+LaTeX Warning: Reference `sec:authority' on page 4 undefined on input line 107.
+
+
+Package natbib Warning: Citation `memorycontagion2026' on page 4 undefined on input line 109.
+
+
+LaTeX Warning: Reference `tab:dose-response' on page 4 undefined on input line 109.
+
+
+LaTeX Warning: Reference `tab:dose-response' on page 4 undefined on input line 109.
+
+
+LaTeX Warning: Reference `tab:qwen' on page 4 undefined on input line 109.
+
+
+Package natbib Warning: Citation `gao2024retrieval' on page 4 undefined on input line 113.
+
+
+Package natbib Warning: Citation `gehman2020realtoxicityprompts' on page 4 undefined on input line 113.
+
+
+Package natbib Warning: Citation `schick2021debiasing' on page 4 undefined on input line 119.
+
+
+Package natbib Warning: Citation `guo2017calibration' on page 4 undefined on input line 119.
+
+
+Package natbib Warning: Citation `kadavath2022language' on page 4 undefined on input line 119.
+
+
+Package natbib Warning: Citation `lin2022teach' on page 4 undefined on input line 119.
+
+[4]
+
+Package natbib Warning: Citation `hao2026tooluse' on page 5 undefined on input line 122.
+
+
+Package natbib Warning: Citation `liang2026mirage' on page 5 undefined on input line 122.
+
+
+Package natbib Warning: Citation `bay2026sampling' on page 5 undefined on input line 122.
+
+
+LaTeX Warning: Reference `sec:supp-sample-budget' on page 5 undefined on input line 122.
+
+
+Package natbib Warning: Citation `liu2023lost' on page 5 undefined on input line 126.
+
+
+Package natbib Warning: Citation `wu2024memochat' on page 5 undefined on input line 126.
+
+[5]
+
+LaTeX Warning: Reference `sec:hyperparams' on page 1 undefined on input line 167.
+
+[6]
+
+LaTeX Warning: Reference `tab:stats' on page 1 undefined on input line 183.
+
+
+LaTeX Warning: Reference `fig:dose-response' on page 1 undefined on input line 183.
+
+
+LaTeX Warning: Reference `fig:reduction' on page 1 undefined on input line 183.
+
+
+LaTeX Warning: Reference `tab:qwen' on page 1 undefined on input line 184.
+
+
+LaTeX Warning: Reference `tab:authority' on page 1 undefined on input line 185.
+
+
+Package natbib Warning: Citation `memorycontagion2026' on page 7 undefined on input line 203.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [7{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [8]
+
+LaTeX Warning: Reference `sec:stat-protocol' on page 9 undefined on input line 247.
+
+
+LaTeX Warning: Reference `sec:stat-protocol' on page 9 undefined on input line 247.
+
+
+LaTeX Warning: Reference `sec:results' on page 9 undefined on input line 253.
+
+
+Underfull \vbox (badness 1248) has occurred while \output is active [9]
+Underfull \vbox (badness 10000) has occurred while \output is active [10]
+
+LaTeX Warning: Reference `fig:dose-response' on page 1 undefined on input line 275.
+
+
+LaTeX Warning: Reference `tab:dose-response' on page 1 undefined on input line 275.
+
+
+LaTeX Warning: Reference `tab:stats' on page 1 undefined on input line 301.
+
+
+LaTeX Warning: Reference `sec:crossover' on page 1 undefined on input line 301.
+
+
+LaTeX Warning: Reference `fig:reduction' on page 1 undefined on input line 307.
+
+[11 <./figures/ece_dose_response.pdf>]
+
+LaTeX Warning: Reference `sec:stat-protocol' on page 12 undefined on input line 315.
+
+
+LaTeX Warning: Reference `tab:stats' on page 1 undefined on input line 315.
+
+
+LaTeX Warning: Reference `sec:stat-protocol' on page 12 undefined on input line 315.
+
+
+LaTeX Warning: Reference `tab:stats' on page 1 undefined on input line 326.
+
+
+LaTeX Warning: Reference `sec:stat-protocol' on page 12 undefined on input line 342.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [12 <./figures/dose_response_curves.pdf>] [13 <./figures/reduction_heatmap.pdf>]
+
+LaTeX Warning: Reference `tab:qwen' on page 1 undefined on input line 349.
+
+
+LaTeX Warning: Reference `sec:stat-protocol' on page 14 undefined on input line 365.
+
+
+LaTeX Warning: Reference `sec:stat-protocol' on page 14 undefined on input line 365.
+
+
+LaTeX Warning: Reference `tab:authority' on page 1 undefined on input line 373.
+
+
+LaTeX Warning: Reference `sec:stat-protocol' on page 14 undefined on input line 389.
+
+[14]
+
+LaTeX Warning: Reference `tab:decomposition' on page 1 undefined on input line 398.
+
+
+LaTeX Warning: Reference `sec:stat-protocol' on page 15 undefined on input line 415.
+
+
+LaTeX Warning: Reference `tab:decomposition' on page 15 undefined on input line 418.
+
+[15]
+Underfull \vbox (badness 10000) has occurred while \output is active [16]
+
+Package natbib Warning: Citation `bertalanic2026cost' on page 17 undefined on input line 458.
+
+
+Package natbib Warning: Citation `huang2026cagecal' on page 17 undefined on input line 458.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+[]\T1/lmr/m/n/10 (+20) DeepSeek V4-
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+[]\T1/lmr/m/n/10 (+20) length (low
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+\T1/lmr/m/n/10 (+20) con-tam-i-na-
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
+[]$\OT1/lmr/m/n/10 (+20) ^^@ =
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--474
+[]\T1/lmr/m/n/10 (+20) DeepSeek V4-
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--474
+[]\T1/lmr/m/n/10 (+20) length (high
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--474
+\T1/lmr/m/n/10 (+20) con-tam-i-na-
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--475
+[]$\OT1/lmr/m/n/10 (+20) ^^@ =
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--475
+[]\T1/lmr/m/n/10 (+20) Lowest $\OT1/lmr/m/n/10 (+20) ^^@$ \T1/lmr/m/n/10 (+20) in the
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--475
+\T1/lmr/m/n/10 (+20) length arm (0.530
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--475
+\T1/lmr/m/n/10 (+20) vs. 0.627/0.752);
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+[]\T1/lmr/m/n/10 (+20) Unknown
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+[]\T1/lmr/m/n/10 (+20) Run the three-
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\T1/lmr/m/n/10 (+20) architecture com-
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\T1/lmr/m/n/10 (+20) par-i-son pro-to-col
+
+LaTeX Warning: Reference `sec:stat-protocol' on page 17 undefined on input line 481.
+
+
+LaTeX Warning: Reference `sec:intro' on page 17 undefined on input line 496.
+
+[17] [18] [19]
+Underfull \vbox (badness 10000) has occurred while \output is active [20]
+
+LaTeX Warning: Reference `tab:authority' on page 21 undefined on input line 535.
+
+[21]
+
+Package natbib Warning: Citation `bay2026sampling' on page 22 undefined on input line 554.
+
+No file main.bbl.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Gamma' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 560.
+
+
+Underfull \hbox (badness 4981) in paragraph at lines 562--563
+\T1/lmr/m/n/10.95 (+20) All archived per-cell means re-ported in this pa-per are re-pro-duced here from the
+
+Underfull \hbox (badness 6348) in paragraph at lines 562--563
+\T1/lmr/m/n/10.95 (+20) re-tained per-seed records and re-com-puted cell means. The gen-er-at-ing script is
+
+LaTeX Warning: Reference `tab:dose-response' on page 22 undefined on input line 566.
+
+
+LaTeX Warning: Reference `tab:dose-response' on page 22 undefined on input line 566.
+
+
+LaTeX Warning: Reference `tab:qwen' on page 22 undefined on input line 588.
+
+
+LaTeX Warning: Reference `tab:authority' on page 22 undefined on input line 588.
+
+
+LaTeX Warning: Reference `tab:qwen' on page 22 undefined on input line 588.
+
+
+LaTeX Warning: Reference `tab:authority' on page 22 undefined on input line 588.
+
+
+LaTeX Warning: Reference `sec:limitations' on page 22 undefined on input line 613.
+
+
+LaTeX Warning: Reference `sec:limitations' on page 22 undefined on input line 613.
+
+
+Package natbib Warning: There were undefined citations.
+
+[22] [23] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)</home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (23 pages, 434531 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'main.pdf'
+  ===Source file 'main.bbl' for 'pdflatex'
+Create bibtex main
+Latexmk: Found bibliography file(s):
+  ./refs.bib
+Latexmk: applying rule 'bibtex main'...
+Rule 'bibtex main':  Reasons for rerun
+Category 'other':
+  Rerun of 'bibtex main' forced or previously required:
+    Reason or flag: 'Initial set up of rule'
+
+------------
+Run number 1 of rule 'bibtex main'
+------------
+------------
+Running 'bibtex  "main.aux"'
+------------
+This is BibTeX, Version 0.99e (TeX Live 2026)
+The top-level auxiliary file: main.aux
+The style file: tmlr.bst
+Database file #1: refs.bib
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  main.aux
+  main.bbl
+  main.out
+
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/size11.clo)) (./tmlr.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/eso-pic/eso-pic.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty)) (./math_commands.tex (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/tools/bm.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/url/url.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/cleveref/cleveref.sty)
+==> First Aid for cleveref.sty applied!
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/algorithms/algorithm.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/float/float.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/ifthen.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/algorithms/algorithmic.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def) (./main.aux) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (./main.out) (./main.out) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd) [1{/home/liuzewen/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+
+Package natbib Warning: Citation `brown2020language' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `touvron2023llama' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `zhao2023survey' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `du2024improving' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `li2023camel' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `liang2023multiagent' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `park2023generative' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `kaplan2020scaling' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `wei2022emergent' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `wei2022chain' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `ouyang2022training' on page 2 undefined on input line 65.
+
+
+Package natbib Warning: Citation `christiano2017deep' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `ouyang2022training' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `lee2023rlaif' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `bai2022constitutional' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `bertalanic2026cost' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `huang2026cagecal' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `ma2026implicitbias' on page 2 undefined on input line 69.
+
+
+Package natbib Warning: Citation `ma2026implicitbias' on page 2 undefined on input line 69.
+
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd)
+Underfull \vbox (badness 1509) has occurred while \output is active [2{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+
+Package natbib Warning: Citation `park2023generative' on page 3 undefined on input line 97.
+
+
+Package natbib Warning: Citation `park2023generative' on page 3 undefined on input line 97.
+
+
+Package natbib Warning: Citation `packer2023memgpt' on page 3 undefined on input line 97.
+
+
+Package natbib Warning: Citation `lewis2020rag' on page 3 undefined on input line 99.
+
+
+Package natbib Warning: Citation `izacard2022fusion' on page 3 undefined on input line 99.
+
+
+Package natbib Warning: Citation `izacard2022fusion' on page 3 undefined on input line 99.
+
+
+Package natbib Warning: Citation `asai2023selfrag' on page 3 undefined on input line 99.
+
+
+Package natbib Warning: Citation `jiang2023active' on page 3 undefined on input line 99.
+
+
+Package natbib Warning: Citation `cheng2026agenticsts' on page 3 undefined on input line 101.
+
+[3]
+
+Package natbib Warning: Citation `park2023generative' on page 4 undefined on input line 105.
+
+
+Package natbib Warning: Citation `guo2017calibration' on page 4 undefined on input line 105.
+
+
+Package natbib Warning: Citation `kadavath2022language' on page 4 undefined on input line 105.
+
+
+Package natbib Warning: Citation `liang2023multiagent' on page 4 undefined on input line 105.
+
+
+Package natbib Warning: Citation `bertalanic2026cost' on page 4 undefined on input line 107.
+
+
+Package natbib Warning: Citation `huang2026cagecal' on page 4 undefined on input line 107.
+
+
+Package natbib Warning: Citation `memorycontagion2026' on page 4 undefined on input line 109.
+
+
+Package natbib Warning: Citation `gao2024retrieval' on page 4 undefined on input line 113.
+
+
+Package natbib Warning: Citation `gehman2020realtoxicityprompts' on page 4 undefined on input line 113.
+
+
+Package natbib Warning: Citation `schick2021debiasing' on page 4 undefined on input line 119.
+
+
+Package natbib Warning: Citation `guo2017calibration' on page 4 undefined on input line 119.
+
+
+Package natbib Warning: Citation `kadavath2022language' on page 4 undefined on input line 119.
+
+
+Package natbib Warning: Citation `lin2022teach' on page 4 undefined on input line 119.
+
+[4]
+
+Package natbib Warning: Citation `hao2026tooluse' on page 5 undefined on input line 122.
+
+
+Package natbib Warning: Citation `liang2026mirage' on page 5 undefined on input line 122.
+
+
+Package natbib Warning: Citation `bay2026sampling' on page 5 undefined on input line 122.
+
+
+Package natbib Warning: Citation `liu2023lost' on page 5 undefined on input line 126.
+
+
+Package natbib Warning: Citation `wu2024memochat' on page 5 undefined on input line 126.
+
+[5] [6]
+
+Package natbib Warning: Citation `memorycontagion2026' on page 7 undefined on input line 203.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [7{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [8]
+Underfull \vbox (badness 1248) has occurred while \output is active [9]
+Underfull \vbox (badness 10000) has occurred while \output is active [10] [11 <./figures/ece_dose_response.pdf>]
+Underfull \vbox (badness 1286) has occurred while \output is active [12 <./figures/dose_response_curves.pdf>] [13 <./figures/reduction_heatmap.pdf>] [14] [15]
+Underfull \vbox (badness 10000) has occurred while \output is active [16]
+
+Package natbib Warning: Citation `bertalanic2026cost' on page 17 undefined on input line 458.
+
+
+Package natbib Warning: Citation `huang2026cagecal' on page 17 undefined on input line 458.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+[]\T1/lmr/m/n/10 (+20) DeepSeek V4-
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+[]\T1/lmr/m/n/10 (+20) length (low
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+\T1/lmr/m/n/10 (+20) con-tam-i-na-
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
+[]$\OT1/lmr/m/n/10 (+20) ^^@ =
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--474
+[]\T1/lmr/m/n/10 (+20) DeepSeek V4-
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--474
+[]\T1/lmr/m/n/10 (+20) length (high
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--474
+\T1/lmr/m/n/10 (+20) con-tam-i-na-
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--475
+[]$\OT1/lmr/m/n/10 (+20) ^^@ =
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--475
+[]\T1/lmr/m/n/10 (+20) Lowest $\OT1/lmr/m/n/10 (+20) ^^@$ \T1/lmr/m/n/10 (+20) in the
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--475
+\T1/lmr/m/n/10 (+20) length arm (0.530
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--475
+\T1/lmr/m/n/10 (+20) vs. 0.627/0.752);
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+[]\T1/lmr/m/n/10 (+20) Unknown
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+[]\T1/lmr/m/n/10 (+20) Run the three-
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\T1/lmr/m/n/10 (+20) architecture com-
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\T1/lmr/m/n/10 (+20) par-i-son pro-to-col
+[17] [18] [19]
+Underfull \vbox (badness 10000) has occurred while \output is active [20] [21]
+
+Package natbib Warning: Citation `bay2026sampling' on page 22 undefined on input line 554.
+
+(./main.bbl [22] [23])
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Gamma' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 560.
+
+
+Underfull \hbox (badness 4981) in paragraph at lines 562--563
+\T1/lmr/m/n/10.95 (+20) All archived per-cell means re-ported in this pa-per are re-pro-duced here from the
+
+Underfull \hbox (badness 6348) in paragraph at lines 562--563
+\T1/lmr/m/n/10.95 (+20) re-tained per-seed records and re-com-puted cell means. The gen-er-at-ing script is
+
+Package natbib Warning: There were undefined citations.
+
+[24] [25] [26] (./main.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)</home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (26 pages, 453413 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'main.pdf'
+  ===Source file 'main.bbl' for 'pdflatex'
+Latexmk: Found bibliography file(s):
+  ./refs.bib
+Latexmk: applying rule 'bibtex main'...
+Rule 'bibtex main':  Reasons for rerun
+Changed files or newly in use/created:
+  main.aux
+
+------------
+Run number 2 of rule 'bibtex main'
+------------
+------------
+Running 'bibtex  "main.aux"'
+------------
+This is BibTeX, Version 0.99e (TeX Live 2026)
+The top-level auxiliary file: main.aux
+The style file: tmlr.bst
+Database file #1: refs.bib
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  main.aux
+  main.out
+
+------------
+Run number 3 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/size11.clo)) (./tmlr.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/eso-pic/eso-pic.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty)) (./math_commands.tex (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/tools/bm.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/url/url.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/cleveref/cleveref.sty)
+==> First Aid for cleveref.sty applied!
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/algorithms/algorithm.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/float/float.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/ifthen.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/algorithms/algorithmic.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def) (./main.aux) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (./main.out) (./main.out) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd) [1{/home/liuzewen/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd)
+Underfull \vbox (badness 6708) has occurred while \output is active [2] [3{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+Underfull \vbox (badness 1248) has occurred while \output is active [4] [5] [6]
+Underfull \vbox (badness 10000) has occurred while \output is active [7{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [8]
+Underfull \vbox (badness 10000) has occurred while \output is active [9]
+Underfull \vbox (badness 10000) has occurred while \output is active [10] [11 <./figures/ece_dose_response.pdf>]
+Underfull \vbox (badness 1286) has occurred while \output is active [12 <./figures/dose_response_curves.pdf>] [13 <./figures/reduction_heatmap.pdf>] [14] [15]
+Underfull \vbox (badness 10000) has occurred while \output is active [16]
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+[]\T1/lmr/m/n/10 (+20) DeepSeek V4-
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+[]\T1/lmr/m/n/10 (+20) length (low
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+\T1/lmr/m/n/10 (+20) con-tam-i-na-
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
+[]$\OT1/lmr/m/n/10 (+20) ^^@ =
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--474
+[]\T1/lmr/m/n/10 (+20) DeepSeek V4-
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--474
+[]\T1/lmr/m/n/10 (+20) length (high
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--474
+\T1/lmr/m/n/10 (+20) con-tam-i-na-
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--475
+[]$\OT1/lmr/m/n/10 (+20) ^^@ =
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--475
+[]\T1/lmr/m/n/10 (+20) Lowest $\OT1/lmr/m/n/10 (+20) ^^@$ \T1/lmr/m/n/10 (+20) in the
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--475
+\T1/lmr/m/n/10 (+20) length arm (0.530
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--475
+\T1/lmr/m/n/10 (+20) vs. 0.627/0.752);
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+[]\T1/lmr/m/n/10 (+20) Unknown
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+[]\T1/lmr/m/n/10 (+20) Run the three-
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\T1/lmr/m/n/10 (+20) architecture com-
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\T1/lmr/m/n/10 (+20) par-i-son pro-to-col
+[17] [18] [19]
+Underfull \vbox (badness 10000) has occurred while \output is active [20] [21] (./main.bbl [22] [23])
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Gamma' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 560.
+
+
+Underfull \hbox (badness 4981) in paragraph at lines 562--563
+\T1/lmr/m/n/10.95 (+20) All archived per-cell means re-ported in this pa-per are re-pro-duced here from the
+
+Underfull \hbox (badness 6348) in paragraph at lines 562--563
+\T1/lmr/m/n/10.95 (+20) re-tained per-seed records and re-com-puted cell means. The gen-er-at-ing script is
+[24] [25] [26] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)</home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (26 pages, 458050 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: References changed.
+Latexmk: Log file says output to 'main.pdf'
+  ===Source file 'main.bbl' for 'pdflatex'
+Latexmk: Found bibliography file(s):
+  ./refs.bib
+Latexmk: applying rule 'bibtex main'...
+Rule 'bibtex main':  Reasons for rerun
+Changed files or newly in use/created:
+  main.aux
+
+------------
+Run number 3 of rule 'bibtex main'
+------------
+------------
+Running 'bibtex  "main.aux"'
+------------
+This is BibTeX, Version 0.99e (TeX Live 2026)
+The top-level auxiliary file: main.aux
+The style file: tmlr.bst
+Database file #1: refs.bib
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  main.aux
+
+------------
+Run number 4 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/size11.clo)) (./tmlr.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/eso-pic/eso-pic.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty)) (./math_commands.tex (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/tools/bm.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/url/url.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/cleveref/cleveref.sty)
+==> First Aid for cleveref.sty applied!
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/algorithms/algorithm.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/float/float.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/ifthen.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/algorithms/algorithmic.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def) (./main.aux) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (./main.out) (./main.out) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd) [1{/home/liuzewen/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd)
+Underfull \vbox (badness 6708) has occurred while \output is active [2] [3{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+Underfull \vbox (badness 1248) has occurred while \output is active [4] [5] [6]
+Underfull \vbox (badness 10000) has occurred while \output is active [7{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [8]
+Underfull \vbox (badness 10000) has occurred while \output is active [9]
+Underfull \vbox (badness 10000) has occurred while \output is active [10] [11 <./figures/ece_dose_response.pdf>]
+Underfull \vbox (badness 1286) has occurred while \output is active [12 <./figures/dose_response_curves.pdf>] [13 <./figures/reduction_heatmap.pdf>] [14] [15]
+Underfull \vbox (badness 10000) has occurred while \output is active [16]
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+[]\T1/lmr/m/n/10 (+20) DeepSeek V4-
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+[]\T1/lmr/m/n/10 (+20) length (low
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+\T1/lmr/m/n/10 (+20) con-tam-i-na-
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
+[]$\OT1/lmr/m/n/10 (+20) ^^@ =
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--474
+[]\T1/lmr/m/n/10 (+20) DeepSeek V4-
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--474
+[]\T1/lmr/m/n/10 (+20) length (high
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--474
+\T1/lmr/m/n/10 (+20) con-tam-i-na-
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--475
+[]$\OT1/lmr/m/n/10 (+20) ^^@ =
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--475
+[]\T1/lmr/m/n/10 (+20) Lowest $\OT1/lmr/m/n/10 (+20) ^^@$ \T1/lmr/m/n/10 (+20) in the
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--475
+\T1/lmr/m/n/10 (+20) length arm (0.530
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--475
+\T1/lmr/m/n/10 (+20) vs. 0.627/0.752);
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+[]\T1/lmr/m/n/10 (+20) Unknown
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+[]\T1/lmr/m/n/10 (+20) Run the three-
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\T1/lmr/m/n/10 (+20) architecture com-
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\T1/lmr/m/n/10 (+20) par-i-son pro-to-col
+[17] [18] [19]
+Underfull \vbox (badness 10000) has occurred while \output is active [20] [21] (./main.bbl [22] [23])
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Gamma' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 560.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 560.
+
+
+Underfull \hbox (badness 4981) in paragraph at lines 562--563
+\T1/lmr/m/n/10.95 (+20) All archived per-cell means re-ported in this pa-per are re-pro-duced here from the
+
+Underfull \hbox (badness 6348) in paragraph at lines 562--563
+\T1/lmr/m/n/10.95 (+20) re-tained per-seed records and re-com-puted cell means. The gen-er-at-ing script is
+[24] [25] [26] (./main.aux) )
+(see the transcript file for additional information)</home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (26 pages, 458050 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: Log file says output to 'main.pdf'
+  ===Source file 'main.bbl' for 'pdflatex'
+Latexmk: Found bibliography file(s):
+  ./refs.bib
+Latexmk: All targets (main.pdf) are up-to-date
+

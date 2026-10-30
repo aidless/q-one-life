@@ -1,0 +1,102 @@
+{
+  "config": {
+    "n_seeds": 3,
+    "rounds": 10,
+    "executor": "qwen2.5:3b-instruct-q4_K_M",
+    "evaluator": "qwen2.5:3b-instruct-q4_K_M",
+    "k_tee": 3
+  },
+  "results": {
+    "0": {
+      "standard": {
+        "gamma_TV": 0.4656,
+        "gamma_VT": 0.6572,
+        "H_T": 0.8573,
+        "H_V": 0.8792
+      },
+      "cg_alone": {
+        "gamma_TV": 0.3795,
+        "gamma_VT": 0.3671,
+        "H_T": 0.8842,
+        "H_V": 0.9066
+      },
+      "cg_tee": {
+        "gamma_TV": 0.3664,
+        "gamma_VT": 0.3224,
+        "H_T": 0.9103,
+        "H_V": 0.8922
+      }
+    },
+    "1": {
+      "standard": {
+        "gamma_TV": 0.7295,
+        "gamma_VT": 0.7012,
+        "H_T": 0.9582,
+        "H_V": 0.9063
+      },
+      "cg_alone": {
+        "gamma_TV": 0.5106,
+        "gamma_VT": 0.5337,
+        "H_T": 0.9342,
+        "H_V": 0.9293
+      },
+      "cg_tee": {
+        "gamma_TV": 0.4327,
+        "gamma_VT": 0.2592,
+        "H_T": 0.8895,
+        "H_V": 0.907
+      }
+    },
+    "2": {
+      "standard": {
+        "gamma_TV": 0.5744,
+        "gamma_VT": 0.4464,
+        "H_T": 0.9367,
+        "H_V": 0.9506
+      },
+      "cg_alone": {
+        "gamma_TV": 0.6105,
+        "gamma_VT": 0.5039,
+        "H_T": 0.9257,
+        "H_V": 0.938
+      },
+      "cg_tee": {
+        "gamma_TV": 0.4922,
+        "gamma_VT": 0.4704,
+        "H_T": 0.8938,
+        "H_V": 0.9164
+      }
+    }
+  },
+  "aggregate": {
+    "standard": {
+      "gamma_TV_mean": 0.5898,
+      "gamma_TV_std": 0.1326,
+      "gamma_VT_mean": 0.6016,
+      "H_T_mean": 0.9174
+    },
+    "cg_alone": {
+      "gamma_TV_mean": 0.5002,
+      "gamma_TV_std": 0.1159,
+      "gamma_VT_mean": 0.4682,
+      "H_T_mean": 0.9147
+    },
+    "cg_tee": {
+      "gamma_TV_mean": 0.4304,
+      "gamma_TV_std": 0.0629,
+      "gamma_VT_mean": 0.3507,
+      "H_T_mean": 0.8979
+    }
+  },
+  "parse_failures": {
+    "confidence_parse_fail_rate": 0.0,
+    "binary_parse_fail_rate": 0.0083,
+    "confidence_calls": 480,
+    "binary_calls": 120
+  },
+  "degenerate_check": {
+    "cg_alone_all_zero_gamma": false,
+    "cg_tee_all_zero_gamma": false,
+    "cg_alone_all_uniform_H": false
+  }
+}

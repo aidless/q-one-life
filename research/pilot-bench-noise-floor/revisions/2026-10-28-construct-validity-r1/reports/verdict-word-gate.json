@@ -1,0 +1,695 @@
+{
+  "schema": "verdict-word-gate/1",
+  "rows": [
+    {
+      "check": "代码词表 == 注册表 code_expect",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[span] span-algorithm 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[span] span-alphabet 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[span] span-ec63-limits 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[span] span-poscontrol-null 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[span] span-ajb 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] abstract-m25-counts 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] abstract-m25-counts UNREADABLE 的载体计数 == “three”(3)",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] abstract-m25-counts “three” 确在窗内",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] abstract-m25-counts UNDECIDABLE_DOMAIN_MISMATCH 的载体计数 == “one”(1)",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] abstract-m25-counts “one” 确在窗内",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] abstract-m25-counts 载体 token UNREADABLE=3 窗里有写法",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] abstract-m25-counts 载体 token UNDECIDABLE_DOMAIN_MISMATCH=1 窗里有写法",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] tab2-row-decision 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] tab2-row-decision 窗内 UNDECIDABLE_DOMAIN_MISMATCH 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] tab2-row-decision 窗内 UNDECIDABLE_DOMAIN_MISMATCH 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] tab2-row-question 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] tab2-row-question 窗内 UNDECIDABLE_DOMAIN_MISMATCH 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] tab2-row-question 窗内 UNDECIDABLE_DOMAIN_MISMATCH 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] tab2-row-m25 UNREADABLE 的载体计数 == “3”(3)",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] tab2-row-m25 “3” 确在窗内",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] tab2-row-m25 UNDECIDABLE_DOMAIN_MISMATCH 的载体计数 == “1”(1)",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] tab2-row-m25 “1” 确在窗内",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] tab2-row-m25 载体 token UNREADABLE=3 窗里有写法",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[coun] tab2-row-m25 载体 token UNDECIDABLE_DOMAIN_MISMATCH=1 窗里有写法",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 载体里 factuality 的 verdict == UNREADABLE",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 任务名 factuality 确在窗内",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 UNREADABLE 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 载体里 coherence 的 verdict == UNREADABLE",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 任务名 coherence 确在窗内",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 UNREADABLE 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 载体里 relevance 的 verdict == UNREADABLE",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 任务名 relevance 确在窗内",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 UNREADABLE 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 载体里 preference 的 verdict == UNDECIDABLE_DOMAIN_MISMATCH",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 任务名 preference 确在窗内",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 UNDECIDABLE_DOMAIN_MISMATCH 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] tab2-caption-m25 窗内没有 map 之外的判决词",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-invariant-degenerate 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-invariant-mismatch 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-rule-failure-modes 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-refusal-emission 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-scale-words 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-checklist 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defi] def-counterfactual-marginal 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-counterfactual-marginal 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defi] def-zero-margin 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-zero-margin 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defi] def-positive-control 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-positive-control 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-unfalsifiable 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-readable-arm-limits 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defi] def-m25-second-place 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-m25-second-place 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defi] def-readable-arm-conclusion 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-readable-arm-conclusion 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-human-released-readable 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-human-released-readable 窗内 ABOVE_MEDIAN_ACTOR 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-human-released-readable 窗内 ABOVE_MEDIAN_ACTOR 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-external-chain 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-external-chain 窗内 UNDECIDABLE_DOMAIN_MISMATCH 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-external-chain 窗内 UNDECIDABLE_DOMAIN_MISMATCH 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-degenerate-chain 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-degenerate-chain 窗内 UNDECIDABLE_FLOOR_DEGENERATE 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-degenerate-chain 窗内 UNDECIDABLE_FLOOR_DEGENERATE 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-question-unmeas 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-question-unmeas 窗内 UNDECIDABLE_DOMAIN_MISMATCH 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-question-unmeas 窗内 UNDECIDABLE_DOMAIN_MISMATCH 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-question-forced 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-question-forced 窗内 UNDECIDABLE_DOMAIN_MISMATCH 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-question-forced 窗内 UNDECIDABLE_DOMAIN_MISMATCH 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-no-better-than 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-no-better-than 窗内 UNREADABLE 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-no-better-than 窗内 UNREADABLE 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[with] wd-decision-readable-70 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[withd] wd-decision-readable-70 窗内词都在代码词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[with] wd-decision-delta0 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[withd] wd-decision-delta0 窗内词都在代码词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[with] wd-question-unreadable 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[withd] wd-question-unreadable 窗内词都在代码词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[with] wd-m25-marginals-in-text 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[with] wd-m25-marginals-in-text 载体 status=withdrawn",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[withd] wd-m25-marginals-in-text 窗内 MARGINAL == 撤回载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[with] wd-appendix-decision-item 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[withd] wd-appendix-decision-item 窗内词都在代码词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[with] wd-appendix-decision-delta 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[withd] wd-appendix-decision-delta 窗内词都在代码词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[with] wd-appendix-question 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[withd] wd-appendix-question 窗内词都在代码词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[per_] wd-appendix-m25-per-task 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task 载体里 factuality 的 verdict == UNREADABLE",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task 任务名 factuality 确在窗内",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task UNREADABLE 在 withdrawn 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task 载体里 coherence 的 verdict == MARGINAL",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task 任务名 coherence 确在窗内",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task MARGINAL 在 withdrawn 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task 载体里 relevance 的 verdict == MARGINAL",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task 任务名 relevance 确在窗内",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task MARGINAL 在 withdrawn 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task 载体里 preference 的 verdict == UNDECIDABLE_DOMAIN_MISMATCH",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task 任务名 preference 确在窗内",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task UNDECIDABLE_DOMAIN_MISMATCH 在 withdrawn 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[pert] wd-appendix-m25-per-task 窗内没有 map 之外的判决词",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[with] wd-appendix-equality-marginal 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[withd] wd-appendix-equality-marginal 窗内词都在代码词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defi] def-narrow-interval-below-floor 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-narrow-interval-below-floor 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] tab2-row-panel 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] tab2-row-panel 窗内 UNREADABLE 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] tab2-row-panel 窗内 UNREADABLE 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defi] tab2-caption-panel 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] tab2-caption-panel 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-panel-related 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-panel-related 窗内 UNREADABLE 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-panel-related 窗内 UNREADABLE 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-panel-reading 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-panel-reading 窗内 UNREADABLE 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] cur-panel-reading 窗内 UNREADABLE 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defi] def-panel-overlap-limit 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-panel-overlap-limit 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defi] def-readable-arm-panel-limit 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-readable-arm-panel-limit 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-prop4-unreachable-tiers 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defi] def-readable-words-external 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] def-readable-words-external 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defi] gap-readable-words-no-interval 自带撤回/定义标记",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[defin] gap-readable-words-no-interval 词集 == 声明",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] poscontrol-above-median-1 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] poscontrol-above-median-1 窗内 ABOVE_MEDIAN_ACTOR 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] poscontrol-above-median-1 窗内 ABOVE_MEDIAN_ACTOR 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] poscontrol-above-median-2 载体 status=live",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] poscontrol-above-median-2 窗内 ABOVE_MEDIAN_ACTOR 是载体现读值",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "[curr] poscontrol-above-median-2 窗内 ABOVE_MEDIAN_ACTOR 在 live 词表里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "每个机器词形的判决词都落在注册窗里",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "current 窗内没有 live 词表之外的判决词",
+      "state": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "无载体可绑的撤回窗条数 == 注册表 blind_expected",
+      "state": "PASS",
+      "detail": ""
+    }
+  ],
+  "withdrawn_without_carrier": [
+    "wd-decision-readable-70",
+    "wd-decision-delta0",
+    "wd-question-unreadable",
+    "wd-appendix-decision-item",
+    "wd-appendix-decision-delta",
+    "wd-appendix-question",
+    "wd-appendix-equality-marginal"
+  ],
+  "verdict": "PASS"
+}

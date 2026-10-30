@@ -1,0 +1,12 @@
+{
+  "schema": "q-one-source-record-v1",
+  "generated_at": "2026-10-27T14:18:09.483866Z",
+  "family_id": "qf-auditing-score-exposure-and-presentation-7c01af0b01",
+  "portfolio_project_id": "qp-v3-2fe03f99963c",
+  "source_path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/paper/main.tex",
+  "source_sha256": "9748c64cbd338dcc495d6ce4119365ccf8540b5369fb912c74df662f999be02a",
+  "source_bytes": 24016,
+  "source_modified_at": "2026-10-27T13:01:12.156009Z",
+  "title": "Auditing Score Exposure and Presentation Order\\\\ in LLM Harness Selection: A Matched 30-Task Case Study",
+  "project_type": "paper"
+}

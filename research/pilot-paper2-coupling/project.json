@@ -1,0 +1,535 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-a-conditional-coupling-diversity-precisi-7336590fb7",
+  "title": "A Conditional Coupling--Diversity--Precision Bound for TTRL-Based LLM Evaluation",
+  "status": "review_pending",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling",
+  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/paper/main.tex",
+  "manuscript": {
+    "path": "source/main.tex",
+    "sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "de45b6aa490438ee59e0c3a31bd7dd6f5f736b372b157a94ed54dc1b2d81077d",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Canonical source identity plus the current overlay revision."
+    },
+    {
+      "path": "evidence/variant-reconciliation.json",
+      "sha256": "62556f6ba575fa4143f736e7e1557cd11bdada0089b545792af87063422ba9aa",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Canonical, duplicate, old, and drift source versions reconciled."
+    },
+    {
+      "path": "evidence/upstream/paper/main.tex",
+      "sha256": "379e1632302e979ded0c0462eeba32a07fa82653796ca72d4f9f55e46f8d5cec",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Byte-identical canonical upstream retained before overlay edits."
+    },
+    {
+      "path": "evidence/upstream/source/CLAIM_LEDGER.md",
+      "sha256": "1bee799e68f47403407db1b586a2d17bcc5b0c4fe81b8a56144a656140da8208",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Native P2-C1..P2-C14 ledger retained for semantic comparison."
+    },
+    {
+      "path": "evidence/upstream/source/MANIFEST_ingest.json",
+      "sha256": "bfe23361a0f3542558b88dff3be4b98c5529b72fd05da36785fee647847f99fb",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Ingest manifest for the frozen source project."
+    },
+    {
+      "path": "evidence/CARRIER_RECEIPTS.json",
+      "sha256": "6f654b3c9945cbe1b67931933317814729234276d655ce76decbc6b31b48b6f3",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Frozen numerical carrier receipts produced before the overlay."
+    },
+    {
+      "path": "evidence/carrier-audit.json",
+      "sha256": "72fb588eb4ec043875cc789151d2ece4b36cdf26537443c7b6bc2358a8ad764c",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Independent re-evaluation of every carrier receipt."
+    },
+    {
+      "path": "evidence/native-audit.json",
+      "sha256": "86b29709b27e65023bd44f0689f4843061def762447370508e8cb98cadc0d67c",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Evidence-boundary, citation, held-out, proof-audit and template checks."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/scope_P2C11.md",
+      "sha256": "ec734b998a88228494d9985e570ba563968d78966c98236af6d2ad7b1671eb1e",
+      "state": "candidate",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Native scope note containing the unresolved p=0.12 drift statement."
+    },
+    {
+      "path": "evidence/upstream/source/review_real/summary.json",
+      "sha256": "394caf926f4da02a6fd48e3ab389e1d4c519988687a5bcd5dde14d923d838bc1",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Frozen role-review summary with five Major findings."
+    },
+    {
+      "path": "evidence/upstream/source/reviews/main.multi/meta-review.md",
+      "sha256": "985110f85122eba8f21ff31277d466adad1d45d70e1b7b1348d00ef4a93721e3",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Multi-reviewer meta-review recommending Major Revisions."
+    },
+    {
+      "path": "reports/claim-ledger-verification.md",
+      "sha256": "6e534fb39840719e5d1b7d8191bcf8f7674753cdb7ecdcd0ffc69eefe894c68d",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Six-column overlay claim-ledger verification report."
+    },
+    {
+      "path": "reports/carrier-audit.md",
+      "sha256": "a1d35a624a6432a593328957598fa40579f336647116aed184070c2d085ef998",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Human-readable carrier receipt audit."
+    },
+    {
+      "path": "reports/source-revision.json",
+      "sha256": "98d8523970867cbc470d8374696bcd5d592c1faf0cb46e3ff28b7acdf9adb9ce",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Overlay-only revision binding for template and metadata hygiene."
+    },
+    {
+      "path": "reports/source-revision.diff",
+      "sha256": "524c673dae41f0ec127daa7b1fe07f49e16f25387fe09cf911342eb4ae67086b",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Exact upstream-to-overlay source diff."
+    },
+    {
+      "path": "reports/cleanroom/receipt.json",
+      "sha256": "5dc9c99625b25e5834e5c163297f9da5f4998e662befd3ea496979714e407176",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Two-run isolated compile receipt."
+    },
+    {
+      "path": "reports/package-audit.json",
+      "sha256": "4e26294c7d2aef7e899918a947d7b04eeb8f19759c85d82e9ceb435940072da7",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Mechanical three-file arXiv source-tree audit."
+    },
+    {
+      "path": "reports/package/package-receipt.json",
+      "sha256": "08af4fcc9473b3150c5d0c0a93d8174d13234ee2c390c43c778db78746ec3b58",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Deterministic candidate archive and extraction compile receipt."
+    },
+    {
+      "path": "reports/package/paper2-arxiv-candidate.tar.gz",
+      "sha256": "561f551d8aa85c4a4fc923110d4a5443d440fcedb545e3164847461924e2d4c5",
+      "state": "verified",
+      "origin": "Paper 2 Research Factory overlay",
+      "description": "Internal candidate archive; not upload-authorized."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Theory and experiment inventory",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Favorable-region scope",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "location": "Tight-bound validation scope",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "location": "Pinsker regime scope",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "location": "Logistic gamma estimand map",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "location": "Conditional product-bound proof",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "T5, T6 and T8 consistency boundary",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "T7 polytope reconciliation",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C09",
+      "location": "Sample-size and estimator comparability",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "Standard baselines scope",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "location": "GPT-4o drift evidence conflict",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "location": "Eleven condition rows and table-carrier traceability",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "location": "Reproducibility completeness boundary",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "location": "Independent review closure",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-audit.json"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "paper2-carrier-recomputation",
+      "state": "reproduced",
+      "receipt": "evidence/carrier-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper2-cleanroom-compile",
+      "state": "reproduced",
+      "receipt": "reports/cleanroom/receipt.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper2-candidate-archive",
+      "state": "reproduced",
+      "receipt": "reports/package/package-receipt.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper2-heldout-validation",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "paper2-independent-proof-audit",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "paper2-role-review-r6",
+      "kind": "method",
+      "state": "open",
+      "critical": 0,
+      "major": 5,
+      "receipt": "evidence/upstream/source/review_real/summary.json"
+    },
+    {
+      "review_id": "paper2-multi-reviewer-meta-review",
+      "kind": "statistics",
+      "state": "open",
+      "critical": 3,
+      "major": 5,
+      "receipt": "evidence/upstream/source/reviews/main.multi/meta-review.md"
+    }
+  ],
+  "package": {
+    "state": "compiled",
+    "files": [
+      {
+        "path": "source/main.tex",
+        "sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d"
+      },
+      {
+        "path": "source/refs.bib",
+        "sha256": "ec8031ca836fc60f1836350ea15478961769a221b8eb7627f991ae73c0546ad2"
+      },
+      {
+        "path": "source/tmlr.sty",
+        "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002"
+      },
+      {
+        "path": "reports/cleanroom/receipt.json",
+        "sha256": "5dc9c99625b25e5834e5c163297f9da5f4998e662befd3ea496979714e407176"
+      },
+      {
+        "path": "reports/cleanroom/main.pdf",
+        "sha256": "c1ba59060845f7c2f02668cc9cb9dc26c8804b99dd607432778b35cc66a4c403"
+      },
+      {
+        "path": "reports/package/package-receipt.json",
+        "sha256": "08af4fcc9473b3150c5d0c0a93d8174d13234ee2c390c43c778db78746ec3b58"
+      },
+      {
+        "path": "reports/package/paper2-arxiv-candidate.tar.gz",
+        "sha256": "561f551d8aa85c4a4fc923110d4a5443d440fcedb545e3164847461924e2d4c5"
+      }
+    ],
+    "blockers": [
+      "Independent proof audit of the conditional and product bounds is absent.",
+      "The held-out 30-40 condition validation is absent.",
+      "The native p=0.12 GPT-4o drift statement conflicts with p_bootstrap=1.0 in the frozen evidence.",
+      "The T7 satisfied-cell count differs between the native scope note and the frozen output.",
+      "The meta-review remains open with Major Revisions.",
+      "Final author, category, abstract, license and upload authorization remain user decisions."
+    ]
+  },
+  "gate_receipts": [
+    {
+      "gate_id": "paper2-carrier-recomputation",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/carrier-audit.json",
+      "receipt_sha256": "72fb588eb4ec043875cc789151d2ece4b36cdf26537443c7b6bc2358a8ad764c",
+      "source_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+      "summary": "All 176 frozen carrier receipts resolve and match their printed values."
+    },
+    {
+      "gate_id": "paper2-citation-resolution",
+      "scope": "citations",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "86b29709b27e65023bd44f0689f4843061def762447370508e8cb98cadc0d67c",
+      "source_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+      "summary": "All seven cite keys resolve to local bibitems."
+    },
+    {
+      "gate_id": "paper2-source-identity",
+      "scope": "reproducibility",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "de45b6aa490438ee59e0c3a31bd7dd6f5f736b372b157a94ed54dc1b2d81077d",
+      "source_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+      "summary": "The canonical and overlay source hashes are bound explicitly."
+    },
+    {
+      "gate_id": "paper2-cleanroom-compile",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/cleanroom/receipt.json",
+      "receipt_sha256": "5dc9c99625b25e5834e5c163297f9da5f4998e662befd3ea496979714e407176",
+      "source_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+      "summary": "Two isolated compiles produced byte-identical 14-page PDFs."
+    },
+    {
+      "gate_id": "paper2-package-audit",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/package-audit.json",
+      "receipt_sha256": "4e26294c7d2aef7e899918a947d7b04eeb8f19759c85d82e9ceb435940072da7",
+      "source_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+      "summary": "The three-file source tree passes the mechanical arXiv audit."
+    },
+    {
+      "gate_id": "paper2-candidate-archive",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/package/package-receipt.json",
+      "receipt_sha256": "08af4fcc9473b3150c5d0c0a93d8174d13234ee2c390c43c778db78746ec3b58",
+      "source_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+      "summary": "The archive rebuild is deterministic and extracts to a 14-page compile."
+    },
+    {
+      "gate_id": "paper2-proof-audit",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "86b29709b27e65023bd44f0689f4843061def762447370508e8cb98cadc0d67c",
+      "source_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+      "summary": "No independent proof audit receipt exists for the current source."
+    },
+    {
+      "gate_id": "paper2-heldout-validation",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "86b29709b27e65023bd44f0689f4843061def762447370508e8cb98cadc0d67c",
+      "source_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+      "summary": "No held-out condition dataset or validation receipt exists."
+    },
+    {
+      "gate_id": "paper2-scientific-review",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/upstream/source/reviews/main.multi/meta-review.md",
+      "receipt_sha256": "985110f85122eba8f21ff31277d466adad1d45d70e1b7b1348d00ef4a93721e3",
+      "source_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+      "summary": "The meta-review still recommends Major Revisions."
+    },
+    {
+      "gate_id": "paper2-metadata-license",
+      "scope": "other",
+      "state": "blocked",
+      "receipt": "reports/package/package-receipt.json",
+      "receipt_sha256": "08af4fcc9473b3150c5d0c0a93d8174d13234ee2c390c43c778db78746ec3b58",
+      "source_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+      "summary": "Final author, category, abstract, license and upload authorization remain unconfirmed."
+    }
+  ],
+  "measurements": [
+    {
+      "name": "carrier_receipts_passed",
+      "value": 176,
+      "unit": "checks",
+      "definition": "Frozen carrier fields and printed manuscript values passing re-evaluation.",
+      "source": "evidence/carrier-audit.json#summary.passed",
+      "state": "observed"
+    },
+    {
+      "name": "carrier_receipts_failed",
+      "value": 0,
+      "unit": "checks",
+      "definition": "Frozen carrier fields or printed values failing re-evaluation.",
+      "source": "evidence/carrier-audit.json#summary.failed",
+      "state": "observed"
+    },
+    {
+      "name": "cleanroom_pdf_pages",
+      "value": 14,
+      "unit": "pages",
+      "definition": "Pages in the deterministic clean-room PDF.",
+      "source": "reports/cleanroom/receipt.json#pdf.pages",
+      "state": "observed"
+    },
+    {
+      "name": "source_package_files",
+      "value": 3,
+      "unit": "files",
+      "definition": "Files admitted to the internal arXiv candidate archive.",
+      "source": "reports/package/package-receipt.json#entries[]",
+      "state": "observed"
+    },
+    {
+      "name": "candidate_archive_bytes",
+      "value": 24110,
+      "unit": "bytes",
+      "definition": "Size of the deterministic internal candidate archive.",
+      "source": "reports/package/package-receipt.json#archive.bytes",
+      "state": "observed"
+    },
+    {
+      "name": "bound_decision_rows",
+      "value": 11,
+      "unit": "rows",
+      "definition": "Condition rows in the frozen sample-size decision case.",
+      "source": "evidence/native-audit.json#counts.bound_decision_rows",
+      "state": "observed"
+    },
+    {
+      "name": "heldout_data_files",
+      "value": 0,
+      "unit": "files",
+      "definition": "Held-out condition datasets in the frozen upstream evidence.",
+      "source": "evidence/native-audit.json#counts.heldout_data_files",
+      "state": "blocked"
+    },
+    {
+      "name": "proof_audit_receipts",
+      "value": 0,
+      "unit": "receipts",
+      "definition": "Independent proof-audit receipts in the frozen upstream evidence.",
+      "source": "evidence/native-audit.json#counts.proof_audit_receipts",
+      "state": "blocked"
+    }
+  ],
+  "notes": [
+    "The upstream manuscript is preserved byte-for-byte.",
+    "The overlay edits only packaging, scope wording and off-topic template text.",
+    "All 176 frozen numerical carrier receipts pass re-evaluation.",
+    "Only condition-table traceability is verified; proof and held-out validation remain blocked.",
+    "The internal candidate archive is not authorized for upload."
+  ]
+}

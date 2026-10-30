@@ -1,0 +1,86 @@
+{
+ "deepseek-r1_7b": {
+  "n": 10,
+  "mean_div": 8.5209,
+  "median_div": 8.6826,
+  "max_div": 10.2955,
+  "scenarios_divergent": 10,
+  "examples": [
+   {
+    "scenario": "M-001",
+    "div": 9.599
+   },
+   {
+    "scenario": "M-002",
+    "div": 9.011
+   },
+   {
+    "scenario": "M-003",
+    "div": 6.525
+   }
+  ]
+ },
+ "qwen2.5-coder_7b": {
+  "n": 10,
+  "mean_div": 7.0599,
+  "median_div": 7.2575,
+  "max_div": 9.017,
+  "scenarios_divergent": 10,
+  "examples": [
+   {
+    "scenario": "M-001",
+    "div": 7.447
+   },
+   {
+    "scenario": "M-002",
+    "div": 7.532
+   },
+   {
+    "scenario": "M-003",
+    "div": 5.913
+   }
+  ]
+ },
+ "qwen2_7b": {
+  "n": 10,
+  "mean_div": 5.9404,
+  "median_div": 6.1148,
+  "max_div": 6.4994,
+  "scenarios_divergent": 10,
+  "examples": [
+   {
+    "scenario": "M-001",
+    "div": 6.141
+   },
+   {
+    "scenario": "M-002",
+    "div": 6.088
+   },
+   {
+    "scenario": "M-003",
+    "div": 6.213
+   }
+  ]
+ },
+ "qwen3_4b": {
+  "n": 10,
+  "mean_div": 2.9487,
+  "median_div": 3.0631,
+  "max_div": 4.2567,
+  "scenarios_divergent": 10,
+  "examples": [
+   {
+    "scenario": "M-001",
+    "div": 2.25
+   },
+   {
+    "scenario": "M-002",
+    "div": 3.006
+   },
+   {
+    "scenario": "M-003",
+    "div": 4.177
+   }
+  ]
+ }
+}

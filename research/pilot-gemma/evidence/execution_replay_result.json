@@ -1,0 +1,58 @@
+{
+  "completed_at_utc": "2026-10-16T01:24:00.921254+00:00",
+  "engineering_fixture_cases_passed": 20,
+  "distinct_fixture_input_texts": 19,
+  "repository_counts": {
+    "rows_assessed": 24,
+    "operation_attempts": 21,
+    "operations_completed": 19,
+    "pre_execution_rejections": 3
+  },
+  "repository_summary": [
+    {
+      "model": "llama3.2:1b",
+      "rows_assessed": 12,
+      "operation_attempts": 9,
+      "operations_completed": 8,
+      "pre_execution_rejections": 3,
+      "fixture_task_success": 3,
+      "primary_failures": {
+        "wrong_exact_arguments": 3,
+        "argument_schema": 3,
+        "wrong_selected_tool": 2,
+        "execution_IsADirectoryError": 1
+      }
+    },
+    {
+      "model": "qwen2.5:1.5b-instruct-q4_K_M",
+      "rows_assessed": 12,
+      "operation_attempts": 12,
+      "operations_completed": 11,
+      "pre_execution_rejections": 0,
+      "fixture_task_success": 10,
+      "primary_failures": {
+        "wrong_exact_arguments": 1,
+        "execution_NotADirectoryError": 1
+      }
+    }
+  ],
+  "full_traces_match_preserved_evidence": true,
+  "model_calls": 0,
+  "network_calls": 0,
+  "gpu_hours": 0,
+  "new_paid_spend": 0,
+  "new_model_benchmark_or_capability_result": false,
+  "limitations": [
+    "Executor was written after model outputs; not a preregistered model trial.",
+    "Three repository requests repeated across four registry conditions and two models.",
+    "No real weather provider, code patch/test environment, or hidden competition execution.",
+    "Fixture outcomes do not establish model-family accuracy or generalization."
+  ],
+  "input_hashes": {
+    "cross-model-probe/records.jsonl": "607a28dc60d4892f135634ae25d3663eaa981bcc8203aee3f71657104db4bb9d",
+    "scorer.py": "5e602a610f978044ab10e318241b26385ba007fec63e5db5085a228fa6556cb9",
+    "engineering-validation/engineering_protocol.json": "4720c0e99260a009daa1f46f5d3aa7b61e4d9040a9d9f8309140392a74dd4319",
+    "engineering-validation/engineering_fixture_traces.json": "1abe25ea35a84d65d483c0fd11533d39f60c911e470c62d7f5f05c1b73c609e1",
+    "engineering-validation/retrospective_repository_execution_traces.json": "0ccb629222e7a2c90c0d5cc12f20635635c3275c61ba4b6a156321e283355ddc"
+  }
+}

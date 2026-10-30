@@ -1,0 +1,10 @@
+{
+  "schema": "q-one-p17-review-request-v1",
+  "request": "research/pilot-calibration-fatigue/reports/review-request-20261028/request.md",
+  "request_sha256": "c264b5dc2c76710d7ad23672360e4fe4ad0ec3d173b3fe0b460a7104dd0fd388",
+  "source_sha256": "9010a8883bff1b547e31aa10cd29d209fff2a0c261a7ba8423cd0bd7e420e338",
+  "state": "prepared_not_sent",
+  "external_action": false,
+  "reviewer": null,
+  "response_receipt": null
+}

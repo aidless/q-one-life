@@ -1,0 +1,5 @@
+正文数值读数 356 个，未绑定 0 个 -> /home/liuzewen/F:\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/ledger-reverse-coverage.json
+  （另有 3 个走 allowlist，理由随产物一起落盘）
+附录 A（撤回值）30 个：现行读数 20 / 归档件可重读 8 / 显式声明不可重读 2 / 不可重读 0 / 未绑定 0
+           1.9 声明不可重读：产生 1.9 的那一代 sweep 归档件不在发布里，盘上也没有任何文件含这个值；只在附录 A 作为撤回值保存
+          5.77 声明不可重读：同域对齐前的那一代 audit_preference 归档件不在发布里；归档件里出现的 5.77 是问题板另一系统的差值

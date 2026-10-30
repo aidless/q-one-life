@@ -1,0 +1,50 @@
+\section{Evidence and Reproducibility Inventory}\label{sec:evidenceinventory}
+
+The candidate overlay audits the five review-packet source versions, one
+additional source mirror, and the five result artifacts that dominate the
+paper. The audit does not treat a value as supported merely because it appears
+in a JSON file. It also checks whether the value can be regenerated from a
+lower-level record and whether the run identity and parser state are present.
+
+\begin{table}[ht]\centering\small
+\caption{Primary evidence artifacts retained with the overlay. Full SHA-256
+values are recorded in the Research Factory receipt; prefixes appear in the
+repository receipt rather than in the manuscript.}
+\label{tab:artifactinventory}
+\begin{tabular}{p{5.6cm} r p{4.4cm}}\toprule
+Artifact & bytes & role \\\midrule
+\texttt{evidence/cg\_tee\_checkpoint.json} & 7900 & 15-seed simulation records \\
+\texttt{evidence/cg\_tee\_results.json} & 1244 & recorded simulation aggregate \\
+\texttt{evidence/cg\_tee\_final\_results.json} & 7965 & separate final/calibration family \\
+\texttt{evidence/cg\_tee\_real\_results.json} & 6219 & degenerate real-API run \\
+\texttt{experiments/results/cg\_tee\_local\_smoke.json} & 2239 & 3-seed parser-fixed smoke run \\
+\bottomrule\end{tabular}\end{table}
+
+\paragraph{Recomputed checks.}
+All three simulation $\gamma_{T\to V}$ means reproduce exactly from the 15
+per-seed values: standard $=0.143$, CG $=0.719$, and CG+TEE $=0.574$.
+The real-API standard arm also matches the uncalibrated block of the separate
+final-results artifact. These checks establish arithmetic consistency across
+specific files, not agreement across the whole package.
+
+\paragraph{Failed checks.}
+The recorded CV values $0.192$, $0.134$, and $0.174$ do not reproduce from
+per-seed gamma or entropy values under the tested sample and population
+variance definitions. All 15 real-API CG and CG+TEE records contain $\gamma=0$
+and $H=1$. The archived executor maps confidence-parse failures to $0.5$, which
+produces a zero update. No $N{=}15$ result file records executor/evaluator
+identity or a parser-success rate.
+
+\paragraph{Carrier receipts.}
+The archived carrier manifest contains 11 rows. Every row resolves to its named
+JSON locator and matching printed manuscript token, so the numbers are
+transcription-consistent. Carrier success is not scientific validity: for
+example, the $0.000$ real-API gamma values have a carrier precisely because the
+run is degenerate.
+
+\paragraph{What the paper can claim.}
+The paper can claim that the recorded simulation means are recomputable, that
+the real-API CG arms are degenerate, that the CV column lacks a per-seed
+carrier, and that the 39.2\% scalar belongs to a different, unresolved artifact
+family. It cannot claim that TEE reduces noise or bias, or that the current
+archive establishes a TEE null result.

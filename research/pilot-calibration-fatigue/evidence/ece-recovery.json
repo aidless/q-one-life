@@ -1,0 +1,1784 @@
+{
+  "schema": "q-one-p17-ece-recovery-v1",
+  "inputs": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/snapshot.json",
+    "sha256": "ae5c747c6b4265168bb1f6e8489b05bbf36555f887fe4f476ba759170eabdd06",
+    "bytes": 88792
+  },
+  "definition_inputs": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/recovery/ece-definition-inputs.json",
+    "sha256": "5a11f61f5b0ab208ff3564d975f8be3b04a022b4ed1e8a1c4161dfb0c673b707",
+    "bytes": 1616
+  },
+  "runner": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/tools/audit_p17.py",
+    "sha256": "1ac9ec9dfd100e030c742d714f25548ac032a563854b4b5104d974bd4fcadd70",
+    "bytes": 32466
+  },
+  "T30": {
+    "definition": "Rank-sort confidence/correctness pairs in agent-major order; 10 equal-count bins, remainder in last bin; round per-seed ECE to 4 decimals. Ties preserve input order, as in archived drivers.",
+    "observations": 18000,
+    "seed_rows": 120,
+    "stored_metric_differences": [],
+    "conditions": {
+      "A": {
+        "mean": 0.22938666666666666,
+        "sd": 0.07157074500261881
+      },
+      "B": {
+        "mean": 0.22580333333333333,
+        "sd": 0.0730409260966581
+      },
+      "C": {
+        "mean": 0.23156999999999997,
+        "sd": 0.06589353037155915
+      },
+      "D": {
+        "mean": 0.22512000000000001,
+        "sd": 0.07259664854048252
+      }
+    },
+    "range": [
+      0.0751,
+      0.3686
+    ],
+    "comm": {
+      "difference": -0.005016666666666669,
+      "t": -0.39121856475468825,
+      "p": 0.6963434690507863,
+      "d": -0.0714264109436461
+    },
+    "cal": {
+      "difference": 0.0007500000000000007,
+      "t": 0.058450777475320986,
+      "p": 0.9534886071481188,
+      "d": 0.01067160310898272
+    },
+    "rows": [
+      {
+        "condition": "A",
+        "seed": 0,
+        "pairs": 150,
+        "computed": 0.2055,
+        "stored": 0.2055
+      },
+      {
+        "condition": "A",
+        "seed": 1,
+        "pairs": 150,
+        "computed": 0.1443,
+        "stored": 0.1443
+      },
+      {
+        "condition": "A",
+        "seed": 2,
+        "pairs": 150,
+        "computed": 0.2019,
+        "stored": 0.2019
+      },
+      {
+        "condition": "A",
+        "seed": 3,
+        "pairs": 150,
+        "computed": 0.1599,
+        "stored": 0.1599
+      },
+      {
+        "condition": "A",
+        "seed": 4,
+        "pairs": 150,
+        "computed": 0.132,
+        "stored": 0.132
+      },
+      {
+        "condition": "A",
+        "seed": 5,
+        "pairs": 150,
+        "computed": 0.312,
+        "stored": 0.312
+      },
+      {
+        "condition": "A",
+        "seed": 6,
+        "pairs": 150,
+        "computed": 0.2637,
+        "stored": 0.2637
+      },
+      {
+        "condition": "A",
+        "seed": 7,
+        "pairs": 150,
+        "computed": 0.1777,
+        "stored": 0.1777
+      },
+      {
+        "condition": "A",
+        "seed": 8,
+        "pairs": 150,
+        "computed": 0.2878,
+        "stored": 0.2878
+      },
+      {
+        "condition": "A",
+        "seed": 9,
+        "pairs": 150,
+        "computed": 0.2443,
+        "stored": 0.2443
+      },
+      {
+        "condition": "A",
+        "seed": 10,
+        "pairs": 150,
+        "computed": 0.2985,
+        "stored": 0.2985
+      },
+      {
+        "condition": "A",
+        "seed": 11,
+        "pairs": 150,
+        "computed": 0.299,
+        "stored": 0.299
+      },
+      {
+        "condition": "A",
+        "seed": 12,
+        "pairs": 150,
+        "computed": 0.1126,
+        "stored": 0.1126
+      },
+      {
+        "condition": "A",
+        "seed": 13,
+        "pairs": 150,
+        "computed": 0.3686,
+        "stored": 0.3686
+      },
+      {
+        "condition": "A",
+        "seed": 14,
+        "pairs": 150,
+        "computed": 0.1571,
+        "stored": 0.1571
+      },
+      {
+        "condition": "A",
+        "seed": 15,
+        "pairs": 150,
+        "computed": 0.2136,
+        "stored": 0.2136
+      },
+      {
+        "condition": "A",
+        "seed": 16,
+        "pairs": 150,
+        "computed": 0.3519,
+        "stored": 0.3519
+      },
+      {
+        "condition": "A",
+        "seed": 17,
+        "pairs": 150,
+        "computed": 0.1925,
+        "stored": 0.1925
+      },
+      {
+        "condition": "A",
+        "seed": 18,
+        "pairs": 150,
+        "computed": 0.1199,
+        "stored": 0.1199
+      },
+      {
+        "condition": "A",
+        "seed": 19,
+        "pairs": 150,
+        "computed": 0.3067,
+        "stored": 0.3067
+      },
+      {
+        "condition": "A",
+        "seed": 20,
+        "pairs": 150,
+        "computed": 0.312,
+        "stored": 0.312
+      },
+      {
+        "condition": "A",
+        "seed": 21,
+        "pairs": 150,
+        "computed": 0.1367,
+        "stored": 0.1367
+      },
+      {
+        "condition": "A",
+        "seed": 22,
+        "pairs": 150,
+        "computed": 0.2596,
+        "stored": 0.2596
+      },
+      {
+        "condition": "A",
+        "seed": 23,
+        "pairs": 150,
+        "computed": 0.1653,
+        "stored": 0.1653
+      },
+      {
+        "condition": "A",
+        "seed": 24,
+        "pairs": 150,
+        "computed": 0.2127,
+        "stored": 0.2127
+      },
+      {
+        "condition": "A",
+        "seed": 25,
+        "pairs": 150,
+        "computed": 0.256,
+        "stored": 0.256
+      },
+      {
+        "condition": "A",
+        "seed": 26,
+        "pairs": 150,
+        "computed": 0.186,
+        "stored": 0.186
+      },
+      {
+        "condition": "A",
+        "seed": 27,
+        "pairs": 150,
+        "computed": 0.2853,
+        "stored": 0.2853
+      },
+      {
+        "condition": "A",
+        "seed": 28,
+        "pairs": 150,
+        "computed": 0.2406,
+        "stored": 0.2406
+      },
+      {
+        "condition": "A",
+        "seed": 29,
+        "pairs": 150,
+        "computed": 0.2779,
+        "stored": 0.2779
+      },
+      {
+        "condition": "B",
+        "seed": 0,
+        "pairs": 150,
+        "computed": 0.1535,
+        "stored": 0.1535
+      },
+      {
+        "condition": "B",
+        "seed": 1,
+        "pairs": 150,
+        "computed": 0.171,
+        "stored": 0.171
+      },
+      {
+        "condition": "B",
+        "seed": 2,
+        "pairs": 150,
+        "computed": 0.1627,
+        "stored": 0.1627
+      },
+      {
+        "condition": "B",
+        "seed": 3,
+        "pairs": 150,
+        "computed": 0.1405,
+        "stored": 0.1405
+      },
+      {
+        "condition": "B",
+        "seed": 4,
+        "pairs": 150,
+        "computed": 0.1654,
+        "stored": 0.1654
+      },
+      {
+        "condition": "B",
+        "seed": 5,
+        "pairs": 150,
+        "computed": 0.2717,
+        "stored": 0.2717
+      },
+      {
+        "condition": "B",
+        "seed": 6,
+        "pairs": 150,
+        "computed": 0.2505,
+        "stored": 0.2505
+      },
+      {
+        "condition": "B",
+        "seed": 7,
+        "pairs": 150,
+        "computed": 0.164,
+        "stored": 0.164
+      },
+      {
+        "condition": "B",
+        "seed": 8,
+        "pairs": 150,
+        "computed": 0.293,
+        "stored": 0.293
+      },
+      {
+        "condition": "B",
+        "seed": 9,
+        "pairs": 150,
+        "computed": 0.2496,
+        "stored": 0.2496
+      },
+      {
+        "condition": "B",
+        "seed": 10,
+        "pairs": 150,
+        "computed": 0.2736,
+        "stored": 0.2736
+      },
+      {
+        "condition": "B",
+        "seed": 11,
+        "pairs": 150,
+        "computed": 0.2705,
+        "stored": 0.2705
+      },
+      {
+        "condition": "B",
+        "seed": 12,
+        "pairs": 150,
+        "computed": 0.0751,
+        "stored": 0.0751
+      },
+      {
+        "condition": "B",
+        "seed": 13,
+        "pairs": 150,
+        "computed": 0.3469,
+        "stored": 0.3469
+      },
+      {
+        "condition": "B",
+        "seed": 14,
+        "pairs": 150,
+        "computed": 0.1261,
+        "stored": 0.1261
+      },
+      {
+        "condition": "B",
+        "seed": 15,
+        "pairs": 150,
+        "computed": 0.2195,
+        "stored": 0.2195
+      },
+      {
+        "condition": "B",
+        "seed": 16,
+        "pairs": 150,
+        "computed": 0.3441,
+        "stored": 0.3441
+      },
+      {
+        "condition": "B",
+        "seed": 17,
+        "pairs": 150,
+        "computed": 0.2785,
+        "stored": 0.2785
+      },
+      {
+        "condition": "B",
+        "seed": 18,
+        "pairs": 150,
+        "computed": 0.1429,
+        "stored": 0.1429
+      },
+      {
+        "condition": "B",
+        "seed": 19,
+        "pairs": 150,
+        "computed": 0.2937,
+        "stored": 0.2937
+      },
+      {
+        "condition": "B",
+        "seed": 20,
+        "pairs": 150,
+        "computed": 0.3468,
+        "stored": 0.3468
+      },
+      {
+        "condition": "B",
+        "seed": 21,
+        "pairs": 150,
+        "computed": 0.1382,
+        "stored": 0.1382
+      },
+      {
+        "condition": "B",
+        "seed": 22,
+        "pairs": 150,
+        "computed": 0.2585,
+        "stored": 0.2585
+      },
+      {
+        "condition": "B",
+        "seed": 23,
+        "pairs": 150,
+        "computed": 0.1717,
+        "stored": 0.1717
+      },
+      {
+        "condition": "B",
+        "seed": 24,
+        "pairs": 150,
+        "computed": 0.2247,
+        "stored": 0.2247
+      },
+      {
+        "condition": "B",
+        "seed": 25,
+        "pairs": 150,
+        "computed": 0.2779,
+        "stored": 0.2779
+      },
+      {
+        "condition": "B",
+        "seed": 26,
+        "pairs": 150,
+        "computed": 0.1791,
+        "stored": 0.1791
+      },
+      {
+        "condition": "B",
+        "seed": 27,
+        "pairs": 150,
+        "computed": 0.2712,
+        "stored": 0.2712
+      },
+      {
+        "condition": "B",
+        "seed": 28,
+        "pairs": 150,
+        "computed": 0.2071,
+        "stored": 0.2071
+      },
+      {
+        "condition": "B",
+        "seed": 29,
+        "pairs": 150,
+        "computed": 0.3061,
+        "stored": 0.3061
+      },
+      {
+        "condition": "C",
+        "seed": 0,
+        "pairs": 150,
+        "computed": 0.1659,
+        "stored": 0.1659
+      },
+      {
+        "condition": "C",
+        "seed": 1,
+        "pairs": 150,
+        "computed": 0.1442,
+        "stored": 0.1442
+      },
+      {
+        "condition": "C",
+        "seed": 2,
+        "pairs": 150,
+        "computed": 0.1996,
+        "stored": 0.1996
+      },
+      {
+        "condition": "C",
+        "seed": 3,
+        "pairs": 150,
+        "computed": 0.1596,
+        "stored": 0.1596
+      },
+      {
+        "condition": "C",
+        "seed": 4,
+        "pairs": 150,
+        "computed": 0.1637,
+        "stored": 0.1637
+      },
+      {
+        "condition": "C",
+        "seed": 5,
+        "pairs": 150,
+        "computed": 0.2986,
+        "stored": 0.2986
+      },
+      {
+        "condition": "C",
+        "seed": 6,
+        "pairs": 150,
+        "computed": 0.2503,
+        "stored": 0.2503
+      },
+      {
+        "condition": "C",
+        "seed": 7,
+        "pairs": 150,
+        "computed": 0.1735,
+        "stored": 0.1735
+      },
+      {
+        "condition": "C",
+        "seed": 8,
+        "pairs": 150,
+        "computed": 0.3193,
+        "stored": 0.3193
+      },
+      {
+        "condition": "C",
+        "seed": 9,
+        "pairs": 150,
+        "computed": 0.1783,
+        "stored": 0.1783
+      },
+      {
+        "condition": "C",
+        "seed": 10,
+        "pairs": 150,
+        "computed": 0.3049,
+        "stored": 0.3049
+      },
+      {
+        "condition": "C",
+        "seed": 11,
+        "pairs": 150,
+        "computed": 0.2187,
+        "stored": 0.2187
+      },
+      {
+        "condition": "C",
+        "seed": 12,
+        "pairs": 150,
+        "computed": 0.1526,
+        "stored": 0.1526
+      },
+      {
+        "condition": "C",
+        "seed": 13,
+        "pairs": 150,
+        "computed": 0.3603,
+        "stored": 0.3603
+      },
+      {
+        "condition": "C",
+        "seed": 14,
+        "pairs": 150,
+        "computed": 0.1667,
+        "stored": 0.1667
+      },
+      {
+        "condition": "C",
+        "seed": 15,
+        "pairs": 150,
+        "computed": 0.2276,
+        "stored": 0.2276
+      },
+      {
+        "condition": "C",
+        "seed": 16,
+        "pairs": 150,
+        "computed": 0.32,
+        "stored": 0.32
+      },
+      {
+        "condition": "C",
+        "seed": 17,
+        "pairs": 150,
+        "computed": 0.2539,
+        "stored": 0.2539
+      },
+      {
+        "condition": "C",
+        "seed": 18,
+        "pairs": 150,
+        "computed": 0.1453,
+        "stored": 0.1453
+      },
+      {
+        "condition": "C",
+        "seed": 19,
+        "pairs": 150,
+        "computed": 0.3263,
+        "stored": 0.3263
+      },
+      {
+        "condition": "C",
+        "seed": 20,
+        "pairs": 150,
+        "computed": 0.325,
+        "stored": 0.325
+      },
+      {
+        "condition": "C",
+        "seed": 21,
+        "pairs": 150,
+        "computed": 0.1733,
+        "stored": 0.1733
+      },
+      {
+        "condition": "C",
+        "seed": 22,
+        "pairs": 150,
+        "computed": 0.2646,
+        "stored": 0.2646
+      },
+      {
+        "condition": "C",
+        "seed": 23,
+        "pairs": 150,
+        "computed": 0.1457,
+        "stored": 0.1457
+      },
+      {
+        "condition": "C",
+        "seed": 24,
+        "pairs": 150,
+        "computed": 0.2193,
+        "stored": 0.2193
+      },
+      {
+        "condition": "C",
+        "seed": 25,
+        "pairs": 150,
+        "computed": 0.2436,
+        "stored": 0.2436
+      },
+      {
+        "condition": "C",
+        "seed": 26,
+        "pairs": 150,
+        "computed": 0.2255,
+        "stored": 0.2255
+      },
+      {
+        "condition": "C",
+        "seed": 27,
+        "pairs": 150,
+        "computed": 0.2977,
+        "stored": 0.2977
+      },
+      {
+        "condition": "C",
+        "seed": 28,
+        "pairs": 150,
+        "computed": 0.2639,
+        "stored": 0.2639
+      },
+      {
+        "condition": "C",
+        "seed": 29,
+        "pairs": 150,
+        "computed": 0.2592,
+        "stored": 0.2592
+      },
+      {
+        "condition": "D",
+        "seed": 0,
+        "pairs": 150,
+        "computed": 0.1291,
+        "stored": 0.1291
+      },
+      {
+        "condition": "D",
+        "seed": 1,
+        "pairs": 150,
+        "computed": 0.1455,
+        "stored": 0.1455
+      },
+      {
+        "condition": "D",
+        "seed": 2,
+        "pairs": 150,
+        "computed": 0.1891,
+        "stored": 0.1891
+      },
+      {
+        "condition": "D",
+        "seed": 3,
+        "pairs": 150,
+        "computed": 0.1409,
+        "stored": 0.1409
+      },
+      {
+        "condition": "D",
+        "seed": 4,
+        "pairs": 150,
+        "computed": 0.1463,
+        "stored": 0.1463
+      },
+      {
+        "condition": "D",
+        "seed": 5,
+        "pairs": 150,
+        "computed": 0.3178,
+        "stored": 0.3178
+      },
+      {
+        "condition": "D",
+        "seed": 6,
+        "pairs": 150,
+        "computed": 0.2445,
+        "stored": 0.2445
+      },
+      {
+        "condition": "D",
+        "seed": 7,
+        "pairs": 150,
+        "computed": 0.1731,
+        "stored": 0.1731
+      },
+      {
+        "condition": "D",
+        "seed": 8,
+        "pairs": 150,
+        "computed": 0.2991,
+        "stored": 0.2991
+      },
+      {
+        "condition": "D",
+        "seed": 9,
+        "pairs": 150,
+        "computed": 0.2318,
+        "stored": 0.2318
+      },
+      {
+        "condition": "D",
+        "seed": 10,
+        "pairs": 150,
+        "computed": 0.2791,
+        "stored": 0.2791
+      },
+      {
+        "condition": "D",
+        "seed": 11,
+        "pairs": 150,
+        "computed": 0.2388,
+        "stored": 0.2388
+      },
+      {
+        "condition": "D",
+        "seed": 12,
+        "pairs": 150,
+        "computed": 0.1066,
+        "stored": 0.1066
+      },
+      {
+        "condition": "D",
+        "seed": 13,
+        "pairs": 150,
+        "computed": 0.3396,
+        "stored": 0.3396
+      },
+      {
+        "condition": "D",
+        "seed": 14,
+        "pairs": 150,
+        "computed": 0.1567,
+        "stored": 0.1567
+      },
+      {
+        "condition": "D",
+        "seed": 15,
+        "pairs": 150,
+        "computed": 0.1939,
+        "stored": 0.1939
+      },
+      {
+        "condition": "D",
+        "seed": 16,
+        "pairs": 150,
+        "computed": 0.3341,
+        "stored": 0.3341
+      },
+      {
+        "condition": "D",
+        "seed": 17,
+        "pairs": 150,
+        "computed": 0.2052,
+        "stored": 0.2052
+      },
+      {
+        "condition": "D",
+        "seed": 18,
+        "pairs": 150,
+        "computed": 0.1261,
+        "stored": 0.1261
+      },
+      {
+        "condition": "D",
+        "seed": 19,
+        "pairs": 150,
+        "computed": 0.3196,
+        "stored": 0.3196
+      },
+      {
+        "condition": "D",
+        "seed": 20,
+        "pairs": 150,
+        "computed": 0.3263,
+        "stored": 0.3263
+      },
+      {
+        "condition": "D",
+        "seed": 21,
+        "pairs": 150,
+        "computed": 0.1479,
+        "stored": 0.1479
+      },
+      {
+        "condition": "D",
+        "seed": 22,
+        "pairs": 150,
+        "computed": 0.2522,
+        "stored": 0.2522
+      },
+      {
+        "condition": "D",
+        "seed": 23,
+        "pairs": 150,
+        "computed": 0.1471,
+        "stored": 0.1471
+      },
+      {
+        "condition": "D",
+        "seed": 24,
+        "pairs": 150,
+        "computed": 0.2375,
+        "stored": 0.2375
+      },
+      {
+        "condition": "D",
+        "seed": 25,
+        "pairs": 150,
+        "computed": 0.2647,
+        "stored": 0.2647
+      },
+      {
+        "condition": "D",
+        "seed": 26,
+        "pairs": 150,
+        "computed": 0.2004,
+        "stored": 0.2004
+      },
+      {
+        "condition": "D",
+        "seed": 27,
+        "pairs": 150,
+        "computed": 0.3047,
+        "stored": 0.3047
+      },
+      {
+        "condition": "D",
+        "seed": 28,
+        "pairs": 150,
+        "computed": 0.2524,
+        "stored": 0.2524
+      },
+      {
+        "condition": "D",
+        "seed": 29,
+        "pairs": 150,
+        "computed": 0.3035,
+        "stored": 0.3035
+      }
+    ],
+    "scope": "New retrospective reaggregation of archived pairs, not a new API experiment or a preregistered ECE test. Neither nonsignificance nor repaired NaN establishes equivalence. Not equal-width ECE; tied-confidence bins have convention dependence."
+  },
+  "T50": {
+    "definition": "Rank-sort confidence/correctness pairs in agent-major order; 10 equal-count bins, remainder in last bin; round per-seed ECE to 4 decimals. Ties preserve input order, as in archived drivers.",
+    "observations": 30000,
+    "seed_rows": 120,
+    "stored_metric_differences": [],
+    "conditions": {
+      "A": {
+        "mean": 0.23098333333333335,
+        "sd": 0.054592579281837174
+      },
+      "B": {
+        "mean": 0.23178333333333334,
+        "sd": 0.049315039905890166
+      },
+      "C": {
+        "mean": 0.23557000000000003,
+        "sd": 0.04881506374343745
+      },
+      "D": {
+        "mean": 0.23444666666666666,
+        "sd": 0.05599854513709499
+      }
+    },
+    "range": [
+      0.1287,
+      0.3739
+    ],
+    "comm": {
+      "difference": -0.0001616666666666433,
+      "t": -0.017072727805576365,
+      "p": 0.9864074387701495,
+      "d": -0.0031170393790866157
+    },
+    "cal": {
+      "difference": 0.003625000000000045,
+      "t": 0.38305378381381666,
+      "p": 0.7023691340659403,
+      "d": 0.06993573271084488
+    },
+    "rows": [
+      {
+        "condition": "A",
+        "seed": 0,
+        "pairs": 250,
+        "computed": 0.1287,
+        "stored": 0.1287
+      },
+      {
+        "condition": "A",
+        "seed": 1,
+        "pairs": 250,
+        "computed": 0.2002,
+        "stored": 0.2002
+      },
+      {
+        "condition": "A",
+        "seed": 2,
+        "pairs": 250,
+        "computed": 0.178,
+        "stored": 0.178
+      },
+      {
+        "condition": "A",
+        "seed": 3,
+        "pairs": 250,
+        "computed": 0.1888,
+        "stored": 0.1888
+      },
+      {
+        "condition": "A",
+        "seed": 4,
+        "pairs": 250,
+        "computed": 0.2148,
+        "stored": 0.2148
+      },
+      {
+        "condition": "A",
+        "seed": 5,
+        "pairs": 250,
+        "computed": 0.245,
+        "stored": 0.245
+      },
+      {
+        "condition": "A",
+        "seed": 6,
+        "pairs": 250,
+        "computed": 0.2308,
+        "stored": 0.2308
+      },
+      {
+        "condition": "A",
+        "seed": 7,
+        "pairs": 250,
+        "computed": 0.2602,
+        "stored": 0.2602
+      },
+      {
+        "condition": "A",
+        "seed": 8,
+        "pairs": 250,
+        "computed": 0.3062,
+        "stored": 0.3062
+      },
+      {
+        "condition": "A",
+        "seed": 9,
+        "pairs": 250,
+        "computed": 0.1888,
+        "stored": 0.1888
+      },
+      {
+        "condition": "A",
+        "seed": 10,
+        "pairs": 250,
+        "computed": 0.261,
+        "stored": 0.261
+      },
+      {
+        "condition": "A",
+        "seed": 11,
+        "pairs": 250,
+        "computed": 0.2642,
+        "stored": 0.2642
+      },
+      {
+        "condition": "A",
+        "seed": 12,
+        "pairs": 250,
+        "computed": 0.1811,
+        "stored": 0.1811
+      },
+      {
+        "condition": "A",
+        "seed": 13,
+        "pairs": 250,
+        "computed": 0.3414,
+        "stored": 0.3414
+      },
+      {
+        "condition": "A",
+        "seed": 14,
+        "pairs": 250,
+        "computed": 0.1688,
+        "stored": 0.1688
+      },
+      {
+        "condition": "A",
+        "seed": 15,
+        "pairs": 250,
+        "computed": 0.1799,
+        "stored": 0.1799
+      },
+      {
+        "condition": "A",
+        "seed": 16,
+        "pairs": 250,
+        "computed": 0.2753,
+        "stored": 0.2753
+      },
+      {
+        "condition": "A",
+        "seed": 17,
+        "pairs": 250,
+        "computed": 0.1867,
+        "stored": 0.1867
+      },
+      {
+        "condition": "A",
+        "seed": 18,
+        "pairs": 250,
+        "computed": 0.2391,
+        "stored": 0.2391
+      },
+      {
+        "condition": "A",
+        "seed": 19,
+        "pairs": 250,
+        "computed": 0.2285,
+        "stored": 0.2285
+      },
+      {
+        "condition": "A",
+        "seed": 20,
+        "pairs": 250,
+        "computed": 0.357,
+        "stored": 0.357
+      },
+      {
+        "condition": "A",
+        "seed": 21,
+        "pairs": 250,
+        "computed": 0.1626,
+        "stored": 0.1626
+      },
+      {
+        "condition": "A",
+        "seed": 22,
+        "pairs": 250,
+        "computed": 0.2522,
+        "stored": 0.2522
+      },
+      {
+        "condition": "A",
+        "seed": 23,
+        "pairs": 250,
+        "computed": 0.2372,
+        "stored": 0.2372
+      },
+      {
+        "condition": "A",
+        "seed": 24,
+        "pairs": 250,
+        "computed": 0.1996,
+        "stored": 0.1996
+      },
+      {
+        "condition": "A",
+        "seed": 25,
+        "pairs": 250,
+        "computed": 0.244,
+        "stored": 0.244
+      },
+      {
+        "condition": "A",
+        "seed": 26,
+        "pairs": 250,
+        "computed": 0.3208,
+        "stored": 0.3208
+      },
+      {
+        "condition": "A",
+        "seed": 27,
+        "pairs": 250,
+        "computed": 0.1806,
+        "stored": 0.1806
+      },
+      {
+        "condition": "A",
+        "seed": 28,
+        "pairs": 250,
+        "computed": 0.2358,
+        "stored": 0.2358
+      },
+      {
+        "condition": "A",
+        "seed": 29,
+        "pairs": 250,
+        "computed": 0.2722,
+        "stored": 0.2722
+      },
+      {
+        "condition": "B",
+        "seed": 0,
+        "pairs": 250,
+        "computed": 0.1514,
+        "stored": 0.1514
+      },
+      {
+        "condition": "B",
+        "seed": 1,
+        "pairs": 250,
+        "computed": 0.2068,
+        "stored": 0.2068
+      },
+      {
+        "condition": "B",
+        "seed": 2,
+        "pairs": 250,
+        "computed": 0.1694,
+        "stored": 0.1694
+      },
+      {
+        "condition": "B",
+        "seed": 3,
+        "pairs": 250,
+        "computed": 0.1965,
+        "stored": 0.1965
+      },
+      {
+        "condition": "B",
+        "seed": 4,
+        "pairs": 250,
+        "computed": 0.2154,
+        "stored": 0.2154
+      },
+      {
+        "condition": "B",
+        "seed": 5,
+        "pairs": 250,
+        "computed": 0.235,
+        "stored": 0.235
+      },
+      {
+        "condition": "B",
+        "seed": 6,
+        "pairs": 250,
+        "computed": 0.2596,
+        "stored": 0.2596
+      },
+      {
+        "condition": "B",
+        "seed": 7,
+        "pairs": 250,
+        "computed": 0.2677,
+        "stored": 0.2677
+      },
+      {
+        "condition": "B",
+        "seed": 8,
+        "pairs": 250,
+        "computed": 0.2885,
+        "stored": 0.2885
+      },
+      {
+        "condition": "B",
+        "seed": 9,
+        "pairs": 250,
+        "computed": 0.1921,
+        "stored": 0.1921
+      },
+      {
+        "condition": "B",
+        "seed": 10,
+        "pairs": 250,
+        "computed": 0.2481,
+        "stored": 0.2481
+      },
+      {
+        "condition": "B",
+        "seed": 11,
+        "pairs": 250,
+        "computed": 0.235,
+        "stored": 0.235
+      },
+      {
+        "condition": "B",
+        "seed": 12,
+        "pairs": 250,
+        "computed": 0.2221,
+        "stored": 0.2221
+      },
+      {
+        "condition": "B",
+        "seed": 13,
+        "pairs": 250,
+        "computed": 0.32,
+        "stored": 0.32
+      },
+      {
+        "condition": "B",
+        "seed": 14,
+        "pairs": 250,
+        "computed": 0.1613,
+        "stored": 0.1613
+      },
+      {
+        "condition": "B",
+        "seed": 15,
+        "pairs": 250,
+        "computed": 0.1657,
+        "stored": 0.1657
+      },
+      {
+        "condition": "B",
+        "seed": 16,
+        "pairs": 250,
+        "computed": 0.2686,
+        "stored": 0.2686
+      },
+      {
+        "condition": "B",
+        "seed": 17,
+        "pairs": 250,
+        "computed": 0.1919,
+        "stored": 0.1919
+      },
+      {
+        "condition": "B",
+        "seed": 18,
+        "pairs": 250,
+        "computed": 0.2436,
+        "stored": 0.2436
+      },
+      {
+        "condition": "B",
+        "seed": 19,
+        "pairs": 250,
+        "computed": 0.2281,
+        "stored": 0.2281
+      },
+      {
+        "condition": "B",
+        "seed": 20,
+        "pairs": 250,
+        "computed": 0.3566,
+        "stored": 0.3566
+      },
+      {
+        "condition": "B",
+        "seed": 21,
+        "pairs": 250,
+        "computed": 0.1764,
+        "stored": 0.1764
+      },
+      {
+        "condition": "B",
+        "seed": 22,
+        "pairs": 250,
+        "computed": 0.2636,
+        "stored": 0.2636
+      },
+      {
+        "condition": "B",
+        "seed": 23,
+        "pairs": 250,
+        "computed": 0.2164,
+        "stored": 0.2164
+      },
+      {
+        "condition": "B",
+        "seed": 24,
+        "pairs": 250,
+        "computed": 0.2116,
+        "stored": 0.2116
+      },
+      {
+        "condition": "B",
+        "seed": 25,
+        "pairs": 250,
+        "computed": 0.2364,
+        "stored": 0.2364
+      },
+      {
+        "condition": "B",
+        "seed": 26,
+        "pairs": 250,
+        "computed": 0.3049,
+        "stored": 0.3049
+      },
+      {
+        "condition": "B",
+        "seed": 27,
+        "pairs": 250,
+        "computed": 0.208,
+        "stored": 0.208
+      },
+      {
+        "condition": "B",
+        "seed": 28,
+        "pairs": 250,
+        "computed": 0.2168,
+        "stored": 0.2168
+      },
+      {
+        "condition": "B",
+        "seed": 29,
+        "pairs": 250,
+        "computed": 0.296,
+        "stored": 0.296
+      },
+      {
+        "condition": "C",
+        "seed": 0,
+        "pairs": 250,
+        "computed": 0.1651,
+        "stored": 0.1651
+      },
+      {
+        "condition": "C",
+        "seed": 1,
+        "pairs": 250,
+        "computed": 0.2284,
+        "stored": 0.2284
+      },
+      {
+        "condition": "C",
+        "seed": 2,
+        "pairs": 250,
+        "computed": 0.1494,
+        "stored": 0.1494
+      },
+      {
+        "condition": "C",
+        "seed": 3,
+        "pairs": 250,
+        "computed": 0.2043,
+        "stored": 0.2043
+      },
+      {
+        "condition": "C",
+        "seed": 4,
+        "pairs": 250,
+        "computed": 0.1866,
+        "stored": 0.1866
+      },
+      {
+        "condition": "C",
+        "seed": 5,
+        "pairs": 250,
+        "computed": 0.2528,
+        "stored": 0.2528
+      },
+      {
+        "condition": "C",
+        "seed": 6,
+        "pairs": 250,
+        "computed": 0.2589,
+        "stored": 0.2589
+      },
+      {
+        "condition": "C",
+        "seed": 7,
+        "pairs": 250,
+        "computed": 0.2529,
+        "stored": 0.2529
+      },
+      {
+        "condition": "C",
+        "seed": 8,
+        "pairs": 250,
+        "computed": 0.2858,
+        "stored": 0.2858
+      },
+      {
+        "condition": "C",
+        "seed": 9,
+        "pairs": 250,
+        "computed": 0.2155,
+        "stored": 0.2155
+      },
+      {
+        "condition": "C",
+        "seed": 10,
+        "pairs": 250,
+        "computed": 0.2588,
+        "stored": 0.2588
+      },
+      {
+        "condition": "C",
+        "seed": 11,
+        "pairs": 250,
+        "computed": 0.2587,
+        "stored": 0.2587
+      },
+      {
+        "condition": "C",
+        "seed": 12,
+        "pairs": 250,
+        "computed": 0.2086,
+        "stored": 0.2086
+      },
+      {
+        "condition": "C",
+        "seed": 13,
+        "pairs": 250,
+        "computed": 0.3292,
+        "stored": 0.3292
+      },
+      {
+        "condition": "C",
+        "seed": 14,
+        "pairs": 250,
+        "computed": 0.1809,
+        "stored": 0.1809
+      },
+      {
+        "condition": "C",
+        "seed": 15,
+        "pairs": 250,
+        "computed": 0.1944,
+        "stored": 0.1944
+      },
+      {
+        "condition": "C",
+        "seed": 16,
+        "pairs": 250,
+        "computed": 0.2493,
+        "stored": 0.2493
+      },
+      {
+        "condition": "C",
+        "seed": 17,
+        "pairs": 250,
+        "computed": 0.2165,
+        "stored": 0.2165
+      },
+      {
+        "condition": "C",
+        "seed": 18,
+        "pairs": 250,
+        "computed": 0.2078,
+        "stored": 0.2078
+      },
+      {
+        "condition": "C",
+        "seed": 19,
+        "pairs": 250,
+        "computed": 0.2412,
+        "stored": 0.2412
+      },
+      {
+        "condition": "C",
+        "seed": 20,
+        "pairs": 250,
+        "computed": 0.363,
+        "stored": 0.363
+      },
+      {
+        "condition": "C",
+        "seed": 21,
+        "pairs": 250,
+        "computed": 0.1526,
+        "stored": 0.1526
+      },
+      {
+        "condition": "C",
+        "seed": 22,
+        "pairs": 250,
+        "computed": 0.2487,
+        "stored": 0.2487
+      },
+      {
+        "condition": "C",
+        "seed": 23,
+        "pairs": 250,
+        "computed": 0.2562,
+        "stored": 0.2562
+      },
+      {
+        "condition": "C",
+        "seed": 24,
+        "pairs": 250,
+        "computed": 0.2083,
+        "stored": 0.2083
+      },
+      {
+        "condition": "C",
+        "seed": 25,
+        "pairs": 250,
+        "computed": 0.2718,
+        "stored": 0.2718
+      },
+      {
+        "condition": "C",
+        "seed": 26,
+        "pairs": 250,
+        "computed": 0.2925,
+        "stored": 0.2925
+      },
+      {
+        "condition": "C",
+        "seed": 27,
+        "pairs": 250,
+        "computed": 0.2439,
+        "stored": 0.2439
+      },
+      {
+        "condition": "C",
+        "seed": 28,
+        "pairs": 250,
+        "computed": 0.2011,
+        "stored": 0.2011
+      },
+      {
+        "condition": "C",
+        "seed": 29,
+        "pairs": 250,
+        "computed": 0.2839,
+        "stored": 0.2839
+      },
+      {
+        "condition": "D",
+        "seed": 0,
+        "pairs": 250,
+        "computed": 0.1488,
+        "stored": 0.1488
+      },
+      {
+        "condition": "D",
+        "seed": 1,
+        "pairs": 250,
+        "computed": 0.2046,
+        "stored": 0.2046
+      },
+      {
+        "condition": "D",
+        "seed": 2,
+        "pairs": 250,
+        "computed": 0.1668,
+        "stored": 0.1668
+      },
+      {
+        "condition": "D",
+        "seed": 3,
+        "pairs": 250,
+        "computed": 0.2165,
+        "stored": 0.2165
+      },
+      {
+        "condition": "D",
+        "seed": 4,
+        "pairs": 250,
+        "computed": 0.2011,
+        "stored": 0.2011
+      },
+      {
+        "condition": "D",
+        "seed": 5,
+        "pairs": 250,
+        "computed": 0.2505,
+        "stored": 0.2505
+      },
+      {
+        "condition": "D",
+        "seed": 6,
+        "pairs": 250,
+        "computed": 0.2676,
+        "stored": 0.2676
+      },
+      {
+        "condition": "D",
+        "seed": 7,
+        "pairs": 250,
+        "computed": 0.2593,
+        "stored": 0.2593
+      },
+      {
+        "condition": "D",
+        "seed": 8,
+        "pairs": 250,
+        "computed": 0.3042,
+        "stored": 0.3042
+      },
+      {
+        "condition": "D",
+        "seed": 9,
+        "pairs": 250,
+        "computed": 0.2243,
+        "stored": 0.2243
+      },
+      {
+        "condition": "D",
+        "seed": 10,
+        "pairs": 250,
+        "computed": 0.2171,
+        "stored": 0.2171
+      },
+      {
+        "condition": "D",
+        "seed": 11,
+        "pairs": 250,
+        "computed": 0.2755,
+        "stored": 0.2755
+      },
+      {
+        "condition": "D",
+        "seed": 12,
+        "pairs": 250,
+        "computed": 0.1896,
+        "stored": 0.1896
+      },
+      {
+        "condition": "D",
+        "seed": 13,
+        "pairs": 250,
+        "computed": 0.3287,
+        "stored": 0.3287
+      },
+      {
+        "condition": "D",
+        "seed": 14,
+        "pairs": 250,
+        "computed": 0.1805,
+        "stored": 0.1805
+      },
+      {
+        "condition": "D",
+        "seed": 15,
+        "pairs": 250,
+        "computed": 0.1614,
+        "stored": 0.1614
+      },
+      {
+        "condition": "D",
+        "seed": 16,
+        "pairs": 250,
+        "computed": 0.3004,
+        "stored": 0.3004
+      },
+      {
+        "condition": "D",
+        "seed": 17,
+        "pairs": 250,
+        "computed": 0.1476,
+        "stored": 0.1476
+      },
+      {
+        "condition": "D",
+        "seed": 18,
+        "pairs": 250,
+        "computed": 0.2404,
+        "stored": 0.2404
+      },
+      {
+        "condition": "D",
+        "seed": 19,
+        "pairs": 250,
+        "computed": 0.2556,
+        "stored": 0.2556
+      },
+      {
+        "condition": "D",
+        "seed": 20,
+        "pairs": 250,
+        "computed": 0.3739,
+        "stored": 0.3739
+      },
+      {
+        "condition": "D",
+        "seed": 21,
+        "pairs": 250,
+        "computed": 0.1685,
+        "stored": 0.1685
+      },
+      {
+        "condition": "D",
+        "seed": 22,
+        "pairs": 250,
+        "computed": 0.265,
+        "stored": 0.265
+      },
+      {
+        "condition": "D",
+        "seed": 23,
+        "pairs": 250,
+        "computed": 0.2376,
+        "stored": 0.2376
+      },
+      {
+        "condition": "D",
+        "seed": 24,
+        "pairs": 250,
+        "computed": 0.1995,
+        "stored": 0.1995
+      },
+      {
+        "condition": "D",
+        "seed": 25,
+        "pairs": 250,
+        "computed": 0.283,
+        "stored": 0.283
+      },
+      {
+        "condition": "D",
+        "seed": 26,
+        "pairs": 250,
+        "computed": 0.2972,
+        "stored": 0.2972
+      },
+      {
+        "condition": "D",
+        "seed": 27,
+        "pairs": 250,
+        "computed": 0.2159,
+        "stored": 0.2159
+      },
+      {
+        "condition": "D",
+        "seed": 28,
+        "pairs": 250,
+        "computed": 0.1842,
+        "stored": 0.1842
+      },
+      {
+        "condition": "D",
+        "seed": 29,
+        "pairs": 250,
+        "computed": 0.2681,
+        "stored": 0.2681
+      }
+    ],
+    "scope": "New retrospective reaggregation of archived pairs, not a new API experiment or a preregistered ECE test. Neither nonsignificance nor repaired NaN establishes equivalence. Not equal-width ECE; tied-confidence bins have convention dependence."
+  }
+}

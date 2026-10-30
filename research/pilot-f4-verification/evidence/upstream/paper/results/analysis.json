@@ -1,0 +1,20 @@
+{
+  "n_cells": 270,
+  "n_seeds": 10,
+  "P_mean": 0.2493,
+  "P_std": 0.0289,
+  "P_CI95": [
+    0.2458,
+    0.2527
+  ],
+  "grid_results": [
+    {
+      "K": 3,
+      "gamma": 0.5,
+      "P_mean": 0.2493,
+      "n_cells": 270
+    }
+  ],
+  "source": "local_270_synthetic_cloud_aligned",
+  "generated_at": "2026-08-24T18:50:00"
+}

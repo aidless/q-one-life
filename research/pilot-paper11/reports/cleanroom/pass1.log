@@ -1,0 +1,110 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/size11.clo)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/tools/array.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/float/float.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/url/url.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty) (./generated_values.tex) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def)
+No file main.aux.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/home/liuzewen/.TinyTeX/texmf-local/tex/latex/grfext/grfext.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd)
+
+LaTeX Warning: Reference `tab:ties' on page 1 undefined on input line 50.
+
+
+Package natbib Warning: Citation `cawley2010overfitting' on page 1 undefined on input line 62.
+
+
+Package natbib Warning: Citation `dwork2015holdout' on page 1 undefined on input line 63.
+
+
+Package natbib Warning: Citation `shi2024judgingjudges' on page 1 undefined on input line 69.
+
+[1{/home/liuzewen/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+Package natbib Warning: Citation `cawley2010overfitting' on page 2 undefined on input line 97.
+
+
+Package natbib Warning: Citation `dwork2015holdout' on page 2 undefined on input line 99.
+
+
+Package natbib Warning: Citation `gu2025judgesurvey' on page 2 undefined on input line 104.
+
+
+Package natbib Warning: Citation `shi2024judgingjudges' on page 2 undefined on input line 104.
+
+
+Package natbib Warning: Citation `li2025preference' on page 2 undefined on input line 105.
+
+
+Package natbib Warning: Citation `nahhas2026estimator' on page 2 undefined on input line 107.
+
+
+Package natbib Warning: Citation `xu2026harness2' on page 2 undefined on input line 114.
+
+
+Package natbib Warning: Citation `zhang2026disclose' on page 2 undefined on input line 115.
+
+
+Package natbib Warning: Citation `vats2026scaffold' on page 2 undefined on input line 116.
+
+
+Package natbib Warning: Citation `harness2026rethinking' on page 2 undefined on input line 117.
+
+
+Package natbib Warning: Citation `binette2024estimands' on page 2 undefined on input line 123.
+
+
+Package natbib Warning: Citation `freiesleben2025epistemology' on page 2 undefined on input line 123.
+
+[2]
+
+LaTeX Warning: Reference `tab:design' on page 3 undefined on input line 147.
+
+[3]
+
+LaTeX Warning: Reference `tab:results' on page 4 undefined on input line 205.
+
+
+LaTeX Warning: Reference `fig:results' on page 4 undefined on input line 205.
+
+[4 <./figures/factorial-audit.pdf>]
+
+LaTeX Warning: Reference `tab:ties' on page 5 undefined on input line 276.
+
+[5]
+
+Package natbib Warning: Citation `shi2024judgingjudges' on page 6 undefined on input line 319.
+
+[6]
+
+LaTeX Warning: Reference `app:repro' on page 7 undefined on input line 368.
+
+
+LaTeX Warning: Reference `app:excluded' on page 7 undefined on input line 374.
+
+[7]
+No file main.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[8] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ ) </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (8 pages, 176191 bytes).
+Transcript written on main.log.

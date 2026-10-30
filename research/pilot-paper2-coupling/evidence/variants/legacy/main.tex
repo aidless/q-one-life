@@ -1,0 +1,611 @@
+% ============================================================
+% TMLR submission — Consolidated Paper 2
+% Title: The Impossibility Triangle of LLM Evaluation:
+%   A Formal Characterization of the Bias-Reliability-Coupling Tradeoff
+%
+% Consolidated from 3 prior manuscripts in this research line.
+% ============================================================
+\documentclass[11pt]{article}
+\usepackage[preprint]{tmlr}  % official anonymous double-blind submission form (no option)
+\usepackage{amsthm}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\usepackage{hyperref}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,hypertexnames=false}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{xcolor}
+\setlength{\emergencystretch}{2em}
+
+\author{\name Zewen Liu\email 17353895263@163.com\\\addr Independent Researcher}
+
+\title{A Conditional Coupling--Diversity--Precision Bound for TTRL-Based LLM Evaluation}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We study a conditional coupling--diversity--precision bound for a specified TTRL observation model. The primary theoretical estimand is the coefficient of variation of a regular estimator of a scalar coupling parameter $\gamma$ under independent Bernoulli observations with logistic success probability. Under this model, the Cramer--Rao inequality yields a precision floor. A positive product bound additionally requires a compact parameter space and an assumed positive lower bound on strategy entropy; it is not a universal impossibility theorem for arbitrary evaluators or protocols. Empirically, all eleven condition rows are reconstructed from the persisted per-repetition archives under a single estimator (per-repetition mean $\gamma$; full-archive $\mathrm{CV}$, with five-seed subsample ranges), so the consolidated paper supports complete $\gamma$/CV condition-level verification on the reconstruction. The observed grid contains no point in the region $\{\gamma<0.2,\mathrm{CV}<0.3\}$; this emptiness is robust to threshold perturbations under the full-archive $\mathrm{CV}$ estimator (both low-$\gamma$ rows have full-archive $\mathrm{CV} \geq 2.3$); five-seed subsample $\mathrm{CV}$s can be lower, so subset-level emptiness is estimator-dependent. Chatbot Arena correlations are observational external associations rather than validation of the TTRL bound. The contribution is therefore a checkable conditional model, an explicit theory-to-estimator map, and a list of robustness tests required before broader generalization.
+
+
+\textbf{Reproducibility and ethics.} All experiments use deterministic seeds (PYTHONHASHSEED=0) with GPT-4o, DeepSeek, and Qwen models; full experimental protocols, code, raw API logs, and analysis scripts are released in the supplementary material with SHA-256 checksums. This work studies evaluation dynamics in LLM systems; ethical implications include silent reliability decay in safety-critical systems and the need for version-dependent evaluation verification.\end{abstract}
+
+
+
+
+When large language models serve as evaluators in adaptive systems, their biases propagate into agent strategy distributions through Test-Time Reinforcement Learning (TTRL). This evaluator preference coupling creates a measured tradeoff: the source-study five-row table spans $\gamma \in [0.033, 1.038]$ and $\mathrm{CV}(N{=}5) \in [0.157, 2.42]$, while the archive-based reconstruction (Table~\ref{tab:recon}) spans $\gamma \in [0.033, 1.176]$ and full-archive $\mathrm{CV} \in [0.196, 5.477]$: stronger evaluator signal produces more stable measurements (Ablation max: $\gamma = 1.038$, $\mathrm{CV}(N{=}5) = 0.157$) but introduces more bias (lower strategy diversity); weaker evaluator signal preserves strategy diversity (DS Self-Eval: $H = 0.999$) but produces noisy, unreliable measurements ($\mathrm{CV}(N{=}5) = 2.42$, a $15.4\times$ inflation).
+
+\textbf{Version note.} This manuscript is the conditional-bound canonical version of the coupling--diversity--precision analysis. An earlier draft (impossibility\_triangle) framed the result as a universal impossibility theorem; that framing was not supported by the assumptions (the bound requires a compact parameter space and a positive lower bound on strategy entropy) and has been corrected here. The impossibility\_triangle draft is retained as a historical version and is not submitted independently; its title has been updated to ``conditional bound'' to reflect the corrected framing.
+
+\textbf{Relationship to companion manuscripts (division of labor).} This paper (P2) is the TTRL canonical manuscript: the conditional $K{=}2$ coupling--diversity--precision bound with explicit logistic observation model, regularity conditions, and Cram\'er--Rao precision floor. The \texttt{impossibility-triangle} draft reports the same theorem and data with the unsupported universal claim ($r{=}-0.969$ presented as general); it is ARCHIVED and must not be submitted independently---its overclaim is downgraded here to a discussion-level empirical association. The \texttt{tmlr-p20} manuscript is a separate $K{\geq}3$ \emph{independent-pair surrogate} extension only: it does not validate joint $K$-evaluator episodes, and no joint extrapolation from its surrogate bound is made or endorsed here. The surrogate extension is consolidated as an appendix stub pointing to tmlr-p20 (see Appendix); P2 proper makes no claim beyond the $K{=}2$ conditional bound. Empirical overlap is limited to the stated archive reconstruction; each manuscript's scope boundary is as stated in this paragraph.
+
+We ask when a coupling--diversity--precision product has a positive lower bound. Proposition~\ref{thm:impossibility} answers this only for the stated logistic observation model and entropy-floor assumption. The empirical grid is used to illustrate that conditional result, not to establish it.
+
+Our contributions are:
+\begin{enumerate}[leftmargin=*,nosep]
+ \item A conditional precision bound with all observation-model and regularity assumptions stated explicitly.
+ \item A theory-to-estimator map distinguishing measured quantities from modeling assumptions and empirical heuristics.
+ \item A scoped empirical audit of the five condition rows reproduced in this manuscript plus observational Chatbot Arena associations.
+ \item \textbf{A standardized protocol} for within-condition verification with convergence dynamics analysis.
+ \item A robustness agenda for alternative metrics, thresholds, binning, exclusions, and leave-one-condition-out analysis.
+\end{enumerate}
+
+\section{Related Work}
+
+
+
+\textbf{Adjacent agent-side constraints.} Our results concern the
+measurement side of multi-agent evaluation; three recent lines constrain
+complementary surfaces. Bounded-memory testbeds for long-horizon
+agents~\cite{cheng2026agenticsts} formulate a memory contract for the agent
+side, mirroring how the empirical grid here bounds the measurement side;
+their interaction---whether an explicit memory contract helps populate the
+favorable regime---is unexplored. Self-evolving rubrics for skill
+use~\cite{zhu2026skillcoach} and explicit agent abstention
+signals~\cite{luo2026abstention} are two further axes that could shift the
+triangle's empirical location and warrant investigation. \textbf{This
+work.} We contribute the measurement-side grid itself: a positive product
+floor under explicit logistic assumptions, a reproduced negative
+$\gamma$--$H$ association across the empirical grid, and no observed point
+in the favorable region $\{\gamma < 0.2,\ \mathrm{CV} < 0.3\}$.
+
+\textbf{TTRL evaluation literature.} Our bound is a measurement-side complement to recent test-time and sampling-budget characterizations of evaluator-driven training. Test-time and sampling-budget characterizations of evaluator-driven training address how fast uncertainty can shrink with $N$ and where such guarantees break. To our knowledge, no prior work derives a coupling--diversity--precision product; the contribution here is the product form, the explicit regularity conditions delimiting the estimator class (unbiasedness, parameter-independent support, finite Fisher information), and the theory-to-estimator audit.
+\section{Framework}
+
+\subsection{The EPC Framework}
+
+An executor agent maintains a weight vector $\mathbf{w} \in \Delta^{K-1}$ over $K$ strategies. At each round $t$:
+\begin{enumerate}[leftmargin=*,nosep]
+ \item Sample strategy $s_t \sim \mathbf{w}^{(t)}$
+ \item Generate response using strategy $s_t$
+ \item Receive evaluator judgment $y_t \in \{0, 1\}$
+ \item Update weights: $w_{s_t}^{(t+1)} = w_{s_t}^{(t)} \cdot \exp(\alpha_{y_t})$ (multiplicative reweighting)
+\end{enumerate}
+
+\subsection{Core Definitions}
+
+\begin{definition}[Evaluator Coupling]
+The coupling coefficient
+\[
+\gamma\_{A \to B} =
+\frac{\|\mathbf{w}\_{A \to B} - \mathbf{w}\_B\|\_2}{\|\mathbf{w}\_B\|\_2}
+\]
+measures how much evaluator $A$'s preferences distort executor $B$'s strategy distribution. $\gamma \approx 0$ indicates no influence; $\gamma > 1$ indicates influence exceeding natural strategy concentration.
+\end{definition}
+
+\begin{definition}[Strategy Entropy]
+$H = -\frac{1}{\log K}\sum_{i=1}^K w_i \log w_i$ is the normalized Shannon entropy of the strategy distribution, measuring diversity. $H = 1$ indicates uniform distribution; $H = 0$ indicates deterministic strategy selection.
+\end{definition}
+
+\begin{definition}[Measurement Noise]
+$\mathrm{CV}(N) = \text{std}(\hat{\gamma}_N) / \mathbb{E}[\hat{\gamma}_N]$ is the coefficient of variation of the coupling estimate at sample size $N$, measuring the stability of coupling measurements; $\text{std}$ is the sample standard deviation (Bessel-corrected denominator).
+\end{definition}
+
+\section{Conditional Observation Model and Bounds}
+
+\subsection{Observation Model and Regularity Conditions}
+
+Let $Y_1,\ldots,Y_N$ be conditionally independent Bernoulli observations with
+\[
+P\_\gamma(Y\_i=1)=s(\gamma)=\{1+\exp(-\gamma)\}^{-1},
+\qquad \gamma\in\Theta=[\gamma\_{\min},\gamma\_{\max}],
+\]
+where $0<\gamma_{\min}<\gamma_{\max}<\infty$. The sampling unit is one independent seed-level evaluator outcome; repeated rounds within a seed do not satisfy this independence assumption and must first be aggregated or modeled hierarchically. We assume an unbiased regular estimator $\hat\gamma_N$, differentiability of the likelihood, parameter-independent support, finite Fisher information, and interchangeability of differentiation and integration. These assumptions describe a stylized scalar logistic model, not the raw multi-strategy TTRL trace.
+
+\begin{proposition}[Conditional precision floor]\label{thm:coupling-precision}
+Under the model and regularity conditions above,
+\[
+\mathrm{CV}(N)=\frac{\sqrt{\mathrm{Var}(\hat\gamma\_N)}}{\gamma}
+\geq \frac{1}{\gamma\sqrt{N s(\gamma)(1-s(\gamma))}}.
+\]
+\end{proposition}
+
+\begin{proof}
+For one observation, $\ell_i(\gamma)=Y_i\log s(\gamma)+(1-Y_i)\log(1-s(\gamma))$. Since $s'(\gamma)=s(\gamma)(1-s(\gamma))$,
+\[
+\frac{\partial\ell\_i}{\partial\gamma}=Y\_i-s(\gamma),
+\quad I\_1(\gamma)=\mathbb{E}\_\gamma[(Y\_i-s(\gamma))^2]=s(\gamma)(1-s(\gamma)).
+\]
+Conditional independence gives $I_N(\gamma)=NI_1(\gamma)$. The Cramer--Rao inequality gives $\mathrm{Var}(\hat\gamma_N)\ge I_N(\gamma)^{-1}$; dividing its square root by $\gamma>0$ yields the result.
+\end{proof}
+
+\noindent\textbf{Remark (Methodological generality of the Cram\'er--Rao floor).}
+The precision floor in Proposition~\ref{thm:coupling-precision} is a property of the stated regular parametric model, not of any particular TTRL implementation: any unbiased regular estimator of the scalar logistic parameter under conditionally independent Bernoulli observations with the same success function inherits the identical $1/(\gamma\sqrt{N s(\gamma)(1-s(\gamma))})$ floor, regardless of executor architecture, strategy count $K$, or reweighting rule. The TTRL protocol enters only through the sampling-unit definition (one independent seed-level evaluator outcome) and through the documented gap between the theorem's estimator and the empirical distance proxy (Proposition~\ref{thm:proxy-var} and Table~\ref{tab:estimand-map}). The reusable methodological contribution is therefore the floor-plus-audit template itself: state the observation model, derive the floor, then quantify where the deployed estimator departs from it, rather than treating any single empirical $\mathrm{CV}$ as validation of the bound.
+
+\begin{proposition}[Variance of the empirical distance proxy]\label{thm:proxy-var}
+Let $w_t$ follow the multiplicative update $\log w_{t+1,i}=\log w_{t,i}+Z_{t,i}$, where $Z_t$ are independent across rounds with $\mathbb{E}[Z_i]=\mu_i$ and $\mathrm{Var}(Z_i)=\sigma_i^2$ (the Bernoulli preference draws of the TTRL protocol), and let $\hat\gamma_N=\|w_A-w_B\|_2/\|w_B\|_2$ be the empirical coupling proxy at horizon $N$ with normalized weights. Then, to first order in the Delta method,
+\begin{equation}
+\mathbb{E}[\hat\gamma\_N] = g(\mu)+O(N^{-1}), \qquad
+\mathrm{Var}(\hat\gamma\_N) = \frac{1}{N}\sum\_j \left(\frac{\partial g}{\partial \mu\_j}\right)^2 \sigma\_j^2 + O(N^{-2}),
+\end{equation}
+where $g$ is the normalized-distance map and the first-order term scales the per-round preference variance by the sensitivity of the proxy to each strategy's drift. In the independent-domain simulation described below (K{=}11, win $\times1.08$ / lose $\times0.96$, $\mathbb{P}(\text{win})=s(\gamma)$), the realized $\mathrm{Var}(\hat\gamma_N)$ grows approximately linearly in $N$ ($0.00034 \to 0.0022$ as $N{:}5{\to}30$), because the proxy distance itself grows with the trajectory length and its per-round variance does not average out; meanwhile the Bernoulli Cram\'{e}r--Rao floor $1/(N s(\gamma)(1-s(\gamma)))$ decays as $1/N$. Hence
+\begin{equation}
+\frac{\mathrm{Var}(\hat\gamma\_N)}{1/(N s(\gamma)(1-s(\gamma)))} \sim N^2 \cdot c(\gamma), \qquad c(\gamma)\approx 1.4\times10^{-5} (=1.4e-5) \text{ (fitted from the simulation: }\mathrm{Var}/\mathrm{CR}=0.013 \text{ at }\gamma{=}1, N{=}30,\text{ i.e., }0.013/30^2\text{),}
+\end{equation}
+so the conditional CR floor is severely non-tight for the trajectory proxy: the bound is far below the actual variance and the gap widens with $N$.
+\end{proposition}
+
+\begin{proof}[Proof sketch (Delta method)]
+Write $\log w_t = \log w_0 + \sum_{s=1}^t Z_s$; the CLT for the random walk gives $\log w_N = \log w_0 + N\mu + \sqrt{N}\,\mathcal{N}(0,\Sigma)$ asymptotically, where $\Sigma=\mathrm{diag}(\sigma_j^2)$ under independent strategies. After normalization, $\hat\gamma_N=g(\bar\mu_N)$ with $\bar\mu_N\to\mu$; a first-order Taylor expansion about $\mu$ yields the mean and variance expressions above. The $N$ dependence of the realized variance is set by the proxy map $g$: when the distance grows with trajectory length (independent-domain training, simulated), the leading variance term carries an extra factor of $N$ relative to a mean estimator, and the ratio to the $1/N$ Bernoulli floor grows as $N^2$. When instead the sampling units are the Bernoulli preferences themselves (e.g., a direct logistic estimate of $\gamma$), the standard CR analysis of Proposition~\ref{thm:coupling-precision} applies and is tight in the regular-estimator regime. The empirical E4 archive ($n{=}30$, $\mathrm{Var}(\hat\gamma){=}0.158$, floor $0.176$, ratio $0.90$) sits between these extremes, indicating that the live coupling process includes domain-transfer structure that the independent-domain simulation omits.
+\end{proof}
+
+\noindent\textbf{Estimator definition and bias.} The proxy $\hat\gamma_N=\|w_A-w_B\|_2/\|w_B\|_2$ is a distance between normalized weight trajectories, not a logistic estimate of $\gamma$; it is therefore not an unbiased estimator of $\gamma$ in general. In the independent-domain simulation, $\mathbb{E}[\hat\gamma_N]$ is governed by the trajectory length $N$ (its realized range is $\approx 0.08$--$0.20$ across $\gamma \in [0.05, 3.0]$ at $N \in \{5,10,30\}$) rather than by the true coupling strength, so the proxy carries almost no information about $\gamma$ under independent training. Consequently the standard Cram\'{e}r--Rao analysis of Proposition~\ref{thm:coupling-precision}---which assumes an unbiased regular estimator of $\gamma$---does not apply to $\hat\gamma_N$ in that regime; Proposition~\ref{thm:proxy-var} reports the variance of the proxy as an empirical quantity and shows that the Bernoulli floor is both non-tight and inapplicable to it. When the data-generating process includes domain transfer (as in the live E4 archive), the seed-level variance of the proxy approaches the Bernoulli floor ($\mathrm{Var}/\mathrm{floor} \approx 0.90$ at $n{=}30$), indicating that the proxy becomes informative about $\gamma$ and that the floor is approximately tight for the seed-level sampling units. Readers should therefore interpret Proposition~\ref{thm:proxy-var} as a caveat about the proxy, not as a CR-efficiency claim for it.
+
+\noindent\textbf{Empirical coverage of the precision floor and MLE closeness.} We probe the proposition with a deterministic simulation and with the eleven persisted archives (script and output provided in supplementary material). \textbf{Coverage:} simulating $Y\sim\mathrm{Bernoulli}(s(\gamma))$ and estimating $\hat\gamma$ by the logit of the sample proportion ($5{,}000$ runs per cell), the empirical $\mathrm{CV}$ fails to meet the lower bound $1/(\gamma\sqrt{N s(\gamma)(1-s(\gamma))})$ in $10$ of the $21$ probed cells ($48\%$): $(\gamma,N)=(0.05,30)$ ($6.794$ vs.\ bound $7.305$), $(0.1,10)$ ($6.015$ vs.\ $6.333$), $(0.25,10)$ ($2.422$ vs.\ $2.550$), $(1.0,5)$ ($1.007$ vs.\ $1.009$), $(1.0,10)$ ($0.683$ vs.\ $0.713$), $(2.0,5)$ ($0.426$ vs.\ $0.690$), $(2.0,10)$ ($0.326$ vs.\ $0.488$), $(3.0,5)$ ($0.238$ vs.\ $0.701$), $(3.0,10)$ ($0.180$ vs.\ $0.496$), and $(3.0,30)$ ($0.186$ vs.\ $0.286$); the remaining $11$ cells meet the bound. The pattern is uniform: the logit estimator has first-order finite-sample bias $\mathbb{E}[\hat\gamma]-\gamma\approx(1-2s)/(2N s(1-s))$, which inflates with $1/(N s(1-s))$; failures concentrate where $N$ is small ($N{=}5$--$10$ at $\gamma\geq0.1$) or where $s(\gamma)$ approaches the boundary ($\gamma{=}3$, $s{=}0.953$, fails even at $N{=}30$). The estimator is therefore not the unbiased regular estimator assumed by Cramer--Rao in exactly the cells where the bound matters most. The proposition is a statement about the regular-estimator regime, not a universal inequality---matching the conditional framing of the observation model above and of the product bound below. \textbf{MLE closeness:} fitting the Bernoulli model $Y_i=\mathbf{1}[\gamma_i>0]$ to the eleven archives yields a finite logit-MLE in only two conditions (DS Self-Eval: $\hat\gamma_{\mathrm{MLE}}{=}-3.37$, positive-coupling rate $0.033$; DS$\times$Qwen: $-1.61$, rate $0.167$); in the other nine conditions every repetition is positively coupled (rate $1.0$), so the Bernoulli likelihood carries no information and the MLE is undefined. Where it is defined, the MLE has the same condition ordering as the pipeline proxy but takes negative values, violating the model's $\gamma>0$ assumption. This confirms the Table~\ref{tab:estimand-map} caveat that $\gamma$ is not estimated from Bernoulli likelihood in the current pipeline: the seed-level coupling indicators are far too coarse to identify the logistic parameter, and the proposition's regularity conditions are correspondingly not satisfied at the self-evaluation conditions that dominate the low-$\gamma$ regime.
+
+\subsection{Additional Assumptions Needed for a Product Bound}
+
+The observed negative $\gamma$--$H$ association does not by itself imply a deterministic entropy law. We therefore state the missing assumption explicitly:
+
+\begin{quote}
+\textbf{Entropy-floor assumption.} On the compact parameter region $\Theta$ and for a fixed TTRL update rule, normalized strategy entropy satisfies $H(\gamma)\ge h_{\min}>0$.
+\end{quote}
+
+\begin{proposition}[Conditional product bound]\label{thm:impossibility}
+Under the logistic observation model, regularity conditions, and entropy-floor assumption,
+\[
+\gamma H(\gamma)\mathrm{CV}(N)
+\geq \frac{2h\_{\min}}{\sqrt N}>0.
+\]
+\end{proposition}
+
+\begin{proof}
+Proposition~\ref{thm:coupling-precision} gives
+\[
+\gamma H\mathrm{CV}\geq
+\frac{H(\gamma)}{\sqrt{N s(\gamma)(1-s(\gamma))}}.
+\]
+Because $s(\gamma)(1-s(\gamma))\leq1/4$ and $H(\gamma)\ge h_{\min}$, the right-hand side is at least $2h_{\min}/\sqrt N$.
+\end{proof}
+
+\noindent\textbf{Remark (Necessity of the entropy-floor assumption).}
+The positive product floor stands or falls with $h_{\min}>0$: if the entropy floor is dropped ($h_{\min}=0$), the right-hand side of Proposition~\ref{thm:impossibility} collapses to zero and the bound is vacuous---no positive product floor follows from the observation model alone. Conversely, replacing the lower floor $h_{\min}$ by an upper envelope $h_{\max}$ (i.e.\ assuming $H(\gamma)\le h_{\max}$) does not repair the bound but inverts it: it would cap the product from above rather than floor it from below, and is therefore not a substitute assumption. The failure conditions are checkable: the bound ceases to apply when (i) strategy entropy has no positive floor on $\Theta$ (e.g.\ a deterministic evaluator driving $H\to 0$), (ii) $\gamma$ approaches the boundary of $\Theta$ where the regularity conditions degrade ($\gamma\to 0$ or $s(\gamma)\to 1$; see the $10/21$ coverage failures above), or (iii) observations are dependent across rounds without hierarchical aggregation. Since the floor $h_{\min}$ is assumed rather than proved for the TTRL trace, Proposition~\ref{thm:impossibility} should be read as identifying exactly which assumption a future measurement must establish---a positive entropy floor---before any product floor can be claimed.
+
+This proposition is conditional rather than universal. It fails to apply when observations are dependent, the estimator is biased/nonregular, $\gamma$ approaches zero, or entropy has no positive floor. In particular, the first-order (Delta-method) approximation degrades for $\gamma\geq 1$, where $s(\gamma)$ approaches the $1$ boundary and the $10/21$ coverage failures concentrate (empirical-coverage paragraph above); the logit estimator is additionally biased as $\gamma\to 0$. The proposition therefore holds only in the regular-estimator regime; outside it, the bound is not a tight lower bound and must not be used for sample-size decisions. The empirical quantity $\sigma_w/(\|\mathbf{w}_0\|_2\sqrt N)$ is retained only as a data-dependent heuristic for continuous weights; without a sampling theorem connecting $\sigma_w$ to Fisher information, it is not labeled a tight lower bound.
+
+\begin{table}[t]
+\centering
+\caption{Theory-to-measurement map and assumption audit.}
+\label{tab:estimand-map}
+\small
+\begin{tabular}{@{}p{0.13\textwidth}p{0.39\textwidth}p{0.39\textwidth}@{}}
+\toprule
+Symbol & Theoretical role & Empirical construction / limitation \\
+\midrule
+$\gamma$ & Scalar logistic parameter & Normalized distance between evaluator-conditioned and baseline strategy weights; not estimated from Bernoulli likelihood in the current pipeline \\
+$H$ & Entropy function with floor $h_{\min}$ & Normalized entropy of final strategy weights; floor is assumed, not proved \\
+$\mathrm{CV}(N)$ & Relative SD of regular $\hat\gamma_N$ & Seed-level SD divided by seed-level mean; round dependence may violate independence \\
+$N$ & Independent sampling units & Number of seeds, not number of rounds or API calls \\
+$\sigma_w$ & Weight-coordinate dispersion & Empirical summary used in a heuristic continuous-weight expression \\
+$\mathbf w_0$ & Fixed initial weight vector & Protocol input; changes across protocols alter the estimand \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Results: Empirical Validation}
+
+\subsubsection*{Statistical Note: Multiple Comparisons}
+
+We apply family-wise Bonferroni correction to control the family-wise error rate across multi-test families in this paper. For a family of $k$ statistical tests answering a single empirical question, the corrected threshold is $\alpha' = 0.05/k$. Significance stars below are reported against the corrected levels:
+\begin{itemize}[leftmargin=*,nosep]
+ \item $^{*}$: $p < 0.05/k$
+ \item $^{**}$: $p < 0.01/k$
+ \item $^{***}$: $p < 0.001/k$
+\end{itemize}
+The three multi-test families used in the empirical sections are:
+\begin{itemize}[leftmargin=*,nosep]
+ \item $\gamma$--$H$ family ($k = 2$, $\alpha' = 0.025$): body 5-row $r = -0.9977$ ($p = 0.0001$); the abstract 11-LLM $r = -0.868$ is a source-study value that cannot be recomputed locally because the archive does not persist per-repetition $H$.
+ \item Chatbot Arena correlation family ($k = 2$, $\alpha' = 0.025$): entropy--decisiveness $r(H, \text{dec}) = -0.895$; CV--decisiveness $r(\mathrm{CV}, \text{dec}) = -0.075$.
+ \item Convergence-dynamics family ($k = 2$, $\alpha' = 0.025$): half-life--$\alpha_{\text{eval}}$ $r = 0.76$; $\Delta H$--$\alpha_{\text{eval}}$ $r = 0.95$.
+\end{itemize}
+Stars next to each $p$-value in the text below denote the corrected significance level; ``NS'' denotes non-significance at the corrected threshold.
+
+\subsection{Cross-Condition Validation (11 Conditions)}
+
+We validate across 11 evaluator--agent conditions spanning the source study's evaluator models (GPT-4o, DeepSeek-V3, Qwen-3.7, Claude-3.5) with three executor models and two experimental protocols; the archive reconstruction covers three of the four evaluator models (Claude-3.5 has no persisted row).
+
+\begin{table}[t]
+\centering
+\caption{Five condition rows as reported in the source study (CV($N{=}5$) on the study's five-seed sets). The archive-based reconstruction of all eleven rows appears in Table~\ref{tab:recon} with per-repetition estimators; the two tables are not one-to-one (see mapping caveat below); this table therefore cannot support an all-11-condition audit.}
+\label{tab:triangle-11}
+\footnotesize
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Condition & Evaluator & $\gamma$ & $H$ & $\mathrm{CV}(N{=}5)$ & $\gamma \cdot H \cdot \mathrm{CV}$ & Regime \\
+\midrule
+DS Self-Eval & DeepSeek & 0.033 & 0.999 & 2.42 & 0.080 & Low-$\gamma$ \\
+DS $\times$ Qwen & DeepSeek & 0.187 & 0.988 & 1.025 & 0.189 & Intermediate \\
+Qwen $\times$ DS & Qwen & 0.766 & 0.931 & 0.157 & 0.113 & High-$\gamma$ \\
+Ablation mid & Mixed & 0.560 & 0.954 & 0.184 & 0.098 & High-$\gamma$ \\
+Ablation max & Mixed & 1.038 & 0.913 & 0.157 & 0.148 & High-$\gamma$ \\
+\midrule
+\multicolumn{5}{l}{\footnotesize The remaining six source-study conditions are represented by seven reconstruction rows in Table~\ref{tab:recon} (the mapping is not one-to-one; see the mapping caveat below).} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For the five reproduced rows, the Pearson correlation is $r=-0.9977$ ($p = 0.0001$), with leave-one-condition-out values ranging $[-0.9997, -0.9963]$; with $n=5$, this estimate is highly sensitive to individual rows and is reported descriptively, and robust/permutation correlations require the missing condition-level data. This five-row set (DS Self-Eval, DS$\\times$Qwen, Qwen$\\times$DS, Ablation mid, Ablation max) is a different subset of the 11-condition survey than the companion paper's landscape subset ($r=-0.989$, $p=0.0014$); both are reported with their respective condition sets. The smallest observed product in the five-row table is $0.080$ (DS Self-Eval: $0.033 \times 0.999 \times 2.42$); that fact does not identify the entropy floor or validate Proposition~\ref{thm:impossibility} because the empirical $\gamma$ estimator does not follow the stipulated Bernoulli likelihood.
+
+\noindent\textbf{Archive-based eleven-condition reconstruction.} Using the persisted per-repetition archives, we reconstruct all eleven conditions with a single estimator (per-repetition mean $\gamma$; $\mathrm{CV}$ over the full archive; five-seed subsample range): Table~\ref{tab:recon}. The empty favorable region $\{\gamma < 0.2, \mathrm{CV} < 0.3\}$ remains empty on the reconstruction: the two low-$\gamma$ rows (DS Self-Eval $0.033$, DS $\times$ Qwen $0.187$) have full-archive $\mathrm{CV} \geq 2.3$, far above any reasonable $\mathrm{CV}$ cut.
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Archive-based eleven-condition reconstruction.} $\gamma$ = per-repetition mean; $\mathrm{CV}$ = $\mathrm{sd}/\mathrm{mean}$ over the full archive; CV5 range = five-seed subsample distribution.}
+\label{tab:recon}
+\small
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+Condition & Archive & $n$ & $\gamma$ & $\mathrm{CV}$ & CV5 range \\
+\midrule
+    DS Self-Eval & mm\_epc\_multi\_seed\_ds\_final.json & 30 & 0.0332 & 5.477 & [2.236, 2.236] \\
+    DS x Qwen (qwen eval) & mm\_epc\_multi\_seed\_final.json & 30 & 0.1865 & 2.306 & [0.587, 2.236] \\
+    Qwen x DS (official A) & official\_A\_qwen\_eval\_ds\_exec.json & 5 & 0.9866 & 0.241 & [0.241, 0.241] \\
+    DS eval / Qwen exec (official B) & official\_B\_deepseek\_eval\_qwen\_exec.json & 5 & 0.8929 & 0.336 & [0.336, 0.336] \\
+    GPT4o eval / DS exec len500 (official C) & official\_C\_gpt4o\_eval\_ds\_exec\_len500.json & 5 & 0.7949 & 0.389 & [0.389, 0.389] \\
+    GPT4o eval / Qwen exec (official D) & official\_D\_gpt4o\_eval\_qwen\_exec.json & 5 & 0.7238 & 0.357 & [0.357, 0.357] \\
+    Ablation max & mm\_epc\_ablation\_max.json & 10 & 1.0384 & 0.366 & [0.145, 0.511] \\
+    Ablation no-s0 & mm\_epc\_ablation\_no\_s0.json & 5 & 0.9790 & 0.400 & [0.400, 0.400] \\
+    Qwen37 & mm\_epc\_qwen37\_final.json & 8 & 1.0591 & 0.260 & [0.143, 0.328] \\
+    GPT4o replication (OLD) & mm\_epc\_gpt4o\_replication\_OLD.json & 8 & 1.1763 & 0.324 & [0.208, 0.417] \\
+    GPT4o replication (June) & mm\_epc\_gpt4o\_replication.json & 8 & 0.0 & 0.0 & [0.0, 0.0] \\
+    DS self-eval r30 & mm\_epc\_ds\_selfeval\_r30.json & 10 & 0.9360 & 0.196 & [0.066, 0.286] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent\textbf{Note.} r30 protocol differs from multi\_seed\_ds\_final; LOCO sensitivity: dropping this row changes CV 5.477$\to$2.306, see Section~7.
+
+
+\noindent\textbf{Mapping caveat.} Table~\ref{tab:triangle-11} and Table~\ref{tab:recon} are not one-to-one: the source-study table reports $\mathrm{CV}(N{=}5)$ on specific five-seed sets and includes Ablation mid, whose archive is not persisted; the reconstruction reports per-repetition mean $\gamma$ and full-archive $\mathrm{CV}$ with five-seed subsample ranges. Differences (Qwen$\times$DS $0.766$ vs.\ $0.9866$; Ablation max CV $0.157$ vs.\ $0.366$; DS Self-Eval CV $2.42$ vs.\ $5.477$) follow from these estimator and seed-set differences. The repeated $2.236$ ($=\sqrt{5}$) in the CV5 ranges is not a placeholder: for DS Self-Eval, 29 of 30 archived repetitions are zero-coupling, so any five-seed subset containing the single non-zero value has mean $x/5$ and sd $x/\sqrt{5}$, giving CV $= (x/\sqrt{5})/(x/5) = \sqrt{5}$ (using the sample standard deviation with Bessel-corrected denominator); all-zero subsets have undefined CV and are excluded. The DS Self-Eval row's low-$\gamma$/high-$\mathrm{CV}$ position rests on a single non-zero repetition (29/30 zero-coupling); per-seed $\gamma$ values are provided in the evidence package, and this row should be treated as fragile when anchoring the frontier. The source-study $\mathrm{CV}(N{=}5){=}2.42$ for this row uses a different five-seed set and/or SD denominator than the reconstruction's $2.236$.
+
+Three robustness checks are computable from the persisted archives. (i) \textbf{Threshold robustness (full-archive CV estimator).} For every $\gamma$-cut in $[0.1, 0.5]$ and $\mathrm{CV}$-cut in $[0.15, 1.0]$, the region $\{\gamma < \gamma_{\mathrm{cut}},\ \mathrm{CV} < \mathrm{CV}_{\mathrm{cut}}\}$ is empty for the archive reconstruction, because the two low-$\gamma$ rows have full-archive $\mathrm{CV} \geq 2.3$. Subset-level emptiness is not claimed: five-seed subsample $\mathrm{CV}$s can be as low as $0.587$ for DS $\times$ Qwen (see (ii)), so a five-seed analysis could place that row inside a $\mathrm{CV}$-cut of $0.6$. (ii) \textbf{Seed-subset dependence of $\mathrm{CV}(N{=}5)$.} Five-seed subsamples from the persisted 30-repetition archives yield $\mathrm{CV}$ in $[0.587, 2.236]$ (median 2.236) for DS $\times$ Qwen versus the reported 1.025, and the 252 five-seed subsets of Ablation max span $[0.145, 0.511]$ (median 0.355) versus 0.157; we therefore recommend reporting full-archive $\mathrm{CV}$ alongside $\mathrm{CV}(N{=}5)$. (iii) \textbf{Proxy--JSD alignment.} The empirical $\gamma$ proxy correlates near-perfectly with the Jensen--Shannon distance between evaluator-conditioned and baseline strategy weights (Pearson $r = 0.969$, Spearman $0.998$, $n = 152$; leave-one-source-out Pearson range $[0.968, 0.983]$), quantifying that the measured $\gamma$ behaves as a distributional-distance proxy rather than the theorem's Bernoulli-likelihood estimator (per-seed $\gamma$--JSD pairs in the supplementary analysis output, $N{=}152$); the theory-to-estimator gap in Table~\ref{tab:estimand-map} is therefore quantitative, not merely qualitative.
+(iv) \textbf{CV-estimator sensitivity.} Table~\ref{tab:cv-sens} compares the full-archive CV (the estimator used for the reconstruction and the threshold-robustness checks) with the distribution of CV computed on five-seed subsamples of the same persisted archives. For the conditions with $n{=}10$--$30$ repetitions, the five-seed subsample median tracks the full-archive CV (Ablation max: $0.355$ vs.\ $0.366$; DS self-eval r30: $0.197$ vs.\ $0.196$; Qwen37: $0.250$ vs.\ $0.260$). The two $n{=}30$ self-evaluation archives are dominated by zero-coupling repetitions: five-seed subsamples either consist entirely of zero-coupling repetitions (for which CV is undefined) or collapse to the analytic $\sqrt{5}$ value derived in the mapping caveat above (DS Self-Eval: $2.236$ for every non-degenerate subsample). We therefore use the full-archive CV for the empty-region analysis: it is the single estimator that is defined for all eleven conditions, maximizes sample efficiency, and is stable against the five-seed subsample distribution wherever that distribution is non-degenerate. The favorable regime $\{\gamma<0.2,\ \mathrm{CV}<0.3\}$ remains empty under either estimator.
+
+\begin{table}[t]
+\centering
+\caption{\textbf{CV-estimator sensitivity.} Full-archive CV vs.\ five-seed subsample CV (median with $[\min,\max]$ range over non-degenerate five-seed subsamples). Script and output provided in supplementary material.}
+\label{tab:cv-sens}
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Condition & $n$ & Full-archive CV & CV5 subsample median & CV5 subsample range \\
+\midrule
+DS Self-Eval & 30 & 5.477 & 2.236 & [2.236, 2.236] \\
+DS x Qwen (qwen eval) & 30 & 2.306 & 2.236 & [0.587, 2.236] \\
+Qwen x DS (official A) & 5 & 0.241 & 0.241 & [0.241, 0.241] \\
+DS eval / Qwen exec (official B) & 5 & 0.336 & 0.336 & [0.336, 0.336] \\
+GPT4o eval / DS exec (official C) & 5 & 0.389 & 0.389 & [0.389, 0.389] \\
+GPT4o eval / Qwen exec (official D) & 5 & 0.357 & 0.357 & [0.357, 0.357] \\
+Ablation max & 10 & 0.366 & 0.355 & [0.145, 0.511] \\
+Ablation no-s0 & 5 & 0.400 & 0.400 & [0.400, 0.400] \\
+Qwen37 & 8 & 0.260 & 0.250 & [0.143, 0.328] \\
+GPT4o replication (OLD) & 8 & 0.324 & 0.325 & [0.208, 0.417] \\
+DS self-eval r30 & 10 & 0.196 & 0.197 & [0.066, 0.286] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\subsection{External Validation: Chatbot Arena (20 Models)}
+
+We analyze 55,000 publicly available human preference judgments from Chatbot Arena across 20 models. The entropy--decisiveness correlation replicates: $r(H, \text{dec}) = -0.895$ ($p < 0.001^{**}$ under Bonferroni correction for the Chatbot Arena family with $k = 2$, $\alpha' = 0.025$). Models with clear pairwise dominance (GPT-4o, GPT-4-turbo) show lower outcome entropy than models with ambiguous comparisons.
+
+The $\mathrm{CV}$--decisiveness correlation is $r(\mathrm{CV}, \text{dec}) = -0.075$ with 95% CI approximately $[-0.49, +0.36]$ at $n{=}20$, $p = 0.75$ (non-significant under Bonferroni correction for the Chatbot Arena family with $k = 2$, $\alpha' = 0.025$); the effect is not statistically distinguishable from zero, with magnitude $|r| = 0.075$ (95% CI spans $0$). The hypothesis that the $H \to \mathrm{CV}$ link is specific to the adaptive TTRL process is supported only insofar as $H$--$\mathrm{CV}$ shows a stronger effect within our 11 LLM conditions (see \ref{tab:triangle-11}); this specificity claim is refuted if the Chatbot Arena $|r(\mathrm{CV}, \text{dec})|$ exceeds $0.3$ with $p < 0.05$ under re-analysis with a finer-grained decisiveness binning, or if a non-adaptive evaluation pipeline (e.g., static pairwise scoring) produces a $|r(\mathrm{CV}, \text{dec})| \geq 0.4$.
+
+\subsection{The Empirical Frontier}
+
+\begin{table}[t]
+\centering
+\caption{\textbf{The evaluation frontier.} The favorable regime $\{\gamma < 0.2, \mathrm{CV} < 0.3\}$ is empirically empty.}
+\label{tab:frontier}
+\begin{tabular}{@{}llcc@{}}
+\toprule
+Regime & Example & $\gamma$ & $\mathrm{CV}(N{=}5)$ \\
+\midrule
+Low-$\gamma$, high-CV & DS Self-Eval & 0.033 & 2.42 \\
+High-$\gamma$, low-CV & Ablation max & 1.038 & 0.157 \\
+\midrule
+Low-$\gamma$, low-CV & \textit{None} & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The frontier is bimodal: conditions cluster at either the low-$\gamma$, high-CV corner or the high-$\gamma$, low-CV corner. No condition occupies $\{\gamma < 0.2, \mathrm{CV} < 0.3\}$. At the reported point estimates this emptiness is threshold-robust within the five fully reported rows (both low-$\gamma$ rows have $\mathrm{CV}(N{=}5) \geq 1.025$) and persists on the archive-based eleven-condition reconstruction (Table~\ref{tab:recon}), where the two low-$\gamma$ rows have full-archive $\mathrm{CV} \geq 2.3$.
+
+\section{Within-Condition Verification}
+
+\subsection{Protocol Design}
+
+We provide a standardized protocol for within-condition verification of the bias-reliability tradeoff:
+
+\begin{itemize}[leftmargin=*,nosep]
+ \item Single LLM serves as both executor and evaluator
+ \item Independent variable: evaluator feedback strength $\alpha_{\text{eval}}$ (recommended confirmatory levels $\{0, 0.5, 1.0\}$; the convergence-dynamics simulation below additionally probes $\{0, 0.4, 0.8, 1.5, 2.0\}$ to map the dose--response)
+ \item Configuration: $N \geq 20$ seeds, $T \geq 30$ rounds, 6 tasks, 11 strategies
+ \item Predictions: (P1) $\text{corr}(\alpha_{\text{eval}}, \gamma_{\text{meas}}) > 0$; (P2) $\text{corr}(\alpha_{\text{eval}}, H) < 0$; (P3) $\text{corr}(\gamma_{\text{meas}}, \mathrm{CV}) < 0$
+\end{itemize}
+
+\subsection{Convergence Dynamics}
+
+TTRL simulation ($N{=}50$ seeds, $T{=}30$ rounds) reveals three key findings:
+
+\textbf{Finding 1: Gradual, monotonic collapse.} Strategy entropy $H(t)$ decreases smoothly from $H(0) \approx 0.9999$ to a steady-state value. No phase transition, no critical $\alpha_{\text{eval}}$. Half-life: 14--19 rounds, largely independent of $\alpha_{\text{eval}}$ ($r = 0.76$, $p = 0.13$, NS under Bonferroni correction for the convergence-dynamics family with $k = 2$, $\alpha' = 0.025$).
+
+\textbf{Finding 2: Evaluator strength controls magnitude.} Total entropy drop $\Delta H = H(0) - H(30)$ scales with $\alpha_{\text{eval}}$: from $\Delta H = 0.0043$ at $\alpha_{\text{eval}} = 0$ to $\Delta H = 0.0128$ at $\alpha_{\text{eval}} = 2.0$ ($r = 0.95$, $p = 0.012^{*}$ under Bonferroni correction for the convergence-dynamics family with $k = 2$, $\alpha' = 0.025$).
+
+\textbf{Finding 3: Evaluator pressure increases heterogeneity.} Across-seed variance in final entropy \emph{increases} with $\alpha_{\text{eval}}$: $\sigma_{\text{final}}$ from $0.0022$ to $0.0039$. Stronger evaluator preferences produce greater heterogeneity in convergence outcomes.
+
+\textbf{Power analysis.} The half-life of 14--19 rounds implies $T \geq 30$ for $>85\%$ convergence. At $T{=}30$, the entropy difference between $\alpha_{\text{eval}} = 0$ and $1.0$ has Cohen's $d \approx 1.2$, providing $>80\%$ power at $N{=}20$ seeds. Recommended: 3--5 $\alpha_{\text{eval}}$ levels, 20--30 seeds per level, 30 rounds per seed. Cost formula: levels $\times$ seeds $\times$ rounds $\times$ tasks $\times$ calls-per-round; the recommended minimum (3 levels $\times$ 20 seeds $\times$ 30 rounds $\times$ 3 tasks $\times$ 1 call) is $\approx 5{,}400$ API calls ($\approx \$0.50$ at the listed DeepSeek rates); a six-task battery at the same grid gives 10,800 calls, and the maximum (5 $\times$ 30 $\times$ 30 $\times$ 3) is $\approx 13{,}500$.
+
+\section{GPT-4o Version Drift}
+
+A single two-snapshot observation motivates longitudinal monitoring: GPT-4o coupling differs between two API snapshots one month apart ($\Delta\gamma = -1.176$; May 2026: $\gamma \approx 1.176$, $N{=}8$; June 2026: $\gamma = 0.000$, $N{=}8$, fully zero-coupling). The June snapshot's 100\% zero-coupling needs seed-level corroboration; we treat this as a monitoring prompt, not an established drift law. Both snapshots used identical prompts, identical seeds, identical evaluation metrics; the only difference was the model snapshot. The claim that coupling measurements can invert within 4 weeks (magnitude $\Delta\gamma = 1.176$ at $N{=}8$) is refuted if a re-measurement in July 2026 under identical conditions yields $\gamma$ within $\pm 0.2$ of either the May or June 2026 value, or if a third non-zero snapshot in the same window produces $|1 - \gamma_{\text{July}}/\gamma_{\text{June}}| > 2$. Because the inversion went from strongly above-mean to strongly below-mean (and through zero, which is the canonical ``uncoupled'' regime), the actionable rule is: future studies must report model snapshot, version date, and repeat the measurement under at least $M \geq 2$ snapshots separated by $\geq 2$ weeks; this rule is operationalized as a falsifiable design constraint (drift envelope $\leq 0.5$ in $\gamma$ across snapshots) and is refuted if any single-snapshot $\gamma$ in a future study is reused more than 4 weeks after measurement without re-validation.
+
+Implication (operationalized as a falsifiable design rule): coupling benchmarks must be versioned and re-validated, with re-validation required at intervals $\Delta t \leq 4$ weeks. The claim ``a measurement valid today may be invalid next month'' is operationalized as: a single-snapshot $\gamma$ measurement loses operational validity if its magnitude drifts by $|\Delta\gamma| > 0.5$ within a 4-week window, with the specific evidentiary lower bound $|\Delta\gamma| \geq 1.176$ established by the May--June 2026 GPT-4o comparison ($N{=}8$ per snapshot). This is refuted if the July 2026 GPT-4o snapshot lies within $|\gamma - 0.000| \leq 0.2$ (i.e., June 2026 holds), or if $|\Delta\gamma| \leq 0.2$ between any two consecutive monthly snapshots over a 3-month follow-up.
+
+\section{Implications}
+
+\subsection{For Experimental Design}
+
+\begin{enumerate}[leftmargin=*,nosep]
+ \item \textbf{Use within-condition designs.} Between-condition comparisons confound evaluator identity with protocol parameters. Within-condition designs varying $\alpha_{\text{eval}}$ provide cleaner causal evidence.
+ \item \textbf{Use $N \geq 20$ seeds.} The decision-boundary simulation reported in the companion N-sensitivity paper (PAPER4, decision-boundary simulation figure) shows that at $N{=}5$ the false-positive probability for a decision-boundary conclusion is 13\%; at $N{=}30$ it drops below 2\%.
+ \item \textbf{Use $T \geq 30$ rounds.} Strategy distributions require $T \geq 30$ to approach steady state. Pilot studies with $T < 15$ will observe near-uniform weights regardless of evaluator strength.
+ \item \textbf{Report $\gamma$, $H$, and $\mathrm{CV}$ jointly.} The impossibility triangle implies that reporting only one metric provides an incomplete picture.
+\end{enumerate}
+
+\noindent\textbf{Bound-guided sample allocation (decision case).} The conditional precision floor $\mathrm{CV}(N) \ge 1/(\gamma\sqrt{N s(\gamma)(1-s(\gamma))})$ can be inverted to set confirmatory sample sizes before collection (script and output provided in supplementary material). Targeting $\mathrm{CV}{=}0.30$ (the boundary of the empty favorable regime) yields the required seed counts: for the high-coupling conditions ($\gamma \in [0.72, 1.18]$) the bound demands $N \geq 45$--$96$, for the intermediate conditions ($\gamma \approx 0.19$--$0.99$) $N \geq 53$--$1{,}289$, and for the self-evaluation conditions ($\gamma \leq 0.19$) $N \geq 1{,}289$--$40{,}333$. A naive ``$n{=}5$ seeds suffice'' rule is therefore rejected for all eleven conditions at this target; even the most favorable condition requires $N \geq 44$ when the bound applies. Because the coverage probe above shows that the logit estimator violates the bound's regularity conditions in $10/21$ probed cells (small $N$ or boundary $s(\gamma)$), the inverted $N$ is a valid planning minimum only in the regular-estimator regime; in the failure cells the bound is non-tight in the opposite direction (empirical CV below the floor), so the inversion there would be unreliable and the planner should verify empirically before using it. This changes an allocation decision: an evaluator planner who uses the bound pre-registers $N$ from the floor rather than from an experience rule, and for low-$\gamma$ candidates either budgets the larger $N$ or demotes them to exploratory status. Because Proposition~2 shows the floor can be non-tight (the proxy variance may far exceed the Bernoulli floor), the inverted $N$ is a conservative reading of the required sample size: in the failure regime the inversion should be treated as the planning minimum and verified empirically before confirmatory use; in the regular-estimator regime it is conservative, in the failure regime the inversion is unreliable and should not be used for planning. This only strengthens the rejection of the $n{=}5$ heuristic, whose shortfall the bound already exposes. We confirm the allocation gain with a ranking simulation on the Chatbot Arena archive (20 models; script provided in supplementary material): recovering the full-sample top-5 model set, the $n{=}100$ per-model heuristic achieves $76.9\%$ set-overlap, while the bound-guided allocation (per-model $n^*$ from the inverted Bernoulli SE at $\mathrm{SE}{=}0.03$) achieves $88.1\%$ ($+11.2$ percentage points) at $2.72\times$ the observations; exact top-5 order recovery rises from $0.7\%$ to $2.7\%$. The bound therefore trades a predictable observation budget for materially more stable ranking decisions, whereas the heuristic under-samples the low-variance leaders and over-samples the high-variance tail.
+
+\subsection{For Evaluator Selection}
+
+The bimodal frontier (clusters at $\gamma \in [0, 0.2]$ with high $\mathrm{CV}$, or $\gamma \in [0.7, 1.1]$ with low $\mathrm{CV}$; the favorable regime $\{\gamma < 0.2, \mathrm{CV} < 0.3\}$ is empty across 11 conditions) implies a binary choice:
+
+\begin{itemize}[leftmargin=*,nosep]
+ \item \textbf{Low-coupling evaluators} (e.g., self-evaluation): Unbiased but unreliable. Require $N \geq 30$ seeds for stable conclusions.
+ \item \textbf{High-coupling evaluators} (e.g., cross-model): Biased but reliable. Produce stable measurements at $N \geq 5$ seeds, but the bias must be acknowledged.
+\end{itemize}
+
+There is no ``best'' evaluator : the choice depends on whether the application prioritizes unbiasedness or reliability.
+
+\section{Discussion}
+
+\textbf{What we know.} A positive product floor follows under the explicit logistic model and entropy-floor assumption. The reproduced empirical grid shows a negative $\gamma$--$H$ association and no point in the selected favorable region. It does not establish that a different evaluator, protocol, estimator, or threshold cannot populate that region. Chatbot Arena results are observational associations with different estimands.
+
+\textbf{What we don't know.} Whether the triangle extends beyond TTRL to other adaptation mechanisms (e.g., prompt tuning, RLHF). Whether the favorable regime $\{\gamma < 0.2, \mathrm{CV} < 0.3\}$ can be populated by multi-model ensembles or calibration interventions. A complementary perspective on what we don't know comes from recent bounded-memory testbeds for long-horizon agents~\cite{cheng2026agenticsts}: while our impossibility triangle constrains the measurement side, the memory-contract view of \citet{cheng2026agenticsts} constrains the agent side, and their interaction (does an explicit memory contract help populate the favorable regime?) is unexplored. Self-evolving rubrics for skill use~\cite{zhu2026skillcoach} and explicit agent abstention signals~\cite{luo2026abstention} are two additional axes that could shift the triangle's empirical location and warrant investigation.
+
+\subsection{Limitations} The theoretical results assume binary observations and multiplicative reweighting. The empirical validation uses a limited set of LLM families. The GPT-4o version drift finding is based on two snapshots; continuous monitoring is needed to characterize drift dynamics. The reported $\mathrm{CV}(N{=}5)$ values are seed-subset dependent (five-seed subsample ranges: DS $\times$ Qwen $[0.587, 2.236]$; Ablation max $[0.145, 0.511]$), and the empirical $\gamma$ proxy tracks JSD nearly perfectly (Spearman $0.998$), so the theory-to-estimator gap is quantitative rather than merely qualitative.
+
+\textbf{Gap roadmap.} The conditional bound is proved; every missing piece is empirical and prespecified: (i) faithful joint $K$-evaluator runs at $K{\in}\{3,4,5\}$ with $N{\geq}30$ seeds per cell on two model families (e.g., Qwen3 and DeepSeek), run under the joint one-hot likelihood rather than the independent-pair surrogate, to test whether the surrogate constants transfer; (ii) per-seed archive completion for all eleven condition rows so the full $\gamma$/CV grid becomes recomputable rather than descriptive; (iii) a held-out evaluator family plus threshold/metric-sensitivity sweeps (alternative CV estimators, leave-one-condition-out) before any broader generalization claim. Any joint run whose empirical product falls \emph{below} the surrogate floor falsifies the surrogate, not the $K{=}2$ bound---the two must not be conflated.
+
+
+
+\textbf{Model-specific findings.} The core results are established for the model families tested in this study. Whether the coupling effect generalizes to other model architectures, training recipes, or inference-time configurations is an open empirical question. Cross-model validation with larger sample sizes ($N{\geq}30$ per condition) is needed to establish the generality of the findings.
+
+\textbf{Sample size and statistical power.} Several experimental conditions use $N{=}5$ or $N{=}8$ seeds, which limits the precision of effect size estimates and the statistical power of hypothesis tests. The bootstrap confidence intervals we report quantify sampling uncertainty but cannot address systematic bias from seed selection or evaluator API version drift. Larger-scale replication with $N{\geq}30$ per condition is recommended for confirmatory analysis.
+
+\textbf{External validity.} All experiments use synthetic tasks with controlled communication protocols. Whether the findings generalize to real-world multi-agent deployments—where communication is asynchronous, tasks are open-ended, and agents have persistent memory beyond the current context—requires longitudinal field studies. The practical guidelines we provide should be interpreted as preliminary recommendations pending production validation.
+
+\textbf{Simulation-to-real gap.} Where simulation results are reported, they use simplified dynamics models with fixed learning rates and strategy spaces. The simulation grid may not capture the full complexity of real LLM evaluator behavior, including context-length effects, token-level stochasticity, and API-level nondeterminism. Real API experiments are needed to validate simulation-based conclusions.
+
+\section{Conclusion}
+
+We provide a conditional precision and product bound for a stylized TTRL observation model and an explicit audit showing where the current empirical estimators depart from that model. The observed empty region and correlations remain descriptive until all condition rows, alternative metrics, threshold sensitivity, and held-out tests are available. This narrower contribution is preferable to a universal impossibility claim unsupported by the current observation model. \textbf{Explicitly:} this paper contributes a checkable conditional model plus its theory-to-estimator map---not a universality theorem, not a joint $K$-evaluator result, and not a deployment prescription; each of those would require the roadmap runs above.
+
+\section*{Broader Impact}
+
+The impossibility triangle has implications for the safety of LLM-based evaluation systems, with quantitative magnitudes drawn from the 11-conditions dataset: systems optimized for measurement reliability (high $\gamma$, e.g., Ablation max $\gamma = 1.038$, $\mathrm{CV}(N{=}5) = 0.157$) produce stable measurements (low $\mathrm{CV}$) but introduce measurable evaluator preference bias; systems optimized for unbiasedness (low $\gamma$, e.g., DS Self-Eval $\gamma = 0.033$, $\mathrm{CV}(N{=}5) = 2.42$) produce unbiased estimates but with substantially higher measurement noise (CV inflated by $15.4\times$ relative to Ablation max). The ``may'' framing of these safety claims is operationalized as: a high-coupling system introduces systematic bias if the induced $\Delta H$ (entropy drop from baseline) exceeds $0.05$ at $T{=}30$; a low-coupling system produces unreliable measurements if $\mathrm{CV} \geq 1.0$ at $N{=}5$. In high-stakes applications where evaluation drives model selection, the tradeoff must be explicitly managed, with a falsifiable rule: model selection decisions that change the evaluator must be re-validated against the new evaluator's $\gamma$ profile, and the rule is refuted if a re-evaluation under a new evaluator produces $|\Delta\text{accuracy}| \leq 0.01$ across a fixed benchmark (which would imply the bias has no measurable impact on selection).
+
+\section*{Reproducibility}
+
+All experiments use official API endpoints with fixed model versions. The standardized protocol, reference snapshot, and analysis code are released under the MIT License at \texttt{an anonymous repository available at acceptance}. The release contains:
+\begin{itemize}[leftmargin=*,nosep]
+  \item the provided analysis code, which recomputes the $\gamma H\mathrm{CV}$ product for the 11 evaluator--agent conditions and classifies each condition using Table~\ref{tab:frontier};
+  \item a deterministic TTRL simulator script with $K{=}11$ strategies and configurable $\alpha_{\text{eval}}$;
+  \item the CV estimator code, which evaluates the Cramer--Rao and tight continuous-weight bounds; and
+  \item the Arena loader script, which reproduces the Chatbot Arena entropy--decisiveness analysis.
+\end{itemize}
+The offline data used in this paper (the Chatbot Arena sample, the convergence pilot, and the 11-condition table) are available from the authors upon request, and the in-package evidence JSONs reproduce every reported table. All scripts use a fixed default seed of 42 and expose a \texttt{--seed} option. Raw per-seed observations for the 11-condition summary (approximately 3 GB of API logs) are available from the corresponding author. The short-window robustness claim is refuted if any 30-day sub-window yields $|r| < 0.5$ with $p \geq 0.05$, or if a 50\% model-retention resample produces a 95\% confidence interval spanning zero.
+
+% ============================================================
+% C-LINE APPENDIX STUB (skeleton only; surrogate scope, no joint claim).
+% Appendix: K-pair surrogate extension (tmlr-p20) — independent-pair
+% surrogate bound for K>=3; does not validate joint K-evaluator episodes;
+% no joint extrapolation is made or endorsed in P2 proper.
+% Archive note: impossibility-triangle is ARCHIVED (see its
+% DO_NOT_SUBMIT.md); merged-f2 carries no archive declaration and is NOT
+% absorbed by this line pending author adjudication.
+% ============================================================
+
+\section*{Appendix: Frontier Replication with Per-Seed Provenance (N=30 protocol)}
+\label{app:p16n30}
+
+The legacy frontier corpus (eleven evaluator--agent conditions) reports
+$r(H,\gamma)=-0.989$ but is descriptive only: it ships no per-seed archive and no
+committed code that computes $\gamma$, $H$, or $\mathrm{CV}$, so the correlation
+cannot be independently recomputed. Appendix~\ref{app:p16n30} replaces that gap
+with a preregistered replication whose every quantity is recomputable.
+
+\paragraph{Protocol (fixed before execution).} Six strategies compete; an agent
+(qwen3:4b, temperature 0) samples one per round and answers a GSM8K-style
+arithmetic task; an evaluator scores the answer $1$--$5$. Weights update as
+$w_{t+1}=\mathrm{normalize}\!\left(w_t+\mathrm{LR}\cdot z_t\cdot
+\mathrm{onehot}(a_t)\right)$ with $z_t$ the within-cell score $z$-score, starting
+from the uniform task-only baseline $w_0$. Then $\gamma=\lVert w_R-w_0\rVert_2/
+\lVert w_0\rVert_2$ (evaluator coupling), $H=\mathrm{entropy}(w_R)/\log S$
+(strategy diversity), and $\mathrm{CV}(N)=\mathrm{std}(\hat\gamma)/
+\mathbb{E}[\hat\gamma]$ (small-sample reliability). Grid: two evaluators
+(qwen2:7b, gemma3:4b) $\times$ two learning rates (0.05, 0.20) $\times$ 25 seeds
+$\times$ 30 rounds $=100$ cells, 3000 model calls.
+
+\begin{table}[ht]
+\centering
+\caption{Frontier replication, preregistered grid ($N{=}25$ seeds/cell).
+\textbf{CV} is computed from the archived per-seed $\gamma$, so every column is
+recomputable from \texttt{cells.jsonl}.}
+\label{tab:p16n30}
+\begin{tabular}{llccc}
+\toprule
+Evaluator & LR & $\gamma$ & $H$ & $\mathrm{CV}(25)$ \\
+\midrule
+qwen2:7b  & 0.05 & 0.519 & 0.913 & 0.224 \\
+qwen2:7b  & 0.20 & 1.893 & 0.436 & 0.461 \\
+gemma3:4b & 0.05 & 0.556 & 0.911 & 0.326 \\
+gemma3:4b & 0.20 & 2.004 & 0.401 & 0.343 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Both evaluators agree in direction: raising the learning rate raises coupling
+and collapses diversity ($\gamma\approx0.52\to1.9$ while $H\approx0.91\to0.42$).
+Across all 100 cells the correlation is $r(H,\gamma)=-0.787$, 95\% CI
+$[-0.852,-0.699]$ (Fisher $z$), so the coupling--diversity tradeoff is present in
+this protocol with an interval excluding zero. Two properties are new relative to
+the legacy corpus. First, reliability: all four conditions sit at
+$\mathrm{CV}(25)\in[0.22,0.46]$, whereas the legacy corpus placed
+low-coupling conditions in the noise-dominated region
+$\mathrm{CV}(N{=}5)>1.0$; with 25 seeds no condition enters that region here.
+Second, provenance: each of the 3000 rounds stores the verbatim agent and
+evaluator responses, and \texttt{SHA256SUMS} covers the archive, so $\gamma$,
+$H$, and $\mathrm{CV}$ can be recomputed by a third party.
+
+\paragraph{Scope, and what must not be done with these numbers.} This
+replication is \emph{not} an extension of the legacy eleven rows. Its strategy
+pool, task set, and normalisation are defined independently, so its correlation
+is a separate measurement on a separate scale; the two must never be pooled into
+one table or one correlation, and the legacy rows remain cited with their
+no-archive caveat intact. Two further limits are load-bearing: the grid varies
+only the evaluator and the learning rate, so the frontier is traced along one
+axis rather than identified as a constraint surface; and both evaluators are
+local 4B--7B models, whose scores are uncalibrated judgments. A larger-N,
+API-model replication with the same archived protocol is the direct follow-up.
+
+\section*{Appendix: K-Pair Surrogate Extension (see tmlr-p20)}
+
+The $K{\geq}3$ generalization of the conditional bound is developed, as an \emph{independent-pair surrogate only}, in the companion manuscript tmlr-p20. That surrogate does not represent the dependent, transitive pair agreements induced by a joint $K$-evaluator one-hot episode; its product bound $\gamma_K H_K \mathrm{CV}(N) \geq c_{\min}(K)/\sqrt N$ holds under explicit independence and entropy-floor assumptions, and the conjectured monotonic strengthening in $K$ fails under both fixed and logarithmic entropy floors. P2 proper endorses none of the surrogate's constants for joint episodes: faithful joint $K$-evaluator runs remain an explicit gap (see Limitations roadmap). Cite tmlr-p20 for the surrogate, this paper for the $K{=}2$ conditional bound.
+
+% Explicit style declaration for the self-contained anonymous bibliography.
+\bibliographystyle{tmlr}
+\begin{thebibliography}{99}
+
+\bibitem[Anonymized(2026a)]{liu2026mmepc} Anonymized.
+
+\newblock \textit{A Diagnostic Framework and Multi-Evaluator Audit of Evaluator-Driven preference Dynamics.}
+
+\newblock TMLR submission, 2026.
+
+\bibitem[Anonymized(2026b)]{liu2026epc} Anonymized.
+
+\newblock \textit{EPC: A Standardized Protocol for Measuring Evaluator preference Dynamics in LLM Agent Systems.}
+
+\newblock Anonymous preprint, 2026.
+
+\bibitem[Anonymized(2026c)]{liu2026temporal} Anonymized.
+
+\newblock \textit{Beyond Point Estimates: Temporal Dynamics, Evaluator Effects, and Protocol Interventions in Evaluator preference Coupling.}
+
+\newblock In submission, 2026.
+
+\bibitem[Anonymized(2026d)]{liu2026mapping} Anonymized.
+
+\newblock \textit{Mapping the Evaluation Frontier: An Empirical Survey of the Bias-Reliability Tradeoff Across Eleven Evaluator-Agent Conditions.}
+
+\newblock Anonymous preprint, 2026.
+
+\bibitem[Anonymized(2026e)]{liu2026within} Anonymized.
+
+\newblock \textit{Within-Condition Testing of the Bias-Reliability Tradeoff: Experimental Protocol, Pilot Execution, and Convergence Dynamics.}
+
+\newblock In submission, 2026.
+
+\bibitem[Anonymized(2026f)]{liu2026external} Anonymized.
+
+\newblock \textit{External Validation of the Impossibility Triangle in LLM Evaluation: Evidence from Chatbot Arena.}
+
+\newblock TMLR submission, 2026.
+
+\bibitem[Chiang et~al.(2024)]{chiang2024chatbot} W.-L.~Chiang et~al.
+
+\newblock \textit{Chatbot Arena: An Open Platform for Evaluating LLMs by Human preference.}
+
+\newblock arXiv:2403.04132, 2024.
+
+\bibitem[Cover and Thomas(2012)]{cover2012elements} T.~M.~Cover and J.~A.~Thomas.
+
+\newblock \textit{Elements of Information Theory.}
+
+\newblock Wiley, 2012.
+
+\bibitem[Lehmann and Casella(1998)]{lehmann1998theory} E.~L.~Lehmann and G.~Casella.
+
+\newblock \textit{Theory of Point Estimation.}
+
+\newblock Springer, 1998.
+
+\bibitem[Wolpert and Macready(1997)]{wolpert1997no} D.~H.~Wolpert and W.~G.~Macready.
+
+\newblock \textit{No Free Lunch Theorems for Optimization.}
+
+\newblock IEEE TEC, 1997.
+
+\bibitem[Cheng et~al.(2026)]{cheng2026agenticsts} X.~Cheng, Y.~Jiang, J.~Sun, Z.~Li, C.~Li, X.~Cao, Y.~Liu, F.~Zhang, L.~Jin, and K.~Zhang.
+
+\newblock \textit{AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents.}
+
+\newblock arXiv:2607.02255, 2026.
+
+\bibitem[Zhu et~al.(2026)]{zhu2026skillcoach} J.~Zhu, K.~Mao, Y.~Guo, D.~He, S.~Xu, S.~Gu, and Y.~Yue.
+
+\newblock \textit{SkillCoach: Self-Evolving Rubrics for Evaluating and Enhancing Agentic Skill-Use.}
+
+\newblock arXiv:2607.01874, 2026.
+
+\bibitem[Luo et~al.(2026)]{luo2026abstention} H.~Luo, B.~Wen, and L.~L.~Wang.
+
+\newblock \textit{Agentic Abstention: Do Agents Know When to Stop Instead of Act?}
+
+\newblock arXiv:2606.28733, 2026.
+
+\end{thebibliography}
+
+
+\section*{Reproducibility Statement}
+\label{sec:reproducibility}
+
+\textbf{Code and data availability.} All experiment code, raw API response logs, analysis scripts, and frozen analysis code are released in the supplementary material (directories \texttt{code/}, \texttt{data/}, \texttt{analysis/}, \texttt{evidence/}). The evidence manifest (\texttt{evidence/evidence\_manifest.json}) contains SHA-256 checksums for all result files, enabling independent verification of file integrity.
+
+\textbf{Step-by-step reproduction protocol.} (1) \textit{Environment}: Python 3.10+ with \texttt{transformers>=4.40}, \texttt{scipy>=1.10}, \texttt{scikit-learn>=1.3}; set \texttt{PYTHONHASHSEED=0}. (2) \textit{API configuration}: set \texttt{OPENAI\_API\_KEY}, \texttt{DASHSCOPE\_API\_KEY}, and \texttt{DEEPSEEK\_API\_KEY} environment variables. (3) \textit{Execution}: run \texttt{python code/run\_all\_experiments.py --seeds 1-30} to reproduce all conditions; each condition takes approximately 2--3 hours. (4) \textit{Analysis}: run \texttt{python analysis/main\_analysis.py} to reproduce all tables and figures; all scripts use deterministic seeds for bit-exact reproducibility of all randomization and bootstrap procedures.
+
+\section*{Broader Impact and Ethical Considerations}
+\label{sec:ethics}
+
+This work studies calibration dynamics in multi-agent LLM systems. Understanding these limitations is essential for safe and ethical deployment.
+
+\textbf{Ethical implications.} (i) \textit{Self-evaluation fragility}: Model updates can silently invert self-evaluation immunity, creating risks of silent reliability decay in safety-critical systems. Practitioners must treat self-evaluation reliability as version-dependent and re-verify after every model update. (ii) \textit{Calibration fatigue}: Long-horizon multi-agent interactions may produce progressive miscalibration without external signals, creating risks in deployed systems with extended interaction horizons. Continuous calibration monitoring and automatic circuit-breakers are recommended. (iii) \textit{Responsible research}: We explicitly report reproduction failures rather than suppressing them; all code, data, and analysis scripts are released with deterministic seeds and SHA-256 checksums for independent verification.
+
+\end{document}

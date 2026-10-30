@@ -1,0 +1,98 @@
+{
+  "schema": "q-one-arxiv-candidate-package-v1",
+  "generated_at": "2026-10-29T08:39:57.287312Z",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/source",
+    "main_sha256": "fcafbeef57efbcad7db2f687dd4faac2f84e703dc429865fd7c7325de831433d",
+    "package_sha256": "375a7506363624e931f13cf878169edd0f45d93a2f02bda37ff9f08c9ced1e6f",
+    "file_count": 11
+  },
+  "archive": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/package/r4-consistency-candidate.tar.gz",
+    "sha256": "aba2dc5ac9a04ebcce41f5c15050d325c0966d8aa653ae7eb6f67f217a3158ea",
+    "bytes": 108611,
+    "repeat_sha256": "aba2dc5ac9a04ebcce41f5c15050d325c0966d8aa653ae7eb6f67f217a3158ea",
+    "deterministic": true
+  },
+  "entries": [
+    {
+      "path": "bibliography.tex",
+      "sha256": "3f5f5ddde88b7ec071246ecee90ff5b0ddf56f88c05b7faaee0d0395d950c119",
+      "bytes": 11095
+    },
+    {
+      "path": "main.tex",
+      "sha256": "fcafbeef57efbcad7db2f687dd4faac2f84e703dc429865fd7c7325de831433d",
+      "bytes": 224225
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    },
+    {
+      "path": "figures/fig_verdicts.pdf",
+      "sha256": "a2ff38204013ebca8198a39c6b6bb7193caa4ec3004a6b5f5b43b949a98cd354",
+      "bytes": 26835
+    },
+    {
+      "path": "tables/table_ajb.tex",
+      "sha256": "4eb25cbab41522f9eda7eb06ff33fa0158e03b541033624b17e5d411c4a5a19f",
+      "bytes": 548
+    },
+    {
+      "path": "tables/table_both.tex",
+      "sha256": "4716dc20e4f3da8a4c0e9afa8dcd7b17bc79843157d8b3cfa2faf1fcf576a980",
+      "bytes": 664
+    },
+    {
+      "path": "tables/table_calibrated.tex",
+      "sha256": "7ff2c6e07a9fab6ed3985a10be3bc7d0ac7f8958d8fe192ad805700197d9a9cd",
+      "bytes": 1039
+    },
+    {
+      "path": "tables/table_denominators.tex",
+      "sha256": "0a2d6347c75e5d44cc3ef322a8f937e2e4afb18899a23c9d1522b056da2e8538",
+      "bytes": 1128
+    },
+    {
+      "path": "tables/table_ds.tex",
+      "sha256": "1766942de728bd5f4f056671c53ca2b104d97f8b1fc2d020c98bf59812b1dece",
+      "bytes": 466
+    },
+    {
+      "path": "tables/table_power.tex",
+      "sha256": "9a34009ed5b4493405b77673019d1183b521924c265d2b1f90e9af8c818411f5",
+      "bytes": 544
+    },
+    {
+      "path": "tables/table_rulers.tex",
+      "sha256": "e9617c04fdbf1c4120b58c16a0ba483127ca009fb05aea8ea399f7b704fc50ba",
+      "bytes": 1011
+    }
+  ],
+  "extract_compile": {
+    "exit_code": 0,
+    "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/package/archive-cleanroom/receipt.json",
+    "receipt_sha256": "900797c32d8b1a8d6ccb1dcb6b2a1f2710c7497efa36611f3cc28965cb0eebde",
+    "pdf_pages": 46,
+    "pdf_sha256": "8fc50c3d9819ec915c908f7503137a6a473a0c61144451db40821a58e6726906",
+    "command_stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/package/archive-cleanroom/build.stdout.log",
+    "command_stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/package/archive-cleanroom/build.stderr.log"
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "ready_for_upload": false,
+  "blockers": [
+    "Internal consistency candidate only; not ready for publication, not upload-authorized.",
+    "This is an internal candidate archive; no arXiv upload was performed.",
+    "Author, category, license, abstract and final metadata remain user decisions.",
+    "A compiling archive does not establish scientific readiness or independent review."
+  ],
+  "notes": [
+    "The archive uses sorted entries and normalized owner, mode and mtime.",
+    "The archive was extracted into a separate temporary directory before compilation."
+  ]
+}

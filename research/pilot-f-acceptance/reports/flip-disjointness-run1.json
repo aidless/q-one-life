@@ -1,0 +1,122 @@
+{
+  "schema": "q-one-flip-disjointness-v1",
+  "generated_at": "2026-10-27T00:00:00Z",
+  "state": "passed",
+  "frozen_counts": {
+    "uncorrected_anti_conservative": 231,
+    "continuity_corrected_conservative": 9
+  },
+  "observed_counts": {
+    "uncorrected_anti_conservative": 231,
+    "continuity_corrected_conservative": 9,
+    "intersection": 0
+  },
+  "uncorrected_sha256": "7c086e4cdb4faf0dbf5b900fe2cf7e3702e2d5b5a846029372604cad460ed3d8",
+  "corrected_sha256": "d6a7888d4cbefb7ee4dd53951bbd651b91a6fdbeb28bf0b411ff120f0a0ab049",
+  "intersection": [],
+  "uncorrected_examples": [
+    {
+      "b": 18,
+      "c": 8,
+      "n": 26
+    },
+    {
+      "b": 19,
+      "c": 8,
+      "n": 27
+    },
+    {
+      "b": 20,
+      "c": 9,
+      "n": 29
+    },
+    {
+      "b": 21,
+      "c": 10,
+      "n": 31
+    },
+    {
+      "b": 22,
+      "c": 10,
+      "n": 32
+    },
+    {
+      "b": 23,
+      "c": 11,
+      "n": 34
+    },
+    {
+      "b": 24,
+      "c": 12,
+      "n": 36
+    },
+    {
+      "b": 26,
+      "c": 13,
+      "n": 39
+    },
+    {
+      "b": 27,
+      "c": 14,
+      "n": 41
+    },
+    {
+      "b": 28,
+      "c": 15,
+      "n": 43
+    }
+  ],
+  "corrected_examples": [
+    {
+      "b": 29,
+      "c": 15,
+      "n": 44
+    },
+    {
+      "b": 42,
+      "c": 25,
+      "n": 67
+    },
+    {
+      "b": 57,
+      "c": 37,
+      "n": 94
+    },
+    {
+      "b": 81,
+      "c": 57,
+      "n": 138
+    },
+    {
+      "b": 109,
+      "c": 81,
+      "n": 190
+    },
+    {
+      "b": 150,
+      "c": 117,
+      "n": 267
+    },
+    {
+      "b": 168,
+      "c": 133,
+      "n": 301
+    },
+    {
+      "b": 218,
+      "c": 178,
+      "n": 396
+    },
+    {
+      "b": 240,
+      "c": 198,
+      "n": 438
+    }
+  ],
+  "formula_source": "tools/audit_flip_disjointness.py",
+  "frozen_source": "evidence/native/wave2-F-acceptance/revision_stats.json",
+  "notes": [
+    "The two sets use the same audited region n=26..500 and mirrored half-plane.",
+    "The intersection is computed from full cell tuples, not only aggregate counts."
+  ]
+}

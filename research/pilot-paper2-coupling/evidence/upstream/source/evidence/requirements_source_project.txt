@@ -1,0 +1,34 @@
+# 自动化科研流水线 - 统一实验依赖
+# 适用于所有 12 篇论文的实验复现
+# Python 3.10+
+
+# 核心科学计算
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+scikit-learn>=1.2.0
+
+# 统计与计量
+statsmodels>=0.14.0
+pymc>=5.0.0
+arviz>=0.16.0
+
+# 可视化
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# LLM API 调用
+openai>=1.0.0
+anthropic>=0.7.0
+requests>=2.31.0
+tenacity>=8.2.0
+
+# 工具
+tqdm>=4.65.0
+pyyaml>=6.0
+jsonlines>=3.1.0
+python-dotenv>=1.0.0
+
+# Jupyter（可选）
+jupyter>=1.0.0
+ipykernel>=6.25.0

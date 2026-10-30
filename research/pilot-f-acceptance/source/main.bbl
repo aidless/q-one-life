@@ -1,0 +1,94 @@
+\begin{thebibliography}{17}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Dietterich(1998)]{dietterich1998approximate}
+Thomas~G. Dietterich.
+\newblock Approximate statistical tests for comparing supervised classification learning algorithms.
+\newblock \emph{Neural Computation}, 10\penalty0 (7):\penalty0 1895--1923, 1998.
+
+\bibitem[Dror et~al.(2018)Dror, Baumer, Shlomov, and Reichart]{dror2018hitchhiker}
+Rotem Dror, Gili Baumer, Segev Shlomov, and Roi Reichart.
+\newblock The hitchhiker's guide to testing statistical significance in natural language processing.
+\newblock In \emph{Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics}, pp.\  1383--1392, 2018.
+
+\bibitem[Fagerland et~al.(2013)Fagerland, Lydersen, and Laake]{fagerland2013mcnemar}
+Morten~W. Fagerland, Stian Lydersen, and Petter Laake.
+\newblock The {McNemar} test for binary matched-pairs data: mid-$p$ and asymptotic are better than exact conditional.
+\newblock \emph{BMC Medical Research Methodology}, 13:\penalty0 91, 2013.
+
+\bibitem[Feng et~al.(2026)Feng, Wang, Yang, Shi, Xie, Yu, Wu, and Ye]{feng2026cods}
+Yukun Feng, Xingyao Wang, Jinghan Yang, Xiangru Shi, Pengfei Xie, Philip~S. Yu, Xian Wu, and Jiayi Ye.
+\newblock Evolving together, failing apart: The skill--policy co-evolution trap in self-improving agents.
+\newblock \emph{arXiv preprint arXiv:2610.20845}, 2026.
+
+\bibitem[Garc{\'i}a \& Fern{\'a}ndez(2015)Garc{\'i}a and Fern{\'a}ndez]{garcia2015safe}
+Javier Garc{\'i}a and Fernando Fern{\'a}ndez.
+\newblock A comprehensive survey on safe reinforcement learning.
+\newblock \emph{Journal of Machine Learning Research}, 16\penalty0 (1):\penalty0 1437--1480, 2015.
+
+\bibitem[He(2026)]{he2026failure}
+Rong He.
+\newblock Does failure feedback direct agent self-modification?
+\newblock \emph{arXiv preprint arXiv:2610.14662}, 2026.
+
+\bibitem[Jamieson \& Talwalkar(2016)Jamieson and Talwalkar]{jamieson2016asha}
+Kevin Jamieson and Ameet Talwalkar.
+\newblock Non-stochastic best arm identification and hyperparameter optimization.
+\newblock In \emph{Proceedings of the 19th International Conference on Artificial Intelligence and Statistics (AISTATS)}, pp.\  240--248, 2016.
+
+\bibitem[Li et~al.(2017)Li, Jamieson, DeSalvo, Rostamizadeh, and Talwalkar]{li2017hyperband}
+Lisha Li, Kevin Jamieson, Giulia DeSalvo, Afshin Rostamizadeh, and Ameet Talwalkar.
+\newblock Hyperband: A novel bandit-based approach to hyperparameter optimization.
+\newblock \emph{Journal of Machine Learning Research}, 18\penalty0 (185):\penalty0 1--52, 2017.
+
+\bibitem[L{\'o}pez-Ib{\'a}{\~n}ez et~al.(2016)L{\'o}pez-Ib{\'a}{\~n}ez, Dubois-Lacoste, P{\'e}rez~C{\'a}ceres, St{\"u}tzle, and Birattari]{birattari2016irace}
+Manuel L{\'o}pez-Ib{\'a}{\~n}ez, J{\'e}r{\'e}mie Dubois-Lacoste, Leslie P{\'e}rez~C{\'a}ceres, Thomas St{\"u}tzle, and Mauro Birattari.
+\newblock The irace package: Iterated racing for automatic algorithm configuration.
+\newblock \emph{Operations Research Perspectives}, 3:\penalty0 43--58, 2016.
+
+\bibitem[Luo et~al.(2014)Luo, Hariri, Eloussi, and Marinov]{luo2016flaky}
+Qingzhou Luo, Farah Hariri, Lamyaa Eloussi, and Darko Marinov.
+\newblock An empirical analysis of flaky tests.
+\newblock In \emph{Proceedings of the 22nd ACM SIGSOFT International Symposium on Foundations of Software Engineering (FSE)}, pp.\  643--653, 2014.
+\newblock \doi{10.1145/2635868.2635920}.
+
+\bibitem[McNemar(1947)]{mcnemar1947}
+Quinn McNemar.
+\newblock Note on the sampling error of the difference between correlated proportions or percentages.
+\newblock \emph{Psychometrika}, 12\penalty0 (2):\penalty0 153--157, 1947.
+
+\bibitem[Meyer(1992)]{meyer1992contract}
+Bertrand Meyer.
+\newblock Applying ``design by contract''.
+\newblock \emph{IEEE Computer}, 25\penalty0 (10):\penalty0 40--51, 1992.
+
+\bibitem[Shinn et~al.(2023)Shinn, Cassano, Berman, Gopinath, Narasimhan, and Yao]{shinn2023reflexion}
+Noah Shinn, Federico Cassano, Edward Berman, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao.
+\newblock Reflexion: Language agents with verbal reinforcement learning.
+\newblock \emph{arXiv preprint arXiv:2303.11366}, 2023.
+
+\bibitem[Virtanen et~al.(2020)Virtanen, Gommers, Oliphant, Haberland, Reddy, Cournapeau, Burovski, Peterson, Weckesser, Bright, et~al.]{scipy2020}
+Pauli Virtanen, Ralf Gommers, Travis~E. Oliphant, Matt Haberland, Tyler Reddy, David Cournapeau, Evgeni Burovski, Pearu Peterson, Warren Weckesser, Jonathan Bright, et~al.
+\newblock {SciPy} 1.0: fundamental algorithms for scientific computing in {Python}.
+\newblock \emph{Nature Methods}, 17:\penalty0 261--272, 2020.
+
+\bibitem[Wald(1945)]{wald1945sequential}
+Abraham Wald.
+\newblock Sequential tests of statistical hypotheses.
+\newblock \emph{The Annals of Mathematical Statistics}, 16\penalty0 (2):\penalty0 117--186, 1945.
+
+\bibitem[Wang et~al.(2023)Wang, Xie, Jiang, Mandlekar, Xiao, Zhu, Fan, and Anandkumar]{wang2023voyager}
+Guanzhi Wang, Yuqi Xie, Yunfan Jiang, Ajay Mandlekar, Chaowei Xiao, Yuke Zhu, Linxi Fan, and Anima Anandkumar.
+\newblock Voyager: An open-ended embodied agent with large language models.
+\newblock \emph{arXiv preprint arXiv:2305.16291}, 2023.
+
+\bibitem[Zheng et~al.(2023)Zheng, Chiang, Sheng, Zhuang, Li, Zhu, Zhang, Zhuang, Xie, Wu, et~al.]{zheng2023judging}
+Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Li, Di~Zhu, Hao Zhang, Sewon Zhuang, Yue Xie, Yubo Wu, et~al.
+\newblock Judging {LLM}-as-a-judge with {MT-Bench} and {Chatbot Arena}.
+\newblock \emph{arXiv preprint arXiv:2306.05685}, 2023.
+
+\end{thebibliography}

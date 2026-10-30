@@ -1,0 +1,111 @@
+{
+  "region": {
+    "n_min": 26,
+    "n_max": 500,
+    "constraint": "b >= c"
+  },
+  "cells": 62819,
+  "promotions_by_code": 55469,
+  "decision_flips": 231,
+  "flip_rate_among_promotions": 0.0041644882727289115,
+  "all_flips_anti_conservative": true,
+  "max_abs_error": 0.1526103403132857,
+  "max_abs_error_at": {
+    "b": 14,
+    "c": 13,
+    "p_code": 0.8473896596867143,
+    "p_exact": 1.0
+  },
+  "most_severe_flips": [
+    {
+      "b": 22,
+      "c": 10,
+      "n": 32,
+      "p_code": 0.03389485352468924,
+      "p_exact": 0.050102459732443094,
+      "ratio_exact_over_code": 1.4781730711993821,
+      "anti_conservative": true
+    },
+    {
+      "b": 19,
+      "c": 8,
+      "n": 27,
+      "p_code": 0.03426400773486904,
+      "p_exact": 0.052238985896110535,
+      "ratio_exact_over_code": 1.5246023261589774,
+      "anti_conservative": true
+    },
+    {
+      "b": 26,
+      "c": 13,
+      "n": 39,
+      "p_code": 0.0373729883406515,
+      "p_exact": 0.05325191409792752,
+      "ratio_exact_over_code": 1.4248770693031287,
+      "anti_conservative": true
+    },
+    {
+      "b": 38,
+      "c": 22,
+      "n": 60,
+      "p_code": 0.038867103812417314,
+      "p_exact": 0.051893895928921435,
+      "ratio_exact_over_code": 1.3351624082765412,
+      "anti_conservative": true
+    },
+    {
+      "b": 47,
+      "c": 29,
+      "n": 76,
+      "p_code": 0.038947455742025294,
+      "p_exact": 0.050452410247217666,
+      "ratio_exact_over_code": 1.2953968182516793,
+      "anti_conservative": true
+    },
+    {
+      "b": 30,
+      "c": 16,
+      "n": 46,
+      "p_code": 0.03899995301244541,
+      "p_exact": 0.054076031858869555,
+      "ratio_exact_over_code": 1.386566590006228,
+      "anti_conservative": true
+    },
+    {
+      "b": 52,
+      "c": 33,
+      "n": 85,
+      "p_code": 0.03931836908173869,
+      "p_exact": 0.050250895335291444,
+      "ratio_exact_over_code": 1.2780513665463895,
+      "anti_conservative": true
+    },
+    {
+      "b": 34,
+      "c": 19,
+      "n": 53,
+      "p_code": 0.039359508888249906,
+      "p_exact": 0.053438810537711046,
+      "ratio_exact_over_code": 1.3577102978961273,
+      "anti_conservative": true
+    },
+    {
+      "b": 23,
+      "c": 11,
+      "n": 34,
+      "p_code": 0.03959176323669045,
+      "p_exact": 0.05761267291381955,
+      "ratio_exact_over_code": 1.4551681512489139,
+      "anti_conservative": true
+    },
+    {
+      "b": 63,
+      "c": 42,
+      "n": 105,
+      "p_code": 0.040423979336908555,
+      "p_exact": 0.05044215663996978,
+      "ratio_exact_over_code": 1.2478275881640941,
+      "anti_conservative": true
+    }
+  ]
+}

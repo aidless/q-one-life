@@ -1,0 +1,29 @@
+{
+  "note": "Existence record for files this run claims to deliver. Keys are dot-free slugs because the claim-path grammar splits on \".\" and the real file names contain dots.",
+  "files": {
+    "attacks_py": {
+      "path": "attacks.py",
+      "present": true,
+      "bytes": 5782,
+      "md5": "e7df76ba8024c4ea2297dfc11b439830"
+    },
+    "benchmark_py": {
+      "path": "benchmark.py",
+      "present": true,
+      "bytes": 3675,
+      "md5": "7dd75bddd7f0c46c2a36074f10ef2558"
+    },
+    "per_attack_table_json": {
+      "path": "evidence/main_results/per_attack_table.json",
+      "present": true,
+      "bytes": 729,
+      "md5": "a3e392d2799ba51a938b07efd68e8b1d"
+    },
+    "crv_py": {
+      "path": "crv.py",
+      "present": true,
+      "bytes": 6637,
+      "md5": "a38c15d735eea3b94bab454f3ae1dd01"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+archive_extract=/tmp/qone-paper11-package-check.bJYztH
+pdflatex_pass1=0
+bibtex=0
+pdflatex_pass2=0
+pdflatex_pass3=0

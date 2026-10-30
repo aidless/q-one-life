@@ -1,0 +1,17 @@
+{
+  "schema": "q-one-evidence-sources-v1",
+  "generated_at": "2026-10-27T14:18:10.204859Z",
+  "sources": [
+    {
+      "path": "/home/liuzewen/WorkBuddy/2026-10-23-23-32-00/reviews/REVIEW_INDEPENDENT_20261024.md",
+      "sha256": "8d815000775ad110354043854967c79044605deb1f6113a549a6cba13078c86e",
+      "state": "candidate"
+    },
+    {
+      "path": "/home/liuzewen/WorkBuddy/2026-10-23-23-32-00/arxiv/ARXIV_SUBMISSION_20261024.md",
+      "sha256": "60ffd9e628f89e14814e8e675dd3851abaed80bc8572347b8d74544f0d81f75d",
+      "state": "candidate"
+    }
+  ],
+  "missing": []
+}

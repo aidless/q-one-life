@@ -1,0 +1,37 @@
+{
+ "config": {
+  "T": 1000,
+  "N": 7,
+  "f": 2,
+  "n_seeds": 5
+ },
+ "per_attack_mean": {
+  "prompt_injection": {
+   "majority": 0.8766,
+   "bft_pbft": 0.7652,
+   "weighted_uniform": 0.8758,
+   "trust_mean": 0.8938,
+   "trust_median": 0.8766,
+   "kalman_trust": 0.8774,
+   "ATV": 0.8858
+  },
+  "rubric_injection": {
+   "majority": 0.9448,
+   "bft_pbft": 0.8864,
+   "weighted_uniform": 0.9442,
+   "trust_mean": 0.9444,
+   "trust_median": 0.9448,
+   "kalman_trust": 0.9448,
+   "ATV": 0.945
+  },
+  "majority_bias": {
+   "majority": 0.9974,
+   "bft_pbft": 0.985,
+   "weighted_uniform": 0.9974,
+   "trust_mean": 0.9976,
+   "trust_median": 0.9974,
+   "kalman_trust": 0.9974,
+   "ATV": 0.9974
+  }
+ }
+}

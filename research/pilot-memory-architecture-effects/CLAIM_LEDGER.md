@@ -1,0 +1,34 @@
+# Claim ledger - Memory Architecture Effects
+
+Status marker: `agent-proposed, not human publication approval`
+
+| ID | Claim | Evidence file + fields | Value | How to verify | Status |
+|---|---|---|---|---|---|
+| C01 | The family has four packet source versions plus one source mirror, all with distinct hashes. | evidence/variant-reconciliation.json -> variant_count / distinct_hashes / packet_variant_count / additional_variant_count | 5 / 5 / 4 / 1 | Re-hash all retained source versions | verified |
+| C02 | The overlay has one title, author block, end-document token, 24 unique labels, 26 resolvable references, and 35 citation keys. | evidence/native-audit.json -> structure.labels / structure.references / structure.citation_keys | 24 / 26 / 35 | Run `tools/audit_memory_architecture.py` | verified |
+| C03 | The R1 evidence contains 90 per-seed records and nine predeclared architecture contrasts with n=10. | evidence/native-audit.json -> r1.records / r1.contrast_count / r1.n_seeds_per_contrast | 90 / 9 / 10 | Reconstruct every cell and paired contrast from the per-seed file | verified |
+| C04 | The R1 Summarization-vs-Append-Only p=0.8 contrast is 0.0727 in favor of Summarization, t=3.725, raw p=0.0047, and d_z=1.178. | evidence/native-audit.json -> r1.canonical_r1_contrast.mean_diff_a_minus_b / r1.canonical_r1_contrast.t / r1.canonical_r1_contrast.p_raw / r1.canonical_r1_contrast.d_z | 0.0727 / 3.725 / 0.0047 / 1.178 | Run a paired t-test on the 10 archived seed differences | verified |
+| C05 | At p=0.2 RAG-vs-Append-Only has mean difference 0.1171, t=3.050, d_z=0.9645, and raw p=0.0138. | evidence/native-audit.json -> r1.contrasts[0].mean_diff_a_minus_b / r1.contrasts[0].t / r1.contrasts[0].d_z / r1.contrasts[0].p_raw | 0.1171 / 3.050 / 0.9645 / 0.0138 | Recompute contrast 0 from the archived per-seed records | verified |
+| C06 | The selected R1 cell means are 0.420/0.303 at p=0.2 and 0.266/0.193 at p=0.8 for Append-Only/RAG and Append-Only/Summarization. | evidence/claim-values.json -> r1_selected_append_p02_mean / r1_selected_rag_p02_mean / r1_selected_append_p08_mean / r1_selected_summarization_p08_mean | 0.420 / 0.303 / 0.266 / 0.193 | Recompute cell means from the per-seed file | verified |
+| C07 | The rebuilt v4-flash grid contains 18 cells with n=10 and reproduces the printed carrier values 0.521, 0.521, 0.607, and 2.385. | evidence/claim-values.json -> v4flash_cell_count / v4flash_authority_append_p05_mean / v4flash_authority_summarization_p08_mean / v4flash_authority_rag_p08_mean / v4flash_length_append_p08_mean | 18 / 0.521 / 0.521 / 0.607 / 2.385 | Recompute each selected mean from the 10-cell per-seed arrays | verified |
+| C08 | The Qwen3.7-Plus authority arm gives Summarization 0.544 and Append-Only 0.802, but the arm is only a descriptive output-length response. | evidence/native-audit.json -> qwen_authority.summarization_mean / qwen_authority.append_only_mean / qwen_authority.construct_status | 0.544 / 0.802 / descriptive | Inspect the fixed 10-seed cell means and retain the construct-validity hedge | verified |
+| C09 | The Round-4 validation aggregate records 1,080 seed-level logs across 36 cell definitions, and every cell has n=30. | evidence/native-audit.json -> round4.files / round4.cells / round4.all_cell_n | 1080 / 36 / 30 | Inspect the Round-4 validation JSON and all 36 cell records | verified |
+| C10 | The Round-4 reversal is +0.2024 (p=0.0001) on deepseek-v4-flash and +0.0007 (p=0.9944) on deepseek-v4-pro. | evidence/native-audit.json -> round4.replication.deepseek-v4-flash.diff_sum_app / round4.replication.deepseek-v4-flash.p_raw / round4.replication.deepseek-v4-pro.diff_sum_app / round4.replication.deepseek-v4-pro.p_raw | 0.2024 / 0.0001 / 0.0007 / 0.9944 | Read the retained Round-4 validation aggregate | verified |
+| C11 | The external-judge audit covers 120 responses and its maximum absolute calibration delta is 0.00625. | evidence/native-audit.json -> external_judge.total_judged / external_judge.max_abs_delta_ece | 120 / 0.00625 | Count the six per-cell judge samples and recompute the maximum | verified |
+| C12 | The RAG threshold theta=0.1 was selected using a 5-seed sweep at p=0.5. | evidence/native-audit.json -> theta_sweep.sweep_n_seeds / theta_sweep.chosen_theta / theta_sweep.sweep_p | 5 / 0.1 / 0.5 | Inspect the retained theta sweep summary | verified |
+| C13 | The upstream carrier tool reports seven PASS, zero FAIL, and zero NOT_VERIFIABLE for the retained carrier receipts. | evidence/native-audit.json -> carrier_receipts.count / carrier_receipts.upstream_tool_result.tally | seven / seven PASS, zero FAIL, zero NOT_VERIFIABLE | Re-run the upstream carrier checker against the retained artifacts | verified |
+| C14 | The 35 citation keys resolve mechanically to 35 bibliography keys. | evidence/native-audit.json -> structure.citation_keys / structure.bib_keys | 35 / 35 | Re-parse citations and `refs.bib` | verified |
+| C15 | The overlay compiles reproducibly in two isolated directories to a 26-page PDF. | reports/cleanroom/receipt.json -> pdf.pages / exit_codes[0] / exit_codes[1] | 26 / 0 / 0 | Re-run `scripts/cleanroom_compile.py` on the source tree | verified |
+| C16 | The 10-file candidate archive is deterministic and compiles after extraction, but it is not upload-ready. | reports/package/package-receipt.json -> archive.deterministic / extract_compile.pdf_pages / ready_for_upload | true / 26 / false | Rebuild the archive and compile the extracted tree | verified |
+| C17 | The authority-marker endpoint validates authority-bias propagation. | evidence/native-audit.json -> qwen_authority.construct_status | not validated | Require blinded authority uptake, source attribution, formatting/refusal controls, and discriminant validation | blocked |
+| C18 | The Round-4 raw per-seed logs required for a full independent rerun are retained in this overlay. | evidence/native-audit.json -> round4.raw_per_seed_logs_retained | false | Archive the 1,080 per-seed logs and bind their hashes | blocked |
+| C19 | Independent method and statistics review is closed against the current source hash. | evidence/upstream/paper/REVIEW_CARD.md | open | Require a reviewer receipt bound to `b2190494...` and zero unresolved Critical/Major findings | blocked |
+| C20 | The package is authorized for upload. | reports/package/package-receipt.json -> ready_for_upload | false | Check package blockers, metadata, license and user authorization | blocked |
+
+## Summary
+
+The R1 confirmatory contrast, v4-flash grid, Qwen point estimates, Round-4
+aggregate, external-judge calibration sample, theta sweep, citations and
+deterministic compile are auditable. The authority endpoint is not validated,
+the Round-4 raw logs are not retained, independent review is open, and no upload
+is authorized.

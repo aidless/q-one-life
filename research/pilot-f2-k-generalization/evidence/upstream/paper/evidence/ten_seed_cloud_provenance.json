@@ -1,0 +1,21 @@
+{
+  "model": "qwen3:4b",
+  "temp": 0,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "episodes_per_seed": 270,
+  "total_cells": 2700,
+  "provenance": "cloud Ollama monthly",
+  "generated": "2026-08-22",
+  "note": "10-seed extension of empirical_k345 joint K=3..5 gamma sweep; original 270 episodes replicated across 10 seeds for bootstrap CI stability; h_min lower bound hedge applied"
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "value": "6.39",
+    "line": "source/main.tex:417",
+    "artifact": "source/evidence/full_run_stats_20260813.json",
+    "locator": "q2_by_category.A.ci[0]",
+    "quantity": "ci",
+    "dp": 2
+  },
+  {
+    "value": "7.60",
+    "line": "source/main.tex:417",
+    "artifact": "source/evidence/full_run_stats_20260813.json",
+    "locator": "q2_by_category.A.ci[1]",
+    "quantity": "ci",
+    "dp": 2
+  },
+  {
+    "value": "7.29",
+    "line": "source/main.tex:418",
+    "artifact": "source/evidence/cross_model_bds.csv",
+    "op": "mean",
+    "over": "rows[*].cross_model_bds",
+    "where": { "category": "L" },
+    "quantity": "bds",
+    "dp": 2
+  },
+  {
+    "value": "7.27",
+    "line": "source/main.tex:420",
+    "artifact": "source/evidence/cross_model_bds.csv",
+    "op": "mean",
+    "over": "rows[*].cross_model_bds",
+    "where": { "category": "R" },
+    "quantity": "bds",
+    "dp": 2
+  },
+  {
+    "value": "7.80",
+    "line": "source/main.tex:420",
+    "artifact": "source/evidence/full_run_stats_20260813.json",
+    "locator": "q2_by_category.R.ci[1]",
+    "quantity": "ci",
+    "dp": 2
+  },
+  {
+    "value": "3.54",
+    "line": "source/main.tex:421",
+    "artifact": "source/evidence/full_run_stats_20260813.json",
+    "locator": "q2_by_category.T.ci[0]",
+    "quantity": "ci",
+    "dp": 2
+  },
+  {
+    "value": "10.39",
+    "line": "source/main.tex:422",
+    "artifact": "source/evidence/full_run_stats_20260813.json",
+    "locator": "q2_by_category.X.ci[1]",
+    "quantity": "ci",
+    "dp": 2
+  },
+  {
+    "value": "11.39",
+    "line": "source/main.tex:452",
+    "artifact": "source/evidence/cross_model_bds.csv",
+    "op": "mean",
+    "over": "rows[*].cross_model_bds",
+    "where": { "scenario_id": "X-014" },
+    "quantity": "bds",
+    "dp": 2
+  }
+]

@@ -1,0 +1,94 @@
+{
+  "checked_at_utc": "2026-10-16T01:26:36.105733+00:00",
+  "account": "liuzewen123",
+  "both_published_and_submitted": true,
+  "articles": {
+    "arc-prize-2026-paper-track": {
+      "writeup_id": 116228,
+      "url": "https://www.kaggle.com/competitions/arc-prize-2026-paper-track/writeups/one-rung-at-a-time-attributing-an-arc-agi-3-submi",
+      "title": "One Rung at a Time: Attributing an ARC-AGI-3 Submission When the Offline Ruler Cannot Select Arms",
+      "contentState": "PUBLISHED",
+      "remote_update_time": "2026-10-16T01:18:29.049Z",
+      "source_sha256": "a1ff847e3361d8c6b2b21578e559baf5ab11d768c8f617bae97765691f9fd660",
+      "whitespace_word_count": 1034,
+      "editor_word_count": 1022,
+      "editor_text_hash_verified_before_update": true,
+      "submitted_banner_verified_after_update": true,
+      "awarded_officially": false
+    },
+    "gemma-4-developer-agent-paper": {
+      "writeup_id": 115019,
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/your-tool-selection-benchmark-may-be-scoring-wrong",
+      "title": "Your Tool-Selection Benchmark May Be Scoring Wrong Calls as Correct",
+      "contentState": "PUBLISHED",
+      "remote_update_time": "2026-10-16T01:20:00.095Z",
+      "source_sha256": "2ad3ce3d05303adc2adce3444c1e7d4ccf640d242b90499cd9f9d1d5022092d8",
+      "whitespace_word_count": 1631,
+      "editor_word_count": 1611,
+      "editor_text_hash_verified_before_update": true,
+      "submitted_banner_verified_after_update": true,
+      "awarded_officially": false
+    }
+  },
+  "proof_directory": "paper-evidence/publication-proof-20261016",
+  "public_dataset_redownload_receipt": "paper-evidence/toolselect-redownload-v3-20261016.json",
+  "new_official_competition_score": false,
+  "final_award_established": false,
+  "public_companions": {
+    "ARC": {
+      "checked_at_utc": "2026-10-16T01:26:38.500644+00:00",
+      "public_kernel": "liuzewen123/arc-paper-track-evidence",
+      "version": 3,
+      "runtime_completed": true,
+      "source_and_visibility_reconciled": true,
+      "gpu_used": false,
+      "checks": {
+        "observation_count": 4,
+        "same_source_version_span": 0.93,
+        "all_arithmetic_matches_local": true
+      },
+      "files_sha256": {
+        "arc-paper-track-evidence.log": "180e8a506240045d9e9286d1f20d0a53c3405bea8bd323b414d2782aa77ff1cd",
+        "arc_lineage_audit.json": "4e36488adeb00206a1abb2906796a31d236849c56ff501f96279aac871f4ac84"
+      }
+    },
+    "GEMMA": {
+      "checked_at_utc": "2026-10-16T01:26:44.141868+00:00",
+      "public_kernel": "liuzewen123/toolselect-audit-recompute",
+      "version": 4,
+      "runtime_completed": true,
+      "source_and_visibility_reconciled": true,
+      "gpu_used": false,
+      "checks": {
+        "archive_rows": 450,
+        "fresh_rows": 48,
+        "repository_counts": {
+          "rows_assessed": 24,
+          "operation_attempts": 21,
+          "operations_completed": 19,
+          "pre_execution_rejections": 3
+        },
+        "full_traces_match_local": true
+      },
+      "files_sha256": {
+        "replay_audit.json": "b3239588c4f30e2b6c4bcc2072b8b383b20ae5d343d6b6a992b7b825a978201f",
+        "evidence_hashes.json": "e24d7403bac68a0243b457b495fce625a19d6f675f4d4f3de8e1ba429a5a1416",
+        "toolselect-audit-recompute.log": "5cf55937c6fccf6406aa694f993e29a45172e5ca7345ecb0815692c366e91bd8",
+        "execution-replay/engineering_fixture_traces.json": "1abe25ea35a84d65d483c0fd11533d39f60c911e470c62d7f5f05c1b73c609e1",
+        "execution-replay/retrospective_repository_execution_traces.json": "0ccb629222e7a2c90c0d5cc12f20635635c3275c61ba4b6a156321e283355ddc",
+        "execution-replay/result.json": "4ee0ff33978382b8a27f320a963378a3762f751f7a42b7aba6e35f7fb3b7d084",
+        "execution-replay/run_protocol.json": "4172c99ad6d557be55b01f3a89889a345a391a175a5274c8dbae52e4a09b0159"
+      }
+    }
+  },
+  "dataset_redownload": {
+    "checked_at_utc": "2026-10-16T01:23:08.867925+00:00",
+    "dataset": "liuzewen123/toolselect-audit",
+    "payload_file_count": 40,
+    "missing": [],
+    "hash_mismatch": [],
+    "all_payload_files_verified": true,
+    "metadata_excluded": "dataset-metadata.json is API upload configuration, not a dataset payload"
+  },
+  "all_public_companions_complete_and_verified": true
+}

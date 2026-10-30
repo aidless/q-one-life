@@ -1,0 +1,17 @@
+{
+  "description": "Five evaluator-agent conditions with complete (gamma, H, CV_N5) triples used for the impossibility-triangle correlations (Figure triangle_verification.pdf).",
+  "source": "11-condition landscape survey (CALIBRATION_EFFECTS/UNIFIED lineage); five conditions with complete metrics.",
+  "n": 5,
+  "metric": "CV(N=5) bootstrap",
+  "conditions": [
+    {"name": "DS self-eval", "gamma": 0.033, "H": 0.992, "CV_N5": 2.420},
+    {"name": "DS x Qwen", "gamma": 0.187, "H": 0.976, "CV_N5": 1.025},
+    {"name": "Ablation max", "gamma": 1.038, "H": 0.753, "CV_N5": 0.157},
+    {"name": "Qwen 3.7", "gamma": 1.059, "H": 0.793, "CV_N5": 0.108},
+    {"name": "Ablation no-S0", "gamma": 0.979, "H": 0.788, "CV_N5": 0.161}
+  ],
+  "correlations": {
+    "r_H_gamma": -0.989, "p_H_gamma": 0.0014,
+    "r_CV_gamma": -0.916, "p_CV_gamma": 0.0286
+  }
+}

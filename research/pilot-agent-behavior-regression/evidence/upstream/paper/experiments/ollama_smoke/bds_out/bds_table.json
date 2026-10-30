@@ -1,0 +1,26 @@
+{
+  "rows": [
+    {
+      "model_alias": "qwen",
+      "scenario_id": "L-001",
+      "bds": 8.70779545205165
+    },
+    {
+      "model_alias": "qwen",
+      "scenario_id": "L-002",
+      "bds": 8.6419463948925
+    },
+    {
+      "model_alias": "qwen",
+      "scenario_id": "L-003",
+      "bds": 8.882806801114802
+    }
+  ],
+  "summary": {
+    "qwen": {
+      "mean_bds": 8.744182882686317,
+      "median_bds": 8.70779545205165,
+      "n_scenarios": 3
+    }
+  }
+}

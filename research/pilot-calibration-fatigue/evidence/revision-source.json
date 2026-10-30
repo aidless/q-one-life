@@ -1,0 +1,46 @@
+{
+  "schema": "q-one-p17-revision-source-v1",
+  "files": [
+    {
+      "path": "source/figures/fig1_ece_trajectories.pdf",
+      "sha256": "a1aa44194dd0bf902294c5ece1375539e027fa557bc97e4287d35a01a0513747",
+      "bytes": 29400
+    },
+    {
+      "path": "source/figures/fig2_final_ece.pdf",
+      "sha256": "fecb3ec1ad247e3b3d065efe9ac4a8d861221cfa50c3f6432a6c5fe382dee50a",
+      "bytes": 23778
+    },
+    {
+      "path": "source/figures/fig8_T30_vs_T50.pdf",
+      "sha256": "bba0860679615896cf34afee48b0ccebea9ffb938262443526ea56df1e015f32",
+      "bytes": 15349
+    },
+    {
+      "path": "source/main.tex",
+      "sha256": "9010a8883bff1b547e31aa10cd29d209fff2a0c261a7ba8423cd0bd7e420e338",
+      "bytes": 82257
+    },
+    {
+      "path": "source/references.bib",
+      "sha256": "40569c45fe34d0568f5a824d6f0723354a155f64f6639dc7a9a638c14a1164ae",
+      "bytes": 8282
+    },
+    {
+      "path": "source/refs_added.bib",
+      "sha256": "c63a2cff5cc8e00fcab11f0f5c2d9277492a161bf3cdbbc25eb8d388ef14037c",
+      "bytes": 651
+    },
+    {
+      "path": "source/tmlr.bst",
+      "sha256": "306fd454cf40771bee01293eeb98d2c1cd5f4e11ed0cd7296b335f354fc45206",
+      "bytes": 26969
+    },
+    {
+      "path": "source/tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    }
+  ],
+  "scope": "Internal evidence-repair source; upstream evidence/upstream bytes unchanged. No author, target, license or upload state changed."
+}

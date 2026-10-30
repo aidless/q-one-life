@@ -1,0 +1,112 @@
+[
+ {
+  "value": "0.521",
+  "line": "paper/main.tex:675",
+  "artifact": "source/evidence/p5_grid_v4flash_20260807.json",
+  "locator": "cells[\"authority|Append-Only|p0.5\"].mean",
+  "quantity": "mean",
+  "dp": 3,
+  "nth_numeric": 2,
+  "printed_count": 1,
+  "note": "value 0.521 also on lines [675, 688] — nearest cited"
+ },
+ {
+  "value": "0.521",
+  "line": "paper/main.tex:675",
+  "artifact": "source/evidence/p5_grid_v4flash_20260807.json",
+  "locator": "cells[\"authority|Summarization|p0.8\"].mean",
+  "quantity": "mean",
+  "dp": 3,
+  "nth_numeric": 2,
+  "printed_count": 1,
+  "note": "value 0.521 also on lines [675, 688] — nearest cited"
+ },
+ {
+  "value": "0.607",
+  "line": "paper/main.tex:682",
+  "artifact": "source/evidence/p5_grid_v4flash_20260807.json",
+  "locator": "cells[\"authority|RAG+Filter|p0.8\"].mean",
+  "quantity": "mean",
+  "dp": 3,
+  "nth_numeric": 2,
+  "printed_count": 1
+ },
+ {
+  "value": "2.385",
+  "line": "paper/main.tex:679",
+  "artifact": "source/evidence/p5_grid_v4flash_20260807.json",
+  "locator": "cells[\"length|Append-Only|p0.8\"].mean",
+  "quantity": "mean",
+  "dp": 3,
+  "note": "re-pointed by tools/repoint_to_occurrence.py: the cited line no longer prints this value and exactly one line within +/-10 prints it",
+  "nth_numeric": 2,
+  "printed_count": 1
+ },
+ {
+  "value": "1.000",
+  "line": "paper/main.tex:358",
+  "artifact": "source/evidence/analyses/r1_dose_response_contrasts.json",
+  "op": "min",
+  "over": "contrasts[*].p_bonf_k3",
+  "where": {
+   "rate": [
+    0.8
+   ],
+   "architecture_a": [
+    "Append-Only"
+   ],
+   "architecture_b": [
+    "RAG+Filter"
+   ]
+  },
+  "quantity": "p_bonf_k3",
+  "dp": 3,
+  "nth_numeric": 3,
+  "printed_count": 1,
+  "expect": 1
+ },
+ {
+  "value": "1.000",
+  "line": "paper/main.tex:366",
+  "artifact": "source/evidence/analyses/r1_dose_response_contrasts.json",
+  "op": "min",
+  "over": "contrasts[*].p_bonf_k3",
+  "where": {
+   "rate": [
+    0.8
+   ],
+   "architecture_a": [
+    "Append-Only"
+   ],
+   "architecture_b": [
+    "RAG+Filter"
+   ]
+  },
+  "quantity": "p_bonf_k3",
+  "dp": 3,
+  "nth_numeric": 11,
+  "printed_count": 1,
+  "expect": 1
+ },
+ {
+  "value": "-2.074",
+  "line": "paper/main.tex:359",
+  "artifact": "source/evidence/analyses/r1_dose_response_contrasts.json",
+  "op": "min",
+  "over": "contrasts[*].t",
+  "where": {
+   "rate": [
+    0.8
+   ],
+   "architecture_a": [
+    "Summarization"
+   ],
+   "architecture_b": [
+    "RAG+Filter"
+   ]
+  },
+  "quantity": "t",
+  "dp": 3,
+  "expect": 1
+ }
+]

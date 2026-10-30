@@ -1,0 +1,92 @@
+paper: tmlr_p6
+claims:
+- id: C01
+  statement: Supplementary archives contain four 20-Newsgroups result snapshots, each
+    configured for 10 seeds; the model-variant list is explicitly recorded.
+  value: 10.0
+  tol: 0
+  evidence:
+    file: evidence/supplementary/newsgroups_20260627_195431.json
+    path: config.n_seeds
+- id: C02
+  statement: In the 195431 snapshot, RF-Embed ECE=0.0957 and MLP-Embed ECE=0.1410,
+    with corresponding AUROC 0.8778 and 0.8667.
+  value: 0.09570733937161496
+  tol: 0
+  evidence:
+    file: evidence/supplementary/newsgroups_20260627_195431.json
+    path: aggregated.RF-Embed.ece_mean
+- id: C03
+  statement: The 203749 snapshot reports MLP-Embed AUROC=0.9549 and ECE=0.0670; results
+    vary across timestamped snapshots.
+  value: 0.9549027441755451
+  tol: 0
+  evidence:
+    file: evidence/supplementary/newsgroups_20260627_203749.json
+    path: aggregated.MLP-Embed.auroc_mean
+- id: C04
+  statement: N-sensitivity archive contains five seeds; its sample-size list spans
+    200–5000.
+  value: 5.0
+  tol: 0
+  evidence:
+    file: evidence/supplementary/n_sensitivity_newsgroups_20260627_191332.json
+    path: n_seeds
+- id: C05
+  statement: The main manuscript table/abstract values (e.g., ECE=0.131/0.083 and
+    20 Newsgroups framing) are not uniquely matched to one delivered snapshot; the
+    Methods also state a synthetic stand-in.
+  value: snapshots
+  tol: 0
+  evidence:
+    file: evidence/protocol.md
+- id: C06
+  statement: 'Existing review identifies Major Revision: calibration-after-resampling
+    baseline, practical magnitude, neural-classifier comparison, and application guidance
+    are missing.'
+  value: 4 Majors hedged to scoped limitations (before-resampling only, conditional
+    10 seeds, 2 models, if-resampling-recalibrate)
+  tol: 0
+  evidence:
+    file: evidence/scope_C06_major_revision.md
+- id: C07
+  statement: 'The manuscript author block is anonymous and the source contains no
+    real identity string (carrier: manuscript_anonymity.json, generated from main.tex).'
+  value: true
+  tol: 0
+  tex: main.tex
+  pattern: anonymous
+  evidence:
+    file: manuscript_anonymity.json
+    path: author_is_anonymous
+- id: C08
+  statement: 'At n=2000 the MLP-Embed variant has the worst calibration: ECE mean
+    0.1304, reported in the abstract as 0.131.'
+  value: 0.13043876558088202
+  tol: 0.001
+  evidence:
+    file: evidence/supplementary/n_sensitivity_newsgroups_20260627_191332.json
+    path: results.2000.aggregated.MLP-Embed.ece_mean
+- id: C09
+  statement: 'At n=2000 the RF-Hybrid (tree) variant is better calibrated: ECE mean
+    0.0935, reported in the abstract as 0.094.'
+  value: 0.0935344421655844
+  tol: 0.001
+  evidence:
+    file: evidence/supplementary/n_sensitivity_newsgroups_20260627_191332.json
+    path: results.2000.aggregated.RF-Hybrid.ece_mean
+- id: C10
+  statement: The abstract attributes an AUROC cost of 0.037 to post-hoc isotonic calibration;
+    that quantity is not recomputable from the delivered evidence.
+  status: inconclusive
+  missing_evidence: 'n_sensitivity_newsgroups_20260627_191332.json contains only three
+    variants (RF-Embed, RF-Hybrid, MLP-Embed) at every sample size - no isotonic variant
+    - so the isotonic AUROC cost cannot be recomputed. The only value near 0.037 in
+    the delivered evidence is results.200.aggregated.MLP-Embed.auroc_std = 0.0383,
+    which is a standard deviation, not that cost. Upgrade: deliver the run that produced
+    the isotonic variants.'
+  value: null
+  tol: 0
+  evidence:
+    file: evidence/supplementary/n_sensitivity_newsgroups_20260627_191332.json
+    path: results.2000.aggregated

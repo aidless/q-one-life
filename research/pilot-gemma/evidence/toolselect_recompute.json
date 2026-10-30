@@ -1,0 +1,147 @@
+{
+ "input_manifest": [
+  {
+   "file": "r05_eval_k5.jsonl",
+   "k": 5,
+   "rows": 30,
+   "bytes": 8586,
+   "sha256_16": "b7e41d38befb0777"
+  },
+  {
+   "file": "r05_eval_k20.jsonl",
+   "k": 20,
+   "rows": 120,
+   "bytes": 37320,
+   "sha256_16": "239d67b5b4a4a06f"
+  },
+  {
+   "file": "r05_eval_k50.jsonl",
+   "k": 50,
+   "rows": 300,
+   "bytes": 89862,
+   "sha256_16": "f78c9a7f844d5545"
+  }
+ ],
+ "scipy": true,
+ "per_k": {
+  "5": {
+   "n": 30,
+   "scored_correct": 24,
+   "proven_genuine": 18,
+   "proven_inflated": 0,
+   "undecidable": 6,
+   "accuracy_pct": [
+    60.0,
+    80.0
+   ],
+   "contamination_rows": [
+    0,
+    6
+   ],
+   "scored_correct_ci": [
+    0.6269,
+    0.905
+   ],
+   "failure_modes": {
+    "wrong": 0,
+    "omit": 6,
+    "halluc": 0
+   }
+  },
+  "20": {
+   "n": 120,
+   "scored_correct": 60,
+   "proven_genuine": 48,
+   "proven_inflated": 12,
+   "undecidable": 0,
+   "accuracy_pct": [
+    40.0,
+    40.0
+   ],
+   "contamination_rows": [
+    12,
+    12
+   ],
+   "scored_correct_ci": [
+    0.4119,
+    0.5881
+   ],
+   "failure_modes": {
+    "wrong": 36,
+    "omit": 24,
+    "halluc": 0
+   }
+  },
+  "50": {
+   "n": 300,
+   "scored_correct": 36,
+   "proven_genuine": 30,
+   "proven_inflated": 0,
+   "undecidable": 6,
+   "accuracy_pct": [
+    10.0,
+    12.0
+   ],
+   "contamination_rows": [
+    0,
+    6
+   ],
+   "scored_correct_ci": [
+    0.088,
+    0.1617
+   ],
+   "failure_modes": {
+    "wrong": 174,
+    "omit": 60,
+    "halluc": 30
+   }
+  }
+ },
+ "trend": {
+  "upper(scored_correct).error_rate": {
+   "correct": [
+    24,
+    60,
+    36
+   ],
+   "Z": 10.434,
+   "p": "1.727e-25"
+  },
+  "lower(proven_genuine).error_rate": {
+   "correct": [
+    18,
+    48,
+    30
+   ],
+   "Z": 8.621,
+   "p": "6.639e-18"
+  },
+  "failure.wrong": {
+   "xs": [
+    0,
+    36,
+    174
+   ],
+   "Z": 7.293,
+   "p": "3.041e-13"
+  },
+  "failure.omit": {
+   "xs": [
+    6,
+    24,
+    60
+   ],
+   "Z": 0.0,
+   "p": "1.000e+00"
+  },
+  "failure.halluc": {
+   "xs": [
+    0,
+    0,
+    30
+   ],
+   "Z": 3.913,
+   "p": "9.113e-05"
+  }
+ }
+}

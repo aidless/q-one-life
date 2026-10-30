@@ -1,0 +1,332 @@
+% ============================================================
+% Combined references for Calibration Fatigue paper
+% Merged from arxiv/main.tex and arxiv_contagion/refs.bib
+% ============================================================
+
+% --- Core calibration literature ---
+
+@inproceedings{sclar2024quantifying,
+  title     = {Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design},
+  author    = {Megan Sclar and Suchin Gururangan and Tanmay Rajpurohit and Akari Asai and Swabha Swayamdipta and Jordan Lee Smith and Matthew E. Peters and Ashish Sabharwal and Yejin Choi and Hannaneh Hajishirzi},
+  booktitle = {ICLR},
+  year      = {2024},
+}
+
+@inproceedings{guo2017calibration,
+  title     = {On Calibration of Modern Neural Networks},
+  author    = {Chuan Guo and Geoff Pleiss and Yu Sun and Kilian Q. Weinberger},
+  booktitle = {ICML},
+  year      = {2017},
+}
+
+@inproceedings{he2026paradox,
+  title     = {The Calibration Paradox: When Better Probability Estimates Lead to Worse Decisions},
+  author    = {He, Wei and others},
+  booktitle = {NeurIPS},
+  year      = {2026},
+}
+
+@inproceedings{messing2026tee,
+  title     = {Hidden Measurement Error in {LLM} Pipelines: Decomposing Evaluation Variance with Multi-Judge Ensembles},
+  author    = {Messing, Sarah and others},
+  booktitle = {arXiv preprint arXiv:2604.11581},
+  year      = {2026},
+}
+
+% --- Multi-agent calibration ---
+
+@article{huang2026cagecal,
+  title   = {{CAGE-Cal}: Counterfactual Agent-Graph Calibration for Multi-Agent {LLM} Systems},
+  author  = {J. Huang and M. Li and Z. Li and S. Kwon and H. Yu and C. Zhang},
+  journal = {arXiv preprint arXiv:2605.30653},
+  year    = {2026},
+}
+
+@inproceedings{lin2024collaborative,
+  title     = {Collaborative Calibration: Multi-Agent Deliberation for Improved {LLM} Calibration},
+  author    = {Zhen Lin and Shubhendu Trivedi and Jimeng Sun},
+  booktitle = {ICLR Workshop on Reliable and Responsible Foundation Models},
+  year      = {2024},
+}
+
+@article{li2025sacd,
+  title   = {Self-Anchoring Calibration Drift in Multi-Turn {LLM} Conversations},
+  author  = {Y. Li and K. Zhang},
+  journal = {Anonymous preprint},
+  year    = {2025},
+}
+
+@inproceedings{tian2023just,
+  title     = {Just Ask for Calibration: Strategies for Eliciting Calibrated Confidence Scores from Language Models Fine-Tuned with Human Feedback},
+  author    = {Katherine Tian and Eric Mitchell and Allan Zhou and Archit Sharma and Rafael Rafailov and Huaxiu Yao and Chelsea Finn and Christopher D. Manning},
+  booktitle = {EMNLP},
+  year      = {2023},
+}
+
+@article{chen2025unicr,
+  title   = {{UniCR}: Unified Multi-Evidence Calibration and Risk Control for Large Language Models},
+  author  = {Chen, X. and others},
+  journal = {Anonymous preprint},
+  year    = {2025},
+}
+
+% --- EPC framework and related work by the same author ---
+
+@article{epc2026,
+  title   = {Evaluator Preference Collapse: Self-Evaluation Bias in Test-Time Agent Evolution},
+  author  = {Anonymous Authors},
+  journal = {arXiv preprint arXiv:2606.16682},
+  year    = {2026},
+}
+
+@article{boundarysync2026,
+  title   = {{BOUNDARY\_SYNC}: A Causal Protocol for Measuring Communication-Induced Coupling in Multi-Agent {LLM} Systems},
+  author  = {Anonymous Authors},
+  journal = {arXiv preprint arXiv:2607.01600},
+  year    = {2026},
+}
+
+@article{tensor2026,
+  title   = {The Contagion Tensor: A Framework for Measuring Output-Distribution Coupling in Multi-Agent {LLM} Systems},
+  author  = {Anonymous Authors},
+  journal = {arXiv preprint arXiv:2606.28839},
+  year    = {2026},
+}
+
+@article{contagion2026,
+  title   = {Contagion Networks: Evaluator Preference Propagation in Multi-Agent {LLM} Systems},
+  author  = {Anonymous Authors},
+  journal = {arXiv preprint arXiv:2606.20493},
+  year    = {2026},
+}
+
+@article{caleffects2026,
+  title   = {Communication Degrades Calibration, Self-Evaluation Immunity Is Model-Dependent, and Calibration Increases Noise: A Systematic Study of Calibration Effects in Multi-Agent {LLM} Systems},
+  author  = {Anonymous Authors},
+  journal = {arXiv preprint arXiv:2606.31371},
+  year    = {2026},
+}
+
+@article{temporal2026,
+  title   = {Not Contagion, Just Time: Temporal Calibration Fatigue in {LLM} Agents},
+  author  = {Anonymous Authors},
+  journal = {arXiv preprint arXiv:2606.23195},
+  year    = {2026},
+}
+
+@article{memory2025,
+  title   = {Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory},
+  author  = {Anonymous Authors},
+  journal = {arXiv preprint arXiv:2606.23195},
+  year    = {2026},
+}
+
+@article{mmepc2026,
+  title   = {{MM-EPC}: Multimodal Evaluator Preference Collapse in Self-Evolving Agents},
+  author  = {Anonymous Authors},
+  journal = {arXiv preprint arXiv:2606.16682},
+  year    = {2026},
+}
+
+@article{resampling2026,
+  title   = {The Hidden Cost of Resampling: How Imbalance Correction Degrades Probability Calibration in Tree Ensembles},
+  author  = {Anonymous Authors},
+  journal = {arXiv preprint arXiv:2606.29720},
+  year    = {2026},
+}
+
+% --- LLM evaluation ---
+
+@inproceedings{zheng2023judging,
+  title     = {Judging {LLM}-as-a-Judge with {MT-Bench} and {Chatbot Arena}},
+  author    = {Lianmin Zheng and Wei-Lin Chiang and Sheng Yin and Siyuan Zhuang and Zhanghao Wu and Yonghao Zhuang and Zhuohan Li and Siqi Chen and Dacheng Li and Hao Zhang and Joseph E. Gonzalez and Ion Stoica},
+  booktitle = {NeurIPS},
+  year      = {2023},
+}
+
+@article{chiang2024chatbot,
+  title   = {{Chatbot Arena}: An Open Platform for Evaluating {LLMs} by Human Preference},
+  author  = {Wei-Lin Chiang and Lianmin Zheng and Ying Sheng and Tianle Zhang and Siyuan Zhuang and Zhanghao Wu and Yonghao Zhuang and Zhuohan Li and Zi Lin and Joseph E. Gonzalez and Ion Stoica and Eric P. Xing},
+  journal = {arXiv preprint arXiv:2403.04132},
+  year    = {2024},
+}
+
+@article{cobbe2021gsm8k,
+  title   = {Training Verifiers to Solve Math Word Problems},
+  author  = {Karl Cobbe and Vineet Kosaraju and Mohammad Bavarian and Mark Chen and Heewoo Jun and Lukasz Kaiser and Matthias Plappert and Jerry Tworek and Jacob Hilton and Reiichiro Nakano and Christopher Hesse and John Schulman},
+  journal = {arXiv preprint arXiv:2110.14168},
+  year    = {2021},
+}
+
+@inproceedings{li2023multiagent,
+  title     = {{CAMEL}: Communicative Agents for ``Mind'' Exploration of Large Language Model Society},
+  author    = {Guohao Li and Hasan Abed Al Kader Hammoud and Hani Itani and Dmitrii Khizbullin and Bernard Ghanem},
+  booktitle = {NeurIPS},
+  year      = {2023},
+}
+
+@article{wu2024autogen,
+  title   = {{AutoGen}: Enabling Next-Gen {LLM} Applications via Multi-Agent Conversation},
+  author  = {Qingyun Wu and Gagan Bansal and Jieyu Zhang and Yiran Wu and Beibin Li and Erkang Zhu and Li Jiang and Xiaoyun Zhang and Shaokun Zhang and Jiale Liu and Ahmed Hassan Awadallah and Ryen W. White and Doug Burger and Chi Wang},
+  journal = {arXiv preprint arXiv:2308.08155},
+  year    = {2024},
+}
+
+% --- Calibration methods ---
+
+@article{secl2025,
+  title   = {{SECL}: Test-Time Calibration via Discriminative Signals for Large Language Models},
+  author  = {Anonymous Authors},
+  journal = {Anonymous preprint},
+  year    = {2025},
+}
+
+@inproceedings{zhou2024incontext,
+  title     = {Navigating the Grey Area: How Expressions of Uncertainty and Overconfidence Affect Language Models},
+  author    = {Kaitlyn Zhou and Dan Jurafsky and Tatsunori Hashimoto},
+  booktitle = {EMNLP},
+  year      = {2024},
+}
+
+% --- General ML ---
+
+@article{tversky1974anchoring,
+  title   = {Judgment under Uncertainty: Heuristics and Biases},
+  author  = {Amos Tversky and Daniel Kahneman},
+  journal = {Science},
+  volume  = {185},
+  number  = {4157},
+  pages   = {1124--1131},
+  year    = {1974},
+}
+
+@inproceedings{sun2020test,
+  title     = {Test-Time Training with Self-Supervision for Generalization under Distribution Shifts},
+  author    = {Yu Sun and Xiaolong Wang and Zhuang Liu and John Miller and Alexei A. Efros and Moritz Hardt},
+  booktitle = {ICML},
+  year      = {2020},
+}
+
+@article{jiang2021can,
+  title   = {How Can We Know When Language Models Know?},
+  author  = {Zhengbao Jiang and Jun Araki and Haibo Ding and Graham Neubig},
+  journal = {Transactions of the Association for Computational Linguistics},
+  volume  = {9},
+  year    = {2021},
+}
+
+@article{wolpert1997no,
+  title   = {No Free Lunch Theorems for Optimization},
+  author  = {David H. Wolpert and William G. Macready},
+  journal = {IEEE Transactions on Evolutionary Computation},
+  volume  = {1},
+  number  = {1},
+  pages   = {67--82},
+  year    = {1997},
+}
+
+
+@article{he2023separating,
+  title   = {Separating Kalman Filters for State-Space Models},
+  author  = {J. He and others},
+  journal = {Anonymous preprint},
+  year    = {2023},
+}
+
+@inproceedings{niculescu2005predicting,
+  title     = {Predicting Good Probabilities with Supervised Learning},
+  author    = {Alex Niculescu-Mizil and Rich Caruana},
+  booktitle = {ICML},
+  year      = {2005},
+}
+
+@inproceedings{dodge2019show,
+  title     = {Show Your Work: Improved Reporting of Experimental Results},
+  author    = {Jesse Dodge and Suchin Gururangan and Dallas Card and Roy Schwartz and Noah A. Smith},
+  booktitle = {EMNLP},
+  year      = {2019},
+}
+
+@inproceedings{naeini2015obtaining,
+  title     = {Obtaining Well Calibrated Probabilities Using Bayesian Binning},
+  author    = {Mahdi Pakdaman Naeini and Gregory F. Cooper and Milos Hauskrecht},
+  booktitle = {AAAI},
+  year      = {2015},
+}
+
+@article{bubeck2012regret,
+  title   = {Regret Analysis of Stochastic and Nonstochastic Multi-armed Bandit Problems},
+  author  = {S{\'e}bastien Bubeck and Nicolo Cesa-Bianchi},
+  journal = {Foundations and Trends in Machine Learning},
+  volume  = {5},
+  pages   = {1--122},
+  year    = {2012},
+}
+
+@book{lehmann1998theory,
+  title     = {Theory of Point Estimation},
+  author    = {E. L. Lehmann and George Casella},
+  year      = {1998},
+  publisher = {Springer},
+}
+
+% --- External references (Path B: +0.5) ---
+
+@book{cover2012elements,
+  title     = {Elements of Information Theory},
+  author    = {Thomas M. Cover and Joy A. Thomas},
+  year      = {2012},
+  publisher = {John Wiley \& Sons},
+  edition   = {2nd},
+}
+
+
+@inproceedings{choi2023large,
+  title     = {Large Language Models Help Humans Verify Facts and Express Opinions},
+  author    = {Seungju Choi and Kaitlyn Zhou and Jiatong Han and Sullam Lee and Changyeon Kim},
+  booktitle = {EMNLP},
+  year      = {2023},
+}
+  author    = {E. L. Lehmann and George Casella},
+  year      = {1998},
+  publisher = {Springer},
+}
+
+@inproceedings{zheng2024judging,
+  title     = {Judging {LLM}-as-a-Judge with {MT-Bench} and {Chatbot Arena}},
+  author    = {Lianmin Zheng and Wei-Lin Chiang and Sheng Yin and Siyuan Zhuang and Zhanghao Wu and Yonghao Zhuang and Zhuohan Li and Siqi Chen and Dacheng Li and Hao Zhang and Joseph E. Gonzalez and Ion Stoica},
+  booktitle = {NeurIPS},
+  year      = {2023},
+}
+
+  title   = {Separating Kalman Filters for State-Space Models},
+  author  = {J. He and others},
+  journal = {Anonymous preprint},
+  year    = {2023},
+}
+
+  title     = {Predicting Good Probabilities with Supervised Learning},
+  author    = {Alex Niculescu-Mizil and Rich Caruana},
+  booktitle = {ICML},
+  year      = {2005},
+}
+
+  title     = {Show Your Work: Improved Reporting of Experimental Results},
+  author    = {Jesse Dodge and Suchin Gururangan and Dallas Card and Roy Schwartz and Noah A. Smith},
+  booktitle = {EMNLP},
+  year      = {2019},
+}
+
+% Self-citation entries (neutral keys for double-blind; verify author metadata per venue policy)
+@misc{companion2026,
+  author  = {Anonymous Authors},
+  title   = {Conditional Communication Effects in Multi-Agent {LLM} Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation},
+  year    = {2026},
+  note    = {Companion manuscript}}
+
+@article{tian2023calibration,
+  title={Just Ask for Calibration: Strategies for Eliciting Calibrated Confidence Scores from Language Models Fine-Tuned with Human Feedback},
+  author={Tian, Katherine and Mitchell, Eric and Zhou, Allan and Sharma, Archit and Rafailov, Rafael and Yao, Huaxiu Finn and Finn, Chelsea and Manning, Christopher D},
+  journal={arXiv:2305.14975},
+  year={2023}
+}

@@ -1,0 +1,36 @@
+{
+  "per_seed_jsonl": {
+    "claim_lines": [
+      188,
+      191
+    ],
+    "files_found": []
+  },
+  "gates_history": {
+    "claim_lines": [
+      191
+    ],
+    "files_found": []
+  },
+  "protocol_search_strings": {
+    "claim_lines": [
+      191
+    ],
+    "protocol_md_lines": 3,
+    "protocol_md_bytes": 145,
+    "hits_for_search_string": 0,
+    "keyword_clusters_in_review": 6
+  },
+  "prisma_funnel": {
+    "claim_lines": [
+      191
+    ],
+    "found_in": "LITERATURE_REVIEW.md",
+    "stages": [
+      216,
+      142,
+      68,
+      42
+    ]
+  }
+}

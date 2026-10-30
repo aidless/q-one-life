@@ -1,0 +1,226 @@
+{
+  "schema": "q-one-r3-candidate-gates-v1",
+  "generated_at": "2026-10-29T05:20:40.425355Z",
+  "status": "passed",
+  "inputs": [
+    {
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/source/main.tex",
+      "sha256": "a9eef802faa6ef80f7916626a28aade11f1922701fb1f3b24b2f3780a69e0bb6"
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/evidence/paper-ledger-overlay.json",
+      "sha256": "7ff57a361f0a174e81ecf18652cadca9df7c9ee039ebf4a8917c36667f572fc3"
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/evidence/verdict-claims-overlay.json",
+      "sha256": "7f1c9b157edd4246811c61695b4899fc81c46e6417491293bfd8698d130c078d"
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/reverse_coverage_allowlist.json",
+      "sha256": "015f396d83e58db0d45cf85762beea8ff3038b5e3fd447c708b70689d189307d"
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/ledger_reverse_coverage.py",
+      "sha256": "19b219d2995b7756586ba21d2b008afa2e76c9c7d5bd3b2a1d9218fe6de9b7cb"
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/ledger_anchor_census.py",
+      "sha256": "d9777f8dee24ece56420e81b32b9d71660550e0824212ed4ea19313056d560e8"
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/check_verdict_words.py",
+      "sha256": "a27c5efe15a3e1eab7e225a9dbe7ce2e7abf7cfb2c372506515c0ea0b6fc0e84"
+    }
+  ],
+  "reverse_coverage": {
+    "exit_code": 0,
+    "n_tokens": 355,
+    "n_bound": 352,
+    "n_excused": 3,
+    "n_unbound": 0,
+    "appendix": {
+      "present": true,
+      "n_tokens": 30,
+      "live": 20,
+      "archive": 8,
+      "declared_unrecoverable": {
+        "1.9": {
+          "count": 2,
+          "entry": "bench_noise_floor.retracted.sweep.bias_n150",
+          "reason": "产生 1.9 的那一代 sweep 归档件不在发布里，盘上也没有任何文件含这个值；只在附录 A 作为撤回值保存"
+        },
+        "5.77": {
+          "count": 2,
+          "entry": "bench_noise_floor.retracted.external.preference_margin_prealign",
+          "reason": "同域对齐前的那一代 audit_preference 归档件不在发布里；归档件里出现的 5.77 是问题板另一系统的差值，属于撞号"
+        }
+      },
+      "unreadable": {},
+      "unbound": {},
+      "per_token": {
+        "0.0": {
+          "count": 1,
+          "status": "live"
+        },
+        "0.00": {
+          "count": 1,
+          "status": "live"
+        },
+        "0.0033": {
+          "count": 1,
+          "status": "live"
+        },
+        "0.0048": {
+          "count": 1,
+          "status": "live"
+        },
+        "0.1023": {
+          "count": 1,
+          "status": "live"
+        },
+        "0.14": {
+          "count": 1,
+          "status": "live"
+        },
+        "0.5": {
+          "count": 1,
+          "status": "live"
+        },
+        "0.5276": {
+          "count": 1,
+          "status": "live"
+        },
+        "0.943": {
+          "count": 1,
+          "status": "archive",
+          "entry": "bench_noise_floor.retracted.sweep.rho_min",
+          "source": "papers/bench_noise_floor/evidence/archived_v2__ds_sweep.json",
+          "field": "aggregate.spearman_rho_min"
+        },
+        "1.40": {
+          "count": 1,
+          "status": "archive",
+          "entry": "bench_noise_floor.retracted.ds.relevance_delta",
+          "source": "papers/bench_noise_floor/evidence/archived_v2__ds_relevance.json",
+          "field": "floor.delta"
+        },
+        "1.57": {
+          "count": 1,
+          "status": "live"
+        },
+        "1.6037": {
+          "count": 3,
+          "status": "live"
+        },
+        "1.9": {
+          "count": 2,
+          "status": "declared_unrecoverable"
+        },
+        "11897": {
+          "count": 1,
+          "status": "archive",
+          "entry": "bench_noise_floor.retracted.question.meanprob_leader_n_truncated",
+          "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_both.json",
+          "field": "methods.mean_prob.leaderboard[0].n"
+        },
+        "1520": {
+          "count": 1,
+          "status": "live"
+        },
+        "2.9412": {
+          "count": 1,
+          "status": "live"
+        },
+        "2.96": {
+          "count": 1,
+          "status": "live"
+        },
+        "5.77": {
+          "count": 2,
+          "status": "declared_unrecoverable"
+        },
+        "6.25": {
+          "count": 1,
+          "status": "archive",
+          "entry": "bench_noise_floor.retracted.ds.preference_delta",
+          "source": "papers/bench_noise_floor/evidence/archived_v2__ds_preference.json",
+          "field": "floor.delta"
+        },
+        "6.27": {
+          "count": 1,
+          "status": "live"
+        },
+        "70.23": {
+          "count": 1,
+          "status": "live"
+        },
+        "73.19": {
+          "count": 1,
+          "status": "live"
+        },
+        "79.59": {
+          "count": 1,
+          "status": "archive",
+          "entry": "bench_noise_floor.retracted.question.meanprob_ci_hi_truncated",
+          "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_both.json",
+          "field": "methods.mean_prob.margin_ci.hi95"
+        },
+        "8.97": {
+          "count": 3,
+          "status": "archive",
+          "entry": "bench_noise_floor.retracted.question.meanprob_leader_truncated",
+          "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_both.json",
+          "field": "methods.mean_prob.leaderboard[0].macro"
+        },
+        "80.51": {
+          "count": 2,
+          "status": "archive",
+          "entry": "bench_noise_floor.retracted.question.margin_meanprob_truncated",
+          "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_lexicographic.json",
+          "field": "methods.mean_prob.margin_vs_floor"
+        },
+        "80.97": {
+          "count": 1,
+          "status": "live"
+        },
+        "81.1236": {
+          "count": 2,
+          "status": "live"
+        },
+        "81.36": {
+          "count": 1,
+          "status": "archive",
+          "entry": "bench_noise_floor.retracted.question.meanprob_ci_lo_truncated",
+          "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_both.json",
+          "field": "methods.mean_prob.margin_ci.lo95"
+        },
+        "82.5737": {
+          "count": 1,
+          "status": "live"
+        },
+        "89.48": {
+          "count": 1,
+          "status": "live"
+        }
+      }
+    }
+  },
+  "anchor_census": {
+    "verdict": "GREEN",
+    "anchor_missing": 0,
+    "anchor_soft_mismatch": 92,
+    "ambiguous_membership": 0,
+    "json_entries_checked": 484
+  },
+  "verdict_word_gate": {
+    "verdict": "PASS",
+    "checks": 137,
+    "failures": 0,
+    "not_assessed": 0
+  },
+  "non_claims": [
+    "These gates check binding and wording; they do not establish scientific readiness.",
+    "The native paper tree and native ledger are read-only inputs.",
+    "Passing gates do not resolve C02 or C03."
+  ]
+}

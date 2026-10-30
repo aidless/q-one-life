@@ -1,0 +1,22 @@
+Title:           When a Leaderboard Cannot Be Read: Three Rulers for the Noise Floor of LLM-as-Judge Evaluation
+Subject:         Noise floor, leave-one-out gold, LLM-as-judge evaluation, measurement validity
+Keywords:        LLM-as-a-judge; noise floor; leave-one-out; Dawid-Skene; bootstrap; refusal semantics
+Author:          
+Creator:         pdfLaTeX
+Producer:        pdfTeX-1.40.29
+CreationDate:    Fri Dec 31 16:00:00 1999 PST
+ModDate:         Fri Dec 31 16:00:00 1999 PST
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           46
+Encrypted:       no
+Page size:       612 x 792 pts (letter)
+Page rot:        0
+File size:       693809 bytes
+Optimized:       no
+PDF version:     1.7

@@ -1,0 +1,12 @@
+{
+  "schema": "q-one-source-record-v1",
+  "generated_at": "2026-10-27T14:18:14.488114Z",
+  "family_id": "qf-your-tool-selection-benchmark-may-be-sco-85ad80aa80",
+  "portfolio_project_id": "qp-gemma-revised-da47d4c6ca9b",
+  "source_path": "/home/liuzewen/kaggle-control-20261013/paper-evidence/GEMMA_REVISED.md",
+  "source_sha256": "aa25d33d83b55c4bff5716f2777f420b182122faf93b26a78694b5ce9c5ea798",
+  "source_bytes": 9336,
+  "source_modified_at": "2026-10-14T01:52:20.857614Z",
+  "title": "Your Tool-Selection Benchmark May Be Scoring Wrong Calls as Correct",
+  "project_type": "paper"
+}

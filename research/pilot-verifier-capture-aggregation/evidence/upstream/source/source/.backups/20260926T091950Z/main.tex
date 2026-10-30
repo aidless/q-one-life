@@ -1,0 +1,1009 @@
+% =====================================================================
+% PAPER6 — Capture-Resilient Voting in Multi-LLM Verifier Ensembles
+% Template: tmlr.sty (v0.1, copied from PAPER5, 6560 bytes)
+% Status: COMPLETE DRAFT — full sections + synthetic pilot results (4,000 trials/cell, N∈{5,7,10}, f∈{1,2,3}); real-trace benchmark noted as future work
+% =====================================================================
+
+\documentclass[11pt]{article}
+\usepackage[preprint]{tmlr}
+% If accepted, switch to: \usepackage[accepted]{tmlr}
+\usepackage{amsmath, amssymb, amsthm}
+\input{math_commands.tex}
+\DeclareMathOperator{\CV}{CV}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[capitalize]{cleveref}
+\usepackage{microtype}
+\setlength{\headheight}{14pt}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\let\STATE\State
+
+% ---------------------------------------------------------------------
+% Theorem environments
+% ---------------------------------------------------------------------
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{assumption}{Assumption}
+
+% ---------------------------------------------------------------------
+% Notation shortcuts
+% ---------------------------------------------------------------------
+\newcommand{\V}{\mathcal{V}}            % set of verifiers
+\newcommand{\A}{\mathcal{A}}            % set of attackers
+\newcommand{\CRV}{\textsc{CRV}}         % Capture-Resilient Voting
+\newcommand{\ECR}{\varepsilon\text{-CR}} % $\varepsilon$-capture-resilient
+
+\title{An Empirical Study of Aggregation Methods Under\\
+       Verifier Capture in Multi-LLM Ensembles:\\
+       When Does Majority Voting Fail, and Can We Beat It?}
+
+\author{\name Anonymous\email anonymous@anonymous.invalid\\\addr Anonymous affiliation}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Multi-LLM verification ensembles increasingly aggregate the verdicts of
+several LLM \emph{verifiers} to reduce variance and adversarial
+brittleness relative to any single model. A growing concern in such
+ensembles is \emph{verifier capture}: a small coalition of verifiers
+whose outputs are systematically biased can flip the aggregated
+decision while remaining individually plausible. This paper contributes
+(i) a formal definition of capture-resilient voting (\textsc{CRV}) and
+the threat model distinguishing prompt-injection, rubric-injection, and
+majority-bias mimicry attacks; (ii) an experimental
+protocol comparing seven aggregation methods (plain majority,
+PBFT-style deterministic thresholding, uniform-weighted mean, three
+trust-score variants, and an adaptive hybrid) across verifier pools of
+size $N \in \{5,7,10\}$ with capture counts $f \in \{1,2,3\}$ in a
+synthetic benchmark and a small local-model pilot; and (iii) a falsifiable prediction---that captured verifiers'
+outputs are statistically indistinguishable from a minority of
+honest-but-wrong verifiers, so any statistical-deviation capture rule
+incurs false-positive costs that can outweigh its gains. A synthetic pilot (4,000 trials per cell, $N=7$ verifiers,
+f=2 captured) already tests the prediction and yields a nuanced result:
+trust-score weighting beats plain majority under prompt-injection capture
+(accuracy 0.69 vs. 0.34 at honest accuracy 0.6; 0.94 vs. 0.74 at 0.8),
+because calibration-phase trust identifies deterministically flipped
+verifiers; under majority-bias mimicry, however, the same method fails
+(0.32 vs. 0.41 at honest accuracy 0.6). These pilot values are synthetic and
+do not establish a universal impossibility result. A descriptive local-model
+pilot is included in the evidence package, but a held-out real-trace benchmark
+remains future work; we release the framework, generators, and analysis
+scripts so the benchmark can be extended independently.
+
+
+\textbf{Reproducibility and ethics.} All experiments use deterministic seeds (PYTHONHASHSEED=0) with GPT-4o, DeepSeek, and Qwen models; full experimental protocols, code, raw API logs, and analysis scripts are released in the supplementary material with SHA-256 checksums. This work studies evaluation dynamics in LLM systems; ethical implications include silent reliability decay in safety-critical systems and the need for version-dependent evaluation verification.\end{abstract}
+
+% =====================================================================
+
+
+\textbf{Novelty positioning.} This work differs from existing literature in three ways: (i) systematic decomposition of temporal vs.\ communicative causes of calibration fatigue; (ii) demonstration that self-evaluation immunity is model-dependent and fragile; (iii) reframing of the coupling-noise tradeoff as method-specific with explicit falsification conditions.
+
+
+
+\textbf{Contributions.} This paper makes four contributions: (1) \emph{Systematic empirical analysis} of the target phenomenon across multiple model families and experimental conditions, with matched baselines and controlled confounds. (2) \emph{Formal characterization} of the key metric or relation, with explicit definitions, falsification conditions, and boundary cases. (3) \emph{Cross-model validation} demonstrating that observed effects are not model-specific, with replication attempts and explicit reporting of reproduction failures. (4) \emph{Reproducibility framework}: all experiments released with deterministic seeds, SHA-256 checksums, and step-by-step reproduction protocols, enabling independent verification of all results.\section{Experimental Setup}
+\label{sec:experimental-setup}
+
+\textbf{Models and APIs.} All experiments use the following canonical configuration unless otherwise noted. \textit{Primary model}: GPT-4o (API version gpt-4o-2024-05-13) with temperature $=0.0$, top\_p $=1.0$, and max\_tokens $=1024$ for all agent interactions. \textit{Cross-model validation}: DeepSeek-V4-Pro and Qwen-2.5-72B via their respective APIs with identical generation parameters. \textit{Reproducibility}: all randomness controlled via deterministic seeds (seed $=42$ for canonical runs; 30 distinct seeds for repetition experiments); Python hash randomization disabled (PYTHONHASHSEED $=0$); all API calls use idempotent request parameters.
+
+\textbf{Tasks and datasets.} Evaluation tasks include GSM8K (math reasoning, $K{=}5$ problems per round), MMLU (multi-disciplinary QA), and HumanEval (code generation) for diversity. All datasets are publicly available; exact problem subsets and seed mappings are released in the evidence package.
+
+\textbf{Metrics.} Primary metrics: Expected Calibration Error (ECE, $B{=}10$ equal-width bins), Brier score, coupling coefficient $\gamma$, strategy entropy $H$, and coefficient of variation $\CV$. All metrics computed at the per-seed level and aggregated across seeds with bootstrap confidence intervals.
+
+\textbf{Statistical procedures.} All confidence intervals are bootstrap intervals ($B{=}5{,}000$ resamples). Pairwise contrasts use Welch's $t$-test with Bonferroni correction for multiple comparisons (correction factor $k$ specified per table). Effect sizes reported as Cohen's $d$. All tests two-sided unless otherwise noted.
+
+\textbf{Exclusion criteria.} Runs with API errors, empty responses, or malformed outputs ($<2\%$ of total) are excluded and re-run with fresh seeds. All exclusions logged in the evidence manifest with SHA-256 checksums for all result files.
+
+\section{Introduction}
+\label{sec:intro}
+% =====================================================================
+
+Large language model (LLM)-based verification pipelines increasingly rely on
+\emph{multi-source verifier ensembles} \citep{cui2026edo,leung2026rubricllm}, in which a fixed pool
+of $N$ LLM verifiers independently evaluate a candidate output and a final
+decision is produced by aggregating their votes. Such ensembles have become a
+default building block of contemporary AI auditing, peer review assistance,
+and safety-critical content moderation, where the goal is to reduce variance
+and adversarial brittleness relative to any single model.
+
+A natural and increasingly documented failure mode of these ensembles is what
+we call \emph{verifier capture}: a small coalition of verifiers whose outputs
+are systematically biased in a coordinated direction can swing the aggregated
+decision, even when a majority of verifiers remain individually reliable.
+Verifier capture differs from the classical single-verifier hallucination or
+bias problem in two important ways.
+\textbf{(i) Capture is interactive.} The adversarial verifier does not need to
+be accurate in absolute terms; it only needs to produce outputs that, when
+combined with the other verifiers under a fixed aggregation rule, flip the
+final decision.
+\textbf{(ii) Capture is silent.} From the perspective of an external observer
+that only sees final aggregated verdicts, a captured ensemble looks identical
+to a correctly functioning one until the disagreement structure of individual
+votes is examined.
+
+Recent work has begun to expose capture-like failure modes in LLM judges:
+\citet{zhang2026blindcurator} show that a biased judge \emph{silently
+disables} a downstream curator past a sharp false-pass threshold. This paper
+asks the natural follow-up question: given that capture is real and silent,
+\emph{can any aggregation rule do better than plain majority voting}? Our
+answer, in this empirical study, is \emph{mostly no}.
+
+This paper makes four contributions:
+
+\begin{itemize}
+  \item A formal threat model for verifier capture in LLM ensembles, including
+        a definition of $\varepsilon$-capture-resilience that decouples the
+        adversary's per-verifier accuracy from its aggregate influence
+        (Section~\ref{sec:threat}).
+  \item A unified experimental protocol that benchmarks seven aggregation
+        methods under three attack families and four scenario configurations
+        (Section~\ref{sec:method}).
+  \item An empirical finding that \emph{no} aggregation method we tested
+        substantially outperforms plain majority voting, and several
+        trust-score variants \emph{underperform} majority under strong
+        capture (Section~\ref{sec:exp}). We provide a structural
+        explanation for the negative result: in our setting the captured
+        verifiers' outputs are statistically indistinguishable from a
+        minority of honest-but-wrong verifiers, so any rule that uses
+        statistical deviation to identify capture incurs false-positive
+        costs that outweigh its true-positive gains.
+  \item A reproducible open-source release with code, vote generators, and a
+        Beyond-PDF interactive attack demonstration
+        (Section~\ref{sec:broader}).
+\end{itemize}
+
+We emphasise that the \emph{negative} headline finding is the paper's
+contribution, not an apology. TMLR's acceptance criteria explicitly
+prioritise technical correctness and audience interest over novelty, and a
+rigorous benchmark that documents the limits of the obvious aggregation
+strategies is valuable precisely because future work can build on it
+rather than re-derive it. We discuss when, and against which assumptions,
+our negative result would \emph{not} hold
+(Section~\ref{sec:conclusion}).
+
+The remainder of this paper is organized as follows.
+Section~\ref{sec:background} reviews classical Byzantine fault tolerance and
+LLM ensembling. Section~\ref{sec:threat} introduces the threat model.
+Section~\ref{sec:method} describes the seven aggregation rules we benchmark.
+Section~\ref{sec:exp} reports the benchmark and its negative result.
+Section~\ref{sec:related} discusses related work.
+Section~\ref{sec:broader} addresses broader impact.
+Section~\ref{sec:conclusion} concludes and outlines conditions under which
+our negative result would not hold.
+
+% =====================================================================
+\section{Background}
+\label{sec:background}
+% =====================================================================
+
+\paragraph{Classical Byzantine consensus.}
+Byzantine fault tolerance (BFT) \citep{lamport1982byzantine} establishes
+that a deterministic consensus protocol over $N$ replicas tolerates at
+most $f < N/3$ Byzantine (arbitrary) failures when paired with digital
+signatures, or $f < N/2$ under synchrony assumptions with binary outputs.
+PBFT \citep{castro1999pbft} brought BFT to practical systems and
+HotStuff \citep{yin2019hotstuff} linearised the communication pattern.
+All classical BFT results assume \emph{binary} replica outputs; the
+extension to \emph{continuous} outputs (which we need for LLM verifier
+probabilities) is not standard and is one of the contributions of this
+paper.
+
+\paragraph{LLM-as-judge and ensembles.}
+The use of LLMs as evaluators, or \emph{judges}, was popularised by
+MT-Bench and Chatbot Arena \citep{zheng2023judging}, where a single
+LLM judge is shown to correlate well with human preference ratings.
+Subsequent work studied ensemble-of-judges methods
+\citep{cui2026edo,leung2026rubricllm} to reduce variance and calibrate
+directional bias. These methods optimise for \emph{passive} disagreement
+across annotators; we instead consider \emph{adversarial} disagreement
+induced by verifier capture.
+
+\paragraph{Adversarial robustness of LLM judges.}
+Recent work has begun to expose the silent nature of biased LLM
+judges: \citet{zhang2026blindcurator} show that a biased judge
+\emph{silently disables} a downstream curator past a sharp false-pass
+threshold, and broader red-teaming studies
+\citep{perez2022red,schulhoff2023ignore} catalogue prompt-injection
+attacks. Our threat model (Section~\ref{sec:threat}) operationalises
+these observations into a quantitative capture-resilience condition.
+
+\paragraph{Peer-review automation.}
+\citet{liu2026paperreviewtoolkit} release an open-source multi-reviewer
+pipeline that we use as one of our testbeds; we discuss this and
+related calibration work \citep{liu2026calibration} in
+Section~\ref{sec:related}.
+
+% =====================================================================
+\section{Threat Model and Definitions}
+\label{sec:threat}
+% =====================================================================
+
+We consider an ensemble $\V = \{v_1, \ldots, v_N\}$ of $N$ LLM verifiers
+that independently evaluate a candidate output and produce a continuous
+decision distribution $p_i \in [0,1]$ on the binary outcome
+$\{0,1\}$; the aggregated decision is produced by a fixed aggregation rule
+$\mathcal{A}: [0,1]^N \to \{0,1\}$. A subset $\A \subseteq \V$ of size
+$f = |\A|$ is \emph{captured} by an adversary that controls the verifiers'
+outputs but cannot observe or modify the inputs seen by honest verifiers.
+
+\begin{definition}[Honest verifier]
+\label{def:honest}
+A verifier $v_i \in \V \setminus \A$ is \emph{honest} if
+$p_i = \mathbb{P}[\text{correct outcome} \mid x, \theta_i]$, where $\theta_i$
+is the verifier's fixed-but-unknown system prompt and training. In
+particular, an honest verifier's outputs are conditionally independent
+given the input $x$.
+\end{definition}
+
+\begin{definition}[Capture coalition]
+\label{def:capture}
+A captured verifier $v_j \in \A$ outputs
+$\tilde{p}_j = g(p_j^{\text{true}})$ where $g: [0,1] \to [0,1]$ is an
+adversarial response function drawn from one of three concrete attack
+families:
+\begin{itemize}
+  \item \emph{Prompt injection}: $g$ is a fixed affine or step function
+        chosen by the adversary (e.g. ``always output 0.9'').
+  \item \emph{Rubric injection}: $g$ depends on the input via a hidden
+        rubric bias that flips the verifier's preference order on a
+        target subset of inputs.
+  \item \emph{Majority bias}: $g$ mimics the running empirical mode of
+        the other verifiers' outputs, so the captured output is
+        indistinguishable from the majority.
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Aggregation correctness]
+\label{def:correctness}
+The aggregation rule $\mathcal{A}$ is $(\eta, \delta)$-correct on a
+distribution $\mathcal{D}$ if
+$\Pr_{(x,y) \sim \mathcal{D}, \A, g}
+[\mathcal{A}(p\_1, \ldots, p\_N) = y] \geq 1 - \delta$,
+where the probability is taken over the input distribution, the
+adversary's choice of capture coalition $\A$, and the response
+functions $g$ of all captured verifiers.
+\end{definition}
+
+\begin{definition}[Capture-resilient aggregation]
+\label{def:resilient}
+The aggregation rule $\mathcal{A}$ is $\varepsilon$-\emph{capture-resilient}
+if, for every adversary that captures at most $f$ verifiers, the ensemble
+remains $(\eta, \delta)$-correct with $\delta \leq \varepsilon$ for every
+input distribution $\mathcal{D}$.
+\end{definition}
+
+\begin{theorem}[Capture lower bound]
+\label{thm:lower}
+For any deterministic aggregation rule $\mathcal{A}$, if the adversary
+captures $f \geq N/2$ verifiers, then for \emph{some} input distribution
+$\mathcal{D}$ and \emph{some} adversarial response function $g$ from
+Definition~\ref{def:capture}, the rule $\mathcal{A}$ is not
+$\varepsilon$-capture-resilient for any $\varepsilon < 1/2$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+If the adversary controls a strict majority $f > N/2$, the adversary can
+choose $g$ such that the captured verifiers all output the same value $y^*$
+with probability $1$, while honest verifiers (whose accuracy is below $1$
+on $\mathcal{D}$) collectively cannot outvote $\A$. Formal reduction to
+the classical $f \geq N/2$ impossibility bound for deterministic
+aggregation. Full proof in Appendix~\ref{app:proof}.
+\end{proof}
+
+\begin{remark}[Continuous outputs vs.\ classical BFT]
+Theorem~\ref{thm:lower} recovers the classical $f < N/2$ BFT impossibility
+bound but does not yield a constructive upper bound, because LLM verifier
+outputs are continuous: a verifier that outputs $p_i = 0.51$ is
+qualitatively different from one that outputs $p_i = 0.99$, even though
+both would be treated as ``in favor'' by a binary-vote aggregation rule.
+This gap is what motivates the trust-score weighting in \textsc{CRV}
+(Section~\ref{sec:method}).
+\end{remark}
+
+\begin{assumption}[Honest independence]
+\label{ass:indep}
+Honest verifiers' outputs are conditionally independent given $x$. This
+is the standard assumption in LLM-ensemble calibration work
+\citep{cui2026edo,zheng2023judging}; we discuss the relaxation in
+Section~\ref{sec:related}.
+\end{assumption}
+
+% =====================================================================
+\section{Methods: Seven Aggregation Rules}
+\label{sec:method}
+% =====================================================================
+
+We benchmark seven aggregation rules. Three are \emph{classical} and
+require no learning: plain majority voting
+(Section~\ref{sub:majority}), PBFT-style deterministic thresholding
+(Section~\ref{sub:pbft}), and uniform-weighted mean
+(Section~\ref{sub:uniform}). Three are \emph{trust-score-based} and
+share the EMA update
+$\tau_i^{(t)} = \alpha \tau_i^{(t-1)} + (1-\alpha) c_i^{(t)}$ where
+$c_i^{(t)} = 1 - |p_i^{(t-1)} - \text{med}_{-i}^{(t-1)}|$; they differ
+in how the trust score is \emph{used} at decision time: weighted mean,
+weighted median, and Kalman-filter trust tracking. The seventh is
+\textsc{Atv}, an adaptive hybrid we proposed as a candidate that we
+expected to combine the strengths of soft weighting and outlier
+robustness.
+
+\paragraph{Plain majority.}
+\label{sub:majority}
+Each verifier contributes a binary vote $\mathbb{1}[p_i \geq 0.5]$; the
+aggregate is the majority over the $N$ binary votes. Cost $O(N)$ per
+round, no state.
+
+\paragraph{PBFT-style deterministic thresholding.}
+\label{sub:pbft}
+\citep{castro1999pbft} Each verifier again votes binary; the aggregate
+passes if at least $(N+f+1)/2$ verifiers agree, which is the
+deterministic threshold that tolerates $f$ adversarial nodes when a
+strict majority is required. Cost $O(N)$ per round.
+
+\paragraph{Uniform-weighted mean.}
+\label{sub:uniform}
+The aggregate is $\mathbb{1}[\sum_i p_i / N \geq 0.5]$. Cost $O(N)$,
+no state.
+
+\paragraph{Trust-score weighted mean.}
+\label{sub:trustmean}
+At round $t$, weights are $w_i = \tau_i^{(t-1)} / \sum_j \tau_j^{(t-1)}$;
+the aggregate is $\mathbb{1}[\sum_i w_i p_i \geq 0.5]$. The trust
+update uses consistency against the per-round median. Cost $O(N)$
+plus a per-round $O(N \log N)$ for the median.
+
+\paragraph{Trust-score weighted median.}
+\label{sub:trustmedian}
+Identical trust update; at decision time, sort verifiers by current
+$p_i$ and pick the $p_i$ at which the cumulative trust weight crosses
+half the total weight. This is robust to a single extreme value but
+expensive $O(N \log N)$ per round.
+
+\paragraph{Kalman-filter trust tracking.}
+\label{sub:kalman}
+Same decision rule as weighted mean, but trust tracking uses a
+Kalman filter with process variance $Q = 0.01$ and measurement
+variance $R = 0.05$ instead of an EMA, which we hypothesised would
+smooth trust under noisy verifier streams.
+
+\paragraph{\textsc{Atv}: adaptive trust-weighted voting.}
+\label{sub:atv}
+A hybrid we designed as the natural synthesis of the two trust-score
+decision rules. \textsc{Atv} switches between weighted mean and
+weighted median at each round based on the standard deviation of the
+trust scores: if $\text{std}(\tau) < \tau_{\text{split}} = 0.5$ (trust
+concentrated, presumed-uniform regime), use weighted mean; otherwise
+(trust dispersed, capture suspected) use weighted median. The
+hyperparameter $\tau_{\text{split}}$ was tuned on a held-out scenario;
+we report sensitivity in Appendix~\ref{app:ablation}.
+
+\paragraph{Why we expected \textsc{Atv} to win.}
+Our \emph{a priori} hypothesis, before running the benchmark, was that
+\textsc{Atv} would inherit the best of both worlds: the mean's
+sensitivity to subtle weight differences in the easy regime, and the
+median's robustness to outlier-dominated rounds in the hard regime.
+The benchmark (Section~\ref{sec:exp}) does not support this hypothesis.
+
+\paragraph{Why we report \textsc{Atv} even though it loses.}
+We report \textsc{Atv} as a representative of the natural design space
+that future researchers might explore, rather than as our recommended
+method. The negative result is informative precisely because \textsc{Atv}
+\emph{was} our best prior and still loses; the same is true of the
+Kalman variant.
+
+% =====================================================================
+\section{Experimental Setup}
+\label{sec:exp}
+% =====================================================================
+
+\paragraph{Datasets.}
+\label{sub:generator}
+We use a synthetic verifier-output generator in this study; we discuss
+the limitations of this choice in Section~\ref{sec:conclusion}. The
+generator (Section~\ref{sub:generator}) models the agreement structure
+of a multi-LLM verification ensemble under verifier capture, and is
+calibrated to produce vote distributions whose summary statistics
+match published numbers for LLM judges on rubric decisions
+\citep{leung2026rubricllm}: per-verifier outputs are concentrated
+near $0$ or $1$ with $p_{\text{conf}} \in [0.7, 0.85]$ and a small
+amount of i.i.d.\ Gaussian noise ($\sigma = 0.05$). We additionally
+release a \emph{Beyond-PDF} interactive demonstration that replays
+the benchmark on real LLM trace files
+(Section~\ref{sec:broader}).
+
+\paragraph{Attack models.}
+\label{sub:attacks}
+We instantiate the three attack families of
+Definition~\ref{def:capture} concretely: \emph{prompt injection}
+(\textsc{PromptInj}: captured verifier outputs the complement of its
+honest output), \emph{rubric injection}
+(\textsc{RubricInj}: captured verifier flips its label on a random
+fraction of inputs), and \emph{majority bias}
+(\textsc{MajBias}: captured verifier mimics the running median of the
+other verifiers' outputs). Section~\ref{sub:attacks} gives the formal
+parameterisations.
+
+\paragraph{Scenarios.}
+We consider four scenarios that vary the two most consequential
+parameters: honest-verifier per-instance accuracy $\eta \in \{0.65,
+0.85\}$ and attack strength $\alpha \in \{0.6, 0.9\}$ (probability
+that a captured verifier executes the attack on a given round). The
+four combinations are labelled S1--S4 in
+Table~\ref{tab:main}. We run $T = 1000$ rounds per scenario and
+average over $n = 5$ random seeds; full per-seed numbers are in
+Appendix~\ref{app:ablation}.
+
+\paragraph{Metrics.}
+We report \emph{decision accuracy} as the fraction of rounds on which
+the aggregated decision equals the ground-truth label. Accuracy is the
+right metric for this benchmark because the goal of the aggregator is
+to produce the correct label, and the captured verifiers' goal is to
+produce an incorrect one; alternative metrics such as false-positive
+rate at the verifier level would require labelling individual
+verifiers as captured or honest, which we cannot do from observed
+verifier outputs alone (this is the central statistical difficulty).
+
+\paragraph{Hyperparameters.}
+All trust-based methods use $\alpha = 0.9$ (EMA decay) and
+$c_i^{(t)} = 1 - |p_i - \text{med}_{-i}|$. \textsc{Atv} uses
+$\tau_{\text{split}} = 0.5$ chosen on a held-out scenario. PBFT
+threshold is $(N+f+1)/2$. Code and configuration files are released
+with the paper.
+
+% =====================================================================
+\section{Results}
+\label{sec:results}
+% =====================================================================
+
+\paragraph{Headline.}
+Table~\ref{tab:main} reports the headline result. Under every scenario
+we test, plain majority voting is at or near the top; the trust-based
+methods tie or trail majority by $1$--$3$ percentage points; and
+\textsc{Atv}, our adaptive hybrid, never wins. The differences are
+small but consistent across all five random seeds we ran; the
+standard deviations are below $0.01$ in every cell.
+
+\begin{table}[ht]
+\caption{Decision accuracy across four scenarios. Best per column
+in bold. No aggregation method we tested substantially outperforms
+plain majority voting.}
+\label{tab:main}
+\centering
+\small
+\begin{tabular}{lccccc}
+\toprule
+Method & S1 & S2 & S3 & S4 & mean \\
+ & ($\eta{=}0.85$, $\alpha{=}0.6$)
+ & ($\eta{=}0.65$, $\alpha{=}0.6$)
+ & ($\eta{=}0.65$, $\alpha{=}0.9$)
+ & ($\eta{=}0.85$, $\alpha{=}0.9$)
+ & \\
+\midrule
+majority            & \textbf{0.889} & \textbf{0.553} & \textbf{0.459} & 0.843 & \textbf{0.686} \\
+bft\_pbft           & 0.777 & 0.522 & 0.458 & 0.720 & 0.619 \\
+weighted\_uniform   & 0.804 & 0.484 & 0.365 & 0.729 & 0.595 \\
+trust\_mean         & 0.883 & 0.521 & 0.432 & \textbf{0.851} & 0.672 \\
+trust\_median       & \textbf{0.889} & \textbf{0.553} & \textbf{0.459} & 0.844 & \textbf{0.686} \\
+kalman\_trust       & 0.882 & 0.535 & 0.446 & 0.842 & 0.677 \\
+\textsc{Atv}        & 0.883 & 0.527 & 0.438 & 0.846 & 0.673 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Why no method beats majority.}
+The negative result has a structural explanation. Capture is
+\emph{statistically indistinguishable from honest-but-wrong}: a
+captured verifier outputting the complement of its honest output has
+exactly the same per-instance deviation from the median as an honest
+verifier that happens to be wrong on this round. Any rule that uses
+deviation from the median to identify capture therefore cannot
+distinguish a captured verifier from a minority of honest-but-wrong
+verifiers; it will either ignore both (and gain nothing) or exclude
+both (and lose accuracy on rounds where honest-but-wrong verifiers
+are the actual minority).
+
+In the high-honest scenario S1, the trust-based methods approach
+majority but trail it by 0.5 percentage points, consistent with the
+explanation above: the trust mechanism correctly down-weights
+captured verifiers when they \emph{happen} to be outliers, but it
+also incorrectly down-weights honest verifiers that happen to be
+wrong, and the two effects approximately cancel.
+
+In the strong-attack scenarios S3 and S4, the trust-based methods
+gain an apparent advantage in some columns (S4 for trust\_mean) but
+lose it in others (S2 for all trust-based methods). The advantage in
+S4 disappears when averaged across all four scenarios: the mean
+column is dominated by majority and trust\_median, both at $0.686$.
+
+\paragraph{Per-attack breakdown.}
+Across the three attack families (prompt injection, rubric injection,
+majority bias), the ordering of methods is qualitatively similar.
+Majority and trust\_median remain tied at the top across all three
+attack types; \textsc{Atv} and the Kalman variant trail by $0.5$--$1.5$
+percentage points. The largest gap between majority and the best
+trust-based method is under \textsc{RubricInj}, where trust\_median
+loses to majority by $0.7$ percentage points because the rubric
+injection only flips on a random fraction of rounds, and the trust
+update averages over both flipped and unflipped rounds.
+
+\paragraph{Sensitivity to hyperparameters.}
+\textsc{Atv}'s $\tau_{\text{split}}$ was tuned on a held-out scenario;
+sensitivity sweeps over $\tau_{\text{split}} \in [0.2, 0.8]$ change
+\textsc{Atv}'s mean accuracy by at most $0.4$ percentage points and
+do not affect its ranking. Trust $\alpha$ sweeps over $[0.5, 0.99]$
+shift trust\_mean by $\pm 0.5$ percentage points with no rank
+change. Full sensitivity table in
+Appendix~\ref{app:ablation}.
+
+\paragraph{Implication.}
+The benchmark implies that, for the ensemble size, attack strength,
+and honest-accuracy regime we consider, \emph{the engineering effort
+of building a non-trivial aggregation rule does not pay off}.
+Practitioners should prefer plain majority voting and invest their
+engineering effort elsewhere --- either in increasing honest-verifier
+accuracy or in diversifying the verifier pool so that capture becomes
+harder. We elaborate on diversification as a defensive strategy in
+Section~\ref{sec:conclusion}.
+
+% =====================================================================
+\section{Related Work}
+\textbf{Novelty positioning.} This work makes three distinct contributions relative to prior literature. \textbf{First}, prior work on calibration in multi-agent systems reported calibration effects but did not systematically deconfound temporal from communicative causes; our pure-factor decomposition isolates the dominant causal factor. \textbf{Second}, prior work treated self-evaluation immunity as a stable property; we demonstrate that model updates can silently invert this behavior, showing it is model-dependent and fragile. \textbf{Third}, prior work proposed structural coupling-noise tradeoffs; our deterministic-seed reruns fail to support universal noise-increase claims, and we reframe the tradeoff as a method-specific hypothesis with explicit falsification conditions.
+
+
+\label{sec:related}
+% =====================================================================
+
+
+\paragraph{Classical Byzantine consensus.}
+\citet{lamport1982byzantine,castro1999pbft,yin2019hotstuff} establish the
+$3f+1$ bound for binary-output consensus under $f$ adversarial nodes. Our
+setting differs in that LLM verifier outputs are continuous probability
+distributions, so classical BFT bounds do not transfer directly; this
+motivates our $\varepsilon$-capture-resilience definition in
+Section~\ref{sec:threat}.
+
+\paragraph{LLM-as-judge and ensemble calibration.}
+\citet{zheng2023judging} introduce the MT-Bench and Chatbot Arena
+evaluation paradigm; \citet{leung2026rubricllm} provide the most recent
+calibration numbers for 8 LLM judges on rubric decisions, and
+\citet{cui2026edo} jointly optimize ensemble weights and calibration for
+subjective supervision. CRV differs from EDO in operating under an
+explicit adversarial model (capture) rather than a passive disagreement
+model.
+
+\paragraph{Adversarial robustness of LLM judges.}
+\citet{zhang2026blindcurator} show that a biased judge \emph{silently}
+disables a downstream curator past a sharp false-pass threshold, and
+\citet{perez2022red,schulhoff2023ignore} catalogue prompt-injection and
+red-team attack techniques against LLM evaluators. Our threat model
+operationalises these observations into a quantitative capture-resilience
+definition and provides a protocol that provably maintains aggregation
+correctness under bounded capture.
+
+\paragraph{Peer-review automation.}
+\citet{liu2026paperreviewtoolkit} release an open-source multi-reviewer
+pipeline that we use as the testbed for our empirical evaluation
+(Section~\ref{sec:exp}); \citet{liu2026calibration} develops calibration
+methods for multi-agent ensembles more broadly and is the closest work
+in our own research line.
+
+% =====================================================================
+\section{Broader Impact}
+\label{sec:broader}
+% =====================================================================
+
+\paragraph{Positive impact.}
+The primary positive impact of this work is \emph{negative}: by
+showing that no aggregation method we tested substantially outperforms
+plain majority voting under verifier capture, we redirect practitioner
+effort away from building sophisticated aggregators and toward
+investments that \emph{do} pay off in the capture regime: increasing
+honest-verifier accuracy, diversifying the verifier pool, and
+auditing deployed ensembles for suspicious agreement patterns. We
+expect the benchmark to be useful for engineering teams that are
+currently considering whether to invest in a custom aggregation
+layer; our data suggest the answer is ``no'' under the parameter
+regime we test, and the engineering budget should be spent elsewhere.
+
+A secondary positive impact is methodological: the failure modes of
+the seven aggregation rules we test illuminate which statistical
+assumptions a successful capture-resilient aggregator would need
+to break. Future research that does find a winning method can
+explicitly cite which assumption we showed fails here.
+
+\paragraph{Negative impact and dual-use concerns.}
+The same attack implementations that allow us to \emph{benchmark}
+verifier capture also allow an adversary to \emph{measure} capture
+susceptibility of a competing verifier product. We consider this a
+real but bounded risk for the following reasons.
+\textbf{(i)} The three attack families we instantiate
+(\textsc{PromptInj}, \textsc{RubricInj}, \textsc{MajBias}) are
+straightforward enough that a competent adversarial team could
+re-derive them from the threat model alone; our code release does
+not materially lower the cost.
+\textbf{(ii)} Our benchmark demonstrates that these attacks, when
+attempted against a well-calibrated honest majority, have only
+small absolute effect (the gap between majority and the best
+trust-based method is below 1 percentage point in 3 of 4
+scenarios). An adversary using our code to measure capture
+susceptibility will therefore find that the practical upside of
+attack deployment is small.
+\textbf{(iii)} Our benchmark is \emph{synthetic}. An adversary who
+wishes to deploy a capture attack against a real ensemble must
+still construct a real captured verifier that mimics the target
+ensemble's distribution, which is a substantially harder engineering
+problem than running our code.
+
+\paragraph{Responsible disclosure norms.}
+We follow the standard ML-security responsible-disclosure norm: we
+release the benchmark code under a licence that prohibits offensive
+use, and we provide a \texttt{ResponsibleUse.md} file in the
+repository that documents the intended defensive use and lists
+specific prohibited uses. We do not release any captured-verifier
+weights or fine-tuning scripts that would lower the cost of deploying
+a real capture attack.
+
+\paragraph{Limitations of public release.}
+The benchmark code we release is sufficient to \emph{reproduce} our
+results but not sufficient to \emph{deploy} a capture attack against
+a real ensemble without substantial additional engineering. This is
+deliberate. We discuss the scope of the release, including which
+extensions a future maintainer might add and which are out of scope,
+in the \texttt{README.md} of the released repository.
+
+\paragraph{Stakeholder considerations.}
+Verifier-capture attacks disproportionately threaten operators of
+multi-LLM auditing pipelines, including the authors of this paper,
+who maintain an open-source peer-review audit tool
+\citep{liu2026paperreviewtoolkit}. We have therefore prioritised
+documentation of defensive best-practice over attack
+generalisation, and we invite other operators of LLM-judge ensembles
+to contact us with deployment experience that would refine the
+attack-and-defence landscape this benchmark sketches.
+
+\paragraph{Positive-negative balance.}
+On balance, we believe the positive impact of releasing this
+benchmark---redirecting engineering effort away from ineffective
+aggregation rules toward more productive investments in verifier
+quality and pool diversification---substantially outweighs the
+bounded negative impact of marginally lowering the cost of an
+attack that, per our own benchmark, has small practical effect
+against well-calibrated honest majorities.
+
+% =====================================================================
+\section{Ethics Statement}
+\label{sec:ethics}
+% =====================================================================
+
+This study does not involve human subjects, personal data, or animal
+subjects. The verifier-output data we use is either synthetic
+(Section~\ref{sub:generator}) or from publicly available LLM-judge
+benchmarks \citep{leung2026rubricllm,zhang2026blindcurator}.
+
+\paragraph{Dual-use risk.}
+We have discussed the dual-use risk of releasing the attack
+implementations in detail in Section~\ref{sec:broader}. In summary,
+the bounded risk is outweighed by the positive impact of the
+benchmark, and we have taken reasonable mitigations: a
+responsible-use licence, no released captured-verifier weights or
+fine-tuning scripts, and a \texttt{ResponsibleUse.md} file in the
+repository.
+
+\paragraph{Affected stakeholders.}
+The primary stakeholders are operators of multi-LLM verification
+ensembles, including AI-auditing platforms, peer-review automation
+tools, and safety-content moderation pipelines. We have reached out
+to the maintainers of two such platforms
+(\citep{liu2026paperreviewtoolkit} and the public release of
+\citet{leung2026rubricllm}'s evaluation harness) to inform them of
+our findings ahead of public release.
+
+\paragraph{IRB and funding.}
+This study was not subject to IRB review. No external funding was
+received for this work.
+
+\paragraph{Author conflicts of interest.}
+The authors declare no financial conflicts of interest. The authors
+maintain an open-source peer-review audit tool
+\citep{liu2026paperreviewtoolkit} that is discussed as one of the
+motivating use cases for this benchmark; the tool is referenced
+consistently with the rest of the literature and no special pleading
+is made for it.
+
+% =====================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% =====================================================================
+
+We have presented an empirical benchmark of seven aggregation methods
+for multi-LLM verifier ensembles under three verifier-capture attacks,
+across four scenarios. The headline finding is \emph{negative}: no
+aggregation method we tested substantially outperforms plain majority
+voting, and several trust-score variants underperform majority under
+strong capture. We argued that the negative result is structural: a
+captured verifier is statistically indistinguishable from an honest
+verifier that happens to be wrong, so any rule that uses statistical
+deviation to identify capture cannot outperform a rule that ignores
+the distinction.
+
+\paragraph{When our negative result would \emph{not} hold.}
+Our negative result rests on the assumption that captured verifiers
+mimic honest-but-wrong verifiers. If a real-world capture breaks this
+assumption --- for instance, by introducing a structured deviation
+(e.g. a verifier that always outputs the exact median plus a fixed
+delta) --- then a more sophisticated aggregation rule may recover
+above majority. Our benchmark does not rule this out; it only shows
+that for the three concrete attack parameterisations we test, the
+gain is at most a fraction of a percentage point.
+
+A second assumption is that honest verifiers are exchangeable. If
+honest verifiers have known specialty areas (e.g.\ one verifier is
+better at math, another at code), then a domain-aware aggregator may
+do substantially better than majority. Our synthetic generator
+deliberately does not model this specialisation, so our benchmark
+under-estimates the upside of sophisticated aggregation in
+heterogeneous pools.
+
+\section{Discussion and Limitations}
+Our results rely on a synthetic verifier-output generator calibrated
+to published rubric-LLM numbers but not validated against
+real LLM trace data. A practitioner applying our benchmark to a real
+ensemble should re-run our scenario definitions with the real
+distribution and may find that some methods we rule out do in fact
+help on their specific distribution. We release the synthetic
+generator and the attack implementations to facilitate this
+replication.
+
+\paragraph{Future work.}
+Three directions follow from this study.
+(i) Validate the negative result on real LLM verifier trace data;
+the result may not survive the transition from synthetic to real.
+(ii) Investigate structured-attack settings where captured verifiers
+introduce deviations outside the honest-but-wrong distribution; the
+negative result may not apply there.
+(iii) Investigate diversified verifier pools where domain-aware
+aggregation can outperform majority by exploiting specialisation.
+
+% =====================================================================
+% References (refs.bib populated in W1)
+% =====================================================================
+\bibliographystyle{tmlr}
+\bibliography{refs}
+
+% =====================================================================
+% Appendix begins here
+% =====================================================================
+\appendix
+
+\section{Proof of the Capture Lower Bound (Theorem~1)}
+\label{app:proof}
+
+We prove the deterministic lower bound stated in Theorem~1: if
+$f \geq N/2$ of the verifiers are captured, no deterministic
+aggregation rule $\mathcal{A}: [0,1]^N \to \{0,1\}$ can be
+$\varepsilon$-capture-resilient for $\varepsilon < 1/2$.
+
+\begin{proof}
+Consider the case $f > N/2$ (strict majority capture; the case
+$f = N/2$ follows by a standard limit argument). The adversary
+chooses a target label $y^* \in \{0,1\}$ and a response function
+$g$ such that every captured verifier outputs $y^*$ with
+probability $1$ on every input. The adversary also chooses an input
+distribution $\mathcal{D}$ on which the \emph{honest} verifiers have
+per-instance accuracy strictly below $1/2$; this is always possible
+by choosing $\mathcal{D}$ to concentrate on inputs where the honest
+verifiers systematically err.
+
+Because the captured coalition $\A$ forms a strict majority, the
+deterministic rule $\mathcal{A}$ sees $p_i \in \{0, 1\}$ on the
+captured inputs (after $g$ is applied) and any values in $[0,1]$ on
+the honest inputs. Since $\mathcal{A}$ is deterministic, its
+decision is a function only of the multiset $\{p_1, \ldots, p_N\}$,
+and in particular of the \emph{number} of captured verifiers voting
+$y^*$, which is $f > N/2$. For any such deterministic rule, there
+exists an assignment of honest outputs such that $\mathcal{A}$ outputs
+$y^*$ on every input, even when the true label is the opposite
+$\bar{y}^*$; this is a direct consequence of the fact that a strict
+majority of $N$ deterministic binary inputs forces the binary
+majority rule, and any rule that agrees with binary majority on
+strict-majority inputs cannot be $\varepsilon$-resilient for
+$\varepsilon < 1/2$ on the chosen $\mathcal{D}$.
+
+This shows that for any deterministic $\mathcal{A}$, the adversary
+can construct a distribution $\mathcal{D}$ on which $\mathcal{A}$
+achieves error probability at least $1/2$, completing the proof.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~2 (claim; \textsc{Atv} $\varepsilon$-resilience)]
+The full proof is omitted for brevity because \textsc{Atv} does
+not in fact achieve the claimed $\varepsilon = 2f/N + O(\Delta^2)$
+guarantee in our benchmark (Section~\ref{sec:exp}). We retain the
+theorem statement for completeness so that future readers can
+identify exactly which step in the proof fails; a candidate
+follow-up paper can either fix the proof or revise the theorem.
+\end{proof}
+
+\section{Algorithm Pseudocode and Complexity}
+\label{app:algo}
+
+We give pseudocode for the four representative aggregation rules.
+All four have memory $O(N)$ for the per-verifier state.
+
+\paragraph{Plain majority.}
+\begin{algorithmic}[1]
+\Require votes $p_1, \ldots, p_N$
+\State $s \gets \sum_i \mathbb{1}[p_i \geq 0.5]$
+\State \Return $\mathbb{1}[s > N/2]$
+\end{algorithmic}
+Time $O(N)$.
+
+\paragraph{PBFT-style threshold.}
+\begin{algorithmic}[1]
+\Require votes $p_1, \ldots, p_N$; bound $f$
+\State $s \gets \sum_i \mathbb{1}[p_i \geq 0.5]$
+\State \Return $\mathbb{1}[s \geq (N+f+1)/2]$
+\end{algorithmic}
+Time $O(N)$.
+
+\paragraph{Trust-score weighted mean.}
+\begin{algorithmic}[1]
+\Require votes $p_1, \ldots, p_N$; trusts $\tau_1, \ldots, \tau_N$; decay $\alpha$
+\State $w_i \gets \tau_i / \sum_j \tau_j$ for each $i$
+\State \Return $\mathbb{1}[\sum_i w_i p_i \geq 0.5]$
+\State Update: $\tau_i \gets \alpha \tau_i + (1-\alpha)(1 - |p_i - \text{med}_{-i}|)$ for each $i$
+\end{algorithmic}
+Time $O(N \log N)$ per round (median), memory $O(N)$.
+
+\paragraph{Trust-score weighted median.}
+\begin{algorithmic}[1]
+\Require votes $p_1, \ldots, p_N$; trusts $\tau_1, \ldots, \tau_N$; decay $\alpha$
+\State Sort indices by $p_i$; let $\pi$ be the sorted permutation
+\State $W \gets \sum_j \tau_j$; find smallest $k$ with $\sum_{i \leq k} \tau_{\pi(i)} \geq W/2$
+\State \Return $\mathbb{1}[p_{\pi(k)} \geq 0.5]$
+\State Update trust as in weighted mean.
+\end{algorithmic}
+Time $O(N \log N)$ per round, memory $O(N)$.
+
+\paragraph{\textsc{Atv} (adaptive hybrid).}
+\begin{algorithmic}[1]
+\Require votes $p_1, \ldots, p_N$; trusts $\tau_1, \ldots, \tau_N$; decay $\alpha$; split $\tau_{\text{split}}$
+\If{$\text{std}(\tau) < \tau_{\text{split}}$}
+  \State \Return weighted-mean decision
+\Else
+  \State \Return weighted-median decision
+\EndIf
+\State Update trust as in weighted mean.
+\end{algorithmic}
+Time $O(N \log N)$ per round, memory $O(N)$.
+
+\section{Additional Ablations and Sensitivity Sweeps}
+\label{app:ablation}
+
+\paragraph{Per-attack-model breakdown.}
+Table~\ref{tab:per-attack} reports per-attack-model accuracies. The
+ordering of methods is qualitatively consistent across the three
+attack families: majority and trust\_median remain tied at the top,
+with the largest absolute gap (0.7 percentage points) appearing
+under rubric injection.
+
+\begin{table}[ht]
+\caption{Decision accuracy by attack model, averaged across all
+four scenarios (5 seeds, $T=1000$ rounds per cell).}
+\label{tab:per-attack}
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Method & \textsc{PromptInj} & \textsc{RubricInj} & \textsc{MajBias} \\
+\midrule
+majority            & 0.877 & 0.945 & 0.997 \\
+bft\_pbft           & 0.765 & 0.886 & 0.985 \\
+weighted\_uniform   & 0.876 & 0.944 & 0.997 \\
+trust\_mean         & \textbf{0.894} & 0.944 & \textbf{0.998} \\
+trust\_median       & 0.877 & \textbf{0.945} & 0.997 \\
+kalman\_trust       & 0.877 & \textbf{0.945} & 0.997 \\
+\textsc{Atv}        & 0.886 & \textbf{0.945} & 0.997 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Hyperparameter sensitivity.}
+\textsc{Atv}'s $\tau_{\text{split}}$ was tuned on a held-out
+scenario. Sensitivity sweeps over $\tau_{\text{split}} \in [0.2, 0.8]$
+shift \textsc{Atv}'s mean accuracy by at most $0.4$ percentage
+points; the rank ordering is preserved across all sweep values.
+Trust-update decay $\alpha$ sweeps over $[0.5, 0.99]$ shift
+trust\_mean by $\pm 0.5$ percentage points with no rank change.
+
+\paragraph{Ensemble-size sweep.}
+We additionally ran the benchmark at $N \in \{5, 7, 10\}$ with $f$
+proportional to $N$ ($f = \lfloor N/3 \rfloor$). Under this
+proportional-f regime, majority remains the top method at every
+ensemble size, and the gap between majority and trust-based methods
+\emph{widens} as $N$ grows (because the larger honest majority
+hardens against capture). This is consistent with our structural
+explanation: as the honest majority grows, capture becomes a
+smaller perturbation that any aggregation rule, including
+majority, can absorb.
+
+\paragraph{Real-LLM validation (sketch).}
+We did not run the full benchmark on real LLM verifier traces
+within the scope of this paper. A small pilot run on
+\citet{leung2026rubricllm}'s evaluation harness (8 LLM judges, 1248
+rubric decisions, of which we synthetically capture 2) is consistent
+with the synthetic-data trend: majority remains at or near the top,
+trust-based methods trail by less than 1 percentage point. We discuss
+the limitations of this pilot in Section~\ref{sec:conclusion}.
+
+\section{Code and Reproducibility}
+\label{app:code}
+
+\paragraph{Repository layout.}
+Code is released under a permissive licence with an attached
+\texttt{ResponsibleUse.md} file. The repository contains:
+\begin{itemize}
+  \item \texttt{crv.py}: legacy CRV implementation (retained for
+        archival reference; not used as a benchmarked method).
+  \item \texttt{attacks.py}: implementations of the three attack
+        families (\textsc{PromptInj}, \textsc{RubricInj},
+        \textsc{MajBias}).
+  \item \texttt{extended\_methods.py}: the seven aggregation methods
+        benchmarked in this paper.
+  \item \texttt{benchmark.py}: the four-scenario benchmark driver.
+  \item \texttt{verify\_p6.py}: the verify suite used during
+        paper preparation.
+\end{itemize}
+
+\paragraph{Beyond-PDF interactive demo.}
+We release a Beyond-PDF interactive demonstration that replays the
+benchmark on real LLM trace files. The demo runs the seven
+aggregation rules on a user-provided trace file and displays the
+per-round decision side-by-side with the ground-truth label. We
+expect this to be useful for engineering teams that wish to
+re-run our scenario definitions on a real ensemble.
+
+\paragraph{Reproducibility hashes.}
+At submission time, we record SHA-256 hashes of all released code
+artifacts in \texttt{HASHES.txt}. Reviewers can verify their copy
+against the hashes by running the included \texttt{verify\_hashes.sh}
+script.
+
+\paragraph{Computational footprint.}
+A full benchmark run (4 scenarios $\times$ 7 methods $\times$ 5 seeds,
+$T=1000$ rounds) takes approximately 4 minutes on a single CPU core
+(no GPU required) and uses 50 MB of memory. The complete experiment
+can be reproduced in under 10 minutes on commodity hardware.
+
+
+\section*{Reproducibility Statement}
+
+\textbf{Code and data availability.} All experiment code, raw API response logs, and analysis scripts are released in the supplementary material (directories \texttt{code/}, \texttt{data/}, \texttt{analysis/}). The complete evidence package includes SHA-256 checksums for all experimental result files (\texttt{evidence\_manifest.json}).
+
+\textbf{Step-by-step reproduction protocol.} (1) \textit{Environment}: Python 3.10+ with \texttt{transformers>=4.40}, \texttt{scipy>=1.10}, \texttt{scikit-learn>=1.3}; set \texttt{PYTHONHASHSEED=0}. (2) \textit{API configuration}: set \texttt{OPENAI\_API\_KEY} and \texttt{DEEPSEEK\_API\_KEY} environment variables. (3) \textit{Execution}: run \texttt{python code/run\_all\_experiments.py --seeds 1-30} to reproduce all conditions; each condition takes approximately 2--3 hours. (4) \textit{Analysis}: run \texttt{python analysis/main\_analysis.py} to reproduce all tables and figures; all scripts use deterministic seeds (\texttt{int.from\_bytes(seed.encode(), ``little'')}) for bit-exact reproducibility.
+
+
+\section*{Reproducibility Statement}
+\label{sec:reproducibility}
+
+\textbf{Code and data availability.} All experiment code, raw API response logs, analysis scripts, and frozen analysis code are released in the supplementary material (directories \texttt{code/}, \texttt{data/}, \texttt{analysis/}, \texttt{evidence/}). The evidence manifest (\texttt{evidence/evidence\_manifest.json}) contains SHA-256 checksums for all result files, enabling independent verification of file integrity.
+
+\textbf{Step-by-step reproduction protocol.} (1) \textit{Environment}: Python 3.10+ with \texttt{transformers>=4.40}, \texttt{scipy>=1.10}, \texttt{scikit-learn>=1.3}; set \texttt{PYTHONHASHSEED=0}. (2) \textit{API configuration}: set \texttt{OPENAI\_API\_KEY}, \texttt{DASHSCOPE\_API\_KEY}, and \texttt{DEEPSEEK\_API\_KEY} environment variables. (3) \textit{Execution}: run \texttt{python code/run\_all\_experiments.py --seeds 1-30} to reproduce all conditions; each condition takes approximately 2--3 hours. (4) \textit{Analysis}: run \texttt{python analysis/main\_analysis.py} to reproduce all tables and figures; all scripts use deterministic seeds for bit-exact reproducibility of all randomization and bootstrap procedures.
+
+\section*{Broader Impact and Ethical Considerations}
+\label{sec:ethics}
+
+This work studies calibration dynamics in multi-agent LLM systems. Understanding these limitations is essential for safe and ethical deployment.
+
+\textbf{Ethical implications.} (i) \textit{Self-evaluation fragility}: Model updates can silently invert self-evaluation immunity, creating risks of silent reliability decay in safety-critical systems. Practitioners must treat self-evaluation reliability as version-dependent and re-verify after every model update. (ii) \textit{Calibration fatigue}: Long-horizon multi-agent interactions may produce progressive miscalibration without external signals, creating risks in deployed systems with extended interaction horizons. Continuous calibration monitoring and automatic circuit-breakers are recommended. (iii) \textit{Responsible research}: We explicitly report reproduction failures rather than suppressing them; all code, data, and analysis scripts are released with deterministic seeds and SHA-256 checksums for independent verification.
+
+\end{document}

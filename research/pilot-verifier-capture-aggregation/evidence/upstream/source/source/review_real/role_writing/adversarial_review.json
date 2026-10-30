@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\PAPER6_CONSOLIDATED\\main.tex",
+    "rpc": "http://127.0.0.1:11435",
+    "timestamp": "2026-09-02T13:09:26+00:00",
+    "roles": [
+      "writing"
+    ],
+    "rounds": 1
+  },
+  "roles": {
+    "writing": {
+      "status": "parse_failed",
+      "raw_head": "```json\n{\n  \"issues\": [\n    {\n      \"severity\": \"minor\",\n      \"location\": \"Abstract, 1st paragraph\",\n      \"description\": \"The sentence 'A natural and increasingly documented failure mode of these ensembles is what we call \\emph{verifier capture}:' is somewhat awkward and could be rephrased for clarity.\",\n      \"suggestion\": \"Suggested rephrasing: 'Verifier capture, a natural and increasingly documented failure mode in these ensembles, is what we call:'\"\n    },\n    {\n      \"severity\": \"minor\",\n"
+    }
+  },
+  "stable_issues": [],
+  "summary": {
+    "verdict": "PASS",
+    "critical": 0,
+    "major": 0,
+    "minor": 0
+  }
+}

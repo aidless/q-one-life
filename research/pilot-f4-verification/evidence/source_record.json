@@ -1,0 +1,21 @@
+{
+  "schema": "q-one-f4-source-record-v1",
+  "generated_at": "2026-10-28T08:56:00Z",
+  "marker": "agent-proposed, not human publication approval",
+  "family_id": "qf-merged-flagship-f4-verification-trust-sc-88e8c3c2ce",
+  "project_id": "qp-tmlr-f4-verification-08357385d7b0",
+  "canonical": {
+    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
+    "sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+    "bytes": 28427,
+    "title": "Merged Flagship F4: Verification, Trust Scores and Ablation"
+  },
+  "audit_copy": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f4-verification/evidence/upstream/paper/main.tex",
+    "sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+    "bytes": 28427,
+    "role": "byte-identical audit copy"
+  },
+  "canonical_to_overlay_changed": false,
+  "boundary": "The canonical source is preserved; no repaired manuscript is offered."
+}

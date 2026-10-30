@@ -1,0 +1,678 @@
+{
+  "bootstrap": {
+    "cluster": "case",
+    "k_fold": 4,
+    "n_boot": 2000,
+    "percentile": [
+      2.5,
+      97.5
+    ],
+    "seed": 20261001,
+    "tolerance_points": 1e-09
+  },
+  "decision": {
+    "conclusion": "On the four m25 carriers, the non-zero LOO_on_kfold_domain margin is reproduced and is eliminated only after every generator is restricted to the joint main-gold, LOO-gold, k-fold-gold and actor-row support. The leaky comparison is therefore not a clean k-fold-versus-LOO effect. A non-zero k-fold margin on the joint support shows that the support fix does not force every comparison to zero.",
+    "hypothesis": "H1_support_artifact",
+    "non_claims": [
+      "This is a recomputation on four fixed m25 constructions, not an external-validity study.",
+      "The result does not show that k-fold restores ranking validity.",
+      "The result does not rewrite the canonical manuscript or close independent review finding A4.",
+      "The result does not authorize an arXiv upload."
+    ],
+    "status": "passed"
+  },
+  "experiment_id": "noise-floor-kfold-common-support-a3",
+  "gates": {
+    "F1_recorded_leak_reproduced": {
+      "all_task_fidelity": true,
+      "coherence_reported_domain_size": 404,
+      "coherence_reported_margin": 0.47111581387146373,
+      "passed": true
+    },
+    "F2_loo_label_identity_on_joint_support": {
+      "mismatches": 0,
+      "pairs": 47200,
+      "passed": true
+    },
+    "F3_joint_support_margin_zero": {
+      "passed": true,
+      "task_domains": {
+        "coherence": 383,
+        "factuality": 477,
+        "preference": 54,
+        "relevance": 974
+      },
+      "task_margins": {
+        "coherence": 0.0,
+        "factuality": 0.0,
+        "preference": 0.0,
+        "relevance": 0.0
+      }
+    },
+    "F4_bootstrap_identity_degenerate": {
+      "intervals": {
+        "coherence": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 2000
+        },
+        "factuality": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 2000
+        },
+        "preference": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 2000
+        },
+        "relevance": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 2000
+        }
+      },
+      "passed": true
+    },
+    "F5_kfold_control_has_teeth": {
+      "coherence_kfold_joint_interval": {
+        "hi95": 4.545454545454541,
+        "lo95": 1.3088150861892187,
+        "n_dropped_rounds": 0,
+        "n_negative_rounds": 0,
+        "n_positive_rounds": 2000,
+        "n_valid_rounds": 2000,
+        "n_zero_rounds": 0
+      },
+      "coherence_kfold_joint_margin": 2.872062663185389,
+      "passed": true
+    }
+  },
+  "implementation": {
+    "path": "run_common_support.py",
+    "sha256": "9669db5401f31b10a450eafd0762ddd9bafdec77737a3d30a420ec85f977b012"
+  },
+  "native": {
+    "external_root_name": "F:\\deepseek",
+    "hashes": {
+      "papers/bench_noise_floor/evidence/strict_review_followup/EC63_kfold_vs_loo.json": "f80712e34f86e71fd75d71d3c6224dfd0af466bccef244ae9c23cd31e6a62b50",
+      "tools/bench-noise-floor/audit.py": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b",
+      "tools/bench-noise-floor/followup_common.py": "66aeb942b6bb8526f4467d244b9a04bad4d4023eaaf95b87aef0c1307912ee54",
+      "tools/bench-noise-floor/followup_ec63_kfold.py": "e0528fa164e2b7de63fb9711686c9f1882f083d170fa777251f878f0301ee5fb",
+      "tools/bench-noise-floor/make_m25_votes.py": "defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236"
+    },
+    "head": "ab40e28abcb2a97e13242d0dab5584d42a15f94e"
+  },
+  "preregistration": {
+    "path": "preregistration.json",
+    "sha256": "bacdf9e09372d8382460a7712893989fb04a56d921fa3cddcf3cacbac2462133",
+    "version": "1.0.0"
+  },
+  "schema": "q-one-a3-common-support-v1",
+  "tasks": {
+    "coherence": {
+      "carrier_validation": "passed",
+      "kfold_on_joint_support": {
+        "bootstrap": {
+          "cluster": "case",
+          "n_boot": 2000,
+          "percentile": [
+            2.5,
+            97.5
+          ],
+          "seed": 20261001
+        },
+        "domain_sha256": "4457dc2eaba1dba96c0487ded9ad0481c7291d21db4ff3f3532c0d51cd4fa333",
+        "domain_size": 383,
+        "floor_max_macro": 81.98433420365535,
+        "floor_sets_match_domain": true,
+        "leader": "kimi-k3",
+        "leader_is_generator": true,
+        "leader_macro": 84.85639686684074,
+        "n_generators": 25,
+        "n_systems": 25,
+        "point_margin": 2.872062663185389,
+        "same_domain_as_floor": true,
+        "theta_both_interval": {
+          "hi95": 4.545454545454541,
+          "lo95": 1.3088150861892187,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 2000,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 0
+        },
+        "theta_fixed_interval": {
+          "hi95": 4.545454545454541,
+          "lo95": 1.3053980363359508,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 1999,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 1
+        }
+      },
+      "label_identity_on_joint_support": {
+        "examples": [],
+        "mismatches": 0,
+        "pairs_checked": 9575
+      },
+      "loo_on_joint_support": {
+        "bootstrap": {
+          "cluster": "case",
+          "n_boot": 2000,
+          "percentile": [
+            2.5,
+            97.5
+          ],
+          "seed": 20261001
+        },
+        "domain_sha256": "4457dc2eaba1dba96c0487ded9ad0481c7291d21db4ff3f3532c0d51cd4fa333",
+        "domain_size": 383,
+        "floor_max_macro": 84.85639686684074,
+        "floor_sets_match_domain": true,
+        "leader": "kimi-k3",
+        "leader_is_generator": true,
+        "leader_macro": 84.85639686684074,
+        "n_generators": 25,
+        "n_systems": 25,
+        "point_margin": 0.0,
+        "same_domain_as_floor": true,
+        "theta_both_interval": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 2000
+        },
+        "theta_fixed_interval": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 5,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 1995
+        }
+      },
+      "recorded_fidelity": {
+        "kfold_domain_match": true,
+        "kfold_leader_match": true,
+        "kfold_margin_match": true,
+        "loo_floor_match": true,
+        "loo_leader_match": true,
+        "loo_margin_match": true
+      },
+      "reported_kfold": {
+        "ci_floor": {
+          "hi95": 5.839741089504283,
+          "lo95": 2.1897810218978075,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "seed": 20261001
+        },
+        "domain_size": 404,
+        "floor_max_macro": 79.20792079207921,
+        "leader": "kimi-k3",
+        "leader_macro": 83.16831683168317,
+        "point_margin": 3.960396039603964
+      },
+      "reported_leaky_loo_on_kfold_domain": {
+        "ci_floor": {
+          "hi95": 0.8345105481568784,
+          "lo95": 0.18375196870198507,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "seed": 20261001
+        },
+        "domain_size": 404,
+        "floor_max_macro": 82.69720101781171,
+        "leader": "kimi-k3",
+        "leader_macro": 83.16831683168317,
+        "point_margin": 0.47111581387146373
+      },
+      "support": {
+        "generator_rows": 500,
+        "joint": 383,
+        "joint_sha256": "4457dc2eaba1dba96c0487ded9ad0481c7291d21db4ff3f3532c0d51cd4fa333",
+        "kfold_minus_actor": 0,
+        "kfold_minus_joint": 21,
+        "kfold_minus_loo": 21,
+        "kfold_reported": 404,
+        "loo_all": 445,
+        "main_gold": 487,
+        "system_rows": 500
+      },
+      "task": "coherence"
+    },
+    "factuality": {
+      "carrier_validation": "passed",
+      "kfold_on_joint_support": {
+        "bootstrap": {
+          "cluster": "case",
+          "n_boot": 2000,
+          "percentile": [
+            2.5,
+            97.5
+          ],
+          "seed": 20261001
+        },
+        "domain_sha256": "2c8b0925d6806a60ed8370e83b1030bf559277867e4614d27b9e1af4bc8f504c",
+        "domain_size": 477,
+        "floor_max_macro": 94.33962264150944,
+        "floor_sets_match_domain": true,
+        "leader": "gemma-4-31b",
+        "leader_is_generator": true,
+        "leader_macro": 94.33962264150944,
+        "n_generators": 25,
+        "n_systems": 25,
+        "point_margin": 0.0,
+        "same_domain_as_floor": true,
+        "theta_both_interval": {
+          "hi95": 0.8511091956630232,
+          "lo95": -0.4166666666666652,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 231,
+          "n_positive_rounds": 1368,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 401
+        },
+        "theta_fixed_interval": {
+          "hi95": 0.42285537678719054,
+          "lo95": -3.3760649305275634,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 1285,
+          "n_positive_rounds": 366,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 349
+        }
+      },
+      "label_identity_on_joint_support": {
+        "examples": [],
+        "mismatches": 0,
+        "pairs_checked": 11925
+      },
+      "loo_on_joint_support": {
+        "bootstrap": {
+          "cluster": "case",
+          "n_boot": 2000,
+          "percentile": [
+            2.5,
+            97.5
+          ],
+          "seed": 20261001
+        },
+        "domain_sha256": "2c8b0925d6806a60ed8370e83b1030bf559277867e4614d27b9e1af4bc8f504c",
+        "domain_size": 477,
+        "floor_max_macro": 94.33962264150944,
+        "floor_sets_match_domain": true,
+        "leader": "gemma-4-31b",
+        "leader_is_generator": true,
+        "leader_macro": 94.33962264150944,
+        "n_generators": 25,
+        "n_systems": 25,
+        "point_margin": 0.0,
+        "same_domain_as_floor": true,
+        "theta_both_interval": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 2000
+        },
+        "theta_fixed_interval": {
+          "hi95": 0.0,
+          "lo95": -3.8054968287526414,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 1204,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 796
+        }
+      },
+      "recorded_fidelity": {
+        "kfold_domain_match": true,
+        "kfold_leader_match": true,
+        "kfold_margin_match": true,
+        "loo_floor_match": true,
+        "loo_leader_match": true,
+        "loo_margin_match": true
+      },
+      "reported_kfold": {
+        "ci_floor": {
+          "hi95": 1.65631469979296,
+          "lo95": -3.105590062111796,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "seed": 20261001
+        },
+        "domain_size": 484,
+        "floor_max_macro": 93.38842975206612,
+        "leader": "gemma-4-31b",
+        "leader_macro": 94.00826446280992,
+        "point_margin": 0.6198347107438025
+      },
+      "reported_leaky_loo_on_kfold_domain": {
+        "ci_floor": {
+          "hi95": 0.11382585985212068,
+          "lo95": -3.7411061641925496,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "seed": 20261001
+        },
+        "domain_size": 484,
+        "floor_max_macro": 93.94572025052193,
+        "leader": "gemma-4-31b",
+        "leader_macro": 94.00826446280992,
+        "point_margin": 0.0625442122879889
+      },
+      "support": {
+        "generator_rows": 500,
+        "joint": 477,
+        "joint_sha256": "2c8b0925d6806a60ed8370e83b1030bf559277867e4614d27b9e1af4bc8f504c",
+        "kfold_minus_actor": 0,
+        "kfold_minus_joint": 7,
+        "kfold_minus_loo": 7,
+        "kfold_reported": 484,
+        "loo_all": 486,
+        "main_gold": 498,
+        "system_rows": 500
+      },
+      "task": "factuality"
+    },
+    "preference": {
+      "carrier_validation": "passed",
+      "kfold_on_joint_support": {
+        "bootstrap": {
+          "cluster": "case",
+          "n_boot": 2000,
+          "percentile": [
+            2.5,
+            97.5
+          ],
+          "seed": 20261001
+        },
+        "domain_sha256": "bb6866dfc11947bc0f0797192571cfadf0b370dddb73cce80d2e13d860c7b4b2",
+        "domain_size": 54,
+        "floor_max_macro": 96.29629629629629,
+        "floor_sets_match_domain": true,
+        "leader": "qwen3.7-flash",
+        "leader_is_generator": true,
+        "leader_macro": 98.14814814814815,
+        "n_generators": 25,
+        "n_systems": 25,
+        "point_margin": 1.8518518518518619,
+        "same_domain_as_floor": true,
+        "theta_both_interval": {
+          "hi95": 5.555555555555558,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 878,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 1122
+        },
+        "theta_fixed_interval": {
+          "hi95": 4.255319148936165,
+          "lo95": -4.364130434782605,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 538,
+          "n_positive_rounds": 775,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 687
+        }
+      },
+      "label_identity_on_joint_support": {
+        "examples": [],
+        "mismatches": 0,
+        "pairs_checked": 1350
+      },
+      "loo_on_joint_support": {
+        "bootstrap": {
+          "cluster": "case",
+          "n_boot": 2000,
+          "percentile": [
+            2.5,
+            97.5
+          ],
+          "seed": 20261001
+        },
+        "domain_sha256": "bb6866dfc11947bc0f0797192571cfadf0b370dddb73cce80d2e13d860c7b4b2",
+        "domain_size": 54,
+        "floor_max_macro": 98.14814814814815,
+        "floor_sets_match_domain": true,
+        "leader": "qwen3.7-flash",
+        "leader_is_generator": true,
+        "leader_macro": 98.14814814814815,
+        "n_generators": 25,
+        "n_systems": 25,
+        "point_margin": 0.0,
+        "same_domain_as_floor": true,
+        "theta_both_interval": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 2000
+        },
+        "theta_fixed_interval": {
+          "hi95": 0.0,
+          "lo95": -5.1724137931034475,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 636,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 1364
+        }
+      },
+      "recorded_fidelity": {
+        "kfold_domain_match": true,
+        "kfold_leader_match": true,
+        "kfold_margin_match": true,
+        "loo_floor_match": true,
+        "loo_leader_match": true,
+        "loo_margin_match": true
+      },
+      "reported_kfold": {
+        "ci_floor": {
+          "hi95": 2.7888446215139417,
+          "lo95": -0.990099009900991,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "seed": 20261001
+        },
+        "domain_size": 505,
+        "floor_max_macro": 95.84158415841584,
+        "leader": "qwen3.7-flash",
+        "leader_macro": 97.42574257425743,
+        "point_margin": 1.5841584158415856
+      },
+      "reported_leaky_loo_on_kfold_domain": {
+        "ci_floor": {
+          "hi95": 0.04024614505105326,
+          "lo95": -1.7612790541728551,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "seed": 20261001
+        },
+        "domain_size": 505,
+        "floor_max_macro": 97.41035856573706,
+        "leader": "qwen3.7-flash",
+        "leader_macro": 97.42574257425743,
+        "point_margin": 0.01538400852037114
+      },
+      "support": {
+        "generator_rows": 64,
+        "joint": 54,
+        "joint_sha256": "bb6866dfc11947bc0f0797192571cfadf0b370dddb73cce80d2e13d860c7b4b2",
+        "kfold_minus_actor": 449,
+        "kfold_minus_joint": 451,
+        "kfold_minus_loo": 5,
+        "kfold_reported": 505,
+        "loo_all": 511,
+        "main_gold": 520,
+        "system_rows": 64
+      },
+      "task": "preference"
+    },
+    "relevance": {
+      "carrier_validation": "passed",
+      "kfold_on_joint_support": {
+        "bootstrap": {
+          "cluster": "case",
+          "n_boot": 2000,
+          "percentile": [
+            2.5,
+            97.5
+          ],
+          "seed": 20261001
+        },
+        "domain_sha256": "7132a4153528b25570eba1810bfe5f028c25f2c7596538da0d4f834158199913",
+        "domain_size": 974,
+        "floor_max_macro": 97.02258726899385,
+        "floor_sets_match_domain": true,
+        "leader": "kimi-k3",
+        "leader_is_generator": true,
+        "leader_macro": 97.63860369609856,
+        "n_generators": 25,
+        "n_systems": 25,
+        "point_margin": 0.6160164271047108,
+        "same_domain_as_floor": true,
+        "theta_both_interval": {
+          "hi95": 1.1351909184726505,
+          "lo95": -0.10277492291880241,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 86,
+          "n_positive_rounds": 1825,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 89
+        },
+        "theta_fixed_interval": {
+          "hi95": 1.1351909184726505,
+          "lo95": -0.5087120101022108,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 165,
+          "n_positive_rounds": 1771,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 64
+        }
+      },
+      "label_identity_on_joint_support": {
+        "examples": [],
+        "mismatches": 0,
+        "pairs_checked": 24350
+      },
+      "loo_on_joint_support": {
+        "bootstrap": {
+          "cluster": "case",
+          "n_boot": 2000,
+          "percentile": [
+            2.5,
+            97.5
+          ],
+          "seed": 20261001
+        },
+        "domain_sha256": "7132a4153528b25570eba1810bfe5f028c25f2c7596538da0d4f834158199913",
+        "domain_size": 974,
+        "floor_max_macro": 97.63860369609856,
+        "floor_sets_match_domain": true,
+        "leader": "kimi-k3",
+        "leader_is_generator": true,
+        "leader_macro": 97.63860369609856,
+        "n_generators": 25,
+        "n_systems": 25,
+        "point_margin": 0.0,
+        "same_domain_as_floor": true,
+        "theta_both_interval": {
+          "hi95": 0.0,
+          "lo95": 0.0,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 0,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 2000
+        },
+        "theta_fixed_interval": {
+          "hi95": 0.0,
+          "lo95": -0.5133470225872627,
+          "n_dropped_rounds": 0,
+          "n_negative_rounds": 188,
+          "n_positive_rounds": 0,
+          "n_valid_rounds": 2000,
+          "n_zero_rounds": 1812
+        }
+      },
+      "recorded_fidelity": {
+        "kfold_domain_match": true,
+        "kfold_leader_match": true,
+        "kfold_margin_match": true,
+        "loo_floor_match": true,
+        "loo_leader_match": true,
+        "loo_margin_match": true
+      },
+      "reported_kfold": {
+        "ci_floor": {
+          "hi95": 1.0288065843621408,
+          "lo95": -0.40984657419083165,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "seed": 20261001
+        },
+        "domain_size": 978,
+        "floor_max_macro": 96.93251533742331,
+        "leader": "kimi-k3",
+        "leader_macro": 97.4437627811861,
+        "point_margin": 0.5112474437627839
+      },
+      "reported_leaky_loo_on_kfold_domain": {
+        "ci_floor": {
+          "hi95": 0.019130802611566633,
+          "lo95": -0.5087548442956835,
+          "n_boot": 2000,
+          "n_dropped_rounds": 0,
+          "seed": 20261001
+        },
+        "domain_size": 978,
+        "floor_max_macro": 97.43852459016394,
+        "leader": "kimi-k3",
+        "leader_macro": 97.4437627811861,
+        "point_margin": 0.005238191022158389
+      },
+      "support": {
+        "generator_rows": 1000,
+        "joint": 974,
+        "joint_sha256": "7132a4153528b25570eba1810bfe5f028c25f2c7596538da0d4f834158199913",
+        "kfold_minus_actor": 0,
+        "kfold_minus_joint": 4,
+        "kfold_minus_loo": 4,
+        "kfold_reported": 978,
+        "loo_all": 987,
+        "main_gold": 996,
+        "system_rows": 1000
+      },
+      "task": "relevance"
+    }
+  }
+}

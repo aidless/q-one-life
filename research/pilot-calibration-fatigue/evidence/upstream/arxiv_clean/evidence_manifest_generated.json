@@ -1,0 +1,147 @@
+{
+  "format": "uxp/4",
+  "created_at": "2026-08-27T07:27:40Z",
+  "seg": {
+    "standard": {
+      "segment_size": 4194304,
+      "data_shards": 50,
+      "mirror": false
+    }
+  },
+  "entries": [
+    {
+      "entry": "evidence/protocol.md",
+      "tier": "standard",
+      "path": "evidence/protocol.md",
+      "plain_sha256": "967531e54e22942678c5a34727ac058d62be9387b344f7a904194e5a453a7191",
+      "plain_bytes": 965,
+      "stored_bytes": 965,
+      "segments": [
+        {
+          "sha256": "967531e54e22942678c5a34727ac058d62be9387b344f7a904194e5a453a7191",
+          "bytes": 965
+        }
+      ]
+    },
+    {
+      "entry": "evidence_manifest.json",
+      "tier": "standard",
+      "path": "evidence_manifest.json",
+      "plain_sha256": "ca21c9398bbc86cea81e5e831f6839d91c7bebb7e00cc594258a61aa1c9adabd",
+      "plain_bytes": 5696,
+      "stored_bytes": 5696,
+      "segments": [
+        {
+          "sha256": "ca21c9398bbc86cea81e5e831f6839d91c7bebb7e00cc594258a61aa1c9adabd",
+          "bytes": 5696
+        }
+      ]
+    },
+    {
+      "entry": "figures/fig1_ece_trajectories.pdf",
+      "tier": "standard",
+      "path": "figures/fig1_ece_trajectories.pdf",
+      "plain_sha256": "a1aa44194dd0bf902294c5ece1375539e027fa557bc97e4287d35a01a0513747",
+      "plain_bytes": 29400,
+      "stored_bytes": 29400,
+      "segments": [
+        {
+          "sha256": "a1aa44194dd0bf902294c5ece1375539e027fa557bc97e4287d35a01a0513747",
+          "bytes": 29400
+        }
+      ]
+    },
+    {
+      "entry": "figures/fig2_final_ece.pdf",
+      "tier": "standard",
+      "path": "figures/fig2_final_ece.pdf",
+      "plain_sha256": "fecb3ec1ad247e3b3d065efe9ac4a8d861221cfa50c3f6432a6c5fe382dee50a",
+      "plain_bytes": 23778,
+      "stored_bytes": 23778,
+      "segments": [
+        {
+          "sha256": "fecb3ec1ad247e3b3d065efe9ac4a8d861221cfa50c3f6432a6c5fe382dee50a",
+          "bytes": 23778
+        }
+      ]
+    },
+    {
+      "entry": "main.tex",
+      "tier": "standard",
+      "path": "main.tex",
+      "plain_sha256": "06647f2886ee4788be5c38708ed0732f334aed71ba7ad2bff25ff4e1b030a6cd",
+      "plain_bytes": 44893,
+      "stored_bytes": 44893,
+      "segments": [
+        {
+          "sha256": "06647f2886ee4788be5c38708ed0732f334aed71ba7ad2bff25ff4e1b030a6cd",
+          "bytes": 44893
+        }
+      ]
+    },
+    {
+      "entry": "references.bib",
+      "tier": "standard",
+      "path": "references.bib",
+      "plain_sha256": "ec318f48955acc34923f43b96fa5b3b788aeba8cc304420909ee611960bdd3c1",
+      "plain_bytes": 12607,
+      "stored_bytes": 12607,
+      "segments": [
+        {
+          "sha256": "ec318f48955acc34923f43b96fa5b3b788aeba8cc304420909ee611960bdd3c1",
+          "bytes": 12607
+        }
+      ]
+    },
+    {
+      "entry": "tmlr.sty",
+      "tier": "standard",
+      "path": "tmlr.sty",
+      "plain_sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "plain_bytes": 6560,
+      "stored_bytes": 6560,
+      "segments": [
+        {
+          "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+          "bytes": 6560
+        }
+      ]
+    }
+  ],
+  "layout": [
+    {
+      "name": "evidence/protocol.md",
+      "stored_bytes": 965
+    },
+    {
+      "name": "evidence_manifest.json",
+      "stored_bytes": 5696
+    },
+    {
+      "name": "figures/fig1_ece_trajectories.pdf",
+      "stored_bytes": 29400
+    },
+    {
+      "name": "figures/fig2_final_ece.pdf",
+      "stored_bytes": 23778
+    },
+    {
+      "name": "main.tex",
+      "stored_bytes": 44893
+    },
+    {
+      "name": "references.bib",
+      "stored_bytes": 12607
+    },
+    {
+      "name": "tmlr.sty",
+      "stored_bytes": 6560
+    }
+  ],
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "uxp-v1",
+    "root_hash": "b9f0a342551784adcbf905e6d48ff617dbac1622bb44bdf24f77c3e3842b9c8c",
+    "value": "n1rs7YA3z/fei8rKannDPT0Lxpv0PFdI2Y+Nh2vjD0CtvBl3CQ1RPAXABCmK9hzMCMrWmYT9iZ6w048tPgqvCQ=="
+  }
+}

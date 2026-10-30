@@ -1,0 +1,37 @@
+{
+  "schema": "q-one-paper6-source-revision-v1",
+  "generated_at": "2026-10-27T17:08:00Z",
+  "upstream": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/paper/main.tex",
+    "sha256": "42fe9b13f6a17af326f346aaa1afb7228fa1e8f4478126fadbce0fc7cea80cc3",
+    "bytes": 57721,
+    "lines": 1062
+  },
+  "overlay": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source/main.tex",
+    "sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+    "bytes": 47351,
+    "lines": 976
+  },
+  "diff_receipt": {
+    "path": "reports/source-revision.diff",
+    "sha256": "79c7e88e98672ef768d5586ac3aa29d747646ff3df9486ea72fc0f77e0b705ef",
+    "changed_canonical_lines": 207,
+    "changed_overlay_lines": 121
+  },
+  "change_scope": [
+    "Removed off-topic GPT-4o/GSM8K/MMLU/HumanEval experimental setup and unrelated calibration template text.",
+    "Removed duplicate Reproducibility Statement and off-topic final ethics block.",
+    "Replaced unsupported universal structural claims with a bounded hypothesis.",
+    "Corrected the S4 majority comparison and the N=10 ensemble sweep claim.",
+    "Removed the ATV Theorem 2 proof placeholder from the manuscript.",
+    "Replaced absent API-log/Transformer release claims with the actual synthetic and local-pilot evidence boundary."
+  ],
+  "claim_impact": "No claim was promoted; unsupported claims remain blocked or inconclusive.",
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "Canonical bytes remain available for exact reversion.",
+    "This revision does not close held-out, hyperparameter, independent review, metadata or license gates."
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "arc-paper-track-2026",
+  "title": "One Rung at a Time: Attributing an ARC-AGI-3 Submission When the Offline Ruler Cannot Select Arms",
+  "status": "revision",
+  "target": "arxiv",
+  "root": "/home/liuzewen/qone-life-work/research/arc-paper-track",
+  "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence",
+  "manuscript": {
+    "path": "ARC_REVISED.md",
+    "sha256": "a07872cc4710944b6c76084ff89091316d409da5605552c2b201f3648d348c95",
+    "published_source_sha256": "a1ff847e3361d8c6b2b21578e559baf5ab11d768c8f617bae97765691f9fd660",
+    "matches_published_source": false,
+    "source_url": "https://www.kaggle.com/competitions/arc-prize-2026-paper-track/writeups/one-rung-at-a-time-attributing-an-arc-agi-3-submi"
+  },
+  "evidence": [
+    {
+      "path": "evidence/claims_verified.json",
+      "sha256": "0fd252f90da685965d68cb50c86214cb71e3c9b84af931b5b1087b27de82702b",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/claims_verified.json",
+      "description": "Authenticated submission IDs, scores, and fresh-pull source hashes."
+    },
+    {
+      "path": "evidence/arc_pins_verified.json",
+      "sha256": "3296b443c9129d584185aaf59d6df500d6f77b83d90957c3383cd8382c8d55cc",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/arc_pins_verified.json",
+      "description": "Notebook source hashes pinned for the three primary submissions."
+    },
+    {
+      "path": "evidence/audit.json",
+      "sha256": "99d588d5eabc4622914d1ce0d88e8e971f771b137e7ce7a26081942368df6719",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/audit.json",
+      "description": "Prior publication and evidence audit snapshot."
+    },
+    {
+      "path": "evidence/source_evidence_manifest.json",
+      "sha256": "3d20b0c2b5510d2f28625a5255e2335d08c2d775b123669bc447391fe196fb6d",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/arc-notebook-update-20261015/outputs/arc_lineage_audit.json",
+      "description": "Source evidence-manifest snapshot from the original workspace."
+    },
+    {
+      "path": "evidence/publication_receipt_20261016.json",
+      "sha256": "140654c72cb0b6ce2fe9f39889c29cc870b8359709e76d1d4b9ba73cdab022be",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/publication_receipt_20261016.json",
+      "description": "Authenticated Kaggle publication and public companion receipt."
+    },
+    {
+      "path": "evidence/arc_lineage_audit.json",
+      "sha256": "4e36488adeb00206a1abb2906796a31d236849c56ff501f96279aac871f4ac84",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/arc-notebook-update-20261015/outputs/arc_lineage_audit.json",
+      "description": "Recomputed adjacent score differences and evidence limitations."
+    },
+    {
+      "path": "evidence/public_game_set.json",
+      "sha256": "fc29000ae5a3579c8f51bd5fc74eb0e8585b99458b7477d83c7f199d119ed267",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/arc-notebook-update-20261015/outputs/arc_lineage_audit.json",
+      "description": "Public game IDs parsed from the submitted notebook bytes."
+    },
+    {
+      "path": "evidence/manuscript_identity.json",
+      "sha256": "a9afa31ced52001eb2c717e8aa7aa1e6d651b1ba1b09daf1f81f70edee8d80ce",
+      "state": "verified",
+      "origin": "/home/liuzewen/kaggle-control-20261013/paper-evidence/arc-notebook-update-20261015/outputs/arc_lineage_audit.json",
+      "description": "Comparison of local manuscript bytes with the published remote source hash."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Abstract; section 2",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Abstract; section 2",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "location": "Section 5",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "location": "Metadata",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "location": "Publication check",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "location": "Section 2",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "Sections 3-4",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "Sections 3-5",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C09",
+      "location": "Sections 1 and 3",
+      "state": "inconclusive",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "Manuscript identity",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md",
+        "evidence/manuscript_identity_recovered.json"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "location": "Abstract; section 5",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/claim-ledger-verification.md"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "arc3-public-score-lineage-observation",
+      "state": "completed",
+      "receipt": "evidence/arc_lineage_audit.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [],
+  "package": {
+    "state": "not-started",
+    "files": [],
+    "blockers": [
+      "The local Markdown manuscript does not match the source hash recorded by the current remote publication receipt.",
+      "No arXiv source tree, BibTeX package, cover metadata, or compiled PDF has been prepared from the verified claims.",
+      "The official scoring-methodology source needed by C09 is not captured locally."
+    ]
+  },
+  "measurements": [
+    {
+      "name": "public_score_best",
+      "value": 4.24,
+      "unit": "public leaderboard points",
+      "definition": "Best authenticated public score in the three-submission lineage.",
+      "source": "evidence/claims_verified.json#arc_submissions[2].score",
+      "state": "observed"
+    },
+    {
+      "name": "same_source_score_span",
+      "value": 0.93,
+      "unit": "public leaderboard points",
+      "definition": "Spread between two observed scores for the same source version.",
+      "source": "evidence/arc_lineage_audit.json#same_source_version_score_span",
+      "state": "observed"
+    },
+    {
+      "name": "public_game_count",
+      "value": 25,
+      "unit": "games",
+      "definition": "Unique fixed IDs in the submitted notebook offline selection.",
+      "source": "evidence/public_game_set.json#count",
+      "state": "observed"
+    },
+    {
+      "name": "registered_claims",
+      "value": 11,
+      "unit": "claims",
+      "definition": "Claims registered in CLAIM_LEDGER.md.",
+      "source": "CLAIM_LEDGER.md",
+      "state": "observed"
+    },
+    {
+      "name": "verified_claims",
+      "value": 9,
+      "unit": "claims",
+      "definition": "Claims with verified evidence fields and recomputation coverage.",
+      "source": "reports/claim-ledger-verification.md",
+      "state": "observed"
+    },
+    {
+      "name": "inconclusive_claims",
+      "value": 1,
+      "unit": "claims",
+      "definition": "Claims explicitly held without sufficient evidence.",
+      "source": "reports/claim-ledger-verification.md",
+      "state": "observed"
+    },
+    {
+      "name": "blocked_claims",
+      "value": 1,
+      "unit": "claims",
+      "definition": "Claims that cannot enter strong manuscript assertions.",
+      "source": "reports/claim-ledger-verification.md",
+      "state": "observed"
+    }
+  ],
+  "notes": [
+    "Kaggle remote contentState is PUBLISHED and submitted_banner_verified_after_update is true.",
+    "No official award or final ranking is established by the publication receipt.",
+    "This project manifest prepares an arXiv target; it does not claim that an arXiv submission exists."
+  ]
+}

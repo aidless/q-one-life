@@ -1,0 +1,135 @@
+[
+  {
+    "severity": "major",
+    "location": "第2节：Introduction",
+    "description": "方法论描述不够详细，缺乏对现有研究的深入分析和对比。",
+    "suggestion": "详细描述现有研究中的方法论差异，并对比说明本研究如何改进或超越现有研究。",
+    "role": "methodology"
+  },
+  {
+    "severity": "minor",
+    "location": "第3节：Methodology",
+    "description": "实验设计中缺少对具体算法实现细节的描述。",
+    "suggestion": "增加对算法实现细节的描述，确保方法论的可复现性。",
+    "role": "methodology"
+  },
+  {
+    "severity": "minor",
+    "location": "第4节：Results",
+    "description": "结果部分缺乏对实验数据的详细分析和解释。",
+    "suggestion": "增加对实验数据的详细分析和解释，确保结果的可信度。",
+    "role": "methodology"
+  },
+  {
+    "severity": "minor",
+    "location": "第5节：Discussion",
+    "description": "讨论部分缺乏对实验结果的深入讨论和解释。",
+    "suggestion": "增加对实验结果的深入讨论和解释，探讨其背后的机制和影响因素。",
+    "role": "methodology"
+  },
+  {
+    "severity": "minor",
+    "location": "第2段",
+    "description": "在描述统计显著性时，建议明确指出统计显著性的具体标准或阈值，以便读者能够更好地理解结果的可靠性。",
+    "suggestion": "在描述统计显著性时，明确指出统计显著性的具体标准或阈值，例如：‘在我们的实验中，我们使用显著性水平α=0.05来判断统计显著性。’",
+    "role": "statistics"
+  },
+  {
+    "severity": "minor",
+    "location": "第4段",
+    "description": "在定义ε-捕获鲁棒性时，建议提供一个具体的数学表达式或公式，以便读者能够更清晰地理解定义。",
+    "suggestion": "提供一个具体的数学表达式或公式来定义ε-捕获鲁棒性，例如：‘ε-捕获鲁棒性定义为：对于任意ε>0，存在一个δ>0，使得当verifiers中的比例为f时，即使有ε比例的verifiers被俘获，最终决策的错误率不超过δ。’",
+    "role": "statistics"
+  },
+  {
+    "severity": "minor",
+    "location": "第6段",
+    "description": "在描述实验结果时，建议提供具体的统计显著性检验结果，以增强结果的可信度。",
+    "suggestion": "提供具体的统计显著性检验结果，例如：‘在信任评分加权方法下，准确率为0.69，显著性水平为α=0.05，p值为0.01。’",
+    "role": "statistics"
+  },
+  {
+    "severity": "major",
+    "location": "Section 3.1, page 4",
+    "description": "实验设计中缺乏对不同攻击类型的详细描述，仅提到三种攻击家族：prompt-injection, rubric-injection, and majority-bias mimicry attacks。需要提供每个攻击类型的详细定义和具体实现方法。",
+    "suggestion": "详细描述每种攻击类型的定义和具体实现方法，确保实验设计的透明性和可重复性。",
+    "role": "experiment"
+  },
+  {
+    "severity": "major",
+    "location": "Section 3.2, page 5",
+    "description": "实验结果中未提供足够的统计分析和置信区间，仅报告了准确率等指标。需要进行更详细的统计分析，包括置信区间和显著性检验。",
+    "suggestion": "增加统计分析部分，提供置信区间和显著性检验结果，以增强实验结果的可信度。",
+    "role": "experiment"
+  },
+  {
+    "severity": "minor",
+    "location": "Section 4, page 6",
+    "description": "实验结果部分未详细说明实验的具体步骤和参数设置，可能影响读者的可重复性。",
+    "suggestion": "增加实验步骤和参数设置的详细描述，确保实验的可重复性。",
+    "role": "experiment"
+  },
+  {
+    "severity": "major",
+    "location": "Introduction",
+    "description": "The paper does not provide a clear and specific definition of the term 'plain majority voting' in the context of the aggregation methods. This could lead to confusion for readers.",
+    "suggestion": "Define 'plain majority voting' explicitly in the introduction or the relevant section to ensure clarity.",
+    "role": "novelty"
+  },
+  {
+    "severity": "minor",
+    "location": "Abstract",
+    "description": "The phrase 'A synthetic pilot (4,000 trials per cell, N=7 verifiers, f=2 captured) already tests the prediction' is somewhat vague. It would be clearer to specify the exact conditions and results.",
+    "suggestion": "Provide more details on the exact conditions and results of the synthetic pilot in the abstract.",
+    "role": "novelty"
+  },
+  {
+    "severity": "minor",
+    "location": "Abstract",
+    "description": "The phrase 'A descriptive local-model pilot is included in the evidence package, but a held-out real-trace benchmark remains future work' could be more precise.",
+    "suggestion": "Clarify the status and availability of the local-model pilot and real-trace benchmark in the abstract.",
+    "role": "novelty"
+  },
+  {
+    "severity": "major",
+    "location": "Abstract",
+    "description": "未提供具体的复现步骤或代码链接，影响论文的可复现性。",
+    "suggestion": "在摘要中明确指出复现步骤或提供代码链接，以便读者能够轻松复现实验结果。",
+    "role": "reproducibility"
+  },
+  {
+    "severity": "major",
+    "location": "Abstract",
+    "description": "未详细说明合成基准的具体实现细节。",
+    "suggestion": "在摘要中详细说明合成基准的具体实现细节，包括生成器的代码和参数设置。",
+    "role": "reproducibility"
+  },
+  {
+    "severity": "minor",
+    "location": "Introduction",
+    "description": "未提供具体的复现步骤或代码链接，影响论文的可复现性。",
+    "suggestion": "在介绍部分提供具体的复现步骤或代码链接，以便读者能够轻松复现实验结果。",
+    "role": "reproducibility"
+  },
+  {
+    "severity": "minor",
+    "location": "Section 4.1",
+    "description": "实验结果未提供详细的代码或数据集下载链接。",
+    "suggestion": "在实验部分提供详细的代码或数据集下载链接，以便读者能够复现实验。",
+    "role": "reproducibility"
+  },
+  {
+    "severity": "major",
+    "location": "Introduction",
+    "description": "未详细讨论伦理问题，特别是关于如何确保研究结果不会被滥用或误用。",
+    "suggestion": "在论文中详细讨论伦理问题，包括如何确保研究结果不会被滥用或误用，以及如何防止潜在的不良后果。",
+    "role": "ethics"
+  },
+  {
+    "severity": "minor",
+    "location": "Abstract",
+    "description": "未明确指出研究结果可能带来的潜在风险或伦理问题。",
+    "suggestion": "在摘要中明确指出研究结果可能带来的潜在风险或伦理问题。",
+    "role": "ethics"
+  }
+]

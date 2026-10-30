@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\PAPER35_FRONT_DRIFT\\main.tex",
+    "rpc": "http://127.0.0.1:11435",
+    "timestamp": "2026-09-02T13:14:36+00:00",
+    "roles": [
+      "novelty"
+    ],
+    "rounds": 1
+  },
+  "roles": {
+    "novelty": {
+      "status": "ok",
+      "issues": [
+        {
+          "severity": "minor",
+          "location": "Introduction",
+          "description": "The paper does not explicitly discuss the novelty of the Behavioral Drift Score (BDS) compared to existing measures of model behavior consistency.",
+          "suggestion": "The authors should compare the BDS with existing measures of model behavior consistency, such as token distribution similarity measures, and discuss any unique contributions of the BDS."
+        },
+        {
+          "severity": "minor",
+          "location": "Introduction",
+          "description": "The paper does not provide a detailed comparison of the 100-scenario suite with existing benchmark suites.",
+          "suggestion": "The authors should include a comparison of the 100-scenario suite with existing benchmark suites to highlight its unique value and novelty."
+        }
+      ],
+      "overall_assessment": "The paper presents a novel approach to measure the stability and transferability of local LLMs, which is an important contribution to the field. However, the novelty of the Behavioral Drift Score (BDS) and the 100-scenario suite could be further emphasized.",
+      "score": 8
+    }
+  },
+  "stable_issues": [],
+  "summary": {
+    "verdict": "PASS",
+    "critical": 0,
+    "major": 0,
+    "minor": 2
+  }
+}

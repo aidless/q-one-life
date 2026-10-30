@@ -1,0 +1,93 @@
+{
+  "schema": "q-one-arxiv-candidate-package-v1",
+  "generated_at": "2026-10-27T16:43:42.079705Z",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/source",
+    "main_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+    "package_sha256": "02a861ab06bb8db54224eafc2e541f239f92752e7c405f39094dcbf26a356158",
+    "file_count": 9
+  },
+  "archive": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/paper35-arxiv-candidate.tar.gz",
+    "sha256": "76d6a55900454c65c76cd9456f2da52fdb69c3d2e1290b882d5d4f9254eb8a81",
+    "bytes": 154412,
+    "repeat_sha256": "76d6a55900454c65c76cd9456f2da52fdb69c3d2e1290b882d5d4f9254eb8a81",
+    "deterministic": true
+  },
+  "entries": [
+    {
+      "path": "main.tex",
+      "sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "bytes": 32735
+    },
+    {
+      "path": "math_commands.tex",
+      "sha256": "9d655842e74bf55f241770197793507d27f178abef4132378b8333e391a6a0e0",
+      "bytes": 5039
+    },
+    {
+      "path": "refs.bib",
+      "sha256": "b9d61a346848450930d0d4befe86312a494bb78afb74ca2f092ccc3a05d41c09",
+      "bytes": 4627
+    },
+    {
+      "path": "tmlr.bst",
+      "sha256": "306fd454cf40771bee01293eeb98d2c1cd5f4e11ed0cd7296b335f354fc45206",
+      "bytes": 26969
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    },
+    {
+      "path": "figures/bds_determinism_duality.png",
+      "sha256": "ce268cf89d2589fb2eb7feb0e38f5b67838e03448705472d122c513b14373969",
+      "bytes": 60920
+    },
+    {
+      "path": "figures/bds_heatmap.png",
+      "sha256": "4d7e13b113a4c0b9a034107e661761639a652f1cce0391df34d7adfbfce9c153",
+      "bytes": 80292
+    },
+    {
+      "path": "figures/fig_heterogeneity.pdf",
+      "sha256": "b869d18ae269fc8db32402bd13d2b57cb838a4a82af22160573fce6605c4595a",
+      "bytes": 17325
+    },
+    {
+      "path": "figures/fig_reproducibility.pdf",
+      "sha256": "7639293707562c13127c86700f7d167ac8490d8a0b484364b6a4755e28e537f8",
+      "bytes": 15402
+    }
+  ],
+  "extract_compile": {
+    "exit_code": 0,
+    "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/archive-cleanroom/receipt.json",
+    "receipt_sha256": "b5deaac31f98a1e5cb8d8322deb8151d45847388c511e96195d1e56ad14c59c6",
+    "pdf_pages": 12,
+    "pdf_sha256": "34e160a576d9f3f5b1d20b3c5f36eb6cde3a93050212954e267b281e387739df",
+    "command_stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/archive-cleanroom/build.stdout.log",
+    "command_stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/archive-cleanroom/build.stderr.log"
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "ready_for_upload": false,
+  "blockers": [
+    "The full-run manifest declares 1,200 cells, but all 12 raw full-run JSONL files are missing.",
+    "The upstream evidence_manifest.json has 62 missing entries, including six full-run analysis files and the raw full-run cells.",
+    "The upstream review remains open with 6 Major and 21 Minor findings; the debate retains 5 Major findings.",
+    "BDS sensitivity to tokenization, top-K, smoothing and response length has not been independently audited.",
+    "The multi-agent chain result is descriptive; causal amplification and hierarchical power have not been established.",
+    "Final author, category, abstract, license and upload authorization remain user decisions.",
+    "This is an internal candidate archive; no arXiv upload was performed.",
+    "Author, category, license, abstract and final metadata remain user decisions.",
+    "A compiling archive does not establish scientific readiness or independent review."
+  ],
+  "notes": [
+    "The archive uses sorted entries and normalized owner, mode and mtime.",
+    "The archive was extracted into a separate temporary directory before compilation."
+  ]
+}

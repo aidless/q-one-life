@@ -1,0 +1,78 @@
+paper: PAPER6_CONSOLIDATED
+claims:
+- id: C01
+  statement: 'Benchmark config: T=1000 (rounds per cell).'
+  value: 1000
+  tol: 0
+  evidence:
+    file: evidence/main_results/benchmark_table.json
+    path: config.T
+- id: C01b
+  statement: 'Benchmark config: N=7 (aggregation methods).'
+  value: 7
+  tol: 0
+  evidence:
+    file: evidence/main_results/benchmark_table.json
+    path: config.N
+- id: C01c
+  statement: 'Benchmark config: n_seeds=5 (seeds per cell).'
+  value: 5
+  tol: 0
+  evidence:
+    file: evidence/main_results/benchmark_table.json
+    path: config.n_seeds
+- id: C02
+  statement: 'In the fourth scenario (S4: high-honest, strong-attack) plain majority
+    scores 0.8430, below trust_mean at 0.8506; majority is therefore strongest or
+    tied in 3 of the 4 scenarios, not all 4.'
+  evidence:
+    file: evidence/main_results/benchmark_table.json
+    path: 'aggregate.0.S4: high-honest, strong-attack'
+  value: 0.843
+  tol: 1.0e-09
+- id: C03
+  statement: the three attack families are implemented (attacks.py).
+  note: originally pointed at attacks.py; benchmark.py; per_attack_table.json
+  value: true
+  tol: 0
+  evidence:
+    file: delivered_files.json
+    path: files.attacks_py.present
+- id: C03b
+  statement: the benchmark harness is shipped (benchmark.py).
+  note: originally pointed at attacks.py; benchmark.py; per_attack_table.json
+  value: true
+  tol: 0
+  evidence:
+    file: delivered_files.json
+    path: files.benchmark_py.present
+- id: C03c
+  statement: the per-attack results table is archived (evidence/main_results/per_attack_table.json).
+  note: originally pointed at attacks.py; benchmark.py; per_attack_table.json
+  value: true
+  tol: 0
+  evidence:
+    file: delivered_files.json
+    path: files.per_attack_table_json.present
+- id: C05
+  statement: The real-LLM check scores 20 questions.
+  value: 20
+  tol: 0
+  evidence:
+    file: evidence/real_llm_results/summary.json
+    path: config.n_questions
+- id: C05b
+  statement: The real-LLM check uses 3 seeds.
+  value: 3
+  tol: 0
+  evidence:
+    file: evidence/real_llm_results/summary.json
+    path: config.n_seeds
+- id: C06
+  statement: The local pilot gives identical rounded mean accuracy (0.9167) for all
+    seven aggregation methods.
+  value: 0.9167
+  tol: 0
+  evidence:
+    file: evidence/real_llm_results/summary.json
+    path: per_method.majority.mean

@@ -1,0 +1,94 @@
+{
+  "case": "Bound-guided sample-size allocation for confirmatory evaluation",
+  "method": "invert CV(N) >= 1/(gamma sqrt(N s(1-s))) for target CV",
+  "rows": [
+    {
+      "condition": "DS Self-Eval",
+      "gamma": 0.0332,
+      "N_for_CV0.10": 362997.4,
+      "N_for_CV0.30": 40333.0,
+      "naive_rule_ok": false,
+      "decision": "large-N required (>30)"
+    },
+    {
+      "condition": "DS x Qwen (qwen eval)",
+      "gamma": 0.1865,
+      "N_for_CV0.10": 11600.4,
+      "N_for_CV0.30": 1288.9,
+      "naive_rule_ok": false,
+      "decision": "large-N required (>30)"
+    },
+    {
+      "condition": "Qwen x DS (official A)",
+      "gamma": 0.9866,
+      "N_for_CV0.10": 519.3,
+      "N_for_CV0.30": 57.7,
+      "naive_rule_ok": false,
+      "decision": "large-N required (>30)"
+    },
+    {
+      "condition": "DS eval / Qwen exec (B)",
+      "gamma": 0.8929,
+      "N_for_CV0.10": 608.5,
+      "N_for_CV0.30": 67.6,
+      "naive_rule_ok": false,
+      "decision": "large-N required (>30)"
+    },
+    {
+      "condition": "GPT4o eval / DS exec (C)",
+      "gamma": 0.7949,
+      "N_for_CV0.10": 738.4,
+      "N_for_CV0.30": 82.0,
+      "naive_rule_ok": false,
+      "decision": "large-N required (>30)"
+    },
+    {
+      "condition": "GPT4o eval / Qwen exec (D)",
+      "gamma": 0.7238,
+      "N_for_CV0.10": 868.0,
+      "N_for_CV0.30": 96.4,
+      "naive_rule_ok": false,
+      "decision": "large-N required (>30)"
+    },
+    {
+      "condition": "Ablation max",
+      "gamma": 1.0384,
+      "N_for_CV0.10": 480.3,
+      "N_for_CV0.30": 53.4,
+      "naive_rule_ok": false,
+      "decision": "large-N required (>30)"
+    },
+    {
+      "condition": "Ablation no-s0",
+      "gamma": 0.979,
+      "N_for_CV0.10": 525.6,
+      "N_for_CV0.30": 58.4,
+      "naive_rule_ok": false,
+      "decision": "large-N required (>30)"
+    },
+    {
+      "condition": "Qwen37",
+      "gamma": 1.0591,
+      "N_for_CV0.10": 466.3,
+      "N_for_CV0.30": 51.8,
+      "naive_rule_ok": false,
+      "decision": "large-N required (>30)"
+    },
+    {
+      "condition": "GPT4o replication (OLD)",
+      "gamma": 1.1763,
+      "N_for_CV0.10": 401.2,
+      "N_for_CV0.30": 44.6,
+      "naive_rule_ok": false,
+      "decision": "large-N required (>30)"
+    },
+    {
+      "condition": "DS self-eval r30",
+      "gamma": 0.936,
+      "N_for_CV0.10": 564.1,
+      "N_for_CV0.30": 62.7,
+      "naive_rule_ok": false,
+      "decision": "large-N required (>30)"
+    }
+  ]
+}

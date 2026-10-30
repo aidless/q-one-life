@@ -1,0 +1,241 @@
+{
+  "schema": "q-one-cleanroom-compile-v1",
+  "generated_at": "2026-10-29T05:19:18.788621Z",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/source",
+    "main_file": "main.tex",
+    "main_sha256": "a9eef802faa6ef80f7916626a28aade11f1922701fb1f3b24b2f3780a69e0bb6",
+    "package_sha256": "b375e0877d7ce4f2330d5c31a21dfef3797b3e88140e7ac41bc4fbcb9f83ade6",
+    "file_count": 11
+  },
+  "commands": [
+    [
+      "latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "main.tex"
+    ],
+    [
+      "latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "main.tex"
+    ]
+  ],
+  "runs": [
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "environment": {
+        "SOURCE_DATE_EPOCH": "946684800",
+        "FORCE_SOURCE_DATE": "1"
+      },
+      "exit_code": 0,
+      "workdir": "/tmp/qone-cleanroom-svafollz/run-1",
+      "stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/reports/cleanroom/pass1.stdout.log",
+      "stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/reports/cleanroom/pass1.stderr.log",
+      "main_log": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/reports/cleanroom/pass1.main.log",
+      "warnings": [
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 6--6",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 1990) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 11--11",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 12--12",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 13--13",
+        "Underfull \\hbox (badness 2818) in paragraph at lines 13--13",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 13--13",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 5637) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 3118) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 3919) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 3333) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\vbox (badness 1418) has occurred while \\output is active []",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 322--322",
+        "Underfull \\hbox (badness 3568) in paragraph at lines 322--323",
+        "Underfull \\hbox (badness 4013) in paragraph at lines 323--323",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 323--323",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 324--324",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 5--6",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 6--7",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 6--7",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--8",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 8--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 13--14",
+        "Underfull \\vbox (badness 4819) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []"
+      ]
+    },
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "environment": {
+        "SOURCE_DATE_EPOCH": "946684800",
+        "FORCE_SOURCE_DATE": "1"
+      },
+      "exit_code": 0,
+      "workdir": "/tmp/qone-cleanroom-svafollz/run-2",
+      "stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/reports/cleanroom/pass2.stdout.log",
+      "stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/reports/cleanroom/pass2.stderr.log",
+      "main_log": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/reports/cleanroom/pass2.main.log",
+      "warnings": [
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 6--6",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 1990) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 11--11",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 12--12",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 13--13",
+        "Underfull \\hbox (badness 2818) in paragraph at lines 13--13",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 13--13",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 5637) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 3118) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 3919) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 3333) in paragraph at lines 17--20",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 17--20",
+        "Underfull \\vbox (badness 1418) has occurred while \\output is active []",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 322--322",
+        "Underfull \\hbox (badness 3568) in paragraph at lines 322--323",
+        "Underfull \\hbox (badness 4013) in paragraph at lines 323--323",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 323--323",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 324--324",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 5--6",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 6--7",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 6--7",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 7--8",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 8--9",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 13--14",
+        "Underfull \\vbox (badness 4819) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []"
+      ]
+    }
+  ],
+  "exit_codes": [
+    0,
+    0
+  ],
+  "outputs": [
+    {
+      "path": "cleanroom/main.pdf",
+      "sha256": "439708174a052cf6163b0c9af26b1f9961492396dc567a259233ca37f4d3396e",
+      "bytes": 693809
+    },
+    {
+      "path": "cleanroom/main-repeat.pdf",
+      "sha256": "439708174a052cf6163b0c9af26b1f9961492396dc567a259233ca37f4d3396e",
+      "bytes": 693809
+    },
+    {
+      "path": "cleanroom/pdfinfo.txt",
+      "sha256": "bde834a368db64c176131ce184c3d89cb0b9e3e8814bb609b7e308f84ca40750",
+      "bytes": 792
+    },
+    {
+      "path": "cleanroom/pass1.stdout.log",
+      "sha256": "c4ad164766c77c0146cf2f5e33dd661c1c95d52c1b7c3884e3be43e4c351ea39",
+      "bytes": 70270
+    },
+    {
+      "path": "cleanroom/pass2.stdout.log",
+      "sha256": "c4ad164766c77c0146cf2f5e33dd661c1c95d52c1b7c3884e3be43e4c351ea39",
+      "bytes": 70270
+    },
+    {
+      "path": "cleanroom/pass1.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "cleanroom/pass2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "cleanroom/pass1.main.log",
+      "sha256": "f1a612d0bcf14888789db4986fe20949c3524e8e7b8ad0d671ac42b0af8160fe",
+      "bytes": 43242
+    },
+    {
+      "path": "cleanroom/pass2.main.log",
+      "sha256": "f1a612d0bcf14888789db4986fe20949c3524e8e7b8ad0d671ac42b0af8160fe",
+      "bytes": 43242
+    }
+  ],
+  "pdf": {
+    "pages": 46,
+    "sha256_run1": "439708174a052cf6163b0c9af26b1f9961492396dc567a259233ca37f4d3396e",
+    "sha256_run2": "439708174a052cf6163b0c9af26b1f9961492396dc567a259233ca37f4d3396e",
+    "deterministic": true
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "latexmk": [
+      "Latexmk, John Collins, 9 March 2026. Version 4.88"
+    ]
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "Only files admitted by the mechanical package audit were copied.",
+    "Two independent clean directories were compiled with a fixed source epoch.",
+    "A successful compile is not scientific readiness or upload authorization."
+  ]
+}

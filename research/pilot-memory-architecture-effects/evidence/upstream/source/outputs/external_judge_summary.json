@@ -1,0 +1,47 @@
+{
+  "per_cell": {
+    "Q-A-08": {
+      "n_judged": 20,
+      "n_valid": 20,
+      "ece_biased": 1.0,
+      "ece_clean": 1.0,
+      "delta_ece_judged": 0.0
+    },
+    "Q-S-08": {
+      "n_judged": 20,
+      "n_valid": 20,
+      "ece_biased": 1.0,
+      "ece_clean": 0.9961538461538461,
+      "delta_ece_judged": 0.0038461538461539435
+    },
+    "Q-R-08": {
+      "n_judged": 20,
+      "n_valid": 20,
+      "ece_biased": 1.0,
+      "ece_clean": 0.9944444444444444,
+      "delta_ece_judged": 0.005555555555555647
+    },
+    "Q-A-AU": {
+      "n_judged": 20,
+      "n_valid": 20,
+      "ece_biased": 1.0,
+      "ece_clean": 0.99375,
+      "delta_ece_judged": 0.006249999999999978
+    },
+    "Q-S-AU": {
+      "n_judged": 20,
+      "n_valid": 20,
+      "ece_biased": 0.9958333333333332,
+      "ece_clean": 1.0,
+      "delta_ece_judged": -0.004166666666666763
+    },
+    "Q-R-AU": {
+      "n_judged": 20,
+      "n_valid": 20,
+      "ece_biased": 1.0,
+      "ece_clean": 0.9958333333333332,
+      "delta_ece_judged": 0.004166666666666763
+    }
+  },
+  "total_judged": 120
+}

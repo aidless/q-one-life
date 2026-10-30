@@ -1,0 +1,387 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-calibrating-the-evaluator-does-probabili-6544cd664a",
+  "title": "Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?",
+  "status": "archived",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibrating-evaluator",
+  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/main.tex",
+  "manuscript": {
+    "path": "evidence/upstream/main.tex",
+    "sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": "https://arxiv.org/abs/2606.31371v1"
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "bf8fb3509f418965439b25c1c4abb6c87ac08673473f5a7a62f290681739ab76",
+      "state": "verified",
+      "origin": "P9 Research Factory overlay",
+      "description": "Canonical source and arXiv v1 identity with raw response hashes."
+    },
+    {
+      "path": "evidence/variant-reconciliation.json",
+      "sha256": "3e91df40c2ed6dbadeb5611846ac8db0f5c66b44b587ec63b13876e0b7cf525f",
+      "state": "verified",
+      "origin": "P9 Research Factory overlay",
+      "description": "Six P9 source variants and calibration-landscape merge target reconciliation."
+    },
+    {
+      "path": "evidence/p9-audit.json",
+      "sha256": "4899985c930686e9af2b8eac6f3ba593f5693426667b0bba6441ef113165be72",
+      "state": "verified",
+      "origin": "P9 Research Factory overlay",
+      "description": "Scale, control, model, result-archive and citation audit."
+    },
+    {
+      "path": "evidence/arxiv-identity-2606.31371.xml",
+      "sha256": "0282cfb9892c7df04a239e77f5d80c1fa6baa5c78edc066f9b5cf6b49ef22632",
+      "state": "verified",
+      "origin": "arXiv export API",
+      "description": "Raw Atom response for 2606.31371."
+    },
+    {
+      "path": "evidence/arxiv-identity-2606.31371.headers.txt",
+      "sha256": "37aba0cda265003b031e22175b02b93a6a94930f7ad495e372706da57e127dd3",
+      "state": "verified",
+      "origin": "arXiv export API",
+      "description": "Raw HTTP response headers for the arXiv identity lookup."
+    },
+    {
+      "path": "evidence/upstream/main.tex",
+      "sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
+      "state": "verified",
+      "origin": "P9 canonical source",
+      "description": "Canonical source retained byte-for-byte."
+    },
+    {
+      "path": "evidence/upstream/CLAIM_LEDGER.md",
+      "sha256": "1568c7bcdc5bb3962dcd7715e311983b51b646e22f7108dfe77bd82495308a9e",
+      "state": "candidate",
+      "origin": "P9 upstream source",
+      "description": "Native ledger retained for comparison; it hedges rather than carries the headline numbers."
+    },
+    {
+      "path": "evidence/upstream/REVIEW_CARD.md",
+      "sha256": "fb9c1ad8e70c21752b110207a1d3a89b85fdf74c9a9222ae32cb9548aebfd23b",
+      "state": "verified",
+      "origin": "P9 upstream source",
+      "description": "Upstream review card recording a D veto and Major Revisions."
+    },
+    {
+      "path": "evidence/upstream/calibrated_ttrl.py",
+      "sha256": "ece3ec6bf301274d7edf5552618e33385bb3f533b8bba7fa6092669e98b57e29",
+      "state": "verified",
+      "origin": "P9 upstream source",
+      "description": "Archived driver audited for scale, controls and model identity."
+    },
+    {
+      "path": "evidence/upstream/REPRODUCTION_SURFACE.json",
+      "sha256": "d2b37652b3391440579721b80955f7294e70aae89eb8f3c520cd4415b171199c",
+      "state": "verified",
+      "origin": "P9 upstream source",
+      "description": "Reproduction-surface extraction showing call-count and control conflicts."
+    },
+    {
+      "path": "evidence/upstream/evidence/protocol.md",
+      "sha256": "05b22a9c7f06619c27bf66d09ae6e7d0914e5b12970d2e5b4db5c933739bda99",
+      "state": "candidate",
+      "origin": "P9 upstream source",
+      "description": "Protocol note acknowledging that the result archive is missing."
+    },
+    {
+      "path": "evidence/upstream/evidence/scope_C02_C03.md",
+      "sha256": "f193305299e9e18e1b8c82d2230d09a0cf143d3456359f46e9590752776d763f",
+      "state": "candidate",
+      "origin": "P9 upstream source",
+      "description": "Hedging note; it does not supply missing per-seed evidence."
+    },
+    {
+      "path": "evidence/upstream/evidence/scope_C04_C05.md",
+      "sha256": "a35ff8af7e2734714634df5d4a648028fb9fc01b128550017ec57c220dab24ff",
+      "state": "candidate",
+      "origin": "P9 upstream source",
+      "description": "Mechanism and cross-paper scope note retained as context only."
+    },
+    {
+      "path": "evidence/merge-target/CALIBRATION_MERGED_main.tex",
+      "sha256": "09ad579249cae4d966944bf4ae33ecd81648318f9ee02384bab8d86e3673fa1a",
+      "state": "verified",
+      "origin": "Calibration landscape current merge source",
+      "description": "Current target contains the P9 Appendix B protocol-deposit marker."
+    },
+    {
+      "path": "evidence/merge-target/CALIBRATION_MERGED_FULL_snapshot_main.tex",
+      "sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "state": "candidate",
+      "origin": "Expected full merge snapshot",
+      "description": "Expected hash exists, but the snapshot lacks an explicit P9 marker."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Method implementation",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/calibrated_ttrl.py"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Existing arXiv identity",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/source_record.json",
+        "evidence/arxiv-identity-2606.31371.xml"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "location": "Printed experimental scale",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/p9-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "location": "Archive-realized experimental scale",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/p9-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "location": "Printed scale validity",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/p9-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "location": "Control experiments",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/p9-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "Headline percentage ranges",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/p9-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "Missing per-seed archive",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/p9-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C09",
+      "location": "Executed model identity",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/p9-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "Mechanism statistics",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/p9-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "location": "Bibliography mechanical resolution",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/p9-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "location": "Merge-target protocol marker",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/variant-reconciliation.json",
+        "evidence/merge-target/CALIBRATION_MERGED_main.tex"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "location": "Snapshot as merge proof",
+      "state": "inconclusive",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/variant-reconciliation.json"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "location": "Final local disposition",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/variant-reconciliation.json"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "p9-archived-driver",
+      "state": "blocked",
+      "receipt": "evidence/p9-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p9-per-seed-results",
+      "state": "blocked",
+      "receipt": "evidence/p9-audit.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "p9-upstream-method-review",
+      "kind": "method",
+      "state": "open",
+      "critical": 3,
+      "major": 4,
+      "receipt": "evidence/upstream/REVIEW_CARD.md"
+    },
+    {
+      "review_id": "p9-statistics-recheck",
+      "kind": "statistics",
+      "state": "open",
+      "critical": 0,
+      "major": 1,
+      "receipt": "evidence/upstream/REVIEW_CARD.md"
+    }
+  ],
+  "package": {
+    "state": "not-started",
+    "files": [],
+    "blockers": [
+      "Printed scale exceeds the archived driver",
+      "Length-normalized control is absent",
+      "Symmetric-LR control is absent",
+      "Per-seed result archive is absent",
+      "Driver model pair disagrees with the manuscript",
+      "Mechanism statistics lack raw confidence records",
+      "Upstream method/statistics review remains open",
+      "P9 is a protocol deposit in the merge target"
+    ]
+  },
+  "measurements": [
+    {
+      "name": "printed_ttrl_rounds",
+      "value": 2400,
+      "unit": "rounds",
+      "definition": "Rounds printed in the current manuscript scale paragraph.",
+      "source": "evidence/upstream/main.tex",
+      "state": "observed"
+    },
+    {
+      "name": "realized_ttrl_rounds",
+      "value": 1200,
+      "unit": "rounds",
+      "definition": "Rounds instantiated by the archived driver.",
+      "source": "evidence/p9-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "realized_evaluator_calls",
+      "value": 1800,
+      "unit": "calls",
+      "definition": "Evaluator-side calls instantiated by the archived driver.",
+      "source": "evidence/p9-audit.json",
+      "state": "observed"
+    }
+  ],
+  "gate_receipts": [
+    {
+      "gate_id": "p9-source-identity",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "bf8fb3509f418965439b25c1c4abb6c87ac08673473f5a7a62f290681739ab76",
+      "source_sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
+      "summary": "Canonical source and arXiv v1 identity are pinned."
+    },
+    {
+      "gate_id": "p9-variant-reconciliation",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "3e91df40c2ed6dbadeb5611846ac8db0f5c66b44b587ec63b13876e0b7cf525f",
+      "source_sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
+      "summary": "Six variants and both merge-target sources are reconciled."
+    },
+    {
+      "gate_id": "p9-number-carrier",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/p9-audit.json",
+      "receipt_sha256": "4899985c930686e9af2b8eac6f3ba593f5693426667b0bba6441ef113165be72",
+      "source_sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
+      "summary": "Printed scale and headline ranges lack a matching per-seed carrier."
+    },
+    {
+      "gate_id": "p9-controls",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/p9-audit.json",
+      "receipt_sha256": "4899985c930686e9af2b8eac6f3ba593f5693426667b0bba6441ef113165be72",
+      "source_sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
+      "summary": "Both control experiments are absent from the archived driver."
+    },
+    {
+      "gate_id": "p9-citation-parse",
+      "scope": "citations",
+      "state": "passed",
+      "receipt": "evidence/p9-audit.json",
+      "receipt_sha256": "4899985c930686e9af2b8eac6f3ba593f5693426667b0bba6441ef113165be72",
+      "source_sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
+      "summary": "Seventeen citation keys resolve mechanically; semantics remain unaudited."
+    },
+    {
+      "gate_id": "p9-merge-archive",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "3e91df40c2ed6dbadeb5611846ac8db0f5c66b44b587ec63b13876e0b7cf525f",
+      "source_sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
+      "summary": "Current merge target classifies P9 as a protocol deposit."
+    }
+  ],
+  "notes": [
+    "agent-proposed, not human publication approval",
+    "The existing arXiv identity is public metadata, not proof of result reproducibility.",
+    "No independent candidate package was created.",
+    "No upload, account action, or publication action was performed."
+  ]
+}

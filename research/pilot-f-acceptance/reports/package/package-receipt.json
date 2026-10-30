@@ -1,0 +1,74 @@
+{
+  "schema": "q-one-arxiv-candidate-package-v1",
+  "generated_at": "2026-10-27T15:09:17.647348Z",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source",
+    "main_sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
+    "package_sha256": "bdeea2c323eea75a6a3e0bf5b8674abd48deca6819001254e7704be5318bcd5f",
+    "file_count": 6
+  },
+  "archive": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/package/f-acceptance-arxiv-candidate.tar.gz",
+    "sha256": "cf23a62a2c2066a934bea529b6aa97d993df0b78d048c42ceb6ce96620de213a",
+    "bytes": 35355,
+    "repeat_sha256": "cf23a62a2c2066a934bea529b6aa97d993df0b78d048c42ceb6ce96620de213a",
+    "deterministic": true
+  },
+  "entries": [
+    {
+      "path": "fancyhdr.sty",
+      "sha256": "3d2922548e0e5f1a6c5676eda6ebb6dc20d7d305b4d8c2be5f1c833fb1084e6d",
+      "bytes": 17086
+    },
+    {
+      "path": "main.bbl",
+      "sha256": "75596e9b25be8b9fb6b63dfe2f4ce556ab3ecba8c78f3d217292e057d58dc551",
+      "bytes": 5716
+    },
+    {
+      "path": "main.bib",
+      "sha256": "d9c73ccb66b43d13792323379248c1806817bc936237cf45b379597be5f6abc1",
+      "bytes": 5465
+    },
+    {
+      "path": "main.tex",
+      "sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
+      "bytes": 54638
+    },
+    {
+      "path": "tmlr.bst",
+      "sha256": "306fd454cf40771bee01293eeb98d2c1cd5f4e11ed0cd7296b335f354fc45206",
+      "bytes": 26969
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    }
+  ],
+  "extract_compile": {
+    "exit_code": 0,
+    "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/package/archive-cleanroom/receipt.json",
+    "receipt_sha256": "9a792271b87e55cd8def8134c9183f9f0e35515920c57158ae7ec3d77d831364",
+    "pdf_pages": 14,
+    "pdf_sha256": "d6c4c8e8081448fb4d43d545d5609d271656e0e2b12045ab96b58b2fc4888fae",
+    "command_stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/package/archive-cleanroom/build.stdout.log",
+    "command_stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/package/archive-cleanroom/build.stderr.log"
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "ready_for_upload": false,
+  "blockers": [
+    "Independent re-review is open for the current source hash.",
+    "Final author, category, abstract, license and upload authorization remain user decisions.",
+    "This is an internal candidate archive; no arXiv upload was performed.",
+    "Author, category, license, abstract and final metadata remain user decisions.",
+    "A compiling archive does not establish scientific readiness or independent review."
+  ],
+  "notes": [
+    "The archive uses sorted entries and normalized owner, mode and mtime.",
+    "The archive was extracted into a separate temporary directory before compilation."
+  ]
+}

@@ -1,0 +1,112 @@
+[
+ {
+  "value": "15",
+  "line": "paper/main.tex:38",
+  "artifact": "source/evidence/cg_tee_results.json",
+  "locator": "config.n_seeds",
+  "quantity": "n_seeds",
+  "dp": 0,
+  "nth_numeric": 1,
+  "printed_count": 1
+ },
+ {
+  "value": "0.143",
+  "line": "paper/main.tex:106",
+  "artifact": "source/evidence/cg_tee_results.json",
+  "locator": "aggregate.standard.gamma_mean",
+  "quantity": "gamma",
+  "dp": 3,
+  "nth_numeric": 1,
+  "printed_count": 1
+ },
+ {
+  "value": "0.719",
+  "line": "paper/main.tex:107",
+  "artifact": "source/evidence/cg_tee_results.json",
+  "locator": "aggregate.cg_alone.gamma_mean",
+  "quantity": "gamma",
+  "dp": 3,
+  "nth_numeric": 1,
+  "printed_count": 1
+ },
+ {
+  "value": "0.574",
+  "line": "paper/main.tex:108",
+  "artifact": "source/evidence/cg_tee_results.json",
+  "locator": "aggregate.cg_tee.gamma_mean",
+  "quantity": "gamma",
+  "dp": 3,
+  "nth_numeric": 1,
+  "printed_count": 1
+ },
+ {
+  "value": "0.192",
+  "line": "paper/main.tex:106",
+  "artifact": "source/evidence/cg_tee_results.json",
+  "locator": "aggregate.standard.cv",
+  "quantity": "cv",
+  "dp": 3,
+  "nth_numeric": 2,
+  "printed_count": 1
+ },
+ {
+  "value": "0.134",
+  "line": "paper/main.tex:107",
+  "artifact": "source/evidence/cg_tee_results.json",
+  "locator": "aggregate.cg_alone.cv",
+  "quantity": "cv",
+  "dp": 3,
+  "nth_numeric": 2,
+  "printed_count": 1
+ },
+ {
+  "value": "0.174",
+  "line": "paper/main.tex:108",
+  "artifact": "source/evidence/cg_tee_results.json",
+  "locator": "aggregate.cg_tee.cv",
+  "quantity": "cv",
+  "dp": 3,
+  "nth_numeric": 2,
+  "printed_count": 1
+ },
+ {
+  "value": "0.000",
+  "line": "paper/main.tex:109",
+  "artifact": "source/evidence/cg_tee_real_results.json",
+  "locator": "results.0.cg_tee.gamma_TV",
+  "quantity": "gamma_TV",
+  "dp": 3,
+  "nth_numeric": 1,
+  "printed_count": 1
+ },
+ {
+  "value": "0.000",
+  "line": "paper/main.tex:109",
+  "artifact": "source/evidence/cg_tee_real_results.json",
+  "locator": "results.14.cg_tee.gamma_TV",
+  "quantity": "gamma_TV",
+  "dp": 3,
+  "nth_numeric": 1,
+  "printed_count": 1
+ },
+ {
+  "value": "1",
+  "line": "paper/main.tex:38",
+  "artifact": "source/evidence/cg_tee_real_results.json",
+  "locator": "results.0.cg_tee.H_T",
+  "quantity": "H_T",
+  "dp": 0,
+  "nth_numeric": 8,
+  "printed_count": 1
+ },
+ {
+  "value": "39.2",
+  "line": "paper/main.tex:38",
+  "artifact": "figures/CG_TEE_PER_SEED.json",
+  "locator": "thirty_nine_search.within_half_point_of_39[1].reduction_pct",
+  "quantity": "reduction_pct",
+  "dp": 1,
+  "nth_numeric": 9,
+  "printed_count": 1
+ }
+]

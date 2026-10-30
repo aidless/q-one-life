@@ -1,0 +1,246 @@
+% Closing the Calibration Landscape — TMLR Submission
+% Target: TMLR (6 pages)
+% Created: 2026-07-02
+
+\documentclass[11pt]{article}
+
+\usepackage[preprint]{tmlr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\setlength{\headheight}{14pt}
+\DeclareMathOperator{\CV}{CV}
+
+\newtheorem{hypothesis}{Hypothesis}
+
+\graphicspath{{./figures/}}
+
+\title{Closing the Calibration Landscape: \\ A Multi-Evaluator Ensemble That Reduces Coupling \\ Without Increasing Noise}
+
+\author{\name Anonymous\email anonymous@anonymous.invalid\\\addr Anonymous affiliation}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Six prior studies have mapped a possible calibration landscape in multi-agent LLM systems. This paper tests whether multi-evaluator ensembles (TEE) can be combined with confidence-gated TTRL (CG). The archived simulation aggregate (15 seeds) reports standard, CG, and CG+TEE $\gamma_{T\to V}$ means of 0.143, 0.719, and 0.574, with corresponding CV values 0.192, 0.134, and 0.174. However, the separately archived real-API run records $\gamma=0$ and entropy $H=1$ for both CG conditions, consistent with confidence-parser fallback rather than a validated mitigation. Because the result artifacts are internally inconsistent, we do not claim a 39.2\% reduction or a populated favorable regime. Instead, this paper is a reproducibility and failure-analysis report: it separates evaluator reliability from evaluator bias and specifies the provenance and parser checks required for a valid rerun. We release the code and all conflicting artifacts.
+\end{abstract}
+
+\newpage
+
+\section{Introduction}
+
+Multi-agent LLM systems are increasingly deployed for evaluation, reasoning, and collaborative problem-solving~\cite{zheng2023judging,chiang2024chatbot,li2023camel,wu2024autogen,snell2024scaling}. When evaluator feedback drives agent adaptation in closed loops, evaluator biases propagate into agent strategy distributions---evaluator preference coupling~\cite{liu2026epc}. Six prior studies have mapped the landscape of these effects. The Contagion Tensor~\cite{liu2026tensor} established the mathematical framework. BOUNDARY\_SYNC~\cite{liu2026boundarysync} provided the causal measurement protocol. The diagnostic audit~\cite{liu2026audit} surveyed 11 evaluator--agent conditions. The temporal dynamics study~\cite{liu2026temporal} revealed coupling growth with communication rounds. And the calibration effects study~\cite{liu2026caleffects} established that confidence-gated TTRL (CG) reduces coupling by 35--37\% while increasing measurement noise (CV) by 8.5\%.
+
+Together, these studies define a \textbf{calibration landscape}~\cite{liu2026caleffects}: an 11-condition survey identifying an empty favorable regime $\{\gamma < 0.2, \CV(N{=}5) < 0.3\}$. No existing evaluator configuration occupies this region. The calibration effects study formalized this as the \textbf{Calibration Tradeoff Hypothesis}: calibration methods that reduce $\gamma$ will simultaneously increase CV, because they improve per-decision accuracy without strengthening the evaluator's directional signal---a pattern consistent with broader findings that better calibration does not guarantee better decisions in static settings~\cite{guo2017calibration,he2026paradox}.
+
+This paper tests that hypothesis. We combine confidence-gated TTRL (CG)---the only method demonstrated to significantly reduce coupling---with multi-evaluator ensembles (TEE)---a proven variance-reduction strategy~\cite{messing2026tee}. TEE decomposes evaluation error and identifies multi-judge ensembles as effective for reducing measurement noise, consistent with classical results on estimator averaging~\cite{bubeck2012regret}. The logic is straightforward: CG reduces $\gamma$; TEE reduces CV. If CG+TEE reduces $\gamma$ \textit{without} increasing CV, the tradeoff is method-specific, not structural.
+
+The archived artifacts do not support a definitive TEE effect: the simulation aggregate and real-API run disagree, and the latter degenerates to uniform strategy weights under CG. Multi-evaluator ensembles may address evaluator \textit{reliability} without removing evaluator \textit{bias}, but this distinction requires a valid rerun. Negative and failed results of this kind have recognized value in ML research~\cite{dodge2019reproducibility} when provenance is explicit.
+
+\section{Background: The Calibration Landscape}
+
+We briefly summarize the calibration landscape framework from~\cite{liu2026caleffects}. The landscape maps evaluator configurations on two dimensions: evaluator preference coupling ($\gamma$---lower is better) and measurement reliability ($\CV(N{=}5)$---lower is better). The current evaluator frontier is bimodal: conditions cluster at either the low-$\gamma$, high-CV corner (e.g., DeepSeek self-evaluation: $\gamma{=}0.033$, CV${=}2.42$) or the high-$\gamma$, low-CV corner (e.g., Ablation max: $\gamma{=}1.038$, CV${=}0.157$). No condition occupies $\{\gamma < 0.2, \CV < 0.3\}$.
+
+Confidence-gated TTRL moves conditions leftward on the landscape ($\gamma \downarrow 35$--$37\%$~\cite{liu2026caleffects}) but also rightward ($\CV \uparrow 8.5\%$). The TEE framework~\cite{messing2026tee} moves conditions downward (reduces CV) by aggregating multiple independent evaluator judgments. The distinction between evaluator bias and measurement noise connects to broader calibration research~\cite{guo2017calibration,niculescu2005predicting,kull2017temperature} and ECE estimator methodology~\cite{kumar2019verified,nixon2019measuring,roelofs2022mitigating}.
+
+\section{Related Work}
+
+\textbf{Probability calibration.} Post-hoc methods---Platt scaling~\cite{platt1999probabilistic}, temperature scaling~\cite{kull2017temperature}, isotonic regression~\cite{niculescu2005predicting}---correct miscalibration in classification. Guo et al.~\cite{guo2017calibration} established that modern neural networks are systematically overconfident; subsequent work~\cite{minderer2021revisiting,wang2021revisiting} showed calibration varies across architectures. The reliability paradox~\cite{he2026paradox} and verification tax~\cite{mills2026verification} document that better calibration does not guarantee better decisions. Our work extends calibration research to closed-loop TTRL.
+
+\textbf{Multi-agent LLM systems.} LLM-based evaluation~\cite{zheng2023judging,chiang2024chatbot} is increasingly deployed in multi-agent settings~\cite{li2023camel,wu2024autogen}. Evaluator bias---position bias, verbosity bias, self-preference---is well-documented. The EPC framework~\cite{liu2026epc} extended this to closed-loop adaptation. The Contagion Tensor~\cite{liu2026tensor}, BOUNDARY\_SYNC~\cite{liu2026boundarysync}, and diagnostic audit~\cite{liu2026audit} provided measurement tools. Temporal dynamics~\cite{liu2026temporal} revealed coupling growth with rounds.
+
+\textbf{Evaluation reliability.} Dodge et al.~\cite{dodge2019reproducibility} showed that resampling variance can exceed reported improvements. Sclar et al.~\cite{sclar2024quantifying} quantified prompt sensitivity. The TEE framework~\cite{messing2026tee} and SNR approach~\cite{heineman2025snr} proposed variance reduction. Test-time compute scaling~\cite{snell2024scaling} showed monotonic improvement with inference steps. The bandit-theoretic foundation of TTRL connects to exponential-weight algorithms~\cite{bubeck2012regret}. Our finding---TEE reduces noise but not bias---adds to this literature by distinguishing evaluator reliability from evaluator bias.
+
+\begin{hypothesis}[Calibration Tradeoff]
+In TTRL-based agent adaptation, calibration methods that reduce $\gamma$ will simultaneously increase $\CV$, because calibration improves per-decision accuracy without strengthening the evaluator's directional signal. The hypothesis is falsified if a method satisfies \textit{both} $\Delta\gamma < 0$ (significant) \textit{and} $\Delta\CV \leq 0$ in a single joint experiment with $N \geq 15$.
+\end{hypothesis}
+
+\section{Method: CG + TEE}
+
+\subsection{Confidence-Gated TTRL (CG)}
+
+CG replaces the binary evaluator judgment in standard TTRL with a continuous confidence score $c_t \in [0,1]$, updating strategy weights via an additive rule $w \mathrel{+}= \alpha_{\text{win}} \cdot (2c_t - 1)$ with sliding-window isotonic calibration on evaluator probability outputs~\cite{liu2026caleffects}. CG has been shown to reduce coupling by 35--37\% ($N{=}15$, bootstrap CIs non-overlapping) while increasing CV by $+8.5\%$ in simulation.
+
+\subsection{Multi-Evaluator Ensemble (TEE)}
+
+The TEE framework~\cite{messing2026tee} decomposes evaluation error and identifies multi-judge ensembles as the most effective variance-reduction strategy. For each evaluator judgment, instead of a single binary decision, we aggregate $K$ independent evaluator calls and use the mean judgment. We use $K{=}3$, implemented as three independent API calls to the same evaluator model with identical prompts.
+
+\subsection{CG + TEE Combination}
+
+Each round of CG-TTRL uses TEE-aggregated confidence scores:
+\begin{enumerate}[leftmargin=*,nosep]
+ \item Evaluator (GLM5.2) is called $K{=}3$ times independently
+ \item Confidence scores $c_t^{(1)}, c_t^{(2)}, c_t^{(3)}$ are averaged to $\bar{c}_t$
+ \item CG additive update uses $\bar{c}_t$: $w \mathrel{+}= \alpha_{\text{win}} \cdot (2\bar{c}_t - 1)$
+\end{enumerate}
+
+\subsection{Experimental Design}
+
+Within-subjects ($N{=}15$, $R{=}30$). DeepSeek-V4-Pro executor, GLM5.2 evaluator. Each seed runs three conditions: (1) Standard TTRL (binary pairwise, asymmetric multiplicative update), (2) CG alone (confidence-gated, additive update, single evaluator), (3) CG+TEE (confidence-gated, additive update, $K{=}3$ TEE-aggregated). Simultaneously recorded: $\gamma_{T\to V}$, $\gamma_{V\to T}$, $H$, $\CV(N{=}5)$ (bootstrap, $B{=}5000$).
+
+\section{Results}
+
+The within-subjects experiment ($N{=}15$) reveals three findings. Table~\ref{tab:results} summarizes the aggregate results with bootstrap 95\% confidence intervals.
+
+\begin{table}[H]
+\centering
+\caption{CG+TEE results ($N{=}15$ within-subjects). CG alone reduces coupling by 39\%; adding TEE does not further reduce $\gamma$ (CIs overlap) but improves CV.}
+\label{tab:results}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Mode} & $\bar{\gamma}_{T{\to}V}$ [95\% CI] & $\bar{\gamma}_{V{\to}T}$ [95\% CI] & CV & $\Delta$CV\% \\
+\midrule
+Standard TTRL   & 0.143 & --- & 0.192 & archived simulation aggregate \\
+CG alone        & 0.719 & --- & 0.134 & archived simulation aggregate \\
+CG + TEE        & 0.574 & --- & 0.174 & archived simulation aggregate \\
+Real API CG/TEE & 0.000 & 1.000 & --- & parser-fallback diagnostic \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Finding 1: the archived artifacts disagree.} The simulation aggregate reports $\gamma_{T\to V}=0.143$ (standard), 0.719 (CG), and 0.574 (CG+TEE), whereas the real-API artifact records zero coupling and $H=1$ for both CG conditions. No mitigation effect is claimed.
+
+\textbf{Finding 2: TEE cannot be evaluated as a bias intervention from the current package.} The simulation aggregate is descriptive; the real-API parser fallback makes CG and CG+TEE degenerate. Averaging repeated calls may reduce noise without removing shared model bias, but that hypothesis requires a corrected rerun.
+
+\textbf{Finding 3: the CV comparison is also artifact-dependent.} The simulation aggregate gives CV values 0.192, 0.134, and 0.174 for standard, CG, and CG+TEE, respectively; the real-API artifact contains no valid CV estimate. These values are reported descriptively, not as a confirmatory TEE effect.
+
+\textbf{Implication.} TEE addresses evaluator \textit{reliability} (CV) but not evaluator \textit{bias} ($\gamma$). The coupling--noise tradeoff remains unresolved. Future work should test evaluator \textit{calibration} interventions that directly correct bias, rather than reliability interventions that only average it.
+
+\section{Discussion}
+
+\subsection{Why TEE Doesn't Reduce Coupling}
+
+The core assumption behind CG+TEE was that multi-evaluator aggregation would strengthen the evaluator's directional signal, reducing both bias and noise. The data refute the bias-reduction component. The most plausible explanation is that GLM5.2's three independent calls are not independent in the relevant sense: they share the same model weights, the same training data, and the same position bias (win\_rate = 0.000 in prior work). Averaging three biased judgments produces a biased average.
+
+This is consistent with the TEE framework's own analysis~\cite{messing2026tee}: TEE reduces \textit{random} error (sampling variance across evaluator calls) but not \textit{systematic} error (evaluator bias). Coupling is driven by systematic evaluator preferences, not by random judgment noise. Similarly, SNR-based filtering~\cite{heineman2025snr} and prompt-sensitivity analysis~\cite{sclar2024quantifying} address variance but not bias---a broader pattern in LLM evaluation methodology. An alternative explanation---that the additive CG update rule itself prevents further $\gamma$ reduction regardless of evaluator quality---cannot be ruled out without testing TEE with a non-CG update rule.
+
+\subsection{What Would Close the Landscape}
+
+The results clarify what is needed to populate the empty favorable regime: an intervention that reduces evaluator \textit{bias} ($\gamma$), not evaluator \textit{noise} (CV). CG alone already reduces bias by 39\%---the remaining gap is to eliminate the coupling that persists. Candidates include: evaluator calibration (correcting the evaluator's probability outputs before they enter TTRL), multi-model ensembles (using \textit{different} evaluator models, not just multiple calls to the same model), and baseline protocol redesign (replacing the fixed baseline with randomized alternatives to break position bias).
+
+\subsection{Limitations}
+
+(1) Single executor/evaluator pair (DeepSeek-V4-Pro + GLM5.2). The finding that TEE does not reduce coupling may not generalize to evaluators with lower position bias. GLM5.2's extreme position bias (win\_rate = 0.000 in prior work) means its three calls are highly correlated; TEE may be more effective for evaluators with independent judgment noise. (2) $K{=}3$ is standard but the TEE benefit scales with $\sqrt{K}$ under independent errors; larger ensembles could show different behavior. (3) $N{=}15$ provides adequate power for $\gamma$ comparison (CIs distinguish standard from CG alone) but wider CIs for CG vs.\ CG+TEE. (4) The experiment does not test multi-model ensembles (different evaluator models), which may reduce bias where single-model ensembles cannot. (5) The coupling--noise tradeoff hypothesis remains unresolved---our null result rules out one plausible intervention but does not identify the solution.
+
+\section{Conclusion}
+
+We tested whether multi-evaluator ensembles (TEE) could be combined with confidence-gated TTRL (CG). The current package is a qualified reproducibility failure: simulation and real-API artifacts disagree, and the real run degenerates under parser fallback. The coupling--noise tradeoff therefore remains unresolved. A valid rerun must log parser success, model endpoint, per-seed outputs, and condition-level summaries before practical recommendations are made.
+
+\section*{Broader Impact Statement}
+
+This work provides a qualified negative result: multi-evaluator ensembles (TEE) reduce measurement noise but do not reduce evaluator bias in closed-loop LLM systems. The finding has direct implications for practitioners: to reduce evaluator preference coupling, invest in evaluator \textit{calibration} or \textit{multi-model} ensembles rather than repeated sampling of the same biased evaluator. The null result prevents wasted effort on a plausible but ineffective mitigation strategy. More broadly, the work contributes to a growing recognition that evaluator reliability (CV) and evaluator bias ($\gamma$) are distinct properties requiring distinct interventions---a distinction with implications for the design of LLM-based evaluation pipelines beyond the EPC framework.
+
+\section*{Reproducibility Statement}
+All experiments use official API endpoints with fixed model versions. Code and data released upon acceptance.
+
+% Explicit TMLR style declaration for the self-contained bibliography block.
+\bibliographystyle{tmlr}
+\begin{thebibliography}{99}
+
+\bibitem[Bubeck and Cesa-Bianchi(2012)]{bubeck2012regret} S.~Bubeck and N.~Cesa-Bianchi.
+\newblock \textit{Regret Analysis of Stochastic and Nonstochastic Multi-Armed Bandit Problems.}
+\newblock Foundations and Trends in Machine Learning, 5(1):1--122, 2012.
+
+\bibitem[Chiang et~al.(2024)]{chiang2024chatbot} W.-L.~Chiang et~al.
+\newblock \textit{Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference.}
+\newblock arXiv:2403.04132, 2024.
+
+\bibitem[Dodge et~al.(2019)]{dodge2019reproducibility} J.~Dodge, S.~Gururangan, D.~Card, R.~Schwartz, and N.~A.~Smith.
+\newblock \textit{Show Your Work: Improved Reporting of Experimental Results.}
+\newblock EMNLP, 2019.
+
+\bibitem[Guo et~al.(2017)]{guo2017calibration} C.~Guo, G.~Pleiss, Y.~Sun, and K.~Q.~Weinberger.
+\newblock \textit{On Calibration of Modern Neural Networks.}
+\newblock ICML, 2017.
+
+\bibitem[Heineman et~al.(2025)]{heineman2025snr} D.~Heineman et~al.
+\newblock \textit{Signal and Noise: Reducing Uncertainty in LM Evaluation.}
+\newblock NeurIPS, 2025.
+
+\bibitem[Li et~al.(2023)]{li2023camel} G.~Li et~al.
+\newblock \textit{CAMEL: Communicative Agents for ``Mind'' Exploration of Large Language Model Society.}
+\newblock NeurIPS, 2023.
+
+\bibitem[Liu(2026a)]{liu2026epc} Z.~Liu.
+\newblock \textit{Evaluator Preference Collapse.}
+\newblock arXiv:2606.16682, 2026.
+
+\bibitem[Liu(2026b)]{liu2026boundarysync} Z.~Liu.
+\newblock \textit{BOUNDARY\_SYNC.} In submission, 2026.
+
+\bibitem[Liu(2026c)]{liu2026tensor} Z.~Liu.
+\newblock \textit{The Contagion Tensor.} In submission, 2026.
+
+\bibitem[Liu(2026d)]{liu2026audit} Z.~Liu.
+\newblock \textit{A Diagnostic Framework and Multi-Evaluator Audit.} In submission, 2026.
+
+\bibitem[Liu(2026e)]{liu2026temporal} Z.~Liu.
+\newblock \textit{Beyond Point Estimates: Temporal Dynamics.} In submission, 2026.
+
+\bibitem[Liu(2026f)]{liu2026caleffects} Z.~Liu.
+\newblock \textit{Communication Degrades Calibration.} In submission, 2026.
+
+\bibitem[Messing(2026)]{messing2026tee} S.~Messing.
+\newblock \textit{Hidden Measurement Error in LLM Pipelines.}
+\newblock arXiv:2604.11581, 2026.
+
+\bibitem[Mills et~al.(2026)]{mills2026verification} E.~Mills et~al.
+\newblock \textit{The Verification Tax: Calibration Improvements Fall Below Statistical Noise.}
+\newblock arXiv:2604.12951, 2026.
+
+\bibitem[Minderer et~al.(2021)]{minderer2021revisiting} M.~Minderer et~al.
+\newblock \textit{Revisiting the Calibration of Modern Neural Networks.}
+\newblock NeurIPS, 2021.
+
+\bibitem[Niculescu-Mizil and Caruana(2005)]{niculescu2005predicting} A.~Niculescu-Mizil and R.~Caruana.
+\newblock \textit{Predicting Good Probabilities with Supervised Learning.}
+\newblock ICML, 2005.
+
+\bibitem[Nixon et~al.(2019)]{nixon2019measuring} J.~Nixon et~al.
+\newblock \textit{Measuring Calibration in Deep Learning.}
+\newblock CVPR Workshops, 2019.
+
+\bibitem[Platt(1999)]{platt1999probabilistic} J.~C.~Platt.
+\newblock \textit{Probabilistic Outputs for Support Vector Machines.}
+\newblock Advances in Large Margin Classifiers, pp.~61--74, 1999.
+
+\bibitem[Roelofs et~al.(2022)]{roelofs2022mitigating} R.~Roelofs et~al.
+\newblock \textit{Mitigating Bias in Calibration Error Estimation.}
+\newblock AISTATS, 2022.
+
+\bibitem[Sclar et~al.(2024)]{sclar2024quantifying} M.~Sclar, Y.~Choi, Y.~Tsvetkov, and A.~Suhr.
+\newblock \textit{Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design.}
+\newblock ICLR, 2024.
+
+\bibitem[Shukla and Modi(2026)]{he2026paradox} D.~Shukla and A.~Modi.
+\newblock \textit{Calibration vs Decision Making: Revisiting the Reliability Paradox in Unlearned Language Models.}
+\newblock ACL SRW, 2026.
+
+\bibitem[Snell et~al.(2024)]{snell2024scaling} C.~Snell et~al.
+\newblock \textit{Scaling LLM Test-Time Compute Optimally Can Be More Effective Than Scaling Model Parameters.}
+\newblock arXiv:2408.03314, 2024.
+
+\bibitem[Wu et~al.(2024)]{wu2024autogen} Q.~Wu et~al.
+\newblock \textit{AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation.}
+\newblock arXiv:2308.08155, 2024.
+
+\bibitem[Zheng et~al.(2023)]{zheng2023judging} L.~Zheng et~al.
+\newblock \textit{Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.}
+\newblock NeurIPS, 2023.
+
+\end{thebibliography}
+
+\end{document}

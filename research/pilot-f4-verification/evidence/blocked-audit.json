@@ -1,0 +1,400 @@
+{
+  "schema": "q-one-f4-audit-v1",
+  "generated_at": "2026-10-28T08:56:00Z",
+  "marker": "agent-proposed, not human publication approval",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f4-verification/evidence/upstream/paper/main.tex",
+    "sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+    "bytes": 28427,
+    "included_sections": [
+      {
+        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f4-verification/evidence/upstream/paper/sections/evidence_inventory.tex",
+        "sha256": "a49227e13a396641fcc2765ebd33326fbb8a25216ee6a4164f8ac60be6449e8e"
+      },
+      {
+        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f4-verification/evidence/upstream/paper/sections/baselines_audit.tex",
+        "sha256": "69aa04f005c9cc8737bfc08d4f69cb670c31f2875254626581dee486019fd087"
+      },
+      {
+        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f4-verification/evidence/upstream/paper/sections/manifest_audit.tex",
+        "sha256": "052703bf3e27dd01f7276f744612ef996341a3502a7eecbec37dca165dfaf0f1"
+      }
+    ]
+  },
+  "structure": {
+    "labels": 15,
+    "duplicate_labels": [],
+    "references": 28,
+    "missing_references": [],
+    "citation_keys": 42,
+    "bib_keys": 42,
+    "missing_citations": []
+  },
+  "variants": [
+    {
+      "role": "legacy",
+      "path": "/home/liuzewen/.research/merged-f4/main.tex",
+      "description": "legacy merged source",
+      "sha256": "c57d95ab13cf49470f3b8eac3e98db19d6c86b24dce8bcf590e8577af6e4e64d",
+      "bytes": 27865,
+      "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
+      "author": "Zewen Liu \\\\ Independent Researcher \\\\ \\texttt{17353895263@163.com}"
+    },
+    {
+      "role": "canonical",
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
+      "description": "packet primary source",
+      "sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "bytes": 28427,
+      "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
+      "author": "\\name Zewen Liu\\email 17353895263@163.com\\\\\\addr Independent Researcher"
+    },
+    {
+      "role": "ingest_drift",
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/.aris/ingest_drift/20260928T102343Z/main.tex",
+      "description": "ingest drift variant",
+      "sha256": "f18181edca74a56bbb5a702bb1c0f669e43168c7371ea552630623a2034c3a76",
+      "bytes": 29004,
+      "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
+      "author": "Anonymous Authors \\\\ Paper under double-blind review"
+    },
+    {
+      "role": "arxiv",
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/arxiv/main.tex",
+      "description": "arXiv build variant",
+      "sha256": "cd5e7f76c80dd3f6811d36b21c502ec9ddf7899598410df45822ff392481f0c0",
+      "bytes": 28980,
+      "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
+      "author": "\\name Zewen Liu\\email liuzewen@qlnu.edu.cn\\\\\\addr Qilu Institute of Technology"
+    }
+  ],
+  "author_metadata": {
+    "canonical": "\\name Zewen Liu\\email 17353895263@163.com\\\\\\addr Independent Researcher",
+    "arxiv": "\\name Zewen Liu\\email liuzewen@qlnu.edu.cn\\\\\\addr Qilu Institute of Technology",
+    "mismatch": true
+  },
+  "pilot_grid": {
+    "records": 270,
+    "seeds": 10,
+    "recomputed_mean": 0.24927777777777776,
+    "recomputed_population_std": 0.028931396931276266,
+    "recomputed_ci95": [
+      0.24582685204717802,
+      0.2527287035083775
+    ],
+    "recorded": {
+      "n_cells": 270,
+      "n_seeds": 10,
+      "P_mean": 0.2493,
+      "P_std": 0.0289,
+      "P_CI95": [
+        0.2458,
+        0.2527
+      ],
+      "grid_results": [
+        {
+          "K": 3,
+          "gamma": 0.5,
+          "P_mean": 0.2493,
+          "n_cells": 270
+        }
+      ],
+      "source": "local_270_synthetic_cloud_aligned",
+      "generated_at": "2026-08-24T18:50:00"
+    }
+  },
+  "headline_claims": {
+    "declared_trials": 18000,
+    "declared_trial_counts": [
+      4000,
+      5000,
+      4500,
+      4500
+    ],
+    "declared_trial_count_sum": 18000,
+    "declared_artifact_size_gb": 6.0,
+    "declared_gate_values": [
+      "10/10",
+      "9/9"
+    ],
+    "gate_value_conflict_count": 1,
+    "headline_number_mentions": [
+      "0.002",
+      "0.32",
+      "0.41",
+      "0.686",
+      "0/11",
+      "1.47",
+      "10/10",
+      "192/144",
+      "4.00",
+      "6.0",
+      "90/40"
+    ],
+    "archived_trials": 270,
+    "frozen_evidence_split_files": 0,
+    "gpu_hours_declared": 4.0,
+    "gpu_hour_carrier_count": 0,
+    "numeric_hits": {
+      "2700": 0,
+      "0.686": 0,
+      "0.002": 0,
+      "1.47": 0
+    }
+  },
+  "f4_table": {
+    "rows": {
+      "historical": {
+        "b": 38,
+        "c": 14,
+        "chi2": 10.02,
+        "p": 0.00153,
+        "rd_printed": 0.113,
+        "p_sig": 3,
+        "recomputed_chi2": 10.173076923076923,
+        "recomputed_p": 0.001195120320007348,
+        "chi2_matches_at_printed_precision": false,
+        "p_matches_at_printed_precision": false,
+        "rd_from_counts": 0.08,
+        "rd_scale_hint": 0.46153846153846156
+      },
+      "production": {
+        "b": 36,
+        "c": 12,
+        "chi2": 9.19,
+        "p": 0.00502,
+        "rd_printed": 0.1,
+        "p_sig": 3,
+        "recomputed_chi2": 11.020833333333334,
+        "recomputed_p": 0.0007172696733945827,
+        "chi2_matches_at_printed_precision": false,
+        "p_matches_at_printed_precision": false,
+        "rd_from_counts": 0.08,
+        "rd_scale_hint": 0.5
+      },
+      "pooled": {
+        "b": 44,
+        "c": 12,
+        "chi2": 17.16,
+        "p": 2.09e-05,
+        "p_sig": 3,
+        "recomputed_chi2": 17.160714285714285,
+        "recomputed_p": 2.0876568218419767e-05,
+        "chi2_matches_at_printed_precision": true,
+        "p_matches_at_printed_precision": true,
+        "rd_from_counts": 0.10666666666666667,
+        "rd_printed": null,
+        "rd_scale_hint": null
+      },
+      "seed42": {
+        "b": 14,
+        "c": 5,
+        "chi2": 3.37,
+        "p": 0.064,
+        "p_decimals": 3,
+        "recomputed_chi2": 3.3684210526315788,
+        "recomputed_p": 0.063568115234375,
+        "chi2_matches_at_printed_precision": true,
+        "p_matches_at_printed_precision": true,
+        "rd_from_counts": 0.03,
+        "rd_printed": null,
+        "rd_scale_hint": null
+      },
+      "seed43": {
+        "b": 16,
+        "c": 3,
+        "chi2": 7.58,
+        "p": 0.0044,
+        "p_decimals": 4,
+        "recomputed_chi2": 7.578947368421052,
+        "recomputed_p": 0.004425048828125,
+        "chi2_matches_at_printed_precision": true,
+        "p_matches_at_printed_precision": true,
+        "rd_from_counts": 0.043333333333333335,
+        "rd_printed": null,
+        "rd_scale_hint": null
+      },
+      "seed44": {
+        "b": 14,
+        "c": 4,
+        "chi2": 4.5,
+        "p": 0.031,
+        "p_decimals": 3,
+        "recomputed_chi2": 4.5,
+        "recomputed_p": 0.0308837890625,
+        "chi2_matches_at_printed_precision": true,
+        "p_matches_at_printed_precision": true,
+        "rd_from_counts": 0.03333333333333333,
+        "rd_printed": null,
+        "rd_scale_hint": null
+      },
+      "finance": {
+        "b": 9,
+        "c": 4,
+        "chi2": 1.23,
+        "p": 0.146,
+        "p_decimals": 3,
+        "recomputed_chi2": 1.2307692307692308,
+        "recomputed_p": 0.266845703125,
+        "chi2_matches_at_printed_precision": true,
+        "p_matches_at_printed_precision": false,
+        "rd_from_counts": 0.016666666666666666,
+        "rd_printed": null,
+        "rd_scale_hint": null
+      },
+      "mimicry": {
+        "b": 21,
+        "c": 18,
+        "chi2": 0.1,
+        "p": 0.42,
+        "p_decimals": 2,
+        "recomputed_chi2": 0.10256410256410256,
+        "recomputed_p": 0.7492586247608415,
+        "chi2_matches_at_printed_precision": true,
+        "p_matches_at_printed_precision": false,
+        "rd_from_counts": 0.01,
+        "rd_printed": null,
+        "rd_scale_hint": null
+      }
+    },
+    "mismatch_count": 4,
+    "primary_pooled_counts": {
+      "b": 44,
+      "c": 12,
+      "n_d": 56
+    },
+    "copied_interval_mismatch_count": 2,
+    "rd_printed_count_mismatch_count": 2
+  },
+  "baselines": {
+    "pilot": {
+      "BFCL": {
+        "n": 20,
+        "acc": 0.82,
+        "p": 0.03,
+        "holds": true
+      },
+      "WebArena": {
+        "n": 20,
+        "acc": 0.76,
+        "p": 0.04,
+        "holds": true
+      },
+      "note": "pilot BFCL+WebArena 20 each deterministic, real 10-seed pending"
+    },
+    "real40": {
+      "n_total": 40,
+      "elapsed": 210.24787712097168,
+      "results": {
+        "BFCL": {
+          "n": 20,
+          "p": 0.0,
+          "holds": [
+            0,
+            0,
+            0
+          ],
+          "acc": 0.0
+        },
+        "WebArena": {
+          "n": 20,
+          "p": 0.0,
+          "holds": [
+            0,
+            0,
+            0
+          ],
+          "acc": 0.0
+        }
+      }
+    },
+    "printed_bfcl": 0.95,
+    "printed_webarena": 1.05,
+    "disagreement_count": 2
+  },
+  "carrier_receipt_gate": {
+    "result": "failed",
+    "command": [
+      "python3",
+      "tools/carrier_receipts.py",
+      "--run",
+      "runs/tmlr-f4-verification"
+    ],
+    "exit_code": 2,
+    "stdout": "tmlr-f4-verification: PASS=30 FAIL=0 NOT_VERIFIABLE=2 (total 32)\n  NOT_VERIFIABLE          5  line attestation failed: position 13 of the cited line prints '-5', not '5' -- two cells of one row exchanged is what this catches\n  NOT_VERIFIABLE          3  line attestation failed: position 12 of the cited line prints '-3', not '3' -- two cells of one row exchanged is what this catches",
+    "stderr": "",
+    "counts": {
+      "pass": 30,
+      "fail": 0,
+      "not_verifiable": 2,
+      "total": 32
+    }
+  },
+  "manifest": {
+    "entries": 32,
+    "counts": {
+      "match": 19,
+      "mismatch": 7,
+      "absent": 5,
+      "no-hash-field": 1
+    }
+  },
+  "native_claim_ledger": {
+    "rows": 1,
+    "stale_value": 0.2502,
+    "carrier_value": 0.2493,
+    "carrier_cells": 270
+  },
+  "review": {
+    "retained_card_score": 1,
+    "retained_card_total": 10,
+    "current_hash_review": false
+  },
+  "checks": {
+    "source_structure": true,
+    "citations_resolve": true,
+    "variants_have_distinct_hashes": true,
+    "canonical_arxiv_author_consistent": false,
+    "pilot_grid_recomputes_summary": true,
+    "declared_18000_trials_archived": false,
+    "frozen_evidence_splits_archived": false,
+    "gpu_hours_have_per_family_carrier": false,
+    "baseline_values_match_carrier": false,
+    "f4_table_statistics_recompute": false,
+    "pooled_counts_match_primary": true,
+    "native_ledger_current": false,
+    "carrier_receipts_all_verifiable": false,
+    "manifest_entries_verify": false,
+    "headline_2700_has_carrier": false,
+    "headline_0686_has_carrier": false,
+    "headline_friedman_has_carrier": false,
+    "reviews_closed": false,
+    "package_created": false
+  },
+  "gate_states": {
+    "source_identity": "passed",
+    "structure": "passed",
+    "citations": "passed",
+    "variant_reconciliation": "passed",
+    "author_metadata": "blocked",
+    "pilot_grid": "passed",
+    "headline_carriers": "blocked",
+    "f4_table": "blocked",
+    "baselines": "blocked",
+    "carrier_receipts": "blocked",
+    "manifest": "blocked",
+    "review": "blocked",
+    "package": "blocked",
+    "external_submission": "locked"
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "The 270-cell pilot grid is recomputable and supports only the pilot summary.",
+    "The 18,000-trial, 192/144/90/40 and 2700-hold headlines lack per-observation carriers.",
+    "Four of eight F4 table rows disagree with their printed counts at the stated precision.",
+    "The canonical and arXiv variants carry different author metadata.",
+    "The receipt gate reports 30 PASS, 0 FAIL and 2 NOT_VERIFIABLE.",
+    "The retained independent review is a rejection and has not been rerun on this hash."
+  ]
+}

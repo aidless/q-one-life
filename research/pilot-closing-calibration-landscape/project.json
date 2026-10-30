@@ -1,0 +1,481 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-closing-the-calibration-landscape-a-mult-99bef231e5",
+  "title": "Closing the Calibration Landscape: A Reproducibility Failure Analysis of Multi-Evaluator Ensembles for Coupling Reduction",
+  "status": "revision",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape",
+  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/main.tex",
+  "manuscript": {
+    "path": "source/main.tex",
+    "sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "042805a89e8828422892245f5517cec8a118680138976758de297aaadbbfcd36",
+      "state": "verified",
+      "origin": "P10 Research Factory overlay",
+      "description": "Canonical and overlay source identity."
+    },
+    {
+      "path": "evidence/variant-reconciliation.json",
+      "sha256": "e4210570d09c484fe9763de25f16a3c388582a5a811b5362a1cb0344da4c9a5d",
+      "state": "verified",
+      "origin": "P10 Research Factory overlay",
+      "description": "Five packet variants, one source mirror, and old archive reconciliation."
+    },
+    {
+      "path": "evidence/run-script-identity.json",
+      "sha256": "846faf4568c8fe9d757e28717d8e8b22c3161df8f726a72cffc781b4583e811d",
+      "state": "verified",
+      "origin": "P10 Research Factory overlay",
+      "description": "Pinned runner hashes and sanitized parser semantics."
+    },
+    {
+      "path": "evidence/parser-provenance.md",
+      "sha256": "6d929e4da5f16910042593b515da756d1d5a6654da3b39b3d80b21f85a8d7cc8",
+      "state": "verified",
+      "origin": "P10 Research Factory overlay",
+      "description": "Sanitized parser fallback and local smoke provenance."
+    },
+    {
+      "path": "evidence/native-audit.json",
+      "sha256": "ba84377bed87c60ed326393664badf140b946568936fde9d965ed4a08a49457d",
+      "state": "verified",
+      "origin": "P10 Research Factory overlay",
+      "description": "Independent numeric, degeneracy, citation, carrier and source audit."
+    },
+    {
+      "path": "evidence/upstream/paper/main.tex",
+      "sha256": "8314b7b1c2e67eb266bd08c281a4f55fd48c7e920477bae9c9794143f02f3c78",
+      "state": "verified",
+      "origin": "Portfolio representative paper/main.tex",
+      "description": "Canonical upstream source retained byte-for-byte."
+    },
+    {
+      "path": "evidence/upstream/paper/CLAIM_LEDGER.md",
+      "sha256": "4d345704fa71330b6cc6899e11c52d655680e765e2f8b22cca297969715078a6",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Native claim ledger retained for semantic comparison."
+    },
+    {
+      "path": "evidence/upstream/paper/REVIEW_CARD.md",
+      "sha256": "9f421b1d5e99ac9985cd0a9fc0a22aa2d36fc883d591bbbf39101c99ba153406",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Upstream Reject review card and data-conflict findings."
+    },
+    {
+      "path": "evidence/upstream/paper/REVIEW_READINESS_20260812.md",
+      "sha256": "ce00eea98ecf71bbbef4c79e54d096ec1ed0a3100d1954f81f61d5395f3b7c37",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Pre-submission soundness blocker diagnosis."
+    },
+    {
+      "path": "evidence/upstream/evidence/cg_tee_results.json",
+      "sha256": "74701ae3da718caabbb984f98c67f8adeb5afa46c5c5aa503fee8ab0df3bb42f",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Recorded simulation aggregate."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/cg_tee_checkpoint.json",
+      "sha256": "3497c1480103d606a27be345b672b47d0f1db7ac31208332ace6565874558f6c",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Fifteen-seed simulation checkpoint."
+    },
+    {
+      "path": "evidence/upstream/evidence/cg_tee_final_results.json",
+      "sha256": "e1153039f313c54b399c1d7cb55738b843c662d4f4489c1c863e576c2f051ff6",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Separate final/calibration family with unresolved provenance."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/cg_tee_real_results.json",
+      "sha256": "4b535e1f4d23b5d0d79efc33f0516e87d35c01c55a5bbf00cd7fa56ef098b69f",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Fifteen-seed real-API result with degenerate CG arms."
+    },
+    {
+      "path": "evidence/upstream/paper/experiments/results/cg_tee_local_smoke.json",
+      "sha256": "7b26f1f3d8e5a7368c6b9baeea6de613c48c5b31dc8d642adb3829983348689c",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Three-seed fixed-parser local smoke run."
+    },
+    {
+      "path": "evidence/upstream/figures/CG_TEE_PER_SEED.json",
+      "sha256": "40a218bc05a0bde63ff1331e33b202a9aef0b2628891c453c3f609cc431e7114",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Per-seed recomputation, CV-definition test and 39.2 attribution search."
+    },
+    {
+      "path": "evidence/upstream/source/evidence/CARRIER_RECEIPTS.json",
+      "sha256": "01b6bd4375a2ee8129ad16164696f81e9579ca64eb6e964f6ec9f5e0d36ef543",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Eleven archived numeric carrier rows."
+    },
+    {
+      "path": "reports/source-revision.json",
+      "sha256": "93f780985cfbed4f5395532f578afc751ab8f832e88f49cd9306823ad92b6a42",
+      "state": "verified",
+      "origin": "P10 Research Factory overlay",
+      "description": "Overlay revision metadata and change list."
+    },
+    {
+      "path": "reports/source-revision.diff",
+      "sha256": "e059be5a8646c901b8b71220df1ebaf45a84d38c5ac901fcdb2ad2893edea345",
+      "state": "verified",
+      "origin": "P10 Research Factory overlay",
+      "description": "Exact canonical-to-overlay diff."
+    },
+    {
+      "path": "reports/package-audit.json",
+      "sha256": "7682de7931a8914caad82c22b9a689a947c830210c0acc83adba6c87dcc61422",
+      "state": "verified",
+      "origin": "P10 Research Factory overlay",
+      "description": "Mechanical seven-file arXiv audit."
+    },
+    {
+      "path": "reports/cleanroom/receipt.json",
+      "sha256": "5e6dca8570bcc47e63e1406bb9233fad786e5ef2f9c82bb1edfe1d870423b403",
+      "state": "verified",
+      "origin": "P10 Research Factory overlay",
+      "description": "Two-run isolated compile receipt."
+    },
+    {
+      "path": "reports/package/package-receipt.json",
+      "sha256": "7b61c5b9f99e734694212ea79c63967af4df04a0e5e4752a022d50db7c398c2e",
+      "state": "verified",
+      "origin": "P10 Research Factory overlay",
+      "description": "Deterministic archive and extraction compile receipt."
+    },
+    {
+      "path": "reports/package/closing-landscape-arxiv-candidate.tar.gz",
+      "sha256": "e733492836fc96e95e08938cb8c5cc349ba88883a9aea206a3a5e396c8fbe525",
+      "state": "verified",
+      "origin": "P10 Research Factory overlay",
+      "description": "Internal candidate archive; not upload-authorized."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Simulation configuration",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/upstream/evidence/cg_tee_results.json"]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Simulation gamma means",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C03",
+      "location": "Recorded CV values",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C04",
+      "location": "CV reproduction gaps",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C05",
+      "location": "TEE noise reduction",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C06",
+      "location": "Real-API degeneracy",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C07",
+      "location": "Silent parser fallback",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/run-script-identity.json"]
+    },
+    {
+      "claim_id": "C08",
+      "location": "N=15 model identity",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C09",
+      "location": "Separate final-results means",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C10",
+      "location": "39.2 percent attribution",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C11",
+      "location": "Local parser-fixed smoke",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/paper/experiments/results/cg_tee_local_smoke.json"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "location": "Citation mechanical resolution",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C13",
+      "location": "Carrier transcription",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/native-audit.json"]
+    },
+    {
+      "claim_id": "C14",
+      "location": "Clean-room compilation",
+      "state": "verified",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/cleanroom/receipt.json"]
+    },
+    {
+      "claim_id": "C15",
+      "location": "Upload readiness",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "reports/package/package-receipt.json"]
+    },
+    {
+      "claim_id": "C16",
+      "location": "Independent review closure",
+      "state": "blocked",
+      "evidence_refs": ["CLAIM_LEDGER.md", "evidence/upstream/paper/REVIEW_CARD.md"]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "p10-simulation-recompute",
+      "state": "reproduced",
+      "receipt": "evidence/native-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p10-real-api-run",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p10-fixed-local-smoke",
+      "state": "completed",
+      "receipt": "evidence/upstream/paper/experiments/results/cg_tee_local_smoke.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p10-valid-n15-rerun",
+      "state": "planned",
+      "receipt": null,
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "p10-data-provenance-review",
+      "kind": "method",
+      "state": "open",
+      "critical": 2,
+      "major": 2,
+      "receipt": "evidence/upstream/paper/REVIEW_CARD.md"
+    },
+    {
+      "review_id": "p10-statistics-review",
+      "kind": "statistics",
+      "state": "open",
+      "critical": 0,
+      "major": 2,
+      "receipt": "evidence/upstream/paper/REVIEW_CARD.md"
+    }
+  ],
+  "package": {
+    "state": "compiled",
+    "files": [
+      {
+        "path": "reports/package/closing-landscape-arxiv-candidate.tar.gz",
+        "sha256": "e733492836fc96e95e08938cb8c5cc349ba88883a9aea206a3a5e396c8fbe525"
+      },
+      {
+        "path": "reports/package/package-receipt.json",
+        "sha256": "7b61c5b9f99e734694212ea79c63967af4df04a0e5e4752a022d50db7c398c2e"
+      }
+    ],
+    "blockers": [
+      "Simulation CV values are not reproducible",
+      "Real-API CG and CG+TEE are degenerate",
+      "N=15 model identity and parser success are absent",
+      "The 39.2 percent scalar is misattributed if treated as CG/TEE",
+      "Independent method review remains open",
+      "Independent statistics review remains open",
+      "Final metadata, license confirmation and upload authorization remain user decisions"
+    ]
+  },
+  "measurements": [
+    {
+      "name": "simulation_gamma_standard",
+      "value": 0.142988,
+      "unit": "gamma",
+      "definition": "Mean gamma_TV over 15 simulation seeds.",
+      "source": "evidence/native-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "simulation_gamma_cg",
+      "value": 0.718778,
+      "unit": "gamma",
+      "definition": "Mean gamma_TV for the CG-alone simulation arm.",
+      "source": "evidence/native-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "simulation_gamma_cg_tee",
+      "value": 0.574018,
+      "unit": "gamma",
+      "definition": "Mean gamma_TV for the CG+TEE simulation arm.",
+      "source": "evidence/native-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "separate_final_calibration_reduction",
+      "value": 39.249,
+      "unit": "percent",
+      "definition": "Uncalibrated-to-calibrated gamma_TV reduction in the separate final-results artifact.",
+      "source": "evidence/native-audit.json",
+      "state": "observed"
+    }
+  ],
+  "gate_receipts": [
+    {
+      "gate_id": "p10-source-identity",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "042805a89e8828422892245f5517cec8a118680138976758de297aaadbbfcd36",
+      "source_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "summary": "Canonical and overlay identities are pinned."
+    },
+    {
+      "gate_id": "p10-variant-reconciliation",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "e4210570d09c484fe9763de25f16a3c388582a5a811b5362a1cb0344da4c9a5d",
+      "source_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "summary": "Five packet variants and one mirror reconcile as six distinct hashes."
+    },
+    {
+      "gate_id": "p10-simulation-gamma",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "ba84377bed87c60ed326393664badf140b946568936fde9d965ed4a08a49457d",
+      "source_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "summary": "All simulation gamma means reproduce from 15 per-seed records."
+    },
+    {
+      "gate_id": "p10-simulation-cv",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "ba84377bed87c60ed326393664badf140b946568936fde9d965ed4a08a49457d",
+      "source_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "summary": "Recorded CV values do not reproduce under four tested definitions."
+    },
+    {
+      "gate_id": "p10-real-api",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "ba84377bed87c60ed326393664badf140b946568936fde9d965ed4a08a49457d",
+      "source_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "summary": "Both real-API confidence-gated arms are degenerate on 15/15 seeds."
+    },
+    {
+      "gate_id": "p10-model-identity",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/run-script-identity.json",
+      "receipt_sha256": "846faf4568c8fe9d757e28717d8e8b22c3161df8f726a72cffc781b4583e811d",
+      "source_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "summary": "No N=15 result file records model identity or parser success."
+    },
+    {
+      "gate_id": "p10-citations",
+      "scope": "citations",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "ba84377bed87c60ed326393664badf140b946568936fde9d965ed4a08a49457d",
+      "source_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "summary": "Twenty-six citation keys resolve mechanically."
+    },
+    {
+      "gate_id": "p10-carrier-transcription",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/native-audit.json",
+      "receipt_sha256": "ba84377bed87c60ed326393664badf140b946568936fde9d965ed4a08a49457d",
+      "source_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "summary": "All 11 archived carrier rows resolve."
+    },
+    {
+      "gate_id": "p10-cleanroom-compile",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/cleanroom/receipt.json",
+      "receipt_sha256": "5e6dca8570bcc47e63e1406bb9233fad786e5ef2f9c82bb1edfe1d870423b403",
+      "source_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "summary": "Two isolated compiles produce identical 10-page PDFs."
+    },
+    {
+      "gate_id": "p10-candidate-archive",
+      "scope": "package",
+      "state": "candidate",
+      "receipt": "reports/package/package-receipt.json",
+      "receipt_sha256": "7b61c5b9f99e734694212ea79c63967af4df04a0e5e4752a022d50db7c398c2e",
+      "source_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "summary": "Deterministic internal package exists and is not upload-authorized."
+    },
+    {
+      "gate_id": "p10-independent-review",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/upstream/paper/REVIEW_CARD.md",
+      "receipt_sha256": "9f421b1d5e99ac9985cd0a9fc0a22aa2d36fc883d591bbbf39101c99ba153406",
+      "source_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "summary": "Upstream review remains Reject; no current-hash review is closed."
+    }
+  ],
+  "notes": [
+    "agent-proposed, not human publication approval",
+    "The overlay turns the paper into a bounded reproducibility failure analysis.",
+    "The 39.2 percent scalar is preserved but not attributed to CG+TEE.",
+    "The candidate archive is internal and not upload-authorized.",
+    "No upload, account action, or publication action was performed."
+  ]
+}

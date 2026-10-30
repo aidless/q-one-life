@@ -1,0 +1,166 @@
+{
+  "schema": "q-one-paper6-evidence-audit-v1",
+  "generated_at": "2026-10-27T17:01:29.525673Z",
+  "source": {
+    "canonical_main_sha256": "42fe9b13f6a17af326f346aaa1afb7228fa1e8f4478126fadbce0fc7cea80cc3",
+    "overlay_main_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+    "canonical_bytes": 57721,
+    "overlay_bytes": 47351
+  },
+  "counts": {
+    "scenarios": 4,
+    "methods": 7,
+    "seeds": 5,
+    "rounds": 1000,
+    "capture_slots": 2,
+    "pilot_cells": 9,
+    "pilot_trials_per_cell": [
+      4000
+    ],
+    "local_seeds": 3,
+    "local_methods": 7,
+    "manifest_entries": 42,
+    "manifest_missing": 11
+  },
+  "observed": {
+    "winners": {
+      "S1: high-honest, weak-attack": {
+        "best_method": "trust_median",
+        "best_value": 0.8886,
+        "majority_value": 0.8886,
+        "majority_gap_to_best": 0.0
+      },
+      "S2: med-honest, weak-attack": {
+        "best_method": "trust_median",
+        "best_value": 0.5528,
+        "majority_value": 0.5528,
+        "majority_gap_to_best": 0.0
+      },
+      "S3: med-honest, strong-attack": {
+        "best_method": "trust_median",
+        "best_value": 0.4592,
+        "majority_value": 0.4592,
+        "majority_gap_to_best": 0.0
+      },
+      "S4: high-honest, strong-attack": {
+        "best_method": "trust_mean",
+        "best_value": 0.8506,
+        "majority_value": 0.843,
+        "majority_gap_to_best": -0.007600000000000051
+      }
+    },
+    "aggregate_means": {
+      "majority": 0.6859,
+      "bft_pbft": 0.6192,
+      "weighted_uniform": 0.5954,
+      "trust_mean": 0.6716,
+      "trust_median": 0.6863,
+      "kalman_trust": 0.6765,
+      "ATV": 0.6733
+    },
+    "recomputed_means": {
+      "majority": {
+        "S1: high-honest, weak-attack": 0.8886000000000001,
+        "S2: med-honest, weak-attack": 0.5528000000000001,
+        "S3: med-honest, strong-attack": 0.45920000000000005,
+        "S4: high-honest, strong-attack": 0.843
+      },
+      "bft_pbft": {
+        "S1: high-honest, weak-attack": 0.7767999999999999,
+        "S2: med-honest, weak-attack": 0.5216000000000001,
+        "S3: med-honest, strong-attack": 0.45840000000000003,
+        "S4: high-honest, strong-attack": 0.72
+      },
+      "weighted_uniform": {
+        "S1: high-honest, weak-attack": 0.804,
+        "S2: med-honest, weak-attack": 0.4835999999999999,
+        "S3: med-honest, strong-attack": 0.36460000000000004,
+        "S4: high-honest, strong-attack": 0.7292
+      },
+      "trust_mean": {
+        "S1: high-honest, weak-attack": 0.8827999999999999,
+        "S2: med-honest, weak-attack": 0.5214000000000001,
+        "S3: med-honest, strong-attack": 0.4316,
+        "S4: high-honest, strong-attack": 0.8506
+      },
+      "trust_median": {
+        "S1: high-honest, weak-attack": 0.8886000000000001,
+        "S2: med-honest, weak-attack": 0.5528000000000001,
+        "S3: med-honest, strong-attack": 0.45920000000000005,
+        "S4: high-honest, strong-attack": 0.8443999999999999
+      },
+      "kalman_trust": {
+        "S1: high-honest, weak-attack": 0.8824,
+        "S2: med-honest, weak-attack": 0.5354000000000001,
+        "S3: med-honest, strong-attack": 0.44620000000000004,
+        "S4: high-honest, strong-attack": 0.842
+      },
+      "ATV": {
+        "S1: high-honest, weak-attack": 0.8826,
+        "S2: med-honest, weak-attack": 0.5268,
+        "S3: med-honest, strong-attack": 0.43820000000000003,
+        "S4: high-honest, strong-attack": 0.8455999999999999
+      }
+    },
+    "local_recomputed_means": {
+      "majority": 0.9166666666666666,
+      "bft_pbft": 0.9166666666666666,
+      "weighted_uniform": 0.9166666666666666,
+      "trust_mean": 0.9166666666666666,
+      "trust_median": 0.9166666666666666,
+      "kalman_trust": 0.9166666666666666,
+      "ATV": 0.9166666666666666
+    },
+    "missing_citations": [],
+    "manifest_missing": [
+      "benchmark_persist.py",
+      "demo.py",
+      "demo2.py",
+      "demo3.py",
+      "demo4.py",
+      "main.tex.LLM_FABRICATED_DO_NOT_SUBMIT",
+      "ollama_client.py",
+      "per_attack.py",
+      "persist_tables.py",
+      "real_llm_runner.py",
+      "run_pilot.py"
+    ]
+  },
+  "checks": {
+    "scenario_count_4": true,
+    "method_count_7": true,
+    "seed_count_5": true,
+    "rounds_1000": true,
+    "per_seed_recomputes_aggregate": true,
+    "local_pilot_recomputes": true,
+    "citations_resolve": true,
+    "template_contamination_removed": true,
+    "duplicate_reproducibility_removed": true,
+    "majority_best_or_tied_s1_s3": true,
+    "majority_best_all_scenarios": false,
+    "heldout_trace_present": false,
+    "hyperparameter_sweeps_present": false,
+    "manifest_complete": false
+  },
+  "gate_states": {
+    "source_identity": "passed",
+    "synthetic_benchmark": "passed",
+    "local_pilot": "passed",
+    "citations": "passed",
+    "template_hygiene": "passed",
+    "held_out_real_trace": "blocked",
+    "hyperparameter_sweeps": "blocked",
+    "scientific_review": "blocked",
+    "metadata_and_license": "blocked",
+    "external_submission": "locked"
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "The synthetic aggregate table is recomputed from the frozen per-seed records.",
+    "The local pilot is descriptive and does not establish external generalization.",
+    "The majority is not best in S4; trust-mean is 0.0076 higher in that synthetic cell.",
+    "No hyperparameter tau/alpha sweep files are present.",
+    "The upstream evidence manifest is incomplete and includes absent files."
+  ]
+}

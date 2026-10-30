@@ -1,0 +1,26 @@
+experiment: e001_seeded_from_claims
+paper: PAPER6_CONSOLIDATED
+description: 从 claims.yaml 反向生成的复现协议（4 条预测）
+predictions:
+- claim_id: C01
+  expected: 1000.0
+  evidence: evidence/main_results/benchmark_table.json
+  path: config.T / config.N / config.n_seeds
+  tol: 0
+- claim_id: C02
+  expected: null
+  evidence: evidence/main_results/benchmark_table.json
+  path: aggregate
+- claim_id: C05
+  expected: 20.0
+  evidence: evidence/real_llm_results/summary.json
+  path: config.n_questions / config.n_seeds
+  tol: 0
+- claim_id: C06
+  expected: 0.9167
+  evidence: evidence/real_llm_results/summary.json
+  path: per_method.majority.mean
+  tol: 0
+output: experiments/e001_seeded_from_claims_results.json
+created: '2026-09-01'
+_note: 反向生成的协议草稿：expected 来自 claims.yaml 的 value，用于复现核验而非预测先行。执行前请人工 review。

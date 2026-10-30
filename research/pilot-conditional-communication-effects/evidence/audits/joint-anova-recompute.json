@@ -1,0 +1,237 @@
+{
+  "verdict": "NOT_REPRODUCIBLE",
+  "carrier": "runs/tmlr-paper13-merged/paper/evidence/joint_full_F_v10_results.json",
+  "anova_block_path": "summary.anova_ECE",
+  "n_per_cell_from_stored_block": 15,
+  "actual_cell_sizes": {
+    "0.0|10": 25,
+    "0.0|20": 25,
+    "0.5|10": 20,
+    "0.5|20": 15,
+    "1.0|10": 15,
+    "1.0|20": 15
+  },
+  "carrier_is_unbalanced": true,
+  "documented_subset": "first n_per_cell per cell, ascending (cell_idx, seed)",
+  "closure_residual": 4.440892098500626e-16,
+  "Q1_internal_consistency": {
+    "question": "Q1_internal_consistency",
+    "verdict": "SELF_CONSISTENT",
+    "checks": [
+      {
+        "quantity": "SS_alpha_vs_MS_df",
+        "stored": 0.563,
+        "recomputed": 0.56296,
+        "rel_err": 7.104795737109944e-05,
+        "matches": true
+      },
+      {
+        "quantity": "F_alpha_vs_MS_ratio",
+        "stored": 8.16,
+        "recomputed": 8.16120614670919,
+        "rel_err": 0.00014781209671450884,
+        "matches": true
+      },
+      {
+        "quantity": "p_alpha_vs_F_dist",
+        "stored": 0.0006,
+        "recomputed": 0.0005773697525390517,
+        "abs_err": 2.2630247460948263e-05,
+        "tol_abs": 5e-05,
+        "matches": true
+      },
+      {
+        "quantity": "SS_T_vs_MS_df",
+        "stored": 0.2706,
+        "recomputed": 0.27061,
+        "rel_err": 3.695491500373245e-05,
+        "matches": true
+      },
+      {
+        "quantity": "F_T_vs_MS_ratio",
+        "stored": 7.845,
+        "recomputed": 7.846042331110468,
+        "rel_err": 0.00013286566099017465,
+        "matches": true
+      },
+      {
+        "quantity": "p_T_vs_F_dist",
+        "stored": 0.0063,
+        "recomputed": 0.006323197490340379,
+        "abs_err": 2.3197490340379386e-05,
+        "tol_abs": 5e-05,
+        "matches": true
+      },
+      {
+        "quantity": "SS_interaction_vs_MS_df",
+        "stored": 1.0604,
+        "recomputed": 1.06036,
+        "rel_err": 3.772161448513769e-05,
+        "matches": true
+      },
+      {
+        "quantity": "F_interaction_vs_MS_ratio",
+        "stored": 15.37,
+        "recomputed": 15.371991881704842,
+        "rel_err": 0.00012959542646992639,
+        "matches": true
+      },
+      {
+        "quantity": "p_interaction_vs_F_dist",
+        "stored": 0.0,
+        "recomputed": 2.049776461608741e-06,
+        "abs_err": 2.049776461608741e-06,
+        "tol_abs": 0.5,
+        "matches": true
+      }
+    ]
+  },
+  "Q2_from_raw_sessions": {
+    "verdict": "NOT_REPRODUCIBLE",
+    "recomputed": {
+      "N": 90,
+      "cells": 6,
+      "SS_A": 0.37638888888888883,
+      "SS_T": 0.08402777777777778,
+      "SS_AB": 0.12638888888888888,
+      "SS_w": 2.3916666666666666,
+      "MS_w": 0.02847222222222222,
+      "df_w": 84,
+      "F_A": 6.609756097560974,
+      "p_A": 0.0021581699118363587,
+      "F_T": 2.9512195121951224,
+      "p_T": 0.08949712601400873,
+      "F_AB": 2.219512195121951,
+      "p_AB": 0.11499644292073037,
+      "closure_residual": 4.440892098500626e-16,
+      "cell_means": {
+        "0.0|10": 0.5,
+        "0.0|20": 0.5,
+        "0.5|10": 0.5,
+        "0.5|20": 0.6666666666666666,
+        "1.0|10": 0.65,
+        "1.0|20": 0.6666666666666666
+      },
+      "alpha_marginals": {
+        "0.0": 0.5,
+        "0.5": 0.5833333333333333,
+        "1.0": 0.6583333333333333
+      },
+      "T_marginals": {
+        "10": 0.5499999999999999,
+        "20": 0.611111111111111
+      }
+    },
+    "checks": [
+      {
+        "quantity": "SS_within",
+        "stored": 2.8975,
+        "recomputed": 2.3916666666666666,
+        "rel_err": 0.1745757837215991,
+        "matches": false
+      },
+      {
+        "quantity": "F_alpha",
+        "stored": 8.16,
+        "recomputed": 6.609756097560974,
+        "rel_err": 0.18998087039693942,
+        "matches": false
+      },
+      {
+        "quantity": "F_T",
+        "stored": 7.845,
+        "recomputed": 2.9512195121951224,
+        "rel_err": 0.6238088575914439,
+        "matches": false
+      },
+      {
+        "quantity": "F_interaction",
+        "stored": 15.37,
+        "recomputed": 2.219512195121951,
+        "rel_err": 0.8555945221130806,
+        "matches": false
+      }
+    ],
+    "tolerance_rel": 0.005
+  },
+  "Q3_exact_reachability": {
+    "target_SS_w": 2.8975,
+    "target_precision_decimals": 4,
+    "forced_cells": [
+      "0.5|20",
+      "1.0|10",
+      "1.0|20"
+    ],
+    "forced_SS_w": 2.3916666666666666,
+    "optional_cells": [
+      "0.0|10",
+      "0.0|20",
+      "0.5|10"
+    ],
+    "required_from_optional_cells": 0.5058333333333334,
+    "n_reachable_sums": 124,
+    "verdict": "UNREACHABLE",
+    "nearest_reachable": 2.9,
+    "nearest_distance": 0.0025,
+    "method": "exact rational enumeration over per-cell value-count vectors, matched at 4 decimals (the carrier's stored precision)"
+  },
+  "ordering_sensitivity": [
+    {
+      "ordering": "documented_cell_idx_then_seed",
+      "SS_w": 2.3916666666666666,
+      "MS_w": 0.02847222222222222,
+      "F_A": 6.609756097560974,
+      "p_A": 0.0021581699118363587,
+      "F_T": 2.9512195121951224,
+      "p_T": 0.08949712601400873,
+      "F_AB": 2.219512195121951,
+      "p_AB": 0.11499644292073037
+    },
+    {
+      "ordering": "seed_ascending",
+      "SS_w": 4.566666666666666,
+      "MS_w": 0.05436507936507936,
+      "F_A": 0.2682481751824814,
+      "p_A": 0.7653705576778655,
+      "F_T": 0.0,
+      "p_T": 1.0,
+      "F_AB": 0.03832116788321141,
+      "p_AB": 0.9624206129966753
+    },
+    {
+      "ordering": "seed_descending",
+      "SS_w": 3.7,
+      "MS_w": 0.04404761904761905,
+      "F_A": 1.8445945945945932,
+      "p_A": 0.16443555505903426,
+      "F_T": 0.252252252252253,
+      "p_T": 0.6168077310384983,
+      "F_AB": 0.2995495495495491,
+      "p_AB": 0.7419403809666536
+    },
+    {
+      "ordering": "task_id_then_seed",
+      "SS_w": 4.783333333333333,
+      "MS_w": 0.05694444444444444,
+      "F_A": 0.012195121951219428,
+      "p_A": 0.9878806858803135,
+      "F_T": 0.0,
+      "p_T": 1.0,
+      "F_AB": 0.03658536585365828,
+      "p_AB": 0.96409114439996
+    },
+    {
+      "ordering": "archive_list_order",
+      "SS_w": 2.3916666666666666,
+      "MS_w": 0.02847222222222222,
+      "F_A": 6.609756097560974,
+      "p_A": 0.0021581699118363587,
+      "F_T": 2.9512195121951224,
+      "p_T": 0.08949712601400873,
+      "F_AB": 2.219512195121951,
+      "p_AB": 0.11499644292073037
+    }
+  ],
+  "interpretation": "Q1 says the stored block agrees with itself; Q2/Q3 say whether the raw sessions can produce it. UNREACHABLE in Q3 means no subset of the delivered rows can yield the stored SS_within at all.",
+  "tolerance_rel": 0.005
+}

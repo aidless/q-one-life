@@ -1,0 +1,268 @@
+{
+  "schema": "q-one-closing-landscape-audit-v1",
+  "generated_at": "2026-10-28T06:43:15.755186Z",
+  "marker": "agent-proposed, not human publication approval",
+  "source": {
+    "canonical_sha256": "8314b7b1c2e67eb266bd08c281a4f55fd48c7e920477bae9c9794143f02f3c78",
+    "overlay_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+    "canonical_bytes": 24036,
+    "overlay_bytes": 22515
+  },
+  "simulation": {
+    "standard": {
+      "n": 15,
+      "recomputed_mean": 0.1429878956260213,
+      "recorded_mean": 0.1429878956260213,
+      "mean_abs_difference": 0.0,
+      "recorded_cv": 0.19180676050901868,
+      "cv_candidates": {
+        "sample_cv_gamma": 0.22923245433638045,
+        "population_cv_gamma": 0.22145959054947703,
+        "sample_cv_entropy": 0.0018573151005380339,
+        "sample_sd_gamma": 0.03277746625474706
+      },
+      "nearest_cv_candidate": "population_cv_gamma",
+      "nearest_cv_gap": 0.02965283004045835
+    },
+    "cg_alone": {
+      "n": 15,
+      "recomputed_mean": 0.7187781641976239,
+      "recorded_mean": 0.7187781641976237,
+      "mean_abs_difference": 1.1102230246251565e-16,
+      "recorded_cv": 0.1341812396040852,
+      "cv_candidates": {
+        "sample_cv_gamma": 0.1639314324088435,
+        "population_cv_gamma": 0.1583728098386027,
+        "sample_cv_entropy": 0.03904587916394787,
+        "sample_sd_gamma": 0.11783033404111538
+      },
+      "nearest_cv_candidate": "sample_sd_gamma",
+      "nearest_cv_gap": 0.016350905562969822
+    },
+    "cg_tee": {
+      "n": 15,
+      "recomputed_mean": 0.5740180982911599,
+      "recorded_mean": 0.5740180982911599,
+      "mean_abs_difference": 0.0,
+      "recorded_cv": 0.1742851260509935,
+      "cv_candidates": {
+        "sample_cv_gamma": 0.21037558745847607,
+        "population_cv_gamma": 0.20324212640411352,
+        "sample_cv_entropy": 0.0327916895687866,
+        "sample_sd_gamma": 0.12075939463980002
+      },
+      "nearest_cv_candidate": "population_cv_gamma",
+      "nearest_cv_gap": 0.028957000353120016
+    }
+  },
+  "final_results": {
+    "means": {
+      "uncalibrated": 0.9909266666666666,
+      "calibrated": 0.602,
+      "cg_tee": 0.6438733333333333
+    },
+    "uncalibrated_to_calibrated_reduction_pct": 39.248783966522915,
+    "cg_tee_minus_calibrated": 0.04187333333333332
+  },
+  "real_api": {
+    "completed_seeds": 15,
+    "arms": {
+      "standard": {
+        "n": 15,
+        "gamma_tv_zero": 0,
+        "gamma_vt_zero": 0,
+        "entropy_t_one": 0,
+        "entropy_v_one": 0
+      },
+      "cg_alone": {
+        "n": 15,
+        "gamma_tv_zero": 15,
+        "gamma_vt_zero": 15,
+        "entropy_t_one": 15,
+        "entropy_v_one": 15
+      },
+      "cg_tee": {
+        "n": 15,
+        "gamma_tv_zero": 15,
+        "gamma_vt_zero": 15,
+        "entropy_t_one": 15,
+        "entropy_v_one": 15
+      }
+    },
+    "model_identity_present": false
+  },
+  "model_named_result_files": [],
+  "local_smoke": {
+    "n_seeds": 3,
+    "rounds": 10,
+    "parse_failures": {
+      "confidence_parse_fail_rate": 0.0,
+      "binary_parse_fail_rate": 0.0083,
+      "confidence_calls": 480,
+      "binary_calls": 120
+    },
+    "degenerate_check": {
+      "cg_alone_all_zero_gamma": false,
+      "cg_tee_all_zero_gamma": false,
+      "cg_alone_all_uniform_H": false
+    }
+  },
+  "carrier_audit": {
+    "receipts": 11,
+    "passed": 11,
+    "failed": 0,
+    "rows": [
+      {
+        "locator": "config.n_seeds",
+        "artifact": "source/evidence/cg_tee_results.json",
+        "artifact_sha256": "74701ae3da718caabbb984f98c67f8adeb5afa46c5c5aa503fee8ab0df3bb42f",
+        "expected": 15.0,
+        "resolved": 15,
+        "value_match": true,
+        "line_match": true,
+        "line_preview": "Six prior studies have mapped a possible calibration landscape in multi-agent LLM systems. This paper tests whether multi-evaluator ensembles (TEE) can be combined with confidence-gated TTRL (CG). The archived simulation aggregate (15 seeds) reports standard, CG, and CG+TEE $\\gamma_{T\\to V}$ means of 0.143, 0.719, and 0.574, with corresponding CV values 0.192, 0.134, and 0.174. However, the separately archived real-API run records $\\gamma=0$ and entropy $H=1$ for both CG conditions, consistent with confidence-parser fallback rather than a validated mitigation. Because the result artifacts are internally inconsistent, we do not claim a 39.2\\% reduction or a populated favorable regime. Instead, this paper is a reproducibility and failure-analysis report: it separates evaluator reliability from evaluator bias and specifies the provenance and parser checks required for a valid rerun. We release the code and all conflicting artifacts."
+      },
+      {
+        "locator": "aggregate.standard.gamma_mean",
+        "artifact": "source/evidence/cg_tee_results.json",
+        "artifact_sha256": "74701ae3da718caabbb984f98c67f8adeb5afa46c5c5aa503fee8ab0df3bb42f",
+        "expected": 0.143,
+        "resolved": 0.1429878956260213,
+        "value_match": true,
+        "line_match": true,
+        "line_preview": "Standard TTRL   & 0.143 & --- & 0.192 & archived simulation aggregate \\\\"
+      },
+      {
+        "locator": "aggregate.cg_alone.gamma_mean",
+        "artifact": "source/evidence/cg_tee_results.json",
+        "artifact_sha256": "74701ae3da718caabbb984f98c67f8adeb5afa46c5c5aa503fee8ab0df3bb42f",
+        "expected": 0.719,
+        "resolved": 0.7187781641976237,
+        "value_match": true,
+        "line_match": true,
+        "line_preview": "CG alone        & 0.719 & --- & 0.134 & archived simulation aggregate \\\\"
+      },
+      {
+        "locator": "aggregate.cg_tee.gamma_mean",
+        "artifact": "source/evidence/cg_tee_results.json",
+        "artifact_sha256": "74701ae3da718caabbb984f98c67f8adeb5afa46c5c5aa503fee8ab0df3bb42f",
+        "expected": 0.574,
+        "resolved": 0.5740180982911599,
+        "value_match": true,
+        "line_match": true,
+        "line_preview": "CG + TEE        & 0.574 & --- & 0.174 & archived simulation aggregate \\\\"
+      },
+      {
+        "locator": "aggregate.standard.cv",
+        "artifact": "source/evidence/cg_tee_results.json",
+        "artifact_sha256": "74701ae3da718caabbb984f98c67f8adeb5afa46c5c5aa503fee8ab0df3bb42f",
+        "expected": 0.192,
+        "resolved": 0.19180676050901868,
+        "value_match": true,
+        "line_match": true,
+        "line_preview": "Standard TTRL   & 0.143 & --- & 0.192 & archived simulation aggregate \\\\"
+      },
+      {
+        "locator": "aggregate.cg_alone.cv",
+        "artifact": "source/evidence/cg_tee_results.json",
+        "artifact_sha256": "74701ae3da718caabbb984f98c67f8adeb5afa46c5c5aa503fee8ab0df3bb42f",
+        "expected": 0.134,
+        "resolved": 0.1341812396040852,
+        "value_match": true,
+        "line_match": true,
+        "line_preview": "CG alone        & 0.719 & --- & 0.134 & archived simulation aggregate \\\\"
+      },
+      {
+        "locator": "aggregate.cg_tee.cv",
+        "artifact": "source/evidence/cg_tee_results.json",
+        "artifact_sha256": "74701ae3da718caabbb984f98c67f8adeb5afa46c5c5aa503fee8ab0df3bb42f",
+        "expected": 0.174,
+        "resolved": 0.1742851260509935,
+        "value_match": true,
+        "line_match": true,
+        "line_preview": "CG + TEE        & 0.574 & --- & 0.174 & archived simulation aggregate \\\\"
+      },
+      {
+        "locator": "results.0.cg_tee.gamma_TV",
+        "artifact": "source/evidence/cg_tee_real_results.json",
+        "artifact_sha256": "4b535e1f4d23b5d0d79efc33f0516e87d35c01c55a5bbf00cd7fa56ef098b69f",
+        "expected": 0.0,
+        "resolved": 0.0,
+        "value_match": true,
+        "line_match": true,
+        "line_preview": "Real API CG/TEE & 0.000 & 1.000 & --- & parser-fallback diagnostic \\\\"
+      },
+      {
+        "locator": "results.14.cg_tee.gamma_TV",
+        "artifact": "source/evidence/cg_tee_real_results.json",
+        "artifact_sha256": "4b535e1f4d23b5d0d79efc33f0516e87d35c01c55a5bbf00cd7fa56ef098b69f",
+        "expected": 0.0,
+        "resolved": 0.0,
+        "value_match": true,
+        "line_match": true,
+        "line_preview": "Real API CG/TEE & 0.000 & 1.000 & --- & parser-fallback diagnostic \\\\"
+      },
+      {
+        "locator": "results.0.cg_tee.H_T",
+        "artifact": "source/evidence/cg_tee_real_results.json",
+        "artifact_sha256": "4b535e1f4d23b5d0d79efc33f0516e87d35c01c55a5bbf00cd7fa56ef098b69f",
+        "expected": 1.0,
+        "resolved": 1.0,
+        "value_match": true,
+        "line_match": true,
+        "line_preview": "Six prior studies have mapped a possible calibration landscape in multi-agent LLM systems. This paper tests whether multi-evaluator ensembles (TEE) can be combined with confidence-gated TTRL (CG). The archived simulation aggregate (15 seeds) reports standard, CG, and CG+TEE $\\gamma_{T\\to V}$ means of 0.143, 0.719, and 0.574, with corresponding CV values 0.192, 0.134, and 0.174. However, the separately archived real-API run records $\\gamma=0$ and entropy $H=1$ for both CG conditions, consistent with confidence-parser fallback rather than a validated mitigation. Because the result artifacts are internally inconsistent, we do not claim a 39.2\\% reduction or a populated favorable regime. Instead, this paper is a reproducibility and failure-analysis report: it separates evaluator reliability from evaluator bias and specifies the provenance and parser checks required for a valid rerun. We release the code and all conflicting artifacts."
+      },
+      {
+        "locator": "thirty_nine_search.within_half_point_of_39[1].reduction_pct",
+        "artifact": "figures/CG_TEE_PER_SEED.json",
+        "artifact_sha256": "40a218bc05a0bde63ff1331e33b202a9aef0b2628891c453c3f609cc431e7114",
+        "expected": 39.2,
+        "resolved": 39.249,
+        "value_match": true,
+        "line_match": true,
+        "line_preview": "Six prior studies have mapped a possible calibration landscape in multi-agent LLM systems. This paper tests whether multi-evaluator ensembles (TEE) can be combined with confidence-gated TTRL (CG). The archived simulation aggregate (15 seeds) reports standard, CG, and CG+TEE $\\gamma_{T\\to V}$ means of 0.143, 0.719, and 0.574, with corresponding CV values 0.192, 0.134, and 0.174. However, the separately archived real-API run records $\\gamma=0$ and entropy $H=1$ for both CG conditions, consistent with confidence-parser fallback rather than a validated mitigation. Because the result artifacts are internally inconsistent, we do not claim a 39.2\\% reduction or a populated favorable regime. Instead, this paper is a reproducibility and failure-analysis report: it separates evaluator reliability from evaluator bias and specifies the provenance and parser checks required for a valid rerun. We release the code and all conflicting artifacts."
+      }
+    ]
+  },
+  "citations": {
+    "bibitems": 26,
+    "unique_bibitems": 26,
+    "citation_keys": 26,
+    "missing": [],
+    "uncited": []
+  },
+  "checks": {
+    "simulation_gamma_means_recompute": true,
+    "simulation_cv_recompute": false,
+    "real_confidence_arms_degenerate": true,
+    "real_standard_matches_final": true,
+    "carrier_receipts_pass": true,
+    "n15_model_identity_present": false,
+    "citations_resolve": true,
+    "source_has_no_content_after_end_document": true,
+    "design_sentence_not_duplicated": true,
+    "local_smoke_parser_clean": true
+  },
+  "gate_states": {
+    "source_identity": "passed",
+    "variant_reconciliation": "passed",
+    "simulation_gamma": "passed",
+    "simulation_cv": "blocked",
+    "real_api": "blocked",
+    "model_identity": "blocked",
+    "carrier_transcription": "passed",
+    "citations": "passed",
+    "scientific_review": "blocked",
+    "metadata_and_license": "blocked",
+    "external_submission": "locked"
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "Gamma means are recomputable from the simulation checkpoint.",
+    "CV values are not recomputable from any tested per-seed definition.",
+    "The real-API confidence-gated arms are degenerate on all 15 seeds.",
+    "The 39.249 percent scalar is an uncalibrated-versus-calibrated contrast, not a CG+TEE result.",
+    "Carrier transcription is not scientific support."
+  ]
+}

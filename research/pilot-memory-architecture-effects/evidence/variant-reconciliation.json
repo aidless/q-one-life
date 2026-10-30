@@ -1,0 +1,74 @@
+{
+  "schema": "q-one-memory-architecture-variant-reconciliation-v1",
+  "generated_at": "2026-10-28T07:28:00.934635Z",
+  "marker": "agent-proposed, not human publication approval",
+  "family_id": "qf-memory-architecture-effects-on-output-le-0ea84705a9",
+  "packet_variant_count": 4,
+  "additional_variant_count": 1,
+  "variant_count": 5,
+  "distinct_hashes": 5,
+  "variants": [
+    {
+      "role": "imported_variant",
+      "origin": "/home/liuzewen/.research/imported/paper5-consolidated/main.tex",
+      "origin_resolved": "/data3/Research/PAPER5_CONSOLIDATED/main.tex",
+      "sha256": "1ab4bd5e5d58c00e71bdd7fe7a6dd66735af7af8be71028c41fedd6709522d2d",
+      "bytes": 92351,
+      "title": "Memory Architecture Effects on Output-Length Responses under Controlled Multi-Agent Contamination",
+      "description": "packet variant; symlink target /data3/Research/PAPER5_CONSOLIDATED/main.tex",
+      "novelty_blocks": 2,
+      "reproducibility_sections": 3
+    },
+    {
+      "role": "home_research_variant",
+      "origin": "/home/liuzewen/.research/paper5-consolidated/main.tex",
+      "origin_resolved": "/home/liuzewen/.research/paper5-consolidated/main.tex",
+      "sha256": "9487ef7810ba3f38ef67accd569d17dbe27234541496abe70309d18c8c798107",
+      "bytes": 100527,
+      "title": "Memory Architecture Effects on Output-Length Responses under Controlled Multi-Agent Contamination",
+      "description": "packet variant",
+      "novelty_blocks": 2,
+      "reproducibility_sections": 3
+    },
+    {
+      "role": "canonical",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/paper/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/paper/main.tex",
+      "sha256": "f926cae5baf4a3a9ac4cbba11d6cce8ecf6206187ea25306f620550d7a7b2bd8",
+      "bytes": 93477,
+      "title": "Memory Architecture Effects on Output-Length Responses under Controlled Multi-Agent Contamination",
+      "description": "packet canonical source",
+      "novelty_blocks": 2,
+      "reproducibility_sections": 3
+    },
+    {
+      "role": "ingest_drift",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex",
+      "sha256": "3762beac54b50e3bc41446734a00ed1ea872bd39917835026844779e4bd9f395",
+      "bytes": 92349,
+      "title": "Memory Architecture Effects on Output-Length Responses under Controlled Multi-Agent Contamination",
+      "description": "packet variant",
+      "novelty_blocks": 2,
+      "reproducibility_sections": 3
+    },
+    {
+      "role": "source_mirror",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/source/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/source/main.tex",
+      "sha256": "7a8a5a13779ea55fab6499c2f7a9e0b362c58bf255ae33cfc66c4a9722ab307b",
+      "bytes": 92722,
+      "title": "Memory Architecture Effects on Output-Length Responses under Controlled Multi-Agent Contamination",
+      "description": "additional source mirror",
+      "novelty_blocks": 2,
+      "reproducibility_sections": 3
+    }
+  ],
+  "decision": {
+    "disposition": "repair",
+    "scope": "controlled output-length architecture comparison",
+    "package_created": true,
+    "uploaded": false,
+    "reason": "Canonical source contains the strongest R1 and cross-model evidence, but needs template cleanup and a scoped force-failure analysis."
+  }
+}

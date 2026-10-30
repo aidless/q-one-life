@@ -1,0 +1,16 @@
+03751dc96ec6fc702927c7e8d86589fe453b966abaf112d57d71e3d139ff50ba  ./attempts/attempt-1-preregistration.json
+8267c7edd5411fc57219c0829a74a46199b67158084e3dd176192b53cd1631a6  ./attempts/attempt-1-protocol-failure.log
+2e097c0744d0ea7f1e491b99828ecfaa7376d3a55a84a216a9d6b40da8406d47  ./attempts/attempt-1-run_estimand_split.py
+692a7d19f5194d4f50354df4cea00d727d503c5bdb8c55b2904d2f8b8e49ba76  ./attempts/attempt-2-preregistration.json
+6016d85f99d42b6d1c21271dea4be3fd4a9c25223388f9ab744f34402f417e9e  ./attempts/attempt-2-protocol-failure.log
+c59239ae13f26fe8cc0afb91cfef76a1e13fda4b78d4c98cc5c97a29a06bb5b7  ./attempts/attempt-2-run_estimand_split.py
+982731897d7ad8fed9450c16bed0458d2f73041006d66c9e4b92c3d58eff369e  ./attempts/attempt-3-protocol-failure.log
+1c7b6ac4076159c7af0d0742d9478247e993c52355231ef5af49e522f35e7201  ./attempts/attempt-3-run-1.json
+a58bf0b93419d4465c9b93b9f4e1ec055f9ba5f5cc31e21a85fa870fcf565484  ./preregistration.json
+c2485c10a2d24a9853bef5feec52801ddff970d136d434871b375394cc75190b  ./README.md
+e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c  ./results/native-rerun-factuality.json
+9bde582f5f73fca8e64950e2070bedfce49f0793cff28859232da39978a2413d  ./results/native-rerun-factuality.log
+86ea70406748878ea91dbde8d70b778cafb9e271789dc8e2ec957a17e2e2bca3  ./results/REPORT.md
+4b0d65068f78015a4b5014f28e87b4d49b62db555d04598bee4e47cc5dade408  ./results/run-1.json
+4b0d65068f78015a4b5014f28e87b4d49b62db555d04598bee4e47cc5dade408  ./results/run-2.json
+927143dd6727272311e67c4468d1bedaf131dc119d40546aae7c993d52b8d2d0  ./run_estimand_split.py

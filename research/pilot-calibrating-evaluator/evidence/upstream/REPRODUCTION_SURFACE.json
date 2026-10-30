@@ -1,0 +1,300 @@
+{
+  "script": {
+    "bytes": 8944,
+    "lines": 206,
+    "n_strategies": 11,
+    "strategies": [
+      "step_by_step",
+      "critical_check",
+      "first_principles",
+      "creative_leap",
+      "analogy_meta",
+      "evidence_cite",
+      "synthesis",
+      "counterfactual",
+      "visual_grounding",
+      "spatial_decompose",
+      "aesthetic_frame"
+    ],
+    "n_tasks_text": 8,
+    "n_tasks_visual": 8,
+    "tasks_text": [
+      "Explain why the sky is blue.",
+      "What are pros and cons of remote work?",
+      "Describe how a computer works.",
+      "Why do leaves change color?",
+      "Explain supply and demand.",
+      "Weather vs climate?",
+      "How do vaccines work?",
+      "Explain the water cycle."
+    ],
+    "tasks_visual": [
+      "Describe composing a sunset photo.",
+      "Symmetry in architecture?",
+      "What makes a painting balanced?",
+      "How do colors interact?",
+      "Explain perspective in drawing.",
+      "What makes a logo memorable?",
+      "Circle vs sphere visually?",
+      "How does lighting affect mood?"
+    ],
+    "api_url": "https://www.dmxapi.com/v1/chat/completions",
+    "api_models": [
+      "deepseek-chat",
+      "gpt-4o"
+    ],
+    "A_WIN": 0.08,
+    "A_LOSE": 0.04,
+    "FLOOR": 0.001,
+    "calls_per_round_standard": {
+      "?": 9,
+      "range": 1,
+      "executor_fn": 2,
+      "max": 2,
+      "sum": 2,
+      "gpt4o_eval": 1,
+      "list": 2
+    },
+    "calls_per_round_calibrated": {
+      "?": 11,
+      "range": 1,
+      "executor_fn": 2,
+      "gpt4o_confidence": 1,
+      "max": 2,
+      "sum": 2,
+      "gpt4o_eval": 1,
+      "list": 2
+    },
+    "argparse": {
+      "--n-seeds": "5",
+      "--rounds": "30"
+    },
+    "output_path": "experiments/calibrated_ttrl.json",
+    "batch_flag_in_usage": true,
+    "accepted_flags": [
+      "--n-seeds",
+      "--rounds"
+    ],
+    "control_mentions": {
+      "symmetric": 0,
+      "capped": 0,
+      "length.normali": 0,
+      "0.06": 0
+    }
+  },
+  "manuscript": {
+    "scale_factors": null,
+    "printed_rounds": 2400,
+    "printed_executor_calls": 2400,
+    "printed_evaluator_calls": 3600,
+    "printed_strategies": "11",
+    "printed_tasks": [
+      "8",
+      "8"
+    ],
+    "printed_seeds_default": "5",
+    "printed_rounds_R": "30",
+    "printed_update": [
+      "0.08",
+      "0.04"
+    ],
+    "model_names": [
+      "DeepSeek-V4-Pro",
+      "GLM5.2"
+    ],
+    "endpoints": [
+      "Alibaba MaaS",
+      "api.deepseek.com/anthropic"
+    ],
+    "control_lines": [
+      124,
+      125,
+      155
+    ],
+    "range_claims": [
+      [
+        "18--51\\%",
+        57
+      ],
+      [
+        "20--49\\%",
+        31
+      ],
+      [
+        "20--49\\%",
+        45
+      ],
+      [
+        "20--49\\%",
+        132
+      ],
+      [
+        "20--49\\%",
+        167
+      ],
+      [
+        "20--49\\%",
+        180
+      ],
+      [
+        "20--49\\%",
+        184
+      ],
+      [
+        "45--67\\%",
+        31
+      ],
+      [
+        "45--67\\%",
+        45
+      ],
+      [
+        "45--67\\%",
+        184
+      ]
+    ],
+    "range_in_own_claim": [
+      "18--51\\%",
+      "20--49\\%",
+      "45--67\\%"
+    ]
+  },
+  "comparison": {
+    "rows": [
+      {
+        "quantity": "strategies |S|",
+        "manuscript": "11",
+        "driver": "11",
+        "verdict": "match"
+      },
+      {
+        "quantity": "task sets",
+        "manuscript": "8 x 8",
+        "driver": "8 text + 8 visual",
+        "verdict": "match"
+      },
+      {
+        "quantity": "seeds N",
+        "manuscript": "5",
+        "driver": "5",
+        "verdict": "match"
+      },
+      {
+        "quantity": "rounds R",
+        "manuscript": "30",
+        "driver": "30",
+        "verdict": "match"
+      },
+      {
+        "quantity": "update magnitudes",
+        "manuscript": "0.08 / 0.04",
+        "driver": "A_WIN=0.08, A_LOSE=0.04, FLOOR=0.001",
+        "verdict": "match"
+      },
+      {
+        "quantity": "TTRL rounds",
+        "manuscript": "2400",
+        "driver": "1200 = 2 modes x 5 seeds x 4 phases x 30 rounds",
+        "verdict": "driver realizes fewer"
+      },
+      {
+        "quantity": "executor calls",
+        "manuscript": "2400",
+        "driver": "2400 = 2+2 per round x 1200",
+        "verdict": "match"
+      },
+      {
+        "quantity": "evaluator calls",
+        "manuscript": "3600",
+        "driver": "1800 = 1+2 per round x 1200",
+        "verdict": "disagrees"
+      },
+      {
+        "quantity": "executor model",
+        "manuscript": "DeepSeek-V4-Pro, GLM5.2",
+        "driver": "api_call model ids: deepseek-chat, gpt-4o at https://www.dmxapi.com/v1/chat/completions",
+        "verdict": "disagrees"
+      },
+      {
+        "quantity": "controls",
+        "manuscript": "two, at main.tex:[124, 125, 155]",
+        "driver": "{\"symmetric\": 0, \"capped\": 0, \"length.normali\": 0, \"0.06\": 0}",
+        "verdict": "absent from driver"
+      }
+    ],
+    "realized_rounds": 1200,
+    "exec_calls": 2400,
+    "eval_calls": 1800,
+    "output_file": "experiments/calibrated_ttrl.json",
+    "output_file_present": false,
+    "batch_advertised_but_unaccepted": true,
+    "ranges_without_carrier": [
+      "18--51\\%",
+      "20--49\\%",
+      "45--67\\%"
+    ],
+    "all_range_mentions": [
+      [
+        "18--51\\%",
+        57
+      ],
+      [
+        "20--49\\%",
+        31
+      ],
+      [
+        "20--49\\%",
+        45
+      ],
+      [
+        "20--49\\%",
+        132
+      ],
+      [
+        "20--49\\%",
+        167
+      ],
+      [
+        "20--49\\%",
+        180
+      ],
+      [
+        "20--49\\%",
+        184
+      ],
+      [
+        "45--67\\%",
+        31
+      ],
+      [
+        "45--67\\%",
+        45
+      ],
+      [
+        "45--67\\%",
+        184
+      ]
+    ],
+    "calls_per_round": {
+      "standard": {
+        "?": 9,
+        "range": 1,
+        "executor_fn": 2,
+        "max": 2,
+        "sum": 2,
+        "gpt4o_eval": 1,
+        "list": 2
+      },
+      "calibrated": {
+        "?": 11,
+        "range": 1,
+        "executor_fn": 2,
+        "gpt4o_confidence": 1,
+        "max": 2,
+        "sum": 2,
+        "gpt4o_eval": 1,
+        "list": 2
+      }
+    }
+  }
+}

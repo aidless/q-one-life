@@ -1,0 +1,42 @@
+{
+  "case": "bound-guided vs n=100 heuristic for Chatbot Arena top-5 recovery",
+  "full_top5": [
+    "gpt-4o",
+    "gpt-4-turbo",
+    "claude-3-opus",
+    "gemini-1.5-pro",
+    "claude-3-sonnet"
+  ],
+  "heur_n": 100,
+  "heur_total": 2000,
+  "heur_rate": 0.007,
+  "heur_overlap": 0.769,
+  "heur_overlap_pct": 76.9,
+  "se_target": 0.03,
+  "n_star": {
+    "gpt-4-turbo": 265,
+    "gpt-4o": 258,
+    "claude-3-opus": 268,
+    "claude-3-sonnet": 271,
+    "gemini-1.5-pro": 271,
+    "llama-3-70b": 275,
+    "mistral-large": 276,
+    "qwen-2-72b": 277,
+    "deepseek-v2": 277,
+    "yi-large": 277,
+    "command-r-plus": 277,
+    "dbrx-instruct": 277,
+    "gemma-2-27b": 277,
+    "phi-3-medium": 275,
+    "llama-3-8b": 274,
+    "mixtral-8x22b": 271,
+    "gpt-3.5-turbo": 270,
+    "claude-3-haiku": 267,
+    "gemini-1.5-flash": 267,
+    "llama-2-70b": 264
+  },
+  "bound_total": 5434,
+  "bound_rate": 0.027,
+  "bound_overlap": 0.881,
+  "total_ratio": 2.717
+}

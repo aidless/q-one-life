@@ -1,0 +1,114 @@
+{
+  "theorem": "T5 (Minimax Lower Bound via Le Cam + Fano)",
+  "version": "v9",
+  "n_gamma_obs": 18,
+  "gamma_max_95th": 1.6405,
+  "sigma_var": 0.25,
+  "c_min_minimax_at_delta_0.5": 0.021025,
+  "bootstraps_by_N": {
+    "2": {
+      "empirical_std": 0.1372,
+      "ci_low": 0.0668,
+      "ci_high": 0.2381,
+      "squared_error_proxy": 0.018815,
+      "bound_curve_T5": 0.010513
+    },
+    "5": {
+      "empirical_std": 0.1937,
+      "ci_low": 0.113,
+      "ci_high": 0.2423,
+      "squared_error_proxy": 0.037516,
+      "bound_curve_T5": 0.004205
+    },
+    "8": {
+      "empirical_std": 0.2247,
+      "ci_low": 0.2055,
+      "ci_high": 0.2438,
+      "squared_error_proxy": 0.050497,
+      "bound_curve_T5": 0.002628
+    },
+    "15": {
+      "empirical_std": 0.3871,
+      "ci_low": 0.3871,
+      "ci_high": 0.3871,
+      "squared_error_proxy": 0.149854,
+      "bound_curve_T5": 0.001402
+    },
+    "30": {
+      "empirical_std": 0.3455,
+      "ci_low": 0.2775,
+      "ci_high": 0.3916,
+      "squared_error_proxy": 0.119369,
+      "bound_curve_T5": 0.000701
+    }
+  },
+  "sample_complexity_table": [
+    {
+      "epsilon": 0.05,
+      "delta": 0.05,
+      "N_required": 2157.451018540944
+    },
+    {
+      "epsilon": 0.05,
+      "delta": 0.1,
+      "N_required": 1880.1921463169658
+    },
+    {
+      "epsilon": 0.05,
+      "delta": 0.5,
+      "N_required": 1236.416981343326
+    },
+    {
+      "epsilon": 0.1,
+      "delta": 0.05,
+      "N_required": 539.362754635236
+    },
+    {
+      "epsilon": 0.1,
+      "delta": 0.1,
+      "N_required": 470.04803657924145
+    },
+    {
+      "epsilon": 0.1,
+      "delta": 0.5,
+      "N_required": 309.1042453358315
+    },
+    {
+      "epsilon": 0.2,
+      "delta": 0.05,
+      "N_required": 134.840688658809
+    },
+    {
+      "epsilon": 0.2,
+      "delta": 0.1,
+      "N_required": 117.51200914481036
+    },
+    {
+      "epsilon": 0.2,
+      "delta": 0.5,
+      "N_required": 77.27606133395787
+    },
+    {
+      "epsilon": 0.5,
+      "delta": 0.05,
+      "N_required": 21.574510185409444
+    },
+    {
+      "epsilon": 0.5,
+      "delta": 0.1,
+      "N_required": 18.801921463169663
+    },
+    {
+      "epsilon": 0.5,
+      "delta": 0.5,
+      "N_required": 12.364169813433262
+    }
+  ],
+  "overall_status": "CONSISTENT",
+  "notes": [
+    "T5 says E[||hat_theta - theta||^2] >= c_min^minimax(delta) / N",
+    "Empirical squared error = std(gamma_subcohort)^2 is a proxy.",
+    "Bound applies as a universal 'irreducible' lower bound; the",
+    "empirical std is expected to exceed this at all N where T5 holds."
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "n_seeds": 15,
+  "per_arm": {
+    "standard": {
+      "n": 15,
+      "recomputed_mean": 0.142988,
+      "recorded_mean": 0.1429878956260213,
+      "abs_difference": 0.0,
+      "min": 0.08823623828835858,
+      "max": 0.18696426217774392,
+      "sd": 0.032777,
+      "recorded_ci": [
+        0.1269532386021021,
+        0.1587935943819972
+      ],
+      "pct_vs_standard_recomputed": 0.0,
+      "recorded_delta_gamma_pct": null
+    },
+    "cg_alone": {
+      "n": 15,
+      "recomputed_mean": 0.718778,
+      "recorded_mean": 0.7187781641976237,
+      "abs_difference": 1.1102230246251565e-16,
+      "min": 0.4742444164822406,
+      "max": 0.9303369582076843,
+      "sd": 0.11783,
+      "recorded_ci": [
+        0.6632415864338229,
+        0.7721766323151923
+      ],
+      "pct_vs_standard_recomputed": 402.685,
+      "recorded_delta_gamma_pct": -433.3596432231277
+    },
+    "cg_tee": {
+      "n": 15,
+      "recomputed_mean": 0.574018,
+      "recorded_mean": 0.5740180982911599,
+      "abs_difference": 0.0,
+      "min": 0.3358049433436753,
+      "max": 0.7231740921876292,
+      "sd": 0.120759,
+      "recorded_ci": [
+        0.5107155282358836,
+        0.6265061366490486
+      ],
+      "pct_vs_standard_recomputed": 301.445,
+      "recorded_delta_gamma_pct": -330.561402410231
+    }
+  },
+  "cv_definition_test": [
+    {
+      "arm": "standard",
+      "recorded_cv": 0.19180676050901868,
+      "candidates": {
+        "sd(gamma)/mean(gamma)": 0.229232,
+        "pstdev(gamma)/mean(gamma)": 0.22146,
+        "sd(H)/mean(H)": 0.001857,
+        "sd(gamma)": 0.032777
+      },
+      "nearest": "pstdev(gamma)/mean(gamma)",
+      "nearest_value": 0.22146,
+      "nearest_gap": 0.029653
+    },
+    {
+      "arm": "cg_alone",
+      "recorded_cv": 0.1341812396040852,
+      "candidates": {
+        "sd(gamma)/mean(gamma)": 0.163931,
+        "pstdev(gamma)/mean(gamma)": 0.158373,
+        "sd(H)/mean(H)": 0.039046,
+        "sd(gamma)": 0.11783
+      },
+      "nearest": "sd(gamma)",
+      "nearest_value": 0.11783,
+      "nearest_gap": 0.016351
+    },
+    {
+      "arm": "cg_tee",
+      "recorded_cv": 0.1742851260509935,
+      "candidates": {
+        "sd(gamma)/mean(gamma)": 0.210376,
+        "pstdev(gamma)/mean(gamma)": 0.203242,
+        "sd(H)/mean(H)": 0.032792,
+        "sd(gamma)": 0.120759
+      },
+      "nearest": "pstdev(gamma)/mean(gamma)",
+      "nearest_value": 0.203242,
+      "nearest_gap": 0.028957
+    }
+  ],
+  "thirty_nine_search": {
+    "scalars": 10,
+    "pairs_tested": 90,
+    "within_half_point_of_39": [
+      {
+        "from": "mean_gVT[uncalibrated]",
+        "to": "mean_gamma[cg_tee]",
+        "reduction_pct": 38.771
+      },
+      {
+        "from": "mean_gTV[uncalibrated]",
+        "to": "mean_gTV[calibrated]",
+        "reduction_pct": 39.249
+      }
+    ]
+  },
+  "conditions": {
+    "json_files_naming_models": [
+      {
+        "file": "experiments/results/cg_tee_local_smoke.json",
+        "config": {
+          "n_seeds": 3,
+          "rounds": 10,
+          "executor": "qwen2.5:3b-instruct-q4_K_M",
+          "evaluator": "qwen2.5:3b-instruct-q4_K_M",
+          "k_tee": 3
+        }
+      }
+    ],
+    "json_files_total": 15,
+    "prose_files_naming_models": [
+      "REVIEW_READINESS_20260812.md",
+      "llm_summaries/main.critique.mm3.md",
+      "llm_summaries/main.experiments.mm3.md",
+      "llm_summaries/main.methods.mm3.md"
+    ]
+  },
+  "duplicate_paths": {
+    "3497c1480103": [
+      "evidence/cg_tee_checkpoint.json",
+      "experiments/results/cg_tee_checkpoint.json"
+    ],
+    "e1153039f313": [
+      "evidence/cg_tee_final_results.json",
+      "experiments/results/cg_tee_final_results.json"
+    ],
+    "4b535e1f4d23": [
+      "evidence/cg_tee_real_results.json",
+      "experiments/results/cg_tee_real_checkpoint.json",
+      "experiments/results/cg_tee_real_results.json"
+    ],
+    "74701ae3da71": [
+      "evidence/cg_tee_results.json",
+      "experiments/results/cg_tee_results.json"
+    ],
+    "7b26f1f3d8e5": [
+      "experiments/results/cg_tee_local_smoke.json"
+    ]
+  },
+  "real_arms_degenerate_seeds": {
+    "standard": 0,
+    "cg_alone": 15,
+    "cg_tee": 15
+  },
+  "real_arms_n": 15
+}

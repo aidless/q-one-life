@@ -1,0 +1,72 @@
+{
+  "schema": "q-one-arxiv-package-audit-v1",
+  "generated_at": "2026-10-27T16:43:34.789894Z",
+  "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/source",
+  "main_file": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/source/main.tex",
+  "mechanical_pass": true,
+  "ready_for_upload": false,
+  "upload_blocker": "Mechanical packaging does not establish scientific readiness, license, metadata correctness, or user authorization.",
+  "blockers": [],
+  "warnings": [],
+  "file_count": 9,
+  "visible_suffixes": {
+    ".bib": 1,
+    ".bst": 1,
+    ".pdf": 2,
+    ".png": 2,
+    ".sty": 1,
+    ".tex": 2
+  },
+  "files": [
+    {
+      "path": "main.tex",
+      "sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+      "bytes": 32735
+    },
+    {
+      "path": "math_commands.tex",
+      "sha256": "9d655842e74bf55f241770197793507d27f178abef4132378b8333e391a6a0e0",
+      "bytes": 5039
+    },
+    {
+      "path": "refs.bib",
+      "sha256": "b9d61a346848450930d0d4befe86312a494bb78afb74ca2f092ccc3a05d41c09",
+      "bytes": 4627
+    },
+    {
+      "path": "tmlr.bst",
+      "sha256": "306fd454cf40771bee01293eeb98d2c1cd5f4e11ed0cd7296b335f354fc45206",
+      "bytes": 26969
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    },
+    {
+      "path": "figures/bds_determinism_duality.png",
+      "sha256": "ce268cf89d2589fb2eb7feb0e38f5b67838e03448705472d122c513b14373969",
+      "bytes": 60920
+    },
+    {
+      "path": "figures/bds_heatmap.png",
+      "sha256": "4d7e13b113a4c0b9a034107e661761639a652f1cce0391df34d7adfbfce9c153",
+      "bytes": 80292
+    },
+    {
+      "path": "figures/fig_heterogeneity.pdf",
+      "sha256": "b869d18ae269fc8db32402bd13d2b57cb838a4a82af22160573fce6605c4595a",
+      "bytes": 17325
+    },
+    {
+      "path": "figures/fig_reproducibility.pdf",
+      "sha256": "7639293707562c13127c86700f7d167ac8490d8a0b484364b6a4755e28e537f8",
+      "bytes": 15402
+    }
+  ],
+  "package_sha256": "02a861ab06bb8db54224eafc2e541f239f92752e7c405f39094dcbf26a356158",
+  "notes": [
+    "This is a source-tree audit, not a clean-room LaTeX compile.",
+    "The package hash covers the sorted path/hash manifest, not tar bytes."
+  ]
+}

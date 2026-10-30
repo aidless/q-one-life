@@ -1,0 +1,61 @@
+{
+  "schema": "q-one-arxiv-package-audit-v1",
+  "generated_at": "2026-10-28T06:44:09.574084Z",
+  "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/source",
+  "main_file": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/source/main.tex",
+  "mechanical_pass": true,
+  "ready_for_upload": false,
+  "upload_blocker": "Mechanical packaging does not establish scientific readiness, license, metadata correctness, or user authorization.",
+  "blockers": [],
+  "warnings": [],
+  "file_count": 7,
+  "visible_suffixes": {
+    ".bbl": 1,
+    ".pdf": 1,
+    ".sty": 1,
+    ".tex": 3,
+    "<none>": 1
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "c9c310685017f06b77000b05a0fd7fce152aa31ad8b25f71067fa3ffd73d0391",
+      "bytes": 267
+    },
+    {
+      "path": "main.bbl",
+      "sha256": "8e5c0a84578475116bd7e34d81ab6a955fa410c276f07902a2ba9c41ed532db6",
+      "bytes": 275
+    },
+    {
+      "path": "main.tex",
+      "sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+      "bytes": 22515
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    },
+    {
+      "path": "figures/fig_cg_tee_seeds.pdf",
+      "sha256": "d13a0a5baaafa91b47db77fde48f36c48e31a596d507185049ac56ef07a3c6d4",
+      "bytes": 28007
+    },
+    {
+      "path": "sections/evidence_inventory.tex",
+      "sha256": "4ce1b1674c87b12bb8fff9cd78cc62769d9c416ec425358577a785d7e939a8f4",
+      "bytes": 2851
+    },
+    {
+      "path": "sections/per_seed_evidence.tex",
+      "sha256": "f8ed7029208d5287c41e63676c64328c18474e2a0034938abc63006d76fc8acd",
+      "bytes": 5329
+    }
+  ],
+  "package_sha256": "38f19fc050d92d9132c3de46aaac555b402150e2fabd7abf2e999e3a86970927",
+  "notes": [
+    "This is a source-tree audit, not a clean-room LaTeX compile.",
+    "The package hash covers the sorted path/hash manifest, not tar bytes."
+  ]
+}

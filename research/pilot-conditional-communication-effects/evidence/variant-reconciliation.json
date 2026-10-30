@@ -1,0 +1,149 @@
+{
+  "schema": "q-one-conditional-communication-variant-reconciliation-v1",
+  "generated_at": "2026-10-28T06:57:20.690278Z",
+  "marker": "agent-proposed, not human publication approval",
+  "family_id": "qf-conditional-communication-effects-in-mul-ad96998074",
+  "packet_variant_count": 7,
+  "additional_variant_count": 1,
+  "variant_count": 8,
+  "distinct_hashes": 8,
+  "variants": [
+    {
+      "role": "home_research_symlink",
+      "origin": "/home/liuzewen/.research/paper13-merged/main.tex",
+      "origin_resolved": "/data3/Research/PAPER13_MERGED/main.tex",
+      "sha256": "14a966defbe0462b98743f1cd8929cbd3df47af7a4840fc0c0fdd0eeb9b752ed",
+      "bytes": 111032,
+      "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
+      "description": "packet variant; symlink target /data3/Research/PAPER13_MERGED/main.tex",
+      "legacy_values": {
+        "8.16": true,
+        "7.845": false,
+        "7.84": true,
+        "15.37": true
+      },
+      "has_6_61": true
+    },
+    {
+      "role": "paper1_canonical",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper1-consolidated/paper/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper1-consolidated/paper/main.tex",
+      "sha256": "7eadb18e25a247b511e3706d1c94719f85163f1b9637b6d63c7f8630a25023ed",
+      "bytes": 94206,
+      "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
+      "description": "packet variant",
+      "legacy_values": {
+        "8.16": true,
+        "7.845": false,
+        "7.84": true,
+        "15.37": true
+      },
+      "has_6_61": true
+    },
+    {
+      "role": "paper1_ingest_drift",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper1-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper1-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex",
+      "sha256": "02be49a4865b3eb1fbac66ba8747421058668de87b9dc7a730963c0d88054011",
+      "bytes": 93546,
+      "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
+      "description": "packet variant",
+      "legacy_values": {
+        "8.16": true,
+        "7.845": false,
+        "7.84": true,
+        "15.37": true
+      },
+      "has_6_61": true
+    },
+    {
+      "role": "paper1_submission",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper1-consolidated/source/submission_variant/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper1-consolidated/source/submission_variant/main.tex",
+      "sha256": "cc990465b0a6e6acd5a42ac934a5a80df59688eb56435fadf8fe173836a10d1c",
+      "bytes": 93533,
+      "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
+      "description": "packet variant",
+      "legacy_values": {
+        "8.16": true,
+        "7.845": false,
+        "7.84": true,
+        "15.37": true
+      },
+      "has_6_61": true
+    },
+    {
+      "role": "paper13_canonical",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex",
+      "sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+      "bytes": 111802,
+      "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
+      "description": "packet canonical",
+      "legacy_values": {
+        "8.16": false,
+        "7.845": false,
+        "7.84": false,
+        "15.37": false
+      },
+      "has_6_61": true
+    },
+    {
+      "role": "paper13_ingest_drift",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/.aris/ingest_drift/20260930T052414Z/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/.aris/ingest_drift/20260930T052414Z/main.tex",
+      "sha256": "253ce9f3698f0f2b45e7349328f96f938c06abc7ee51b655ed9a18af390c5289",
+      "bytes": 110616,
+      "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
+      "description": "packet variant",
+      "legacy_values": {
+        "8.16": true,
+        "7.845": false,
+        "7.84": true,
+        "15.37": true
+      },
+      "has_6_61": true
+    },
+    {
+      "role": "paper13_arxiv",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/arxiv/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/arxiv/main.tex",
+      "sha256": "4217bb3966a2f097709eab3e56209d773e303b3fdc514af1641683da7537ee39",
+      "bytes": 111160,
+      "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
+      "description": "packet variant",
+      "legacy_values": {
+        "8.16": true,
+        "7.845": false,
+        "7.84": true,
+        "15.37": true
+      },
+      "has_6_61": true
+    },
+    {
+      "role": "paper13_source_mirror",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/source/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/source/main.tex",
+      "sha256": "30c68d04926c76711158b40cbce7fd1f37ef0ed78c2cdb60a2f606d5596c2dde",
+      "bytes": 110392,
+      "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
+      "description": "additional source mirror",
+      "legacy_values": {
+        "8.16": true,
+        "7.845": false,
+        "7.84": true,
+        "15.37": true
+      },
+      "has_6_61": true
+    }
+  ],
+  "canonical_decision": {
+    "selected": "paper13_canonical",
+    "sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+    "reason": "It is the newest and most complete packet source and already uses the reproducible balanced ANOVA values 6.61/2.95/2.22.",
+    "legacy_source_mirror_status": "Do not use the 9-19 source mirror, which still carries 8.16/7.845/15.37."
+  },
+  "disposition": "blocked",
+  "package_created": false,
+  "uploaded": false
+}

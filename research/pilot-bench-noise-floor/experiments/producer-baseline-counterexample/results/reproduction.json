@@ -1,0 +1,111 @@
+{
+  "accepted_attempt": 4,
+  "all_expected_signatures_met": true,
+  "byte_identical": true,
+  "condition_summary": [
+    {
+      "condition_id": "perfect-producer-refuses-stable-order",
+      "expected_signature_met": true,
+      "gate_readable": false,
+      "observed_relation": "first_gt_second",
+      "paired_discordance": {
+        "first_only_correct": 280,
+        "second_only_correct": 0
+      },
+      "producer_floor": 1.0,
+      "role": "critical_counterexample",
+      "single_item_deletions_defined": 700,
+      "single_item_deletions_stable": 700,
+      "system_accuracies": {
+        "A": 0.9,
+        "B": 0.5
+      }
+    },
+    {
+      "condition_id": "imperfect-producers-positive-gate-control",
+      "expected_signature_met": true,
+      "gate_readable": true,
+      "observed_relation": "first_gt_second",
+      "paired_discordance": {
+        "first_only_correct": 280,
+        "second_only_correct": 0
+      },
+      "producer_floor": 0.8,
+      "role": "positive_control",
+      "single_item_deletions_defined": 700,
+      "single_item_deletions_stable": 700,
+      "system_accuracies": {
+        "A": 0.9,
+        "B": 0.5
+      }
+    },
+    {
+      "condition_id": "reversed-order-negative-control",
+      "expected_signature_met": true,
+      "gate_readable": false,
+      "observed_relation": "first_lt_second",
+      "paired_discordance": {
+        "first_only_correct": 0,
+        "second_only_correct": 280
+      },
+      "producer_floor": 1.0,
+      "role": "negative_control",
+      "single_item_deletions_defined": 700,
+      "single_item_deletions_stable": 700,
+      "system_accuracies": {
+        "A": 0.5,
+        "B": 0.9
+      }
+    }
+  ],
+  "experiment_id": "noise-floor-producer-baseline-necessity-counterexample",
+  "failed_attempts": [
+    {
+      "accepted_as_evidence": false,
+      "attempt": 1,
+      "path": "attempts/attempt-1-failure.log",
+      "sha256": "192ba7a754a89a7f0a3a114a0bc5d540a2311cd6dee07d4b78339bb641656f4c"
+    },
+    {
+      "accepted_as_evidence": false,
+      "attempt": 2,
+      "path": "attempts/attempt-2-protocol-failure.log",
+      "sha256": "5a9cd2c15bfa0b5735b7c297800d921c18db5a74f755a2a9a931dc5effc1b48d"
+    },
+    {
+      "accepted_as_evidence": false,
+      "attempt": 3,
+      "path": "attempts/attempt-3-protocol-failure.log",
+      "sha256": "085b3f5df58718e208b06f9f7b035703176f5f64e9113591a26717e3def13062"
+    }
+  ],
+  "hypothesis_decision": "reject_H0_in_declared_synthetic_condition",
+  "implementation": {
+    "path": "run_counterexample.py",
+    "sha256": "b615e6dd785b853f0cb0eded1cbe7f6246de9809602353f9fa4dbb428e4a440e"
+  },
+  "interpretation_limits": [
+    "This is a synthetic logical witness, not a study of real leaderboard prevalence.",
+    "The result does not show that the producer floor is uninformative in every benchmark.",
+    "The result does not establish any model's accuracy on a real task.",
+    "Sign-test p-values describe the constructed item sample only."
+  ],
+  "manuscript_sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+  "narrow_conclusion": "The declared producer-baseline gate can refuse a top ordering that is deterministic and stable under every single-item deletion. Therefore clearance of that gate is not a necessary condition for every resolvable top ordering, and the gate cannot by itself be read as a general ranking noise bound.",
+  "preregistration": {
+    "path": "preregistration.json",
+    "sha256": "ee9b2355387841012450be05d934e3402c85dfc9d346274ea8d5a1b5aa369e62"
+  },
+  "runs": [
+    {
+      "path": "results/run-1.json",
+      "sha256": "fa0846484b4dba64236caf2aeefb2b70d3db8f6bab78b5ad1fe6067f289cd424"
+    },
+    {
+      "path": "results/run-2.json",
+      "sha256": "fa0846484b4dba64236caf2aeefb2b70d3db8f6bab78b5ad1fe6067f289cd424"
+    }
+  ],
+  "schema": "q-one-experiment-reproduction-v1",
+  "status": "reproduced"
+}

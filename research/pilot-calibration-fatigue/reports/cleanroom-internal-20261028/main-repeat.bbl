@@ -1,0 +1,152 @@
+\begin{thebibliography}{29}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Authors(2026{\natexlab{a}})]{companion2026}
+Anonymous Authors.
+\newblock Conditional communication effects in multi-agent {LLM} systems: Strategy convergence, calibration fatigue, and a metric-conditional noise relation, 2026{\natexlab{a}}.
+\newblock Companion manuscript.
+
+\bibitem[Authors(2026{\natexlab{b}})]{epc2026}
+Anonymous Authors.
+\newblock {MM-EPC}: Multimodal evaluator preference collapse: Cross-modal coupling in self-evolving agents.
+\newblock \emph{arXiv preprint arXiv:2606.16682}, 2026{\natexlab{b}}.
+
+\bibitem[Authors(2026{\natexlab{c}})]{resampling2026}
+Anonymous Authors.
+\newblock The hidden cost of resampling: How imbalance correction degrades probability calibration in tree ensembles.
+\newblock \emph{arXiv preprint arXiv:2606.29720}, 2026{\natexlab{c}}.
+
+\bibitem[Authors(2026{\natexlab{d}})]{temporal2026}
+Anonymous Authors.
+\newblock Not contagion, just time: Temporal calibration fatigue in {LLM} agents.
+\newblock \emph{Anonymous preprint}, 2026{\natexlab{d}}.
+
+\bibitem[Bertalani\v{c} \& Fortuna(2026)Bertalani\v{c} and Fortuna]{bertalanic2026cost}
+B.~Bertalani\v{c} and C.~Fortuna.
+\newblock The cost of consensus: Isolated self-correction prevails over unguided homogeneous multi-agent debate, 2026.
+
+\bibitem[Bubeck \& Cesa-Bianchi(2012)Bubeck and Cesa-Bianchi]{bubeck2012regret}
+S{\'e}bastien Bubeck and Nicolo Cesa-Bianchi.
+\newblock Regret analysis of stochastic and nonstochastic multi-armed bandit problems.
+\newblock \emph{Foundations and Trends in Machine Learning}, 5:\penalty0 1--122, 2012.
+
+\bibitem[Chiang et~al.(2024)Chiang, Zheng, Sheng, Zhang, Zhuang, Wu, Zhuang, Li, Lin, Gonzalez, Stoica, and Xing]{chiang2024chatbot}
+Wei-Lin Chiang, Lianmin Zheng, Ying Sheng, Tianle Zhang, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zhuohan Li, Zi~Lin, Joseph~E. Gonzalez, Ion Stoica, and Eric~P. Xing.
+\newblock {Chatbot Arena}: An open platform for evaluating {LLMs} by human preference.
+\newblock \emph{arXiv preprint arXiv:2403.04132}, 2024.
+
+\bibitem[Cobbe et~al.(2021)Cobbe, Kosaraju, Bavarian, Chen, Jun, Kaiser, Plappert, Tworek, Hilton, Nakano, Hesse, and Schulman]{cobbe2021gsm8k}
+Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano, Christopher Hesse, and John Schulman.
+\newblock Training verifiers to solve math word problems.
+\newblock \emph{arXiv preprint arXiv:2110.14168}, 2021.
+
+\bibitem[Cover \& Thomas(2012)Cover and Thomas]{cover2012elements}
+Thomas~M. Cover and Joy~A. Thomas.
+\newblock \emph{Elements of Information Theory}.
+\newblock John Wiley \& Sons, 2nd edition, 2012.
+
+\bibitem[Dodge et~al.(2019{\natexlab{a}})Dodge, Gururangan, Card, Schwartz, and Smith]{dodge2019show}
+Jesse Dodge, Suchin Gururangan, Dallas Card, Roy Schwartz, and Noah~A. Smith.
+\newblock Show your work: Improved reporting of experimental results.
+\newblock In \emph{EMNLP}, 2019{\natexlab{a}}.
+
+\bibitem[Dodge et~al.(2019{\natexlab{b}})]{dodge2019reproducibility}
+Jesse Dodge et~al.
+\newblock Show your work: Improved reporting of experimental results in {NLP}.
+\newblock \emph{Proceedings of EMNLP-IJCNLP}, 2019{\natexlab{b}}.
+
+\bibitem[Guo et~al.(2017)Guo, Pleiss, Sun, and Weinberger]{guo2017calibration}
+Chuan Guo, Geoff Pleiss, Yu~Sun, and Kilian~Q. Weinberger.
+\newblock On calibration of modern neural networks.
+\newblock In \emph{ICML}, 2017.
+
+\bibitem[Huang et~al.(2026)Huang, Li, Li, Kwon, Yu, and Zhang]{huang2026cagecal}
+Jiatan Huang, Mingchen Li, Ziming Li, Sunjae Kwon, Hong Yu, and Chuxu Zhang.
+\newblock Counterfactual graph for multi-agent {LLM} calibration.
+\newblock \emph{arXiv preprint arXiv:2605.30653}, 2026.
+
+\bibitem[Jiang et~al.(2021)Jiang, Araki, Ding, and Neubig]{jiang2021can}
+Zhengbao Jiang, Jun Araki, Haibo Ding, and Graham Neubig.
+\newblock How can we know when language models know?
+\newblock \emph{Transactions of the Association for Computational Linguistics}, 9, 2021.
+
+\bibitem[Lehmann \& Casella(1998)Lehmann and Casella]{lehmann1998theory}
+E.~L. Lehmann and George Casella.
+\newblock \emph{Theory of Point Estimation}.
+\newblock Springer, 1998.
+
+\bibitem[Liu(2026{\natexlab{a}})]{boundarysync2026}
+Zewen Liu.
+\newblock {BOUNDARY\_SYNC}: Measuring communication-induced representational coupling in multi-agent {LLM} systems.
+\newblock \emph{arXiv preprint arXiv:2607.01600}, 2026{\natexlab{a}}.
+
+\bibitem[Liu(2026{\natexlab{b}})]{caleffects2026}
+Zewen Liu.
+\newblock Calibrating the evaluator: Does probability calibration mitigate preference coupling in {LLM} agent feedback loops?
+\newblock \emph{arXiv preprint arXiv:2606.31371}, 2026{\natexlab{b}}.
+
+\bibitem[Messing(2026)]{messing2026tee}
+Solomon Messing.
+\newblock Hidden measurement error in {LLM} pipelines distorts annotation, evaluation, and benchmarking.
+\newblock \emph{arXiv preprint arXiv:2604.11581}, 2026.
+
+\bibitem[Naeini et~al.(2015)Naeini, Cooper, and Hauskrecht]{naeini2015obtaining}
+Mahdi~Pakdaman Naeini, Gregory~F. Cooper, and Milos Hauskrecht.
+\newblock Obtaining well calibrated probabilities using bayesian binning.
+\newblock In \emph{AAAI}, 2015.
+
+\bibitem[Niculescu-Mizil \& Caruana(2005)Niculescu-Mizil and Caruana]{niculescu2005predicting}
+Alex Niculescu-Mizil and Rich Caruana.
+\newblock Predicting good probabilities with supervised learning.
+\newblock In \emph{ICML}, 2005.
+
+\bibitem[Oehri et~al.(2025)Oehri, Conti, Pather, et~al.]{chen2025unicr}
+Markus Oehri, Giulia Conti, Kaviraj Pather, et~al.
+\newblock Trusted uncertainty in large language models: A unified framework for confidence calibration and risk-controlled refusal.
+\newblock \emph{arXiv preprint arXiv:2509.01455}, 2025.
+
+\bibitem[Sclar et~al.(2024)Sclar, Gururangan, Rajpurohit, Asai, Swayamdipta, Smith, Peters, Sabharwal, Choi, and Hajishirzi]{sclar2024quantifying}
+Megan Sclar, Suchin Gururangan, Tanmay Rajpurohit, Akari Asai, Swabha Swayamdipta, Jordan~Lee Smith, Matthew~E. Peters, Ashish Sabharwal, Yejin Choi, and Hannaneh Hajishirzi.
+\newblock Quantifying language models' sensitivity to spurious features in prompt design.
+\newblock In \emph{ICLR}, 2024.
+
+\bibitem[Sun et~al.(2020)Sun, Wang, Liu, Miller, Efros, and Hardt]{sun2020test}
+Yu~Sun, Xiaolong Wang, Zhuang Liu, John Miller, Alexei~A. Efros, and Moritz Hardt.
+\newblock Test-time training with self-supervision for generalization under distribution shifts.
+\newblock In \emph{ICML}, 2020.
+
+\bibitem[Tian et~al.(2023{\natexlab{a}})Tian, Mitchell, Zhou, Sharma, Rafailov, Yao, Finn, and Manning]{tian2023calibration}
+Katherine Tian, Eric Mitchell, Allan Zhou, Archit Sharma, Rafael Rafailov, Huaxiu Yao, Chelsea Finn, and Christopher~D Manning.
+\newblock Just ask for calibration: Strategies for eliciting calibrated confidence scores from language models fine-tuned with human feedback.
+\newblock \emph{arXiv:2305.14975}, 2023{\natexlab{a}}.
+
+\bibitem[Tian et~al.(2023{\natexlab{b}})Tian, Mitchell, Zhou, Sharma, Rafailov, Yao, Finn, and Manning]{tian2023just}
+Katherine Tian, Eric Mitchell, Allan Zhou, Archit Sharma, Rafael Rafailov, Huaxiu Yao, Chelsea Finn, and Christopher~D. Manning.
+\newblock Just ask for calibration: Strategies for eliciting calibrated confidence scores from language models fine-tuned with human feedback.
+\newblock In \emph{EMNLP}, 2023{\natexlab{b}}.
+
+\bibitem[Tversky \& Kahneman(1974)Tversky and Kahneman]{tversky1974anchoring}
+Amos Tversky and Daniel Kahneman.
+\newblock Judgment under uncertainty: Heuristics and biases.
+\newblock \emph{Science}, 185\penalty0 (4157):\penalty0 1124--1131, 1974.
+
+\bibitem[Wolpert \& Macready(1997)Wolpert and Macready]{wolpert1997no}
+David~H. Wolpert and William~G. Macready.
+\newblock No free lunch theorems for optimization.
+\newblock \emph{IEEE Transactions on Evolutionary Computation}, 1\penalty0 (1):\penalty0 67--82, 1997.
+
+\bibitem[Zheng et~al.(2023)Zheng, Chiang, Yin, Zhuang, Wu, Zhuang, Li, Chen, Li, Zhang, Gonzalez, and Stoica]{zheng2023judging}
+Lianmin Zheng, Wei-Lin Chiang, Sheng Yin, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zhuohan Li, Siqi Chen, Dacheng Li, Hao Zhang, Joseph~E. Gonzalez, and Ion Stoica.
+\newblock Judging {LLM}-as-a-judge with {MT-Bench} and {Chatbot Arena}.
+\newblock In \emph{NeurIPS}, 2023.
+
+\bibitem[Zhou et~al.(2024)Zhou, Jurafsky, and Hashimoto]{zhou2024incontext}
+Kaitlyn Zhou, Dan Jurafsky, and Tatsunori Hashimoto.
+\newblock Navigating the grey area: How expressions of uncertainty and overconfidence affect language models.
+\newblock In \emph{EMNLP}, 2024.
+
+\end{thebibliography}

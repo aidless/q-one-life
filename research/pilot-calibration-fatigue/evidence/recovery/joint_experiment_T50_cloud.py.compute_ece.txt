@@ -1,0 +1,20 @@
+def compute_ece(confidences, correctness, n_bins=ECE_BINS):
+    """Expected Calibration Error."""
+    if len(confidences) < n_bins:
+        return 0.0
+    pairs = sorted(zip(confidences, correctness), key=lambda x: x[0])
+    bin_size = max(1, len(pairs) // n_bins)
+    ece = 0.0
+    total = len(pairs)
+    for i in range(n_bins):
+        start = i * bin_size
+        end = start + bin_size if i < n_bins - 1 else len(pairs)
+        if start >= len(pairs):
+            break
+        bin_pairs = pairs[start:end]
+        if not bin_pairs:
+            continue
+        bin_conf = sum(c for c, _ in bin_pairs) / len(bin_pairs)
+        bin_acc = sum(r for _, r in bin_pairs) / len(bin_pairs)
+        ece += (len(bin_pairs) / total) * abs(bin_conf - bin_acc)
+    return round(ece, 4)

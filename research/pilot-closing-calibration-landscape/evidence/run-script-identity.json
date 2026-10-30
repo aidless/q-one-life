@@ -1,0 +1,49 @@
+{
+  "schema": "q-one-closing-landscape-run-script-identity-v1",
+  "generated_at": "2026-10-28T06:41:48.579837Z",
+  "marker": "agent-proposed, not human publication approval",
+  "scripts": [
+    {
+      "role": "simulation_runner",
+      "path": "/data3/Research/closing_landscape/experiments/run_cg_tee.py",
+      "bytes": 17879,
+      "sha256": "b2766cc7e50eb7b2f53a037506158204cede120c6f6fdef9ed44fd5cb3a9555f"
+    },
+    {
+      "role": "real_api_runner",
+      "path": "/data3/Research/closing_landscape/experiments/run_cg_tee_real.py",
+      "bytes": 11907,
+      "sha256": "451d17dcba4c2cf588f9220b0dc3276927c61be15aaac5d570750a75cdb16683"
+    },
+    {
+      "role": "fixed_local_runner",
+      "path": "/data3/Research/closing_landscape/experiments/run_cg_tee_local.py",
+      "bytes": 9746,
+      "sha256": "9f00e9df4bbf2eb2e20fadab608cc2f95757b8c29bfc8d48fd1866d12ffb1d35"
+    },
+    {
+      "role": "fixed_cloud_runner",
+      "path": "/data3/Research/closing_landscape/experiments/run_cg_tee_cloud.py",
+      "bytes": 9533,
+      "sha256": "c52d841a2ee4679fde951b380991fdae0c1c490b57245bbb47d290fb2958bec9"
+    }
+  ],
+  "facts": {
+    "simulation_runner_is_simulation": true,
+    "real_api_models": [
+      "deepseek-v4-pro",
+      "glm-5.2"
+    ],
+    "real_api_k_tee": 3,
+    "real_api_confidence_parse_fallback": 0.5,
+    "real_api_parser_failure_log_count": 0,
+    "fixed_local_confidence_fallback": false,
+    "fixed_local_smoke_confidence_parse_fail_rate": 0.0,
+    "credentials_copied": false
+  },
+  "notes": [
+    "Only hashes and sanitized parser semantics are recorded.",
+    "The real-API high-level runner is not copied into the overlay because it contains a credential-like fallback literal.",
+    "The fixed local smoke run is 3 seeds x 10 rounds and is descriptive only."
+  ]
+}

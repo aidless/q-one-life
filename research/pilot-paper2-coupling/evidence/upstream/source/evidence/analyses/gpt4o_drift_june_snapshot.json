@@ -1,0 +1,67 @@
+{
+  "monitor": "GPT-4o version-drift monitoring (two-snapshot plan)",
+  "snapshot": "june",
+  "snapshot_date": "2026-06-22",
+  "experiment": "GPT-4o Replication",
+  "protocol": "N=8 reps x R=30 rounds; executor deepseek-chat, evaluator GPT-4o; TTRL multiplicative updates",
+  "metric": "per-rep gamma_T_to_V (TTRL coupling proxy); coupled iff gamma_T_to_V > 0",
+  "n_seeds": 8,
+  "seeds": {
+    "seed_1": {
+      "gamma_T_to_V": 0.0,
+      "gamma_V_to_T": 0.0,
+      "direction": "symmetric",
+      "coupled": false
+    },
+    "seed_2": {
+      "gamma_T_to_V": 0.0,
+      "gamma_V_to_T": 0.0,
+      "direction": "symmetric",
+      "coupled": false
+    },
+    "seed_3": {
+      "gamma_T_to_V": 0.0,
+      "gamma_V_to_T": 0.0,
+      "direction": "symmetric",
+      "coupled": false
+    },
+    "seed_4": {
+      "gamma_T_to_V": 0.0,
+      "gamma_V_to_T": 0.0,
+      "direction": "symmetric",
+      "coupled": false
+    },
+    "seed_5": {
+      "gamma_T_to_V": 0.0,
+      "gamma_V_to_T": 0.0,
+      "direction": "symmetric",
+      "coupled": false
+    },
+    "seed_6": {
+      "gamma_T_to_V": 0.0,
+      "gamma_V_to_T": 0.0,
+      "direction": "symmetric",
+      "coupled": false
+    },
+    "seed_7": {
+      "gamma_T_to_V": 0.0,
+      "gamma_V_to_T": 0.0,
+      "direction": "symmetric",
+      "coupled": false
+    },
+    "seed_8": {
+      "gamma_T_to_V": 0.0,
+      "gamma_V_to_T": 0.0,
+      "direction": "symmetric",
+      "coupled": false
+    }
+  },
+  "summary": {
+    "mean_gamma_T_to_V": 0.0,
+    "zero_coupling_rate": 1.0
+  },
+  "source": "Original per-seed records: evidence/analyses/mm_epc_gpt4o_replication.json (GPT-4o Replication, N=8, R=30, dated 2026-06-22; per-rep gamma_T_to_V and weight vectors). May-2026 snapshot (gamma ~ 1.176) source: evidence/analyses/mm_epc_gpt4o_replication_OLD.json.",
+  "protocol_note": "Identical prompts, seeds, evaluation metrics across May and June snapshots; only the model snapshot differed (per main.tex ?GPT-4o Version Drift).",
+  "exported_by": "reconstructed from original experiment JSON",
+  "date_of_export": "2026-08-12"
+}

@@ -1,0 +1,832 @@
+{
+  "root": "/home/liuzewen/F:\\deepseek",
+  "count": 118,
+  "impls": [
+    {
+      "path": "r3_r6_recalc.py",
+      "name": "mcnemar_p",
+      "lineno": 5,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "paper_gate_review_r1/.verify_stats/recompute_check.py",
+      "name": "mcnemar_exact_2sided",
+      "lineno": 5,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "rag_min_demo/bline/w3_harness.py",
+      "name": "mcnemar_exact",
+      "lineno": 44,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "rag_min_demo/bline/w2_harness.py",
+      "name": "mcnemar_exact",
+      "lineno": 34,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "paper_gate_review_r2/recalc_table3_concise.py",
+      "name": "mcnemar_two_sided",
+      "lineno": 24,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "paper_slm_agentic_gap/scripts/r06_compare_copy.py",
+      "name": "mcnemar_exact",
+      "lineno": 25,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "paper_slm_agentic_gap/scripts/r03_recalc.py",
+      "name": "exact_mcnemar",
+      "lineno": 50,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "gsm8k-self-evolve/evokit/stats.py",
+      "name": "mcnemar_two_sided",
+      "lineno": 3,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "gsm8k-self-evolve/scripts/ablation_gate.py",
+      "name": "paired_mcnemar",
+      "lineno": 355,
+      "classification": "unknown",
+      "body_lines": 23
+    },
+    {
+      "path": "gsm8k-self-evolve/scripts/retention_report.py",
+      "name": "mcnemar_two_sided",
+      "lineno": 75,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "gsm8k-self-evolve/scripts/run_pilot_train.py",
+      "name": "mcnemar_two_sided",
+      "lineno": 66,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "gsm8k-self-evolve/scripts/audit_gate_rules.py",
+      "name": "paired_mcnemar",
+      "lineno": 242,
+      "classification": "unknown",
+      "body_lines": 19
+    },
+    {
+      "path": "gsm8k-self-evolve/scripts/frontier.py",
+      "name": "mcnemar_exact",
+      "lineno": 51,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "gsm8k-self-evolve/scripts/trackB_power.py",
+      "name": "mcnemar_exact",
+      "lineno": 51,
+      "classification": "exact-only",
+      "body_lines": 16
+    },
+    {
+      "path": "gsm8k-self-evolve/tests/test_frontier.py",
+      "name": "test_mcnemar_exact_known_values",
+      "lineno": 35,
+      "classification": "unknown",
+      "body_lines": 6
+    },
+    {
+      "path": "gsm8k-self-evolve/tests/test_frontier.py",
+      "name": "test_mcnemar_is_symmetric",
+      "lineno": 43,
+      "classification": "unknown",
+      "body_lines": 3
+    },
+    {
+      "path": "gsm8k-self-evolve/tests/test_retention_report.py",
+      "name": "test_mcnemar_matches_the_canonical_evokit_implementation",
+      "lineno": 29,
+      "classification": "unknown",
+      "body_lines": 7
+    },
+    {
+      "path": "gsm8k-self-evolve/tests/test_build_pools.py",
+      "name": "exact_mcnemar_two_sided",
+      "lineno": 134,
+      "classification": "exact-only",
+      "body_lines": 11
+    },
+    {
+      "path": "gsm8k-self-evolve/tests/test_build_pools.py",
+      "name": "test_roundingaware_pool_counts_and_exact_mcnemar_are_pinned",
+      "lineno": 427,
+      "classification": "exact-only",
+      "body_lines": 41
+    },
+    {
+      "path": "gsm8k-self-evolve/tests/test_evokit.py",
+      "name": "test_mcnemar_round2_values",
+      "lineno": 5,
+      "classification": "unknown",
+      "body_lines": 2
+    },
+    {
+      "path": "gsm8k-self-evolve/tests/test_evokit.py",
+      "name": "test_mcnemar_empty",
+      "lineno": 8,
+      "classification": "unknown",
+      "body_lines": 2
+    },
+    {
+      "path": "gsm8k-self-evolve/tests/test_gate_rules.py",
+      "name": "test_mcnemar_agreement_with_evokit",
+      "lineno": 155,
+      "classification": "unknown",
+      "body_lines": 8
+    },
+    {
+      "path": "dsh-research-local/scripts/verify_claims.py",
+      "name": "exact_mcnemar_p",
+      "lineno": 97,
+      "classification": "exact-only",
+      "body_lines": 11
+    },
+    {
+      "path": "dsh-research-local/scripts/verify_claims.py",
+      "name": "recompute_mcnemar",
+      "lineno": 139,
+      "classification": "unknown",
+      "body_lines": 8
+    },
+    {
+      "path": "paper_promotion_gate/scripts/power_analysis.py",
+      "name": "power_mcnemar",
+      "lineno": 168,
+      "classification": "unknown",
+      "body_lines": 6
+    },
+    {
+      "path": "paper_promotion_gate/scripts/power_analysis.py",
+      "name": "n_mcnemar",
+      "lineno": 195,
+      "classification": "unknown",
+      "body_lines": 16
+    },
+    {
+      "path": "paper_promotion_gate/scripts/power_analysis.py",
+      "name": "or_mcnemar",
+      "lineno": 213,
+      "classification": "unknown",
+      "body_lines": 9
+    },
+    {
+      "path": "paper_promotion_gate/scripts/stats.py",
+      "name": "exact_mcnemar",
+      "lineno": 30,
+      "classification": "unknown",
+      "body_lines": 19
+    },
+    {
+      "path": "paper_promotion_gate/scripts/stats.py",
+      "name": "mcnemar_scipy",
+      "lineno": 51,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "paper_promotion_gate/scripts/stats.py",
+      "name": "mcnemar_chi2",
+      "lineno": 215,
+      "classification": "approx-only",
+      "body_lines": 15
+    },
+    {
+      "path": "paper_promotion_gate/results/runs/rerun-20261008-ablation-recompute/recompute_local.py",
+      "name": "mcnemar_stdlib",
+      "lineno": 38,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "paper_workflow_kb/scripts/power_analysis.py",
+      "name": "power_mcnemar",
+      "lineno": 168,
+      "classification": "unknown",
+      "body_lines": 6
+    },
+    {
+      "path": "paper_workflow_kb/scripts/power_analysis.py",
+      "name": "n_mcnemar",
+      "lineno": 195,
+      "classification": "unknown",
+      "body_lines": 16
+    },
+    {
+      "path": "paper_workflow_kb/scripts/power_analysis.py",
+      "name": "or_mcnemar",
+      "lineno": 213,
+      "classification": "unknown",
+      "body_lines": 9
+    },
+    {
+      "path": "paper_workflow_kb/scripts/analyze_new60.py",
+      "name": "mcnemar_p",
+      "lineno": 27,
+      "classification": "exact-only",
+      "body_lines": 9
+    },
+    {
+      "path": "paper_workflow_kb/scripts/analyze_xdomain.py",
+      "name": "mcnemar_exact_two",
+      "lineno": 28,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "paper_workflow_kb/scripts/sensitivity_xdomain_overlap.py",
+      "name": "mcnemar_exact_two",
+      "lineno": 23,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "paper_workflow_kb/scripts/stats.py",
+      "name": "exact_mcnemar",
+      "lineno": 30,
+      "classification": "unknown",
+      "body_lines": 19
+    },
+    {
+      "path": "paper_workflow_kb/scripts/stats.py",
+      "name": "mcnemar_scipy",
+      "lineno": 51,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "paper_workflow_kb/scripts/stats.py",
+      "name": "mcnemar_chi2",
+      "lineno": 215,
+      "classification": "approx-only",
+      "body_lines": 15
+    },
+    {
+      "path": "paper_workflow_kb/scripts/analyze_retest.py",
+      "name": "mcnemar_p",
+      "lineno": 21,
+      "classification": "exact-only",
+      "body_lines": 10
+    },
+    {
+      "path": "paper_workflow_kb/scripts/seal_powrep_rollups.py",
+      "name": "mcnemar_exact_two",
+      "lineno": 19,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "paper_workflow_kb/scripts/r3_stats_recompute.py",
+      "name": "mcnemar_two_sided",
+      "lineno": 10,
+      "classification": "exact-only",
+      "body_lines": 6
+    },
+    {
+      "path": "paper_workflow_kb/scripts/analyze_powrep.py",
+      "name": "mcnemar_exact_two",
+      "lineno": 37,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "ai-researcher/demo/transfer/run_transfer.py",
+      "name": "mcnemar_exact",
+      "lineno": 22,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "ai-researcher/demo/transfer/run_confirmation.py",
+      "name": "mcnemar",
+      "lineno": 119,
+      "classification": "exact-only",
+      "body_lines": 6
+    },
+    {
+      "path": "ai-researcher/demo/sweetspot/run_sweetspot_amp.py",
+      "name": "mcnemar",
+      "lineno": 68,
+      "classification": "exact-only",
+      "body_lines": 6
+    },
+    {
+      "path": "ai-researcher/demo/coderepair/run_coderepair2.py",
+      "name": "mcnemar",
+      "lineno": 93,
+      "classification": "exact-only",
+      "body_lines": 6
+    },
+    {
+      "path": "ai-researcher/scripts/w6_significance.py",
+      "name": "mcnemar_exact",
+      "lineno": 44,
+      "classification": "exact-only",
+      "body_lines": 14
+    },
+    {
+      "path": "ai-researcher/scripts/w8_faithful_cot.py",
+      "name": "mcnemar_two_sided",
+      "lineno": 242,
+      "classification": "unknown",
+      "body_lines": 15
+    },
+    {
+      "path": "ai-researcher/scripts/project_alpha.py",
+      "name": "mcnemar_p",
+      "lineno": 36,
+      "classification": "exact-only",
+      "body_lines": 6
+    },
+    {
+      "path": "ai-researcher/scripts/coderepair_escalation_verdict.py",
+      "name": "p_mcnemar_exact",
+      "lineno": 32,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "ai-researcher/src/ai_researcher/fitness.py",
+      "name": "mcnemar_exact",
+      "lineno": 30,
+      "classification": "exact-only",
+      "body_lines": 6
+    },
+    {
+      "path": "paper_joint_mem_forget/scripts/power_analysis.py",
+      "name": "power_mcnemar",
+      "lineno": 168,
+      "classification": "unknown",
+      "body_lines": 6
+    },
+    {
+      "path": "paper_joint_mem_forget/scripts/power_analysis.py",
+      "name": "n_mcnemar",
+      "lineno": 195,
+      "classification": "unknown",
+      "body_lines": 16
+    },
+    {
+      "path": "paper_joint_mem_forget/scripts/power_analysis.py",
+      "name": "or_mcnemar",
+      "lineno": 213,
+      "classification": "unknown",
+      "body_lines": 9
+    },
+    {
+      "path": "paper_joint_mem_forget/scripts/stats.py",
+      "name": "exact_mcnemar",
+      "lineno": 30,
+      "classification": "unknown",
+      "body_lines": 19
+    },
+    {
+      "path": "paper_joint_mem_forget/scripts/stats.py",
+      "name": "mcnemar_scipy",
+      "lineno": 51,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "paper_joint_mem_forget/scripts/stats.py",
+      "name": "mcnemar_chi2",
+      "lineno": 215,
+      "classification": "approx-only",
+      "body_lines": 15
+    },
+    {
+      "path": "agent-verifiability/wave2-A-obligation/paired_a01.py",
+      "name": "exact_mcnemar",
+      "lineno": 37,
+      "classification": "exact-only",
+      "body_lines": 9
+    },
+    {
+      "path": "agent-verifiability/wave2-F-acceptance/mcnemar_audit.py",
+      "name": "mcnemar_exact",
+      "lineno": 48,
+      "classification": "hybrid",
+      "body_lines": 15
+    },
+    {
+      "path": "paper_joint_mem_forget_formal/release/supplement/scripts/analysis.py",
+      "name": "mcnemar_exact",
+      "lineno": 42,
+      "classification": "unknown",
+      "body_lines": 7
+    },
+    {
+      "path": "paper_joint_mem_forget_formal/release/supplement/scripts/analysis_v4.py",
+      "name": "mcnemar_exact",
+      "lineno": 43,
+      "classification": "unknown",
+      "body_lines": 7
+    },
+    {
+      "path": "paper_joint_mem_forget_formal/scripts/analysis.py",
+      "name": "mcnemar_exact",
+      "lineno": 42,
+      "classification": "unknown",
+      "body_lines": 7
+    },
+    {
+      "path": "paper_joint_mem_forget_formal/scripts/analysis_v5.py",
+      "name": "mcnemar_exact",
+      "lineno": 110,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "paper_joint_mem_forget_formal/scripts/analysis_v4.py",
+      "name": "mcnemar_exact",
+      "lineno": 43,
+      "classification": "unknown",
+      "body_lines": 7
+    },
+    {
+      "path": "paper_joint_mem_forget_formal/.r3tmp/recompute_ledger.py",
+      "name": "mcnemar",
+      "lineno": 166,
+      "classification": "exact-only",
+      "body_lines": 18
+    },
+    {
+      "path": ".agent-memory/j1-72run/audit-20260917-1055/analyze_p5.py",
+      "name": "mcnemar_exact",
+      "lineno": 40,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": ".agent-memory/j1-72run/audit-20260917-1055/power_r266.py",
+      "name": "mcnemar_exact",
+      "lineno": 19,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "scripts/analyze_new60.py",
+      "name": "mcnemar_p",
+      "lineno": 27,
+      "classification": "exact-only",
+      "body_lines": 9
+    },
+    {
+      "path": "tools/bench-noise-floor/selftest.py",
+      "name": "case_mcnemar_unequal_items",
+      "lineno": 322,
+      "classification": "unknown",
+      "body_lines": 9
+    },
+    {
+      "path": "tools/bench-noise-floor/selftest.py",
+      "name": "case_two_slices_mcnemar",
+      "lineno": 424,
+      "classification": "unknown",
+      "body_lines": 21
+    },
+    {
+      "path": "tools/bench-noise-floor/audit.py",
+      "name": "mcnemar_exact",
+      "lineno": 642,
+      "classification": "exact-only",
+      "body_lines": 24
+    },
+    {
+      "path": "tools/bench-noise-floor/.bak-20261004T2215Z/selftest.py",
+      "name": "case_mcnemar_unequal_items",
+      "lineno": 213,
+      "classification": "unknown",
+      "body_lines": 9
+    },
+    {
+      "path": "tools/bench-noise-floor/.bak-20261004T2215Z/selftest.py",
+      "name": "case_two_slices_mcnemar",
+      "lineno": 307,
+      "classification": "unknown",
+      "body_lines": 21
+    },
+    {
+      "path": "tools/bench-noise-floor/.bak-20261004T2215Z/audit.py",
+      "name": "mcnemar_exact",
+      "lineno": 275,
+      "classification": "exact-only",
+      "body_lines": 24
+    },
+    {
+      "path": "shot2-2x2/src/s2/stats.py",
+      "name": "mcnemar_exact",
+      "lineno": 62,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "artifacts/bench-noise-floor-paper-v1/v2/bench-noise-floor/selftest.py",
+      "name": "case_mcnemar_unequal_items",
+      "lineno": 213,
+      "classification": "unknown",
+      "body_lines": 9
+    },
+    {
+      "path": "artifacts/bench-noise-floor-paper-v1/v2/bench-noise-floor/selftest.py",
+      "name": "case_two_slices_mcnemar",
+      "lineno": 307,
+      "classification": "unknown",
+      "body_lines": 21
+    },
+    {
+      "path": "artifacts/bench-noise-floor-paper-v1/v2/bench-noise-floor/audit.py",
+      "name": "mcnemar_exact",
+      "lineno": 275,
+      "classification": "exact-only",
+      "body_lines": 24
+    },
+    {
+      "path": "artifacts/a01-obligation-disclosure/v1/paired_a01.py",
+      "name": "exact_mcnemar",
+      "lineno": 37,
+      "classification": "exact-only",
+      "body_lines": 9
+    },
+    {
+      "path": "papers/engram_vs_kv/scripts/power_analysis.py",
+      "name": "power_mcnemar",
+      "lineno": 168,
+      "classification": "unknown",
+      "body_lines": 6
+    },
+    {
+      "path": "papers/engram_vs_kv/scripts/power_analysis.py",
+      "name": "n_mcnemar",
+      "lineno": 195,
+      "classification": "unknown",
+      "body_lines": 16
+    },
+    {
+      "path": "papers/engram_vs_kv/scripts/power_analysis.py",
+      "name": "or_mcnemar",
+      "lineno": 213,
+      "classification": "unknown",
+      "body_lines": 9
+    },
+    {
+      "path": "papers/engram_vs_kv/scripts/stats.py",
+      "name": "exact_mcnemar",
+      "lineno": 30,
+      "classification": "unknown",
+      "body_lines": 19
+    },
+    {
+      "path": "papers/engram_vs_kv/scripts/stats.py",
+      "name": "mcnemar_scipy",
+      "lineno": 51,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "papers/engram_vs_kv/scripts/stats.py",
+      "name": "mcnemar_chi2",
+      "lineno": 215,
+      "classification": "approx-only",
+      "body_lines": 15
+    },
+    {
+      "path": "papers/async_rl_2bit/scripts/power_analysis.py",
+      "name": "power_mcnemar",
+      "lineno": 168,
+      "classification": "unknown",
+      "body_lines": 6
+    },
+    {
+      "path": "papers/async_rl_2bit/scripts/power_analysis.py",
+      "name": "n_mcnemar",
+      "lineno": 195,
+      "classification": "unknown",
+      "body_lines": 16
+    },
+    {
+      "path": "papers/async_rl_2bit/scripts/power_analysis.py",
+      "name": "or_mcnemar",
+      "lineno": 213,
+      "classification": "unknown",
+      "body_lines": 9
+    },
+    {
+      "path": "papers/async_rl_2bit/scripts/stats.py",
+      "name": "exact_mcnemar",
+      "lineno": 30,
+      "classification": "unknown",
+      "body_lines": 19
+    },
+    {
+      "path": "papers/async_rl_2bit/scripts/stats.py",
+      "name": "mcnemar_scipy",
+      "lineno": 51,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "papers/async_rl_2bit/scripts/stats.py",
+      "name": "mcnemar_chi2",
+      "lineno": 215,
+      "classification": "approx-only",
+      "body_lines": 15
+    },
+    {
+      "path": "papers/science_factory/scripts/analysis.py",
+      "name": "mcnemar_exact",
+      "lineno": 54,
+      "classification": "exact-only",
+      "body_lines": 11
+    },
+    {
+      "path": "papers/multiagent_scaling/scripts/analysis.py",
+      "name": "mcnemar_exact",
+      "lineno": 142,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "papers/csa2_robust/scripts/power_analysis.py",
+      "name": "power_mcnemar",
+      "lineno": 168,
+      "classification": "unknown",
+      "body_lines": 6
+    },
+    {
+      "path": "papers/csa2_robust/scripts/power_analysis.py",
+      "name": "n_mcnemar",
+      "lineno": 195,
+      "classification": "unknown",
+      "body_lines": 16
+    },
+    {
+      "path": "papers/csa2_robust/scripts/power_analysis.py",
+      "name": "or_mcnemar",
+      "lineno": 213,
+      "classification": "unknown",
+      "body_lines": 9
+    },
+    {
+      "path": "papers/csa2_robust/scripts/analyze_controls.py",
+      "name": "mcnemar_exact",
+      "lineno": 72,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "papers/csa2_robust/scripts/seal_exp2.py",
+      "name": "mcnemar_exact",
+      "lineno": 81,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "papers/csa2_robust/scripts/analyze_h2.py",
+      "name": "mcnemar_exact",
+      "lineno": 64,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "papers/csa2_robust/scripts/analyze_h2.py",
+      "name": "mcnemar_binomtest",
+      "lineno": 74,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "papers/csa2_robust/scripts/analyze_h2.py",
+      "name": "mcnemar",
+      "lineno": 83,
+      "classification": "exact-only",
+      "body_lines": 7
+    },
+    {
+      "path": "papers/csa2_robust/scripts/stats.py",
+      "name": "exact_mcnemar",
+      "lineno": 30,
+      "classification": "unknown",
+      "body_lines": 19
+    },
+    {
+      "path": "papers/csa2_robust/scripts/stats.py",
+      "name": "mcnemar_scipy",
+      "lineno": 51,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "papers/csa2_robust/scripts/stats.py",
+      "name": "mcnemar_chi2",
+      "lineno": 215,
+      "classification": "approx-only",
+      "body_lines": 15
+    },
+    {
+      "path": "papers/agent_effort/experiments/h4_derived_stats.py",
+      "name": "mcnemar",
+      "lineno": 32,
+      "classification": "exact-only",
+      "body_lines": 18
+    },
+    {
+      "path": "papers/agent_effort/submission/repo/experiments/h4_derived_stats.py",
+      "name": "mcnemar",
+      "lineno": 32,
+      "classification": "exact-only",
+      "body_lines": 18
+    },
+    {
+      "path": "papers/agent_effort/scripts/power_analysis.py",
+      "name": "power_mcnemar",
+      "lineno": 168,
+      "classification": "unknown",
+      "body_lines": 6
+    },
+    {
+      "path": "papers/agent_effort/scripts/power_analysis.py",
+      "name": "n_mcnemar",
+      "lineno": 195,
+      "classification": "unknown",
+      "body_lines": 16
+    },
+    {
+      "path": "papers/agent_effort/scripts/power_analysis.py",
+      "name": "or_mcnemar",
+      "lineno": 213,
+      "classification": "unknown",
+      "body_lines": 9
+    },
+    {
+      "path": "papers/agent_effort/scripts/stats.py",
+      "name": "exact_mcnemar",
+      "lineno": 30,
+      "classification": "unknown",
+      "body_lines": 19
+    },
+    {
+      "path": "papers/agent_effort/scripts/stats.py",
+      "name": "mcnemar_scipy",
+      "lineno": 51,
+      "classification": "exact-only",
+      "body_lines": 8
+    },
+    {
+      "path": "papers/agent_effort/scripts/stats.py",
+      "name": "mcnemar_chi2",
+      "lineno": 215,
+      "classification": "approx-only",
+      "body_lines": 15
+    },
+    {
+      "path": "papers/encoder_memory/anc/scripts/analysis.py",
+      "name": "mcnemar_exact",
+      "lineno": 101,
+      "classification": "exact-only",
+      "body_lines": 10
+    },
+    {
+      "path": "papers/encoder_memory/scripts/analysis.py",
+      "name": "mcnemar_exact",
+      "lineno": 101,
+      "classification": "exact-only",
+      "body_lines": 10
+    },
+    {
+      "path": "evo_agent/evolve.py",
+      "name": "mcnemar_exact",
+      "lineno": 14,
+      "classification": "hybrid",
+      "body_lines": 14
+    },
+    {
+      "path": "evo_agent/frozen_v6/evolve.py",
+      "name": "mcnemar_exact",
+      "lineno": 12,
+      "classification": "hybrid",
+      "body_lines": 14
+    }
+  ]
+}

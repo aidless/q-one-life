@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\PAPER35_FRONT_DRIFT\\main.tex",
+    "rpc": "http://127.0.0.1:11435",
+    "timestamp": "2026-09-02T13:12:07+00:00",
+    "roles": [
+      "statistics"
+    ],
+    "rounds": 1
+  },
+  "roles": {
+    "statistics": {
+      "status": "ok",
+      "issues": [
+        {
+          "severity": "minor",
+          "location": "Abstract, 第2行",
+          "description": "使用了非标准的数学符号，如$400\times$，建议使用标准的数学表达式，如$400 \times$。",
+          "suggestion": "将$400\times$改为$400 \times$。"
+        },
+        {
+          "severity": "minor",
+          "location": "Abstract, 第10行",
+          "description": "使用了非标准的数学符号，如$7.14$，建议使用标准的数学表达式，如$7.14$。",
+          "suggestion": "将$7.14$改为$7.14$。"
+        },
+        {
+          "severity": "minor",
+          "location": "Abstract, 第11行",
+          "description": "使用了非标准的数学符号，如$4\times10^{-18}$，建议使用标准的数学表达式，如$4 \times 10^{-18}$。",
+          "suggestion": "将$4\times10^{-18}$改为$4 \times 10^{-18}$。"
+        },
+        {
+          "severity": "minor",
+          "location": "Introduction, 第5行",
+          "description": "使用了非标准的数学符号，如$4 \text{ models} \times 100 \text{ scenarios} \times 3 \text{ seeds}$，建议使用标准的数学表达式，如$4 \text{ models} \times 100 \text{ scenarios} \times 3 \text{ seeds}$。",
+          "suggestion": "保持原样，但确保所有数学表达式都使用标准格式。"
+        },
+        {
+          "severity": "minor",
+          "location": "Introduction, 第6行",
+          "description": "使用了非标准的数学符号，如$1{,}200$，建议使用标准的数学表达式，如$1,200$。",
+          "suggestion": "将$1{,}200$改为$1,200$。"
+        },
+        {
+          "severity": "minor",
+          "location": "Introduction, 第13行",
+          "description": "使用了非标准的数学符号，如$3 \text{ seed pairs}$，建议使用标准的数学表达式，如$3 \text{ seed pairs}$。",
+          "suggestion": "保持原样，但确保所有数学表达式都使用标准格式。"
+        },
+        {
+          "severity": "minor",
+          "location": "Introduction, 第14行",
+          "description": "使用了非标准的数学符号，如$6 \text{ model pairs}$，建议使用标准的数学表达式，如$6 \text{ model pairs}$。",
+          "suggestion": "保持原样，但确保所有数学表达式都使用标准格式。"
+        }
+      ],
+      "overall_assessment": "论文整体结构清晰，内容详实，但在数学符号的使用上存在一些非标准格式，建议统一使用标准格式以提高可读性。",
+      "score": 8
+    }
+  },
+  "stable_issues": [],
+  "summary": {
+    "verdict": "PASS",
+    "critical": 0,
+    "major": 0,
+    "minor": 7
+  }
+}

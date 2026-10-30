@@ -1,0 +1,175 @@
+{
+  "schema": "q-one-cleanroom-compile-v1",
+  "generated_at": "2026-10-28T06:43:20.465971Z",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/source",
+    "main_file": "main.tex",
+    "main_sha256": "ada8019e9c9ce01002334c9362dabfade3433ad9b1881be056b139ded32b743d",
+    "package_sha256": "38f19fc050d92d9132c3de46aaac555b402150e2fabd7abf2e999e3a86970927",
+    "file_count": 7
+  },
+  "commands": [
+    [
+      "latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "main.tex"
+    ],
+    [
+      "latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "main.tex"
+    ]
+  ],
+  "runs": [
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "environment": {
+        "SOURCE_DATE_EPOCH": "1786400000",
+        "FORCE_SOURCE_DATE": "1"
+      },
+      "exit_code": 0,
+      "workdir": "/tmp/qone-cleanroom-r646puky/run-1",
+      "stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/reports/cleanroom/pass1.stdout.log",
+      "stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/reports/cleanroom/pass1.stderr.log",
+      "main_log": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/reports/cleanroom/pass1.main.log",
+      "warnings": [
+        "Underfull \\vbox (badness 2856) has occurred while \\output is active []",
+        "Overfull \\hbox (3.41393pt too wide) in paragraph at lines 16--16",
+        "Underfull \\hbox (badness 1776) in paragraph at lines 17--18",
+        "Overfull \\hbox (19.16388pt too wide) in paragraph at lines 18--18",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 18--19",
+        "Overfull \\hbox (13.9139pt too wide) in paragraph at lines 19--19",
+        "Overfull \\hbox (66.41374pt too wide) in paragraph at lines 20--20",
+        "Underfull \\hbox (badness 1107) in paragraph at lines 4--5",
+        "Underfull \\hbox (badness 1122) in paragraph at lines 4--5",
+        "Underfull \\hbox (badness 3333) in paragraph at lines 4--5",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []"
+      ]
+    },
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "environment": {
+        "SOURCE_DATE_EPOCH": "1786400000",
+        "FORCE_SOURCE_DATE": "1"
+      },
+      "exit_code": 0,
+      "workdir": "/tmp/qone-cleanroom-r646puky/run-2",
+      "stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/reports/cleanroom/pass2.stdout.log",
+      "stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/reports/cleanroom/pass2.stderr.log",
+      "main_log": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/reports/cleanroom/pass2.main.log",
+      "warnings": [
+        "Underfull \\vbox (badness 2856) has occurred while \\output is active []",
+        "Overfull \\hbox (3.41393pt too wide) in paragraph at lines 16--16",
+        "Underfull \\hbox (badness 1776) in paragraph at lines 17--18",
+        "Overfull \\hbox (19.16388pt too wide) in paragraph at lines 18--18",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 18--19",
+        "Overfull \\hbox (13.9139pt too wide) in paragraph at lines 19--19",
+        "Overfull \\hbox (66.41374pt too wide) in paragraph at lines 20--20",
+        "Underfull \\hbox (badness 1107) in paragraph at lines 4--5",
+        "Underfull \\hbox (badness 1122) in paragraph at lines 4--5",
+        "Underfull \\hbox (badness 3333) in paragraph at lines 4--5",
+        "Underfull \\vbox (badness 10000) has occurred while \\output is active []"
+      ]
+    }
+  ],
+  "exit_codes": [
+    0,
+    0
+  ],
+  "outputs": [
+    {
+      "path": "cleanroom/main.pdf",
+      "sha256": "bac92dde25ec4413c10be230d135b899c8db3a4ae3418fd99688192b61c26961",
+      "bytes": 257456
+    },
+    {
+      "path": "cleanroom/main-repeat.pdf",
+      "sha256": "bac92dde25ec4413c10be230d135b899c8db3a4ae3418fd99688192b61c26961",
+      "bytes": 257456
+    },
+    {
+      "path": "cleanroom/main.bbl",
+      "sha256": "8e5c0a84578475116bd7e34d81ab6a955fa410c276f07902a2ba9c41ed532db6",
+      "bytes": 275
+    },
+    {
+      "path": "cleanroom/main-repeat.bbl",
+      "sha256": "8e5c0a84578475116bd7e34d81ab6a955fa410c276f07902a2ba9c41ed532db6",
+      "bytes": 275
+    },
+    {
+      "path": "cleanroom/pdfinfo.txt",
+      "sha256": "0e6dc252d0695cfd4c82105e601130ae746bcbd5e452f850ef88d5365e34cea7",
+      "bytes": 546
+    },
+    {
+      "path": "cleanroom/pass1.stdout.log",
+      "sha256": "8d9b6a29edce5416e74459b5dbf725ba30b96345b00958e2aa48a037b428f705",
+      "bytes": 36269
+    },
+    {
+      "path": "cleanroom/pass2.stdout.log",
+      "sha256": "8d9b6a29edce5416e74459b5dbf725ba30b96345b00958e2aa48a037b428f705",
+      "bytes": 36269
+    },
+    {
+      "path": "cleanroom/pass1.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "cleanroom/pass2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "cleanroom/pass1.main.log",
+      "sha256": "455545622434dc3799214829125811021b87324e58ac380f3788727af8cd36c5",
+      "bytes": 29293
+    },
+    {
+      "path": "cleanroom/pass2.main.log",
+      "sha256": "455545622434dc3799214829125811021b87324e58ac380f3788727af8cd36c5",
+      "bytes": 29293
+    }
+  ],
+  "pdf": {
+    "pages": 10,
+    "sha256_run1": "bac92dde25ec4413c10be230d135b899c8db3a4ae3418fd99688192b61c26961",
+    "sha256_run2": "bac92dde25ec4413c10be230d135b899c8db3a4ae3418fd99688192b61c26961",
+    "deterministic": true
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "latexmk": [
+      "Latexmk, John Collins, 9 March 2026. Version 4.88"
+    ]
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "Only files admitted by the mechanical package audit were copied.",
+    "Two independent clean directories were compiled with a fixed source epoch.",
+    "A successful compile is not scientific readiness or upload authorization."
+  ]
+}

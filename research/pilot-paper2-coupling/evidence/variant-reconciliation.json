@@ -1,0 +1,68 @@
+{
+  "schema": "q-one-paper2-variant-reconciliation-v1",
+  "generated_at": "2026-10-27T15:35:00Z",
+  "family_id": "qf-a-conditional-coupling-diversity-precisi-7336590fb7",
+  "portfolio_project_id": "qp-tmlr-paper2-consolidated-a737471ea703",
+  "canonical": {
+    "role": "canonical",
+    "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/paper/main.tex",
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/paper/main.tex",
+    "sha256": "379e1632302e979ded0c0462eeba32a07fa82653796ca72d4f9f55e46f8d5cec",
+    "bytes": 56705,
+    "lines": 498,
+    "byte_identical_to_canonical": true,
+    "changed_lines_vs_canonical": 0
+  },
+  "variants": [
+    {
+      "role": "arxiv",
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/variants/arxiv/main.tex",
+      "sha256": "379e1632302e979ded0c0462eeba32a07fa82653796ca72d4f9f55e46f8d5cec",
+      "bytes": 56705,
+      "lines": 498,
+      "byte_identical_to_canonical": true,
+      "changed_lines_vs_canonical": 0
+    },
+    {
+      "role": "source_old",
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/main.tex",
+      "sha256": "de0ec5a5fc47f3db0d69a5b1a137aacdda698018fc1aa07f18b94d83fa50ddf2",
+      "bytes": 56692,
+      "lines": 529,
+      "byte_identical_to_canonical": false,
+      "changed_lines_vs_canonical": 64
+    },
+    {
+      "role": "ingest_drift",
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/variants/ingest-drift/main.tex",
+      "sha256": "350b5463b0f70d3ce7af2334ee1571f05b49d9ed1cced43b0aee3819ffa733a3",
+      "bytes": 55466,
+      "lines": 493,
+      "byte_identical_to_canonical": false,
+      "changed_lines_vs_canonical": 24
+    },
+    {
+      "role": "legacy",
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/variants/legacy/main.tex",
+      "sha256": "382c2b5b3da8beaaa5c2c5116569319a0025f5ebea45458816315ab9828a5f4d",
+      "bytes": 65778,
+      "lines": 611,
+      "byte_identical_to_canonical": false,
+      "changed_lines_vs_canonical": 160
+    }
+  ],
+  "decision": {
+    "canonical_source": "main.tex",
+    "basis": [
+      "The paper/main.tex file is the portfolio project's primary source.",
+      "arxiv/main.tex is byte-identical to the canonical source.",
+      "source/main.tex and the legacy/drift copies are older or noncanonical."
+    ],
+    "superseded_copies_remain_immutable": true,
+    "final_disposition": "unreviewed"
+  },
+  "notes": [
+    "This reconciliation records identity; it does not claim scientific validity.",
+    "Variant line deltas are descriptive and do not imply that all changes are improvements."
+  ]
+}

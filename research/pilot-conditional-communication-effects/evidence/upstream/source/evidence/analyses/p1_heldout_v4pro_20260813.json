@@ -1,0 +1,2231 @@
+{
+ "model": "deepseek-v4-pro",
+ "protocol": "C2-like sync, trap problems, 3 agents, seed agent >=0.9",
+ "n_seeds": 3,
+ "conditions": [
+  "sync T=10",
+  "sync T=20"
+ ],
+ "results": [
+  {
+   "seed": 0,
+   "n_rounds": 10,
+   "mode": "sync",
+   "final_ece": 0.32999999999999996,
+   "accuracy": 0.4667,
+   "mean_conf": 0.8133,
+   "records": [
+    {
+     "round": 1,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "208"
+    },
+    {
+     "round": 1,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "360",
+     "gold": "360"
+    },
+    {
+     "round": 1,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "6",
+     "gold": "6"
+    },
+    {
+     "round": 2,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "360",
+     "gold": "360"
+    },
+    {
+     "round": 2,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "41"
+    },
+    {
+     "round": 2,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "41"
+    },
+    {
+     "round": 3,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "496"
+    },
+    {
+     "round": 3,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "99",
+     "gold": "99"
+    },
+    {
+     "round": 3,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "540",
+     "gold": "540"
+    },
+    {
+     "round": 4,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "181"
+    },
+    {
+     "round": 4,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "181"
+    },
+    {
+     "round": 4,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "608"
+    },
+    {
+     "round": 5,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "99",
+     "gold": "99"
+    },
+    {
+     "round": 5,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "99",
+     "gold": "99"
+    },
+    {
+     "round": 5,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "472"
+    },
+    {
+     "round": 6,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "33"
+    },
+    {
+     "round": 6,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "144",
+     "gold": "144"
+    },
+    {
+     "round": 6,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "472"
+    },
+    {
+     "round": 7,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "13",
+     "gold": "13"
+    },
+    {
+     "round": 7,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "19"
+    },
+    {
+     "round": 7,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "20",
+     "gold": "20"
+    },
+    {
+     "round": 8,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "19"
+    },
+    {
+     "round": 8,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "20",
+     "gold": "20"
+    },
+    {
+     "round": 8,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "19",
+     "gold": "19"
+    },
+    {
+     "round": 9,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "19",
+     "gold": "19"
+    },
+    {
+     "round": 9,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "150"
+    },
+    {
+     "round": 9,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "13"
+    },
+    {
+     "round": 10,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "215"
+    },
+    {
+     "round": 10,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "87"
+    },
+    {
+     "round": 10,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "19",
+     "gold": "19"
+    }
+   ]
+  },
+  {
+   "seed": 0,
+   "n_rounds": 20,
+   "mode": "sync",
+   "final_ece": 0.49000000000000005,
+   "accuracy": 0.4333,
+   "mean_conf": 0.8097,
+   "records": [
+    {
+     "round": 1,
+     "agent": 0,
+     "confidence": 0.99,
+     "correct": 1.0,
+     "answer": "208",
+     "gold": "208"
+    },
+    {
+     "round": 1,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "360",
+     "gold": "360"
+    },
+    {
+     "round": 1,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "6",
+     "gold": "6"
+    },
+    {
+     "round": 2,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "360",
+     "gold": "360"
+    },
+    {
+     "round": 2,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "41"
+    },
+    {
+     "round": 2,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "41"
+    },
+    {
+     "round": 3,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "496"
+    },
+    {
+     "round": 3,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "99",
+     "gold": "99"
+    },
+    {
+     "round": 3,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "540",
+     "gold": "540"
+    },
+    {
+     "round": 4,
+     "agent": 0,
+     "confidence": 0.99,
+     "correct": 1.0,
+     "answer": "181",
+     "gold": "181"
+    },
+    {
+     "round": 4,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "181"
+    },
+    {
+     "round": 4,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "608"
+    },
+    {
+     "round": 5,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "99"
+    },
+    {
+     "round": 5,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "99",
+     "gold": "99"
+    },
+    {
+     "round": 5,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "472"
+    },
+    {
+     "round": 6,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "33",
+     "gold": "33"
+    },
+    {
+     "round": 6,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "144",
+     "gold": "144"
+    },
+    {
+     "round": 6,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "472"
+    },
+    {
+     "round": 7,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "13"
+    },
+    {
+     "round": 7,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "19"
+    },
+    {
+     "round": 7,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "20",
+     "gold": "20"
+    },
+    {
+     "round": 8,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "19"
+    },
+    {
+     "round": 8,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "20",
+     "gold": "20"
+    },
+    {
+     "round": 8,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "19",
+     "gold": "19"
+    },
+    {
+     "round": 9,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "19",
+     "gold": "19"
+    },
+    {
+     "round": 9,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "150"
+    },
+    {
+     "round": 9,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "13"
+    },
+    {
+     "round": 10,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "215"
+    },
+    {
+     "round": 10,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "87"
+    },
+    {
+     "round": 10,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "19",
+     "gold": "19"
+    },
+    {
+     "round": 11,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-10"
+    },
+    {
+     "round": 11,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "87"
+    },
+    {
+     "round": 11,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-2"
+    },
+    {
+     "round": 12,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "13"
+    },
+    {
+     "round": 12,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "216",
+     "gold": "216"
+    },
+    {
+     "round": 12,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "416"
+    },
+    {
+     "round": 13,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "0"
+    },
+    {
+     "round": 13,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "180",
+     "gold": "180"
+    },
+    {
+     "round": 13,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "0"
+    },
+    {
+     "round": 14,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "180",
+     "gold": "180"
+    },
+    {
+     "round": 14,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "108",
+     "gold": "108"
+    },
+    {
+     "round": 14,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "166"
+    },
+    {
+     "round": 15,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "166"
+    },
+    {
+     "round": 15,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "30",
+     "gold": "30"
+    },
+    {
+     "round": 15,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "420",
+     "gold": "420"
+    },
+    {
+     "round": 16,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "43"
+    },
+    {
+     "round": 16,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "6",
+     "gold": "6"
+    },
+    {
+     "round": 16,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "76"
+    },
+    {
+     "round": 17,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-6"
+    },
+    {
+     "round": 17,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "7",
+     "gold": "7"
+    },
+    {
+     "round": 17,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "76"
+    },
+    {
+     "round": 18,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "12"
+    },
+    {
+     "round": 18,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "17",
+     "gold": "17"
+    },
+    {
+     "round": 18,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "84"
+    },
+    {
+     "round": 19,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "7"
+    },
+    {
+     "round": 19,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "183"
+    },
+    {
+     "round": 19,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "17",
+     "gold": "17"
+    },
+    {
+     "round": 20,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "7"
+    },
+    {
+     "round": 20,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "7",
+     "gold": "7"
+    },
+    {
+     "round": 20,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "183"
+    }
+   ]
+  },
+  {
+   "seed": 1,
+   "n_rounds": 10,
+   "mode": "sync",
+   "final_ece": 0.2899999999999999,
+   "accuracy": 0.5667,
+   "mean_conf": 0.835,
+   "records": [
+    {
+     "round": 1,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "148"
+    },
+    {
+     "round": 1,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "0",
+     "gold": "0"
+    },
+    {
+     "round": 1,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "148"
+    },
+    {
+     "round": 2,
+     "agent": 0,
+     "confidence": 0.95,
+     "correct": 1.0,
+     "answer": "7",
+     "gold": "7"
+    },
+    {
+     "round": 2,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "7"
+    },
+    {
+     "round": 2,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "136",
+     "gold": "136"
+    },
+    {
+     "round": 3,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "136",
+     "gold": "136"
+    },
+    {
+     "round": 3,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "7",
+     "gold": "7"
+    },
+    {
+     "round": 3,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "7"
+    },
+    {
+     "round": 4,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "5"
+    },
+    {
+     "round": 4,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "240",
+     "gold": "240"
+    },
+    {
+     "round": 4,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "448",
+     "gold": "448"
+    },
+    {
+     "round": 5,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "144",
+     "gold": "144"
+    },
+    {
+     "round": 5,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-30"
+    },
+    {
+     "round": 5,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "240",
+     "gold": "240"
+    },
+    {
+     "round": 6,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-29"
+    },
+    {
+     "round": 6,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "144",
+     "gold": "144"
+    },
+    {
+     "round": 6,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "144",
+     "gold": "144"
+    },
+    {
+     "round": 7,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "108",
+     "gold": "108"
+    },
+    {
+     "round": 7,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "175"
+    },
+    {
+     "round": 7,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "175"
+    },
+    {
+     "round": 8,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "168",
+     "gold": "168"
+    },
+    {
+     "round": 8,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "175"
+    },
+    {
+     "round": 8,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "240"
+    },
+    {
+     "round": 9,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "9"
+    },
+    {
+     "round": 9,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "480",
+     "gold": "480"
+    },
+    {
+     "round": 9,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "480",
+     "gold": "480"
+    },
+    {
+     "round": 10,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "480",
+     "gold": "480"
+    },
+    {
+     "round": 10,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "33",
+     "gold": "33"
+    },
+    {
+     "round": 10,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "33"
+    }
+   ]
+  },
+  {
+   "seed": 1,
+   "n_rounds": 20,
+   "mode": "sync",
+   "final_ece": 0.16999999999999998,
+   "accuracy": 0.5333,
+   "mean_conf": 0.8365,
+   "records": [
+    {
+     "round": 1,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "148"
+    },
+    {
+     "round": 1,
+     "agent": 1,
+     "confidence": 0.95,
+     "correct": 1.0,
+     "answer": "0",
+     "gold": "0"
+    },
+    {
+     "round": 1,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "148"
+    },
+    {
+     "round": 2,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "7"
+    },
+    {
+     "round": 2,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "7"
+    },
+    {
+     "round": 2,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "136"
+    },
+    {
+     "round": 3,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "136",
+     "gold": "136"
+    },
+    {
+     "round": 3,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "7",
+     "gold": "7"
+    },
+    {
+     "round": 3,
+     "agent": 2,
+     "confidence": 0.99,
+     "correct": 1.0,
+     "answer": "7",
+     "gold": "7"
+    },
+    {
+     "round": 4,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "5"
+    },
+    {
+     "round": 4,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "240",
+     "gold": "240"
+    },
+    {
+     "round": 4,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "448",
+     "gold": "448"
+    },
+    {
+     "round": 5,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "144",
+     "gold": "144"
+    },
+    {
+     "round": 5,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-30"
+    },
+    {
+     "round": 5,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "240",
+     "gold": "240"
+    },
+    {
+     "round": 6,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-29"
+    },
+    {
+     "round": 6,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "144",
+     "gold": "144"
+    },
+    {
+     "round": 6,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "144",
+     "gold": "144"
+    },
+    {
+     "round": 7,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "108"
+    },
+    {
+     "round": 7,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "175"
+    },
+    {
+     "round": 7,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "175"
+    },
+    {
+     "round": 8,
+     "agent": 0,
+     "confidence": 0.99,
+     "correct": 1.0,
+     "answer": "168",
+     "gold": "168"
+    },
+    {
+     "round": 8,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "175"
+    },
+    {
+     "round": 8,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "240"
+    },
+    {
+     "round": 9,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 1.0,
+     "answer": "9",
+     "gold": "9"
+    },
+    {
+     "round": 9,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "480",
+     "gold": "480"
+    },
+    {
+     "round": 9,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "480",
+     "gold": "480"
+    },
+    {
+     "round": 10,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "480",
+     "gold": "480"
+    },
+    {
+     "round": 10,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "33"
+    },
+    {
+     "round": 10,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "33"
+    },
+    {
+     "round": 11,
+     "agent": 0,
+     "confidence": 0.99,
+     "correct": 1.0,
+     "answer": "5",
+     "gold": "5"
+    },
+    {
+     "round": 11,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "16",
+     "gold": "16"
+    },
+    {
+     "round": 11,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "16",
+     "gold": "16"
+    },
+    {
+     "round": 12,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "616"
+    },
+    {
+     "round": 12,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "16",
+     "gold": "16"
+    },
+    {
+     "round": 12,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-8"
+    },
+    {
+     "round": 13,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "180",
+     "gold": "180"
+    },
+    {
+     "round": 13,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "216",
+     "gold": "216"
+    },
+    {
+     "round": 13,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-8"
+    },
+    {
+     "round": 14,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-8"
+    },
+    {
+     "round": 14,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-8"
+    },
+    {
+     "round": 14,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "13",
+     "gold": "13"
+    },
+    {
+     "round": 15,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "13"
+    },
+    {
+     "round": 15,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "220",
+     "gold": "220"
+    },
+    {
+     "round": 15,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "19",
+     "gold": "19"
+    },
+    {
+     "round": 16,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "16"
+    },
+    {
+     "round": 16,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "153"
+    },
+    {
+     "round": 16,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "24"
+    },
+    {
+     "round": 17,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "153"
+    },
+    {
+     "round": 17,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "19",
+     "gold": "19"
+    },
+    {
+     "round": 17,
+     "agent": 2,
+     "confidence": 0.98,
+     "correct": 1.0,
+     "answer": "24",
+     "gold": "24"
+    },
+    {
+     "round": 18,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "131"
+    },
+    {
+     "round": 18,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "420",
+     "gold": "420"
+    },
+    {
+     "round": 18,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "42"
+    },
+    {
+     "round": 19,
+     "agent": 0,
+     "confidence": 0.99,
+     "correct": 1.0,
+     "answer": "19",
+     "gold": "19"
+    },
+    {
+     "round": 19,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "19",
+     "gold": "19"
+    },
+    {
+     "round": 19,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "288",
+     "gold": "288"
+    },
+    {
+     "round": 20,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "288",
+     "gold": "288"
+    },
+    {
+     "round": 20,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "288",
+     "gold": "288"
+    },
+    {
+     "round": 20,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "81"
+    }
+   ]
+  },
+  {
+   "seed": 2,
+   "n_rounds": 10,
+   "mode": "sync",
+   "final_ece": 0.55,
+   "accuracy": 0.2667,
+   "mean_conf": 0.766,
+   "records": [
+    {
+     "round": 1,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-9"
+    },
+    {
+     "round": 1,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "351",
+     "gold": "351"
+    },
+    {
+     "round": 1,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "180"
+    },
+    {
+     "round": 2,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-9"
+    },
+    {
+     "round": 2,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "7"
+    },
+    {
+     "round": 2,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "116"
+    },
+    {
+     "round": 3,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "7"
+    },
+    {
+     "round": 3,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "144",
+     "gold": "144"
+    },
+    {
+     "round": 3,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "336",
+     "gold": "336"
+    },
+    {
+     "round": 4,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "116"
+    },
+    {
+     "round": 4,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "107"
+    },
+    {
+     "round": 4,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "336",
+     "gold": "336"
+    },
+    {
+     "round": 5,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "116"
+    },
+    {
+     "round": 5,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "107"
+    },
+    {
+     "round": 5,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "107"
+    },
+    {
+     "round": 6,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "5"
+    },
+    {
+     "round": 6,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "35",
+     "gold": "35"
+    },
+    {
+     "round": 6,
+     "agent": 2,
+     "confidence": 0.99,
+     "correct": 1.0,
+     "answer": "16",
+     "gold": "16"
+    },
+    {
+     "round": 7,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "16"
+    },
+    {
+     "round": 7,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "16"
+    },
+    {
+     "round": 7,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "67"
+    },
+    {
+     "round": 8,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-45"
+    },
+    {
+     "round": 8,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "67"
+    },
+    {
+     "round": 8,
+     "agent": 2,
+     "confidence": 0.99,
+     "correct": 1.0,
+     "answer": "22",
+     "gold": "22"
+    },
+    {
+     "round": 9,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "15"
+    },
+    {
+     "round": 9,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "15"
+    },
+    {
+     "round": 9,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "216",
+     "gold": "216"
+    },
+    {
+     "round": 10,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-9"
+    },
+    {
+     "round": 10,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "520"
+    },
+    {
+     "round": 10,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-9"
+    }
+   ]
+  },
+  {
+   "seed": 2,
+   "n_rounds": 20,
+   "mode": "sync",
+   "final_ece": 0.49000000000000005,
+   "accuracy": 0.3833,
+   "mean_conf": 0.8027,
+   "records": [
+    {
+     "round": 1,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-9"
+    },
+    {
+     "round": 1,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "351",
+     "gold": "351"
+    },
+    {
+     "round": 1,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "180"
+    },
+    {
+     "round": 2,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-9"
+    },
+    {
+     "round": 2,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "7"
+    },
+    {
+     "round": 2,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "116"
+    },
+    {
+     "round": 3,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "7"
+    },
+    {
+     "round": 3,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "144",
+     "gold": "144"
+    },
+    {
+     "round": 3,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "336",
+     "gold": "336"
+    },
+    {
+     "round": 4,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "116"
+    },
+    {
+     "round": 4,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "107"
+    },
+    {
+     "round": 4,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "336",
+     "gold": "336"
+    },
+    {
+     "round": 5,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "116"
+    },
+    {
+     "round": 5,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "107"
+    },
+    {
+     "round": 5,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "107"
+    },
+    {
+     "round": 6,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "5"
+    },
+    {
+     "round": 6,
+     "agent": 1,
+     "confidence": 0.95,
+     "correct": 1.0,
+     "answer": "35",
+     "gold": "35"
+    },
+    {
+     "round": 6,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "16",
+     "gold": "16"
+    },
+    {
+     "round": 7,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "16"
+    },
+    {
+     "round": 7,
+     "agent": 1,
+     "confidence": 0.99,
+     "correct": 1.0,
+     "answer": "16",
+     "gold": "16"
+    },
+    {
+     "round": 7,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "67"
+    },
+    {
+     "round": 8,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-45"
+    },
+    {
+     "round": 8,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "67"
+    },
+    {
+     "round": 8,
+     "agent": 2,
+     "confidence": 0.99,
+     "correct": 1.0,
+     "answer": "22",
+     "gold": "22"
+    },
+    {
+     "round": 9,
+     "agent": 0,
+     "confidence": 0.99,
+     "correct": 1.0,
+     "answer": "15",
+     "gold": "15"
+    },
+    {
+     "round": 9,
+     "agent": 1,
+     "confidence": 0.99,
+     "correct": 1.0,
+     "answer": "15",
+     "gold": "15"
+    },
+    {
+     "round": 9,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "216",
+     "gold": "216"
+    },
+    {
+     "round": 10,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-9"
+    },
+    {
+     "round": 10,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "520"
+    },
+    {
+     "round": 10,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-9"
+    },
+    {
+     "round": 11,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-41"
+    },
+    {
+     "round": 11,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-24"
+    },
+    {
+     "round": 11,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "19",
+     "gold": "19"
+    },
+    {
+     "round": 12,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "520"
+    },
+    {
+     "round": 12,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "24"
+    },
+    {
+     "round": 12,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "24",
+     "gold": "24"
+    },
+    {
+     "round": 13,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "19"
+    },
+    {
+     "round": 13,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "3"
+    },
+    {
+     "round": 13,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "312"
+    },
+    {
+     "round": 14,
+     "agent": 0,
+     "confidence": 0.95,
+     "correct": 1.0,
+     "answer": "6",
+     "gold": "6"
+    },
+    {
+     "round": 14,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "432",
+     "gold": "432"
+    },
+    {
+     "round": 14,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "19"
+    },
+    {
+     "round": 15,
+     "agent": 0,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "66",
+     "gold": "66"
+    },
+    {
+     "round": 15,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "3"
+    },
+    {
+     "round": 15,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "66",
+     "gold": "66"
+    },
+    {
+     "round": 16,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "16"
+    },
+    {
+     "round": 16,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "213",
+     "gold": "213"
+    },
+    {
+     "round": 16,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "144",
+     "gold": "144"
+    },
+    {
+     "round": 17,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "213"
+    },
+    {
+     "round": 17,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "12",
+     "gold": "12"
+    },
+    {
+     "round": 17,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "16"
+    },
+    {
+     "round": 18,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "91"
+    },
+    {
+     "round": 18,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "144",
+     "gold": "144"
+    },
+    {
+     "round": 18,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-52"
+    },
+    {
+     "round": 19,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-22"
+    },
+    {
+     "round": 19,
+     "agent": 1,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "216",
+     "gold": "216"
+    },
+    {
+     "round": 19,
+     "agent": 2,
+     "confidence": 1.0,
+     "correct": 1.0,
+     "answer": "216",
+     "gold": "216"
+    },
+    {
+     "round": 20,
+     "agent": 0,
+     "confidence": 0.9,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-19"
+    },
+    {
+     "round": 20,
+     "agent": 1,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-52"
+    },
+    {
+     "round": 20,
+     "agent": 2,
+     "confidence": 0.5,
+     "correct": 0.0,
+     "answer": "",
+     "gold": "-19"
+    }
+   ]
+  }
+ ]
+}

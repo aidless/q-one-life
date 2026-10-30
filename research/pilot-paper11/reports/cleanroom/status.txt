@@ -1,0 +1,5 @@
+pdflatex_pass1=0
+bibtex=0
+pdflatex_pass2=0
+pdflatex_pass3=0
+cleanroom_dir=/tmp/qone-paper11-cleanroom.1R1aM1

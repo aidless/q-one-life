@@ -1,0 +1,20 @@
+{
+  "schema": "ledger-class-census/1",
+  "entries": 575,
+  "anchor_missing": [],
+  "refusal_sentences": [
+    {
+      "line": 100,
+      "pattern": "refuses to report one",
+      "sentence": "the fourth is whether the floor and the leaderboard are computed on the same items: a difference between a floor measured on one denominator and a leaderboard measured on another i"
+    },
+    {
+      "line": 347,
+      "pattern": "do not read a verdict",
+      "sentence": "we do not read a verdict off these two numbers: the released report carries their difference and its interval as reference, which is what a refusal does here (\\s\\ref{sec:loo}), but"
+    }
+  ],
+  "ambiguous_membership": [],
+  "json_entries_checked": 484,
+  "verdict": "GREEN"
+}

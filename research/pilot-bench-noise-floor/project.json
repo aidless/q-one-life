@@ -1,0 +1,997 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-reading-a-leaderboard-before-you-cite-it-96866c580c",
+  "title": "Reading a Leaderboard Before You Cite It: Three Rulers for the Noise Floor of LLM-as-Judge Evaluation",
+  "status": "revision",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor",
+  "origin": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
+  "manuscript": {
+    "path": "source/main.tex",
+    "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+    "published_source_sha256": "0d68bda378fa0fc4fe1d39c8c8d46ba39052230fae7a1e8f2fd44b41e5b7e113",
+    "matches_published_source": false,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "f6ae8d2c36f15f7c3c1c34494d657100b0a7d8854ad6b0178b3b5510cf3fb8ba",
+      "state": "candidate",
+      "origin": "evidence/source_record.json",
+      "description": "Q-One source identity for the current source copy."
+    },
+    {
+      "path": "evidence/native-paper-ledger.json",
+      "sha256": "47d5b7d66e8ece9ac21f6c82089f4883405689e6428fce1e70eb936236252063",
+      "state": "verified",
+      "origin": "evidence/native-paper-ledger.json",
+      "description": "Copied native numeric ledger; 569 entries audited without rewriting."
+    },
+    {
+      "path": "evidence/native-manifest.json",
+      "sha256": "827720a059a385b6fbf945f2a88cc2984d9179f3641822b12ba717b1ec15697a",
+      "state": "verified",
+      "origin": "evidence/native-manifest.json",
+      "description": "Copied paper manifest containing the recorded source hash."
+    },
+    {
+      "path": "evidence/verdict-claims.json",
+      "sha256": "3e0bf6dc8fed20263deb751e509d84a1b338d41b6219c1936e116cfe85f46c9b",
+      "state": "verified",
+      "origin": "evidence/verdict-claims.json",
+      "description": "Copied 45 verdict-word claim registry."
+    },
+    {
+      "path": "evidence/native-ledger-pointer.json",
+      "sha256": "adc8289ae02807355396c754c40dbdde4d401f92aafc82478b1471412e4d6021",
+      "state": "candidate",
+      "origin": "evidence/native-ledger-pointer.json",
+      "description": "Pointer to the external workspace used for native field verification."
+    },
+    {
+      "path": "evidence/REVIEW_LOCAL_2026-10-24.md",
+      "sha256": "ad04fb8faead31919a7d0a7123afbb47e48d1eb23453a84e4d79cd9e3b52cb2a",
+      "state": "verified",
+      "origin": "evidence/REVIEW_LOCAL_2026-10-24.md",
+      "description": "Local desk review identifying major conceptual-validity issues."
+    },
+    {
+      "path": "evidence/REVIEW_INDEPENDENT_2026-10-24.md",
+      "sha256": "8d815000775ad110354043854967c79044605deb1f6113a549a6cba13078c86e",
+      "state": "verified",
+      "origin": "evidence/REVIEW_INDEPENDENT_2026-10-24.md",
+      "description": "Independent adversarial review of the current manuscript."
+    },
+    {
+      "path": "reports/native-ledger-audit.json",
+      "sha256": "dc97a9923800deddf56e6ef5b2b5d528b3d10d23e38db87f60cd81c21e53a72d",
+      "state": "verified",
+      "origin": "reports/native-ledger-audit.json",
+      "description": "Native ledger source/field/value audit."
+    },
+    {
+      "path": "reports/package-audit.json",
+      "sha256": "fd4fcc5528a12ecdb81020a041e5298c43512c330c16382ff57c5e7be2a988f2",
+      "state": "verified",
+      "origin": "reports/package-audit.json",
+      "description": "Mechanical LaTeX source-tree audit."
+    },
+    {
+      "path": "reports/check-manuscript-numbers.log",
+      "sha256": "4b4e5613801f9edd7d3bae3d964c0a927b338839893e0f8975cf38e1f0e207a9",
+      "state": "verified",
+      "origin": "native Noise Floor gate",
+      "description": "250/250 native manuscript number checks."
+    },
+    {
+      "path": "reports/ledger-reverse-coverage.json",
+      "sha256": "e13e76b5d2b34b707d08e45f2355bb104344e10369cae5fc25794cf1651e024c",
+      "state": "verified",
+      "origin": "native Noise Floor gate",
+      "description": "Native reverse coverage: 353 manuscript numbers, 0 unbound."
+    },
+    {
+      "path": "reports/ledger-reverse-coverage.log",
+      "sha256": "642e014f4c7a2fa6b7064cbf129c45c4d72ff5e854fe817feb9707f727bfd51d",
+      "state": "verified",
+      "origin": "native Noise Floor gate",
+      "description": "Captured reverse coverage output."
+    },
+    {
+      "path": "reports/ledger-anchor-census.log",
+      "sha256": "6f62e6be802aa9c600fefc2bb0a702c21fb37ba49914e5da0e9fc0b11bf0dcdd",
+      "state": "verified",
+      "origin": "native Noise Floor gate",
+      "description": "Native anchor census: GREEN, A1=0."
+    },
+    {
+      "path": "reports/native-numeric-gate.json",
+      "sha256": "6c9e0468e9754f5daff65a85b9dfaad9756a19b738ca6f270f885cf5291b9fbf",
+      "state": "verified",
+      "origin": "reports/native-numeric-gate.json",
+      "description": "Machine-readable two-run receipt for all three native numeric gates."
+    },
+    {
+      "path": "reports/cleanroom/receipt.json",
+      "sha256": "68fa94f327299254c71536b8946f6b2a59076ef3168674126e6841fce1b90043",
+      "state": "verified",
+      "origin": "reports/cleanroom/receipt.json",
+      "description": "Two-run isolated LaTeX compile receipt bound to the current source."
+    },
+    {
+      "path": "reports/package/package-receipt.json",
+      "sha256": "0401071a21b670595fec50973175baf962932240b6b5b586787fae8f3c873274",
+      "state": "verified",
+      "origin": "reports/package/package-receipt.json",
+      "description": "Deterministic internal candidate archive and extraction compile receipt."
+    },
+    {
+      "path": "reports/package/noise-floor-arxiv-candidate.tar.gz",
+      "sha256": "74218ff9f262a8a57383875faf229a93cbd6a0cf45a2738e17571b1e11900c75",
+      "state": "verified",
+      "origin": "reports/package/noise-floor-arxiv-candidate.tar.gz",
+      "description": "Internal eleven-file candidate archive; not upload-authorized."
+    },
+    {
+      "path": "evidence/source-lineage.json",
+      "sha256": "20a2abc52d3b38e313f821b8a51e511593170813e7a63066f11fe486c7d2b01a",
+      "state": "verified",
+      "origin": "external git commit 9eb77f1b77baaa9932d8faf18da2fc50a2077f6c",
+      "description": "Recovers the native-manifest source blob and records an eight-added/five-removed-line revision difference from the current manuscript; publication identity remains false."
+    },
+    {
+      "path": "experiments/producer-baseline-counterexample/preregistration.json",
+      "sha256": "ee9b2355387841012450be05d934e3402c85dfc9d346274ea8d5a1b5aa369e62",
+      "state": "verified",
+      "origin": "frozen v1.3.0 protocol after three preserved pre-measurement audit failures",
+      "description": "Frozen protocol for the producer-baseline necessity counterexample and its controls."
+    },
+    {
+      "path": "experiments/producer-baseline-counterexample/results/run-1.json",
+      "sha256": "fa0846484b4dba64236caf2aeefb2b70d3db8f6bab78b5ad1fe6067f289cd424",
+      "state": "verified",
+      "origin": "run_counterexample.py",
+      "description": "Accepted deterministic result for the critical, positive and negative conditions."
+    },
+    {
+      "path": "experiments/producer-baseline-counterexample/results/reproduction.json",
+      "sha256": "4e96412333a6634b5f3977fa71a447dd4e1cd743493aad113fabff98b3b6f84d",
+      "state": "verified",
+      "origin": "two byte-identical runs",
+      "description": "Two-run reproduction receipt binding the preregistration, implementation, manuscript and preserved failed attempts."
+    },
+    {
+      "path": "revisions/2026-10-28-construct-validity-r1/revision-manifest.json",
+      "sha256": "cf246a1fced7653fcf7562947210384c2ca05731da0bb15a513b974a44de2b18",
+      "state": "candidate",
+      "origin": "local revision candidate R1",
+      "description": "Separate construct-validity wording candidate preserving the canonical source and reported measurements; independent review remains open."
+    },
+    {
+      "path": "experiments/bootstrap-estimand-a2/preregistration.json",
+      "sha256": "a58bf0b93419d4465c9b93b9f4e1ec055f9ba5f5cc31e21a85fa870fcf565484",
+      "state": "verified",
+      "origin": "experiments/bootstrap-estimand-a2/preregistration.json",
+      "description": "Frozen preregistration v2.0.0 for the A2 estimand split, with three superseded attempts preserved under attempts/."
+    },
+    {
+      "path": "experiments/bootstrap-estimand-a2/run_estimand_split.py",
+      "sha256": "927143dd6727272311e67c4468d1bedaf131dc119d40546aae7c993d52b8d2d0",
+      "state": "verified",
+      "origin": "experiments/bootstrap-estimand-a2/run_estimand_split.py",
+      "description": "Frozen runner pinned by the preregistration hash."
+    },
+    {
+      "path": "experiments/bootstrap-estimand-a2/results/run-1.json",
+      "sha256": "4b0d65068f78015a4b5014f28e87b4d49b62db555d04598bee4e47cc5dade408",
+      "state": "verified",
+      "origin": "experiments/bootstrap-estimand-a2/results/run-1.json",
+      "description": "Accepted A2 run: theta_both is zero in 2000/2000 rounds on all four m25 tasks, theta_fixed reproduces the recorded native intervals, both controls move the statistic."
+    },
+    {
+      "path": "experiments/bootstrap-estimand-a2/results/run-2.json",
+      "sha256": "4b0d65068f78015a4b5014f28e87b4d49b62db555d04598bee4e47cc5dade408",
+      "state": "verified",
+      "origin": "experiments/bootstrap-estimand-a2/results/run-2.json",
+      "description": "Second accepted A2 run; byte-identical to run-1.json."
+    },
+    {
+      "path": "experiments/bootstrap-estimand-a2/results/native-rerun-factuality.json",
+      "sha256": "e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c",
+      "state": "verified",
+      "origin": "experiments/bootstrap-estimand-a2/results/native-rerun-factuality.json",
+      "description": "Unmodified native audit.py rerun on the rebuilt factuality table; byte-identical to the recorded evidence/m25_factuality.json."
+    },
+    {
+      "path": "experiments/bootstrap-estimand-a2/results/REPORT.md",
+      "sha256": "86ea70406748878ea91dbde8d70b778cafb9e271789dc8e2ec957a17e2e2bca3",
+      "state": "verified",
+      "origin": "experiments/bootstrap-estimand-a2/results/REPORT.md",
+      "description": "A2 result report with estimand definitions, controls, and interpretation limits."
+    },
+    {
+      "path": "revisions/2026-10-29-estimand-split-r2/revision-manifest.json",
+      "sha256": "db7df4ba6cf7f95fcbf351f9058871e033a34ef02e401dce9589f85928802c18",
+      "state": "candidate",
+      "origin": "local revision candidate R2 built on R1",
+      "description": "A2 estimand-split wording candidate binding its parent source, canonical source, A2 evidence and five verification receipts; C02/C03 remain open."
+    },
+    {
+      "path": "revisions/2026-10-29-estimand-split-r2/SHA256SUMS.txt",
+      "sha256": "e36db072ae0286f54eda7ee695ed16c3532d2d666474adfbc71052d45a4ad3b4",
+      "state": "candidate",
+      "origin": "revision candidate R2 hash manifest",
+      "description": "Hash inventory for all 29 R2 candidate files excluding the manifest itself; every entry verifies."
+    },
+    {
+      "path": "revisions/2026-10-29-estimand-split-r2/source/main.tex",
+      "sha256": "fc24f8effef7c6f90c6dca6a52ea967adcec60bf7b79408c817b3a8561930c0f",
+      "state": "candidate",
+      "origin": "candidate R1 plus the A2 estimand-split correction",
+      "description": "Separate R2 manuscript source; it does not replace source/main.tex."
+    },
+    {
+      "path": "revisions/2026-10-29-estimand-split-r2/main.diff",
+      "sha256": "390e9d7f9a8f7c0e99705f5d102d074e7e221aa57d11adf21a209b5d241b6d62",
+      "state": "candidate",
+      "origin": "diff of candidate R2 against candidate R1",
+      "description": "R2 changes two A2-related sentences while preserving the R1 construct-validity correction."
+    },
+    {
+      "path": "revisions/2026-10-29-estimand-split-r2/main-vs-canonical.diff",
+      "sha256": "a7ba05d9ceab85cd7e7564a3e7a50bce9f54e339a895886ffc8b44c307c891c8",
+      "state": "candidate",
+      "origin": "diff of candidate R2 against the canonical overlay",
+      "description": "Full difference between the unmodified canonical source and R2; source identity remains unresolved."
+    },
+    {
+      "path": "revisions/2026-10-29-estimand-split-r2/REVISION_R2.md",
+      "sha256": "1af52f2bd80b296880792843366ddc437a333b0279f86d41b4d3458ae83233cf",
+      "state": "candidate",
+      "origin": "revision candidate R2 report",
+      "description": "Human-readable R2 scope, evidence bindings, gate results and non-claims."
+    },
+    {
+      "path": "revisions/2026-10-29-estimand-split-r2/reports/cleanroom/receipt.json",
+      "sha256": "524d9f014298bc191a958aa50f6bfc1bd1fb420263ba194d7a8d1721cdca2d60",
+      "state": "candidate",
+      "origin": "two isolated latexmk runs",
+      "description": "R2 clean-room receipt: two byte-identical 45-page PDFs; compilation is not scientific readiness."
+    },
+    {
+      "path": "experiments/kfold-common-support-a3/preregistration.json",
+      "sha256": "bacdf9e09372d8382460a7712893989fb04a56d921fa3cddcf3cacbac2462133",
+      "state": "verified",
+      "origin": "frozen A3 preregistration v1.0.0",
+      "description": "Predeclares the joint main-gold, LOO-gold, fold-gold and actor support, five gates, and the exactly-two-run stopping rule."
+    },
+    {
+      "path": "experiments/kfold-common-support-a3/run_common_support.py",
+      "sha256": "9669db5401f31b10a450eafd0762ddd9bafdec77737a3d30a420ec85f977b012",
+      "state": "verified",
+      "origin": "frozen A3 runner",
+      "description": "Rebuilds the m25 vote tables, reproduces the recorded leaky comparison, and recomputes LOO and k-fold arms on one joint support."
+    },
+    {
+      "path": "experiments/kfold-common-support-a3/results/run-1.json",
+      "sha256": "93455b86334d9345f220b0e93b4a4067783f1ff0846d2af0bd93dac1695e6391",
+      "state": "verified",
+      "origin": "A3 accepted run 1",
+      "description": "All five A3 gates pass; LOO joint-support margin is zero and the bootstrap identity is zero in 2000/2000 rounds on every task."
+    },
+    {
+      "path": "experiments/kfold-common-support-a3/results/run-2.json",
+      "sha256": "93455b86334d9345f220b0e93b4a4067783f1ff0846d2af0bd93dac1695e6391",
+      "state": "verified",
+      "origin": "A3 accepted run 2",
+      "description": "Second accepted A3 run; byte-identical to run-1.json."
+    },
+    {
+      "path": "experiments/kfold-common-support-a3/results/reproduction.json",
+      "sha256": "c2f1ebde69c98427acf685759e168b751700e7d88dff51c6221715d337d47b88",
+      "state": "verified",
+      "origin": "two byte-identical A3 runs",
+      "description": "Reproduction receipt binding the frozen protocol, runner, both runs and all five gates."
+    },
+    {
+      "path": "experiments/kfold-common-support-a3/results/REPORT.md",
+      "sha256": "07c6bc5de88144658d4bbbdb9e4904a324afd49fe680f17478d21f3d7d519efe",
+      "state": "verified",
+      "origin": "A3 result report",
+      "description": "Reports the joint-support sizes, zero LOO margins, non-zero k-fold control, and the 54-item preference limitation."
+    },
+    {
+      "path": "experiments/kfold-common-support-a3/SHA256SUMS.txt",
+      "sha256": "0c8bcad7f8fa4820af89726fdf272254be6f5330534629c922381e0e334981c4",
+      "state": "verified",
+      "origin": "A3 experiment hash inventory",
+      "description": "All seven A3 experiment files verify against the recorded hashes."
+    },
+    {
+      "path": "experiments/threshold-interface-a4/preregistration.json",
+      "sha256": "de1cb0d656c92537444bd950fa8d357282f4ec13e489c6688f5413da9a48fabd",
+      "state": "verified",
+      "origin": "frozen A4 preregistration v1.0.0",
+      "description": "Predeclares seven synthetic fixtures, five interface gates, the pinned native hash, and the exactly-two-run stopping rule."
+    },
+    {
+      "path": "experiments/threshold-interface-a4/run_threshold_interface.py",
+      "sha256": "c996fc7b8be09ee8e0aaf58abfb1ecb86003a8e39bfa4b4ee3bcce5dcc456971",
+      "state": "verified",
+      "origin": "frozen A4 runner",
+      "description": "Invokes the unmodified native audit.py on deterministic threshold, equality, interval and fail-closed fixtures."
+    },
+    {
+      "path": "experiments/threshold-interface-a4/results/run-1.json",
+      "sha256": "d2fedc88b0ae81f782c8169cfe8c66103871a389db644476a4b47735e049727c",
+      "state": "verified",
+      "origin": "A4 accepted run 1",
+      "description": "All five A4 gates pass: hard-coded delta, equality mismatch, CI non-gating and three fail-closed controls."
+    },
+    {
+      "path": "experiments/threshold-interface-a4/results/run-2.json",
+      "sha256": "d2fedc88b0ae81f782c8169cfe8c66103871a389db644476a4b47735e049727c",
+      "state": "verified",
+      "origin": "A4 accepted run 2",
+      "description": "Second accepted A4 run; byte-identical to run-1.json."
+    },
+    {
+      "path": "experiments/threshold-interface-a4/results/reproduction.json",
+      "sha256": "f98e5004bc953751f7a2c05c446206a87780af7202ad9acba77e62181c2a69a9",
+      "state": "verified",
+      "origin": "two byte-identical A4 runs",
+      "description": "Reproduction receipt binding the frozen protocol, runner, both runs and all five interface gates."
+    },
+    {
+      "path": "experiments/threshold-interface-a4/results/REPORT.md",
+      "sha256": "37181f44053f9994056a9a0791f0c56d50f95dfedf50bc52566d36caabda9eb6",
+      "state": "verified",
+      "origin": "A4 result report",
+      "description": "Reports fixture values, equality/CI mismatches, fail-closed controls and interpretation limits."
+    },
+    {
+      "path": "experiments/threshold-interface-a4/SHA256SUMS.txt",
+      "sha256": "491229687cde7e1039170cd347d0202a5d20d7b50ec0fc940b43ac360349853b",
+      "state": "verified",
+      "origin": "A4 experiment hash inventory",
+      "description": "All seven A4 experiment files verify against the recorded hashes."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/revision-manifest.json",
+      "sha256": "65c2507433098c50e1c4a360a0d1796dc0ff7a346942c22ead8fd1f293a929bc",
+      "state": "candidate",
+      "origin": "local revision candidate R3 built on R2",
+      "description": "A3 joint-support and A4 threshold/interface integration candidate; binds the parent, canonical source, review request, experiment receipts and candidate-specific gate reports. C02/C03 remain open."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/SHA256SUMS.txt",
+      "sha256": "419b34006bfca00c1a93b3d0e70fa1f41ba23cc452a89c806e304893b27c1c07",
+      "state": "candidate",
+      "origin": "revision candidate R3 hash inventory",
+      "description": "Hash inventory for all 35 R3 candidate files excluding the checksum file itself; the complete inventory verifies."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/REVISION_R3.md",
+      "sha256": "55bd86bba618532410ef53f6a22ae1b316713ade7d32db1ba30e156d4cbdb6ca",
+      "state": "candidate",
+      "origin": "revision candidate R3 report",
+      "description": "Human-readable scope, evidence bindings, gate results, remaining blockers and non-claims for R3."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/REVIEW_REQUEST_R3.md",
+      "sha256": "b8eaf83c2e28da1b9f330b7a8a9d985b5e2f3e7329ec446acce5b043a2ceaae2",
+      "state": "candidate",
+      "origin": "frozen R3 independent-review request packet",
+      "description": "Self-contained, read-only review request mapping A1-A4 to R3 evidence and naming the remaining MDE, generator-independence and external-validity questions; it has not been sent."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/source/main.tex",
+      "sha256": "a9eef802faa6ef80f7916626a28aade11f1922701fb1f3b24b2f3780a69e0bb6",
+      "state": "candidate",
+      "origin": "candidate R2 plus A3/A4 integration and executable threshold wording",
+      "description": "Separate 46-page R3 manuscript source; it does not replace source/main.tex."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/main.diff",
+      "sha256": "42e40ab0b040c12bb2982ca204aae464c41e15ecee7fa9d116e911d297ec6a14",
+      "state": "candidate",
+      "origin": "diff of candidate R3 against R2",
+      "description": "R3 replaces conflicting equality instructions, states the non-gating interval rule and integrates the A3 joint-support result."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/main-vs-canonical.diff",
+      "sha256": "0264a11ff93671948625934844fc993e2436a0bb1e9f6c1ffa570f0ea3503e40",
+      "state": "candidate",
+      "origin": "diff of candidate R3 against the canonical overlay",
+      "description": "Full difference between the unmodified canonical source and R3; the published-source identity gap remains unresolved."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/evidence/README.md",
+      "sha256": "412ce20ce9bc888212af6536d8813934724cad956da6a3a9205173b3ddf178b9",
+      "state": "candidate",
+      "origin": "R3 evidence overlay documentation",
+      "description": "Explains how candidate-only ledger and verdict overlays append A3/A4 bindings without modifying the native paper tree."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/evidence/paper-ledger-overlay.json",
+      "sha256": "7ff57a361f0a174e81ecf18652cadca9df7c9ee039ebf4a8917c36667f572fc3",
+      "state": "candidate",
+      "origin": "native ledger plus R3-specific A3/A4 readings",
+      "description": "Candidate ledger overlay; records the native base hash and appends six readings bound directly to A3/A4 result fields."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/evidence/verdict-claims-overlay.json",
+      "sha256": "7f1c9b157edd4246811c61695b4899fc81c46e6417491293bfd8698d130c078d",
+      "state": "candidate",
+      "origin": "candidate verdict registry overlay",
+      "description": "Candidate verdict-word registry used only for R3 source text; it does not rewrite the native registry."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/run_candidate_gates.py",
+      "sha256": "411cd00c54dc96e8e0d8e4cde31708276b7fda9eb4fdae68677cbc1222e1eed2",
+      "state": "candidate",
+      "origin": "R3 candidate gate runner",
+      "description": "Runs reverse coverage, anchor census and verdict-word checks against the candidate source while leaving the native paper tree read-only."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/reports/package-audit.json",
+      "sha256": "26e8583840f2326b57c04c22ebad8a45123910f92df5e92fa03cc78193e7a588",
+      "state": "candidate",
+      "origin": "R3 mechanical package audit",
+      "description": "Eleven-file package audit passed for the R3 source tree; packageability is not scientific readiness."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/reports/cleanroom/receipt.json",
+      "sha256": "0254ad16dcb835138323a9567ad172d4eaf41cf527145d5c8625abb3ad47a39b",
+      "state": "candidate",
+      "origin": "two isolated R3 compilation runs",
+      "description": "R3 clean-room receipt: two byte-identical 46-page PDFs; compilation is not scientific readiness."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/reports/ledger-reverse-coverage.json",
+      "sha256": "50bc1168961c0522ad80a9a56f47ee118bbd0fdb384d5cfda20724480b1712fd",
+      "state": "candidate",
+      "origin": "R3 candidate reverse numeric coverage",
+      "description": "355 readings, 352 bound, 3 excused and 0 unbound against the R3 candidate ledger overlay."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/reports/ledger-anchor-census.json",
+      "sha256": "39b66daff59bb4394e56ef5e8196d95849941ac8934c30f59cf920efa36d727c",
+      "state": "candidate",
+      "origin": "R3 candidate anchor census",
+      "description": "GREEN with zero missing anchors and zero ambiguous ledger membership."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/reports/verdict-word-gate.json",
+      "sha256": "10dbc52e004a7a8caa422f2a23b89899d87d1be48223507bbe61c674d380eaaa",
+      "state": "candidate",
+      "origin": "R3 candidate verdict-word gate",
+      "description": "137/137 verdict-word checks passed for the candidate source."
+    },
+    {
+      "path": "revisions/2026-10-29-support-threshold-r3/reports/candidate-gates-summary.json",
+      "sha256": "d1c212dfcee851ec5a9281fa7cf34b5fb9e9106a3f2d2142e4335d12b0da7e8f",
+      "state": "candidate",
+      "origin": "combined R3 candidate gate receipt",
+      "description": "Binds the R3 source, overlays and native read-only tools to passing reverse, anchor and verdict gate results."
+    },
+    {
+      "path": "revisions/2026-10-29-consistency-r4/revision-manifest.json",
+      "sha256": "b96ac5b33605c0ee407e8ff876a3db1148f473766db73db9405aeea1e95fc762",
+      "state": "candidate",
+      "origin": "local revision candidate R4 built on R3",
+      "description": "Rule-consistency, resolution-diagnostic terminology, serialized-boundary wording, A3 joint-support integration and calibrated-arm separation; C02/C03 remain open."
+    },
+    {
+      "path": "revisions/2026-10-29-consistency-r4/SHA256SUMS.txt",
+      "sha256": "48b7bf629f648adc3d64e6f2bd8f0f542923e2ce220a9a399afa49a8257154f7",
+      "state": "candidate",
+      "origin": "revision candidate R4 hash inventory",
+      "description": "Hash inventory for all 49 R4 candidate files excluding the checksum file itself; the complete inventory verifies."
+    },
+    {
+      "path": "revisions/2026-10-29-consistency-r4/REVISION_R4.md",
+      "sha256": "3f4a704d1ed0c600bcf4af43bc73059ab4d073a3ccc49de1050cfda5adeed702",
+      "state": "candidate",
+      "origin": "revision candidate R4 report",
+      "description": "Human-readable scope, evidence bindings, gate results, remaining blockers and non-claims for R4."
+    },
+    {
+      "path": "revisions/2026-10-29-consistency-r4/source/main.tex",
+      "sha256": "fcafbeef57efbcad7db2f687dd4faac2f84e703dc429865fd7c7325de831433d",
+      "state": "candidate",
+      "origin": "candidate R3 plus rule-consistency and resolution-diagnostic corrections",
+      "description": "Separate 46-page R4 manuscript source; it does not replace source/main.tex."
+    },
+    {
+      "path": "revisions/2026-10-29-consistency-r4/reports/cleanroom/receipt.json",
+      "sha256": "800b65257961d70c1f64a980049ca5bb78bf4856a5a461603fad1a0dcda3d293",
+      "state": "candidate",
+      "origin": "two isolated R4 compilation runs",
+      "description": "R4 clean-room receipt: two byte-identical 46-page PDFs; compilation is not scientific readiness."
+    },
+    {
+      "path": "revisions/2026-10-29-consistency-r4/reports/ledger-reverse-coverage.json",
+      "sha256": "51ae6aa7beab247e60ea613bde9d8e9a60255f269ddbe81aa2a41b18833f4702",
+      "state": "candidate",
+      "origin": "R4 candidate reverse numeric coverage",
+      "description": "356 readings, 353 bound, 3 excused and 0 unbound against the R4 candidate ledger overlay."
+    },
+    {
+      "path": "revisions/2026-10-29-consistency-r4/reports/ledger-anchor-census.json",
+      "sha256": "39b66daff59bb4394e56ef5e8196d95849941ac8934c30f59cf920efa36d727c",
+      "state": "candidate",
+      "origin": "R4 candidate anchor census",
+      "description": "GREEN with zero missing anchors and zero ambiguous ledger membership."
+    },
+    {
+      "path": "revisions/2026-10-29-consistency-r4/reports/verdict-word-gate.json",
+      "sha256": "10dbc52e004a7a8caa422f2a23b89899d87d1be48223507bbe61c674d380eaaa",
+      "state": "candidate",
+      "origin": "R4 candidate verdict-word gate",
+      "description": "137/137 verdict-word checks passed for the candidate source."
+    },
+    {
+      "path": "revisions/2026-10-29-consistency-r4/reports/rule-consistency.json",
+      "sha256": "da6a74a3b162979461199d4771d586de72e1665c2e14e16f501b0d8aaaf242c8",
+      "state": "candidate",
+      "origin": "R4 candidate rule-consistency gate",
+      "description": "7/7 consistency checks passed; R3 negative control failed on all 7 as expected."
+    },
+    {
+      "path": "revisions/2026-10-29-consistency-r4/reports/candidate-gates-summary.json",
+      "sha256": "20184c5482cd3581629f41e0ec33c7c8ddd6cb5a7bdc339f0bce94a2fb4f9622",
+      "state": "candidate",
+      "origin": "combined R4 candidate gate receipt",
+      "description": "Binds the R4 source, overlays and native read-only tools to passing reverse, anchor, verdict and rule-consistency gate results."
+    },
+    {
+      "path": "revisions/2026-10-29-consistency-r4/reports/package/package-receipt.json",
+      "sha256": "d1b442f65683224d5909bfc06a0da0ecec0d500abd7c3f8244ef12188ee2f4cb",
+      "state": "candidate",
+      "origin": "R4 candidate package receipt",
+      "description": "Eleven-file deterministic archive with extract-and-compile verification; ready_for_upload=false."
+    },
+    {
+      "path": "revisions/2026-10-29-consistency-r4/reports/package/r4-consistency-candidate.tar.gz",
+      "sha256": "aba2dc5ac9a04ebcce41f5c15050d325c0966d8aa653ae7eb6f67f217a3158ea",
+      "state": "candidate",
+      "origin": "R4 candidate archive",
+      "description": "Deterministic tar.gz of the R4 candidate source tree; internal only, not upload-authorized."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Native numeric ledger",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/native-ledger-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Source identity",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/native-manifest.json"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "location": "Abstract; sections 1-4",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/REVIEW_INDEPENDENT_2026-10-24.md",
+        "experiments/producer-baseline-counterexample/results/reproduction.json"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "location": "Limitations and next experiment",
+      "state": "candidate",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/REVIEW_INDEPENDENT_2026-10-24.md"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "location": "Package audit",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/package-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "location": "Native numeric gates",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/native-numeric-gate.json"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "Clean-room compile",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/cleanroom/receipt.json"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "Internal candidate archive",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "reports/package/package-receipt.json"
+      ]
+    },
+    {
+      "claim_id": "C09",
+      "location": "Synthetic construct-validity counterexample",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "experiments/producer-baseline-counterexample/results/run-1.json",
+        "experiments/producer-baseline-counterexample/results/reproduction.json"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "Source lineage recovery",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/source-lineage.json"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "location": "Method: margin bootstrap (independent review finding A2)",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "experiments/bootstrap-estimand-a2/results/run-1.json",
+        "experiments/bootstrap-estimand-a2/results/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "location": "Method: k-fold common support (independent review finding A3)",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "experiments/kfold-common-support-a3/results/reproduction.json",
+        "experiments/kfold-common-support-a3/results/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "location": "Method: threshold and interface semantics (independent review finding A4)",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "experiments/threshold-interface-a4/results/reproduction.json",
+        "experiments/threshold-interface-a4/results/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "location": "Revision candidate R3 mechanical evidence",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "revisions/2026-10-29-support-threshold-r3/revision-manifest.json",
+        "revisions/2026-10-29-support-threshold-r3/reports/cleanroom/receipt.json",
+        "revisions/2026-10-29-support-threshold-r3/reports/candidate-gates-summary.json",
+        "revisions/2026-10-29-support-threshold-r3/SHA256SUMS.txt"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "noise-floor-native-ledger-field-audit",
+      "state": "completed",
+      "receipt": "reports/native-ledger-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "noise-floor-native-numeric-gates",
+      "state": "reproduced",
+      "receipt": "reports/native-numeric-gate.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "noise-floor-producer-baseline-necessity-counterexample",
+      "state": "reproduced",
+      "receipt": "experiments/producer-baseline-counterexample/results/reproduction.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "noise-floor-kfold-common-support-a3",
+      "state": "reproduced",
+      "receipt": "experiments/kfold-common-support-a3/results/reproduction.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "noise-floor-threshold-interface-a4",
+      "state": "reproduced",
+      "receipt": "experiments/threshold-interface-a4/results/reproduction.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "noise-floor-independent-review-20261024",
+      "kind": "method",
+      "state": "open",
+      "critical": 0,
+      "major": 1,
+      "receipt": "evidence/REVIEW_INDEPENDENT_2026-10-24.md"
+    }
+  ],
+  "package": {
+    "state": "compiled",
+    "files": [
+      {
+        "path": "source/main.tex",
+        "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca"
+      },
+      {
+        "path": "source/bibliography.tex",
+        "sha256": "3f5f5ddde88b7ec071246ecee90ff5b0ddf56f88c05b7faaee0d0395d950c119"
+      },
+      {
+        "path": "source/tmlr.sty",
+        "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002"
+      },
+      {
+        "path": "source/figures/fig_verdicts.pdf",
+        "sha256": "a2ff38204013ebca8198a39c6b6bb7193caa4ec3004a6b5f5b43b949a98cd354"
+      },
+      {
+        "path": "source/tables/table_ajb.tex",
+        "sha256": "4eb25cbab41522f9eda7eb06ff33fa0158e03b541033624b17e5d411c4a5a19f"
+      },
+      {
+        "path": "source/tables/table_both.tex",
+        "sha256": "4716dc20e4f3da8a4c0e9afa8dcd7b17bc79843157d8b3cfa2faf1fcf576a980"
+      },
+      {
+        "path": "source/tables/table_calibrated.tex",
+        "sha256": "7ff2c6e07a9fab6ed3985a10be3bc7d0ac7f8958d8fe192ad805700197d9a9cd"
+      },
+      {
+        "path": "source/tables/table_denominators.tex",
+        "sha256": "0a2d6347c75e5d44cc3ef322a8f937e2e4afb18899a23c9d1522b056da2e8538"
+      },
+      {
+        "path": "source/tables/table_ds.tex",
+        "sha256": "1766942de728bd5f4f056671c53ca2b104d97f8b1fc2d020c98bf59812b1dece"
+      },
+      {
+        "path": "source/tables/table_power.tex",
+        "sha256": "9a34009ed5b4493405b77673019d1183b521924c265d2b1f90e9af8c818411f5"
+      },
+      {
+        "path": "source/tables/table_rulers.tex",
+        "sha256": "e9617c04fdbf1c4120b58c16a0ba483127ca009fb05aea8ea399f7b704fc50ba"
+      },
+      {
+        "path": "reports/cleanroom/receipt.json",
+        "sha256": "68fa94f327299254c71536b8946f6b2a59076ef3168674126e6841fce1b90043"
+      },
+      {
+        "path": "reports/cleanroom/main.pdf",
+        "sha256": "94f1b3ab5bd879f33c9c596c1ad615e675951ddad3a485eb786e853dbb430818"
+      },
+      {
+        "path": "reports/package/package-receipt.json",
+        "sha256": "0401071a21b670595fec50973175baf962932240b6b5b586787fae8f3c873274"
+      },
+      {
+        "path": "reports/package/noise-floor-arxiv-candidate.tar.gz",
+        "sha256": "74218ff9f262a8a57383875faf229a93cbd6a0cf45a2738e17571b1e11900c75"
+      },
+      {
+        "path": "reports/package/archive-cleanroom/main.pdf",
+        "sha256": "94f1b3ab5bd879f33c9c596c1ad615e675951ddad3a485eb786e853dbb430818"
+      }
+    ],
+    "blockers": [
+      "The current source hash differs from the source hash recorded in the native manifest.",
+      "The independent review's producer-baseline/readability issue has a reproducible synthetic counterexample and separate R1/R2/R3 candidates, but the canonical manuscript remains unchanged and the review remains open.",
+      "The source package is compiled but lacks final metadata, license and author confirmation.",
+      "arXiv upload requires a separate user authorization and account action."
+    ]
+  },
+  "gate_receipts": [
+    {
+      "gate_id": "noise-floor-native-numeric-gates",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "reports/native-numeric-gate.json",
+      "receipt_sha256": "6c9e0468e9754f5daff65a85b9dfaad9756a19b738ca6f270f885cf5291b9fbf",
+      "source_sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+      "summary": "250/250 number checks, 353 reverse-coverage reads with 0 unbound, and anchor census GREEN all passed twice."
+    },
+    {
+      "gate_id": "noise-floor-cleanroom-compile",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/cleanroom/receipt.json",
+      "receipt_sha256": "68fa94f327299254c71536b8946f6b2a59076ef3168674126e6841fce1b90043",
+      "source_sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+      "summary": "Two isolated latexmk runs passed and produced byte-identical 45-page PDFs."
+    },
+    {
+      "gate_id": "noise-floor-candidate-archive",
+      "scope": "package",
+      "state": "passed",
+      "receipt": "reports/package/package-receipt.json",
+      "receipt_sha256": "0401071a21b670595fec50973175baf962932240b6b5b586787fae8f3c873274",
+      "source_sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+      "summary": "The eleven-file archive rebuilt deterministically and its extraction compiled to 45 pages."
+    }
+  ],
+  "measurements": [
+    {
+      "name": "native_ledger_entries",
+      "value": 569,
+      "unit": "entries",
+      "definition": "Entries in the native numeric ledger.",
+      "source": "reports/native-ledger-audit.json#counts.entries_total",
+      "state": "observed"
+    },
+    {
+      "name": "field_verified_entries",
+      "value": 472,
+      "unit": "entries",
+      "definition": "Entries whose source JSON field and value matched.",
+      "source": "reports/native-ledger-audit.json#counts.field_verified",
+      "state": "observed"
+    },
+    {
+      "name": "named_derivations",
+      "value": 78,
+      "unit": "entries",
+      "definition": "Entries tied to a named derivation; not executed by this adapter.",
+      "source": "reports/native-ledger-audit.json#counts.named_derivation",
+      "state": "inconclusive"
+    },
+    {
+      "name": "field_waivers",
+      "value": 8,
+      "unit": "entries",
+      "definition": "Entries with a written field waiver.",
+      "source": "reports/native-ledger-audit.json#counts.field_waiver",
+      "state": "inconclusive"
+    },
+    {
+      "name": "unrecoverable_retractions",
+      "value": 3,
+      "unit": "entries",
+      "definition": "Retracted entries explicitly marked unrecoverable.",
+      "source": "reports/native-ledger-audit.json#counts.unrecoverable_retraction",
+      "state": "inconclusive"
+    },
+    {
+      "name": "manuscript_number_checks",
+      "value": 250,
+      "unit": "checks",
+      "definition": "Native manuscript-number checks matching evidence.",
+      "source": "reports/check-manuscript-numbers.log",
+      "state": "observed"
+    },
+    {
+      "name": "reverse_coverage_numbers",
+      "value": 353,
+      "unit": "numeric literals",
+      "definition": "Manuscript numeric readings checked by reverse coverage.",
+      "source": "reports/ledger-reverse-coverage.json#n_tokens",
+      "state": "observed"
+    },
+    {
+      "name": "reverse_coverage_unbound",
+      "value": 0,
+      "unit": "numeric literals",
+      "definition": "Manuscript numeric readings without a ledger binding.",
+      "source": "reports/ledger-reverse-coverage.json#n_unbound",
+      "state": "observed"
+    },
+    {
+      "name": "reverse_coverage_bound",
+      "value": 350,
+      "unit": "numeric literals",
+      "definition": "Manuscript numeric readings bound to a ledger value.",
+      "source": "reports/ledger-reverse-coverage.json#n_bound",
+      "state": "observed"
+    },
+    {
+      "name": "reverse_coverage_excused",
+      "value": 3,
+      "unit": "numeric literals",
+      "definition": "Manuscript numeric tokens with a written non-measurement reason.",
+      "source": "reports/ledger-reverse-coverage.json#n_excused",
+      "state": "observed"
+    },
+    {
+      "name": "anchor_census_a1",
+      "value": 0,
+      "unit": "entries",
+      "definition": "Anchored ledger entries whose number is absent from the manuscript.",
+      "source": "reports/ledger-anchor-census.log",
+      "state": "observed"
+    },
+    {
+      "name": "candidate_archive_bytes",
+      "value": 107492,
+      "unit": "bytes",
+      "definition": "Size of the deterministic internal candidate archive.",
+      "source": "reports/package/package-receipt.json#archive.bytes",
+      "state": "observed"
+    },
+    {
+      "name": "producer_counterexample_a_only_correct",
+      "value": 280,
+      "unit": "items",
+      "definition": "Items where candidate A is correct and candidate B is incorrect in the critical synthetic condition.",
+      "source": "experiments/producer-baseline-counterexample/results/run-1.json#conditions[0].paired_comparison.first_only_correct",
+      "state": "observed"
+    },
+    {
+      "name": "producer_counterexample_b_only_correct",
+      "value": 0,
+      "unit": "items",
+      "definition": "Items where candidate B is correct and candidate A is incorrect in the critical synthetic condition.",
+      "source": "experiments/producer-baseline-counterexample/results/run-1.json#conditions[0].paired_comparison.second_only_correct",
+      "state": "observed"
+    },
+    {
+      "name": "producer_counterexample_stable_deletions",
+      "value": 700,
+      "unit": "single-item deletions",
+      "definition": "Delete-one checks that preserve A above B in the critical synthetic condition.",
+      "source": "experiments/producer-baseline-counterexample/results/run-1.json#conditions[0].delete_one_stability.stable",
+      "state": "observed"
+    },
+    {
+      "name": "producer_counterexample_positive_floor",
+      "value": 0.8,
+      "unit": "accuracy",
+      "definition": "Leave-one-out producer floor in the positive-control construction.",
+      "source": "experiments/producer-baseline-counterexample/results/run-1.json#conditions[1].producer_floor",
+      "state": "observed"
+    }
+  ],
+  "notes": [
+    "The native ledger is copied but is audited against its original workspace root.",
+    "A source-hash mismatch is explicitly retained; the overlay does not silently update the manifest.",
+    "The independent review is open and blocks readiness.",
+    "Native gates pass twice against the current source bytes, but the copied source and native manifest hash still differ.",
+    "The numeric gate receipt is bound to the current source hash and does not resolve publication identity.",
+    "The clean-room compile and candidate archive are deterministic, but they do not close the source-identity or scientific-review gates.",
+    "The manifest-named source blob is exactly recoverable from git commit 9eb77f1b77baaa9932d8faf18da2fc50a2077f6c; this proves lineage, not publication identity.",
+    "The accepted synthetic counterexample rejects the broad producer-baseline necessity claim, but it is not an external leaderboard study.",
+    "Three failed preregistration attempts are preserved and are not accepted as evidence.",
+    "Revision candidate R1 is a separate construct-validity wording revision with deterministic compile and candidate-specific ledger gates; it does not replace the canonical source or close the independent review.",
+    "A2 is now separated into two estimands: theta_both (per-round reselected leader minus per-round best generator) is exactly zero in 2000/2000 rounds on all four m25 tasks, and theta_fixed (frozen winner minus per-round best generator) reproduces the recorded native intervals and is never positive in any round.",
+    "The two A2 controls are experiment-internal constructions: a non-generator leader moves theta_both to [+3.2720, +7.3469]; an unranked generator moves it to [-2.6750, 0.0000].",
+    "An unmodified native audit.py rerun on the rebuilt factuality table reproduces evidence/m25_factuality.json byte for byte, so the recomputation is on the same generation of evidence.",
+    "The A2 experiment does not close A3 (k-fold common support) or A4 (threshold and interface semantics), and it does not establish publication identity or readiness.",
+    "A4 reproduces three pinned-native interface mismatches: no delta CLI parameter, equality classified READABLE, and a confidence interval crossing zero not gating the verdict; its refusal controls remain fail-closed.",
+    "A4 is synthetic interface evidence, does not resolve the MDE terminology or generator-independence parts of the review, and does not close C03 or authorize upload.",
+    "Revision candidate R3 integrates the A3 joint-support result and the A4 executable threshold/interface semantics; it is an internal candidate with 46-page deterministic compilation, 355/352/3/0 reverse coverage, GREEN anchor census and 137/137 verdict checks.",
+    "R3 does not replace source/main.tex, does not close C02/C03, does not resolve the remaining MDE terminology or generator-independence review objections, and does not authorize an arXiv upload.",
+    "REVIEW_REQUEST_R3.md freezes a read-only candidate review packet mapping A1-A4 to evidence; it has not been sent and no independent review of R3 exists yet."
+  ]
+}

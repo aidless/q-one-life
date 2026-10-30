@@ -1,0 +1,72 @@
+{
+  "archive": [
+    {
+      "registry_size": 5,
+      "rows": 30,
+      "distinct_record_signatures": 5,
+      "signature_multiplicities": [
+        6
+      ],
+      "sha256": "b7e41d38befb0777b45592826aa44200b79d775b9f900e185efb46d25c3e18ce",
+      "recorded_substring_positives": 24,
+      "whole_identifier_observed": 18,
+      "fully_recorded_longer_name_discrepancy": 0,
+      "unresolved_truncated_record": 6
+    },
+    {
+      "registry_size": 20,
+      "rows": 120,
+      "distinct_record_signatures": 20,
+      "signature_multiplicities": [
+        6
+      ],
+      "sha256": "239d67b5b4a4a06fcfa4476d23e95451951efb7b27f77e0ca29e9cba0e921cd8",
+      "recorded_substring_positives": 60,
+      "whole_identifier_observed": 48,
+      "fully_recorded_longer_name_discrepancy": 12,
+      "unresolved_truncated_record": 0
+    },
+    {
+      "registry_size": 50,
+      "rows": 300,
+      "distinct_record_signatures": 50,
+      "signature_multiplicities": [
+        6
+      ],
+      "sha256": "f78c9a7f844d5545adbc59a484f8f3828b4bf1fe381ea3e5f20beaeeefed8bdd",
+      "recorded_substring_positives": 36,
+      "whole_identifier_observed": 30,
+      "fully_recorded_longer_name_discrepancy": 0,
+      "unresolved_truncated_record": 6
+    }
+  ],
+  "archive_rows": 450,
+  "distinct_registry_record_pairs": 75,
+  "fresh_probe": {
+    "models": [
+      {
+        "model": "llama3.2:1b",
+        "conditions": 24,
+        "requested_returned_model_match": true,
+        "flat_contract_tool_correct": 10,
+        "flat_contract_arguments_correct": 7,
+        "format_variant_or_missing_flat_tool": 6,
+        "substring_false_positives_valid_wrong_selected_tool": 3,
+        "identifier_false_positives_valid_wrong_selected_tool": 0
+      },
+      {
+        "model": "qwen2.5:1.5b-instruct-q4_K_M",
+        "conditions": 24,
+        "requested_returned_model_match": true,
+        "flat_contract_tool_correct": 22,
+        "flat_contract_arguments_correct": 21,
+        "format_variant_or_missing_flat_tool": 0,
+        "substring_false_positives_valid_wrong_selected_tool": 1,
+        "identifier_false_positives_valid_wrong_selected_tool": 0
+      }
+    ],
+    "rows": 48,
+    "distinct_requests": 6
+  },
+  "interpretation": "Identifier presence is not invocation or execution. Format variants are not automatically semantic errors. No independent-trial p-values or model rankings are supported."
+}

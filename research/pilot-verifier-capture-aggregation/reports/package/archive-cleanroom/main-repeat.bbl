@@ -1,0 +1,67 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Castro \& Liskov(1999)Castro and Liskov]{castro1999pbft}
+Miguel Castro and Barbara Liskov.
+\newblock Practical {Byzantine} fault tolerance.
+\newblock In \emph{Proceedings of the Third USENIX Symposium on Operating Systems Design and Implementation (OSDI)}, 1999.
+
+\bibitem[Cui et~al.(2026)Cui, Huang, and Abeynayake]{cui2026edo}
+Xia Cui, Ziyi Huang, and N.~R. Abeynayake.
+\newblock Ensemble diversity optimization for subjective supervision.
+\newblock \emph{arXiv preprint arXiv:2607.08493}, 2026.
+\newblock cs.LG; submitted 9 Jul 2026. Jointly optimizes ensemble weights, effective cardinality, and calibration via Gumbel-Softmax + signed diversity regularizer. Reduces cross-entropy 40-78% vs Soft-CE / Soft-MD / Top-5 Voting / WEL baselines. We cite as the most recent ensemble-with-calibration baseline; CRV differs by operating under an explicit adversarial (capture) model rather than a passive disagreement model.
+
+\bibitem[Lamport et~al.(1982)Lamport, Shostak, and Pease]{lamport1982byzantine}
+Leslie Lamport, Robert Shostak, and Marshall Pease.
+\newblock The {Byzantine} generals problem.
+\newblock \emph{ACM Transactions on Programming Languages and Systems}, 4\penalty0 (3):\penalty0 382--401, 1982.
+
+\bibitem[Leung et~al.(2026)Leung, Lumer, Feld, Huber, Subbiah, and Paul]{leung2026rubricllm}
+Ethan Leung, Elias Lumer, Corey Feld, Austin Huber, Vamse~Kumar Subbiah, and Kevin Paul.
+\newblock Do you need a frontier model as a citation verifier? benchmarking rubric llms for deep-research source attribution.
+\newblock \emph{arXiv preprint arXiv:2607.08700}, 2026.
+\newblock cs.CL; submitted 9 Jul 2026. Provides calibration numbers for 8 LLM judges across 1,248 rubric decisions; reports F1=0.908 (kappa=0.636) for GPT-5-mini on source-relevance; shows directional bias (pass-rate drift, FPR, FNR) differs across judges at matched F1. We use this as the most recent published rubric-judge benchmark and as motivation for capture-resilient aggregation.
+
+\bibitem[Liu(2026{\natexlab{a}})]{liu2026calibration}
+Zewen Liu.
+\newblock Calibration of multi-agent ensembles under verifier pressure.
+\newblock 2026{\natexlab{a}}.
+\newblock TMLR submission (under review).
+
+\bibitem[Liu(2026{\natexlab{b}})]{liu2026paperreviewtoolkit}
+Zewen Liu.
+\newblock A multi-reviewer toolkit for transparent peer review of machine learning papers, 2026{\natexlab{b}}.
+\newblock Open-source release, paper-review-toolkit v0.3.0.
+
+\bibitem[Perez et~al.(2022)Perez, Huang, Song, Cai, Ring, Aslanides, Glaese, McAleese, and Irving]{perez2022red}
+Ethan Perez, Saffron Huang, Francis Song, Trevor Cai, Roman Ring, John Aslanides, Amelia Glaese, Nathan McAleese, and Geoffrey Irving.
+\newblock Red teaming language models with language models.
+\newblock 2022.
+
+\bibitem[Schulhoff et~al.(2023)]{schulhoff2023ignore}
+Sander Schulhoff et~al.
+\newblock Ignore previous prompt: Attack techniques for language models.
+\newblock \emph{arXiv preprint arXiv:2311.16119}, 2023.
+
+\bibitem[Yin et~al.(2019)Yin, Malkhi, Reiter, Gueta, and Abraham]{yin2019hotstuff}
+Maofan Yin, Dahlia Malkhi, Michael~K. Reiter, Guy~Golan Gueta, and Ittai Abraham.
+\newblock Hotstuff: {BFT} consensus with linearity and responsiveness.
+\newblock In \emph{Proceedings of the 2019 ACM Symposium on Principles of Distributed Computing (PODC)}, 2019.
+
+\bibitem[Zhang et~al.(2026)Zhang, Cui, Wang, Li, Qiu, Zhu, and He]{zhang2026blindcurator}
+Xing Zhang, Yanwei Cui, Guanghui Wang, Ziyuan Li, Wei Qiu, Bing Zhu, and Peiyang He.
+\newblock The blind curator: How a biased judge silently disables skill retirement in self-evolving agents.
+\newblock \emph{arXiv preprint arXiv:2607.07436}, 2026.
+\newblock cs.AI; submitted 8 Jul 2026. Direct predecessor of our threat model: shows biased LLM judge silently disables a downstream curator past a sharp false-pass threshold. Submitted within 3 days of our draft; we cite it as the closest contemporaneous evidence that the verifier-capture problem is timely.
+
+\bibitem[Zheng et~al.(2023)Zheng, Chiang, Sheng, Zhuang, Wu, Zhuang, Lin, Li, Li, Xing, et~al.]{zheng2023judging}
+Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Eric Lin, Zhuohan Li, Dacheng Li, Eric~P. Xing, et~al.
+\newblock Judging {LLM}-as-a-judge with {MT-Bench} and {Chatbot Arena}.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2023.
+
+\end{thebibliography}

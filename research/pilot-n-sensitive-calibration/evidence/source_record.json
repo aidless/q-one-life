@@ -1,0 +1,14 @@
+{
+  "schema": "q-one-p15-source-record-v1",
+  "generated_at": "2026-10-28T00:00:00Z",
+  "canonical_path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
+  "canonical_sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+  "upstream_copy_path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-n-sensitive-calibration/evidence/upstream/main.tex",
+  "upstream_copy_sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+  "byte_identical": true,
+  "deprecated_banner_present": true,
+  "merge_marker_path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-n-sensitive-calibration/evidence/upstream/MERGED_INTO_tmlr_p12_20260921.md",
+  "merge_marker_sha256": "6769dd47973659b881bd2931df0aee1c999f236c7beb851478bd216523230cda",
+  "review_card_path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-n-sensitive-calibration/evidence/upstream/REVIEW_CARD.md",
+  "review_card_sha256": "8b67f261fbbac236b2815c7de906c530ade0c7d3142949a171a08794189e7872"
+}

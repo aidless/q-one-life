@@ -1,0 +1,92 @@
+{
+  "checked_at_utc": "2026-10-14T08:45:26.077293+00:00",
+  "toolselect_records": [
+    {
+      "file": "r05_eval_k20.jsonl",
+      "rows": 120,
+      "unique_records": 20,
+      "multiplicity_histogram": {
+        "6": 20
+      },
+      "sha256": "239d67b5b4a4a06fcfa4476d23e95451951efb7b27f77e0ca29e9cba0e921cd8"
+    },
+    {
+      "file": "r05_eval_k5.jsonl",
+      "rows": 30,
+      "unique_records": 5,
+      "multiplicity_histogram": {
+        "6": 5
+      },
+      "sha256": "b7e41d38befb0777b45592826aa44200b79d775b9f900e185efb46d25c3e18ce"
+    },
+    {
+      "file": "r05_eval_k50.jsonl",
+      "rows": 300,
+      "unique_records": 50,
+      "multiplicity_histogram": {
+        "6": 50
+      },
+      "sha256": "f78c9a7f844d5545adbc59a484f8f3828b4bf1fe381ea3e5f20beaeeefed8bdd"
+    }
+  ],
+  "unique_registry_record_pairs": 75,
+  "rows": 450,
+  "whole_identifier_is_not_invocation": true,
+  "independent_trial_inference_supported": false,
+  "upstream_generator_missing": true,
+  "cross_model_validation_completed": true,
+  "recompute": "recomputed_20261014.json",
+  "drafts": {
+    "ARC_REVISED.md": {
+      "conservative_word_count": 879,
+      "limit": 1500,
+      "status": "published_revision_submitted"
+    },
+    "GEMMA_REVISED.md": {
+      "conservative_word_count": 1298,
+      "limit": 3000,
+      "status": "published_revision_submitted"
+    }
+  },
+  "source_archive_preserved": true,
+  "official_arc_methodology": "https://docs.arcprize.org/methodology",
+  "arc_corrections": [
+    "Partial completion can receive a nonzero score",
+    "Per-level cap and final/game caps are different",
+    "Single-run score differences do not establish component contributions",
+    "Offline predictive validity is unproven, not disproven in general"
+  ],
+  "web_update": {
+    "confirmed_published": true,
+    "both_original_submissions_still_submitted": true,
+    "update_button_clicked": true,
+    "published_at_verified_utc": "2026-10-14T08:45:26.077293+00:00",
+    "proofs": {
+      "ARC": {
+        "url": "https://www.kaggle.com/competitions/arc-prize-2026-paper-track/writeups/one-rung-at-a-time-attributing-an-arc-agi-3-submi",
+        "body_sha256": "a07872cc4710944b6c76084ff89091316d409da5605552c2b201f3648d348c95",
+        "pre_submit_editor_exact_match": true,
+        "visible_published_body_verified": true,
+        "submitted_status_after_revision": true,
+        "screenshot": "ARC_PUBLISHED_20261014.png",
+        "published_dom": "ARC_PUBLISHED_DOM_20261014.txt"
+      },
+      "GEMMA": {
+        "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/your-tool-selection-benchmark-may-be-scoring-wrong",
+        "body_sha256": "aa25d33d83b55c4bff5716f2777f420b182122faf93b26a78694b5ce9c5ea798",
+        "pre_submit_editor_exact_match": true,
+        "visible_published_body_verified": true,
+        "submitted_status_after_revision": true,
+        "screenshot": "GEMMA_PUBLISHED_20261014.png",
+        "published_dom": "GEMMA_PUBLISHED_DOM_20261014.txt"
+      }
+    },
+    "public_evidence_dataset_updated": true,
+    "dataset_download_hash_verified_files": 24,
+    "public_companion_kernel_version": 3,
+    "public_companion_cpu_replay_complete": true,
+    "official_award_verified": false
+  },
+  "cross_model_scope": "48 synthetic selector-condition outputs, two models/two tool families, six paired requests; no tool execution or model ranking",
+  "cross_model_analysis": "cross-model-probe/analysis.json"
+}

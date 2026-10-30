@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\PAPER35_FRONT_DRIFT\\main.tex",
+    "rpc": "http://127.0.0.1:11435",
+    "timestamp": "2026-09-02T13:16:13+00:00",
+    "roles": [
+      "writing"
+    ],
+    "rounds": 1
+  },
+  "roles": {
+    "writing": {
+      "status": "ok",
+      "issues": [
+        {
+          "severity": "minor",
+          "location": "Abstract, 第1行",
+          "description": "首字母大写不一致，建议统一首字母大写。",
+          "suggestion": "将首字母大写统一，例如：Local Llm Systems at Temperature 0 Are Nearly Perfectly Seed-Reproducible Yet"
+        },
+        {
+          "severity": "minor",
+          "location": "Abstract, 第2行",
+          "description": "术语未定义，建议在首次出现时定义或解释。",
+          "suggestion": "在首次出现时定义或解释术语，例如：Behavior Drift Score (BDS) 是衡量不同模型之间行为差异的指标。"
+        },
+        {
+          "severity": "minor",
+          "location": "Abstract, 第3行",
+          "description": "句子结构较为复杂，建议简化。",
+          "suggestion": "简化句子结构，例如：This fundamentally challenges the transfer assumption in agent pipelines."
+        },
+        {
+          "severity": "minor",
+          "location": "Abstract, 第4行",
+          "description": "术语未定义，建议在首次出现时定义或解释。",
+          "suggestion": "在首次出现时定义或解释术语，例如：Behavioral Regression Suite 是用于测试模型行为稳定性的测试套件。"
+        },
+        {
+          "severity": "minor",
+          "location": "Introduction, 第2段",
+          "description": "句子结构较为复杂，建议简化。",
+          "suggestion": "简化句子结构，例如：Both assumptions are typically left implicit, and neither is routinely measured."
+        },
+        {
+          "severity": "minor",
+          "location": "Introduction, 第3段",
+          "description": "列举项目点时，建议使用一致的格式。",
+          "suggestion": "使用一致的格式，例如：我们贡献了：1. 一个包含六个类别的100场景行为回归套件；2. 行为漂移分数（BDS）；3. 四个本地模型上的实证表征；4. 统计上可靠的结果。"
+        },
+        {
+          "severity": "minor",
+          "location": "Introduction, 第4段",
+          "description": "句子结构较为复杂，建议简化。",
+          "suggestion": "简化句子结构，例如：我们的结果量化了在常见套件上不同种子和不同模型家族之间行为的变化程度，给部署团队提供了一个具体的测试标准。"
+        },
+        {
+          "severity": "minor",
+          "location": "Related Work, 第2段",
+          "description": "句子结构较为复杂，建议简化。",
+          "suggestion": "简化句子结构，例如：Prior work in this corpus has shown that evaluator bias propagates across agents through memory, and that communication can shift calibration in multi-agent loops."
+        }
+      ],
+      "overall_assessment": "论文整体写作质量良好，但存在一些小的改进空间，特别是在术语定义、句子结构简化和一致性格式方面。",
+      "score": 8
+    }
+  },
+  "stable_issues": [],
+  "summary": {
+    "verdict": "PASS",
+    "critical": 0,
+    "major": 0,
+    "minor": 8
+  }
+}

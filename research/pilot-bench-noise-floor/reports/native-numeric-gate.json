@@ -1,0 +1,183 @@
+{
+  "schema": "q-one-native-numeric-gate-v1",
+  "gate_id": "noise-floor-native-numeric-gates",
+  "generated_at": "2026-10-27T14:54:46.414604Z",
+  "state": "passed",
+  "scope": "numbers",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
+    "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+    "sha256_after": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+    "bytes": 220650,
+    "stable_during_run": true
+  },
+  "inputs": [
+    {
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/check_manuscript_numbers.py",
+      "sha256": "289fe36e5ddc6469f6d24609ae09f5621b2c6fde09543d315de9d9392172bf25"
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/ledger_reverse_coverage.py",
+      "sha256": "19b219d2995b7756586ba21d2b008afa2e76c9c7d5bd3b2a1d9218fe6de9b7cb"
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/ledger_anchor_census.py",
+      "sha256": "d9777f8dee24ece56420e81b32b9d71660550e0824212ed4ea19313056d560e8"
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/paper-ledger.json",
+      "sha256": "47d5b7d66e8ece9ac21f6c82089f4883405689e6428fce1e70eb936236252063"
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/reverse_coverage_allowlist.json",
+      "sha256": "015f396d83e58db0d45cf85762beea8ff3038b5e3fd447c708b70689d189307d"
+    }
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39"
+  },
+  "commands": {
+    "numbers": [
+      "/home/liuzewen/.cache/qone-desktop-runtime-20261027/bin/python",
+      "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/check_manuscript_numbers.py"
+    ],
+    "reverse": [
+      "/home/liuzewen/.cache/qone-desktop-runtime-20261027/bin/python",
+      "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/ledger_reverse_coverage.py",
+      "--paper",
+      "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
+      "--ledger",
+      "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/paper-ledger.json",
+      "--allowlist",
+      "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/reverse_coverage_allowlist.json"
+    ],
+    "anchor": [
+      "/home/liuzewen/.cache/qone-desktop-runtime-20261027/bin/python",
+      "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/ledger_anchor_census.py"
+    ]
+  },
+  "checks": {
+    "numbers": {
+      "passed": true,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "passed_checks": 250,
+      "total_checks": 250,
+      "deterministic_stdout": true
+    },
+    "reverse": {
+      "passed": true,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "n_tokens": 353,
+      "n_bound": 350,
+      "n_excused": 3,
+      "n_unbound": 0,
+      "deterministic_json": true
+    },
+    "anchor": {
+      "passed": true,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "verdict": "GREEN",
+      "entries": 569,
+      "anchor_missing": 0,
+      "ambiguous_membership": 0,
+      "deterministic_json": true
+    }
+  },
+  "artifacts": [
+    {
+      "path": "reports/native-gates/numbers-run1.log",
+      "sha256": "4b4e5613801f9edd7d3bae3d964c0a927b338839893e0f8975cf38e1f0e207a9",
+      "bytes": 33
+    },
+    {
+      "path": "reports/native-gates/numbers-run1.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "reports/native-gates/numbers-run2.log",
+      "sha256": "4b4e5613801f9edd7d3bae3d964c0a927b338839893e0f8975cf38e1f0e207a9",
+      "bytes": 33
+    },
+    {
+      "path": "reports/native-gates/numbers-run2.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "reports/native-gates/reverse-run1.log",
+      "sha256": "e0ec95d67a3ba371cebb97e1ff3583892c18c0ffced55b20953dca4e450e9852",
+      "bytes": 694
+    },
+    {
+      "path": "reports/native-gates/reverse-run1.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "reports/native-gates/reverse-run2.log",
+      "sha256": "0e6ede14d52f8d86f949a57b5dc44685829f1e00c976bed6debae710419aa0eb",
+      "bytes": 694
+    },
+    {
+      "path": "reports/native-gates/reverse-run2.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "reports/native-gates/anchor-run1.log",
+      "sha256": "3ad94300f71905046b68774a9062f4c060f6d10fe0871d846115c82e3295a679",
+      "bytes": 987
+    },
+    {
+      "path": "reports/native-gates/anchor-run1.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "reports/native-gates/anchor-run2.log",
+      "sha256": "54e8832e7fe96800d382c988ff55f35cc357bd460b94245212517ce7010b16f7",
+      "bytes": 987
+    },
+    {
+      "path": "reports/native-gates/anchor-run2.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "reports/native-gates/reverse-run1.json",
+      "sha256": "e13e76b5d2b34b707d08e45f2355bb104344e10369cae5fc25794cf1651e024c",
+      "bytes": 7028
+    },
+    {
+      "path": "reports/native-gates/reverse-run2.json",
+      "sha256": "e13e76b5d2b34b707d08e45f2355bb104344e10369cae5fc25794cf1651e024c",
+      "bytes": 7028
+    },
+    {
+      "path": "reports/native-gates/anchor-run1.json",
+      "sha256": "3217e519c4ce1fa9247ed65b926cccd00b7223d14c5d17f9a5413469565aaf79",
+      "bytes": 746
+    },
+    {
+      "path": "reports/native-gates/anchor-run2.json",
+      "sha256": "3217e519c4ce1fa9247ed65b926cccd00b7223d14c5d17f9a5413469565aaf79",
+      "bytes": 746
+    }
+  ],
+  "notes": [
+    "All three gates were executed twice against the bytes hashed above.",
+    "Passing numeric gates do not resolve the separate native-manifest source mismatch.",
+    "Named derivations in the native ledger are not executed by this receipt."
+  ]
+}

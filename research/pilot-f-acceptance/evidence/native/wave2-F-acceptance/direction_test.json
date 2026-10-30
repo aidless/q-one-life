@@ -1,0 +1,7 @@
+{
+  "n_flips": 231,
+  "n_promotion_direction": 231,
+  "exact_binomial_greater_p": 2.897817305224548e-70,
+  "two_pow_minus_231": 2.897817305224548e-70,
+  "statement": "All 231 decision flips favor promotion; under H0 (flip direction 50/50), P(X>=231|n=231,p=0.5) = 2^-231."
+}

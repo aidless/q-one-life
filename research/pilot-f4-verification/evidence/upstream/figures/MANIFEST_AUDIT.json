@@ -1,0 +1,272 @@
+{
+  "manifest": "source/evidence_manifest.json",
+  "manifest_root": "F:\\Research\\MERGED_FLAGSHIPS\\F4_Verification",
+  "created": "2026-08-22T16:50:47+00:00",
+  "updated": "2026-08-24T11:46:11.391747",
+  "entries": 32,
+  "counts": {
+    "match": 19,
+    "mismatch": 7,
+    "absent": 5,
+    "no-hash-field": 1
+  },
+  "rows": [
+    {
+      "path": "evidence/protocol.md",
+      "state": "match",
+      "declared_size": 145,
+      "declared_sha256": "fbe6caea4a7e",
+      "resolved": "source/evidence/protocol.md",
+      "size_on_disk": 145
+    },
+    {
+      "path": "LITERATURE_REVIEW.md",
+      "state": "match",
+      "declared_size": 7265,
+      "declared_sha256": "2aea2cd1d7d6",
+      "resolved": "source/LITERATURE_REVIEW.md",
+      "size_on_disk": 7265
+    },
+    {
+      "path": "main.aux",
+      "state": "mismatch",
+      "declared_size": 142,
+      "declared_sha256": "c6bd086917b0",
+      "resolved": "paper/main.aux",
+      "size_on_disk": 5904
+    },
+    {
+      "path": "main.bbl",
+      "state": "mismatch",
+      "declared_size": 275,
+      "declared_sha256": "8e5c0a845784",
+      "resolved": "paper/main.bbl",
+      "size_on_disk": 10775
+    },
+    {
+      "path": "main.blg",
+      "state": "mismatch",
+      "declared_size": 934,
+      "declared_sha256": "5da998f1b136",
+      "resolved": "paper/main.blg",
+      "size_on_disk": 904
+    },
+    {
+      "path": "main.log",
+      "state": "mismatch",
+      "declared_size": 13850,
+      "declared_sha256": "3737684894e2",
+      "resolved": "paper/main.log",
+      "size_on_disk": 29091
+    },
+    {
+      "path": "main.pdf",
+      "state": "mismatch",
+      "declared_size": 131528,
+      "declared_sha256": "535bc87b8126",
+      "resolved": "source/main.pdf",
+      "size_on_disk": 341454
+    },
+    {
+      "path": "main.tex",
+      "state": "mismatch",
+      "declared_size": 3054,
+      "declared_sha256": "a4a9f922382b",
+      "resolved": "source/main.tex",
+      "size_on_disk": 27973
+    },
+    {
+      "path": "main.toc",
+      "state": "match",
+      "declared_size": 0,
+      "declared_sha256": "e3b0c44298fc",
+      "resolved": "paper/main.toc",
+      "size_on_disk": 0
+    },
+    {
+      "path": "main_full.aux",
+      "state": "absent",
+      "declared_size": 183,
+      "declared_sha256": "b4fa4554e8a2",
+      "resolved": null,
+      "size_on_disk": null
+    },
+    {
+      "path": "main_full.bbl",
+      "state": "absent",
+      "declared_size": 275,
+      "declared_sha256": "8e5c0a845784",
+      "resolved": null,
+      "size_on_disk": null
+    },
+    {
+      "path": "main_full.blg",
+      "state": "absent",
+      "declared_size": 944,
+      "declared_sha256": "7dff40be8ff0",
+      "resolved": null,
+      "size_on_disk": null
+    },
+    {
+      "path": "main_full.log",
+      "state": "absent",
+      "declared_size": 15307,
+      "declared_sha256": "8d000aa4b335",
+      "resolved": null,
+      "size_on_disk": null
+    },
+    {
+      "path": "main_full.pdf",
+      "state": "match",
+      "declared_size": 131697,
+      "declared_sha256": "f1dac7e80c28",
+      "resolved": "source/main_full.pdf",
+      "size_on_disk": 131697
+    },
+    {
+      "path": "main_full.tex",
+      "state": "match",
+      "declared_size": 3054,
+      "declared_sha256": "a4a9f922382b",
+      "resolved": "source/main_full.tex",
+      "size_on_disk": 3054
+    },
+    {
+      "path": "main_full.toc",
+      "state": "absent",
+      "declared_size": 0,
+      "declared_sha256": "e3b0c44298fc",
+      "resolved": null,
+      "size_on_disk": null
+    },
+    {
+      "path": "refs.bib",
+      "state": "mismatch",
+      "declared_size": 128,
+      "declared_sha256": "cd2fb1cb1ed8",
+      "resolved": "source/refs.bib",
+      "size_on_disk": 10092
+    },
+    {
+      "path": "REVIEW_R2_patch.md",
+      "state": "match",
+      "declared_size": 823,
+      "declared_sha256": "9a81f2674e05",
+      "resolved": "source/REVIEW_R2_patch.md",
+      "size_on_disk": 823
+    },
+    {
+      "path": "reviews/ten_review_cloud_R901.json",
+      "state": "match",
+      "declared_size": 929,
+      "declared_sha256": "4c413d5cf06b",
+      "resolved": "source/reviews/ten_review_cloud_R901.json",
+      "size_on_disk": 929
+    },
+    {
+      "path": "tmlr.bst",
+      "state": "match",
+      "declared_size": 26969,
+      "declared_sha256": "306fd454cf40",
+      "resolved": "source/tmlr.bst",
+      "size_on_disk": 26969
+    },
+    {
+      "path": "tmlr.sty",
+      "state": "match",
+      "declared_size": 6560,
+      "declared_sha256": "816214ff5919",
+      "resolved": "source/tmlr.sty",
+      "size_on_disk": 6560
+    },
+    {
+      "path": "evidence/baselines/baselines.json",
+      "state": "match",
+      "declared_size": 257,
+      "declared_sha256": "be6f0c999b6d",
+      "resolved": "source/evidence/baselines/baselines.json",
+      "size_on_disk": 257
+    },
+    {
+      "path": "evidence/baselines/real40.json",
+      "state": "match",
+      "declared_size": 354,
+      "declared_sha256": "35b3cbdfda20",
+      "resolved": "source/evidence/baselines/real40.json",
+      "size_on_disk": 354
+    },
+    {
+      "path": "reviews/ten_review_real_final_R10_F4_Verification.json",
+      "state": "match",
+      "declared_size": 178,
+      "declared_sha256": "3403f75e913b",
+      "resolved": "source/reviews/ten_review_real_final_R10_F4_Verification.json",
+      "size_on_disk": 178
+    },
+    {
+      "path": "reviews/ten_review_real_final_R11_F4_Verification.json",
+      "state": "match",
+      "declared_size": 173,
+      "declared_sha256": "6de4569d9364",
+      "resolved": "source/reviews/ten_review_real_final_R11_F4_Verification.json",
+      "size_on_disk": 173
+    },
+    {
+      "path": "reviews/ten_review_real_final_R12_F4_Verification.json",
+      "state": "match",
+      "declared_size": 172,
+      "declared_sha256": "af279b5b455f",
+      "resolved": "source/reviews/ten_review_real_final_R12_F4_Verification.json",
+      "size_on_disk": 172
+    },
+    {
+      "path": "reviews/ten_review_real_final2_R13_F4_Verification.json",
+      "state": "match",
+      "declared_size": 172,
+      "declared_sha256": "a5f4bea6cbdb",
+      "resolved": "source/reviews/ten_review_real_final2_R13_F4_Verification.json",
+      "size_on_disk": 172
+    },
+    {
+      "path": "reviews/ten_review_real_final3_R14_F4_Verification.json",
+      "state": "match",
+      "declared_size": 172,
+      "declared_sha256": "e1ad3fc6d2c0",
+      "resolved": "source/reviews/ten_review_real_final3_R14_F4_Verification.json",
+      "size_on_disk": 172
+    },
+    {
+      "path": "reviews/ten_review_real_final_R15_F4_Verification.json",
+      "state": "match",
+      "declared_size": 172,
+      "declared_sha256": "b68f31e1444e",
+      "resolved": "source/reviews/ten_review_real_final_R15_F4_Verification.json",
+      "size_on_disk": 172
+    },
+    {
+      "path": "reviews/ten_review_real_final_R16_F4_Verification.json",
+      "state": "match",
+      "declared_size": 172,
+      "declared_sha256": "ead745c0c92d",
+      "resolved": "source/reviews/ten_review_real_final_R16_F4_Verification.json",
+      "size_on_disk": 172
+    },
+    {
+      "path": "reviews/ten_review_real_final_R17_F4_Verification.json",
+      "state": "match",
+      "declared_size": 171,
+      "declared_sha256": "188bf836d1c4",
+      "resolved": "source/reviews/ten_review_real_final_R17_F4_Verification.json",
+      "size_on_disk": 171
+    },
+    {
+      "path": "results/analysis.json",
+      "state": "no-hash-field",
+      "declared_size": null,
+      "declared_sha256": null,
+      "resolved": "source/results/analysis.json",
+      "size_on_disk": 343
+    }
+  ],
+  "hash_fields": 31
+}

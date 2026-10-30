@@ -1,0 +1,66 @@
+paper: RESAMPLING_CALIBRATION
+claims:
+- id: C01
+  statement: The N-sensitivity study compares RF and MLP calibration across multiple class
+    counts, datasets, embeddings, and seeds.
+  value: 5.0
+  tol: 0
+  evidence:
+    file: results/multi_dataset_sweep.json
+    path: n_seeds
+- id: C02
+  statement: At higher class counts, MLP and RF show different ECE-vs-N directions under the
+    revised protocol.
+  evidence:
+    file: results/multi_dataset_sweep.json
+  status: inconclusive
+  missing_evidence: 'multi_dataset_sweep.json holds datasets/sizes/n_seeds/results but the
+    ledger names no field for the ECE-vs-N direction claim, so it cannot be recomputed as
+    written. Upgrade: name the field holding the per-size ECE direction, or attach the per-size
+    series.'
+- id: C03
+  statement: Temperature scaling reduces RF ECE with small AUROC cost in the embedding experiment.
+  evidence:
+    file: results/hyperparameter_sweep.json; results/final_m2_m3_m5.json
+  status: inconclusive
+  missing_evidence: 'the two named files now ship in the bundle (results/hyperparameter_sweep.json
+    keys RF and MLP; results/final_m2_m3_m5.json keys config and results) but neither records
+    an AUROC field, so the AUROC cost cannot be read. Found 2026-09-26 upstream at /data3/Research/RESAMPLING_CALIBRATION/results/
+    and copied in; the earlier "absent from the delivered tree" is superseded. Upgrade: a
+    sweep output that carries the AUROC column.'
+- id: C04
+  statement: SMOTE has no statistically significant aggregate calibration cost at the tested
+    scale.
+  evidence:
+    file: results/final_m2_m3_m5.json
+  status: inconclusive
+  missing_evidence: 'final_m2_m3_m5.json has no field carrying the SMOTE aggregate calibration
+    cost. Upgrade: record the aggregate ECE delta for SMOTE in that file.'
+- id: C05
+  statement: Random undersampling can strongly worsen ECE at the extreme Yeast imbalance ratio.
+  evidence:
+    file: results/final_m2_m3_m5.json; results/class_merge_ablation.json
+  status: inconclusive
+  missing_evidence: 'results/class_merge_ablation.json now ships in the bundle (K_values,
+    sizes, n_seeds, results; per-cell ece_mean and ece_std) but holds no Yeast extreme ratio,
+    so the stated Yeast degradation cannot be read from it. Found 2026-09-26 upstream and
+    copied in; the earlier "absent from the delivered tree" is superseded. Upgrade: the class-merge
+    output at the Yeast ratio.'
+- id: C06
+  statement: Post-hoc recalibration reduces resampling-induced ECE in the tested datasets.
+  evidence:
+    file: results/final_m2_m3_m5.json
+  status: inconclusive
+  missing_evidence: 'final_m2_m3_m5.json has no field carrying the post-hoc recalibration
+    effect. Upgrade: record the pre/post recalibration ECE in that file.'
+- id: C7
+  statement: 'The manuscript names analysis code that the delivered bundle does not contain:
+    run_n_sensitivity_replication.py.'
+  status: inconclusive
+  missing_evidence: RESOLVED 2026-09-26. The script the manuscript names, run_n_sensitivity_replication.py,
+    was located at /data3/Research/RESAMPLING_CALIBRATION/ and copied into this run after
+    py_compile passed. All three scripts the manuscript names now ship. This entry stays only
+    as the record of the gap; upgrade condition met.
+  note: 'Recorded by tools/record_named_script_gaps.py on 2026-09-26. Upgrade: the author
+    supplies the named scripts, or revises the manuscript so it no longer describes code that
+    is not in the submission.'

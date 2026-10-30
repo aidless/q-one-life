@@ -1,0 +1,79 @@
+{
+  "schema": "q-one-arxiv-package-audit-v1",
+  "generated_at": "2026-10-27T14:55:57.420328Z",
+  "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source",
+  "main_file": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source/main.tex",
+  "mechanical_pass": true,
+  "ready_for_upload": false,
+  "upload_blocker": "Mechanical packaging does not establish scientific readiness, license, metadata correctness, or user authorization.",
+  "blockers": [],
+  "warnings": [],
+  "file_count": 11,
+  "visible_suffixes": {
+    ".pdf": 1,
+    ".sty": 1,
+    ".tex": 9
+  },
+  "files": [
+    {
+      "path": "bibliography.tex",
+      "sha256": "3f5f5ddde88b7ec071246ecee90ff5b0ddf56f88c05b7faaee0d0395d950c119",
+      "bytes": 11095
+    },
+    {
+      "path": "main.tex",
+      "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+      "bytes": 220650
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    },
+    {
+      "path": "figures/fig_verdicts.pdf",
+      "sha256": "a2ff38204013ebca8198a39c6b6bb7193caa4ec3004a6b5f5b43b949a98cd354",
+      "bytes": 26835
+    },
+    {
+      "path": "tables/table_ajb.tex",
+      "sha256": "4eb25cbab41522f9eda7eb06ff33fa0158e03b541033624b17e5d411c4a5a19f",
+      "bytes": 548
+    },
+    {
+      "path": "tables/table_both.tex",
+      "sha256": "4716dc20e4f3da8a4c0e9afa8dcd7b17bc79843157d8b3cfa2faf1fcf576a980",
+      "bytes": 664
+    },
+    {
+      "path": "tables/table_calibrated.tex",
+      "sha256": "7ff2c6e07a9fab6ed3985a10be3bc7d0ac7f8958d8fe192ad805700197d9a9cd",
+      "bytes": 1039
+    },
+    {
+      "path": "tables/table_denominators.tex",
+      "sha256": "0a2d6347c75e5d44cc3ef322a8f937e2e4afb18899a23c9d1522b056da2e8538",
+      "bytes": 1128
+    },
+    {
+      "path": "tables/table_ds.tex",
+      "sha256": "1766942de728bd5f4f056671c53ca2b104d97f8b1fc2d020c98bf59812b1dece",
+      "bytes": 466
+    },
+    {
+      "path": "tables/table_power.tex",
+      "sha256": "9a34009ed5b4493405b77673019d1183b521924c265d2b1f90e9af8c818411f5",
+      "bytes": 544
+    },
+    {
+      "path": "tables/table_rulers.tex",
+      "sha256": "e9617c04fdbf1c4120b58c16a0ba483127ca009fb05aea8ea399f7b704fc50ba",
+      "bytes": 1011
+    }
+  ],
+  "package_sha256": "a54d44b673a702f06d8814387e45f6d05ec1f8c98487eb717b9713c6b1c0a04b",
+  "notes": [
+    "This is a source-tree audit, not a clean-room LaTeX compile.",
+    "The package hash covers the sorted path/hash manifest, not tar bytes."
+  ]
+}

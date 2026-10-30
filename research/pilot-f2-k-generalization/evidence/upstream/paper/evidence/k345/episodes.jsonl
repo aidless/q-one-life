@@ -1,0 +1,180 @@
+{"K": 3, "gamma_true": 0.5, "episode": 0, "votes": [0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 3, "gamma_true": 0.5, "episode": 1, "votes": [1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 3, "gamma_true": 0.5, "episode": 2, "votes": [0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 3, "gamma_true": 0.5, "episode": 3, "votes": [1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 3, "gamma_true": 0.5, "episode": 4, "votes": [0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 3, "gamma_true": 0.5, "episode": 5, "votes": [1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 3, "gamma_true": 0.5, "episode": 6, "votes": [1.0, 1.0, 1.0], "question": "How many weeks are in a year?"}
+{"K": 3, "gamma_true": 0.5, "episode": 7, "votes": [1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 3, "gamma_true": 0.5, "episode": 8, "votes": [1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 3, "gamma_true": 0.5, "episode": 9, "votes": [1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 3, "gamma_true": 0.5, "episode": 10, "votes": [0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 3, "gamma_true": 0.5, "episode": 11, "votes": [1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 3, "gamma_true": 0.5, "episode": 12, "votes": [0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 3, "gamma_true": 0.5, "episode": 13, "votes": [1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 3, "gamma_true": 0.5, "episode": 14, "votes": [0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 3, "gamma_true": 0.5, "episode": 15, "votes": [1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 3, "gamma_true": 0.5, "episode": 16, "votes": [1.0, 1.0, 1.0], "question": "How many weeks are in a year?"}
+{"K": 3, "gamma_true": 0.5, "episode": 17, "votes": [1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 3, "gamma_true": 0.5, "episode": 18, "votes": [1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 3, "gamma_true": 0.5, "episode": 19, "votes": [1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 3, "gamma_true": 0.5, "episode": 20, "votes": [0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 3, "gamma_true": 0.5, "episode": 21, "votes": [1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 3, "gamma_true": 0.5, "episode": 22, "votes": [0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 3, "gamma_true": 0.5, "episode": 23, "votes": [1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 3, "gamma_true": 0.5, "episode": 24, "votes": [0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 3, "gamma_true": 0.5, "episode": 25, "votes": [1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 3, "gamma_true": 0.5, "episode": 26, "votes": [1.0, 1.0, 1.0], "question": "How many weeks are in a year?"}
+{"K": 3, "gamma_true": 0.5, "episode": 27, "votes": [1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 3, "gamma_true": 0.5, "episode": 28, "votes": [1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 3, "gamma_true": 0.5, "episode": 29, "votes": [1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 3, "gamma_true": 1.0, "episode": 0, "votes": [0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 3, "gamma_true": 1.0, "episode": 1, "votes": [1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 3, "gamma_true": 1.0, "episode": 2, "votes": [0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 3, "gamma_true": 1.0, "episode": 3, "votes": [1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 3, "gamma_true": 1.0, "episode": 4, "votes": [0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 3, "gamma_true": 1.0, "episode": 5, "votes": [1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 3, "gamma_true": 1.0, "episode": 6, "votes": [0.0, 0.0, 0.0], "question": "How many weeks are in a year?"}
+{"K": 3, "gamma_true": 1.0, "episode": 7, "votes": [1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 3, "gamma_true": 1.0, "episode": 8, "votes": [1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 3, "gamma_true": 1.0, "episode": 9, "votes": [1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 3, "gamma_true": 1.0, "episode": 10, "votes": [0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 3, "gamma_true": 1.0, "episode": 11, "votes": [1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 3, "gamma_true": 1.0, "episode": 12, "votes": [0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 3, "gamma_true": 1.0, "episode": 13, "votes": [1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 3, "gamma_true": 1.0, "episode": 14, "votes": [0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 3, "gamma_true": 1.0, "episode": 15, "votes": [1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 3, "gamma_true": 1.0, "episode": 16, "votes": [0.0, 0.0, 0.0], "question": "How many weeks are in a year?"}
+{"K": 3, "gamma_true": 1.0, "episode": 17, "votes": [1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 3, "gamma_true": 1.0, "episode": 18, "votes": [1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 3, "gamma_true": 1.0, "episode": 19, "votes": [1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 3, "gamma_true": 1.0, "episode": 20, "votes": [0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 3, "gamma_true": 1.0, "episode": 21, "votes": [1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 3, "gamma_true": 1.0, "episode": 22, "votes": [0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 3, "gamma_true": 1.0, "episode": 23, "votes": [1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 3, "gamma_true": 1.0, "episode": 24, "votes": [0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 3, "gamma_true": 1.0, "episode": 25, "votes": [1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 3, "gamma_true": 1.0, "episode": 26, "votes": [0.0, 0.0, 0.0], "question": "How many weeks are in a year?"}
+{"K": 3, "gamma_true": 1.0, "episode": 27, "votes": [1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 3, "gamma_true": 1.0, "episode": 28, "votes": [1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 3, "gamma_true": 1.0, "episode": 29, "votes": [1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 4, "gamma_true": 0.5, "episode": 0, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 4, "gamma_true": 0.5, "episode": 1, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 4, "gamma_true": 0.5, "episode": 2, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 4, "gamma_true": 0.5, "episode": 3, "votes": [1.0, 1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 4, "gamma_true": 0.5, "episode": 4, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 4, "gamma_true": 0.5, "episode": 5, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 4, "gamma_true": 0.5, "episode": 6, "votes": [1.0, 1.0, 1.0, 1.0], "question": "How many weeks are in a year?"}
+{"K": 4, "gamma_true": 0.5, "episode": 7, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 4, "gamma_true": 0.5, "episode": 8, "votes": [1.0, 1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 4, "gamma_true": 0.5, "episode": 9, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 4, "gamma_true": 0.5, "episode": 10, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 4, "gamma_true": 0.5, "episode": 11, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 4, "gamma_true": 0.5, "episode": 12, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 4, "gamma_true": 0.5, "episode": 13, "votes": [1.0, 1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 4, "gamma_true": 0.5, "episode": 14, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 4, "gamma_true": 0.5, "episode": 15, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 4, "gamma_true": 0.5, "episode": 16, "votes": [1.0, 1.0, 0.0, 0.0], "question": "How many weeks are in a year?"}
+{"K": 4, "gamma_true": 0.5, "episode": 17, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 4, "gamma_true": 0.5, "episode": 18, "votes": [1.0, 1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 4, "gamma_true": 0.5, "episode": 19, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 4, "gamma_true": 0.5, "episode": 20, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 4, "gamma_true": 0.5, "episode": 21, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 4, "gamma_true": 0.5, "episode": 22, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 4, "gamma_true": 0.5, "episode": 23, "votes": [1.0, 1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 4, "gamma_true": 0.5, "episode": 24, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 4, "gamma_true": 0.5, "episode": 25, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 4, "gamma_true": 0.5, "episode": 26, "votes": [1.0, 1.0, 1.0, 1.0], "question": "How many weeks are in a year?"}
+{"K": 4, "gamma_true": 0.5, "episode": 27, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 4, "gamma_true": 0.5, "episode": 28, "votes": [1.0, 1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 4, "gamma_true": 0.5, "episode": 29, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 4, "gamma_true": 1.0, "episode": 0, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 4, "gamma_true": 1.0, "episode": 1, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 4, "gamma_true": 1.0, "episode": 2, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 4, "gamma_true": 1.0, "episode": 3, "votes": [1.0, 1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 4, "gamma_true": 1.0, "episode": 4, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 4, "gamma_true": 1.0, "episode": 5, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 4, "gamma_true": 1.0, "episode": 6, "votes": [0.0, 0.0, 0.0, 0.0], "question": "How many weeks are in a year?"}
+{"K": 4, "gamma_true": 1.0, "episode": 7, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 4, "gamma_true": 1.0, "episode": 8, "votes": [1.0, 1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 4, "gamma_true": 1.0, "episode": 9, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 4, "gamma_true": 1.0, "episode": 10, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 4, "gamma_true": 1.0, "episode": 11, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 4, "gamma_true": 1.0, "episode": 12, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 4, "gamma_true": 1.0, "episode": 13, "votes": [1.0, 1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 4, "gamma_true": 1.0, "episode": 14, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 4, "gamma_true": 1.0, "episode": 15, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 4, "gamma_true": 1.0, "episode": 16, "votes": [0.0, 0.0, 0.0, 0.0], "question": "How many weeks are in a year?"}
+{"K": 4, "gamma_true": 1.0, "episode": 17, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 4, "gamma_true": 1.0, "episode": 18, "votes": [1.0, 1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 4, "gamma_true": 1.0, "episode": 19, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 4, "gamma_true": 1.0, "episode": 20, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 4, "gamma_true": 1.0, "episode": 21, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 4, "gamma_true": 1.0, "episode": 22, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 4, "gamma_true": 1.0, "episode": 23, "votes": [1.0, 1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 4, "gamma_true": 1.0, "episode": 24, "votes": [0.0, 0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 4, "gamma_true": 1.0, "episode": 25, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 4, "gamma_true": 1.0, "episode": 26, "votes": [0.0, 0.0, 0.0, 0.0], "question": "How many weeks are in a year?"}
+{"K": 4, "gamma_true": 1.0, "episode": 27, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 4, "gamma_true": 1.0, "episode": 28, "votes": [1.0, 1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 4, "gamma_true": 1.0, "episode": 29, "votes": [1.0, 1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 5, "gamma_true": 0.5, "episode": 0, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 5, "gamma_true": 0.5, "episode": 1, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 5, "gamma_true": 0.5, "episode": 2, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 5, "gamma_true": 0.5, "episode": 3, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 5, "gamma_true": 0.5, "episode": 4, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 5, "gamma_true": 0.5, "episode": 5, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 5, "gamma_true": 0.5, "episode": 6, "votes": [1.0, 1.0, 0.0, 0.0, 1.0], "question": "How many weeks are in a year?"}
+{"K": 5, "gamma_true": 0.5, "episode": 7, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 5, "gamma_true": 0.5, "episode": 8, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 5, "gamma_true": 0.5, "episode": 9, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 5, "gamma_true": 0.5, "episode": 10, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 5, "gamma_true": 0.5, "episode": 11, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 5, "gamma_true": 0.5, "episode": 12, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 5, "gamma_true": 0.5, "episode": 13, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 5, "gamma_true": 0.5, "episode": 14, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 5, "gamma_true": 0.5, "episode": 15, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 5, "gamma_true": 0.5, "episode": 16, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "How many weeks are in a year?"}
+{"K": 5, "gamma_true": 0.5, "episode": 17, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 5, "gamma_true": 0.5, "episode": 18, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 5, "gamma_true": 0.5, "episode": 19, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 5, "gamma_true": 0.5, "episode": 20, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 5, "gamma_true": 0.5, "episode": 21, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 5, "gamma_true": 0.5, "episode": 22, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 5, "gamma_true": 0.5, "episode": 23, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 5, "gamma_true": 0.5, "episode": 24, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 5, "gamma_true": 0.5, "episode": 25, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 5, "gamma_true": 0.5, "episode": 26, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "How many weeks are in a year?"}
+{"K": 5, "gamma_true": 0.5, "episode": 27, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 5, "gamma_true": 0.5, "episode": 28, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 5, "gamma_true": 0.5, "episode": 29, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 5, "gamma_true": 1.0, "episode": 0, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 5, "gamma_true": 1.0, "episode": 1, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 5, "gamma_true": 1.0, "episode": 2, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 5, "gamma_true": 1.0, "episode": 3, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 5, "gamma_true": 1.0, "episode": 4, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 5, "gamma_true": 1.0, "episode": 5, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 5, "gamma_true": 1.0, "episode": 6, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "How many weeks are in a year?"}
+{"K": 5, "gamma_true": 1.0, "episode": 7, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 5, "gamma_true": 1.0, "episode": 8, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 5, "gamma_true": 1.0, "episode": 9, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 5, "gamma_true": 1.0, "episode": 10, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 5, "gamma_true": 1.0, "episode": 11, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 5, "gamma_true": 1.0, "episode": 12, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 5, "gamma_true": 1.0, "episode": 13, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 5, "gamma_true": 1.0, "episode": 14, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 5, "gamma_true": 1.0, "episode": 15, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 5, "gamma_true": 1.0, "episode": 16, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "How many weeks are in a year?"}
+{"K": 5, "gamma_true": 1.0, "episode": 17, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 5, "gamma_true": 1.0, "episode": 18, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 5, "gamma_true": 1.0, "episode": 19, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}
+{"K": 5, "gamma_true": 1.0, "episode": 20, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is 12 * 12?"}
+{"K": 5, "gamma_true": 1.0, "episode": 21, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the capital of Australia?"}
+{"K": 5, "gamma_true": 1.0, "episode": 22, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is 15% of 300?"}
+{"K": 5, "gamma_true": 1.0, "episode": 23, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "Who discovered penicillin?"}
+{"K": 5, "gamma_true": 1.0, "episode": 24, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "What is the square root of 196?"}
+{"K": 5, "gamma_true": 1.0, "episode": 25, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the chemical symbol for sodium?"}
+{"K": 5, "gamma_true": 1.0, "episode": 26, "votes": [0.0, 0.0, 0.0, 0.0, 0.0], "question": "How many weeks are in a year?"}
+{"K": 5, "gamma_true": 1.0, "episode": 27, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is 2^8?"}
+{"K": 5, "gamma_true": 1.0, "episode": 28, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "Which planet is known as the Red Planet?"}
+{"K": 5, "gamma_true": 1.0, "episode": 29, "votes": [1.0, 1.0, 1.0, 1.0, 1.0], "question": "What is the largest organ of the human body?"}

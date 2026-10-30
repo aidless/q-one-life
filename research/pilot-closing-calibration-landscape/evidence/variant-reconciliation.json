@@ -1,0 +1,125 @@
+{
+  "schema": "q-one-closing-landscape-variant-reconciliation-v1",
+  "generated_at": "2026-10-28T06:41:48.579837Z",
+  "marker": "agent-proposed, not human publication approval",
+  "family_id": "qf-closing-the-calibration-landscape-a-mult-99bef231e5",
+  "packet_variant_count": 5,
+  "additional_variant_count": 1,
+  "variant_count": 6,
+  "distinct_hashes": 6,
+  "variants": [
+    {
+      "role": "home_research_symlink",
+      "origin": "/home/liuzewen/.research/closing-landscape/main.tex",
+      "origin_resolved": "/data3/Research/closing_landscape/main.tex",
+      "bytes": 21470,
+      "sha256": "80da74a4ce5e81c2c66688be112b5ac7d01707672d2bd04bfe4957a66ead30b6",
+      "title": "Closing the Calibration Landscape: \\\\ A Multi-Evaluator Ensemble That Reduces Coupling \\\\ Without Increasing Noise",
+      "description": "packet variant; symlink to /data3/Research/closing_landscape/main.tex",
+      "has_39_2_scalar": true,
+      "has_parser_fallback": true,
+      "trailing_content_after_end": false
+    },
+    {
+      "role": "ingest_drift",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/.aris/ingest_drift/20260928T102343Z/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/.aris/ingest_drift/20260928T102343Z/main.tex",
+      "bytes": 21294,
+      "sha256": "eb0a2a9a05345c15d0c9989c4422e86e86893d5ea6b8d649914f04ffb2f8521f",
+      "title": "Closing the Calibration Landscape: \\\\ A Multi-Evaluator Ensemble That Reduces Coupling \\\\ Without Increasing Noise",
+      "description": "packet variant; anonymous form",
+      "has_39_2_scalar": true,
+      "has_parser_fallback": true,
+      "trailing_content_after_end": false
+    },
+    {
+      "role": "canonical",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/main.tex",
+      "bytes": 24036,
+      "sha256": "8314b7b1c2e67eb266bd08c281a4f55fd48c7e920477bae9c9794143f02f3c78",
+      "title": "Closing the Calibration Landscape: \\\\ A Multi-Evaluator Ensemble That Reduces Coupling \\\\ Without Increasing Noise",
+      "description": "packet canonical source retained byte-for-byte",
+      "has_39_2_scalar": true,
+      "has_parser_fallback": true,
+      "trailing_content_after_end": true
+    },
+    {
+      "role": "arxiv_submit",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/arxiv_submit/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/arxiv_submit/main.tex",
+      "bytes": 21733,
+      "sha256": "707c705548461b16aae029cdbbc709e2e9a7dfd65430766854bde20212609161",
+      "title": "Closing the Calibration Landscape: \\\\ A Multi-Evaluator Ensemble That Reduces Coupling \\\\ Without Increasing Noise",
+      "description": "packet variant; positive-result arXiv variant",
+      "has_39_2_scalar": true,
+      "has_parser_fallback": false,
+      "trailing_content_after_end": false
+    },
+    {
+      "role": "submission_variant",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/submission_variant/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/submission_variant/main.tex",
+      "bytes": 20868,
+      "sha256": "04ccf161d510dd4e28bff2711c95af4decc186ccd7a6c29c33dfd57dded98f5f",
+      "title": "Closing the Calibration Landscape: \\\\ A Multi-Evaluator Ensemble That Reduces Coupling \\\\ Without Increasing Noise",
+      "description": "packet variant; hidden-template submission copy",
+      "has_39_2_scalar": true,
+      "has_parser_fallback": true,
+      "trailing_content_after_end": false
+    },
+    {
+      "role": "source_mirror",
+      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/source/main.tex",
+      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/source/main.tex",
+      "bytes": 21124,
+      "sha256": "c4d43aa22d39de57c00c76ca7262486411e74c14bbf61929d5b20df89284de87",
+      "title": "Closing the Calibration Landscape: \\\\ A Multi-Evaluator Ensemble That Reduces Coupling \\\\ Without Increasing Noise",
+      "description": "additional ingest mirror",
+      "has_39_2_scalar": true,
+      "has_parser_fallback": true,
+      "trailing_content_after_end": false
+    }
+  ],
+  "archives": {
+    "supplementary_zip": {
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/supplementary_tmlr-closing-landscape.zip",
+      "bytes": 5193,
+      "sha256": "d06a1884f1439bb72c4dbbafdd95d289ad5daab8adb85b215e56aa75dd1d4d0a",
+      "repeat_copy": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/source/supplementary_tmlr-closing-landscape.zip",
+      "repeat_sha256": "d06a1884f1439bb72c4dbbafdd95d289ad5daab8adb85b215e56aa75dd1d4d0a",
+      "entries": [
+        "evidence/cg_tee_checkpoint.json",
+        "evidence/cg_tee_final_results.json",
+        "evidence/cg_tee_real_results.json",
+        "evidence/cg_tee_results.json",
+        "evidence/protocol.md"
+      ],
+      "contains_main_tex": false
+    },
+    "arxiv_tar": {
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/tmlr-closing-landscape-arxiv.tar.gz",
+      "bytes": 20617,
+      "sha256": "5f7a3fbaa0e3269864f34ca07a466adc7579d3aa3b941233ae93cf00f66f019a",
+      "entries": [
+        "LICENSE",
+        "main.bbl",
+        "main.tex",
+        "sections/evidence_inventory.tex",
+        "sections/per_seed_evidence.tex",
+        "tmlr.bst",
+        "tmlr.sty"
+      ],
+      "main_tex_sha256": "8314b7b1c2e67eb266bd08c281a4f55fd48c7e920477bae9c9794143f02f3c78",
+      "main_tex_matches_canonical": true
+    }
+  },
+  "decision": {
+    "disposition": "repair",
+    "scope": "reproducibility failure analysis",
+    "canonical_experiment_claim_promoted": false,
+    "package_created": true,
+    "uploaded": false,
+    "reason": "The canonical body already withdraws the headline claim, but its title and several prose sentences still imply a TEE effect. The overlay narrows those claims and preserves all conflicting artifacts."
+  }
+}

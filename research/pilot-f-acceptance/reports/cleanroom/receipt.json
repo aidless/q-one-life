@@ -1,0 +1,193 @@
+{
+  "schema": "q-one-cleanroom-compile-v1",
+  "generated_at": "2026-10-27T15:09:15.917677Z",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source",
+    "main_file": "main.tex",
+    "main_sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
+    "package_sha256": "bdeea2c323eea75a6a3e0bf5b8674abd48deca6819001254e7704be5318bcd5f",
+    "file_count": 6
+  },
+  "commands": [
+    [
+      "latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "main.tex"
+    ],
+    [
+      "latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "main.tex"
+    ]
+  ],
+  "runs": [
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "environment": {
+        "SOURCE_DATE_EPOCH": "946684800",
+        "FORCE_SOURCE_DATE": "1"
+      },
+      "exit_code": 0,
+      "workdir": "/tmp/qone-cleanroom-cya2qy3r/run-1",
+      "stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/cleanroom/pass1.stdout.log",
+      "stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/cleanroom/pass1.stderr.log",
+      "main_log": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/cleanroom/pass1.main.log",
+      "warnings": [
+        "Underfull \\hbox (badness 1383) in paragraph at lines 194--200",
+        "Underfull \\hbox (badness 6910) in paragraph at lines 666--675",
+        "Underfull \\hbox (badness 5133) in paragraph at lines 666--675",
+        "Underfull \\hbox (badness 1902) in paragraph at lines 666--675",
+        "Underfull \\hbox (badness 3019) in paragraph at lines 666--675",
+        "Underfull \\hbox (badness 4205) in paragraph at lines 717--721",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 862--862",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 864--864",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 864--864",
+        "Underfull \\hbox (badness 1337) in paragraph at lines 864--864",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 864--864",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 864--864",
+        "Underfull \\hbox (badness 2529) in paragraph at lines 864--864",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 865--865",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 866--866",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 866--866",
+        "Underfull \\hbox (badness 3049) in paragraph at lines 866--867",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 867--867",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 867--867",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 867--867"
+      ]
+    },
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "environment": {
+        "SOURCE_DATE_EPOCH": "946684800",
+        "FORCE_SOURCE_DATE": "1"
+      },
+      "exit_code": 0,
+      "workdir": "/tmp/qone-cleanroom-cya2qy3r/run-2",
+      "stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/cleanroom/pass2.stdout.log",
+      "stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/cleanroom/pass2.stderr.log",
+      "main_log": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/cleanroom/pass2.main.log",
+      "warnings": [
+        "Underfull \\hbox (badness 1383) in paragraph at lines 194--200",
+        "Underfull \\hbox (badness 6910) in paragraph at lines 666--675",
+        "Underfull \\hbox (badness 5133) in paragraph at lines 666--675",
+        "Underfull \\hbox (badness 1902) in paragraph at lines 666--675",
+        "Underfull \\hbox (badness 3019) in paragraph at lines 666--675",
+        "Underfull \\hbox (badness 4205) in paragraph at lines 717--721",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 862--862",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 864--864",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 864--864",
+        "Underfull \\hbox (badness 1337) in paragraph at lines 864--864",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 864--864",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 864--864",
+        "Underfull \\hbox (badness 2529) in paragraph at lines 864--864",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 865--865",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 866--866",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 866--866",
+        "Underfull \\hbox (badness 3049) in paragraph at lines 866--867",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 867--867",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 867--867",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 867--867"
+      ]
+    }
+  ],
+  "exit_codes": [
+    0,
+    0
+  ],
+  "outputs": [
+    {
+      "path": "cleanroom/main.pdf",
+      "sha256": "d6c4c8e8081448fb4d43d545d5609d271656e0e2b12045ab96b58b2fc4888fae",
+      "bytes": 476544
+    },
+    {
+      "path": "cleanroom/main-repeat.pdf",
+      "sha256": "d6c4c8e8081448fb4d43d545d5609d271656e0e2b12045ab96b58b2fc4888fae",
+      "bytes": 476544
+    },
+    {
+      "path": "cleanroom/main.bbl",
+      "sha256": "044ac1a36838831f147cabd17191b8613100d401ad69575ad8b3535f76de481c",
+      "bytes": 5717
+    },
+    {
+      "path": "cleanroom/main-repeat.bbl",
+      "sha256": "044ac1a36838831f147cabd17191b8613100d401ad69575ad8b3535f76de481c",
+      "bytes": 5717
+    },
+    {
+      "path": "cleanroom/pdfinfo.txt",
+      "sha256": "9a6b773a6866cf43496a87da0ef39345cceffd225bf9e7cb374d4bee43324d4a",
+      "bytes": 555
+    },
+    {
+      "path": "cleanroom/pass1.stdout.log",
+      "sha256": "a8df6f0b1046182faebf9fc1b0a06b3819b2f5ab1368f2846c1bf00cca4bed92",
+      "bytes": 25598
+    },
+    {
+      "path": "cleanroom/pass2.stdout.log",
+      "sha256": "a8df6f0b1046182faebf9fc1b0a06b3819b2f5ab1368f2846c1bf00cca4bed92",
+      "bytes": 25598
+    },
+    {
+      "path": "cleanroom/pass1.stderr.log",
+      "sha256": "e9fd09dc0839d7100cac4d9ee46d5eb96f8d57bbbc62c2f70451c5b05c171b2d",
+      "bytes": 104
+    },
+    {
+      "path": "cleanroom/pass2.stderr.log",
+      "sha256": "e9fd09dc0839d7100cac4d9ee46d5eb96f8d57bbbc62c2f70451c5b05c171b2d",
+      "bytes": 104
+    },
+    {
+      "path": "cleanroom/pass1.main.log",
+      "sha256": "63dc4481e597282c133b8e71167bbbee91af5340488d0ba798e49d1ebedf8fd3",
+      "bytes": 24551
+    },
+    {
+      "path": "cleanroom/pass2.main.log",
+      "sha256": "63dc4481e597282c133b8e71167bbbee91af5340488d0ba798e49d1ebedf8fd3",
+      "bytes": 24551
+    }
+  ],
+  "pdf": {
+    "pages": 14,
+    "sha256_run1": "d6c4c8e8081448fb4d43d545d5609d271656e0e2b12045ab96b58b2fc4888fae",
+    "sha256_run2": "d6c4c8e8081448fb4d43d545d5609d271656e0e2b12045ab96b58b2fc4888fae",
+    "deterministic": true
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "latexmk": [
+      "Latexmk, John Collins, 9 March 2026. Version 4.88"
+    ]
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "Only files admitted by the mechanical package audit were copied.",
+    "Two independent clean directories were compiled with a fixed source epoch.",
+    "A successful compile is not scientific readiness or upload authorization."
+  ]
+}

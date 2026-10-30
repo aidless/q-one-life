@@ -1,0 +1,85 @@
+{
+ "paper_workflow_kb": {
+  "target": "../paper_workflow_kb/scripts/stats.py:mcnemar_scipy",
+  "cells": 10019,
+  "decision_flips": 0,
+  "max_abs_error": 0.0,
+  "max_abs_error_at": null,
+  "is_exact": true,
+  "output_rounded": false
+ },
+ "paper_promotion_gate": {
+  "target": "../paper_promotion_gate/scripts/stats.py:mcnemar_scipy",
+  "cells": 10019,
+  "decision_flips": 0,
+  "max_abs_error": 0.0,
+  "max_abs_error_at": null,
+  "is_exact": true,
+  "output_rounded": false
+ },
+ "gsm8k-self-evolve": {
+  "target": "../gsm8k-self-evolve/evokit/stats.py:mcnemar_two_sided",
+  "cells": 10019,
+  "decision_flips": 0,
+  "max_abs_error": 1.9984014443252818e-15,
+  "max_abs_error_at": {
+   "b": 84,
+   "c": 75,
+   "p_target": 0.5259245063255021,
+   "p_exact": 0.5259245063255041
+  },
+  "is_exact": true,
+  "output_rounded": true
+ },
+ "paper_joint_mem_forget_formal": {
+  "target": "../paper_joint_mem_forget_formal/scripts/analysis_v5.py:mcnemar_exact",
+  "cells": 10019,
+  "decision_flips": 0,
+  "max_abs_error": 1.9984014443252818e-15,
+  "max_abs_error_at": {
+   "b": 84,
+   "c": 75,
+   "p_target": 0.5259245063255021,
+   "p_exact": 0.5259245063255041
+  },
+  "is_exact": true,
+  "output_rounded": true
+ },
+ "papers/csa2_robust": {
+  "target": "../papers/csa2_robust/scripts/analyze_h2.py:mcnemar_binomtest",
+  "cells": 10019,
+  "decision_flips": 0,
+  "max_abs_error": 0.0,
+  "max_abs_error_at": null,
+  "is_exact": true,
+  "output_rounded": false
+ },
+ "rag_min_demo (w3)": {
+  "target": "../rag_min_demo/bline/w3_harness.py:mcnemar_exact",
+  "cells": 10019,
+  "decision_flips": 0,
+  "max_abs_error": 4.997435736981002e-05,
+  "max_abs_error_at": {
+   "b": 110,
+   "c": 57,
+   "p_target": 0.0001,
+   "p_exact": 5.0025642630189984e-05
+  },
+  "is_exact": true,
+  "output_rounded": true
+ },
+ "paper_workflow_kb (chi2)": {
+  "target": "../paper_workflow_kb/scripts/stats.py:mcnemar_chi2",
+  "cells": 10019,
+  "decision_flips": 5,
+  "max_abs_error": 0.15548073252706007,
+  "max_abs_error_at": {
+   "b": 13,
+   "c": 13,
+   "p_target": 0.8445192674729399,
+   "p_exact": 1.0
+  },
+  "is_exact": false,
+  "output_rounded": false
+ }
+}

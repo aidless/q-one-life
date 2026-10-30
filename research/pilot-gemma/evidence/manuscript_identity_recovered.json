@@ -1,0 +1,16 @@
+{
+  "schema": "q-one-manuscript-identity-v1",
+  "local_path": "GEMMA_REVISED.md",
+  "local_sha256": "aa25d33d83b55c4bff5716f2777f420b182122faf93b26a78694b5ce9c5ea798",
+  "remote_source_sha256": "2ad3ce3d05303adc2adce3444c1e7d4ccf640d242b90499cd9f9d1d5022092d8",
+  "recovered_source_path": "source/WRITEUP.md",
+  "recovered_source_sha256": "2ad3ce3d05303adc2adce3444c1e7d4ccf640d242b90499cd9f9d1d5022092d8",
+  "recovered_source_bytes": 11672,
+  "recovered_from": "/home/liuzewen/kaggle-control-20261013/paper-evidence/toolselect-publish-v3-20261015/WRITEUP.md",
+  "matches_published_source": true,
+  "remote_url": "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/your-tool-selection-benchmark-may-be-scoring-wrong",
+  "remote_content_state": "PUBLISHED",
+  "remote_updated_at": "2026-10-16T01:20:00.095Z",
+  "recovered_at": "2026-10-29T20:42:00Z",
+  "interpretation": "The exact remote source bytes have been recovered and verified against the publication receipt hash. C06 source identity is now resolved."
+}

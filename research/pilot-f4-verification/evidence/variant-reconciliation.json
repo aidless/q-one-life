@@ -1,0 +1,54 @@
+{
+  "schema": "q-one-f4-variant-reconciliation-v1",
+  "generated_at": "2026-10-28T08:56:00Z",
+  "marker": "agent-proposed, not human publication approval",
+  "family_id": "qf-merged-flagship-f4-verification-trust-sc-88e8c3c2ce",
+  "packet_variant_count": 3,
+  "additional_variant_count": 1,
+  "variant_count": 4,
+  "distinct_hashes": 4,
+  "variants": [
+    {
+      "role": "legacy",
+      "path": "/home/liuzewen/.research/merged-f4/main.tex",
+      "description": "legacy merged source",
+      "sha256": "c57d95ab13cf49470f3b8eac3e98db19d6c86b24dce8bcf590e8577af6e4e64d",
+      "bytes": 27865,
+      "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
+      "author": "Zewen Liu \\\\ Independent Researcher \\\\ \\texttt{17353895263@163.com}"
+    },
+    {
+      "role": "canonical",
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
+      "description": "packet primary source",
+      "sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+      "bytes": 28427,
+      "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
+      "author": "\\name Zewen Liu\\email 17353895263@163.com\\\\\\addr Independent Researcher"
+    },
+    {
+      "role": "ingest_drift",
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/.aris/ingest_drift/20260928T102343Z/main.tex",
+      "description": "ingest drift variant",
+      "sha256": "f18181edca74a56bbb5a702bb1c0f669e43168c7371ea552630623a2034c3a76",
+      "bytes": 29004,
+      "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
+      "author": "Anonymous Authors \\\\ Paper under double-blind review"
+    },
+    {
+      "role": "arxiv",
+      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/arxiv/main.tex",
+      "description": "arXiv build variant",
+      "sha256": "cd5e7f76c80dd3f6811d36b21c502ec9ddf7899598410df45822ff392481f0c0",
+      "bytes": 28980,
+      "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
+      "author": "\\name Zewen Liu\\email liuzewen@qlnu.edu.cn\\\\\\addr Qilu Institute of Technology"
+    }
+  ],
+  "decision": {
+    "disposition": "blocked",
+    "package_created": false,
+    "uploaded": false,
+    "reason": "The 18k, frozen-split and 2700-hold headlines lack archived observations; F4 table statistics and author metadata do not reconcile; the review remains open."
+  }
+}

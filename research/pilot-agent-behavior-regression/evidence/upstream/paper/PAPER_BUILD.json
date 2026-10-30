@@ -1,0 +1,11 @@
+{
+ "passes": "xelatex:0 bibtex:0 xelatex:0 xelatex:0",
+ "errors": 0,
+ "undefined": 0,
+ "bbl": true,
+ "bbl_state": "fresh",
+ "first_error": null,
+ "engine_passes": 3,
+ "main_tex_sha256": "d1eac66806754899",
+ "built_utc": "2026-10-01T02:56:28Z"
+}

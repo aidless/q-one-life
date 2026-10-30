@@ -1,0 +1,29 @@
+{
+  "schema": "q-one-source-record-v1",
+  "generated_at": "2026-10-27T16:21:00Z",
+  "family_id": "qf-agent-behavior-regression-testing-for-lo-1f724f2bff",
+  "portfolio_project_id": "qp-tmlr-paper35-front-drift-0c2ed0225fe5",
+  "canonical_source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/paper/main.tex",
+    "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/main.tex",
+    "sha256": "d1eac66806754899440a12bb30446c3944ed230191a077b1bbd331a2ae7a02f0",
+    "bytes": 36921,
+    "lines": 679,
+    "authority": "paper/main.tex from the portfolio representative project"
+  },
+  "overlay_source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/source/main.tex",
+    "sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+    "bytes": 32735,
+    "lines": 681
+  },
+  "published_source_sha256": null,
+  "matches_published_source": null,
+  "variant_reconciliation": "evidence/variant-reconciliation.json",
+  "notes": [
+    "The upstream canonical source is retained byte-for-byte under evidence/upstream/paper.",
+    "The overlay removes template contamination, narrows unsupported claims, and keeps the missing raw-cell evidence visible.",
+    "The overlay does not promote candidate or blocked claims into verified claims.",
+    "Published source identity will remain unknown until an external publication receipt exists."
+  ]
+}

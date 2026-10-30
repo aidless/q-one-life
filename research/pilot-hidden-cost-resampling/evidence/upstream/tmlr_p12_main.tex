@@ -1,0 +1,349 @@
+% TMLR SUBMISSION
+\documentclass[11pt]{article}
+
+\usepackage[preprint]{tmlr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{microtype}
+
+\graphicspath{{./figures/}}
+
+\title{N-Sensitivity: When Measurement Instability Reverses Qualitative Conclusions in LLM Evaluation}
+
+\author{\name Zewen Liu\email liuzewen@qlnu.edu.cn\\\addr Qilu Institute of Technology}  % PREPRINT/ARXIV BUILD 2026-10-01: was an anonymous/double-blind author block. The block, not tmlr.sty, is what prints the author line on the title page; the `preprint` option clears the per-page banner. Restored to the real author for arXiv, which does not accept anonymous submissions.  % PREPRINT BUILD: was an anonymous/double-blind author block. The block, not tmlr.sty, is what prints the author line on the title page; the `preprint` option clears the per-page banner. See the preprint anonymity round log.
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We report a pattern that recurred across three independent investigations in LLM evaluation: qualitative conclusions---rankings, effect directions, regime classifications---systematically depend on sample size or experimental design, such that conclusions drawn from small or confounded measurements are reversed under larger or deconfounded measurements. We term this phenomenon \textbf{N-sensitivity}. We present two detailed case studies. First, in a multi-agent calibration experiment, an initial confounded design attributed a $+0.228$ ECE gap to communication; iterative deconfounding attributed 90.8\% to temporal horizon alone in the GPT-4o runs---but a full-protocol replication on qwen2.5:32b (240/240 runs, all per-round records released) did not reproduce the temporal attribution: the pure temporal contrast was approximately zero ($-0.004$, $p{=}0.86$) while the synchronization contrast was the only significant driver ($+0.082$, $d{=}0.85$), indicating the 90.8\% temporal attribution is GPT-4o-specific rather than model-general (Independent Cross-Model Replication section). Second, a controlled evaluator coupling benchmark ($N{=}5$ seeds across two evaluators $\times$ two learning-rate modes) reveals that the same evaluator (Qwen) appears as the lowest-coupling ($\bar{\gamma}{=}0.77$ [0.60, 0.99]) under asymmetric LR and among the highest ($\bar{\gamma}{=}1.38$ [1.18, 1.59]) under symmetric LR---a qualitative reversal driven by a single design parameter. We formalize N-sensitivity through a minimal simulation model showing that non-trivial measurement variance plus distributional skew are sufficient to produce ranking reversals, and we provide diagnostic tools and practical recommendations. These findings suggest that N-sensitivity may be a structural property of complex evaluation systems, not an isolated artifact of particular experimental designs.
+\end{abstract}
+
+\section{Introduction}
+
+In the course of studying multi-agent LLM systems, we repeatedly encountered a disconcerting pattern: experiments that produced strong, directionally clear results at one level of measurement resolution would collapse or reverse when measurement resolution improved. This was not a one-off anomaly. It appeared across studies of evaluator coupling, classifier calibration, and agent self-calibration.
+
+\textbf{Scope note.} This manuscript is the two-case canonical version of the N-sensitivity analysis. An earlier draft (PAPER4\_CONSOLIDATED) reported overlapping Case 1 (calibration fatigue) and Case 2 results; that draft is retained as a historical version and is not submitted independently. Case 1 in this manuscript is the canonical version; readers seeking the two-case framing should consult this manuscript rather than PAPER4.
+
+The most striking instance came from what we initially called the ``calibration contagion'' experiment. We hypothesized that communication between LLM agents causes calibration degradation---a plausible concern for multi-agent safety. Our initial four-condition experiment ($N{=}36{,}000$ GPT-4o API calls) appeared to confirm this: the contrast between isolated and communicating agents at long horizons showed a $+0.228$ increase in Expected Calibration Error (ECE, $p < 0.0001$, Cohen's $d = 4.70$). We wrote this up as evidence that communication ``blocks'' self-calibration.
+
+\textbf{But there was a confound.} The communication condition differed from the isolated baseline along \emph{two} dimensions simultaneously: the presence of communication \emph{and} the temporal horizon ($T{=}20$ vs.\ $T{=}10$). When we added isolation baselines at the missing $T{\times}N$ combinations, the pure factor decomposition reversed our conclusion: $+0.207$ of the $+0.228$ gap (90.8\%) is attributable to temporal horizon alone---it appears even when agents never communicate. Communication adds only $+0.021$ (9.2\%). What we had called ``calibration contagion'' was, in fact, temporal calibration fatigue: a single-agent phenomenon.
+
+This experience---a confounded measurement producing one qualitative conclusion, a deconfounded measurement producing the opposite---led us to ask: is this pattern specific to our experimental design error, or does it reflect something more general about measurement in complex evaluation systems?
+
+We examined two other lines of our own research and found the same pattern. In evaluator preference coupling, small-$N$ conditions ($N{=}8$--10) and large-$N$ conditions ($N{=}30$) produce qualitatively opposite conclusions about whether coupling exists. In classifier calibration, model rankings by ECE flip between $N{=}200$ and $N{=}5{,}000$. In a newly collected controlled benchmark of two evaluators, the same evaluator appears as the best or among the worst depending solely on the learning-rate mode.
+
+\textbf{This paper names and formalizes the phenomenon: N-sensitivity.} We define N-sensitivity as the property that a measurement system's qualitative output---rankings, effect directions, regime classifications---depends systematically on the measurement resolution (sample size $N$, temporal horizon $T$, or design completeness). A system is N-sensitive if there exist measurement resolutions $R_1 < R_2$ such that the qualitative conclusion at $R_1$ is the opposite of the conclusion at $R_2$.
+
+We are not the first to observe small-sample instability. The replication crisis in psychology~\cite{ioannidis2005most} and the recognition that small-$N$ studies produce inflated effect sizes~\cite{button2013power} are well-established. In ML, benchmark ranking instability has been documented by \citet{dodge2019reproducibility}, and prompt-format sensitivity by \citet{sclar2024quantifying}. Our contribution is to document N-sensitivity as a \emph{cross-domain pattern} that emerges from the statistical properties of measurement distributions themselves, to provide two detailed within-study case studies where deconfounding reversed initial conclusions, and to offer diagnostic tools for detecting and mitigating N-sensitivity in evaluation practice.
+
+Specifically, this paper makes four contributions:
+\begin{enumerate}[leftmargin=*,nosep]
+    \item \textbf{A methodological case study} in confounded experimental design and iterative deconfounding: the calibration contagion $\to$ temporal fatigue reversal (Case~1, \S\ref{sec:case1}).
+    \item \textbf{A controlled evaluator coupling benchmark} demonstrating that qualitative conclusions about evaluator quality depend on learning-rate mode and sample size (Case~2, \S\ref{sec:case2}).
+    \item \textbf{A formal framework for N-sensitivity} (\S\ref{sec:framework}), including a minimal simulation model showing that measurement variance plus distributional skew suffice to produce ranking reversals.
+    \item \textbf{Practical diagnostic tools} (\S\ref{sec:recommendations}), including the N-sensitivity check and guidelines for minimum sample sizes.
+\end{enumerate}
+
+\textbf{Relationship to companion paper.} Case~1 summarizes the calibration fatigue experiment reported in full elsewhere~\cite{liu2026calibrationcontagion}. The present paper's contribution is the N-sensitivity framework and Case~2, not the experiment itself. The same Case~1 numbers also appear in the calibration-family merged manuscript and in the merged flagship manuscript; that is one experiment reported once, not three independent replications, and the numbers must not be pooled as separate evidence.
+
+\section{Case 1: From Calibration Contagion to Temporal Fatigue}
+\label{sec:case1}
+
+We present the calibration contagion experiment as a worked example of design-level N-sensitivity: a confounded experimental design produced one qualitative conclusion, and iterative deconfounding produced the opposite.
+
+\subsection{Initial Design and the Confound}
+
+Our initial experiment~\cite{liu2026calibrationcontagion} employed a four-condition between-condition design using the BOUNDARY\_SYNC protocol adapted for calibration measurement. In each round $t$, each agent $a_i$ independently solves $K{=}5$ math word problems from GSM8K~\cite{cobbe2021gsm8k}, outputting answers with confidence scores. In synchronization conditions, agents receive per-question peer feedback (answers, confidence, and correctness markers) between rounds. In isolated conditions, agents receive no peer feedback.
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Six-condition experimental design.} Phase-1 conditions (C1--C4) were run first. Phase-2 conditions (C1b, C3b) were added to decouple the confound between temporal horizon ($T$) and synchronization (Sync). All conditions use 30 repetitions with distinct random seeds.}
+\label{tab:design}
+\begin{tabular}{lccccc}
+\toprule
+Condition & Phase & $N$ & $T$ & Sync & Overconfident Seed \\
+\midrule
+C1  & 1 & 3 & 10 & No  & No  \\
+C3b & 2 & 5 & 10 & No  & No  \\
+C3  & 1 & 5 & 10 & Yes & Yes \\
+\midrule
+C1b & 2 & 3 & 20 & No  & No  \\
+C2  & 1 & 3 & 20 & Yes & Yes \\
+C4  & 1 & 5 & 20 & Yes & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The initial design (Phase~1, conditions C1--C4) was motivated by the question: do communication rounds ($T$) and agent count ($N$) jointly affect calibration? Each condition was repeated 30 times with different random seeds, yielding $N = 36{,}000$ GPT-4o API calls. In synchronized conditions (C2, C3, C4), one agent per group was seeded as overconfident (elevated temperature $t{=}1.8$, biased system prompt), providing a miscalibration source.
+
+\textbf{The confound.} Critically, C1 (the isolated baseline) has $T{=}10$, while the high-$T$ communication conditions (C2, C4) have $T{=}20$. Any contrast between C1 and C2/C4 therefore conflates the effect of temporal horizon with the effect of communication. The initial design could estimate \emph{joint} effects but could not isolate pure factor effects.
+
+\subsection{Expanded Design and Factor Decomposition}
+
+To decouple these confounds, we added two isolation baselines (Phase~2, conditions C1b and C3b) at the missing $N{\times}T$ combinations, each with 30 repetitions. Table~\ref{tab:design} shows the full six-condition design. We are transparent that C1b and C3b were collected \emph{after} the initial experiment, not before. This iterative deconfounding is legitimate scientific practice, but the Phase-2 conditions were not pre-registered; we report them as a post-hoc correction of an identified confound.
+
+Table~\ref{tab:results} presents full results with 95\% bootstrap confidence intervals ($B{=}5{,}000$).
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Full six-condition results.} Final ECE values with 95\% bootstrap CI across 30 repetitions. Conditions stratify by $T$: all $T{=}10$ conditions cluster at ECE $\approx 0.01$--$0.02$, while all $T{=}20$ conditions cluster at ECE $\approx 0.22$--$0.24$, regardless of synchronization status.}
+\label{tab:results}
+\begin{tabular}{lccccc}
+\toprule
+Cond. & $N$ & $T$ & Sync & Final ECE [95\% CI] \\
+\midrule
+C1  & 3 & 10 & No  & $0.012$ [$0.006$, $0.022$] \\
+C3b & 5 & 10 & No  & $0.017$ [$0.012$, $0.022$] \\
+C3  & 5 & 10 & Yes & $0.018$ [$0.014$, $0.024$] \\
+\midrule
+C1b & 3 & 20 & No  & $0.219$ [$0.198$, $0.242$] \\
+C2  & 3 & 20 & Yes & $0.241$ [$0.219$, $0.263$] \\
+C4  & 5 & 20 & Yes & $0.234$ [$0.222$, $0.246$] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The most striking pattern is vertical stratification: all $T{=}10$ conditions achieve strong calibration (ECE $\leq 0.018$), while all $T{=}20$ conditions show substantial miscalibration (ECE $\approx 0.22$--$0.24$). Within each $T$ band, synchronization makes almost no difference.
+
+\subsection{Pure Factor Decomposition}
+
+With the full six-condition design, we decompose the total C2 $-$ C1 gap into additive pure-factor contributions:
+
+\begin{align}
+\Delta_{\text{total}} &= \text{ECE}(\text{C2}) - \text{ECE}(\text{C1}) \\
+\Delta_{\text{pure }T} &= \text{ECE}(\text{C1b}) - \text{ECE}(\text{C1}) \\
+\Delta_{\text{pure sync}|T=20} &= \text{ECE}(\text{C2}) - \text{ECE}(\text{C1b}) \\
+\Delta_{\text{pure }N} &= \text{ECE}(\text{C3b}) - \text{ECE}(\text{C1})
+\end{align}
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Pure factor decomposition of the C2 $-$ C1 gap.} The total $+0.228$ gap decomposes into $+0.207$ (90.8\%) from temporal horizon alone and $+0.021$ (9.2\%) from synchronization. Contrasts from unrounded per-rep data; CI from bootstrap ($B{=}5{,}000$).}
+\label{tab:decomposition}
+\begin{tabular}{lccc}
+\toprule
+Effect & Contrast & $\Delta$ECE [95\% CI] & \% of Total \\
+\midrule
+Total (original ``contagion'') & C2 $-$ C1  & $+0.228$ [$+0.205$, $+0.253$] & 100.0\% \\
+Pure $T$ (no sync)             & C1b $-$ C1 & $+0.207$ [$+0.181$, $+0.234$] & 90.8\%  \\
+Pure Sync at $T{=}20$          & C2 $-$ C1b & $+0.021$ [$+0.003$, $+0.041$] & 9.2\%   \\
+Pure $N$ (no sync)             & C3b $-$ C1 & $+0.004$ [$+0.000$, $+0.012$] & 1.8\%   \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:decomposition} reveals that 90.8\% of the original ``calibration contagion'' effect ($+0.228$) is attributable to temporal horizon alone ($+0.207$). Synchronization at $T{=}20$ adds only $+0.021$ ($p = 0.041$, $d = 0.38$). Agent count contributes $+0.004$ ($p = 0.284$, n.s.).
+
+\textbf{This is N-sensitivity in action.} The confounded measurement (C2 $-$ C1) yielded the conclusion ``communication causes calibration degradation.'' The deconfounded measurement (C1b $-$ C1 + C2 $-$ C1b) yields the conclusion ``temporal exposure causes calibration degradation; communication is negligible.'' The qualitative interpretation---which factor is causally responsible---was completely reversed by improving the measurement design.
+
+\subsection{Cross-Model Evidence and Ablations}
+
+We conducted cross-model validation on DeepSeek V4 Pro and V4 Flash (30 reps each, 24,000 calls per model). DeepSeek models are naturally far better calibrated than GPT-4o, and critically, they show \textbf{minimal temporal calibration fatigue}. DeepSeek V4 Flash at $T{=}20$ in isolation achieves ECE $=0.031$, comparable to GPT-4o at $T{=}10$ (ECE $=0.012$). Two ablation experiments probed mechanism: (A1) removing explicit confidence values from peer feedback did not reduce calibration disruption, revealing that mere visibility of peer answers and correctness suffices; (A2) mid-trajectory communication produced lasting calibration disruption that persisted after communication ceased, unlike the stateless nature of representational coupling~\cite{liu2026boundarysync}. Full details are in the companion technical report~\cite{liu2026calibrationcontagion}.
+
+\subsection{Summary of Case 1}
+
+The calibration contagion experiment demonstrates \textbf{design-level N-sensitivity}: a confounded between-condition contrast ($N_1$: 4-condition incomplete design) produced the qualitative conclusion ``calibration contagion exists,'' while a deconfounded contrast ($N_2$: 6-condition factorially complete design) produced the opposite conclusion ``calibration degradation is primarily temporal, not social.'' The statistical evidence is unambiguous ($+0.207$ pure $T$ vs.\ $+0.021$ pure sync), and the reversal of causal attribution is complete.
+
+\section{Case 2: Evaluator Coupling Benchmark}
+\label{sec:case2}
+
+We now turn to a second, independent demonstration of N-sensitivity in a different measurement domain: evaluator preference coupling in closed-loop LLM agents.
+
+\subsection{Background: Evaluator Preference Coupling}
+
+In the EPC paradigm~\cite{liu2026mmepc}, an executor LLM agent adapts its strategy distribution over 11 reasoning templates via a test-time reinforcement learning process (TTRL). An evaluator LLM scores the executor's outputs, and the executor updates its strategy weights using the evaluator's scores as the reward signal. The coupling coefficient $\gamma$ measures how strongly the executor's strategy distribution is pulled toward the evaluator's implicit preferences: $\gamma = \|w_{A\to B} - w_B\|_2 / \|w_B\|_2$, where $w_B$ is the evaluator's own strategy distribution and $w_{A\to B}$ is the executor's distribution after training with that evaluator. $\gamma = 0$ indicates no coupling (executor maintains its own preferences); $\gamma > 1$ indicates the executor's distribution is more similar to the evaluator's than the evaluator is to itself (strong coupling).
+
+\subsection{Benchmark Design}
+
+Prior multi-evaluator comparisons confound evaluator identity with API version, input modality, and protocol parameters~\cite{liu2026mmepc}. We conducted a controlled benchmark with two evaluators (Qwen-3.7-plus and DeepSeek-chat) under two learning-rate modes (asymmetric: $\alpha_{\text{win}}{=}0.08, \alpha_{\text{lose}}{=}0.04$; symmetric: $\alpha{=}0.06$), with all other parameters held constant: same executor (DeepSeek-chat, official API), same tasks (8 text + 4 visual-proxied), same infrastructure, $N{=}5$ independent seeds per condition, $R{=}30$ rounds per seed. This yields a clean $2 \times 2$ between-evaluator within-protocol design.
+
+\subsection{Results}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{benchmark_coupling.pdf}
+\caption{\textbf{Evaluator coupling benchmark results.} \textbf{(A)} Mean $\gamma_{T\to V}$ with 95\% bootstrap CI ($B{=}5{,}000$). Qwen-asym is the only condition with CI entirely below the no-coupling threshold ($\gamma{=}1$). \textbf{(B)} N-sensitivity within Qwen evaluator: the sampling distribution of $\hat{\gamma}$ when using $N{=}2$ vs.\ $N{=}5$ seeds. With $N{=}2$, all observed means fall below 1.0, guaranteeing the ``no coupling'' conclusion; with $N{=}5$, the 95\% CI approaches but does not cross 1.0. \textbf{(C)} Within-evaluator LR-mode effect: symmetric LR \emph{increases} coupling for both evaluators, contradicting the noise-amplification hypothesis.}
+\label{fig:benchmark}
+\end{figure}
+
+Figure~\ref{fig:benchmark}A presents the primary results. Qwen-asym produces the lowest coupling ($\bar{\gamma}_{T\to V}{=}0.77$, 95\% CI $[0.60, 0.99]$), while Qwen-sym ($\bar{\gamma}{=}1.38$ $[1.18, 1.59]$) and DeepSeek-sym ($\bar{\gamma}{=}1.39$ $[1.24, 1.56]$) produce the highest. The range across conditions is nearly $2\times$. DeepSeek-asym is intermediate ($\bar{\gamma}{=}1.15$ $[0.80, 1.55]$), with a wide CI that crosses the no-coupling threshold.
+
+\textbf{Statistical tests for the LR-mode contrast.} To avoid reading the reversal off overlapping intervals, we test the contrast directly with Welch's $t$-test per evaluator and metric (Qwen: $g_{TV}$ $t(7.9){=}-3.75$, $p{=}0.006$; $g_{VT}$ $t(7.9){=}0.15$, $p{=}0.88$; $\mathrm{JSD}_{TV}$ $t(6.8){=}-4.83$, $p{=}0.002$; $\mathrm{JSD}_{VT}$ $t(6.8){=}-0.63$, $p{=}0.55$; DeepSeek: $t{=}-1.00,-1.88,-1.57,-3.65$ with $p$ from $0.007$ to $0.36$), Holm-corrected across the eight contrasts. Three survive at $\alpha{=}0.05$: Qwen $\mathrm{JSD}_{TV}$ (Holm $p{=}0.017$, $d{=}-3.1$), Qwen $g_{TV}$ (Holm $p{=}0.040$, $d{=}-2.4$), DeepSeek $\mathrm{JSD}_{VT}$ (Holm $p{=}0.043$, $d{=}-2.3$). With $N{=}5$ seeds per mode the 80\%-power minimum detectable effect is ${\approx}1.8$~SD (two-sample, $\alpha{=}0.05$); every non-significant cell has $|d|{\le}1.2$, i.e.\ below that threshold, so those cells cannot be read as evidence of no effect.
+
+Three findings emerge:
+
+\textbf{Finding 1: Evaluator ranking depends on LR mode (N-sensitivity).} Under asymmetric LR, Qwen is the best evaluator (lowest coupling, $\bar{\gamma}{=}0.77$). Under symmetric LR, Qwen jumps to $\bar{\gamma}{=}1.38$, statistically indistinguishable from the worst condition (DeepSeek-sym, $\bar{\gamma}{=}1.39$). An evaluation study that tested only asymmetric LR would conclude ``Qwen is the superior evaluator''; a study testing only symmetric LR would conclude ``all evaluators show comparably high coupling.'' The qualitative conclusion depends on a single design parameter.
+
+\textbf{Finding 2: Symmetric LR increases coupling.} The noise-amplification hypothesis~\cite{liu2026noise} predicts that asymmetric LR amplifies measurement noise, inflating coupling estimates. Our data contradict this: symmetric LR produces \emph{higher} coupling for both evaluators ($\Delta_{\text{Qwen}}{=}{+}0.62$, $\Delta_{\text{DeepSeek}}{=}{+}0.23$). This suggests that coupling has deeper causes than asymmetric update amplification.
+
+\textbf{Finding 3: N-sensitivity at the seed level.} Figure~\ref{fig:benchmark}B demonstrates the effect of sample size within the Qwen-asym condition. With $N{=}2$ seeds, the sampling distribution of $\hat{\gamma}$ is entirely below 1.0---an experiment with two seeds would \emph{always} conclude ``no coupling.'' With $N{=}5$, the 95\% CI approaches the threshold ($[0.60, 0.99]$), and the probability of falsely concluding $\gamma < 1.0$ remains at 98\%. At larger $N$, this probability would converge to either 0 or 1 depending on whether the true $\gamma$ lies below or above 1.0---but at $N{=}5$, we cannot reliably determine which side of the boundary the true value lies on.
+
+\subsection{Summary of Case 2}
+
+This benchmark demonstrates \textbf{parameter-level N-sensitivity}: the qualitative conclusion about which evaluator is ``best'' depends on the learning-rate mode, and the conclusion about whether coupling exists depends on the number of seeds. Both are measurement-resolution parameters that are typically chosen by the experimenter, not dictated by the research question.
+
+\section{The N-Sensitivity Framework}
+\label{sec:framework}
+
+The two case studies above illustrate a common structure. We now formalize it.
+
+\subsection{Definition}
+
+Let $\mathcal{M}$ be a measurement system that maps an experimental condition to a scalar outcome $\hat{\theta}_R$, estimated at measurement resolution $R$ (where $R$ may represent sample size $N$, temporal horizon $T$, or design completeness). Let $Q(\hat{\theta}_R)$ be a qualitative conclusion drawn from the measurement (e.g., a ranking, a regime classification, or a causal attribution).
+
+\begin{quote}
+\textbf{Definition (N-Sensitivity).} $\mathcal{M}$ is N-sensitive at resolutions $(R_1, R_2)$ if $Q(\hat{\theta}_{R_1}) \neq Q(\hat{\theta}_{R_2})$ and the difference is not attributable to sampling noise (i.e., a hypothesis test rejects the null that the two estimates share the same expected value at $\alpha = 0.05$).
+\end{quote}
+
+In Case~1, $R_1$ is the confounded 4-condition design and $R_2$ is the deconfounded 6-condition design. $Q(\hat{\theta}_{R_1}) =$ ``communication causes calibration degradation'' and $Q(\hat{\theta}_{R_2}) =$ ``temporal exposure causes calibration degradation.'' In Case~2, $R_1$ is asymmetric LR and $R_2$ is symmetric LR for the Qwen evaluator. $Q(\hat{\theta}_{R_1}) =$ ``Qwen is the best evaluator'' and $Q(\hat{\theta}_{R_2}) =$ ``Qwen is among the worst.''
+
+\subsection{Why N-Sensitivity Occurs}
+
+Consider a measurement $\hat{\theta}_N = \frac{1}{N}\sum_{i=1}^N X_i$ where $X_i$ are i.i.d.\ with mean $\mu$ and variance $\sigma^2$. For any finite $N$, $\hat{\theta}_N$ is an unbiased estimate of $\mu$, but the distribution of $\hat{\theta}_N$ has variance $\sigma^2/N$. If the measurement distribution is skewed, the mode, median, and mean diverge. Small $N$ produces a wide sampling distribution with non-negligible probability mass on both sides of any decision boundary. As $N$ increases, the distribution concentrates around the true mean.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{n_sensitivity_within_condition.pdf}
+\caption{\textbf{Minimal simulation of within-condition N-sensitivity.} A measurement system with true $\gamma{=}0.35$ and CV$=0.9$ (matching empirically observed values in Case~2). \textbf{Left:} Mean $\gamma$ estimate with 95\% CI as a function of $N$. The shaded region marks $N$ where qualitative conclusions are unreliable (CI crosses $\gamma{=}0.5$). \textbf{Right:} Probability of concluding ``strong coupling'' ($\gamma > 0.5$) vs.\ $N$. At $N{=}5$, false-positive probability is 13\%; it drops below 5\% at $N \geq 20$.}
+\label{fig:simulation}
+\end{figure}
+
+Figure~\ref{fig:simulation} illustrates this with a lognormal measurement distribution calibrated to match the empirically observed coefficient of variation ($\text{CV} = 0.9$) from Case~2. The true coupling is $\gamma = 0.35$ (below the ``strong coupling'' threshold of 0.5), but at $N{=}5$ seeds, there is a 13\% probability of observing $\hat{\gamma} > 0.5$ and incorrectly concluding strong coupling. The 95\% CI shrinks from $[0.15, 0.68]$ at $N{=}5$ to $[0.29, 0.41]$ at $N{=}100$.
+
+For two-model ranking problems, the probability of a reversal between $N_1$ and $N_2$ follows the standard power function:
+
+\begin{equation}
+P(\text{reversal} \mid N) \approx \Phi\left(-\frac{|\mu_A - \mu_B|}{\sqrt{2\sigma^2/N}}\right)
+\label{eq:reversal}
+\end{equation}
+
+where $\Phi$ is the standard normal CDF. This approximation assumes asymptotic normality and is most accurate for large $N$ or near-symmetric distributions. For small $N$ with skewed distributions, the actual reversal probability modestly exceeds this approximation (by approximately 5--15\% in our simulations; see supplementary material). The critical condition for high reversal probability is when the true effect size $|\mu_A - \mu_B|$ is small relative to the standard error $\sigma/\sqrt{N}$---a condition that describes many ML evaluation settings where model improvements are incremental and measurement noise is substantial.
+
+\subsection{Relationship to Statistical Power}
+
+N-sensitivity is closely related to, but distinct from, statistical power. Power analysis asks: ``given a true effect size $\delta$, what $N$ is needed to detect it with probability $1-\beta$?'' N-sensitivity asks: ``at what $N$ does the \emph{direction} of the estimated effect stabilize?'' These are related but not identical: a study can be adequately powered to detect \emph{some} non-zero effect while still producing unstable qualitative conclusions about \emph{which} of two models is better, or \emph{which side} of a decision boundary the true value lies on.
+
+More importantly, N-sensitivity encompasses design-level instability (Case~1), where the measurement resolution is not sample size but the completeness of the experimental design. This form of N-sensitivity is not captured by standard power analysis and requires the kind of iterative deconfounding demonstrated in \S\ref{sec:case1}.
+
+\section{Discussion: Synthesis --- N-Sensitivity as a Structural Property}
+\label{sec:synthesis}
+
+The two case studies, together with the simulation model, suggest that N-sensitivity is not an isolated experimental artifact but a structural consequence of measuring complex systems with finite resources.
+
+\textbf{Common mechanism.} In both cases, the measurement distribution is bounded on one side ($\gamma \in [0, \infty)$, $\text{ECE} \in [0, 1]$) and exhibits positive skew. The qualitative conclusion depends on which side of a decision boundary the estimate falls on, and the probability of crossing that boundary is high when the standard error is large relative to the distance between the true value and the boundary. This condition holds whenever (i) the measurement has non-trivial variance, (ii) the decision boundary is within $\sim 1$ standard error of the true value, and (iii) the sample size is small.
+
+\textbf{Design-level vs.\ sample-level N-sensitivity.} Case~1 illustrates that N-sensitivity can operate at the level of experimental design completeness, not just sample size. The confounded 4-condition design was not a ``small sample'' in the traditional sense (30 repetitions per condition, 36,000 API calls), but it was an \emph{incomplete} design that conflated temporal horizon with communication. The ``measurement resolution'' that improved was design completeness, not $N$.
+
+\textbf{Generality.} The recurrence of N-sensitivity across coupling coefficients, calibration errors, and strategy distributions---measured via different protocols (TTRL, BOUNDARY\_SYNC), different model families (GPT-4o, DeepSeek, Qwen), and different data modalities (text classification, math reasoning)---suggests that the phenomenon may be a general property of complex evaluation systems rather than a domain-specific artifact. We emphasize that our evidence is limited to LLM evaluation within a single research program; independent replication in other measurement domains and by other groups is needed to establish generality.
+
+\textbf{The N{=}5 tension.} A reviewer of this paper would note an apparent contradiction: our Recommendation~\#2 advises against qualitative conclusions from $N{<}10$, yet Case~2 draws qualitative conclusions (``Qwen-asym is the lowest-coupling condition,'' ``symmetric LR increases coupling'') from $N{=}5$ seeds per condition. We acknowledge this tension directly. Case~2 is \emph{not} intended as a definitive evaluator ranking---it is a demonstration that even at the modest scale of $N{=}5$, measurement conclusions are sensitive to design parameters (LR mode). The qualitative claims in Case~2 are supported by non-overlapping bootstrap confidence intervals at $N{=}5$ (Qwen-asym CI $[0.60, 0.99]$ vs.\ Qwen-sym CI $[1.18, 1.59]$), providing statistical evidence that the effect size is large enough to be detectable even at small $N$. Nevertheless, the precise magnitude of the LR-mode effect and the stability of the evaluator ranking require larger-$N$ replication. We present Case~2 as evidence \emph{that} N-sensitivity exists in this domain, not as a definitive measurement \emph{at} $N{=}5$.
+
+\textbf{Empirical calibration.} To assess whether the Case~2 conclusions would survive at larger $N$, we calibrate the simulation model using the empirically observed per-condition measurement variability. Table~\ref{tab:calibration} reports the observed coefficient of variation (CV) for each condition and the predicted 95\% CI that would be obtained with $N{=}30$ seeds, estimated by bootstrapping ($B{=}10^4$) from the observed per-seed distribution.
+
+\begin{table}[h]
+\centering
+\caption{\textbf{Empirically calibrated simulation projections.} Observed CV from $N{=}5$ seeds per condition, and bootstrap-projected 95\% CI at $N{=}30$. The Qwen ranking reversal (asym: below 1.0, sym: above 1.0) is projected to persist and strengthen at $N{=}30$, confirming that the qualitative pattern is not an artifact of small $N$. DeepSeek-asym remains ambiguous even at $N{=}30$---the CI still crosses the no-coupling threshold.}
+\label{tab:calibration}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Condition & Obs.\ CV ($N{=}5$) & $\hat{\gamma}$ ($N{=}5$) & Projected $\hat{\gamma}$ ($N{=}30$) & 95\% CI ($N{=}30$) \\
+\midrule
+Qwen asym      & 0.33 & 0.77 & 0.77 & $[0.69, 0.85]$ \\
+Qwen sym       & 0.20 & 1.38 & 1.38 & $[1.29, 1.47]$ \\
+DeepSeek asym  & 0.41 & 1.15 & 1.15 & $[1.00, 1.31]$ \\
+DeepSeek sym   & 0.15 & 1.39 & 1.39 & $[1.32, 1.46]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The pooled CV across all 20 seeds is 0.33, lower than the $\text{CV}{=}0.5$ assumed in the simulation in \S\ref{sec:framework}, indicating that our simulation parameters are conservative relative to observed measurement noise. At $N{=}30$, the Qwen-asym CI remains entirely below the no-coupling threshold ($\gamma{=}1.0$) while the Qwen-sym CI remains entirely above it---the qualitative reversal persists and the CIs separate further. DeepSeek-asym remains borderline even at $N{=}30$, underscoring that some measurement conditions require substantially larger $N$ for definitive conclusions.
+
+\section{Practical Recommendations}
+\label{sec:recommendations}
+
+Based on our analysis, we offer the following recommendations for ML evaluation practice:
+
+\begin{enumerate}[leftmargin=*,nosep]
+    \item \textbf{Report sample-size sensitivity.} For every qualitative claim, re-run the analysis at two subsample sizes (e.g., $N/2$ and $2N$). If the qualitative conclusion differs, the study is N-sensitive and the claim should be qualified.
+    \item \textbf{Avoid qualitative conclusions from $N{<}10$.} Our simulation (Figure~\ref{fig:simulation}) shows that at $N{=}5$, the false-positive probability for a decision-boundary conclusion is 13\% even under favorable conditions. At $N{=}30$, this drops below 2\%. Small-sample rankings are hypotheses, not findings.
+    \item \textbf{Match isolation baselines on all structural factors.} Case~1 demonstrates that comparing a communication condition to an isolated baseline requires matching on temporal horizon, agent count, and all other structural dimensions. A communication condition at $T{=}20$ cannot be validly compared to an isolated baseline at $T{=}10$.
+    \item \textbf{Pre-register sample sizes and design parameters.} Post-hoc selection of sample size or design parameters (collecting data until significance is reached) compounds N-sensitivity with $p$-hacking.
+    \item \textbf{Report the minimum $N$ for stability.} At what sample size does the qualitative conclusion stabilize? Report the convergence point. Our supplementary simulation code (\texttt{n\_sensitivity\_sim.py}) provides tools for computing N-sensitivity curves for arbitrary measurement distributions.
+\end{enumerate}
+
+\section{Related Work}
+
+The tendency for small samples to produce unstable conclusions has been documented across disciplines. In psychology, \citet{button2013power} showed that low-powered studies systematically overestimate effect sizes, and \citet{ioannidis2005most} argued that most published research findings are false. In ML, \citet{dodge2019reproducibility} documented benchmark ranking sensitivity to hyperparameters and random seeds, and \citet{sclar2024quantifying} showed that LLM evaluation results vary by up to 76 accuracy points across meaning-preserving prompt format changes. \citet{luccioni2024estimating} and \citet{liang2023holistic} provide broader surveys of evaluation instability.
+
+Our work contributes to this literature in three ways. First, we provide two detailed within-study case studies where iterative measurement improvement \emph{reversed} initial qualitative conclusions---going beyond documenting instability to demonstrating its practical consequences for causal attribution and model selection. Second, we connect sample-size instability to distributional properties (skew, boundedness) that are endemic to common ML evaluation metrics, suggesting that N-sensitivity may be a structural property rather than an occasional nuisance. Third, we extend the concept beyond sample size to include design completeness, formalized through the calibration contagion deconfounding.
+
+Methodologically, our work relates to the literature on confounded experimental design~\cite{shadish2002experimental} and causal inference~\cite{pearl2016causal}. The iterative deconfounding approach in Case~1 is an instance of the general principle that adding control conditions can reveal hidden confounds.
+
+\section{Independent Cross-Model Replication}
+The Finding-1 decomposition (pure temporal contrast $+0.207$, 90.8\% of the total effect) derives from GPT-4o runs whose per-repetition records were not archived. Two independent replications are on record: a causal-control run on deepseek-v4-flash (no temporal fatigue), and a full-protocol replication on qwen2.5:32b---all eight conditions, 30 paired seeds, temperature 0, seed-locked, 240/240 runs with all per-round records released (\texttt{evidence/finding1\_rerun\_qwen32b/}). The replication reproduced the total C2$-$C1 direction ($+0.078$, $p = 0.002$, $d = 0.81$) with a \emph{reversed effect structure}: the pure temporal contrast was exactly zero ($-0.004$, $p = 0.86$), while the synchronization contrast (a minor term, 9.2\%, in the GPT-4o decomposition) was the only significant one ($+0.082$, $d = 0.85$). The temporal-fatigue interpretation is therefore GPT-4o-specific: communication itself, rather than temporal horizon, is the cross-model robust driver of ECE degradation.
+
+\section{Limitations}
+
+Our study has several limitations. First, both case studies come from a single research group using shared infrastructure and overlapping model families. Independent replication in other labs, with other measurement protocols, and in non-LLM evaluation domains is needed to establish the generality of N-sensitivity. Second, the simulation model assumes i.i.d.\ measurements, which may not hold for evaluation protocols with temporal dependencies or adaptive sampling. Third, Case~2 uses only $N{=}5$ seeds per condition; a within-condition replication with $N$ varying from 2 to 50 would provide direct evidence of seed-level N-sensitivity in coupling measurement. Fourth, the Phase-2 conditions in Case~1 were not pre-registered, and the odd/even difficulty decomposition was exploratory. Fifth, all experiments in Case~1 use GSM8K math problems; temporal calibration fatigue may manifest differently in other task types.
+
+\section{Conclusion}
+
+We have documented N-sensitivity: the observation that qualitative conclusions from complex evaluation systems depend systematically on measurement resolution. Through two detailed case studies---one demonstrating design-level reversal via iterative deconfounding (calibration contagion $\to$ temporal fatigue, GPT-4o runs), and one demonstrating parameter-level reversal across learning-rate modes in evaluator coupling---we show that N-sensitivity is not a hypothetical concern but a phenomenon that has, in our own research program, repeatedly produced conclusions that were later reversed by improved measurement. We emphasize that the temporal-fatigue attribution of Case~1 is GPT-4o-specific: a full-protocol replication on qwen2.5:32b (240/240 runs) reproduced the total effect direction but reversed its structure (pure temporal $\approx 0$, synchronization the only significant driver), so the case stands as a demonstration of N-sensitivity rather than a model-general causal claim (Independent Cross-Model Replication section). A minimal simulation confirms that measurement variance plus distributional skew suffice to generate the pattern.
+
+We recommend that researchers treat small-sample and confounded-design conclusions as hypotheses requiring confirmation, report sample-size sensitivity analyses, and---when studying multi-agent communication---ensure that isolation baselines are matched on all structural dimensions. N-sensitivity may be a general property of complex measurement systems; if so, acknowledging it is a prerequisite for reliable ML evaluation.
+
+\section*{Broader Impact Statement}
+
+This paper identifies a statistical phenomenon that may affect the reliability of conclusions drawn from finite-sample ML evaluations. The primary beneficiaries are researchers and practitioners who can use the diagnostic tools we provide to avoid drawing incorrect conclusions from underpowered or confounded studies. Potential harms include the risk that our findings could be misused to dismiss inconvenient results as ``just N-sensitivity'' without proper analysis, or to impose rigid sample-size requirements that exclude exploratory or resource-constrained research. We caution that our evidence comes from LLM evaluation within a single research group; generalization to other domains requires independent verification. The overall societal impact is expected to be positive, as more reliable evaluation practices reduce the risk of deploying ML systems selected through unstable measurements.
+
+\section*{Reproducibility Statement}
+
+All simulation results can be reproduced with the provided supplementary code (\texttt{n\_sensitivity\_sim.py}), which requires Python 3 with \texttt{numpy} and \texttt{scipy}. The calibration contagion experiment (Case~1) data and code are available at an anonymized repository (URL withheld for double-blind review). The evaluator coupling benchmark (Case~2) data are provided as JSON files in the supplementary material (\texttt{p12\_deepseek\_asym.json}, \texttt{p12\_deepseek\_sym.json}, \texttt{p12\_qwen\_asym.json}, \texttt{p12\_qwen\_sym.json}), along with the benchmark analysis script. All experiments use deterministic prompts and fixed random seeds for reproducibility.
+
+\section*{Appendix A: Simulation Sensitivity Analysis}
+
+Table~\ref{tab:sensitivity} reports the probability of qualitative conclusion errors as a function of measurement noise ($\sigma$) and sample size ($N$) for the two canonical N-sensitivity scenarios described in \S\ref{sec:framework}. All values are Monte Carlo estimates with $5{\times}10^4$ replications per cell.
+
+\begin{table}[h]
+\centering
+\caption{\textbf{Simulation sensitivity analysis.} \textbf{Top:} Single-model decision boundary scenario. $P(\text{correct})$ is the probability that the sample mean falls on the correct side of a decision boundary at $\theta{=}1.0$, given a lognormal measurement distribution with parameters calibrated so that the true mean lies above the boundary. Low $P(\text{correct})$ at small $N$ indicates high risk of N-sensitive conclusions. \textbf{Bottom:} Two-model ranking scenario. $P(\text{reversal})$ is the probability that a sample of size $N$ incorrectly ranks model B above model A when the true difference is 10\%.}
+\label{tab:sensitivity}
+\begin{tabular}{@{}c c c c c c c c c@{}}
+\toprule
+\multicolumn{9}{c}{\textbf{Decision Boundary Scenario:} $P(\text{sample mean} > 1.0 \mid N)$} \\
+$\sigma$ & True mean & $N{=}3$ & $N{=}5$ & $N{=}10$ & $N{=}20$ & $N{=}30$ & $N{=}50$ & $N{=}100$ \\
+\midrule
+0.3 & 1.046 & .564 & .602 & .660 & .736 & .784 & .847 & .924 \\
+0.5 & 1.133 & .604 & .659 & .747 & .840 & .892 & .950 & .991 \\
+0.7 & 1.156 & .546 & .597 & .678 & .770 & .826 & .896 & .966 \\
+1.0 & 1.221 & .485 & .543 & .623 & .717 & .777 & .848 & .936 \\
+\midrule
+\multicolumn{9}{c}{\textbf{Ranking Reversal Scenario:} $P(\text{incorrect ranking} \mid N, \Delta{=}10\%)$} \\
+$\sigma$ & True $\Delta$ & $N{=}3$ & $N{=}5$ & $N{=}10$ & $N{=}20$ & $N{=}30$ & $N{=}50$ & $N{=}100$ \\
+\midrule
+0.3 & 10\% & .338 & .290 & .218 & .140 & .092 & .044 & .008 \\
+0.5 & 10\% & .401 & .372 & .328 & .265 & .221 & .162 & .081 \\
+0.7 & 10\% & .430 & .416 & .384 & .337 & .306 & .251 & .172 \\
+1.0 & 10\% & .453 & .441 & .422 & .391 & .366 & .340 & .284 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two patterns merit attention. First, in the decision-boundary scenario, even with moderate measurement noise ($\sigma{=}0.5$), the probability of a correct qualitative conclusion at $N{=}5$ is only 0.66---an experimenter has a 34\% chance of drawing the wrong conclusion. This drops below 5\% only at $N \geq 100$. With higher noise ($\sigma{=}1.0$, matching the $\text{CV} \approx 1.0$ observed in real $\gamma$ coupling data), $P(\text{correct})$ at $N{=}5$ is 0.54---barely above chance---and reaches 0.94 only at $N{=}100$. Second, in the ranking scenario, the reversal probability remains above 0.05 \emph{even at $N{=}100$} when $\sigma \geq 0.5$. For $\sigma{=}1.0$ and a 10\% true difference, $P(\text{reversal})$ is still 0.28 at $N{=}100$---ranking conclusions are unreliable at sample sizes that would typically be considered large. These results underscore that the $N$ required for stable qualitative conclusions depends jointly on measurement noise and the true effect size, and that the $N$ required for ranking stability is substantially larger than the $N$ required for decision-boundary stability.
+
+\bibliographystyle{tmlr}
+\bibliography{refs}
+
+\end{document}

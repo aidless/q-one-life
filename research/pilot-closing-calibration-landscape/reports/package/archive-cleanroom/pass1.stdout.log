@@ -1,0 +1,464 @@
+Rc files read (in order):
+  NONE
+Latexmk: This is Latexmk, John Collins, 9 March 2026. Version 4.88.
+No existing .aux file, so I'll make a simple one, and require run of *latex.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Category 'other':
+  Rerun of 'pdflatex' forced or previously required:
+    Reason or flag: 'Initial setup'
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/size11.clo)) (./tmlr.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/eso-pic/eso-pic.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/url/url.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/float/float.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def) (./main.aux) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg) [1{/home/liuzewen/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+
+Package natbib Warning: Citation `zheng2023judging' on page 2 undefined on input line 45.
+
+
+Package natbib Warning: Citation `chiang2024chatbot' on page 2 undefined on input line 45.
+
+
+Package natbib Warning: Citation `li2023camel' on page 2 undefined on input line 45.
+
+
+Package natbib Warning: Citation `wu2024autogen' on page 2 undefined on input line 45.
+
+
+Package natbib Warning: Citation `snell2024scaling' on page 2 undefined on input line 45.
+
+
+Package natbib Warning: Citation `liu2026epc' on page 2 undefined on input line 45.
+
+
+Package natbib Warning: Citation `liu2026tensor' on page 2 undefined on input line 45.
+
+
+Package natbib Warning: Citation `liu2026boundarysync' on page 2 undefined on input line 45.
+
+
+Package natbib Warning: Citation `liu2026audit' on page 2 undefined on input line 45.
+
+
+Package natbib Warning: Citation `liu2026temporal' on page 2 undefined on input line 45.
+
+
+Package natbib Warning: Citation `liu2026caleffects' on page 2 undefined on input line 45.
+
+
+Package natbib Warning: Citation `liu2026caleffects' on page 2 undefined on input line 47.
+
+
+Package natbib Warning: Citation `guo2017calibration' on page 2 undefined on input line 47.
+
+
+Package natbib Warning: Citation `he2026paradox' on page 2 undefined on input line 47.
+
+
+Package natbib Warning: Citation `messing2026tee' on page 2 undefined on input line 49.
+
+
+Package natbib Warning: Citation `bubeck2012regret' on page 2 undefined on input line 49.
+
+
+Package natbib Warning: Citation `dodge2019reproducibility' on page 2 undefined on input line 51.
+
+
+Package natbib Warning: Citation `liu2026caleffects' on page 2 undefined on input line 55.
+
+
+Package natbib Warning: Citation `liu2026caleffects' on page 2 undefined on input line 57.
+
+
+Package natbib Warning: Citation `messing2026tee' on page 2 undefined on input line 57.
+
+
+Package natbib Warning: Citation `guo2017calibration' on page 2 undefined on input line 57.
+
+
+Package natbib Warning: Citation `niculescu2005predicting' on page 2 undefined on input line 57.
+
+
+Package natbib Warning: Citation `kull2017temperature' on page 2 undefined on input line 57.
+
+
+Package natbib Warning: Citation `kumar2019verified' on page 2 undefined on input line 57.
+
+
+Package natbib Warning: Citation `nixon2019measuring' on page 2 undefined on input line 57.
+
+
+Package natbib Warning: Citation `roelofs2022mitigating' on page 2 undefined on input line 57.
+
+
+Package natbib Warning: Citation `platt1999probabilistic' on page 2 undefined on input line 61.
+
+
+Package natbib Warning: Citation `kull2017temperature' on page 2 undefined on input line 61.
+
+
+Package natbib Warning: Citation `niculescu2005predicting' on page 2 undefined on input line 61.
+
+
+Package natbib Warning: Citation `guo2017calibration' on page 2 undefined on input line 61.
+
+
+Package natbib Warning: Citation `minderer2021revisiting' on page 2 undefined on input line 61.
+
+
+Package natbib Warning: Citation `he2026paradox' on page 2 undefined on input line 61.
+
+
+Package natbib Warning: Citation `mills2026verification' on page 2 undefined on input line 61.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [2]
+
+Package natbib Warning: Citation `zheng2023judging' on page 3 undefined on input line 63.
+
+
+Package natbib Warning: Citation `chiang2024chatbot' on page 3 undefined on input line 63.
+
+
+Package natbib Warning: Citation `li2023camel' on page 3 undefined on input line 63.
+
+
+Package natbib Warning: Citation `wu2024autogen' on page 3 undefined on input line 63.
+
+
+Package natbib Warning: Citation `liu2026epc' on page 3 undefined on input line 63.
+
+
+Package natbib Warning: Citation `liu2026tensor' on page 3 undefined on input line 63.
+
+
+Package natbib Warning: Citation `liu2026boundarysync' on page 3 undefined on input line 63.
+
+
+Package natbib Warning: Citation `liu2026audit' on page 3 undefined on input line 63.
+
+
+Package natbib Warning: Citation `liu2026temporal' on page 3 undefined on input line 63.
+
+
+Package natbib Warning: Citation `dodge2019reproducibility' on page 3 undefined on input line 65.
+
+
+Package natbib Warning: Citation `sclar2024quantifying' on page 3 undefined on input line 65.
+
+
+Package natbib Warning: Citation `messing2026tee' on page 3 undefined on input line 65.
+
+
+Package natbib Warning: Citation `heineman2025snr' on page 3 undefined on input line 65.
+
+
+Package natbib Warning: Citation `snell2024scaling' on page 3 undefined on input line 65.
+
+
+Package natbib Warning: Citation `bubeck2012regret' on page 3 undefined on input line 65.
+
+
+Package natbib Warning: Citation `liu2026caleffects' on page 3 undefined on input line 75.
+
+
+Package natbib Warning: Citation `messing2026tee' on page 3 undefined on input line 79.
+
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd)
+
+LaTeX Warning: Reference `sec:perseed' on page 3 undefined on input line 92.
+
+[3]
+
+LaTeX Warning: Reference `tab:results' on page 4 undefined on input line 96.
+
+
+LaTeX Warning: Reference `sec:perseed' on page 4 undefined on input line 114.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [4
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.127 
+      ]
+
+Package natbib Warning: Citation `messing2026tee' on page 5 undefined on input line 128.
+
+
+Package natbib Warning: Citation `heineman2025snr' on page 5 undefined on input line 128.
+
+
+Package natbib Warning: Citation `sclar2024quantifying' on page 5 undefined on input line 128.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [5] (./sections/evidence_inventory.tex
+Overfull \hbox (3.41393pt too wide) in paragraph at lines 16--16
+[]\T1/lmtt/m/n/10 evidence/cg_tee_checkpoint.json| 
+
+Underfull \hbox (badness 1776) in paragraph at lines 17--18
+[]\T1/lmr/m/n/10 (+20) recorded sim-u-la-tion ag-gre-
+
+Overfull \hbox (19.16388pt too wide) in paragraph at lines 18--18
+[]\T1/lmtt/m/n/10 evidence/cg_tee_final_results.json| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+[]\T1/lmr/m/n/10 (+20) separate fi-nal/calibration
+
+Overfull \hbox (13.9139pt too wide) in paragraph at lines 19--19
+[]\T1/lmtt/m/n/10 evidence/cg_tee_real_results.json| 
+
+Overfull \hbox (66.41374pt too wide) in paragraph at lines 20--20
+[]\T1/lmtt/m/n/10 experiments/results/cg_tee_local_smoke.json| 
+[6
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.45 \paragraph
+               {What the paper can claim.}]) (./sections/per_seed_evidence.tex
+
+LaTeX Warning: Reference `tab:results' on page 7 undefined on input line 3.
+
+
+LaTeX Warning: Reference `tab:results' on page 7 undefined on input line 4.
+
+
+Underfull \hbox (badness 3000) in paragraph at lines 4--5
+\T1/lmr/m/n/10.95 (+20) Table [] prints three ag-gre-gates. The archive also holds the 15 per-seed records
+[7
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.29 
+     ]) [8
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.165 ...e et~al.(2019)]{dodge2019reproducibility}
+                                                   J.~Dodge, S.~Gururangan, ...
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.165 ...e et~al.(2019)]{dodge2019reproducibility}
+                                                   J.~Dodge, S.~Gururangan, ... <./figures/fig_cg_tee_seeds.pdf>] [9]
+
+Package natbib Warning: There were undefined citations.
+
+[10] (./main.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)</home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (10 pages, 272106 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  main.aux
+  main.out
+
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/size11.clo)) (./tmlr.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/eso-pic/eso-pic.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/url/url.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/float/float.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def) (./main.aux) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (./main.out) (./main.out) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg) [1{/home/liuzewen/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+Underfull \vbox (badness 2856) has occurred while \output is active [2] [3] (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd) [4
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.121 
+      ] [5] (./sections/evidence_inventory.tex
+Overfull \hbox (3.41393pt too wide) in paragraph at lines 16--16
+[]\T1/lmtt/m/n/10 evidence/cg_tee_checkpoint.json| 
+
+Underfull \hbox (badness 1776) in paragraph at lines 17--18
+[]\T1/lmr/m/n/10 (+20) recorded sim-u-la-tion ag-gre-
+
+Overfull \hbox (19.16388pt too wide) in paragraph at lines 18--18
+[]\T1/lmtt/m/n/10 evidence/cg_tee_final_results.json| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+[]\T1/lmr/m/n/10 (+20) separate fi-nal/calibration
+
+Overfull \hbox (13.9139pt too wide) in paragraph at lines 19--19
+[]\T1/lmtt/m/n/10 evidence/cg_tee_real_results.json| 
+
+Overfull \hbox (66.41374pt too wide) in paragraph at lines 20--20
+[]\T1/lmtt/m/n/10 experiments/results/cg_tee_local_smoke.json| 
+[6
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.44 
+     ]) (./sections/per_seed_evidence.tex
+Underfull \hbox (badness 1107) in paragraph at lines 4--5
+\T1/lmr/m/n/10.95 (+20) Table [][]1[][] prints three ag-gre-gates. The archive also holds the 15 per-seed records they
+
+Underfull \hbox (badness 1122) in paragraph at lines 4--5
+\T1/lmr/m/n/10.95 (+20) were com-puted from, in \T1/lmtt/m/n/10.95 evidence/cg_tee_checkpoint.json \T1/lmr/m/n/10.95 (+20) (byte-identically mir-rored as
+
+Underfull \hbox (badness 3333) in paragraph at lines 4--5
+\T1/lmtt/m/n/10.95 experiments/results/cg_tee_checkpoint.json\T1/lmr/m/n/10.95 (+20) ; 5 dis-tinct con-tents across the shipped
+[7
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.29 
+     ])
+Underfull \vbox (badness 10000) has occurred while \output is active [8
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.161 ...m[Chiang et~al.(2024)]{chiang2024chatbot}
+                                                   W.-L.~Chiang et~al.
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.161 ...m[Chiang et~al.(2024)]{chiang2024chatbot}
+                                                   W.-L.~Chiang et~al. <./figures/fig_cg_tee_seeds.pdf>] [9] [10] (./main.aux)
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)</home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (10 pages, 257463 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: References changed.
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  main.aux
+  main.out
+
+------------
+Run number 3 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/size11.clo)) (./tmlr.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/eso-pic/eso-pic.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/url/url.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/float/float.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def) (./main.aux) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (./main.out) (./main.out) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg) [1{/home/liuzewen/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/liuzewen/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+Underfull \vbox (badness 2856) has occurred while \output is active [2] [3] (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd) [4
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.121 
+      ] [5] (./sections/evidence_inventory.tex
+Overfull \hbox (3.41393pt too wide) in paragraph at lines 16--16
+[]\T1/lmtt/m/n/10 evidence/cg_tee_checkpoint.json| 
+
+Underfull \hbox (badness 1776) in paragraph at lines 17--18
+[]\T1/lmr/m/n/10 (+20) recorded sim-u-la-tion ag-gre-
+
+Overfull \hbox (19.16388pt too wide) in paragraph at lines 18--18
+[]\T1/lmtt/m/n/10 evidence/cg_tee_final_results.json| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+[]\T1/lmr/m/n/10 (+20) separate fi-nal/calibration
+
+Overfull \hbox (13.9139pt too wide) in paragraph at lines 19--19
+[]\T1/lmtt/m/n/10 evidence/cg_tee_real_results.json| 
+
+Overfull \hbox (66.41374pt too wide) in paragraph at lines 20--20
+[]\T1/lmtt/m/n/10 experiments/results/cg_tee_local_smoke.json| 
+[6
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.44 
+     ]) (./sections/per_seed_evidence.tex
+Underfull \hbox (badness 1107) in paragraph at lines 4--5
+\T1/lmr/m/n/10.95 (+20) Table [][]1[][] prints three ag-gre-gates. The archive also holds the 15 per-seed records they
+
+Underfull \hbox (badness 1122) in paragraph at lines 4--5
+\T1/lmr/m/n/10.95 (+20) were com-puted from, in \T1/lmtt/m/n/10.95 evidence/cg_tee_checkpoint.json \T1/lmr/m/n/10.95 (+20) (byte-identically mir-rored as
+
+Underfull \hbox (badness 3333) in paragraph at lines 4--5
+\T1/lmtt/m/n/10.95 experiments/results/cg_tee_checkpoint.json\T1/lmr/m/n/10.95 (+20) ; 5 dis-tinct con-tents across the shipped
+[7
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.29 
+     ])
+Underfull \vbox (badness 10000) has occurred while \output is active [8
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.161 ...m[Chiang et~al.(2024)]{chiang2024chatbot}
+                                                   W.-L.~Chiang et~al.
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.161 ...m[Chiang et~al.(2024)]{chiang2024chatbot}
+                                                   W.-L.~Chiang et~al. <./figures/fig_cg_tee_seeds.pdf>] [9] [10] (./main.aux) )
+(see the transcript file for additional information)</home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (10 pages, 257456 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: All targets (main.pdf) are up-to-date
+

@@ -1,0 +1,155 @@
+{
+  "schema": "q-one-paper35-carrier-audit-v1",
+  "generated_at": "2026-10-27T16:40:42.233466Z",
+  "source": {
+    "receipts": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/paper/evidence/CARRIER_RECEIPTS.json",
+    "receipts_sha256": "df8d2f040480f1d383886fa4a088780d1c9b350c601fd797a18883f7bff0808a",
+    "overlay_main_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
+    "upstream_main_sha256": "d1eac66806754899440a12bb30446c3944ed230191a077b1bbd331a2ae7a02f0"
+  },
+  "summary": {
+    "receipts": 8,
+    "passed": 8,
+    "failed": 0
+  },
+  "receipts": [
+    {
+      "status": "PASS",
+      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
+      "artifact_sha256": "5df68c6d06045c1fe712559f8ea07111baf7250d5d526c522699e5da82c91847",
+      "locator": "q2_by_category.A.ci[0]",
+      "over": null,
+      "expected": 6.39,
+      "values": [
+        6.3856
+      ],
+      "value_match": true,
+      "line_match": true,
+      "line_preview": "\\textsc{A} authority        & 20 & 7.00 & $[6.39, 7.60]$ \\\\",
+      "selected_rows": null,
+      "expected_rows": null,
+      "count_match": true
+    },
+    {
+      "status": "PASS",
+      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
+      "artifact_sha256": "5df68c6d06045c1fe712559f8ea07111baf7250d5d526c522699e5da82c91847",
+      "locator": "q2_by_category.A.ci[1]",
+      "over": null,
+      "expected": 7.6,
+      "values": [
+        7.5975
+      ],
+      "value_match": true,
+      "line_match": true,
+      "line_preview": "\\textsc{A} authority        & 20 & 7.00 & $[6.39, 7.60]$ \\\\",
+      "selected_rows": null,
+      "expected_rows": null,
+      "count_match": true
+    },
+    {
+      "status": "PASS",
+      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/cross_model_bds.csv",
+      "artifact_sha256": "fbb1ecf1919359c331abfd84d23a4762fa456eb22fd838e39529788fe23d21b5",
+      "locator": null,
+      "over": "rows[*].cross_model_bds",
+      "expected": 7.29,
+      "values": [
+        7.286230000000001
+      ],
+      "value_match": true,
+      "line_match": true,
+      "line_preview": "\\textsc{L} length           & 20 & 7.29 & $[7.07, 7.51]$ \\\\",
+      "selected_rows": 20,
+      "expected_rows": 20,
+      "count_match": true
+    },
+    {
+      "status": "PASS",
+      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/cross_model_bds.csv",
+      "artifact_sha256": "fbb1ecf1919359c331abfd84d23a4762fa456eb22fd838e39529788fe23d21b5",
+      "locator": null,
+      "over": "rows[*].cross_model_bds",
+      "expected": 7.27,
+      "values": [
+        7.26806
+      ],
+      "value_match": true,
+      "line_match": true,
+      "line_preview": "\\textsc{R} refusal          & 15 & 7.27 & $[6.74, 7.80]$ \\\\",
+      "selected_rows": 15,
+      "expected_rows": 15,
+      "count_match": true
+    },
+    {
+      "status": "PASS",
+      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
+      "artifact_sha256": "5df68c6d06045c1fe712559f8ea07111baf7250d5d526c522699e5da82c91847",
+      "locator": "q2_by_category.R.ci[1]",
+      "over": null,
+      "expected": 7.8,
+      "values": [
+        7.7994
+      ],
+      "value_match": true,
+      "line_match": true,
+      "line_preview": "\\textsc{R} refusal          & 15 & 7.27 & $[6.74, 7.80]$ \\\\",
+      "selected_rows": null,
+      "expected_rows": null,
+      "count_match": true
+    },
+    {
+      "status": "PASS",
+      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
+      "artifact_sha256": "5df68c6d06045c1fe712559f8ea07111baf7250d5d526c522699e5da82c91847",
+      "locator": "q2_by_category.T.ci[0]",
+      "over": null,
+      "expected": 3.54,
+      "values": [
+        3.535
+      ],
+      "value_match": true,
+      "line_match": true,
+      "line_preview": "\\textsc{T} tool-use         & 10 & \\textbf{4.48} & $[3.54, 5.38]$ \\\\",
+      "selected_rows": null,
+      "expected_rows": null,
+      "count_match": true
+    },
+    {
+      "status": "PASS",
+      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
+      "artifact_sha256": "5df68c6d06045c1fe712559f8ea07111baf7250d5d526c522699e5da82c91847",
+      "locator": "q2_by_category.X.ci[1]",
+      "over": null,
+      "expected": 10.39,
+      "values": [
+        10.389
+      ],
+      "value_match": true,
+      "line_match": true,
+      "line_preview": "\\textsc{X} multilingual     & 15 & \\textbf{9.42} & $[8.46, 10.39]$ \\\\",
+      "selected_rows": null,
+      "expected_rows": null,
+      "count_match": true
+    },
+    {
+      "status": "PASS",
+      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/cross_model_bds.csv",
+      "artifact_sha256": "fbb1ecf1919359c331abfd84d23a4762fa456eb22fd838e39529788fe23d21b5",
+      "locator": null,
+      "over": "rows[*].cross_model_bds",
+      "expected": 11.39,
+      "values": [
+        11.3859
+      ],
+      "value_match": true,
+      "line_match": true,
+      "line_preview": "\\textsc{X}-014 (mean model-pair BDS $11.39$); the most similar is",
+      "selected_rows": 1,
+      "expected_rows": 1,
+      "count_match": true
+    }
+  ],
+  "scientific_ready": false,
+  "external_submission": false
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "sev": "Major",
+    "text": "方法论描述不够详细，缺乏对现有研究的深入分析和对比。",
+    "role": "methodology"
+  },
+  {
+    "sev": "Major",
+    "text": "实验设计中缺乏对不同攻击类型的详细描述，仅提到三种攻击家族：prompt-injection, rubric-injection, and majority-bias mimicry attacks。需要提供每个攻击类型的详细定义和具体实现方法。",
+    "role": "experiment"
+  },
+  {
+    "sev": "Major",
+    "text": "实验结果中未提供足够的统计分析和置信区间，仅报告了准确率等指标。需要进行更详细的统计分析，包括置信区间和显著性检验。",
+    "role": "experiment"
+  },
+  {
+    "sev": "Major",
+    "text": "The paper does not provide a clear and specific definition of the term 'plain majority voting' in the context of the aggregation methods. This could lead to confusion for readers.",
+    "role": "novelty"
+  },
+  {
+    "sev": "Major",
+    "text": "未提供具体的复现步骤或代码链接，影响论文的可复现性。",
+    "role": "reproducibility"
+  },
+  {
+    "sev": "Major",
+    "text": "未详细说明合成基准的具体实现细节。",
+    "role": "reproducibility"
+  },
+  {
+    "sev": "Major",
+    "text": "未详细讨论伦理问题，特别是关于如何确保研究结果不会被滥用或误用。",
+    "role": "ethics"
+  }
+]

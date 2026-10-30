@@ -1,0 +1,591 @@
+{
+ "criterion": "Among definitions whose name promises exactness, flag a conditional fallback to a normal/chi-square/asymptotic/approx call when the condition compares the sample size (n, n_total, ntotal, total, m) against a threshold with >, >=, <, or <=.",
+ "sources": {
+  "classification": "raw/classification.json",
+  "bodies": "raw/files/"
+ },
+ "total_exact_named_implementation_defs": 68,
+ "counterexamples_count": 1,
+ "counterexamples": [
+  {
+   "file": "Gurp-S__XEYO__python__evals__changedetect__stats.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 58,
+   "verdict": "exact",
+   "status": "counterexample",
+   "hits": [
+    {
+     "condition": "n > _EXACT_MAX_N",
+     "call_lines": [
+      {
+       "line": 68,
+       "call": "mcnemar_normal"
+      }
+     ],
+     "source": "if n > _EXACT_MAX_N:\n        return mcnemar_normal(b, c)"
+    }
+   ]
+  }
+ ],
+ "status_counts": {
+  "counterexample": 1,
+  "no-sample-size-switch": 67
+ },
+ "rows": [
+  {
+   "file": "1CatAI__1Cat-vLLM__benchmarks__compare_sm70_dflash2_quality_matrix.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 79,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "BichengWang__multi-agents__agent__bench__report.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 39,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "Ch3nOff__dual-loop-controller__eval_results__archive_deprecated__scripts__benchmark_glm4_20_suite.py",
+   "fn": "mcnemar_exact_pvalue",
+   "def_line_no": 78,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "Ch3nOff__dual-loop-controller__eval_results__archive_deprecated__scripts__eval_multistep_reasoning.py",
+   "fn": "mcnemar_exact_pvalue",
+   "def_line_no": 82,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "Cryptic-LEY__gmp-agent__gmp-api__eval__critic_metrics.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 218,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "Cygnux-Labs__Tracekit__tracekit__why__replay.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 153,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "General-Instinct__InstinctFlash__instinctflash__verify__certify.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 171,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "Gurp-S__XEYO__python__evals__changedetect__stats.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 58,
+   "verdict": "exact",
+   "status": "counterexample",
+   "hits": [
+    {
+     "condition": "n > _EXACT_MAX_N",
+     "call_lines": [
+      {
+       "line": 68,
+       "call": "mcnemar_normal"
+      }
+     ],
+     "source": "if n > _EXACT_MAX_N:\n        return mcnemar_normal(b, c)"
+    }
+   ]
+  },
+  {
+   "file": "Kiln-AI__Kiln__libs__server__kiln_server__statistics_lib.py",
+   "fn": "mcnemar_exact_p",
+   "def_line_no": 425,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "Lumen-Labs__brainapi2__benchmarks__locomo__metrics.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 330,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "Miosa-osa__OSA__bench__headtohead__paired.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 35,
+   "verdict": "exact-delegate",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "Miosa-osa__OSA__bench__modelsweep__paired.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 55,
+   "verdict": "exact-delegate",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "Miosa-osa__OSA__bench__recoverybench__delta_report.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 66,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "Miosa-osa__OSA__bench__scaffold__paired.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 63,
+   "verdict": "exact-delegate",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "NVIDIA__SkillEvaluator__src__skillevaluator__reporting__html.py",
+   "fn": "_sanitize_tier3_mcnemar_exact",
+   "def_line_no": 617,
+   "verdict": "non-computing-wrapper",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "NVIDIA__SkillEvaluator__src__skillevaluator__tier3__harbor__collector.py",
+   "fn": "_mcnemar_exact_probability",
+   "def_line_no": 4587,
+   "verdict": "exact-wrapper",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "NVIDIA__SkillEvaluator__src__skillevaluator__tier3__harbor__collector.py",
+   "fn": "_mcnemar_exact_p_value",
+   "def_line_no": 4688,
+   "verdict": "exact-wrapper",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "OpenAgentsInc__openagents__training__compiled-functions__compare.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 23,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "SodaMem__SodaMem__benchmarking__run_s500.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 664,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "TaewoooPark__Motifcode__packages__eval__polyglot-bench__compare.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 68,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "TianyuCodings__NanoJev__scripts__summarize_appo_supervision.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 39,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "Trampoline-AI__predict-rlm__src__rlm_gepa__reporting__stats.py",
+   "fn": "_mcnemar_exact_p",
+   "def_line_no": 1891,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "WingedGuardian__GENesis-AGI__src__genesis__eval__stats.py",
+   "fn": "_mcnemar_exact_two_sided",
+   "def_line_no": 168,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "ZeKaiNie__universal-examprep-skill__full__scripts__retrieval_evaluation.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 836,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "air-embodied-brain__Zetta-Embodiment__scripts__experiments__analyze_paired_results.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 66,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "amd2g2zz__kunglao-agent__scripts__bench_analyze.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 40,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "antoinezambelli__forge__tests__eval__significance.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 64,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "ashishsinha1602__schemagate__benchmarks__rerank_eval.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 39,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "bespokelabsai__nimble__nimble__evaluation__compare_public.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 28,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "bnsd55__jevmlx__jevmlx__evalmetrics.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 696,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "bojieli__ai-agent-book__chapter10__multi-role-transfer__run_comparison.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 121,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "borghei__Claude-Skills__engineering__agent-harness__scripts__eval_diff.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 56,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "cyberlife-coder__VelesDB__crates__velesdb-memory__examples__locomo__analysis__stats.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 6,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "datadog-labs__agent-skills__agent-observability__agent-observability-build-eval-from-annotations__references__scoring.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 40,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "elder-plinius__OBLITERATUS__obliteratus__concepts__statistics.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 42,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "ggozad__haiku.rag__evaluations__evaluations__pairing.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 15,
+   "verdict": "exact-delegate",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "hanamorix__companion-emergence__brain__memory__judge_eval.py",
+   "fn": "mcnemar_exact_p",
+   "def_line_no": 173,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "jaredpalmer__kev__scripts__jevbench_paired.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 35,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "jianzhou0420__AgentCanvas__coding-agent__stdrun.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 125,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "jiayuqi7813__DeepSeek-V4-Flash-0731-CRACK-2x-DGX-Spark__scripts__compare_behavior.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 27,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "jiayuqi7813__DeepSeek-V4-Flash-0731-CRACK-2x-DGX-Spark__scripts__compare_capability.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 36,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "jiayuqi7813__DeepSeek-V4-Flash-0731-CRACK-2x-DGX-Spark__scripts__compare_judgments.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 33,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "jonashertner__opencaselaw__benchmarks__swiss_legal_rag_bench__statistical_analysis.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 52,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "juyterman1000__entroly__benchmarks__agentic_tasks_run.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 493,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "juyterman1000__entroly__benchmarks__compression_frontier.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 557,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "juyterman1000__entroly__benchmarks__model_recovery.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 538,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "juyterman1000__entroly__benchmarks__neural_evidence_frontier.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 60,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "juyterman1000__entroly__benchmarks__neural_query_shift.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 50,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "liberomax__LIBERO-MAX__src__libero_max__results.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 218,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "no-human-ai__no_human__src__no_human__eval__bench_compare.py",
+   "fn": "mcnemar_exact_p",
+   "def_line_no": 340,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "no-magic-ai__no-magic__03-systems__microcot.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 781,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "notque__vexjoy-agent__scripts__routing-ab-test.py",
+   "fn": "_mcnemar_exact_p",
+   "def_line_no": 731,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "royshil__scoresight__ocr_eval__metrics.py",
+   "fn": "mcnemar_exact_p",
+   "def_line_no": 294,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "rtk-ai__icm__bench__amb__rejudge_strict.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 324,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "rzc156__dreamforge__src__dreamforge__stats.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 90,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "strands-labs__strands-decider__evaluation__jevbench__paired.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 53,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "udaysharmadev__Gravitas__benchmarks__runner__compare.py",
+   "fn": "mcnemar_exact_p",
+   "def_line_no": 30,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "vegetableleaf__ClashAI__pipeline__e1_score.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 78,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "vllm-project__semantic-router__src__training__model_classifier__modality_routing_classifier__label_audit__audit_lib__stats.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 39,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "volcengine__OpenViking__benchmark__memory_organization__grader.py",
+   "fn": "mcnemar_exact_p_value",
+   "def_line_no": 218,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "vukrosic__glm-5.3-flash-from-scratch__scripts__analyze_rl_variants.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 12,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "w1u2d3i4__multitown__multitown__semantic_model_probe.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 339,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "xinxuxin__keystone-bench__keystone__metrics.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 29,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "yail259__frankensurf__scripts__searchbench.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 218,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "youngbryan97__aura__core__learning__semantic_method_overlap.py",
+   "fn": "_mcnemar_exact",
+   "def_line_no": 45,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "ypollak2__llm-router__scripts__g1_synthetic_evidence.py",
+   "fn": "mcnemar_exact",
+   "def_line_no": 208,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "ypollak2__llm-router__scripts__release__eval_gate.py",
+   "fn": "mcnemar_exact_p",
+   "def_line_no": 80,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  },
+  {
+   "file": "zhangrldndx__offerclaw__rag_eval_metrics.py",
+   "fn": "mcnemar_exact_p",
+   "def_line_no": 293,
+   "verdict": "exact",
+   "status": "no-sample-size-switch",
+   "hits": []
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+  "experiment": "GPT-4o Replication",
+  "N": 8,
+  "R": 30,
+  "gTV_mean": 1.1763,
+  "gVT_mean": 1.0886,
+  "diff_mean": -0.0877,
+  "se_diff": 0.122,
+  "ci95": [
+    -0.3268,
+    0.1513
+  ],
+  "p_bootstrap": 0.5747,
+  "cohens_d": 0.2896,
+  "sig_05": false,
+  "dir_VtoT": 3,
+  "dir_TtoV": 5,
+  "zeros": 0,
+  "results": [
+    {
+      "rep": 1,
+      "gTV": 0.7384,
+      "gVT": 1.2148,
+      "asym": 0.2439,
+      "dir": "V->T",
+      "top_T": "critical_check",
+      "top_V": "critical_check",
+      "top_TV": "synthesis",
+      "top_VT": "evidence_cite",
+      "time": 1359.3185393810272
+    },
+    {
+      "rep": 2,
+      "gTV": 0.7608,
+      "gVT": 0.8949,
+      "asym": 0.081,
+      "dir": "V->T",
+      "top_T": "synthesis",
+      "top_V": "synthesis",
+      "top_TV": "synthesis",
+      "top_VT": "synthesis",
+      "time": 1515.596218585968
+    },
+    {
+      "rep": 3,
+      "gTV": 1.5975,
+      "gVT": 1.2823,
+      "asym": 0.1095,
+      "dir": "T->V",
+      "top_T": "first_principles",
+      "top_V": "creative_leap",
+      "top_TV": "first_principles",
+      "top_VT": "creative_leap",
+      "time": 1469.246696472168
+    },
+    {
+      "rep": 4,
+      "gTV": 1.2977,
+      "gVT": 0.8491,
+      "asym": 0.209,
+      "dir": "T->V",
+      "top_T": "evidence_cite",
+      "top_V": "aesthetic_frame",
+      "top_TV": "critical_check",
+      "top_VT": "evidence_cite",
+      "time": 1414.4391176700592
+    },
+    {
+      "rep": 5,
+      "gTV": 0.9215,
+      "gVT": 1.1977,
+      "asym": 0.1303,
+      "dir": "V->T",
+      "top_T": "first_principles",
+      "top_V": "critical_check",
+      "top_TV": "evidence_cite",
+      "top_VT": "critical_check",
+      "time": 2290.6511075496674
+    },
+    {
+      "rep": 6,
+      "gTV": 1.3703,
+      "gVT": 1.1381,
+      "asym": 0.0926,
+      "dir": "T->V",
+      "top_T": "counterfactual",
+      "top_V": "creative_leap",
+      "top_TV": "counterfactual",
+      "top_VT": "step_by_step",
+      "time": 1497.349323272705
+    },
+    {
+      "rep": 7,
+      "gTV": 1.7406,
+      "gVT": 1.2971,
+      "asym": 0.146,
+      "dir": "T->V",
+      "top_T": "step_by_step",
+      "top_V": "creative_leap",
+      "top_TV": "step_by_step",
+      "top_VT": "creative_leap",
+      "time": 1511.704098701477
+    },
+    {
+      "rep": 8,
+      "gTV": 0.9839,
+      "gVT": 0.8348,
+      "asym": 0.082,
+      "dir": "T->V",
+      "top_T": "first_principles",
+      "top_V": "counterfactual",
+      "top_TV": "aesthetic_frame",
+      "top_VT": "step_by_step",
+      "time": 1383.5212020874023
+    }
+  ],
+  "total_time": 12441.859988689423
+}

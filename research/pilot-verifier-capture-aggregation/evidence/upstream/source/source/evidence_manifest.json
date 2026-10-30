@@ -1,0 +1,258 @@
+{
+  "root": "F:\\Research\\PAPER6_CONSOLIDATED",
+  "created": "2026-08-18T18:10:18+00:00",
+  "files": [
+    {
+      "path": "attacks.py",
+      "size": 5782,
+      "sha256": "d9c6807cbf832e7df7b454b1936a021416fe6c8180da3ffede70fe215c1f5432",
+      "modified": "2026-07-11T09:10:48+00:00"
+    },
+    {
+      "path": "benchmark.py",
+      "size": 3675,
+      "sha256": "3bf076f4fc66ce69ca24dfd533afc05d47e624b77fd47e16f6e6d0314105036c",
+      "modified": "2026-07-11T09:24:30+00:00"
+    },
+    {
+      "path": "benchmark_persist.py",
+      "size": 2339,
+      "sha256": "df3a10d8ac4a961f00fceb3d0b90e35b1d5aed79d76e8ff4b3e978c6f8f5ed9e",
+      "modified": "2026-08-16T12:38:59+00:00"
+    },
+    {
+      "path": "crv.py",
+      "size": 6637,
+      "sha256": "5f30a3ce697edd95542dfbd074a372cf9d5d3766007f735a86739e18bc270793",
+      "modified": "2026-07-11T09:20:30+00:00"
+    },
+    {
+      "path": "demo.py",
+      "size": 4068,
+      "sha256": "854ef3eda5b520a7cb155f0071042f662e6d9036a005231feaa52d9a2927ab07",
+      "modified": "2026-07-11T09:11:10+00:00"
+    },
+    {
+      "path": "demo2.py",
+      "size": 1984,
+      "sha256": "9ef93d92948b58030a36100f90aea45813a30c08ec945ff0577fa123de5cb48f",
+      "modified": "2026-07-11T09:21:11+00:00"
+    },
+    {
+      "path": "demo3.py",
+      "size": 3245,
+      "sha256": "5dffd7a12e5b1fc072a617ade781156825861a30d09c18f173f8dd39a3913c37",
+      "modified": "2026-07-11T09:21:37+00:00"
+    },
+    {
+      "path": "demo4.py",
+      "size": 2724,
+      "sha256": "c5aa43a68b6ee6fee83914c7401173c142d5a77edc6800d2e050e5c1f99d0b27",
+      "modified": "2026-07-11T09:21:59+00:00"
+    },
+    {
+      "path": "evidence/main_results/benchmark_table.json",
+      "size": 11985,
+      "sha256": "b2f7c090edfd86d7cf32a03bd404bc9ed1572dc74ada043a5027af67b7b9fbd2",
+      "modified": "2026-08-16T12:39:20+00:00"
+    },
+    {
+      "path": "evidence/main_results/ensemble_sweep.json",
+      "size": 671,
+      "sha256": "b34475d34fea23aca5ae2649484b7e8979fc66c5a9cf473bd0a76d72cd4691de",
+      "modified": "2026-08-16T12:41:49+00:00"
+    },
+    {
+      "path": "evidence/main_results/per_attack_table.json",
+      "size": 729,
+      "sha256": "094cca8a5cc3e28830f6db0db6c1f36d64d7c9b647bd985cc353472f6b6abb9a",
+      "modified": "2026-08-16T12:40:59+00:00"
+    },
+    {
+      "path": "evidence/pilot_results/summary_v2.json",
+      "size": 1452,
+      "sha256": "9d28fc528d8a1d44f612305a25d2d919baf6ec267ea867d22f298bee42afdca3",
+      "modified": "2026-08-13T15:55:06+00:00"
+    },
+    {
+      "path": "evidence/real_llm_results/cells.json",
+      "size": 6199,
+      "sha256": "a4e9c087d27c6a3f5f6945fff5f4d3762179f8e6d8b3c6bbf4ac30c17b00473e",
+      "modified": "2026-08-17T09:57:22+00:00"
+    },
+    {
+      "path": "evidence/real_llm_results/summary.json",
+      "size": 833,
+      "sha256": "764af6e6fae035a6f612c64e770950834271c03b2222d00bafb332d857064001",
+      "modified": "2026-08-17T09:57:23+00:00"
+    },
+    {
+      "path": "experiments/benchmark_results/benchmark_table.json",
+      "size": 11985,
+      "sha256": "b2f7c090edfd86d7cf32a03bd404bc9ed1572dc74ada043a5027af67b7b9fbd2",
+      "modified": "2026-08-16T12:39:20+00:00"
+    },
+    {
+      "path": "experiments/benchmark_results/ensemble_sweep.json",
+      "size": 671,
+      "sha256": "b34475d34fea23aca5ae2649484b7e8979fc66c5a9cf473bd0a76d72cd4691de",
+      "modified": "2026-08-16T12:41:49+00:00"
+    },
+    {
+      "path": "experiments/benchmark_results/per_attack_table.json",
+      "size": 729,
+      "sha256": "094cca8a5cc3e28830f6db0db6c1f36d64d7c9b647bd985cc353472f6b6abb9a",
+      "modified": "2026-08-16T12:40:59+00:00"
+    },
+    {
+      "path": "experiments/pilot_results/summary.json",
+      "size": 994,
+      "sha256": "620d8fb4e5c58d56bcfd7b240188384f835c6c2722c20182bc3e57d29f9f3ead",
+      "modified": "2026-08-13T15:49:29+00:00"
+    },
+    {
+      "path": "experiments/pilot_results/summary_v2.json",
+      "size": 1452,
+      "sha256": "9d28fc528d8a1d44f612305a25d2d919baf6ec267ea867d22f298bee42afdca3",
+      "modified": "2026-08-13T15:55:06+00:00"
+    },
+    {
+      "path": "experiments/real_llm_results/cells.json",
+      "size": 6199,
+      "sha256": "a4e9c087d27c6a3f5f6945fff5f4d3762179f8e6d8b3c6bbf4ac30c17b00473e",
+      "modified": "2026-08-17T09:57:22+00:00"
+    },
+    {
+      "path": "experiments/real_llm_results/summary.json",
+      "size": 833,
+      "sha256": "764af6e6fae035a6f612c64e770950834271c03b2222d00bafb332d857064001",
+      "modified": "2026-08-17T09:57:23+00:00"
+    },
+    {
+      "path": "extended_methods.py",
+      "size": 7768,
+      "sha256": "13e6aae1e81c7bae6726ee399ab2259813e37510d0106d21576a726043a56189",
+      "modified": "2026-07-11T09:24:10+00:00"
+    },
+    {
+      "path": "main.aux",
+      "size": 14536,
+      "sha256": "a66cc8b4050d87951f63990b7eb5dbfa23a8061f6b4e115f6e3feba8b5f60e31",
+      "modified": "2026-08-16T12:47:39+00:00"
+    },
+    {
+      "path": "main.bbl",
+      "size": 4711,
+      "sha256": "087bc892f4df077a652f64bee36dfaed4add7f06967464b0f2b217d991751093",
+      "modified": "2026-08-16T12:47:34+00:00"
+    },
+    {
+      "path": "main.blg",
+      "size": 997,
+      "sha256": "d2b14784809704bb2cee4c374be16bd97dc6fcbd93b7ae5e35a20c09d5d07684",
+      "modified": "2026-08-16T12:47:34+00:00"
+    },
+    {
+      "path": "main.log",
+      "size": 30289,
+      "sha256": "249c1f08c36025c6e1b9b49521bb0c26dfa3168f31305a075cb0849cfef2593f",
+      "modified": "2026-08-16T12:47:39+00:00"
+    },
+    {
+      "path": "main.out",
+      "size": 2221,
+      "sha256": "2c50cc3ff8059ca1afdfa47336082970f1ee8d4871657261d7e9121759fc0b54",
+      "modified": "2026-08-16T12:47:39+00:00"
+    },
+    {
+      "path": "main.pdf",
+      "size": 365622,
+      "sha256": "045bd8284f4195188baca3e56bb0927af27735645fec7bcc4df5be85fde728d7",
+      "modified": "2026-08-16T12:47:39+00:00"
+    },
+    {
+      "path": "main.tex",
+      "size": 47261,
+      "sha256": "08ef1eb25e77575792bed9a381afbb0ef4221102eb82796fbb77d4d75275a28f",
+      "modified": "2026-08-16T14:45:40+00:00"
+    },
+    {
+      "path": "main.tex.LLM_FABRICATED_DO_NOT_SUBMIT",
+      "size": 11372,
+      "sha256": "e30b4509101ac1728782fa765cd7d5db57f4a52cb2bf3f106fa1f4a5bf52ba0f",
+      "modified": "2026-07-09T12:37:36+00:00"
+    },
+    {
+      "path": "math_commands.tex",
+      "size": 5039,
+      "sha256": "9d655842e74bf55f241770197793507d27f178abef4132378b8333e391a6a0e0",
+      "modified": "2026-07-08T12:57:44+00:00"
+    },
+    {
+      "path": "ollama_client.py",
+      "size": 2895,
+      "sha256": "1761c369b8d6dbe384553bd6b447bbeecc40f7711108b96e8c4b72f99d33fdd2",
+      "modified": "2026-08-17T12:38:50+00:00"
+    },
+    {
+      "path": "per_attack.py",
+      "size": 1080,
+      "sha256": "59060a492b6db8a198de4c096268bd922598367b294545e784ca9fe52a0efdcd",
+      "modified": "2026-07-11T09:42:06+00:00"
+    },
+    {
+      "path": "persist_tables.py",
+      "size": 2399,
+      "sha256": "c4b5043d31265ad76e88cce84b3229cdf0f525a5f1ad959db83ecfb1f669da08",
+      "modified": "2026-08-16T12:40:25+00:00"
+    },
+    {
+      "path": "protocol.md",
+      "size": 4088,
+      "sha256": "ccb2353370e4b6d509241b2a2713e1361d33725478f43430c2615a00c15cf54d",
+      "modified": "2026-08-16T12:53:33+00:00"
+    },
+    {
+      "path": "real_llm_runner.py",
+      "size": 5176,
+      "sha256": "d60e8fd5a5e87d7ab74f81eeabdb9f7f8ee9d73515ce66bc1f3807dd3bb0a63d",
+      "modified": "2026-08-16T16:08:13+00:00"
+    },
+    {
+      "path": "refs.bib",
+      "size": 5864,
+      "sha256": "2e08d1889d7d8da29949c655bec95b39cf174baf23cab422c0c06e4f4f6dbd9a",
+      "modified": "2026-07-11T05:49:20+00:00"
+    },
+    {
+      "path": "review_report_v1.md",
+      "size": 8658,
+      "sha256": "8b6681ea69416c78cab17adf3667c670580c7ca6e9fb5639e0f8b52b1089c8a9",
+      "modified": "2026-07-09T12:33:59+00:00"
+    },
+    {
+      "path": "run_pilot.py",
+      "size": 3345,
+      "sha256": "838642901a80d89489c4b433efc2c6127468387d97b48981bf389b60ee708dca",
+      "modified": "2026-08-13T15:55:00+00:00"
+    },
+    {
+      "path": "tmlr.bst",
+      "size": 26969,
+      "sha256": "306fd454cf40771bee01293eeb98d2c1cd5f4e11ed0cd7296b335f354fc45206",
+      "modified": "2026-07-10T03:34:01+00:00"
+    },
+    {
+      "path": "tmlr.sty",
+      "size": 6560,
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "modified": "2026-06-29T14:27:05+00:00"
+    },
+    {
+      "path": "verify_p6.py",
+      "size": 14777,
+      "sha256": "94b8795f912ef69413f247a1cb5eabc3dd96746d1f94a2c2308c73f90add9311",
+      "modified": "2026-07-11T09:41:45+00:00"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+experiment: e001_seeded_from_claims
+paper: PAPER35_FRONT_DRIFT
+description: 从 claims.yaml 反向生成的复现协议（3 条预测）
+predictions:
+- claim_id: C02
+  expected: 100.0
+  evidence: experiments/full_run/_manifest.json
+  path: scenarios_count / total_cells
+  tol: 0
+- claim_id: C04
+  expected: 7.1547
+  evidence: experiments/full_run/analysis/full_run_stats_20260813.json
+  path: q2_overall.mean / seed_vs_cross.mean_diff
+  tol: 0
+- claim_id: C06
+  expected: 100.0
+  evidence: experiments/full_run/analysis/full_run_stats_20260813.json
+  path: seed_vs_cross.n_paired
+  tol: 0
+output: experiments/e001_seeded_from_claims_results.json
+created: '2026-09-01'
+_note: 反向生成的协议草稿：expected 来自 claims.yaml 的 value，用于复现核验而非预测先行。执行前请人工 review。

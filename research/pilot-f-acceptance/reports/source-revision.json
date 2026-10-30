@@ -1,0 +1,32 @@
+{
+  "schema": "q-one-source-revision-v1",
+  "generated_at": "2026-10-27T15:09:00Z",
+  "baseline": {
+    "path": "evidence/upstream/main.tex",
+    "sha256": "4c59377876dfe6136c24dd016bca1111918e09a5ecbdf1a4109801795394f797"
+  },
+  "current": {
+    "path": "source/main.tex",
+    "sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef"
+  },
+  "changes": [
+    {
+      "id": "bibliography-before-appendix",
+      "description": "Moved the bibliography commands before the appendix in the overlay copy.",
+      "reason": "The 2026-10-26 final review identified the reverse order as a formatting defect.",
+      "original_source_modified": false
+    }
+  ],
+  "verification": [
+    "reports/native-verification-gate.json",
+    "reports/package-audit.json",
+    "reports/cleanroom/receipt.json",
+    "reports/package/package-receipt.json",
+    "reports/review-response-audit.json"
+  ],
+  "notes": [
+    "The upstream source is retained byte-for-byte in evidence/upstream/.",
+    "The revision is an internal candidate and has not been uploaded.",
+    "Independent re-review of the revised source remains open."
+  ]
+}

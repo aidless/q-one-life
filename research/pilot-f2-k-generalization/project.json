@@ -1,0 +1,531 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-merged-flagship-f2-k-generalization-sele-112d818110",
+  "title": "Merged Flagship F2: K-Generalization, Selective Prediction and Self-Evaluation",
+  "status": "blocked",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f2-k-generalization",
+  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
+  "manuscript": {
+    "path": "evidence/upstream/paper/main.tex",
+    "sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "0bc429516c9e5ba23ed8b3a996119469d97ce241f41f75026555f80f6fe98e5f",
+      "state": "verified",
+      "origin": "P13 Research Factory overlay",
+      "description": "Canonical source and audit copy identity."
+    },
+    {
+      "path": "evidence/variant-reconciliation.json",
+      "sha256": "eaa5f5ea2cf5b8f0ae125dccae31c3296159d41c0f1139c9c766ea2584436772",
+      "state": "verified",
+      "origin": "P13 Research Factory overlay",
+      "description": "Three packet variants plus one mirror, all distinct."
+    },
+    {
+      "path": "evidence/blocked-audit.json",
+      "sha256": "22aa58dcc1affb4a6167f503c0b5f699c9660eed551bfb8d0471370d686131d0",
+      "state": "verified",
+      "origin": "P13 Research Factory overlay",
+      "description": "Joint, per-seed, episode, real-LLM and reported-statistic audit."
+    },
+    {
+      "path": "evidence/claim-values.json",
+      "sha256": "d7a50dbd0d42cd4dfc635d9ddb31b3bb981cb230e8e577c9a93828d29752deab",
+      "state": "verified",
+      "origin": "P13 Research Factory overlay",
+      "description": "Scalar claim values extracted from the blocked audit for exact ledger verification."
+    },
+    {
+      "path": "evidence/EVIDENCE_PLAN.md",
+      "sha256": "160f047201487f5135df826d4525df19f0c54bbed08b7e1ca8fd88c74ba0ebb1",
+      "state": "verified",
+      "origin": "Upstream ARIS audit",
+      "description": "Seven flagged values, zero executable carriers."
+    },
+    {
+      "path": "evidence/ARIS_EVIDENCE_VERDICT.md",
+      "sha256": "d7591fbb2bb0b5b141eb10a4291d8dcbda2e844717285a01bbc7bf89e241010d",
+      "state": "verified",
+      "origin": "Upstream ARIS audit",
+      "description": "Carrier, table, ledger and proof contradictions."
+    },
+    {
+      "path": "evidence/upstream/paper/main.tex",
+      "sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
+      "state": "verified",
+      "origin": "Portfolio representative paper/main.tex",
+      "description": "Canonical source retained byte-for-byte."
+    },
+    {
+      "path": "evidence/upstream/paper/refs.bib",
+      "sha256": "14e4fd0ae09997ab89a7c08067389cd0d24b0c141450cafbd51347376cc24251",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Canonical bibliography."
+    },
+    {
+      "path": "evidence/upstream/paper/CLAIM_LEDGER.md",
+      "sha256": "0ba698576738c8c986d68a9a0727b6b9bfc33eb3ecb7109cf9fa8d0e8ae17028",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Native nine-claim ledger retained for comparison."
+    },
+    {
+      "path": "evidence/upstream/paper/REVIEW_CARD.md",
+      "sha256": "d0cd5cc586788c354c63b6d950fff6d2e8e393917c955159da0985bea3e974b4",
+      "state": "verified",
+      "origin": "Upstream source project",
+      "description": "Retained reject review card."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/k345/joint_2700.json",
+      "sha256": "672a855e209ec6edb5c45036bd56558c7e5d95baf2acdefe0d67d98e7c8e2a27",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Declared 2,700 cells but five stored rows."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/k345/analysis_2700.json",
+      "sha256": "7e502b92b49de8dbedd4f83fc5b0eb1995a29ec06dec85758a84bba4a88264dd",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Six condition summaries."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/k345/bootstrap_2700.json",
+      "sha256": "6714c26d9ee05c78045dc2849be48d629c57ad7c6323f4c1e3d30eacf3384915",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Ten per-seed products per condition; two point-mean disagreements."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/k345/per_seed.jsonl",
+      "sha256": "81263111762a8837548783c3da43f9fb130a28ce17419e2845e6d3a22370de47",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Sixty per-seed products; disagrees with analysis on four conditions."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/k345/episodes.jsonl",
+      "sha256": "0e3f662e07cfa00f1a933e8413f628a589e5e5f220ca15257c0c623d93113be6",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "One hundred eighty vote records; gamma=2.0 absent."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/k345/real64.json",
+      "sha256": "74ecc7fccf625f573f2d99160cc82048c8350e2759ba17f518036ff58f9a451a",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Sixty-four calls; one failing condition and constant product."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/k345/real128_combined.json",
+      "sha256": "e6b501f9d6d7a0e32d683b09716b7da9674ca22640db375f427a273b1c4eae19",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Incomplete 128-of-192 call note."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/k345/real192.json",
+      "sha256": "98676b6338b2e34030910cd553026ee7d9bb60066e82e4faa6f877a3fbcf96b5",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Summary-string-only 192-call carrier."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/p16_provenance.json",
+      "sha256": "95e8f39814ece6690158f986875b418c627a856f6ce2707bdaeac3c5319be05f",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "No selective-effect fields."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/protocol.md",
+      "sha256": "d3e5b4488921de585f0f3e045c04ad6b9c1897c7b44c8c5afecd2e97f9b76852",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Four-line protocol without the declared thresholds."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/tightness_proof.md",
+      "sha256": "af070bec564a2073b1de330df7acba4f93263ea3ee9076b24f16d620944798fe",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Proof sketch with a product range that contradicts the abstract."
+    },
+    {
+      "path": "evidence/upstream/paper/evidence/CARRIER_RECEIPTS.json",
+      "sha256": "6654537801235de3630810ffb30f1b50b2f42392bd073dfe010aeffa62105d83",
+      "state": "candidate",
+      "origin": "Upstream source project",
+      "description": "Eleven context receipts that do not carry the flagged statistics."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "Source variant identity",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/variant-reconciliation.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "location": "Source structure",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "location": "Citation resolution",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "location": "Declared 2700 cells",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "location": "Archived 2700 cells",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "location": "Six-condition coverage",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "Analysis summaries",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "Bootstrap point consistency",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C09",
+      "location": "Per-seed consistency",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "Episode archive",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "location": "Real-LLM call count",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "location": "Real64 uniformity",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "location": "Real128 completeness",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "location": "Real192 per-episode records",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "location": "Selective effect carrier",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "location": "Threshold carrier",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "location": "Proof/abstract range consistency",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "location": "Executable carrier coverage",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/EVIDENCE_PLAN.md"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "location": "Package readiness",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/variant-reconciliation.json"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "location": "Independent review closure",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/upstream/paper/REVIEW_CARD.md"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "location": "Reference resolution",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md",
+        "evidence/blocked-audit.json",
+        "evidence/claim-values.json"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "p13-joint-k345",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p13-per-seed-consistency",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p13-real-llm-subset",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "p13-empirical-integrity-review",
+      "kind": "reproduction",
+      "state": "open",
+      "critical": 5,
+      "major": 4,
+      "receipt": "evidence/upstream/paper/REVIEW_CARD.md"
+    },
+    {
+      "review_id": "p13-statistics-review",
+      "kind": "statistics",
+      "state": "open",
+      "critical": 3,
+      "major": 3,
+      "receipt": "evidence/ARIS_EVIDENCE_VERDICT.md"
+    }
+  ],
+  "package": {
+    "state": "not-started",
+    "files": [],
+    "blockers": [
+      "2700 cells are declared but not archived",
+      "Only three K/gamma conditions have stored rows",
+      "The per-seed archives disagree with the analysis",
+      "Only 180 episode records exist and gamma=2.0 is absent",
+      "Archived real-LLM calls total 384, not 466",
+      "Selective/drift/causal effects lack field-level carriers",
+      "The frozen proof contradicts the abstract's product range",
+      "Independent review remains open"
+    ]
+  },
+  "measurements": [
+    {
+      "name": "declared_cells",
+      "value": 2700,
+      "unit": "cells",
+      "definition": "Scalar declared by joint_2700.json.",
+      "source": "evidence/blocked-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "archived_joint_rows",
+      "value": 5,
+      "unit": "rows",
+      "definition": "Number of stored cell objects in joint_2700.json.",
+      "source": "evidence/blocked-audit.json",
+      "state": "observed"
+    },
+    {
+      "name": "episode_records",
+      "value": 180,
+      "unit": "records",
+      "definition": "Number of lines in episodes.jsonl.",
+      "source": "evidence/blocked-audit.json",
+      "state": "observed"
+    }
+  ],
+  "gate_receipts": [
+    {
+      "gate_id": "p13-source-identity",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "0bc429516c9e5ba23ed8b3a996119469d97ce241f41f75026555f80f6fe98e5f",
+      "source_sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
+      "summary": "Canonical source and audit copy are pinned."
+    },
+    {
+      "gate_id": "p13-variant-reconciliation",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "eaa5f5ea2cf5b8f0ae125dccae31c3296159d41c0f1139c9c766ea2584436772",
+      "source_sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
+      "summary": "Three packet variants and one mirror are distinct."
+    },
+    {
+      "gate_id": "p13-structure",
+      "scope": "other",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "22aa58dcc1affb4a6167f503c0b5f699c9660eed551bfb8d0471370d686131d0",
+      "source_sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
+      "summary": "Two unresolved references remain (alg:run, lst:runschema); the structure gate fails."
+    },
+    {
+      "gate_id": "p13-citations",
+      "scope": "citations",
+      "state": "passed",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "22aa58dcc1affb4a6167f503c0b5f699c9660eed551bfb8d0471370d686131d0",
+      "source_sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
+      "summary": "All 32 citation keys resolve."
+    },
+    {
+      "gate_id": "p13-k345-carrier",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "22aa58dcc1affb4a6167f503c0b5f699c9660eed551bfb8d0471370d686131d0",
+      "source_sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
+      "summary": "Only five stored rows cover three of the six conditions."
+    },
+    {
+      "gate_id": "p13-per-seed-consistency",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "22aa58dcc1affb4a6167f503c0b5f699c9660eed551bfb8d0471370d686131d0",
+      "source_sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
+      "summary": "Bootstrap and staged per-seed means disagree with printed analyses."
+    },
+    {
+      "gate_id": "p13-real-llm",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/blocked-audit.json",
+      "receipt_sha256": "22aa58dcc1affb4a6167f503c0b5f699c9660eed551bfb8d0471370d686131d0",
+      "source_sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
+      "summary": "Archived calls total 384 and include incomplete and degenerate files."
+    },
+    {
+      "gate_id": "p13-effect-carriers",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/EVIDENCE_PLAN.md",
+      "receipt_sha256": "160f047201487f5135df826d4525df19f0c54bbed08b7e1ca8fd88c74ba0ebb1",
+      "source_sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
+      "summary": "Zero of seven flagged values has an executable receipt."
+    },
+    {
+      "gate_id": "p13-review",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/upstream/paper/REVIEW_CARD.md",
+      "receipt_sha256": "d0cd5cc586788c354c63b6d950fff6d2e8e393917c955159da0985bea3e974b4",
+      "source_sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
+      "summary": "Retained review is a reject and no current-hash review exists."
+    }
+  ],
+  "notes": [
+    "agent-proposed, not human publication approval",
+    "P13 is blocked on empirical integrity, not merely writing quality.",
+    "The theory sketch is preserved but no empirical result is promoted.",
+    "No package or upload was created."
+  ]
+}

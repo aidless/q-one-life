@@ -1,0 +1,197 @@
+{
+  "schema": "q-one-conditional-communication-audit-v1",
+  "generated_at": "2026-10-28T07:01:44.972706Z",
+  "marker": "agent-proposed, not human publication approval",
+  "source": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-conditional-communication-effects/evidence/upstream/paper/main.tex",
+    "sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
+    "bytes": 111802
+  },
+  "structure": {
+    "labels": 22,
+    "duplicate_labels": [],
+    "references": 33,
+    "missing_references": [],
+    "citation_keys": 40,
+    "bib_keys": 40,
+    "missing_citations": [],
+    "legacy_anova_counts_current": {
+      "8.16": 0,
+      "7.845": 0,
+      "7.84": 0,
+      "15.37": 0
+    },
+    "legacy_anova_counts_source_mirror": {
+      "8.16": 8,
+      "7.845": 0,
+      "7.84": 5,
+      "15.37": 4
+    }
+  },
+  "joint_experiment": {
+    "metadata": {
+      "ts": "2026-07-09T13:22:19.978494",
+      "model": "deepseek-v4-flash",
+      "n_tasks": 5,
+      "n_seeds": 5,
+      "n_agents": 2,
+      "alpha_eval_levels": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "T_levels": [
+        10,
+        20
+      ],
+      "total_cells_planned": 150,
+      "total_cells_completed": 125,
+      "aborted_cells": 0,
+      "total_calls": 4000,
+      "total_tokens": 861305,
+      "estimated_cost_usd": 1.5073,
+      "wall_sec_offline_replay": 0.1,
+      "wall_sec_live": 3890.0,
+      "wall_min_live": 64.8,
+      "wall_sec_note": "wall_sec_live = 3890 s (64.8 min, the final wall_so_far_sec of the live run log; reported as 'wall: 65 min' in the manuscript); wall_sec_offline_replay = 0.1 s (offline replay of the analysis script, not the live run time)."
+    },
+    "stored_anova": {
+      "F_alpha": 8.16,
+      "F_T": 7.845,
+      "F_interaction": 15.37,
+      "df_alpha": 2,
+      "df_T": 1,
+      "df_interaction": 2,
+      "df_within": 84,
+      "MS_alpha": 0.28148,
+      "MS_T": 0.27061,
+      "MS_interaction": 0.53018,
+      "MS_within": 0.03449,
+      "SS_alpha": 0.563,
+      "SS_T": 0.2706,
+      "SS_interaction": 1.0604,
+      "SS_within": 2.8975,
+      "n_per_cell": 15,
+      "p_alpha": 0.0006,
+      "p_T": 0.0063,
+      "p_interaction": 0.0
+    },
+    "balanced_recompute": {
+      "N": 90,
+      "cells": 6,
+      "SS_A": 0.37638888888888883,
+      "SS_T": 0.08402777777777778,
+      "SS_AB": 0.12638888888888888,
+      "SS_w": 2.3916666666666666,
+      "MS_w": 0.02847222222222222,
+      "df_w": 84,
+      "F_A": 6.609756097560974,
+      "p_A": 0.0021581699118363587,
+      "F_T": 2.9512195121951224,
+      "p_T": 0.08949712601400873,
+      "F_AB": 2.219512195121951,
+      "p_AB": 0.11499644292073037,
+      "closure_residual": 4.440892098500626e-16,
+      "cell_means": {
+        "0.0|10": 0.5,
+        "0.0|20": 0.5,
+        "0.5|10": 0.5,
+        "0.5|20": 0.6666666666666666,
+        "1.0|10": 0.65,
+        "1.0|20": 0.6666666666666666
+      },
+      "alpha_marginals": {
+        "0.0": 0.5,
+        "0.5": 0.5833333333333333,
+        "1.0": 0.6583333333333333
+      },
+      "T_marginals": {
+        "10": 0.5499999999999999,
+        "20": 0.611111111111111
+      }
+    },
+    "stored_anova_reproducible": false,
+    "reason": "Stored SS_within=2.8975 is unreachable; documented subset gives SS_within=2.3917."
+  },
+  "e4": {
+    "n_seeds": 30,
+    "uncalibrated_gTV": 1.0811,
+    "calibrated_gTV": 0.7485,
+    "gTV_reduction_pct": 30.76496161317176,
+    "gVT_reduction_pct": 29.347618136598435
+  },
+  "heldout_v4pro": {
+    "n_seeds": 3,
+    "model": "deepseek-v4-pro",
+    "per_seed_delta_ece": [
+      0.1600000000000001,
+      -0.11999999999999994,
+      -0.06
+    ],
+    "mean_delta_ece": -0.006666666666666617,
+    "interpretation": "The held-out run did not reproduce the original GPT-4o temporal-fatigue contrast; n=3 is only a small non-replication probe."
+  },
+  "landscape": {
+    "n": 5,
+    "r_H_gamma": -0.988677659711492,
+    "r_CV_gamma": -0.9164067346607697
+  },
+  "face1_caf_carrier_search": {
+    "targets": [
+      1.243,
+      1.35,
+      1.416,
+      1.518,
+      1.088,
+      1.204
+    ],
+    "tolerance": 0.0005,
+    "hit_count": 0,
+    "hits": {
+      "1.243": [],
+      "1.35": [],
+      "1.416": [],
+      "1.518": [],
+      "1.088": [],
+      "1.204": []
+    }
+  },
+  "checks": {
+    "single_title_and_author": true,
+    "single_end_document": true,
+    "single_broader_impact": true,
+    "single_reproducibility": true,
+    "labels_unique": true,
+    "references_resolve": true,
+    "citations_resolve": true,
+    "current_paper_uses_reproducible_anova": true,
+    "current_paper_excludes_legacy_anova": true,
+    "source_mirror_contains_legacy_anova": true,
+    "joint_metadata_4000_calls_125_sessions": true,
+    "balanced_alpha_recomputed": true,
+    "temporal_and_interaction_not_significant": true,
+    "face1_caf_raw_carrier_absent": true,
+    "e4_30seed_reduction_29_4_to_30_8": true,
+    "heldout_n3_delta_minus_0_007": true,
+    "landscape_correlations_recompute": true
+  },
+  "gate_states": {
+    "source_structure": "passed",
+    "citations": "passed",
+    "face1_caf_raw": "blocked",
+    "joint_anova": "blocked",
+    "e4_30seed": "passed",
+    "landscape": "passed",
+    "independent_review": "blocked",
+    "package": "blocked",
+    "external_submission": "locked"
+  },
+  "scientific_ready": false,
+  "external_submission": false,
+  "notes": [
+    "The current canonical paper uses the reproducible balanced ANOVA values.",
+    "The old source mirror still carries legacy values and must not be used independently.",
+    "Face-1 CAF values have no retained per-seed carrier.",
+    "The paper remains a blocked multi-lineage synthesis, not an arXiv-ready manuscript."
+  ]
+}

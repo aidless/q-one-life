@@ -1,0 +1,9 @@
+attempt=3
+timestamp=2026-10-28T13:38:00Z
+command=python3 run_counterexample.py --preregistration preregistration.json --output results/run-1.json
+exit_code=1
+observed_hypothesis_decision=H1_not_supported
+protocol_audit=failed
+reason=positive control paired discordance was 280/0, not the preregistered 70/0
+critical_counterexample_signature=matched
+accepted_as_evidence=false

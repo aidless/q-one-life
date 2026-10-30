@@ -1,0 +1,108 @@
+[0] audit.py sha256 = 2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b
+==============================================================================
+bench-noise-floor  |  gold=majority  |  items=500  slices=1
+==============================================================================
+
+[1] 金标构成与 judge 分歧诊断
+  judges: claude-haiku, claude-opus-4-7, claude-sonnet, deepseek-v4-flash, deepseek-v4-flash-ds, deepseek-v4-pro, gemini-3.7-flash, gemini-flash, gemma-4-31b, glm-5.2, kimi-k3, llama-3.3-70b, llama-4-maverick, llama-4-scout, llama3-8b, magistral-small, mistral-medium, mistral-small, qwen, qwen-3.6-flash, qwen3-14b, qwen3-32b, qwen3-8b, qwen3.7-flash, qwen3.8-27b-hf
+  items=500  有分歧 items=354 (70.8%)  无任何一致项=0
+
+[2] 噪声下限 —— judge 打自己参与生成的金标
+  claude-haiku                 macro= 85.14%  micro= 85.14%   留一法 macro=84.65%  (n=495)  同域U=86.21%
+  claude-opus-4-7              macro= 91.77%  micro= 91.77%   留一法 macro=91.28%  (n=493)  同域U=92.59%
+  claude-sonnet                macro= 89.56%  micro= 89.56%   留一法 macro=89.00%  (n=491)  同域U=89.92%
+  deepseek-v4-flash            macro= 88.76%  micro= 88.76%   留一法 macro=88.21%  (n=492)  同域U=89.30%
+  deepseek-v4-flash-ds         macro= 89.96%  micro= 89.96%   留一法 macro=89.41%  (n=491)  同域U=90.33%
+  deepseek-v4-pro              macro= 88.15%  micro= 88.15%   留一法 macro=87.55%  (n=490)  同域U=88.27%
+  gemini-3.7-flash             macro= 90.16%  micro= 90.16%   留一法 macro=89.59%  (n=490)  同域U=90.33%
+  gemini-flash                 macro= 89.36%  micro= 89.36%   留一法 macro=88.82%  (n=492)  同域U=89.92%
+  gemma-4-31b                  macro= 93.17%  micro= 93.17%   留一法 macro=92.68%  (n=492)  同域U=93.83%
+  glm-5.2                      macro= 88.55%  micro= 88.55%   留一法 macro=88.01%  (n=492)  同域U=89.09%
+  kimi-k3                      macro= 91.16%  micro= 91.16%   留一法 macro=90.65%  (n=492)  同域U=91.77%
+  llama-3.3-70b                macro= 87.95%  micro= 87.95%   留一法 macro=87.53%  (n=497)  同域U=89.51%
+  llama-4-maverick             macro= 85.94%  micro= 85.94%   留一法 macro=85.37%  (n=492)  同域U=86.42%
+  llama-4-scout                macro= 79.52%  micro= 79.52%   留一法 macro=78.99%  (n=495)  同域U=80.45%
+  llama3-8b                    macro= 73.69%  micro= 73.69%   留一法 macro=73.19%  (n=496)  同域U=74.69%
+  magistral-small              macro= 72.49%  micro= 72.49%   留一法 macro=72.03%  (n=497)  同域U=73.66%
+  mistral-medium               macro= 82.73%  micro= 82.73%   留一法 macro=82.22%  (n=495)  同域U=83.74%
+  mistral-small                macro= 72.69%  micro= 72.69%   留一法 macro=72.18%  (n=496)  同域U=73.66%
+  qwen                         macro= 87.15%  micro= 87.15%   留一法 macro=86.67%  (n=495)  同域U=88.27%
+  qwen-3.6-flash               macro= 90.76%  micro= 90.76%   留一法 macro=90.36%  (n=498)  同域U=92.59%
+  qwen3-14b                    macro= 86.35%  micro= 86.35%   留一法 macro=85.77%  (n=492)  同域U=86.83%
+  qwen3-32b                    macro= 83.13%  micro= 83.13%   留一法 macro=82.66%  (n=496)  同域U=84.36%
+  qwen3-8b                     macro= 83.94%  micro= 83.94%   留一法 macro=83.50%  (n=497)  同域U=85.39%
+  qwen3.7-flash                macro= 92.17%  micro= 92.17%   留一法 macro=91.75%  (n=497)  同域U=93.83%
+  qwen3.8-27b-hf               macro= 82.73%  micro= 82.73%   留一法 macro=82.41%  (n=489)  同域U=82.92%
+  [定义域提示] 公共留一题域 U=486 items，比金标域少 12 items（这些题上 c^- 无定义） -> 地板与榜首都在 U 上算，保证同分母
+  => 含自身口径下限（偏高侧）        = 93.17%   （min=72.49%，含自身把自己抬分 ⇒ 是**保守偏高**的一侧）
+  => 真留一法口径下限（eq:loo）     = 93.83%   <== 用这个判榜
+     [敏感性] 各自定义域上的真留一下限 max=92.68% / min=72.03%（差 20.65 点） —— 差值来自定义域不同，不可直接比较；判决用同域值。
+  => 两 judge 互差 = 20.68 个百分点（同一批题、同一把尺，差这么多 = 金标构造本身就带噪）
+
+[3] 榜单（system 打同一把金标，与地板同域 U）
+  system                                      macro    micro      n     未测  Δmacro-micro
+  gemma-4-31b                                93.83%   93.83%    486      0          0.00
+  qwen3.7-flash                              93.83%   93.83%    486      0          0.00
+  claude-opus-4-7                            92.59%   92.59%    486      0          0.00
+  qwen-3.6-flash                             92.59%   92.59%    486      0          0.00
+  kimi-k3                                    91.77%   91.77%    486      0          0.00
+  deepseek-v4-flash-ds                       90.33%   90.33%    486      0          0.00
+  gemini-3.7-flash                           90.33%   90.33%    486      0          0.00
+  claude-sonnet                              89.92%   89.92%    486      0          0.00
+  gemini-flash                               89.92%   89.92%    486      0          0.00
+  llama-3.3-70b                              89.51%   89.51%    486      0          0.00
+  deepseek-v4-flash                          89.30%   89.30%    486      0          0.00
+  glm-5.2                                    89.09%   89.09%    486      0          0.00
+  deepseek-v4-pro                            88.27%   88.27%    486      0          0.00
+  qwen                                       88.27%   88.27%    486      0          0.00
+  qwen3-14b                                  86.83%   86.83%    486      0          0.00
+  llama-4-maverick                           86.42%   86.42%    486      0          0.00
+  claude-haiku                               86.21%   86.21%    486      0          0.00
+  qwen3-8b                                   85.39%   85.39%    486      0          0.00
+  qwen3-32b                                  84.36%   84.36%    486      0          0.00
+  mistral-medium                             83.74%   83.74%    486      0          0.00
+  qwen3.8-27b-hf                             82.92%   82.92%    486      0          0.00
+  llama-4-scout                              80.45%   80.45%    486      0          0.00
+  llama3-8b                                  74.69%   74.69%    486      0          0.00
+  magistral-small                            73.66%   73.66%    486      0          0.00
+  mistral-small                              73.66%   73.66%    486      0          0.00
+  榜首 gemma-4-31b macro=93.83%  全榜跨度 macro=20.16 / micro=20.16 个百分点
+
+[4] 配对 bootstrap（2000 次重采样，按 case 整簇重采样；点估计与 CI 同为 macro 口径）
+  对比                                                   Δmacro            95%CI(点)   McNemar p
+  qwen3.7-flash vs gemma-4-31b                           0.00       [-3.70,+3.73]      1.0000   平局
+  claude-opus-4-7 vs gemma-4-31b                        -1.23       [-5.11,+2.72]      0.5044   平局
+  qwen-3.6-flash vs gemma-4-31b                         -1.23       [-4.77,+2.46]      0.4966   平局
+  kimi-k3 vs gemma-4-31b                                -2.06       [-5.53,+1.25]      0.1839   平局
+  deepseek-v4-flash-ds vs gemma-4-31b                   -3.50       [-7.58,+0.41]      0.0430   平局
+  gemini-3.7-flash vs gemma-4-31b                       -3.50       [-7.52,+0.62]      0.0331   平局
+  claude-sonnet vs gemma-4-31b                          -3.91       [-8.45,+0.41]      0.0344   平局
+  gemini-flash vs gemma-4-31b                           -3.91       [-7.85,+0.20]      0.0295   平局
+  llama-3.3-70b vs gemma-4-31b                          -4.32       [-8.39,-0.61]      0.0075   显著
+  deepseek-v4-flash vs gemma-4-31b                      -4.53       [-8.45,-0.61]      0.0092   显著
+  glm-5.2 vs gemma-4-31b                                -4.73       [-8.61,-0.82]      0.0052   显著
+  deepseek-v4-pro vs gemma-4-31b                        -5.56       [-9.84,-1.23]      0.0018   显著
+  qwen vs gemma-4-31b                                   -5.56       [-9.75,-1.23]      0.0024   显著
+  qwen3-14b vs gemma-4-31b                              -7.00      [-11.22,-2.66]      0.0001   显著
+  llama-4-maverick vs gemma-4-31b                       -7.41      [-11.80,-3.05]      0.0001   显著
+  claude-haiku vs gemma-4-31b                           -7.61      [-12.25,-2.47]      0.0001   显著
+  qwen3-8b vs gemma-4-31b                               -8.44      [-12.53,-4.52]      0.0000   显著
+  qwen3-32b vs gemma-4-31b                              -9.47      [-13.67,-5.56]      0.0000   显著
+  mistral-medium vs gemma-4-31b                        -10.08      [-14.96,-5.51]      0.0000   显著
+  qwen3.8-27b-hf vs gemma-4-31b                        -10.91      [-15.29,-6.42]      0.0000   显著
+  llama-4-scout vs gemma-4-31b                         -13.37      [-18.61,-8.21]      0.0000   显著
+  llama3-8b vs gemma-4-31b                             -19.14     [-24.69,-13.81]      0.0000   显著
+  magistral-small vs gemma-4-31b                       -20.16     [-25.62,-15.04]      0.0000   显著
+  mistral-small vs gemma-4-31b                         -20.16     [-25.81,-14.88]      0.0000   显著
+  => 对榜首 8/24 组是统计平局（16 组可区分）
+
+[4b] margin 的配对 bootstrap（2000 次，与 [4] 同一批 case 抽样）
+  margin 点估计 = +0.00 点   95%CI = [-3.90, +0.00]
+  => CI 跨 0：'榜首越过地板' 这一结论在这套抽样下并不稳健，判决应按可下结论的**下界**（-3.90 点）解读，而不是点估计。
+
+[5] 结论
+  VERDICT = UNREADABLE
+    榜首 93.8272% 与噪声下限 93.8272% 相等（差 +0.00e+00 点）：严格判据 max_s acc > floor + δ 没有被越过哪怕一点点。
+    结构性成因：榜首本身就是参与造金标的 25 个生成器之一，剔掉它那一票后其余 24 票的顶票常常不变 ⇒ 它的留一自复现就是它的榜面分，于是『必须跨过所有生成器中最高那个下限』在这类语料上等于『跨过自己』。
+
+[JSON] -> /home/liuzewen/F:\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/results/native-rerun-factuality.json

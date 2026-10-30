@@ -1,0 +1,121 @@
+{
+  "schema": "q-one-preregistration-v1",
+  "experiment_id": "noise-floor-threshold-interface-a4",
+  "version": "1.0.0",
+  "frozen_at": "2026-10-29T04:58:35Z",
+  "status": "frozen_before_execution",
+  "scope": {
+    "kind": "deterministic_interface_fixtures_on_pinned_native_tool",
+    "target": "independent review finding A4: threshold parameter, equality branch, confidence-interval gating, and fail-closed controls",
+    "external_validity": "none claimed; all fixtures are synthetic",
+    "manuscript_or_native_repository_modification": false,
+    "new_data_collection": false
+  },
+  "review_binding": {
+    "path": "../../../evidence/REVIEW_INDEPENDENT_2026-10-24.md",
+    "sha256": "8d815000775ad110354043854967c79044605deb1f6113a549a6cba13078c86e",
+    "finding": "A4"
+  },
+  "manuscript_binding": {
+    "path": "../../revisions/2026-10-29-estimand-split-r2/source/main.tex",
+    "sha256": "fc24f8effef7c6f90c6dca6a52ea967adcec60bf7b79408c817b3a8561930c0f",
+    "relevant_instruction": "R2 states that the formula is strict, that a margin of exactly delta reads as the readable branch in the implementation, and that a reader should treat equality as marginal; the same paragraph contains duplicate competing instructions and is an R3 correction target."
+  },
+  "research_question": "Does the pinned native CLI expose delta as a parameter, does its equality branch match the manuscript's stated strict rule, and does the printed margin confidence interval participate in the READABLE/MARGINAL/UNREADABLE verdict?",
+  "hypotheses": {
+    "H0": "The native interface is semantically aligned: delta is configurable, a point margin equal to delta is not classified READABLE, and a point margin above delta whose paired interval crosses zero is not classified READABLE without qualification.",
+    "H1": "The native interface has the three mismatches named in A4: delta is hard-coded rather than configurable; a derived point margin equal to delta is classified READABLE even though R2 instructs the reader to treat equality as marginal; and a point margin above delta with a paired interval crossing zero is still returned as READABLE. Refusal paths remain fail-closed and therefore do not explain the result.",
+    "decision_rule": "Reject H0 and accept H1 only if gates F1-F5 all pass in two byte-identical accepted runs."
+  },
+  "fixtures": {
+    "below_delta": {
+      "construction": "400 items, 24 rotating-dissent items among four generators, leader correct on 399 items; derived floor 98.50%, leader 99.75%, margin +1.25 points",
+      "expected_implementation_verdict": "MARGINAL"
+    },
+    "equality_delta": {
+      "construction": "50 items, 4 rotating-dissent items among four generators, leader follows the plurality gold on all 50 items; derived floor 98.00%, leader 100.00%, raw margin 2.0000000000000018 points",
+      "expected_manuscript_equality_instruction": "MARGINAL",
+      "expected_implementation_verdict": "READABLE"
+    },
+    "above_delta": {
+      "construction": "10 items, 8 rotating-dissent items among four generators, leader correct on all 10 items; derived floor 80.00%, leader 100.00%, margin +20.00 points",
+      "expected_implementation_verdict": "READABLE"
+    },
+    "ci_crossing_zero": {
+      "construction": "one 500-item case with a balanced-four-generator LOO floor of 75% and leader accuracy 100%, plus 50 singleton cases with unanimous generator gold and leader accuracy 0%; aggregate floor 77.2727%, leader 90.9091%, point margin +13.6364 points",
+      "n_boot": 2000,
+      "seed": 20261001,
+      "cluster": "case",
+      "expected_implementation_verdict": "READABLE",
+      "expected_margin_ci_crosses_zero": true,
+      "expected_ci_lower_bound_below_zero": true
+    },
+    "domain_mismatch_control": {
+      "construction": "four generators on 10 items, one system on all 10 items and one on 5 items",
+      "expected_verdict": "UNDECIDABLE_DOMAIN_MISMATCH"
+    },
+    "floor_degenerate_control": {
+      "construction": "two generators on 10 unanimous items",
+      "expected_verdict": "UNDECIDABLE_FLOOR_DEGENERATE"
+    },
+    "no_reading_control": {
+      "construction": "one item with five votes 2/2/1 and no plurality label",
+      "expected_verdict": "UNDECIDABLE_NO_READING"
+    }
+  },
+  "cli_contract": {
+    "help_must_not_expose_delta": true,
+    "help_must_expose_tie_rule": true,
+    "hardcoded_decision_branch_text": "elif top[\"macro\"] - ceiling < 2.0:",
+    "hardcoded_threshold_metadata_text": "\"delta_threshold_points\": 2.0,",
+    "delta_invocation_must_exit_nonzero": true
+  },
+  "native_pin": {
+    "external_git_head": "ab40e28abcb2a97e13242d0dab5584d42a15f94e",
+    "files": [
+      {
+        "path": "tools/bench-noise-floor/audit.py",
+        "sha256": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b"
+      }
+    ]
+  },
+  "gates": [
+    {
+      "id": "F1_threshold_is_not_a_cli_parameter",
+      "rule": "audit.py --help exits zero, exposes --tie-rule, does not expose --delta, the pinned source contains the 2.0 decision branch and metadata literal, and invoking --delta exits nonzero with an unrecognized-argument error."
+    },
+    {
+      "id": "F2_equality_branch_mismatch_reproduced",
+      "rule": "The equality fixture's analytically derived raw margin equals 2.0 within 1e-12 and is just above it in floating representation; native JSON rounds the margin to 2.0 and returns READABLE."
+    },
+    {
+      "id": "F3_graded_branch_controls",
+      "rule": "The below-delta fixture returns MARGINAL at +1.25 points and the above-delta fixture returns READABLE at +20.0 points, showing that the equality result is not caused by a tool that always returns READABLE."
+    },
+    {
+      "id": "F4_confidence_interval_is_not_gating",
+      "rule": "The CI-crossing fixture has native point margin >2.0, margin_ci.crosses_zero=true, and margin_ci.lo95<0, yet the native verdict remains READABLE."
+    },
+    {
+      "id": "F5_fail_closed_controls",
+      "rule": "Domain membership mismatch, two-generator floor degeneracy, and unresolved-gold no-reading fixtures return their respective refusal strings rather than any graded verdict."
+    }
+  ],
+  "falsification_condition": "H1 is rejected if any gate fails. A configurable delta, equality classified as non-READABLE, CI crossing zero preventing READABLE, an always-READABLE implementation, or a refusal path that falls through to a graded verdict all count against H1.",
+  "stopping_rule": "Run the frozen implementation exactly twice with the same command and output paths results/run-1.json and results/run-2.json. If the two files are not byte-identical, stop with a reproducibility failure and do not reinterpret either run. No fixture, threshold, seed, gate, native pin, or interpretation may be changed within version 1.0.0; any change requires a new preregistration version or a preserved attempt.",
+  "execution": {
+    "command": "/home/liuzewen/.cache/qone-life-venv/bin/python run_threshold_interface.py --external-root '/home/liuzewen/F:\\deepseek' --preregistration preregistration.json --output results/run-1.json",
+    "repeat_command": "the same command with results/run-2.json",
+    "accepted_output": "q-one-a4-threshold-interface-v1 with decision.status=passed"
+  },
+  "implementation": {
+    "path": "run_threshold_interface.py",
+    "sha256": "c996fc7b8be09ee8e0aaf58abfb1ecb86003a8e39bfa4b4ee3bcce5dcc456971"
+  },
+  "non_claims": [
+    "These are deterministic synthetic interface fixtures, not external leaderboard measurements.",
+    "The experiment identifies interface semantics; it does not measure ranking validity.",
+    "The experiment does not establish that changing only the threshold would improve scientific validity.",
+    "The experiment does not close the independent review, establish publication identity, or authorize an arXiv upload."
+  ]
+}

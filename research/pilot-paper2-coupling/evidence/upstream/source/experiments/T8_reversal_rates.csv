@@ -1,0 +1,67 @@
+claim_id,paper,claim,delta_claim,direction,N,E_RR_bound
+P1-C1,PAPER1,"Strategy consensus: agents converge to JSD < 0.2 within 30 rounds",0.005,+,2,1.0
+P1-C1,PAPER1,"Strategy consensus: agents converge to JSD < 0.2 within 30 rounds",0.005,+,5,1.0
+P1-C1,PAPER1,"Strategy consensus: agents converge to JSD < 0.2 within 30 rounds",0.005,+,8,1.0
+P1-C1,PAPER1,"Strategy consensus: agents converge to JSD < 0.2 within 30 rounds",0.005,+,15,0.8485
+P1-C1,PAPER1,"Strategy consensus: agents converge to JSD < 0.2 within 30 rounds",0.005,+,30,0.6
+P1-C1,PAPER1,"Strategy consensus: agents converge to JSD < 0.2 within 30 rounds",0.005,+,100,0.3286
+P1-C2,PAPER1,"Calibration contagion: ΔECE > 0.05 in sync conditions",0.005,+,2,1.0
+P1-C2,PAPER1,"Calibration contagion: ΔECE > 0.05 in sync conditions",0.005,+,5,1.0
+P1-C2,PAPER1,"Calibration contagion: ΔECE > 0.05 in sync conditions",0.005,+,8,1.0
+P1-C2,PAPER1,"Calibration contagion: ΔECE > 0.05 in sync conditions",0.005,+,15,0.8485
+P1-C2,PAPER1,"Calibration contagion: ΔECE > 0.05 in sync conditions",0.005,+,30,0.6
+P1-C2,PAPER1,"Calibration contagion: ΔECE > 0.05 in sync conditions",0.005,+,100,0.3286
+P2-C1,PAPER2,"γ·H·CV ≥ 0.003 at N=30 (v8 impossibility product)",0.003,+,2,1.0
+P2-C1,PAPER2,"γ·H·CV ≥ 0.003 at N=30 (v8 impossibility product)",0.003,+,5,1.0
+P2-C1,PAPER2,"γ·H·CV ≥ 0.003 at N=30 (v8 impossibility product)",0.003,+,8,1.0
+P2-C1,PAPER2,"γ·H·CV ≥ 0.003 at N=30 (v8 impossibility product)",0.003,+,15,1.0
+P2-C1,PAPER2,"γ·H·CV ≥ 0.003 at N=30 (v8 impossibility product)",0.003,+,30,1.0
+P2-C1,PAPER2,"γ·H·CV ≥ 0.003 at N=30 (v8 impossibility product)",0.003,+,100,0.5477
+P2-C2,PAPER2,"γ-H tradeoff: Pearson r < -0.5 across conditions",0.05,-,2,0.2324
+P2-C2,PAPER2,"γ-H tradeoff: Pearson r < -0.5 across conditions",0.05,-,5,0.147
+P2-C2,PAPER2,"γ-H tradeoff: Pearson r < -0.5 across conditions",0.05,-,8,0.1162
+P2-C2,PAPER2,"γ-H tradeoff: Pearson r < -0.5 across conditions",0.05,-,15,0.0849
+P2-C2,PAPER2,"γ-H tradeoff: Pearson r < -0.5 across conditions",0.05,-,30,0.06
+P2-C2,PAPER2,"γ-H tradeoff: Pearson r < -0.5 across conditions",0.05,-,100,0.0329
+P3-C1,PAPER3,"90.8% temporal vs 9.2% sync ΔECE decomposition",0.01,+,2,1.0
+P3-C1,PAPER3,"90.8% temporal vs 9.2% sync ΔECE decomposition",0.01,+,5,0.7348
+P3-C1,PAPER3,"90.8% temporal vs 9.2% sync ΔECE decomposition",0.01,+,8,0.5809
+P3-C1,PAPER3,"90.8% temporal vs 9.2% sync ΔECE decomposition",0.01,+,15,0.4243
+P3-C1,PAPER3,"90.8% temporal vs 9.2% sync ΔECE decomposition",0.01,+,30,0.3
+P3-C1,PAPER3,"90.8% temporal vs 9.2% sync ΔECE decomposition",0.01,+,100,0.1643
+P3-C2,PAPER3,"Self-eval coupling γ > 1.0 (DeepSeek-V4-Pro)",0.1,+,2,0.1162
+P3-C2,PAPER3,"Self-eval coupling γ > 1.0 (DeepSeek-V4-Pro)",0.1,+,5,0.0735
+P3-C2,PAPER3,"Self-eval coupling γ > 1.0 (DeepSeek-V4-Pro)",0.1,+,8,0.0581
+P3-C2,PAPER3,"Self-eval coupling γ > 1.0 (DeepSeek-V4-Pro)",0.1,+,15,0.0424
+P3-C2,PAPER3,"Self-eval coupling γ > 1.0 (DeepSeek-V4-Pro)",0.1,+,30,0.03
+P3-C2,PAPER3,"Self-eval coupling γ > 1.0 (DeepSeek-V4-Pro)",0.1,+,100,0.0164
+P4-C1,PAPER4,"N-sensitivity reversal rate > 0.5 at N=5",0.005,+,2,1.0
+P4-C1,PAPER4,"N-sensitivity reversal rate > 0.5 at N=5",0.005,+,5,1.0
+P4-C1,PAPER4,"N-sensitivity reversal rate > 0.5 at N=5",0.005,+,8,1.0
+P4-C1,PAPER4,"N-sensitivity reversal rate > 0.5 at N=5",0.005,+,15,0.8485
+P4-C1,PAPER4,"N-sensitivity reversal rate > 0.5 at N=5",0.005,+,30,0.6
+P4-C1,PAPER4,"N-sensitivity reversal rate > 0.5 at N=5",0.005,+,100,0.3286
+P4-C2,PAPER4,"Qwen γ ranking flips across LR modes",0.1,+,2,0.1162
+P4-C2,PAPER4,"Qwen γ ranking flips across LR modes",0.1,+,5,0.0735
+P4-C2,PAPER4,"Qwen γ ranking flips across LR modes",0.1,+,8,0.0581
+P4-C2,PAPER4,"Qwen γ ranking flips across LR modes",0.1,+,15,0.0424
+P4-C2,PAPER4,"Qwen γ ranking flips across LR modes",0.1,+,30,0.03
+P4-C2,PAPER4,"Qwen γ ranking flips across LR modes",0.1,+,100,0.0164
+P5-C1,PAPER5,"Architecture crossover at p=0.8 (RAG vs Summarization)",0.01,+,2,1.0
+P5-C1,PAPER5,"Architecture crossover at p=0.8 (RAG vs Summarization)",0.01,+,5,0.7348
+P5-C1,PAPER5,"Architecture crossover at p=0.8 (RAG vs Summarization)",0.01,+,8,0.5809
+P5-C1,PAPER5,"Architecture crossover at p=0.8 (RAG vs Summarization)",0.01,+,15,0.4243
+P5-C1,PAPER5,"Architecture crossover at p=0.8 (RAG vs Summarization)",0.01,+,30,0.3
+P5-C1,PAPER5,"Architecture crossover at p=0.8 (RAG vs Summarization)",0.01,+,100,0.1643
+P5-C2,PAPER5,"Authority bias +107% on Qwen Summarization",0.05,+,2,0.2324
+P5-C2,PAPER5,"Authority bias +107% on Qwen Summarization",0.05,+,5,0.147
+P5-C2,PAPER5,"Authority bias +107% on Qwen Summarization",0.05,+,8,0.1162
+P5-C2,PAPER5,"Authority bias +107% on Qwen Summarization",0.05,+,15,0.0849
+P5-C2,PAPER5,"Authority bias +107% on Qwen Summarization",0.05,+,30,0.06
+P5-C2,PAPER5,"Authority bias +107% on Qwen Summarization",0.05,+,100,0.0329
+P5-C3,PAPER5,"Length bias Γ < 0.5 on DeepSeek RAG",0.01,-,2,1.0
+P5-C3,PAPER5,"Length bias Γ < 0.5 on DeepSeek RAG",0.01,-,5,0.7348
+P5-C3,PAPER5,"Length bias Γ < 0.5 on DeepSeek RAG",0.01,-,8,0.5809
+P5-C3,PAPER5,"Length bias Γ < 0.5 on DeepSeek RAG",0.01,-,15,0.4243
+P5-C3,PAPER5,"Length bias Γ < 0.5 on DeepSeek RAG",0.01,-,30,0.3
+P5-C3,PAPER5,"Length bias Γ < 0.5 on DeepSeek RAG",0.01,-,100,0.1643
