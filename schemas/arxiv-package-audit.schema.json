@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/aidless/q-one-life/blob/main/schemas/arxiv-package-audit.schema.json",
+  "title": "Q-One mechanical arXiv package audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generated_at",
+    "source_dir",
+    "main_file",
+    "mechanical_pass",
+    "ready_for_upload",
+    "upload_blocker",
+    "blockers",
+    "warnings",
+    "file_count",
+    "visible_suffixes",
+    "files",
+    "package_sha256",
+    "notes"
+  ],
+  "properties": {
+    "schema": {"const": "q-one-arxiv-package-audit-v1"},
+    "generated_at": {"type": "string", "minLength": 1},
+    "source_dir": {"type": "string", "minLength": 1},
+    "main_file": {"type": "string", "minLength": 1},
+    "mechanical_pass": {"type": "boolean"},
+    "ready_for_upload": {"const": false},
+    "upload_blocker": {"type": "string", "minLength": 1},
+    "blockers": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "file_count": {"type": "integer", "minimum": 0},
+    "visible_suffixes": {"type": "object"},
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256", "bytes"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "bytes": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "package_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/aidless/q-one-life/blob/main/schemas/research-triage.schema.json",
+  "title": "Q-One research triage queue",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generated_at",
+    "source_portfolio",
+    "definitions",
+    "summary",
+    "projects"
+  ],
+  "properties": {
+    "schema": {"const": "q-one-research-triage-v1"},
+    "generated_at": {"type": "string", "minLength": 1},
+    "source_portfolio": {"type": "object"},
+    "definitions": {"type": "object"},
+    "summary": {
+      "type": "object",
+      "required": [
+        "paper_families",
+        "priority_bands",
+        "suggested_dispositions",
+        "next_actions",
+        "matched_pilots",
+        "final_dispositions_unchanged",
+        "global_readiness_score"
+      ]
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "family_id",
+          "project_id",
+          "title",
+          "primary_source",
+          "final_disposition",
+          "suggested_disposition",
+          "suggested_next_action",
+          "human_review_required",
+          "pilot_ids",
+          "priority_band",
+          "production_priority",
+          "priority_factors"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/aidless/q-one-life/blob/main/schemas/paper-portfolio.schema.json",
+  "title": "Q-One paper portfolio",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generated_at",
+    "scope",
+    "summary",
+    "projects",
+    "families",
+    "duplicates",
+    "candidates"
+  ],
+  "properties": {
+    "schema": {"const": "q-one-paper-portfolio-v1"},
+    "generated_at": {"type": "string", "minLength": 1},
+    "scope": {"type": "object"},
+    "summary": {
+      "type": "object",
+      "required": [
+        "raw_project_roots",
+        "canonical_projects",
+        "exact_duplicate_groups",
+        "duplicate_project_roots",
+        "global_readiness_score"
+      ]
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "project_id",
+          "title",
+          "root",
+          "primary_source",
+          "primary_sha256",
+          "project_type",
+          "status",
+          "disposition",
+          "canonical_project_id",
+          "exact_duplicate"
+        ]
+      }
+    },
+    "families": {"type": "array"},
+    "duplicates": {"type": "array"},
+    "candidates": {"type": "array"}
+  }
+}

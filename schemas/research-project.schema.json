@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/aidless/q-one-life/blob/main/schemas/research-project.schema.json",
+  "title": "Q-One research project",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "paper_id",
+    "title",
+    "status",
+    "target",
+    "root",
+    "manuscript",
+    "evidence",
+    "claims",
+    "experiments",
+    "reviews",
+    "package"
+  ],
+  "properties": {
+    "schema": {
+      "const": "q-one-research-project-v1"
+    },
+    "paper_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "planning",
+        "evidence_review",
+        "experiment_pending",
+        "revision",
+        "review_pending",
+        "package_ready",
+        "prepared",
+        "submitted",
+        "withdrawn",
+        "archived",
+        "blocked",
+        "unknown"
+      ]
+    },
+    "target": {
+      "enum": [
+        "arxiv",
+        "tmlr",
+        "kaggle-writeup",
+        "workshop",
+        "report",
+        "unknown"
+      ]
+    },
+    "root": {
+      "type": "string",
+      "minLength": 1
+    },
+    "origin": {
+      "type": ["string", "null"]
+    },
+    "manuscript": {
+      "type": "object",
+      "required": ["path", "sha256", "published_source_sha256", "matches_published_source"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "published_source_sha256": {
+          "type": ["string", "null"],
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "matches_published_source": {"type": ["boolean", "null"]},
+        "source_url": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256", "state", "origin"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "state": {
+            "enum": ["verified", "candidate", "inconclusive", "blocked", "unknown"]
+          },
+          "origin": {"type": "string", "minLength": 1},
+          "description": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "location", "state"],
+        "properties": {
+          "claim_id": {"type": "string", "minLength": 1},
+          "location": {"type": "string", "minLength": 1},
+          "state": {
+            "enum": ["verified", "candidate", "inconclusive", "blocked", "unknown"]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "experiments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["experiment_id", "state"],
+        "properties": {
+          "experiment_id": {"type": "string", "minLength": 1},
+          "state": {
+            "enum": [
+              "planned",
+              "running",
+              "completed",
+              "reproduced",
+              "failed",
+              "blocked",
+              "unknown"
+            ]
+          },
+          "receipt": {"type": ["string", "null"]},
+          "environment_sha256": {
+            "type": ["string", "null"],
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["review_id", "kind", "state"],
+        "properties": {
+          "review_id": {"type": "string", "minLength": 1},
+          "kind": {
+            "enum": ["method", "statistics", "citation", "reproduction", "writing", "security"]
+          },
+          "state": {"enum": ["open", "closed", "accepted-risk", "unknown"]},
+          "critical": {"type": "integer", "minimum": 0},
+          "major": {"type": "integer", "minimum": 0},
+          "receipt": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "package": {
+      "type": "object",
+      "required": ["state", "files", "blockers"],
+      "properties": {
+        "state": {
+          "enum": [
+            "not-started",
+            "building",
+            "compiled",
+            "ready",
+            "submitted",
+            "unknown"
+          ]
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "blockers": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "additionalProperties": false
+    },
+    "measurements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "value", "unit", "definition", "source", "state"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "value": {"type": ["number", "string", "null"]},
+          "unit": {"type": "string", "minLength": 1},
+          "definition": {"type": "string", "minLength": 1},
+          "source": {"type": "string", "minLength": 1},
+          "state": {
+            "enum": ["observed", "inferred", "inconclusive", "blocked", "unknown"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "gate_receipts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "gate_id",
+          "scope",
+          "state",
+          "receipt",
+          "receipt_sha256",
+          "source_sha256",
+          "summary"
+        ],
+        "properties": {
+          "gate_id": {"type": "string", "minLength": 1},
+          "scope": {
+            "enum": ["numbers", "citations", "review", "package", "reproducibility", "other"]
+          },
+          "state": {"enum": ["passed", "failed", "candidate", "blocked"]},
+          "receipt": {"type": "string", "minLength": 1},
+          "receipt_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "source_sha256": {
+            "type": ["string", "null"],
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "summary": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}
