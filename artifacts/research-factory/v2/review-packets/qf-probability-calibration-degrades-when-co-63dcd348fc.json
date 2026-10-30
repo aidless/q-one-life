@@ -1,0 +1,62 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-probability-calibration-degrades-when-co-63dcd348fc",
+  "project_id": "qp-arxiv-submission-ee81c7515bf9",
+  "title": "Probability Calibration Degrades When Combining LLM Embeddings with Tree Ensembles: Evidence from Three Embedding Models",
+  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/paper/arxiv_submission/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "0b54fa5c5ae406548428d72460b80740aa96791accbab3656b3b2305c68a6507",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "paper",
+  "production_priority": 0,
+  "priority_band": "P3",
+  "priority_factors": [],
+  "pilot_ids": [],
+  "signals": {
+    "claim_ledger": false,
+    "bibliography": false,
+    "compiled_pdf": false,
+    "evidence_directory": false,
+    "variants_to_reconcile": 0,
+    "overlay_present": false
+  },
+  "variant_sources": [
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/paper/arxiv_submission/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "The canonical source has enough structure to repair, but its evidence and package gates remain unverified.",
+    "next_action": "confirm_target_and_scope",
+    "authoritative": false
+  },
+  "overlay": null,
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

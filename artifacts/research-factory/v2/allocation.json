@@ -1,0 +1,73 @@
+{
+  "schema": "q-one-allocation-v1",
+  "capacity": 5,
+  "considered": 131,
+  "ranked": [
+    {
+      "family_id": "qf-one-rung-at-a-time-attributing-an-arc-ag-b3e1c59ca9",
+      "title": "One Rung at a Time: Attributing an ARC-AGI-3 Submission When the Offline Ruler Cannot Select Arms",
+      "priority_band": null,
+      "verified": 10,
+      "candidate": 1,
+      "blocked": 0,
+      "missing_gates": 0,
+      "close_cost": 0,
+      "evidence_gap": 0.090909,
+      "publishability": 0.909091,
+      "roi": 0.909091
+    },
+    {
+      "family_id": "qf-the-name-is-the-contract-a-promotion-gat-afdfe0105b",
+      "title": "The Name Is the Contract:\\\\ A Promotion Gate Called mcnemar\\_exact Is Not Exact ---\\\\ and, Against the Two-Sided Exact Reference,\\\\ Every Flip Favors Promotion",
+      "priority_band": null,
+      "verified": 11,
+      "candidate": 1,
+      "blocked": 1,
+      "missing_gates": 1,
+      "close_cost": 2,
+      "evidence_gap": 0.153846,
+      "publishability": 0.846154,
+      "roi": 0.423077
+    },
+    {
+      "family_id": "qf-reading-a-leaderboard-before-you-cite-it-96866c580c",
+      "title": "Reading a Leaderboard Before You Cite It:\\\\ Three Rulers for the Noise Floor of\\\\ LLM-as-Judge Evaluation",
+      "priority_band": null,
+      "verified": 11,
+      "candidate": 1,
+      "blocked": 2,
+      "missing_gates": 0,
+      "close_cost": 2,
+      "evidence_gap": 0.214286,
+      "publishability": 0.785714,
+      "roi": 0.392857
+    },
+    {
+      "family_id": "qf-memory-architecture-effects-on-output-le-0ea84705a9",
+      "title": "Memory Architecture Effects on Output-Length Responses under Controlled Multi-Agent Contamination",
+      "priority_band": null,
+      "verified": 16,
+      "candidate": 0,
+      "blocked": 4,
+      "missing_gates": 2,
+      "close_cost": 6,
+      "evidence_gap": 0.2,
+      "publishability": 0.8,
+      "roi": 0.133333
+    },
+    {
+      "family_id": "qf-closing-the-calibration-landscape-a-mult-99bef231e5",
+      "title": "Closing the Calibration Landscape: \\\\ A Multi-Evaluator Ensemble That Reduces Coupling \\\\ Without Increasing Noise",
+      "priority_band": null,
+      "verified": 11,
+      "candidate": 0,
+      "blocked": 5,
+      "missing_gates": 4,
+      "close_cost": 9,
+      "evidence_gap": 0.3125,
+      "publishability": 0.6875,
+      "roi": 0.076389
+    }
+  ],
+  "note": "ROI uses evidence completeness only. It is not a paper-quality score and does not authorize publication."
+}

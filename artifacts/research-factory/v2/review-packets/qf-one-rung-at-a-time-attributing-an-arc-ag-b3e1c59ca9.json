@@ -1,0 +1,137 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-one-rung-at-a-time-attributing-an-arc-ag-b3e1c59ca9",
+  "project_id": "qp-arc-revised-01e3e435770e",
+  "title": "One Rung at a Time: Attributing an ARC-AGI-3 Submission When the Offline Ruler Cannot Select Arms",
+  "primary_source": "/home/liuzewen/kaggle-control-20261013/paper-evidence/ARC_REVISED.md",
+  "source_state": {
+    "exists": true,
+    "sha256": "a07872cc4710944b6c76084ff89091316d409da5605552c2b201f3648d348c95",
+    "matches_catalog": true
+  },
+  "target": "arxiv",
+  "recorded_status": "revision",
+  "project_type": "paper",
+  "production_priority": 330,
+  "priority_band": "P0",
+  "priority_factors": [
+    {
+      "code": "PINNED_PILOT",
+      "points": 200,
+      "observed": "Matched pilot arc-paper-track at phase P0."
+    },
+    {
+      "code": "QONE_OVERLAY",
+      "points": 40,
+      "observed": "Q-One overlay metadata: qp-arc-paper-track-64c15908bdc5."
+    },
+    {
+      "code": "CLAIM_LEDGER",
+      "points": 35,
+      "observed": "Claim ledger is present."
+    },
+    {
+      "code": "EVIDENCE_DIRECTORY",
+      "points": 20,
+      "observed": "At least one evidence directory is present."
+    },
+    {
+      "code": "ARXIV_TARGET",
+      "points": 15,
+      "observed": "Explicit arXiv target is recorded."
+    },
+    {
+      "code": "EXPLICIT_STATUS",
+      "points": 10,
+      "observed": "Explicit status: revision."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    }
+  ],
+  "pilot_ids": [
+    "arc-paper-track"
+  ],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": false,
+    "compiled_pdf": false,
+    "evidence_directory": true,
+    "variants_to_reconcile": 0,
+    "overlay_present": true
+  },
+  "variant_sources": [
+    "/home/liuzewen/kaggle-control-20261013/paper-evidence/ARC_REVISED.md"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "Pinned as a production pilot; evidence and package gates still apply.",
+    "next_action": "overlay-plan:close_inconclusive_claims,remove_or_repair_blocked_claims,resynchronize_published_source",
+    "authoritative": false
+  },
+  "overlay": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/arc-paper-track/project.json",
+    "status": "revision",
+    "ledger_present": true,
+    "bibliography_present": false,
+    "evidence_present": true,
+    "claims": 11,
+    "claim_states": {
+      "verified": 9,
+      "inconclusive": 1,
+      "blocked": 1
+    },
+    "package_state": "not-started",
+    "package_blockers": [
+      "The local Markdown manuscript does not match the source hash recorded by the current remote publication receipt.",
+      "No arXiv source tree, BibTeX package, cover metadata, or compiled PDF has been prepared from the verified claims.",
+      "The official scoring-methodology source needed by C09 is not captured locally."
+    ],
+    "gate_receipts": 0,
+    "plan_stages": {
+      "source-identity": "blocked",
+      "claim-ledger": "blocked",
+      "evidence-recomputation": "pending",
+      "citation-verification": "pending",
+      "scientific-review": "pending",
+      "arxiv-package": "blocked",
+      "external-submission": "locked"
+    },
+    "plan_actions": [
+      "close_inconclusive_claims",
+      "remove_or_repair_blocked_claims",
+      "resynchronize_published_source",
+      "build_bibliography",
+      "reproduce_required_numeric_claims",
+      "resolve_package_blockers",
+      "external_submission_gate"
+    ]
+  },
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

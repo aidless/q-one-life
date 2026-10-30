@@ -1,0 +1,147 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-closing-the-calibration-landscape-a-mult-99bef231e5",
+  "project_id": "qp-tmlr-closing-landscape-133137543459",
+  "title": "Closing the Calibration Landscape: \\\\ A Multi-Evaluator Ensemble That Reduces Coupling \\\\ Without Increasing Noise",
+  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "8314b7b1c2e67eb266bd08c281a4f55fd48c7e920477bae9c9794143f02f3c78",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "paper",
+  "production_priority": 345,
+  "priority_band": "P1",
+  "priority_factors": [
+    {
+      "code": "PINNED_PILOT",
+      "points": 200,
+      "observed": "Matched pilot closing-calibration-landscape at phase P1."
+    },
+    {
+      "code": "QONE_OVERLAY",
+      "points": 40,
+      "observed": "Q-One overlay metadata: qp-20260926t060545z-c21e73ae84bc."
+    },
+    {
+      "code": "CLAIM_LEDGER",
+      "points": 35,
+      "observed": "Claim ledger is present."
+    },
+    {
+      "code": "BIBLIOGRAPHY",
+      "points": 20,
+      "observed": "At least one bibliography file is present."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "EVIDENCE_DIRECTORY",
+      "points": 20,
+      "observed": "At least one evidence directory is present."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    },
+    {
+      "code": "VERSION_RECONCILIATION",
+      "points": 5,
+      "observed": "4 extra normalized-title source version(s) require review."
+    }
+  ],
+  "pilot_ids": [
+    "closing-calibration-landscape"
+  ],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": true,
+    "compiled_pdf": true,
+    "evidence_directory": true,
+    "variants_to_reconcile": 4,
+    "overlay_present": true
+  },
+  "variant_sources": [
+    "/home/liuzewen/.research/closing-landscape/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/arxiv_submit/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/submission_variant/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "Pinned as a production pilot; evidence and package gates still apply.",
+    "next_action": "overlay-plan:close_scientific_review,remove_or_repair_blocked_claims,repair_failed_native_gates",
+    "authoritative": false
+  },
+  "overlay": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/project.json",
+    "status": "revision",
+    "ledger_present": true,
+    "bibliography_present": true,
+    "evidence_present": true,
+    "claims": 16,
+    "claim_states": {
+      "verified": 11,
+      "blocked": 5
+    },
+    "package_state": "compiled",
+    "package_blockers": [
+      "Simulation CV values are not reproducible",
+      "Real-API CG and CG+TEE are degenerate",
+      "N=15 model identity and parser success are absent",
+      "The 39.2 percent scalar is misattributed if treated as CG/TEE",
+      "Independent method review remains open",
+      "Independent statistics review remains open",
+      "Final metadata, license confirmation and upload authorization remain user decisions"
+    ],
+    "gate_receipts": 11,
+    "plan_stages": {
+      "source-identity": "candidate",
+      "claim-ledger": "blocked",
+      "evidence-recomputation": "blocked",
+      "citation-verification": "verified",
+      "scientific-review": "blocked",
+      "arxiv-package": "blocked",
+      "external-submission": "locked"
+    },
+    "plan_actions": [
+      "close_scientific_review",
+      "remove_or_repair_blocked_claims",
+      "repair_failed_native_gates",
+      "resolve_package_blockers",
+      "external_submission_gate"
+    ]
+  },
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

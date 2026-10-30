@@ -1,0 +1,294 @@
+name: desktop foundation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "desktop/**"
+      - "src/qone_life/**"
+      - "tests/**"
+      - "pyproject.toml"
+      - "requirements.txt"
+      - ".github/workflows/desktop.yml"
+  pull_request:
+    paths:
+      - "desktop/**"
+      - "src/qone_life/**"
+      - "tests/**"
+      - "pyproject.toml"
+      - "requirements.txt"
+      - ".github/workflows/desktop.yml"
+
+permissions:
+  contents: read
+
+env:
+  PYTHONUTF8: "1"
+  PYTHONIOENCODING: "utf-8"
+  CSC_IDENTITY_AUTO_DISCOVERY: "false"
+
+jobs:
+  native-desktop:
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-latest
+            platform: linux
+            arch: x64
+            sidecar: build/sidecar/qone-life-sidecar/qone-life-sidecar
+            electron: desktop/node_modules/electron/dist/electron
+          - runner: macos-15
+            platform: darwin
+            arch: arm64
+            sidecar: build/sidecar/qone-life-sidecar/qone-life-sidecar
+            electron: desktop/node_modules/electron/dist/Electron.app/Contents/MacOS/Electron
+          - runner: windows-latest
+            platform: win32
+            arch: x64
+            sidecar: build\\sidecar\\qone-life-sidecar\\qone-life-sidecar.exe
+            electron: desktop/node_modules/electron/dist/electron.exe
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: q-one-life
+      - uses: actions/checkout@v4
+        with:
+          repository: aidless/q-one-core
+          ref: b1f41dea59eb9d26b66e812f3fc167b83c23d7cf
+          path: q-one-core
+      - uses: actions/checkout@v4
+        with:
+          repository: aidless/q-one-agent
+          ref: 79a951ac4e4f77239a227cfe28ffdc0fb30bc19f
+          path: q-one-agent
+      - name: Apply reviewed local-model provider patch
+        shell: bash
+        run: |
+          workspace="$(cygpath -u "$GITHUB_WORKSPACE" 2>/dev/null || printf '%s' "$GITHUB_WORKSPACE")"
+          git -C q-one-agent apply \
+            "$workspace/q-one-life/desktop/patches/q-one-agent-local-provider.patch"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify fixed source baseline and integration patch
+        shell: bash
+        run: python q-one-life/desktop/scripts/verify_source_baseline.py --workspace "$GITHUB_WORKSPACE"
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: "12.8.1"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: pnpm
+          cache-dependency-path: q-one-life/desktop/pnpm-lock.yaml
+      - name: Require Apple Silicon for the macOS artifact
+        if: runner.os == 'macOS'
+        shell: bash
+        run: test "$(uname -m)" = "arm64"
+      - name: Create isolated test and build environments
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m venv "$RUNNER_TEMP/qone-test-venv"
+          python -m venv "$RUNNER_TEMP/qone-build-venv"
+          if [[ "$RUNNER_OS" == "Windows" ]]; then
+            test_python="$RUNNER_TEMP/qone-test-venv/Scripts/python.exe"
+            build_python="$RUNNER_TEMP/qone-build-venv/Scripts/python.exe"
+          else
+            test_python="$RUNNER_TEMP/qone-test-venv/bin/python"
+            build_python="$RUNNER_TEMP/qone-build-venv/bin/python"
+          fi
+          echo "QONE_TEST_PYTHON=$test_python" >> "$GITHUB_ENV"
+          echo "QONE_BUILD_PYTHON=$build_python" >> "$GITHUB_ENV"
+          "$test_python" -m pip install --upgrade pip
+          "$build_python" -m pip install --upgrade pip
+      - name: Install Python test environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          "$QONE_TEST_PYTHON" -m pip install \
+            fastapi==0.115.6 \
+            uvicorn==0.34.0 \
+            httpx==0.28.1 \
+            portalocker==4.4.1 \
+            cryptography==50.0.2 \
+            argon2-cffi==25.1.0 \
+            "numpy>=1.26,<3" \
+            "scipy>=1.11,<2" \
+            pytest==9.1.1
+          "$QONE_TEST_PYTHON" -m pip install --no-deps \
+            -e q-one-core \
+            -e q-one-agent \
+            -e q-one-life
+      - name: Install Python build environment without test tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          "$QONE_BUILD_PYTHON" -m pip install \
+            fastapi==0.115.6 \
+            uvicorn==0.34.0 \
+            httpx==0.28.1 \
+            portalocker==4.4.1 \
+            cryptography==50.0.2 \
+            argon2-cffi==25.1.0 \
+            "numpy>=1.26,<3" \
+            "scipy>=1.11,<2" \
+            pyinstaller==6.22.3
+          "$QONE_BUILD_PYTHON" -m pip install --no-deps \
+            -e q-one-core \
+            -e q-one-agent \
+            -e q-one-life
+          "$QONE_BUILD_PYTHON" -c \
+            "import importlib.util; assert importlib.util.find_spec('pytest') is None, 'pytest leaked into sidecar build environment'"
+      - name: Run Python tests
+        shell: bash
+        working-directory: q-one-life
+        run: '"$QONE_TEST_PYTHON" -m pytest -q'
+      - name: Run q-one-agent provider tests
+        shell: bash
+        working-directory: q-one-agent
+        run: '"$QONE_TEST_PYTHON" -m pytest -q'
+      - name: Install desktop dependencies
+        working-directory: q-one-life/desktop
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm exec install-electron
+      - name: Compile and unit-test desktop
+        working-directory: q-one-life/desktop
+        run: pnpm test
+      - name: Restore pinned E2E model
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/qone-e2e-model
+          key: ${{ matrix.platform }}-qwen3-model-v1
+      - name: Download and verify pinned E2E model
+        shell: bash
+        working-directory: q-one-life/desktop
+        run: |
+          node scripts/fetch-e2e-model.mjs \
+            --output "$RUNNER_TEMP/qone-e2e-model/Qwen3-0.6B-Q8_0.gguf"
+      - name: Build native sidecar
+        shell: bash
+        working-directory: q-one-life/desktop
+        run: '"$QONE_BUILD_PYTHON" -m PyInstaller --clean --noconfirm --distpath ../build/sidecar --workpath ../build/pyinstaller sidecar.spec'
+      - name: Install virtual display
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y xvfb
+      - name: Electron consumer E2E
+        shell: bash
+        working-directory: q-one-life/desktop
+        env:
+          QONE_SIDECAR_BIN: ${{ matrix.sidecar }}
+          QONE_E2E_LOCAL_MODEL_PATH: ${{ runner.temp }}/qone-e2e-model/Qwen3-0.6B-Q8_0.gguf
+          QONE_REQUIRE_LOCAL_MODEL_E2E: "1"
+        run: |
+          set -euo pipefail
+          if [[ "$RUNNER_OS" == "Linux" ]]; then
+            xvfb-run -a pnpm run test:e2e
+          else
+            pnpm run test:e2e
+          fi
+      - name: Electron launch and capability smoke
+        shell: bash
+        working-directory: q-one-life
+        env:
+          QONE_SIDECAR_BIN: ${{ matrix.sidecar }}
+        run: |
+          set -euo pipefail
+          if [[ "$RUNNER_OS" == "Linux" ]]; then
+            xvfb-run -a "$QONE_BUILD_PYTHON" desktop/scripts/smoke.py \
+              --electron "${{ matrix.electron }}" \
+              --app desktop
+          else
+            "$QONE_BUILD_PYTHON" desktop/scripts/smoke.py \
+              --electron "${{ matrix.electron }}" \
+              --app desktop
+          fi
+      - name: Electron sidecar crash recovery smoke
+        shell: bash
+        working-directory: q-one-life
+        env:
+          QONE_SIDECAR_BIN: ${{ matrix.sidecar }}
+        run: |
+          set -euo pipefail
+          if [[ "$RUNNER_OS" == "Linux" ]]; then
+            xvfb-run -a "$QONE_BUILD_PYTHON" desktop/scripts/smoke.py \
+              --mode crash-recovery \
+              --electron "${{ matrix.electron }}" \
+              --app desktop
+          else
+            "$QONE_BUILD_PYTHON" desktop/scripts/smoke.py \
+              --mode crash-recovery \
+              --electron "${{ matrix.electron }}" \
+              --app desktop
+          fi
+      - name: Build native desktop installers
+        working-directory: q-one-life/desktop
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+        run: pnpm exec electron-builder --publish never
+      - name: Packaged application launch and capability smoke
+        shell: bash
+        working-directory: q-one-life
+        run: |
+          set -euo pipefail
+          package_executable="$("$QONE_BUILD_PYTHON" desktop/scripts/find_packaged.py --release-dir desktop/release)"
+          if [[ "$RUNNER_OS" == "Linux" ]]; then
+            xvfb-run -a "$QONE_BUILD_PYTHON" desktop/scripts/smoke.py \
+              --electron "$package_executable"
+          else
+            "$QONE_BUILD_PYTHON" desktop/scripts/smoke.py \
+              --electron "$package_executable"
+          fi
+      - name: Packaged local-model inference smoke
+        shell: bash
+        working-directory: q-one-life
+        env:
+          QONE_MODEL_SMOKE_PATH: ${{ runner.temp }}/qone-e2e-model/Qwen3-0.6B-Q8_0.gguf
+        run: |
+          set -euo pipefail
+          package_executable="$("$QONE_BUILD_PYTHON" desktop/scripts/find_packaged.py --release-dir desktop/release)"
+          if [[ "$RUNNER_OS" == "Linux" ]]; then
+            xvfb-run -a "$QONE_BUILD_PYTHON" desktop/scripts/smoke.py \
+              --mode model-host \
+              --electron "$package_executable"
+          else
+            "$QONE_BUILD_PYTHON" desktop/scripts/smoke.py \
+              --mode model-host \
+              --electron "$package_executable"
+          fi
+      - name: Generate release evidence
+        shell: bash
+        working-directory: q-one-life/desktop
+        env:
+          QONE_PLATFORM: ${{ matrix.platform }}
+          QONE_ARCH: ${{ matrix.arch }}
+          QONE_SIGNATURE_STATUS: unsigned-internal
+          QONE_NOTARIZATION_STATUS: not-notarized
+        run: |
+          node scripts/release-evidence.mjs --release-dir release
+          if node scripts/release-evidence.mjs \
+            --release-dir release \
+            --require-signed; then
+            echo "unsigned installer incorrectly passed the public release gate"
+            exit 1
+          fi
+      - name: Upload native installer and release evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: q-one-desktop-${{ runner.os }}-${{ matrix.arch }}-unsigned-internal
+          path: |
+            q-one-life/desktop/release/*.AppImage
+            q-one-life/desktop/release/*.deb
+            q-one-life/desktop/release/*.dmg
+            q-one-life/desktop/release/*.zip
+            q-one-life/desktop/release/*.exe
+            q-one-life/desktop/release/*.blockmap
+            q-one-life/desktop/release/*.yml
+            q-one-life/desktop/release/evidence/**
+          if-no-files-found: error
+          retention-days: 14

@@ -1,10 +1,50 @@
-# Q-One · 个人决策工作台
+# Q-One · 本地优先、证据可审计的个人决策 Agent
 
-**保存目标 → 系统自动推荐下一步 → 采纳为今日重点 → 完成行动 → 自动调整后续建议。**
+[![application checks](https://github.com/aidless/q-one-life/actions/workflows/checks.yml/badge.svg)](https://github.com/aidless/q-one-life/actions/workflows/checks.yml)
+[![desktop foundation](https://github.com/aidless/q-one-life/actions/workflows/desktop.yml/badge.svg)](https://github.com/aidless/q-one-life/actions/workflows/desktop.yml)
+[![MIT](https://img.shields.io/badge/license-MIT-17382c.svg)](LICENSE)
 
-这是本项目独立交付的一套完整个人应用，包含中文界面、本地数据存储、真实模型接口和备份恢复。`q-one-core`、`q-one-agent` 是它的内部依赖；三个仓库不代表用户要求的三个独立方案。其他 AI 的实现不在本次交付范围内。
+> 普通 Agent 给出建议；Q-One 同时要求建议绑定输入、来源和可复算回执，失败时回退规则，无法验证时拒绝发布。
 
-![Decision Studio（合成验收数据）](docs/images/studio-desktop.png)
+![Q-One architecture](docs/images/qone-evidence-runtime-architecture.png)
+
+这是一个独立开发的消费级桌面应用与 Research Factory。Electron/TypeScript
+外壳启动隐藏的 PyInstaller Python sidecar；服务只监听随机回环端口，所有
+`/api/*` 请求都要求一次性 capability。没有模型时规则推荐仍能完成目标、行动、
+反馈、备份和恢复；启用本地模型后，Qwen3-0.6B 也只能细化已有候选。
+
+## 当前证据
+
+| 范围 | 已验证 |
+|---|---|
+| Python | pytest 178 + 32 subtests；unittest 88 |
+| Desktop | TypeScript 单测 42；真实 sidecar + Qwen Electron E2E 5（2 个核心闭环、2 个 benchmark、1 个截图采集） |
+| 工程验收 | 6 个固定任务，规则与本地模型均为 6/6 目标匹配、trace 绑定、可执行步骤 |
+| Research Factory | 17 pilots；29/29 当前引用键解析；85 个未闭合 claim 被阻止进入发布候选 |
+| 发布状态 | Linux x64 unsigned-internal；**未签名、未公证、未公开发布** |
+
+- 三分钟演示脚本：[docs/demo/QONE_3_MINUTE_DEMO.zh-CN.md](docs/demo/QONE_3_MINUTE_DEMO.zh-CN.md)
+- 简历条目与面试要点：[docs/career/QONE_RESUME_PACK.zh-CN.md](docs/career/QONE_RESUME_PACK.zh-CN.md)
+- 真实界面截图：[artifacts/resume-kit/demo/](artifacts/resume-kit/demo/)
+- 可复算证据与哈希：[artifacts/resume-kit/evidence.json](artifacts/resume-kit/evidence.json)
+- 技术文章草稿：[为什么本地 Agent 需要证据门](docs/blog/2026-10-28-why-local-agents-need-evidence-gates.zh-CN.md)
+- 技术定位与 `q-one-core`、`q-one-agent` 的关系：[完整蓝图](docs/BLUEPRINT.zh-CN.md)
+
+```bash
+# 从源码复制到无冒号路径，重新安装并运行 Python、桌面单测与完整真实 E2E
+QONE_CLEANROOM_E2E=1 \
+QONE_RUN_RESUME_BENCHMARK=1 \
+QONE_CAPTURE_DEMO=1 \
+QONE_SIDECAR_BIN=/absolute/path/to/qone-life-sidecar \
+QONE_E2E_LOCAL_MODEL_PATH=/absolute/path/to/Qwen3-0.6B-Q8_0.gguf \
+bash scripts/cleanroom-check.sh
+```
+
+> 当前 Linux 安装包仅供内部验收，不能用“可下载”替代签名、干净机器升级、
+> 回滚和三平台真机测试。工作 SQLite 数据库受操作系统 ACL 保护，加密范围是
+> `.qonebackup` 备份容器，不是端到端加密。
+
+![Decision Studio（历史网页验收数据）](docs/images/studio-desktop.png)
 
 v0.4 首页以一个优先行动为中心：具体第一步、完成标准、可展开的依据，以及当天的安排与时间容量。其他建议收为备选项。详见 [Decision Studio 改版与验收](docs/DECISION_STUDIO.zh-CN.md)。
 

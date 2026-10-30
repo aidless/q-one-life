@@ -47,6 +47,14 @@ class PlannerTests(unittest.TestCase):
         self.assertEqual(self.planner.state()["items"], [])
         self.assertEqual(self.repo.all("suggestions"), [])
 
+    def test_rule_copy_follows_the_resolved_interface_language(self):
+        self.config["resolved_language"] = "en-US"
+        self.repo.goal(GOAL)
+        item = self.planner.snapshot()["candidates"][0]
+        self.assertTrue(item["title"].startswith("Define the first deliverable:"))
+        self.assertIn("Goal priority", item["reason"])
+        self.assertIn("Write one small deliverable", item["first_step"])
+
     def test_goal_alone_generates_action_without_decision_or_baseline(self):
         self.repo.goal(GOAL)
         self.planner.tick()
@@ -163,11 +171,80 @@ class PlannerTests(unittest.TestCase):
             self.assertNotIn("record_id", context["candidates"][0])
             return httpx.Response(200, json={"message": {"content": json.dumps({"items": fixture_plan(snapshot, self.config).items})}})
         transport = httpx.MockTransport(handler)
-        result = generate_plan(snapshot, self.config, transport=transport)
+        result = generate_plan(
+            snapshot,
+            self.config | {"auto_recommend_provider": "ollama"},
+            transport=transport,
+        )
         self.assertEqual(result.provider, "ollama")
         with self.assertRaises(ProviderError):
-            generate_plan(snapshot, self.config | {"ollama_url": "https://remote.invalid"}, transport=transport)
+            generate_plan(
+                snapshot,
+                self.config | {
+                    "auto_recommend_provider": "ollama",
+                    "ollama_url": "https://remote.invalid",
+                },
+                transport=transport,
+            )
         self.assertEqual(len(calls), 1)
+
+    def test_builtin_local_model_contract_uses_loopback_bearer_and_json_schema(self):
+        self.repo.goal(GOAL)
+        snapshot = self.planner.snapshot()
+        token = "local-" + "t" * 43
+        calls = []
+
+        def handler(request):
+            body = json.loads(request.content)
+            calls.append(body)
+            self.assertEqual(request.url.path, "/v1/chat/completions")
+            self.assertEqual(request.headers["authorization"], "Bearer " + token)
+            self.assertEqual(
+                body["response_format"]["json_schema"]["name"],
+                "qone_action_plan",
+            )
+            self.assertFalse(body["response_format"]["json_schema"]["strict"] is False)
+            context = json.loads(body["messages"][1]["content"])
+            self.assertNotIn("local_token", context)
+            return httpx.Response(
+                200,
+                json={
+                    "choices": [
+                        {
+                            "message": {
+                                "content": json.dumps(
+                                    {"items": fixture_plan(snapshot, self.config).items}
+                                )
+                            }
+                        }
+                    ],
+                    "usage": {"prompt_tokens": 32, "completion_tokens": 48},
+                },
+            )
+
+        result = generate_plan(
+            snapshot,
+            self.config
+            | {
+                "auto_recommend_provider": "local",
+                "local_url": "http://127.0.0.1:43123/v1",
+                "local_model": "Qwen3-0.6B-Q8_0",
+                "local_token": token,
+            },
+            transport=httpx.MockTransport(handler),
+        )
+        self.assertEqual(result.provider, "local")
+        self.assertTrue(result.usage["local"])
+        self.assertEqual(len(calls), 1)
+
+    def test_builtin_local_model_unavailable_keeps_rule_fallback_signal(self):
+        self.repo.goal(GOAL)
+        snapshot = self.planner.snapshot()
+        with self.assertRaisesRegex(ProviderError, "规则建议"):
+            generate_plan(
+                snapshot,
+                self.config | {"auto_recommend_provider": "local"},
+            )
 
     def test_action_details_are_validated_and_kept_in_the_accepted_task(self):
         self.repo.goal(GOAL)
@@ -208,7 +285,11 @@ class PlannerTests(unittest.TestCase):
         item.pop("first_step")
         transport = httpx.MockTransport(lambda _: httpx.Response(200, json={"message": {"content": json.dumps({"items": [item]})}}))
         with self.assertRaisesRegex(ProviderError, "第一步"):
-            generate_plan(snapshot, self.config, transport=transport)
+            generate_plan(
+                snapshot,
+                self.config | {"auto_recommend_provider": "ollama"},
+                transport=transport,
+            )
 
     def test_cpu_override_is_explicit_and_recorded(self):
         self.repo.goal(GOAL)
@@ -217,7 +298,11 @@ class PlannerTests(unittest.TestCase):
             self.assertEqual(json.loads(request.content)["options"]["num_gpu"], 0)
             return httpx.Response(200, json={"message": {"content": json.dumps({"items": fixture_plan(snapshot, self.config).items})}})
         with patch.dict(os.environ, {"QONE_OLLAMA_CPU_ONLY": "1"}):
-            result = generate_plan(snapshot, self.config, transport=httpx.MockTransport(handler))
+            result = generate_plan(
+                snapshot,
+                self.config | {"auto_recommend_provider": "ollama"},
+                transport=httpx.MockTransport(handler),
+            )
         self.assertTrue(result.usage["cpu_only"])
         self.assertEqual(result.usage["context_protocol"], "action-brief-v1")
 

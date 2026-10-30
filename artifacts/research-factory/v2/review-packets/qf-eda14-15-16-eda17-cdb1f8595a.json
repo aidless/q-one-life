@@ -1,0 +1,73 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-eda14-15-16-eda17-cdb1f8595a",
+  "project_id": "qp-eda14-15-16-revised-a3313f0e1021",
+  "title": "EDA14/15/16 — 结论改写（以 EDA17 管线口径为准）",
+  "primary_source": "/home/liuzewen/.research/nfl-bdb-2027/docs/EDA14_15_16_REVISED.md",
+  "source_state": {
+    "exists": true,
+    "sha256": "2a062a1f970efcef7999060608da31c1f701c0df5de37a5acb59a2a0806fe235",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "legacy",
+  "production_priority": 10,
+  "priority_band": "P3",
+  "priority_factors": [
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    },
+    {
+      "code": "LEGACY_SOURCE",
+      "points": 0,
+      "observed": "Legacy source type; no points, review still required."
+    }
+  ],
+  "pilot_ids": [],
+  "signals": {
+    "claim_ledger": false,
+    "bibliography": false,
+    "compiled_pdf": false,
+    "evidence_directory": false,
+    "variants_to_reconcile": 0,
+    "overlay_present": false
+  },
+  "variant_sources": [
+    "/home/liuzewen/.research/nfl-bdb-2027/docs/EDA14_15_16_REVISED.md"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "The canonical source has enough structure to repair, but its evidence and package gates remain unverified.",
+    "next_action": "confirm_target_and_scope",
+    "authoritative": false
+  },
+  "overlay": null,
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

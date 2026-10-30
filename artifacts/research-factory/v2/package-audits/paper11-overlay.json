@@ -1,0 +1,44 @@
+{
+  "schema": "q-one-arxiv-package-audit-v1",
+  "generated_at": "2026-10-30T05:17:35.691062Z",
+  "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper11/source",
+  "main_file": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper11/source/main.tex",
+  "mechanical_pass": true,
+  "ready_for_upload": false,
+  "upload_blocker": "Mechanical packaging does not establish scientific readiness, license, metadata correctness, or user authorization.",
+  "blockers": [],
+  "warnings": [],
+  "file_count": 4,
+  "visible_suffixes": {
+    ".bib": 1,
+    ".pdf": 1,
+    ".tex": 2
+  },
+  "files": [
+    {
+      "path": "generated_values.tex",
+      "sha256": "88350d5d14550389500b5c47977c5067e1f93cd5fd781f31de0375ca844fe468",
+      "bytes": 3654
+    },
+    {
+      "path": "main.tex",
+      "sha256": "9748c64cbd338dcc495d6ce4119365ccf8540b5369fb912c74df662f999be02a",
+      "bytes": 24016
+    },
+    {
+      "path": "references.bib",
+      "sha256": "51f0432d5db567c3497e5763b818080492979ea8f278ee0fbaf3a7626c4c65b9",
+      "bytes": 4751
+    },
+    {
+      "path": "figures/factorial-audit.pdf",
+      "sha256": "d1449f3abbe71b26c18d9fe6398269de54776281317b24bf70b029b433728bfa",
+      "bytes": 18589
+    }
+  ],
+  "package_sha256": "64ed1f187d991dd1dd386f9eae55f7bb0eb5989652977073c8af65ee61790813",
+  "notes": [
+    "This is a source-tree audit, not a clean-room LaTeX compile.",
+    "The package hash covers the sorted path/hash manifest, not tar bytes."
+  ]
+}

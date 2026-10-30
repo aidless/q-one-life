@@ -1,0 +1,899 @@
+{
+  "artifacts": [
+    {
+      "bytes": 2970,
+      "path": "artifacts/resume-kit/README.md",
+      "sha256": "2ddef9945068244bccb14e1982905968f08711eae3f65484aaaa9abc5c19cb22"
+    },
+    {
+      "bytes": 1441,
+      "path": "artifacts/resume-kit/cleanroom-receipt.json",
+      "sha256": "462a7afd3ad7cefbfd77a2836e3c22b7c8758735fc18a183697f7316c132a51f"
+    },
+    {
+      "bytes": 3588,
+      "path": "artifacts/resume-kit/benchmark/rules.json",
+      "sha256": "ecffecb1f25384328cc7b5c06cc1d609c54b13d9ad4493c707e10f4e96935af0"
+    },
+    {
+      "bytes": 3191,
+      "path": "artifacts/resume-kit/benchmark/hybrid-local.json",
+      "sha256": "b87722bafb07c29913798b108cd7d55b9a3ba50428fd4fe7ff52e40541e6d73d"
+    },
+    {
+      "bytes": 1838,
+      "path": "desktop/benchmarks/resume-tasks.json",
+      "sha256": "bdf2b8e284855e140b3dcc15f7bebe1d22a23cc199ecda78ffc02328a932593d"
+    },
+    {
+      "bytes": 11170,
+      "path": "README.md",
+      "sha256": "1a80d8d16b878720cb758f79d0cd57371697c9712c55a3338396747c8752e2cd"
+    },
+    {
+      "bytes": 4693,
+      "path": "desktop/README.md",
+      "sha256": "4725634197898b6a158f38363052f456499b548d8af1763438e3ae80ca7bdd79"
+    },
+    {
+      "bytes": 11394,
+      "path": "desktop/e2e/resume-benchmark.spec.ts",
+      "sha256": "97e72780f36bd0675c91df1ebd67f119f489e9d156401e2314c306f55453fdb6"
+    },
+    {
+      "bytes": 5329,
+      "path": "desktop/e2e/capture-demo.spec.ts",
+      "sha256": "fea9834df3002cc118218e2332699ea411c76e8787d2ed904d33a9377791a6f5"
+    },
+    {
+      "bytes": 26800,
+      "path": "scripts/build_resume_evidence.py",
+      "sha256": "c36ee6b0eb8f67406e45fa217c3e51a9a87f437f97bc6b4a7b8d9518adb164fc"
+    },
+    {
+      "bytes": 7638,
+      "path": "scripts/cleanroom-check.sh",
+      "sha256": "dd5fa6ac270602bffbf31a3ff45672b7328782fd00f7616b5b14896721e7f609"
+    },
+    {
+      "bytes": 23759,
+      "path": "scripts/research_factory_verify.py",
+      "sha256": "7c9a14d2357842a8e474299bec21c6b40f1666bd6ea0873b4e387a54949ce2cc"
+    },
+    {
+      "bytes": 66253,
+      "path": "src/qone_life/research_factory.py",
+      "sha256": "3d559413b2d1e993d603f607a1a5de5f3577314f9070e3d8898f7c1080a42db3"
+    },
+    {
+      "bytes": 22295,
+      "path": "tests/test_research_factory.py",
+      "sha256": "8045ac83a65d38731ee896201a130c57a11bd8d81845f61a6f3fc4cbd5e4bd7a"
+    },
+    {
+      "bytes": 2439,
+      "path": "tests/test_research_experiment.py",
+      "sha256": "0a7ae0eaedebd7e2791069f2e7148654b612fd78ec16df61c59dfc984315727d"
+    },
+    {
+      "bytes": 13157,
+      "path": "artifacts/research-factory/v2/verification.json",
+      "sha256": "fcb006e01c84d21ecc8154c9a7cdf097285115cb1c6de56c6b194d54ed5a41d0"
+    },
+    {
+      "bytes": 43457,
+      "path": "artifacts/research-factory/v2/pilot-status.json",
+      "sha256": "33900a744abce508c928c49a701864e3ca01b9efe3345a7210b5df262f024ad0"
+    },
+    {
+      "bytes": 38015,
+      "path": "research/FACTORY_STATUS.md",
+      "sha256": "eeea1c224cfb50c3e97bd0df7f1b5f33837c1b20e51f2539bcf64bef68919460"
+    },
+    {
+      "bytes": 17784,
+      "path": "research/pilot-bench-noise-floor/CLAIM_LEDGER.md",
+      "sha256": "a58c0f13c1b6ee2bc57503cd2e05437cec3c09beaa868018dc9b5d6e3029f5e3"
+    },
+    {
+      "bytes": 21922,
+      "path": "research/pilot-bench-noise-floor/evidence/source-lineage.json",
+      "sha256": "20a2abc52d3b38e313f821b8a51e511593170813e7a63066f11fe486c7d2b01a"
+    },
+    {
+      "bytes": 10817,
+      "path": "research/pilot-bench-noise-floor/experiments/producer-baseline-counterexample/preregistration.json",
+      "sha256": "ee9b2355387841012450be05d934e3402c85dfc9d346274ea8d5a1b5aa369e62"
+    },
+    {
+      "bytes": 19374,
+      "path": "research/pilot-bench-noise-floor/experiments/producer-baseline-counterexample/run_counterexample.py",
+      "sha256": "b615e6dd785b853f0cb0eded1cbe7f6246de9809602353f9fa4dbb428e4a440e"
+    },
+    {
+      "bytes": 10805,
+      "path": "research/pilot-bench-noise-floor/experiments/producer-baseline-counterexample/results/run-1.json",
+      "sha256": "fa0846484b4dba64236caf2aeefb2b70d3db8f6bab78b5ad1fe6067f289cd424"
+    },
+    {
+      "bytes": 3894,
+      "path": "research/pilot-bench-noise-floor/experiments/producer-baseline-counterexample/results/reproduction.json",
+      "sha256": "4e96412333a6634b5f3977fa71a447dd4e1cd743493aad113fabff98b3b6f84d"
+    },
+    {
+      "bytes": 2972,
+      "path": "research/pilot-bench-noise-floor/experiments/producer-baseline-counterexample/results/REPORT.md",
+      "sha256": "332894690b86e3ecf3ff79d10d1c8e2e0f8e17859f47d23cc08e610ee12d05e0"
+    },
+    {
+      "bytes": 16148,
+      "path": "research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/preregistration.json",
+      "sha256": "a58bf0b93419d4465c9b93b9f4e1ec055f9ba5f5cc31e21a85fa870fcf565484"
+    },
+    {
+      "bytes": 23593,
+      "path": "research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/run_estimand_split.py",
+      "sha256": "927143dd6727272311e67c4468d1bedaf131dc119d40546aae7c993d52b8d2d0"
+    },
+    {
+      "bytes": 63028,
+      "path": "research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/results/run-1.json",
+      "sha256": "4b0d65068f78015a4b5014f28e87b4d49b62db555d04598bee4e47cc5dade408"
+    },
+    {
+      "bytes": 63028,
+      "path": "research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/results/run-2.json",
+      "sha256": "4b0d65068f78015a4b5014f28e87b4d49b62db555d04598bee4e47cc5dade408"
+    },
+    {
+      "bytes": 14209,
+      "path": "research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/results/native-rerun-factuality.json",
+      "sha256": "e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c"
+    },
+    {
+      "bytes": 3108,
+      "path": "research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/results/REPORT.md",
+      "sha256": "86ea70406748878ea91dbde8d70b778cafb9e271789dc8e2ec957a17e2e2bca3"
+    },
+    {
+      "bytes": 8516,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/preregistration.json",
+      "sha256": "bacdf9e09372d8382460a7712893989fb04a56d921fa3cddcf3cacbac2462133"
+    },
+    {
+      "bytes": 23603,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/run_common_support.py",
+      "sha256": "9669db5401f31b10a450eafd0762ddd9bafdec77737a3d30a420ec85f977b012"
+    },
+    {
+      "bytes": 21063,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/results/run-1.json",
+      "sha256": "93455b86334d9345f220b0e93b4a4067783f1ff0846d2af0bd93dac1695e6391"
+    },
+    {
+      "bytes": 21063,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/results/run-2.json",
+      "sha256": "93455b86334d9345f220b0e93b4a4067783f1ff0846d2af0bd93dac1695e6391"
+    },
+    {
+      "bytes": 7063,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/results/reproduction.json",
+      "sha256": "c2f1ebde69c98427acf685759e168b751700e7d88dff51c6221715d337d47b88"
+    },
+    {
+      "bytes": 3983,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/results/REPORT.md",
+      "sha256": "07c6bc5de88144658d4bbbdb9e4904a324afd49fe680f17478d21f3d7d519efe"
+    },
+    {
+      "bytes": 597,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/SHA256SUMS.txt",
+      "sha256": "0c8bcad7f8fa4820af89726fdf272254be6f5330534629c922381e0e334981c4"
+    },
+    {
+      "bytes": 7843,
+      "path": "research/pilot-bench-noise-floor/experiments/threshold-interface-a4/preregistration.json",
+      "sha256": "de1cb0d656c92537444bd950fa8d357282f4ec13e489c6688f5413da9a48fabd"
+    },
+    {
+      "bytes": 22624,
+      "path": "research/pilot-bench-noise-floor/experiments/threshold-interface-a4/run_threshold_interface.py",
+      "sha256": "c996fc7b8be09ee8e0aaf58abfb1ecb86003a8e39bfa4b4ee3bcce5dcc456971"
+    },
+    {
+      "bytes": 35743,
+      "path": "research/pilot-bench-noise-floor/experiments/threshold-interface-a4/results/run-1.json",
+      "sha256": "d2fedc88b0ae81f782c8169cfe8c66103871a389db644476a4b47735e049727c"
+    },
+    {
+      "bytes": 35743,
+      "path": "research/pilot-bench-noise-floor/experiments/threshold-interface-a4/results/run-2.json",
+      "sha256": "d2fedc88b0ae81f782c8169cfe8c66103871a389db644476a4b47735e049727c"
+    },
+    {
+      "bytes": 4072,
+      "path": "research/pilot-bench-noise-floor/experiments/threshold-interface-a4/results/reproduction.json",
+      "sha256": "f98e5004bc953751f7a2c05c446206a87780af7202ad9acba77e62181c2a69a9"
+    },
+    {
+      "bytes": 4414,
+      "path": "research/pilot-bench-noise-floor/experiments/threshold-interface-a4/results/REPORT.md",
+      "sha256": "37181f44053f9994056a9a0791f0c56d50f95dfedf50bc52566d36caabda9eb6"
+    },
+    {
+      "bytes": 602,
+      "path": "research/pilot-bench-noise-floor/experiments/threshold-interface-a4/SHA256SUMS.txt",
+      "sha256": "491229687cde7e1039170cd347d0202a5d20d7b50ec0fc940b43ac360349853b"
+    },
+    {
+      "bytes": 4995,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-28-construct-validity-r1/revision-manifest.json",
+      "sha256": "cf246a1fced7653fcf7562947210384c2ca05731da0bb15a513b974a44de2b18"
+    },
+    {
+      "bytes": 5902,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-28-construct-validity-r1/REVISION_R1.md",
+      "sha256": "0c4b703035aaba39d12344bc62e036db769d00b2874a3b4feee424924aeadbbd"
+    },
+    {
+      "bytes": 56320,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-28-construct-validity-r1/main.diff",
+      "sha256": "9352aa037213ed7998006c1fe52b641d1a29c7e6ce73f3a6e562e8a18a24a553"
+    },
+    {
+      "bytes": 221267,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-28-construct-validity-r1/source/main.tex",
+      "sha256": "842f7760f95aaa8bc3eb32fdc59933a54669157fd0b5e3a09f3375ea3ee12451"
+    },
+    {
+      "bytes": 2679,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-28-construct-validity-r1/reports/package-audit.json",
+      "sha256": "b43fcd7db57b0faf638a057345b75c2fdd2d5b2d6d3239d6f6bf1bd6a9bf8e8d"
+    },
+    {
+      "bytes": 7028,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-28-construct-validity-r1/reports/ledger-reverse-coverage.json",
+      "sha256": "e13e76b5d2b34b707d08e45f2355bb104344e10369cae5fc25794cf1651e024c"
+    },
+    {
+      "bytes": 746,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-28-construct-validity-r1/reports/ledger-anchor-census.json",
+      "sha256": "3217e519c4ce1fa9247ed65b926cccd00b7223d14c5d17f9a5413469565aaf79"
+    },
+    {
+      "bytes": 18482,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-28-construct-validity-r1/reports/verdict-word-gate.json",
+      "sha256": "cd698d4a423735ecb7211c26d4a98ccb528f6627fbce8cdb08c61a124b949aa6"
+    },
+    {
+      "bytes": 12587,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-28-construct-validity-r1/reports/cleanroom/receipt.json",
+      "sha256": "febe768d78cd457d07b5164f76dfbb6a6f771304729216fd6c80df6d1a5332a7"
+    },
+    {
+      "bytes": 692216,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-28-construct-validity-r1/reports/cleanroom/main.pdf",
+      "sha256": "4c2b1bcfb4db4022c8f22423b446f2ae4ec7cf47d2a29e7e272a40f8e5e82442"
+    },
+    {
+      "bytes": 7080,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/revision-manifest.json",
+      "sha256": "65c2507433098c50e1c4a360a0d1796dc0ff7a346942c22ead8fd1f293a929bc"
+    },
+    {
+      "bytes": 6444,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/REVIEW_REQUEST_R3.md",
+      "sha256": "b8eaf83c2e28da1b9f330b7a8a9d985b5e2f3e7329ec446acce5b043a2ceaae2"
+    },
+    {
+      "bytes": 3417,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/SHA256SUMS.txt",
+      "sha256": "419b34006bfca00c1a93b3d0e70fa1f41ba23cc452a89c806e304893b27c1c07"
+    },
+    {
+      "bytes": 6007,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/REVISION_R3.md",
+      "sha256": "55bd86bba618532410ef53f6a22ae1b316713ade7d32db1ba30e156d4cbdb6ca"
+    },
+    {
+      "bytes": 223325,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/source/main.tex",
+      "sha256": "a9eef802faa6ef80f7916626a28aade11f1922701fb1f3b24b2f3780a69e0bb6"
+    },
+    {
+      "bytes": 24970,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/main.diff",
+      "sha256": "42e40ab0b040c12bb2982ca204aae464c41e15ecee7fa9d116e911d297ec6a14"
+    },
+    {
+      "bytes": 78290,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/main-vs-canonical.diff",
+      "sha256": "0264a11ff93671948625934844fc993e2436a0bb1e9f6c1ffa570f0ea3503e40"
+    },
+    {
+      "bytes": 1621,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/evidence/README.md",
+      "sha256": "412ce20ce9bc888212af6536d8813934724cad956da6a3a9205173b3ddf178b9"
+    },
+    {
+      "bytes": 314255,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/evidence/paper-ledger-overlay.json",
+      "sha256": "7ff57a361f0a174e81ecf18652cadca9df7c9ee039ebf4a8917c36667f572fc3"
+    },
+    {
+      "bytes": 37215,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/evidence/verdict-claims-overlay.json",
+      "sha256": "7f1c9b157edd4246811c61695b4899fc81c46e6417491293bfd8698d130c078d"
+    },
+    {
+      "bytes": 6671,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/run_candidate_gates.py",
+      "sha256": "411cd00c54dc96e8e0d8e4cde31708276b7fda9eb4fdae68677cbc1222e1eed2"
+    },
+    {
+      "bytes": 2677,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/reports/package-audit.json",
+      "sha256": "26e8583840f2326b57c04c22ebad8a45123910f92df5e92fa03cc78193e7a588"
+    },
+    {
+      "bytes": 12242,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/reports/cleanroom/receipt.json",
+      "sha256": "0254ad16dcb835138323a9567ad172d4eaf41cf527145d5c8625abb3ad47a39b"
+    },
+    {
+      "bytes": 7028,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/reports/ledger-reverse-coverage.json",
+      "sha256": "50bc1168961c0522ad80a9a56f47ee118bbd0fdb384d5cfda20724480b1712fd"
+    },
+    {
+      "bytes": 746,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/reports/ledger-anchor-census.json",
+      "sha256": "39b66daff59bb4394e56ef5e8196d95849941ac8934c30f59cf920efa36d727c"
+    },
+    {
+      "bytes": 18598,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/reports/verdict-word-gate.json",
+      "sha256": "10dbc52e004a7a8caa422f2a23b89899d87d1be48223507bbe61c674d380eaaa"
+    },
+    {
+      "bytes": 7336,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/reports/candidate-gates-summary.json",
+      "sha256": "d1c212dfcee851ec5a9281fa7cf34b5fb9e9106a3f2d2142e4335d12b0da7e8f"
+    },
+    {
+      "bytes": 6065,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-estimand-split-r2/revision-manifest.json",
+      "sha256": "db7df4ba6cf7f95fcbf351f9058871e033a34ef02e401dce9589f85928802c18"
+    },
+    {
+      "bytes": 2747,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-estimand-split-r2/SHA256SUMS.txt",
+      "sha256": "e36db072ae0286f54eda7ee695ed16c3532d2d666474adfbc71052d45a4ad3b4"
+    },
+    {
+      "bytes": 4984,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-estimand-split-r2/REVISION_R2.md",
+      "sha256": "1af52f2bd80b296880792843366ddc437a333b0279f86d41b4d3458ae83233cf"
+    },
+    {
+      "bytes": 221814,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-estimand-split-r2/source/main.tex",
+      "sha256": "fc24f8effef7c6f90c6dca6a52ea967adcec60bf7b79408c817b3a8561930c0f"
+    },
+    {
+      "bytes": 3824,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-estimand-split-r2/main.diff",
+      "sha256": "390e9d7f9a8f7c0e99705f5d102d074e7e221aa57d11adf21a209b5d241b6d62"
+    },
+    {
+      "bytes": 59893,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-estimand-split-r2/main-vs-canonical.diff",
+      "sha256": "a7ba05d9ceab85cd7e7564a3e7a50bce9f54e339a895886ffc8b44c307c891c8"
+    },
+    {
+      "bytes": 2671,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-estimand-split-r2/reports/package-audit.json",
+      "sha256": "3921b0073d0eae29b037693e93046a6c577e0ed74afc89cc88fc39f42037ec5f"
+    },
+    {
+      "bytes": 7028,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-estimand-split-r2/reports/ledger-reverse-coverage.json",
+      "sha256": "e13e76b5d2b34b707d08e45f2355bb104344e10369cae5fc25794cf1651e024c"
+    },
+    {
+      "bytes": 746,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-estimand-split-r2/reports/ledger-anchor-census.json",
+      "sha256": "3217e519c4ce1fa9247ed65b926cccd00b7223d14c5d17f9a5413469565aaf79"
+    },
+    {
+      "bytes": 16693,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-estimand-split-r2/reports/verdict-word-gate.json",
+      "sha256": "484adc31195305c68f3bda68d6c6065f833956935376c4fe5a957c57e3d5452b"
+    },
+    {
+      "bytes": 12561,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-estimand-split-r2/reports/cleanroom/receipt.json",
+      "sha256": "524d9f014298bc191a958aa50f6bfc1bd1fb420263ba194d7a8d1721cdca2d60"
+    },
+    {
+      "bytes": 692710,
+      "path": "research/pilot-bench-noise-floor/revisions/2026-10-29-estimand-split-r2/reports/cleanroom/main.pdf",
+      "sha256": "17842993a95fbe699ae1cba90b249a3cf1750878b56211f114af0e1385ede0a7"
+    },
+    {
+      "bytes": 8516,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/preregistration.json",
+      "sha256": "bacdf9e09372d8382460a7712893989fb04a56d921fa3cddcf3cacbac2462133"
+    },
+    {
+      "bytes": 23603,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/run_common_support.py",
+      "sha256": "9669db5401f31b10a450eafd0762ddd9bafdec77737a3d30a420ec85f977b012"
+    },
+    {
+      "bytes": 21063,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/results/run-1.json",
+      "sha256": "93455b86334d9345f220b0e93b4a4067783f1ff0846d2af0bd93dac1695e6391"
+    },
+    {
+      "bytes": 21063,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/results/run-2.json",
+      "sha256": "93455b86334d9345f220b0e93b4a4067783f1ff0846d2af0bd93dac1695e6391"
+    },
+    {
+      "bytes": 7063,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/results/reproduction.json",
+      "sha256": "c2f1ebde69c98427acf685759e168b751700e7d88dff51c6221715d337d47b88"
+    },
+    {
+      "bytes": 3983,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/results/REPORT.md",
+      "sha256": "07c6bc5de88144658d4bbbdb9e4904a324afd49fe680f17478d21f3d7d519efe"
+    },
+    {
+      "bytes": 597,
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/SHA256SUMS.txt",
+      "sha256": "0c8bcad7f8fa4820af89726fdf272254be6f5330534629c922381e0e334981c4"
+    },
+    {
+      "bytes": 6435,
+      "path": "docs/career/QONE_RESUME_PACK.zh-CN.md",
+      "sha256": "b75d4df9025a7871cec21cdc21a10c59164da82c76cd054b6254f9ef14eb5429"
+    },
+    {
+      "bytes": 4460,
+      "path": "docs/demo/QONE_3_MINUTE_DEMO.zh-CN.md",
+      "sha256": "a2d009e7e71b1490614e846beb7724061c4ab91ede4a0cf5f1b39824df7f6b42"
+    },
+    {
+      "bytes": 5371,
+      "path": "docs/blog/2026-10-28-why-local-agents-need-evidence-gates.zh-CN.md",
+      "sha256": "3c05f0cb27fa0598ccb780cafbbfcae6a59cc8acedcf55ded62c3c4b6de18aae"
+    },
+    {
+      "bytes": 9872,
+      "path": "docs/images/qone-evidence-runtime-architecture.svg",
+      "sha256": "efa8b821728fd5d800f323760d70d19f4b053bada789fde8c0aa459c65190628"
+    },
+    {
+      "bytes": 486282,
+      "path": "docs/images/qone-evidence-runtime-architecture.png",
+      "sha256": "81304afc7d2a42e11276968897ec4cceb9163e3622468ce44de7e358a92c0c3d"
+    },
+    {
+      "bytes": 165,
+      "path": "artifacts/resume-kit/cleanroom-logs/base-requirements.txt",
+      "sha256": "76aa1a9cd7d6fa843a973909a886d317a8895bfd934232eb1e8dd59f4ca34f4d"
+    },
+    {
+      "bytes": 3398,
+      "path": "artifacts/resume-kit/cleanroom-logs/desktop-unit.log",
+      "sha256": "379578a6508c227208e1aad11795083e2fb8ce788878b8a87981c7b75c8f1770"
+    },
+    {
+      "bytes": 548,
+      "path": "artifacts/resume-kit/cleanroom-logs/electron-e2e.log",
+      "sha256": "6fcc99502d598aac8b78a869faef349650ed35e88764b32e45415885895a47b3"
+    },
+    {
+      "bytes": 756,
+      "path": "artifacts/resume-kit/cleanroom-logs/pnpm-install.log",
+      "sha256": "db32a4daa3fb804b37a4bcdd5cfabf0d3055fc4af68fcc5f7d51ef11b2c77b2c"
+    },
+    {
+      "bytes": 814,
+      "path": "artifacts/resume-kit/cleanroom-logs/pytest.log",
+      "sha256": "5311ac8a256b05c667b0251159062261ae08cd7fcbc6a9e200ac3ba87d677b71"
+    },
+    {
+      "bytes": 2549,
+      "path": "artifacts/resume-kit/cleanroom-logs/python-install.log",
+      "sha256": "2d811674eb09731ff1a4892650122655661ab726e2724bef4606899e7a734f22"
+    },
+    {
+      "bytes": 249925,
+      "path": "artifacts/resume-kit/cleanroom-logs/source-manifest.txt",
+      "sha256": "8749caee07c6a03b1e67fb175141211f3af3ff589d116343997283d5e4dd329d"
+    },
+    {
+      "bytes": 14249,
+      "path": "artifacts/resume-kit/cleanroom-logs/unittest.log",
+      "sha256": "d5ba3d686f53e27ce406109b53d492a1e8b5d3715a69e6a82949ef673c3d3c3f"
+    },
+    {
+      "bytes": 194904,
+      "path": "artifacts/resume-kit/demo/01-first-run.png",
+      "sha256": "da7b70b4be794fa146ed5f37477927a04961f5b2ecb33b6aedb04e2288181a66"
+    },
+    {
+      "bytes": 403577,
+      "path": "artifacts/resume-kit/demo/02-today-recommendation.png",
+      "sha256": "f17337c9dad300695f4dee986d7d5b8f50e0f6d14085fe8605eb185652e2b407"
+    },
+    {
+      "bytes": 397904,
+      "path": "artifacts/resume-kit/demo/03-completed-action.png",
+      "sha256": "938bc935c1a5b0588ded3ad1fd2612488f548be2be21b4dfcb31481870c5b476"
+    },
+    {
+      "bytes": 340704,
+      "path": "artifacts/resume-kit/demo/04-review.png",
+      "sha256": "24aa0d8633a5fb26bcc8e3ddbc212900f73d3d68fbf24abb0899cf425ba536c8"
+    },
+    {
+      "bytes": 346376,
+      "path": "artifacts/resume-kit/demo/05-settings-backup.png",
+      "sha256": "dcdf3ffc1bb99f2abfe36e21a772dff719531c0784cc5996386b8481a0b4f4d1"
+    }
+  ],
+  "benchmark": {
+    "hybrid_local": {
+      "actionable": 6,
+      "average_latency_ms": 4540,
+      "completed": 6,
+      "electron_cpu_percent": 2.76,
+      "electron_working_set_kb": 990372,
+      "maximum_latency_ms": 13503,
+      "mode": "hybrid-local",
+      "provider_counts": {
+        "local": 6
+      },
+      "runtime": {
+        "application": "0.8.0-dev.0",
+        "arch": "x64",
+        "chrome": "156.0.8078.48",
+        "electron": "45.0.0",
+        "model_bytes": 639446688,
+        "model_sha256": "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031",
+        "node": "24.22.0",
+        "platform": "linux",
+        "sidecar_bytes": 12418128,
+        "sidecar_sha256": "ed0c09ec830615b35fb00901a4b49a7ea64daec79213b14712d425ff126a4324"
+      },
+      "task_count": 6,
+      "trace_bound": 6,
+      "valid_goal_matches": 6
+    },
+    "qualification": "Small local engineering acceptance set; not an external validity study or evidence of real-world benefit.",
+    "rules": {
+      "actionable": 6,
+      "average_latency_ms": 55,
+      "completed": 6,
+      "electron_cpu_percent": 0.75,
+      "electron_working_set_kb": 524656,
+      "maximum_latency_ms": 58,
+      "mode": "rules",
+      "provider_counts": {
+        "rules": 6
+      },
+      "runtime": {
+        "application": "0.8.0-dev.0",
+        "arch": "x64",
+        "chrome": "156.0.8078.48",
+        "electron": "45.0.0",
+        "node": "24.22.0",
+        "platform": "linux",
+        "sidecar_bytes": 12418128,
+        "sidecar_sha256": "ed0c09ec830615b35fb00901a4b49a7ea64daec79213b14712d425ff126a4324"
+      },
+      "task_count": 6,
+      "trace_bound": 6,
+      "valid_goal_matches": 6
+    },
+    "task_fixture_sha256": "bdf2b8e284855e140b3dcc15f7bebe1d22a23cc199ecda78ffc02328a932593d"
+  },
+  "cleanroom": {
+    "documentation_and_evidence_excluded": [
+      "README.md",
+      "CHANGELOG.md",
+      "docs/",
+      "artifacts/",
+      "logs/",
+      "scripts/build_resume_evidence.py"
+    ],
+    "finished_at": "2026-10-28T13:17:08Z",
+    "pinned_sources": {
+      "q-one-agent": "79a951ac4e4f77239a227cfe28ffdc0fb30bc19f",
+      "q-one-agent_patch": "desktop/patches/q-one-agent-local-provider.patch",
+      "q-one-core": "b1f41dea59eb9d26b66e812f3fc167b83c23d7cf"
+    },
+    "source_manifest_scope": "runtime source, tests, build/release inputs, and this clean-room harness; documentation and generated evidence are hash-bound separately",
+    "source_manifest_sha256": "8749caee07c6a03b1e67fb175141211f3af3ff589d116343997283d5e4dd329d",
+    "started_at": "2026-10-28T13:14:16Z",
+    "strict_electron_e2e": true
+  },
+  "generated_at": "2026-10-30T05:20:00.638672+00:00",
+  "non_claims": [
+    "The benchmark is a six-task local engineering acceptance check.",
+    "It is not an external validity study, user study, or benefit claim.",
+    "The working SQLite database is not end-to-end encrypted.",
+    "The current desktop artifacts are unsigned internal builds.",
+    "No paper is publication-ready or uploaded.",
+    "The producer-baseline counterexample is a synthetic logical witness, not an external leaderboard study.",
+    "Noise Floor still has blocked source-identity and scientific-review claims; it is not arXiv-ready.",
+    "R3 is an internal revision candidate; its compile and gate receipts do not establish scientific readiness or publication."
+  ],
+  "positioning": "Local-first, evidence-auditable personal decision agent",
+  "project": "Q-One",
+  "release_scope": {
+    "arxiv_publication": false,
+    "public_release": false,
+    "signed": false,
+    "three_platform_clean_machine_validation": false
+  },
+  "research_factory": {
+    "claim_ledger": {
+      "report": {
+        "bytes": 7568,
+        "path": "research/pilot-bench-noise-floor/reports/claim-ledger-verification.md",
+        "sha256": "ba554206d22ef4a676b745f8beb426ff7db01bda610d2f8d4e44f583237eeef3"
+      },
+      "result": "passed",
+      "summary": "14 PASS, 0 FAIL, 2 WARN"
+    },
+    "cleanroom_note": "The strict Electron clean-room receipt is a separate earlier desktop/runtime run; research-factory verification is bound to the current research source and tests.",
+    "counterexample": {
+      "accepted_attempt": 4,
+      "byte_identical": true,
+      "experiment_id": "noise-floor-producer-baseline-necessity-counterexample",
+      "hypothesis_decision": "reject_H0_in_declared_synthetic_condition",
+      "narrow_conclusion": "The declared producer-baseline gate can refuse a top ordering that is deterministic and stable under every single-item deletion. Therefore clearance of that gate is not a necessary condition for every resolvable top ordering, and the gate cannot by itself be read as a general ranking noise bound.",
+      "status": "reproduced"
+    },
+    "noise_floor_claim_counts": {
+      "blocked": 2,
+      "candidate": 1,
+      "verified": 11
+    },
+    "noise_floor_validation": {
+      "blocked_claims": [
+        "C02",
+        "C03"
+      ],
+      "failed_gate_receipts": [],
+      "ready": false,
+      "valid": true
+    },
+    "project_validation": {
+      "projects": 17,
+      "ready": 0,
+      "valid": 17
+    },
+    "pytest": {
+      "result": "passed",
+      "subtests": 22,
+      "tests": 132,
+      "warnings": 1
+    },
+    "revision_r3": {
+      "anchor_census": {
+        "ambiguous_membership": 0,
+        "anchor_missing": 0,
+        "anchor_soft_mismatch": 92,
+        "json_entries_checked": 484,
+        "verdict": "GREEN"
+      },
+      "checksum_inventory_sha256": "419b34006bfca00c1a93b3d0e70fa1f41ba23cc452a89c806e304893b27c1c07",
+      "deterministic": true,
+      "manifest_sha256": "65c2507433098c50e1c4a360a0d1796dc0ff7a346942c22ead8fd1f293a929bc",
+      "pages": 46,
+      "reverse_coverage": {
+        "appendix": {
+          "archive": 8,
+          "declared_unrecoverable": {
+            "1.9": {
+              "count": 2,
+              "entry": "bench_noise_floor.retracted.sweep.bias_n150",
+              "reason": "\u4ea7\u751f 1.9 \u7684\u90a3\u4e00\u4ee3 sweep \u5f52\u6863\u4ef6\u4e0d\u5728\u53d1\u5e03\u91cc\uff0c\u76d8\u4e0a\u4e5f\u6ca1\u6709\u4efb\u4f55\u6587\u4ef6\u542b\u8fd9\u4e2a\u503c\uff1b\u53ea\u5728\u9644\u5f55 A \u4f5c\u4e3a\u64a4\u56de\u503c\u4fdd\u5b58"
+            },
+            "5.77": {
+              "count": 2,
+              "entry": "bench_noise_floor.retracted.external.preference_margin_prealign",
+              "reason": "\u540c\u57df\u5bf9\u9f50\u524d\u7684\u90a3\u4e00\u4ee3 audit_preference \u5f52\u6863\u4ef6\u4e0d\u5728\u53d1\u5e03\u91cc\uff1b\u5f52\u6863\u4ef6\u91cc\u51fa\u73b0\u7684 5.77 \u662f\u95ee\u9898\u677f\u53e6\u4e00\u7cfb\u7edf\u7684\u5dee\u503c\uff0c\u5c5e\u4e8e\u649e\u53f7"
+            }
+          },
+          "live": 20,
+          "n_tokens": 30,
+          "per_token": {
+            "0.0": {
+              "count": 1,
+              "status": "live"
+            },
+            "0.00": {
+              "count": 1,
+              "status": "live"
+            },
+            "0.0033": {
+              "count": 1,
+              "status": "live"
+            },
+            "0.0048": {
+              "count": 1,
+              "status": "live"
+            },
+            "0.1023": {
+              "count": 1,
+              "status": "live"
+            },
+            "0.14": {
+              "count": 1,
+              "status": "live"
+            },
+            "0.5": {
+              "count": 1,
+              "status": "live"
+            },
+            "0.5276": {
+              "count": 1,
+              "status": "live"
+            },
+            "0.943": {
+              "count": 1,
+              "entry": "bench_noise_floor.retracted.sweep.rho_min",
+              "field": "aggregate.spearman_rho_min",
+              "source": "papers/bench_noise_floor/evidence/archived_v2__ds_sweep.json",
+              "status": "archive"
+            },
+            "1.40": {
+              "count": 1,
+              "entry": "bench_noise_floor.retracted.ds.relevance_delta",
+              "field": "floor.delta",
+              "source": "papers/bench_noise_floor/evidence/archived_v2__ds_relevance.json",
+              "status": "archive"
+            },
+            "1.57": {
+              "count": 1,
+              "status": "live"
+            },
+            "1.6037": {
+              "count": 3,
+              "status": "live"
+            },
+            "1.9": {
+              "count": 2,
+              "status": "declared_unrecoverable"
+            },
+            "11897": {
+              "count": 1,
+              "entry": "bench_noise_floor.retracted.question.meanprob_leader_n_truncated",
+              "field": "methods.mean_prob.leaderboard[0].n",
+              "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_both.json",
+              "status": "archive"
+            },
+            "1520": {
+              "count": 1,
+              "status": "live"
+            },
+            "2.9412": {
+              "count": 1,
+              "status": "live"
+            },
+            "2.96": {
+              "count": 1,
+              "status": "live"
+            },
+            "5.77": {
+              "count": 2,
+              "status": "declared_unrecoverable"
+            },
+            "6.25": {
+              "count": 1,
+              "entry": "bench_noise_floor.retracted.ds.preference_delta",
+              "field": "floor.delta",
+              "source": "papers/bench_noise_floor/evidence/archived_v2__ds_preference.json",
+              "status": "archive"
+            },
+            "6.27": {
+              "count": 1,
+              "status": "live"
+            },
+            "70.23": {
+              "count": 1,
+              "status": "live"
+            },
+            "73.19": {
+              "count": 1,
+              "status": "live"
+            },
+            "79.59": {
+              "count": 1,
+              "entry": "bench_noise_floor.retracted.question.meanprob_ci_hi_truncated",
+              "field": "methods.mean_prob.margin_ci.hi95",
+              "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_both.json",
+              "status": "archive"
+            },
+            "8.97": {
+              "count": 3,
+              "entry": "bench_noise_floor.retracted.question.meanprob_leader_truncated",
+              "field": "methods.mean_prob.leaderboard[0].macro",
+              "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_both.json",
+              "status": "archive"
+            },
+            "80.51": {
+              "count": 2,
+              "entry": "bench_noise_floor.retracted.question.margin_meanprob_truncated",
+              "field": "methods.mean_prob.margin_vs_floor",
+              "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_lexicographic.json",
+              "status": "archive"
+            },
+            "80.97": {
+              "count": 1,
+              "status": "live"
+            },
+            "81.1236": {
+              "count": 2,
+              "status": "live"
+            },
+            "81.36": {
+              "count": 1,
+              "entry": "bench_noise_floor.retracted.question.meanprob_ci_lo_truncated",
+              "field": "methods.mean_prob.margin_ci.lo95",
+              "source": "papers/bench_noise_floor/evidence/pre-meanprobfix__jev_question_both.json",
+              "status": "archive"
+            },
+            "82.5737": {
+              "count": 1,
+              "status": "live"
+            },
+            "89.48": {
+              "count": 1,
+              "status": "live"
+            }
+          },
+          "present": true,
+          "unbound": {},
+          "unreadable": {}
+        },
+        "exit_code": 0,
+        "n_bound": 352,
+        "n_excused": 3,
+        "n_tokens": 355,
+        "n_unbound": 0
+      },
+      "review_request_sha256": "b8eaf83c2e28da1b9f330b7a8a9d985b5e2f3e7329ec446acce5b043a2ceaae2",
+      "source_sha256": "a9eef802faa6ef80f7916626a28aade11f1922701fb1f3b24b2f3780a69e0bb6",
+      "status": "candidate",
+      "verdict_word_gate": {
+        "checks": 137,
+        "failures": 0,
+        "not_assessed": 0,
+        "verdict": "PASS"
+      }
+    },
+    "unittest": {
+      "resource_warnings": 4,
+      "result": "passed",
+      "tests": 130
+    },
+    "verification_command": "PYTHONPATH=/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src /home/liuzewen/.cache/qone-life-venv/bin/python '/home/liuzewen/F:\\deepseek/q-one-life/scripts/research_factory_verify.py'",
+    "verification_generated_at": "2026-10-30T05:17:36.999684Z"
+  },
+  "schema": "q-one-resume-evidence-v1",
+  "tests": {
+    "desktop_unit_passed": 42,
+    "electron_e2e_passed": 5,
+    "pytest_passed": 178,
+    "pytest_subtests_passed": 32,
+    "unittest_passed": 88
+  }
+}

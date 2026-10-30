@@ -1,0 +1,73 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-scievalsuite-a-unified-reproducible-benc-e3e9fe28ba",
+  "project_id": "qp-scievalsuite-293e3ac74ab7",
+  "title": "SciEvalSuite: A Unified, Reproducible Benchmark for Scientific Agents Across Prediction, Workflow, and Execution",
+  "primary_source": "/home/liuzewen/.research/scievalsuite/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "da1969c3ca7d46971a5ae911bd1c49fd5d80317f350256631e012fd1440def65",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "legacy",
+  "production_priority": 15,
+  "priority_band": "P3",
+  "priority_factors": [
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "LEGACY_SOURCE",
+      "points": 0,
+      "observed": "Legacy source type; no points, review still required."
+    }
+  ],
+  "pilot_ids": [],
+  "signals": {
+    "claim_ledger": false,
+    "bibliography": false,
+    "compiled_pdf": true,
+    "evidence_directory": false,
+    "variants_to_reconcile": 0,
+    "overlay_present": false
+  },
+  "variant_sources": [
+    "/home/liuzewen/.research/scievalsuite/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "The canonical source has enough structure to repair, but its evidence and package gates remain unverified.",
+    "next_action": "confirm_target_and_scope",
+    "authoritative": false
+  },
+  "overlay": null,
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

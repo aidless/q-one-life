@@ -1,0 +1,136 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-merged-flagship-f4-verification-trust-sc-88e8c3c2ce",
+  "project_id": "qp-tmlr-f4-verification-08357385d7b0",
+  "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
+  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "paper",
+  "production_priority": 345,
+  "priority_band": "P1",
+  "priority_factors": [
+    {
+      "code": "PINNED_PILOT",
+      "points": 200,
+      "observed": "Matched pilot f4-verification-audit at phase P1."
+    },
+    {
+      "code": "QONE_OVERLAY",
+      "points": 40,
+      "observed": "Q-One overlay metadata: qp-20260926t143646z-d9776e373696."
+    },
+    {
+      "code": "CLAIM_LEDGER",
+      "points": 35,
+      "observed": "Claim ledger is present."
+    },
+    {
+      "code": "BIBLIOGRAPHY",
+      "points": 20,
+      "observed": "At least one bibliography file is present."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "EVIDENCE_DIRECTORY",
+      "points": 20,
+      "observed": "At least one evidence directory is present."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    },
+    {
+      "code": "VERSION_RECONCILIATION",
+      "points": 5,
+      "observed": "3 extra normalized-title source version(s) require review."
+    }
+  ],
+  "pilot_ids": [
+    "f4-verification-audit"
+  ],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": true,
+    "compiled_pdf": true,
+    "evidence_directory": true,
+    "variants_to_reconcile": 3,
+    "overlay_present": true
+  },
+  "variant_sources": [
+    "/home/liuzewen/.research/merged-f4/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/arxiv/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "Pinned as a production pilot; evidence and package gates still apply.",
+    "next_action": "confirm_target_and_scope",
+    "authoritative": false
+  },
+  "overlay": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f4-verification/project.json",
+    "status": "blocked",
+    "ledger_present": true,
+    "bibliography_present": true,
+    "evidence_present": true,
+    "claims": 21,
+    "claim_states": {
+      "verified": 6,
+      "blocked": 15
+    },
+    "package_state": "not-started",
+    "package_blockers": [
+      "18,000 declared trials are not archived as per-observation records",
+      "The 192/144/90/40 frozen split bundle is absent",
+      "The 2,700 tightness holds have no carrier",
+      "Four GPU-hours lack per-family runtime receipts",
+      "Four of eight F4 table rows disagree with their own counts",
+      "Two risk-difference denominators and two copied intervals conflict",
+      "The manifest has 7 mismatches and 5 absent entries",
+      "Two of 32 carrier receipts are NOT_VERIFIABLE",
+      "Printed baselines disagree with archived baselines",
+      "Canonical and arXiv author metadata differ",
+      "The retained review is a rejection and no current-hash review exists"
+    ],
+    "gate_receipts": 15,
+    "plan_stages": {},
+    "plan_actions": []
+  },
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

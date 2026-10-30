@@ -1,0 +1,357 @@
+{
+  "schema": "q-one-research-factory-verification-v1",
+  "generated_at": "2026-10-30T05:17:36.999684Z",
+  "command": "PYTHONPATH=/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src /home/liuzewen/.cache/qone-life-venv/bin/python '/home/liuzewen/F:\\deepseek/q-one-life/scripts/research_factory_verify.py'",
+  "scope": "Research Factory control plane, seventeen pilot overlays, claim ledgers, mechanical package audits, clean-room compilation and candidate archives",
+  "source": {
+    "workspace": "/home/liuzewen/F:\\deepseek/q-one-life",
+    "head": "fed3f771a7890618bee7276a0c0efddc4e31015e",
+    "dirty": true
+  },
+  "machine": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "python_executable": "/home/liuzewen/.cache/qone-life-venv/bin/python",
+    "test_pythonpath": "/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src",
+    "cpu_count": 16
+  },
+  "checks": {
+    "pytest": {
+      "result": "passed",
+      "tests": 132,
+      "warnings": 1,
+      "subtests": 22
+    },
+    "unittest": {
+      "result": "passed",
+      "tests": 130,
+      "resource_warnings": 4
+    },
+    "ruff_scoped_research": {
+      "result": "passed"
+    },
+    "git_diff_check": {
+      "result": "passed"
+    },
+    "json_schema": {
+      "checked": 28,
+      "errors": [],
+      "result": "passed"
+    },
+    "project_validation": {
+      "valid": 17,
+      "ready": 0,
+      "projects": 17
+    },
+    "claim_ledgers": {
+      "arc-paper-track": {
+        "result": "passed",
+        "summary": "11 PASS, 0 FAIL, 1 WARN",
+        "report": {
+          "path": "research/arc-paper-track/reports/claim-ledger-verification.md",
+          "sha256": "a2cca71227701891d5e795460838f506fedfc33ea496545a2416801f8434d203",
+          "bytes": 2864
+        }
+      },
+      "pilot-paper11": {
+        "result": "passed",
+        "summary": "20 PASS, 0 FAIL, 0 WARN",
+        "report": {
+          "path": "research/pilot-paper11/reports/claim-ledger-verification.md",
+          "sha256": "3c52bce52066095026e68deaff8f3854de79b62ecb47f7d9b6fcc402dfac0b26",
+          "bytes": 8072
+        }
+      },
+      "pilot-bench-noise-floor": {
+        "result": "passed",
+        "summary": "14 PASS, 0 FAIL, 2 WARN",
+        "report": {
+          "path": "research/pilot-bench-noise-floor/reports/claim-ledger-verification.md",
+          "sha256": "ba554206d22ef4a676b745f8beb426ff7db01bda610d2f8d4e44f583237eeef3",
+          "bytes": 7568
+        }
+      },
+      "pilot-f-acceptance": {
+        "result": "passed",
+        "summary": "13 PASS, 0 FAIL, 1 WARN",
+        "report": {
+          "path": "research/pilot-f-acceptance/reports/claim-ledger-verification.md",
+          "sha256": "0ab54fcbbd393ea387049da62b1dd1aa00bdca9b6354892ce01507d8a4ea6b26",
+          "bytes": 5359
+        }
+      },
+      "pilot-gemma": {
+        "result": "passed",
+        "summary": "8 PASS, 0 FAIL, 0 WARN",
+        "report": {
+          "path": "research/pilot-gemma/reports/claim-ledger-verification.md",
+          "sha256": "56a975da8e991efbffb39966899edc3218e47ee99a723f6e15dc1534d25424bc",
+          "bytes": 2806
+        }
+      },
+      "pilot-paper2-coupling": {
+        "result": "passed",
+        "summary": "14 PASS, 0 FAIL, 2 WARN",
+        "report": {
+          "path": "research/pilot-paper2-coupling/reports/claim-ledger-verification.md",
+          "sha256": "6e534fb39840719e5d1b7d8191bcf8f7674753cdb7ecdcd0ffc69eefe894c68d",
+          "bytes": 4030
+        }
+      },
+      "pilot-agent-behavior-regression": {
+        "result": "passed",
+        "summary": "11 PASS, 0 FAIL, 4 WARN",
+        "report": {
+          "path": "research/pilot-agent-behavior-regression/reports/claim-ledger-verification.md",
+          "sha256": "e58590dd981b9affcbf5819d43d8cef9b6de013b0adda0a3be52de729de8f7bb",
+          "bytes": 3253
+        }
+      },
+      "pilot-verifier-capture-aggregation": {
+        "result": "passed",
+        "summary": "11 PASS, 0 FAIL, 4 WARN",
+        "report": {
+          "path": "research/pilot-verifier-capture-aggregation/reports/claim-ledger-verification.md",
+          "sha256": "552ed444ba9673b2177f73373aec36d90dcaafad4be8488009967d16515e6c5e",
+          "bytes": 3503
+        }
+      },
+      "pilot-calibrating-evaluator": {
+        "result": "passed",
+        "summary": "14 PASS, 0 FAIL, 6 WARN",
+        "report": {
+          "path": "research/pilot-calibrating-evaluator/reports/claim-ledger-verification.md",
+          "sha256": "826d2e0d45e000e3d0bf7e8f61cc3d305e1a206b440fb1b4e1c3fd5168a0c752",
+          "bytes": 3882
+        }
+      },
+      "pilot-closing-calibration-landscape": {
+        "result": "passed",
+        "summary": "16 PASS, 0 FAIL, 5 WARN",
+        "report": {
+          "path": "research/pilot-closing-calibration-landscape/reports/claim-ledger-verification.md",
+          "sha256": "ff0ee58512f9f80a5f34840e228af59bf7fd92779a2a7cbf23fbce2f22f0d9db",
+          "bytes": 4507
+        }
+      },
+      "pilot-conditional-communication-effects": {
+        "result": "passed",
+        "summary": "15 PASS, 0 FAIL, 5 WARN",
+        "report": {
+          "path": "research/pilot-conditional-communication-effects/reports/claim-ledger-verification.md",
+          "sha256": "d9d2ddf7a39b9df1d611a6703cfdecf4c9e2f487e32304fcc9fd1c25fa02f2df",
+          "bytes": 4582
+        }
+      },
+      "pilot-memory-architecture-effects": {
+        "result": "passed",
+        "summary": "20 PASS, 0 FAIL, 4 WARN",
+        "report": {
+          "path": "research/pilot-memory-architecture-effects/reports/claim-ledger-verification.md",
+          "sha256": "f27fa299046dc731b7e2c2d15fd054d978b14ee165a1188d34c4709f884b7378",
+          "bytes": 5528
+        }
+      },
+      "pilot-f2-k-generalization": {
+        "result": "passed",
+        "summary": "21 PASS, 0 FAIL, 16 WARN",
+        "report": {
+          "path": "research/pilot-f2-k-generalization/reports/claim-ledger-verification.md",
+          "sha256": "19a5f1e4374676c927104bfcb18ab75945c9f3fd44e1e29cdf365a9db615b5cc",
+          "bytes": 4923
+        }
+      },
+      "pilot-f4-verification": {
+        "result": "passed",
+        "summary": "21 PASS, 0 FAIL, 15 WARN",
+        "report": {
+          "path": "research/pilot-f4-verification/reports/claim-ledger-verification.md",
+          "sha256": "1c153d6eb7c05619fc396c6c133bcf35d3d93fd2bffbd3aa8ecb170084df3f9f",
+          "bytes": 5120
+        }
+      },
+      "pilot-n-sensitive-calibration": {
+        "result": "passed",
+        "summary": "15 PASS, 0 FAIL, 4 WARN",
+        "report": {
+          "path": "research/pilot-n-sensitive-calibration/reports/claim-ledger-verification.md",
+          "sha256": "8838fd7837850926714fe218940f8d9017bfae5fdb3c9754767b67cd5f77db9f",
+          "bytes": 3918
+        }
+      },
+      "pilot-hidden-cost-resampling": {
+        "result": "passed",
+        "summary": "19 PASS, 0 FAIL, 12 WARN",
+        "report": {
+          "path": "research/pilot-hidden-cost-resampling/reports/claim-ledger-verification.md",
+          "sha256": "9492d5c5b32a05d3062a45d4b776ae9fdf26e52d5a255581c6a511b78e210bee",
+          "bytes": 5141
+        }
+      },
+      "pilot-calibration-fatigue": {
+        "result": "passed",
+        "summary": "14 PASS, 0 FAIL, 6 WARN",
+        "report": {
+          "path": "research/pilot-calibration-fatigue/reports/claim-ledger-verification.md",
+          "sha256": "aeb168727ff7b26d92126032a59ad2559d3e69e60baf872b27643946469e335e",
+          "bytes": 4087
+        }
+      }
+    },
+    "agent_dispositions": {
+      "result": "passed",
+      "summary": {
+        "families": 131,
+        "priority_bands": {
+          "P0": 5,
+          "P1": 26,
+          "P2": 57,
+          "P3": 43
+        },
+        "agent_proposed_dispositions": {
+          "archive": 3,
+          "blocked": 4,
+          "merge": 46,
+          "repair": 78
+        },
+        "final_human_dispositions": {
+          "unreviewed": 131
+        },
+        "publication_ready": 0,
+        "upload_authorized": 0
+      },
+      "artifact": {
+        "path": "artifacts/research-factory/v2/agent-dispositions.json",
+        "sha256": "1f59e6104477037881439e3e11099cc47b9630285bf846e8718f85c78d8ed80b",
+        "bytes": 193527
+      }
+    }
+  },
+  "pilots": {
+    "pilots": 17,
+    "valid_overlays": 17,
+    "ready_projects": 0,
+    "compiled_packages": 8,
+    "candidate_packages": 8,
+    "blocked_claims": 83,
+    "inconclusive_claims": 4,
+    "uploaded_papers": 0
+  },
+  "artifact_hashes": [
+    {
+      "path": "artifacts/research-factory/v2/artifact.json",
+      "sha256": "a5714ef2ba1cd21ceb4d965626e0f9b1e47e9e4cb2c75273d9cee114e667126c",
+      "bytes": 1899
+    },
+    {
+      "path": "artifacts/research-factory/v2/triage.json",
+      "sha256": "0465e99261d49dc1a8b98e7d8dac37b8197b83a4c05867afbb30fd8117bbc236",
+      "bytes": 232676
+    },
+    {
+      "path": "artifacts/research-factory/v2/triage.md",
+      "sha256": "aafc1310e4086a8141951c41de88d93a792e58481135bd3faadc4e0252eba014",
+      "bytes": 21580
+    },
+    {
+      "path": "artifacts/research-factory/v2/triage.csv",
+      "sha256": "013d7d6f4e6bd6fac171e263a310401ded980fd5bd524f74a35f5aa297bacf58",
+      "bytes": 37299
+    },
+    {
+      "path": "artifacts/research-factory/v2/pilot-status.json",
+      "sha256": "33900a744abce508c928c49a701864e3ca01b9efe3345a7210b5df262f024ad0",
+      "bytes": 43457
+    },
+    {
+      "path": "artifacts/research-factory/v2/agent-dispositions.json",
+      "sha256": "1f59e6104477037881439e3e11099cc47b9630285bf846e8718f85c78d8ed80b",
+      "bytes": 193527
+    },
+    {
+      "path": "artifacts/research-factory/v2/agent-dispositions.md",
+      "sha256": "dbe10cd3b8ed988ab645975575572651b4bc854670cba1ff83dc1dbb48c79872",
+      "bytes": 23641
+    },
+    {
+      "path": "artifacts/research-factory/v2/agent-dispositions.csv",
+      "sha256": "e6dae3774fb5841af1211ed4e5d2c19266dd9b3cfdb41fe61cba737b4dc846c9",
+      "bytes": 30849
+    },
+    {
+      "path": "research/FACTORY_STATUS.md",
+      "sha256": "eeea1c224cfb50c3e97bd0df7f1b5f33837c1b20e51f2539bcf64bef68919460",
+      "bytes": 38015
+    },
+    {
+      "path": "docs/RESEARCH_FACTORY_AUTONOMOUS_ITERATION_PLAN.zh-CN.md",
+      "sha256": "8b71f86b952d5c7dd2226163489669848bdfe1705fe0800a87f5297f501b328c",
+      "bytes": 27789
+    },
+    {
+      "path": "artifacts/research-factory/v2/review-packets/index.json",
+      "sha256": "2ba182628f356a18239bde19709068b90c3ba2d7d4f8df7aae71e12312ef9b88",
+      "bytes": 38901
+    },
+    {
+      "path": "artifacts/research-factory/v2/review-packets/top20.md",
+      "sha256": "ca0255df5eaba17c2137d805d68cb8bc998cb68b604ac5ddb6f68dd4a5157383",
+      "bytes": 4579
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/index.json",
+      "sha256": "91d438ed4d219d80eb38177aef68bdf27071fa9356a89c018769cbcdc0e620ab",
+      "bytes": 4328
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/agent-behavior-regression.json",
+      "sha256": "218ffbda7482690b38b86036e48769aad27c6b5045db911f6212c1c1bd89b10e",
+      "bytes": 2339
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/closing-landscape.json",
+      "sha256": "63088c018a9ecf67e4ba7837af9ca7498945eacf0f2ffd530bfeef98a4dd193d",
+      "bytes": 2011
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/f-acceptance.json",
+      "sha256": "900796910ae38bde91afbf393b531d41b20c23c76da709ab9fc43b14f33388ad",
+      "bytes": 1775
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/memory-architecture.json",
+      "sha256": "48badab773491aa51dadc4a09a9da6167e9035f3cb814da4d9e08d1474f421ec",
+      "bytes": 2498
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/noise-floor.json",
+      "sha256": "6b6c3a19b716b2f7bc55549942475137fc021a3f8f12715ace19ab6b01b47990",
+      "bytes": 2593
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/paper11-overlay.json",
+      "sha256": "200152b85c2b5d06cb2eab5efa26aa7e432bb54f65133ac13ee8e23f25bf9cc0",
+      "bytes": 1481
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/paper11.json",
+      "sha256": "588b4ab66b56e5e981fb47b0cc0c98f3712760d26036c6a3106213ae9e32536e",
+      "bytes": 5083
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/paper2-coupling.json",
+      "sha256": "9db1f2686c45ab51130ba023079f78dede8c9c991b205592fdf63bc4f871be2c",
+      "bytes": 1317
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/verifier-capture-aggregation.json",
+      "sha256": "d57f0c4af4818bb13fea3a3f6dd93b72461cd07036ad6f774c9849662d90334b",
+      "bytes": 1653
+    }
+  ],
+  "notes": [
+    "Unknown readiness remains null; no aggregate quality score is produced.",
+    "Compilation and packageability do not establish scientific readiness.",
+    "No upload, account action or publication occurred."
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-where-does-cross-layer-sparsity-break-ro-20c2581fbf",
+  "project_id": "qp-release-f8e3d4766076",
+  "title": "Where Does Cross-Layer Sparsity Break? Robustness Boundaries of Compressed Long-Context Attention",
+  "primary_source": "/home/liuzewen/F:\\deepseek/papers/csa2_robust/release/paper/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "fc3db3f28db2f13a971a8b676a226881c6cfcf61f5445be3697e1598f9a954da",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "submission-copy",
+  "production_priority": 90,
+  "priority_band": "P2",
+  "priority_factors": [
+    {
+      "code": "CLAIM_LEDGER",
+      "points": 35,
+      "observed": "Claim ledger is present."
+    },
+    {
+      "code": "BIBLIOGRAPHY",
+      "points": 20,
+      "observed": "At least one bibliography file is present."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "EVIDENCE_DIRECTORY",
+      "points": 20,
+      "observed": "At least one evidence directory is present."
+    }
+  ],
+  "pilot_ids": [],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": true,
+    "compiled_pdf": true,
+    "evidence_directory": true,
+    "variants_to_reconcile": 0,
+    "overlay_present": false
+  },
+  "variant_sources": [
+    "/home/liuzewen/F:\\deepseek/papers/csa2_robust/release/paper/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "The canonical source has enough structure to repair, but its evidence and package gates remain unverified.",
+    "next_action": "confirm_target_and_scope",
+    "authoritative": false
+  },
+  "overlay": null,
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

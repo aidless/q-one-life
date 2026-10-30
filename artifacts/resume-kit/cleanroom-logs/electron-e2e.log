@@ -1,0 +1,11 @@
+
+Running 5 tests using 1 worker
+
+
+
+[1/5] e2e/capture-demo.spec.ts:31:5 › capture the verified consumer demo storyboard
+[2/5] e2e/desktop.spec.ts:135:5 › consumer onboarding, action, review, encrypted backup, restore, and relaunch
+[3/5] e2e/desktop.spec.ts:283:5 › built-in local model produces a grounded sidecar recommendation
+[4/5] e2e/resume-benchmark.spec.ts:352:5 › resume benchmark: deterministic rule recommendations
+[5/5] e2e/resume-benchmark.spec.ts:356:5 › resume benchmark: hybrid local-model recommendations
+  5 passed (1.9m)

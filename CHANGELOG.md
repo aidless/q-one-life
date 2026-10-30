@@ -23,6 +23,12 @@
 
 ## Unreleased
 
+- Added the first quantified research layer: project schemas, read-only paper
+  portfolio inventory, exact/title-version deduplication, evidence validation,
+  and an ARC Paper Track claim ledger.
+- Added Research Factory v2: transparent production triage, non-destructive
+  research overlays, evidence-gated next-action plans, and mechanical arXiv
+  source-tree audits.
 - Added source-linked Chinese research synthesis and implementation priorities.
 - Clarified prototype status and pending real-model acceptance.
 

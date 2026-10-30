@@ -1,0 +1,1193 @@
+{
+  "schema": "q-one-research-pilot-status-v1",
+  "generated_at": "2026-10-30T05:17:36.989089Z",
+  "projects": [
+    {
+      "project_path": "research/arc-paper-track",
+      "paper_id": "arc-paper-track-2026",
+      "title": "One Rung at a Time: Attributing an ARC-AGI-3 Submission When the Offline Ruler Cannot Select Arms",
+      "status": "revision",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [],
+        "failed_gate_receipts": []
+      },
+      "claim_counts": {
+        "inconclusive": 1,
+        "verified": 10
+      },
+      "claims_total": 11,
+      "package_state": "not-started",
+      "package_blockers": [
+        "The local Markdown manuscript does not match the source hash recorded by the current remote publication receipt.",
+        "No arXiv source tree, BibTeX package, cover metadata, or compiled PDF has been prepared from the verified claims.",
+        "The official scoring-methodology source needed by C09 is not captured locally."
+      ],
+      "plan_stages": {
+        "source-identity": "blocked",
+        "claim-ledger": "candidate",
+        "evidence-recomputation": "pending",
+        "citation-verification": "pending",
+        "scientific-review": "pending",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_inconclusive_claims",
+        "resynchronize_published_source",
+        "build_bibliography",
+        "reproduce_required_numeric_claims",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "11 PASS, 0 FAIL, 1 WARN",
+        "report": {
+          "path": "research/arc-paper-track/reports/claim-ledger-verification.md",
+          "sha256": "a2cca71227701891d5e795460838f506fedfc33ea496545a2416801f8434d203",
+          "bytes": 2864
+        }
+      },
+      "cleanroom_receipt": null,
+      "candidate_package_receipt": null
+    },
+    {
+      "project_path": "research/pilot-paper11",
+      "paper_id": "qf-auditing-score-exposure-and-presentation-7c01af0b01",
+      "title": "Auditing Score Exposure and Presentation Order in LLM Harness Selection: A Matched 30-Task Case Study",
+      "status": "review_pending",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [],
+        "failed_gate_receipts": []
+      },
+      "claim_counts": {
+        "verified": 20
+      },
+      "claims_total": 20,
+      "package_state": "compiled",
+      "package_blockers": [
+        "An internal arXiv candidate archive extracts and compiles, but final title, authors, category, abstract and license require user confirmation.",
+        "The historical PDF hash differs from the rebuilt PDF because pdfTeX embeds build time; final upload must bind the generated PDF and source hashes.",
+        "arXiv upload requires a separate user authorization and account action."
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "verified",
+        "evidence-recomputation": "verified",
+        "citation-verification": "candidate",
+        "scientific-review": "verified",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "20 PASS, 0 FAIL, 0 WARN",
+        "report": {
+          "path": "research/pilot-paper11/reports/claim-ledger-verification.md",
+          "sha256": "3c52bce52066095026e68deaff8f3854de79b62ecb47f7d9b6fcc402dfac0b26",
+          "bytes": 8072
+        }
+      },
+      "cleanroom_receipt": {
+        "path": "research/pilot-paper11/reports/cleanroom/receipt.json",
+        "sha256": "eedb63fded8e7151e014580b0b7244b4ba9daad97b19ccdc285008922788747b",
+        "bytes": 3271
+      },
+      "candidate_package_receipt": {
+        "path": "research/pilot-paper11/reports/package/package-receipt.json",
+        "sha256": "b0697bfd8354b07f5796b3b6fd7f0e4874f3ca601fd7355558c76b5a09e12e36",
+        "bytes": 2289
+      }
+    },
+    {
+      "project_path": "research/pilot-bench-noise-floor",
+      "paper_id": "qf-reading-a-leaderboard-before-you-cite-it-96866c580c",
+      "title": "Reading a Leaderboard Before You Cite It: Three Rulers for the Noise Floor of LLM-as-Judge Evaluation",
+      "status": "revision",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C02",
+          "C03"
+        ],
+        "failed_gate_receipts": []
+      },
+      "claim_counts": {
+        "blocked": 2,
+        "candidate": 1,
+        "verified": 11
+      },
+      "claims_total": 14,
+      "package_state": "compiled",
+      "package_blockers": [
+        "The current source hash differs from the source hash recorded in the native manifest.",
+        "The independent review's producer-baseline/readability issue has a reproducible synthetic counterexample and separate R1/R2/R3 candidates, but the canonical manuscript remains unchanged and the review remains open.",
+        "The source package is compiled but lacks final metadata, license and author confirmation.",
+        "arXiv upload requires a separate user authorization and account action."
+      ],
+      "plan_stages": {
+        "source-identity": "blocked",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "verified",
+        "citation-verification": "candidate",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_inconclusive_claims",
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "resynchronize_published_source",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "14 PASS, 0 FAIL, 2 WARN",
+        "report": {
+          "path": "research/pilot-bench-noise-floor/reports/claim-ledger-verification.md",
+          "sha256": "ba554206d22ef4a676b745f8beb426ff7db01bda610d2f8d4e44f583237eeef3",
+          "bytes": 7568
+        }
+      },
+      "cleanroom_receipt": {
+        "path": "research/pilot-bench-noise-floor/reports/cleanroom/receipt.json",
+        "sha256": "68fa94f327299254c71536b8946f6b2a59076ef3168674126e6841fce1b90043",
+        "bytes": 12118
+      },
+      "candidate_package_receipt": {
+        "path": "research/pilot-bench-noise-floor/reports/package/package-receipt.json",
+        "sha256": "0401071a21b670595fec50973175baf962932240b6b5b586787fae8f3c873274",
+        "bytes": 4034
+      }
+    },
+    {
+      "project_path": "research/pilot-f-acceptance",
+      "paper_id": "qf-the-name-is-the-contract-a-promotion-gat-afdfe0105b",
+      "title": "The Name Is the Contract:\\\\ A Promotion Gate Called mcnemar\\_exact Is Not Exact ---\\\\ and, Against the Two-Sided Exact Reference,\\\\ Every Flip Favors Promotion",
+      "status": "review_pending",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C11"
+        ],
+        "failed_gate_receipts": [
+          "f-acceptance-review-response"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 1,
+        "candidate": 1,
+        "verified": 11
+      },
+      "claims_total": 13,
+      "package_state": "compiled",
+      "package_blockers": [
+        "The current source has not been independently re-reviewed after the final-review fixes.",
+        "Final author, category, abstract, license and upload authorization remain user decisions."
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "verified",
+        "citation-verification": "candidate",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_inconclusive_claims",
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "13 PASS, 0 FAIL, 1 WARN",
+        "report": {
+          "path": "research/pilot-f-acceptance/reports/claim-ledger-verification.md",
+          "sha256": "0ab54fcbbd393ea387049da62b1dd1aa00bdca9b6354892ce01507d8a4ea6b26",
+          "bytes": 5359
+        }
+      },
+      "cleanroom_receipt": {
+        "path": "research/pilot-f-acceptance/reports/cleanroom/receipt.json",
+        "sha256": "2a9f7b467dda8577398757fc5e1df5ebba14d55c02b947f58f903cdf96f452ee",
+        "bytes": 7773
+      },
+      "candidate_package_receipt": {
+        "path": "research/pilot-f-acceptance/reports/package/package-receipt.json",
+        "sha256": "79acc07cef24c7880aedb5ed28e0b4149ae49772ee05a370cb882f4141217d82",
+        "bytes": 3080
+      }
+    },
+    {
+      "project_path": "research/pilot-gemma",
+      "paper_id": "qf-your-tool-selection-benchmark-may-be-sco-85ad80aa80",
+      "title": "Your Tool-Selection Benchmark May Be Scoring Wrong Calls as Correct",
+      "status": "revision",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [],
+        "failed_gate_receipts": []
+      },
+      "claim_counts": {
+        "verified": 8
+      },
+      "claims_total": 8,
+      "package_state": "not-started",
+      "package_blockers": [
+        "The local manuscript hash differs from the current remote published source hash.",
+        "No arXiv source tree, bibliography, cover metadata, or compiled PDF has been prepared from the current source.",
+        "The archive replay establishes record-level text discrepancies, not tool execution correctness.",
+        "The 48-row cross-model probe is descriptive and does not establish a model ranking.",
+        "arXiv upload requires a separate user authorization and account action."
+      ],
+      "plan_stages": {
+        "source-identity": "blocked",
+        "claim-ledger": "verified",
+        "evidence-recomputation": "pending",
+        "citation-verification": "pending",
+        "scientific-review": "pending",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "resynchronize_published_source",
+        "build_bibliography",
+        "reproduce_required_numeric_claims",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "8 PASS, 0 FAIL, 0 WARN",
+        "report": {
+          "path": "research/pilot-gemma/reports/claim-ledger-verification.md",
+          "sha256": "56a975da8e991efbffb39966899edc3218e47ee99a723f6e15dc1534d25424bc",
+          "bytes": 2806
+        }
+      },
+      "cleanroom_receipt": null,
+      "candidate_package_receipt": null
+    },
+    {
+      "project_path": "research/pilot-paper2-coupling",
+      "paper_id": "qf-a-conditional-coupling-diversity-precisi-7336590fb7",
+      "title": "A Conditional Coupling--Diversity--Precision Bound for TTRL-Based LLM Evaluation",
+      "status": "review_pending",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C11",
+          "C14"
+        ],
+        "failed_gate_receipts": [
+          "paper2-proof-audit",
+          "paper2-heldout-validation",
+          "paper2-scientific-review",
+          "paper2-metadata-license"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 2,
+        "candidate": 11,
+        "verified": 1
+      },
+      "claims_total": 14,
+      "package_state": "compiled",
+      "package_blockers": [
+        "Independent proof audit of the conditional and product bounds is absent.",
+        "The held-out 30-40 condition validation is absent.",
+        "The native p=0.12 GPT-4o drift statement conflicts with p_bootstrap=1.0 in the frozen evidence.",
+        "The T7 satisfied-cell count differs between the native scope note and the frozen output.",
+        "The meta-review remains open with Major Revisions.",
+        "Final author, category, abstract, license and upload authorization remain user decisions."
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "blocked",
+        "citation-verification": "verified",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_inconclusive_claims",
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "14 PASS, 0 FAIL, 2 WARN",
+        "report": {
+          "path": "research/pilot-paper2-coupling/reports/claim-ledger-verification.md",
+          "sha256": "6e534fb39840719e5d1b7d8191bcf8f7674753cdb7ecdcd0ffc69eefe894c68d",
+          "bytes": 4030
+        }
+      },
+      "cleanroom_receipt": {
+        "path": "research/pilot-paper2-coupling/reports/cleanroom/receipt.json",
+        "sha256": "5dc9c99625b25e5834e5c163297f9da5f4998e662befd3ea496979714e407176",
+        "bytes": 6491
+      },
+      "candidate_package_receipt": {
+        "path": "research/pilot-paper2-coupling/reports/package/package-receipt.json",
+        "sha256": "08af4fcc9473b3150c5d0c0a93d8174d13234ee2c390c43c778db78746ec3b58",
+        "bytes": 2844
+      }
+    },
+    {
+      "project_path": "research/pilot-agent-behavior-regression",
+      "paper_id": "qf-agent-behavior-regression-testing-for-lo-1f724f2bff",
+      "title": "Agent Behavior Regression Testing for Local LLM Systems: Seed Reproducibility and Cross-Model Heterogeneity across 100 Scenarios",
+      "status": "revision",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C08",
+          "C10",
+          "C11"
+        ],
+        "failed_gate_receipts": [
+          "paper35-raw-cell-recount",
+          "paper35-paper-evidence-manifest",
+          "paper35-metric-sensitivity",
+          "paper35-scientific-review",
+          "paper35-metadata-license"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 3,
+        "candidate": 5,
+        "inconclusive": 1,
+        "verified": 2
+      },
+      "claims_total": 11,
+      "package_state": "compiled",
+      "package_blockers": [
+        "The full-run manifest declares 1,200 cells, but all 12 raw full-run JSONL files are missing.",
+        "The upstream evidence_manifest.json has 62 missing entries, including six full-run analysis files and the raw full-run cells.",
+        "The upstream review remains open with 6 Major and 21 Minor findings; the debate retains 5 Major findings.",
+        "BDS sensitivity to tokenization, top-K, smoothing and response length has not been independently audited.",
+        "The multi-agent chain result is descriptive; causal amplification and hierarchical power have not been established.",
+        "Final author, category, abstract, license and upload authorization remain user decisions."
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "blocked",
+        "citation-verification": "verified",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_inconclusive_claims",
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "11 PASS, 0 FAIL, 4 WARN",
+        "report": {
+          "path": "research/pilot-agent-behavior-regression/reports/claim-ledger-verification.md",
+          "sha256": "e58590dd981b9affcbf5819d43d8cef9b6de013b0adda0a3be52de729de8f7bb",
+          "bytes": 3253
+        }
+      },
+      "cleanroom_receipt": {
+        "path": "research/pilot-agent-behavior-regression/reports/cleanroom/receipt.json",
+        "sha256": "1201396dc74a58c0b150fd2ac0ab4b0443ca580116d2a398b61665bdb89525fb",
+        "bytes": 6428
+      },
+      "candidate_package_receipt": {
+        "path": "research/pilot-agent-behavior-regression/reports/package/package-receipt.json",
+        "sha256": "eb689142f9ff916b1c7f5730a524fb8d75186e628847708d74ed3740247a3001",
+        "bytes": 4180
+      }
+    },
+    {
+      "project_path": "research/pilot-verifier-capture-aggregation",
+      "paper_id": "qf-an-empirical-study-of-aggregation-method-819da8c6b1",
+      "title": "An Empirical Study of Aggregation Methods Under Verifier Capture in Multi-LLM Ensembles: When Does Majority Voting Fail, and Can We Beat It?",
+      "status": "revision",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C07",
+          "C08",
+          "C11"
+        ],
+        "failed_gate_receipts": [
+          "paper6-heldout-trace",
+          "paper6-hyperparameter-sweep",
+          "paper6-manifest",
+          "paper6-universal-result",
+          "paper6-scientific-review",
+          "paper6-metadata-license"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 3,
+        "inconclusive": 1,
+        "verified": 7
+      },
+      "claims_total": 11,
+      "package_state": "compiled",
+      "package_blockers": [
+        "The evidence is a synthetic benchmark plus a descriptive four-model local pilot; no held-out real-trace benchmark exists.",
+        "The upstream evidence manifest has 11 missing entries.",
+        "No per-cell tau or alpha hyperparameter sweep is present; the ensemble-size sweep is only three descriptive points.",
+        "The native claim that majority is strongest in all scenarios is contradicted by S4, where trust-mean is 0.0076 higher.",
+        "The universal negative-result claim and the ATV epsilon-resilience theorem remain unresolved.",
+        "The upstream review remains open with 7 Major and 12 Minor findings.",
+        "Final author, category, abstract, license and upload authorization remain user decisions."
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "blocked",
+        "citation-verification": "verified",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_inconclusive_claims",
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "11 PASS, 0 FAIL, 4 WARN",
+        "report": {
+          "path": "research/pilot-verifier-capture-aggregation/reports/claim-ledger-verification.md",
+          "sha256": "552ed444ba9673b2177f73373aec36d90dcaafad4be8488009967d16515e6c5e",
+          "bytes": 3503
+        }
+      },
+      "cleanroom_receipt": {
+        "path": "research/pilot-verifier-capture-aggregation/reports/cleanroom/receipt.json",
+        "sha256": "39a90d538b947bfdd4b3990e0127f83d9a4fe2f884967592a1d57ea7b44c6f32",
+        "bytes": 7541
+      },
+      "candidate_package_receipt": {
+        "path": "research/pilot-verifier-capture-aggregation/reports/package/package-receipt.json",
+        "sha256": "823b00f2d408e142912accf403f81ac825a66bd5b1a1fc8ec07f1d096633a3ef",
+        "bytes": 3599
+      }
+    },
+    {
+      "project_path": "research/pilot-calibrating-evaluator",
+      "paper_id": "qf-calibrating-the-evaluator-does-probabili-6544cd664a",
+      "title": "Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?",
+      "status": "archived",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C05",
+          "C06",
+          "C07",
+          "C09",
+          "C10"
+        ],
+        "failed_gate_receipts": [
+          "p9-number-carrier",
+          "p9-controls"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 5,
+        "inconclusive": 1,
+        "verified": 8
+      },
+      "claims_total": 14,
+      "package_state": "not-started",
+      "package_blockers": [
+        "Printed scale exceeds the archived driver",
+        "Length-normalized control is absent",
+        "Symmetric-LR control is absent",
+        "Per-seed result archive is absent",
+        "Driver model pair disagrees with the manuscript",
+        "Mechanism statistics lack raw confidence records",
+        "Upstream method/statistics review remains open",
+        "P9 is a protocol deposit in the merge target"
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "blocked",
+        "citation-verification": "verified",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_inconclusive_claims",
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "build_bibliography",
+        "reproduce_required_numeric_claims",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "14 PASS, 0 FAIL, 6 WARN",
+        "report": {
+          "path": "research/pilot-calibrating-evaluator/reports/claim-ledger-verification.md",
+          "sha256": "826d2e0d45e000e3d0bf7e8f61cc3d305e1a206b440fb1b4e1c3fd5168a0c752",
+          "bytes": 3882
+        }
+      },
+      "cleanroom_receipt": null,
+      "candidate_package_receipt": null
+    },
+    {
+      "project_path": "research/pilot-closing-calibration-landscape",
+      "paper_id": "qf-closing-the-calibration-landscape-a-mult-99bef231e5",
+      "title": "Closing the Calibration Landscape: A Reproducibility Failure Analysis of Multi-Evaluator Ensembles for Coupling Reduction",
+      "status": "revision",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C05",
+          "C08",
+          "C10",
+          "C15",
+          "C16"
+        ],
+        "failed_gate_receipts": [
+          "p10-simulation-cv",
+          "p10-real-api",
+          "p10-model-identity",
+          "p10-independent-review"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 5,
+        "verified": 11
+      },
+      "claims_total": 16,
+      "package_state": "compiled",
+      "package_blockers": [
+        "Simulation CV values are not reproducible",
+        "Real-API CG and CG+TEE are degenerate",
+        "N=15 model identity and parser success are absent",
+        "The 39.2 percent scalar is misattributed if treated as CG/TEE",
+        "Independent method review remains open",
+        "Independent statistics review remains open",
+        "Final metadata, license confirmation and upload authorization remain user decisions"
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "blocked",
+        "citation-verification": "verified",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "16 PASS, 0 FAIL, 5 WARN",
+        "report": {
+          "path": "research/pilot-closing-calibration-landscape/reports/claim-ledger-verification.md",
+          "sha256": "ff0ee58512f9f80a5f34840e228af59bf7fd92779a2a7cbf23fbce2f22f0d9db",
+          "bytes": 4507
+        }
+      },
+      "cleanroom_receipt": {
+        "path": "research/pilot-closing-calibration-landscape/reports/cleanroom/receipt.json",
+        "sha256": "5e6dca8570bcc47e63e1406bb9233fad786e5ef2f9c82bb1edfe1d870423b403",
+        "bytes": 6574
+      },
+      "candidate_package_receipt": {
+        "path": "research/pilot-closing-calibration-landscape/reports/package/package-receipt.json",
+        "sha256": "7b61c5b9f99e734694212ea79c63967af4df04a0e5e4752a022d50db7c398c2e",
+        "bytes": 3587
+      }
+    },
+    {
+      "project_path": "research/pilot-conditional-communication-effects",
+      "paper_id": "qf-conditional-communication-effects-in-mul-ad96998074",
+      "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
+      "status": "blocked",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C05",
+          "C08",
+          "C09",
+          "C13",
+          "C14"
+        ],
+        "failed_gate_receipts": [
+          "p11-stored-anova",
+          "p11-face1-caf",
+          "p11-temporal-decomposition",
+          "p11-independent-review"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 5,
+        "verified": 10
+      },
+      "claims_total": 15,
+      "package_state": "not-started",
+      "package_blockers": [
+        "Face-1 CAF has no raw per-seed carrier",
+        "GPT-4o temporal decomposition lacks per-repetition rows",
+        "Stored joint ANOVA is not derivable from its sessions",
+        "Legacy source mirror carries 8.16/7.84/15.37",
+        "Independent review remains open",
+        "Metadata, license and upload authorization remain user decisions"
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "blocked",
+        "citation-verification": "verified",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "15 PASS, 0 FAIL, 5 WARN",
+        "report": {
+          "path": "research/pilot-conditional-communication-effects/reports/claim-ledger-verification.md",
+          "sha256": "d9d2ddf7a39b9df1d611a6703cfdecf4c9e2f487e32304fcc9fd1c25fa02f2df",
+          "bytes": 4582
+        }
+      },
+      "cleanroom_receipt": null,
+      "candidate_package_receipt": null
+    },
+    {
+      "project_path": "research/pilot-memory-architecture-effects",
+      "paper_id": "qf-memory-architecture-effects-on-output-le-0ea84705a9",
+      "title": "Memory Architecture Effects on Output-Length Responses under Controlled Multi-Agent Contamination",
+      "status": "review_pending",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C17",
+          "C18",
+          "C19",
+          "C20"
+        ],
+        "failed_gate_receipts": [
+          "p12-authority-validity",
+          "p12-independent-review"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 4,
+        "verified": 16
+      },
+      "claims_total": 20,
+      "package_state": "compiled",
+      "package_blockers": [
+        "Authority-marker endpoint is not validated authority bias",
+        "Round-4 raw per-seed logs are absent from the overlay",
+        "Seven carrier receipts do not cover every exploratory value",
+        "Independent method review is open",
+        "Independent statistics review is open",
+        "Final metadata, license, author list and upload authorization remain user decisions"
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "blocked",
+        "citation-verification": "verified",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "20 PASS, 0 FAIL, 4 WARN",
+        "report": {
+          "path": "research/pilot-memory-architecture-effects/reports/claim-ledger-verification.md",
+          "sha256": "f27fa299046dc731b7e2c2d15fd054d978b14ee165a1188d34c4709f884b7378",
+          "bytes": 5528
+        }
+      },
+      "cleanroom_receipt": {
+        "path": "research/pilot-memory-architecture-effects/reports/cleanroom/receipt.json",
+        "sha256": "71f99b40f218ec57daaa790fc9a21b3c49f9c84a05903245e153ffadc3cae969",
+        "bytes": 9457
+      },
+      "candidate_package_receipt": {
+        "path": "research/pilot-memory-architecture-effects/reports/package/package-receipt.json",
+        "sha256": "b7b72c8c24f01d00ff4da975565d1a42c1be1d935f2beaa71f5126ac6922ee10",
+        "bytes": 4180
+      }
+    },
+    {
+      "project_path": "research/pilot-f2-k-generalization",
+      "paper_id": "qf-merged-flagship-f2-k-generalization-sele-112d818110",
+      "title": "Merged Flagship F2: K-Generalization, Selective Prediction and Self-Evaluation",
+      "status": "blocked",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C05",
+          "C06",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21"
+        ],
+        "failed_gate_receipts": [
+          "p13-structure",
+          "p13-k345-carrier",
+          "p13-per-seed-consistency",
+          "p13-real-llm",
+          "p13-effect-carriers",
+          "p13-review"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 16,
+        "verified": 5
+      },
+      "claims_total": 21,
+      "package_state": "not-started",
+      "package_blockers": [
+        "2700 cells are declared but not archived",
+        "Only three K/gamma conditions have stored rows",
+        "The per-seed archives disagree with the analysis",
+        "Only 180 episode records exist and gamma=2.0 is absent",
+        "Archived real-LLM calls total 384, not 466",
+        "Selective/drift/causal effects lack field-level carriers",
+        "The frozen proof contradicts the abstract's product range",
+        "Independent review remains open"
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "blocked",
+        "citation-verification": "verified",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "reproduce_required_numeric_claims",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "21 PASS, 0 FAIL, 16 WARN",
+        "report": {
+          "path": "research/pilot-f2-k-generalization/reports/claim-ledger-verification.md",
+          "sha256": "19a5f1e4374676c927104bfcb18ab75945c9f3fd44e1e29cdf365a9db615b5cc",
+          "bytes": 4923
+        }
+      },
+      "cleanroom_receipt": null,
+      "candidate_package_receipt": null
+    },
+    {
+      "project_path": "research/pilot-f4-verification",
+      "paper_id": "qf-merged-flagship-f4-verification-trust-sc-88e8c3c2ce",
+      "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
+      "status": "blocked",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21"
+        ],
+        "failed_gate_receipts": [
+          "p14-headline-carriers",
+          "p14-splits",
+          "p14-gpu-hours",
+          "p14-f4-table",
+          "p14-manifest",
+          "p14-carrier-receipts",
+          "p14-baselines",
+          "p14-author-metadata",
+          "p14-review",
+          "p14-package"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 15,
+        "verified": 6
+      },
+      "claims_total": 21,
+      "package_state": "not-started",
+      "package_blockers": [
+        "18,000 declared trials are not archived as per-observation records",
+        "The 192/144/90/40 frozen split bundle is absent",
+        "The 2,700 tightness holds have no carrier",
+        "Four GPU-hours lack per-family runtime receipts",
+        "Four of eight F4 table rows disagree with their own counts",
+        "Two risk-difference denominators and two copied intervals conflict",
+        "The manifest has 7 mismatches and 5 absent entries",
+        "Two of 32 carrier receipts are NOT_VERIFIABLE",
+        "Printed baselines disagree with archived baselines",
+        "Canonical and arXiv author metadata differ",
+        "The retained review is a rejection and no current-hash review exists"
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "blocked",
+        "citation-verification": "verified",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "21 PASS, 0 FAIL, 15 WARN",
+        "report": {
+          "path": "research/pilot-f4-verification/reports/claim-ledger-verification.md",
+          "sha256": "1c153d6eb7c05619fc396c6c133bcf35d3d93fd2bffbd3aa8ecb170084df3f9f",
+          "bytes": 5120
+        }
+      },
+      "cleanroom_receipt": null,
+      "candidate_package_receipt": null
+    },
+    {
+      "project_path": "research/pilot-n-sensitive-calibration",
+      "paper_id": "qf-n-sensitive-calibration-of-tree-ensemble-623d15100e",
+      "title": "N-Sensitive Calibration of Tree Ensembles on Frozen LLM Embeddings",
+      "status": "archived",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C04",
+          "C05",
+          "C10",
+          "C11"
+        ],
+        "failed_gate_receipts": [
+          "p15-merge-provenance",
+          "p15-resampling-fields",
+          "p15-carrier-verdicts",
+          "p15-candidate-package"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 4,
+        "verified": 11
+      },
+      "claims_total": 15,
+      "package_state": "not-started",
+      "package_blockers": [
+        "Canonical source explicitly forbids independent submission",
+        "Named merge target does not contain the study terms",
+        "Synthetic canonical scope conflicts with three-real-dataset arXiv copies",
+        "E6 K=4 contradicts the abstract four-class sentence",
+        "Resampling headline values lack named result fields",
+        "42 carrier receipts have no verdict",
+        "Retained review has two open Major findings"
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "blocked",
+        "citation-verification": "pending",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "build_bibliography",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "15 PASS, 0 FAIL, 4 WARN",
+        "report": {
+          "path": "research/pilot-n-sensitive-calibration/reports/claim-ledger-verification.md",
+          "sha256": "8838fd7837850926714fe218940f8d9017bfae5fdb3c9754767b67cd5f77db9f",
+          "bytes": 3918
+        }
+      },
+      "cleanroom_receipt": null,
+      "candidate_package_receipt": null
+    },
+    {
+      "project_path": "research/pilot-hidden-cost-resampling",
+      "paper_id": "qf-the-hidden-cost-of-resampling-how-imbala-36f86aadfa",
+      "title": "The Hidden Cost of Resampling: How Imbalance Correction Degrades Probability Calibration in Tree Ensembles",
+      "status": "archived",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C05",
+          "C06",
+          "C07",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17"
+        ],
+        "failed_gate_receipts": [
+          "p16-merge-provenance",
+          "p16-dataset-scope",
+          "p16-main-table",
+          "p16-isotonic-result",
+          "p16-pairwise-significance",
+          "p16-n-sensitivity",
+          "p16-carrier-bindings",
+          "p16-anonymity-metadata",
+          "p16-review",
+          "p16-candidate-package"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 12,
+        "verified": 7
+      },
+      "claims_total": 19,
+      "package_state": "not-started",
+      "package_blockers": [
+        "Canonical source explicitly forbids independent submission",
+        "Archive marker forbids upload, repackaging and source edits",
+        "Named p12 merge target contains no study-specific data, model or result terms",
+        "Synthetic six-class canonical scope conflicts with the eight-class Newsgroups snapshot",
+        "The title promises resampling although no SMOTE or undersampling experiment is present",
+        "Snapshot AUROC and Brier values contradict the printed table",
+        "Isotonic reduction is 24.86 percent rather than 99 percent",
+        "Only 10 of 15 Bonferroni-corrected tests remain significant",
+        "42 of 57 carrier receipts bind the value to the wrong semantic quantity, model, run or role",
+        "Anonymity metadata conflicts with the named source author",
+        "Retained review is 2/8 D veto / reject and R16 requires Major Revision"
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "blocked",
+        "citation-verification": "pending",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "build_bibliography",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "19 PASS, 0 FAIL, 12 WARN",
+        "report": {
+          "path": "research/pilot-hidden-cost-resampling/reports/claim-ledger-verification.md",
+          "sha256": "9492d5c5b32a05d3062a45d4b776ae9fdf26e52d5a255581c6a511b78e210bee",
+          "bytes": 5141
+        }
+      },
+      "cleanroom_receipt": null,
+      "candidate_package_receipt": null
+    },
+    {
+      "project_path": "research/pilot-calibration-fatigue",
+      "paper_id": "qf-calibration-fatigue-self-evaluation-frag-3c06d49517",
+      "title": "Calibration Fatigue, Self-Evaluation Fragility, and the Coupling--Noise Tradeoff in Multi-Agent LLM Systems: A Systematic Study of Calibration Effects",
+      "status": "blocked",
+      "target": "arxiv",
+      "validation": {
+        "valid": true,
+        "ready": false,
+        "blocked_claims": [
+          "C03",
+          "C05",
+          "C09",
+          "C10",
+          "C13",
+          "C14"
+        ],
+        "failed_gate_receipts": [
+          "p17-manifests",
+          "p17-headline-carriers",
+          "p17-archive-integrity",
+          "p17-review",
+          "p17-package"
+        ]
+      },
+      "claim_counts": {
+        "blocked": 6,
+        "verified": 8
+      },
+      "claims_total": 14,
+      "package_state": "not-started",
+      "package_blockers": [
+        "GPT-4o Finding-1 raw per-repetition traces missing",
+        "Finding-2 raw traces for 1.06/42%/35-37% missing",
+        "30-seed predecessor A/C/D gamma arrays identical",
+        "outer and arXiv manifests stale",
+        "current-hash external method/statistics review open",
+        "sentence-level support for remaining 27 citations not audited"
+      ],
+      "plan_stages": {
+        "source-identity": "candidate",
+        "claim-ledger": "blocked",
+        "evidence-recomputation": "blocked",
+        "citation-verification": "verified",
+        "scientific-review": "blocked",
+        "arxiv-package": "blocked",
+        "external-submission": "locked"
+      },
+      "plan_actions": [
+        "close_scientific_review",
+        "remove_or_repair_blocked_claims",
+        "repair_failed_native_gates",
+        "resolve_package_blockers",
+        "external_submission_gate"
+      ],
+      "claim_verification": {
+        "result": "passed",
+        "summary": "14 PASS, 0 FAIL, 6 WARN",
+        "report": {
+          "path": "research/pilot-calibration-fatigue/reports/claim-ledger-verification.md",
+          "sha256": "aeb168727ff7b26d92126032a59ad2559d3e69e60baf872b27643946469e335e",
+          "bytes": 4087
+        }
+      },
+      "cleanroom_receipt": null,
+      "candidate_package_receipt": null
+    }
+  ],
+  "summary": {
+    "pilots": 17,
+    "valid_overlays": 17,
+    "ready_projects": 0,
+    "compiled_packages": 8,
+    "candidate_packages": 8,
+    "blocked_claims": 83,
+    "inconclusive_claims": 4,
+    "uploaded_papers": 0
+  },
+  "notes": [
+    "No project is ready for external submission.",
+    "Candidate package receipts do not authorize upload."
+  ]
+}

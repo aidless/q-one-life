@@ -1,0 +1,78 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-formatting-instructions-for-tmlr-submiss-cb8704ea2a",
+  "project_id": "qp-tmlr-tmlr-style-file-main-5492dd09f540",
+  "title": "Formatting Instructions for TMLR \\ Submissions",
+  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-style-file-main/source/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "85a994256fae53477e935bbacdf45b7e0e031abff660991485a61bff9bd4704c",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "paper",
+  "production_priority": 55,
+  "priority_band": "P3",
+  "priority_factors": [
+    {
+      "code": "BIBLIOGRAPHY",
+      "points": 20,
+      "observed": "At least one bibliography file is present."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "EVIDENCE_DIRECTORY",
+      "points": 20,
+      "observed": "At least one evidence directory is present."
+    }
+  ],
+  "pilot_ids": [],
+  "signals": {
+    "claim_ledger": false,
+    "bibliography": true,
+    "compiled_pdf": true,
+    "evidence_directory": true,
+    "variants_to_reconcile": 0,
+    "overlay_present": false
+  },
+  "variant_sources": [
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-style-file-main/source/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "The canonical source has enough structure to repair, but its evidence and package gates remain unverified.",
+    "next_action": "confirm_target_and_scope",
+    "authoritative": false
+  },
+  "overlay": null,
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

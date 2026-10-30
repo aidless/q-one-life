@@ -1,0 +1,108 @@
+{
+  "schema": "q-one-resume-benchmark-result-v1",
+  "generated_at": "2026-10-28T13:16:33.146Z",
+  "mode": "rules",
+  "qualification": "Small local engineering acceptance set; not an external validity study or evidence of real-world benefit.",
+  "task_count": 6,
+  "completed": 6,
+  "valid_goal_matches": 6,
+  "trace_bound": 6,
+  "actionable": 6,
+  "average_latency_ms": 55,
+  "maximum_latency_ms": 58,
+  "electron_working_set_kb": 524656,
+  "electron_cpu_percent": 0.75,
+  "provider_counts": {
+    "rules": 6
+  },
+  "cases": [
+    {
+      "id": "readme-first-page",
+      "completed": true,
+      "valid_goal_match": true,
+      "trace_bound": true,
+      "actionable": true,
+      "latency_ms": 55,
+      "configured_provider": "local",
+      "planner_status": "rules",
+      "effective_source": "rules",
+      "item_title": "Define the first deliverable: Draft the first usable page of a project README",
+      "error": "内置本地模型尚未就绪；当前保留规则建议"
+    },
+    {
+      "id": "stats-review",
+      "completed": true,
+      "valid_goal_match": true,
+      "trace_bound": true,
+      "actionable": true,
+      "latency_ms": 54,
+      "configured_provider": "local",
+      "planner_status": "rules",
+      "effective_source": "rules",
+      "item_title": "Define the first deliverable: Prepare a statistical review checklist for a paper",
+      "error": "内置本地模型尚未就绪；当前保留规则建议"
+    },
+    {
+      "id": "weekly-learning",
+      "completed": true,
+      "valid_goal_match": true,
+      "trace_bound": true,
+      "actionable": true,
+      "latency_ms": 55,
+      "configured_provider": "local",
+      "planner_status": "rules",
+      "effective_source": "rules",
+      "item_title": "Define the first deliverable: Plan one week of focused Python learning",
+      "error": "内置本地模型尚未就绪；当前保留规则建议"
+    },
+    {
+      "id": "backup-restore",
+      "completed": true,
+      "valid_goal_match": true,
+      "trace_bound": true,
+      "actionable": true,
+      "latency_ms": 58,
+      "configured_provider": "local",
+      "planner_status": "rules",
+      "effective_source": "rules",
+      "item_title": "Define the first deliverable: Verify encrypted backup and restore on a clean profile",
+      "error": "内置本地模型尚未就绪；当前保留规则建议"
+    },
+    {
+      "id": "grant-abstract",
+      "completed": true,
+      "valid_goal_match": true,
+      "trace_bound": true,
+      "actionable": true,
+      "latency_ms": 55,
+      "configured_provider": "local",
+      "planner_status": "rules",
+      "effective_source": "rules",
+      "item_title": "Define the first deliverable: Draft a 200-word abstract for a small research grant",
+      "error": "内置本地模型尚未就绪；当前保留规则建议"
+    },
+    {
+      "id": "interview-notes",
+      "completed": true,
+      "valid_goal_match": true,
+      "trace_bound": true,
+      "actionable": true,
+      "latency_ms": 52,
+      "configured_provider": "local",
+      "planner_status": "rules",
+      "effective_source": "rules",
+      "item_title": "Define the first deliverable: Organize notes from five user interviews",
+      "error": "内置本地模型尚未就绪；当前保留规则建议"
+    }
+  ],
+  "runtime": {
+    "platform": "linux",
+    "arch": "x64",
+    "electron": "45.0.0",
+    "chrome": "156.0.8078.48",
+    "node": "24.22.0",
+    "application": "0.8.0-dev.0",
+    "sidecar_bytes": 12418128,
+    "sidecar_sha256": "ed0c09ec830615b35fb00901a4b49a7ea64daec79213b14712d425ff126a4324"
+  }
+}

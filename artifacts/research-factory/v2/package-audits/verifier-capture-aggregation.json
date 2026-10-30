@@ -1,0 +1,50 @@
+{
+  "schema": "q-one-arxiv-package-audit-v1",
+  "generated_at": "2026-10-30T05:17:35.702424Z",
+  "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source",
+  "main_file": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source/main.tex",
+  "mechanical_pass": true,
+  "ready_for_upload": false,
+  "upload_blocker": "Mechanical packaging does not establish scientific readiness, license, metadata correctness, or user authorization.",
+  "blockers": [],
+  "warnings": [],
+  "file_count": 5,
+  "visible_suffixes": {
+    ".bib": 1,
+    ".bst": 1,
+    ".sty": 1,
+    ".tex": 2
+  },
+  "files": [
+    {
+      "path": "main.tex",
+      "sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
+      "bytes": 47351
+    },
+    {
+      "path": "math_commands.tex",
+      "sha256": "9d655842e74bf55f241770197793507d27f178abef4132378b8333e391a6a0e0",
+      "bytes": 5039
+    },
+    {
+      "path": "refs.bib",
+      "sha256": "2e08d1889d7d8da29949c655bec95b39cf174baf23cab422c0c06e4f4f6dbd9a",
+      "bytes": 5864
+    },
+    {
+      "path": "tmlr.bst",
+      "sha256": "306fd454cf40771bee01293eeb98d2c1cd5f4e11ed0cd7296b335f354fc45206",
+      "bytes": 26969
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    }
+  ],
+  "package_sha256": "252dad210ec608195b5bb65224f9eacd826bf1c6298262ddd80aed349705b210",
+  "notes": [
+    "This is a source-tree audit, not a clean-room LaTeX compile.",
+    "The package hash covers the sorted path/hash manifest, not tar bytes."
+  ]
+}

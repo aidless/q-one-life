@@ -1,0 +1,27 @@
+# Position Selection — Noise Floor Revision
+
+**Selected option**: #1 (Narrowed construct-validity audit)  
+**Decision timestamp**: 2026-10-28T14:00Z  
+**Rationale**: Provides strongest academic credibility, requires no external data collection, keeps tool and measurements intact, aligns with available evidence chain.
+
+## What changes compared to original abstract/intro/conclusion
+
+Original abstract line 76-81 claimed "the leader is readable only if it clears that floor" and "public ranking is readable." This implied a necessary condition for citing leaderboard tops. The synthetic counterexample directly contradicts this necessity claim.
+
+New narrative will state: we identify when consensus-gold constructions fail to yield verdicts, and how design choices determine outcomes. The tool shows **a sufficient condition for refusal** under specific construction, not a general necessity for readability.
+
+## Acceptance criteria
+
+- Abstract removes "necessary condition" language about public rankings
+- Introduction clarifies rule certifies only whether leader exceeds gold producer score, not distinguishability of systems
+- Section 4 adds reference to counterexample as proof that clearing baseline is not always necessary for resolvable orderings  
+- Conclusion states READABLE arm fires only in test suite positive control until external disjoint measurement succeeds
+- Limitations explicitly mentions counterexample result and interpretation limits
+
+## Next steps after position commit
+
+1. Generate draft text edits for each section
+2. Apply edits to source/main.tex incrementally
+3. Pre-revision gate baseline → post-edit validation
+4. Update project.json claims/evidence
+5. Claim ledger verification → C03 status update pending independent review sign-off

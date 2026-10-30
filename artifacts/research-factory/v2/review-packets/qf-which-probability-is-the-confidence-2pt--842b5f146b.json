@@ -1,0 +1,132 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-which-probability-is-the-confidence-2pt--842b5f146b",
+  "project_id": "qp-v38-landed-99e33d754491",
+  "title": "Which Probability Is ``the Confidence''?\\\\[2pt] Caliber Dependence of Cost Claims\\\\[2pt] in Confidence-Gated Judge Cascades",
+  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/v38-landed/paper/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "277d4b377478810a71fedfd8b2e0a9a134dac57323d74e8f137eb82802aa917f",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "version-copy",
+  "production_priority": 85,
+  "priority_band": "P2",
+  "priority_factors": [
+    {
+      "code": "CLAIM_LEDGER",
+      "points": 35,
+      "observed": "Claim ledger is present."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "EVIDENCE_DIRECTORY",
+      "points": 20,
+      "observed": "At least one evidence directory is present."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    },
+    {
+      "code": "VERSION_RECONCILIATION",
+      "points": 5,
+      "observed": "44 extra normalized-title source version(s) require review."
+    }
+  ],
+  "pilot_ids": [],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": false,
+    "compiled_pdf": true,
+    "evidence_directory": true,
+    "variants_to_reconcile": 44,
+    "overlay_present": false
+  },
+  "variant_sources": [
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-01220234/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-030a2076/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-07cf1d15/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-08683ddd/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-09afac69/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-0de6f153/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-0e18a3a0/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-116644b4/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-137e7dd6/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-2c2fe24e/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-3cf420e6/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-3f9ac7b9/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-49a35528/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-4a3f647c/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-559227c3/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-5ba6ba60/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-682f639f/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-710a2673/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-7e300a20/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-870d3844/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-8f0b4502/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-9dde961b/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-a297c729/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-a4b972f1/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-a7afee40/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-b02c305e/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-b4248406/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-b53d760d/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-ba4b40fb/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-c16f3440/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-c4a2ed60/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-cace6deb/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-cfae0cae/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-d156960e/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-d34f0d38/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-ddc703f0/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-f3981081/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-f3cf0356/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-f450b068/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-fa66d92a/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-fad27d8b/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-rehearsal-fda8bbfe/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/arxiv-v1/preprint/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/v37-landed/paper/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/v38-landed/paper/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "merge",
+    "reason": "One normalized-title family contains multiple source versions; reconcile the canonical source before drafting.",
+    "next_action": "confirm_target_and_scope",
+    "authoritative": false
+  },
+  "overlay": null,
+  "review_questions": [
+    "Which member is the canonical scientific source?",
+    "Is every materially different result, figure, or claim represented in the canonical source?",
+    "Can superseded copies be archived without losing unique evidence?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

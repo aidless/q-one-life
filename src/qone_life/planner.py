@@ -57,6 +57,7 @@ class Planner:
 
     def snapshot(self):
         config = self.settings()
+        english = str(config.get("resolved_language", "zh-CN")).lower().startswith("en")
         today = datetime.now().astimezone().date().isoformat()
         all_tasks = self.repo.all("tasks")
         reserved = sum(t.get("focus_minutes", t.get("estimate_minutes", 25)) for t in all_tasks if t.get("focus_date") == today)
@@ -76,13 +77,27 @@ class Planner:
             if task.get("focus_date") == today:
                 continue
             linked = goal_map.get(task.get("goal_id"))
-            reason = "尚未完成的任务" + (f"；回看期限 {task['deadline']}" if task.get("deadline") else "；尚未设定期限")
+            reason = (
+                "An unfinished task"
+                + (f"; review by {task['deadline']}" if task.get("deadline") else "; no deadline set")
+                if english
+                else "尚未完成的任务"
+                + (f"；回看期限 {task['deadline']}" if task.get("deadline") else "；尚未设定期限")
+            )
             if linked:
-                reason += "；关联目标：" + linked["title"]
+                reason += ("; linked goal: " if english else "；关联目标：") + linked["title"]
             candidates.append({"id": "task:" + task["id"], "kind": "task", "task_id": task["id"], "goal_id": task.get("goal_id"),
                 "title": task["title"][:200], "reason": reason, "domain": task["domain"],
-                "first_step": "对照任务描述，选出这次时间内能完成的一个具体部分；缺少材料时先记录依赖。",
-                "done_when": "保存本次产出，并记录任务是否完成；未完成的部分继续保留。",
+                "first_step": (
+                    "Choose one concrete part of this task that fits the available time; record any missing dependency first."
+                    if english
+                    else "对照任务描述，选出这次时间内能完成的一个具体部分；缺少材料时先记录依赖。"
+                ),
+                "done_when": (
+                    "Save the output and record whether the task is complete; keep unfinished parts on the list."
+                    if english
+                    else "保存本次产出，并记录任务是否完成；未完成的部分继续保留。"
+                ),
                 "minutes": task.get("estimate_minutes", 25),
                 "revision": digest({k: task.get(k) for k in ("title", "deadline", "priority", "goal_id", "done")})})
         linked_tasks = {t.get("goal_id") for t in tasks}
@@ -90,19 +105,51 @@ class Planner:
             if goal["id"] in linked_tasks:
                 continue
             completed = [t for t in all_tasks if t.get("goal_id") == goal["id"] and t["done"]]
-            title = ("核对下一项缺口：" if completed else "明确第一个交付物：") + goal["title"][:120]
+            if english:
+                title = ("Check the next gap: " if completed else "Define the first deliverable: ") + goal["title"][:120]
+                reason = (
+                    ("Completed actions exist; compare the current output with the remaining success criteria."
+                     if completed
+                     else "This goal has no open action yet; define the next verifiable slice first.")
+                    + f" Goal priority {goal['priority']}/5."
+                )
+                first_step = (
+                    "Compare the latest output with the success criterion and write one condition that is still unmet."
+                    if completed
+                    else "Write one small deliverable for this session and how you will check it."
+                )
+                done_when = "Save a concrete deliverable description and its acceptance check; this does not complete the whole goal."
+            else:
+                title = ("核对下一项缺口：" if completed else "明确第一个交付物：") + goal["title"][:120]
+                reason = ("已有行动完成，需对照目标核对剩余缺口。" if completed else "该目标还没有未完成的待办，先把下一步的验收范围写清楚。") + "目标优先级 " + str(goal["priority"]) + "/5。"
+                first_step = "对照完成标准，" + ("检查最近产出，写下一个尚未满足的条件。" if completed else "写下一个这次时间内可以交付的小成果，以及如何检查它。")
+                done_when = "保存一条具体的交付物描述和验收办法；这一步不代表整个目标完成。"
             candidates.append({"id": "goal:" + goal["id"], "kind": "goal", "goal_id": goal["id"], "task_id": None,
-                "title": title, "reason": ("已有行动完成，需对照目标核对剩余缺口。" if completed else "该目标还没有未完成的待办，先把下一步的验收范围写清楚。") + "目标优先级 " + str(goal["priority"]) + "/5。",
-                "first_step": "对照完成标准，" + ("检查最近产出，写下一个尚未满足的条件。" if completed else "写下一个这次时间内可以交付的小成果，以及如何检查它。"),
-                "done_when": "保存一条具体的交付物描述和验收办法；这一步不代表整个目标完成。",
+                "title": title, "reason": reason,
+                "first_step": first_step,
+                "done_when": done_when,
                 "domain": goal["domain"], "minutes": min(25, config["daily_available_minutes"]), "revision": digest({"goal": goal, "completed_actions": [{"id": t["id"], "title": t["title"]} for t in all_tasks if t.get("goal_id") == goal["id"] and t["done"]][:8]})})
         for state in self.ledger.project_all().values():
             if state["status"] == "decided" and datetime.fromisoformat(state["deadline"].replace("Z", "+00:00")) <= datetime.now(timezone.utc):
                 candidates.insert(0, {"id": "review:" + state["decision_id"], "kind": "review", "decision_id": state["decision_id"],
-                    "task_id": None, "goal_id": None, "title": "回看：" + state["question"][:160],
-                    "reason": "已到事前约定的回看时间，结果仍未记录", "domain": state["domain"], "minutes": 5,
-                    "first_step": "打开这次选择，对照事前标准填写实际结果。",
-                    "done_when": "保存一次结果回看；无法判断时明确记为未知。",
+                    "task_id": None, "goal_id": None,
+                    "title": ("Review: " if english else "回看：") + state["question"][:160],
+                    "reason": (
+                        "The review time set before acting has arrived, but the outcome is still unrecorded."
+                        if english
+                        else "已到事前约定的回看时间，结果仍未记录"
+                    ),
+                    "domain": state["domain"], "minutes": 5,
+                    "first_step": (
+                        "Open this decision and record the actual result against the criterion set in advance."
+                        if english
+                        else "打开这次选择，对照事前标准填写实际结果。"
+                    ),
+                    "done_when": (
+                        "Save one outcome review; record it explicitly as unknown when it cannot be judged."
+                        if english
+                        else "保存一次结果回看；无法判断时明确记为未知。"
+                    ),
                     "revision": digest({"status": state["status"], "deadline": state["deadline"]})})
         # Preserve feedback without making it part of the model's private context.
         eligible = []
@@ -156,7 +203,9 @@ class Planner:
         card = candidate | {"id": candidate["record_id"], "candidate_id": candidate["id"], "title": title, "reason": reason,
             "minutes": minutes, "source": source, "status": "active", "input_sha256": input_sha, "run_id": run_id,
             "created_at": now(), "generated_at": now()}
-        card.update({key: (detail or {}).get(key) or candidate.get(key) or "具体内容待细化" for key in ("first_step", "done_when")})
+        english = str(self.settings().get("resolved_language", "zh-CN")).lower().startswith("en")
+        fallback = "Details need refinement" if english else "具体内容待细化"
+        card.update({key: (detail or {}).get(key) or candidate.get(key) or fallback for key in ("first_step", "done_when")})
         card["proposal_sha256"] = digest({k: card[k] for k in ("title", "reason", "first_step", "done_when", "minutes", "source", "revision", "input_sha256")})
         self.repo.put("suggestions", card)
         return card

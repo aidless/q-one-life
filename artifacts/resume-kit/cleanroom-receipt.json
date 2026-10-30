@@ -1,0 +1,50 @@
+{
+  "desktop_tests": [
+    "typescript-unit"
+  ],
+  "documentation_and_evidence_excluded": [
+    "README.md",
+    "CHANGELOG.md",
+    "docs/",
+    "artifacts/",
+    "logs/",
+    "scripts/build_resume_evidence.py"
+  ],
+  "finished_at": "2026-10-28T13:17:08Z",
+  "generated_artifacts_excluded": [
+    ".venv",
+    "artifacts",
+    "logs",
+    "build",
+    "desktop/node_modules",
+    "desktop/release"
+  ],
+  "logs": [
+    "logs/base-requirements.txt",
+    "logs/desktop-unit.log",
+    "logs/electron-e2e.log",
+    "logs/pnpm-install.log",
+    "logs/pytest.log",
+    "logs/python-install.log",
+    "logs/source-manifest.txt",
+    "logs/unittest.log"
+  ],
+  "pinned_sources": {
+    "q-one-agent": "79a951ac4e4f77239a227cfe28ffdc0fb30bc19f",
+    "q-one-agent_patch": "desktop/patches/q-one-agent-local-provider.patch",
+    "q-one-core": "b1f41dea59eb9d26b66e812f3fc167b83c23d7cf"
+  },
+  "python_tests": [
+    "pytest",
+    "unittest",
+    "render",
+    "site"
+  ],
+  "result": "passed",
+  "schema": "q-one-cleanroom-check-v1",
+  "scope": "fresh dependency install and tests from a copied runtime source tree",
+  "source_manifest_scope": "runtime source, tests, build/release inputs, and this clean-room harness; documentation and generated evidence are hash-bound separately",
+  "source_manifest_sha256": "8749caee07c6a03b1e67fb175141211f3af3ff589d116343997283d5e4dd329d",
+  "started_at": "2026-10-28T13:14:16Z",
+  "strict_electron_e2e": true
+}

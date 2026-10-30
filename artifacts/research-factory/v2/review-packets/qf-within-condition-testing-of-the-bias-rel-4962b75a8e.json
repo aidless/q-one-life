@@ -1,0 +1,89 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-within-condition-testing-of-the-bias-rel-4962b75a8e",
+  "project_id": "qp-tmlr-p14-470f10d6a88e",
+  "title": "Within-Condition Testing of the Bias-Reliability Tradeoff: Experimental Protocol, Pilot Execution, and Convergence Dynamics",
+  "primary_source": "/home/liuzewen/.research/tmlr-p14/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "8b28c312ceeec5b70f24829f89b9a8bda932d146e43be0fc5c5df0fd587b38a1",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "legacy",
+  "production_priority": 65,
+  "priority_band": "P2",
+  "priority_factors": [
+    {
+      "code": "CLAIM_LEDGER",
+      "points": 35,
+      "observed": "Claim ledger is present."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    },
+    {
+      "code": "VERSION_RECONCILIATION",
+      "points": 5,
+      "observed": "1 extra normalized-title source version(s) require review."
+    },
+    {
+      "code": "LEGACY_SOURCE",
+      "points": 0,
+      "observed": "Legacy source type; no points, review still required."
+    }
+  ],
+  "pilot_ids": [],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": false,
+    "compiled_pdf": true,
+    "evidence_directory": false,
+    "variants_to_reconcile": 1,
+    "overlay_present": false
+  },
+  "variant_sources": [
+    "/home/liuzewen/.research/tmlr-p14/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-flagship/source/arxiv_submit/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "merge",
+    "reason": "One normalized-title family contains multiple source versions; reconcile the canonical source before drafting.",
+    "next_action": "confirm_target_and_scope",
+    "authoritative": false
+  },
+  "overlay": null,
+  "review_questions": [
+    "Which member is the canonical scientific source?",
+    "Is every materially different result, figure, or claim represented in the canonical source?",
+    "Can superseded copies be archived without losing unique evidence?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "schema": "q-one-research-factory-verification-v1",
+  "generated_at": "2026-10-28T11:24:59.779594Z",
+  "command": "PYTHONPATH=src python scripts/research_factory_verify.py",
+  "scope": "Research Factory control plane, sixteen pilot overlays, claim ledgers, mechanical package audits, clean-room compilation and candidate archives",
+  "source": {
+    "workspace": "/home/liuzewen/F:\\deepseek/q-one-life",
+    "head": "fed3f771a7890618bee7276a0c0efddc4e31015e",
+    "dirty": true
+  },
+  "machine": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "cpu_count": 16
+  },
+  "checks": {
+    "pytest": {
+      "result": "passed",
+      "tests": 89,
+      "warnings": 1,
+      "subtests": 22
+    },
+    "unittest": {
+      "result": "passed",
+      "tests": 87,
+      "resource_warnings": 4
+    },
+    "ruff_scoped_research": {
+      "result": "passed"
+    },
+    "git_diff_check": {
+      "result": "passed"
+    },
+    "json_schema": {
+      "checked": 27,
+      "errors": [],
+      "result": "passed"
+    },
+    "project_validation": {
+      "valid": 16,
+      "ready": 0,
+      "projects": 16
+    },
+    "claim_ledgers": {
+      "arc-paper-track": {
+        "result": "passed",
+        "summary": "11 PASS, 0 FAIL, 2 WARN",
+        "report": {
+          "path": "research/arc-paper-track/reports/claim-ledger-verification.md",
+          "sha256": "b9a0e9b5766fefdf9707a73794a37fdb93493e2a2dc48171beb8b2af4e9c6596",
+          "bytes": 2972
+        }
+      },
+      "pilot-paper11": {
+        "result": "passed",
+        "summary": "20 PASS, 0 FAIL, 0 WARN",
+        "report": {
+          "path": "research/pilot-paper11/reports/claim-ledger-verification.md",
+          "sha256": "3c52bce52066095026e68deaff8f3854de79b62ecb47f7d9b6fcc402dfac0b26",
+          "bytes": 8072
+        }
+      },
+      "pilot-bench-noise-floor": {
+        "result": "passed",
+        "summary": "8 PASS, 0 FAIL, 2 WARN",
+        "report": {
+          "path": "research/pilot-bench-noise-floor/reports/claim-ledger-verification.md",
+          "sha256": "afb2f117bd9ab8ebdc624769b950d72fffd9ef049c0d408293875c4d4dc71c49",
+          "bytes": 3039
+        }
+      },
+      "pilot-f-acceptance": {
+        "result": "passed",
+        "summary": "13 PASS, 0 FAIL, 1 WARN",
+        "report": {
+          "path": "research/pilot-f-acceptance/reports/claim-ledger-verification.md",
+          "sha256": "0ab54fcbbd393ea387049da62b1dd1aa00bdca9b6354892ce01507d8a4ea6b26",
+          "bytes": 5359
+        }
+      },
+      "pilot-gemma": {
+        "result": "passed",
+        "summary": "8 PASS, 0 FAIL, 1 WARN",
+        "report": {
+          "path": "research/pilot-gemma/reports/claim-ledger-verification.md",
+          "sha256": "5bbd1ef50125bed6ba43f4dd0818bf95a3ce1ba025f7ad193089d47ae3c9903a",
+          "bytes": 2918
+        }
+      },
+      "pilot-paper2-coupling": {
+        "result": "passed",
+        "summary": "14 PASS, 0 FAIL, 2 WARN",
+        "report": {
+          "path": "research/pilot-paper2-coupling/reports/claim-ledger-verification.md",
+          "sha256": "6e534fb39840719e5d1b7d8191bcf8f7674753cdb7ecdcd0ffc69eefe894c68d",
+          "bytes": 4030
+        }
+      },
+      "pilot-agent-behavior-regression": {
+        "result": "passed",
+        "summary": "11 PASS, 0 FAIL, 4 WARN",
+        "report": {
+          "path": "research/pilot-agent-behavior-regression/reports/claim-ledger-verification.md",
+          "sha256": "e58590dd981b9affcbf5819d43d8cef9b6de013b0adda0a3be52de729de8f7bb",
+          "bytes": 3253
+        }
+      },
+      "pilot-verifier-capture-aggregation": {
+        "result": "passed",
+        "summary": "11 PASS, 0 FAIL, 4 WARN",
+        "report": {
+          "path": "research/pilot-verifier-capture-aggregation/reports/claim-ledger-verification.md",
+          "sha256": "552ed444ba9673b2177f73373aec36d90dcaafad4be8488009967d16515e6c5e",
+          "bytes": 3503
+        }
+      },
+      "pilot-calibrating-evaluator": {
+        "result": "passed",
+        "summary": "14 PASS, 0 FAIL, 6 WARN",
+        "report": {
+          "path": "research/pilot-calibrating-evaluator/reports/claim-ledger-verification.md",
+          "sha256": "826d2e0d45e000e3d0bf7e8f61cc3d305e1a206b440fb1b4e1c3fd5168a0c752",
+          "bytes": 3882
+        }
+      },
+      "pilot-closing-calibration-landscape": {
+        "result": "passed",
+        "summary": "16 PASS, 0 FAIL, 5 WARN",
+        "report": {
+          "path": "research/pilot-closing-calibration-landscape/reports/claim-ledger-verification.md",
+          "sha256": "ff0ee58512f9f80a5f34840e228af59bf7fd92779a2a7cbf23fbce2f22f0d9db",
+          "bytes": 4507
+        }
+      },
+      "pilot-conditional-communication-effects": {
+        "result": "passed",
+        "summary": "15 PASS, 0 FAIL, 5 WARN",
+        "report": {
+          "path": "research/pilot-conditional-communication-effects/reports/claim-ledger-verification.md",
+          "sha256": "d9d2ddf7a39b9df1d611a6703cfdecf4c9e2f487e32304fcc9fd1c25fa02f2df",
+          "bytes": 4582
+        }
+      },
+      "pilot-memory-architecture-effects": {
+        "result": "passed",
+        "summary": "20 PASS, 0 FAIL, 4 WARN",
+        "report": {
+          "path": "research/pilot-memory-architecture-effects/reports/claim-ledger-verification.md",
+          "sha256": "f27fa299046dc731b7e2c2d15fd054d978b14ee165a1188d34c4709f884b7378",
+          "bytes": 5528
+        }
+      },
+      "pilot-f2-k-generalization": {
+        "result": "passed",
+        "summary": "21 PASS, 0 FAIL, 16 WARN",
+        "report": {
+          "path": "research/pilot-f2-k-generalization/reports/claim-ledger-verification.md",
+          "sha256": "19a5f1e4374676c927104bfcb18ab75945c9f3fd44e1e29cdf365a9db615b5cc",
+          "bytes": 4923
+        }
+      },
+      "pilot-f4-verification": {
+        "result": "passed",
+        "summary": "21 PASS, 0 FAIL, 15 WARN",
+        "report": {
+          "path": "research/pilot-f4-verification/reports/claim-ledger-verification.md",
+          "sha256": "1c153d6eb7c05619fc396c6c133bcf35d3d93fd2bffbd3aa8ecb170084df3f9f",
+          "bytes": 5120
+        }
+      },
+      "pilot-n-sensitive-calibration": {
+        "result": "passed",
+        "summary": "15 PASS, 0 FAIL, 4 WARN",
+        "report": {
+          "path": "research/pilot-n-sensitive-calibration/reports/claim-ledger-verification.md",
+          "sha256": "8838fd7837850926714fe218940f8d9017bfae5fdb3c9754767b67cd5f77db9f",
+          "bytes": 3918
+        }
+      },
+      "pilot-hidden-cost-resampling": {
+        "result": "passed",
+        "summary": "19 PASS, 0 FAIL, 12 WARN",
+        "report": {
+          "path": "research/pilot-hidden-cost-resampling/reports/claim-ledger-verification.md",
+          "sha256": "9492d5c5b32a05d3062a45d4b776ae9fdf26e52d5a255581c6a511b78e210bee",
+          "bytes": 5141
+        }
+      }
+    },
+    "agent_dispositions": {
+      "result": "passed",
+      "summary": {
+        "families": 131,
+        "priority_bands": {
+          "P0": 5,
+          "P1": 26,
+          "P2": 57,
+          "P3": 43
+        },
+        "agent_proposed_dispositions": {
+          "archive": 3,
+          "blocked": 3,
+          "merge": 47,
+          "repair": 78
+        },
+        "final_human_dispositions": {
+          "unreviewed": 131
+        },
+        "publication_ready": 0,
+        "upload_authorized": 0
+      },
+      "artifact": {
+        "path": "artifacts/research-factory/v2/agent-dispositions.json",
+        "sha256": "d00475b8b756821d4415b9d5b5565bec8e7b984e5246420503f934004ceee3ae",
+        "bytes": 193440
+      }
+    }
+  },
+  "pilots": {
+    "pilots": 16,
+    "valid_overlays": 16,
+    "ready_projects": 0,
+    "compiled_packages": 8,
+    "candidate_packages": 8,
+    "blocked_claims": 79,
+    "inconclusive_claims": 4,
+    "uploaded_papers": 0
+  },
+  "artifact_hashes": [
+    {
+      "path": "artifacts/research-factory/v2/artifact.json",
+      "sha256": "84a9807d0066b83a8d8b00b5b787138ca128a4c1b138905f05b209debe76df71",
+      "bytes": 1899
+    },
+    {
+      "path": "artifacts/research-factory/v2/triage.json",
+      "sha256": "bf5e2a4ca31b43856b773134136b93c861a4ffe850ae71351528959d41e35da0",
+      "bytes": 232481
+    },
+    {
+      "path": "artifacts/research-factory/v2/triage.md",
+      "sha256": "ff501c92a448ff38f3053870070f7a5ff6433e8a8105b86d3ae8f8ea58e8672c",
+      "bytes": 21555
+    },
+    {
+      "path": "artifacts/research-factory/v2/triage.csv",
+      "sha256": "1d42aa7a4be9d0ca25a9b645ba41b66e24e638a26c7efc581667a2f51a71971b",
+      "bytes": 37273
+    },
+    {
+      "path": "artifacts/research-factory/v2/pilot-status.json",
+      "sha256": "eb1c6f6e35242d69a64dcd5c0de76eeeb99e2b8074d1acc77350825f8e8b4856",
+      "bytes": 41251
+    },
+    {
+      "path": "artifacts/research-factory/v2/agent-dispositions.json",
+      "sha256": "d00475b8b756821d4415b9d5b5565bec8e7b984e5246420503f934004ceee3ae",
+      "bytes": 193440
+    },
+    {
+      "path": "artifacts/research-factory/v2/agent-dispositions.md",
+      "sha256": "74c3bdbd8146a8a3e952c85f7f6639fa4a35ef66a2646c45dbb19b61c09148a4",
+      "bytes": 23654
+    },
+    {
+      "path": "artifacts/research-factory/v2/agent-dispositions.csv",
+      "sha256": "6313f5fe547fcef89d7c0d2bb9f769cb244101a02f19913051ad47fdb5f8c5ed",
+      "bytes": 30858
+    },
+    {
+      "path": "research/FACTORY_STATUS.md",
+      "sha256": "8c6b6e9e35ca18092647d7c352fd02b059f33e77ed8de99cf021132626ae00c3",
+      "bytes": 26002
+    },
+    {
+      "path": "docs/RESEARCH_FACTORY_AUTONOMOUS_ITERATION_PLAN.zh-CN.md",
+      "sha256": "3ab3f40b3973cf8d296486c1b5f16deee5618029d31557aae85482478b76c187",
+      "bytes": 23981
+    },
+    {
+      "path": "artifacts/research-factory/v2/review-packets/index.json",
+      "sha256": "0fb1af2a6d7153e7643deda9063320075d3fad8832df9fd35a080d07279ff8e0",
+      "bytes": 38901
+    },
+    {
+      "path": "artifacts/research-factory/v2/review-packets/top20.md",
+      "sha256": "bd38ff0592399689649028d24b16a7cac0e353096c2a3ada2aba4d5212f69c23",
+      "bytes": 4578
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/index.json",
+      "sha256": "57c8c8dc61f944ce9e2daab698956a7063bc78842f500f3129cf007d1fa90f1d",
+      "bytes": 4328
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/agent-behavior-regression.json",
+      "sha256": "37593ced6f442032056e346a7a14841c13a12513d5db2b80720f776710cfc9e1",
+      "bytes": 2339
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/closing-landscape.json",
+      "sha256": "fefc2c5b41e0798e96736641a616e6557615071b1ab9e4cd337d8c9ccc48b2d6",
+      "bytes": 2011
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/f-acceptance.json",
+      "sha256": "4cd9cc8e24ef6791a486484a62b0e5729fde7fc5d1c6c6dc3cd6c3ed0b27bc51",
+      "bytes": 1775
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/memory-architecture.json",
+      "sha256": "7514ca0c70fbd1837a27b7a9add656bfe996a224fa7cabb5f0e891145931f635",
+      "bytes": 2498
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/noise-floor.json",
+      "sha256": "7b08fe5eedaf80fc4ce960da542a1f0531b45ccd29bbb224be31fc8e51fdf100",
+      "bytes": 2593
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/paper11-overlay.json",
+      "sha256": "c2f4f1ed57d220a1f888329dd8173142d6619b4bcbec0df4c3022a0cd500bf76",
+      "bytes": 1481
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/paper11.json",
+      "sha256": "fdcea9bab448edc8bad8cc5cd40544181ebf27735cdebbac72cad8d661249e7f",
+      "bytes": 5083
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/paper2-coupling.json",
+      "sha256": "e108e1f16dbc0e0ba89508f5f80436d7fbdd307faa59b91c9d4ce201a193bcc9",
+      "bytes": 1317
+    },
+    {
+      "path": "artifacts/research-factory/v2/package-audits/verifier-capture-aggregation.json",
+      "sha256": "3235d6dcc06e2ad4e533975263dcb14b2f32cc1bbc12887efbb612747515c86e",
+      "bytes": 1653
+    }
+  ],
+  "notes": [
+    "Unknown readiness remains null; no aggregate quality score is produced.",
+    "Compilation and packageability do not establish scientific readiness.",
+    "No upload, account action or publication occurred."
+  ]
+}

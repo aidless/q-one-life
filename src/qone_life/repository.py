@@ -12,6 +12,11 @@ from pathlib import Path
 from uuid import uuid4
 
 DOMAINS = {"work": "工作", "learning": "学习", "energy": "精力", "recovery": "恢复", "other": "其他"}
+SCHEMA_VERSION = 1
+
+
+class DatabaseVersionError(RuntimeError):
+    """Raised when local data was written by an incompatible newer release."""
 
 
 def now():
@@ -38,6 +43,11 @@ class Repository:
         self.directory.mkdir(parents=True, exist_ok=True, mode=0o700)
         self.path = self.directory / "app.sqlite3"
         with self.connect() as db:
+            version = db.execute("PRAGMA user_version").fetchone()[0]
+            if version > SCHEMA_VERSION:
+                raise DatabaseVersionError(
+                    f"database schema {version} is newer than supported {SCHEMA_VERSION}"
+                )
             db.executescript('''
                 PRAGMA journal_mode=WAL;
                 CREATE TABLE IF NOT EXISTS system_revisions(id TEXT PRIMARY KEY, payload TEXT NOT NULL);
@@ -50,6 +60,8 @@ class Repository:
                 CREATE TABLE IF NOT EXISTS runs(id TEXT PRIMARY KEY, payload TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS reviews(id TEXT PRIMARY KEY, payload TEXT NOT NULL);
             ''')
+            if version < SCHEMA_VERSION:
+                db.execute(f"PRAGMA user_version={SCHEMA_VERSION}")
         self.path.chmod(0o600)
 
     @contextmanager
@@ -58,6 +70,11 @@ class Repository:
         try:
             with db:
                 db.execute("PRAGMA busy_timeout=15000")
+                version = db.execute("PRAGMA user_version").fetchone()[0]
+                if version > SCHEMA_VERSION:
+                    raise DatabaseVersionError(
+                        f"database schema {version} is newer than supported {SCHEMA_VERSION}"
+                    )
                 yield db
         finally:
             db.close()

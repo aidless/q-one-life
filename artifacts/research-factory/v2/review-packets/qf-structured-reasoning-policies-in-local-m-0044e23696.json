@@ -1,0 +1,73 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-structured-reasoning-policies-in-local-m-0044e23696",
+  "project_id": "qp-arxiv-4514b530fd94",
+  "title": "Structured Reasoning Policies in Local Models:\\ Transfer Effect, Prospectively Confirmed",
+  "primary_source": "/home/liuzewen/F:\\deepseek/papers/verification_selfaudit/migrations/8fam-20261019/bundle-snapshot/worktree/untracked/ai-researcher/arxiv/paper.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "ec3fe03a98475bdc4db7a1734b3081b594d53a42d8d37819192121fbad68344a",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "paper",
+  "production_priority": 25,
+  "priority_band": "P3",
+  "priority_factors": [
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    }
+  ],
+  "pilot_ids": [],
+  "signals": {
+    "claim_ledger": false,
+    "bibliography": false,
+    "compiled_pdf": true,
+    "evidence_directory": false,
+    "variants_to_reconcile": 0,
+    "overlay_present": false
+  },
+  "variant_sources": [
+    "/home/liuzewen/F:\\deepseek/papers/verification_selfaudit/migrations/8fam-20261019/bundle-snapshot/worktree/untracked/ai-researcher/arxiv/paper.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "The canonical source has enough structure to repair, but its evidence and package gates remain unverified.",
+    "next_action": "confirm_target_and_scope",
+    "authoritative": false
+  },
+  "overlay": null,
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

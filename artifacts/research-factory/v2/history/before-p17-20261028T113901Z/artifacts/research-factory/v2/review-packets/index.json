@@ -1,0 +1,819 @@
+{
+  "schema": "q-one-review-packet-index-v1",
+  "generated_at": "2026-10-28T11:15:28.815719Z",
+  "inputs": [
+    {
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-portfolio.json",
+      "sha256": "3a6daa6b530d7dd1b6deee6ef3806a57a0356b01e1e443fa49dcbac0bf961e2c"
+    },
+    {
+      "path": "/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-factory/v2/triage.json",
+      "sha256": "bf5e2a4ca31b43856b773134136b93c861a4ffe850ae71351528959d41e35da0"
+    }
+  ],
+  "summary": {
+    "paper_families": 131,
+    "unreviewed": 131,
+    "suggested_dispositions": {
+      "merge": 47,
+      "repair": 84
+    },
+    "source_missing": 0,
+    "source_hash_mismatch": 0,
+    "overlays": 16,
+    "overlay_attachments": 17
+  },
+  "top20": "review-packets/top20.md",
+  "packets": [
+    {
+      "family_id": "qf-a-conditional-coupling-diversity-precisi-7336590fb7",
+      "path": "qf-a-conditional-coupling-diversity-precisi-7336590fb7.json",
+      "sha256": "a35564a125872e736e5d43b838d3c3a82ee2ce9380bc684ff6fc02a63d9b8183",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-agent-behavior-regression-testing-for-lo-1f724f2bff",
+      "path": "qf-agent-behavior-regression-testing-for-lo-1f724f2bff.json",
+      "sha256": "c82b7ab9901155d1a369497a51b3bb26a68d3e6567d09d18c64842ac98d63dfb",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-an-empirical-study-of-aggregation-method-819da8c6b1",
+      "path": "qf-an-empirical-study-of-aggregation-method-819da8c6b1.json",
+      "sha256": "5a432f06b3225db8a7d3a3856817a5f1a8c5c5b15ad569ab887e7deac3632539",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-calibrating-the-evaluator-does-probabili-6544cd664a",
+      "path": "qf-calibrating-the-evaluator-does-probabili-6544cd664a.json",
+      "sha256": "c0896082ea4ec1a3ad4597bc6172012b250e969a535230858614b426ac3afd38",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-closing-the-calibration-landscape-a-mult-99bef231e5",
+      "path": "qf-closing-the-calibration-landscape-a-mult-99bef231e5.json",
+      "sha256": "6a3d0e7646beb93052b9d5a72bf2d1433ed5bfceb835cdaa6bcb399fe240d5b0",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-conditional-communication-effects-in-mul-ad96998074",
+      "path": "qf-conditional-communication-effects-in-mul-ad96998074.json",
+      "sha256": "569ee720854ee2a035b5ed38a6d339c83beba4062d2d7474bb59651b10c9391b",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-memory-architecture-effects-on-output-le-0ea84705a9",
+      "path": "qf-memory-architecture-effects-on-output-le-0ea84705a9.json",
+      "sha256": "bf86e47a2701dcb6c647ded342a7cd7dfc6f5855045c006ecd6885dfad5b9a2c",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-merged-flagship-f2-k-generalization-sele-112d818110",
+      "path": "qf-merged-flagship-f2-k-generalization-sele-112d818110.json",
+      "sha256": "799d87fc6e7b4fb8eb4f83356cf97d82cc6819004bab6b8387873dbf043d84e9",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-merged-flagship-f4-verification-trust-sc-88e8c3c2ce",
+      "path": "qf-merged-flagship-f4-verification-trust-sc-88e8c3c2ce.json",
+      "sha256": "f4e6cad814b6003e1c3c7c2d2f4a572c3472cd2ffb6d885740e49d06446a22e1",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-n-sensitive-calibration-of-tree-ensemble-623d15100e",
+      "path": "qf-n-sensitive-calibration-of-tree-ensemble-623d15100e.json",
+      "sha256": "37c107a8ff19464fa5006bdd44acdfc8fbc634ebe38446556c72a2dc76d2a492",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-hidden-cost-of-resampling-how-imbala-36f86aadfa",
+      "path": "qf-the-hidden-cost-of-resampling-how-imbala-36f86aadfa.json",
+      "sha256": "74e6fb73a0530870f528bb43ca379e7503d9b0d7458f5efc1cf604516724aa40",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-one-rung-at-a-time-attributing-an-arc-ag-b3e1c59ca9",
+      "path": "qf-one-rung-at-a-time-attributing-an-arc-ag-b3e1c59ca9.json",
+      "sha256": "28a58588e371f63bce609eb9b9571c7aee9f8bd2b464f26dd2516abefa6c7895",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-auditing-score-exposure-and-presentation-7c01af0b01",
+      "path": "qf-auditing-score-exposure-and-presentation-7c01af0b01.json",
+      "sha256": "a0fc87f6e9f029c5b6f66c03992725fd593df23a2dc8ac9a7f25bf9a12067f24",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-name-is-the-contract-a-promotion-gat-afdfe0105b",
+      "path": "qf-the-name-is-the-contract-a-promotion-gat-afdfe0105b.json",
+      "sha256": "062d723165a78bd64519d90efc19d197bdacd0c3c69b22503d0829164f679a89",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-reading-a-leaderboard-before-you-cite-it-96866c580c",
+      "path": "qf-reading-a-leaderboard-before-you-cite-it-96866c580c.json",
+      "sha256": "b08ffd23215454fd2bd631c0f06cf34cf80cbb6f14c1cb950a72395e9b7d7926",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-your-tool-selection-benchmark-may-be-sco-85ad80aa80",
+      "path": "qf-your-tool-selection-benchmark-may-be-sco-85ad80aa80.json",
+      "sha256": "2ceea0a358f5913210930e57d80c44089f680ef81a678f43aa68e59dac74d676",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-n-sensitivity-when-measurement-instabili-bf41179ed8",
+      "path": "qf-n-sensitivity-when-measurement-instabili-bf41179ed8.json",
+      "sha256": "79187916d29608e221a72e3de5ea20502bfd266e26908e163f616ad673d75fd7",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-calibration-fatigue-self-evaluation-frag-3c06d49517",
+      "path": "qf-calibration-fatigue-self-evaluation-frag-3c06d49517.json",
+      "sha256": "4b12f9701375149368b767632eb005dc2459bd99ce3076839577548e260428fc",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-calibration-fatigue-self-evaluation-frag-caf6272827",
+      "path": "qf-calibration-fatigue-self-evaluation-frag-caf6272827.json",
+      "sha256": "ad8b03811e512673f126e7ab54d2a2e680794be77667f1dc05e6609cb1db21b9",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-when-zero-does-not-mean-safe-auditing-ap-5f95685f66",
+      "path": "qf-when-zero-does-not-mean-safe-auditing-ap-5f95685f66.json",
+      "sha256": "bf0fda5a981d9e8cbfe754f159884884dd091563568354394c320097c1004503",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-a-diagnostic-framework-and-multi-evaluat-7446aa9495",
+      "path": "qf-a-diagnostic-framework-and-multi-evaluat-7446aa9495.json",
+      "sha256": "efdb6a8ba1bc614e0e0aac21cb3fb0efd84e157f97e34de27b2f6ba82ccd2d72",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-an-empirical-characterization-of-selecti-a82a462a3a",
+      "path": "qf-an-empirical-characterization-of-selecti-a82a462a3a.json",
+      "sha256": "773bcd946edcb674257253f1c68ff5d7ddfe5909292c6508926aa6d9882df582",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-communication-degrades-calibration-evalu-241a0f227b",
+      "path": "qf-communication-degrades-calibration-evalu-241a0f227b.json",
+      "sha256": "05a91d3925bde17ccd77d03c0a44d394080fdb682701946176865d003bce0787",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-empirical-comparison-of-memory-architect-3084cbb481",
+      "path": "qf-empirical-comparison-of-memory-architect-3084cbb481.json",
+      "sha256": "e37756b006cfd3c7a5ba9ba65e632b5f04bea8bf67137f09a9ba3fdf8e61143f",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-memory-architecture-design-for-bias-resi-0dea4cfb82",
+      "path": "qf-memory-architecture-design-for-bias-resi-0dea4cfb82.json",
+      "sha256": "082ac88db87521f8eca16f4301dfc751a1b8b88761cc979ba5d7dab4d1e27b3f",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-memory-architecture-design-for-bias-resi-586a560097",
+      "path": "qf-memory-architecture-design-for-bias-resi-586a560097.json",
+      "sha256": "577617cd7dcfc1a5ada4cdd88b39c8a2cce3fe1930fda235031d16d25a3f66cd",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-probability-calibration-when-combining-l-d41d5031eb",
+      "path": "qf-probability-calibration-when-combining-l-d41d5031eb.json",
+      "sha256": "3115219cd4f6ab9e4558e188dd6bf4c9bc5de67853050da83f358a1fa5db16b8",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-taming-the-queue-a-systematic-characteri-856e0899b7",
+      "path": "qf-taming-the-queue-a-systematic-characteri-856e0899b7.json",
+      "sha256": "4c29187ddb437fed6ddb3d2393bbb00636b6fa2b0e78f392b92c469c836def84",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-category-error-in-multi-agent-simula-4b1da049e9",
+      "path": "qf-the-category-error-in-multi-agent-simula-4b1da049e9.json",
+      "sha256": "faf985e4c7c4db2825afcd180c643468ff20eede21846e2345acc581381d435b",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-impossibility-triangle-of-llm-evalua-36f17b1cad",
+      "path": "qf-the-impossibility-triangle-of-llm-evalua-36f17b1cad.json",
+      "sha256": "650a0e9c282c958e85d79c96b5cca14473063f22d6c11a32dfb8b2d1cb2d93ba",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-what-communication-does-to-multi-agent-l-3fdbb7f4b3",
+      "path": "qf-what-communication-does-to-multi-agent-l-3fdbb7f4b3.json",
+      "sha256": "7dba148493a44b34775c534d7c1bcf9becad0f6bc8a3fa11439406218c89b763",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-agent-effort-under-resource-budgets-allo-46b07acd3f",
+      "path": "qf-agent-effort-under-resource-budgets-allo-46b07acd3f.json",
+      "sha256": "45a64a27030542140f5c599d3f06800625c327264f6133ece196b35655ce2a7a",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-agentcompose-quantifying-compositional-g-116e493f2d",
+      "path": "qf-agentcompose-quantifying-compositional-g-116e493f2d.json",
+      "sha256": "f944bce7fa197c6bab9b9c47b294284c8b8af4e962b1e1085d60a8ec081820ff",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-calibration-dynamics-in-multi-agent-llm--59030c6fc2",
+      "path": "qf-calibration-dynamics-in-multi-agent-llm--59030c6fc2.json",
+      "sha256": "58457de1c7336c307cc875197df49e1ffd3525ad17337038715d8439f0df4001",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-calibration-effects-in-multi-agent-llm-s-cfc3d4239c",
+      "path": "qf-calibration-effects-in-multi-agent-llm-s-cfc3d4239c.json",
+      "sha256": "35c5647cb528f76acc1ede29b7eb8d58e7a2b8747d836e47b4bf9454b166da47",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-fail-closed-auditable-promotion-gates-fo-43e1af2458",
+      "path": "qf-fail-closed-auditable-promotion-gates-fo-43e1af2458.json",
+      "sha256": "3241b1530e806045b395a1803cae476c1a5f2adaa55c8b372f3ee981bcaed5d7",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-from-controllable-reasoning-effort-to-co-59cf112eb3",
+      "path": "qf-from-controllable-reasoning-effort-to-co-59cf112eb3.json",
+      "sha256": "43567176484527d487448f2877371dea24f5c23e6fefa0b67af7bd37ab3d0b5d",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-leakage-in-harness-selection-a-ground-tr-7f3f5eccd9",
+      "path": "qf-leakage-in-harness-selection-a-ground-tr-7f3f5eccd9.json",
+      "sha256": "de6f1d932fbe455e8e64a89e39005f350937d6229d1f3311db193c712592c788",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-proxy-true-decoupling-under-speed-reward-2144d91df6",
+      "path": "qf-proxy-true-decoupling-under-speed-reward-2144d91df6.json",
+      "sha256": "b2c1d32bbf456cf85201c068bf7b65165e6ba0bdde70a31d3d37af78afde9390",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-coupling-diversity-precision-tradeof-65b8db1abc",
+      "path": "qf-the-coupling-diversity-precision-tradeof-65b8db1abc.json",
+      "sha256": "47da6e790a5636a85cbe22f5b2a0266b1bb3942155e1e75e64432956f835e4bc",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-when-zero-does-not-mean-safe-auditing-na-58ac4b9b60",
+      "path": "qf-when-zero-does-not-mean-safe-auditing-na-58ac4b9b60.json",
+      "sha256": "773c4414932a02fded7e6d75f31790d1ef14f81e8ec52ad1f8fd17744123cd9f",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-approval-gates-and-safety-prompts-descri-1d749982b9",
+      "path": "qf-approval-gates-and-safety-prompts-descri-1d749982b9.json",
+      "sha256": "d144d636dfbaa4b9ae0d012a8bd29695dbf75f939bc1b1b5978ccae084e84f3c",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-approval-gates-and-safety-prompts-measur-8356bb57c4",
+      "path": "qf-approval-gates-and-safety-prompts-measur-8356bb57c4.json",
+      "sha256": "aa3f7db274be5e6cff7943afd0b4a3f54b672431609b5b1b52cfa34e360fc3f0",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-approval-gates-versus-safety-prompts-pla-d890407bf4",
+      "path": "qf-approval-gates-versus-safety-prompts-pla-d890407bf4.json",
+      "sha256": "c30da94e9d8f4dfb7836af6d5146f9ed4b884eda7b014e19ce329f7f2d02d7f9",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-cost-coverage-and-auditability-of-approv-e8c079010e",
+      "path": "qf-cost-coverage-and-auditability-of-approv-e8c079010e.json",
+      "sha256": "57bcb28973a660e4d335e820c48eba9ac7e88d1cd801b8f4232eed9a2a3701f2",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-encoder-only-agent-memory-how-much-retri-b397ed6372",
+      "path": "qf-encoder-only-agent-memory-how-much-retri-b397ed6372.json",
+      "sha256": "b3851dedebcb70e41d0f3512e58c73ad3920772d337c698aedf661aba10018f8",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-how-much-staleness-can-training-tolerate-c9999765c5",
+      "path": "qf-how-much-staleness-can-training-tolerate-c9999765c5.json",
+      "sha256": "b88f2b4284d2f5f3ff46b60af477bded2ac0c8a5850c12cf95e74b684ca8a8a5",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-label-matcher-choice-moves-measured-accu-07fc9ff1f7",
+      "path": "qf-label-matcher-choice-moves-measured-accu-07fc9ff1f7.json",
+      "sha256": "3a49e2a4da4c76d9e4c80f930f847db2a5e3230b3c1ad8528c890b7773a02c90",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-provenance-marks-do-not-survive-self-evo-43c17717d1",
+      "path": "qf-provenance-marks-do-not-survive-self-evo-43c17717d1.json",
+      "sha256": "3bec4411da9d6fac1dda41e26ab4327ac71eebb00abdfdda9a672226e068825f",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-science-task-factory-score-swap-auditing-fd442a0963",
+      "path": "qf-science-task-factory-score-swap-auditing-fd442a0963.json",
+      "sha256": "99abd6752611dcc13bbd1b358170817b56a92ac76033731c09d0c8d96071be96",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-trust-weighted-and-hybrid-voting-under-c-9aac50007a",
+      "path": "qf-trust-weighted-and-hybrid-voting-under-c-9aac50007a.json",
+      "sha256": "71649af308a2c64d44de41c06c37c2fb8c98f06677195928bf9868740e6de5ae",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-what-belongs-in-engram-and-what-belongs--1c6558f8bc",
+      "path": "qf-what-belongs-in-engram-and-what-belongs--1c6558f8bc.json",
+      "sha256": "67f0d2a6285ba89c5dbb72e19706a936f9ada2cc1f204bf1e7716540c8874f16",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-what-the-archive-can-certify-an-audit-of-38f833e921",
+      "path": "qf-what-the-archive-can-certify-an-audit-of-38f833e921.json",
+      "sha256": "7aaca9437819afb534601fcbbe23a2e8f24974b25865eb9a7cf815e418dedffd",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-when-does-parallelising-agents-pay-deriv-c9d6889991",
+      "path": "qf-when-does-parallelising-agents-pay-deriv-c9d6889991.json",
+      "sha256": "934d9c8dd84759ff4618ef255d56e34833167049c0a4ecfb4dc768933a94d8e3",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-when-the-model-says-it-checked-finite-lo-703b9d6a8b",
+      "path": "qf-when-the-model-says-it-checked-finite-lo-703b9d6a8b.json",
+      "sha256": "e8b5973f53d379765fbcafd236ba8edae51e4c4674eb60691db24639d2e320d1",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-where-does-cross-layer-sparsity-break-an-7269b6a596",
+      "path": "qf-where-does-cross-layer-sparsity-break-an-7269b6a596.json",
+      "sha256": "59aaf17b5d558c68ea57626881a40142929fa7be71c3ecb4649c9d27be173bf4",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-beyond-point-estimates-temporal-dynamics-a5718b6580",
+      "path": "qf-beyond-point-estimates-temporal-dynamics-a5718b6580.json",
+      "sha256": "89ee38c0f64d8e017c7675d4f97440601b7f43d49c3891fd48bcba2ba9fb88bf",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-does-temporal-calibration-fatigue-replic-c4824bf35f",
+      "path": "qf-does-temporal-calibration-fatigue-replic-c4824bf35f.json",
+      "sha256": "bf6547f13bf7d7cdcbbd0fa9fd31a82924b3446500c4498c4974dc4afd3cdb8f",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-n-sensitivity-in-llm-evaluation-a-diagno-5cbc1237b7",
+      "path": "qf-n-sensitivity-in-llm-evaluation-a-diagno-5cbc1237b7.json",
+      "sha256": "90a527c7443b9d846de5df2b7867304142cbfeede8b58a0c5e90660ce6e71284",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-not-contagion-just-time-temporal-calibra-f7a1815037",
+      "path": "qf-not-contagion-just-time-temporal-calibra-f7a1815037.json",
+      "sha256": "fee5d3680d88bf0d3ee29f319538fb3e647c32475078498d831ac64a175b557a",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-calibration-fatigue-llm-self-improvement-67cb39652a",
+      "path": "qf-calibration-fatigue-llm-self-improvement-67cb39652a.json",
+      "sha256": "7c289098542d4564afb1dc7e23384e0c3bd86a97014f00a2bb4a8466f3ef5990",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-joint-memory-forgetting-and-lightweight--00bd009a55",
+      "path": "qf-joint-memory-forgetting-and-lightweight--00bd009a55.json",
+      "sha256": "ed7f9726d4da07ef6baf5fab7220361369131c05e6bae2faf07240000a949bb3",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-where-does-cross-layer-sparsity-break-ro-20c2581fbf",
+      "path": "qf-where-does-cross-layer-sparsity-break-ro-20c2581fbf.json",
+      "sha256": "e921580e3ff778eee9ade692ff8d6a695c1af7e7e48147ad7ce263ce05696ca5",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-caliber-dependence-of-cost-claims-2pt-ev-e3c0202bb5",
+      "path": "qf-caliber-dependence-of-cost-claims-2pt-ev-e3c0202bb5.json",
+      "sha256": "fc4c70778f206d022df2c9a7c54a655ab4b1e66ee6489cd0d94364563b924e0b",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-what-do-approval-logs-and-task-scores-es-4d7911ffd4",
+      "path": "qf-what-do-approval-logs-and-task-scores-es-4d7911ffd4.json",
+      "sha256": "ffe072adb00dc09e58344d69c96aae2b875720d5d04c04e57df2085a15b444e4",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-which-probability-is-the-confidence-2pt--842b5f146b",
+      "path": "qf-which-probability-is-the-confidence-2pt--842b5f146b.json",
+      "sha256": "0efaa2fab0362d7ab3b2bbb9ea7d832e6a0388f224dac813de72c17e7d4c5a00",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-memory-contagion-418adb87a9",
+      "path": "qf-memory-contagion-418adb87a9.json",
+      "sha256": "5e2dafd14f527088b5b81e8bde1f83f5a8ee01e065f325d6af327b7d89465cd8",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-auditable-recursive-self-improvement-0-2-e2b788577f",
+      "path": "qf-auditable-recursive-self-improvement-0-2-e2b788577f.json",
+      "sha256": "bce928c3f147e50056eab84c0d4aa1fed8f612b3a2e057e3dfaa823d78e78fe8",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-calibration-leakage-from-retrieved-skill-18d88d8a2a",
+      "path": "qf-calibration-leakage-from-retrieved-skill-18d88d8a2a.json",
+      "sha256": "6e84b3638ec9dd387b8e04e25e976ba50efc29ae6a4529d794aa85650c46ac31",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-mapping-the-evaluation-frontier-an-empir-577037cb22",
+      "path": "qf-mapping-the-evaluation-frontier-an-empir-577037cb22.json",
+      "sha256": "82449d14b2e30f319e955dbd466c43491858182f990cddaa19f286e1f2dc49a6",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-merged-flagship-f3-memory-contagion-and--13313351c7",
+      "path": "qf-merged-flagship-f3-memory-contagion-and--13313351c7.json",
+      "sha256": "8c05ba260fcc77b97af2d01e9238b8d339bb80b6ae7ca036737b680de7cc060f",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-merged-flagship-f5-ensemble-atv-self-eva-994c7c5b6c",
+      "path": "qf-merged-flagship-f5-ensemble-atv-self-eva-994c7c5b6c.json",
+      "sha256": "9340dce3cf3fa7c9bbb703a1a8f4885f99dd99d951611b3c76928d915f37a944",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-post-rlhf-calibration-drift-a-distributi-5152a683fc",
+      "path": "qf-post-rlhf-calibration-drift-a-distributi-5152a683fc.json",
+      "sha256": "dcebb0f7781cb81eb441fb9055da7f2198f3afd081ce2e6e80443df7f3e244d2",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-self-evaluation-coupling-in-local-llms-a-815e3ebbb6",
+      "path": "qf-self-evaluation-coupling-in-local-llms-a-815e3ebbb6.json",
+      "sha256": "842d75b868afbe52bab747ac05d9fab7c088850bbd05af726de94bb512c776dd",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-when-the-sandbox-lies-quantifying-the-be-ea3f9656e4",
+      "path": "qf-when-the-sandbox-lies-quantifying-the-be-ea3f9656e4.json",
+      "sha256": "27a085bac03ff88b6f0c7baef68c198070d0bb467ff86a9f14b128df82104921",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-a-conditional-k-pair-surrogate-bound-for-84f2cdd1fb",
+      "path": "qf-a-conditional-k-pair-surrogate-bound-for-84f2cdd1fb.json",
+      "sha256": "f4a189027629e22a2bf64a93ca70d267cbed95e322c3013748a7743add3c8d9c",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-boundary-sync-efaf7f88e1",
+      "path": "qf-boundary-sync-efaf7f88e1.json",
+      "sha256": "523400ef217c435bbd88031ca8ed660dedc68f284143c45216782a3c06bcea97",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-cca-agent-4ce757da70",
+      "path": "qf-cca-agent-4ce757da70.json",
+      "sha256": "6afb4f6c89f39db58f97606a3bbdfd604f618ee8f5b18cc0f6d2f4b00933aca9",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-gate-green-is-not-right-false-greens-a-f-69f271dcbb",
+      "path": "qf-gate-green-is-not-right-false-greens-a-f-69f271dcbb.json",
+      "sha256": "945a8ec48888ba881467721f24e422383f5a9d359c5bc735156b46db68e3d9f0",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-how-many-evaluation-runs-does-a-ranking--93f856fd61",
+      "path": "qf-how-many-evaluation-runs-does-a-ranking--93f856fd61.json",
+      "sha256": "1382d4a971a6b22aa4f6b43cfdfc2141fcff7c125b956ee92da81228eaff78a1",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-self-scoring-reproduction-audits-when-a--c088b2c04b",
+      "path": "qf-self-scoring-reproduction-audits-when-a--c088b2c04b.json",
+      "sha256": "335d41cd00446dc391f9295461de9a605153fdca482c4f1b23c789e952f0a3e9",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-when-a-leaderboard-cannot-be-read-three--408f5f6ceb",
+      "path": "qf-when-a-leaderboard-cannot-be-read-three--408f5f6ceb.json",
+      "sha256": "5f93d7dd02ee62fbfbda543ac61b7abf5991ee0cce98f566ac07f3015372ecc4",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-within-condition-testing-of-the-bias-rel-4962b75a8e",
+      "path": "qf-within-condition-testing-of-the-bias-rel-4962b75a8e.json",
+      "sha256": "1bcf6826a0ed7c4241de7efca161eafe9fad1f583025361ffa45f32277f9245f",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-contagion-networks-evaluator-preference--4093c9a3cf",
+      "path": "qf-contagion-networks-evaluator-preference--4093c9a3cf.json",
+      "sha256": "49cb9e5701b556de22f99ee94318d0424aa0a56fc0e8ca0043f9426194fc8fb1",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-probability-calibration-worsens-evaluati-ebfa2ad9ce",
+      "path": "qf-probability-calibration-worsens-evaluati-ebfa2ad9ce.json",
+      "sha256": "c23b21b9e042908e7e214f91b9e341b946215ac476cfcec5e39f410d02098c9d",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-self-evaluation-immunity-appears-model-d-e696ab8e34",
+      "path": "qf-self-evaluation-immunity-appears-model-d-e696ab8e34.json",
+      "sha256": "7a8d200244dc27ef4a96f0da7f7ec30776633526984defc2fa39daf719716c16",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-strategy-collapse-dynamics-how-evaluator-d6c3ca43da",
+      "path": "qf-strategy-collapse-dynamics-how-evaluator-d6c3ca43da.json",
+      "sha256": "327ecdb4b99636613b2729a719b8938441be720ce196dc6175eff194c1959d55",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-symmetric-learning-rates-do-not-eliminat-2b24d91220",
+      "path": "qf-symmetric-learning-rates-do-not-eliminat-2b24d91220.json",
+      "sha256": "ade30393e75253d03b32f82b0a3318416322b39764a5410b082b9d0af051aed7",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-formatting-instructions-for-tmlr-submiss-cb8704ea2a",
+      "path": "qf-formatting-instructions-for-tmlr-submiss-cb8704ea2a.json",
+      "sha256": "5b3c09f7f48a63b1b1e3b95cfb49d3797f6ac38cc11b1ee4026cacecf9cfeea5",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-small-model-closed-loop-dynamics-an-hone-91fd6395d3",
+      "path": "qf-small-model-closed-loop-dynamics-an-hone-91fd6395d3.json",
+      "sha256": "280db22a284d4b9449c4f684c3457de18d95185b1740af3742441d575deefd99",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-claim-surface-outside-the-manuscript-58d59cb7f8",
+      "path": "qf-the-claim-surface-outside-the-manuscript-58d59cb7f8.json",
+      "sha256": "2127e4fa105faa91fecd1ca6d0fee3d7cc18ed37a43ca90560b2bbe758bb579d",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-embodied-neurosymbolic-world-model-a-70e29e5c56",
+      "path": "qf-the-embodied-neurosymbolic-world-model-a-70e29e5c56.json",
+      "sha256": "f8971ebd091b5431d744fc6410aab0a264bb81ecb2a63c3862e3c80c2ff83abd",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-name-is-the-contract-a-promotion-gat-9c5f678967",
+      "path": "qf-the-name-is-the-contract-a-promotion-gat-9c5f678967.json",
+      "sha256": "683b36427d095931c373e9d5b04c9f830f412425dc7c1a61cab1a460599be56a",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-what-a-passing-score-certifies-a-no-acti-21960abdfb",
+      "path": "qf-what-a-passing-score-certifies-a-no-acti-21960abdfb.json",
+      "sha256": "ce86d036c175c6a1722f01ab6f1e598d25691d4272725b005233e3b59ea962ac",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-which-endpoint-is-undecidable-auditing-r-e1b9af095d",
+      "path": "qf-which-endpoint-is-undecidable-auditing-r-e1b9af095d.json",
+      "sha256": "342f4d8ea334ea45410deff8244015f7303bf2a738d2b06af15ade1acc123307",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-adaptive-hybrid-voting-does-not-exhibit--a3eea0d720",
+      "path": "qf-adaptive-hybrid-voting-does-not-exhibit--a3eea0d720.json",
+      "sha256": "4e4d171538fd1cf68771868d84f0efc827f4929de1816828f5660ff614ad018d",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-agentcompose-a-benchmark-design-for-comp-4cca690098",
+      "path": "qf-agentcompose-a-benchmark-design-for-comp-4cca690098.json",
+      "sha256": "bdc8d61b4e8353bb177452956d9ad868a64289da8a952983c1e3c59eb81cdcc0",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-confidence-priming-instructions-in-retri-1843660b2a",
+      "path": "qf-confidence-priming-instructions-in-retri-1843660b2a.json",
+      "sha256": "0caa96c10d9bee84d77cb7b73c4b910747d24c33579f1f3681c3433cba0aff8d",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-explicit-failure-wording-in-unmet-tool-o-7924f0c562",
+      "path": "qf-explicit-failure-wording-in-unmet-tool-o-7924f0c562.json",
+      "sha256": "a280b6bb35d7b1961892497f1d462c426790d3a5b51b6056d88c0075168d7da7",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-explicit-failure-wording-in-unmet-tool-o-dd5d97ea89",
+      "path": "qf-explicit-failure-wording-in-unmet-tool-o-dd5d97ea89.json",
+      "sha256": "c933d7ed81305893e9a647021bb401a0011e5000ec8457d3dc6566240197baf4",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-four-routes-one-goal-a-mechanistic-taxon-76d578818e",
+      "path": "qf-four-routes-one-goal-a-mechanistic-taxon-76d578818e.json",
+      "sha256": "e4d01a2fbf3dc96a03f80d5acaee27287e21e4cdfd9814fd529eb0e87927a46b",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-how-agent-memory-architecture-is-associa-81fe3812c9",
+      "path": "qf-how-agent-memory-architecture-is-associa-81fe3812c9.json",
+      "sha256": "0f3328100ee3b4885938a4b850de06318deeab6365395e86a55a6a395f981dc6",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-no-record-in-an-audit-pipeline-can-tell--e0122da8dc",
+      "path": "qf-no-record-in-an-audit-pipeline-can-tell--e0122da8dc.json",
+      "sha256": "34e6d97148c79a993e5cef515ac1f79c76918366604d0c7ea88c2a88f0ddc262",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-trust-weighted-voting-never-loses-to-maj-42ccc127d8",
+      "path": "qf-trust-weighted-voting-never-loses-to-maj-42ccc127d8.json",
+      "sha256": "2fe7bc479a530228bac8a57c9e7cd67a5a6cdb67fc01a0da900514a16fbe7614",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-calibration-leakage-from-retrieved-skill-9c35b37bdb",
+      "path": "qf-calibration-leakage-from-retrieved-skill-9c35b37bdb.json",
+      "sha256": "5848f02e7a3c31245de927fc3db7010fa17a0dbdbd566993ef21232939ba5666",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-genesis-master-a-self-creating-self-iter-499049faf6",
+      "path": "qf-genesis-master-a-self-creating-self-iter-499049faf6.json",
+      "sha256": "71e5f3161b6f3af6ccb739bca5d06462e7eb62e00d6ffe3d867b384273978e14",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-triple-parallel-deployment-and-extreme-s-a5d74fbfdc",
+      "path": "qf-triple-parallel-deployment-and-extreme-s-a5d74fbfdc.json",
+      "sha256": "d9d727b39a5cacc1a3c4bb30a34f21507801bf87c0e627249565d20aab0f2417",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-auditing-the-auditors-an-executable-meta-f835f63c93",
+      "path": "qf-auditing-the-auditors-an-executable-meta-f835f63c93.json",
+      "sha256": "6ac913e59561c59ebb2a017bbeeef857ff6cc54bca98a596709f500dddbd00ce",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-do-agent-benchmarks-do-what-they-say-an--d621272a99",
+      "path": "qf-do-agent-benchmarks-do-what-they-say-an--d621272a99.json",
+      "sha256": "c25ab6afc6bc3772115f95b3e2d3ce32b6306430c6e7b69f2a8b49b2601b5ac0",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-does-the-loop-cost-number-survive-recomp-fa7aa56d16",
+      "path": "qf-does-the-loop-cost-number-survive-recomp-fa7aa56d16.json",
+      "sha256": "270cdd137e68ab232e04f473dec3277a8e2a2af068a4f0d74b5c05090975e607",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-evaluator-dynamics-coupling-version-drif-90f277fc37",
+      "path": "qf-evaluator-dynamics-coupling-version-drif-90f277fc37.json",
+      "sha256": "8a6f537eb52b43b44ed1a4616f489fb60f9d5e9d4c3c88c4c3722633ae5324e9",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-load-bearing-or-noise-a-verification-fir-7de6c247a0",
+      "path": "qf-load-bearing-or-noise-a-verification-fir-7de6c247a0.json",
+      "sha256": "821af72e694883415313004771e98318e3e7cfcfe743460de2b3ae160ddaeb09",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-agent-did-not-say-it-failed-positive-9a45117b1c",
+      "path": "qf-the-agent-did-not-say-it-failed-positive-9a45117b1c.json",
+      "sha256": "e7a5ca76e37a78194d1477782774c77c923a99e803bb5ab52a4e79cb825a568a",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-verifier-bottleneck-why-capability-s-30a1389f39",
+      "path": "qf-the-verifier-bottleneck-why-capability-s-30a1389f39.json",
+      "sha256": "0e1ba654dddeaeb5c5b042e2944f0862544af04f7d8b0e17c0fe8da8abb55755",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-what-communication-does-to-multi-agent-l-4e26909950",
+      "path": "qf-what-communication-does-to-multi-agent-l-4e26909950.json",
+      "sha256": "1905c785e83a775f3a47999eda848a3116553a7e8b2165e1d24c59dfc3671fea",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-your-benchmark-score-names-no-object-dep-66732e659c",
+      "path": "qf-your-benchmark-score-names-no-object-dep-66732e659c.json",
+      "sha256": "af37a0aaa837d0aa474557ef0e68ded8b43c561a86ce1bd7339d469a13d033ab",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-a-statistical-gate-for-autonomous-resear-b0ce7418c2",
+      "path": "qf-a-statistical-gate-for-autonomous-resear-b0ce7418c2.json",
+      "sha256": "b4b987985c56c307d9187ebdb361f596f97d8345665d65d414af03851fd6658d",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-structured-reasoning-policies-in-local-m-0044e23696",
+      "path": "qf-structured-reasoning-policies-in-local-m-0044e23696.json",
+      "sha256": "ed88ecc78989914bc4340d74f9692c693eb5ec623d8003af6a37769eed306b4b",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-structured-reasoning-policies-in-local-m-0061e9179e",
+      "path": "qf-structured-reasoning-policies-in-local-m-0061e9179e.json",
+      "sha256": "055cc610343fb6d6eb86fac4d6cb4ec829a5b928162eb23f83849649242444e0",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-channel-is-the-context-structural-bl-fdfdfc3c51",
+      "path": "qf-the-channel-is-the-context-structural-bl-fdfdfc3c51.json",
+      "sha256": "7e7bdcd5e18c0b5565d13683c7a1dfe807da85d625fb4992ea9996b47ce853d3",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-edge-in-the-log-cross-principal-leak-f7438b6267",
+      "path": "qf-the-edge-in-the-log-cross-principal-leak-f7438b6267.json",
+      "sha256": "af8fde7ffb7076f28563e7220b014b95161a77fe951818b6492a3c4a1ef27c65",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-the-name-is-the-contract-a-promotion-gat-a3e8572d68",
+      "path": "qf-the-name-is-the-contract-a-promotion-gat-a3e8572d68.json",
+      "sha256": "9eb29f17f20d77b3c9fc386cc0efe3cd9770b203c603793026433682a5660379",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-where-provenance-marks-survive-echo-infl-7a44537b6c",
+      "path": "qf-where-provenance-marks-survive-echo-infl-7a44537b6c.json",
+      "sha256": "252a71605328f6f10911060f8a6981e4d1e5786a987fbc9603d22fb79b1e153d",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-where-provenance-marks-survive-echo-infl-40d7160b32",
+      "path": "qf-where-provenance-marks-survive-echo-infl-40d7160b32.json",
+      "sha256": "c195953dca964ca209d43c0bafdebb783d2c7e86d6a22a022952179d30e4a85a",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-robust-evaluation-of-confidence-calibrat-0f3601ca2b",
+      "path": "qf-robust-evaluation-of-confidence-calibrat-0f3601ca2b.json",
+      "sha256": "525931256958b80f34c11c046d81464037e02dcb60833f1195996d6d5e95c792",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-scievalsuite-a-unified-reproducible-benc-e3e9fe28ba",
+      "path": "qf-scievalsuite-a-unified-reproducible-benc-e3e9fe28ba.json",
+      "sha256": "711e337842e2d056847a90bf7bba98740b4dab842f4daf1ba25776ef8f89ae78",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-threshold-straddling-reported-minimum-n--424840610d",
+      "path": "qf-threshold-straddling-reported-minimum-n--424840610d.json",
+      "sha256": "2d23c87677ffe6a6ac727e7ac56c64b6efacfd2084c9a60f01e00ab86e9583e0",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-when-more-data-changes-the-story-sensiti-0f5fa63054",
+      "path": "qf-when-more-data-changes-the-story-sensiti-0f5fa63054.json",
+      "sha256": "19164a5daac43f4472c8308a6d66d7a336e92c87e6bcc93d8734c4ad402c7b3e",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-eda14-15-16-eda17-cdb1f8595a",
+      "path": "qf-eda14-15-16-eda17-cdb1f8595a.json",
+      "sha256": "19157cf2c78b534f45697d712382fadf43755ec773d66d7fc12e9f7b473fd735",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-leakage-and-order-in-harness-selection-a-179bfe16f0",
+      "path": "qf-leakage-and-order-in-harness-selection-a-179bfe16f0.json",
+      "sha256": "28af973c3375e67b7176c0c7e76470f38deeb49664b6bff6eb35caef8c1a6f26",
+      "final_disposition": "unreviewed"
+    },
+    {
+      "family_id": "qf-probability-calibration-degrades-when-co-63dcd348fc",
+      "path": "qf-probability-calibration-degrades-when-co-63dcd348fc.json",
+      "sha256": "2845576cfc48163c30a8168d1e07dcf427f694a8a4b989ae3f5926f12eaa4438",
+      "final_disposition": "unreviewed"
+    }
+  ],
+  "notes": [
+    "No packet changes the source manifest or paper disposition.",
+    "Source hashes are checked against the portfolio catalog when present."
+  ]
+}

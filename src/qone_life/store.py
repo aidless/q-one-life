@@ -11,11 +11,7 @@ from pathlib import Path
 from typing import Any, Iterator
 
 from .models import Observation
-
-try:
-    import fcntl
-except ImportError:  # pragma: no cover - Windows fallback
-    fcntl = None
+from .locking import exclusive_file_lock
 
 
 GENESIS = "0" * 64
@@ -42,15 +38,8 @@ class LifeStore:
 
     @contextmanager
     def _lock(self) -> Iterator[None]:
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        with self.lock_path.open("a+", encoding="utf-8") as handle:
-            if fcntl is not None:
-                fcntl.flock(handle.fileno(), fcntl.LOCK_EX)
-            try:
-                yield
-            finally:
-                if fcntl is not None:
-                    fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+        with exclusive_file_lock(self.lock_path):
+            yield
 
     def _read_unlocked(self) -> list[dict[str, Any]]:
         if not self.path.exists():

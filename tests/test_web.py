@@ -96,6 +96,18 @@ class WebTests(unittest.TestCase):
         self.assertEqual(openapi.status_code, 200, openapi.text)
         self.assertEqual(openapi.json()["info"]["version"], __version__)
 
+    def test_bootstrap_exposes_consumer_locale_and_first_run_state(self):
+        data = self.bootstrap()
+        self.assertIn(data["locale"], {"zh-CN", "en-US"})
+        self.assertIn("language", data["settings"])
+        self.assertFalse(data["settings"]["onboarding_complete"])
+        settings = self.post("settings", {"language": "en-US"})
+        self.assertEqual(settings["language"], "en-US")
+        self.assertEqual(settings["resolved_language"], "en-US")
+        self.assertTrue(self.post("settings", {"onboarding_complete": True})["onboarding_complete"])
+        self.post("settings", {"language": "fr-FR"}, 400)
+        self.post("settings", {"onboarding_complete": "yes"}, 400)
+
     def test_secret_is_never_returned_or_included_in_backup(self):
         settings = self.post("settings", {"cloud_key": "secret-unique"})
         self.assertTrue(settings["cloud_key_set"])

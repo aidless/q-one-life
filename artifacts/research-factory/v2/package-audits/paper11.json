@@ -1,0 +1,157 @@
+{
+  "schema": "q-one-arxiv-package-audit-v1",
+  "generated_at": "2026-10-30T05:17:35.681322Z",
+  "source_dir": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/paper",
+  "main_file": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/paper/main.tex",
+  "mechanical_pass": true,
+  "ready_for_upload": false,
+  "upload_blocker": "Mechanical packaging does not establish scientific readiness, license, metadata correctness, or user authorization.",
+  "blockers": [],
+  "warnings": [
+    "build auxiliary files should be excluded: build-bibtex.log, build-corrected-bibtex.log, build-corrected-pass-1.log, build-corrected-pass-2.log, build-corrected-pass-3.log, build-final-bibtex.log, build-final-pass-1.log, build-final-pass-2.log, build-final-pass-3.log, build-pass-1.log, build-pass-2.log, build-pass-3.log"
+  ],
+  "file_count": 25,
+  "visible_suffixes": {
+    ".aux": 1,
+    ".bbl": 1,
+    ".bib": 1,
+    ".blg": 1,
+    ".log": 14,
+    ".out": 1,
+    ".pdf": 2,
+    ".tex": 2,
+    ".txt": 2
+  },
+  "files": [
+    {
+      "path": "build-bibtex.log",
+      "sha256": "2a461c53cf420e8a4ee94a25f371f30a1384411b573bb0c9d37fdc3f85386f38",
+      "bytes": 147
+    },
+    {
+      "path": "build-corrected-bibtex.log",
+      "sha256": "2a461c53cf420e8a4ee94a25f371f30a1384411b573bb0c9d37fdc3f85386f38",
+      "bytes": 147
+    },
+    {
+      "path": "build-corrected-pass-1.log",
+      "sha256": "d8ef319a1edc3fb69555c021b92531e24e5c58bb7795c5d33377e53deb262252",
+      "bytes": 6243
+    },
+    {
+      "path": "build-corrected-pass-2.log",
+      "sha256": "d8ef319a1edc3fb69555c021b92531e24e5c58bb7795c5d33377e53deb262252",
+      "bytes": 6243
+    },
+    {
+      "path": "build-corrected-pass-3.log",
+      "sha256": "d8ef319a1edc3fb69555c021b92531e24e5c58bb7795c5d33377e53deb262252",
+      "bytes": 6243
+    },
+    {
+      "path": "build-final-bibtex.log",
+      "sha256": "2a461c53cf420e8a4ee94a25f371f30a1384411b573bb0c9d37fdc3f85386f38",
+      "bytes": 147
+    },
+    {
+      "path": "build-final-pass-1.log",
+      "sha256": "d96be928853fabdbc97e69e15036cb93694790e303a09118d240d5278361731c",
+      "bytes": 6243
+    },
+    {
+      "path": "build-final-pass-2.log",
+      "sha256": "d96be928853fabdbc97e69e15036cb93694790e303a09118d240d5278361731c",
+      "bytes": 6243
+    },
+    {
+      "path": "build-final-pass-3.log",
+      "sha256": "d96be928853fabdbc97e69e15036cb93694790e303a09118d240d5278361731c",
+      "bytes": 6243
+    },
+    {
+      "path": "build-pass-1.log",
+      "sha256": "d1923ec3d588d3f2b9b57ed7ee7ad924512728ab5e39c9031e7018f20bd95717",
+      "bytes": 9110
+    },
+    {
+      "path": "build-pass-2.log",
+      "sha256": "7e6fe19f2a4683a316981bc93d7d68cfd0dbbdf51426283c2d758c2b086e8863",
+      "bytes": 9018
+    },
+    {
+      "path": "build-pass-3.log",
+      "sha256": "c4410122a1ddbc09341316ce50ee440e6c489ccbc431469a22280e7cc420212e",
+      "bytes": 7319
+    },
+    {
+      "path": "build-pass-4.log",
+      "sha256": "d9732715ea83756fd2dc4f94ba25e9a0dfeb056d94687fa62b339a7c1fc8d8f0",
+      "bytes": 2267
+    },
+    {
+      "path": "extracted.txt",
+      "sha256": "532af1119d2b23d453a6383636d4b4ab06698f943b7eb4add4627933d291cd93",
+      "bytes": 25290
+    },
+    {
+      "path": "generated_values.tex",
+      "sha256": "88350d5d14550389500b5c47977c5067e1f93cd5fd781f31de0375ca844fe468",
+      "bytes": 3654
+    },
+    {
+      "path": "main-text.txt",
+      "sha256": "532af1119d2b23d453a6383636d4b4ab06698f943b7eb4add4627933d291cd93",
+      "bytes": 25290
+    },
+    {
+      "path": "main.aux",
+      "sha256": "75e8454a35080476e29758bdd87593c5ac2758e4dcf59c80548d61fe2c95aa68",
+      "bytes": 7572
+    },
+    {
+      "path": "main.bbl",
+      "sha256": "a2468bbd6b52b115965c8b17b0f7b0eb30a421806d16c79b71c3cc53a3aa5dc4",
+      "bytes": 4048
+    },
+    {
+      "path": "main.blg",
+      "sha256": "f4f2e5ad85f1d5059ad66a7eaa8174ce38e020ec3769dde27e0c62711891e0f5",
+      "bytes": 900
+    },
+    {
+      "path": "main.log",
+      "sha256": "da738d9af2978d087f3711152dddba0ac20c1ec0768eaf8fc4a8cde942c79741",
+      "bytes": 18676
+    },
+    {
+      "path": "main.out",
+      "sha256": "31f47026d06a6d0a2bd5e7845f55b533c25647169e0f3644d6a15111cf0fd947",
+      "bytes": 2668
+    },
+    {
+      "path": "main.pdf",
+      "sha256": "7579231499d275fea9e6ccc1dfbcb6c79bfe9b87f5274651526a723ac1fc82ae",
+      "bytes": 203009
+    },
+    {
+      "path": "main.tex",
+      "sha256": "9748c64cbd338dcc495d6ce4119365ccf8540b5369fb912c74df662f999be02a",
+      "bytes": 24016
+    },
+    {
+      "path": "references.bib",
+      "sha256": "51f0432d5db567c3497e5763b818080492979ea8f278ee0fbaf3a7626c4c65b9",
+      "bytes": 4751
+    },
+    {
+      "path": "figures/factorial-audit.pdf",
+      "sha256": "d1449f3abbe71b26c18d9fe6398269de54776281317b24bf70b029b433728bfa",
+      "bytes": 18589
+    }
+  ],
+  "package_sha256": "6929ebcccc97642c9c7ee80aec591d7f50cc22aa97886785fa1e9a97deb59a29",
+  "notes": [
+    "This is a source-tree audit, not a clean-room LaTeX compile.",
+    "The package hash covers the sorted path/hash manifest, not tar bytes."
+  ]
+}

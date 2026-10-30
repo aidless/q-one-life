@@ -1,0 +1,104 @@
+{
+  "schema": "q-one-resume-benchmark-result-v1",
+  "generated_at": "2026-10-28T13:17:07.736Z",
+  "mode": "hybrid-local",
+  "qualification": "Small local engineering acceptance set; not an external validity study or evidence of real-world benefit.",
+  "task_count": 6,
+  "completed": 6,
+  "valid_goal_matches": 6,
+  "trace_bound": 6,
+  "actionable": 6,
+  "average_latency_ms": 4540,
+  "maximum_latency_ms": 13503,
+  "electron_working_set_kb": 990372,
+  "electron_cpu_percent": 2.76,
+  "provider_counts": {
+    "local": 6
+  },
+  "cases": [
+    {
+      "id": "readme-first-page",
+      "completed": true,
+      "valid_goal_match": true,
+      "trace_bound": true,
+      "actionable": true,
+      "latency_ms": 13503,
+      "configured_provider": "local",
+      "planner_status": "ready",
+      "effective_source": "local:Qwen3-0.6B-Q8_0",
+      "item_title": "Draft the first usable page of a project README"
+    },
+    {
+      "id": "stats-review",
+      "completed": true,
+      "valid_goal_match": true,
+      "trace_bound": true,
+      "actionable": true,
+      "latency_ms": 2634,
+      "configured_provider": "local",
+      "planner_status": "ready",
+      "effective_source": "local:Qwen3-0.6B-Q8_0",
+      "item_title": "Prepare a statistical review checklist for a paper"
+    },
+    {
+      "id": "weekly-learning",
+      "completed": true,
+      "valid_goal_match": true,
+      "trace_bound": true,
+      "actionable": true,
+      "latency_ms": 2631,
+      "configured_provider": "local",
+      "planner_status": "ready",
+      "effective_source": "local:Qwen3-0.6B-Q8_0",
+      "item_title": "Plan one week of focused Python learning"
+    },
+    {
+      "id": "backup-restore",
+      "completed": true,
+      "valid_goal_match": true,
+      "trace_bound": true,
+      "actionable": true,
+      "latency_ms": 2633,
+      "configured_provider": "local",
+      "planner_status": "ready",
+      "effective_source": "local:Qwen3-0.6B-Q8_0",
+      "item_title": "Verify encrypted backup and restore on a clean profile"
+    },
+    {
+      "id": "grant-abstract",
+      "completed": true,
+      "valid_goal_match": true,
+      "trace_bound": true,
+      "actionable": true,
+      "latency_ms": 3149,
+      "configured_provider": "local",
+      "planner_status": "ready",
+      "effective_source": "local:Qwen3-0.6B-Q8_0",
+      "item_title": "Draft a 200-word abstract for a small research grant"
+    },
+    {
+      "id": "interview-notes",
+      "completed": true,
+      "valid_goal_match": true,
+      "trace_bound": true,
+      "actionable": true,
+      "latency_ms": 2690,
+      "configured_provider": "local",
+      "planner_status": "ready",
+      "effective_source": "local:Qwen3-0.6B-Q8_0",
+      "item_title": "Organize notes from five user interviews"
+    }
+  ],
+  "runtime": {
+    "platform": "linux",
+    "arch": "x64",
+    "electron": "45.0.0",
+    "chrome": "156.0.8078.48",
+    "node": "24.22.0",
+    "application": "0.8.0-dev.0",
+    "sidecar_bytes": 12418128,
+    "sidecar_sha256": "ed0c09ec830615b35fb00901a4b49a7ea64daec79213b14712d425ff126a4324",
+    "model_bytes": 639446688,
+    "model_sha256": "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031"
+  }
+}

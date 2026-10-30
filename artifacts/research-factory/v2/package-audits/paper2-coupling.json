@@ -1,0 +1,39 @@
+{
+  "schema": "q-one-arxiv-package-audit-v1",
+  "generated_at": "2026-10-30T05:17:35.693831Z",
+  "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/source",
+  "main_file": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/source/main.tex",
+  "mechanical_pass": true,
+  "ready_for_upload": false,
+  "upload_blocker": "Mechanical packaging does not establish scientific readiness, license, metadata correctness, or user authorization.",
+  "blockers": [],
+  "warnings": [],
+  "file_count": 3,
+  "visible_suffixes": {
+    ".bib": 1,
+    ".sty": 1,
+    ".tex": 1
+  },
+  "files": [
+    {
+      "path": "main.tex",
+      "sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
+      "bytes": 52445
+    },
+    {
+      "path": "refs.bib",
+      "sha256": "ec8031ca836fc60f1836350ea15478961769a221b8eb7627f991ae73c0546ad2",
+      "bytes": 12793
+    },
+    {
+      "path": "tmlr.sty",
+      "sha256": "816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002",
+      "bytes": 6560
+    }
+  ],
+  "package_sha256": "5b26ddb738d0139f373119c6d50880db78269a2dc4d79943db17693bdd38483f",
+  "notes": [
+    "This is a source-tree audit, not a clean-room LaTeX compile.",
+    "The package hash covers the sorted path/hash manifest, not tar bytes."
+  ]
+}

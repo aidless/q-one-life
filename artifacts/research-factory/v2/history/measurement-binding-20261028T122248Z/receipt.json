@@ -1,0 +1,132 @@
+{
+  "schema": "q-one-p17-measurement-binding-receipt-v1",
+  "generated_at": "2026-10-28T12:22:34.148248Z",
+  "status": "passed",
+  "scope": "Explicit project measurement source#field bindings across the 17 pilot project.json files.",
+  "trigger": {
+    "command": "PYTHONPATH=src python scripts/research_factory_verify.py",
+    "result": "failed",
+    "project_validation": {
+      "valid": 13,
+      "ready": 0,
+      "projects": 17
+    },
+    "observed_failures": [
+      {
+        "project": "research/arc-paper-track",
+        "measurement": "public_score_best",
+        "reason": "array-index path was not resolved by validator",
+        "repair": "validator now supports [index]"
+      },
+      {
+        "project": "research/pilot-agent-behavior-regression",
+        "measurement": "candidate_archive_bytes",
+        "reason": "recorded 154255 != receipt 154412",
+        "repair": "project measurement updated to receipt value"
+      },
+      {
+        "project": "research/pilot-paper2-coupling",
+        "measurement": "source_package_files",
+        "reason": "count compared with array object",
+        "repair": "source expression changed to entries[]"
+      },
+      {
+        "project": "research/pilot-verifier-capture-aggregation",
+        "measurement": "synthetic_scenarios",
+        "reason": "count compared with array object",
+        "repair": "source expression changed to config.scenarios[]"
+      },
+      {
+        "project": "research/pilot-verifier-capture-aggregation",
+        "measurement": "local_pilot_questions",
+        "reason": "measurement cited counts.local_seeds (3) instead of the 20-question source field",
+        "repair": "source changed to real_llm_results/summary.json#config.n_questions"
+      },
+      {
+        "project": "research/pilot-calibration-fatigue",
+        "measurement": "missing_citations",
+        "reason": "recorded 2 while current audit and C11 resolve 0",
+        "repair": "project measurement updated to 0"
+      }
+    ]
+  },
+  "validator": {
+    "semantics": "A measurement with source path#pointer must exist and match the pointed JSON value. Pointer supports dotted paths, [index], and [] as array length.",
+    "tests": [
+      "tests/test_research.py::test_project_validation_binds_measurement_to_explicit_source_field"
+    ],
+    "limitation": "This validates registration-to-receipt consistency only; it does not validate scientific estimands or make a paper ready."
+  },
+  "verification": {
+    "generated_at": "2026-10-28T12:22:34.148248Z",
+    "project_validation": {
+      "valid": 17,
+      "ready": 0,
+      "projects": 17
+    },
+    "pytest": {
+      "result": "passed",
+      "tests": 90,
+      "warnings": 1,
+      "subtests": 22
+    },
+    "unittest": {
+      "result": "passed",
+      "tests": 88,
+      "resource_warnings": 4
+    },
+    "ruff": {
+      "result": "passed"
+    },
+    "json_schema": {
+      "checked": 28,
+      "errors": [],
+      "result": "passed"
+    },
+    "pilots": {
+      "pilots": 17,
+      "valid_overlays": 17,
+      "ready_projects": 0,
+      "compiled_packages": 8,
+      "candidate_packages": 8,
+      "blocked_claims": 85,
+      "inconclusive_claims": 4,
+      "uploaded_papers": 0
+    },
+    "all_claim_ledgers_passed": true
+  },
+  "files": [
+    {
+      "path": "src/qone_life/research.py",
+      "sha256": "9cfed596349dea43f001351dc4465f6ab575bc1056d08d0dec8444940d89e2a2"
+    },
+    {
+      "path": "tests/test_research.py",
+      "sha256": "8ebdbf3c7d6fe9bab42995eab9ded4e6816d04c5f3176be17f68c700d5908cf1"
+    },
+    {
+      "path": "research/pilot-calibration-fatigue/project.json",
+      "sha256": "a2b1bb0ad52a75c1076394a1b421efe87658062ea3a106bf31dde19adf9b6cc3"
+    },
+    {
+      "path": "research/pilot-agent-behavior-regression/project.json",
+      "sha256": "3869c8dda95d0016fbd35b6923194abcd4bc276c380571a88bc5356b8f76cc81"
+    },
+    {
+      "path": "research/pilot-paper2-coupling/project.json",
+      "sha256": "0340a65d9c1dec2015771be057088f78e32fe13b159f75cde3a14e18b0f7a518"
+    },
+    {
+      "path": "research/pilot-verifier-capture-aggregation/project.json",
+      "sha256": "62ce5f7a24aa1642ca07eaef35d4e3c18a5f2d2f4e290141c03ba316758b24be"
+    }
+  ],
+  "gates": {
+    "commit": false,
+    "push": false,
+    "upload": false,
+    "account_change": false,
+    "publication_ready": false,
+    "upload_authorized": false
+  }
+}

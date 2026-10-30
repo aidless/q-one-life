@@ -1,0 +1,112 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-your-tool-selection-benchmark-may-be-sco-85ad80aa80",
+  "project_id": "qp-gemma-revised-da47d4c6ca9b",
+  "title": "Your Tool-Selection Benchmark May Be Scoring Wrong Calls as Correct",
+  "primary_source": "/home/liuzewen/kaggle-control-20261013/paper-evidence/GEMMA_REVISED.md",
+  "source_state": {
+    "exists": true,
+    "sha256": "aa25d33d83b55c4bff5716f2777f420b182122faf93b26a78694b5ce9c5ea798",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "paper",
+  "production_priority": 210,
+  "priority_band": "P0",
+  "priority_factors": [
+    {
+      "code": "PINNED_PILOT",
+      "points": 200,
+      "observed": "Matched pilot gemma-tool-selection at phase P0."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    }
+  ],
+  "pilot_ids": [
+    "gemma-tool-selection"
+  ],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": false,
+    "compiled_pdf": false,
+    "evidence_directory": true,
+    "variants_to_reconcile": 0,
+    "overlay_present": true
+  },
+  "variant_sources": [
+    "/home/liuzewen/kaggle-control-20261013/paper-evidence/GEMMA_REVISED.md"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "Pinned as a production pilot; evidence and package gates still apply.",
+    "next_action": "overlay-plan:remove_or_repair_blocked_claims,resynchronize_published_source,build_bibliography",
+    "authoritative": false
+  },
+  "overlay": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-gemma/project.json",
+    "status": "revision",
+    "ledger_present": true,
+    "bibliography_present": false,
+    "evidence_present": true,
+    "claims": 8,
+    "claim_states": {
+      "verified": 7,
+      "blocked": 1
+    },
+    "package_state": "not-started",
+    "package_blockers": [
+      "The local manuscript hash differs from the current remote published source hash.",
+      "No arXiv source tree, bibliography, cover metadata, or compiled PDF has been prepared from the current source.",
+      "The archive replay establishes record-level text discrepancies, not tool execution correctness.",
+      "The 48-row cross-model probe is descriptive and does not establish a model ranking.",
+      "arXiv upload requires a separate user authorization and account action."
+    ],
+    "gate_receipts": 0,
+    "plan_stages": {
+      "source-identity": "blocked",
+      "claim-ledger": "blocked",
+      "evidence-recomputation": "pending",
+      "citation-verification": "pending",
+      "scientific-review": "pending",
+      "arxiv-package": "blocked",
+      "external-submission": "locked"
+    },
+    "plan_actions": [
+      "remove_or_repair_blocked_claims",
+      "resynchronize_published_source",
+      "build_bibliography",
+      "reproduce_required_numeric_claims",
+      "resolve_package_blockers",
+      "external_submission_gate"
+    ]
+  },
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

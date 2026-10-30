@@ -1,0 +1,148 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-an-empirical-study-of-aggregation-method-819da8c6b1",
+  "project_id": "qp-tmlr-paper6-consolidated-adcff53fb253",
+  "title": "An Empirical Study of Aggregation Methods Under\\\\ Verifier Capture in Multi-LLM Ensembles:\\\\ When Does Majority Voting Fail, and Can We Beat It?",
+  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/paper/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "42fe9b13f6a17af326f346aaa1afb7228fa1e8f4478126fadbce0fc7cea80cc3",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "paper",
+  "production_priority": 345,
+  "priority_band": "P1",
+  "priority_factors": [
+    {
+      "code": "PINNED_PILOT",
+      "points": 200,
+      "observed": "Matched pilot verifier-capture-aggregation at phase P1."
+    },
+    {
+      "code": "QONE_OVERLAY",
+      "points": 40,
+      "observed": "Q-One overlay metadata: qp-20260926t091950z-af4fc64c77e6."
+    },
+    {
+      "code": "CLAIM_LEDGER",
+      "points": 35,
+      "observed": "Claim ledger is present."
+    },
+    {
+      "code": "BIBLIOGRAPHY",
+      "points": 20,
+      "observed": "At least one bibliography file is present."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "EVIDENCE_DIRECTORY",
+      "points": 20,
+      "observed": "At least one evidence directory is present."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    },
+    {
+      "code": "VERSION_RECONCILIATION",
+      "points": 5,
+      "observed": "3 extra normalized-title source version(s) require review."
+    }
+  ],
+  "pilot_ids": [
+    "verifier-capture-aggregation"
+  ],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": true,
+    "compiled_pdf": true,
+    "evidence_directory": true,
+    "variants_to_reconcile": 3,
+    "overlay_present": true
+  },
+  "variant_sources": [
+    "/home/liuzewen/.research/paper6-consolidated/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/paper/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/source/submission_variant/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "Pinned as a production pilot; evidence and package gates still apply.",
+    "next_action": "overlay-plan:close_inconclusive_claims,close_scientific_review,remove_or_repair_blocked_claims",
+    "authoritative": false
+  },
+  "overlay": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/project.json",
+    "status": "revision",
+    "ledger_present": true,
+    "bibliography_present": true,
+    "evidence_present": true,
+    "claims": 11,
+    "claim_states": {
+      "verified": 7,
+      "blocked": 3,
+      "inconclusive": 1
+    },
+    "package_state": "compiled",
+    "package_blockers": [
+      "The evidence is a synthetic benchmark plus a descriptive four-model local pilot; no held-out real-trace benchmark exists.",
+      "The upstream evidence manifest has 11 missing entries.",
+      "No per-cell tau or alpha hyperparameter sweep is present; the ensemble-size sweep is only three descriptive points.",
+      "The native claim that majority is strongest in all scenarios is contradicted by S4, where trust-mean is 0.0076 higher.",
+      "The universal negative-result claim and the ATV epsilon-resilience theorem remain unresolved.",
+      "The upstream review remains open with 7 Major and 12 Minor findings.",
+      "Final author, category, abstract, license and upload authorization remain user decisions."
+    ],
+    "gate_receipts": 15,
+    "plan_stages": {
+      "source-identity": "candidate",
+      "claim-ledger": "blocked",
+      "evidence-recomputation": "blocked",
+      "citation-verification": "verified",
+      "scientific-review": "blocked",
+      "arxiv-package": "blocked",
+      "external-submission": "locked"
+    },
+    "plan_actions": [
+      "close_inconclusive_claims",
+      "close_scientific_review",
+      "remove_or_repair_blocked_claims",
+      "repair_failed_native_gates",
+      "resolve_package_blockers",
+      "external_submission_gate"
+    ]
+  },
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

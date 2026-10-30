@@ -1,0 +1,624 @@
+{
+  "schema": "q-one-research-project-v1",
+  "paper_id": "qf-calibration-fatigue-self-evaluation-frag-3c06d49517",
+  "title": "Calibration Fatigue, Self-Evaluation Fragility, and the Coupling--Noise Tradeoff in Multi-Agent LLM Systems: A Systematic Study of Calibration Effects",
+  "status": "blocked",
+  "target": "arxiv",
+  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue",
+  "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex",
+  "manuscript": {
+    "path": "evidence/upstream/main.tex",
+    "sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+    "published_source_sha256": null,
+    "matches_published_source": null,
+    "source_url": null
+  },
+  "evidence": [
+    {
+      "path": "evidence/source_record.json",
+      "sha256": "76ca5fd87a9fd7b94aff6fc21bccb8f84d87dd071deaf174edd8ffa6417d7a76",
+      "state": "verified",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/source_record.json"
+    },
+    {
+      "path": "evidence/variant-reconciliation.json",
+      "sha256": "d8bb438b192f84400b45d8753422cf4d11c310cf0bff176d2aa691330d005d39",
+      "state": "verified",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/variant-reconciliation.json"
+    },
+    {
+      "path": "evidence/audit.json",
+      "sha256": "0a9baa0f39442fb9b434f3ee464659d77aaaa0879369532c3129391764998629",
+      "state": "verified",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/audit.json"
+    },
+    {
+      "path": "evidence/claim-values.json",
+      "sha256": "28cf420e969126ff3f4d6d3458ecd145a64e34f1e9406ab503e1e23883ffca78",
+      "state": "verified",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/claim-values.json"
+    },
+    {
+      "path": "evidence/snapshot.json",
+      "sha256": "ae5c747c6b4265168bb1f6e8489b05bbf36555f887fe4f476ba759170eabdd06",
+      "state": "verified",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/snapshot.json"
+    },
+    {
+      "path": "evidence/upstream/main.tex",
+      "sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "state": "verified",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/main.tex"
+    },
+    {
+      "path": "evidence/upstream/references.bib",
+      "sha256": "40569c45fe34d0568f5a824d6f0723354a155f64f6639dc7a9a638c14a1164ae",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/references.bib"
+    },
+    {
+      "path": "evidence/upstream/CLAIM_LEDGER.md",
+      "sha256": "5db978dd09de14291af5d3916b35fca4a82d343a0eb55912d834dcd1376e0fc1",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/CLAIM_LEDGER.md"
+    },
+    {
+      "path": "evidence/upstream/REVIEW_CARD.md",
+      "sha256": "2362b873b1b19a2b9d89d1c94723ece2b36f92faba533485322ba31648784d84",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/REVIEW_CARD.md"
+    },
+    {
+      "path": "evidence/upstream/REVIEW_R16_summary.md",
+      "sha256": "339cc5ebff950196dcf67964396cd831ce36bb8fe93700a286d692a7d314bc16",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/REVIEW_R16_summary.md"
+    },
+    {
+      "path": "evidence/upstream/REVIEW_ROUND_6.md",
+      "sha256": "dda5b0599607c8e848f1ca2e6d6b8c1cd9086100db127a72654ea150a143e34a",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/REVIEW_ROUND_6.md"
+    },
+    {
+      "path": "evidence/upstream/evidence/evidence_manifest.json",
+      "sha256": "b799e202d05ff4aa6b7dd8f95b4d5826d65daec45101e986d34800798e8fd985",
+      "state": "verified",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/evidence/evidence_manifest.json"
+    },
+    {
+      "path": "evidence/upstream/evidence/canonical_results_v5.json",
+      "sha256": "fb0d7815b805eb1f74d3b1bc07521d303a96c7b080c8854f42f8c0f76897f569",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/evidence/canonical_results_v5.json"
+    },
+    {
+      "path": "evidence/upstream/evidence/archived_joint_2x2_30seed_20260811.json",
+      "sha256": "8db678afce04d8cdeaa0cc024750fc81415f5888cb747c3ea9e86d8e5c9d5ebd",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/evidence/archived_joint_2x2_30seed_20260811.json"
+    },
+    {
+      "path": "evidence/upstream/evidence/finding1_data_GAP.md",
+      "sha256": "587b52ff0538e35715f0a8e1e60f8a2a99a04055946a03f242b115707c9f7f57",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/evidence/finding1_data_GAP.md"
+    },
+    {
+      "path": "evidence/upstream/evidence/f9_uniform_T30_results/analysis_summary.json",
+      "sha256": "4cd823092ba60da4fd78016bca3a6aa0046cf8fc65f40f8b9f4f9a776bdcad87",
+      "state": "verified",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/evidence/f9_uniform_T30_results/analysis_summary.json"
+    },
+    {
+      "path": "evidence/upstream/evidence/f9_T50_analysis/analysis_summary.json",
+      "sha256": "3aee4018b872bf249c0d0730611acb73c08e3c4ba5fb67221482b5ca0eaa76a1",
+      "state": "verified",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/evidence/f9_T50_analysis/analysis_summary.json"
+    },
+    {
+      "path": "evidence/upstream/evidence/real_pilot_qwen2/per_seed.jsonl",
+      "sha256": "1abc9af3353bd3d5f4c0c52949f54d153a270f4982b7c916e7868e2ca442dbfa",
+      "state": "verified",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/evidence/real_pilot_qwen2/per_seed.jsonl"
+    },
+    {
+      "path": "evidence/upstream/evidence/real_pilot_qwen2/analysis.json",
+      "sha256": "894c5bfef25f1fbacb978f61899e06746c0c890b3a832e3528208da557720837",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/upstream/evidence/real_pilot_qwen2/analysis.json"
+    },
+    {
+      "path": "evidence/pipeline/evidence/CARRIER_RECEIPTS.json",
+      "sha256": "31ff258873517ce3e6a5fac173864b0d98159c5ed1f847ea5141f9b8482bbee4",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/pipeline/evidence/CARRIER_RECEIPTS.json"
+    },
+    {
+      "path": "evidence/pipeline/evidence/finding1_rerun_qwen32b/finding1_summary.json",
+      "sha256": "6f0f34aab4898c600d0674978cd33963796178d9fd9ea371fbc4e4982e0ecafe",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "evidence/pipeline/evidence/finding1_rerun_qwen32b/finding1_summary.json"
+    },
+    {
+      "path": "CLAIM_LEDGER.md",
+      "sha256": "d1d0b25764e25b5e93b9e2f80630493e61b467c88dea1ea5a63fdbf77c642843",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "CLAIM_LEDGER.md"
+    },
+    {
+      "path": "reports/audit.md",
+      "sha256": "4f9cbc76c0519af93ab836e4d0f8a730b1afea66deb95a87e795e750a5f7414a",
+      "state": "candidate",
+      "origin": "P17 frozen audit snapshot",
+      "description": "reports/audit.md"
+    },
+    {
+      "path": "tools/audit_p17.py",
+      "sha256": "bef2081d2253daec56207c2fb860b232cf94d3f969b02b3a10642712086a6052",
+      "state": "verified",
+      "origin": "P17 frozen audit snapshot",
+      "description": "tools/audit_p17.py"
+    },
+    {
+      "path": "reports/claim-ledger-verification.md",
+      "sha256": "f4b5a983c8c4f8bd081c7d7fe34d8ff96bbd2f42de6c33cd8b4ecc5f0cf5fa0f",
+      "state": "verified",
+      "origin": "P17 mechanical claim-ledger verifier",
+      "description": "14 PASS / 0 FAIL / 8 WARN; 6 verified claims, 8 blocked. The verifier reports 14 PASS / 0 FAIL / 8 WARN; claim states are authoritative."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "location": "source identity",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "location": "variant reconciliation",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "location": "manifest reconciliation",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "location": "calibration grid",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "location": "documented CV range",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "location": "T30 recomputation",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "location": "T50 recomputation",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "location": "T50 ECE availability",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C09",
+      "location": "predecessor archive",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "location": "headline carriers",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "location": "citations",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "location": "real local pilot",
+      "state": "verified",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "location": "review closure",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "location": "disposition",
+      "state": "blocked",
+      "evidence_refs": [
+        "CLAIM_LEDGER.md"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "p17-t30-seed-recompute",
+      "state": "reproduced",
+      "receipt": "evidence/audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p17-t50-seed-recompute",
+      "state": "reproduced",
+      "receipt": "evidence/audit.json",
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p17-headline-raw-carrier-restoration",
+      "state": "blocked",
+      "receipt": null,
+      "environment_sha256": null
+    },
+    {
+      "experiment_id": "p17-real-local-pilot-recompute",
+      "state": "reproduced",
+      "receipt": "evidence/audit.json",
+      "environment_sha256": null
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "P17-retained-R16",
+      "kind": "method",
+      "state": "open",
+      "critical": 0,
+      "major": 5,
+      "receipt": "evidence/upstream/REVIEW_R16_summary.md"
+    },
+    {
+      "review_id": "P17-retained-round6",
+      "kind": "statistics",
+      "state": "open",
+      "critical": 0,
+      "major": 1,
+      "receipt": "evidence/upstream/REVIEW_ROUND_6.md"
+    },
+    {
+      "review_id": "P17-citation",
+      "kind": "citation",
+      "state": "open",
+      "critical": 0,
+      "major": 1,
+      "receipt": "evidence/audit.json"
+    }
+  ],
+  "package": {
+    "state": "not-started",
+    "files": [],
+    "blockers": [
+      "GPT-4o Finding-1 raw per-repetition traces missing",
+      "Finding-2 raw traces for 1.06/42%/35-37% missing",
+      "30-seed predecessor A/C/D gamma arrays identical",
+      "outer and arXiv manifests stale",
+      "two citations missing",
+      "current-hash method/statistics review open"
+    ]
+  },
+  "measurements": [
+    {
+      "name": "outer_manifest_mismatch",
+      "value": 14,
+      "unit": "count",
+      "definition": "Deterministic P17 audit value.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "outer_manifest_absent",
+      "value": 3,
+      "unit": "count",
+      "definition": "Deterministic P17 audit value.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "arxiv_manifest_mismatch",
+      "value": 5,
+      "unit": "count",
+      "definition": "Deterministic P17 audit value.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "generated_manifest_mismatch",
+      "value": 1,
+      "unit": "count",
+      "definition": "Deterministic P17 audit value.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "grid_contrasts",
+      "value": 45,
+      "unit": "count",
+      "definition": "Deterministic P17 audit value.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "grid_mean_delta_pct",
+      "value": -3.481899774262735,
+      "unit": "reported-unit",
+      "definition": "Recomputed value with the definition recorded in audit.json.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "grid_cell_min_pct",
+      "value": -28.408319455132023,
+      "unit": "reported-unit",
+      "definition": "Recomputed value with the definition recorded in audit.json.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "grid_cell_max_pct",
+      "value": 33.860120231307825,
+      "unit": "reported-unit",
+      "definition": "Recomputed value with the definition recorded in audit.json.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "t30_csv_differences",
+      "value": 0,
+      "unit": "count",
+      "definition": "Deterministic P17 audit value.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "t50_late_gamma_d",
+      "value": -0.16933249753436797,
+      "unit": "reported-unit",
+      "definition": "Recomputed value with the definition recorded in audit.json.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "t50_late_gamma_p",
+      "value": 0.3555745990160197,
+      "unit": "reported-unit",
+      "definition": "Recomputed value with the definition recorded in audit.json.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "t50_ece_round_fields",
+      "value": 0,
+      "unit": "count",
+      "definition": "Deterministic P17 audit value.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "reference_bound_90_8_receipts",
+      "value": 11,
+      "unit": "count",
+      "definition": "Deterministic P17 audit value.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "qwen_temporal_share_pct",
+      "value": -5.147106119665931,
+      "unit": "reported-unit",
+      "definition": "Recomputed value with the definition recorded in audit.json.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "missing_citations",
+      "value": 2,
+      "unit": "count",
+      "definition": "Deterministic P17 audit value.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "low_temp_cv",
+      "value": 0.003093434343434347,
+      "unit": "reported-unit",
+      "definition": "Recomputed value with the definition recorded in audit.json.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    },
+    {
+      "name": "high_temp_cv",
+      "value": 0.0060348274969800365,
+      "unit": "reported-unit",
+      "definition": "Recomputed value with the definition recorded in audit.json.",
+      "source": "evidence/claim-values.json",
+      "state": "observed"
+    }
+  ],
+  "gate_receipts": [
+    {
+      "gate_id": "p17-source-identity",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/source_record.json",
+      "receipt_sha256": "76ca5fd87a9fd7b94aff6fc21bccb8f84d87dd071deaf174edd8ffa6417d7a76",
+      "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "summary": "The retained canonical source is byte-identical to its recorded origin."
+    },
+    {
+      "gate_id": "p17-variants",
+      "scope": "other",
+      "state": "passed",
+      "receipt": "evidence/variant-reconciliation.json",
+      "receipt_sha256": "d8bb438b192f84400b45d8753422cf4d11c310cf0bff176d2aa691330d005d39",
+      "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "summary": "Fourteen variants collapse to eleven hashes; the preprint is an older three-finding source."
+    },
+    {
+      "gate_id": "p17-manifests",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "0a9baa0f39442fb9b434f3ee464659d77aaaa0879369532c3129391764998629",
+      "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "summary": "The evidence manifest is complete but the outer and arXiv-clean manifests are stale."
+    },
+    {
+      "gate_id": "p17-grid",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "0a9baa0f39442fb9b434f3ee464659d77aaaa0879369532c3129391764998629",
+      "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "summary": "Grid contrasts are recomputable but the displayed range uses an undocumented aggregation."
+    },
+    {
+      "gate_id": "p17-headline-carriers",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/claim-values.json",
+      "receipt_sha256": "28cf420e969126ff3f4d6d3458ecd145a64e34f1e9406ab503e1e23883ffca78",
+      "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "summary": "Finding-1 and Finding-2 headline carriers are absent or semantically misbound."
+    },
+    {
+      "gate_id": "p17-t30",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "0a9baa0f39442fb9b434f3ee464659d77aaaa0879369532c3129391764998629",
+      "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "summary": "All 120 T30 seed rows and summaries reproduce."
+    },
+    {
+      "gate_id": "p17-t50",
+      "scope": "numbers",
+      "state": "passed",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "0a9baa0f39442fb9b434f3ee464659d77aaaa0879369532c3129391764998629",
+      "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "summary": "All 120 T50 seed rows and gamma/H summaries reproduce as null."
+    },
+    {
+      "gate_id": "p17-t50-ece",
+      "scope": "numbers",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "0a9baa0f39442fb9b434f3ee464659d77aaaa0879369532c3129391764998629",
+      "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "summary": "No per-round ECE field exists in T50 records."
+    },
+    {
+      "gate_id": "p17-archive-integrity",
+      "scope": "reproducibility",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "0a9baa0f39442fb9b434f3ee464659d77aaaa0879369532c3129391764998629",
+      "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "summary": "The predecessor archive has bit-identical A/C/D gamma arrays."
+    },
+    {
+      "gate_id": "p17-citations",
+      "scope": "citations",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "0a9baa0f39442fb9b434f3ee464659d77aaaa0879369532c3129391764998629",
+      "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "summary": "The canonical bibliography is missing two cited keys."
+    },
+    {
+      "gate_id": "p17-review",
+      "scope": "review",
+      "state": "blocked",
+      "receipt": "evidence/upstream/REVIEW_R16_summary.md",
+      "receipt_sha256": "339cc5ebff950196dcf67964396cd831ce36bb8fe93700a286d692a7d314bc16",
+      "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "summary": "The retained review leaves major method/statistics issues open."
+    },
+    {
+      "gate_id": "p17-package",
+      "scope": "package",
+      "state": "blocked",
+      "receipt": "evidence/audit.json",
+      "receipt_sha256": "0a9baa0f39442fb9b434f3ee464659d77aaaa0879369532c3129391764998629",
+      "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+      "summary": "No package is justified before headline evidence and manifests close."
+    }
+  ],
+  "notes": [
+    "agent-proposed, not human publication approval",
+    "T30/T50 reproducibility is not evidence for the missing headline findings.",
+    "No candidate package, upload, account action or publication occurred."
+  ]
+}

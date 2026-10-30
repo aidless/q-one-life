@@ -1,0 +1,135 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-n-sensitive-calibration-of-tree-ensemble-623d15100e",
+  "project_id": "qp-tmlr-resampling-calibration-632b05b06c33",
+  "title": "N-Sensitive Calibration of Tree Ensembles on Frozen LLM Embeddings",
+  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "paper",
+  "production_priority": 345,
+  "priority_band": "P1",
+  "priority_factors": [
+    {
+      "code": "PINNED_PILOT",
+      "points": 200,
+      "observed": "Matched pilot n-sensitive-calibration-archive at phase P1."
+    },
+    {
+      "code": "QONE_OVERLAY",
+      "points": 40,
+      "observed": "Q-One overlay metadata: qp-20260926t080448z-95fddf5d7fda."
+    },
+    {
+      "code": "CLAIM_LEDGER",
+      "points": 35,
+      "observed": "Claim ledger is present."
+    },
+    {
+      "code": "BIBLIOGRAPHY",
+      "points": 20,
+      "observed": "At least one bibliography file is present."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "EVIDENCE_DIRECTORY",
+      "points": 20,
+      "observed": "At least one evidence directory is present."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    },
+    {
+      "code": "VERSION_RECONCILIATION",
+      "points": 5,
+      "observed": "6 extra normalized-title source version(s) require review."
+    }
+  ],
+  "pilot_ids": [
+    "n-sensitive-calibration-archive"
+  ],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": true,
+    "compiled_pdf": true,
+    "evidence_directory": true,
+    "variants_to_reconcile": 6,
+    "overlay_present": true
+  },
+  "variant_sources": [
+    "/home/liuzewen/.research/resampling-calibration/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_clean/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_final/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/submission_variant/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "Pinned as a production pilot; evidence and package gates still apply.",
+    "next_action": "confirm_target_and_scope",
+    "authoritative": false
+  },
+  "overlay": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-n-sensitive-calibration/project.json",
+    "status": "archived",
+    "ledger_present": true,
+    "bibliography_present": false,
+    "evidence_present": true,
+    "claims": 15,
+    "claim_states": {
+      "verified": 11,
+      "blocked": 4
+    },
+    "package_state": "not-started",
+    "package_blockers": [
+      "Canonical source explicitly forbids independent submission",
+      "Named merge target does not contain the study terms",
+      "Synthetic canonical scope conflicts with three-real-dataset arXiv copies",
+      "E6 K=4 contradicts the abstract four-class sentence",
+      "Resampling headline values lack named result fields",
+      "42 carrier receipts have no verdict",
+      "Retained review has two open Major findings"
+    ],
+    "gate_receipts": 8,
+    "plan_stages": {},
+    "plan_actions": []
+  },
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

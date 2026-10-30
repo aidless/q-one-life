@@ -1,0 +1,148 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-agent-behavior-regression-testing-for-lo-1f724f2bff",
+  "project_id": "qp-tmlr-paper35-front-drift-0c2ed0225fe5",
+  "title": "Agent Behavior Regression Testing for Local LLM Systems:\\ Reproducibility and Cross-Model Heterogeneity across 100 Scenarios",
+  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "d1eac66806754899440a12bb30446c3944ed230191a077b1bbd331a2ae7a02f0",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "paper",
+  "production_priority": 345,
+  "priority_band": "P1",
+  "priority_factors": [
+    {
+      "code": "PINNED_PILOT",
+      "points": 200,
+      "observed": "Matched pilot agent-behavior-regression at phase P1."
+    },
+    {
+      "code": "QONE_OVERLAY",
+      "points": 40,
+      "observed": "Q-One overlay metadata: qp-20260926t130000z-pre-script-recovery-c6e6807644d8."
+    },
+    {
+      "code": "CLAIM_LEDGER",
+      "points": 35,
+      "observed": "Claim ledger is present."
+    },
+    {
+      "code": "BIBLIOGRAPHY",
+      "points": 20,
+      "observed": "At least one bibliography file is present."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "EVIDENCE_DIRECTORY",
+      "points": 20,
+      "observed": "At least one evidence directory is present."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    },
+    {
+      "code": "VERSION_RECONCILIATION",
+      "points": 5,
+      "observed": "3 extra normalized-title source version(s) require review."
+    }
+  ],
+  "pilot_ids": [
+    "agent-behavior-regression"
+  ],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": true,
+    "compiled_pdf": true,
+    "evidence_directory": true,
+    "variants_to_reconcile": 3,
+    "overlay_present": true
+  },
+  "variant_sources": [
+    "/home/liuzewen/.research/paper35-front-drift/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/submission_variant/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "Pinned as a production pilot; evidence and package gates still apply.",
+    "next_action": "overlay-plan:close_inconclusive_claims,close_scientific_review,remove_or_repair_blocked_claims",
+    "authoritative": false
+  },
+  "overlay": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/project.json",
+    "status": "revision",
+    "ledger_present": true,
+    "bibliography_present": true,
+    "evidence_present": true,
+    "claims": 11,
+    "claim_states": {
+      "verified": 2,
+      "candidate": 5,
+      "blocked": 3,
+      "inconclusive": 1
+    },
+    "package_state": "compiled",
+    "package_blockers": [
+      "The full-run manifest declares 1,200 cells, but all 12 raw full-run JSONL files are missing.",
+      "The upstream evidence_manifest.json has 62 missing entries, including six full-run analysis files and the raw full-run cells.",
+      "The upstream review remains open with 6 Major and 21 Minor findings; the debate retains 5 Major findings.",
+      "BDS sensitivity to tokenization, top-K, smoothing and response length has not been independently audited.",
+      "The multi-agent chain result is descriptive; causal amplification and hierarchical power have not been established.",
+      "Final author, category, abstract, license and upload authorization remain user decisions."
+    ],
+    "gate_receipts": 14,
+    "plan_stages": {
+      "source-identity": "candidate",
+      "claim-ledger": "blocked",
+      "evidence-recomputation": "blocked",
+      "citation-verification": "verified",
+      "scientific-review": "blocked",
+      "arxiv-package": "blocked",
+      "external-submission": "locked"
+    },
+    "plan_actions": [
+      "close_inconclusive_claims",
+      "close_scientific_review",
+      "remove_or_repair_blocked_claims",
+      "repair_failed_native_gates",
+      "resolve_package_blockers",
+      "external_submission_gate"
+    ]
+  },
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

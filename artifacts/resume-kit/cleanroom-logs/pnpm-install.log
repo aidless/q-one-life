@@ -1,0 +1,23 @@
+✓ Lockfile passes supply-chain policies (verified 1d ago)
+Lockfile is up to date, resolution step is skipped
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /home/liuzewen/.local/share/pnpm/store/v11
+  Virtual store is at:             node_modules/.pnpm
+Packages: +351
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 351, reused 351, downloaded 0, added 351, done
+
+dependencies:
++ electron-updater 6.8.11
++ node-llama-cpp 3.22.2
++ qrcode-generator 2.0.4
++ undici 8.12.3
+
+devDependencies:
++ @playwright/test 1.64.1
++ @types/node 26.6.5
++ electron 45.0.0
++ electron-builder 26.18.0
++ typescript 7.0.2
+
+Done in 552ms using pnpm v12.8.1

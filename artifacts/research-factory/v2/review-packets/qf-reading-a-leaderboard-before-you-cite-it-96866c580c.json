@@ -1,0 +1,124 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-reading-a-leaderboard-before-you-cite-it-96866c580c",
+  "project_id": "qp-bench-noise-floor-b0d4cb581fd3",
+  "title": "Reading a Leaderboard Before You Cite It:\\\\ Three Rulers for the Noise Floor of\\\\ LLM-as-Judge Evaluation",
+  "primary_source": "/home/liuzewen/WorkBuddy/2026-10-23-23-32-00/arxiv/bench_noise_floor/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "971008d73d83b6b9d212bf0789987d8af84bfd92267974ecd706edccecc48d36",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "paper",
+  "production_priority": 230,
+  "priority_band": "P0",
+  "priority_factors": [
+    {
+      "code": "PINNED_PILOT",
+      "points": 200,
+      "observed": "Matched pilot bench-noise-floor at phase P0."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    },
+    {
+      "code": "VERSION_RECONCILIATION",
+      "points": 5,
+      "observed": "2 extra normalized-title source version(s) require review."
+    }
+  ],
+  "pilot_ids": [
+    "bench-noise-floor"
+  ],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": true,
+    "compiled_pdf": true,
+    "evidence_directory": true,
+    "variants_to_reconcile": 2,
+    "overlay_present": true
+  },
+  "variant_sources": [
+    "/home/liuzewen/F:\\deepseek/artifacts/bench-noise-floor-paper-v1/v1/paper/main.tex",
+    "/home/liuzewen/F:\\deepseek/artifacts/bench-noise-floor-paper-v2/v1/paper/main.tex",
+    "/home/liuzewen/WorkBuddy/2026-10-23-23-32-00/arxiv/bench_noise_floor/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "Pinned as a production pilot; evidence and package gates still apply.",
+    "next_action": "overlay-plan:close_inconclusive_claims,close_scientific_review,remove_or_repair_blocked_claims",
+    "authoritative": false
+  },
+  "overlay": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/project.json",
+    "status": "revision",
+    "ledger_present": true,
+    "bibliography_present": true,
+    "evidence_present": true,
+    "claims": 8,
+    "claim_states": {
+      "verified": 5,
+      "blocked": 2,
+      "candidate": 1
+    },
+    "package_state": "compiled",
+    "package_blockers": [
+      "The current source hash differs from the source hash recorded in the native manifest.",
+      "The independent review identifies an unresolved producer-baseline/readability conceptual-validity issue.",
+      "The source package is compiled but lacks final metadata, license and author confirmation.",
+      "arXiv upload requires a separate user authorization and account action."
+    ],
+    "gate_receipts": 3,
+    "plan_stages": {
+      "source-identity": "blocked",
+      "claim-ledger": "blocked",
+      "evidence-recomputation": "verified",
+      "citation-verification": "candidate",
+      "scientific-review": "blocked",
+      "arxiv-package": "blocked",
+      "external-submission": "locked"
+    },
+    "plan_actions": [
+      "close_inconclusive_claims",
+      "close_scientific_review",
+      "remove_or_repair_blocked_claims",
+      "resynchronize_published_source",
+      "resolve_package_blockers",
+      "external_submission_gate"
+    ]
+  },
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

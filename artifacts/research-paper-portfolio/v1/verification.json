@@ -1,0 +1,116 @@
+{
+  "schema": "q-one-q1-verification-v1",
+  "generated_at": "2026-10-27T14:09:13.143071Z",
+  "scope": "Q1 quantified research foundation; read-only portfolio inventory and ARC claim overlay",
+  "source": {
+    "workspace": "/home/liuzewen/qone-life-work",
+    "head": "fed3f771a7890618bee7276a0c0efddc4e31015e",
+    "dirty": true
+  },
+  "machine": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "cpu_count": 16
+  },
+  "portfolio": {
+    "raw_project_roots": 704,
+    "canonical_projects": 131,
+    "exact_duplicate_groups": 158,
+    "duplicate_project_roots": 255,
+    "version_variants": 200,
+    "supporting_objects": 118,
+    "metadata_overlays": 26,
+    "project_types": {
+      "legacy": 32,
+      "paper": 92,
+      "submission-copy": 3,
+      "version-copy": 4
+    },
+    "statuses": {
+      "revision": 1,
+      "unknown": 130
+    },
+    "dispositions": {
+      "unreviewed": 131
+    },
+    "global_readiness_score": null,
+    "note": "Readiness is deliberately not collapsed into a global score.",
+    "json_path": "artifacts/research-paper-portfolio/v1/paper-portfolio.json",
+    "json_sha256": "3a6daa6b530d7dd1b6deee6ef3806a57a0356b01e1e443fa49dcbac0bf961e2c",
+    "markdown_sha256": "922d47f4fc61ddc3d65c2ca9d01a898746c4ceddeee349f6bbdb02d7d4ce693e",
+    "triage_sha256": "1cf8a2fbbbdfbd317e853c05b9ab8f512c9e107bdd44a5a9cf80e7c754d781e3",
+    "schema_validated": true
+  },
+  "arc_overlay": {
+    "paper_id": "arc-paper-track-2026",
+    "status": "revision",
+    "target": "arxiv",
+    "manuscript_sha256": "a07872cc4710944b6c76084ff89091316d409da5605552c2b201f3648d348c95",
+    "published_source_sha256": "a1ff847e3361d8c6b2b21578e559baf5ab11d768c8f617bae97765691f9fd660",
+    "manuscript_matches_published_source": false,
+    "claims_total": 11,
+    "claims_verified": 9,
+    "claims_inconclusive": 1,
+    "claims_blocked": 1,
+    "validation_valid": true,
+    "validation_ready": false,
+    "package_blockers": [
+      "The local Markdown manuscript does not match the source hash recorded by the current remote publication receipt.",
+      "No arXiv source tree, BibTeX package, cover metadata, or compiled PDF has been prepared from the verified claims.",
+      "The official scoring-methodology source needed by C09 is not captured locally."
+    ],
+    "ledger_verification": {
+      "path": "research/arc-paper-track/reports/claim-ledger-verification.md",
+      "sha256": "b9a0e9b5766fefdf9707a73794a37fdb93493e2a2dc48171beb8b2af4e9c6596",
+      "failures": 0,
+      "warnings": 2,
+      "uncovered_numeric_literals": 0
+    }
+  },
+  "checks": {
+    "pytest": {
+      "result": "passed",
+      "tests": 76,
+      "subtests": 22,
+      "warnings": 1
+    },
+    "unittest": {
+      "result": "passed",
+      "tests": 76
+    },
+    "ruff_scoped_research_files": {
+      "result": "passed"
+    },
+    "json_schema": {
+      "result": "passed",
+      "schemas": 2
+    },
+    "artifact_hashes": {
+      "result": "passed"
+    },
+    "git_diff_check": {
+      "result": "passed"
+    }
+  },
+  "external_actions": {
+    "manuscripts_modified": false,
+    "experiments_run": false,
+    "paid_resources_used": false,
+    "external_accounts_accessed": false,
+    "papers_uploaded": false
+  },
+  "open_gates": [
+    "130 portfolio families still have status unknown and disposition unreviewed.",
+    "The ARC local Markdown does not match the published remote source hash and must be resynchronized or recovered.",
+    "ARC claim C09 remains inconclusive pending a local official methodology snapshot and scorer fixture.",
+    "No arXiv source tree, bibliography, cover metadata, or compiled PDF exists for the ARC overlay yet.",
+    "Gemma and the remaining pilot projects do not yet have equivalent research overlays."
+  ],
+  "reproduction_commands": [
+    "PYTHONPATH=src python scripts/research_portfolio.py --config research/portfolio-sources.json --artifact-dir artifacts/research-paper-portfolio/v1",
+    "PYTHONPATH=src python -c 'from qone_life.cli import main; raise SystemExit(main([\"research-validate\", \"--project\", \"research/arc-paper-track\"]))'",
+    "python3 /home/liuzewen/.agents/skills/paper-writing-agent/scripts/verify_claim_ledger.py research/arc-paper-track --out research/arc-paper-track/reports/claim-ledger-verification.md",
+    "PYTHONPATH=src python -m pytest -q",
+    "PYTHONPATH=src python -m unittest discover -s tests -q"
+  ]
+}

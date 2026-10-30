@@ -1,0 +1,146 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-a-conditional-coupling-diversity-precisi-7336590fb7",
+  "project_id": "qp-tmlr-paper2-consolidated-a737471ea703",
+  "title": "A Conditional Coupling--Diversity--Precision Bound for TTRL-Based LLM Evaluation",
+  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/paper/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "379e1632302e979ded0c0462eeba32a07fa82653796ca72d4f9f55e46f8d5cec",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "paper",
+  "production_priority": 345,
+  "priority_band": "P1",
+  "priority_factors": [
+    {
+      "code": "PINNED_PILOT",
+      "points": 200,
+      "observed": "Matched pilot paper2-coupling at phase P1."
+    },
+    {
+      "code": "QONE_OVERLAY",
+      "points": 40,
+      "observed": "Q-One overlay metadata: qp-20260926t080448z-76619bd57f56."
+    },
+    {
+      "code": "CLAIM_LEDGER",
+      "points": 35,
+      "observed": "Claim ledger is present."
+    },
+    {
+      "code": "BIBLIOGRAPHY",
+      "points": 20,
+      "observed": "At least one bibliography file is present."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "EVIDENCE_DIRECTORY",
+      "points": 20,
+      "observed": "At least one evidence directory is present."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    },
+    {
+      "code": "VERSION_RECONCILIATION",
+      "points": 5,
+      "observed": "2 extra normalized-title source version(s) require review."
+    }
+  ],
+  "pilot_ids": [
+    "paper2-coupling"
+  ],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": true,
+    "compiled_pdf": true,
+    "evidence_directory": true,
+    "variants_to_reconcile": 2,
+    "overlay_present": true
+  },
+  "variant_sources": [
+    "/home/liuzewen/.research/paper2-consolidated/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/paper/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "Pinned as a production pilot; evidence and package gates still apply.",
+    "next_action": "overlay-plan:close_inconclusive_claims,close_scientific_review,remove_or_repair_blocked_claims",
+    "authoritative": false
+  },
+  "overlay": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/project.json",
+    "status": "review_pending",
+    "ledger_present": true,
+    "bibliography_present": true,
+    "evidence_present": true,
+    "claims": 14,
+    "claim_states": {
+      "candidate": 11,
+      "blocked": 2,
+      "verified": 1
+    },
+    "package_state": "compiled",
+    "package_blockers": [
+      "Independent proof audit of the conditional and product bounds is absent.",
+      "The held-out 30-40 condition validation is absent.",
+      "The native p=0.12 GPT-4o drift statement conflicts with p_bootstrap=1.0 in the frozen evidence.",
+      "The T7 satisfied-cell count differs between the native scope note and the frozen output.",
+      "The meta-review remains open with Major Revisions.",
+      "Final author, category, abstract, license and upload authorization remain user decisions."
+    ],
+    "gate_receipts": 10,
+    "plan_stages": {
+      "source-identity": "candidate",
+      "claim-ledger": "blocked",
+      "evidence-recomputation": "blocked",
+      "citation-verification": "verified",
+      "scientific-review": "blocked",
+      "arxiv-package": "blocked",
+      "external-submission": "locked"
+    },
+    "plan_actions": [
+      "close_inconclusive_claims",
+      "close_scientific_review",
+      "remove_or_repair_blocked_claims",
+      "repair_failed_native_gates",
+      "resolve_package_blockers",
+      "external_submission_gate"
+    ]
+  },
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

@@ -8,6 +8,7 @@ from tempfile import TemporaryDirectory
 from qone_core.ledger import Ledger
 from qone_core.service import DecisionService
 from .repository import DOMAINS, timestamp
+from .repository import SCHEMA_VERSION
 
 LEGACY_TABLES = {"tasks", "metrics", "observations", "documents", "runs", "reviews"}
 V2_TABLES = LEGACY_TABLES | {"goals", "suggestions"}
@@ -17,6 +18,9 @@ TABLES = V2_TABLES | {"system_revisions"}
 def validate_backup(raw):
     if raw.get("format") not in {"q-one-backup-v1", "q-one-backup-v2", "q-one-backup-v3"} or not isinstance(raw.get("events"), list):
         raise ValueError("备份格式无效")
+    schema_version = raw.get("schema_version", 1)
+    if type(schema_version) is not int or schema_version != SCHEMA_VERSION:
+        raise ValueError("备份数据库版本与当前应用不兼容")
     tables = raw.get("tables")
     expected = {"q-one-backup-v1":LEGACY_TABLES,"q-one-backup-v2":V2_TABLES,"q-one-backup-v3":TABLES}[raw["format"]]
     if not isinstance(tables, dict) or set(tables) != expected:

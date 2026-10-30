@@ -1,0 +1,129 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-calibration-fatigue-self-evaluation-frag-3c06d49517",
+  "project_id": "qp-calibration-merged-full-from-data3-ec845c511c6b",
+  "title": "Calibration Fatigue, Self-Evaluation Fragility, and the Coupling--Noise Tradeoff in Multi-Agent LLM Systems: A Systematic Study of Calibration Effects",
+  "primary_source": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "legacy",
+  "production_priority": 335,
+  "priority_band": "P1",
+  "priority_factors": [
+    {
+      "code": "PINNED_PILOT",
+      "points": 200,
+      "observed": "Matched pilot calibration-fatigue-audit at phase P1."
+    },
+    {
+      "code": "QONE_OVERLAY",
+      "points": 40,
+      "observed": "Q-One overlay metadata: qp-calib-fix-20260909-b51cb57427c9."
+    },
+    {
+      "code": "CLAIM_LEDGER",
+      "points": 35,
+      "observed": "Claim ledger is present."
+    },
+    {
+      "code": "BIBLIOGRAPHY",
+      "points": 20,
+      "observed": "At least one bibliography file is present."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "EVIDENCE_DIRECTORY",
+      "points": 20,
+      "observed": "At least one evidence directory is present."
+    },
+    {
+      "code": "VERSION_RECONCILIATION",
+      "points": 5,
+      "observed": "1 extra normalized-title source version(s) require review."
+    },
+    {
+      "code": "LEGACY_SOURCE",
+      "points": 0,
+      "observed": "Legacy source type; no points, review still required."
+    }
+  ],
+  "pilot_ids": [
+    "calibration-fatigue-audit"
+  ],
+  "signals": {
+    "claim_ledger": true,
+    "bibliography": true,
+    "compiled_pdf": true,
+    "evidence_directory": true,
+    "variants_to_reconcile": 1,
+    "overlay_present": true
+  },
+  "variant_sources": [
+    "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/arxiv_clean/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "repair",
+    "reason": "Pinned as a production pilot; evidence and package gates still apply.",
+    "next_action": "confirm_target_and_scope",
+    "authoritative": false
+  },
+  "overlay": {
+    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/project.json",
+    "status": "blocked",
+    "ledger_present": true,
+    "bibliography_present": true,
+    "evidence_present": true,
+    "claims": 14,
+    "claim_states": {
+      "verified": 8,
+      "blocked": 6
+    },
+    "package_state": "not-started",
+    "package_blockers": [
+      "GPT-4o Finding-1 raw per-repetition traces missing",
+      "Finding-2 raw traces for 1.06/42%/35-37% missing",
+      "30-seed predecessor A/C/D gamma arrays identical",
+      "outer and arXiv manifests stale",
+      "current-hash external method/statistics review open",
+      "sentence-level support for remaining 27 citations not audited"
+    ],
+    "gate_receipts": 12,
+    "plan_stages": {},
+    "plan_actions": []
+  },
+  "review_questions": [
+    "What is the paper's one-sentence bounded claim?",
+    "Which claims have evidence fields and reproducible commands?",
+    "What independent method/statistics review is still missing?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}

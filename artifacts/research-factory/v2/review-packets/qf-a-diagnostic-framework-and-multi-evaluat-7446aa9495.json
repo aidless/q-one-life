@@ -1,0 +1,102 @@
+{
+  "schema": "q-one-paper-review-packet-v1",
+  "generated_at": "2026-10-28T12:14:02.715527Z",
+  "family_id": "qf-a-diagnostic-framework-and-multi-evaluat-7446aa9495",
+  "project_id": "qp-tmlr-iclr-2027-df320bec8b11",
+  "title": "A Diagnostic Framework and Multi-Evaluator Audit of Evaluator-Driven Preference Dynamics in Self-Adapting LLM Agents",
+  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/paper/main.tex",
+  "source_state": {
+    "exists": true,
+    "sha256": "962ad0c7c7669fa6f13a552ce1443155f87b2f17d9735c6f50b409726f3814c8",
+    "matches_catalog": true
+  },
+  "target": null,
+  "recorded_status": "unknown",
+  "project_type": "paper",
+  "production_priority": 110,
+  "priority_band": "P1",
+  "priority_factors": [
+    {
+      "code": "QONE_OVERLAY",
+      "points": 40,
+      "observed": "Q-One overlay metadata: qp-arxiv-submit-083d1aca8e2e."
+    },
+    {
+      "code": "BIBLIOGRAPHY",
+      "points": 20,
+      "observed": "At least one bibliography file is present."
+    },
+    {
+      "code": "COMPILED_PDF",
+      "points": 15,
+      "observed": "At least one PDF is present."
+    },
+    {
+      "code": "EVIDENCE_DIRECTORY",
+      "points": 20,
+      "observed": "At least one evidence directory is present."
+    },
+    {
+      "code": "RECENT_30D",
+      "points": 10,
+      "observed": "Canonical source changed within the last 30 days."
+    },
+    {
+      "code": "VERSION_RECONCILIATION",
+      "points": 5,
+      "observed": "9 extra normalized-title source version(s) require review."
+    }
+  ],
+  "pilot_ids": [],
+  "signals": {
+    "claim_ledger": false,
+    "bibliography": true,
+    "compiled_pdf": true,
+    "evidence_directory": true,
+    "variants_to_reconcile": 9,
+    "overlay_present": false
+  },
+  "variant_sources": [
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-acl-2027/paper/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-acl-2027/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-acl-2027/source/arxiv_submit/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-acl-2027/source/submission_variant/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/paper/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/arxiv/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/source/submission_variant/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-2027/paper/main.tex",
+    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-2027/.aris/ingest_drift/20260930T052414Z/main.tex"
+  ],
+  "machine_recommendation": {
+    "disposition": "merge",
+    "reason": "One normalized-title family contains multiple source versions; reconcile the canonical source before drafting.",
+    "next_action": "confirm_target_and_scope",
+    "authoritative": false
+  },
+  "overlay": null,
+  "review_questions": [
+    "Which member is the canonical scientific source?",
+    "Is every materially different result, figure, or claim represented in the canonical source?",
+    "Can superseded copies be archived without losing unique evidence?"
+  ],
+  "required_for_arxiv_ready": [
+    "A canonical source and exact source identity are recorded.",
+    "Every material claim is registered with evidence fields and status.",
+    "Numerical claims are recomputed from frozen inputs.",
+    "Citations are resolved and the bibliography is mechanically valid.",
+    "Independent method/statistics review is closed against the current hash.",
+    "A clean-room compile and deterministic candidate package exist.",
+    "Author, category, abstract, license and upload authorization are user-confirmed."
+  ],
+  "review_decision": {
+    "final_disposition": "unreviewed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reason": null
+  },
+  "notes": [
+    "This packet supports review; it does not assign a final disposition.",
+    "Machine priority is not paper quality or acceptance probability."
+  ]
+}
