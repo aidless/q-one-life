@@ -10,3 +10,12 @@ build/
 *.private.*
 .life-data/
 .DS_Store
+
+# research factory: 过程备份与缓存不入库，证据本体入库
+research/**/*.bak*
+research/**/*.pyc
+research/**/__pycache__/
+research/**/.pytest_cache/
+node_modules/
+desktop/release/
+desktop/node_modules/
