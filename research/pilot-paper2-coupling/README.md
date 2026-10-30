@@ -24,7 +24,9 @@ Current evidence:
 
 Open hard blockers:
 
-- No independent proof audit.
+- Independent proof audit performed 2026-10-30
+  (`reports/proof-audit-20261030.md`): Theorem 1 and Theorem 2 contain
+  mathematical errors; the three body propositions are sound.
 - No held-out 30-40 condition validation.
 - The native `p=0.12` GPT-4o drift statement conflicts with the frozen
   `p_bootstrap=1.0` artifact.
