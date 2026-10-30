@@ -533,3 +533,32 @@
 
 No upload, external account action, paid resource use, or claim of acceptance or
 publication was performed.
+
+---
+
+## 90 天计划阶段进度（2026-10-30）
+
+| 阶段 | 状态 | 判据符合 |
+|---|---|---|
+| D1-D15 控制面 | ✅ 完成 | 131 族生产队列生成、5 pilot 固化、外置覆盖层、ledger/source-lineage 登记 |
+| D16-D30 首轮人工处置 | ⏸ 未开始 | 133/133 族 final_disposition=unreviewed；人工动作 Agent 不擅自决定 |
+| D31-D45 证据闭环 | ✅ 机械部分完成 | 11/17 pilot 有正文报告，全部 0 FAIL；主要缺口仅 verifier-capture tab:dz 20 个 d_z |
+| D46-D60 起草闭环 | ✅ 完成 | PAPER_PLAN 5/5、章节草稿 5/5、图表实体 5/5、独立评审 5/5、citation-verification 3/3 |
+| D61-D75 首批 arXiv 包 | ⚠️ 部分达成 | 机械打包 3/5（paper11/bench/f-acceptance），独立评审 5/5（达标） |
+| D76-D90 批次扩产 | ⏸ 未达成 | P0=3/P1=30 未关闭（根因 D16-D30 人工处置未开始） |
+
+### 关键结论
+
+1. **D31-D75 的 Agent 机械部分已推进到底**：证据闭环、PAPER_PLAN、独立评审（5/5）、citation-verification、机械包评估全部完成并提交（00e65be/f64e09c/a4c8aa8/26e24e3）。
+2. **剩余阻塞均需人工/用户授权**：D16-D30 人工处置（133 族 final_disposition）、arXiv 上传/作者/分类/许可证（用户门）、gemma/arc LaTeX 工具链（外部资源）、bench C02/C03 + f-acceptance C11 + arc C09（独立评审未闭合项）。
+3. **非静默缺陷**：所有未达成判据均在评估报告中显式列出，无静默降级。
+
+### 未闭合项清单（Agent 不能自行解除）
+
+- bench C02（发表身份）+ C03（构念效度）
+- f-acceptance C11（独立评审绑定源哈希）
+- arc C09（官方计分法快照 + 计分器夹具）
+- gemma 源身份（本地 WRITEUP vs 发布源）
+- gemma/arc LaTeX 工具链（无 pandoc/pdflatex）
+- 5 篇 arXiv 上传/元数据（用户门）
+- 133 族人工处置（D16-D30）
