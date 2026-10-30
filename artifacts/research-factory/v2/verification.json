@@ -1,18 +1,18 @@
 {
   "schema": "q-one-research-factory-verification-v1",
-  "generated_at": "2026-10-30T05:17:36.999684Z",
-  "command": "PYTHONPATH=/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src /home/liuzewen/.cache/qone-life-venv/bin/python '/home/liuzewen/F:\\deepseek/q-one-life/scripts/research_factory_verify.py'",
+  "generated_at": "2026-10-30T10:17:31.879146Z",
+  "command": "PYTHONPATH=/data2/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/data2/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/data2/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src /tmp/qone-venv/bin/python '/home/liuzewen/F:\\deepseek/q-one-life/scripts/research_factory_verify.py'",
   "scope": "Research Factory control plane, seventeen pilot overlays, claim ledgers, mechanical package audits, clean-room compilation and candidate archives",
   "source": {
     "workspace": "/home/liuzewen/F:\\deepseek/q-one-life",
-    "head": "fed3f771a7890618bee7276a0c0efddc4e31015e",
+    "head": "81b0cbe8eea4f9e9eb9812afd7a8e095ebd000c8",
     "dirty": true
   },
   "machine": {
     "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
     "python": "3.12.3",
-    "python_executable": "/home/liuzewen/.cache/qone-life-venv/bin/python",
-    "test_pythonpath": "/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src",
+    "python_executable": "/tmp/qone-venv/bin/python",
+    "test_pythonpath": "/data2/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/data2/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/data2/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src",
     "cpu_count": 16
   },
   "checks": {
@@ -222,7 +222,7 @@
       },
       "artifact": {
         "path": "artifacts/research-factory/v2/agent-dispositions.json",
-        "sha256": "1f59e6104477037881439e3e11099cc47b9630285bf846e8718f85c78d8ed80b",
+        "sha256": "36babb1d573c67fe0437e435e4476fdfb7b86a3b8d0448868b90705c6e1b5ff5",
         "bytes": 193527
       }
     }
@@ -260,17 +260,17 @@
     },
     {
       "path": "artifacts/research-factory/v2/pilot-status.json",
-      "sha256": "33900a744abce508c928c49a701864e3ca01b9efe3345a7210b5df262f024ad0",
+      "sha256": "53684ca01e41afd7b0e448152e6749e1e1abe7336a1d62888f9c5f5ced4b1062",
       "bytes": 43457
     },
     {
       "path": "artifacts/research-factory/v2/agent-dispositions.json",
-      "sha256": "1f59e6104477037881439e3e11099cc47b9630285bf846e8718f85c78d8ed80b",
+      "sha256": "36babb1d573c67fe0437e435e4476fdfb7b86a3b8d0448868b90705c6e1b5ff5",
       "bytes": 193527
     },
     {
       "path": "artifacts/research-factory/v2/agent-dispositions.md",
-      "sha256": "dbe10cd3b8ed988ab645975575572651b4bc854670cba1ff83dc1dbb48c79872",
+      "sha256": "82367ef0ba5b03d613feb5f566f4e94a31ec3fe3724f7b0c6c5632918b8b20de",
       "bytes": 23641
     },
     {
@@ -300,52 +300,52 @@
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/index.json",
-      "sha256": "91d438ed4d219d80eb38177aef68bdf27071fa9356a89c018769cbcdc0e620ab",
+      "sha256": "07aa5227e63ffb718c23847e1db879673a4d83c17443ce1cabc53f082bc8a3d4",
       "bytes": 4328
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/agent-behavior-regression.json",
-      "sha256": "218ffbda7482690b38b86036e48769aad27c6b5045db911f6212c1c1bd89b10e",
+      "sha256": "2f0bc87072578bae3f1134c7ff9de3ac38140dd740986f743af8dd0cfacb8ce9",
       "bytes": 2339
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/closing-landscape.json",
-      "sha256": "63088c018a9ecf67e4ba7837af9ca7498945eacf0f2ffd530bfeef98a4dd193d",
+      "sha256": "741000dcdc530b31bc322906726c4fd69ccd9a050094a0a220768fa875de6140",
       "bytes": 2011
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/f-acceptance.json",
-      "sha256": "900796910ae38bde91afbf393b531d41b20c23c76da709ab9fc43b14f33388ad",
+      "sha256": "9a4381546154276e17af2e32f741e8c8daa29deb388b2c221bf0ffa16690459a",
       "bytes": 1775
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/memory-architecture.json",
-      "sha256": "48badab773491aa51dadc4a09a9da6167e9035f3cb814da4d9e08d1474f421ec",
+      "sha256": "3588bf444a126d68c4b2b92bbc45dd7c5692687f26e1e6099a14f32f0a44a95c",
       "bytes": 2498
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/noise-floor.json",
-      "sha256": "6b6c3a19b716b2f7bc55549942475137fc021a3f8f12715ace19ab6b01b47990",
+      "sha256": "cf138b4673e3667d2db562a4d836fe79c12bc4c8422443fc8e3d3cc28428d09e",
       "bytes": 2593
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/paper11-overlay.json",
-      "sha256": "200152b85c2b5d06cb2eab5efa26aa7e432bb54f65133ac13ee8e23f25bf9cc0",
+      "sha256": "8b4fe424335ad1ef0244026f035e0efdd830852ce9bc76e9f2eff0f7c3689e55",
       "bytes": 1481
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/paper11.json",
-      "sha256": "588b4ab66b56e5e981fb47b0cc0c98f3712760d26036c6a3106213ae9e32536e",
+      "sha256": "cb9734054304dda3d8b1c2b5a27302e51b5abbe64599d5171a4001543c322db6",
       "bytes": 5083
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/paper2-coupling.json",
-      "sha256": "9db1f2686c45ab51130ba023079f78dede8c9c991b205592fdf63bc4f871be2c",
+      "sha256": "cad47047a1c6003b1bfdaf984d22996a414b5a26bca4e8ef0290561d6ac8ec85",
       "bytes": 1317
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/verifier-capture-aggregation.json",
-      "sha256": "d57f0c4af4818bb13fea3a3f6dd93b72461cd07036ad6f774c9849662d90334b",
+      "sha256": "2cd306c7a83bd838e08bd759851ad919a3cddc69330ff64c63850f3b49a1de53",
       "bytes": 1653
     }
   ],

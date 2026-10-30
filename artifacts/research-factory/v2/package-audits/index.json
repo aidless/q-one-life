@@ -1,11 +1,11 @@
 {
   "schema": "q-one-package-audit-index-v1",
-  "generated_at": "2026-10-30T05:17:35.718918Z",
+  "generated_at": "2026-10-30T10:17:30.468918Z",
   "audits": [
     {
       "name": "f-acceptance",
       "path": "artifacts/research-factory/v2/package-audits/f-acceptance.json",
-      "sha256": "900796910ae38bde91afbf393b531d41b20c23c76da709ab9fc43b14f33388ad",
+      "sha256": "9a4381546154276e17af2e32f741e8c8daa29deb388b2c221bf0ffa16690459a",
       "bytes": 1775,
       "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source",
       "mechanical_pass": true,
@@ -16,7 +16,7 @@
     {
       "name": "noise-floor",
       "path": "artifacts/research-factory/v2/package-audits/noise-floor.json",
-      "sha256": "6b6c3a19b716b2f7bc55549942475137fc021a3f8f12715ace19ab6b01b47990",
+      "sha256": "cf138b4673e3667d2db562a4d836fe79c12bc4c8422443fc8e3d3cc28428d09e",
       "bytes": 2593,
       "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source",
       "mechanical_pass": true,
@@ -27,7 +27,7 @@
     {
       "name": "paper11",
       "path": "artifacts/research-factory/v2/package-audits/paper11.json",
-      "sha256": "588b4ab66b56e5e981fb47b0cc0c98f3712760d26036c6a3106213ae9e32536e",
+      "sha256": "cb9734054304dda3d8b1c2b5a27302e51b5abbe64599d5171a4001543c322db6",
       "bytes": 5083,
       "source_dir": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/paper",
       "mechanical_pass": true,
@@ -38,7 +38,7 @@
     {
       "name": "paper11-overlay",
       "path": "artifacts/research-factory/v2/package-audits/paper11-overlay.json",
-      "sha256": "200152b85c2b5d06cb2eab5efa26aa7e432bb54f65133ac13ee8e23f25bf9cc0",
+      "sha256": "8b4fe424335ad1ef0244026f035e0efdd830852ce9bc76e9f2eff0f7c3689e55",
       "bytes": 1481,
       "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper11/source",
       "mechanical_pass": true,
@@ -49,7 +49,7 @@
     {
       "name": "paper2-coupling",
       "path": "artifacts/research-factory/v2/package-audits/paper2-coupling.json",
-      "sha256": "9db1f2686c45ab51130ba023079f78dede8c9c991b205592fdf63bc4f871be2c",
+      "sha256": "cad47047a1c6003b1bfdaf984d22996a414b5a26bca4e8ef0290561d6ac8ec85",
       "bytes": 1317,
       "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/source",
       "mechanical_pass": true,
@@ -60,7 +60,7 @@
     {
       "name": "agent-behavior-regression",
       "path": "artifacts/research-factory/v2/package-audits/agent-behavior-regression.json",
-      "sha256": "218ffbda7482690b38b86036e48769aad27c6b5045db911f6212c1c1bd89b10e",
+      "sha256": "2f0bc87072578bae3f1134c7ff9de3ac38140dd740986f743af8dd0cfacb8ce9",
       "bytes": 2339,
       "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/source",
       "mechanical_pass": true,
@@ -71,7 +71,7 @@
     {
       "name": "verifier-capture-aggregation",
       "path": "artifacts/research-factory/v2/package-audits/verifier-capture-aggregation.json",
-      "sha256": "d57f0c4af4818bb13fea3a3f6dd93b72461cd07036ad6f774c9849662d90334b",
+      "sha256": "2cd306c7a83bd838e08bd759851ad919a3cddc69330ff64c63850f3b49a1de53",
       "bytes": 1653,
       "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source",
       "mechanical_pass": true,
@@ -82,7 +82,7 @@
     {
       "name": "closing-landscape",
       "path": "artifacts/research-factory/v2/package-audits/closing-landscape.json",
-      "sha256": "63088c018a9ecf67e4ba7837af9ca7498945eacf0f2ffd530bfeef98a4dd193d",
+      "sha256": "741000dcdc530b31bc322906726c4fd69ccd9a050094a0a220768fa875de6140",
       "bytes": 2011,
       "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape/source",
       "mechanical_pass": true,
@@ -93,7 +93,7 @@
     {
       "name": "memory-architecture",
       "path": "artifacts/research-factory/v2/package-audits/memory-architecture.json",
-      "sha256": "48badab773491aa51dadc4a09a9da6167e9035f3cb814da4d9e08d1474f421ec",
+      "sha256": "3588bf444a126d68c4b2b92bbc45dd7c5692687f26e1e6099a14f32f0a44a95c",
       "bytes": 2498,
       "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/source",
       "mechanical_pass": true,

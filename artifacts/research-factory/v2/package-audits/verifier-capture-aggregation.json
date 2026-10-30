@@ -1,6 +1,6 @@
 {
   "schema": "q-one-arxiv-package-audit-v1",
-  "generated_at": "2026-10-30T05:17:35.702424Z",
+  "generated_at": "2026-10-30T10:17:30.451863Z",
   "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source",
   "main_file": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source/main.tex",
   "mechanical_pass": true,
