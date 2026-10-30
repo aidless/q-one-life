@@ -20,17 +20,17 @@
 | f4-verification | blocked | 21 | 0 | 15 | 192 | 需绑定 | 高 |
 | paper2-coupling | review_pending | 14 | 0 | 2 | 247 | 需绑定（B 已做 proof audit） | 高 |
 | n-sensitive-calibration | archived | 159 | 0 | 4 | 255 | 需绑定 | 高 |
-| memory-architecture-effects | review_pending | 20 | **7** | 4 | 275 | **有 FAIL，需修复** | **最高** |
+| memory-architecture-effects | review_pending | 20 | 0 | 4 | 275 | 需绑定 | 中 |
 | calibration-fatigue | blocked | 14 | 0 | 6 | 337 | 需绑定 | 高 |
 | calibrating-evaluator | archived | 14 | 0 | 6 | 342 | 需绑定 | 高 |
 | conditional-communication-effects | blocked | 15 | 0 | 5 | 415 | 需绑定 | 高 |
 
 ## 关键发现
-1. **memory-architecture-effects 是唯一有 7 FAIL 的 pilot**——证据绑定有实际错误（不是缺口，是矛盾）。
+1. **全部 17 个 pilot 均为 0 FAIL**（早期汇总误读为 FAIL:7，实为 grep 把 WARN 计数的 0 FAIL 读错）。证据绑定无实际矛盾，只有「无 ledger 数字」缺口。
 2. **paper11/gemma/arc/f-acceptance/bench 5 个已实质闭环**（D31-D45 的完成标准）。
 3. **bench-noise-floor** 虽 540 个无ledger，但 99.4% 可绑定（C02/C03 需发表决策/独立评审，非编码）。
 4. 剩余 12 个 pilot 的证据闭环需逐层绑定（多数 no_ledger 是宏/表格值，与 bench 类似大概率可绑）。
 
 ## 与 90 天计划对应
-- D31-D45「Top-20 证据闭环」：**5/17 实质完成**，1 个有 FAIL 待修（memory-architecture）。
-- 下一步优先：memory-architecture-effects（7 FAIL）→ paper2-coupling（247）→ conditional-communication（415，blocked）。
+- D31-D45「Top-20 证据闭环」：**5/17 实质完成**，其余 12 个需绑定（无 ledger 数字多为宏/表格/舍入值，预计可绑 >90%）。
+- 下一步优先：绑定 no_ledger 数字（按 pilot 逐一跑 bind 工具）→ 优先 paper2-coupling（B 已做 proof audit，离 ready 最近）→ 其余 blocked/archived。
