@@ -1,0 +1,48 @@
+{
+  "schema": "q-one-resume-benchmark-tasks-v1",
+  "description": "Small engineering acceptance set for local recommendation traceability. It is not an external validity study.",
+  "cases": [
+    {
+      "id": "readme-first-page",
+      "title": "Draft the first usable page of a project README",
+      "success_criterion": "README.md states the project purpose, local setup, and one verified command",
+      "domain": "work",
+      "priority": 5
+    },
+    {
+      "id": "stats-review",
+      "title": "Prepare a statistical review checklist for a paper",
+      "success_criterion": "The checklist names every tested claim, its data source, and one recomputation command",
+      "domain": "work",
+      "priority": 5
+    },
+    {
+      "id": "weekly-learning",
+      "title": "Plan one week of focused Python learning",
+      "success_criterion": "The plan contains five dated sessions, each with a runnable exercise and a completion check",
+      "domain": "learning",
+      "priority": 3
+    },
+    {
+      "id": "backup-restore",
+      "title": "Verify encrypted backup and restore on a clean profile",
+      "success_criterion": "A restored profile contains the original goal and excludes a disposable post-backup goal",
+      "domain": "work",
+      "priority": 5
+    },
+    {
+      "id": "grant-abstract",
+      "title": "Draft a 200-word abstract for a small research grant",
+      "success_criterion": "The abstract states the problem, method, evaluation, and one explicit limitation within 200 words",
+      "domain": "work",
+      "priority": 4
+    },
+    {
+      "id": "interview-notes",
+      "title": "Organize notes from five user interviews",
+      "success_criterion": "The notes contain five anonymized summaries, recurring themes, and unresolved contradictions",
+      "domain": "work",
+      "priority": 4
+    }
+  ]
+}

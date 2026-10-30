@@ -1,0 +1,40 @@
+{
+  "name": "q-one-desktop",
+  "version": "0.8.0-dev.0",
+  "license": "MIT",
+  "private": true,
+  "description": "Q-One consumer desktop shell",
+  "author": {
+    "name": "Q-One contributors",
+    "email": "101927025+aidless@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/aidless/q-one-life",
+  "desktopName": "q-one",
+  "main": "dist/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "pnpm run build && electron .",
+    "test": "pnpm run build && node --test dist/test/*.test.js",
+    "test:e2e": "pnpm run build && playwright test",
+    "dist": "pnpm run build && electron-builder --publish never",
+    "dist:dir": "pnpm run build && electron-builder --dir --publish never",
+    "release:manifest": "node scripts/create-update-manifest.mjs",
+    "release:evidence": "node scripts/release-evidence.mjs",
+    "release:verify": "node scripts/verify-release.mjs"
+  },
+  "dependencies": {
+    "electron-updater": "6.8.11",
+    "node-llama-cpp": "3.22.2",
+    "qrcode-generator": "2.0.4",
+    "undici": "8.12.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "26.6.5",
+    "electron": "45.0.0",
+    "electron-builder": "26.18.0",
+    "typescript": "7.0.2"
+  },
+  "packageManager": "pnpm@12.8.1"
+}

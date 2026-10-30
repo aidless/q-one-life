@@ -1,0 +1,45 @@
+{
+  "schema": "q-one-desktop-baseline-v1",
+  "frozen_at": "2026-10-27T00:00:00Z",
+  "applications": {
+    "q-one-life": {
+      "version": "0.7.1",
+      "commit": "fed3f771a7890618bee7276a0c0efddc4e31015e",
+      "ci": "https://github.com/aidless/q-one-life/actions/runs/40458358486"
+    },
+    "q-one-core": {
+      "commit": "b1f41dea59eb9d26b66e812f3fc167b83c23d7cf",
+      "ci": "https://github.com/aidless/q-one-core/actions/runs/40457437405"
+    },
+    "q-one-agent": {
+      "version": "0.2.0",
+      "commit": "79a951ac4e4f77239a227cfe28ffdc0fb30bc19f",
+      "ci": "https://github.com/aidless/q-one-agent/actions/runs/40081643639"
+    }
+  },
+  "source_integrations": [
+    {
+      "repository": "q-one-agent",
+      "base_commit": "79a951ac4e4f77239a227cfe28ffdc0fb30bc19f",
+      "patch": "desktop/patches/q-one-agent-local-provider.patch",
+      "sha256": "74f826d13fb291a083ac9be4bc5533cd1fd7455aeb21fe3318cffe53f81b338d",
+      "reason": "Adds the reviewed loopback-only OpenAI-compatible local model provider.",
+      "release_gate": "Replace with a reviewed q-one-agent commit before public release."
+    }
+  ],
+  "desktop_scope": {
+    "targets": [
+      "windows-x64",
+      "macos-arm64",
+      "linux-x64"
+    ],
+    "runtime": "Electron with Python PyInstaller sidecar",
+    "first_release": "1.0.0"
+  },
+  "not_authorized_here": [
+    "code signing purchase",
+    "GitHub publishing",
+    "public beta",
+    "paid services"
+  ]
+}
