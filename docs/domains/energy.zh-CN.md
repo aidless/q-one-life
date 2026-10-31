@@ -12,7 +12,9 @@
 | drainers | 12 | 越低越好 | score |
 | boosters | 12 | 越高越好 | minutes |
 | circadian | 12 | 越高越好 | minutes、score |
-| **合计** | **60** | | |
+| body_signals | 12 | 目标值、越高越好 | index、score |
+| recovery_habits | 16 | 越高越好 | minutes、score |
+| **合计** | **88** | | |
 
 ## 类别详解
 
@@ -85,3 +87,31 @@
 | caffeine_cutoff | 越高越好 | score | — |
 | light_exposure | 越高越好 | score | — |
 | chronotype_score | 越高越好 | score | — |
+
+### body_signals
+
+维度模板：`value`：范围 0–200index，目标值，建议 7 次/窗口；`score`：范围 0–10score，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| body_temperature | 目标值 | degC | 36.5 |
+| heart_rate_variability | 目标值 | ms | 55 |
+| blood_pressure | 目标值 | mmHg | 120 |
+| oxygen_saturation | 目标值 | pct | 98 |
+| energy_level | 目标值 | score | 7 |
+| stamina | 目标值 | index | 70 |
+
+### recovery_habits
+
+维度模板：`minutes`：范围 0–120minutes，越高越好，建议 7 次/窗口；`quality`：范围 0–10score，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| evening_winddown | 越高越好 | minutes | — |
+| screen_curfew | 越高越好 | minutes | — |
+| hydration_evening | 越高越好 | minutes | — |
+| stretching_evening | 越高越好 | minutes | — |
+| quiet_time | 越高越好 | minutes | — |
+| sleep_schedule | 越高越好 | minutes | — |
+| morning_routine | 越高越好 | minutes | — |
+| afternoon_break | 越高越好 | minutes | — |

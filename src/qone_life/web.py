@@ -695,6 +695,70 @@ def create_app(
             "text": text, "snapshot": {"scores": repository.scores(days), "decisions": len(public_decisions()),
                                         "report": build_report(ledger)}})
 
+    @app.get("/api/scores")
+    def read_scores(days: int = 7):
+        return repository.scores(days)
+
+    @app.get("/api/iterate")
+    def read_iterate(days: int = 7):
+        """Per-day direction-aware dimension scores, deltas, and trends."""
+        from .iteration import daily_iteration
+        from .models import MetricSpec, Observation
+
+        metrics = repository.all("metrics")
+        specs = tuple(
+            MetricSpec(
+                domain=m["domain"], metric=m["name"], minimum=m["minimum"],
+                maximum=m["maximum"], direction=m["direction"],
+                unit=m.get("unit", ""), target=m.get("target"),
+                target_count=m.get("target_count", 1),
+            )
+            for m in metrics
+        )
+        observations = [
+            Observation(
+                observation_id=r["id"], domain=m["domain"], metric=m["name"],
+                value=r["value"], minimum=m["minimum"], maximum=m["maximum"],
+                observed_at=r["observed_at"], source=r.get("source", ""),
+                note=r.get("note", ""),
+            )
+            for r in repository.all("observations")
+            if not r.get("superseded_by")
+            for m in [next((x for x in metrics if x["id"] == r["metric_id"]), None)]
+            if m is not None
+        ]
+        return daily_iteration(observations, specs, window_days=days)
+
+    @app.get("/api/suggest")
+    def read_suggest(threshold: float = 0.5):
+        """Actionable next-step suggestions per domain, direction-aware."""
+        from .models import MetricSpec, Observation
+        from .suggestion import suggest_improvements
+
+        metrics = repository.all("metrics")
+        specs = tuple(
+            MetricSpec(
+                domain=m["domain"], metric=m["name"], minimum=m["minimum"],
+                maximum=m["maximum"], direction=m["direction"],
+                unit=m.get("unit", ""), target=m.get("target"),
+                target_count=m.get("target_count", 1),
+            )
+            for m in metrics
+        )
+        observations = [
+            Observation(
+                observation_id=r["id"], domain=m["domain"], metric=m["name"],
+                value=r["value"], minimum=m["minimum"], maximum=m["maximum"],
+                observed_at=r["observed_at"], source=r.get("source", ""),
+                note=r.get("note", ""),
+            )
+            for r in repository.all("observations")
+            if not r.get("superseded_by")
+            for m in [next((x for x in metrics if x["id"] == r["metric_id"]), None)]
+            if m is not None
+        ]
+        return suggest_improvements(observations, specs, threshold=threshold)
+
     @app.get("/api/settings")
     def read_settings():
         return public_settings()

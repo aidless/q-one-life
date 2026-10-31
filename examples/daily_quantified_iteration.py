@@ -39,7 +39,12 @@ def main() -> int:
     parser.add_argument("--data-dir", default=".life-data", help="LifeStore data directory")
     parser.add_argument("--spec-file", default="examples/metric-spec.json", help="Metric spec JSON")
     parser.add_argument("--note", default="daily iteration starter", help="Observation note")
+    parser.add_argument("--days", type=int, default=1,
+                        help="number of consecutive days to record (default: 1)")
     args = parser.parse_args()
+
+    if args.days < 1 or args.days > 90:
+        raise SystemExit("--days must be between 1 and 90")
 
     repo_root = Path(__file__).resolve().parent.parent
     spec_path = (repo_root / args.spec_file).resolve()
@@ -57,21 +62,33 @@ def main() -> int:
     sys.path.insert(0, str(repo_root / "src"))
     from qone_life.cli import main as cli_main
 
-    for dom, metric, value, minimum, maximum in REPRESENTATIVE:
-        argv = [
-            "qone-life",
-            "--data-dir", args.data_dir,
-            "add-observation",
-            "--domain", dom,
-            "--metric", metric,
-            "--value", str(value),
-            "--minimum", str(minimum),
-            "--maximum", str(maximum),
-            "--source", "daily-iteration",
-            "--note", args.note,
-        ]
-        sys.argv = argv
-        cli_main()
+    # Deterministic plausible day-over-day variation (+/- up to 10%).
+    import random
+    rng = random.Random(20261101)
+
+    from datetime import datetime, timedelta, timezone
+    today = datetime.now(timezone.utc)
+    for day_offset in range(args.days):
+        observed_at = (today - timedelta(days=day_offset)).strftime("%Y-%m-%dT12:00:00Z")
+        for dom, metric, base_value, minimum, maximum in REPRESENTATIVE:
+            drift = 1 + rng.uniform(-0.1, 0.1)
+            value = round(base_value * drift, 2)
+            value = min(maximum, max(minimum, value))
+            argv = [
+                "qone-life",
+                "--data-dir", args.data_dir,
+                "add-observation",
+                "--domain", dom,
+                "--metric", metric,
+                "--value", str(value),
+                "--minimum", str(minimum),
+                "--maximum", str(maximum),
+                "--source", "daily-iteration",
+                "--note", args.note,
+                "--observed-at", observed_at,
+            ]
+            sys.argv = argv
+            cli_main()
 
     # Score the whole dimension vector.
     sys.argv = [

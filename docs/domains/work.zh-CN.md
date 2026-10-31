@@ -13,7 +13,10 @@
 | meetings | 12 | 越低越好 | minutes |
 | tools | 44 | 越高越好 | hours、score |
 | deliverables | 14 | 越高越好 | items |
-| **合计** | **142** | | |
+| performance | 16 | 越高越好 | hours、score |
+| career | 16 | 越高越好 | hours、ratio |
+| communication | 16 | 越高越好 | items、score |
+| **合计** | **190** | | |
 
 ## 类别详解
 
@@ -135,3 +138,48 @@
 | code_snippet | 越高越好 | items | — |
 | architecture_doc | 越高越好 | items | — |
 | runbook | 越高越好 | items | — |
+
+### performance
+
+维度模板：`score`：范围 0–10score，越高越好，建议 7 次/窗口；`hours`：范围 0–8hours，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| focused_hours | 越高越好 | score | — |
+| flow_state | 越高越好 | score | — |
+| productivity | 越高越好 | score | — |
+| output_quality | 越高越好 | score | — |
+| task_completion | 越高越好 | score | — |
+| deep_work | 越高越好 | score | — |
+| shallow_work | 越高越好 | score | — |
+| interruption_count | 越高越好 | score | — |
+
+### career
+
+维度模板：`progress`：范围 0–1ratio，越高越好，建议 30 次/窗口；`hours`：范围 0–8hours，越高越好，建议 30 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| promotion | 越高越好 | ratio | — |
+| salary_negotiation | 越高越好 | ratio | — |
+| skill_development | 越高越好 | ratio | — |
+| job_switch | 越高越好 | ratio | — |
+| portfolio | 越高越好 | ratio | — |
+| interview_prep | 越高越好 | ratio | — |
+| resume_update | 越高越好 | ratio | — |
+| network_events | 越高越好 | ratio | — |
+
+### communication
+
+维度模板：`count`：范围 0–50items，越高越好，建议 7 次/窗口；`quality`：范围 0–10score，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| email_sent | 越高越好 | items | — |
+| slack_message | 越高越好 | items | — |
+| doc_reviewed | 越高越好 | items | — |
+| presentation | 越高越好 | items | — |
+| code_comment | 越高越好 | items | — |
+| design_doc | 越高越好 | items | — |
+| standup_update | 越高越好 | items | — |
+| feedback_given | 越高越好 | items | — |

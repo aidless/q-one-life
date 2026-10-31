@@ -77,6 +77,36 @@ CATALOG: dict[str, list[tuple[str, list[T], list[str] | list[tuple[str, float]]]
             ("rem_sleep", 2), ("light_sleep", 4.5), ("sleep_regularity", 0.8),
             ("sleep_environment_score", 8), ("mattress_score", 7), ("pillow_score", 7),
         ]),
+        ("hydration", [
+            ("intake", 0, 5000, "higher", "ml", None, 0.8, 7),
+            ("glasses", 0, 15, "higher", "glasses", None, 0.6, 7),
+        ], [
+            "water", "electrolyte", "herbal_tea", "coconut_water", "broth",
+        ]),
+        ("dental_oral", [
+            ("minutes", 0, 30, "higher", "minutes", None, 0.6, 7),
+            ("quality", 0, 10, "higher", "score", None, 0.5, 7),
+        ], [
+            "brushing", "flossing", "mouthwash", "tongue_cleaning", "dentist_visit",
+        ]),
+        ("vision_eye", [
+            ("minutes", 0, 240, "higher", "minutes", None, 0.6, 7),
+            ("quality", 0, 10, "higher", "score", None, 0.5, 7),
+        ], [
+            "screen_break", "eye_exercise", "dry_eye", "reading_distance", "20_20_20",
+        ]),
+        ("skin_hair", [
+            ("minutes", 0, 60, "higher", "minutes", None, 0.5, 7),
+            ("quality", 0, 10, "higher", "score", None, 0.5, 7),
+        ], [
+            "skincare", "sunscreen", "hair_care", "moisturizer", "nail_care",
+        ]),
+        ("allergies", [
+            ("severity", 0, 10, "lower", "score", None, 0.5, 7),
+            ("days", 0, 7, "lower", "days", None, 0.4, 7),
+        ], [
+            "pollen", "dust_mite", "food", "medication", "skin",
+        ]),
     ],
     "finance": [
         ("expenses", [
@@ -123,6 +153,30 @@ CATALOG: dict[str, list[tuple[str, list[T], list[str] | list[tuple[str, float]]]
             ("subs_budget", 100), ("gift_budget", 200), ("pet_budget", 300),
             ("telecom_budget", 150), ("repairs_budget", 300), ("beauty_budget", 200),
         ]),
+        ("savings", [
+            ("amount", 0, 100000, "higher", "CNY", None, 0.9, 30),
+            ("rate", 0, 1, "higher", "ratio", None, 0.9, 30),
+            ("months", 0, 60, "higher", "months", None, 0.6, 30),
+        ], [
+            "emergency_fund", "retirement", "house_down", "education_fund",
+            "investment_pool", "travel_fund", "car_fund", "wedding_fund",
+            "tax_reserve", "opportunity_fund",
+        ]),
+        ("investments", [
+            ("value", 0, 10000000, "higher", "CNY", None, 0.7, 30),
+            ("return", 0, 1, "higher", "ratio", None, 0.6, 30),
+        ], [
+            "index_etf", "stock_pick", "bond_pick", "money_fund_pick", "gold_pick",
+            "fund_of_funds", "reits", "us_stock", "hk_stock", "crypto_pick",
+        ]),
+        ("cashflow", [
+            ("inflow", 0, 100000, "higher", "CNY", None, 0.9, 30),
+            ("outflow", 0, 100000, "lower", "CNY", None, 0.9, 30),
+            ("net", 0, 100000, "higher", "CNY", None, 0.8, 30),
+        ], [
+            "monthly_inflow", "monthly_outflow", "monthly_net", "weekly_spend",
+            "daily_spend", "discretionary", "essential",
+        ]),
     ],
     "learning": [
         ("subjects", [
@@ -163,6 +217,30 @@ CATALOG: dict[str, list[tuple[str, list[T], list[str] | list[tuple[str, float]]]
             "history_book", "philosophy_book", "poetry", "essay", "manga",
             "news_article", "blog", "newsletter", "magazine", "manual",
             "report", "tutorial", "diary",
+        ]),
+        ("languages", [
+            ("hours", 0, 8, "higher", "hours", None, 0.8, 7),
+            ("words", 0, 500, "higher", "words", None, 0.6, 7),
+        ], [
+            "english_vocab", "japanese_vocab", "korean_vocab", "french_vocab",
+            "german_vocab", "spanish_vocab", "chinese_learning", "japanese_grammar",
+            "english_listening", "english_speaking", "english_reading", "english_writing",
+        ]),
+        ("exams_certificates", [
+            ("hours", 0, 8, "higher", "hours", None, 0.8, 30),
+            ("progress", 0, 1, "higher", "ratio", None, 0.7, 30),
+        ], [
+            "cet4", "cet6", "ielts", "toefl", "gre", "gmat",
+            "kaoyan", "civil_service", "teacher_cert", "accounting_cert",
+            "programmer_cert", "software_engineer", "pmp", "driver_license",
+            "python_cert", "machine_learning_cert", "data_science_cert",
+        ]),
+        ("courses", [
+            ("hours", 0, 8, "higher", "hours", None, 0.7, 30),
+            ("completed", 0, 20, "higher", "items", None, 0.6, 30),
+        ], [
+            "mooc", "udemy", "coursera", "edx", "youtube_lecture",
+            "bilibili_course", "workshop", "bootcamp", "seminar", "tutorial_series",
         ]),
     ],
     "work": [
@@ -207,6 +285,27 @@ CATALOG: dict[str, list[tuple[str, list[T], list[str] | list[tuple[str, float]]]
             "schema_change", "incident", "hotfix", "docs_page", "test_case",
             "commit", "code_snippet", "architecture_doc", "runbook",
         ]),
+        ("performance", [
+            ("score", 0, 10, "higher", "score", None, 0.7, 7),
+            ("hours", 0, 8, "higher", "hours", None, 0.6, 7),
+        ], [
+            "focused_hours", "flow_state", "productivity", "output_quality",
+            "task_completion", "deep_work", "shallow_work", "interruption_count",
+        ]),
+        ("career", [
+            ("progress", 0, 1, "higher", "ratio", None, 0.7, 30),
+            ("hours", 0, 8, "higher", "hours", None, 0.6, 30),
+        ], [
+            "promotion", "salary_negotiation", "skill_development", "job_switch",
+            "portfolio", "interview_prep", "resume_update", "network_events",
+        ]),
+        ("communication", [
+            ("count", 0, 50, "higher", "items", None, 0.6, 7),
+            ("quality", 0, 10, "higher", "score", None, 0.5, 7),
+        ], [
+            "email_sent", "slack_message", "doc_reviewed", "presentation",
+            "code_comment", "design_doc", "standup_update", "feedback_given",
+        ]),
     ],
     "social": [
         ("relationships", [
@@ -241,6 +340,20 @@ CATALOG: dict[str, list[tuple[str, list[T], list[str] | list[tuple[str, float]]]
             "chess_club", "language_exchange", "hackathon_team", "cooking_club",
             "photography_group", "startup_community", "alumni_assoc",
         ]),
+        ("networking", [
+            ("contacts", 0, 100, "higher", "people", None, 0.6, 30),
+            ("quality", 0, 10, "higher", "score", None, 0.5, 30),
+        ], [
+            "mentor_meeting", "peer_support", "networking_event", "conference_attend",
+            "industry_contact", "referral", "cofounder_search", "community_service",
+        ]),
+        ("family_care", [
+            ("hours", 0, 12, "higher", "hours", None, 0.7, 7),
+            ("quality", 0, 10, "higher", "score", None, 0.5, 7),
+        ], [
+            "parent_care", "child_care", "partner_time", "family_meal",
+            "family_call", "elderly_care", "pet_care_hours", "household_share",
+        ]),
     ],
     "emotion": [
         ("panas", [
@@ -274,6 +387,21 @@ CATALOG: dict[str, list[tuple[str, list[T], list[str] | list[tuple[str, float]]]
             "optimism", "purpose", "meaning", "identity", "self_efficacy",
             "self_compassion", "growth_mindset", "self_awareness", "assertiveness",
             "gratitude", "forgiveness", "patience", "curiosity",
+        ]),
+        ("values_purpose", [
+            ("score", 0, 10, "higher", "score", None, 0.6, 30),
+        ], [
+            "life_satisfaction", "purpose_clarity", "value_alignment", "authenticity",
+            "meaningfulness", "goal_commitment", "self_actualization", "inner_peace",
+            "belonging", "contribution", "legacy", "spirituality",
+        ]),
+        ("coping", [
+            ("effectiveness", 0, 10, "higher", "score", None, 0.6, 7),
+            ("frequency", 0, 7, "lower", "days", None, 0.5, 7),
+        ], [
+            "deep_breathing", "positive_self_talk", "problem_solving", "seeking_support",
+            "distraction", "acceptance", "reframing", "journaling_cope",
+            "walking_cope", "music_cope", "venting_cope", "avoidance",
         ]),
     ],
     "environment": [
@@ -315,6 +443,26 @@ CATALOG: dict[str, list[tuple[str, list[T], list[str] | list[tuple[str, float]]]
             "plant_care", "pet_care", "grocery", "errand", "budgeting_work",
             "caring", "mail",
         ]),
+        ("outdoor", [
+            ("minutes", 0, 480, "higher", "minutes", None, 0.7, 7),
+            ("quality", 0, 10, "higher", "score", None, 0.5, 7),
+        ], [
+            "park_walk", "city_walk", "nature_hike", "rooftop", "balcony",
+            "waterfront", "trail_run", "camping_trip", "picnic", "garden_work",
+        ]),
+        ("transport_env", [
+            ("minutes", 0, 240, "lower", "minutes", None, 0.6, 7),
+            ("quality", 0, 10, "higher", "score", None, 0.5, 7),
+        ], [
+            "commute_crowd", "traffic", "waiting", "transfer", "walking_route",
+            "bike_route", "public_transit", "car_dependency",
+        ]),
+        ("home_comfort", [
+            ("quality", 0, 10, "higher", "score", None, 0.6, 7),
+        ], [
+            "air_quality_home", "lighting", "acoustic", "thermal", "ergonomic",
+            "storage", "decor", "cleanliness", "plants", "safety",
+        ]),
     ],
     "energy": [
         ("sleep_stages", [
@@ -346,6 +494,21 @@ CATALOG: dict[str, list[tuple[str, list[T], list[str] | list[tuple[str, float]]]
             "morning_alertness", "evening_fatigue", "meal_timing",
             "caffeine_cutoff", "light_exposure", "chronotype_score",
         ]),
+        ("body_signals", [
+            ("value", 0, 200, "target", "index", None, 0.7, 7),
+            ("score", 0, 10, "higher", "score", None, 0.5, 7),
+        ], [
+            ("body_temperature", 36.5, "degC"), ("heart_rate_variability", 55, "ms"),
+            ("blood_pressure", 120, "mmHg"), ("oxygen_saturation", 98, "pct"),
+            ("energy_level", 7, "score"), ("stamina", 70, "index"),
+        ]),
+        ("recovery_habits", [
+            ("minutes", 0, 120, "higher", "minutes", None, 0.6, 7),
+            ("quality", 0, 10, "higher", "score", None, 0.5, 7),
+        ], [
+            "evening_winddown", "screen_curfew", "hydration_evening", "stretching_evening",
+            "quiet_time", "sleep_schedule", "morning_routine", "afternoon_break",
+        ]),
     ],
     "recovery": [
         ("techniques", [
@@ -370,6 +533,20 @@ CATALOG: dict[str, list[tuple[str, list[T], list[str] | list[tuple[str, float]]]
         ], [
             "full_rest", "active_rest", "digital_detox", "nature_day",
             "social_rest", "creative_rest", "silent_rest",
+        ]),
+        ("sleep_hygiene", [
+            ("quality", 0, 10, "higher", "score", None, 0.7, 7),
+        ], [
+            "consistent_schedule", "cool_room", "dark_room", "quiet_room",
+            "no_caffeine_evening", "no_screen_bed", "comfortable_bed",
+            "pre_sleep_routine", "no_late_meals", "morning_light",
+        ]),
+        ("body_recovery", [
+            ("score", 0, 10, "higher", "score", None, 0.6, 7),
+            ("days", 0, 7, "higher", "days", None, 0.5, 7),
+        ], [
+            "muscle_recovery", "joint_mobility", "flexibility", "posture",
+            "breath_quality", "digestion", "immune_status", "inflammation",
         ]),
     ],
     "other": [
@@ -412,6 +589,27 @@ CATALOG: dict[str, list[tuple[str, list[T], list[str] | list[tuple[str, float]]]
             "delivery_food", "bubble_tea", "cigarettes", "lottery", "online_games",
             "livestream_gift", "impulse_buy", "snack_food", "fast_food", "alcohol",
             "candy", "energy_drink",
+        ]),
+        ("life_skills", [
+            ("level", 0, 10, "higher", "score", None, 0.6, 30),
+            ("hours", 0, 8, "higher", "hours", None, 0.5, 30),
+        ], [
+            "cooking_skill", "budgeting_skill", "time_management", "negotiation",
+            "first_aid", "navigation", "emergency_prep", "financial_literacy",
+            "digital_literacy", "self_defense", "home_maintenance", "car_maintenance",
+        ]),
+        ("personal_growth", [
+            ("score", 0, 10, "higher", "score", None, 0.6, 30),
+            ("days", 0, 30, "higher", "days", None, 0.5, 30),
+        ], [
+            "self_reflection", "feedback_seeking", "challenge_seeking", "comfort_zone",
+            "habit_streak", "journaling_growth", "mentoring", "coaching",
+        ]),
+        ("random_misc", [
+            ("value", 0, 100, "higher", "score", None, 0.5, 7),
+            ("count", 0, 100, "higher", "items", None, 0.4, 7),
+        ], [
+            "daily_random", "weekly_random", "monthly_random",
         ]),
     ],
 }

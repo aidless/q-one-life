@@ -13,7 +13,10 @@
 | assets | 30 | 越高越好 | CNY、ratio |
 | debts | 10 | 越低越好 | CNY |
 | budget_lines | 36 | 目标值、越低越好 | CNY |
-| **合计** | **172** | | |
+| savings | 30 | 越高越好 | CNY、months、ratio |
+| investments | 20 | 越高越好 | CNY、ratio |
+| cashflow | 21 | 越低越好、越高越好 | CNY |
+| **合计** | **243** | | |
 
 ## 类别详解
 
@@ -142,3 +145,51 @@
 | telecom_budget | 目标值 | CNY | 150 |
 | repairs_budget | 目标值 | CNY | 300 |
 | beauty_budget | 目标值 | CNY | 200 |
+
+### savings
+
+维度模板：`amount`：范围 0–100000CNY，越高越好，建议 30 次/窗口；`rate`：范围 0–1ratio，越高越好，建议 30 次/窗口；`months`：范围 0–60months，越高越好，建议 30 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| emergency_fund | 越高越好 | CNY | — |
+| retirement | 越高越好 | CNY | — |
+| house_down | 越高越好 | CNY | — |
+| education_fund | 越高越好 | CNY | — |
+| investment_pool | 越高越好 | CNY | — |
+| travel_fund | 越高越好 | CNY | — |
+| car_fund | 越高越好 | CNY | — |
+| wedding_fund | 越高越好 | CNY | — |
+| tax_reserve | 越高越好 | CNY | — |
+| opportunity_fund | 越高越好 | CNY | — |
+
+### investments
+
+维度模板：`value`：范围 0–10000000CNY，越高越好，建议 30 次/窗口；`return`：范围 0–1ratio，越高越好，建议 30 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| index_etf | 越高越好 | CNY | — |
+| stock_pick | 越高越好 | CNY | — |
+| bond_pick | 越高越好 | CNY | — |
+| money_fund_pick | 越高越好 | CNY | — |
+| gold_pick | 越高越好 | CNY | — |
+| fund_of_funds | 越高越好 | CNY | — |
+| reits | 越高越好 | CNY | — |
+| us_stock | 越高越好 | CNY | — |
+| hk_stock | 越高越好 | CNY | — |
+| crypto_pick | 越高越好 | CNY | — |
+
+### cashflow
+
+维度模板：`inflow`：范围 0–100000CNY，越高越好，建议 30 次/窗口；`outflow`：范围 0–100000CNY，越低越好，建议 30 次/窗口；`net`：范围 0–100000CNY，越高越好，建议 30 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| monthly_inflow | 越高越好 | CNY | — |
+| monthly_outflow | 越高越好 | CNY | — |
+| monthly_net | 越高越好 | CNY | — |
+| weekly_spend | 越高越好 | CNY | — |
+| daily_spend | 越高越好 | CNY | — |
+| discretionary | 越高越好 | CNY | — |
+| essential | 越高越好 | CNY | — |

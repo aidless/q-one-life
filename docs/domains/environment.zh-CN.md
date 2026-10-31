@@ -13,7 +13,10 @@
 | commute | 22 | 越低越好 | minutes、times |
 | weather | 20 | 目标值、越高越好 | days、index |
 | home | 32 | 越高越好 | minutes、score |
-| **合计** | **106** | | |
+| outdoor | 20 | 越高越好 | minutes、score |
+| transport_env | 16 | 越低越好、越高越好 | minutes、score |
+| home_comfort | 10 | 越高越好 | score |
+| **合计** | **152** | | |
 
 ## 类别详解
 
@@ -110,3 +113,52 @@
 | budgeting_work | 越高越好 | minutes | — |
 | caring | 越高越好 | minutes | — |
 | mail | 越高越好 | minutes | — |
+
+### outdoor
+
+维度模板：`minutes`：范围 0–480minutes，越高越好，建议 7 次/窗口；`quality`：范围 0–10score，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| park_walk | 越高越好 | minutes | — |
+| city_walk | 越高越好 | minutes | — |
+| nature_hike | 越高越好 | minutes | — |
+| rooftop | 越高越好 | minutes | — |
+| balcony | 越高越好 | minutes | — |
+| waterfront | 越高越好 | minutes | — |
+| trail_run | 越高越好 | minutes | — |
+| camping_trip | 越高越好 | minutes | — |
+| picnic | 越高越好 | minutes | — |
+| garden_work | 越高越好 | minutes | — |
+
+### transport_env
+
+维度模板：`minutes`：范围 0–240minutes，越低越好，建议 7 次/窗口；`quality`：范围 0–10score，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| commute_crowd | 越低越好 | minutes | — |
+| traffic | 越低越好 | minutes | — |
+| waiting | 越低越好 | minutes | — |
+| transfer | 越低越好 | minutes | — |
+| walking_route | 越低越好 | minutes | — |
+| bike_route | 越低越好 | minutes | — |
+| public_transit | 越低越好 | minutes | — |
+| car_dependency | 越低越好 | minutes | — |
+
+### home_comfort
+
+维度模板：`quality`：范围 0–10score，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| air_quality_home | 越高越好 | score | — |
+| lighting | 越高越好 | score | — |
+| acoustic | 越高越好 | score | — |
+| thermal | 越高越好 | score | — |
+| ergonomic | 越高越好 | score | — |
+| storage | 越高越好 | score | — |
+| decor | 越高越好 | score | — |
+| cleanliness | 越高越好 | score | — |
+| plants | 越高越好 | score | — |
+| safety | 越高越好 | score | — |

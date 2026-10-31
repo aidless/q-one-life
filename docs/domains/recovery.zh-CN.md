@@ -11,7 +11,9 @@
 | techniques | 40 | 越高越好 | minutes、score |
 | metrics | 20 | 越高越好 | index、score |
 | rest_days | 7 | 越高越好 | days |
-| **合计** | **67** | | |
+| sleep_hygiene | 10 | 越高越好 | score |
+| body_recovery | 16 | 越高越好 | days、score |
+| **合计** | **93** | | |
 
 ## 类别详解
 
@@ -72,3 +74,35 @@
 | social_rest | 越高越好 | days | — |
 | creative_rest | 越高越好 | days | — |
 | silent_rest | 越高越好 | days | — |
+
+### sleep_hygiene
+
+维度模板：`quality`：范围 0–10score，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| consistent_schedule | 越高越好 | score | — |
+| cool_room | 越高越好 | score | — |
+| dark_room | 越高越好 | score | — |
+| quiet_room | 越高越好 | score | — |
+| no_caffeine_evening | 越高越好 | score | — |
+| no_screen_bed | 越高越好 | score | — |
+| comfortable_bed | 越高越好 | score | — |
+| pre_sleep_routine | 越高越好 | score | — |
+| no_late_meals | 越高越好 | score | — |
+| morning_light | 越高越好 | score | — |
+
+### body_recovery
+
+维度模板：`score`：范围 0–10score，越高越好，建议 7 次/窗口；`days`：范围 0–7days，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| muscle_recovery | 越高越好 | score | — |
+| joint_mobility | 越高越好 | score | — |
+| flexibility | 越高越好 | score | — |
+| posture | 越高越好 | score | — |
+| breath_quality | 越高越好 | score | — |
+| digestion | 越高越好 | score | — |
+| immune_status | 越高越好 | score | — |
+| inflammation | 越高越好 | score | — |

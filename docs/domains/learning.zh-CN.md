@@ -12,7 +12,10 @@
 | skills | 52 | 越高越好 | hours、score |
 | study_tools | 24 | 越高越好 | days、minutes |
 | reading | 36 | 越高越好 | minutes、pages |
-| **合计** | **172** | | |
+| languages | 24 | 越高越好 | hours、words |
+| exams_certificates | 34 | 越高越好 | hours、ratio |
+| courses | 20 | 越高越好 | hours、items |
+| **合计** | **250** | | |
 
 ## 类别详解
 
@@ -129,3 +132,63 @@
 | report | 越高越好 | pages | — |
 | tutorial | 越高越好 | pages | — |
 | diary | 越高越好 | pages | — |
+
+### languages
+
+维度模板：`hours`：范围 0–8hours，越高越好，建议 7 次/窗口；`words`：范围 0–500words，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| english_vocab | 越高越好 | hours | — |
+| japanese_vocab | 越高越好 | hours | — |
+| korean_vocab | 越高越好 | hours | — |
+| french_vocab | 越高越好 | hours | — |
+| german_vocab | 越高越好 | hours | — |
+| spanish_vocab | 越高越好 | hours | — |
+| chinese_learning | 越高越好 | hours | — |
+| japanese_grammar | 越高越好 | hours | — |
+| english_listening | 越高越好 | hours | — |
+| english_speaking | 越高越好 | hours | — |
+| english_reading | 越高越好 | hours | — |
+| english_writing | 越高越好 | hours | — |
+
+### exams_certificates
+
+维度模板：`hours`：范围 0–8hours，越高越好，建议 30 次/窗口；`progress`：范围 0–1ratio，越高越好，建议 30 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| cet4 | 越高越好 | hours | — |
+| cet6 | 越高越好 | hours | — |
+| ielts | 越高越好 | hours | — |
+| toefl | 越高越好 | hours | — |
+| gre | 越高越好 | hours | — |
+| gmat | 越高越好 | hours | — |
+| kaoyan | 越高越好 | hours | — |
+| civil_service | 越高越好 | hours | — |
+| teacher_cert | 越高越好 | hours | — |
+| accounting_cert | 越高越好 | hours | — |
+| programmer_cert | 越高越好 | hours | — |
+| software_engineer | 越高越好 | hours | — |
+| pmp | 越高越好 | hours | — |
+| driver_license | 越高越好 | hours | — |
+| python_cert | 越高越好 | hours | — |
+| machine_learning_cert | 越高越好 | hours | — |
+| data_science_cert | 越高越好 | hours | — |
+
+### courses
+
+维度模板：`hours`：范围 0–8hours，越高越好，建议 30 次/窗口；`completed`：范围 0–20items，越高越好，建议 30 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| mooc | 越高越好 | hours | — |
+| udemy | 越高越好 | hours | — |
+| coursera | 越高越好 | hours | — |
+| edx | 越高越好 | hours | — |
+| youtube_lecture | 越高越好 | hours | — |
+| bilibili_course | 越高越好 | hours | — |
+| workshop | 越高越好 | hours | — |
+| bootcamp | 越高越好 | hours | — |
+| seminar | 越高越好 | hours | — |
+| tutorial_series | 越高越好 | hours | — |

@@ -14,7 +14,12 @@
 | body_parts | 12 | 越高越好 | minutes |
 | food_groups | 22 | 越高越好 | servings |
 | sleeping | 15 | 目标值 | hours |
-| **合计** | **162** | | |
+| hydration | 10 | 越高越好 | glasses、ml |
+| dental_oral | 10 | 越高越好 | minutes、score |
+| vision_eye | 10 | 越高越好 | minutes、score |
+| skin_hair | 10 | 越高越好 | minutes、score |
+| allergies | 10 | 越低越好 | days、score |
+| **合计** | **212** | | |
 
 ## 类别详解
 
@@ -172,3 +177,63 @@
 | sleep_environment_score | 目标值 | hours | 8 |
 | mattress_score | 目标值 | hours | 7 |
 | pillow_score | 目标值 | hours | 7 |
+
+### hydration
+
+维度模板：`intake`：范围 0–5000ml，越高越好，建议 7 次/窗口；`glasses`：范围 0–15glasses，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| water | 越高越好 | ml | — |
+| electrolyte | 越高越好 | ml | — |
+| herbal_tea | 越高越好 | ml | — |
+| coconut_water | 越高越好 | ml | — |
+| broth | 越高越好 | ml | — |
+
+### dental_oral
+
+维度模板：`minutes`：范围 0–30minutes，越高越好，建议 7 次/窗口；`quality`：范围 0–10score，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| brushing | 越高越好 | minutes | — |
+| flossing | 越高越好 | minutes | — |
+| mouthwash | 越高越好 | minutes | — |
+| tongue_cleaning | 越高越好 | minutes | — |
+| dentist_visit | 越高越好 | minutes | — |
+
+### vision_eye
+
+维度模板：`minutes`：范围 0–240minutes，越高越好，建议 7 次/窗口；`quality`：范围 0–10score，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| screen_break | 越高越好 | minutes | — |
+| eye_exercise | 越高越好 | minutes | — |
+| dry_eye | 越高越好 | minutes | — |
+| reading_distance | 越高越好 | minutes | — |
+| 20_20_20 | 越高越好 | minutes | — |
+
+### skin_hair
+
+维度模板：`minutes`：范围 0–60minutes，越高越好，建议 7 次/窗口；`quality`：范围 0–10score，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| skincare | 越高越好 | minutes | — |
+| sunscreen | 越高越好 | minutes | — |
+| hair_care | 越高越好 | minutes | — |
+| moisturizer | 越高越好 | minutes | — |
+| nail_care | 越高越好 | minutes | — |
+
+### allergies
+
+维度模板：`severity`：范围 0–10score，越低越好，建议 7 次/窗口；`days`：范围 0–7days，越低越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| pollen | 越低越好 | score | — |
+| dust_mite | 越低越好 | score | — |
+| food | 越低越好 | score | — |
+| medication | 越低越好 | score | — |
+| skin | 越低越好 | score | — |

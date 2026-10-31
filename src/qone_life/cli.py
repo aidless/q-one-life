@@ -76,6 +76,15 @@ def cmd_iterate(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_suggest(args: argparse.Namespace) -> int:
+    from .suggestion import suggest_improvements
+
+    specs = load_metric_specs(_load_json(args.spec_file))
+    report = suggest_improvements(_store(args).observations(), specs, threshold=args.threshold)
+    print(json.dumps(report, ensure_ascii=False, indent=2))
+    return 0
+
+
 def cmd_review(args: argparse.Namespace) -> int:
     print(json.dumps(build_review(_report(args)), ensure_ascii=False, indent=2))
     return 0
@@ -411,6 +420,12 @@ def parser() -> argparse.ArgumentParser:
     command.add_argument("--spec-file", required=True)
     command.add_argument("--window-days", type=int, default=7, help="number of days to include (default: 7)")
     command.set_defaults(handler=cmd_iterate)
+
+    command = commands.add_parser("suggest", help="print actionable next-step suggestions per domain")
+    command.add_argument("--spec-file", required=True)
+    command.add_argument("--threshold", type=float, default=0.5,
+                         help="suggest only metrics scoring below this (default: 0.5)")
+    command.set_defaults(handler=cmd_suggest)
 
     command = commands.add_parser("review", help="print review prompts and missingness")
     command.add_argument("--spec-file", required=True)

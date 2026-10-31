@@ -12,7 +12,9 @@
 | moods | 36 | 越低越好、越高越好 | days、score |
 | stressors | 17 | 越低越好 | score |
 | self_image | 18 | 越高越好 | score |
-| **合计** | **91** | | |
+| values_purpose | 12 | 越高越好 | score |
+| coping | 24 | 越低越好、越高越好 | days、score |
+| **合计** | **127** | | |
 
 ## 类别详解
 
@@ -116,3 +118,41 @@
 | forgiveness | 越高越好 | score | — |
 | patience | 越高越好 | score | — |
 | curiosity | 越高越好 | score | — |
+
+### values_purpose
+
+维度模板：`score`：范围 0–10score，越高越好，建议 30 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| life_satisfaction | 越高越好 | score | — |
+| purpose_clarity | 越高越好 | score | — |
+| value_alignment | 越高越好 | score | — |
+| authenticity | 越高越好 | score | — |
+| meaningfulness | 越高越好 | score | — |
+| goal_commitment | 越高越好 | score | — |
+| self_actualization | 越高越好 | score | — |
+| inner_peace | 越高越好 | score | — |
+| belonging | 越高越好 | score | — |
+| contribution | 越高越好 | score | — |
+| legacy | 越高越好 | score | — |
+| spirituality | 越高越好 | score | — |
+
+### coping
+
+维度模板：`effectiveness`：范围 0–10score，越高越好，建议 7 次/窗口；`frequency`：范围 0–7days，越低越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| deep_breathing | 越高越好 | score | — |
+| positive_self_talk | 越高越好 | score | — |
+| problem_solving | 越高越好 | score | — |
+| seeking_support | 越高越好 | score | — |
+| distraction | 越高越好 | score | — |
+| acceptance | 越高越好 | score | — |
+| reframing | 越高越好 | score | — |
+| journaling_cope | 越高越好 | score | — |
+| walking_cope | 越高越好 | score | — |
+| music_cope | 越高越好 | score | — |
+| venting_cope | 越高越好 | score | — |
+| avoidance | 越高越好 | score | — |

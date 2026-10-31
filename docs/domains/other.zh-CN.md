@@ -13,7 +13,10 @@
 | goals | 24 | 越高越好 | days、ratio |
 | leisure | 18 | 越高越好 | minutes |
 | consumption | 24 | 越低越好 | CNY、days |
-| **合计** | **107** | | |
+| life_skills | 24 | 越高越好 | hours、score |
+| personal_growth | 16 | 越高越好 | days、score |
+| random_misc | 6 | 越高越好 | items、score |
+| **合计** | **153** | | |
 
 ## 类别详解
 
@@ -122,3 +125,47 @@
 | alcohol | 越低越好 | CNY | — |
 | candy | 越低越好 | CNY | — |
 | energy_drink | 越低越好 | CNY | — |
+
+### life_skills
+
+维度模板：`level`：范围 0–10score，越高越好，建议 30 次/窗口；`hours`：范围 0–8hours，越高越好，建议 30 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| cooking_skill | 越高越好 | score | — |
+| budgeting_skill | 越高越好 | score | — |
+| time_management | 越高越好 | score | — |
+| negotiation | 越高越好 | score | — |
+| first_aid | 越高越好 | score | — |
+| navigation | 越高越好 | score | — |
+| emergency_prep | 越高越好 | score | — |
+| financial_literacy | 越高越好 | score | — |
+| digital_literacy | 越高越好 | score | — |
+| self_defense | 越高越好 | score | — |
+| home_maintenance | 越高越好 | score | — |
+| car_maintenance | 越高越好 | score | — |
+
+### personal_growth
+
+维度模板：`score`：范围 0–10score，越高越好，建议 30 次/窗口；`days`：范围 0–30days，越高越好，建议 30 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| self_reflection | 越高越好 | score | — |
+| feedback_seeking | 越高越好 | score | — |
+| challenge_seeking | 越高越好 | score | — |
+| comfort_zone | 越高越好 | score | — |
+| habit_streak | 越高越好 | score | — |
+| journaling_growth | 越高越好 | score | — |
+| mentoring | 越高越好 | score | — |
+| coaching | 越高越好 | score | — |
+
+### random_misc
+
+维度模板：`value`：范围 0–100score，越高越好，建议 7 次/窗口；`count`：范围 0–100items，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| daily_random | 越高越好 | score | — |
+| weekly_random | 越高越好 | score | — |
+| monthly_random | 越高越好 | score | — |

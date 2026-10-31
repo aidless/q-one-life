@@ -12,7 +12,9 @@
 | channels | 20 | 越低越好、越高越好 | minutes、times |
 | activities | 16 | 越高越好 | minutes |
 | communities | 32 | 越高越好 | hours、people |
-| **合计** | **104** | | |
+| networking | 16 | 越高越好 | people、score |
+| family_care | 16 | 越高越好 | hours、score |
+| **合计** | **136** | | |
 
 ## 类别详解
 
@@ -103,3 +105,33 @@
 | photography_group | 越高越好 | hours | — |
 | startup_community | 越高越好 | hours | — |
 | alumni_assoc | 越高越好 | hours | — |
+
+### networking
+
+维度模板：`contacts`：范围 0–100people，越高越好，建议 30 次/窗口；`quality`：范围 0–10score，越高越好，建议 30 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| mentor_meeting | 越高越好 | people | — |
+| peer_support | 越高越好 | people | — |
+| networking_event | 越高越好 | people | — |
+| conference_attend | 越高越好 | people | — |
+| industry_contact | 越高越好 | people | — |
+| referral | 越高越好 | people | — |
+| cofounder_search | 越高越好 | people | — |
+| community_service | 越高越好 | people | — |
+
+### family_care
+
+维度模板：`hours`：范围 0–12hours，越高越好，建议 7 次/窗口；`quality`：范围 0–10score，越高越好，建议 7 次/窗口。
+
+| 成员 | 方向 | 单位 | 目标 |
+|---|---|---|---|
+| parent_care | 越高越好 | hours | — |
+| child_care | 越高越好 | hours | — |
+| partner_time | 越高越好 | hours | — |
+| family_meal | 越高越好 | hours | — |
+| family_call | 越高越好 | hours | — |
+| elderly_care | 越高越好 | hours | — |
+| pet_care_hours | 越高越好 | hours | — |
+| household_share | 越高越好 | hours | — |
