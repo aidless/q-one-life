@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Compile a mechanically valid LaTeX source tree in isolated directories."""
+"""在隔离目录中编译一份通过机械校验的 LaTeX 源码树。
+
+流程：先做 arXiv 包机械审计（缺引用、绝对路径、占位符等），通过后在两个
+独立的临时目录里各编译一次，比较两次产出的 PDF 是否逐字节相同，以此判断
+构建是否可复现。最后落一份 receipt（回执）记录命令、退出码与产物哈希。
+"""
 
 from __future__ import annotations
 
@@ -19,15 +24,20 @@ from qone_life.research_factory import audit_arxiv_package
 
 
 def _pdf_pages(pdf: Path) -> tuple[int | None, str]:
+    """用 pdfinfo 读取 PDF 页数；失败时返回 (None, stderr)。"""
     command = ["pdfinfo", str(pdf)]
     result = subprocess.run(command, capture_output=True, text=True, check=False)
     if result.returncode != 0:
         return None, result.stderr.strip()
     match = re.search(r"^Pages:\s+(\d+)$", result.stdout, re.MULTILINE)
-    return (int(match.group(1)) if match else None), result.stdout
+    pages = None
+    if match:
+        pages = int(match.group(1))
+    return pages, result.stdout
 
 
 def _copy_package(source: Path, target: Path, files: list[dict[str, object]]) -> None:
+    """只把审计放行的文件复制到目标目录（保持原目录层级）。"""
     for entry in files:
         relative = Path(str(entry["path"]))
         destination = target / relative
@@ -42,6 +52,7 @@ def _run(
     output_dir: Path,
     epoch: int,
 ) -> dict[str, object]:
+    """在一个目录里跑一次 latexmk，并把日志与告警收进回执。"""
     command = [
         "latexmk",
         "-pdf",
@@ -51,6 +62,7 @@ def _run(
         main_file,
     ]
     environment = dict(os.environ)
+    # 固定时间戳，让同一份源码在不同机器上产出同样的 PDF。
     environment["SOURCE_DATE_EPOCH"] = str(epoch)
     environment["FORCE_SOURCE_DATE"] = "1"
     result = subprocess.run(
@@ -65,17 +77,19 @@ def _run(
     stderr_path = output_dir / f"{capture_stem}.stderr.log"
     stdout_path.write_text(result.stdout, encoding="utf-8")
     stderr_path.write_text(result.stderr, encoding="utf-8")
+
+    # 把 latexmk 的主日志一并留存，并从中摘出前 100 条告警行。
     main_log = workdir / f"{Path(main_file).stem}.log"
     persisted_log = None
     warnings: list[str] = []
     if main_log.is_file():
         persisted_log = output_dir / f"{capture_stem}.main.log"
         shutil.copy2(main_log, persisted_log)
-        warnings = [
-            line.strip()
-            for line in main_log.read_text(encoding="utf-8", errors="replace").splitlines()
-            if re.search(r"\b(?:Warning|Underfull|Overfull)\b", line)
-        ][:100]
+        for line in main_log.read_text(encoding="utf-8", errors="replace").splitlines():
+            if len(warnings) >= 100:
+                break
+            if re.search(r"\b(?:Warning|Underfull|Overfull)\b", line):
+                warnings.append(line.strip())
     return {
         "command": command,
         "environment": {
@@ -92,6 +106,7 @@ def _run(
 
 
 def main() -> int:
+    """审计、两轮隔离编译、比对 PDF 一致性，并写出回执。"""
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", required=True)
     parser.add_argument("--output-dir", required=True)
@@ -105,6 +120,7 @@ def main() -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
     audit = audit_arxiv_package(source, main_file=args.main)
     if not audit["mechanical_pass"]:
+        # 机械审计不通过时直接打印审计结果并退出，不做编译。
         print(json.dumps(audit, ensure_ascii=False, indent=2))
         return 1
 
@@ -113,6 +129,7 @@ def main() -> int:
     bbl_paths: list[Path] = []
     with tempfile.TemporaryDirectory(prefix="qone-cleanroom-") as temporary:
         root = Path(temporary)
+        # 跑两轮完全独立的编译，用来判断构建是否可复现。
         for index in (1, 2):
             workdir = root / f"run-{index}"
             workdir.mkdir()
@@ -125,37 +142,67 @@ def main() -> int:
                 args.epoch,
             )
             runs.append(run)
+
             pdf = workdir / f"{Path(args.main).stem}.pdf"
             if pdf.is_file():
-                persisted_pdf = output_dir / (
-                    "main.pdf" if index == 1 else "main-repeat.pdf"
-                )
+                if index == 1:
+                    persisted_pdf = output_dir / "main.pdf"
+                else:
+                    persisted_pdf = output_dir / "main-repeat.pdf"
                 shutil.copy2(pdf, persisted_pdf)
                 pdf_paths.append(persisted_pdf)
+
             bbl = workdir / f"{Path(args.main).stem}.bbl"
             if bbl.is_file():
-                persisted_bbl = output_dir / (
-                    "main.bbl" if index == 1 else "main-repeat.bbl"
-                )
+                if index == 1:
+                    persisted_bbl = output_dir / "main.bbl"
+                else:
+                    persisted_bbl = output_dir / "main-repeat.bbl"
                 shutil.copy2(bbl, persisted_bbl)
                 bbl_paths.append(persisted_bbl)
 
+    # 两轮都退出码 0 且都产出了 PDF，才算编译通过。
     compile_passed = all(int(run["exit_code"]) == 0 for run in runs) and len(pdf_paths) == 2
-    deterministic = (
-        compile_passed and sha256_file(pdf_paths[0]) == sha256_file(pdf_paths[1])
-    )
-    pages, pdfinfo = _pdf_pages(pdf_paths[0]) if pdf_paths else (None, "")
+    deterministic = False
+    if compile_passed:
+        deterministic = sha256_file(pdf_paths[0]) == sha256_file(pdf_paths[1])
+
+    pages = None
+    pdfinfo = ""
+    if pdf_paths:
+        pages, pdfinfo = _pdf_pages(pdf_paths[0])
     pdfinfo_path = output_dir / "pdfinfo.txt"
     pdfinfo_path.write_text(pdfinfo, encoding="utf-8")
 
-    generated = [
-        *pdf_paths,
-        *bbl_paths,
-        pdfinfo_path,
-        *[Path(str(run["stdout"])) for run in runs],
-        *[Path(str(run["stderr"])) for run in runs],
-        *[Path(str(run["main_log"])) for run in runs if run["main_log"]],
-    ]
+    # 汇总本次生成的全部产物（PDF、bbl、pdfinfo、两轮日志）。
+    generated: list[Path] = []
+    generated.extend(pdf_paths)
+    generated.extend(bbl_paths)
+    generated.append(pdfinfo_path)
+    for run in runs:
+        generated.append(Path(str(run["stdout"])))
+        generated.append(Path(str(run["stderr"])))
+        if run["main_log"]:
+            generated.append(Path(str(run["main_log"])))
+
+    # 逐个计算产物哈希与大小，写进回执的 outputs 字段。
+    outputs = []
+    for path in generated:
+        outputs.append(
+            {
+                "path": str(path.relative_to(output_dir.parent)),
+                "sha256": sha256_file(path),
+                "bytes": path.stat().st_size,
+            }
+        )
+
+    sha1 = None
+    sha2 = None
+    if pdf_paths:
+        sha1 = sha256_file(pdf_paths[0])
+    if len(pdf_paths) == 2:
+        sha2 = sha256_file(pdf_paths[1])
+
     receipt = {
         "schema": "q-one-cleanroom-compile-v1",
         "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
@@ -169,18 +216,11 @@ def main() -> int:
         "commands": [run["command"] for run in runs],
         "runs": runs,
         "exit_codes": [run["exit_code"] for run in runs],
-        "outputs": [
-            {
-                "path": str(path.relative_to(output_dir.parent)),
-                "sha256": sha256_file(path),
-                "bytes": path.stat().st_size,
-            }
-            for path in generated
-        ],
+        "outputs": outputs,
         "pdf": {
             "pages": pages,
-            "sha256_run1": sha256_file(pdf_paths[0]) if pdf_paths else None,
-            "sha256_run2": sha256_file(pdf_paths[1]) if len(pdf_paths) == 2 else None,
+            "sha256_run1": sha1,
+            "sha256_run2": sha2,
             "deterministic": deterministic,
         },
         "environment": {

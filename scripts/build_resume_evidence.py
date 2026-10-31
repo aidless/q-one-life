@@ -1,4 +1,14 @@
-"""Build a hash-bound resume evidence receipt from verified local outputs."""
+"""从已经验证过的本地产物生成「哈希绑定」的简历证据回执。
+
+这个脚本只做汇总与校验：把 clean-room 回执、benchmark 结果、研究工厂验证结果、
+Noise Floor 的复现与修订候选回执逐个读进来，先确认它们都处于「已通过」状态，
+再为每份被引用的文件算出 SHA-256，最后写出 artifacts/resume-kit/evidence.json
+与配套的 SHA256SUMS.txt。
+
+设计边界：
+- 任何一项校验不通过就抛 ValueError 直接中断，绝不写出半成品回执；
+- 回执里明确列出 non_claims，避免把「工程验收」说成「外部有效性研究」。
+"""
 
 from __future__ import annotations
 
@@ -10,11 +20,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 KIT = ROOT / "artifacts" / "resume-kit"
+
+# 本地 Qwen 模型的固定身份：hybrid benchmark 必须与这个哈希/字节数对得上，
+# 否则说明换了模型，benchmark 数字就不再可比。
 MODEL_SHA256 = "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031"
 MODEL_BYTES = 639_446_688
 
 
 def read_json(path: Path) -> dict:
+    """读取一个 JSON 文件，并确认顶层是对象（而不是数组或标量）。"""
     value = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(value, dict):
         raise TypeError(f"{path} must contain a JSON object")
@@ -22,14 +36,19 @@ def read_json(path: Path) -> dict:
 
 
 def sha256_file(path: Path) -> str:
+    """分块计算文件哈希，避免把大文件（例如 PDF、模型）整个读进内存。"""
     digest = hashlib.sha256()
     with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+        while True:
+            chunk = handle.read(1024 * 1024)
+            if not chunk:
+                break
             digest.update(chunk)
     return digest.hexdigest()
 
 
 def parse_int(pattern: str, path: Path) -> int:
+    """从日志里按正则取出第一个捕获组并转成整数；取不到就报错。"""
     match = re.search(pattern, path.read_text(encoding="utf-8"))
     if not match:
         raise ValueError(f"could not parse {pattern!r} from {path}")
@@ -37,49 +56,62 @@ def parse_int(pattern: str, path: Path) -> int:
 
 
 def benchmark_summary(value: dict, expected_mode: str) -> dict:
+    """校验一份 benchmark 结果，并抽出要写进回执的字段。
+
+    校验项包括：schema 名、mode、任务数固定为 6、四个完成度字段都等于任务数、
+    provider 归属正确；hybrid 模式还要比对模型哈希与字节数。
+    """
     if value.get("schema") != "q-one-resume-benchmark-result-v1":
         raise ValueError(f"{expected_mode} benchmark has an unexpected schema")
     if value.get("mode") != expected_mode:
         raise ValueError(f"expected mode {expected_mode}, got {value.get('mode')}")
     if value.get("task_count") != 6:
         raise ValueError("benchmark task count changed without updating this receipt")
+
     for field in ("completed", "valid_goal_matches", "trace_bound", "actionable"):
         if value.get(field) != value.get("task_count"):
             raise ValueError(f"{expected_mode} benchmark field {field} is incomplete")
-    expected_provider = "rules" if expected_mode == "rules" else "local"
-    if value.get("provider_counts") != {
-        expected_provider: value.get("task_count")
-    }:
+
+    # rules 模式由规则引擎产出，其余模式都是本地模型产出。
+    expected_provider = "local"
+    if expected_mode == "rules":
+        expected_provider = "rules"
+    if value.get("provider_counts") != {expected_provider: value.get("task_count")}:
         raise ValueError(f"{expected_mode} benchmark provider attribution is invalid")
+
+    # hybrid 模式一旦换了模型就不再可比，所以把模型身份钉死。
     if expected_mode == "hybrid-local":
         runtime = value.get("runtime", {})
         if runtime.get("model_sha256") != MODEL_SHA256:
             raise ValueError("hybrid benchmark model hash is not the pinned Qwen model")
         if runtime.get("model_bytes") != MODEL_BYTES:
             raise ValueError("hybrid benchmark model byte count is not pinned")
-    return {
-        key: value[key]
-        for key in (
-            "mode",
-            "task_count",
-            "completed",
-            "valid_goal_matches",
-            "trace_bound",
-            "actionable",
-            "average_latency_ms",
-            "maximum_latency_ms",
-            "electron_working_set_kb",
-            "electron_cpu_percent",
-            "provider_counts",
-            "runtime",
-        )
-    }
+
+    picked: dict = {}
+    for key in (
+        "mode",
+        "task_count",
+        "completed",
+        "valid_goal_matches",
+        "trace_bound",
+        "actionable",
+        "average_latency_ms",
+        "maximum_latency_ms",
+        "electron_working_set_kb",
+        "electron_cpu_percent",
+        "provider_counts",
+        "runtime",
+    ):
+        picked[key] = value[key]
+    return picked
 
 
 def main() -> None:
+    """汇总全部已通过的回执，生成 evidence.json 与 SHA256SUMS.txt。"""
     cleanroom = read_json(KIT / "cleanroom-receipt.json")
     rules_raw = read_json(KIT / "benchmark" / "rules.json")
     hybrid_raw = read_json(KIT / "benchmark" / "hybrid-local.json")
+
     research_verification_path = (
         ROOT / "artifacts" / "research-factory" / "v2" / "verification.json"
     )
@@ -88,6 +120,7 @@ def main() -> None:
     )
     research_verification = read_json(research_verification_path)
     research_status = read_json(research_status_path)
+
     counterexample = read_json(
         ROOT
         / "research"
@@ -107,12 +140,17 @@ def main() -> None:
     r3_manifest = read_json(r3_root / "revision-manifest.json")
     r3_cleanroom = read_json(r3_root / "reports" / "cleanroom" / "receipt.json")
     r3_gates = read_json(r3_root / "reports" / "candidate-gates-summary.json")
+
     rules = benchmark_summary(rules_raw, "rules")
     hybrid = benchmark_summary(hybrid_raw, "hybrid-local")
+
+    # 一、clean-room 必须是通过状态，且跑过严格的 Electron 端到端。
     if cleanroom.get("schema") != "q-one-cleanroom-check-v1":
         raise ValueError("clean-room receipt schema is invalid")
     if cleanroom.get("result") != "passed" or not cleanroom.get("strict_electron_e2e"):
         raise ValueError("clean-room strict E2E did not pass")
+
+    # 二、研究工厂的每一项检查都必须是 passed。
     research_checks = research_verification.get("checks", {})
     for check in (
         "pytest",
@@ -123,51 +161,72 @@ def main() -> None:
     ):
         if research_checks.get(check, {}).get("result") != "passed":
             raise ValueError(f"research verification check did not pass: {check}")
-    noise_floor = next(
-        (
-            project
-            for project in research_status.get("projects", [])
-            if project.get("project_path") == "research/pilot-bench-noise-floor"
-        ),
-        None,
-    )
+
+    # 三、Noise Floor 的覆盖层必须存在于 pilot 列表里且通过校验。
+    noise_floor = None
+    for project in research_status.get("projects", []):
+        if project.get("project_path") == "research/pilot-bench-noise-floor":
+            noise_floor = project
+            break
     if noise_floor is None or not noise_floor.get("validation", {}).get("valid"):
         raise ValueError("Noise Floor research overlay did not validate")
-    if (
-        counterexample.get("schema") != "q-one-experiment-reproduction-v1"
-        or counterexample.get("status") != "reproduced"
-        or not counterexample.get("byte_identical")
-    ):
+
+    # 四、反例必须真的被复现（逐字节一致才算）。
+    if counterexample.get("schema") != "q-one-experiment-reproduction-v1":
         raise ValueError("producer-baseline counterexample was not reproduced")
-    if (
-        r3_manifest.get("schema") != "q-one-revision-candidate-v1"
-        or r3_manifest.get("status") != "candidate"
-        or r3_manifest.get("candidate_source", {}).get("sha256")
-        != sha256_file(r3_root / "source" / "main.tex")
-        or r3_manifest.get("review_request", {}).get("sha256")
-        != sha256_file(r3_root / "REVIEW_REQUEST_R3.md")
+    if counterexample.get("status") != "reproduced":
+        raise ValueError("producer-baseline counterexample was not reproduced")
+    if not counterexample.get("byte_identical"):
+        raise ValueError("producer-baseline counterexample was not reproduced")
+
+    # 五、R3 候选清单里的两个哈希必须与磁盘上的实际文件对得上。
+    if r3_manifest.get("schema") != "q-one-revision-candidate-v1":
+        raise ValueError("R3 candidate manifest is invalid")
+    if r3_manifest.get("status") != "candidate":
+        raise ValueError("R3 candidate manifest is invalid")
+    if r3_manifest.get("candidate_source", {}).get("sha256") != sha256_file(
+        r3_root / "source" / "main.tex"
     ):
         raise ValueError("R3 candidate manifest is invalid")
-    if (
-        r3_cleanroom.get("pdf", {}).get("pages") != 46
-        or r3_cleanroom.get("pdf", {}).get("deterministic") is not True
-        or r3_cleanroom.get("pdf", {}).get("sha256_run1")
-        != r3_cleanroom.get("pdf", {}).get("sha256_run2")
+    if r3_manifest.get("review_request", {}).get("sha256") != sha256_file(
+        r3_root / "REVIEW_REQUEST_R3.md"
+    ):
+        raise ValueError("R3 candidate manifest is invalid")
+
+    # 六、R3 的 clean-room 回执：页数、确定性、两次编译哈希一致。
+    if r3_cleanroom.get("pdf", {}).get("pages") != 46:
+        raise ValueError("R3 clean-room receipt is invalid")
+    if r3_cleanroom.get("pdf", {}).get("deterministic") is not True:
+        raise ValueError("R3 clean-room receipt is invalid")
+    if r3_cleanroom.get("pdf", {}).get("sha256_run1") != r3_cleanroom.get("pdf", {}).get(
+        "sha256_run2"
     ):
         raise ValueError("R3 clean-room receipt is invalid")
-    if (
-        r3_gates.get("status") != "passed"
-        or r3_gates.get("reverse_coverage", {}).get("n_tokens") != 355
-        or r3_gates.get("reverse_coverage", {}).get("n_bound") != 352
-        or r3_gates.get("reverse_coverage", {}).get("n_excused") != 3
-        or r3_gates.get("reverse_coverage", {}).get("n_unbound") != 0
-        or r3_gates.get("anchor_census", {}).get("verdict") != "GREEN"
-        or r3_gates.get("anchor_census", {}).get("anchor_missing") != 0
-        or r3_gates.get("verdict_word_gate", {}).get("checks") != 137
-        or r3_gates.get("verdict_word_gate", {}).get("failures") != 0
-    ):
+
+    # 七、R3 的三道门（反向覆盖、锚点普查、措辞门）数字必须逐项对上。
+    reverse_coverage = r3_gates.get("reverse_coverage", {})
+    anchor_census = r3_gates.get("anchor_census", {})
+    verdict_word_gate = r3_gates.get("verdict_word_gate", {})
+    if r3_gates.get("status") != "passed":
+        raise ValueError("R3 candidate gate summary is invalid")
+    if reverse_coverage.get("n_tokens") != 355:
+        raise ValueError("R3 candidate gate summary is invalid")
+    if reverse_coverage.get("n_bound") != 352:
+        raise ValueError("R3 candidate gate summary is invalid")
+    if reverse_coverage.get("n_excused") != 3:
+        raise ValueError("R3 candidate gate summary is invalid")
+    if reverse_coverage.get("n_unbound") != 0:
+        raise ValueError("R3 candidate gate summary is invalid")
+    if anchor_census.get("verdict") != "GREEN":
+        raise ValueError("R3 candidate gate summary is invalid")
+    if anchor_census.get("anchor_missing") != 0:
+        raise ValueError("R3 candidate gate summary is invalid")
+    if verdict_word_gate.get("checks") != 137:
+        raise ValueError("R3 candidate gate summary is invalid")
+    if verdict_word_gate.get("failures") != 0:
         raise ValueError("R3 candidate gate summary is invalid")
 
+    # 测试数量从 clean-room 日志里现读，不写死。
     log_root = KIT / "cleanroom-logs"
     tests = {
         "pytest_passed": parse_int(r"(\d+) passed", log_root / "pytest.log"),
@@ -198,7 +257,7 @@ def main() -> None:
         ROOT / "scripts" / "build_resume_evidence.py",
         ROOT / "scripts" / "cleanroom-check.sh",
         ROOT / "scripts" / "research_factory_verify.py",
-        ROOT / "src" / "qone_life" / "research_factory.py",
+        ROOT / "src" / "qone_life" / "research_factory" / "__init__.py",
         ROOT / "tests" / "test_research_factory.py",
         ROOT / "tests" / "test_research_experiment.py",
         research_verification_path,
@@ -704,14 +763,17 @@ def main() -> None:
         *sorted(path for path in log_root.iterdir() if path.is_file()),
         *sorted(demo_root.glob("*.png")),
     ]
-    artifact_rows = [
-        {
-            "path": path.relative_to(ROOT).as_posix(),
-            "bytes": path.stat().st_size,
-            "sha256": sha256_file(path),
-        }
-        for path in artifacts
-    ]
+
+    # 为每份被引用的文件记录相对路径、字节数与哈希。
+    artifact_rows = []
+    for path in artifacts:
+        artifact_rows.append(
+            {
+                "path": path.relative_to(ROOT).as_posix(),
+                "bytes": path.stat().st_size,
+                "sha256": sha256_file(path),
+            }
+        )
 
     receipt = {
         "schema": "q-one-resume-evidence-v1",
@@ -801,14 +863,17 @@ def main() -> None:
     output.write_text(
         json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
+
+    # 校验和清单逐行列出每个产物，最后一行是 evidence.json 自己的哈希。
+    sum_lines = []
+    for row in artifact_rows:
+        sum_lines.append(f"{row['sha256']}  {row['path']}")
+    output_path = output.relative_to(ROOT).as_posix()
+    sum_lines.append(f"{sha256_file(output)}  {output_path}")
+
     sums = KIT / "SHA256SUMS.txt"
-    sums.write_text(
-        "\n".join(
-            f"{row['sha256']}  {row['path']}" for row in artifact_rows
-        )
-        + f"\n{sha256_file(output)}  {output.relative_to(ROOT).as_posix()}\n",
-        encoding="utf-8",
-    )
+    sums.write_text("\n".join(sum_lines) + "\n", encoding="utf-8")
+
     print(f"QONE_RESUME_EVIDENCE={output}")
     print(f"QONE_RESUME_EVIDENCE_SHA256={sha256_file(output)}")
 

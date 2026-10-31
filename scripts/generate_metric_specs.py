@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Generate the 1000+ metric specification catalog.
+"""生成 1000 条以上的指标规格目录。
 
-Layered as domain -> category -> real members.  Every member is a real,
-nameable item (nutrient, exercise, expense line, PANAS item, school subject,
-...) rather than a synthetic label.  Each category carries one or more
-measurement templates (amount / score / days / ...) that are themselves real
-measures.  The generator asserts uniqueness of ``domain:metric`` keys and a
-total count of at least 1000 before writing ``examples/metric-spec.json``.
+目录分三层：领域（domain）→ 类别（category）→ 真实成员（member）。每个成员
+都是真实可命名的东西（营养素、运动、支出科目、PANAS 条目、学科……），而不是
+编出来的标签。每个类别带一条或多条测量模板（用量 / 评分 / 天数……），模板本身
+也是真实测量口径。
 
-Run:  python3 scripts/generate_metric_specs.py
+写文件前会做两项自检：``domain:metric`` 键必须唯一，且总数不少于 1000 条。
+
+运行方式：python3 scripts/generate_metric_specs.py
 """
 
 from __future__ import annotations
@@ -17,11 +17,9 @@ import json
 import sys
 from pathlib import Path
 
-# A template is (suffix, min, max, direction, unit, target, weight, target_count)
-# suffix="" means the metric name is the member name itself (single measure).
-T = tuple
-
-CATALOG: dict[str, list[tuple[str, list[T], list[str] | list[tuple[str, float]]]]] = {
+# 一条模板的字段顺序是：(后缀, 最小值, 最大值, 方向, 单位, 目标值, 权重, 目标次数)。
+# 后缀为空字符串时，指标名就是成员名本身（单一口径）。
+CATALOG: dict[str, list[tuple[str, list[tuple], list[str] | list[tuple[str, float]]]]] = {
     "health": [
         ("vitamins_minerals", [
             ("intake", 0, 2000, "higher", "mg", None, 1.0, 7),
@@ -616,24 +614,63 @@ CATALOG: dict[str, list[tuple[str, list[T], list[str] | list[tuple[str, float]]]
 
 
 def _slugify(name: str) -> str:
+    """把成员名压成指标名用的下划线形式（小写、空格与连字符换成下划线）。"""
     return name.strip().lower().replace(" ", "_").replace("-", "_")
 
 
 def build_catalog() -> list[dict]:
+    """按「领域 → 类别 → 成员 → 模板」逐层展开，产出全部指标规格。
+
+    成员有两种写法：
+    - 纯字符串：只有名字，目标值/单位/方向都取模板给的默认值；
+    - 元组：名字之后可跟目标值、单位、方向（例如 ("systolic", 120, "mmHg")）。
+    """
     specs: list[dict] = []
     for domain, categories in CATALOG.items():
         for category_name, templates, members in categories:
             for member in members:
-                if isinstance(member, (tuple, list)) and len(member) >= 2 and not isinstance(member[0], (int, float)):
-                    member_name, target, *rest = member
-                    member_unit = rest[0] if rest else None
-                    member_direction = rest[1] if len(rest) > 1 else None
-                else:
-                    member_name, target, member_unit = member, None, None
+                # 判断这个成员是不是「带额外信息」的元组写法：
+                # 首元素必须是名字（字符串），后面才可能有目标值/单位/方向。
+                is_detailed = False
+                if isinstance(member, (tuple, list)) and len(member) >= 2 and not isinstance(
+                    member[0], (int, float)
+                ):
+                    is_detailed = True
+
+                if is_detailed:
+                    member_name = member[0]
+                    target = member[1]
+                    rest = list(member[2:])
+
+                    member_unit = None
+                    if rest:
+                        member_unit = rest[0]
+
                     member_direction = None
+                    if len(rest) > 1:
+                        member_direction = rest[1]
+                else:
+                    member_name = member
+                    target = None
+                    member_unit = None
+                    member_direction = None
+
+                # 一个成员可以派生出多条指标（例如「摄入量」与「坚持天数」）。
                 for suffix, lo, hi, direction, unit, tmpl_target, weight, tc in templates:
-                    metric_name = _slugify(member_name) + (f"_{suffix}" if suffix else "")
-                    eff_direction = member_direction or direction
+                    if suffix:
+                        metric_name = _slugify(member_name) + f"_{suffix}"
+                    else:
+                        metric_name = _slugify(member_name)
+
+                    # 成员自带的单位/方向优先，其次用模板默认值。
+                    eff_direction = member_direction
+                    if not eff_direction:
+                        eff_direction = direction
+
+                    eff_unit = unit
+                    if unit == "__member_unit__":
+                        eff_unit = member_unit or ""
+
                     spec = {
                         "domain": domain,
                         "metric": metric_name,
@@ -642,30 +679,49 @@ def build_catalog() -> list[dict]:
                         "weight": weight,
                         "target_count": tc,
                         "direction": eff_direction,
-                        "unit": unit if unit != "__member_unit__" else (member_unit or ""),
+                        "unit": eff_unit,
                         "aggregation": "mean",
                     }
-                    eff_target = target if eff_direction == "target" else None
+
+                    # 只有「目标型」指标才写 target 字段；其它方向留空。
                     if eff_direction == "target":
-                        spec["target"] = eff_target
+                        spec["target"] = target
+
                     specs.append(spec)
     return specs
 
 
 def main() -> int:
+    """生成目录、做两项自检，然后写出 examples/metric-spec.json。"""
     specs = build_catalog()
     total = len(specs)
-    keys = [f"{s['domain']}:{s['metric']}" for s in specs]
-    if len(set(keys)) != len(keys):
-        print(f"ERROR: duplicate keys ({len(keys) - len(set(keys))} dupes)", file=sys.stderr)
+
+    keys: list[str] = []
+    for spec in specs:
+        keys.append(f"{spec['domain']}:{spec['metric']}")
+    unique_keys = set(keys)
+
+    # 自检一：domain:metric 必须唯一，否则下游会互相覆盖。
+    if len(unique_keys) != len(keys):
+        duplicates = len(keys) - len(unique_keys)
+        print(f"ERROR: duplicate keys ({duplicates} dupes)", file=sys.stderr)
         return 2
+
+    # 自检二：总量必须达到 1000 条，否则说明目录缩水了。
     if total < 1000:
         print(f"ERROR: only {total} metrics, need >= 1000", file=sys.stderr)
         return 2
+
     out = Path(__file__).resolve().parent.parent / "examples" / "metric-spec.json"
-    out.write_text(json.dumps(specs, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    out.write_text(
+        json.dumps(specs, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
     print(f"Wrote {total} metrics to {out}")
-    print(f"Domains: {sorted({s['domain'] for s in specs})}")
+
+    domains: set[str] = set()
+    for spec in specs:
+        domains.add(spec["domain"])
+    print(f"Domains: {sorted(domains)}")
     return 0
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate research/INDEX.md from project overlays and markdown docs."""
+"""从各项目 overlay 与 markdown 文档生成 research/INDEX.md 索引。"""
 
 from __future__ import annotations
 
@@ -10,10 +10,12 @@ from pathlib import Path
 
 
 def _mtime(path: Path) -> str:
+    """返回文件最后修改时间（UTC，精确到天）。"""
     return datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).strftime("%Y-%m-%d")
 
 
 def _load_project(path: Path) -> dict:
+    """读取 project.json；内容损坏时返回空字典。"""
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except ValueError:
@@ -21,6 +23,7 @@ def _load_project(path: Path) -> dict:
 
 
 def main() -> int:
+    """扫描各项目 overlay，统计声明状态并写出索引 markdown。"""
     parser = argparse.ArgumentParser()
     parser.add_argument("--research", default="research")
     parser.add_argument("--output", default="research/INDEX.md")
@@ -34,9 +37,20 @@ def main() -> int:
     for project_path in sorted(research.glob("*/project.json")):
         project = _load_project(project_path)
         claims = project.get("claims", []) or []
-        blocked = sum(1 for c in claims if c.get("state") == "blocked")
-        candidate = sum(1 for c in claims if c.get("state") in {"candidate", "inconclusive"})
-        verified = sum(1 for c in claims if c.get("state") == "verified")
+
+        # 按状态分别统计声明数量。
+        blocked = 0
+        candidate = 0
+        verified = 0
+        for c in claims:
+            state = c.get("state")
+            if state == "blocked":
+                blocked += 1
+            elif state in {"candidate", "inconclusive"}:
+                candidate += 1
+            elif state == "verified":
+                verified += 1
+
         package = (project.get("package") or {}).get("state", "unknown")
         rows.append({
             "dir": project_path.parent.name,
@@ -50,7 +64,11 @@ def main() -> int:
         })
 
     docs = sorted(research.rglob("*.md"))
-    doc_count = len([d for d in docs if d.name != "INDEX.md"])
+    # 统计 markdown 文档数量，排除索引文件本身。
+    doc_count = 0
+    for d in docs:
+        if d.name != "INDEX.md":
+            doc_count += 1
 
     lines = [
         "# Research index",
@@ -66,6 +84,7 @@ def main() -> int:
         "| Directory | Title | Status | Verified | Candidate | Blocked | Package | Modified |",
         "|---|---|---|---:|---:|---:|---|---|",
     ]
+    # 按「阻塞声明数降序、目录名升序」排序，让有阻塞的项目排在最前。
     for row in sorted(rows, key=lambda r: (-r["blocked"], r["dir"])):
         title = row["title"].replace("|", "\\|")
         lines.append(

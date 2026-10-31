@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a quantified research-production queue with provenance."""
+"""构建一份带溯源信息的量化研究生产队列（triage）。"""
 
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ from qone_life.research_factory import (
 
 
 def main() -> int:
+    """读取组合与试点配置，产出 triage 工件，并落溯源文件。"""
     parser = argparse.ArgumentParser()
     parser.add_argument("--portfolio", required=True)
     parser.add_argument("--pilots", required=True)

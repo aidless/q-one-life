@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Build a deterministic internal arXiv candidate archive and recompile it."""
+"""构建确定性的内部 arXiv 候选压缩包，并在隔离目录里重新编译验证。
+
+注意：这里只产出「内部候选包」，不做任何 arXiv 上传；作者、分类、许可证、
+摘要等元数据仍需由人决定。
+"""
 
 from __future__ import annotations
 
@@ -21,6 +25,7 @@ from qone_life.research_factory import audit_arxiv_package
 
 
 def _tarinfo(name: str, *, size: int = 0, mode: int = 0o664, directory: bool = False) -> tarfile.TarInfo:
+    """构造一个归一化的 tar 成员信息（所有者/时间戳全部固定，保证可复现）。"""
     info = tarfile.TarInfo(name)
     info.size = size
     info.mode = mode
@@ -29,11 +34,15 @@ def _tarinfo(name: str, *, size: int = 0, mode: int = 0o664, directory: bool = F
     info.uname = ""
     info.gname = ""
     info.mtime = 0
-    info.type = tarfile.DIRTYPE if directory else tarfile.REGTYPE
+    if directory:
+        info.type = tarfile.DIRTYPE
+    else:
+        info.type = tarfile.REGTYPE
     return info
 
 
 def _build_archive(source: Path, files: list[dict[str, object]], output: Path) -> None:
+    """按排序后的文件清单写出 tar.gz，目录项先行，避免重复。"""
     output.parent.mkdir(parents=True, exist_ok=True)
     with (
         output.open("wb") as raw,
@@ -44,11 +53,11 @@ def _build_archive(source: Path, files: list[dict[str, object]], output: Path) -
         directories: set[str] = set()
         for entry in sorted(files, key=lambda item: str(item["path"])):
             relative = Path(str(entry["path"]))
-            parents = [
-                f"./{parent.as_posix()}/"
-                for parent in relative.parents
-                if parent != Path(".")
-            ]
+            # 收集该文件的所有上级目录，按由浅到深写入归档。
+            parents = []
+            for parent in relative.parents:
+                if parent != Path("."):
+                    parents.append(f"./{parent.as_posix()}/")
             for directory in reversed(parents):
                 if directory not in directories:
                     archive.addfile(_tarinfo(directory, directory=True, mode=0o775))
@@ -62,16 +71,19 @@ def _build_archive(source: Path, files: list[dict[str, object]], output: Path) -
 
 
 def _safe_extract(archive_path: Path, destination: Path) -> None:
+    """解包前逐个检查成员路径，防止目录穿越（绝对路径或 ../）。"""
     with tarfile.open(archive_path, mode="r:gz") as archive:
+        destination_resolved = destination.resolve()
         for member in archive.getmembers():
             target = destination / member.name
             resolved = target.resolve()
-            if destination.resolve() not in resolved.parents and resolved != destination.resolve():
+            if destination_resolved not in resolved.parents and resolved != destination_resolved:
                 raise ValueError(f"unsafe archive member: {member.name}")
         archive.extractall(destination, filter="data")
 
 
 def main() -> int:
+    """两次构建比对哈希、解包重编译，并写出候选包回执。"""
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", required=True)
     parser.add_argument("--output", required=True)
@@ -88,6 +100,7 @@ def main() -> int:
     output.parent.mkdir(parents=True, exist_ok=True)
     audit = audit_arxiv_package(source, main_file=args.main)
     if not audit["mechanical_pass"]:
+        # 机械审计不通过：直接回显审计结果，不构建压缩包。
         print(json.dumps(audit, ensure_ascii=False, indent=2))
         return 1
 
@@ -97,9 +110,12 @@ def main() -> int:
         second = root / "second.tar.gz"
         _build_archive(source, audit["files"], first)
         _build_archive(source, audit["files"], second)
+        # 两次构建的哈希相同，说明压缩包是可复现的。
         deterministic = sha256_file(first) == sha256_file(second)
         repeat_hash = sha256_file(second)
         shutil.copy2(first, output)
+
+        # 把压缩包解到独立目录，再用 cleanroom_compile 重新编译验证。
         extracted = root / "extracted"
         extracted.mkdir()
         _safe_extract(first, extracted)
@@ -129,11 +145,11 @@ def main() -> int:
         compile_stdout.write_text(compile_result.stdout, encoding="utf-8")
         compile_stderr.write_text(compile_result.stderr, encoding="utf-8")
 
-    compile_data = (
-        json.loads(compile_receipt.read_text(encoding="utf-8"))
-        if compile_receipt.is_file()
-        else None
-    )
+    compile_data = None
+    if compile_receipt.is_file():
+        compile_data = json.loads(compile_receipt.read_text(encoding="utf-8"))
+
+    # 固定追加三条「未闭合」阻塞说明，避免回执被误读成可上传状态。
     blockers = list(args.blocker)
     blockers.extend(
         [
@@ -142,6 +158,18 @@ def main() -> int:
             "A compiling archive does not establish scientific readiness or independent review.",
         ]
     )
+
+    # 从编译回执里取 PDF 页数与哈希；没有回执时两个字段都是 None。
+    pdf_pages = None
+    pdf_sha256 = None
+    if compile_data:
+        pdf_pages = compile_data.get("pdf", {}).get("pages")
+        pdf_sha256 = compile_data.get("pdf", {}).get("sha256_run1")
+
+    receipt_sha256 = None
+    if compile_receipt.is_file():
+        receipt_sha256 = sha256_file(compile_receipt)
+
     receipt = {
         "schema": "q-one-arxiv-candidate-package-v1",
         "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
@@ -162,15 +190,9 @@ def main() -> int:
         "extract_compile": {
             "exit_code": compile_result.returncode,
             "receipt": str(compile_receipt),
-            "receipt_sha256": sha256_file(compile_receipt)
-            if compile_receipt.is_file()
-            else None,
-            "pdf_pages": compile_data.get("pdf", {}).get("pages")
-            if compile_data
-            else None,
-            "pdf_sha256": compile_data.get("pdf", {}).get("sha256_run1")
-            if compile_data
-            else None,
+            "receipt_sha256": receipt_sha256,
+            "pdf_pages": pdf_pages,
+            "pdf_sha256": pdf_sha256,
             "command_stdout": str(compile_stdout),
             "command_stderr": str(compile_stderr),
         },

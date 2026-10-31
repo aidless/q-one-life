@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a read-only paper portfolio artifact with provenance."""
+"""构建一份带溯源信息的只读论文组合（portfolio）工件。"""
 
 from __future__ import annotations
 
@@ -14,6 +14,7 @@ from qone_life.research import build_portfolio, sha256_file, write_portfolio
 
 
 def main() -> int:
+    """扫描论文项目、写出组合工件，并落溯源文件。"""
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True)
     parser.add_argument("--artifact-dir", required=True)

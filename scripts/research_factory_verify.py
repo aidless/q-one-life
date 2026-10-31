@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Refresh Research Factory verification, pilot status and package receipts."""
+"""刷新 Research Factory 的验证结果、pilot 状态与打包回执。
+
+这个脚本是控制面的总入口：跑测试与 lint、校验 JSON schema、校验 17 个
+pilot overlay、校验 claim ledger、做机械打包审计，最后把结果写成
+verification.json / pilot-status.json / package-audits 索引。
+
+边界：这里只产出「机械可验证」的证据，不代表科学可发表，也不做任何上传。
+"""
 
 from __future__ import annotations
 
@@ -28,11 +35,16 @@ from qone_life.research_factory import (
 
 
 def now() -> str:
+    """返回当前 UTC 时间的 ISO 字符串（以 Z 结尾）。"""
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
 
 def write_json_atomic(path: Path, payload: dict[str, Any]) -> None:
-    """Write a receipt without exposing a partially written file."""
+    """原子地写出一份回执，避免读到只写了一半的文件。
+
+    做法：先写临时文件并 fsync，再 os.replace 覆盖目标，最后 fsync 目录项。
+    这是并发/崩溃安全的关键，因此保留临时文件 + 替换的完整流程。
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, temporary = tempfile.mkstemp(
         prefix=f".{path.name}.", suffix=".tmp", dir=path.parent
@@ -50,12 +62,16 @@ def write_json_atomic(path: Path, payload: dict[str, Any]) -> None:
         finally:
             os.close(directory_fd)
     except BaseException:
+        # 任何异常都要清掉临时文件，避免留下半成品。
         if os.path.exists(temporary):
             os.unlink(temporary)
         raise
 
 
-def run(command: list[str], *, cwd: Path, env: dict[str, str] | None = None) -> subprocess.CompletedProcess[str]:
+def run(
+    command: list[str], *, cwd: Path, env: dict[str, str] | None = None
+) -> subprocess.CompletedProcess[str]:
+    """跑一条外部命令并捕获输出（不因非零退出码抛异常）。"""
     return subprocess.run(
         command,
         cwd=cwd,
@@ -67,6 +83,7 @@ def run(command: list[str], *, cwd: Path, env: dict[str, str] | None = None) -> 
 
 
 def artifact(path: Path, root: Path) -> dict[str, Any]:
+    """把一个文件描述成 {相对路径, sha256, 字节数} 的登记项。"""
     return {
         "path": str(path.relative_to(root)),
         "sha256": sha256_file(path),
@@ -75,18 +92,30 @@ def artifact(path: Path, root: Path) -> dict[str, Any]:
 
 
 def research_test_pythonpath(root: Path) -> str:
+    """把本仓库与相邻的 q-one-core/q-one-agent 源码目录拼成 PYTHONPATH。
+
+    为了避免在 F:\\ 这类含特殊字符的路径上直接拼接出问题，这里在临时目录里
+    建一组符号链接，再把这些链接目录串成 PYTHONPATH。链接目录名带内容哈希，
+    同一组源码复用同一个目录。
+    """
     sources = {"qone-life-src": root / "src"}
     for sibling in ("q-one-core", "q-one-agent"):
         source = root.parent / sibling / "src"
         if source.is_dir():
             sources[f"{sibling}-src"] = source
-    identity = "\0".join(f"{name}={path.resolve()}" for name, path in sources.items())
+
+    identity_parts = []
+    for name, path in sources.items():
+        identity_parts.append(f"{name}={path.resolve()}")
+    identity = "\0".join(identity_parts)
     digest = hashlib.sha256(identity.encode("utf-8")).hexdigest()[:12]
     overlay = Path(tempfile.gettempdir()) / f"qone-research-test-paths-{digest}"
     overlay.mkdir(parents=True, exist_ok=True)
+
     paths: list[str] = []
     for name, source in sources.items():
         link = overlay / name
+        # 已存在的链接若指向别处（源码位置变了），先删掉重建。
         if link.is_symlink() and link.resolve() != source.resolve():
             link.unlink()
         if not link.exists():
@@ -96,6 +125,10 @@ def research_test_pythonpath(root: Path) -> str:
 
 
 def schema_check(root: Path) -> dict[str, Any]:
+    """用 jsonschema 校验关键产物；子进程里跑，避免污染当前解释器。
+
+    注意：下面这段代码是作为字符串传给子进程的，内容必须保持原样。
+    """
     code = r"""
 import json
 import sys
@@ -155,20 +188,34 @@ print(json.dumps({"checked": checked, "errors": errors}))
 """
     result = run(["/usr/bin/python3", "-c", code, str(root)], cwd=root)
     if result.returncode != 0:
-        return {"result": "failed", "error": result.stderr.strip(), "checked": 0, "errors": []}
+        return {
+            "result": "failed",
+            "error": result.stderr.strip(),
+            "checked": 0,
+            "errors": [],
+        }
     payload = json.loads(result.stdout)
-    payload["result"] = "passed" if not payload["errors"] else "failed"
+    if payload["errors"]:
+        payload["result"] = "failed"
+    else:
+        payload["result"] = "passed"
     return payload
 
 
 def claim_summary(report: Path) -> str | None:
+    """从 claim ledger 校验报告里取出「## Summary: ...」那一行。"""
     if not report.is_file():
         return None
-    match = re.search(r"^## Summary: (.*)$", report.read_text(encoding="utf-8"), re.MULTILINE)
-    return match.group(1) if match else None
+    match = re.search(
+        r"^## Summary: (.*)$", report.read_text(encoding="utf-8"), re.MULTILINE
+    )
+    if match:
+        return match.group(1)
+    return None
 
 
 def main() -> int:
+    """跑完整个控制面校验流程，并写出三份回执。"""
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", default=".")
     parser.add_argument("--skip-tests", action="store_true")
@@ -181,19 +228,20 @@ def main() -> int:
 
     tests: dict[str, Any]
     if args.skip_tests:
+        # 跳过测试时沿用上一次 verification.json 里记录的测试结论。
         previous = artifact_dir / "verification.json"
-        previous_payload = (
-            json.loads(previous.read_text(encoding="utf-8"))
-            if previous.is_file()
-            else {}
-        )
+        if previous.is_file():
+            previous_payload = json.loads(previous.read_text(encoding="utf-8"))
+        else:
+            previous_payload = {}
         previous_checks = previous_payload.get("checks", {})
-        tests = {
-            "pytest": previous_checks.get("pytest", {"result": "unknown", "tests": None}),
-            "unittest": previous_checks.get(
-                "unittest", {"result": "unknown", "tests": None}
-            ),
-        }
+        pytest_previous = previous_checks.get(
+            "pytest", {"result": "unknown", "tests": None}
+        )
+        unittest_previous = previous_checks.get(
+            "unittest", {"result": "unknown", "tests": None}
+        )
+        tests = {"pytest": pytest_previous, "unittest": unittest_previous}
     else:
         pytest_result = run([sys.executable, "-m", "pytest", "-q"], cwd=root, env=env)
         unittest_result = run(
@@ -206,16 +254,42 @@ def main() -> int:
             pytest_result.stdout,
         )
         unittest_match = re.search(r"Ran (\d+) tests", unittest_result.stderr)
+
+        # 从 pytest 摘要里拆出「通过数 / 警告数 / subtests 数」三个数字。
+        if pytest_match:
+            pytest_tests = int(pytest_match.group(1))
+            pytest_warnings = int(pytest_match.group(2) or 0)
+            pytest_subtests = int(pytest_match.group(3) or 0)
+        else:
+            pytest_tests = None
+            pytest_warnings = None
+            pytest_subtests = None
+
+        # 先假定失败，只有退出码为 0 才记为通过。
+        pytest_verdict = "failed"
+        if pytest_result.returncode == 0:
+            pytest_verdict = "passed"
+
+        # 摘要里没匹配到「Ran N tests」时记为 None，而不是猜一个数字。
+        unittest_tests = None
+        if unittest_match:
+            unittest_tests = int(unittest_match.group(1))
+
+        # 同上：默认失败，退出码 0 才记通过。
+        unittest_verdict = "failed"
+        if unittest_result.returncode == 0:
+            unittest_verdict = "passed"
+
         tests = {
             "pytest": {
-                "result": "passed" if pytest_result.returncode == 0 else "failed",
-                "tests": int(pytest_match.group(1)) if pytest_match else None,
-                "warnings": int(pytest_match.group(2) or 0) if pytest_match else None,
-                "subtests": int(pytest_match.group(3) or 0) if pytest_match else None,
+                "result": pytest_verdict,
+                "tests": pytest_tests,
+                "warnings": pytest_warnings,
+                "subtests": pytest_subtests,
             },
             "unittest": {
-                "result": "passed" if unittest_result.returncode == 0 else "failed",
-                "tests": int(unittest_match.group(1)) if unittest_match else None,
+                "result": unittest_verdict,
+                "tests": unittest_tests,
                 "resource_warnings": unittest_result.stderr.count("ResourceWarning"),
             },
         }
@@ -235,24 +309,24 @@ def main() -> int:
         env=env,
     )
     dispositions_path = artifact_dir / "agent-dispositions.json"
-    dispositions = (
-        json.loads(dispositions_path.read_text(encoding="utf-8"))
-        if dispositions_path.is_file()
-        else {}
-    )
+    if dispositions_path.is_file():
+        dispositions = json.loads(dispositions_path.read_text(encoding="utf-8"))
+    else:
+        dispositions = {}
     triage_payload = json.loads(
         (artifact_dir / "triage.json").read_text(encoding="utf-8")
     )
     triage_family_count = len(triage_payload.get("projects", []))
 
     ruff = shutil.which("ruff")
-    ruff_result = (
-        run(
+    ruff_result = None
+    if ruff:
+        ruff_result = run(
             [
                 ruff,
                 "check",
                 "src/qone_life/research.py",
-                "src/qone_life/research_factory.py",
+                "src/qone_life/research_factory",
                 "src/qone_life/cli.py",
                 "tests/test_research.py",
                 "tests/test_research_factory.py",
@@ -285,9 +359,6 @@ def main() -> int:
             cwd=root,
             env=env,
         )
-        if ruff
-        else None
-    )
     diff_result = run(["git", "diff", "--check"], cwd=root)
 
     project_paths = [
@@ -311,6 +382,7 @@ def main() -> int:
     ]
     validations = {path.name: validate_research_project(path) for path in project_paths}
 
+    # claim ledger 校验脚本来自本机 skill 目录；路径不存在时下面会失败并被记录。
     verifier = Path(
         "/home/liuzewen/.codex/skills/paper-writing-agent/scripts/verify_claim_ledger.py"
     )
@@ -331,10 +403,18 @@ def main() -> int:
             cwd=root,
             env=env,
         )
+        # 校验脚本退出码为 0 才算该族的 claim ledger 通过。
+        claim_verdict = "failed"
+        if result.returncode == 0:
+            claim_verdict = "passed"
+        # 报告文件不存在时登记为 None，避免把缺失误读成通过。
+        claim_report = None
+        if report.is_file():
+            claim_report = artifact(report, root)
         claim_results[path.name] = {
-            "result": "passed" if result.returncode == 0 else "failed",
+            "result": claim_verdict,
             "summary": claim_summary(report),
-            "report": artifact(report, root) if report.is_file() else None,
+            "report": claim_report,
         }
 
     package_specs = [
@@ -389,6 +469,7 @@ def main() -> int:
                 "ready_for_upload": audit["ready_for_upload"],
             }
         )
+
     index = {
         "schema": "q-one-package-audit-index-v1",
         "generated_at": now(),
@@ -403,18 +484,41 @@ def main() -> int:
     )
 
     schemas = schema_check(root)
+
     pilots: list[dict[str, Any]] = []
     for path in project_paths:
         project = json.loads((path / "project.json").read_text(encoding="utf-8"))
         validation = validations[path.name]
         plan = build_research_plan(path)
-        claim_counts = Counter(
-            claim.get("state")
-            for claim in project.get("claims", [])
-            if isinstance(claim, dict)
-        )
+
+        # 统计 claim 各状态的数量（只统计 dict 形式的 claim）。
+        claim_counts: Counter[Any] = Counter()
+        for claim in project.get("claims", []):
+            if isinstance(claim, dict):
+                claim_counts[claim.get("state")] += 1
+        claims_total = 0
+        for count in claim_counts.values():
+            claims_total += count
+
+        plan_stages: dict[str, Any] = {}
+        for item in plan["stages"]:
+            plan_stages[item["stage"]] = item["state"]
+
+        plan_actions: list[Any] = []
+        for item in plan["next_actions"]:
+            plan_actions.append(item["action_id"])
+
         cleanroom_receipt = path / "reports" / "cleanroom" / "receipt.json"
         package_receipt = path / "reports" / "package" / "package-receipt.json"
+        if cleanroom_receipt.is_file():
+            cleanroom_artifact = artifact(cleanroom_receipt, root)
+        else:
+            cleanroom_artifact = None
+        # 候选包回执缺失时记为 None（代表「尚未产出」，不是「已通过」）。
+        package_artifact = None
+        if package_receipt.is_file():
+            package_artifact = artifact(package_receipt, root)
+
         pilots.append(
             {
                 "project_path": str(path.relative_to(root)),
@@ -426,41 +530,47 @@ def main() -> int:
                     "valid": validation.get("valid"),
                     "ready": validation.get("ready"),
                     "blocked_claims": validation.get("blocked_claims", []),
-                    "failed_gate_receipts": validation.get(
-                        "failed_gate_receipts", []
-                    ),
+                    "failed_gate_receipts": validation.get("failed_gate_receipts", []),
                 },
                 "claim_counts": dict(sorted(claim_counts.items())),
-                "claims_total": sum(claim_counts.values()),
+                "claims_total": claims_total,
                 "package_state": project.get("package", {}).get("state"),
                 "package_blockers": project.get("package", {}).get("blockers", []),
-                "plan_stages": {item["stage"]: item["state"] for item in plan["stages"]},
-                "plan_actions": [item["action_id"] for item in plan["next_actions"]],
+                "plan_stages": plan_stages,
+                "plan_actions": plan_actions,
                 "claim_verification": claim_results.get(path.name),
-                "cleanroom_receipt": artifact(cleanroom_receipt, root)
-                if cleanroom_receipt.is_file()
-                else None,
-                "candidate_package_receipt": artifact(package_receipt, root)
-                if package_receipt.is_file()
-                else None,
+                "cleanroom_receipt": cleanroom_artifact,
+                "candidate_package_receipt": package_artifact,
             }
         )
+
+    # pilot 汇总：各类计数全部用显式循环累加，便于逐个读懂。
+    valid_overlays = 0
+    ready_projects = 0
+    compiled_packages = 0
+    candidate_packages = 0
+    blocked_claims = 0
+    inconclusive_claims = 0
+    for item in pilots:
+        if item["validation"]["valid"]:
+            valid_overlays += 1
+        if item["validation"]["ready"]:
+            ready_projects += 1
+        if item["package_state"] in {"compiled", "ready"}:
+            compiled_packages += 1
+        if item["candidate_package_receipt"]:
+            candidate_packages += 1
+        blocked_claims += item["claim_counts"].get("blocked", 0)
+        inconclusive_claims += item["claim_counts"].get("inconclusive", 0)
+
     pilot_summary = {
         "pilots": len(pilots),
-        "valid_overlays": sum(1 for item in pilots if item["validation"]["valid"]),
-        "ready_projects": sum(1 for item in pilots if item["validation"]["ready"]),
-        "compiled_packages": sum(
-            1 for item in pilots if item["package_state"] in {"compiled", "ready"}
-        ),
-        "candidate_packages": sum(
-            1 for item in pilots if item["candidate_package_receipt"]
-        ),
-        "blocked_claims": sum(
-            item["claim_counts"].get("blocked", 0) for item in pilots
-        ),
-        "inconclusive_claims": sum(
-            item["claim_counts"].get("inconclusive", 0) for item in pilots
-        ),
+        "valid_overlays": valid_overlays,
+        "ready_projects": ready_projects,
+        "compiled_packages": compiled_packages,
+        "candidate_packages": candidate_packages,
+        "blocked_claims": blocked_claims,
+        "inconclusive_claims": inconclusive_claims,
         "uploaded_papers": 0,
     }
     pilot_status = {
@@ -493,9 +603,53 @@ def main() -> int:
         *sorted(package_dir.glob("*.json")),
         *sorted((root / "research").glob("pilot-*/.gitkeep")),
     ]
-    unique_paths = [path for path in dict.fromkeys(verification_paths) if path.is_file()]
+    # 去重并丢掉不存在的文件（保留首次出现的顺序）。
+    unique_paths: list[Path] = []
+    seen_paths: set[str] = set()
+    for path in verification_paths:
+        key = str(path)
+        if key in seen_paths:
+            continue
+        seen_paths.add(key)
+        if path.is_file():
+            unique_paths.append(path)
+
     head = run(["git", "rev-parse", "HEAD"], cwd=root).stdout.strip()
     status = run(["git", "status", "--short"], cwd=root).stdout
+
+    # 三个检查项的结论先算出来，再拼进 verification。
+    # ruff 未安装或退出码非 0 都算失败（fail-closed）。
+    ruff_verdict = "failed"
+    if ruff_result and ruff_result.returncode == 0:
+        ruff_verdict = "passed"
+
+    diff_verdict = "failed"
+    if diff_result.returncode == 0:
+        diff_verdict = "passed"
+
+    dispositions_ok = False
+    if dispositions_result.returncode == 0:
+        dispositions_summary = dispositions.get("summary", {})
+        unreviewed_count = (
+            dispositions_summary.get("final_human_dispositions", {}).get("unreviewed")
+        )
+        if (
+            dispositions_summary.get("families") == triage_family_count
+            and unreviewed_count == triage_family_count
+        ):
+            dispositions_ok = True
+    dispositions_verdict = "failed"
+    if dispositions_ok:
+        dispositions_verdict = "passed"
+
+    valid_count = 0
+    ready_count = 0
+    for item in validations.values():
+        if item["valid"]:
+            valid_count += 1
+        if item["ready"]:
+            ready_count += 1
+
     verification = {
         "schema": "q-one-research-factory-verification-v1",
         "generated_at": now(),
@@ -523,35 +677,17 @@ def main() -> int:
         },
         "checks": {
             **(tests if isinstance(tests, dict) else {}),
-            "ruff_scoped_research": {
-                "result": (
-                    "passed"
-                    if ruff_result and ruff_result.returncode == 0
-                    else "failed"
-                )
-            },
-            "git_diff_check": {
-                "result": "passed" if diff_result.returncode == 0 else "failed"
-            },
+            "ruff_scoped_research": {"result": ruff_verdict},
+            "git_diff_check": {"result": diff_verdict},
             "json_schema": schemas,
             "project_validation": {
-                "valid": sum(1 for item in validations.values() if item["valid"]),
-                "ready": sum(1 for item in validations.values() if item["ready"]),
+                "valid": valid_count,
+                "ready": ready_count,
                 "projects": len(validations),
             },
             "claim_ledgers": claim_results,
             "agent_dispositions": {
-                "result": (
-                    "passed"
-                    if dispositions_result.returncode == 0
-                    and dispositions.get("summary", {}).get("families")
-                    == triage_family_count
-                    and dispositions.get("summary", {})
-                    .get("final_human_dispositions", {})
-                    .get("unreviewed")
-                    == triage_family_count
-                    else "failed"
-                ),
+                "result": dispositions_verdict,
                 "summary": dispositions.get("summary"),
                 "artifact": (
                     artifact(dispositions_path, root)
@@ -570,25 +706,37 @@ def main() -> int:
     }
     verification_path = artifact_dir / "verification.json"
     write_json_atomic(verification_path, verification)
-    print(json.dumps({"checks": verification["checks"], "pilots": pilot_summary}, indent=2))
-    failed = (
-        tests.get("pytest", {}).get("result") == "failed"
-        if isinstance(tests, dict)
-        else False
-    ) or (
-        tests.get("unittest", {}).get("result") == "failed"
-        if isinstance(tests, dict)
-        else False
-    ) or (ruff_result is None or ruff_result.returncode != 0) or diff_result.returncode != 0
-    failed = failed or schemas["result"] != "passed"
-    failed = failed or any(not item["valid"] for item in validations.values())
-    failed = failed or any(
-        item["result"] != "passed" for item in claim_results.values()
+    print(
+        json.dumps(
+            {"checks": verification["checks"], "pilots": pilot_summary}, indent=2
+        )
     )
-    failed = failed or (
-        verification["checks"]["agent_dispositions"]["result"] != "passed"
-    )
-    return 1 if failed else 0
+
+    # 汇总最终成败：任何一项检查未通过都返回 1。
+    failed = False
+    if isinstance(tests, dict):
+        if tests.get("pytest", {}).get("result") == "failed":
+            failed = True
+        if tests.get("unittest", {}).get("result") == "failed":
+            failed = True
+    if ruff_result is None or ruff_result.returncode != 0:
+        failed = True
+    if diff_result.returncode != 0:
+        failed = True
+    if schemas["result"] != "passed":
+        failed = True
+    for item in validations.values():
+        if not item["valid"]:
+            failed = True
+    for item in claim_results.values():
+        if item["result"] != "passed":
+            failed = True
+    if verification["checks"]["agent_dispositions"]["result"] != "passed":
+        failed = True
+
+    if failed:
+        return 1
+    return 0
 
 
 if __name__ == "__main__":

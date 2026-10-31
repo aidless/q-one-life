@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Generate per-domain usage docs from the metric CATALOG (single source of truth).
+"""从指标目录 CATALOG（唯一事实来源）生成各领域的使用文档。
 
-Produces docs/domains/<domain>.zh-CN.md for every domain in generate_metric_specs.CATALOG,
-so the documentation and examples/metric-spec.json can never drift apart.
+为 generate_metric_specs.CATALOG 里的每个领域生成 docs/domains/<domain>.zh-CN.md，
+这样文档与 examples/metric-spec.json 不会出现口径漂移。
 
-Usage:
+用法：
     python3 scripts/generate_domain_docs.py
 """
 
@@ -15,7 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from generate_metric_specs import CATALOG  # noqa: E402
+from generate_metric_specs import CATALOG
 
 DOMAIN_NAMES = {
     "health": "健康",
@@ -52,29 +52,33 @@ DOMAIN_INTRO = {
 
 
 def _template_direction(tmpl: tuple) -> str:
+    """取出模板的方向字段（模板第 4 个元素）。"""
     return tmpl[3]  # direction
 
 
 def _member_target(member) -> float | None:
+    """成员若是带属性的元组，返回其目标值；否则返回 None。"""
     if isinstance(member, (tuple, list)) and len(member) >= 2 and not isinstance(member[0], (int, float)):
         return member[1]
     return None
 
 
 def _member_unit(member) -> str | None:
+    """成员若是带属性的元组，返回其单位；否则返回 None。"""
     if isinstance(member, (tuple, list)) and len(member) >= 3 and not isinstance(member[0], (int, float)):
         return member[2]
     return None
 
 
 def _member_direction(member) -> str | None:
+    """成员若是带属性的元组，返回其方向；否则返回 None。"""
     if isinstance(member, (tuple, list)) and len(member) >= 4 and not isinstance(member[0], (int, float)):
         return member[3]
     return None
 
 
 def build_domain_docs() -> dict[str, str]:
-    """Return {domain: markdown} for every domain."""
+    """为每个领域返回 {domain: markdown}。"""
     docs: dict[str, str] = {}
     for domain, categories in CATALOG.items():
         name = DOMAIN_NAMES.get(domain, domain)
@@ -83,7 +87,7 @@ def build_domain_docs() -> dict[str, str]:
         lines.append("")
         lines.append(DOMAIN_INTRO.get(domain, ""))
         lines.append("")
-        lines.append(f"> 本文档由 `scripts/generate_domain_docs.py` 从指标目录同源生成，与 `examples/metric-spec.json` 保持一致。")
+        lines.append("> 本文档由 `scripts/generate_domain_docs.py` 从指标目录同源生成，与 `examples/metric-spec.json` 保持一致。")
         lines.append("")
         lines.append("## 指标总览")
         lines.append("")
@@ -93,7 +97,7 @@ def build_domain_docs() -> dict[str, str]:
         for category_name, templates, members in categories:
             n_metrics = len(members) * len(templates)
             total += n_metrics
-            # 方向/单位摘要：同一类别可能多模板，取首个非空
+            # 方向/单位摘要：同一类别可能有多个模板，取首个非空值。
             directions = set()
             units = set()
             for suffix, lo, hi, direction, unit, _t, _w, _tc in templates:
@@ -101,7 +105,15 @@ def build_domain_docs() -> dict[str, str]:
                 if unit != "__member_unit__":
                     units.add(unit)
             dir_str = "、".join(sorted(directions))
-            unit_str = "、".join(sorted(u for u in units if u)) or "—"
+
+            # 收集所有非空单位并排序；一个都没有时用破折号占位。
+            unit_list = []
+            for u in units:
+                if u:
+                    unit_list.append(u)
+            unit_str = "、".join(sorted(unit_list))
+            if not unit_str:
+                unit_str = "—"
             lines.append(f"| {category_name} | {n_metrics} | {dir_str} | {unit_str} |")
         lines.append(f"| **合计** | **{total}** | | |")
         lines.append("")
@@ -112,10 +124,12 @@ def build_domain_docs() -> dict[str, str]:
         for category_name, templates, members in categories:
             lines.append(f"### {category_name}")
             lines.append("")
-            # 模板说明
+            # 逐个模板生成一句说明文字。
             tmpl_desc = []
             for suffix, lo, hi, direction, unit, _t, _w, tc in templates:
-                unit_disp = unit if unit != "__member_unit__" else "(成员级单位)"
+                unit_disp = unit
+                if unit == "__member_unit__":
+                    unit_disp = "(成员级单位)"
                 tmpl_desc.append(f"`{suffix}`：范围 {lo}–{hi}{unit_disp}，{DIRECTION_LABEL.get(direction, direction)}，建议 {tc} 次/窗口")
             lines.append("维度模板：" + "；".join(tmpl_desc) + "。")
             lines.append("")
@@ -123,7 +137,9 @@ def build_domain_docs() -> dict[str, str]:
             lines.append("| 成员 | 方向 | 单位 | 目标 |")
             lines.append("|---|---|---|---|")
             for member in members:
-                m_name = member[0] if isinstance(member, (tuple, list)) else member
+                m_name = member
+                if isinstance(member, (tuple, list)):
+                    m_name = member[0]
                 m_target = _member_target(member)
                 m_unit = _member_unit(member)
                 m_dir = _member_direction(member)
@@ -139,7 +155,9 @@ def build_domain_docs() -> dict[str, str]:
                 if eff_unit == "__member_unit__":
                     eff_unit = ""
                 dir_label = DIRECTION_LABEL.get(eff_dir or "", eff_dir or "—")
-                tgt = f"{m_target:g}" if m_target is not None else "—"
+                tgt = "—"
+                if m_target is not None:
+                    tgt = f"{m_target:g}"
                 lines.append(f"| {m_name} | {dir_label} | {eff_unit or '—'} | {tgt} |")
             lines.append("")
 
@@ -148,6 +166,7 @@ def build_domain_docs() -> dict[str, str]:
 
 
 def main() -> int:
+    """生成全部领域文档并写入 docs/domains 目录。"""
     docs = build_domain_docs()
     out_dir = Path(__file__).resolve().parent.parent / "docs" / "domains"
     out_dir.mkdir(parents=True, exist_ok=True)

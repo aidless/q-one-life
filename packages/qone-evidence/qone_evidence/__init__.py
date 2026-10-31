@@ -1,4 +1,4 @@
-"""Minimal, dependency-free claim ledger with hash-bound evidence."""
+"""极简、零依赖的声明账本，用内容哈希绑定证据。"""
 
 from .ledger import (
     LedgerError,
