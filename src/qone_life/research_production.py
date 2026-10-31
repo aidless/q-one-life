@@ -1,4 +1,4 @@
-"""Seven-stage research production pipeline with hash-bound stage receipts."""
+"""七阶段科研生产管线，每个阶段都生成与哈希绑定的阶段回执。"""
 
 from __future__ import annotations
 
@@ -28,7 +28,7 @@ BLOCKED = "blocked"
 
 
 class ProductionError(RuntimeError):
-    """Raised when a stage fails or a prior stage is not complete."""
+    """某个阶段失败，或前置阶段尚未完成时抛出。"""
 
 
 def _now() -> str:
@@ -36,15 +36,18 @@ def _now() -> str:
 
 
 def _slugify(value: str) -> str:
+    """把标题转成仅含小写字母/数字/短横线的短标识。"""
     text = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
     return text[:64] or "unnamed"
 
 
 def _stage_path(root: Path, stage: str) -> Path:
+    """阶段回执的文件名带有序号前缀，便于按顺序定位。"""
     return root / f"{STAGES.index(stage) + 1:02d}-{stage}.json"
 
 
 def _write_receipt(root: Path, stage: str, payload: dict[str, Any]) -> dict[str, Any]:
+    """写入一份阶段回执，并把自身内容的哈希作为回执指纹。"""
     body = {
         "schema": "q-one-production-stage-v1",
         "stage": stage,
@@ -59,6 +62,7 @@ def _write_receipt(root: Path, stage: str, payload: dict[str, Any]) -> dict[str,
 
 
 def read_stage(root: Path, stage: str) -> dict[str, Any] | None:
+    """读取某阶段回执；不存在时返回 None。"""
     path = _stage_path(root, stage)
     if not path.is_file():
         return None
@@ -66,7 +70,7 @@ def read_stage(root: Path, stage: str) -> dict[str, Any] | None:
 
 
 def require_previous(root: Path, stage: str) -> None:
-    """Fail closed unless every earlier stage passed."""
+    """除非此前所有阶段都已通过，否则直接失败（fail-closed）。"""
     index = STAGES.index(stage)
     for prior in STAGES[:index]:
         receipt = read_stage(root, prior)
@@ -85,8 +89,9 @@ class ResearchProduction:
     def _root(self, slug: str) -> Path:
         return self.workspace / "research" / "production" / slug
 
-    # ---- stage 1 ------------------------------------------------------
+    # ---- 阶段 1：研究问题 --------------------------------------------------
     def register_question(self, slug: str, question_md: Path, venue: str) -> dict[str, Any]:
+        """登记研究问题；问题文件必须存在且不少于 40 个字符。"""
         if not question_md.is_file():
             raise ProductionError(f"question file is missing: {question_md}")
         text = question_md.read_text(encoding="utf-8").strip()
@@ -105,8 +110,9 @@ class ResearchProduction:
             "outputs": [],
         })
 
-    # ---- stage 2 ------------------------------------------------------
+    # ---- 阶段 2：研究假设 --------------------------------------------------
     def register_hypothesis(self, slug: str, hypothesis: dict[str, Any]) -> dict[str, Any]:
+        """登记假设，要求包含原假设、备择假设与可证伪条件。"""
         root = self._root(slug)
         require_previous(root, "hypothesis")
         for key in ("null_hypothesis", "alternative_hypothesis", "falsification_condition"):
@@ -122,7 +128,7 @@ class ResearchProduction:
             "outputs": [],
         })
 
-    # ---- stage 3 ------------------------------------------------------
+    # ---- 阶段 3：实验计划 --------------------------------------------------
     def register_experiment_plan(
         self, slug: str, *, missing_evidence: str, proposed_experiment: str,
         resource_requirement: str, run_script: Path, inputs: list[Path],
@@ -130,6 +136,7 @@ class ResearchProduction:
         estimated_duration_sec: int | None = None,
         statistical_power: float | None = None,
     ) -> dict[str, Any]:
+        """生成实验计划并把运行脚本与输入复制进待提交的作业目录。"""
         root = self._root(slug)
         require_previous(root, "experiment_plan")
         if not run_script.is_file():
@@ -178,8 +185,9 @@ class ResearchProduction:
             "outputs": [{"path": str(job_dir / "job.json"), "sha256": sha256_file(job_dir / "job.json")}],
         })
 
-    # ---- stage 4 ------------------------------------------------------
+    # ---- 阶段 4：云端执行 --------------------------------------------------
     def execute_cloud(self, slug: str, *, poll_interval: int = 10) -> dict[str, Any]:
+        """提交作业到云端并等待结束；需审批的计划拒绝自动执行。"""
         root = self._root(slug)
         require_previous(root, "cloud_execution")
         plan_receipt = read_stage(root, "experiment_plan")
@@ -195,7 +203,9 @@ class ResearchProduction:
                                        poll_interval=poll_interval)
         except CloudExecutionError as exc:
             raise ProductionError(f"cloud execution failed: {exc}") from exc
-        status = PASSED if final["state"] == "succeeded" else FAILED
+        status = FAILED
+        if final["state"] == "succeeded":
+            status = PASSED
         return _write_receipt(root, "cloud_execution", {
             "status": status,
             "job_id": submitted["job_id"],
@@ -206,8 +216,9 @@ class ResearchProduction:
             "outputs": [],
         })
 
-    # ---- stage 5 ------------------------------------------------------
+    # ---- 阶段 5：结果回收 --------------------------------------------------
     def collect_results(self, slug: str, target_dir: str | Path) -> dict[str, Any]:
+        """把云端输出拉回本地，生成结果回执（无输出文件则记失败）。"""
         root = self._root(slug)
         require_previous(root, "results")
         if self.executor is None:
@@ -230,8 +241,9 @@ class ResearchProduction:
         })
         return receipt
 
-    # ---- stage 6 ------------------------------------------------------
+    # ---- 阶段 6：论断账本 --------------------------------------------------
     def write_claim_ledger(self, slug: str, claims: list[dict[str, Any]]) -> dict[str, Any]:
+        """把论断写成 Markdown 账本，并校验每条论断的必填字段与状态。"""
         root = self._root(slug)
         require_previous(root, "claim_ledger")
         if not claims:
@@ -259,8 +271,9 @@ class ResearchProduction:
             "outputs": [],
         })
 
-    # ---- stage 7 ------------------------------------------------------
+    # ---- 阶段 7：草稿 -----------------------------------------------------
     def write_draft(self, slug: str, manuscript: Path, *, venue: str) -> dict[str, Any]:
+        """把论文草稿复制进管线目录并生成回执。"""
         root = self._root(slug)
         require_previous(root, "draft")
         if not manuscript.is_file():
@@ -277,17 +290,22 @@ class ResearchProduction:
             "outputs": [{"path": str(target), "sha256": sha256_file(target)}],
         })
 
-    # ---- driver -------------------------------------------------------
+    # ---- 驱动：查看各阶段状态 ---------------------------------------------
     def status(self, slug: str) -> dict[str, Any]:
+        """返回每个阶段的当前状态（缺失即为 "missing"）。"""
         root = self._root(slug)
         stages = {}
         for stage in STAGES:
             receipt = read_stage(root, stage)
-            stages[stage] = receipt.get("status") if receipt else "missing"
+            if receipt:
+                stages[stage] = receipt.get("status")
+            else:
+                stages[stage] = "missing"
         return {"slug": slug, "root": str(root), "stages": stages}
 
 
 def _dir_hash(path: Path) -> str:
+    """对目录下所有文件（含相对路径）计算一个整体哈希。"""
     digest = hashlib.sha256()
     for file in sorted(path.rglob("*")):
         if file.is_file():
@@ -297,6 +315,7 @@ def _dir_hash(path: Path) -> str:
 
 
 def _count_states(claims: list[dict[str, Any]]) -> dict[str, int]:
+    """按状态统计论断数量。"""
     counts: dict[str, int] = {}
     for claim in claims:
         counts[claim["state"]] = counts.get(claim["state"], 0) + 1
@@ -307,7 +326,7 @@ def produce(
     workspace: str | Path, *, question_md: str | Path, venue: str, slug: str | None = None,
     executor: CloudExecutor | None = None,
 ) -> dict[str, Any]:
-    """Run the stages that need no external inputs and return current status."""
+    """运行不需要外部输入的阶段并返回当前状态。"""
     question = Path(question_md).expanduser().resolve()
     resolved_slug = slug or _slugify(question.stem)
     pipeline = ResearchProduction(workspace, executor=executor)

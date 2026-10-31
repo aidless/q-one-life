@@ -1,4 +1,4 @@
-"""CLI for local personal observations and review reports."""
+"""本机个人观察数据与评审报告的命令行入口。"""
 
 from __future__ import annotations
 
@@ -21,28 +21,33 @@ from .store import LifeStore, StoreError
 
 
 def _store(args: argparse.Namespace) -> LifeStore:
+    """根据 --data-dir 打开（或创建）事件存储。"""
     root = Path(args.data_dir)
     root.mkdir(parents=True, exist_ok=True)
     return LifeStore(root / "events.jsonl")
 
 
 def _load_json(path: str) -> Any:
+    """读取一个 JSON 文件。"""
     with Path(path).open("r", encoding="utf-8") as handle:
         return json.load(handle)
 
 
 def _report(args: argparse.Namespace) -> dict[str, Any]:
+    """按给定指标定义对当前存储的观察数据打分。"""
     specs = load_metric_specs(_load_json(args.spec_file))
     return score_observations(_store(args).observations(), specs)
 
 
 def cmd_init(args: argparse.Namespace) -> int:
+    """初始化本地存储并打印事件数。"""
     store = _store(args)
     print(f"initialized {store.path} ({store.verify()} events)")
     return 0
 
 
 def cmd_add_observation(args: argparse.Namespace) -> int:
+    """新增一条有上下界的个人观察，并打印其 id。"""
     observation = Observation.from_payload(
         {
             "domain": args.domain,
@@ -62,12 +67,14 @@ def cmd_add_observation(args: argparse.Namespace) -> int:
 
 
 def cmd_score(args: argparse.Namespace) -> int:
+    """打印维度向量得分。"""
     report = _report(args)
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return 0
 
 
 def cmd_iterate(args: argparse.Namespace) -> int:
+    """打印逐日维度得分、环比变化与趋势。"""
     from .iteration import daily_iteration
 
     specs = load_metric_specs(_load_json(args.spec_file))
@@ -77,6 +84,7 @@ def cmd_iterate(args: argparse.Namespace) -> int:
 
 
 def cmd_suggest(args: argparse.Namespace) -> int:
+    """打印每个领域可执行的下一步建议。"""
     from .suggestion import suggest_improvements
 
     specs = load_metric_specs(_load_json(args.spec_file))
@@ -86,22 +94,26 @@ def cmd_suggest(args: argparse.Namespace) -> int:
 
 
 def cmd_review(args: argparse.Namespace) -> int:
+    """打印评审提示与缺失项。"""
     print(json.dumps(build_review(_report(args)), ensure_ascii=False, indent=2))
     return 0
 
 
 def cmd_export(args: argparse.Namespace) -> int:
+    """导出观察数据（默认脱敏）。"""
     payload = export_observations(_store(args).observations(), redacted=args.redacted)
     print(json.dumps(payload, ensure_ascii=False, indent=2))
     return 0
 
 
 def cmd_verify(args: argparse.Namespace) -> int:
+    """校验本地哈希链并打印事件数。"""
     print(f"verified {_store(args).verify()} events")
     return 0
 
 
 def cmd_serve(args):
+    """启动本机 Web 工作台。"""
     import uvicorn
 
     from .web import create_app
@@ -110,37 +122,48 @@ def cmd_serve(args):
 
 
 def cmd_sidecar(args):
+    """启动桌面 sidecar 进程。"""
     from .sidecar import main as sidecar_main
     return sidecar_main(["--data-dir", args.data_dir])
 
 
 def cmd_system_import(args):
+    """导入个人状态、目标、资源与学习记录。"""
     from .repository import Repository
     from .system import SystemService
-    directory=Path(args.home or os.environ.get('QONE_HOME',Path.home()/'.local/share/q-one'))
-    service=SystemService(Repository(directory))
-    result=service.save(_load_json(args.file),args.parent_revision)
-    print(json.dumps(result,ensure_ascii=False,indent=2))
+
+    directory = Path(args.home or os.environ.get("QONE_HOME", Path.home() / ".local/share/q-one"))
+    service = SystemService(Repository(directory))
+    result = service.save(_load_json(args.file), args.parent_revision)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
 
 
 def cmd_system_inspect(args):
+    """比较方案，或按历史时间点回放预测。"""
     from .repository import Repository, now
     from .system import SystemService
-    directory=Path(args.home or os.environ.get('QONE_HOME',Path.home()/'.local/share/q-one'))
-    service=SystemService(Repository(directory))
+
+    directory = Path(args.home or os.environ.get("QONE_HOME", Path.home() / ".local/share/q-one"))
+    service = SystemService(Repository(directory))
     if args.calibration_shadow and not args.replay:
-        raise LifeValidationError('--calibration-shadow需要同时使用--replay')
+        raise LifeValidationError("--calibration-shadow需要同时使用--replay")
+
     if args.replay:
-        candidate={'method':'prequential_aci','step_size':0.01,'window':64,'min_samples':10} if args.calibration_shadow else None
-        result=service.replay(candidate)
+        # 回放时可选择性地带上在线校准候选参数；不改变推荐与保存设置。
+        if args.calibration_shadow:
+            candidate = {"method": "prequential_aci", "step_size": 0.01, "window": 64, "min_samples": 10}
+        else:
+            candidate = None
+        result = service.replay(candidate)
     else:
-        result=service.evaluate(args.as_of or now(),available_minutes=args.available_minutes)
-    print(json.dumps(result,ensure_ascii=False,indent=2))
+        result = service.evaluate(args.as_of or now(), available_minutes=args.available_minutes)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
 
 
 def cmd_research_inventory(args):
+    """只读扫描论文项目并生成去重后的组合清单。"""
     from .research import build_portfolio, write_portfolio
 
     config = _load_json(args.config) if args.config else {}
@@ -167,6 +190,7 @@ def cmd_research_inventory(args):
 
 
 def cmd_research_validate(args):
+    """验证论文项目的哈希、证据、论断与就绪状态。"""
     from .research import validate_research_project
 
     report = validate_research_project(args.project)
@@ -179,10 +203,13 @@ def cmd_research_validate(args):
 
 
 def cmd_research_triage(args):
+    """生成论文生产分流队列（不修改人工最终处置）。"""
     from .research_factory import triage_portfolio, write_triage
 
     portfolio = _load_json(args.portfolio)
-    pilots = _load_json(args.pilots).get("pilots", []) if args.pilots else []
+    pilots = []
+    if args.pilots:
+        pilots = _load_json(args.pilots).get("pilots", [])
     report = triage_portfolio(portfolio, pilots=pilots)
     write_triage(
         report,
@@ -195,6 +222,7 @@ def cmd_research_triage(args):
 
 
 def cmd_research_scaffold(args):
+    """为一个论文族创建外部研究覆盖层（不修改原稿）。"""
     from .research_factory import create_research_scaffold
 
     portfolio = _load_json(args.portfolio)
@@ -211,6 +239,7 @@ def cmd_research_scaffold(args):
 
 
 def cmd_research_plan(args):
+    """生成证据门控的研究下一步计划。"""
     from .research_factory import build_research_plan, render_plan_markdown, write_plan
 
     plan = build_research_plan(args.project)
@@ -225,6 +254,7 @@ def cmd_research_plan(args):
 
 
 def cmd_research_package_check(args):
+    """检查 LaTeX 源树能否被机械打包（不代表学术可投）。"""
     from .research_factory import audit_arxiv_package, write_package_audit
 
     audit = audit_arxiv_package(args.source, main_file=args.main)
@@ -235,6 +265,7 @@ def cmd_research_package_check(args):
 
 
 def cmd_research_native_ledger(args):
+    """验证原生论断账本的源文件、字段与值。"""
     from .research_factory import audit_native_paper_ledger, write_native_ledger_audit
 
     audit = audit_native_paper_ledger(args.ledger, args.workspace_root)
@@ -244,6 +275,7 @@ def cmd_research_native_ledger(args):
 
 
 def cmd_research_source_lineage(args):
+    """从 git commit 恢复源哈希，并记录当前稿的可审计修订差异。"""
     from .research_factory import audit_git_source_lineage
 
     result = audit_git_source_lineage(
@@ -278,6 +310,7 @@ def cmd_research_source_lineage(args):
 
 
 def parser() -> argparse.ArgumentParser:
+    """构建完整的命令行参数解析器。"""
     root = argparse.ArgumentParser(prog="qone-life", description="Q-One local life layer")
     root.add_argument(
         "--data-dir",
@@ -515,12 +548,14 @@ def parser() -> argparse.ArgumentParser:
 
 
 def _measurement_store(args: argparse.Namespace) -> MeasurementStore:
+    """根据 --data-dir 打开（或创建）测量记录存储。"""
     root = Path(args.data_dir)
     root.mkdir(parents=True, exist_ok=True)
     return MeasurementStore(root / "measurements.jsonl")
 
 
 def cmd_measure_add(args: argparse.Namespace) -> int:
+    """新增一条每日测量记录。"""
     store = _measurement_store(args)
     event = store.add(args.type, args.subject, args.metric, args.value, args.unit, args.definition, args.source)
     print(json.dumps(event, ensure_ascii=False, indent=2))
@@ -528,6 +563,7 @@ def cmd_measure_add(args: argparse.Namespace) -> int:
 
 
 def cmd_measure_list(args: argparse.Namespace) -> int:
+    """列出全部测量记录。"""
     store = _measurement_store(args)
     events = store.list_all()
     for event in events:
@@ -538,11 +574,13 @@ def cmd_measure_list(args: argparse.Namespace) -> int:
 
 
 def cmd_measure_verify(args: argparse.Namespace) -> int:
+    """校验测量记录的哈希链。"""
     store = _measurement_store(args)
     print(f"verified {store.verify()} measurements")
     return 0
 
 def cmd_measure_decide(args: argparse.Namespace) -> int:
+    """记录一次包含可选项与理由的决策。"""
     store = _measurement_store(args)
     options = [opt.strip() for opt in args.option]
     event = store.decide(args.subject, options, args.chosen, args.rationale,
@@ -554,6 +592,7 @@ def cmd_measure_decide(args: argparse.Namespace) -> int:
 
 
 def cmd_measure_outcome(args: argparse.Namespace) -> int:
+    """记录某次决策的观察结果。"""
     store = _measurement_store(args)
     event = store.record_outcome(args.decision_seq, args.subject, args.observed_outcome,
                                  args.matched, latency_sec=args.latency_sec)
@@ -562,6 +601,7 @@ def cmd_measure_outcome(args: argparse.Namespace) -> int:
 
 
 def cmd_measure_stats(args: argparse.Namespace) -> int:
+    """显示决策命中率与各类记录数。"""
     store = _measurement_store(args)
     stats = {"hit_rate": store.hit_rate(), "decisions": len(store.decisions()),
              "outcomes": len(store.outcomes()), "measurements": len(store.list_all())}
@@ -570,6 +610,7 @@ def cmd_measure_stats(args: argparse.Namespace) -> int:
 
 
 def cmd_research_produce(args: argparse.Namespace) -> int:
+    """在研究生产管线中登记一个研究问题。"""
     executor = CloudExecutor() if args.cloud else None
     pipeline = ResearchProduction(args.workspace, executor=executor)
     receipt = pipeline.register_question(args.slug, Path(args.question), args.venue)
@@ -578,6 +619,7 @@ def cmd_research_produce(args: argparse.Namespace) -> int:
 
 
 def cmd_research_adversarial(args: argparse.Namespace) -> int:
+    """对论断账本运行多轮对抗式评审。"""
     review = AdversarialReview(args.magpie_url)
     receipt = review.attack(Path(args.ledger), rounds=args.rounds,
                             models=args.model, output_dir=Path(args.output))
@@ -586,6 +628,7 @@ def cmd_research_adversarial(args: argparse.Namespace) -> int:
 
 
 def cmd_research_optimize(args: argparse.Namespace) -> int:
+    """按证据 ROI 对论文族排序。"""
     from .research_factory import optimize_portfolio
     portfolio = json.loads(Path(args.portfolio).read_text(encoding="utf-8"))
     pilots = json.loads(Path(args.pilots).read_text(encoding="utf-8")).get("pilots", [])
@@ -598,6 +641,7 @@ def cmd_research_optimize(args: argparse.Namespace) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
+    """解析参数并分派到对应子命令；捕获已知异常后返回退出码 2。"""
     args = parser().parse_args(argv)
     try:
         return args.handler(args)

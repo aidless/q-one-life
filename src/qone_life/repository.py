@@ -1,4 +1,4 @@
-"""SQLite persistence for the single-user application; no cloud database required."""
+"""单用户应用的 SQLite 持久化层，不需要任何云数据库。"""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ SCHEMA_VERSION = 1
 
 
 class DatabaseVersionError(RuntimeError):
-    """Raised when local data was written by an incompatible newer release."""
+    """本地数据由不兼容的更新版本写入时抛出的异常。"""
 
 
 def now():
@@ -28,6 +28,7 @@ def identifier(prefix):
 
 
 def timestamp(value):
+    """把带时区的时间字符串规范化为 UTC ISO 格式；缺失时区则报错。"""
     try:
         parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
         if parsed.tzinfo is None:
@@ -66,6 +67,7 @@ class Repository:
 
     @contextmanager
     def connect(self):
+        """打开一次连接并在一个事务内 yield，结束时关闭连接。"""
         db = sqlite3.connect(self.path, timeout=15)
         try:
             with db:
@@ -79,8 +81,8 @@ class Repository:
         finally:
             db.close()
 
-    @staticmethod
-    def _table(table):
+    def _table(self, table):
+        """校验表名合法，防止 SQL 注入。"""
         if table not in {"tasks", "metrics", "observations", "documents", "runs", "reviews", "goals", "suggestions", "system_revisions"}:
             raise ValueError("unknown record type")
         return table
@@ -88,7 +90,8 @@ class Repository:
     def all(self, table):
         table = self._table(table)
         with self.connect() as db:
-            return [json.loads(row[0]) for row in db.execute(f"SELECT payload FROM {table} ORDER BY rowid DESC")]
+            rows = db.execute(f"SELECT payload FROM {table} ORDER BY rowid DESC")
+            return [json.loads(row[0]) for row in rows]
 
     def get(self, table, record_id):
         table = self._table(table)
@@ -114,18 +117,23 @@ class Repository:
     def metric(self, raw):
         domain = raw.get("domain", "learning")
         name = str(raw.get("name", "")).strip()
-        lo, hi = float(raw.get("minimum", 0)), float(raw.get("maximum", 10))
+        lo = float(raw.get("minimum", 0))
+        hi = float(raw.get("maximum", 10))
         target_count = raw.get("target_count", 7)
         direction = raw.get("direction", "higher")
         if not name or len(name) > 80 or domain not in DOMAINS:
             raise ValueError("请填写有效指标名称与领域")
-        if not all(math.isfinite(v) for v in (lo, hi)) or hi <= lo:
+        # 上下限必须是有限数，且上限要大于下限。
+        if not math.isfinite(lo) or not math.isfinite(hi) or hi <= lo:
             raise ValueError("指标最大值必须大于最小值，且均为有限数")
         if type(target_count) is not int or not 1 <= target_count <= 365:
             raise ValueError("期望记录数应为1到365的整数")
         if direction not in {"higher", "lower", "target"}:
             raise ValueError("指标方向无效")
-        target = float(raw.get("target", (lo + hi) / 2)) if direction == "target" else (lo + hi) / 2
+        # 默认用区间中点；目标型指标改用自定义目标值。
+        target = (lo + hi) / 2
+        if direction == "target":
+            target = float(raw.get("target", (lo + hi) / 2))
         if not math.isfinite(target) or not lo <= target <= hi:
             raise ValueError("目标值应位于指标范围内")
         return self.put("metrics", {"id": identifier("M"), "version": 1, "name": name,
@@ -149,7 +157,7 @@ class Repository:
         result = {"id": identifier("O"), "metric_id": metric["id"], "metric_version": metric["version"],
             "value": value, "observed_at": observed, "source": str(raw.get("source", "自我记录"))[:80],
             "note": str(raw.get("note", ""))[:2000], "created_at": now(), "supersedes": supersedes}
-        # An observation correction and the previous row update share a transaction.
+        # 更正观察与被更正行的更新必须在同一事务内完成。
         with self.connect() as db:
             if supersedes:
                 current = json.loads(db.execute("SELECT payload FROM observations WHERE id=?", (supersedes,)).fetchone()[0])
@@ -162,8 +170,14 @@ class Repository:
 
     def scores(self, days=7):
         cutoff = datetime.now(timezone.utc) - timedelta(days=days)
-        observations = [r for r in self.all("observations") if not r.get("superseded_by")
-                        and datetime.fromisoformat(r["observed_at"]) >= cutoff]
+        # 只取未被更正为更新的观察，并且落在最近窗口内。
+        observations = []
+        for r in self.all("observations"):
+            if r.get("superseded_by"):
+                continue
+            if datetime.fromisoformat(r["observed_at"]) < cutoff:
+                continue
+            observations.append(r)
         result = []
         for metric in reversed(self.all("metrics")):
             rows = [r for r in observations if r["metric_id"] == metric["id"]]
@@ -176,10 +190,16 @@ class Repository:
                     distance = max(metric["target"] - metric["minimum"], metric["maximum"] - metric["target"])
                     normalized = max(0, 1 - abs(row["value"] - metric["target"]) / distance)
                 values.append(normalized)
+            score = None
+            if values:
+                score = sum(values) / len(values)
+            if rows:
+                latest_row = max(rows, key=lambda r: r["observed_at"])
+                latest_value = latest_row["value"]
+            else:
+                latest_value = None
             result.append(metric | {"n": len(rows), "coverage": min(1, len(rows) / metric["target_count"]),
-                "score": sum(values) / len(values) if values else None,
-                "latest_value": max(rows, key=lambda r: r["observed_at"])["value"] if rows else None,
-                "rows": rows})
+                "score": score, "latest_value": latest_value, "rows": rows})
         return {"days": days, "metrics": result, "global_score": None,
                 "observation_count": len(observations), "interpretation": "自定义指标的描述性记录，不代表人的价值"}
 
@@ -194,22 +214,31 @@ class Repository:
     def search(self, query, limit=3):
         words = re.findall(r"[a-zA-Z0-9]{2,}|[\u4e00-\u9fff]{2,}", query.lower())
         terms = set(words)
+        # 中文按二元组切分，弥补没有分词器的情况。
         for word in words:
             if re.search(r"[\u4e00-\u9fff]", word):
-                terms.update(word[i:i+2] for i in range(len(word)-1))
+                for i in range(len(word) - 1):
+                    terms.add(word[i:i+2])
         ranked = []
         for row in self.all("documents"):
             text = (row["title"] + " " + row["content"]).lower()
-            score = sum(term in text for term in terms)
+            score = 0
+            for term in terms:
+                if term in text:
+                    score += 1
             if score:
                 ranked.append((score, row))
         ranked.sort(key=lambda pair: pair[0], reverse=True)
-        return [{"id": row["id"], "title": row["title"], "source": row["source"],
-                 "excerpt": row["content"][:1800], "verified": False}
-                for _, row in ranked[:limit]]
+        results = []
+        for _, row in ranked[:limit]:
+            results.append({"id": row["id"], "title": row["title"], "source": row["source"],
+                            "excerpt": row["content"][:1800], "verified": False})
+        return results
 
     def goal(self, raw, goal_id=None):
-        previous = self.get("goals", goal_id) if goal_id else {}
+        previous = {}
+        if goal_id:
+            previous = self.get("goals", goal_id)
         data = previous | raw
         if not isinstance(data.get("title"), str) or not isinstance(data.get("success_criterion"), str):
             raise ValueError("目标与完成标准必须为文本")  # noqa: TRY004 - 输入校验统一用 ValueError
@@ -220,7 +249,10 @@ class Repository:
             raise ValueError("请填写目标、可核查的完成标准和有效领域")
         if type(priority) is not int or not 1 <= priority <= 5 or status not in {"active", "paused", "completed"}:
             raise ValueError("目标优先级或状态无效")
+        deadline = None
+        if data.get("deadline"):
+            deadline = timestamp(data["deadline"])
         return self.put("goals", {"id": goal_id or identifier("G"), "title": title, "success_criterion": criterion,
             "priority": priority, "domain": domain, "status": status,
-            "deadline": timestamp(data["deadline"]) if data.get("deadline") else None,
+            "deadline": deadline,
             "created_at": previous.get("created_at", now()), "updated_at": now()})

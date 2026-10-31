@@ -1,4 +1,4 @@
-"""Desktop sidecar process with a one-time stdin/stdout handshake."""
+"""桌面 sidecar 进程：通过一次性 stdin/stdout 握手启动本地服务。"""
 
 from __future__ import annotations
 
@@ -24,40 +24,49 @@ INSTANCE_LOCK = ".q-one-desktop.lock"
 
 
 class SidecarError(RuntimeError):
-    pass
+    """sidecar 启动或握手失败时抛出。"""
 
 
 def _read_handshake(stream) -> dict[str, Any]:
+    """从标准输入读取一行握手 JSON，并逐项校验。
+
+    校验内容包括：能力令牌、控制令牌、云密钥、语言、以及可选的本机模型端点
+    （端点必须是回环、无凭据、无查询串/片段的 http 地址）。
+    """
     line = stream.readline(MAX_HANDSHAKE_BYTES + 1)
     if not line:
         raise SidecarError("missing desktop handshake")
     if len(line.encode("utf-8")) > MAX_HANDSHAKE_BYTES:
         raise SidecarError("desktop handshake is too large")
+
     try:
         value = json.loads(line)
     except json.JSONDecodeError as exc:
         raise SidecarError("desktop handshake is not valid JSON") from exc
     if not isinstance(value, dict):
         raise SidecarError("desktop handshake must be an object")
+
     capability = value.get("capability")
     if not isinstance(capability, str) or not 32 <= len(capability) <= 512:
         raise SidecarError("desktop capability is invalid")
+
     control = value.get("control")
     if not isinstance(control, str) or not 32 <= len(control) <= 512:
         raise SidecarError("desktop control token is invalid")
+
     cloud_key = value.get("cloud_key")
     if cloud_key is not None and (not isinstance(cloud_key, str) or len(cloud_key) > 8192):
         raise SidecarError("desktop cloud key is invalid")
+
     locale = value.get("locale")
     if locale is not None and (not isinstance(locale, str) or len(locale) > 32):
         raise SidecarError("desktop locale is invalid")
-    local_values = (
-        value.get("local_model_url"),
-        value.get("local_model_name"),
-        value.get("local_model_token"),
-    )
-    if any(item is not None for item in local_values):
-        local_url, local_name, local_token = local_values
+
+    # 本机模型相关字段要么全不给，要么三个都合法且指向回环地址。
+    local_url = value.get("local_model_url")
+    local_name = value.get("local_model_name")
+    local_token = value.get("local_model_token")
+    if local_url is not None or local_name is not None or local_token is not None:
         if (
             not isinstance(local_url, str)
             or not isinstance(local_name, str)
@@ -76,10 +85,12 @@ def _read_handshake(stream) -> dict[str, Any]:
             or parsed.fragment
         ):
             raise SidecarError("desktop local model endpoint must be an uncredentialed loopback URL")
+
     return value
 
 
 def _ready_payload(port: int) -> dict[str, Any]:
+    """构造"就绪"事件，供前端读取端口与进程信息。"""
     return {
         "event": "ready",
         "port": port,
@@ -89,19 +100,27 @@ def _ready_payload(port: int) -> dict[str, Any]:
 
 
 def parser() -> argparse.ArgumentParser:
+    """构造 sidecar 命令行参数解析器。"""
     command = argparse.ArgumentParser(prog="qone-life-sidecar")
     command.add_argument("--data-dir", required=True)
     return command
 
 
 def main(argv: list[str] | None = None, *, stdin=None, stdout=None) -> int:
+    """sidecar 主入口：可选转发 restore 子命令，否则握手后启动 uvicorn。"""
     argv = list(argv if argv is not None else sys.argv[1:])
+
+    # 兼容 `sidecar restore ...`：转交给桌面恢复入口。
     if argv[:1] == ["restore"]:
         from .desktop_restore import main as restore_main
+
         return restore_main(argv[1:], stdin=stdin)
+
     args = parser().parse_args(argv)
     stdin = stdin or sys.stdin
     stdout = stdout or sys.stdout
+
+    # 准备数据目录并收紧权限。
     data_dir = Path(args.data_dir).expanduser().resolve()
     data_dir.mkdir(parents=True, exist_ok=True, mode=0o700)
     if os.name != "nt":
@@ -111,21 +130,21 @@ def main(argv: list[str] | None = None, *, stdin=None, stdout=None) -> int:
         handshake = _read_handshake(stdin)
     except SidecarError as exc:
         print(
-            json.dumps(
-                {"event": "error", "code": "HANDSHAKE_INVALID", "message": str(exc)}
-            ),
+            json.dumps({"event": "error", "code": "HANDSHAKE_INVALID", "message": str(exc)}),
             file=stdout,
             flush=True,
         )
         return 2
 
     try:
+        # 用数据目录锁保证同一目录只有一个 sidecar 实例。
         with exclusive_file_lock(data_dir / INSTANCE_LOCK, timeout=0, fail_fast=True):
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             sock.bind(("127.0.0.1", 0))
             sock.listen(2048)
             port = int(sock.getsockname()[1])
+
             app = create_app(
                 data_dir,
                 capability=handshake["capability"],
@@ -146,6 +165,8 @@ def main(argv: list[str] | None = None, *, stdin=None, stdout=None) -> int:
                 server_header=False,
             )
             server = uvicorn.Server(config)
+
+            # 先通知前端端口就绪，再把已监听的 socket 交给 uvicorn 运行。
             print(json.dumps(_ready_payload(port)), file=stdout, flush=True)
             server.run(sockets=[sock])
             return 0

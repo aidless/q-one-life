@@ -1,4 +1,4 @@
-"""Proactive local planner: data-driven refresh, bounded calls, explicit feedback."""
+"""主动式本地规划器：数据驱动的刷新、有界调用与显式反馈。"""
 import hashlib
 import json
 import threading
@@ -25,8 +25,14 @@ def configuration_digest(config):
 
 class Planner:
     def __init__(self, repository, ledger, settings, model_lock, runner=generate_plan):
-        self.repo, self.ledger, self.settings, self.model_lock, self.runner = repository, ledger, settings, model_lock, runner
-        self.lock, self.wake, self.stopping = threading.RLock(), threading.Event(), threading.Event()
+        self.repo = repository
+        self.ledger = ledger
+        self.settings = settings
+        self.model_lock = model_lock
+        self.runner = runner
+        self.lock = threading.RLock()
+        self.wake = threading.Event()
+        self.stopping = threading.Event()
         self.thread = None
         self.current = None
         self.cards = []
@@ -57,102 +63,143 @@ class Planner:
         self.wake.set()
 
     def snapshot(self):
+        """收集当前所有可用于生成推荐的本地事实，构造本次快照。"""
         config = self.settings()
         english = str(config.get("resolved_language", "zh-CN")).lower().startswith("en")
         today = datetime.now().astimezone().date().isoformat()
         all_tasks = self.repo.all("tasks")
-        reserved = sum(t.get("focus_minutes", t.get("estimate_minutes", 25)) for t in all_tasks if t.get("focus_date") == today)
+
+        # 今日已被其它推荐占用的时间要从每日可用额度中扣除。
+        reserved = 0
+        for t in all_tasks:
+            if t.get("focus_date") == today:
+                reserved += t.get("focus_minutes", t.get("estimate_minutes", 25))
         config["daily_available_minutes"] = max(0, config["daily_available_minutes"] - reserved)
+
         advanced = self.system.planning_snapshot(today=today, available_minutes=config["daily_available_minutes"])
         if advanced is not None:
             return advanced
+
         goals = [g for g in self.repo.all("goals") if g["status"] == "active"]
         goals.sort(key=lambda g: (-g["priority"], g.get("deadline") or "9999"))
         active_ids = {g["id"] for g in goals}
         goal_map = {g["id"]: g for g in self.repo.all("goals")}
-        tasks = [t for t in self.repo.all("tasks") if not t["done"] and
-                 (not t.get("goal_id") or t["goal_id"] in active_ids)]
+
+        # 只保留未完成、且未关联到已失活目标的任务。
+        tasks = []
+        for t in self.repo.all("tasks"):
+            if t["done"]:
+                continue
+            if t.get("goal_id") and t["goal_id"] not in active_ids:
+                continue
+            tasks.append(t)
         tasks.sort(key=lambda t: (t.get("deadline") or "9999", -t.get("priority", 3), t["created_at"]))
+
         candidates = []
         for task in tasks[:6]:
             if task.get("focus_date") == today:
                 continue
             linked = goal_map.get(task.get("goal_id"))
-            reason = (
-                "An unfinished task"
-                + (f"; review by {task['deadline']}" if task.get("deadline") else "; no deadline set")
-                if english
-                else "尚未完成的任务"
-                + (f"；回看期限 {task['deadline']}" if task.get("deadline") else "；尚未设定期限")
-            )
+
+            if english:
+                if task.get("deadline"):
+                    reason = "An unfinished task" + f"; review by {task['deadline']}"
+                else:
+                    reason = "An unfinished task" + "; no deadline set"
+            else:
+                if task.get("deadline"):
+                    reason = "尚未完成的任务" + f"；回看期限 {task['deadline']}"
+                else:
+                    reason = "尚未完成的任务" + "；尚未设定期限"
             if linked:
-                reason += ("; linked goal: " if english else "；关联目标：") + linked["title"]
+                if english:
+                    reason += "; linked goal: " + linked["title"]
+                else:
+                    reason += "；关联目标：" + linked["title"]
+
+            if english:
+                first_step = "Choose one concrete part of this task that fits the available time; record any missing dependency first."
+                done_when = "Save the output and record whether the task is complete; keep unfinished parts on the list."
+            else:
+                first_step = "对照任务描述，选出这次时间内能完成的一个具体部分；缺少材料时先记录依赖。"
+                done_when = "保存本次产出，并记录任务是否完成；未完成的部分继续保留。"
+
+            revision = digest({k: task.get(k) for k in ("title", "deadline", "priority", "goal_id", "done")})
             candidates.append({"id": "task:" + task["id"], "kind": "task", "task_id": task["id"], "goal_id": task.get("goal_id"),
                 "title": task["title"][:200], "reason": reason, "domain": task["domain"],
-                "first_step": (
-                    "Choose one concrete part of this task that fits the available time; record any missing dependency first."
-                    if english
-                    else "对照任务描述，选出这次时间内能完成的一个具体部分；缺少材料时先记录依赖。"
-                ),
-                "done_when": (
-                    "Save the output and record whether the task is complete; keep unfinished parts on the list."
-                    if english
-                    else "保存本次产出，并记录任务是否完成；未完成的部分继续保留。"
-                ),
+                "first_step": first_step,
+                "done_when": done_when,
                 "minutes": task.get("estimate_minutes", 25),
-                "revision": digest({k: task.get(k) for k in ("title", "deadline", "priority", "goal_id", "done")})})
+                "revision": revision})
+
         linked_tasks = {t.get("goal_id") for t in tasks}
         for goal in goals[:4]:
             if goal["id"] in linked_tasks:
                 continue
             completed = [t for t in all_tasks if t.get("goal_id") == goal["id"] and t["done"]]
+
             if english:
-                title = ("Check the next gap: " if completed else "Define the first deliverable: ") + goal["title"][:120]
-                reason = (
-                    ("Completed actions exist; compare the current output with the remaining success criteria."
-                     if completed
-                     else "This goal has no open action yet; define the next verifiable slice first.")
-                    + f" Goal priority {goal['priority']}/5."
-                )
-                first_step = (
-                    "Compare the latest output with the success criterion and write one condition that is still unmet."
-                    if completed
-                    else "Write one small deliverable for this session and how you will check it."
-                )
+                if completed:
+                    title = "Check the next gap: " + goal["title"][:120]
+                    reason = "Completed actions exist; compare the current output with the remaining success criteria."
+                else:
+                    title = "Define the first deliverable: " + goal["title"][:120]
+                    reason = "This goal has no open action yet; define the next verifiable slice first."
+                reason = reason + f" Goal priority {goal['priority']}/5."
+                if completed:
+                    first_step = "Compare the latest output with the success criterion and write one condition that is still unmet."
+                else:
+                    first_step = "Write one small deliverable for this session and how you will check it."
                 done_when = "Save a concrete deliverable description and its acceptance check; this does not complete the whole goal."
             else:
-                title = ("核对下一项缺口：" if completed else "明确第一个交付物：") + goal["title"][:120]
-                reason = ("已有行动完成，需对照目标核对剩余缺口。" if completed else "该目标还没有未完成的待办，先把下一步的验收范围写清楚。") + "目标优先级 " + str(goal["priority"]) + "/5。"
-                first_step = "对照完成标准，" + ("检查最近产出，写下一个尚未满足的条件。" if completed else "写下一个这次时间内可以交付的小成果，以及如何检查它。")
+                if completed:
+                    title = "核对下一项缺口：" + goal["title"][:120]
+                    reason = "已有行动完成，需对照目标核对剩余缺口。"
+                else:
+                    title = "明确第一个交付物：" + goal["title"][:120]
+                    reason = "该目标还没有未完成的待办，先把下一步的验收范围写清楚。"
+                reason = reason + "目标优先级 " + str(goal["priority"]) + "/5。"
+                if completed:
+                    first_step = "对照完成标准，" + "检查最近产出，写下一个尚未满足的条件。"
+                else:
+                    first_step = "对照完成标准，" + "写下一个这次时间内可以交付的小成果，以及如何检查它。"
                 done_when = "保存一条具体的交付物描述和验收办法；这一步不代表整个目标完成。"
+
+            completed_actions = []
+            for t in all_tasks:
+                if t.get("goal_id") == goal["id"] and t["done"]:
+                    completed_actions.append({"id": t["id"], "title": t["title"]})
+            completed_actions = completed_actions[:8]
             candidates.append({"id": "goal:" + goal["id"], "kind": "goal", "goal_id": goal["id"], "task_id": None,
                 "title": title, "reason": reason,
                 "first_step": first_step,
                 "done_when": done_when,
-                "domain": goal["domain"], "minutes": min(25, config["daily_available_minutes"]), "revision": digest({"goal": goal, "completed_actions": [{"id": t["id"], "title": t["title"]} for t in all_tasks if t.get("goal_id") == goal["id"] and t["done"]][:8]})})
+                "domain": goal["domain"], "minutes": min(25, config["daily_available_minutes"]),
+                "revision": digest({"goal": goal, "completed_actions": completed_actions})})
+
+        # 已到期、但结果仍未记录的决定，插到最前面提醒回看。
         for state in self.ledger.project_all().values():
             if state["status"] == "decided" and datetime.fromisoformat(state["deadline"].replace("Z", "+00:00")) <= datetime.now(timezone.utc):
+                if english:
+                    title = "Review: " + state["question"][:160]
+                    reason = "The review time set before acting has arrived, but the outcome is still unrecorded."
+                    first_step = "Open this decision and record the actual result against the criterion set in advance."
+                    done_when = "Save one outcome review; record it explicitly as unknown when it cannot be judged."
+                else:
+                    title = "回看：" + state["question"][:160]
+                    reason = "已到事前约定的回看时间，结果仍未记录"
+                    first_step = "打开这次选择，对照事前标准填写实际结果。"
+                    done_when = "保存一次结果回看；无法判断时明确记为未知。"
                 candidates.insert(0, {"id": "review:" + state["decision_id"], "kind": "review", "decision_id": state["decision_id"],
                     "task_id": None, "goal_id": None,
-                    "title": ("Review: " if english else "回看：") + state["question"][:160],
-                    "reason": (
-                        "The review time set before acting has arrived, but the outcome is still unrecorded."
-                        if english
-                        else "已到事前约定的回看时间，结果仍未记录"
-                    ),
+                    "title": title,
+                    "reason": reason,
                     "domain": state["domain"], "minutes": 5,
-                    "first_step": (
-                        "Open this decision and record the actual result against the criterion set in advance."
-                        if english
-                        else "打开这次选择，对照事前标准填写实际结果。"
-                    ),
-                    "done_when": (
-                        "Save one outcome review; record it explicitly as unknown when it cannot be judged."
-                        if english
-                        else "保存一次结果回看；无法判断时明确记为未知。"
-                    ),
+                    "first_step": first_step,
+                    "done_when": done_when,
                     "revision": digest({"status": state["status"], "deadline": state["deadline"]})})
-        # Preserve feedback without making it part of the model's private context.
+
+        # 保留用户反馈，但不把它放进模型可见的私有上下文。
         eligible = []
         for candidate in candidates:
             key = "P-" + digest(candidate["id"])[:24]
@@ -165,15 +212,44 @@ class Planner:
                     and previous.get("status") in {"accepted", "dismissed"}):
                 continue
             eligible.append(candidate)
+
         scores = self.repo.scores(7)
-        metrics = [{k: m[k] for k in ("id", "name", "domain", "unit", "direction", "latest_value", "n", "coverage")}
-                   for m in scores["metrics"][:6]]
-        query = " ".join(g["title"] for g in goals[:3])
-        evidence = [e | {"excerpt": e["excerpt"][:600]} for e in self.repo.search(query)[:2]]
+        metrics = []
+        for m in scores["metrics"][:6]:
+            metrics.append({k: m[k] for k in ("id", "name", "domain", "unit", "direction", "latest_value", "n", "coverage")})
+
+        goal_titles = []
+        for g in goals[:3]:
+            goal_titles.append(g["title"])
+        query = " ".join(goal_titles)
+        evidence = []
+        for e in self.repo.search(query)[:2]:
+            evidence.append(e | {"excerpt": e["excerpt"][:600]})
+
+        goal_views = []
+        for g in goals[:4]:
+            goal_views.append({k: g[k] for k in ("id", "title", "domain", "success_criterion", "priority", "deadline")})
+
+        recent_completed = []
+        for t in all_tasks:
+            if t["done"]:
+                recent_completed.append({"title": t["title"][:200], "goal_id": t.get("goal_id")})
+        recent_completed = recent_completed[:8]
+
+        # 每日可用时间不足 5 分钟时不再给出候选。
+        if config["daily_available_minutes"] >= 5:
+            limited_candidates = []
+            for c in eligible:
+                if c["minutes"] <= config["daily_available_minutes"]:
+                    limited_candidates.append(c)
+            limited_candidates = limited_candidates[:8]
+        else:
+            limited_candidates = []
+
         return {"date": today, "available_minutes": config["daily_available_minutes"],
-            "goals": [{k: g[k] for k in ("id", "title", "domain", "success_criterion", "priority", "deadline")} for g in goals[:4]],
-            "recent_completed_actions": [{"title": t["title"][:200], "goal_id": t.get("goal_id")} for t in all_tasks if t["done"]][:8],
-            "recent_observations": metrics, "evidence": evidence, "candidates": [c for c in eligible if c["minutes"] <= config["daily_available_minutes"]][:8] if config["daily_available_minutes"] >= 5 else [],
+            "goals": goal_views,
+            "recent_completed_actions": recent_completed,
+            "recent_observations": metrics, "evidence": evidence, "candidates": limited_candidates,
             "limits": {"goals_included": min(4, len(goals)), "goals_total": len(goals), "pending_tasks_total": len(tasks)}}
 
     def _prepare(self):
@@ -183,7 +259,10 @@ class Planner:
             if input_sha != self.input_sha:
                 self.current, self.input_sha = snapshot, input_sha
                 self.generated_at, self.error = now(), None
-                self.model_status = "pending" if snapshot["candidates"] else "idle"
+                if snapshot["candidates"]:
+                    self.model_status = "pending"
+                else:
+                    self.model_status = "idle"
                 self.cards = []
                 budget = snapshot["available_minutes"]
                 for candidate in snapshot["candidates"]:
@@ -192,12 +271,24 @@ class Planner:
                     if candidate["minutes"] > budget:
                         continue
                     minutes = candidate["minutes"]
-                    self.cards.append(self._save(candidate, candidate["title"], candidate["reason"], minutes, ("adaptive" if snapshot.get("system",{}).get("mode")=="adaptive" else "scenario") if snapshot.get("system") else "rules", input_sha))
+                    # 根据系统模式决定来源标记。
+                    if snapshot.get("system"):
+                        if snapshot.get("system", {}).get("mode") == "adaptive":
+                            source = "adaptive"
+                        else:
+                            source = "scenario"
+                    else:
+                        source = "rules"
+                    self.cards.append(self._save(candidate, candidate["title"], candidate["reason"], minutes, source, input_sha))
                     budget -= minutes
             if snapshot.get("system"):
-                self.model_status = "conditional" if self.cards else "needs_information"
+                if self.cards:
+                    self.model_status = "conditional"
+                else:
+                    self.model_status = "needs_information"
             elif not snapshot["candidates"]:
-                self.model_status, self.error = "idle", None
+                self.model_status = "idle"
+                self.error = None
             return snapshot, input_sha
 
     def _save(self, candidate, title, reason, minutes, source, input_sha, run_id=None, detail=None):
@@ -205,8 +296,18 @@ class Planner:
             "minutes": minutes, "source": source, "status": "active", "input_sha256": input_sha, "run_id": run_id,
             "created_at": now(), "generated_at": now()}
         english = str(self.settings().get("resolved_language", "zh-CN")).lower().startswith("en")
-        fallback = "Details need refinement" if english else "具体内容待细化"
-        card.update({key: (detail or {}).get(key) or candidate.get(key) or fallback for key in ("first_step", "done_when")})
+        fallback = "具体内容待细化"
+        if english:
+            fallback = "Details need refinement"
+        refined = {}
+        for key in ("first_step", "done_when"):
+            value = (detail or {}).get(key)
+            if not value:
+                value = candidate.get(key)
+            if not value:
+                value = fallback
+            refined[key] = value
+        card.update(refined)
         card["proposal_sha256"] = digest({k: card[k] for k in ("title", "reason", "first_step", "done_when", "minutes", "source", "revision", "input_sha256")})
         self.repo.put("suggestions", card)
         return card
@@ -215,10 +316,16 @@ class Planner:
         snapshot, _ = self._prepare()
         config = self.settings()
         with self.lock:
+            if config["auto_recommend_enabled"]:
+                status = self.model_status
+                items = self.cards
+            else:
+                status = "paused"
+                items = []
             return {"enabled": config["auto_recommend_enabled"], "provider": config["auto_recommend_provider"],
-                "status": self.model_status if config["auto_recommend_enabled"] else "paused", "error": self.error,
+                "status": status, "error": self.error,
                 "date": snapshot["date"], "generated_at": self.generated_at, "input_sha256": self.input_sha,
-                "items": self.cards if config["auto_recommend_enabled"] else [],
+                "items": items,
                 "has_goals": bool(snapshot["goals"]), "has_candidates": bool(snapshot["candidates"]),
                 "available_minutes": snapshot["available_minutes"], "limits": snapshot["limits"], "system": snapshot.get("system")}
 
@@ -227,10 +334,12 @@ class Planner:
         config = self.settings()
         if snapshot.get("system") or not config["auto_recommend_enabled"] or not snapshot["candidates"]:
             return
-        # Account for configuration changes but never hash or send cloud credentials.
+        # 记录配置变化，但绝不对云端凭证做哈希或外发。
         config_sha = configuration_digest(config)
+        retry_after = config["auto_recommend_interval_minutes"] * 60
+        if self.error:
+            retry_after = 300
         with self.lock:
-            retry_after = 300 if self.error else config["auto_recommend_interval_minutes"] * 60
             if (not force and self.attempt_sha == input_sha and self.attempt_config == config_sha
                     and time.monotonic() - self.last_attempt < retry_after):
                 return
@@ -258,8 +367,12 @@ class Planner:
                     self.notify()
                     return
                 candidates = {c["id"]: c for c in snapshot["candidates"]}
-                self.cards = [self._save(candidates[item["candidate_id"]], item["title"], item["reason"], item["minutes"],
-                                         result.provider + ":" + result.model, input_sha, run_id, item) for item in items]
+                cards = []
+                for item in items:
+                    candidate = candidates[item["candidate_id"]]
+                    cards.append(self._save(candidate, item["title"], item["reason"], item["minutes"],
+                                            result.provider + ":" + result.model, input_sha, run_id, item))
+                self.cards = cards
                 self.repo.put("runs", run)
                 self.generated_at, self.model_status, self.error = now(), "ready", None
         except ProviderError as exc:
@@ -292,12 +405,26 @@ class Planner:
                         "estimate_minutes": card["minutes"], "priority": 3}
                 if card["kind"] == "system":
                     task.update({k:card[k] for k in ("system_action_id","system_action_sha256","system_commitments","system_revision")})
-                    task["system_prediction"] = next(s for s in self.current["system"]["comparison"]["scenarios"] if s["id"]==card["system_scenario"])
+                    # 找出与该系统候选对应的情景预测。
+                    system_prediction = None
+                    for s in self.current["system"]["comparison"]["scenarios"]:
+                        if s["id"] == card["system_scenario"]:
+                            system_prediction = s
+                            break
+                    if system_prediction is None:
+                        raise StopIteration
+                    task["system_prediction"] = system_prediction
                 self.repo.put("tasks", task | {"focus_date": self.current["date"], "focus_minutes": card["minutes"], "focus_recommendation": card})
-            self.repo.put("suggestions", card | {"status": "accepted" if action == "accept" else "dismissed",
+            feedback_status = "dismissed"
+            if action == "accept":
+                feedback_status = "accepted"
+            self.repo.put("suggestions", card | {"status": feedback_status,
                 "feedback_date": self.current["date"]})
             self.notify()
-            return {"ok": True, "decision_id": card.get("decision_id") if action == "accept" else None}
+            decision_id = None
+            if action == "accept":
+                decision_id = card.get("decision_id")
+            return {"ok": True, "decision_id": decision_id}
 
     def _loop(self):
         while not self.stopping.is_set():
@@ -308,7 +435,7 @@ class Planner:
             try:
                 self.tick()
             except Exception:  # noqa: BLE001 - 调度器兜底：单条损坏记录不能杀死循环
-                # A corrupt local record must not kill the scheduler or expose private text.
+                # 单条本地损坏记录不能杀死调度器，也不能暴露私有文本。
                 with self.lock:
                     self.model_status, self.error = "error", "自动推荐暂时无法更新，请检查本地数据与模型连接"
                 self.stopping.wait(5)

@@ -1,6 +1,8 @@
-"""Deterministic research-production controls for the Q-One portfolio (split package).
+"""Q-One 研究生产控制（拆分后的包）。
 
-Re-exports the original public API from themed submodules."""
+本文件只负责把各主题子模块里的公共 API 重新导出，保持与拆分前一致的调用入口。
+调用方应始终从 ``qone_life.research_factory`` 导入，而不是直接导入子模块。
+"""
 from __future__ import annotations
 
 from ._helpers import (
@@ -38,6 +40,7 @@ from .triage import (
     write_triage,
 )
 
+# 对外公开的名字：拆分前 research_factory 模块的完整公共 API。
 __all__ = [
     "ABSOLUTE_PATH_RE",
     "GRAPHICSPATH_RE",

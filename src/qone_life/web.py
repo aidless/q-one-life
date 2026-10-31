@@ -1,4 +1,4 @@
-"""Q-One: a local, single-user Chinese workspace backed by real model adapters."""
+"""Q-One：本机单用户的中文工作台，后端接真实模型适配器。"""
 
 from __future__ import annotations
 
@@ -72,6 +72,7 @@ def _error_response(
     retryable: bool = False,
     request_id: str | None = None,
 ):
+    """构造统一结构的错误响应体，并带上请求追踪号。"""
     identifier = request_id or uuid4().hex
     return JSONResponse(
         {
@@ -102,6 +103,7 @@ def create_app(
     local_model_name: str | None = None,
     local_model_token: str | None = None,
 ):
+    """构建 FastAPI 应用：装配仓储、决策账本、规划器与全部路由。"""
     directory = Path(data_dir or os.environ.get("QONE_HOME", Path.home() / ".local/share/q-one"))
     repository = Repository(directory)
     ledger = Ledger(directory / "decisions.jsonl")
@@ -110,8 +112,10 @@ def create_app(
     lock = threading.RLock()
     model_lock = threading.Lock()
     settings_path = directory / "settings.json"
+
     @asynccontextmanager
     async def lifespan(app):
+        # 应用启动时拉起后台规划器，退出时停止它。
         app.state.planner.start()
         try:
             yield
@@ -126,6 +130,7 @@ def create_app(
     local_model_override = bool(local_model_url and local_model_name and local_model_token)
 
     def resolved_language(value: dict):
+        """确定界面语言：优先显式取值，否则依次回退到环境变量与系统区域。"""
         selected = value.get("language", "system")
         if selected in {"zh-CN", "en-US"}:
             return selected
@@ -137,13 +142,17 @@ def create_app(
                 candidate = system_locale.getlocale()[0]
             except (ValueError, TypeError):
                 candidate = None
-        return "en-US" if str(candidate or "").lower().startswith("en") else "zh-CN"
+        if str(candidate or "").lower().startswith("en"):
+            return "en-US"
+        return "zh-CN"
 
     def settings():
-        saved = json.loads(settings_path.read_text()) if settings_path.exists() else {}
+        """读取并合并默认设置与磁盘上的已保存设置。"""
+        saved = {}
+        if settings_path.exists():
+            saved = json.loads(settings_path.read_text())
         value = DEFAULTS | saved
-        # A pre-1.0 installation already has settings and should not be sent
-        # through first-run setup merely because the new flag did not exist.
+        # 早于 1.0 的安装已有设置，不应因为新出现的开关就重新走首次设置流程。
         if settings_path.exists() and "onboarding_complete" not in saved:
             value["onboarding_complete"] = True
         value["resolved_language"] = resolved_language(value)
@@ -158,6 +167,7 @@ def create_app(
         return value
 
     def public_settings():
+        """生成可安全返回给前端的设置副本（移除明文密钥）。"""
         value = settings()
         value["cloud_key_set"] = bool(value.pop("cloud_key", ""))
         local_url = value.pop("local_url", None)
@@ -168,6 +178,7 @@ def create_app(
         return value
 
     def save_settings(raw):
+        """校验并原子写回设置；任何非法输入都以中文错误信息拒绝。"""
         if secret_managed and ("cloud_key" in raw or raw.get("clear_cloud_key")):
             raise ValueError("桌面版接口密钥由系统密钥存储管理，请从设置页重新保存")
         current = settings()
@@ -198,7 +209,8 @@ def create_app(
                 if not isinstance(raw[key], str):
                     raise ValueError("设置项必须为文本")
                 if key == "cloud_key" and raw[key] == "":
-                    continue  # Empty input preserves the existing secret.
+                    # 空输入表示保留现有密钥，不做覆盖。
+                    continue
                 current[key] = raw[key].strip()
         if raw.get("clear_cloud_key"):
             current["cloud_key"] = ""
@@ -232,6 +244,7 @@ def create_app(
 
     @app.middleware("http")
     async def local_boundary(request: Request, call_next):
+        # 本机边界守卫：校验客户端凭据、控制令牌、来源、JSON 类型与体积，并补充安全响应头。
         request_id = uuid4().hex
         request.state.qone_request_id = request_id
         if capability is not None and (
@@ -382,10 +395,19 @@ def create_app(
         )
 
     def public_decisions():
-        return [{k: v for k, v in state.items() if k != "events"}
-                for state in reversed(list(ledger.project_all().values()))]
+        """返回决策状态列表（去掉内部的重放事件字段）。"""
+        result = []
+        for state in reversed(list(ledger.project_all().values())):
+            public_state = {}
+            for key, value in state.items():
+                if key == "events":
+                    continue
+                public_state[key] = value
+            result.append(public_state)
+        return result
 
     def sync_tasks():
+        """把已决定或已结算的决策同步成对应任务（已存在则跳过）。"""
         for state in ledger.project_all().values():
             if state["status"] not in {"decided", "resolved"}:
                 continue
@@ -395,7 +417,13 @@ def create_app(
                 continue
             except KeyError:
                 pass
-            option = next(o for o in state["options"] if o["id"] == state["human_decision"]["option_id"])
+            option = None
+            for candidate_option in state["options"]:
+                if candidate_option["id"] == state["human_decision"]["option_id"]:
+                    option = candidate_option
+                    break
+            if option is None:
+                raise StopIteration
             repository.put("tasks", {"id": task_id, "title": option["label"], "domain": state["domain"],
                 "deadline": state["deadline"], "done": state["status"] == "resolved" and state["outcome"]["success"] == "yes",
                 "decision_id": state["decision_id"], "created_at": now()})
@@ -411,9 +439,17 @@ def create_app(
         with lock:
             sync_tasks()
             public = public_settings()
+            documents = []
+            for row in repository.all("documents"):
+                document = {}
+                for key, value in row.items():
+                    if key == "content":
+                        continue
+                    document[key] = value
+                documents.append(document)
             return {"goals": repository.all("goals"), "planner": planner.state(), "decisions": public_decisions(), "tasks": repository.all("tasks"),
                 "scores": repository.scores(days), "report": build_report(ledger), "domains": DOMAINS,
-                "documents": [{k: v for k, v in row.items() if k != "content"} for row in repository.all("documents")],
+                "documents": documents,
                 "reviews": repository.all("reviews"), "runs": repository.all("runs")[:30],
                 "settings": public, "demo": bool(os.environ.get("QONE_DEMO")),
                 "locale": public["resolved_language"], "version": __version__}
@@ -423,11 +459,20 @@ def create_app(
         if not isinstance(raw.get("options"), list):
             raise ValueError("请填写2到8个备选方案")  # noqa: TRY004 - 校验消息需原样返回给用户（ValueError 专用处理器）
         baseline = raw.get("baseline_option_id")
-        if baseline not in {o.get("id") for o in raw.get("options", []) if isinstance(o, dict)}:
+        option_ids = set()
+        for option in raw.get("options", []):
+            if isinstance(option, dict):
+                option_ids.add(option.get("id"))
+        if baseline not in option_ids:
             raise ValueError("请先选出你自己的初始选择")
         if raw.get("domain") not in DOMAINS:
             raise ValueError("领域无效")
-        raw = {k: v for k, v in raw.items() if k != "baseline_option_id"}
+        cleaned = {}
+        for key, value in raw.items():
+            if key == "baseline_option_id":
+                continue
+            cleaned[key] = value
+        raw = cleaned
         if len(str(raw.get("question", ""))) > 500 or len(str(raw.get("context", ""))) > 15000:
             raise ValueError("问题最多500字，背景最多15000字")
         with lock:
@@ -440,6 +485,7 @@ def create_app(
         return ledger.get(decision_id)
 
     def preview_digest(context, provider, config):
+        """生成预览内容的快照摘要，用于校验发送内容是否一致。"""
         if provider == "local":
             url = config.get("local_url", "")
             model = config.get("local_model", "")
@@ -491,15 +537,14 @@ def create_app(
         evidence = repository.search(state["question"] + " " + state["success_criterion"]) if raw.get("use_evidence", True) else []
         prepared = public_context(state, evidence)
         digest = preview_digest(prepared, provider, config)
-        endpoint = (
-            config.get("local_url", "")
-            if provider == "local"
-            else config.get("cloud_url", "")
-            if provider == "cloud"
-            else config["ollama_url"]
-            if provider == "ollama"
-            else ""
-        )
+        if provider == "local":
+            endpoint = config.get("local_url", "")
+        elif provider == "cloud":
+            endpoint = config.get("cloud_url", "")
+        elif provider == "ollama":
+            endpoint = config["ollama_url"]
+        else:
+            endpoint = ""
         remote = provider in {"ollama", "cloud"} and not is_loopback(endpoint)
         if remote and (raw.get("remote_confirmed") is not True or raw.get("snapshot_sha256") != digest):
             raise ValueError("请先预览当前发送内容并确认；内容变化后需要重新预览")
@@ -559,11 +604,11 @@ def create_app(
 
     @app.post("/api/system", status_code=201)
     def save_system(raw: dict):
-        if "parent_revision" not in raw or not isinstance(raw.get("model"),dict):
+        if "parent_revision" not in raw or not isinstance(raw.get("model"), dict):
             raise ValueError("需要model和parent_revision；首次导入的parent_revision为null")
         with planner.lock:
-            result=planner.system.save(raw["model"],raw["parent_revision"])
-            planner.input_sha=None
+            result = planner.system.save(raw["model"], raw["parent_revision"])
+            planner.input_sha = None
             return result
 
     @app.post("/api/system/observations", status_code=201)
@@ -590,9 +635,14 @@ def create_app(
     @app.post("/api/system/evaluate")
     def evaluate_system(raw: dict):
         with planner.lock:
-            result=planner.system.evaluate(raw.get("as_of",now()),available_minutes=raw.get("available_minutes",settings()["daily_available_minutes"]),
-                max_actions=raw.get("max_actions",3),horizon_days=raw.get("horizon_days"))
-            if result is None: raise ValueError("请先导入并声明人生模型")
+            result = planner.system.evaluate(
+                raw.get("as_of", now()),
+                available_minutes=raw.get("available_minutes", settings()["daily_available_minutes"]),
+                max_actions=raw.get("max_actions", 3),
+                horizon_days=raw.get("horizon_days"),
+            )
+            if result is None:
+                raise ValueError("请先导入并声明人生模型")
             return result
 
     @app.post("/api/system/replay")
@@ -701,62 +751,80 @@ def create_app(
 
     @app.get("/api/iterate")
     def read_iterate(days: int = 7):
-        """Per-day direction-aware dimension scores, deltas, and trends."""
+        """逐日、方向感知的维度得分、环比变化与趋势。"""
         from .iteration import daily_iteration
         from .models import MetricSpec, Observation
 
         metrics = repository.all("metrics")
-        specs = tuple(
-            MetricSpec(
-                domain=m["domain"], metric=m["name"], minimum=m["minimum"],
-                maximum=m["maximum"], direction=m["direction"],
-                unit=m.get("unit", ""), target=m.get("target"),
-                target_count=m.get("target_count", 1),
+        specs = []
+        for m in metrics:
+            specs.append(
+                MetricSpec(
+                    domain=m["domain"], metric=m["name"], minimum=m["minimum"],
+                    maximum=m["maximum"], direction=m["direction"],
+                    unit=m.get("unit", ""), target=m.get("target"),
+                    target_count=m.get("target_count", 1),
+                )
             )
-            for m in metrics
-        )
-        observations = [
-            Observation(
-                observation_id=r["id"], domain=m["domain"], metric=m["name"],
-                value=r["value"], minimum=m["minimum"], maximum=m["maximum"],
-                observed_at=r["observed_at"], source=r.get("source", ""),
-                note=r.get("note", ""),
+        specs = tuple(specs)
+        observations = []
+        for r in repository.all("observations"):
+            if r.get("superseded_by"):
+                continue
+            matched = None
+            for x in metrics:
+                if x["id"] == r["metric_id"]:
+                    matched = x
+                    break
+            if matched is None:
+                continue
+            observations.append(
+                Observation(
+                    observation_id=r["id"], domain=matched["domain"], metric=matched["name"],
+                    value=r["value"], minimum=matched["minimum"], maximum=matched["maximum"],
+                    observed_at=r["observed_at"], source=r.get("source", ""),
+                    note=r.get("note", ""),
+                )
             )
-            for r in repository.all("observations")
-            if not r.get("superseded_by")
-            for m in [next((x for x in metrics if x["id"] == r["metric_id"]), None)]
-            if m is not None
-        ]
         return daily_iteration(observations, specs, window_days=days)
 
     @app.get("/api/suggest")
     def read_suggest(threshold: float = 0.5):
-        """Actionable next-step suggestions per domain, direction-aware."""
+        """按领域给出可执行的下一步建议（方向感知）。"""
         from .models import MetricSpec, Observation
         from .suggestion import suggest_improvements
 
         metrics = repository.all("metrics")
-        specs = tuple(
-            MetricSpec(
-                domain=m["domain"], metric=m["name"], minimum=m["minimum"],
-                maximum=m["maximum"], direction=m["direction"],
-                unit=m.get("unit", ""), target=m.get("target"),
-                target_count=m.get("target_count", 1),
+        specs = []
+        for m in metrics:
+            specs.append(
+                MetricSpec(
+                    domain=m["domain"], metric=m["name"], minimum=m["minimum"],
+                    maximum=m["maximum"], direction=m["direction"],
+                    unit=m.get("unit", ""), target=m.get("target"),
+                    target_count=m.get("target_count", 1),
+                )
             )
-            for m in metrics
-        )
-        observations = [
-            Observation(
-                observation_id=r["id"], domain=m["domain"], metric=m["name"],
-                value=r["value"], minimum=m["minimum"], maximum=m["maximum"],
-                observed_at=r["observed_at"], source=r.get("source", ""),
-                note=r.get("note", ""),
+        specs = tuple(specs)
+        observations = []
+        for r in repository.all("observations"):
+            if r.get("superseded_by"):
+                continue
+            matched = None
+            for x in metrics:
+                if x["id"] == r["metric_id"]:
+                    matched = x
+                    break
+            if matched is None:
+                continue
+            observations.append(
+                Observation(
+                    observation_id=r["id"], domain=matched["domain"], metric=matched["name"],
+                    value=r["value"], minimum=matched["minimum"], maximum=matched["maximum"],
+                    observed_at=r["observed_at"], source=r.get("source", ""),
+                    note=r.get("note", ""),
+                )
             )
-            for r in repository.all("observations")
-            if not r.get("superseded_by")
-            for m in [next((x for x in metrics if x["id"] == r["metric_id"]), None)]
-            if m is not None
-        ]
         return suggest_improvements(observations, specs, threshold=threshold)
 
     @app.get("/api/settings")
@@ -791,7 +859,10 @@ def create_app(
                 with httpx.Client(timeout=3, trust_env=False) as client:
                     response = client.get(config["ollama_url"].rstrip("/") + "/api/tags")
                     response.raise_for_status()
-                    ollama.update(available=True, models=[m["name"] for m in response.json().get("models", [])])
+                    model_names = []
+                    for model in response.json().get("models", []):
+                        model_names.append(model["name"])
+                    ollama.update(available=True, models=model_names)
             except (httpx.HTTPError, ValueError, KeyError):
                 ollama["error"] = "本地Ollama尚未连接"
         return {"local": local, "ollama": ollama, "laya": {"installed": importlib.util.find_spec("laya") is not None,
@@ -799,28 +870,42 @@ def create_app(
 
     @app.get("/api/export")
     def export():
-        # Redacted summary excludes all free text, exact times, IDs and raw option labels.
+        # 脱敏摘要：移除全部自由文本、精确时间、关联ID与原始选项标签。
         states = public_decisions()
+        decisions_summary = []
+        for s in states:
+            decisions_summary.append({"id": secrets.token_hex(8), "domain": s["domain"], "status": s["status"],
+                "success": s.get("outcome", {}).get("success")})
+        metrics_summary = []
+        for m in repository.scores(7)["metrics"]:
+            metrics_summary.append({"id": secrets.token_hex(8), "domain": m["domain"], "n": m["n"],
+                "score": m["score"]})
         result = {"format": "q-one-redacted-summary-v1", "created_date": now()[:10],
-            "decisions": [{"id": secrets.token_hex(8), "domain": s["domain"], "status": s["status"],
-                "success": s.get("outcome", {}).get("success")} for s in states],
-            "metrics": [{"id": secrets.token_hex(8), "domain": m["domain"], "n": m["n"],
-                "score": m["score"]} for m in repository.scores(7)["metrics"]],
+            "decisions": decisions_summary,
+            "metrics": metrics_summary,
             "notice": "已移除自由文本、精确时间和关联ID；摘要仍可能敏感，请检查后再分享"}
         return JSONResponse(result, headers={"Content-Disposition": 'attachment; filename="q-one-summary.json"'})
+
+    def _backup_tables():
+        """按表名收集全部表数据，供导出与备份复用。"""
+        tables = {}
+        for name in TABLES:
+            tables[name] = repository.all(name)
+        return tables
 
     @app.get("/api/backup")
     def backup():
         with lock, planner.lock:
             result = {"format": "q-one-backup-v3", "schema_version": SCHEMA_VERSION,
                 "created_at": now(), "events": ledger.events(),
-                "tables": {name: repository.all(name) for name in TABLES}}
+                "tables": _backup_tables()}
         return JSONResponse(result, headers={"Content-Disposition": 'attachment; filename="q-one-private-backup.json"'})
 
     def backup_payload():
+        """构造完整备份载荷（含事件与全部表）。"""
         return {"format": "q-one-backup-v3", "schema_version": SCHEMA_VERSION,
             "created_at": now(), "events": ledger.events(),
-            "tables": {name: repository.all(name) for name in TABLES}}
+            "tables": _backup_tables()}
 
     @app.post("/api/desktop/backup/export")
     def desktop_backup_export(raw: dict):
@@ -868,7 +953,12 @@ def create_app(
         except (KeyError, TypeError, AttributeError) as exc:
             raise ValueError("备份字段不完整或类型无效") from exc
         with lock, planner.lock:
-            if ledger.events() or any(repository.all(name) for name in TABLES):
+            has_data = bool(ledger.events())
+            for name in TABLES:
+                if repository.all(name):
+                    has_data = True
+                    break
+            if has_data:
                 raise ValueError("只能恢复到空数据目录；现有记录不会被覆盖")
             marker = directory / "restore.pending.json"
             fd = os.open(marker, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)

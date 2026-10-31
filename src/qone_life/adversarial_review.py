@@ -1,4 +1,4 @@
-"""Adversarial review: attack each claim with independent model rounds."""
+"""对抗式评审：用独立的模型轮次对每条论断发起攻击。"""
 
 from __future__ import annotations
 
@@ -32,7 +32,7 @@ CLEAN_MARKERS = ("NO_COUNTEREXAMPLE", "NO_BOUNDARY_RISK", "NO_ALTERNATIVE")
 
 
 class AdversarialError(RuntimeError):
-    """Raised when the adversarial harness cannot run."""
+    """对抗式评审无法运行时抛出的异常。"""
 
 
 def _now() -> str:
@@ -40,7 +40,7 @@ def _now() -> str:
 
 
 def parse_claims(ledger_text: str) -> list[dict[str, str]]:
-    """Extract claim rows from a markdown ledger table."""
+    """从 Markdown 账本表格中解析出论断行。"""
     claims = []
     for line in ledger_text.splitlines():
         match = re.match(r"\|\s*(C\d+)\s*\|([^|]*)\|([^|]*)\|", line)
@@ -60,6 +60,7 @@ class AdversarialReview:
         self.timeout = timeout
 
     def _ask(self, model: str, prompt: str) -> str | None:
+        """向模型发出一次提问，任何网络或解析错误都返回 None。"""
         body = json.dumps({
             "model": model,
             "messages": [{"role": "user", "content": prompt}],
@@ -110,7 +111,14 @@ class AdversarialReview:
                         if answer is None:
                             inconclusive_rounds += 1
                             continue
-                        if any(marker in answer.upper() for marker in CLEAN_MARKERS):
+                        # 模型明确表示"无懈可击"时视为本轮无异议。
+                        upper_answer = answer.upper()
+                        is_clean = False
+                        for marker in CLEAN_MARKERS:
+                            if marker in upper_answer:
+                                is_clean = True
+                                break
+                        if is_clean:
                             continue
                         key = answer.strip()[:300]
                         entry = objections.setdefault(key, {
@@ -122,9 +130,16 @@ class AdversarialReview:
                         if kind not in entry["kinds"]:
                             entry["kinds"].append(kind)
             ordered = sorted(objections.values(), key=lambda x: (-x["count"], x["text"]))
-            verdict = "clean" if not ordered else ("inconclusive" if inconclusive_rounds else "objected")
-            if inconclusive_rounds and not ordered:
+
+            # 结论优先级：只要出现无法判定的调用即判 inconclusive；
+            # 否则有异议判 objected；都没有则判 clean。
+            if inconclusive_rounds:
                 verdict = "inconclusive"
+            elif ordered:
+                verdict = "objected"
+            else:
+                verdict = "clean"
+
             receipt = {
                 "schema": "q-one-adversarial-v1",
                 "claim_id": claim["claim_id"],
@@ -145,6 +160,18 @@ class AdversarialReview:
                 "receipt_sha256": receipt["receipt_sha256"],
             })
 
+        # 汇总各结论条数。
+        clean_count = 0
+        objected_count = 0
+        inconclusive_count = 0
+        for c in per_claim:
+            if c["verdict"] == "clean":
+                clean_count += 1
+            elif c["verdict"] == "objected":
+                objected_count += 1
+            elif c["verdict"] == "inconclusive":
+                inconclusive_count += 1
+
         summary = {
             "schema": "q-one-adversarial-summary-v1",
             "ledger": str(ledger_path),
@@ -152,9 +179,9 @@ class AdversarialReview:
             "rounds": rounds,
             "models": models,
             "claims": per_claim,
-            "clean": sum(1 for c in per_claim if c["verdict"] == "clean"),
-            "objected": sum(1 for c in per_claim if c["verdict"] == "objected"),
-            "inconclusive": sum(1 for c in per_claim if c["verdict"] == "inconclusive"),
+            "clean": clean_count,
+            "objected": objected_count,
+            "inconclusive": inconclusive_count,
             "generated_at": _now(),
         }
         summary_path = output_dir / "summary.json"

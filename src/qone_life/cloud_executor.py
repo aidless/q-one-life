@@ -1,7 +1,6 @@
-"""Submit and monitor research jobs on the remote AMD compute node.
+"""在远程 AMD 计算节点上提交并监控科研作业。
 
-Local execution is limited to orchestration. Every job runs on the configured
-SSH host; nothing is executed on this workstation.
+本地只负责编排：每个作业都在配置好的 SSH 主机上运行，本机不执行任何计算。
 """
 
 from __future__ import annotations
@@ -26,8 +25,8 @@ MAX_CONCURRENT = 2
 
 STATUS_VALUES = {"queued", "running", "succeeded", "failed"}
 
-# Remote wrapper: writes status transitions and an exit code file.
-# The run script placeholder is substituted literally, so no str.format is used.
+# 远程运行包装脚本：负责写入状态迁移和退出码文件。
+# 运行脚本占位符采用字面替换，因此没有使用 str.format。
 REMOTE_RUNNER_TEMPLATE = """#!/bin/bash
 set -u
 cd "$(dirname "$0")"
@@ -44,13 +43,17 @@ PY
 
 
 class CloudExecutionError(RuntimeError):
-    """Raised when a cloud job cannot be submitted, monitored or fetched."""
+    """作业无法提交、监控或回传时抛出。"""
 
 
 def sha256_file(path: Path) -> str:
+    """分块计算文件哈希，避免一次性读入大文件。"""
     digest = hashlib.sha256()
     with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1 << 20), b""):
+        while True:
+            chunk = handle.read(1 << 20)
+            if not chunk:
+                break
             digest.update(chunk)
     return digest.hexdigest()
 
@@ -60,7 +63,7 @@ def _now() -> str:
 
 
 class CloudExecutor:
-    """Drive a job directory on the remote host over SSH."""
+    """通过 SSH 操作远程主机上的作业目录。"""
 
     def __init__(
         self,
@@ -78,6 +81,7 @@ class CloudExecutor:
         self.timeout = timeout
 
     def _ssh(self, command: str, *, timeout: int | None = None) -> subprocess.CompletedProcess[str]:
+        """在远程主机执行一条命令并返回结果（不做返回码检查）。"""
         argv = [
             "ssh", "-o", "BatchMode=yes", "-o", f"ConnectTimeout={min(self.timeout, 15)}",
             "-p", str(self.port), "-i", str(self.key_path), self.host, command,
@@ -89,6 +93,7 @@ class CloudExecutor:
             raise CloudExecutionError(f"ssh timeout running: {command}") from exc
 
     def _scp(self, source: str, target: str, *, recursive: bool = False) -> None:
+        """用 scp 复制文件或目录；失败即抛错。"""
         argv = [
             "scp", "-o", "BatchMode=yes", "-o", f"ConnectTimeout={min(self.timeout, 15)}",
             "-P", str(self.port), "-i", str(self.key_path),
@@ -105,6 +110,7 @@ class CloudExecutor:
             raise CloudExecutionError(f"scp failed: {result.stderr.strip()}")
 
     def _require_ok(self, result: subprocess.CompletedProcess[str], action: str) -> str:
+        """返回码非零即抛错，否则返回标准输出。"""
         if result.returncode != 0:
             raise CloudExecutionError(f"{action} failed ({result.returncode}): {result.stderr.strip()}")
         return result.stdout
@@ -113,6 +119,7 @@ class CloudExecutor:
         return f"{self.remote_root}/{job_id}"
 
     def _validate_job(self, job_dir: Path) -> dict[str, Any]:
+        """校验本地作业目录结构与 job.json 必填字段。"""
         job_path = job_dir / "job.json"
         if not job_path.is_file():
             raise CloudExecutionError(f"job.json is missing in {job_dir}")
@@ -138,6 +145,7 @@ class CloudExecutor:
         return job
 
     def _running_jobs(self) -> int:
+        """统计远程主机上处于排队或运行状态的作业数。"""
         listing = self._ssh(f"ls -1 {shlex.quote(self.remote_root)} 2>/dev/null || true")
         count = 0
         for name in listing.stdout.split():
@@ -157,6 +165,7 @@ class CloudExecutor:
         return count
 
     def submit(self, job_dir: str | Path) -> dict[str, Any]:
+        """把一个本地作业目录提交到远程主机执行。"""
         job_dir = Path(job_dir).expanduser().resolve()
         job = self._validate_job(job_dir)
         if self._running_jobs() >= MAX_CONCURRENT:
@@ -165,13 +174,13 @@ class CloudExecutor:
         job_id = job["job_id"]
         remote = self._remote_job_dir(job_id)
         self._require_ok(self._ssh(f"mkdir -p {shlex.quote(remote)}"), "mkdir remote job dir")
-        # Copy the *contents* of the job directory into the remote job dir.
+        # 把作业目录里的内容复制进远程作业目录（跳过本地运行器文件）。
         for item in sorted(job_dir.iterdir()):
             if item.name.startswith(".qone-runner"):
                 continue
             self._scp(str(item), f"{self.host}:{remote}/", recursive=item.is_dir())
 
-        # Ensure the remote runner exists and is executable.
+        # 保证远程运行器存在且可执行。
         runner = job_dir / ".qone-runner.sh"
         local_runner = REMOTE_RUNNER_TEMPLATE.replace(
             "__RUN_SCRIPT__", shlex.quote(job["run_script"])
@@ -181,10 +190,10 @@ class CloudExecutor:
         runner.unlink()
         self._require_ok(self._ssh(f"chmod +x {shlex.quote(remote)}/.qone-runner.sh"), "chmod runner")
 
-        inputs = [
-            {"path": Path(str(e)).as_posix(), "sha256": sha256_file(job_dir / str(e))}
-            for e in (job.get("inputs", []) or [])
-        ]
+        # 记录每个输入文件的哈希，便于后续核对。
+        inputs = []
+        for e in (job.get("inputs", []) or []):
+            inputs.append({"path": Path(str(e)).as_posix(), "sha256": sha256_file(job_dir / str(e))})
 
         launch = (
             f"cd {shlex.quote(remote)} && "
@@ -202,6 +211,7 @@ class CloudExecutor:
         }
 
     def poll(self, job_id: str) -> dict[str, Any]:
+        """查询一次作业状态；状态文件缺失时视为排队中。"""
         remote = self._remote_job_dir(job_id)
         raw = self._ssh(f"cat {shlex.quote(remote)}/status.json 2>/dev/null || true").stdout.strip()
         if not raw:
@@ -216,6 +226,7 @@ class CloudExecutor:
         return {"job_id": job_id, "state": state, "raw": payload}
 
     def wait(self, job_id: str, *, max_runtime_sec: int, poll_interval: int = 10) -> dict[str, Any]:
+        """轮询直到作业成功/失败，或超过最大运行时间。"""
         started = time.monotonic()
         while True:
             current = self.poll(job_id)
@@ -230,6 +241,7 @@ class CloudExecutor:
             time.sleep(poll_interval)
 
     def fetch(self, job_id: str, target_dir: str | Path) -> dict[str, Any]:
+        """把远程作业的 outputs 与日志拉回本地并记录哈希。"""
         remote = self._remote_job_dir(job_id)
         target = Path(target_dir).expanduser().resolve()
         target.mkdir(parents=True, exist_ok=True)

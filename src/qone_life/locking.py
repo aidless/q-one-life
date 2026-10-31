@@ -1,4 +1,4 @@
-"""Cross-platform advisory locks for local Q-One files."""
+"""本地 Q-One 文件的跨平台建议性锁。"""
 
 from __future__ import annotations
 
@@ -17,8 +17,13 @@ def exclusive_file_lock(
     timeout: float = 15,
     fail_fast: bool = False,
 ) -> Iterator[None]:
-    """Hold an exclusive lock without silently degrading on unsupported systems."""
+    """持有排他锁；在不支持锁的系统上显式失败，而不是静默降级。
 
+    参数：
+    - timeout：等待锁的最长秒数；
+    - fail_fast：为 True 时锁已被占用就立即报错（非阻塞试锁）。
+    离开 with 块时自动释放锁；在非 Windows 系统上还会把锁文件权限收紧为仅属主可读写。
+    """
     lock_path = Path(path)
     lock_path.parent.mkdir(parents=True, exist_ok=True)
     lock = portalocker.Lock(

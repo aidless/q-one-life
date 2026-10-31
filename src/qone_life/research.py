@@ -1,4 +1,8 @@
-"""Read-only inventory and quantification of local research projects."""
+"""本地研究项目的只读盘点与量化。
+
+提供论文组合（portfolio）扫描、单项目量化、以及研究项目校验三组能力，
+全部只读取磁盘内容，不修改任何项目文件。
+"""
 
 from __future__ import annotations
 
@@ -83,27 +87,37 @@ EVIDENCE_DIR_NAMES = {"artifact", "artifacts", "data", "evidence", "results", "r
 
 
 def sha256_file(path: Path) -> str:
+    """分块计算文件 SHA-256，避免一次性读入大文件。"""
     digest = hashlib.sha256()
     with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+        while True:
+            chunk = handle.read(1024 * 1024)
+            if not chunk:
+                break
             digest.update(chunk)
     return digest.hexdigest()
 
 
 def _utc_timestamp(path: Path) -> str:
+    """返回文件修改时间（UTC，ISO 格式，以 Z 结尾）。"""
     value = datetime.fromtimestamp(path.stat().st_mtime, timezone.utc)
     return value.isoformat().replace("+00:00", "Z")
 
 
 def _read_json(path: Path) -> dict[str, Any] | None:
+    """读取 JSON 文件：解析失败或非对象时返回 None。"""
     try:
         value = json.loads(path.read_text(encoding="utf-8-sig"))
     except (OSError, ValueError):
         return None
-    return value if isinstance(value, dict) else None
+    result = None
+    if isinstance(value, dict):
+        result = value
+    return result
 
 
 def _is_qone_research_project_file(path: Path) -> bool:
+    """判断某文件是否为 Q-One 研究项目清单（schema 匹配）。"""
     if path.name not in PROJECT_NAMES:
         return False
     payload = _read_json(path)
@@ -111,16 +125,24 @@ def _is_qone_research_project_file(path: Path) -> bool:
 
 
 def _flatten_json_text(value: Any) -> str:
+    """把 JSON 值中的全部文本拼接成一个字符串（用于全文检索）。"""
     if isinstance(value, str):
         return value
     if isinstance(value, list):
-        return " ".join(_flatten_json_text(item) for item in value)
+        parts = []
+        for item in value:
+            parts.append(_flatten_json_text(item))
+        return " ".join(parts)
     if isinstance(value, dict):
-        return " ".join(_flatten_json_text(item) for item in value.values())
+        parts = []
+        for item in value.values():
+            parts.append(_flatten_json_text(item))
+        return " ".join(parts)
     return ""
 
 
 def _balanced_braced_value(text: str, start: int) -> str | None:
+    """从 start 处的左花括号开始，提取括号内平衡的子串（支持转义）。"""
     depth = 0
     buffer: list[str] = []
     escaped = False
@@ -147,6 +169,7 @@ def _balanced_braced_value(text: str, start: int) -> str | None:
 
 
 def latex_title(text: str) -> str | None:
+    """从 LaTeX 文本中提取 \\title{...} 的标题。"""
     match = re.search(r"\\title\s*(?:\[[^\]]*\])?\s*\{", text)
     if not match:
         return None
@@ -159,6 +182,7 @@ def latex_title(text: str) -> str | None:
 
 
 def markdown_title(text: str) -> str | None:
+    """从 Markdown 文本中提取标题：优先 front-matter 的 title，其次一级标题。"""
     front_matter = re.match(r"^---\s*\n(.*?)\n---\s*(?:\n|$)", text, re.DOTALL)
     if front_matter:
         match = re.search(
@@ -169,15 +193,20 @@ def markdown_title(text: str) -> str | None:
         if match and match.group(1).strip():
             return match.group(1).strip()
     match = re.search(r"^#\s+(.+?)\s*$", text, re.MULTILINE)
-    return match.group(1).strip() if match else None
+    if match:
+        return match.group(1).strip()
+    return None
 
 
 def _title_from_json(path: Path) -> tuple[str | None, str | None, str | None]:
+    """从项目 JSON 中读取标题、目标（target/venue）与状态。"""
     payload = _read_json(path)
     if not payload:
         return None, None, None
     project = payload.get("project")
-    project_data = project if isinstance(project, dict) else payload
+    project_data = payload
+    if isinstance(project, dict):
+        project_data = project
     title = project_data.get("title")
     target = project_data.get("target") or project_data.get("venue")
     status = project_data.get("status")
@@ -191,6 +220,7 @@ def _title_from_json(path: Path) -> tuple[str | None, str | None, str | None]:
 
 
 def _title_from_text(path: Path) -> str | None:
+    """从源文件文本中读取标题（.tex 走 LaTeX，其它走 Markdown）。"""
     try:
         text = path.read_text(encoding="utf-8", errors="replace")[:200_000]
     except OSError:
@@ -201,6 +231,7 @@ def _title_from_text(path: Path) -> str | None:
 
 
 def _project_root_for_marker(path: Path, writeup_globs: tuple[str, ...]) -> Path:
+    """根据标记文件推断所属项目根目录。"""
     if _matches_writeup(path, writeup_globs):
         return path.with_suffix("")
     parent = path.parent
@@ -216,11 +247,18 @@ def _project_root_for_marker(path: Path, writeup_globs: tuple[str, ...]) -> Path
 
 
 def _matches_writeup(path: Path, patterns: Iterable[str]) -> bool:
-    return any(fnmatch(path.name, pattern) for pattern in patterns)
+    """判断文件名是否匹配任一写作文档通配模式。"""
+    for pattern in patterns:  # noqa: SIM110 - 显式循环更直观，贴合本项目直白风格
+        if fnmatch(path.name, pattern):
+            return True
+    return False
 
 
 def _classify_project(root: Path, primary: Path, is_paper_source: bool) -> str:
-    lowered = {part.lower() for part in root.parts}
+    """按目录组成与主文件名判定项目类型（论文/备份/演示/版本副本等）。"""
+    lowered = set()
+    for part in root.parts:
+        lowered.add(part.lower())
     if not is_paper_source:
         if primary.name in (*CONFIG_NAMES, *PROJECT_NAMES):
             return "supporting-config"
@@ -228,7 +266,12 @@ def _classify_project(root: Path, primary: Path, is_paper_source: bool) -> str:
             return "plan"
         if primary.name in LEDGER_NAMES:
             return "claim-ledger"
-    if lowered & BACKUP_PARTS or any(".bak-" in part for part in lowered):
+    has_backup_part = False
+    for part in lowered:
+        if ".bak-" in part:
+            has_backup_part = True
+            break
+    if lowered & BACKUP_PARTS or has_backup_part:
         return "backup"
     if lowered & DEMO_PARTS:
         return "demo"
@@ -242,6 +285,7 @@ def _classify_project(root: Path, primary: Path, is_paper_source: bool) -> str:
 
 
 def _candidate_score(record: dict[str, Any]) -> tuple[int, int, float]:
+    """为一个候选项目打分，用于挑选重复组中的代表（分数越高越优先）。"""
     type_weight = {
         "paper": 100,
         "submission-copy": 70,
@@ -255,21 +299,27 @@ def _candidate_score(record: dict[str, Any]) -> tuple[int, int, float]:
     }.get(record["project_type"], 0)
     files = record["files"]
     score = type_weight
-    score += 30 if files["claim_ledgers"] else 0
-    score += 20 if files["bibliographies"] else 0
-    score += 20 if files["pdfs"] else 0
-    score += 10 if files["configs"] else 0
+    if files["claim_ledgers"]:
+        score += 30
+    if files["bibliographies"]:
+        score += 20
+    if files["pdfs"]:
+        score += 20
+    if files["configs"]:
+        score += 10
     score -= max(0, record["path_depth"] - 4) * 5
     return score, -record["path_depth"], record["modified_epoch"]
 
 
 def _project_id(root: Path) -> str:
+    """由项目根路径生成稳定且可读的项目 ID。"""
     digest = hashlib.sha256(str(root).encode("utf-8")).hexdigest()[:12]
     slug = re.sub(r"[^a-z0-9]+", "-", root.name.lower()).strip("-") or "paper"
     return f"qp-{slug}-{digest}"
 
 
 def _git_metadata(path: Path, cache: dict[Path, dict[str, Any]]) -> dict[str, Any] | None:
+    """向上查找最近的 git 仓库，读取 HEAD、分支与是否有未提交改动。"""
     current = path
     while current.parent != current:
         if (current / ".git").exists():
@@ -309,6 +359,7 @@ def _git_metadata(path: Path, cache: dict[Path, dict[str, Any]]) -> dict[str, An
 
 
 def _project_metadata(root: Path) -> tuple[str | None, str | None, str | None]:
+    """从项目根下的 project.json / research-manifest.json 汇总标题、目标与状态。"""
     title: str | None = None
     target: str | None = None
     status: str | None = None
@@ -326,6 +377,7 @@ def _project_metadata(root: Path) -> tuple[str | None, str | None, str | None]:
 
 
 def _collect_project_files(root: Path) -> dict[str, list[str]]:
+    """遍历项目目录（限深 3 层），收集 PDF、参考文献、账本、配置、计划与证据目录。"""
     files: dict[str, list[str]] = {
         "pdfs": [],
         "bibliographies": [],
@@ -343,12 +395,14 @@ def _collect_project_files(root: Path) -> dict[str, list[str]]:
         if len(relative.parts) > 3:
             directories[:] = []
             continue
-        directories[:] = [
-            name
-            for name in directories
-            if name not in DEFAULT_EXCLUDE_DIRS
-            and name not in {"node_modules", "__pycache__"}
-        ]
+        kept = []
+        for name in directories:
+            if name in DEFAULT_EXCLUDE_DIRS:
+                continue
+            if name in {"node_modules", "__pycache__"}:
+                continue
+            kept.append(name)
+        directories[:] = kept
         for directory in directories:
             if directory.lower() in EVIDENCE_DIR_NAMES:
                 files["evidence_directories"].append(str(current_path / directory))
@@ -378,6 +432,7 @@ def _scan_markers(
     max_depth: int,
     writeup_globs: tuple[str, ...],
 ) -> dict[Path, list[Path]]:
+    """在若干根目录下扫描“项目标记文件”，并按项目根归组。"""
     candidates: dict[Path, list[Path]] = defaultdict(list)
     for scan_root in roots:
         scan_root = scan_root.expanduser().resolve()
@@ -389,14 +444,21 @@ def _scan_markers(
             depth = len(current_path.parts) - root_depth
             if depth >= max_depth:
                 directories[:] = []
-            directories[:] = [
-                name
-                for name in directories
-                if name not in exclude_dirs
-                and name not in DEFAULT_EXCLUDE_DIRS
-            ]
+            kept = []
+            for name in directories:
+                if name in exclude_dirs:
+                    continue
+                if name in DEFAULT_EXCLUDE_DIRS:
+                    continue
+                kept.append(name)
+            directories[:] = kept
             current_marker = current_path.as_posix()
-            if any(fragment in current_marker for fragment in exclude_path_fragments):
+            excluded = False
+            for fragment in exclude_path_fragments:
+                if fragment in current_marker:
+                    excluded = True
+                    break
+            if excluded:
                 directories[:] = []
                 continue
             for filename in filenames:
@@ -415,6 +477,7 @@ def _scan_markers(
 
 
 def _choose_primary(root: Path, markers: list[Path], writeup_globs: tuple[str, ...]) -> Path:
+    """在多个标记文件中选出最能代表项目的主文件（按优先级）。"""
     priority: list[tuple[int, int, str]] = []
     for path in markers:
         name = path.name
@@ -441,6 +504,7 @@ def _build_record(
     writeup_globs: tuple[str, ...],
     git_cache: dict[Path, dict[str, Any]],
 ) -> dict[str, Any]:
+    """为一个项目根构建完整记录（主文件、哈希、类型、元数据、git 等）。"""
     primary = _choose_primary(root, markers, writeup_globs)
     metadata_title, metadata_target, metadata_status = _project_metadata(root)
     title = metadata_title
@@ -455,6 +519,9 @@ def _build_record(
         primary.name in MANUSCRIPT_NAMES or _matches_writeup(primary, writeup_globs)
     )
     project_type = _classify_project(root, primary, is_paper_source)
+    marker_strings = []
+    for path in markers:
+        marker_strings.append(str(path))
     record = {
         "project_id": _project_id(root),
         "title": title or root.name.replace("_", " ").replace("-", " "),
@@ -471,12 +538,13 @@ def _build_record(
         "modified_at": _utc_timestamp(primary),
         "modified_epoch": primary.stat().st_mtime,
         "path_depth": len(root.parts),
-        "markers": sorted(str(path) for path in markers),
+        "markers": sorted(marker_strings),
     }
     return record
 
 
 def _normalized_title(title: str) -> str:
+    """把标题归一化为可比较的键（去 LaTeX 标记、标点，转小写）。"""
     title = re.sub(r"\\[A-Za-z]+\*?(?:\[[^\]]*\])?", " ", title)
     title = title.replace("{", "").replace("}", "").replace("\\", " ")
     title = re.sub(r"[^0-9A-Za-z\u4e00-\u9fff]+", " ", title).lower()
@@ -484,6 +552,7 @@ def _normalized_title(title: str) -> str:
 
 
 def _family_id(title_key: str) -> str:
+    """由归一化标题生成稳定的论文家族 ID。"""
     digest = hashlib.sha256(title_key.encode("utf-8")).hexdigest()[:10]
     slug = re.sub(r"[^a-z0-9]+", "-", title_key).strip("-")[:40] or "paper"
     return f"qf-{slug}-{digest}"
@@ -498,6 +567,7 @@ def build_portfolio(
     writeup_globs: Iterable[str] = (),
     max_depth: int = 8,
 ) -> dict[str, Any]:
+    """扫描若干根目录，构建论文组合：去重、标题版本归并、分家族并汇总。"""
     roots = [Path(root) for root in roots]
     exclude_dir_set = set(exclude_dirs)
     fragment_tuple = tuple(exclude_path_fragments)
@@ -511,10 +581,11 @@ def build_portfolio(
     )
 
     git_cache: dict[Path, dict[str, Any]] = {}
-    records = [
-        _build_record(root, markers, writeup_globs=glob_tuple, git_cache=git_cache)
-        for root, markers in marker_map.items()
-    ]
+    records = []
+    for root, markers in marker_map.items():
+        records.append(
+            _build_record(root, markers, writeup_globs=glob_tuple, git_cache=git_cache)
+        )
     records.sort(key=lambda record: record["root"])
 
     groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -527,18 +598,20 @@ def build_portfolio(
         canonical = max(group, key=_candidate_score)
         canonical_by_hash[digest] = canonical["project_id"]
         if len(group) > 1:
+            members = []
+            for member in sorted(group, key=lambda item: item["root"]):
+                members.append(
+                    {
+                        "project_id": member["project_id"],
+                        "root": member["root"],
+                        "project_type": member["project_type"],
+                    }
+                )
             duplicate_groups.append(
                 {
                     "primary_sha256": digest,
                     "canonical_project_id": canonical["project_id"],
-                    "members": [
-                        {
-                            "project_id": member["project_id"],
-                            "root": member["root"],
-                            "project_type": member["project_type"],
-                        }
-                        for member in sorted(group, key=lambda item: item["root"])
-                    ],
+                    "members": members,
                 }
             )
 
@@ -580,7 +653,9 @@ def build_portfolio(
         representative = max(group, key=_candidate_score)
         representative["family_representative"] = True
         overlay_candidates = supporting_by_title.get(title_key, [])
-        overlay = max(overlay_candidates, key=_candidate_score) if overlay_candidates else None
+        overlay = None
+        if overlay_candidates:
+            overlay = max(overlay_candidates, key=_candidate_score)
         if overlay is not None:
             metadata_overlays += 1
             representative["metadata_project_id"] = overlay["project_id"]
@@ -590,26 +665,27 @@ def build_portfolio(
             if overlay["target"]:
                 representative["target"] = overlay["target"]
         family_records.append(representative)
+        metadata_project_id = None
+        if overlay is not None:
+            metadata_project_id = representative.get("metadata_project_id")
+        members = []
+        for member in sorted(group, key=lambda item: item["root"]):
+            members.append(
+                {
+                    "project_id": member["project_id"],
+                    "root": member["root"],
+                    "project_type": member["project_type"],
+                    "primary_sha256": member["primary_sha256"],
+                }
+            )
         families.append(
             {
                 "family_id": representative["family_id"],
                 "title": representative["title"],
                 "title_key": title_key,
                 "canonical_project_id": representative["project_id"],
-                "metadata_project_id": (
-                    representative.get("metadata_project_id")
-                    if overlay is not None
-                    else None
-                ),
-                "members": [
-                    {
-                        "project_id": member["project_id"],
-                        "root": member["root"],
-                        "project_type": member["project_type"],
-                        "primary_sha256": member["primary_sha256"],
-                    }
-                    for member in sorted(group, key=lambda item: item["root"])
-                ],
+                "metadata_project_id": metadata_project_id,
+                "members": members,
             }
         )
         for member in group:
@@ -625,13 +701,20 @@ def build_portfolio(
         status_counts[record["status"]] += 1
         disposition_counts[record["disposition"]] += 1
 
-    family_member_count = sum(len(family["members"]) for family in families)
+    family_member_count = 0
+    for family in families:
+        family_member_count += len(family["members"])
+
+    scope_roots = []
+    for root in roots:
+        scope_roots.append(str(root.expanduser().resolve()))
+
     return {
         "schema": PORTFOLIO_SCHEMA,
         "generated_at": generated_at
         or datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "scope": {
-            "roots": [str(root.expanduser().resolve()) for root in roots],
+            "roots": scope_roots,
             "exclude_dirs": sorted(exclude_dir_set),
             "exclude_path_fragments": list(fragment_tuple),
             "writeup_globs": list(glob_tuple),
@@ -659,6 +742,7 @@ def build_portfolio(
 
 
 def render_markdown(portfolio: dict[str, Any]) -> str:
+    """把论文组合渲染成 Markdown 摘要（含每篇论文一行表格）。"""
     summary = portfolio["summary"]
     lines = [
         "# Q-One paper portfolio",
@@ -680,10 +764,9 @@ def render_markdown(portfolio: dict[str, Any]) -> str:
         "| Type | Title | Status | Disposition | Primary source | Variants merged |",
         "|---|---|---|---|---|---:|",
     ]
-    variant_counts = {
-        family["canonical_project_id"]: len(family["members"]) - 1
-        for family in portfolio["families"]
-    }
+    variant_counts = {}
+    for family in portfolio["families"]:
+        variant_counts[family["canonical_project_id"]] = len(family["members"]) - 1
     for project in portfolio["projects"]:
         title = project["title"].replace("|", "\\|")
         source = project["primary_source"].replace("|", "\\|")
@@ -707,9 +790,10 @@ def render_markdown(portfolio: dict[str, Any]) -> str:
 
 
 def render_triage_csv(portfolio: dict[str, Any]) -> str:
-    variant_counts = {
-        family["family_id"]: len(family["members"]) - 1 for family in portfolio["families"]
-    }
+    """把论文组合渲染成 CSV 分诊表（按修改时间倒序）。"""
+    variant_counts = {}
+    for family in portfolio["families"]:
+        variant_counts[family["family_id"]] = len(family["members"]) - 1
     output = io.StringIO()
     writer = csv.writer(output, lineterminator="\n")
     writer.writerow(
@@ -752,6 +836,7 @@ def write_portfolio(
     markdown_output: Path | None = None,
     triage_output: Path | None = None,
 ) -> None:
+    """把组合结果写出为 JSON（可选同时输出 Markdown 与 CSV 分诊表）。"""
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
         json.dumps(portfolio, ensure_ascii=False, indent=2) + "\n",
@@ -766,15 +851,12 @@ def write_portfolio(
 
 
 def quantify_research_project(root: str | Path) -> dict[str, Any]:
-    """Compute the documented research quantities for a single project.
+    """计算单个研究项目的七项可计算量化指标。
 
-    Implements the seven computable quantities from
-    RESEARCH_QUANTIFICATION.zh-CN.md.  Every quantity is reported as a value
-    plus the explicit denominator it was computed over; when the denominator
-    is unknown or the field is absent, the value is ``"unknown"`` rather than 0.
+    对应 RESEARCH_QUANTIFICATION.zh-CN.md 中的定义：每个指标都同时给出数值与
+    计算所用的分母；分母未知或字段缺失时记为 ``"unknown"``，而不是 0。
 
-    The function is read-only: it loads ``project.json`` and validates the
-    claims ledger cross-reference without writing anything.
+    本函数只读：只加载 ``project.json`` 并交叉校验声明账本，不写入任何内容。
     """
     root = Path(root).expanduser().resolve()
     project_path = root / "project.json"
@@ -816,24 +898,22 @@ def quantify_research_project(root: str | Path) -> dict[str, Any]:
     errors: list[str] = []
     quantities: dict[str, Any] = {}
 
-    # claim_evidence_coverage: claims with at least one valid evidence_ref
+    # claim_evidence_coverage：至少有一条有效 evidence_ref 的断言占比。
     claims = project.get("claims", [])
     if not isinstance(claims, list):
         errors.append("claims must be an array")
         claims = []
     total_claims = len(claims)
-    claims_with_evidence = sum(
-        1
-        for claim in claims
-        if isinstance(claim, dict) and claim.get("evidence_refs")
-    )
+    claims_with_evidence = 0
+    for claim in claims:
+        if isinstance(claim, dict) and claim.get("evidence_refs"):
+            claims_with_evidence += 1
     quantities["claim_evidence_coverage"] = _ratio(
         claims_with_evidence, total_claims
     )
 
-    # claim_recomputation_coverage: claims with a runnable recomputation method
-    # The project schema carries no explicit recomputation field; a claim with
-    # an evidence_ref pointing at a JSON file is treated as recomputable.
+    # claim_recomputation_coverage：带可复算方法（指向 json/csv/tsv）的断言占比。
+    # 项目 schema 没有显式的复算字段；这里把指向数据文件的 evidence_ref 视为可可复算。
     recomputable_claims = 0
     for claim in claims:
         if not isinstance(claim, dict):
@@ -849,7 +929,7 @@ def quantify_research_project(root: str | Path) -> dict[str, Any]:
         recomputable_claims, total_claims
     )
 
-    # experiment_reproduction_coverage: reproducible experiments / required
+    # experiment_reproduction_coverage：可复现实验数 / 必需实验数。
     experiments = project.get("experiments", [])
     if not isinstance(experiments, list):
         errors.append("experiments must be an array")
@@ -872,29 +952,27 @@ def quantify_research_project(root: str | Path) -> dict[str, Any]:
         reproducible_experiments, required_experiments
     )
 
-    # citation_verification_coverage: verified citations / total citations
-    # The project schema has no citations field; the ledger is the only
-    # structured citation carrier available.
+    # citation_verification_coverage：已核实引用数 / 引用总数。
+    # 项目 schema 没有引用字段；声明账本是唯一结构化的引用载体。
     ledger_path = root / "CLAIM_LEDGER.md"
     if ledger_path.is_file():
         ledger_text = ledger_path.read_text(encoding="utf-8")
-        ledger_rows = [
-            line for line in ledger_text.splitlines()
-            if line.strip().startswith("|") and re.search(r"\bC\d+\b", line)
-        ]
+        ledger_rows = []
+        for line in ledger_text.splitlines():
+            if line.strip().startswith("|") and re.search(r"\bC\d+\b", line):
+                ledger_rows.append(line)
         total_citations = len(ledger_rows)
-        verified_citations = sum(
-            1
-            for line in ledger_rows
-            if re.search(r"\b(verified|pass|ok|yes)\b", line, re.IGNORECASE)
-        )
+        verified_citations = 0
+        for line in ledger_rows:
+            if re.search(r"\b(verified|pass|ok|yes)\b", line, re.IGNORECASE):
+                verified_citations += 1
         quantities["citation_verification_coverage"] = _ratio(
             verified_citations, total_citations
         )
     else:
         quantities["citation_verification_coverage"] = _ratio(0, 0)
 
-    # unresolved_critical / unresolved_major: open reviews with critical/major
+    # unresolved_critical / unresolved_major：未关闭评审中的 critical/major 计数。
     reviews = project.get("reviews", [])
     if not isinstance(reviews, list):
         errors.append("reviews must be an array")
@@ -919,7 +997,7 @@ def quantify_research_project(root: str | Path) -> dict[str, Any]:
         "denominator": "counts",
     }
 
-    # package_completeness: passed package files / applicable package files
+    # package_completeness：已存在文件数 / 适用文件数。
     package = project.get("package", {})
     if not isinstance(package, dict):
         errors.append("package must be an object")
@@ -951,6 +1029,7 @@ def quantify_research_project(root: str | Path) -> dict[str, Any]:
 
 
 def _ratio(numerator: int, denominator: int) -> dict[str, Any]:
+    """计算比值并显式给出分子分母；分母为 0 时返回 unknown。"""
     if denominator <= 0:
         return {
             "value": "unknown",
@@ -965,6 +1044,7 @@ def _ratio(numerator: int, denominator: int) -> dict[str, Any]:
 
 
 def validate_research_project(root: str | Path) -> dict[str, Any]:
+    """校验一个研究项目：清单字段、文件哈希、账本交叉引用、评审与打包门。"""
     root = Path(root).expanduser().resolve()
     errors: list[str] = []
     warnings: list[str] = []
@@ -1059,9 +1139,11 @@ def validate_research_project(root: str | Path) -> dict[str, Any]:
         errors.append("CLAIM_LEDGER.md is missing")
         ledger_claim_ids: set[str] = set()
     else:
-        ledger_claim_ids = set(
-            re.findall(r"^\|\s*(C\d+)\s*\|", ledger_path.read_text(encoding="utf-8"), re.MULTILINE)
-        )
+        ledger_claim_ids = set()
+        for claim_id in re.findall(
+            r"^\|\s*(C\d+)\s*\|", ledger_path.read_text(encoding="utf-8"), re.MULTILINE
+        ):
+            ledger_claim_ids.add(claim_id)
     manifest_claim_ids: set[str] = set()
     blocked_claims: list[str] = []
     for claim in project.get("claims", []):

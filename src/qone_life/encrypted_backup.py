@@ -1,8 +1,7 @@
-"""Authenticated, recovery-key-wrapped backups for the consumer desktop app.
+"""面向消费级桌面应用的、经认证且由恢复密钥包裹的备份。
 
-The application database remains protected by the operating system. This
-module only protects portable backup containers: the payload key is random,
-and the recovery key wraps that key with an Argon2id-derived AES-GCM key.
+应用数据库本身由操作系统保护；本模块只保护可携带的备份容器：载荷密钥是随机的，
+恢复密钥再用经 Argon2id 派生的 AES-GCM 密钥来包裹这个载荷密钥。
 """
 
 from __future__ import annotations
@@ -38,7 +37,7 @@ _AAD_WRAPPED_KEY = b"q-one-encrypted-backup-data-key-v1"
 
 
 class BackupCryptoError(ValueError):
-    """Raised for malformed containers or an incorrect recovery key."""
+    """容器格式错误或恢复密钥不正确时抛出。"""
 
 
 def _b64(value: bytes) -> str:
@@ -46,6 +45,7 @@ def _b64(value: bytes) -> str:
 
 
 def _unb64(value: Any, field: str) -> bytes:
+    """把 base64 字符串解码为字节；类型或内容不合法时抛出中文错误。"""
     if not isinstance(value, str):
         raise BackupCryptoError(f"{field} is missing")
     try:
@@ -55,6 +55,7 @@ def _unb64(value: Any, field: str) -> bytes:
 
 
 def _canonical(value: Any) -> bytes:
+    """生成确定性的 JSON 字节串（键排序、无多余空白），供加密与哈希使用。"""
     return json.dumps(
         value,
         ensure_ascii=False,
@@ -65,6 +66,7 @@ def _canonical(value: Any) -> bytes:
 
 
 def _encode_crockford(raw: bytes) -> str:
+    """把字节编码为 Crockford base32 文本。"""
     value = int.from_bytes(raw, "big")
     characters = []
     for shift in range((len(raw) * 8 + 4) // 5 - 1, -1, -1):
@@ -73,18 +75,28 @@ def _encode_crockford(raw: bytes) -> str:
 
 
 def _decode_crockford(text: str, expected_bytes: int) -> bytes:
+    """把用户输入的恢复密钥文本解码回字节。"""
     characters = text.strip().upper()
     characters = characters.removeprefix("Q1")
     for separator in ("-", " ", "_"):
         characters = characters.replace(separator, "")
+    # 把易混淆的字母统一到数字：I/L→1、O→0。
     characters = characters.replace("I", "1").replace("L", "1").replace("O", "0")
-    if not characters or any(char not in _CROCKFORD_REVERSE for char in characters):
+
+    # 逐字符校验是否属于合法字母表，遇到非法字符立即停止。
+    invalid = False
+    for char in characters:
+        if char not in _CROCKFORD_REVERSE:
+            invalid = True
+            break
+    if not characters or invalid:
         raise BackupCryptoError("恢复密钥包含无效字符")
+
     value = 0
     for char in characters:
         value = (value << 5) | _CROCKFORD_REVERSE[char]
-    # The encoder emits ceil(bytes*8/5) base32 characters. Reject extra
-    # non-zero padding rather than silently accepting a different key.
+    # 编码端输出 ceil(bytes*8/5) 个 base32 字符；这里拒绝多余的、非零的填充位，
+    # 而不是默默接受一个不同的密钥。
     padding = len(characters) * 5 - expected_bytes * 8
     if padding < 0 or value >> (expected_bytes * 8):
         raise BackupCryptoError("恢复密钥长度不正确")
@@ -92,15 +104,19 @@ def _decode_crockford(text: str, expected_bytes: int) -> bytes:
 
 
 def encode_recovery_key(raw: bytes) -> str:
+    """把 32 字节密钥编码为带校验和的 "Q1-XXXX-…" 恢复密钥。"""
     if len(raw) != DATA_KEY_BYTES:
         raise ValueError("recovery keys must contain 256 bits")
     checksum = struct.pack(">I", zlib.crc32(raw) & 0xFFFFFFFF)
     encoded = _encode_crockford(raw + checksum)
-    groups = [encoded[index:index + 8] for index in range(0, len(encoded), 8)]
+    groups = []
+    for index in range(0, len(encoded), 8):
+        groups.append(encoded[index:index + 8])
     return "Q1-" + "-".join(groups)
 
 
 def decode_recovery_key(value: str) -> bytes:
+    """解析恢复密钥并校验校验和，返回 32 字节密钥。"""
     if not isinstance(value, str) or len(value) > 200:
         raise BackupCryptoError("恢复密钥格式不正确")
     raw = _decode_crockford(value, DATA_KEY_BYTES + 4)
@@ -111,13 +127,12 @@ def decode_recovery_key(value: str) -> bytes:
 
 
 def _validate_kdf(raw: Any) -> dict[str, Any]:
+    """校验并规范化 KDF 参数，确保落在安全边界内。"""
     if not isinstance(raw, dict) or raw.get("name") != "argon2id":
         raise BackupCryptoError("备份 KDF 参数无效")
-    memory_kib, iterations, parallelism = (
-        raw.get("memory_kib"),
-        raw.get("iterations"),
-        raw.get("parallelism"),
-    )
+    memory_kib = raw.get("memory_kib")
+    iterations = raw.get("iterations")
+    parallelism = raw.get("parallelism")
     if (
         type(memory_kib) is not int
         or not 8 * 1024 <= memory_kib <= 256 * 1024
@@ -136,6 +151,7 @@ def _validate_kdf(raw: Any) -> dict[str, Any]:
 
 
 def _derive_key(recovery_key: bytes, salt: bytes, kdf: dict[str, Any]) -> bytes:
+    """用 Argon2id 从恢复密钥派生出密钥加密密钥（KEK）。"""
     return hash_secret_raw(
         secret=recovery_key,
         salt=salt,
@@ -172,6 +188,7 @@ def encrypt_backup(
     *,
     kdf: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    """加密一个明文备份对象，返回可序列化的容器字典。"""
     if len(data_key) != DATA_KEY_BYTES or len(recovery_key) != DATA_KEY_BYTES:
         raise ValueError("backup and recovery keys must contain 256 bits")
     if not isinstance(raw, dict):
@@ -212,6 +229,7 @@ def encrypt_backup(
 
 
 def inspect_backup(container: dict[str, Any]) -> dict[str, Any]:
+    """只做结构与范围校验，不接触密钥（用于展示与预检）。"""
     if not isinstance(container, dict) or container.get("format") != FORMAT:
         raise BackupCryptoError("不是受支持的 Q-One 加密备份")
     if (
@@ -243,11 +261,17 @@ def inspect_backup(container: dict[str, Any]) -> dict[str, Any]:
     if not 0 <= payload["size"] <= MAX_CONTAINER_BYTES:
         raise BackupCryptoError("备份过大")
     digest = payload.get("sha256")
-    if (
-        not isinstance(digest, str)
-        or len(digest) != 64
-        or any(char not in "0123456789abcdef" for char in digest)
-    ):
+
+    # 校验明文摘要必须是 64 位十六进制字符。
+    digest_invalid = False
+    if not isinstance(digest, str) or len(digest) != 64:
+        digest_invalid = True
+    else:
+        for char in digest:
+            if char not in "0123456789abcdef":
+                digest_invalid = True
+                break
+    if digest_invalid:
         raise BackupCryptoError("备份明文校验信息无效")
     return {
         "format": FORMAT,
@@ -260,6 +284,7 @@ def inspect_backup(container: dict[str, Any]) -> dict[str, Any]:
 
 
 def decrypt_backup(container: dict[str, Any], recovery_key: bytes) -> dict[str, Any]:
+    """用恢复密钥解包数据密钥并解密载荷，返回明文对象。"""
     if len(recovery_key) != DATA_KEY_BYTES:
         raise BackupCryptoError("恢复密钥长度不正确")
     metadata = inspect_backup(container)
@@ -287,6 +312,7 @@ def decrypt_backup(container: dict[str, Any], recovery_key: bytes) -> dict[str, 
             _payload_aad(created_at, kdf, salt),
         )
     except Exception as exc:
+        # 已经是我们定义的中文错误就直接抛，其它底层异常统一归为"密钥错误或损坏"。
         if isinstance(exc, BackupCryptoError):
             raise
         raise BackupCryptoError("恢复密钥错误或备份已损坏") from exc
@@ -304,6 +330,7 @@ def decrypt_backup(container: dict[str, Any], recovery_key: bytes) -> dict[str, 
 
 
 def write_container(path: str | os.PathLike[str], container: dict[str, Any]) -> None:
+    """原子地写入容器文件：先写临时文件并 fsync，再替换目标文件。"""
     destination = Path(path)
     destination.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
     encoded = (_canonical(container) + b"\n")
@@ -332,6 +359,7 @@ def write_container(path: str | os.PathLike[str], container: dict[str, Any]) -> 
 
 
 def read_container(path: str | os.PathLike[str]) -> dict[str, Any]:
+    """读取并解析容器文件，先按大小上限做保护。"""
     source = Path(path)
     if source.stat().st_size > MAX_CONTAINER_BYTES:
         raise BackupCryptoError("备份文件超过大小上限")

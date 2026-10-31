@@ -1,4 +1,4 @@
-"""Real local recommendation calls, grounded to existing goals and candidate IDs."""
+"""真实的本地推荐调用，严格锚定到已有的目标与候选 ID。"""
 import hashlib
 import json
 import os
@@ -11,6 +11,8 @@ from qone_agent.runtime import ProviderError, is_loopback, run_model
 
 @dataclass
 class PlanResult:
+    """一次推荐调用的结果与元信息。"""
+
     items: list
     provider: str
     model: str
@@ -19,10 +21,16 @@ class PlanResult:
 
 
 def validate_plan(raw, snapshot):
+    """校验模型返回的推荐：候选 ID 必须存在且不重复，各字段在范围内。"""
     if not isinstance(raw, dict) or not isinstance(raw.get("items"), list) or not 1 <= len(raw["items"]) <= 3:
         raise ProviderError("推荐格式无效，应包含1到3项行动")
-    candidates = {c["id"]: c for c in snapshot["candidates"]}
-    items, seen = [], set()
+
+    candidates = {}
+    for c in snapshot["candidates"]:
+        candidates[c["id"]] = c
+
+    items = []
+    seen = set()
     for row in raw["items"]:
         if not isinstance(row, dict) or not isinstance(row.get("candidate_id"), str):
             raise ProviderError("推荐缺少有效候选ID")
@@ -31,15 +39,18 @@ def validate_plan(raw, snapshot):
             raise ProviderError("推荐引用了不存在或重复的目标、任务")
         seen.add(candidate_id)
         candidate = candidates[candidate_id]
-        title, reason, minutes = row.get("title"), row.get("reason"), row.get("minutes")
+        title = row.get("title")
+        reason = row.get("reason")
+        minutes = row.get("minutes")
         if not isinstance(title, str) or not title.strip() or len(title) > 200:
             raise ProviderError("推荐行动标题无效")
         if not isinstance(reason, str) or not reason.strip() or len(reason) > 1600:
             raise ProviderError("推荐依据无效")
         if type(minutes) is not int or not 5 <= minutes <= snapshot["available_minutes"]:
             raise ProviderError("推荐时长超出可用时间")
-        if candidate['kind'] in {'task','review'} and minutes != candidate['minutes']:
+        if candidate['kind'] in {'task', 'review'} and minutes != candidate['minutes']:
             raise ProviderError('已有行动必须保留完整投入估计；请先明确拆分任务')
+
         detail = {}
         for key in ("first_step", "done_when"):
             value = row.get(key)
@@ -47,11 +58,25 @@ def validate_plan(raw, snapshot):
                 raise ProviderError("推荐的开始步骤或完成标准无效")
             if value is not None:
                 detail[key] = value.strip()
-        # Existing task labels are authoritative. A model may propose steps for a goal.
-        items.append({"candidate_id": candidate_id, "title": candidate["title"] if candidate["kind"] != "goal" else title.strip(),
-                      "reason": reason.strip(), "minutes": minutes, **detail})
-    if sum(item["minutes"] for item in items) > snapshot["available_minutes"]:
+
+        # 已有任务的标题是权威的；模型只能为"目标"候选细化出步骤。
+        final_title = title.strip()
+        if candidate["kind"] != "goal":
+            final_title = candidate["title"]
+        items.append({
+            "candidate_id": candidate_id,
+            "title": final_title,
+            "reason": reason.strip(),
+            "minutes": minutes,
+            **detail,
+        })
+
+    total_minutes = 0
+    for item in items:
+        total_minutes += item["minutes"]
+    if total_minutes > snapshot["available_minutes"]:
         raise ProviderError("推荐总时长超出每日预算")
+
     return items
 
 
@@ -108,15 +133,21 @@ PLAN_SCHEMA = {
 
 
 def model_context(snapshot):
-    """Keep bounded facts while removing rule boilerplate that encourages parroting."""
-    return snapshot | {"candidates": [{key: value for key, value in candidate.items()
-        if key not in {"first_step", "done_when", "revision", "record_id"}}
-        for candidate in snapshot["candidates"]]}
+    """构造给模型的上下文：保留有限的事实，去掉会诱发照抄的规则套话。"""
+    candidates = []
+    for candidate in snapshot["candidates"]:
+        trimmed = dict(candidate)
+        for key in ("first_step", "done_when", "revision", "record_id"):
+            trimmed.pop(key, None)
+        candidates.append(trimmed)
+    return snapshot | {"candidates": candidates}
 
 
 def generate_plan(snapshot, config, *, transport=None):
+    """按配置的 provider（local/laya/ollama）生成当日推荐。"""
     provider = config["auto_recommend_provider"]
     started = time.monotonic()
+
     if provider == "local":
         url = str(config.get("local_url", ""))
         model = str(config.get("local_model", ""))
@@ -126,7 +157,10 @@ def generate_plan(snapshot, config, *, transport=None):
         encoded = json.dumps(model_context(snapshot), ensure_ascii=False, sort_keys=True, allow_nan=False)
         if len(encoded) > 12000:
             raise ProviderError("本轮上下文过长，请缩短目标说明或参考资料；当前仍保留规则建议")
-        prompt = PROMPT_EN if str(config.get("resolved_language", "zh-CN")).lower().startswith("en") else PROMPT
+        if str(config.get("resolved_language", "zh-CN")).lower().startswith("en"):
+            prompt = PROMPT_EN
+        else:
+            prompt = PROMPT
         try:
             with httpx.Client(timeout=240, trust_env=False, transport=transport) as client:
                 response = client.post(
@@ -158,8 +192,12 @@ def generate_plan(snapshot, config, *, transport=None):
             raise ProviderError("内置本地模型连接失败或超时，当前仍可查看明确标记的规则建议") from exc
         except (ValueError, KeyError, TypeError, IndexError) as exc:
             raise ProviderError("内置本地模型未返回有效的推荐JSON") from exc
-        if any(not item.get("first_step") or not item.get("done_when") for item in items):
-            raise ProviderError("内置本地模型缺少可执行的第一步或完成标准，当前保留规则草案")
+
+        # 每一条都必须带可执行的第一步与完成标准。
+        for item in items:
+            if not item.get("first_step") or not item.get("done_when"):
+                raise ProviderError("内置本地模型缺少可执行的第一步或完成标准，当前保留规则草案")
+
         usage = payload.get("usage", {})
         usage["context_protocol"] = "action-brief-v1"
         usage["local"] = True
@@ -171,51 +209,85 @@ def generate_plan(snapshot, config, *, transport=None):
             round((time.monotonic() - started) * 1000, 2),
             usage,
         )
+
     if provider == "laya":
         candidates = snapshot["candidates"][:8]
         if len(candidates) == 1:
-            # Laya choice requires alternatives; explicit defer is an actionable alternative.
+            # Laya 的排序需要备选项；"明确暂缓"本身就是一个可执行的备选项。
             candidates = candidates + [{"id": "defer", "title": "先核实目标和约束，暂不新增行动"}]
-        decision = {"question": "根据当前目标，今天优先做哪一步？", "domain": "work", "risk": "low", "reversible": True,
+        options = []
+        for c in candidates:
+            options.append({"id": c["id"], "label": c["title"]})
+        context_items = dict(snapshot)
+        context_items.pop("candidates", None)
+        decision = {
+            "question": "根据当前目标，今天优先做哪一步？", "domain": "work", "risk": "low", "reversible": True,
             "deadline": snapshot["date"] + "T23:59:59Z", "success_criterion": "在可用时间内推进已声明目标，保留未知",
-            "options": [{"id": c["id"], "label": c["title"]} for c in candidates],
-            "context": json.dumps({k: v for k, v in snapshot.items() if k != "candidates"}, ensure_ascii=False)}
+            "options": options,
+            "context": json.dumps(context_items, ensure_ascii=False),
+        }
         result = run_model(decision, "laya", config)
         selected = result.recommendation["option_id"]
         if selected == "defer":
             raise ProviderError("Laya建议先核实约束；目前保留规则建议供你审阅")
-        candidate = next(c for c in snapshot["candidates"] if c["id"] == selected)
-        items = [{"candidate_id": selected, "title": candidate["title"], "reason": candidate["reason"] + "；Laya进行了类型化排序，未生成独立解释。",
-                  "minutes": candidate["minutes"],
-                  "first_step": candidate["first_step"], "done_when": candidate["done_when"]}]
+
+        candidate = None
+        for c in snapshot["candidates"]:
+            if c["id"] == selected:
+                candidate = c
+                break
+        items = [{
+            "candidate_id": selected,
+            "title": candidate["title"],
+            "reason": candidate["reason"] + "；Laya进行了类型化排序，未生成独立解释。",
+            "minutes": candidate["minutes"],
+            "first_step": candidate["first_step"],
+            "done_when": candidate["done_when"],
+        }]
         return PlanResult(items, "laya", result.model, result.duration_ms, result.usage)
+
     if provider != "ollama" or not is_loopback(config["ollama_url"]):
         raise ProviderError("自动推荐只使用本机Ollama或Laya；远程调用需继续使用预览确认流程")
+
     encoded = json.dumps(model_context(snapshot), ensure_ascii=False, sort_keys=True, allow_nan=False)
     if len(encoded) > 12000:
         raise ProviderError("本轮上下文过长，请缩短目标说明或参考资料；当前仍保留规则建议")
+
     cpu_only = os.environ.get("QONE_OLLAMA_CPU_ONLY") == "1"
     options = {"num_ctx": 8192, "num_predict": 1600, "temperature": 0}
     if cpu_only:
         options["num_gpu"] = 0
+
     try:
-        prompt = PROMPT_EN if str(config.get("resolved_language", "zh-CN")).lower().startswith("en") else PROMPT
+        if str(config.get("resolved_language", "zh-CN")).lower().startswith("en"):
+            prompt = PROMPT_EN
+        else:
+            prompt = PROMPT
         with httpx.Client(timeout=240 if cpu_only else 120, trust_env=False, transport=transport) as client:
             response = client.post(config["ollama_url"].rstrip("/") + "/api/chat", json={
-                "model": config["ollama_model"], "messages": [{"role": "system", "content": prompt}, {"role": "user", "content": encoded}],
+                "model": config["ollama_model"],
+                "messages": [{"role": "system", "content": prompt}, {"role": "user", "content": encoded}],
                 "format": "json", "stream": False, "think": False, "keep_alive": 0,
                 "options": options})
             if response.is_error:
                 raise ProviderError(f"本地模型请求失败（HTTP {response.status_code}）")
             payload = response.json()
             items = validate_plan(json.loads(payload["message"]["content"]), snapshot)
-            if any(not item.get("first_step") or not item.get("done_when") for item in items):
-                raise ProviderError("本地模型缺少可执行的第一步或完成标准，当前保留规则草案")
-            usage = {key: payload[key] for key in ("prompt_eval_count", "eval_count") if key in payload}
+
+            # 每一条都必须带可执行的第一步与完成标准。
+            for item in items:
+                if not item.get("first_step") or not item.get("done_when"):
+                    raise ProviderError("本地模型缺少可执行的第一步或完成标准，当前保留规则草案")
+
+            usage = {}
+            for key in ("prompt_eval_count", "eval_count"):
+                if key in payload:
+                    usage[key] = payload[key]
     except httpx.HTTPError as exc:
         raise ProviderError("本地模型连接失败或超时，当前仍可查看明确标记的规则建议") from exc
     except (ValueError, KeyError, TypeError, IndexError) as exc:
         raise ProviderError("本地模型未返回有效的推荐JSON") from exc
+
     usage["context_protocol"] = "action-brief-v1"
     usage["cpu_only"] = cpu_only
     usage["input_sha256"] = hashlib.sha256(encoded.encode()).hexdigest()

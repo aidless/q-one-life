@@ -1,4 +1,4 @@
-"""Minimal daily measurement records with a SHA-256 hash chain."""
+"""每日测量记录：带 SHA-256 哈希链，保证记录不可篡改。"""
 
 from __future__ import annotations
 
@@ -19,10 +19,11 @@ OUTCOME_FIELDS = ("subject", "observed_outcome", "decision_seq")
 
 
 class MeasurementError(ValueError):
-    """Raised when a measurement record is malformed."""
+    """测量记录格式不合法时抛出的异常。"""
 
 
 def _read_measurements(path: Path) -> list[dict[str, Any]]:
+    """读取整份测量文件，逐行解析为事件列表；空行或非法 JSON 都会报错。"""
     if not path.exists():
         return []
     events = []
@@ -41,6 +42,7 @@ def _read_measurements(path: Path) -> list[dict[str, Any]]:
 
 
 def _verify_chain(events: list[dict[str, Any]]) -> int:
+    """校验整条哈希链：序号连续、类型合法、必填字段齐全、前后哈希衔接一致。"""
     previous = GENESIS
     for seq, event in enumerate(events, start=1):
         if event.get("seq") != seq:
@@ -48,11 +50,13 @@ def _verify_chain(events: list[dict[str, Any]]) -> int:
         if event.get("type") not in MEASUREMENT_TYPES:
             raise MeasurementError(f"unknown measurement type at {seq}: {event.get('type')}")
         payload = event.get("payload", {})
-        required = (
-            DECISION_FIELDS if event.get("type") == "decision"
-            else OUTCOME_FIELDS if event.get("type") == "outcome"
-            else MEASUREMENT_FIELDS
-        )
+        # 不同记录类型的必填字段不同。
+        if event.get("type") == "decision":
+            required = DECISION_FIELDS
+        elif event.get("type") == "outcome":
+            required = OUTCOME_FIELDS
+        else:
+            required = MEASUREMENT_FIELDS
         for field in required:
             if not str(payload.get(field) or "").strip():
                 raise MeasurementError(f"missing field {field!r} at measurement {seq}")
@@ -89,30 +93,15 @@ class MeasurementStore:
         for name in MEASUREMENT_FIELDS:
             if not str(locals().get(name) or "").strip():
                 raise MeasurementError(f"{name!r} must not be empty")
-        with self._lock():
-            events = _read_measurements(self.path)
-            _verify_chain(events)
-            payload = {
-                "subject": subject,
-                "metric": metric,
-                "value": value,
-                "unit": unit,
-                "definition": definition,
-                "source": source,
-            }
-            event = {
-                "seq": len(events) + 1,
-                "ts": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
-                "type": record_type,
-                "payload": payload,
-                "prev_hash": events[-1]["hash"] if events else GENESIS,
-            }
-            event["hash"] = event_hash(event)
-            with secure_append(self.path) as handle:
-                handle.write(canonical_json(event) + "\n")
-                handle.flush()
-                os.fsync(handle.fileno())
-            return event
+        payload = {
+            "subject": subject,
+            "metric": metric,
+            "value": value,
+            "unit": unit,
+            "definition": definition,
+            "source": source,
+        }
+        return self._append_payload(record_type, payload)
 
     def list_all(self) -> list[dict[str, Any]]:
         with self._lock():
@@ -120,12 +109,14 @@ class MeasurementStore:
             return _read_measurements(self.path)
 
     def _append_payload(self, record_type: str, payload: dict[str, Any]) -> dict[str, Any]:
+        """在锁内校验现有链、生成新事件并安全落盘，返回写入的事件。"""
         with self._lock():
             events = _read_measurements(self.path)
             _verify_chain(events)
+            timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
             event = {
                 "seq": len(events) + 1,
-                "ts": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+                "ts": timestamp,
                 "type": record_type,
                 "payload": payload,
                 "prev_hash": events[-1]["hash"] if events else GENESIS,
@@ -179,7 +170,12 @@ class MeasurementStore:
         if latency_sec is not None and (isinstance(latency_sec, bool) or not isinstance(latency_sec, int) or latency_sec < 0):
             raise MeasurementError("latency_sec must be a non-negative integer")
         events = self.list_all()
-        target = next((e for e in events if e["seq"] == decision_seq), None)
+        # 定位被回访的那条决策。
+        target = None
+        for e in events:
+            if e["seq"] == decision_seq:
+                target = e
+                break
         if not target or target["type"] != "decision":
             raise MeasurementError(f"no decision at seq {decision_seq}")
         payload = {
@@ -202,7 +198,10 @@ class MeasurementStore:
         outcomes = self.outcomes()
         if not outcomes:
             return {"value": "unknown", "n": 0}
-        matched = sum(1 for o in outcomes if o["payload"].get("matched") is True)
+        matched = 0
+        for o in outcomes:
+            if o["payload"].get("matched") is True:
+                matched += 1
         return {"value": matched / len(outcomes), "matched": matched, "n": len(outcomes)}
 
 
@@ -214,11 +213,13 @@ def plan_experiment(
     estimated_duration_sec: int | None = None,
     statistical_power: float | None = None,
 ) -> dict[str, Any]:
-    """Generate an execution plan for a missing experiment without running it."""
-    approval_required = any(
-        token in resource_requirement.lower()
-        for token in ("gpu", "paid", "cloud", "external api", "submission", "account")
-    )
+    """为某个待补实验生成只读的执行计划，本身不真正运行实验。"""
+    lowered = resource_requirement.lower()
+    approval_required = False
+    for token in ("gpu", "paid", "cloud", "external api", "submission", "account"):
+        if token in lowered:
+            approval_required = True
+            break
     if estimated_duration_sec is not None and estimated_duration_sec <= 0:
         raise MeasurementError("estimated_duration_sec must be a positive integer")
     if statistical_power is not None and not (0 < statistical_power < 1):

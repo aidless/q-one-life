@@ -1,3 +1,8 @@
+"""研究组合的分诊（triage）模块。
+
+这里的「优先级」只是**生产排期顺序**，不是论文质量、成熟度或录用概率的评分。
+最终处置（final_disposition）始终由人决定，本模块只给出建议。
+"""
 from __future__ import annotations
 
 import csv
@@ -28,28 +33,36 @@ def triage_portfolio(
     pilots: Sequence[dict[str, Any]] = (),
     generated_at: str | None = None,
 ) -> dict[str, Any]:
-    """Rank the next production work by transparent signals.
+    """按可观测的信号为下一批生产工作排序。
 
-    The returned priority is an orchestration order, not a scientific-quality
-    score. The source portfolio's human disposition is copied unchanged.
+    产出的优先级只是排期顺序，不代表科学质量。源组合里的人工处置会被原样保留。
     """
-
     timestamp = generated_at or _now()
     generated = _parse_timestamp(timestamp) or datetime.now(timezone.utc)
-    family_by_project = {
-        family.get("canonical_project_id"): family
-        for family in portfolio.get("families", [])
-        if family.get("canonical_project_id")
-    }
-    record_by_project = {
-        record.get("project_id"): record
-        for record in [*portfolio.get("projects", []), *portfolio.get("candidates", [])]
-        if isinstance(record, dict) and record.get("project_id")
-    }
+
+    # 建立两张索引：家族号 -> 家族记录；项目号 -> 项目/候选记录。
+    # 用显式循环而非字典推导，方便阅读，也保证「后出现的覆盖先出现的」这一顺序语义。
+    family_by_project: dict[Any, dict[str, Any]] = {}
+    for family in portfolio.get("families", []):
+        canonical_id = family.get("canonical_project_id")
+        if canonical_id:
+            family_by_project[canonical_id] = family
+
+    record_by_project: dict[Any, dict[str, Any]] = {}
+    all_records = [*portfolio.get("projects", []), *portfolio.get("candidates", [])]
+    for record in all_records:
+        if not isinstance(record, dict):
+            continue
+        project_id = record.get("project_id")
+        if project_id:
+            record_by_project[project_id] = record
+
     records: list[dict[str, Any]] = []
     for project in portfolio.get("projects", []):
         family = family_by_project.get(project.get("project_id"), {})
+        # 同一规范化标题下的成员里，除规范版本外还有几个待合并的变体。
         variant_count = max(0, len(family.get("members", [])) - 1)
+
         pilot_matches = _matched_pilots(project, pilots)
         pilot = pilot_matches[0] if pilot_matches else None
         overlay = record_by_project.get(project.get("metadata_project_id"))
@@ -57,6 +70,8 @@ def triage_portfolio(
             project.get("files", {}),
             overlay.get("files") if overlay else None,
         )
+
+        # 每个因子都在「观测依据」里写清来源，保证排序透明、可解释。
         factors: list[dict[str, Any]] = []
 
         if pilot is not None:
@@ -64,9 +79,7 @@ def triage_portfolio(
                 {
                     "code": "PINNED_PILOT",
                     "points": 200,
-                    "observed": (
-                        f"Matched pilot {pilot['id']} at phase {pilot.get('phase', 'P0')}."
-                    ),
+                    "observed": f"Matched pilot {pilot['id']} at phase {pilot.get('phase', 'P0')}.",
                 }
             )
         if project.get("metadata_project_id"):
@@ -131,10 +144,7 @@ def triage_portfolio(
                 {
                     "code": "VERSION_RECONCILIATION",
                     "points": 5,
-                    "observed": (
-                        f"{variant_count} extra normalized-title source version(s) require "
-                        "review."
-                    ),
+                    "observed": f"{variant_count} extra normalized-title source version(s) require review.",
                 }
             )
         if project.get("project_type") == "legacy":
@@ -153,6 +163,8 @@ def triage_portfolio(
             variant_count=variant_count,
             generated=generated,
         )
+
+        # 依据现有结构推断下一步动作，优先级从低到高逐级判断。
         claim_ledger = _has_file(files, "claim_ledgers")
         bibliography = _has_file(files, "bibliographies")
         pdf = _has_file(files, "pdfs")
@@ -195,14 +207,15 @@ def triage_portfolio(
             }
         )
 
+    # 汇总各类计数，方便在报告里一眼看清分布。
     priority_counts = Counter(record["priority_band"] for record in records)
     suggestion_counts = Counter(record["suggested_disposition"] for record in records)
     action_counts = Counter(record["suggested_next_action"] for record in records)
-    pilot_ids = {
-        pilot_id
-        for record in records
-        for pilot_id in record.get("pilot_ids", [])
-    }
+    pilot_ids: set[str] = set()
+    for record in records:
+        for pilot_id in record.get("pilot_ids", []):
+            pilot_ids.add(pilot_id)
+
     return {
         "schema": TRIAGE_SCHEMA,
         "generated_at": timestamp,
@@ -241,7 +254,10 @@ def triage_portfolio(
             ),
         ),
     }
+
+
 def render_triage_markdown(report: dict[str, Any]) -> str:
+    """把分诊报告渲染成便于人读的 Markdown。"""
     summary = report["summary"]
     lines = [
         "# Q-One research triage",
@@ -255,10 +271,8 @@ def render_triage_markdown(report: dict[str, Any]) -> str:
         "",
         f"- Paper families: {summary['paper_families']}",
         f"- Priority bands: `{json.dumps(summary['priority_bands'], sort_keys=True)}`",
-        (
-            "- Suggested dispositions: "
-            f"`{json.dumps(summary['suggested_dispositions'], sort_keys=True)}`"
-        ),
+        "- Suggested dispositions: "
+        f"`{json.dumps(summary['suggested_dispositions'], sort_keys=True)}`",
         f"- Global readiness score: `{summary['global_readiness_score']}`",
         "",
         "## Queue",
@@ -267,6 +281,7 @@ def render_triage_markdown(report: dict[str, Any]) -> str:
         "|---|---:|---|---|---|---|",
     ]
     for project in report["projects"]:
+        # 标题里的竖线需要转义，否则会破坏 Markdown 表格。
         title = str(project["title"]).replace("|", "\\|")
         pilots = ", ".join(project.get("pilot_ids", [])) or "-"
         lines.append(
@@ -282,7 +297,10 @@ def render_triage_markdown(report: dict[str, Any]) -> str:
         ]
     )
     return "\n".join(lines)
+
+
 def render_triage_csv(report: dict[str, Any]) -> str:
+    """把分诊报告渲染成 CSV 文本。"""
     output = io.StringIO()
     writer = csv.writer(output, lineterminator="\n")
     writer.writerow(
@@ -313,6 +331,8 @@ def render_triage_csv(report: dict[str, Any]) -> str:
             ]
         )
     return output.getvalue()
+
+
 def write_triage(
     report: dict[str, Any],
     output: str | Path,
@@ -320,11 +340,14 @@ def write_triage(
     markdown: str | Path | None = None,
     csv_path: str | Path | None = None,
 ) -> None:
+    """写出分诊报告：JSON 必写，Markdown 与 CSV 按需写出。"""
     _write_json(output, report)
+
     if markdown is not None:
         target = Path(markdown)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(render_triage_markdown(report), encoding="utf-8")
+
     if csv_path is not None:
         target = Path(csv_path)
         target.parent.mkdir(parents=True, exist_ok=True)
