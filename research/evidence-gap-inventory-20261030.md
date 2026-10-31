@@ -15,7 +15,7 @@
 | closing-calibration-landscape | 56 | 44 | 78.6% | 0 | 零真数据缺口 |
 | memory-architecture-effects | 240 | 216 | 90.0% | 0 | 零真数据缺口 |
 | calibration-fatigue | 361 | 334 | 92.5% | 0 | 零真数据缺口 |
-| verifier-capture-aggregation | 101 | 80 | 79.2% | **20 (tab:dz d_z 无冻结)** | **主要缺口** |
+| verifier-capture-aggregation | 101 | 80 | 79.2% | 0 (tab:dz 已重算闭合) | **证据闭环完成** |
 | paper2-coupling | - | - | - | - | 6 硬阻塞裁决待用户 |
 
 ## 无正文的 pilot（6 个）
