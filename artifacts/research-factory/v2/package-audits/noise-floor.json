@@ -1,6 +1,6 @@
 {
   "schema": "q-one-arxiv-package-audit-v1",
-  "generated_at": "2026-10-31T14:41:40.540975Z",
+  "generated_at": "2026-10-31T16:17:18.896408Z",
   "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source",
   "main_file": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source/main.tex",
   "mechanical_pass": true,

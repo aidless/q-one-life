@@ -130,10 +130,14 @@ def numeric_leaf_hits(root: Path, target: float, tolerance: float = 1e-12) -> in
             hits += 1
 
     for path in sorted((root / "evidence" / "upstream").rglob("*.json")):
+        payload = None
         try:
-            walk(load_json(path))
+            payload = load_json(path)
         except (OSError, ValueError):
+            payload = None
+        if payload is None:
             continue
+        walk(payload)
     return hits
 
 

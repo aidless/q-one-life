@@ -333,6 +333,15 @@ def real_pilot() -> dict[str, Any]:
             "boundary": "A local temperature probe; no GPT-4o reproduction or generalization established."}
 
 
+def _rejects_invalid_ece(confidence: list[float], correct: list[int]) -> bool:
+    """非法 ECE 输入必须抛 ValueError；返回 True 表示确实被拒绝。"""
+    try:
+        trace_ece(confidence, correct)
+    except ValueError:
+        return True
+    return False
+
+
 def trace_ece(confidence: list[float], correct: list[int], bins: int = 10) -> float:
     """Match the archived driver's rank-sorted, equal-count ECE convention."""
     if len(confidence) != len(correct) or len(confidence) < bins:
@@ -341,7 +350,7 @@ def trace_ece(confidence: list[float], correct: list[int], bins: int = 10) -> fl
         raise ValueError("invalid confidence")
     if any(c not in (0, 1) for c in correct):
         raise ValueError("invalid correctness")
-    pairs = sorted(zip(confidence, correct), key=lambda pair: pair[0])
+    pairs = sorted(zip(confidence, correct, strict=True), key=lambda pair: pair[0])
     width = len(pairs) // bins
     result = 0.0
     for index in range(bins):
@@ -409,11 +418,7 @@ def self_test() -> None:
     assert trace_ece([0.5] * 10, [0, 1] * 5) == 0.5
     assert trace_ece([0.5] * 20, [0, 1] * 10) == 0
     for confidence, correct in [([0.5] * 10, [0] * 9), ([1.5] * 10, [0] * 10)]:
-        try:
-            trace_ece(confidence, correct)
-        except ValueError:
-            pass
-        else:
+        if _rejects_invalid_ece(confidence, correct) is not True:
             raise AssertionError("invalid ECE inputs accepted")
     grid = grid_audit([{"alpha": 1, "tau": 1, "method": "none", "CV_N5": 2},
                        {"alpha": 1, "tau": 1, "method": "a", "CV_N5": 3},
@@ -451,7 +456,7 @@ def main() -> int:
     reconciliation = {"retained_files": len(variants),
                       "distinct_hashes": len({row["sha256"] for row in variants}),
                       "rows": variants, "diff_opcode_count": len(opcodes),
-                      "changed_line_slots": sum(max(j-i, l-k) for tag, i, j, k, l in opcodes if tag != "equal"),
+                      "changed_line_slots": sum(max(j - i, last - k) for tag, i, j, k, last in opcodes if tag != "equal"),
                       "preprint_equals_backup": sha(UP/"arxiv_clean/main.tex") == sha(UP/"main.tex.bak_preprint"),
                       "canonical_scope_note": "canonical, merged version" in text,
                       "canonical_author_anonymous": bool(re.search(r"\\author\s*\{\s*(?:\\name\s+)?Anonymous", text)),

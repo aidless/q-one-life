@@ -184,7 +184,7 @@ def exact_reachability(rows: list, n_per_cell: int, target_ss_w: float) -> dict:
         for combo in itertools.product(*[range(cnt[v] + 1) for v in keys]):
             if sum(combo) != n_per_cell:
                 continue
-            vals = [v for c, v in zip(combo, keys) for _ in range(c)]
+            vals = [v for c, v in zip(combo, keys, strict=True) for _ in range(c)]
             m = sum(vals) / len(vals)
             reach.add(sum((v - m) ** 2 for v in vals))
         per_cell_sets[k] = reach

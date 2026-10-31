@@ -1,11 +1,11 @@
 {
   "schema": "q-one-research-factory-verification-v1",
-  "generated_at": "2026-10-31T14:41:43.730994Z",
+  "generated_at": "2026-10-31T16:17:20.931687Z",
   "command": "PYTHONPATH=/data2/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/data2/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/data2/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src /tmp/qone-venv/bin/python '/home/liuzewen/F:\\deepseek/q-one-life/scripts/research_factory_verify.py'",
   "scope": "Research Factory control plane, seventeen pilot overlays, claim ledgers, mechanical package audits, clean-room compilation and candidate archives",
   "source": {
     "workspace": "/home/liuzewen/F:\\deepseek/q-one-life",
-    "head": "02922724106caaa458edc62ca3eb0a2b8c0971a3",
+    "head": "79a56fff836ec5904f7a6c0c4504569f35459f31",
     "dirty": true
   },
   "machine": {
@@ -39,7 +39,7 @@
       "result": "passed"
     },
     "project_validation": {
-      "valid": 16,
+      "valid": 17,
       "ready": 0,
       "projects": 17
     },
@@ -222,14 +222,14 @@
       },
       "artifact": {
         "path": "artifacts/research-factory/v2/agent-dispositions.json",
-        "sha256": "66ba9737c0f5e5229e23152402fc5a811f70d257695af8306b96b69747c298eb",
+        "sha256": "3420174414bd494c4b65b3794b2c8b1b51d9d9c96a0d5e6138bd8d7650326488",
         "bytes": 193527
       }
     }
   },
   "pilots": {
     "pilots": 17,
-    "valid_overlays": 16,
+    "valid_overlays": 17,
     "ready_projects": 0,
     "compiled_packages": 8,
     "candidate_packages": 8,
@@ -260,17 +260,17 @@
     },
     {
       "path": "artifacts/research-factory/v2/pilot-status.json",
-      "sha256": "c785ff6bfda64b24ac8b3174fed2924a4278a685a97a4978a0b95f94432a0ec2",
-      "bytes": 43494
+      "sha256": "f7e584a239f826da0d2b49ceb04cafbda7b819c5e2cd39ae470d3109b2612a4f",
+      "bytes": 43457
     },
     {
       "path": "artifacts/research-factory/v2/agent-dispositions.json",
-      "sha256": "66ba9737c0f5e5229e23152402fc5a811f70d257695af8306b96b69747c298eb",
+      "sha256": "3420174414bd494c4b65b3794b2c8b1b51d9d9c96a0d5e6138bd8d7650326488",
       "bytes": 193527
     },
     {
       "path": "artifacts/research-factory/v2/agent-dispositions.md",
-      "sha256": "2906d20e63ad768788ad974ec943c8bb5fa1695b292838e27fa8b755759304af",
+      "sha256": "40ad4f95db4c9e34724ad27953f2413419977aee46217a07959b83e60999dea4",
       "bytes": 23641
     },
     {
@@ -300,52 +300,52 @@
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/index.json",
-      "sha256": "b9794255a7e51a5807809cb3ee0012b708e551e88353af97b8c67f3d945b0210",
+      "sha256": "e514ed1013bb5f9c22bd18c5858eb7f41da5811646ed1a42a5c1662f576929c3",
       "bytes": 4328
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/agent-behavior-regression.json",
-      "sha256": "3ba8c8ce6c65768bb349f33593bfd8ffe26d5e4484804e4d87fc305fb998c9ec",
+      "sha256": "ebc79e8c92246708d533f9dece1fa15d115b03af678dada6645a54b1de4c90a6",
       "bytes": 2339
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/closing-landscape.json",
-      "sha256": "12d7db7e6ba6ecaef9fb2d4736dd73cb202f4bc90b4fa676fe598d2ee838c72d",
+      "sha256": "e31b59003fb15c9adf06f1866aa8d7dac9c55eb47cbd0b23161446160f2c50dc",
       "bytes": 2011
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/f-acceptance.json",
-      "sha256": "b8e3929c93955e6bc371d8fbf926e404262157fc8bed4a5dfaaa43fb566988ca",
+      "sha256": "11536b1e1b9f4e5f65183efaf35ebd1fa42f85c6faef7b77d3f079f6dc00c0e7",
       "bytes": 1775
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/memory-architecture.json",
-      "sha256": "15689dfe97d574f6f114cf7e70a4deb3a89dce16a63d9a988a48fc06a4015a76",
+      "sha256": "03784211a81916f626e3d5b59485b20cd7b6c9de15adf3c5770f2f539f4e95d4",
       "bytes": 2498
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/noise-floor.json",
-      "sha256": "d9fb94fa9b1bbbaac33d7626a535f3ec3f134fb8abcc848c6d3b41ccff681c88",
+      "sha256": "1e26c385e269897170f238b513f912cff1abd7822deb7a45eae93654b66e9171",
       "bytes": 2593
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/paper11-overlay.json",
-      "sha256": "b584e56d3d2178a24715f1b8256b3a9530bbb2e3c52e364ebf5f574608618bdc",
+      "sha256": "c40a45d9ff861a13bc3b2eb0e23ec73c3efc8d0edb0ff8c7135e0624b49c3444",
       "bytes": 1481
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/paper11.json",
-      "sha256": "082ba1c95ba2fe71cc2b3eb1518b34f9f38979d33508af926a5ed1d48a3afad7",
+      "sha256": "e61b38994c316437578910273ebe306368b2ea31e621f81d4ae54963b4da636f",
       "bytes": 5083
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/paper2-coupling.json",
-      "sha256": "133bfb5a0be3b3c0d85a6bc27cf0d08aa621352c2769b513b966bddb4eeac61c",
+      "sha256": "e6a9d7e4e441e0b14e8a7b53cee0a13c8c1c4117d4789cd7b30fe33f1256ba80",
       "bytes": 1317
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/verifier-capture-aggregation.json",
-      "sha256": "a395a805790975f2294581cfe3dc0ba55f8138c223f1be03bc6163e8b83439ed",
+      "sha256": "ce8c6dab4e12f45f169795673ce2d84d11d6519669b679ae36b78876d2dc15b4",
       "bytes": 1653
     }
   ],

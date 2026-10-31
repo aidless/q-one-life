@@ -1,6 +1,6 @@
 {
   "schema": "q-one-research-pilot-status-v1",
-  "generated_at": "2026-10-31T14:41:43.688193Z",
+  "generated_at": "2026-10-31T16:17:20.869615Z",
   "projects": [
     {
       "project_path": "research/arc-paper-track",
@@ -61,7 +61,7 @@
       "status": "review_pending",
       "target": "arxiv",
       "validation": {
-        "valid": false,
+        "valid": true,
         "ready": false,
         "blocked_claims": [],
         "failed_gate_receipts": []
@@ -86,7 +86,6 @@
         "external-submission": "locked"
       },
       "plan_actions": [
-        "repair_overlay_integrity",
         "resolve_package_blockers",
         "external_submission_gate"
       ],
@@ -1179,7 +1178,7 @@
   ],
   "summary": {
     "pilots": 17,
-    "valid_overlays": 16,
+    "valid_overlays": 17,
     "ready_projects": 0,
     "compiled_packages": 8,
     "candidate_packages": 8,

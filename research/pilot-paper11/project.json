@@ -92,7 +92,7 @@
     },
     {
       "path": "reports/citation-verification.json",
-      "sha256": "74dd76c5559fe1400db6a584f60aa6df17711f5ea5f2ca15c954f3452cab14ea",
+      "sha256": "d948bbe3a3c6dac2bb1951d49e0cfa93738d9c16d4868b546c2ccde94c43080c",
       "state": "verified",
       "origin": "12/12 citation keys resolve; 0 unresolved, 0 unused",
       "description": "Citation completeness audit for Paper11: all 12 cite keys in main.tex match references.bib and vice versa."

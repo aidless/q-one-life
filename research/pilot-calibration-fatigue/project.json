@@ -177,7 +177,7 @@
     },
     {
       "path": "tools/audit_p17.py",
-      "sha256": "1ac9ec9dfd100e030c742d714f25548ac032a563854b4b5104d974bd4fcadd70",
+      "sha256": "e87cab304da2ac667c965afe34e17a5944f691715891b9dd14f7d63737af7e1c",
       "state": "verified",
       "origin": "P17 citation/ECE correction 2026-10-28",
       "description": "tools/audit_p17.py"

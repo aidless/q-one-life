@@ -43,7 +43,7 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
 
 def pearson(xs: list[float], ys: list[float]) -> float:
     xm, ym = statistics.mean(xs), statistics.mean(ys)
-    numerator = sum((x - xm) * (y - ym) for x, y in zip(xs, ys))
+    numerator = sum((x - xm) * (y - ym) for x, y in zip(xs, ys, strict=True))
     denominator = math.sqrt(
         sum((x - xm) ** 2 for x in xs) * sum((y - ym) ** 2 for y in ys)
     )
