@@ -1,6 +1,6 @@
 # Research Factory agent disposition ledger
 
-Generated: `2026-10-31T16:17:17.321336Z`
+Generated: `2026-10-31T16:30:37.982595Z`
 
 Authority: `agent-proposed, not human publication approval`.
 

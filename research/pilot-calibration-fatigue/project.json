@@ -30,7 +30,7 @@
     },
     {
       "path": "evidence/audit.json",
-      "sha256": "fa40cc4c8a13b36fb3f4e3c05cc1ec6302a0cadab8915f936cecf08ee22a6846",
+      "sha256": "cfd39b8612ab69225da4f5480aa8bc337195d48e5e2af7fd7c2dfdebf9792cbb",
       "state": "verified",
       "origin": "P17 citation/ECE correction 2026-10-28",
       "description": "evidence/audit.json"
@@ -177,7 +177,7 @@
     },
     {
       "path": "tools/audit_p17.py",
-      "sha256": "e87cab304da2ac667c965afe34e17a5944f691715891b9dd14f7d63737af7e1c",
+      "sha256": "49150fbe399ac8735f5fc9b9763dcada9c0fbf62808ac2936fb55bb1d351d7fe",
       "state": "verified",
       "origin": "P17 citation/ECE correction 2026-10-28",
       "description": "tools/audit_p17.py"
@@ -191,7 +191,7 @@
     },
     {
       "path": "evidence/ece-recovery.json",
-      "sha256": "fe0bcb5b2344dae0c6e92b3bc477f4d54be8dea32df016c44f130d411520a8b1",
+      "sha256": "c16e9f766fc4c41fd1181cac60978bbd7d41835b363f8bcffa5e1f1900ee06c5",
       "state": "verified",
       "origin": "P17 citation/ECE correction 2026-10-28",
       "description": "evidence/ece-recovery.json"
@@ -628,7 +628,7 @@
       "scope": "reproducibility",
       "state": "blocked",
       "receipt": "evidence/audit.json",
-      "receipt_sha256": "fa40cc4c8a13b36fb3f4e3c05cc1ec6302a0cadab8915f936cecf08ee22a6846",
+      "receipt_sha256": "cfd39b8612ab69225da4f5480aa8bc337195d48e5e2af7fd7c2dfdebf9792cbb",
       "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
       "summary": "The evidence manifest is complete but the outer and arXiv-clean manifests are stale."
     },
@@ -637,7 +637,7 @@
       "scope": "numbers",
       "state": "passed",
       "receipt": "evidence/audit.json",
-      "receipt_sha256": "fa40cc4c8a13b36fb3f4e3c05cc1ec6302a0cadab8915f936cecf08ee22a6846",
+      "receipt_sha256": "cfd39b8612ab69225da4f5480aa8bc337195d48e5e2af7fd7c2dfdebf9792cbb",
       "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
       "summary": "The revised source states both the per-method mean range and the full cell range; both reproduce."
     },
@@ -655,7 +655,7 @@
       "scope": "numbers",
       "state": "passed",
       "receipt": "evidence/audit.json",
-      "receipt_sha256": "fa40cc4c8a13b36fb3f4e3c05cc1ec6302a0cadab8915f936cecf08ee22a6846",
+      "receipt_sha256": "cfd39b8612ab69225da4f5480aa8bc337195d48e5e2af7fd7c2dfdebf9792cbb",
       "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
       "summary": "All 120 T30 seed rows and summaries reproduce."
     },
@@ -664,7 +664,7 @@
       "scope": "numbers",
       "state": "passed",
       "receipt": "evidence/audit.json",
-      "receipt_sha256": "fa40cc4c8a13b36fb3f4e3c05cc1ec6302a0cadab8915f936cecf08ee22a6846",
+      "receipt_sha256": "cfd39b8612ab69225da4f5480aa8bc337195d48e5e2af7fd7c2dfdebf9792cbb",
       "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
       "summary": "All 120 T50 seed rows and gamma/H summaries reproduce as null."
     },
@@ -673,7 +673,7 @@
       "scope": "numbers",
       "state": "passed",
       "receipt": "evidence/ece-recovery.json",
-      "receipt_sha256": "fe0bcb5b2344dae0c6e92b3bc477f4d54be8dea32df016c44f130d411520a8b1",
+      "receipt_sha256": "c16e9f766fc4c41fd1181cac60978bbd7d41835b363f8bcffa5e1f1900ee06c5",
       "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
       "summary": "All 120 per-seed ECE values reproduce from 30,000 archived confidence/correctness pairs; no per-round ECE is present."
     },
@@ -682,7 +682,7 @@
       "scope": "reproducibility",
       "state": "blocked",
       "receipt": "evidence/audit.json",
-      "receipt_sha256": "fa40cc4c8a13b36fb3f4e3c05cc1ec6302a0cadab8915f936cecf08ee22a6846",
+      "receipt_sha256": "cfd39b8612ab69225da4f5480aa8bc337195d48e5e2af7fd7c2dfdebf9792cbb",
       "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
       "summary": "The predecessor archive has bit-identical A/C/D gamma arrays."
     },
@@ -691,7 +691,7 @@
       "scope": "citations",
       "state": "passed",
       "receipt": "evidence/audit.json",
-      "receipt_sha256": "fa40cc4c8a13b36fb3f4e3c05cc1ec6302a0cadab8915f936cecf08ee22a6846",
+      "receipt_sha256": "cfd39b8612ab69225da4f5480aa8bc337195d48e5e2af7fd7c2dfdebf9792cbb",
       "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
       "summary": "All 29 canonical keys resolve across both declared BibTeX files; identity was checked for the two former ambiguities, while sentence-level support remains review scope."
     },
@@ -709,7 +709,7 @@
       "scope": "package",
       "state": "blocked",
       "receipt": "evidence/audit.json",
-      "receipt_sha256": "fa40cc4c8a13b36fb3f4e3c05cc1ec6302a0cadab8915f936cecf08ee22a6846",
+      "receipt_sha256": "cfd39b8612ab69225da4f5480aa8bc337195d48e5e2af7fd7c2dfdebf9792cbb",
       "source_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
       "summary": "No package is justified before headline evidence and manifests close."
     }

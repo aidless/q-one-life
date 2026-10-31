@@ -528,7 +528,6 @@ def main() -> int:
               "missing_citations": len(audit["citations"]["canonical"]["missing"]),
               "canonical_cited_keys": len(audit["citations"]["canonical"]["used"]),
               "missing_bibliographies": len(audit["citations"]["canonical"]["missing_bibliographies"]),
-              "citation_identity_sources": len(load(OVERLAY / "evidence/citation-identity.json")["sources"]),
               "t50_ece_recovered_seeds": recovered["T50"]["seed_rows"],
               "t50_ece_observations": recovered["T50"]["observations"],
               "t50_ece_stored_differences": len(recovered["T50"]["stored_metric_differences"]),
@@ -550,6 +549,10 @@ def main() -> int:
     for c, result in audit["real_pilot"]["results"].items():
         values[c+"_cv"] = result["mean_question_cv"]
         values[c+"_coupling"] = result["individual_pearson"]
+    # 字段名与账本 C11 及归档快照保持一致（citation_identities_checked），
+    # 追加在 real_pilot 循环之后（与归档快照键序一致）；
+    # 语义不变：已核验引用身份条数 = citation-identity.json sources 长度
+    values["citation_identities_checked"] = len(load(OVERLAY / "evidence/citation-identity.json")["sources"])
     for name, payload in [("audit", audit), ("source_record", source), ("variant-reconciliation", reconciliation), ("claim-values", values),
                           ("ece-recovery", recovered)]:
         write(OVERLAY/"evidence"/(name+".json"), payload)

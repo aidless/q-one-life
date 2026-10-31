@@ -12,8 +12,8 @@
   "command": "python research/pilot-calibration-fatigue/tools/audit_p17.py",
   "runner": {
     "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/tools/audit_p17.py",
-    "sha256": "1ac9ec9dfd100e030c742d714f25548ac032a563854b4b5104d974bd4fcadd70",
-    "bytes": 32466
+    "sha256": "49150fbe399ac8735f5fc9b9763dcada9c0fbf62808ac2936fb55bb1d351d7fe",
+    "bytes": 32975
   },
   "snapshot": {
     "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/snapshot.json",
@@ -45141,8 +45141,8 @@
     },
     "runner": {
       "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/tools/audit_p17.py",
-      "sha256": "1ac9ec9dfd100e030c742d714f25548ac032a563854b4b5104d974bd4fcadd70",
-      "bytes": 32466
+      "sha256": "49150fbe399ac8735f5fc9b9763dcada9c0fbf62808ac2936fb55bb1d351d7fe",
+      "bytes": 32975
     },
     "T30": {
       "definition": "Rank-sort confidence/correctness pairs in agent-major order; 10 equal-count bins, remainder in last bin; round per-seed ECE to 4 decimals. Ties preserve input order, as in archived drivers.",
