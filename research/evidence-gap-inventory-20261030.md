@@ -24,7 +24,7 @@ hidden-cost / f2-k / f4 / n-sensitive / calibrating-evaluator / conditional-comm
 
 ## 主要证据缺口
 
-**仅 1 处**：verifier-capture-aggregation `tab:dz` 的 20 个 d_z 值（-3.79/-5.36/-8.24 等）无冻结 json——只在 main.tex 与 upstream main.tex，不在任何 evidence json，CLAIM_LEDGER 也无。若该表是核心论断需补冻结的 d_z 计算输出；若为补充说明可标注 descriptive。
+**已闭合（2026-10-30）**：verifier-capture-aggregation `tab:dz` 的 20 个 d_z 值已从冻结 per_seed 数据重算闭合（`evidence/dz-recomputation.json`，20/20 数据源一致，仅 1 个 2dp 舍入边界差异 +16.93 vs +16.9248）。全库「正文数字无冻结证据」缺口已清零。
 
 ## 核心教训
 
@@ -34,5 +34,5 @@ no_ledger 数字多 ≠ 证据缺口大。bench（540 no_ledger → 99.4% 可绑
 
 - 11/17 pilot 证据闭环报告落盘（bench/f-acceptance/gemma/arc/paper11/agent-behavior/closing-calibration/memory-architecture/calibration-fatigue/verifier-capture）
 - 6/17 不适用（无正文）
-- 主要缺口 verifier-capture tab:dz（待决策：核心论断需补冻结 / 描述性可标注）
-- **D31-D45 证据闭环机械部分：实质完成**
+- tab:dz 缺口已机械闭合（evidence/dz-recomputation.json，20/20 数据源一致）
+- **D31-D45 证据闭环：全部完成（全库正文数字均绑定/闭合）**
