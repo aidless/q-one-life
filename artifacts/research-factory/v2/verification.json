@@ -1,11 +1,11 @@
 {
   "schema": "q-one-research-factory-verification-v1",
-  "generated_at": "2026-10-30T10:17:31.879146Z",
+  "generated_at": "2026-10-31T14:41:43.730994Z",
   "command": "PYTHONPATH=/data2/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/data2/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/data2/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src /tmp/qone-venv/bin/python '/home/liuzewen/F:\\deepseek/q-one-life/scripts/research_factory_verify.py'",
   "scope": "Research Factory control plane, seventeen pilot overlays, claim ledgers, mechanical package audits, clean-room compilation and candidate archives",
   "source": {
     "workspace": "/home/liuzewen/F:\\deepseek/q-one-life",
-    "head": "81b0cbe8eea4f9e9eb9812afd7a8e095ebd000c8",
+    "head": "02922724106caaa458edc62ca3eb0a2b8c0971a3",
     "dirty": true
   },
   "machine": {
@@ -18,17 +18,17 @@
   "checks": {
     "pytest": {
       "result": "passed",
-      "tests": 132,
+      "tests": 199,
       "warnings": 1,
       "subtests": 22
     },
     "unittest": {
       "result": "passed",
-      "tests": 130,
+      "tests": 173,
       "resource_warnings": 4
     },
     "ruff_scoped_research": {
-      "result": "passed"
+      "result": "failed"
     },
     "git_diff_check": {
       "result": "passed"
@@ -39,7 +39,7 @@
       "result": "passed"
     },
     "project_validation": {
-      "valid": 17,
+      "valid": 16,
       "ready": 0,
       "projects": 17
     },
@@ -49,8 +49,8 @@
         "summary": "11 PASS, 0 FAIL, 1 WARN",
         "report": {
           "path": "research/arc-paper-track/reports/claim-ledger-verification.md",
-          "sha256": "a2cca71227701891d5e795460838f506fedfc33ea496545a2416801f8434d203",
-          "bytes": 2864
+          "sha256": "b31bc3622aaaddb5fc7ed3dd3d1e622b94d6112bde871d2aceb28b2b60f43d25",
+          "bytes": 2897
         }
       },
       "pilot-paper11": {
@@ -58,8 +58,8 @@
         "summary": "20 PASS, 0 FAIL, 0 WARN",
         "report": {
           "path": "research/pilot-paper11/reports/claim-ledger-verification.md",
-          "sha256": "3c52bce52066095026e68deaff8f3854de79b62ecb47f7d9b6fcc402dfac0b26",
-          "bytes": 8072
+          "sha256": "f6863070c1e2aeca0dfe655296d95c4f3869bb1dfd74013429fa0b46d286abc3",
+          "bytes": 8173
         }
       },
       "pilot-bench-noise-floor": {
@@ -67,7 +67,7 @@
         "summary": "14 PASS, 0 FAIL, 2 WARN",
         "report": {
           "path": "research/pilot-bench-noise-floor/reports/claim-ledger-verification.md",
-          "sha256": "ba554206d22ef4a676b745f8beb426ff7db01bda610d2f8d4e44f583237eeef3",
+          "sha256": "fb64f5bf4d49b691a1a91642e21ca7fb7983bf464b77795037ae6b614a1300d6",
           "bytes": 7568
         }
       },
@@ -222,14 +222,14 @@
       },
       "artifact": {
         "path": "artifacts/research-factory/v2/agent-dispositions.json",
-        "sha256": "36babb1d573c67fe0437e435e4476fdfb7b86a3b8d0448868b90705c6e1b5ff5",
+        "sha256": "66ba9737c0f5e5229e23152402fc5a811f70d257695af8306b96b69747c298eb",
         "bytes": 193527
       }
     }
   },
   "pilots": {
     "pilots": 17,
-    "valid_overlays": 17,
+    "valid_overlays": 16,
     "ready_projects": 0,
     "compiled_packages": 8,
     "candidate_packages": 8,
@@ -260,17 +260,17 @@
     },
     {
       "path": "artifacts/research-factory/v2/pilot-status.json",
-      "sha256": "53684ca01e41afd7b0e448152e6749e1e1abe7336a1d62888f9c5f5ced4b1062",
-      "bytes": 43457
+      "sha256": "c785ff6bfda64b24ac8b3174fed2924a4278a685a97a4978a0b95f94432a0ec2",
+      "bytes": 43494
     },
     {
       "path": "artifacts/research-factory/v2/agent-dispositions.json",
-      "sha256": "36babb1d573c67fe0437e435e4476fdfb7b86a3b8d0448868b90705c6e1b5ff5",
+      "sha256": "66ba9737c0f5e5229e23152402fc5a811f70d257695af8306b96b69747c298eb",
       "bytes": 193527
     },
     {
       "path": "artifacts/research-factory/v2/agent-dispositions.md",
-      "sha256": "82367ef0ba5b03d613feb5f566f4e94a31ec3fe3724f7b0c6c5632918b8b20de",
+      "sha256": "2906d20e63ad768788ad974ec943c8bb5fa1695b292838e27fa8b755759304af",
       "bytes": 23641
     },
     {
@@ -280,8 +280,8 @@
     },
     {
       "path": "research/FACTORY_STATUS.md",
-      "sha256": "eeea1c224cfb50c3e97bd0df7f1b5f33837c1b20e51f2539bcf64bef68919460",
-      "bytes": 38015
+      "sha256": "d672a977713e481965f46aaefb9d9f15dbbac9a3f0ce04ef2f84c0b00ccf29d3",
+      "bytes": 42644
     },
     {
       "path": "docs/RESEARCH_FACTORY_AUTONOMOUS_ITERATION_PLAN.zh-CN.md",
@@ -300,52 +300,52 @@
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/index.json",
-      "sha256": "07aa5227e63ffb718c23847e1db879673a4d83c17443ce1cabc53f082bc8a3d4",
+      "sha256": "b9794255a7e51a5807809cb3ee0012b708e551e88353af97b8c67f3d945b0210",
       "bytes": 4328
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/agent-behavior-regression.json",
-      "sha256": "2f0bc87072578bae3f1134c7ff9de3ac38140dd740986f743af8dd0cfacb8ce9",
+      "sha256": "3ba8c8ce6c65768bb349f33593bfd8ffe26d5e4484804e4d87fc305fb998c9ec",
       "bytes": 2339
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/closing-landscape.json",
-      "sha256": "741000dcdc530b31bc322906726c4fd69ccd9a050094a0a220768fa875de6140",
+      "sha256": "12d7db7e6ba6ecaef9fb2d4736dd73cb202f4bc90b4fa676fe598d2ee838c72d",
       "bytes": 2011
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/f-acceptance.json",
-      "sha256": "9a4381546154276e17af2e32f741e8c8daa29deb388b2c221bf0ffa16690459a",
+      "sha256": "b8e3929c93955e6bc371d8fbf926e404262157fc8bed4a5dfaaa43fb566988ca",
       "bytes": 1775
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/memory-architecture.json",
-      "sha256": "3588bf444a126d68c4b2b92bbc45dd7c5692687f26e1e6099a14f32f0a44a95c",
+      "sha256": "15689dfe97d574f6f114cf7e70a4deb3a89dce16a63d9a988a48fc06a4015a76",
       "bytes": 2498
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/noise-floor.json",
-      "sha256": "cf138b4673e3667d2db562a4d836fe79c12bc4c8422443fc8e3d3cc28428d09e",
+      "sha256": "d9fb94fa9b1bbbaac33d7626a535f3ec3f134fb8abcc848c6d3b41ccff681c88",
       "bytes": 2593
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/paper11-overlay.json",
-      "sha256": "8b4fe424335ad1ef0244026f035e0efdd830852ce9bc76e9f2eff0f7c3689e55",
+      "sha256": "b584e56d3d2178a24715f1b8256b3a9530bbb2e3c52e364ebf5f574608618bdc",
       "bytes": 1481
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/paper11.json",
-      "sha256": "cb9734054304dda3d8b1c2b5a27302e51b5abbe64599d5171a4001543c322db6",
+      "sha256": "082ba1c95ba2fe71cc2b3eb1518b34f9f38979d33508af926a5ed1d48a3afad7",
       "bytes": 5083
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/paper2-coupling.json",
-      "sha256": "cad47047a1c6003b1bfdaf984d22996a414b5a26bca4e8ef0290561d6ac8ec85",
+      "sha256": "133bfb5a0be3b3c0d85a6bc27cf0d08aa621352c2769b513b966bddb4eeac61c",
       "bytes": 1317
     },
     {
       "path": "artifacts/research-factory/v2/package-audits/verifier-capture-aggregation.json",
-      "sha256": "2cd306c7a83bd838e08bd759851ad919a3cddc69330ff64c63850f3b49a1de53",
+      "sha256": "a395a805790975f2294581cfe3dc0ba55f8138c223f1be03bc6163e8b83439ed",
       "bytes": 1653
     }
   ],

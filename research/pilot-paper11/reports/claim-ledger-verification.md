@@ -26,5 +26,5 @@ Ledger: `CLAIM_LEDGER.md`
 
 ## Inconclusive entries (hedge + name missing evidence): 0
 
-## Numeric literals in text without any ledger value: 14
-+0.0000, +0.0333, +0.0444, +0.0667, +0.1222, +0.1667, +0.2222, +0.3333, 12.5, 2.5, 20.8, 3.2, 33.3, 4.3
+## Numeric literals in text without any ledger value: 28
++0.0000, +0.0333, +0.0444, +0.0667, +0.1222, +0.1667, +0.2222, +0.3333, -33.56, -40.93, -66.85, 0.0222, 0.1000, 1.96, 11.79, 12.5, 16.67, 2.5, 20.8, 23.33, 3.2, 33.15, 33.3, 33.56, 4.3, 40.93, 66.85, 7.34
