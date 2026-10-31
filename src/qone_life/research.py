@@ -19,6 +19,7 @@ from typing import Any
 
 PORTFOLIO_SCHEMA = "q-one-paper-portfolio-v1"
 PROJECT_SCHEMA = "q-one-research-project-v1"
+QUANTIFICATION_SCHEMA = "q-one-research-quantification-v1"
 
 MANUSCRIPT_NAMES = ("main.tex", "paper.tex", "manuscript.tex")
 CONFIG_NAMES = ("project_config.json", "research-manifest.json")
@@ -762,6 +763,205 @@ def write_portfolio(
     if triage_output is not None:
         triage_output.parent.mkdir(parents=True, exist_ok=True)
         triage_output.write_text(render_triage_csv(portfolio), encoding="utf-8")
+
+
+def quantify_research_project(root: str | Path) -> dict[str, Any]:
+    """Compute the documented research quantities for a single project.
+
+    Implements the seven computable quantities from
+    RESEARCH_QUANTIFICATION.zh-CN.md.  Every quantity is reported as a value
+    plus the explicit denominator it was computed over; when the denominator
+    is unknown or the field is absent, the value is ``"unknown"`` rather than 0.
+
+    The function is read-only: it loads ``project.json`` and validates the
+    claims ledger cross-reference without writing anything.
+    """
+    root = Path(root).expanduser().resolve()
+    project_path = root / "project.json"
+    if not project_path.is_file():
+        return {
+            "schema": QUANTIFICATION_SCHEMA,
+            "root": str(root),
+            "valid": False,
+            "quantities": {
+                "claim_evidence_coverage": {"value": "unknown", "numerator": "unknown", "denominator": "unknown"},
+                "claim_recomputation_coverage": {"value": "unknown", "numerator": "unknown", "denominator": "unknown"},
+                "experiment_reproduction_coverage": {"value": "unknown", "numerator": "unknown", "denominator": "unknown"},
+                "citation_verification_coverage": {"value": "unknown", "numerator": "unknown", "denominator": "unknown"},
+                "unresolved_critical": {"value": "unknown", "numerator": "unknown", "denominator": "unknown"},
+                "unresolved_major": {"value": "unknown", "numerator": "unknown", "denominator": "unknown"},
+                "package_completeness": {"value": "unknown", "numerator": "unknown", "denominator": "unknown"},
+            },
+            "errors": ["project.json is missing"],
+        }
+    try:
+        project = json.loads(project_path.read_text(encoding="utf-8"))
+    except ValueError as exc:
+        return {
+            "schema": QUANTIFICATION_SCHEMA,
+            "root": str(root),
+            "valid": False,
+            "quantities": {},
+            "errors": [f"project.json is not valid JSON: {exc}"],
+        }
+    if not isinstance(project, dict):
+        return {
+            "schema": QUANTIFICATION_SCHEMA,
+            "root": str(root),
+            "valid": False,
+            "quantities": {},
+            "errors": ["project.json must be an object"],
+        }
+
+    errors: list[str] = []
+    quantities: dict[str, Any] = {}
+
+    # claim_evidence_coverage: claims with at least one valid evidence_ref
+    claims = project.get("claims", [])
+    if not isinstance(claims, list):
+        errors.append("claims must be an array")
+        claims = []
+    total_claims = len(claims)
+    claims_with_evidence = sum(
+        1
+        for claim in claims
+        if isinstance(claim, dict) and claim.get("evidence_refs")
+    )
+    quantities["claim_evidence_coverage"] = _ratio(
+        claims_with_evidence, total_claims
+    )
+
+    # claim_recomputation_coverage: claims with a runnable recomputation method
+    # The project schema carries no explicit recomputation field; a claim with
+    # an evidence_ref pointing at a JSON file is treated as recomputable.
+    recomputable_claims = 0
+    for claim in claims:
+        if not isinstance(claim, dict):
+            continue
+        refs = claim.get("evidence_refs", [])
+        if not isinstance(refs, list):
+            continue
+        for ref in refs:
+            if isinstance(ref, str) and ref.lower().endswith((".json", ".csv", ".tsv")):
+                recomputable_claims += 1
+                break
+    quantities["claim_recomputation_coverage"] = _ratio(
+        recomputable_claims, total_claims
+    )
+
+    # experiment_reproduction_coverage: reproducible experiments / required
+    experiments = project.get("experiments", [])
+    if not isinstance(experiments, list):
+        errors.append("experiments must be an array")
+        experiments = []
+    required_experiments = 0
+    reproducible_experiments = 0
+    for experiment in experiments:
+        if not isinstance(experiment, dict):
+            continue
+        if experiment.get("state") not in {"required", "planned", "running", "completed"}:
+            continue
+        required_experiments += 1
+        receipt = experiment.get("receipt")
+        environment = experiment.get("environment_sha256")
+        if receipt and isinstance(receipt, str):
+            receipt_path = root / receipt
+            if receipt_path.is_file() and environment:
+                reproducible_experiments += 1
+    quantities["experiment_reproduction_coverage"] = _ratio(
+        reproducible_experiments, required_experiments
+    )
+
+    # citation_verification_coverage: verified citations / total citations
+    # The project schema has no citations field; the ledger is the only
+    # structured citation carrier available.
+    ledger_path = root / "CLAIM_LEDGER.md"
+    if ledger_path.is_file():
+        ledger_text = ledger_path.read_text(encoding="utf-8")
+        ledger_rows = [
+            line for line in ledger_text.splitlines()
+            if line.strip().startswith("|") and re.search(r"\bC\d+\b", line)
+        ]
+        total_citations = len(ledger_rows)
+        verified_citations = sum(
+            1
+            for line in ledger_rows
+            if re.search(r"\b(verified|pass|ok|yes)\b", line, re.IGNORECASE)
+        )
+        quantities["citation_verification_coverage"] = _ratio(
+            verified_citations, total_citations
+        )
+    else:
+        quantities["citation_verification_coverage"] = _ratio(0, 0)
+
+    # unresolved_critical / unresolved_major: open reviews with critical/major
+    reviews = project.get("reviews", [])
+    if not isinstance(reviews, list):
+        errors.append("reviews must be an array")
+        reviews = []
+    unresolved_critical = 0
+    unresolved_major = 0
+    for review in reviews:
+        if not isinstance(review, dict):
+            continue
+        if review.get("state") != "open":
+            continue
+        unresolved_critical += int(review.get("critical", 0) or 0)
+        unresolved_major += int(review.get("major", 0) or 0)
+    quantities["unresolved_critical"] = {
+        "value": unresolved_critical,
+        "numerator": unresolved_critical,
+        "denominator": "counts",
+    }
+    quantities["unresolved_major"] = {
+        "value": unresolved_major,
+        "numerator": unresolved_major,
+        "denominator": "counts",
+    }
+
+    # package_completeness: passed package files / applicable package files
+    package = project.get("package", {})
+    if not isinstance(package, dict):
+        errors.append("package must be an object")
+        package = {}
+    package_files = package.get("files", [])
+    if not isinstance(package_files, list):
+        errors.append("package files must be an array")
+        package_files = []
+    applicable_files = 0
+    passed_files = 0
+    for entry in package_files:
+        if not isinstance(entry, dict):
+            continue
+        applicable_files += 1
+        path = entry.get("path")
+        if isinstance(path, str) and (root / path).is_file():
+            passed_files += 1
+    quantities["package_completeness"] = _ratio(
+        passed_files, applicable_files
+    )
+
+    return {
+        "schema": QUANTIFICATION_SCHEMA,
+        "root": str(root),
+        "valid": not errors,
+        "quantities": quantities,
+        "errors": errors,
+    }
+
+
+def _ratio(numerator: int, denominator: int) -> dict[str, Any]:
+    if denominator <= 0:
+        return {
+            "value": "unknown",
+            "numerator": numerator if numerator > 0 else "unknown",
+            "denominator": "unknown",
+        }
+    return {
+        "value": numerator / denominator,
+        "numerator": numerator,
+        "denominator": denominator,
+    }
 
 
 def validate_research_project(root: str | Path) -> dict[str, Any]:

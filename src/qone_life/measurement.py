@@ -173,19 +173,25 @@ class MeasurementStore:
 
     def record_outcome(
         self, decision_seq: int, subject: str, observed_outcome: str, matched: bool,
+        latency_sec: int | None = None,
     ) -> dict[str, Any]:
         if not str(subject or "").strip() or not str(observed_outcome or "").strip():
             raise MeasurementError("subject and observed_outcome must not be empty")
+        if latency_sec is not None and (isinstance(latency_sec, bool) or not isinstance(latency_sec, int) or latency_sec < 0):
+            raise MeasurementError("latency_sec must be a non-negative integer")
         events = self.list_all()
         target = next((e for e in events if e["seq"] == decision_seq), None)
         if not target or target["type"] != "decision":
             raise MeasurementError(f"no decision at seq {decision_seq}")
-        return self._append_payload("outcome", {
+        payload = {
             "subject": subject,
             "observed_outcome": observed_outcome,
             "decision_seq": int(decision_seq),
             "matched": bool(matched),
-        })
+        }
+        if latency_sec is not None:
+            payload["latency_sec"] = latency_sec
+        return self._append_payload("outcome", payload)
 
     def decisions(self) -> list[dict[str, Any]]:
         return [e for e in self.list_all() if e["type"] == "decision"]

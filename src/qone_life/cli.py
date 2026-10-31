@@ -451,6 +451,7 @@ def parser() -> argparse.ArgumentParser:
     command.add_argument("--subject", required=True)
     command.add_argument("--observed-outcome", required=True)
     command.add_argument("--matched", action="store_true")
+    command.add_argument("--latency-sec", type=int, default=None, help="seconds between decision and observed outcome")
     command.set_defaults(handler=cmd_measure_outcome)
 
     command = commands.add_parser("measure-stats", help="show decision hit rate and record counts")
@@ -526,7 +527,7 @@ def cmd_measure_decide(args: argparse.Namespace) -> int:
 def cmd_measure_outcome(args: argparse.Namespace) -> int:
     store = _measurement_store(args)
     event = store.record_outcome(args.decision_seq, args.subject, args.observed_outcome,
-                                 args.matched)
+                                 args.matched, latency_sec=args.latency_sec)
     print(json.dumps(event, ensure_ascii=False, indent=2))
     return 0
 
