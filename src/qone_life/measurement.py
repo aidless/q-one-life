@@ -141,6 +141,9 @@ class MeasurementStore:
     def decide(
         self, subject: str, options: list[str], chosen: str,
         rationale: str, evidence: str, expected_outcome: str,
+        cost: str | None = None,
+        reversibility: str | None = None,
+        deadline: str | None = None,
     ) -> dict[str, Any]:
         if not options or chosen not in options:
             raise MeasurementError("chosen must be one of the supplied options")
@@ -150,14 +153,23 @@ class MeasurementStore:
         ):
             if not str(value or "").strip():
                 raise MeasurementError(f"{name!r} must not be empty")
-        return self._append_payload("decision", {
+        if reversibility is not None and reversibility not in {"reversible", "partially_reversible", "irreversible"}:
+            raise MeasurementError("reversibility must be reversible, partially_reversible, or irreversible")
+        payload = {
             "subject": subject,
             "options": list(options),
             "chosen": chosen,
             "rationale": rationale,
             "evidence": evidence,
             "expected_outcome": expected_outcome,
-        })
+        }
+        if cost is not None:
+            payload["cost"] = str(cost).strip()
+        if reversibility is not None:
+            payload["reversibility"] = reversibility
+        if deadline is not None:
+            payload["deadline"] = str(deadline).strip()
+        return self._append_payload("decision", payload)
 
     def record_outcome(
         self, decision_seq: int, subject: str, observed_outcome: str, matched: bool,

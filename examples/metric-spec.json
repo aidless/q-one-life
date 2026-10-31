@@ -75,5 +75,73 @@
     "direction": "higher",
     "unit": "ratio",
     "aggregation": "mean"
+  },
+  {
+    "domain": "health",
+    "metric": "steps",
+    "minimum": 0,
+    "maximum": 20000,
+    "weight": 1,
+    "target_count": 7,
+    "direction": "higher",
+    "unit": "steps",
+    "aggregation": "mean"
+  },
+  {
+    "domain": "health",
+    "metric": "heart_rate_rest",
+    "minimum": 40,
+    "maximum": 100,
+    "weight": 1,
+    "target_count": 7,
+    "direction": "target",
+    "target": 65,
+    "unit": "bpm",
+    "aggregation": "mean"
+  },
+  {
+    "domain": "social",
+    "metric": "social_hours",
+    "minimum": 0,
+    "maximum": 8,
+    "weight": 1,
+    "target_count": 5,
+    "direction": "target",
+    "target": 2,
+    "unit": "hours",
+    "aggregation": "mean"
+  },
+  {
+    "domain": "emotion",
+    "metric": "mood",
+    "minimum": 1,
+    "maximum": 10,
+    "weight": 1,
+    "target_count": 7,
+    "direction": "higher",
+    "unit": "score",
+    "aggregation": "mean"
+  },
+  {
+    "domain": "emotion",
+    "metric": "stress_level",
+    "minimum": 1,
+    "maximum": 10,
+    "weight": 1,
+    "target_count": 7,
+    "direction": "lower",
+    "unit": "score",
+    "aggregation": "mean"
+  },
+  {
+    "domain": "environment",
+    "metric": "commute_minutes",
+    "minimum": 0,
+    "maximum": 180,
+    "weight": 1,
+    "target_count": 5,
+    "direction": "lower",
+    "unit": "minutes",
+    "aggregation": "mean"
   }
 ]

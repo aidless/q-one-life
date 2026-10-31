@@ -18,6 +18,8 @@
     "decision_id": {"type": ["string", "null"]},
     "direction": {"type": "string", "enum": ["higher", "lower", "target"]},
     "unit": {"type": "string"},
-    "aggregation": {"type": "string"}
+    "aggregation": {"type": "string"},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "corrected_by": {"type": "string"}
   }
 }

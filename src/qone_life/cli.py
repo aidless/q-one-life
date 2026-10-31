@@ -440,6 +440,9 @@ def parser() -> argparse.ArgumentParser:
     command.add_argument("--rationale", required=True)
     command.add_argument("--evidence", required=True)
     command.add_argument("--expected-outcome", required=True)
+    command.add_argument("--cost", default=None, help="resource or time cost of the chosen option")
+    command.add_argument("--reversibility", default=None, choices=["reversible", "partially_reversible", "irreversible"], help="how reversible the decision is")
+    command.add_argument("--deadline", default=None, help="decision deadline (ISO 8601)")
     command.set_defaults(handler=cmd_measure_decide)
 
     command = commands.add_parser("measure-outcome", help="record the observed outcome of a decision")
@@ -513,7 +516,9 @@ def cmd_measure_decide(args: argparse.Namespace) -> int:
     store = _measurement_store(args)
     options = [opt.strip() for opt in args.option]
     event = store.decide(args.subject, options, args.chosen, args.rationale,
-                         args.evidence, args.expected_outcome)
+                         args.evidence, args.expected_outcome,
+                         cost=args.cost, reversibility=args.reversibility,
+                         deadline=args.deadline)
     print(json.dumps(event, ensure_ascii=False, indent=2))
     return 0
 

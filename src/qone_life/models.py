@@ -33,6 +33,8 @@ class Observation:
     source: str
     note: str = ""
     decision_id: str | None = None
+    confidence: float | None = None
+    corrected_by: str | None = None
 
     @classmethod
     def from_payload(cls, raw: dict[str, Any]) -> "Observation":
@@ -56,6 +58,14 @@ class Observation:
         decision_id = raw.get("decision_id")
         if decision_id is not None and (not isinstance(decision_id, str) or not decision_id.strip()):
             raise LifeValidationError("decision_id must be a non-empty string when provided")
+        confidence = raw.get("confidence")
+        if confidence is not None:
+            if isinstance(confidence, bool) or not isinstance(confidence, (int, float)) or not (0 <= float(confidence) <= 1):
+                raise LifeValidationError("confidence must be between 0 and 1 when provided")
+            confidence = float(confidence)
+        corrected_by = raw.get("corrected_by")
+        if corrected_by is not None and (not isinstance(corrected_by, str) or not corrected_by.strip()):
+            raise LifeValidationError("corrected_by must be a non-empty string when provided")
         return cls(
             observation_id=observation_id,
             domain=raw["domain"].strip(),
@@ -67,6 +77,8 @@ class Observation:
             source=raw["source"].strip(),
             note=str(raw.get("note", "")),
             decision_id=decision_id.strip() if decision_id else None,
+            confidence=confidence,
+            corrected_by=corrected_by.strip() if corrected_by else None,
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -81,6 +93,8 @@ class Observation:
             "source": self.source,
             "note": self.note,
             "decision_id": self.decision_id,
+            "confidence": self.confidence,
+            "corrected_by": self.corrected_by,
         }
 
 
