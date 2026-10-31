@@ -11,7 +11,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from uuid import uuid4
 
-DOMAINS = {"work": "工作", "learning": "学习", "energy": "精力", "recovery": "恢复", "other": "其他"}
+DOMAINS = {"work": "工作", "learning": "学习", "energy": "精力", "recovery": "恢复", "other": "其他", "finance": "财务", "health": "健康", "social": "社交", "emotion": "情绪", "environment": "环境"}
 SCHEMA_VERSION = 1
 
 

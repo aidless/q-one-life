@@ -92,6 +92,10 @@ class MetricSpec:
     maximum: float
     weight: float = 1.0
     target_count: int = 1
+    direction: str = "higher"
+    unit: str = ""
+    aggregation: str = "mean"
+    target: float | None = None
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "MetricSpec":
@@ -105,11 +109,28 @@ class MetricSpec:
         maximum = raw.get("maximum")
         weight = raw.get("weight", 1.0)
         target_count = raw.get("target_count", 1)
+        direction = raw.get("direction", "higher")
+        unit = raw.get("unit", "")
+        aggregation = raw.get("aggregation", "mean")
         if any(isinstance(item, bool) or not isinstance(item, (int, float)) for item in (minimum, maximum, weight)):
             raise LifeValidationError("metric bounds and weight must be numbers")
         if maximum <= minimum or weight <= 0 or isinstance(target_count, bool) or not isinstance(target_count, int) or target_count < 1:
             raise LifeValidationError("metric spec bounds, weight, and target_count are invalid")
-        return cls(domain.strip(), metric.strip(), float(minimum), float(maximum), float(weight), target_count)
+        if direction not in {"higher", "lower", "target"}:
+            raise LifeValidationError("metric spec direction must be higher, lower, or target")
+        if not isinstance(unit, str) or not isinstance(aggregation, str):
+            raise LifeValidationError("metric spec unit and aggregation must be strings")
+        target = raw.get("target")
+        if direction == "target":
+            if isinstance(target, bool) or not isinstance(target, (int, float)) or not (minimum < float(target) < maximum):
+                raise LifeValidationError("target-direction metric spec requires a target within the bounds")
+            target = float(target)
+        elif target is not None:
+            target = None
+        return cls(
+            domain.strip(), metric.strip(), float(minimum), float(maximum), float(weight), target_count,
+            direction, unit.strip() if unit else "", aggregation, target,
+        )
 
     @property
     def key(self) -> str:

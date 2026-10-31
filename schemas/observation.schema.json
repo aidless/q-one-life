@@ -15,6 +15,9 @@
     "observed_at": {"type": "string", "minLength": 1},
     "source": {"type": "string", "minLength": 1},
     "note": {"type": "string"},
-    "decision_id": {"type": ["string", "null"]}
+    "decision_id": {"type": ["string", "null"]},
+    "direction": {"type": "string", "enum": ["higher", "lower", "target"]},
+    "unit": {"type": "string"},
+    "aggregation": {"type": "string"}
   }
 }

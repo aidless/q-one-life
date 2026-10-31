@@ -12,6 +12,20 @@ def _normalized(value: float, minimum: float, maximum: float) -> float:
     return (value - minimum) / (maximum - minimum)
 
 
+def _normalized_by_direction(
+    value: float, minimum: float, maximum: float, direction: str, target: float | None
+) -> float:
+    base = _normalized(value, minimum, maximum)
+    if direction == "lower":
+        return 1 - base
+    if direction == "target":
+        if target is None:
+            return base
+        distance = max(target - minimum, maximum - target)
+        return max(0.0, 1 - abs(value - target) / distance)
+    return base
+
+
 def score_observations(
     observations: list[Observation],
     specs: tuple[MetricSpec, ...],
@@ -35,9 +49,15 @@ def score_observations(
             "target_count": spec.target_count,
             "coverage": min(1.0, len(in_range) / spec.target_count),
             "observed_at": max((row.observed_at for row in in_range), default=None),
+            "direction": spec.direction,
+            "unit": spec.unit,
+            "aggregation": spec.aggregation,
         }
         if in_range:
-            values = [_normalized(row.value, spec.minimum, spec.maximum) for row in in_range]
+            values = [
+                _normalized_by_direction(row.value, spec.minimum, spec.maximum, spec.direction, spec.target)
+                for row in in_range
+            ]
             metric_result["score"] = sum(values) / len(values)
         domain = dimensions.setdefault(
             spec.domain,

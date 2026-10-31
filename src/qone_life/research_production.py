@@ -127,6 +127,8 @@ class ResearchProduction:
         self, slug: str, *, missing_evidence: str, proposed_experiment: str,
         resource_requirement: str, run_script: Path, inputs: list[Path],
         max_runtime_sec: int, max_disk_gb: float,
+        estimated_duration_sec: int | None = None,
+        statistical_power: float | None = None,
     ) -> dict[str, Any]:
         root = self._root(slug)
         require_previous(root, "experiment_plan")
@@ -140,6 +142,8 @@ class ResearchProduction:
             missing_evidence=missing_evidence,
             proposed_experiment=proposed_experiment,
             resource_requirement=resource_requirement,
+            estimated_duration_sec=estimated_duration_sec,
+            statistical_power=statistical_power,
         )
         job = {
             "job_id": f"{slug}-{_now().replace(':', '').replace('-', '')}",
@@ -168,6 +172,8 @@ class ResearchProduction:
             "job_id": job["job_id"],
             "job_sha256": sha256_file(job_dir / "job.json"),
             "approval_required": plan["approval_required"],
+            "estimated_duration_sec": plan["estimated_duration_sec"],
+            "statistical_power": plan["statistical_power"],
             "inputs": [{"path": str(plan_path), "sha256": sha256_file(plan_path)}],
             "outputs": [{"path": str(job_dir / "job.json"), "sha256": sha256_file(job_dir / "job.json")}],
         })

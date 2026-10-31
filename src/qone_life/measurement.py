@@ -194,12 +194,18 @@ def plan_experiment(
     missing_evidence: str,
     proposed_experiment: str,
     resource_requirement: str,
+    estimated_duration_sec: int | None = None,
+    statistical_power: float | None = None,
 ) -> dict[str, Any]:
     """Generate an execution plan for a missing experiment without running it."""
     approval_required = any(
         token in resource_requirement.lower()
         for token in ("gpu", "paid", "cloud", "external api", "submission", "account")
     )
+    if estimated_duration_sec is not None and estimated_duration_sec <= 0:
+        raise MeasurementError("estimated_duration_sec must be a positive integer")
+    if statistical_power is not None and not (0 < statistical_power < 1):
+        raise MeasurementError("statistical_power must be between 0 and 1")
     return {
         "schema": "q-one-experiment-plan-v1",
         "claim_id": claim_id,
@@ -214,6 +220,8 @@ def plan_experiment(
             "Bind the receipt hash into the claim ledger.",
         ],
         "estimated_cost": resource_requirement,
+        "estimated_duration_sec": estimated_duration_sec,
+        "statistical_power": statistical_power,
         "approval_required": approval_required,
         "auto_executable": not approval_required,
         "status": "plan_only",
