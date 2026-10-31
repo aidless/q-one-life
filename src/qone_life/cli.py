@@ -67,6 +67,15 @@ def cmd_score(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_iterate(args: argparse.Namespace) -> int:
+    from .iteration import daily_iteration
+
+    specs = load_metric_specs(_load_json(args.spec_file))
+    report = daily_iteration(_store(args).observations(), specs, window_days=args.window_days)
+    print(json.dumps(report, ensure_ascii=False, indent=2))
+    return 0
+
+
 def cmd_review(args: argparse.Namespace) -> int:
     print(json.dumps(build_review(_report(args)), ensure_ascii=False, indent=2))
     return 0
@@ -397,6 +406,11 @@ def parser() -> argparse.ArgumentParser:
     command = commands.add_parser("score", help="print a dimension-vector score")
     command.add_argument("--spec-file", required=True)
     command.set_defaults(handler=cmd_score)
+
+    command = commands.add_parser("iterate", help="print per-day dimension scores, deltas, and trends")
+    command.add_argument("--spec-file", required=True)
+    command.add_argument("--window-days", type=int, default=7, help="number of days to include (default: 7)")
+    command.set_defaults(handler=cmd_iterate)
 
     command = commands.add_parser("review", help="print review prompts and missingness")
     command.add_argument("--spec-file", required=True)

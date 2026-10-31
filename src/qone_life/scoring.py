@@ -26,6 +26,43 @@ def _normalized_by_direction(
     return base
 
 
+# Aggregations a metric spec may declare. These are real reduction semantics,
+# not decorative labels: the chosen aggregation determines how multiple
+# observations of one metric (e.g. across days) collapse into a single score.
+AGGREGATIONS = ("mean", "latest", "max", "min")
+
+
+def _aggregate_scores(rows: list, spec: MetricSpec) -> float:
+    """Collapse one metric's in-range observations into a single normalized score.
+
+    ``aggregation`` semantics:
+      * mean   — average of the per-observation normalized scores (default)
+      * latest — the most recent observation (by observed_at, then seq order)
+      * max    — best normalized score observed
+      * min    — worst normalized score observed
+    """
+    if spec.aggregation not in AGGREGATIONS:
+        # Defensive: unknown aggregation degrades to mean rather than silently
+        # producing a wrong number.
+        raise ValueError(f"unsupported aggregation {spec.aggregation!r}")
+    if spec.aggregation == "mean":
+        return sum(
+            _normalized_by_direction(row.value, spec.minimum, spec.maximum, spec.direction, spec.target)
+            for row in rows
+        ) / len(rows)
+    if spec.aggregation == "latest":
+        best = max(
+            rows,
+            key=lambda row: (row.observed_at or "", getattr(row, "seq", 0)),
+        )
+        return _normalized_by_direction(best.value, spec.minimum, spec.maximum, spec.direction, spec.target)
+    scores = [
+        _normalized_by_direction(row.value, spec.minimum, spec.maximum, spec.direction, spec.target)
+        for row in rows
+    ]
+    return max(scores) if spec.aggregation == "max" else min(scores)
+
+
 def score_observations(
     observations: list[Observation],
     specs: tuple[MetricSpec, ...],
@@ -54,11 +91,7 @@ def score_observations(
             "aggregation": spec.aggregation,
         }
         if in_range:
-            values = [
-                _normalized_by_direction(row.value, spec.minimum, spec.maximum, spec.direction, spec.target)
-                for row in in_range
-            ]
-            metric_result["score"] = sum(values) / len(values)
+            metric_result["score"] = _aggregate_scores(in_range, spec)
         domain = dimensions.setdefault(
             spec.domain,
             {"score": None, "observed_metrics": 0, "expected_metrics": 0, "coverage": 0.0, "metrics": {}},
