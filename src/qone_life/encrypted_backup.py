@@ -74,8 +74,7 @@ def _encode_crockford(raw: bytes) -> str:
 
 def _decode_crockford(text: str, expected_bytes: int) -> bytes:
     characters = text.strip().upper()
-    if characters.startswith("Q1"):
-        characters = characters[2:]
+    characters = characters.removeprefix("Q1")
     for separator in ("-", " ", "_"):
         characters = characters.replace(separator, "")
     characters = characters.replace("I", "1").replace("L", "1").replace("O", "0")
@@ -176,7 +175,7 @@ def encrypt_backup(
     if len(data_key) != DATA_KEY_BYTES or len(recovery_key) != DATA_KEY_BYTES:
         raise ValueError("backup and recovery keys must contain 256 bits")
     if not isinstance(raw, dict):
-        raise ValueError("backup payload must be an object")
+        raise ValueError("backup payload must be an object")  # noqa: TRY004 - 输入校验统一用 ValueError
     params = _validate_kdf(kdf or DEFAULT_KDF)
     salt = os.urandom(16)
     payload_nonce = os.urandom(12)

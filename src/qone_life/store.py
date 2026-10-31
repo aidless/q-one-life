@@ -5,14 +5,15 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+from collections.abc import Iterator
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any
 
-from .models import Observation
 from .locking import exclusive_file_lock
-
+from .models import Observation
+from .permissions import secure_append
 
 GENESIS = "0" * 64
 EVENT_TYPES = {"observation_recorded", "review_recorded"}
@@ -93,7 +94,7 @@ class LifeStore:
                 "prev_hash": events[-1]["hash"] if events else GENESIS,
             }
             event["hash"] = event_hash(event)
-            with self.path.open("a", encoding="utf-8") as handle:
+            with secure_append(self.path) as handle:
                 handle.write(canonical_json(event) + "\n")
                 handle.flush()
                 os.fsync(handle.fileno())

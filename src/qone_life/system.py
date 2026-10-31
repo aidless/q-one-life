@@ -1,13 +1,15 @@
 """Versioned personal models and their connection to the daily recommendation feed."""
-from datetime import datetime, timezone
 import json
 import threading
+from datetime import datetime, timezone
 
-from qone_core.life import AdaptiveKernel, ScenarioKernel, ModelError
-from qone_core.life.model import fingerprint, number, instant
+from qone_core.life import AdaptiveKernel, ModelError, ScenarioKernel
+from qone_core.life.model import fingerprint, instant, number
 from qone_core.life.state import resource_key
+
+from .outcomes import append_observations, append_outcome, canonical_observations, canonical_request
+from .outcomes import preview as outcome_preview
 from .repository import now
-from .outcomes import preview as outcome_preview, canonical_request, append_outcome, canonical_observations, append_observations
 
 
 def kernel_for(model):

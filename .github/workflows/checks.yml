@@ -3,6 +3,15 @@ on: [push, pull_request]
 permissions:
   contents: read
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install ruff==0.16.10
+      - run: python -m ruff check src/ tests/
   application:
     runs-on: ubuntu-latest
     strategy:
@@ -14,8 +23,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -r requirements.txt
-      - run: python -m pip install .
-      - run: python -m unittest discover -s tests -v
+      - run: python -m pip install . pytest
+      - run: python -m pytest -q
       - run: node --check < src/qone_life/static/app.js
       - run: node --input-type=module - < tests/test_app_render.mjs
       - run: node tests/test_site.mjs

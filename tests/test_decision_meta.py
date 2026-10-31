@@ -13,10 +13,10 @@ class DecisionCostTests(unittest.TestCase):
         self.store = MeasurementStore(Path(self.tmp.name) / "measurements.jsonl")
 
     def _decide(self, **overrides):
-        base = dict(
-            subject="upgrade-vm", options=["yes", "no"], chosen="yes",
-            rationale="need compute", evidence="bench 3.5x", expected_outcome="faster",
-        )
+        base = {
+            "subject": "upgrade-vm", "options": ["yes", "no"], "chosen": "yes",
+            "rationale": "need compute", "evidence": "bench 3.5x", "expected_outcome": "faster",
+        }
         base.update(overrides)
         return self.store.decide(**base)
 

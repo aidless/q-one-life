@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from datetime import date, timedelta
+from datetime import date
 
 import pytest
 
 from qone_life.iteration import _day_of, _trend, daily_iteration
 from qone_life.models import MetricSpec, Observation
-from qone_life.scoring import _aggregate_scores, _normalized_by_direction
+from qone_life.scoring import _aggregate_scores
 
 
 def obs(

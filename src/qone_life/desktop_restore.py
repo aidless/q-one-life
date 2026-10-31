@@ -130,6 +130,6 @@ def main(argv: list[str] | None = None, *, stdin=None) -> int:
         )
         print(json.dumps(result, ensure_ascii=False), flush=True)
         return 0
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001 - CLI 顶层兜底：任何异常须转成 JSON 错误并返回非零
         print(json.dumps({"ok": False, "error": str(exc)}, ensure_ascii=False), flush=True)
         return 2

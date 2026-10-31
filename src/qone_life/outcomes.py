@@ -1,7 +1,7 @@
 """Typed, local outcome intake. A task click or an LLM opinion is not a label."""
+import re
 from copy import deepcopy
 from datetime import timedelta
-import re
 
 from qone_core.life import AdaptiveKernel, ModelError
 from qone_core.life.model import fingerprint, instant, number

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import base64
 import hashlib
 import importlib.util
 import json
@@ -10,7 +11,6 @@ import os
 import secrets
 import tempfile
 import threading
-import base64
 from contextlib import asynccontextmanager
 from hmac import compare_digest
 from pathlib import Path
@@ -22,16 +22,14 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
-from starlette.exceptions import HTTPException as StarletteHTTPException
-from starlette.middleware.trustedhost import TrustedHostMiddleware
-
 from qone_agent.runtime import ProviderError, is_loopback, public_context, run_model
 from qone_core.ledger import Ledger, LedgerError
 from qone_core.report import build_report
 from qone_core.service import DecisionService
+from starlette.exceptions import HTTPException as StarletteHTTPException
+from starlette.middleware.trustedhost import TrustedHostMiddleware
+
 from . import __version__
-from .planner import Planner
-from .plan_runtime import generate_plan
 from .backup import TABLES, apply_pending, validate_backup
 from .encrypted_backup import (
     BackupCryptoError,
@@ -41,11 +39,13 @@ from .encrypted_backup import (
     encrypt_backup,
     inspect_backup,
 )
+from .plan_runtime import generate_plan
+from .planner import Planner
 from .repository import (
     DOMAINS,
+    SCHEMA_VERSION,
     DatabaseVersionError,
     Repository,
-    SCHEMA_VERSION,
     identifier,
     now,
     timestamp,
@@ -421,7 +421,7 @@ def create_app(
     @app.post("/api/decisions", status_code=201)
     def create_decision(raw: dict):
         if not isinstance(raw.get("options"), list):
-            raise ValueError("请填写2到8个备选方案")
+            raise ValueError("请填写2到8个备选方案")  # noqa: TRY004 - 校验消息需原样返回给用户（ValueError 专用处理器）
         baseline = raw.get("baseline_option_id")
         if baseline not in {o.get("id") for o in raw.get("options", []) if isinstance(o, dict)}:
             raise ValueError("请先选出你自己的初始选择")
@@ -615,7 +615,7 @@ def create_app(
     def recommendation_feedback(record_id: str, raw: dict):
         with lock:
             if not isinstance(raw.get("proposal_sha256"), str):
-                raise ValueError("请使用当前页面中的推荐")
+                raise ValueError("请使用当前页面中的推荐")  # noqa: TRY004 - 校验消息需原样返回给用户（ValueError 专用处理器）
             return planner.feedback(record_id, raw.get("action"), raw["proposal_sha256"])
 
     @app.post("/api/goals", status_code=201)

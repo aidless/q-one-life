@@ -37,7 +37,7 @@ class Observation:
     corrected_by: str | None = None
 
     @classmethod
-    def from_payload(cls, raw: dict[str, Any]) -> "Observation":
+    def from_payload(cls, raw: dict[str, Any]) -> Observation:
         if not isinstance(raw, dict):
             raise LifeValidationError("observation must be an object")
         required_text = ("domain", "metric", "observed_at", "source")
@@ -112,7 +112,7 @@ class MetricSpec:
     target: float | None = None
 
     @classmethod
-    def from_dict(cls, raw: dict[str, Any]) -> "MetricSpec":
+    def from_dict(cls, raw: dict[str, Any]) -> MetricSpec:
         if not isinstance(raw, dict):
             raise LifeValidationError("metric specification must be an object")
         domain = raw.get("domain")

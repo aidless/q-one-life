@@ -22,5 +22,20 @@ where = ["src"]
 line-length = 100
 target-version = "py310"
 
+[tool.ruff.lint]
+# 显式 pin 规则集（不依赖 ruff 版本的默认值），CI 与本地可复现。
+select = ["E4", "E7", "E9", "F", "I", "UP", "B", "SIM", "PERF", "C4", "RUF", "TRY", "BLE", "PLW", "FURB"]
+ignore = [
+    "E501",    # 行宽由 line-length 控制
+    "E701", "E702",  # 测试中允许单行 if/; 写法
+    "RUF001", "RUF002", "RUF003",  # 中文全角标点是有意为之
+    "TRY003",  # 中文长异常消息有意为之
+    "TRY300", "TRY301",
+    "B007", "B023",
+    "PERF401",  # 显式循环可读性优于推导式
+    "PLW2901", "PLW0108", "SIM105",
+    "RUF005",   # 列表拼接可读性
+]
+
 [tool.setuptools.package-data]
 qone_life = ["static/*.html", "static/*.css", "static/*.js", "static/*.json"]

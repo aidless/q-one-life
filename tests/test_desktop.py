@@ -1,9 +1,9 @@
 from __future__ import annotations
 
+import base64
 import json
 import os
 import queue
-import base64
 import sqlite3
 import subprocess
 import sys
@@ -17,6 +17,7 @@ from unittest.mock import patch
 
 from fastapi.testclient import TestClient
 
+from qone_life.desktop_restore import restore_stdin
 from qone_life.encrypted_backup import (
     DEFAULT_KDF,
     decode_recovery_key,
@@ -24,7 +25,6 @@ from qone_life.encrypted_backup import (
     encode_recovery_key,
     encrypt_backup,
 )
-from qone_life.desktop_restore import restore_stdin
 from qone_life.repository import DatabaseVersionError
 from qone_life.store import LifeStore
 from qone_life.web import create_app
@@ -238,13 +238,15 @@ class DesktopBoundaryTests(unittest.TestCase):
                         raise OSError("simulated interruption")
                     return os.replace(source, destination)
 
-            with patch("qone_life.desktop_restore.os", ReplaceFault()):
-                with self.assertRaises(OSError):
-                    restore_stdin(
-                        str(target),
-                        replace=True,
-                        stream=__import__("io").BytesIO(json.dumps(raw).encode()),
-                    )
+            with (
+                patch("qone_life.desktop_restore.os", ReplaceFault()),
+                self.assertRaises(OSError),
+            ):
+                restore_stdin(
+                    str(target),
+                    replace=True,
+                    stream=__import__("io").BytesIO(json.dumps(raw).encode()),
+                )
 
             self.assertEqual(marker.read_text(encoding="utf-8"), "keep-me")
             self.assertFalse(any(path.name.startswith(".q-one-old-") for path in Path(parent).iterdir()))
@@ -334,6 +336,7 @@ class DesktopBoundaryTests(unittest.TestCase):
                 capture_output=True,
                 text=True,
                 timeout=10,
+                check=False,
             )
             self.assertEqual(second.returncode, 3, second.stdout + second.stderr)
             self.assertEqual(json.loads(second.stdout)["code"], "INSTANCE_ALREADY_RUNNING")
@@ -377,6 +380,7 @@ for index in range(25):
                 capture_output=True,
                 text=True,
                 timeout=10,
+                check=False,
             )
             self.assertEqual(process.returncode, 2)
             self.assertEqual(json.loads(process.stdout)["code"], "HANDSHAKE_INVALID")
@@ -398,6 +402,7 @@ for index in range(25):
                 capture_output=True,
                 text=True,
                 timeout=10,
+                check=False,
             )
             self.assertEqual(process.returncode, 2, process.stdout + process.stderr)
             self.assertEqual(json.loads(process.stdout)["code"], "HANDSHAKE_INVALID")

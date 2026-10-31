@@ -9,7 +9,7 @@ from .models import Observation
 
 
 def _public_id(value: str, salt: str) -> str:
-    return hashlib.sha256(f"{salt}:{value}".encode("utf-8")).hexdigest()[:16]
+    return hashlib.sha256(f"{salt}:{value}".encode()).hexdigest()[:16]
 
 
 def export_observations(

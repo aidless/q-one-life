@@ -7,8 +7,8 @@ from tempfile import TemporaryDirectory
 
 from qone_core.ledger import Ledger
 from qone_core.service import DecisionService
-from .repository import DOMAINS, timestamp
-from .repository import SCHEMA_VERSION
+
+from .repository import DOMAINS, SCHEMA_VERSION, timestamp
 
 LEGACY_TABLES = {"tasks", "metrics", "observations", "documents", "runs", "reviews"}
 V2_TABLES = LEGACY_TABLES | {"goals", "suggestions"}
@@ -46,9 +46,9 @@ def validate_backup(raw):
                 service.resolve(p["decision_id"], p["success"], p.get("notes", ""))
             else:
                 service.abandon(p["decision_id"], p["reason"])
-    for name, rows in tables.items():
+    for rows in tables.values():
         if not isinstance(rows, list):
-            raise ValueError("备份数据表格式无效")
+            raise ValueError("备份数据表格式无效")  # noqa: TRY004 - 输入校验统一用 ValueError（上层按单一类型捕获）
         seen = set()
         for row in rows:
             if not isinstance(row, dict) or not isinstance(row.get("id"), str) or not row["id"] or row["id"] in seen:

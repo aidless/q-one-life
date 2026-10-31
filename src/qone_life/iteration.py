@@ -10,7 +10,7 @@ missing day is never silently read as "score stayed the same".
 from __future__ import annotations
 
 from collections import defaultdict
-from datetime import date, datetime, timezone
+from datetime import date, datetime
 from typing import Any
 
 from .models import MetricSpec, Observation

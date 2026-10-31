@@ -1,15 +1,16 @@
 """Real local intake through API, revision storage, learner and backup; synthetic data."""
-from copy import deepcopy
-from datetime import datetime, timezone
 import json
-from pathlib import Path
 import tempfile
 import threading
 import unittest
+from copy import deepcopy
+from datetime import datetime, timezone
+from pathlib import Path
 from unittest.mock import patch
 
 from fastapi.testclient import TestClient
 from qone_core.life import AdaptiveKernel
+
 from qone_life.web import create_app
 
 NOW = '2026-10-26T00:00:00+00:00'

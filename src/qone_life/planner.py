@@ -6,6 +6,7 @@ import time
 from datetime import datetime, timezone
 
 from qone_agent.runtime import ProviderError
+
 from .plan_runtime import generate_plan, validate_plan
 from .repository import identifier, now
 from .system import SystemService
@@ -306,7 +307,7 @@ class Planner:
                 break
             try:
                 self.tick()
-            except Exception:
+            except Exception:  # noqa: BLE001 - 调度器兜底：单条损坏记录不能杀死循环
                 # A corrupt local record must not kill the scheduler or expose private text.
                 with self.lock:
                     self.model_status, self.error = "error", "自动推荐暂时无法更新，请检查本地数据与模型连接"

@@ -5,8 +5,10 @@ import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+
 from fastapi.testclient import TestClient
 from qone_agent.runtime import ProviderError, RunResult
+
 from qone_life import __version__
 from qone_life.web import create_app
 
@@ -194,7 +196,8 @@ class WebTests(unittest.TestCase):
         self.post("metrics", {"name": "test"}, 201)
         backup = self.client.get("/api/backup").json()
         backup["tables"]["metrics"][0]["maximum"] = 0
-        with tempfile.TemporaryDirectory() as folder:
-            with TestClient(create_app(folder), base_url="http://localhost", headers=HEADERS) as other:
-                self.assertEqual(other.post("/api/restore", json=backup).status_code, 400)
-                self.assertEqual(other.get("/api/bootstrap").json()["scores"]["metrics"], [])
+        with tempfile.TemporaryDirectory() as folder, TestClient(
+            create_app(folder), base_url="http://localhost", headers=HEADERS
+        ) as other:
+            self.assertEqual(other.post("/api/restore", json=backup).status_code, 400)
+            self.assertEqual(other.get("/api/bootstrap").json()["scores"]["metrics"], [])

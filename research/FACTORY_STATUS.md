@@ -562,3 +562,25 @@ publication was performed.
 - gemma/arc LaTeX 工具链（无 pandoc/pdflatex）
 - 5 篇 arXiv 上传/元数据（用户门）
 - 133 族人工处置（D16-D30）
+
+---
+
+## ✅ 未闭合门 · 可勾选关闭清单（2026-10-31）
+
+> 打勾条件：该条的「关闭判据」与「证据落点」**都**满足后才可打勾。Agent **不得**自行勾选需人工/用户授权或依赖外部来源的项。任一未勾 → 保持 `ready=false` / `upload_authorized=0`。
+
+### 独立评审门（Agent 可备料 · 不可自判通过）
+- [ ] **bench C02 — 发表/源身份**：恢复或刷新 bench `main.tex` 源身份，使 sha256 与 native-manifest 记录一致（当前本地 `182822cf…` / 220650B ≠ manifest `0d68bd…` / 220384B；`0d68bd…` 在当前 git 历史与本地 FS 均不可恢复）。证据落点：`research/pilot-bench-noise-floor/` 的 manifest + `artifacts/research-factory/v2/package-audits/index.json`。归属：**用户/上游**（源字节不可在本仓库重建）。
+- [ ] **bench C03 — 构念效度**：把 producer-baseline 收窄为可证伪的 construct-validity audit，或补真实不相交 gold pool 正例。证据落点：A3/A4 实验报告 + 独立 method review 回执。归属：Agent 备料 + 独立评审。
+- [ ] **f-acceptance C11 — 独立复审绑定当前源**：新 method/statistics 复审回执显式引用 `986c0a30…` 且无 Major。证据落点：`research/pilot-f-acceptance/reviews/`。归属：独立评审。
+- [ ] **arc C09 / C10 — 官方计分法**：落盘官方 scoring methodology 快照 + 计分器夹具 + 精确 published source。证据落点：`research/pilot-arc/`。归属：**外部官方来源**。
+- [ ] **gemma 源身份**：本地 `WRITEUP.md`（`2ad3ce3d…`）/ `GEMMA_REVISED.md`（`aa25d33d…`）与远端发布源字节逐一致。归属：**外部发布源**。
+
+### 打包 / 工具链门（Agent 环境受限）
+- [ ] **gemma / arc LaTeX 源**：当前本机无 pandoc/pdflatex（无 sudo 免密、PEP 668 阻止 pip 全局装）。判据：产出可确定性编译的 arXiv source tree（两次编译逐字节相同）。归属：外部资源 / 用户环境。
+
+### 用户授权门（只有用户能勾）
+- [ ] **5 篇 arXiv 上传 + 元数据**（作者、分类、摘要、license、上传授权）：用户逐篇确认并显式授权。归属：**用户**。
+- [ ] **133 族人工处置（D16-D30）**：把 `final_disposition` 从 `unreviewed` 逐族推进（merge / repair / blocked / ready）。机器建议在 `artifacts/research-factory/v2/agent-dispositions.json`，最终决定必须人工（见 `review-packets/top20.md`）。归属：**用户/人工**。
+
+> 关闭流程：对应回执写入 `artifacts/research-factory/v2/pilot-status.json` → 在本清单勾选 → 该 pilot 才可离开 `blocked`。机器建议与 final disposition 始终分列，禁止自动批量标 `arxiv-ready`。

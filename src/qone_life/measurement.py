@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from .locking import exclusive_file_lock
+from .permissions import secure_append
 from .store import GENESIS, canonical_json, event_hash
 
 MEASUREMENT_TYPES = {"code_commit", "experiment_run", "model_review", "decision", "outcome"}
@@ -107,8 +108,7 @@ class MeasurementStore:
                 "prev_hash": events[-1]["hash"] if events else GENESIS,
             }
             event["hash"] = event_hash(event)
-            self.path.parent.mkdir(parents=True, exist_ok=True)
-            with self.path.open("a", encoding="utf-8") as handle:
+            with secure_append(self.path) as handle:
                 handle.write(canonical_json(event) + "\n")
                 handle.flush()
                 os.fsync(handle.fileno())
@@ -131,8 +131,7 @@ class MeasurementStore:
                 "prev_hash": events[-1]["hash"] if events else GENESIS,
             }
             event["hash"] = event_hash(event)
-            self.path.parent.mkdir(parents=True, exist_ok=True)
-            with self.path.open("a", encoding="utf-8") as handle:
+            with secure_append(self.path) as handle:
                 handle.write(canonical_json(event) + "\n")
                 handle.flush()
                 os.fsync(handle.fileno())

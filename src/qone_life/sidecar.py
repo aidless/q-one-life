@@ -162,7 +162,7 @@ def main(argv: list[str] | None = None, *, stdin=None, stdout=None) -> int:
             flush=True,
         )
         return 3
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001 - CLI 顶层兜底：转成错误事件并退出
         print(
             json.dumps(
                 {

@@ -212,7 +212,7 @@ class Repository:
         previous = self.get("goals", goal_id) if goal_id else {}
         data = previous | raw
         if not isinstance(data.get("title"), str) or not isinstance(data.get("success_criterion"), str):
-            raise ValueError("目标与完成标准必须为文本")
+            raise ValueError("目标与完成标准必须为文本")  # noqa: TRY004 - 输入校验统一用 ValueError
         title, criterion = data["title"].strip(), data["success_criterion"].strip()
         priority, domain = data.get("priority", 3), data.get("domain", "learning")
         status = data.get("status", "active")
