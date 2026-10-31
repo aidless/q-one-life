@@ -1,0 +1,54 @@
+{
+ "panelist_id": "P1",
+ "perspective": "软件工程",
+ "anchors": {
+  "D1": "基准：生活层闭环(观察→打分→迭代→建议→web)与科研工厂按设计可跑通，pytest 196 passed + 22 subtests；存在少量未完成边界(机械打包 3/5、133 族人工处置未闭合)。",
+  "D2": "基准：ruff 37 errors(22 fixable)，最大模块 research_factory.py 1811 行、research.py 1246 行，函数返回注解仅 60%，无 mypy/pyright。",
+  "D3": "基准：pytest 196+22 subtests 全通过、unittest 170 通过；CI 3 个 workflow 存在；但 CI 实际跑 unittest 而 README 报 pytest 数字，且无覆盖率门控。",
+  "D4": "基准：web 层有 capability token(compare_digest)+control token+TrustedHost 回环+CSP+origin 检查；但活库 SQLite/JSONL 无静态加密(仅 .qonebackup 容器加密，SECURITY.md 明说无认证/加密/安全删除)。",
+  "D5": "基准：README+14 份 docs+10 域文档(19,827 行)+examples+USER_GUIDE+3 分钟演示脚本齐全；但 README 证据表数字漂移(写 pytest 178+32、unittest 88，实测 196+22、170)。"
+ },
+ "scores": {
+  "D1": 4.0,
+  "D2": 3.0,
+  "D3": 4.0,
+  "D4": 4.0,
+  "D5": 4.0
+ },
+ "rationale": {
+  "D1": "独立复现：pytest 196 passed + 22 subtests(16.53s)，unittest 170 OK；核心量化闭环( scoring._normalized_by_direction 对 higher/lower/target 实测 0.75/0.75/1.0、target 100/60→0.333 )与 web(15 passed)、iteration/suggestion(31 passed)均绿。CLI 含 serve/sidecar/init/add-observation/score/iterate/suggest/review/export/verify/measure-*/research-* 完整子命令。1644 指标、10 域、全部 8 个必填字段齐全、权重和 1230.9。但科研工厂机械打包仅 3/5(paper11/bench/f-acceptance)，133 族人工处置与 5 篇 arXiv 上传未闭合，90 天计划 D16-D30 与 D76-D90 处于暂停态——属于已知未完成边界而非缺陷，故 4 而非 5。",
+  "D2": "ruff 全量检查 src+tests 得 37 errors(22 fixable)，src 单独 22 errors(13 fixable)，集中在 I001 导入排序×6、TRY004(ValueError 应为 TypeError)×5、UP037×2、F401×1 等；最大三个模块 1811/1246/892 行，属高耦合单体；函数返回注解覆盖仅 60%(196/329)；无 mypy/pyright 配置；依赖 pin 合理(fastapi==0.115.6、git 依赖锁 commit b1f41de/79a951a)。结构整体清晰但 lint 问题较多+单体模块偏大，故 3。",
+  "D3": "测试充分(196 pytest + 22 subtests 全过、23 个测试文件、3735 行测试代码)，且我重新安装依赖(portalocker/fastapi/q-one-core/q-one-agent git commit 级)后完整复现 196 passed；CI 三份 workflow(checks/desktop/pages)存在，checks 覆盖 py3.10+3.12 矩阵；可复现命令文档化(cleanroom-check.sh + requirements.txt 精确 pin)。但 CI 实际用 `unittest discover`(170 个)而非 pytest，README 证据表却引 pytest 数字(178+32)，口径不一致；无覆盖率配置/门控；故 4。",
+  "D4": "web 层防护扎实：capability token 用 hmac.compare_digest、desktop 子路由需 control token、TrustedHostMiddleware 仅回环、POST/PUT/PATCH/DELETE 做 origin 与 x-qone-client=web 校验、4MB 请求上限、响应带 CSP/nosniff/no-referrer/no-store。但活库无静态加密：SECURITY.md 明言“does not provide encryption, authentication, secure deletion, or multi-user access control”，PRIVACY.md 承认默认 JSONL 未加密仅靠 OS 权限；加密仅覆盖 .qonebackup 备份容器(Argon2id 包裹 AES-GCM，encrypted_backup.py 实现合理)。故“有基本保护但加密范围有限”=4。",
+  "D5": "文档齐全：README 144 行、docs/ 14 份核心文档(ACCEPTANCE/AUTOMATIC_RECOMMENDATIONS/BLUEPRINT/DECISION_STUDIO/LIFE_SYSTEM/ONTOLOGY/OUTCOME_INTAKE/PRIVACY/RESEARCH_FACTORY_90_DAY_PLAN/RESEARCH_FACTORY_AUTONOMOUS_ITERATION_PLAN/RESEARCH_QUANTIFICATION/SCORING/SYNTHESIS_IMPLEMENTATION/USER_GUIDE)、10 份域文档(19,827 行，test_domain_docs_sync 5/5 同源防漂移)、examples/daily_quantified_iteration.py 示例、docs/demo/QONE_3_MINUTE_DEMO 与 docs/career 简历包。但 README“当前证据”表数字漂移：写 pytest 178+32 subtests、unittest 88，实测 196+22、unittest 170——与实现不符，故 4。",
+  "improvements": {
+   "D1": [
+    "补齐科研工厂机械打包剩余 2/5(arc/gemma 源身份与 LaTeX 工具链)并写入验收记录",
+    "把 133 族人工处置与 5 篇 arXiv 上传从“未闭合”移入明确的 backlog 追踪，避免无限期开放",
+    "为 90 天计划 D16-D30/D76-D90 暂停段补一个恢复触发条件(如关键依赖落地)而非长期空转"
+   ],
+   "D2": [
+    "运行 `ruff check --fix` 清掉 13 个自动可修复错误(I001/UP037/UP012/FURB188)，再手工修 TRY004(改 raise TypeError)与 F401 未用导入",
+    "将 research_factory.py(1811 行)与 research.py(1246 行)按职责拆分为证据解析/打包/评审/量化子模块，降低单体耦合",
+    "为 src/qone_life 接入 mypy 或 pyright 并开启 strict，把返回注解覆盖从 60% 提到 >90%"
+   ],
+   "D3": [
+    "统一测试入口：CI 改用 pytest(或让 README 证据表与 CI 实测数字一致)，消除 unittest 170 vs pytest 196 的口径分歧",
+    "加入 pytest-cov 并设覆盖率阈值(如 line>=80%)作为 CI 门控，覆盖 research_factory/research 两个最大模块",
+    "把 cleanroom-check.sh 的运行方式写进 README 的“复现”小节，标注精确提交与 Python 版本(实测需 >=3.10)"
+   ],
+   "D4": [
+    "明确活库(SQLite/JSONL)的威胁模型：要么引入 OS 级加密卷说明，要么在 README 显著位置声明“活库未加密，请放加密盘”，避免用户误判",
+    "对 capability/control token 增加轮换与失效策略(当前仅在进程生命周期有效)，并加一次桌面端 keychain 集成测试",
+    "为 export 红色脱敏视图增加自动化测试，验证 notes/决策链接/原始 source 确被移除"
+   ],
+   "D5": [
+    "立即修正 README“当前证据”表：pytest 178+32→196+22、unittest 88→170，同步 desktop/TS 数字",
+    "为 10 份域文档补充生成脚本(generate_domain_docs.py)的一键再生成说明，让 test_domain_docs_sync 防漂移可被外部验证",
+    "补一份 CONTRIBUTING 指向的“如何新增指标/域”短指南，降低 1644 指标目录的维护门槛"
+   ]
+  }
+ },
+ "overall_score": 4.0,
+ "overall_comment": "Q-One Life 是一个功能按设计工作、测试充分(196 pytest 全绿)、安全边界设计明确(回环+capability+加密备份)但存在中量 lint 债务(37 ruff errors)、单体模块偏大、README 证据数字漂移的稳健 v0.8.0.dev0 项目。"
+}

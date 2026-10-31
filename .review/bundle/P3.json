@@ -1,0 +1,52 @@
+{
+ "panelist_id": "P3",
+ "perspective": "科研严谨性 (Research Factory & scientific rigor)",
+ "anchors": {
+  "D1": "以 Research Factory 核心管线（triage/scaffold/plan/package-audit/ledger/quantify/optimize）是否按设计工作、且被测试证明为锚定，同时以 pilot 集合实际闭合度衡量完整性。",
+  "D2": "以模块边界、类型标注完整度、ruff 干净度与依赖 pin 合理性为锚定。",
+  "D3": "以测试数量/覆盖率、CI 矩阵、以及可复现命令（cleanroom 双编译字节一致）为锚定。",
+  "D4": "以是否具备数据加密+访问控制+隐私设计为锚定，重点看主存储与备份容器分别怎么保护。",
+  "D5": "以 README + 完整 docs + 示例脚本 + 用户指南齐备度与文档漂移程度为锚定。"
+ },
+ "scores": {
+  "D1": 4.0,
+  "D2": 3.0,
+  "D3": 4.0,
+  "D4": 4.0,
+  "D5": 4.0
+ },
+ "rationale": {
+  "D1": "核心工厂功能按设计工作且有测试证明：test_research_factory.py 11 个测试、test_research 7、test_research_quantification 8、test_research_production 9；audit_git_source_lineage/triage_portfolio/build_research_plan/audit_arxiv_package/audit_native_paper_ledger/optimize_portfolio/quantify_research_project 均实现。PAPER_PLAN 5/5、独立评审 5/5、citation-verification 3/3。但完整性未达顶：17 个 pilot 全部 ready=False（诚实但未闭合），机械打包仅 3/5，bench-noise-floor 正文数字绑定率 99.4%、paper11 79%、closing-calibration-landscape 78.6%，且 C02/C03/C11/C09、gemma 源身份、133 族人工处置、5 篇 arXiv 上传（用户门）均未闭合。工厂在 epistemic 纪律上极为克制：scientific_ready=False、publication_identity_ready=False、upload_authorized=0，绝不把 orchestration 信号当科学就绪，这是严谨性加分项。",
+  "D2": "结构清晰（26 模块、8,203 行 src、模块化职责分明）、类型标注完整（from __future__ import annotations + 全签名注解）、依赖 pin 严谨（fastapi==0.115.6、uvicorn==0.34.0、内部包 q-one-core@b1f41de / q-one-agent@79a951a 固定到已审查源码提交，可复现性强）。但 ruff 不干净：37 errors（E402×10、W1510×3、F401×3、E001×3、F100×2、F102×1、RUF100×若干），22 可修，远超'少量'；最大模块 research_factory.py 1,811 行偏重。故按锚定取 3。",
+  "D3": "pytest 196 passed + 22 subtests（15.53s，1 warning）；23 个测试文件、测试 11,938 行 vs 源码 8,203 行，覆盖率高。CI 存在且为矩阵：.github/workflows/checks.yml 用 Python 3.10/3.12 跑 pip install -r requirements.txt + pip install . + unittest discover，另有 desktop.yml/pages.yml。可复现命令文档化：scripts/cleanroom-check.sh（需 uv + rsync），paper11/bench/f-acceptance 有 tar.gz + clean-room exit 0，两次隔离编译逐字节相同 PDF。schema JSON 5/5 有效。局限：pilot 间证据闭合不均衡（0-99.4% 绑定率），且本环境缺 qone_agent/qone_core 仅能实跑 95/196，完整套件依赖内部包安装（CI 会装，本地裸跑 collect 报 ImportError）。README 记 178 测试与事实 196 有数字漂移（此属 D5）。",
+  "D4": "有基本保护但加密范围有限：主工作库（SQLite/JSONL）依赖 OS ACL，PRIVACY.md 明确'不是加密、应由操作系统与备份策略保护'；加密范围仅 .qonebackup 备份容器——encrypted_backup.py 用随机 32 字节数据密钥 + Argon2id 派生密钥 + AES-GCM 认证加密 + recovery-key 包裹 + Crockford base32 恢复码，设计扎实。访问控制到位：web.py TrustedHostMiddleware 仅 127.0.0.1/localhost/[::1]、随机回环端口、全部 /api/* 需一次性 capability（compare_digest）、control_token 同样恒定时间比较。导出脱敏：redaction.py 保留值/时间戳、去 notes/决策链接/原始源串。无明文凭据入库（.gitignore 排除 .env 与 *.private.*；.env.example 仅空占位）。缺口：主存储静态未加密、端到端加密未覆盖，属'加密范围有限'而非无保护。",
+  "D5": "文档异常齐备：README（11KB，含架构图、证据表、安装运行）、docs/ 下 ACCEPTANCE/USER_GUIDE/PRIVACY/BLUEPRINT/SCORING/DECISION_STUDIO/LIFE_SYSTEM/ONTOLOGY/OUTCOME_INTAKE/SYNTHESIS_IMPLEMENTATION/AUTOMATIC_RECOMMENDATIONS/RESEARCH_FACTORY_90_DAY_PLAN/RESEARCH_FACTORY_AUTONOMOUS_ITERATION_PLAN/RESEARCH_QUANTIFICATION + domains/×10（19,827 行，test_domain_docs_sync 5/5 同源）+ research/blog/demo/career/evidence；examples/ 有 metric-spec.json（1,644 指标）、daily_quantified_iteration.py、adaptive.synthetic.json；3 分钟演示、简历包、真实截图、CHANGELOG、CONTRIBUTING。轻微漂移：README 记 pytest 178+32 subtests，实际 196+22；USER_GUIDE 仍称 v0.3 而版本 0.8.0.dev0。",
+  "improvements": {
+   "D1": [
+    "把 bench C02/C03、f-acceptance C11、arc C09、gemma 源身份作为发布前置，未闭合前保持 scientific_ready=False 的显式门（维持现有纪律）",
+    "为 17 个 pilot 补足证据绑定：至少把 closing-calibration-landscape（78.6%）与 paper11（79%）的未绑定正文数字逐一追因，消除'真数据缺口'",
+    "把 133 族人工处置从 blocked 状态推进：建立可执行的人工处置清单与回执模板，避免 D16-D30 长期空转"
+   ],
+   "D2": [
+    "一次性修复 22 个可自动修的 ruff 错误（F401 未用导入、W1510 等），并给 E402×10 定基线说明或改为顶层导入",
+    "把 research_factory.py（1,811 行）按职责拆分：triage/scaffold/plan/package-audit/native-ledger/optimize 各归独立模块，保持单一职责"
+   ],
+   "D3": [
+    "在 README 更新测试计数与命令（与 196+22 对齐），并新增一条 pip install -e . + pytest 的复现一行命令",
+    "为证据闭合最低的 pilot（gemma 零数据、paper11 79%）增加可复算的断言/回归测试，把绑定率做成 CI 门禁",
+    "在 CI 中加 q-one-agent/q-one-core 安装前的版本指纹断言，确保本地裸跑与 CI 一致"
+   ],
+   "D4": [
+    "评估对主工作库（JSONL/SQLite）启用静态加密或明确其仅受 OS ACL 保护的边界，写入威胁模型",
+    "为 capability/control_token 增加轮换与失效策略，并记录一次性 capability 的过期时间",
+    "补一份数据泄露响应/导出复核 SOP：即使脱敏值也可能敏感（PRIVACY.md 已提示，落成 checklist）"
+   ],
+   "D5": [
+    "把 README 证据表测试数与 USER_GUIDE 版本号（v0.3→0.8.0.dev0）校准，消除文档漂移",
+    "为 RESEARCH_QUANTIFICATION 层补一篇'如何从 evidence-gap 清单推导结论'的解读文档，让 7 个可计算量的口径对外可复算"
+   ]
+  }
+ },
+ "overall_score": 4.0,
+ "overall_comment": "Q-One Life 的 Research Factory 在科研严谨性上表现突出：以 evidence-gap 清单、claim ledger、source-lineage 审计、双编译字节一致与显式 scientific_ready=False 门实现非静默降级，绝不在未闭合 C02/C03/C11/C09 与 133 族人工处置前把 orchestration 当科学就绪；唯因 ruff 37 errors、pilot 证据闭合不均衡与少量文档漂移，未达满分。"
+}

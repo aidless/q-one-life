@@ -1,0 +1,52 @@
+{
+ "panelist_id": "P2",
+ "perspective": "数据/安全与科研严谨性",
+ "anchors": {
+  "D1": "核心功能（观察→打分→迭代→建议→web）闭环可用且有 pytest 证明；但科研工厂端到端未闭合（17 pilot 全部 ready=False），属主要功能按设计工作+少量分支未验证。",
+  "D2": "26 个模块、清晰分层（repository/store/scoring/iteration/web/research_factory），依赖精确 pin，但 ruff 有 37 个错误，介于少量与较多之间。",
+  "D3": "高测试数（196 passed + 22 subtests）＋三套 CI＋cleanroom 可复现文档；但 CI 用 unittest discover，漏掉 4 个 pytest-style 测试文件（26 个测试）。",
+  "D4": "SQLite 0600 + settings 0600 + 加密备份（AESGCM/Argon2id）+ 回环绑定/capability/control token + 无提交密钥；但活动数据不加密且 .life-data/measurements.jsonl 以默认 umask 写（实测 0664），违背 SECURITY.md 的 OS-ACL 策略。",
+  "D5": "README+USER_GUIDE+PRIVACY+10 域文档（19,827 行，与 CATALOG 同步 test 5/5）+examples+cleanroom；但 README 测试计数漂移（178 vs 196）。"
+ },
+ "scores": {
+  "D1": 4.0,
+  "D2": 4.0,
+  "D3": 4.0,
+  "D4": 3.0,
+  "D5": 4.0
+ },
+ "rationale": {
+  "D1": "生命周期闭环（add-observation→score 方向感知归一化→iterate 日聚合/环比/趋势→suggest 按 direction→/api/scores /api/iterate /api/suggest）有测试证明；scoring.py 对 higher/lower/target 与 mean/latest/max/min 聚合有真实语义实现。但科研工厂 17 个 pilot 全部 valid=True ready=False，机械打包仅 3/5（paper11/bench/f-acceptance 有 tar.gz+clean-room exit 0），未闭合含 bench C02/C03、f-acceptance C11、arc C09、gemma 源身份、LaTeX 工具链、5 篇 arXiv 上传与 133 族人工处置——核心可用、端到端发布未达成，故 4。",
+  "D2": "模块化良好：26 个 .py，最大 research_factory.py 1811 行（大但内聚），依赖全部精确 pin（fastapi==0.115.6、uvicorn==0.34.0、cryptography==50.0.2、argon2-cffi==25.1.0、内部依赖固定 git commit），type hints + py310。但 ruff check 报 37 错误（E402×10、W1510×3、F401×3、E001×3、F100×2、F102×1、RUF100×若干；22 可自动修复），非“干净”，故 4。",
+  "D3": "23 个测试文件，facts 记 196 passed + 22 subtests（15.53s）；3 套 CI（checks.yml python3.10/3.12、desktop.yml 三平台 E2E、pages.yml）；研究侧可复现性强：R2/R3 候选两次隔离编译逐字节一致、revision-manifest SHA-256、clean-room exit 0、5/5 schema 有效。但 checks.yml 只跑 `python -m unittest discover`，而 test_domain_docs_sync/test_iteration/test_research_dispositions/test_suggestion 为模块级 def test_*（pytest 风格），unittest 不收集——CI 静默漏掉这 4 文件 26 个测试（实测 unittest 仅收集 22 个而非 196）。此外本环境缺 qone_agent/qone_core 无法独立复跑全量，仅复跑 95+26 通过。故 4。",
+  "D4": "有真实安全设计：repository.py 目录 mkdir 0o700 + 文件 chmod 0o600，web.py settings fchmod 0o600，encrypted_backup.py 用 AESGCM + Argon2id（64MiB/3/4）认证加密备份容器，web 只绑定回环（TrustedHostMiddleware）+ /api capability + /api/desktop control token + origin 校验 + CSP + 4MB 体积上限 + Cache-Control no-store，源码扫描无提交凭据，redaction.py 提供 SHA-256 salt 匿名导出。但两项硬伤：(1) SECURITY.md 自述“does not provide encryption, authentication, secure deletion”，活动 SQLite 与 JSONL 均不加密，加密范围仅 .qonebackup；(2) 实测 .life-data/measurements.jsonl 权限 0664、目录 0775——store.py 与 measurement.py 的 append 路径 `open(\"a\")` 从不 chmod，默认 umask 使个人健康/财务观察对本地其他用户可读，直接违背 SECURITY.md 规定的“靠 OS ACL 保护”策略（SQLite 0600 反而做对了，JSONL 没做）。数据本地化+部分保护，但存在具体可读泄露面，故 3。",
+  "D5": "文档丰富：README（含三分钟演示、cleanroom 命令、证据表）、docs/ 20+ 份（USER_GUIDE、PRIVACY、BLUEPRINT、LIFE_SYSTEM、SCORING、ONTOLOGY、RESEARCH_90_DAY_PLAN、QUANTIFICATION、10 域文档 19,827 行且 test_domain_docs_sync 5/5 同源防漂移）、examples/（metric-spec 1644 指标 + daily_quantified_iteration.py）、CONTRIBUTING/SECURITY、CI badge。但 README 测试计数漂移（写 pytest 178+32 subtests/unittest 88，而 facts 与实测为 196+22，且 unittest 实际只收集 22）——文档与实现略有出入，故 4。"
+ },
+ "improvements": {
+  "D1": [
+   "为每个未闭合门（bench C02/C03、f-acceptance C11、arc C09、gemma 源身份、LaTeX 工具链、5 篇 arXiv 上传、133 族人工处置）在 FACTORY_STATUS 建立可勾选的关闭清单与责任人，避免“机械部分完成”被误读为“端到端就绪”；",
+   "对 17 个 pilot 增加一个 ready=True 的端到端 smoke 测试（发布候选→上传→回执），验证“阻止发布”闸在真实路径生效。"
+  ],
+  "D2": [
+   "修复 37 个 ruff 错误（E402 模块顶部导入、W1510、F401 未用导入、F100/F102），并把 ruff 检查接入 checks.yml 让 CI 强制零错误；",
+   "把 research_factory.py（1811 行）按 research/ 与 publication-gate 拆成两个模块，降低单文件复杂度。"
+  ],
+  "D3": [
+   "把 checks.yml 的 `python -m unittest discover` 改为 `python -m pytest`，或对 4 个 pytest 风格文件补 TestCase 包装，消除 CI 静默漏测（26 个测试不可见）；",
+   "CI 增加 `pip install -e .` 后对 qone_agent/qone_core 的依赖完整性检查，避免依赖缺失时测试被跳过；",
+   "在 README 与 CI 之间统一测试计数来源（生成式，而非手写 178/196）。"
+  ],
+  "D4": [
+   "在 store.py 与 measurement.py 的 append 路径显式 `os.chmod(path, 0o600)`（或先以 0o600 打开），并给 .life-data/ 目录设置 0o700，使 JSONL 与 SQLite 一致；",
+   "增加一条测试断言 personal 数据文件权限 ≤0o600，防止回归；",
+   "考虑为活动 SQLite/JSONL 增加可选的静态加密（如 SQLCipher），并在 SECURITY.md/PRIVACY.md 中把“OS ACL 保护”改为“OS ACL + 显式 0600 强制 + 加密备份”三层描述；",
+   "在 PRIVACY.md 明确列出 .life-data/ 与 settings.json（含 cloud_key）为最高敏感面，给出最小化收集与导出前人工审查步骤。"
+  ],
+  "D5": [
+   "同步 README 测试计数（196+22）与 pytest 实测，消除漂移；",
+   "为 .life-data/measurements.jsonl 权限在 README/PRIVACY 中补一句强制 0600 的说明，与 D4 修复对应。"
+  ]
+ },
+ "overall_score": 4.0,
+ "overall_comment": "本地优先架构清晰、证据门与可复现性（SHA-256/双编译/隔离评审）属上游水平，D4 因活动数据不加密且 JSONL 实测 0664 可读而扣分，整体 4/5。"
+}
