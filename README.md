@@ -13,6 +13,22 @@
 `/api/*` 请求都要求一次性 capability。没有模型时规则推荐仍能完成目标、行动、
 反馈、备份和恢复；启用本地模型后，Qwen3-0.6B 也只能细化已有候选。
 
+## 目录结构
+
+```
+q-one-life/
+├── src/qone_life/          # 应用核心：web.py (FastAPI), planner.py, review.py,
+│                           #   research_factory.py, suggestion.py, measurement.py …
+├── desktop/                # Electron/TypeScript 外壳 + Python sidecar 启动器
+├── packages/               # 内部 Python 包（与 q-one-core/q-one-agent 对接）
+├── research/               # Research Factory：pilot、噪声地板、账本、报告
+├── artifacts/resume-kit/   # 已生成的可复算证据（evidence.json + SHA256SUMS）
+├── tests/                  # pytest 套件（应用 + 研究工厂）
+├── scripts/                # setup.sh / run.sh / cleanroom-check.sh / 证据生成
+├── docs/                   # 蓝图、使用指南、验收、简历包、博客草稿
+└── examples/               # 合成模型与演示输入
+```
+
 ## 当前证据
 
 | 范围 | 已验证 |
@@ -47,6 +63,44 @@ bash scripts/cleanroom-check.sh
 ![Decision Studio（历史网页验收数据）](docs/images/studio-desktop.png)
 
 v0.4 首页以一个优先行动为中心：具体第一步、完成标准、可展开的依据，以及当天的安排与时间容量。其他建议收为备选项。详见 [Decision Studio 改版与验收](docs/DECISION_STUDIO.zh-CN.md)。
+
+## 证明什么 / 不证明什么
+
+**证明什么（本仓库可复算）**：这是一个本地优先、证据可审计的个人决策 Agent。它把「建议必须绑定输入、来源与可复算回执」做成运行时约束：规则路径在没有模型时仍能完成目标、行动、反馈、备份与恢复；本地模型只细化已有候选；自动推荐在服务运行期间工作，数据默认留在本地。上述行为由 `tests/` 的 pytest 套件与桌面单测/E2E 覆盖，测试计数与运行命令见下方「复算」。
+
+**不证明什么（诚实性边界）**：
+- 不是外部效度研究、用户研究或收益声明。六任务基准是**本地工程验收检查**，不是推荐质量、留存或科学有效性的证据。
+- 未签名、未公证、未公开发布；未做三平台真机/干净机器升级与回滚验证。
+- 工作 SQLite 数据库受操作系统 ACL 保护，但**不是端到端加密**；加密范围只覆盖 `.qonebackup` 备份容器。
+- 合成体验文件不代表真实用户数据，不证明真实推荐有效；样本不足或方案无法区分时保持未知，不猜测。
+- 论文尚未达到发表就绪；Research Factory 的 source-identity 与独立方法评审仍阻塞。
+
+## 复算
+
+测试与证据均从仓库内的实际文件/命令重算，不依赖记忆：
+
+```bash
+# 1) 应用 + 研究工厂 pytest 套件（实测基线：199 passed + 22 subtests）
+python3 -m pytest tests/ -q
+
+# 2) 若用项目运行环境
+bash scripts/setup.sh   # 建 venv + 固定依赖
+~/.local/share/q-one-runtime/venv/bin/python -m pytest tests/ -q
+
+# 3) 完整证据包（干净目录、真实 sidecar + Qwen 模型 E2E、六任务基准、哈希清单）
+QONE_CLEANROOM_E2E=1 QONE_RUN_RESUME_BENCHMARK=1 QONE_CAPTURE_DEMO=1 \
+QONE_SIDECAR_BIN=/absolute/path/to/qone-life-sidecar \
+QONE_E2E_LOCAL_MODEL_PATH=/absolute/path/to/Qwen3-0.6B-Q8_0.gguf \
+bash scripts/cleanroom-check.sh
+
+# 4) 证据清单与哈希核对（evidence.json + SHA256SUMS.txt 在 artifacts/resume-kit/）
+python3 scripts/build_resume_evidence.py --help
+```
+
+> 数字说明：README「当前证据」表中的 pytest 计数（178+32）来自
+> `artifacts/resume-kit/evidence.json`（干净目录运行的固件快照）；本机重新运行
+> `python3 -m pytest tests/ -q` 会得到当前源码的计数（2026-11-01 实测 199 passed
+> + 22 subtests）。两者都是真实运行输出，差异来自源码在快照之后的演进。
 
 ## 自动推荐怎样工作
 
