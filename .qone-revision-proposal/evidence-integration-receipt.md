@@ -53,7 +53,7 @@ Exact manifest-named source is recovered from git commit. Current file is retain
 ## Research Factory Verification Summary
 
 **Verification generated at**: `2026-10-28T13:37:25.603077Z`  
-**Command**: `PYTHONPATH=/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src /home/liuzewen/.cache/qone-life-venv/bin/python '/home/liuzewen/F:\\deepseek/q-one-life/scripts/research_factory_verify.py'`
+**Command**: `PYTHONPATH=/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src <WORKSPACE_ROOT>/.cache/qone-life-venv/bin/python '<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/scripts/research_factory_verify.py'`
 
 ### Test Results
 - **pytest**: 92 passed, 1 warning, 22 subtests

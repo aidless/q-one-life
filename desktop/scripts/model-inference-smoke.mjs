@@ -7,7 +7,7 @@ const expectedBytes = 639_446_688;
 const expectedSha256 = "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031";
 const defaultModelPath =
   process.env.QONE_MODEL_SMOKE_PATH ??
-  "/home/liuzewen/.cache/qone-model-qwen3-0.6b-20261027/models/Qwen3-0.6B-Q8_0.gguf";
+  "<WORKSPACE_ROOT>/.cache/qone-model-qwen3-0.6b-20261027/models/Qwen3-0.6B-Q8_0.gguf";
 
 function argument(name) {
   const index = process.argv.indexOf(name);
