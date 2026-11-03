@@ -4,7 +4,7 @@
   "family_id": "qf-boundary-sync-efaf7f88e1",
   "project_id": "qp-boundary-sync-7640e30c112f",
   "title": "boundary sync",
-  "primary_source": "/home/liuzewen/.research/boundary-sync/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/boundary-sync/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "c222f33b4cd803c1572903fb5fc30202eafec5ddce136f8d9f47fc37c9730dcb",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/boundary-sync/main.tex"
+    "<WORKSPACE_ROOT>/.research/boundary-sync/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

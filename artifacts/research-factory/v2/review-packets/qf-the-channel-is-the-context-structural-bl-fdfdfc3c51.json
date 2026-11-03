@@ -4,7 +4,7 @@
   "family_id": "qf-the-channel-is-the-context-structural-bl-fdfdfc3c51",
   "project_id": "qp-v1-7a7b7e5921e5",
   "title": "The Channel Is the Context:\\\\ Structural Blindness of Per-Agent Audits\\\\ to Cross-Principal Leakage",
-  "primary_source": "/home/liuzewen/F:\\deepseek/artifacts/manuscript-e-a2a/v1/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/artifacts/manuscript-e-a2a/v1/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "e02921cc48b8505cd1eb931d40f8d51172d3d9cdb65b6583ced8065d3f0a0e4f",
@@ -37,7 +37,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/artifacts/manuscript-e-a2a/v1/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/artifacts/manuscript-e-a2a/v1/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

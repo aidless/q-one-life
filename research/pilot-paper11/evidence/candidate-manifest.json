@@ -4,7 +4,7 @@
     {
       "bytes": 110,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T002/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T002/cand0/answer.txt",
       "sha256": "ec3315a3b4b8bb8b8b7956ae5119160d90b77c0688520d67202e876cb7c7869c",
       "task": "T002",
       "variant": "base"
@@ -12,7 +12,7 @@
     {
       "bytes": 136,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T002/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T002/cand1/answer.txt",
       "sha256": "7548a6d5c918ddbcb4c554e01a416a2f7394d5136bd334c5b5c342fb74f36159",
       "task": "T002",
       "variant": "c6_selfcheck"
@@ -20,7 +20,7 @@
     {
       "bytes": 275,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T002/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T002/cand2/answer.txt",
       "sha256": "d015bd6093040f1d61e6544a7cb5f59dce3cfd64f761fd79b1953ea835e242fc",
       "task": "T002",
       "variant": "c2_grounding"
@@ -28,7 +28,7 @@
     {
       "bytes": 151,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T003/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T003/cand0/answer.txt",
       "sha256": "a3fb67209d756a8dec9ade7c41d27e6c212885357512a07223c4122b2dcb0ce0",
       "task": "T003",
       "variant": "base"
@@ -36,7 +36,7 @@
     {
       "bytes": 115,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T003/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T003/cand1/answer.txt",
       "sha256": "f0cefc1ea431c599e7cdc4cf91a1da19e5ac2c5ed2342113715978e8c339348d",
       "task": "T003",
       "variant": "c6_selfcheck"
@@ -44,7 +44,7 @@
     {
       "bytes": 115,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T003/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T003/cand2/answer.txt",
       "sha256": "f0cefc1ea431c599e7cdc4cf91a1da19e5ac2c5ed2342113715978e8c339348d",
       "task": "T003",
       "variant": "c2_grounding"
@@ -52,7 +52,7 @@
     {
       "bytes": 136,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T005/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T005/cand0/answer.txt",
       "sha256": "5c11bc34ef52c9a412a51290f19bf5444ef241e45165c232892123aa7f4fb093",
       "task": "T005",
       "variant": "base"
@@ -60,7 +60,7 @@
     {
       "bytes": 135,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T005/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T005/cand1/answer.txt",
       "sha256": "6aa9e94e11d72b2c416918468bbfa5b90b3f8648d736cb9f50ab3698fc3af9d5",
       "task": "T005",
       "variant": "c6_selfcheck"
@@ -68,7 +68,7 @@
     {
       "bytes": 209,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T005/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T005/cand2/answer.txt",
       "sha256": "4cf83bb34b7e39085a616fbe6b3c4fd2dbe11f1a165de933ec7c59289aa1d926",
       "task": "T005",
       "variant": "c2_grounding"
@@ -76,7 +76,7 @@
     {
       "bytes": 119,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T015/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T015/cand0/answer.txt",
       "sha256": "b56094dd71863ac9bc735700bdc170b3e0b7fcd02fb874bfc6e6c9c40ab0cb34",
       "task": "T015",
       "variant": "base"
@@ -84,7 +84,7 @@
     {
       "bytes": 119,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T015/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T015/cand1/answer.txt",
       "sha256": "6df9fb8c27fbdbdafe7989c9e88fae2d8440b6341ec8131d7f5a2121b9ce363f",
       "task": "T015",
       "variant": "c6_selfcheck"
@@ -92,7 +92,7 @@
     {
       "bytes": 119,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T015/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T015/cand2/answer.txt",
       "sha256": "6df9fb8c27fbdbdafe7989c9e88fae2d8440b6341ec8131d7f5a2121b9ce363f",
       "task": "T015",
       "variant": "c2_grounding"
@@ -100,7 +100,7 @@
     {
       "bytes": 681,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T038/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T038/cand0/answer.txt",
       "sha256": "b07a350064b91ddae3a6d6e0fe612fa7cd6fd0ec41442afaed458785152d07e9",
       "task": "T038",
       "variant": "base"
@@ -108,7 +108,7 @@
     {
       "bytes": 1010,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T038/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T038/cand1/answer.txt",
       "sha256": "802d6f2de05cf5a72b255f5abeeeb8bcbe27ca20310440fab0a13bba36678725",
       "task": "T038",
       "variant": "c6_selfcheck"
@@ -116,7 +116,7 @@
     {
       "bytes": 503,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T038/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T038/cand2/answer.txt",
       "sha256": "a6bcaaac79bf7f5ce6725cddd1494529001078e3c3e99233f432b3894a97605a",
       "task": "T038",
       "variant": "c2_grounding"
@@ -124,7 +124,7 @@
     {
       "bytes": 638,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T040/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T040/cand0/answer.txt",
       "sha256": "b23f236f4f42a7b5bafa4e5402ae4bdb0527965c1770c2600351f352a2485fbc",
       "task": "T040",
       "variant": "base"
@@ -132,7 +132,7 @@
     {
       "bytes": 758,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T040/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T040/cand1/answer.txt",
       "sha256": "ed4f09b870e5a78241915a730c0844fd224909f99429fe039c54ef2b01062d26",
       "task": "T040",
       "variant": "c6_selfcheck"
@@ -140,7 +140,7 @@
     {
       "bytes": 655,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T040/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T040/cand2/answer.txt",
       "sha256": "7e7093296b5741bbadb4c0d503a11b9131e987640928d8b6e52b2898b5961dd8",
       "task": "T040",
       "variant": "c2_grounding"
@@ -148,7 +148,7 @@
     {
       "bytes": 154,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T041/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T041/cand0/answer.txt",
       "sha256": "d145dbff54df4d29c109815a6e8c57d14f4db08261002906648911826fd149b1",
       "task": "T041",
       "variant": "base"
@@ -156,7 +156,7 @@
     {
       "bytes": 319,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T041/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T041/cand1/answer.txt",
       "sha256": "abf9684a9ca69838cc9bdd02e6ddbdd2544117d55424cf415f9341c72df40148",
       "task": "T041",
       "variant": "c6_selfcheck"
@@ -164,7 +164,7 @@
     {
       "bytes": 359,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T041/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T041/cand2/answer.txt",
       "sha256": "b6f0405c3706f62f25a52114f500093b2bc129447be9a2f499d3308e7240c22a",
       "task": "T041",
       "variant": "c2_grounding"
@@ -172,7 +172,7 @@
     {
       "bytes": 582,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T043/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T043/cand0/answer.txt",
       "sha256": "7209028a6ebb52363f7f5d96520615864b36e6a225719d602cad403e2b7e8b61",
       "task": "T043",
       "variant": "base"
@@ -180,7 +180,7 @@
     {
       "bytes": 475,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T043/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T043/cand1/answer.txt",
       "sha256": "8120edbdaf6b2825649c5a18fe2de1d2d26818a07f22d6ab4b4b23299560ba26",
       "task": "T043",
       "variant": "c6_selfcheck"
@@ -188,7 +188,7 @@
     {
       "bytes": 1497,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T043/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T043/cand2/answer.txt",
       "sha256": "5b26ede29b746020ef1f8df291db0903995d18205f5d633af41c028b7ee65ac5",
       "task": "T043",
       "variant": "c2_grounding"
@@ -196,7 +196,7 @@
     {
       "bytes": 1086,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T047/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T047/cand0/answer.txt",
       "sha256": "65a3e378a4fb35e42f52901248ddc5986f88470738d55a9b1bdafd62970a695c",
       "task": "T047",
       "variant": "base"
@@ -204,7 +204,7 @@
     {
       "bytes": 819,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T047/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T047/cand1/answer.txt",
       "sha256": "4e3ffe1726f76559b16c77039bf4c20095a246d4d6ec1e48961637ab95345040",
       "task": "T047",
       "variant": "c6_selfcheck"
@@ -212,7 +212,7 @@
     {
       "bytes": 899,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T047/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T047/cand2/answer.txt",
       "sha256": "b3ce379dab57d738b015c89bfdd149d790d67e437c5230badfaf4e10ba223bce",
       "task": "T047",
       "variant": "c2_grounding"
@@ -220,7 +220,7 @@
     {
       "bytes": 542,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T052/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T052/cand0/answer.txt",
       "sha256": "18922b3aa481c321976cf803228fba7b616954a2efd6a9c24cb7ccb213782266",
       "task": "T052",
       "variant": "base"
@@ -228,7 +228,7 @@
     {
       "bytes": 691,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T052/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T052/cand1/answer.txt",
       "sha256": "ae3282c9d0b9d2362e1a74d4d53cb2f1a27b1fc48198075ea5a041b2f026f7bc",
       "task": "T052",
       "variant": "c6_selfcheck"
@@ -236,7 +236,7 @@
     {
       "bytes": 913,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T052/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T052/cand2/answer.txt",
       "sha256": "acc3427ed7fe7576d1ce3a119818024dd4c057f372654b444b1745372efaff42",
       "task": "T052",
       "variant": "c2_grounding"
@@ -244,7 +244,7 @@
     {
       "bytes": 284,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T055/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T055/cand0/answer.txt",
       "sha256": "30ff28c88c6bfcb24c121293d2a36856829814452dea56c5c0ee8ee491e84c3f",
       "task": "T055",
       "variant": "base"
@@ -252,7 +252,7 @@
     {
       "bytes": 954,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T055/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T055/cand1/answer.txt",
       "sha256": "4398b09caa2c049e19fc0b6122ac9b8daa2fd9e7849bf1b0195e249826f9666d",
       "task": "T055",
       "variant": "c6_selfcheck"
@@ -260,7 +260,7 @@
     {
       "bytes": 529,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T055/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T055/cand2/answer.txt",
       "sha256": "b413cbb83381e998da44c41e0e86fb97a8dbd61ca482c1614b74e4e1ea4e9c65",
       "task": "T055",
       "variant": "c2_grounding"
@@ -268,7 +268,7 @@
     {
       "bytes": 233,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T056/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T056/cand0/answer.txt",
       "sha256": "cd3031edd0eb47361162b26abc360e6bbc9617acb313702f64b2fc9e8924de52",
       "task": "T056",
       "variant": "base"
@@ -276,7 +276,7 @@
     {
       "bytes": 231,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T056/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T056/cand1/answer.txt",
       "sha256": "41430d170c212dfbd0fd08bb1b5e4a0876f816f619b8c85835dc302da2801a32",
       "task": "T056",
       "variant": "c6_selfcheck"
@@ -284,7 +284,7 @@
     {
       "bytes": 99,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T056/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T056/cand2/answer.txt",
       "sha256": "7d07653d88ea402094865bb356021b1b701637a39308099c2b189baf86aca6f6",
       "task": "T056",
       "variant": "c2_grounding"
@@ -292,7 +292,7 @@
     {
       "bytes": 355,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T059/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T059/cand0/answer.txt",
       "sha256": "b8a572ce85285915c7a3e61bd608f4b0ab0e4e929412430ee2d7f7b6205f4ecf",
       "task": "T059",
       "variant": "base"
@@ -300,7 +300,7 @@
     {
       "bytes": 469,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T059/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T059/cand1/answer.txt",
       "sha256": "b7f7bd1853f9a1ff66a8393e40fdf857c6f5e34c595c7c2845ff2c97e2f5e9a1",
       "task": "T059",
       "variant": "c6_selfcheck"
@@ -308,7 +308,7 @@
     {
       "bytes": 132,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T059/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T059/cand2/answer.txt",
       "sha256": "157b823fca032f0986a7d43f5fab7f3c0afa4f9eb6eec6da48baa46607e11af4",
       "task": "T059",
       "variant": "c2_grounding"
@@ -316,7 +316,7 @@
     {
       "bytes": 83,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T061/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T061/cand0/answer.txt",
       "sha256": "55814b05666be70e525e86b527415e603bd6f4e048bbd5b34b9be231c878a392",
       "task": "T061",
       "variant": "base"
@@ -324,7 +324,7 @@
     {
       "bytes": 107,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T061/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T061/cand1/answer.txt",
       "sha256": "b85dd9ded09abb5c15834efbdfbfa66e59de3b35fdc2c8737bea03a5b42b8485",
       "task": "T061",
       "variant": "c6_selfcheck"
@@ -332,7 +332,7 @@
     {
       "bytes": 83,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T061/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T061/cand2/answer.txt",
       "sha256": "55814b05666be70e525e86b527415e603bd6f4e048bbd5b34b9be231c878a392",
       "task": "T061",
       "variant": "c2_grounding"
@@ -340,7 +340,7 @@
     {
       "bytes": 120,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T067/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T067/cand0/answer.txt",
       "sha256": "c53aed514637166620b73649572ee8847ceb319c939a1d5a7ee9f71b2f502f6e",
       "task": "T067",
       "variant": "base"
@@ -348,7 +348,7 @@
     {
       "bytes": 215,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T067/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T067/cand1/answer.txt",
       "sha256": "c32e7210d5d0fff0735840a5d764822f758613d6aa6ab83dc72e2c7c3bc8094a",
       "task": "T067",
       "variant": "c6_selfcheck"
@@ -356,7 +356,7 @@
     {
       "bytes": 320,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T067/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T067/cand2/answer.txt",
       "sha256": "5b203096734eb2f4de2484353c64e0a4f905e6466104e864a0824e8ec23e2c1c",
       "task": "T067",
       "variant": "c2_grounding"
@@ -364,7 +364,7 @@
     {
       "bytes": 532,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T074/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T074/cand0/answer.txt",
       "sha256": "9689af4d96b015de8ec60afac3a77e78e2643eaddeb8fdc69875977fbc1d2b24",
       "task": "T074",
       "variant": "base"
@@ -372,7 +372,7 @@
     {
       "bytes": 429,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T074/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T074/cand1/answer.txt",
       "sha256": "94e221c1310e2f5ec483c6a5f7227860611cebf1aaa1e57b95132892133fc1a5",
       "task": "T074",
       "variant": "c6_selfcheck"
@@ -380,7 +380,7 @@
     {
       "bytes": 674,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T074/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T074/cand2/answer.txt",
       "sha256": "4d613bc9e0e55de5efdb88e6fe2e680e8b2b062f24cb67c3f854f3bdc0cd2834",
       "task": "T074",
       "variant": "c2_grounding"
@@ -388,7 +388,7 @@
     {
       "bytes": 23,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T077/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T077/cand0/answer.txt",
       "sha256": "e65691eb0d78f25d7d068bd7e827fd9bdea54f5a5d4a96930cb1e9d247d6d246",
       "task": "T077",
       "variant": "base"
@@ -396,7 +396,7 @@
     {
       "bytes": 22,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T077/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T077/cand1/answer.txt",
       "sha256": "8f0635d7e95ef0f972e238eb11ac479f882e88fa24bdd9a4a4983b505fad2b1c",
       "task": "T077",
       "variant": "c6_selfcheck"
@@ -404,7 +404,7 @@
     {
       "bytes": 709,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T077/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T077/cand2/answer.txt",
       "sha256": "70a868982b23d34036c5adfb35e3c54b244a4428bb637f44c6cd51f7aafd33d9",
       "task": "T077",
       "variant": "c2_grounding"
@@ -412,7 +412,7 @@
     {
       "bytes": 112,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T080/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T080/cand0/answer.txt",
       "sha256": "6da8654503ad39614fd1ce5223b288153a70c5ac665ddc0b6db96d3d19df2c25",
       "task": "T080",
       "variant": "base"
@@ -420,7 +420,7 @@
     {
       "bytes": 147,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T080/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T080/cand1/answer.txt",
       "sha256": "c1e15563df3225395ee259a5c6b746f7c6c5df8008e8e12b8d368b2a8b38aac3",
       "task": "T080",
       "variant": "c6_selfcheck"
@@ -428,7 +428,7 @@
     {
       "bytes": 262,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T080/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T080/cand2/answer.txt",
       "sha256": "4818e1b4bbc3bc072f0433ee6a518d27ac2d51c50c8913f5e79d962292ee9c5d",
       "task": "T080",
       "variant": "c2_grounding"
@@ -436,7 +436,7 @@
     {
       "bytes": 81,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T085/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T085/cand0/answer.txt",
       "sha256": "870ddd4a583e02824e2a187e7f081d3c6010e04d64873f40a4747462ffdf04c9",
       "task": "T085",
       "variant": "base"
@@ -444,7 +444,7 @@
     {
       "bytes": 67,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T085/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T085/cand1/answer.txt",
       "sha256": "797ee013d79f451a6bc1894200e802e8da01c587bfb67d8f52f350b3d6ec0256",
       "task": "T085",
       "variant": "c6_selfcheck"
@@ -452,7 +452,7 @@
     {
       "bytes": 171,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T085/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T085/cand2/answer.txt",
       "sha256": "196be9ee15cb79b83184f4d534f73854f3d5193811668819ee50dbb1727db140",
       "task": "T085",
       "variant": "c2_grounding"
@@ -460,7 +460,7 @@
     {
       "bytes": 70,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T088/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T088/cand0/answer.txt",
       "sha256": "cb57feb91cf525df6bb65a6cdc305f30ce2b3349e84d364efa5ce496824459f0",
       "task": "T088",
       "variant": "base"
@@ -468,7 +468,7 @@
     {
       "bytes": 90,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T088/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T088/cand1/answer.txt",
       "sha256": "b5af950cdeb49b9e68d32eb571b06eefd8554671a7bdf2a8698a4f3f76607da5",
       "task": "T088",
       "variant": "c6_selfcheck"
@@ -476,7 +476,7 @@
     {
       "bytes": 181,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T088/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T088/cand2/answer.txt",
       "sha256": "10577962e69632bd0b3080d7c1ea410336bf184cccf412335c0d32802f15d06e",
       "task": "T088",
       "variant": "c2_grounding"
@@ -484,7 +484,7 @@
     {
       "bytes": 114,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T091/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T091/cand0/answer.txt",
       "sha256": "16cfad92c48dba693189ec67486aceaed70c019d373a115a354c20cdbf4e6814",
       "task": "T091",
       "variant": "base"
@@ -492,7 +492,7 @@
     {
       "bytes": 114,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T091/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T091/cand1/answer.txt",
       "sha256": "16cfad92c48dba693189ec67486aceaed70c019d373a115a354c20cdbf4e6814",
       "task": "T091",
       "variant": "c6_selfcheck"
@@ -500,7 +500,7 @@
     {
       "bytes": 248,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T091/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T091/cand2/answer.txt",
       "sha256": "66b2b0dca01121fa70e0753a1275b6f81f759f5c13ed37acad3c0ec915abbd74",
       "task": "T091",
       "variant": "c2_grounding"
@@ -508,7 +508,7 @@
     {
       "bytes": 53,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T097/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T097/cand0/answer.txt",
       "sha256": "0c75f8b3f982bbccb8e471a55b726a0eb2414fdd5b77c1b53e583ceac7bac35d",
       "task": "T097",
       "variant": "base"
@@ -516,7 +516,7 @@
     {
       "bytes": 53,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T097/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T097/cand1/answer.txt",
       "sha256": "55038d86aacbca19015d6fe00dfa0da2693219e155b9ee09a1cc6540083e7248",
       "task": "T097",
       "variant": "c6_selfcheck"
@@ -524,7 +524,7 @@
     {
       "bytes": 76,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T097/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T097/cand2/answer.txt",
       "sha256": "f8b46350fb984c58b60b8333f607afe8aab5b922e837dabcd8c4fdea4fb14af8",
       "task": "T097",
       "variant": "c2_grounding"
@@ -532,7 +532,7 @@
     {
       "bytes": 203,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T114/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T114/cand0/answer.txt",
       "sha256": "aaeb406e84b8a35317f4821192df31dbfb619449775d4c71b9c5078db833d459",
       "task": "T114",
       "variant": "base"
@@ -540,7 +540,7 @@
     {
       "bytes": 203,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T114/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T114/cand1/answer.txt",
       "sha256": "aaeb406e84b8a35317f4821192df31dbfb619449775d4c71b9c5078db833d459",
       "task": "T114",
       "variant": "c6_selfcheck"
@@ -548,7 +548,7 @@
     {
       "bytes": 292,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T114/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T114/cand2/answer.txt",
       "sha256": "d994201d271303c0b59b0d54c0178975149df43c0e4c3707284bc975910ee4c3",
       "task": "T114",
       "variant": "c2_grounding"
@@ -556,7 +556,7 @@
     {
       "bytes": 222,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T129/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T129/cand0/answer.txt",
       "sha256": "dfd2ba24867a387265b8e0eea2c84d1e40cd72f7bd909662baa1420a120765b9",
       "task": "T129",
       "variant": "base"
@@ -564,7 +564,7 @@
     {
       "bytes": 278,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T129/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T129/cand1/answer.txt",
       "sha256": "2d561a7f4d7deb65e60901fe22c1e5fb6776d7f864699619152867f2baf12abc",
       "task": "T129",
       "variant": "c6_selfcheck"
@@ -572,7 +572,7 @@
     {
       "bytes": 215,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T129/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T129/cand2/answer.txt",
       "sha256": "6f57d78065d83378e3efb2dd4d2b6e4bd01527c62eeaa9fdb4d577edff7f2532",
       "task": "T129",
       "variant": "c2_grounding"
@@ -580,7 +580,7 @@
     {
       "bytes": 149,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T134/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T134/cand0/answer.txt",
       "sha256": "648e68c58458396cc8a2ce2acaa53ebbfa7bba0b2537a78470c735eadade61e0",
       "task": "T134",
       "variant": "base"
@@ -588,7 +588,7 @@
     {
       "bytes": 156,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T134/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T134/cand1/answer.txt",
       "sha256": "72776e32fde9666c137a899f847473285e796372c079a76473d37419c40f57a2",
       "task": "T134",
       "variant": "c6_selfcheck"
@@ -596,7 +596,7 @@
     {
       "bytes": 149,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T134/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T134/cand2/answer.txt",
       "sha256": "60bbbe1229f839cbd1158935f47d300e1897b268b359ad9800048ac837ff3785",
       "task": "T134",
       "variant": "c2_grounding"
@@ -604,7 +604,7 @@
     {
       "bytes": 612,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T135/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T135/cand0/answer.txt",
       "sha256": "5a7c0197f5653a8cf4742cfedbc342ba058078b283397916bf4ba679582cf15a",
       "task": "T135",
       "variant": "base"
@@ -612,7 +612,7 @@
     {
       "bytes": 591,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T135/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T135/cand1/answer.txt",
       "sha256": "b3ad9ff5abac9c759f902c182c8680c97def1801187921bf2dc64850091ee922",
       "task": "T135",
       "variant": "c6_selfcheck"
@@ -620,7 +620,7 @@
     {
       "bytes": 392,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T135/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T135/cand2/answer.txt",
       "sha256": "c80cedbf5ecdfa235cd2fee57ff0deed326710bbbb2153ef385919e554bd738d",
       "task": "T135",
       "variant": "c2_grounding"
@@ -628,7 +628,7 @@
     {
       "bytes": 871,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T138/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T138/cand0/answer.txt",
       "sha256": "0e1d53f8ef9dabf09a1f378989f5d1c1e0c0595d082ebe918ee1ef2e68d42d93",
       "task": "T138",
       "variant": "base"
@@ -636,7 +636,7 @@
     {
       "bytes": 467,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T138/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T138/cand1/answer.txt",
       "sha256": "046d0af64d8cf724405b5bcad3a18cdce59f53e0ad151072bac4ee5f0ff4bf49",
       "task": "T138",
       "variant": "c6_selfcheck"
@@ -644,7 +644,7 @@
     {
       "bytes": 345,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T138/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T138/cand2/answer.txt",
       "sha256": "981d68df4e767cbb95f3ed738b96632114175d61453683efe059fc9470c449bc",
       "task": "T138",
       "variant": "c2_grounding"
@@ -652,7 +652,7 @@
     {
       "bytes": 156,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T140/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T140/cand0/answer.txt",
       "sha256": "4a5d7697d8fb81b7b6c446d5907a63e55d2f179779ef501abab2d1c5fb41e3a6",
       "task": "T140",
       "variant": "base"
@@ -660,7 +660,7 @@
     {
       "bytes": 209,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T140/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T140/cand1/answer.txt",
       "sha256": "9684423846f6428cf852a258fe4f5fe083d434f5ff6831ed18c66abbf519ef58",
       "task": "T140",
       "variant": "c6_selfcheck"
@@ -668,7 +668,7 @@
     {
       "bytes": 214,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T140/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T140/cand2/answer.txt",
       "sha256": "6280ff1862b801194404c6431901869ace52ea68b3e8e5784fae987435891d93",
       "task": "T140",
       "variant": "c2_grounding"
@@ -676,7 +676,7 @@
     {
       "bytes": 331,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T152/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T152/cand0/answer.txt",
       "sha256": "b2da0931e0a3171ac744ae49f95310b2ad0c446826a169c4869bcf1acb4ea197",
       "task": "T152",
       "variant": "base"
@@ -684,7 +684,7 @@
     {
       "bytes": 438,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T152/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T152/cand1/answer.txt",
       "sha256": "2b4277fee76971548eb41eb7619777337c920cefed0c6a99a69dd9107ab933c0",
       "task": "T152",
       "variant": "c6_selfcheck"
@@ -692,7 +692,7 @@
     {
       "bytes": 605,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T152/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T152/cand2/answer.txt",
       "sha256": "8234f4ea9f65ab4ec753ad621e5e2701dc8cd7ad8b14e3d5df198f07a9cb29be",
       "task": "T152",
       "variant": "c2_grounding"
@@ -700,7 +700,7 @@
     {
       "bytes": 180,
       "candidate": 0,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T156/cand0/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T156/cand0/answer.txt",
       "sha256": "d92280f4f41ffe42e998d5d60c40eaa23d8177d77f1b4930395ac026d8ea8a46",
       "task": "T156",
       "variant": "base"
@@ -708,7 +708,7 @@
     {
       "bytes": 290,
       "candidate": 1,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T156/cand1/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T156/cand1/answer.txt",
       "sha256": "b6c1541bb773f186892017709c54c320e8d5e08c2e2b31c2194a0df08cb102fe",
       "task": "T156",
       "variant": "c6_selfcheck"
@@ -716,7 +716,7 @@
     {
       "bytes": 400,
       "candidate": 2,
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T156/cand2/answer.txt",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30/T156/cand2/answer.txt",
       "sha256": "c29ad6e9b7e1ee04eb38be875124732c2bdbadb146d0a65951cd646718c1b474",
       "task": "T156",
       "variant": "c2_grounding"
@@ -725,6 +725,6 @@
   "expected_files": 90,
   "missing_file_count": 0,
   "missing_files": [],
-  "run_root": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30",
+  "run_root": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/runs_wse/l32matched30",
   "source_sha256": "6a5275a85358c7e2e42fc16db1fdd746f7ba8e4d249e8e91b4fa26b18f530b55"
 }

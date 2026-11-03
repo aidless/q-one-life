@@ -4,7 +4,7 @@
   "family_id": "qf-small-model-closed-loop-dynamics-an-hone-91fd6395d3",
   "project_id": "qp-paper-iv-smallmodel-closedloop-69ea784d2361",
   "title": "Small-Model Closed-Loop Dynamics: An Honest Negative Result\\\\ and the Noise-Floor Methodology It Produced",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/papercorpus-anon/paper-IV-smallmodel-closedloop/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/papercorpus-anon/paper-IV-smallmodel-closedloop/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "383ee0089f90d0c4fb0cd4b80fdc30677aa42a2d4ea70d07a48ded1f323910c8",
@@ -47,8 +47,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/papercorpus-anon/paper-IV-smallmodel-closedloop/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/piv-smallmodel-closedloop/paper/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/papercorpus-anon/paper-IV-smallmodel-closedloop/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/piv-smallmodel-closedloop/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

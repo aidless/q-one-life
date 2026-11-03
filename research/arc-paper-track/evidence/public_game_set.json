@@ -1,6 +1,6 @@
 {
   "schema": "q-one-arc-public-game-set-v1",
-  "source_notebook": "/home/liuzewen/kaggle-control-20261013/paper-evidence/arc-submission-sources/arc3-duck-prefcache-v1/arc3-duck-prefcache-v1.ipynb",
+  "source_notebook": "<WORKSPACE_ROOT>/kaggle-control-20261013/paper-evidence/arc-submission-sources/arc3-duck-prefcache-v1/arc3-duck-prefcache-v1.ipynb",
   "source_sha256": "e53788bed53c014951342d9c2517ee59137cfe820f73084f3892268c9be0bdc4",
   "selection": "PUBLIC_GAME_IDS tuple in the submitted notebook",
   "game_ids": [

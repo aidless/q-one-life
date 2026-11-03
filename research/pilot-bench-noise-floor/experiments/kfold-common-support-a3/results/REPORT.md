@@ -76,15 +76,15 @@ own explicit estimand and support statement in the manuscript.
 ## Reproduction
 
 ```bash
-cd '/home/liuzewen/F:\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/kfold-common-support-a3'
+cd '<WORKSPACE_ROOT>/F:\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/kfold-common-support-a3'
 
-/home/liuzewen/.cache/qone-life-venv/bin/python run_common_support.py \
-  --external-root '/home/liuzewen/F:\deepseek' \
+<WORKSPACE_ROOT>/.cache/qone-life-venv/bin/python run_common_support.py \
+  --external-root '<WORKSPACE_ROOT>/F:\deepseek' \
   --preregistration preregistration.json \
   --output results/run-1.json
 
-/home/liuzewen/.cache/qone-life-venv/bin/python run_common_support.py \
-  --external-root '/home/liuzewen/F:\deepseek' \
+<WORKSPACE_ROOT>/.cache/qone-life-venv/bin/python run_common_support.py \
+  --external-root '<WORKSPACE_ROOT>/F:\deepseek' \
   --preregistration preregistration.json \
   --output results/run-2.json
 

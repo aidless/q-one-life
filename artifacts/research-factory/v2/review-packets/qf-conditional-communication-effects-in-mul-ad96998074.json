@@ -4,7 +4,7 @@
   "family_id": "qf-conditional-communication-effects-in-mul-ad96998074",
   "project_id": "qp-tmlr-paper13-merged-1fe996f84944",
   "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
@@ -69,13 +69,13 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/.research/paper13-merged/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper1-consolidated/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper1-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper1-consolidated/source/submission_variant/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/.aris/ingest_drift/20260930T052414Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/arxiv/main.tex"
+    "<WORKSPACE_ROOT>/.research/paper13-merged/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper1-consolidated/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper1-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper1-consolidated/source/submission_variant/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/arxiv/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -84,7 +84,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-conditional-communication-effects/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-conditional-communication-effects/project.json",
     "status": "blocked",
     "ledger_present": true,
     "bibliography_present": true,

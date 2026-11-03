@@ -885,7 +885,7 @@
       "result": "passed",
       "tests": 130
     },
-    "verification_command": "PYTHONPATH=/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src /home/liuzewen/.cache/qone-life-venv/bin/python '/home/liuzewen/F:\\deepseek/q-one-life/scripts/research_factory_verify.py'",
+    "verification_command": "PYTHONPATH=/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src <WORKSPACE_ROOT>/.cache/qone-life-venv/bin/python '<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/scripts/research_factory_verify.py'",
     "verification_generated_at": "2026-10-30T05:17:36.999684Z"
   },
   "schema": "q-one-resume-evidence-v1",

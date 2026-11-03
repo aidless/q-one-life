@@ -1,6 +1,6 @@
 # Research pipeline
 
-Source: `/home/liuzewen/kaggle-control-20261013/paper-evidence/GEMMA_REVISED.md`
+Source: `<WORKSPACE_ROOT>/kaggle-control-20261013/paper-evidence/GEMMA_REVISED.md`
 Source SHA-256: `aa25d33d83b55c4bff5716f2777f420b182122faf93b26a78694b5ce9c5ea798`
 
 | Stage | State | Required output |

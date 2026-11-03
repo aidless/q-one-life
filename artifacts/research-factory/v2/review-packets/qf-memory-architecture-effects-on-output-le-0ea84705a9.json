@@ -4,7 +4,7 @@
   "family_id": "qf-memory-architecture-effects-on-output-le-0ea84705a9",
   "project_id": "qp-tmlr-paper5-consolidated-f099458d8ecd",
   "title": "Memory Architecture Effects on Output-Length Responses under Controlled Multi-Agent Contamination",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "f926cae5baf4a3a9ac4cbba11d6cce8ecf6206187ea25306f620550d7a7b2bd8",
@@ -69,10 +69,10 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/.research/imported/paper5-consolidated/main.tex",
-    "/home/liuzewen/.research/paper5-consolidated/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex"
+    "<WORKSPACE_ROOT>/.research/imported/paper5-consolidated/main.tex",
+    "<WORKSPACE_ROOT>/.research/paper5-consolidated/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -81,7 +81,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects/project.json",
     "status": "review_pending",
     "ledger_present": true,
     "bibliography_present": true,

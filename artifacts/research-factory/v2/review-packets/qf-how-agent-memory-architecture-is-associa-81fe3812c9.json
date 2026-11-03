@@ -4,7 +4,7 @@
   "family_id": "qf-how-agent-memory-architecture-is-associa-81fe3812c9",
   "project_id": "qp-f3-single-3bf1ca3f66ce",
   "title": "How Agent Memory Architecture Is Associated With Verbalized-Confidence Error: A Controlled Comparison of Append-Only, Summarization, and Retrieval-Augmented Memories on MMLU",
-  "primary_source": "/home/liuzewen/.research/f3-single/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/f3-single/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "6c33aab7fcf96506d94e0694b3812abff20734d5e06367504606179c9aaa0785",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/f3-single/main.tex"
+    "<WORKSPACE_ROOT>/.research/f3-single/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

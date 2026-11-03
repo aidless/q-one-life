@@ -105,4 +105,4 @@ bench-noise-floor  |  gold=majority  |  items=500  slices=1
     榜首 93.8272% 与噪声下限 93.8272% 相等（差 +0.00e+00 点）：严格判据 max_s acc > floor + δ 没有被越过哪怕一点点。
     结构性成因：榜首本身就是参与造金标的 25 个生成器之一，剔掉它那一票后其余 24 票的顶票常常不变 ⇒ 它的留一自复现就是它的榜面分，于是『必须跨过所有生成器中最高那个下限』在这类语料上等于『跨过自己』。
 
-[JSON] -> /home/liuzewen/F:\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/results/native-rerun-factuality.json
+[JSON] -> <WORKSPACE_ROOT>/F:\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/results/native-rerun-factuality.json

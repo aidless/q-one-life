@@ -4,7 +4,7 @@
   "family_id": "qf-joint-memory-forgetting-and-lightweight--00bd009a55",
   "project_id": "qp-paper-joint-mem-forget-5f9b81f7a93f",
   "title": "Joint Memory-Forgetting and Lightweight Security Negotiation for LLM Agents",
-  "primary_source": "/home/liuzewen/F:\\deepseek/paper_joint_mem_forget/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/paper_joint_mem_forget/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "acc4f78c0b3945efea29b2054506212b88619d5891dcb22abd940e702768bd28",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/paper_joint_mem_forget/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/paper_joint_mem_forget/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

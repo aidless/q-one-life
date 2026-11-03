@@ -4,7 +4,7 @@
   "family_id": "qf-label-matcher-choice-moves-measured-accu-07fc9ff1f7",
   "project_id": "qp-paper-workflow-kb-e4b24a1323d8",
   "title": "Label Matcher Choice Moves Measured Accuracy in Short-Answer QA: A Stratified Descriptive Study with Adjudication and a Guard Patch",
-  "primary_source": "/home/liuzewen/F:\\deepseek/paper_workflow_kb/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/paper_workflow_kb/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "d1d4a50be49fa4310619bc1ba68805f67c6752efc24bec93eae77d26847a6b55",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/paper_workflow_kb/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/paper_workflow_kb/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

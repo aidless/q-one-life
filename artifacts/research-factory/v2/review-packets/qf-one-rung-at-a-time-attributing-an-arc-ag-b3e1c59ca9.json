@@ -4,7 +4,7 @@
   "family_id": "qf-one-rung-at-a-time-attributing-an-arc-ag-b3e1c59ca9",
   "project_id": "qp-arc-revised-01e3e435770e",
   "title": "One Rung at a Time: Attributing an ARC-AGI-3 Submission When the Offline Ruler Cannot Select Arms",
-  "primary_source": "/home/liuzewen/kaggle-control-20261013/paper-evidence/ARC_REVISED.md",
+  "primary_source": "<WORKSPACE_ROOT>/kaggle-control-20261013/paper-evidence/ARC_REVISED.md",
   "source_state": {
     "exists": true,
     "sha256": "a07872cc4710944b6c76084ff89091316d409da5605552c2b201f3648d348c95",
@@ -64,7 +64,7 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/kaggle-control-20261013/paper-evidence/ARC_REVISED.md"
+    "<WORKSPACE_ROOT>/kaggle-control-20261013/paper-evidence/ARC_REVISED.md"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -73,7 +73,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/arc-paper-track/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/arc-paper-track/project.json",
     "status": "revision",
     "ledger_present": true,
     "bibliography_present": false,

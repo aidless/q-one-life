@@ -4,1693 +4,1693 @@
   "files": [
     {
       "path": "evidence/upstream/main.tex",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex",
       "sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
       "bytes": 81637
     },
     {
       "path": "evidence/upstream/references.bib",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/references.bib",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/references.bib",
       "sha256": "40569c45fe34d0568f5a824d6f0723354a155f64f6639dc7a9a638c14a1164ae",
       "bytes": 8282
     },
     {
       "path": "evidence/upstream/refs_added.bib",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/refs_added.bib",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/refs_added.bib",
       "sha256": "c63a2cff5cc8e00fcab11f0f5c2d9277492a161bf3cdbbc25eb8d388ef14037c",
       "bytes": 651
     },
     {
       "path": "evidence/upstream/CLAIM_LEDGER.md",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/CLAIM_LEDGER.md",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/CLAIM_LEDGER.md",
       "sha256": "5db978dd09de14291af5d3916b35fca4a82d343a0eb55912d834dcd1376e0fc1",
       "bytes": 3615
     },
     {
       "path": "evidence/upstream/REVIEW_CARD.md",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/REVIEW_CARD.md",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/REVIEW_CARD.md",
       "sha256": "2362b873b1b19a2b9d89d1c94723ece2b36f92faba533485322ba31648784d84",
       "bytes": 1175
     },
     {
       "path": "evidence/upstream/REVIEW_R16_summary.md",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/REVIEW_R16_summary.md",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/REVIEW_R16_summary.md",
       "sha256": "339cc5ebff950196dcf67964396cd831ce36bb8fe93700a286d692a7d314bc16",
       "bytes": 3464
     },
     {
       "path": "evidence/upstream/REVIEW_ROUND_6.md",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/REVIEW_ROUND_6.md",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/REVIEW_ROUND_6.md",
       "sha256": "dda5b0599607c8e848f1ca2e6d6b8c1cd9086100db127a72654ea150a143e34a",
       "bytes": 1667
     },
     {
       "path": "evidence/upstream/evidence_manifest.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence_manifest.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence_manifest.json",
       "sha256": "d6bfc67a64647bdf2d37baa33e3c6c975168ccc011b86fe260e0a63d6df74538",
       "bytes": 1172766
     },
     {
       "path": "evidence/upstream/arxiv_clean/main.tex",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/arxiv_clean/main.tex",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/arxiv_clean/main.tex",
       "sha256": "06647f2886ee4788be5c38708ed0732f334aed71ba7ad2bff25ff4e1b030a6cd",
       "bytes": 44893
     },
     {
       "path": "evidence/upstream/arxiv_clean/references.bib",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/arxiv_clean/references.bib",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/arxiv_clean/references.bib",
       "sha256": "d48253e693c13ff60aeb9c2d0332b4727fd791c4ee4410d0c538d0a1a5c42894",
       "bytes": 12542
     },
     {
       "path": "evidence/upstream/arxiv_clean/evidence_manifest.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/arxiv_clean/evidence_manifest.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/arxiv_clean/evidence_manifest.json",
       "sha256": "ca21c9398bbc86cea81e5e831f6839d91c7bebb7e00cc594258a61aa1c9adabd",
       "bytes": 5696
     },
     {
       "path": "evidence/upstream/arxiv_clean/evidence_manifest_generated.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/arxiv_clean/evidence_manifest_generated.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/arxiv_clean/evidence_manifest_generated.json",
       "sha256": "f2498ed41833c954d14329e702a52cf6f6cd7c6051a48892b86378a3d41e17b0",
       "bytes": 4105
     },
     {
       "path": "evidence/upstream/evidence/evidence_manifest.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/evidence_manifest.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/evidence_manifest.json",
       "sha256": "b799e202d05ff4aa6b7dd8f95b4d5826d65daec45101e986d34800798e8fd985",
       "bytes": 137820
     },
     {
       "path": "evidence/upstream/evidence/canonical_results_v5.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/canonical_results_v5.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/canonical_results_v5.json",
       "sha256": "fb0d7815b805eb1f74d3b1bc07521d303a96c7b080c8854f42f8c0f76897f569",
       "bytes": 43578
     },
     {
       "path": "evidence/upstream/evidence/canonical_calibration_v5.py",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/canonical_calibration_v5.py",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/canonical_calibration_v5.py",
       "sha256": "0afa2a1e27d3d0cdf301d7d3bb177bec60ed9c273588cf062dfa9d4989e2969f",
       "bytes": 22443
     },
     {
       "path": "evidence/upstream/evidence/archived_joint_2x2_30seed_20260811.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/archived_joint_2x2_30seed_20260811.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/archived_joint_2x2_30seed_20260811.json",
       "sha256": "8db678afce04d8cdeaa0cc024750fc81415f5888cb747c3ea9e86d8e5c9d5ebd",
       "bytes": 610028
     },
     {
       "path": "evidence/upstream/evidence/finding1_data_GAP.md",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/finding1_data_GAP.md",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/finding1_data_GAP.md",
       "sha256": "587b52ff0538e35715f0a8e1e60f8a2a99a04055946a03f242b115707c9f7f57",
       "bytes": 1974
     },
     {
       "path": "evidence/upstream/evidence/FINDING1_DATA_SEARCH_VERDICT.md",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/FINDING1_DATA_SEARCH_VERDICT.md",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/FINDING1_DATA_SEARCH_VERDICT.md",
       "sha256": "4c47fd99a17ed56876b56866f6ea34014855e9668d6d927b816bcf216f0685f1",
       "bytes": 13255
     },
     {
       "path": "evidence/upstream/evidence/f9_analysis_report.md",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_analysis_report.md",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_analysis_report.md",
       "sha256": "24fae7495a13551ee92a8d8739420261f9b00c61f4bdba3f3bfbb3f9d773abc7",
       "bytes": 6120
     },
     {
       "path": "evidence/upstream/evidence/regen_T30_singlesource_20260910.py",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/regen_T30_singlesource_20260910.py",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/regen_T30_singlesource_20260910.py",
       "sha256": "e42f26676aa71811d7d84d85cd4417c239e7847b7259b9a37e4b40c8f210b89b",
       "bytes": 5003
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/all_results.csv",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/all_results.csv",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/all_results.csv",
       "sha256": "8fc1489231fc8a137f226f8ca4e4ae6ca760600bd9c10279d24e72f4871fc197",
       "bytes": 8532
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/analysis_summary.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/analysis_summary.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/analysis_summary.json",
       "sha256": "4cd823092ba60da4fd78016bca3a6aa0046cf8fc65f40f8b9f4f9a776bdcad87",
       "bytes": 3380
     },
     {
       "path": "evidence/upstream/evidence/f9_T50_analysis/analysis_summary.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_T50_analysis/analysis_summary.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_T50_analysis/analysis_summary.json",
       "sha256": "3aee4018b872bf249c0d0730611acb73c08e3c4ba5fb67221482b5ca0eaa76a1",
       "bytes": 3057
     },
     {
       "path": "evidence/upstream/evidence/f9_T50_full_analysis.py",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_T50_full_analysis.py",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_T50_full_analysis.py",
       "sha256": "b4786938f7cfbbe7f8898d112b736ba7fa29cf7c58394e458046677b2048972c",
       "bytes": 16347
     },
     {
       "path": "evidence/upstream/evidence/real_pilot_qwen2/per_seed.jsonl",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/real_pilot_qwen2/per_seed.jsonl",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/real_pilot_qwen2/per_seed.jsonl",
       "sha256": "1abc9af3353bd3d5f4c0c52949f54d153a270f4982b7c916e7868e2ca442dbfa",
       "bytes": 19047
     },
     {
       "path": "evidence/upstream/evidence/real_pilot_qwen2/analysis.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/real_pilot_qwen2/analysis.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/real_pilot_qwen2/analysis.json",
       "sha256": "894c5bfef25f1fbacb978f61899e06746c0c890b3a832e3528208da557720837",
       "bytes": 1045
     },
     {
       "path": "evidence/upstream/main.tex.bak.reviewR1.20260909_212912",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak.reviewR1.20260909_212912",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak.reviewR1.20260909_212912",
       "sha256": "461521431122f53431f4bee43ec5fa47bcfce3751182b413e101ac758c74a23d",
       "bytes": 78341
     },
     {
       "path": "evidence/upstream/main.tex.bak.reviewR3.20260910_090551",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak.reviewR3.20260910_090551",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak.reviewR3.20260910_090551",
       "sha256": "5e17b29dfe41f1a5bad729633e46fc6cebadbaac431a0c7b5287b3de36a65ba3",
       "bytes": 80165
     },
     {
       "path": "evidence/upstream/main.tex.bak.reviewR4.20260910_092618",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak.reviewR4.20260910_092618",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak.reviewR4.20260910_092618",
       "sha256": "e574af1d7f04ac857c4a6f02dff3e310a2b70542a98bd726d5156d878d5a5a10",
       "bytes": 80241
     },
     {
       "path": "evidence/upstream/main.tex.bak.reviewR5.20260910_093011",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak.reviewR5.20260910_093011",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak.reviewR5.20260910_093011",
       "sha256": "d0ff525ec09ba9e6b515adaf62a264d99a53ea08ab2fe50e689035d552acca92",
       "bytes": 80858
     },
     {
       "path": "evidence/upstream/main.tex.bak.reviewR6.20260910_093550",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak.reviewR6.20260910_093550",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak.reviewR6.20260910_093550",
       "sha256": "750a19727278e09f8651350a60fb0f95f61ebeb873fc61980d90beae8a151310",
       "bytes": 81263
     },
     {
       "path": "evidence/upstream/main.tex.bak_kumar",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak_kumar",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak_kumar",
       "sha256": "f3015174d3d8ecda7e76fd2e6fef6ed342facd07a901e99dc2d78285bce9a4be",
       "bytes": 44895
     },
     {
       "path": "evidence/upstream/main.tex.bak_pre_t50",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak_pre_t50",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak_pre_t50",
       "sha256": "ba65943908fea4509bffb697856344b049044625708d9d8e89ee5a6c5033b7ee",
       "bytes": 74407
     },
     {
       "path": "evidence/upstream/main.tex.bak_preprint",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak_preprint",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex.bak_preprint",
       "sha256": "06647f2886ee4788be5c38708ed0732f334aed71ba7ad2bff25ff4e1b030a6cd",
       "bytes": 44893
     },
     {
       "path": "evidence/upstream/paper/main.tex",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/paper/main.tex",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/paper/main.tex",
       "sha256": "cf35af58bc8502c8f5dc8a8b80bd1f8d5ed61e685d1c66f2b586e4e8c0b6e09f",
       "bytes": 16585
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed000.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed000.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed000.json",
       "sha256": "c3ead1715fba1f06ec8d225c2cbd677bb45555bd0f4135fa81105fad19e2ccc6",
       "bytes": 27676
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed001.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed001.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed001.json",
       "sha256": "23c1d43e39ed14f97aad5fcb7fe187f9a0e00a8a240011512a8038b1ec0b6203",
       "bytes": 27671
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed002.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed002.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed002.json",
       "sha256": "d7647a31b0571cdc0f0b0586fd6ded7b965b64dc684c7077dce2d46f247e0363",
       "bytes": 27660
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed003.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed003.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed003.json",
       "sha256": "338a6c5ec139e6b6496a6e8ffa14e6530c930df288b379078dc5a64d31f9187c",
       "bytes": 27708
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed004.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed004.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed004.json",
       "sha256": "297700a1029dd0195a390fc83ec5d8f236d154a4beddb71ce10f2a7e2b80f3b7",
       "bytes": 27646
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed005.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed005.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed005.json",
       "sha256": "6b66bf8e024f31544678e16945beb88fcc0dea45c44488da75558714ddb99e3f",
       "bytes": 27678
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed006.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed006.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed006.json",
       "sha256": "f38bbd6d0b26b4e34a357a8665fc0f522ab43ec95ed476b983c0c547501d56e3",
       "bytes": 27681
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed007.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed007.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed007.json",
       "sha256": "5daa1e8bce19fd7d59511a32f8f215c9108ed368a1475ca3f8c4e8f580692641",
       "bytes": 27698
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed008.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed008.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed008.json",
       "sha256": "78bd05046cc6f2433d7a33dd3501e7a6f6f6ff64723c2812129bc166d35314e4",
       "bytes": 27684
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed009.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed009.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed009.json",
       "sha256": "8ae102f9a19772cae84469d64104476f96690f99debc6f8287d92726f59352db",
       "bytes": 27676
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed010.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed010.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed010.json",
       "sha256": "fc0fa32843e57514131685549707f71ec5298893124c8b236fd0ca8b3cd829ff",
       "bytes": 27660
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed011.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed011.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed011.json",
       "sha256": "5f3b43d1138677eee03dd0c15361ba7cd5c63ef6be36f063562178b1c9551ddd",
       "bytes": 27674
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed012.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed012.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed012.json",
       "sha256": "d22f7a1179adc18b0c8044e838c784b2bdde3f18227684f91e5f4d75f10e931b",
       "bytes": 27632
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed013.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed013.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed013.json",
       "sha256": "3e6119cf95eed5bc0280715de6654c883def0e1f0f7f24e577ff6fabf38355d7",
       "bytes": 27661
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed014.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed014.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed014.json",
       "sha256": "e91c33c04bca158f5c728751b951ce8e893c94d21f4029a1ee56f7de3a55d3e2",
       "bytes": 27664
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed015.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed015.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed015.json",
       "sha256": "7973a9f711d229ca4dc01caf5de62d3a3e725049e579076c78cfd47b4be71cf2",
       "bytes": 27638
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed016.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed016.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed016.json",
       "sha256": "a3ef287b450100e8f726a492d2958f96a28760387b31d594ab153787b6b2924d",
       "bytes": 27661
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed017.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed017.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed017.json",
       "sha256": "e354fb8122fdab0383087e9b9eda9e1230294bd7b81621fa64e54e82bb7a9fc5",
       "bytes": 27669
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed018.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed018.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed018.json",
       "sha256": "cd92009ffd749e77d61447430af88cc14de52744dc00dc61a55ad4c01b524687",
       "bytes": 27629
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed019.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed019.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed019.json",
       "sha256": "bff4f388ffff32a8dd0b93f870786dc29615d747fbd73db7bc78b4db79b14228",
       "bytes": 27654
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed020.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed020.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed020.json",
       "sha256": "0357b1aeb71ba6f0d97110dce86d48bb31057e1dd3ac6fccb20a52d69c46ed65",
       "bytes": 27687
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed021.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed021.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed021.json",
       "sha256": "57c5432a24063845cbcdb7353af7a64f94a56da00d1ccb99556545d6d43f2806",
       "bytes": 27653
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed022.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed022.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed022.json",
       "sha256": "feacb416d4310152c01481c3af0c4659a8660f217d3712e470ff35942b953f36",
       "bytes": 27654
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed023.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed023.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed023.json",
       "sha256": "f9643c3d54fc405de310120b0c02eef5765d1d48096d780cef45163e252b7583",
       "bytes": 27667
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed024.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed024.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed024.json",
       "sha256": "7796121b91fb9d8c612ee81e872e41f2879a46969798848be237601dcadebd35",
       "bytes": 27684
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed025.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed025.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed025.json",
       "sha256": "b5ae842618d3a198e35503684d5435c872100c0b6cad07b62eb57876b0ebf8ac",
       "bytes": 27689
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed026.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed026.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed026.json",
       "sha256": "3a6896204b1be815132988cb00cd0bfce625c6c3eeb92a255b12985c7306741f",
       "bytes": 27650
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed027.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed027.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed027.json",
       "sha256": "ae400a6b5fb346c4660ba9cd718bad7660d861d5c875db04a52b66e48acf19c1",
       "bytes": 27665
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed028.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed028.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed028.json",
       "sha256": "a419ebf71ea9ccdc1b976c906c607225138660038c6cd186e4a3c51b2138e4af",
       "bytes": 27652
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/A_seed029.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed029.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/A_seed029.json",
       "sha256": "37c92e0c21d7358a29a957e93e3345721771fe2ea76c496f7bbd564c5735f3fc",
       "bytes": 27653
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed000.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed000.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed000.json",
       "sha256": "f211c0d24a8351598a59914c65ca4d85ab121ec3ab61c4af90d54a91ec7dc2b2",
       "bytes": 27706
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed001.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed001.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed001.json",
       "sha256": "e1dbbee11baed0129402eab0fb22f6bb14ec879c6740df6eed127b62bb6a497f",
       "bytes": 27698
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed002.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed002.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed002.json",
       "sha256": "96236e6ed9c99ad6165557251158f60f3470241ef88a404d6944af8a86eddb0d",
       "bytes": 27688
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed003.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed003.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed003.json",
       "sha256": "13cc7e3a88b473ae60d699650823a0d574b5ce6dae31153f80398a8d41085ea6",
       "bytes": 27659
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed004.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed004.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed004.json",
       "sha256": "8f6e3723ee2b9df1fe95d784dc24129c4af8398f1f0dd92a267b3062f4e5b346",
       "bytes": 27681
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed005.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed005.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed005.json",
       "sha256": "1578ff44d3bfdf00957be2d740fcc582b519f824a346c081d02213fb06263c58",
       "bytes": 27701
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed006.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed006.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed006.json",
       "sha256": "cb8d1cc96ccb961da4fac4da071aadfa0c0a8fe7c754274811f48f5cd128fe8e",
       "bytes": 27708
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed007.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed007.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed007.json",
       "sha256": "0d9dc31a84a2f80f0110e148d45a5a5a526000ca4d1b5896149008d28aed3071",
       "bytes": 27702
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed008.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed008.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed008.json",
       "sha256": "d46d3ff797cabaccc65dfef8005be5facd2668782888de9bc67e2bd18253574b",
       "bytes": 27685
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed009.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed009.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed009.json",
       "sha256": "c65d375fb7379ba075536de4de788c5a5428530ec3788af0e82e83cd4e89ba00",
       "bytes": 27729
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed010.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed010.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed010.json",
       "sha256": "e70331e3ff52d46550b1442a643882e0a91fc681a76bc079ce28bf7056804ae1",
       "bytes": 27681
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed011.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed011.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed011.json",
       "sha256": "63b36ebe0d9f19f6d023cf9b4b0de6b4748c82b39c048e78da0cc3f9ec1b7c14",
       "bytes": 27673
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed012.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed012.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed012.json",
       "sha256": "73e570cee1be86394738d0c845feb33bad15f6960afe4b19815b33b10f1eb5e1",
       "bytes": 27703
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed013.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed013.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed013.json",
       "sha256": "885d56063dc92b6c75c631ebb284dfdaf2a1ecb9455a29f20c30931229122340",
       "bytes": 27687
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed014.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed014.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed014.json",
       "sha256": "dd9d2d2b8127d2784676fe66c9f037752b89af56dfa9e9ca8a54f8e90e64c1cc",
       "bytes": 27707
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed015.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed015.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed015.json",
       "sha256": "ee929a92c5650c30bfdc38a59d5dff21ad8717e6e1674a173576d1a71807c9d3",
       "bytes": 27712
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed016.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed016.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed016.json",
       "sha256": "75a9d89c815e49c8cf056e688f62d50c8160769baa48d1c95d34cfa468089156",
       "bytes": 27705
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed017.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed017.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed017.json",
       "sha256": "54fb0f39a4f5c0c030a5f4cccac8ca39ec465c0444005b7738ab4fd2a5e6a8d2",
       "bytes": 27669
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed018.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed018.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed018.json",
       "sha256": "35cf62d05f6acde7fc2db0344ce2031908471161965089f2b78d1ac738e63aed",
       "bytes": 27666
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed019.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed019.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed019.json",
       "sha256": "da4ecd083b91fe88272b2cd2fce3e635d05bd9e57bbe837ca5f64f7f01f29fb7",
       "bytes": 27686
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed020.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed020.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed020.json",
       "sha256": "6662e8634743914a9f2d11a5f09adc1160f6132d6f726887d2f28cfa3d5146bd",
       "bytes": 27663
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed021.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed021.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed021.json",
       "sha256": "55f8a40a9587b265e8707cc4287b7f66771158808da27d9cd4b9a6b9af5d1c9b",
       "bytes": 27722
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed022.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed022.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed022.json",
       "sha256": "7b68f5ed83ba7b3cdb5b111270bc76807afda4decb72c0a3e1f70d6f45f1278c",
       "bytes": 27696
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed023.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed023.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed023.json",
       "sha256": "094fa4c8ce3f8c83446632a00fa3e148a525e4cd9b67f5c54d16efb6e368ecf2",
       "bytes": 27666
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed024.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed024.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed024.json",
       "sha256": "e8b156c0aa87a5f5f9b19a5c26812e2249faad832b04c5d694314fd1858cd684",
       "bytes": 27683
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed025.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed025.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed025.json",
       "sha256": "f26c4adaea6500478ca4bb0deae38f934be310fb4b27975d97f622ee9a0c140b",
       "bytes": 27666
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed026.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed026.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed026.json",
       "sha256": "606381a510a38e5f233e4caf3f1dcd428f41b878a774b1e71ab6829be87334f6",
       "bytes": 27676
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed027.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed027.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed027.json",
       "sha256": "a603aae2aa8e26ed2b7ae01e3b82c4ecadab9d980ed2d753c94478858bbfbbe8",
       "bytes": 27675
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed028.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed028.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed028.json",
       "sha256": "a43c61e4bf06da5fd3efd166cc8c59f10829da63bc69b4f4a41ed1a077a7d9e4",
       "bytes": 27681
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/B_seed029.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed029.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/B_seed029.json",
       "sha256": "8525935f12c205f97e1e2333aca103bb90e7b9132e21f03103e1f4393f94c5ec",
       "bytes": 27662
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed000.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed000.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed000.json",
       "sha256": "8c7fe8eb023286c85bb6ef285cc78075bfd06a8f97b4db5da73c3e3bcb14bf76",
       "bytes": 27685
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed001.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed001.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed001.json",
       "sha256": "614a54d682bf7d8dc3c56c5a8cc19743f93bf9e436cf74ab0cb3b8e387b09200",
       "bytes": 27686
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed002.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed002.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed002.json",
       "sha256": "97cc963f3cbdc6271ca3e51dd23f7d1868ddf764bbeb25b5e07a9088c11a0280",
       "bytes": 27675
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed003.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed003.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed003.json",
       "sha256": "df6cee32a48b8b263ceb6f744260b95f98b32c86651e909b7a205cc28cfa6ad7",
       "bytes": 27655
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed004.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed004.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed004.json",
       "sha256": "d5bad317b1928e7fe5bc638eeac370bc5755b07f8c20f9cd709d93aff01c0f1d",
       "bytes": 27693
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed005.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed005.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed005.json",
       "sha256": "739313871fdfa919fb7da3270337298caef0df710fa89e8c1ca109edf620b5f9",
       "bytes": 27655
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed006.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed006.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed006.json",
       "sha256": "86b1db6d8a6fdeb9432286623a5de8e07880d30316059a8c65bd10257cea0681",
       "bytes": 27669
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed007.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed007.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed007.json",
       "sha256": "b55ce929e41d985cea5981c0d990a62787d81612c388ecbeba2f3d5bd8ebaa43",
       "bytes": 27705
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed008.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed008.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed008.json",
       "sha256": "55fcdc9105db1b67ecdc9f6d68815a41067a29d626705421672f299a684a11a7",
       "bytes": 27681
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed009.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed009.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed009.json",
       "sha256": "27107a45a338d0ef0671e36647ee4497e180765dd8dec59175095382610d2add",
       "bytes": 27667
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed010.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed010.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed010.json",
       "sha256": "f60c4085b00cbcc779d58e2c9b19f93324c73a86be54d7f3a6aaacbb052a54d0",
       "bytes": 27643
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed011.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed011.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed011.json",
       "sha256": "7d02503150b275109369b67002e5f651ac5808f2d5dcc0daacd0399b618237c6",
       "bytes": 27661
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed012.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed012.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed012.json",
       "sha256": "5979a4b27ea3f6143c6c2911cf6cfe340aae8bef89f759801251dc0139e04adf",
       "bytes": 27627
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed013.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed013.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed013.json",
       "sha256": "0141d8ad7df12660b19d88131f1eb530ee17f0e76397d76b6e21125ec91eb1ee",
       "bytes": 27701
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed014.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed014.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed014.json",
       "sha256": "0a2b35780279c4ec85dc9aaa7a1d55843d530720ec046e53884e2080d8869b38",
       "bytes": 27643
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed015.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed015.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed015.json",
       "sha256": "74d09e3190b2dab24b815fd60ba276724d7470cf1d3e40b2ede7e1a5375bcebf",
       "bytes": 27672
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed016.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed016.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed016.json",
       "sha256": "faa6b2d65d1b86d8efa920c4ab4e2ac467f52fd01520b84f6a7e49f178c4d38d",
       "bytes": 27660
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed017.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed017.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed017.json",
       "sha256": "eb50c053407a73461f8e4203af74a7dccb2334ab50b51f3e06fec330d1723b1f",
       "bytes": 27686
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed018.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed018.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed018.json",
       "sha256": "6f3d0f5f7c0154ad6331c38259dac1772836f4a627578a22c2c45f5ef40de2a1",
       "bytes": 27656
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed019.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed019.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed019.json",
       "sha256": "f0ccd5b4af9a725bd66bb5ee8f6f5dc4a2d81997371a20d00e1e16451a9d1338",
       "bytes": 27688
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed020.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed020.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed020.json",
       "sha256": "875e4186bd2e25784f2112808850f133e7b57a2a1ac144148bc70451dca293ad",
       "bytes": 27697
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed021.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed021.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed021.json",
       "sha256": "d43432bbf7175a770ad7583990dcbee9fd3d320b8fd97cd0dd53928989350716",
       "bytes": 27657
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed022.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed022.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed022.json",
       "sha256": "27acbaf534f96cb6a88a631e500b4ee17223b890b8f4c355a96c9ccd7d2af415",
       "bytes": 27720
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed023.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed023.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed023.json",
       "sha256": "0d2fef3a152c6adcd722f2325c845cee9470448538af45d7bccae460c104aded",
       "bytes": 27710
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed024.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed024.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed024.json",
       "sha256": "8d0c900c7f74a1d6533f728f9780d92f5881ddb10fc51160d815e78443f41824",
       "bytes": 27662
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed025.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed025.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed025.json",
       "sha256": "6e28ff05865076368111adfc3ba90f4a3b117e7a9f10cfbe83916cca7b8ed80a",
       "bytes": 27661
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed026.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed026.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed026.json",
       "sha256": "74fe2fb3ce80b69d0178e6d40dbefeec8b9685902d591c927deb71305adeaa0b",
       "bytes": 27655
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed027.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed027.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed027.json",
       "sha256": "88ac88a901f7a091f164157d17c2f46825d7106df4cf73bbd11700433eb2fc4d",
       "bytes": 27700
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed028.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed028.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed028.json",
       "sha256": "8553b3c8d114b7814acde004e3224d102400af3ecb0a25db6ff9232ab5fbe825",
       "bytes": 27687
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/C_seed029.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed029.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/C_seed029.json",
       "sha256": "1adf58d38030135bbbcc3b933898af941c0e9d096cfaaac6895bd510cd4e0e1f",
       "bytes": 27636
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed000.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed000.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed000.json",
       "sha256": "8c72c19877b72a418257796e1d610b834ecf06a4b0535917f6901a1cd8c4a7f6",
       "bytes": 27694
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed001.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed001.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed001.json",
       "sha256": "eaabe0c4adeccb1596cafac56896c41c618f446f78631825bd8f4f243756d476",
       "bytes": 27668
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed002.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed002.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed002.json",
       "sha256": "b56365a78603e40eec717e572cd44109f4f2dc16328a4e93de5d15ea7137e931",
       "bytes": 27707
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed003.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed003.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed003.json",
       "sha256": "24429f6bf95cd2a8b7b1324e9c5558ddfda27c509cee7e998acb74c8f1af2eb1",
       "bytes": 27688
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed004.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed004.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed004.json",
       "sha256": "a92fbb8522d6c3b8c25a68ce71396f2214fac48d619e32be2d288cdba651a035",
       "bytes": 27684
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed005.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed005.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed005.json",
       "sha256": "86b12f3d106f8ba5096dd767a414ca1303416da6eb6b1263b528f4a90bc541e8",
       "bytes": 27683
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed006.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed006.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed006.json",
       "sha256": "927a1bc5867ba30701461d61319858d31365387abb8d46e88d425d9c191e2b62",
       "bytes": 27687
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed007.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed007.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed007.json",
       "sha256": "b2fe6248e15437b8cda8dfb08a212404cced01089404e8000f943d86da6aa023",
       "bytes": 27677
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed008.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed008.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed008.json",
       "sha256": "cd19359a85276d2b6afbee9f5b63563f35ce32365783ce9e899c174965eb2329",
       "bytes": 27708
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed009.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed009.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed009.json",
       "sha256": "d5fc16d64854f499065366457d1e749c7c45d2d6575317a097c1d91910633a4c",
       "bytes": 27692
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed010.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed010.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed010.json",
       "sha256": "8f74941ff20b43a106ddce16f282e14df232f3efb06cdb564c64157cf9ce0b1e",
       "bytes": 27675
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed011.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed011.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed011.json",
       "sha256": "47e807a989f7256072a578154c0b3ce4d5d5eba73f95238f6ac6e005bdbbf6f9",
       "bytes": 27705
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed012.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed012.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed012.json",
       "sha256": "e56f47ca7acc0198142dc5aa03e135021daf0ff6687886c9b1464f9556d44527",
       "bytes": 27695
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed013.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed013.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed013.json",
       "sha256": "0c4c5c8529c3bc12aa60253330188938c1c4abe4ca71707816be24a4943b9083",
       "bytes": 27702
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed014.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed014.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed014.json",
       "sha256": "2a3b58cb3321fff7365653eb375aecd52858b2a2b2e160638e3ef24b4cf2cbe4",
       "bytes": 27699
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed015.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed015.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed015.json",
       "sha256": "936d7a7c412de4124cccd47f28c2507de4c1e8d5ee1cadbb0001dc61662aa822",
       "bytes": 27718
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed016.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed016.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed016.json",
       "sha256": "552f24e93ba8b69ef5911d1e9c28d47d5b425e8acc67e892d6f46ec8775b40c6",
       "bytes": 27687
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed017.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed017.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed017.json",
       "sha256": "54539b064190cb49ec397c7bb2fc03750eeaabca7a10fe10451854d9f81d9ca3",
       "bytes": 27700
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed018.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed018.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed018.json",
       "sha256": "c261543ac044840c1d561ea2072e5d5f30e6377292953b585850cfac87981024",
       "bytes": 27664
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed019.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed019.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed019.json",
       "sha256": "b061e729f08d50ab9647914a3211cb479cc4ee671e23cb82eb4d1f6397625b2d",
       "bytes": 27653
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed020.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed020.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed020.json",
       "sha256": "956a9c4153dbf718e5ce9c8f4015cee82431b18d5cd9dd448a318e721c6cdfd4",
       "bytes": 27691
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed021.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed021.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed021.json",
       "sha256": "e9831b0b5b377c4846ae9295376d9a439a5bb3aa8be9a10ff67b00eba19f9cb9",
       "bytes": 27695
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed022.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed022.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed022.json",
       "sha256": "d42d1ed2e2fd4e5c321c0b4acee8d8c9df6bd2b6e4de46cf5bd291147e546ef9",
       "bytes": 27709
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed023.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed023.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed023.json",
       "sha256": "45c4b2fc5145703832a392506e5fd761b132da33645e05ee2287f7ac80a1dccc",
       "bytes": 27700
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed024.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed024.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed024.json",
       "sha256": "070f64fd02db551ab518baf0a3d07a26ee7d7a791229e3280d381d1297bdade6",
       "bytes": 27691
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed025.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed025.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed025.json",
       "sha256": "3a86e64f1def9b602ba0ae50486bb250eed8ba65d99ad4571211487a01ce3275",
       "bytes": 27684
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed026.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed026.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed026.json",
       "sha256": "60c0fb1f6f57f0c0307db1c14c84d2a96502fecb0ec636d250335f1407d2d9ae",
       "bytes": 27666
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed027.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed027.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed027.json",
       "sha256": "40c5e7819389cb9d7a386d0fcdeb10da4a88c2f21b37a78fc770ede705e0f842",
       "bytes": 27665
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed028.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed028.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed028.json",
       "sha256": "9ef888027137f361af616b802c819645be99d0712e9aa65c3da6902c1a0b576d",
       "bytes": 27699
     },
     {
       "path": "evidence/upstream/evidence/f9_uniform_T30_results/D_seed029.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed029.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_uniform_T30_results/D_seed029.json",
       "sha256": "98d737d66d31edcc4ff494d4ebf58e52f862f0f6c20b212712c2f11082f8a0f3",
       "bytes": 27690
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed000.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed000.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed000.json",
       "sha256": "4b6a91a75ee4a2e6d6a663d032cb0541647785fe37c6150660dc105878e12263",
       "bytes": 44089
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed001.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed001.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed001.json",
       "sha256": "b44d6b14c2a7183305f917e9b85bf77ef9efe79b1084c2ee84d68754e3c45f01",
       "bytes": 44116
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed002.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed002.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed002.json",
       "sha256": "7d2cbf49cbb13b91b234f976d7eb92892a6d19a62c28af05896d38e38c947c01",
       "bytes": 44057
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed003.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed003.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed003.json",
       "sha256": "1d0fb8b5ad61dc0a9928308d46e6601b775c23d9e4f10ee2a8b2cd52495080a3",
       "bytes": 44114
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed004.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed004.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed004.json",
       "sha256": "3cc58403e3bcaeabf8eb5dbda9bf8b2b32b01c47dc9f3951cc1fd264312cff0e",
       "bytes": 44084
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed005.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed005.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed005.json",
       "sha256": "2ed683df7f33355561eeefdaf42b31512f9f79d09aea3ad3ef37e32178ee25ff",
       "bytes": 44068
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed006.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed006.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed006.json",
       "sha256": "98c0584b844147d65c0f94939232d6a9ec6587e937b7790cca1a37e206d16450",
       "bytes": 44134
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed007.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed007.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed007.json",
       "sha256": "df6fbba37b779b40485f341f459a7e62761bde73b826eba413caf5888f7e64cb",
       "bytes": 44069
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed008.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed008.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed008.json",
       "sha256": "ee2c59c89b6f48f3d5af593ef15dc90ee0aed066296e3f3d77f8919074a8125f",
       "bytes": 44103
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed009.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed009.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed009.json",
       "sha256": "76d5baa66045572c04ed9e15ac79e70299218ac3afc4a406d54c20f111ff8772",
       "bytes": 44101
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed010.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed010.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed010.json",
       "sha256": "c8c5e65e5dffa42f0bad7471da01019599fb41df647501b9a9ddf6a22de963a6",
       "bytes": 44073
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed011.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed011.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed011.json",
       "sha256": "979cfee4297e931f1daf30ccff6e721585dc69cdd0dedf35de029d66a43697f8",
       "bytes": 44080
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed012.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed012.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed012.json",
       "sha256": "fc4d343070e3ebd14ad96995efaf8ec275b9ae27e3b22c27fd6a628154f46272",
       "bytes": 44092
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed013.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed013.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed013.json",
       "sha256": "f2dc55c3504f28b2497b72050852a1be4abafde6848aaa85e29ac0ab602248aa",
       "bytes": 44109
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed014.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed014.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed014.json",
       "sha256": "7bf2e2eb8c66594d777801883809e444a14802466f7eb0a78a56cca540f77778",
       "bytes": 44086
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed015.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed015.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed015.json",
       "sha256": "dbc001a5f71ed41bc0be967698ba393af56de7e3934be578f3580958ec30157d",
       "bytes": 44095
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed016.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed016.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed016.json",
       "sha256": "227d85ce6c2a98b2df91590a5f2aa86316982c35adafd7d9d1eea10afc626a52",
       "bytes": 44102
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed017.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed017.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed017.json",
       "sha256": "eb6c4c6dd34f57a09821d0b663f327df81abaca355e33371133f398150c88dde",
       "bytes": 44075
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed018.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed018.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed018.json",
       "sha256": "b05615538a0f12c6252eb9354860ededbbb14e10046945b89d6418e8cfb9419d",
       "bytes": 44132
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed019.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed019.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed019.json",
       "sha256": "5f1ce471376501a62cae554e3ff465535618806043b6bcc34eca1c4b9fd71c54",
       "bytes": 44109
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed020.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed020.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed020.json",
       "sha256": "7dc8976daf2aa095a9641ddca3b77831afbafff00f0f594b83b1bbac941f915f",
       "bytes": 44112
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed021.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed021.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed021.json",
       "sha256": "2073ca173961cdee943aabaa74985f3082fc19dcb98332945a2e8877dfa35a95",
       "bytes": 44050
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed022.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed022.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed022.json",
       "sha256": "52e81aada3bee7014081339081cc32173ab5907cfa03d638649c0eaf09eac282",
       "bytes": 44119
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed023.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed023.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed023.json",
       "sha256": "df1697344abe96e6797bb8aa3fc55fb250793ec1c9596263e2126a9dba86bf1c",
       "bytes": 44121
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed024.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed024.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed024.json",
       "sha256": "8cf7cfc2ba5ace4de304bfded6503197524f9c1b274db5bbf0a9dafc93763387",
       "bytes": 44128
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed025.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed025.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed025.json",
       "sha256": "ab9a978c617e79d8e9ba2a43754daabe8df73bbd593444c0082a8cd72b7230be",
       "bytes": 44082
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed026.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed026.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed026.json",
       "sha256": "7e0a22ae4e1b4ed7e0247c6cdc33238d45aa9dddddc3b6cd3b3c6e50728a26a7",
       "bytes": 44110
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed027.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed027.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed027.json",
       "sha256": "5398d062d2460c4f37eefee6382ef93019fcc9ffd8407d91c3c3a85e7cc03448",
       "bytes": 44143
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed028.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed028.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed028.json",
       "sha256": "341a4c57816091731d40b12ba99e020558c882b1876f3837d4a0496aec456ff5",
       "bytes": 44131
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/A_seed029.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed029.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/A_seed029.json",
       "sha256": "cc01b8a7f8193107c2505398a5eb1e95ffb68bc400d627d0ced23121db701d11",
       "bytes": 44037
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed000.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed000.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed000.json",
       "sha256": "f989c4dd662474d743810e5968f75ce473b3dd190b83f05c076b11aac8575c85",
       "bytes": 44153
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed001.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed001.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed001.json",
       "sha256": "c07397d47cd97870c03211c3b1f2d8b3bbfb525087f9bdcd1936180d45486f73",
       "bytes": 44186
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed002.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed002.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed002.json",
       "sha256": "9e99739678b3273778f47e6b04ee1f59aa38653864debd8ea5b71e5db0e9478a",
       "bytes": 44114
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed003.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed003.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed003.json",
       "sha256": "a752980537543d1a047715ff3f58152e31b59ea14210b666203e692c8c300132",
       "bytes": 44167
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed004.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed004.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed004.json",
       "sha256": "463e5f756d48b5cdc4e78b630de7169986355149528d38a7b85cf6c6bb899bb9",
       "bytes": 44169
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed005.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed005.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed005.json",
       "sha256": "52ab3614c15a7118749140edcc5c786cebaef10ea35a5e8c5a162225012969e1",
       "bytes": 44185
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed006.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed006.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed006.json",
       "sha256": "690d525cdb4424f7c24cc438233b3ea40c283da9febab6e82edba1aef678b85b",
       "bytes": 44134
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed007.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed007.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed007.json",
       "sha256": "9bc9a0bf14991336b1f74dc02f5bd03151153cc2bf05a714a9ef9615b249d90c",
       "bytes": 44137
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed008.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed008.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed008.json",
       "sha256": "857ae6b7195cad28104d32e58d70c6a5bb943859a1ad3cc22eeab9c141bf59f7",
       "bytes": 44090
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed009.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed009.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed009.json",
       "sha256": "3727f5f3edc0749e54b365a4fa3d176fae9682a319afab2f794db9b737954761",
       "bytes": 44154
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed010.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed010.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed010.json",
       "sha256": "883446f5dd5c5a3ff2176f83a81d3cdc231e38c098846e8daf51d244665b416d",
       "bytes": 44119
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed011.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed011.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed011.json",
       "sha256": "bf1445f7cacd911b49f30aaa709c6975fb34e831cf4e6ea32bf997e2a3fe056b",
       "bytes": 44093
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed012.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed012.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed012.json",
       "sha256": "b02b801645beb06ab1ea875d75f7cca5e3c95952adc09244e5ecbe4ed6499a60",
       "bytes": 44099
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed013.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed013.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed013.json",
       "sha256": "6e8f0b9f86f5ed0b26b9d090f1d78bb9566e70a2a7a266f0a70a8434bf020f92",
       "bytes": 44116
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed014.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed014.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed014.json",
       "sha256": "06dd177d6b7e700a9bbf49faa70e1bbcbd5f19b1eb866b08d8bae1fe515afcf6",
       "bytes": 44125
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed015.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed015.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed015.json",
       "sha256": "3a91fc767632f135bb2aedaf173155eb117963987f76342338bc3c4efb0655c2",
       "bytes": 44127
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed016.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed016.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed016.json",
       "sha256": "2dcb1b1165d7880965b59ed33505a93633c4bd1eae7d28043fedbddb6a338166",
       "bytes": 44125
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed017.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed017.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed017.json",
       "sha256": "7e35933303e8b9e702becd5d06a9c9cf97b99dc4a635a1203446cd6b0c94feab",
       "bytes": 44152
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed018.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed018.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed018.json",
       "sha256": "c0aa5e9ce9d175be7134da776d083d42f0de1f580d7199297bb89af2fb5fb16c",
       "bytes": 44141
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed019.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed019.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed019.json",
       "sha256": "3de8bbeb764312fe5949576fac20c951094c6e042d29bae5e68f7396937da3e1",
       "bytes": 44129
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed020.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed020.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed020.json",
       "sha256": "4d26d2124de390ca8284a7dc2d9e394b9ef66c66cea5c30da42e92c18203baf4",
       "bytes": 44118
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed021.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed021.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed021.json",
       "sha256": "3c87e0019a46ecf40f47081a26cdbebbb7152a7d7dcb68227f4903b6e054cc0e",
       "bytes": 44096
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed022.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed022.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed022.json",
       "sha256": "a055cc9a74ce6a21274af60e001403848f1409aa21fb0426503972d14f553fae",
       "bytes": 44076
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed023.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed023.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed023.json",
       "sha256": "e31acf7a33e099f83486749ca982fb9145188cb6e0212ea7f2c39eb73d4ef553",
       "bytes": 44091
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed024.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed024.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed024.json",
       "sha256": "9cf784dbc97e3e9f3610a3781ad12598903bcbe8181bec4670eba9a2f1096827",
       "bytes": 44115
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed025.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed025.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed025.json",
       "sha256": "64ed0ebbe12fa7ebc7089bde4312b6b2100d7b57293f05e744b5dcf1f5c8f788",
       "bytes": 44069
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed026.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed026.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed026.json",
       "sha256": "eff9b85e42e1e2069231280a30f44d3bd96f6b68d54b2a8d52e28e1204da8fea",
       "bytes": 44128
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed027.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed027.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed027.json",
       "sha256": "a43a028cea9777f554168fe49de5f08b844c9b7cd5db156d9e6299e2398e3f39",
       "bytes": 44083
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed028.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed028.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed028.json",
       "sha256": "250a7909db30eccdf7c5068fd8350d3a82198227b462a539dfc0732b738f2f80",
       "bytes": 44100
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/B_seed029.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed029.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/B_seed029.json",
       "sha256": "34503240e73f9b3b1ca115c556175f5bc7cf2f1b85b7170a0a729001b76e0862",
       "bytes": 44170
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed000.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed000.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed000.json",
       "sha256": "232b5368cebff191613cd2f3b88ca1b331d19821e67e864da80e2fe9e381f67f",
       "bytes": 44085
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed001.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed001.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed001.json",
       "sha256": "274c96d6bb85e18edd6c1d2986df29e022f7ceb38bf5d8f51aebac7d1851f9cf",
       "bytes": 44121
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed002.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed002.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed002.json",
       "sha256": "594664c4bdf87112c88c27032678f54a634a8af5cbba3b2423d22083276de7f0",
       "bytes": 44097
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed003.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed003.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed003.json",
       "sha256": "e2ba22f7e86e219d3de9e79a0feeb27b151d372506ddf40c51e66b0034c92f1c",
       "bytes": 44076
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed004.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed004.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed004.json",
       "sha256": "c05af65732b18b014767fb39f39b7b86530000988fed8ab9f4ef75714c7955b6",
       "bytes": 44062
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed005.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed005.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed005.json",
       "sha256": "2bc8350a010393ad5746379e6c962f1f1d6c535d1771d52df63b2bcddf95cc95",
       "bytes": 44162
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed006.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed006.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed006.json",
       "sha256": "31cb40d7176c5382212a9065a7bed3deb866d089883b34e828469017a36eaad5",
       "bytes": 44108
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed007.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed007.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed007.json",
       "sha256": "f0a7d070b1c63bb7b7391e58f3cfc8c3938da1594b35ff39caca0b13c8df1e09",
       "bytes": 44133
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed008.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed008.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed008.json",
       "sha256": "eb38dbfcad1e34bcfd8d6003c5c854c341af260140b3cd55c2de71890c7ea405",
       "bytes": 44104
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed009.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed009.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed009.json",
       "sha256": "a3bfbb1fb5d170c98a08193f69a5ace43f23dcdc5aa8c30b8d3984b591590734",
       "bytes": 44116
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed010.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed010.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed010.json",
       "sha256": "e69863f379984587db799567986199171080642858072d4b240adb88c3a8f873",
       "bytes": 44098
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed011.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed011.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed011.json",
       "sha256": "e646fe01af53972dc1af3900ccda5fe7da1e24bd2f073042d2575ff879ff7bf7",
       "bytes": 44083
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed012.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed012.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed012.json",
       "sha256": "984acd7e85f72766576df2f003e21ccc3fe70eeaac3e9d0c2eb89490e04a2eb2",
       "bytes": 44065
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed013.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed013.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed013.json",
       "sha256": "56f0923bdb587731a564a724bc957540c30014842382678b9413772992879508",
       "bytes": 44126
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed014.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed014.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed014.json",
       "sha256": "c29e506e46a8ad83291aa949ad10d375491ce372aae28b16b916d85d12a755dd",
       "bytes": 44099
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed015.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed015.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed015.json",
       "sha256": "01db89e18d1d88ba7c8b0f962f92d96f1015c45c79ec210749bc892237a83273",
       "bytes": 44088
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed016.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed016.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed016.json",
       "sha256": "2ea2c48c9ed1bc6e0bfe59639591fc0ecc215b9b3173e5fd616dd995fb899d9b",
       "bytes": 44093
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed017.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed017.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed017.json",
       "sha256": "e92a9f9d1b049341c2801f4bc735d6094125306a42382d07bafeb04dc63cec53",
       "bytes": 44042
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed018.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed018.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed018.json",
       "sha256": "21bc758a791bcd429e8781c8f1ecaf64418b56c91887b3f4be9099c41630422a",
       "bytes": 44076
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed019.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed019.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed019.json",
       "sha256": "6e900b3c92459b90399d460a8221ee1c73f1b519f7ab3993d1fe6771fe493d6d",
       "bytes": 44104
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed020.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed020.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed020.json",
       "sha256": "bbb5fc3036d4464ac5612b3894ce96a8904c7e1ed2eb877dc71523c8b187a621",
       "bytes": 44108
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed021.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed021.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed021.json",
       "sha256": "b60d233f733a913d4977458ecf38ee560e22dbd35d32c524a5cc9cdf440308c7",
       "bytes": 44109
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed022.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed022.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed022.json",
       "sha256": "bd905e5b02a3b41728719fff514683050e5ea9ec47f3f76b3c7c65a7b03134b6",
       "bytes": 44096
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed023.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed023.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed023.json",
       "sha256": "2967a9a59f7b717475c962c19b673a081aca2f1ff2fa729623583aac10fb58d2",
       "bytes": 44096
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed024.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed024.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed024.json",
       "sha256": "c3d363964de9495a89da17662d14ae446422c5107984cde271905ceb16db2ea0",
       "bytes": 44121
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed025.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed025.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed025.json",
       "sha256": "8c0ddef752943aa1f31f0cc5a88106a0ff545f7b30dfb5157f0196d94cc6a694",
       "bytes": 44102
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed026.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed026.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed026.json",
       "sha256": "7e35d4e48445b0bc63b22d81acb1241b846b074f70d1fccdd15eada91963375f",
       "bytes": 44077
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed027.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed027.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed027.json",
       "sha256": "187c0a70816810927b290ac66df94d695eec964c7ea6dcea2bfcffdc26ecb792",
       "bytes": 44104
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed028.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed028.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed028.json",
       "sha256": "8164aefbe645ad20ad703deb5b688c5c9ced2f015f34719fc61e660dea0e93f6",
       "bytes": 44076
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/C_seed029.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed029.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/C_seed029.json",
       "sha256": "2b338da406f84d50834a26a130a8da6eb2f17883636092950c7747473a57f3a6",
       "bytes": 44057
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed000.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed000.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed000.json",
       "sha256": "ef601df495052450c175d9b57d6be3d8670d177aac4ab16dd230c61e0f203079",
       "bytes": 42445
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed001.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed001.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed001.json",
       "sha256": "6fb8d9eef3a83a701c43544ae0ed3a961790472a7d25c6f0a245b7e06159f675",
       "bytes": 42455
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed002.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed002.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed002.json",
       "sha256": "61a838737fd3cc9856da9a654d92b33b8ca1a2fd276fdcaf0bafa44fd7e2f5c1",
       "bytes": 42496
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed003.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed003.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed003.json",
       "sha256": "2e66912b121baf43ae2c14e680aa1961bb77498483590f42d85ca66bc4cbd34d",
       "bytes": 42416
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed004.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed004.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed004.json",
       "sha256": "bec7886e7c6c5f96dbfd423dd9871b2b7ef8350bef935ea18d922e3a429da765",
       "bytes": 42433
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed005.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed005.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed005.json",
       "sha256": "da722e68cac5f90c31764fdc51dae445b13997001ee9b9809fbc43196b0c3887",
       "bytes": 42516
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed006.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed006.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed006.json",
       "sha256": "f2863644bb51db153f916ee9f2c791d9095b01bd1d44877801525b5768755f70",
       "bytes": 42472
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed007.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed007.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed007.json",
       "sha256": "256a434a6ed96b83bfe2c95cc6ffa1b33640988b352e3bce3e6ce19ef0957316",
       "bytes": 42519
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed008.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed008.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed008.json",
       "sha256": "aec7c4248b5ece5b593338c1ecb0496fab25eecc834640b362e491dd05199486",
       "bytes": 42508
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed009.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed009.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed009.json",
       "sha256": "d0bc6d9699be8ae926a5456e418d8f376b86eed4a9afc9fc27c55feb50c3ec3a",
       "bytes": 42483
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed010.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed010.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed010.json",
       "sha256": "f1835fa71b7a51981380a0ac806d6f9e8add4cb2bea94d74992fb7e4f2243d7a",
       "bytes": 42478
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed011.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed011.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed011.json",
       "sha256": "a5bf28421928cdb917991517679fab005b658df5d47ffff91533dfc431432e77",
       "bytes": 42465
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed012.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed012.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed012.json",
       "sha256": "3775b947b030c12f4f502f196d9530c5492091a59135bb64d53fd0dd29579e38",
       "bytes": 42518
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed013.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed013.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed013.json",
       "sha256": "48c7ed1866051b0b81597fbb15ed2e7a18b703a5e6120b525bb910760d01944d",
       "bytes": 42498
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed014.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed014.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed014.json",
       "sha256": "720effad055c856948df6126030f6ad461d344114e2a49389343339163c607bb",
       "bytes": 42507
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed015.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed015.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed015.json",
       "sha256": "10d5a5c991bb92b279cebbf236a07bfdf2795be98eabd9197e93537f9d4e1a9b",
       "bytes": 42438
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed016.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed016.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed016.json",
       "sha256": "4497f86b17709c490bf0a11a8ecf3cdc5f794a5f66e06a418f963b84029f8049",
       "bytes": 42464
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed017.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed017.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed017.json",
       "sha256": "f45001ad57e64a96651b0887b5657f6ec7104bcb72e20b2e624903a1f9a04089",
       "bytes": 42491
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed018.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed018.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed018.json",
       "sha256": "550f33269e6b34bc7787d1704bce7d1af70f0c649f2ee73a2046d674f488c616",
       "bytes": 42439
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed019.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed019.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed019.json",
       "sha256": "4158686b970b910d242d3718a5a2ff2e35bf9787ca89736a961820e859339d5e",
       "bytes": 42441
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed020.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed020.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed020.json",
       "sha256": "713c178d992a4e31d450b434e760e1512fa86d30ac88df598fc9d125bef4f045",
       "bytes": 42409
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed021.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed021.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed021.json",
       "sha256": "6f5d0a18a5080d96e477139bad077cab8ca7a35fd550763a2fd10e64c65ba11c",
       "bytes": 42515
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed022.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed022.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed022.json",
       "sha256": "a5b23b68c8a90eb6436ca5a7f2100b7d7342852a0e1d05dcb7ee7a4d752a3cd7",
       "bytes": 42526
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed023.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed023.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed023.json",
       "sha256": "b9748c924b4f3ab04c3ffcd1e50c1590284104e1a85e8a3d56afe5edd6bc000e",
       "bytes": 42467
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed024.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed024.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed024.json",
       "sha256": "e901c1531db8d3e7b50345e6b733a058584baf78f8b5d5dd6a26985c7f5bc72b",
       "bytes": 42554
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed025.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed025.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed025.json",
       "sha256": "8725c9ce13e83857251137759ba566d41adcdc0280e6d182032e28e4bd6ed7d2",
       "bytes": 42443
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed026.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed026.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed026.json",
       "sha256": "3b5881232405b3cd314e9b9bebb2f37fd25539b4f8e36a177b2d61b7705188b0",
       "bytes": 42434
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed027.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed027.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed027.json",
       "sha256": "e00f7122fdcbef6ca7cea96961eb654d86b65f46ff068c34437d24d5f6d956c7",
       "bytes": 42406
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed028.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed028.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed028.json",
       "sha256": "40c8cdac1d327910ea0de99f476520d920f1e3f5fe47cde9578e5e1a1382a441",
       "bytes": 42463
     },
     {
       "path": "evidence/upstream/evidence/f9_t50_results/D_seed029.json",
-      "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed029.json",
+      "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence/f9_t50_results/D_seed029.json",
       "sha256": "d0c6b08b9e7c333390c780a32baef24bb8797a6744a0bbc58da5e7cb9b660355",
       "bytes": 42419
     },
     {
       "path": "evidence/pipeline/main.tex",
-      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/main.tex",
+      "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/main.tex",
       "sha256": "fa68871be5177cfdca505ac3b5ea7865ceb0ae2368fdb3268a2bf0caf45ed6c9",
       "bytes": 93024
     },
     {
       "path": "evidence/pipeline/references.bib",
-      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/references.bib",
+      "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/references.bib",
       "sha256": "b13dbc45ba5971b16faab0e9a2260f8043d52b15d2214152a60347bff7b31a78",
       "bytes": 8296
     },
     {
       "path": "evidence/pipeline/refs_added.bib",
-      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/refs_added.bib",
+      "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/refs_added.bib",
       "sha256": "3697cef1a968db494c80374190d833ab698d02de4c551d084a9413b035d05b9a",
       "bytes": 894
     },
     {
       "path": "evidence/pipeline/paper/main.tex",
-      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/paper/main.tex",
+      "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/paper/main.tex",
       "sha256": "cf35af58bc8502c8f5dc8a8b80bd1f8d5ed61e685d1c66f2b586e4e8c0b6e09f",
       "bytes": 16585
     },
     {
       "path": "evidence/pipeline/arxiv_clean/main.tex",
-      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/arxiv_clean/main.tex",
+      "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/arxiv_clean/main.tex",
       "sha256": "06647f2886ee4788be5c38708ed0732f334aed71ba7ad2bff25ff4e1b030a6cd",
       "bytes": 44893
     },
     {
       "path": "evidence/pipeline/evidence/CARRIER_RECEIPTS.json",
-      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/evidence/CARRIER_RECEIPTS.json",
+      "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/evidence/CARRIER_RECEIPTS.json",
       "sha256": "31ff258873517ce3e6a5fac173864b0d98159c5ed1f847ea5141f9b8482bbee4",
       "bytes": 114973
     },
     {
       "path": "evidence/pipeline/evidence/finding1_rerun_qwen32b/finding1_summary.json",
-      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/evidence/finding1_rerun_qwen32b/finding1_summary.json",
+      "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/evidence/finding1_rerun_qwen32b/finding1_summary.json",
       "sha256": "6f0f34aab4898c600d0674978cd33963796178d9fd9ea371fbc4e4982e0ecafe",
       "bytes": 1911
     }

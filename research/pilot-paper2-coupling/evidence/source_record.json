@@ -4,13 +4,13 @@
   "family_id": "qf-a-conditional-coupling-diversity-precisi-7336590fb7",
   "portfolio_project_id": "qp-tmlr-paper2-consolidated-a737471ea703",
   "canonical_source": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/paper/main.tex",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/paper/main.tex",
     "sha256": "379e1632302e979ded0c0462eeba32a07fa82653796ca72d4f9f55e46f8d5cec",
     "bytes": 56705,
     "authority": "paper/main.tex from the portfolio record"
   },
   "overlay_source": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/source/main.tex",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/source/main.tex",
     "sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
     "bytes": 52445
   },

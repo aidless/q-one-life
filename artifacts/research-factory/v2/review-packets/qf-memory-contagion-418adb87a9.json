@@ -4,7 +4,7 @@
   "family_id": "qf-memory-contagion-418adb87a9",
   "project_id": "qp-memory-contagion-47d7a7bbfdf1",
   "title": "memory contagion",
-  "primary_source": "/home/liuzewen/.research/memory-contagion/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/memory-contagion/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "50161d16fa99850336583466b6172bd6457ed431803d6a6ffba387e57401ece6",
@@ -57,8 +57,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/imported/memory-contagion/main.tex",
-    "/home/liuzewen/.research/memory-contagion/main.tex"
+    "<WORKSPACE_ROOT>/.research/imported/memory-contagion/main.tex",
+    "<WORKSPACE_ROOT>/.research/memory-contagion/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

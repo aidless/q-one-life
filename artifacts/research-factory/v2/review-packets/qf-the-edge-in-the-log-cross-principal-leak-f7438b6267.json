@@ -4,7 +4,7 @@
   "family_id": "qf-the-edge-in-the-log-cross-principal-leak-f7438b6267",
   "project_id": "qp-e-a2a-8597590d479d",
   "title": "The Edge in the Log:\\\\ Cross-Principal Leakage Is a Logging Problem\\\\ Before It Is an Auditing Problem",
-  "primary_source": "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/e-a2a/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/e-a2a/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "cad4025d76bf17f1cf9fa77a838f8bde8e52ef05a4aabd1a00eca351adfdd81b",
@@ -37,7 +37,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/e-a2a/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/e-a2a/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

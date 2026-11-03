@@ -4,7 +4,7 @@
   "family_id": "qf-auditing-the-auditors-an-executable-meta-f835f63c93",
   "project_id": "qp-paper-iii-audit-metadata-c9ee49d63a73",
   "title": "Auditing the Auditors:\\\\ An Executable Metadata for Research Produced by Language Models",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/papercorpus-anon/paper-III-audit-metadata/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/papercorpus-anon/paper-III-audit-metadata/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "a4e55c2cf8416cd898688ee5bbc69f581151bbdd6e22032a483af01000010ee5",
@@ -42,8 +42,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/papercorpus-anon/paper-III-audit-metadata/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/piii-audit-metadata/paper/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/papercorpus-anon/paper-III-audit-metadata/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/piii-audit-metadata/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

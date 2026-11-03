@@ -4,7 +4,7 @@
   "family_id": "qf-contagion-networks-evaluator-preference--4093c9a3cf",
   "project_id": "qp-contagion-networks-ffa56860f655",
   "title": "Contagion Networks: Evaluator Preference \\ in Multi-Agent LLM Systems",
-  "primary_source": "/home/liuzewen/.research/contagion-networks/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/contagion-networks/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "4836cc0c0434386983c579180be23d1fd41c8feb6adb587286ca18244289ba62",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/contagion-networks/main.tex"
+    "<WORKSPACE_ROOT>/.research/contagion-networks/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

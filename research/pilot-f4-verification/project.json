@@ -4,8 +4,8 @@
   "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
   "status": "blocked",
   "target": "arxiv",
-  "root": "/home/liuzewen/F:\\\\deepseek/q-one-life/research/pilot-f4-verification",
-  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
+  "root": "<WORKSPACE_ROOT>/F:\\\\deepseek/q-one-life/research/pilot-f4-verification",
+  "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
   "manuscript": {
     "path": "evidence/upstream/paper/main.tex",
     "sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",

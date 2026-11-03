@@ -4,7 +4,7 @@
   "family_id": "qf-science-task-factory-score-swap-auditing-fd442a0963",
   "project_id": "qp-science-factory-90fd79f542f8",
   "title": "Science Task Factory: Score-Swap Auditing in a Restricted Verification Prototype\\\\(R-C Regime Only; FAR 19.90\\%, $ =0.391$)",
-  "primary_source": "/home/liuzewen/F:\\deepseek/papers/science_factory/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/papers/science_factory/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "a2308eb73b3a37ab17b96a8e4e4fd92286e8711e180afcd35ef75b83e15b6cc7",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/papers/science_factory/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/papers/science_factory/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

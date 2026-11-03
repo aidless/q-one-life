@@ -4,7 +4,7 @@
   "family_id": "qf-structured-reasoning-policies-in-local-m-0061e9179e",
   "project_id": "qp-arxiv-debd377a011f",
   "title": "Structured Reasoning Policies in Local Models:\\ Transfer Effect, Prospectively Confirmed and Bounded",
-  "primary_source": "/home/liuzewen/F:\\deepseek/ai-researcher/arxiv/paper.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/ai-researcher/arxiv/paper.tex",
   "source_state": {
     "exists": true,
     "sha256": "10e107a60c971e638e98f35b40bde15c2ef858ec377b76a4c0bc354a1ee95242",
@@ -37,7 +37,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/ai-researcher/arxiv/paper.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/ai-researcher/arxiv/paper.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

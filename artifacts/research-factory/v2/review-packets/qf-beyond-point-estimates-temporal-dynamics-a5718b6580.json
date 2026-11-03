@@ -4,7 +4,7 @@
   "family_id": "qf-beyond-point-estimates-temporal-dynamics-a5718b6580",
   "project_id": "qp-tmlr-temporal-dynamics-0d1191d1735f",
   "title": "Beyond Point Estimates: Temporal Dynamics, Evaluator Effects, and Protocol Interventions in Evaluator Preference Coupling",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-temporal-dynamics/source/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-temporal-dynamics/source/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "a218c8f2aa001f8281073c4e286116edb01f7bd6c2d76a022b9ce413e3ef88b1",
@@ -52,8 +52,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-temporal-dynamics/source/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-temporal-dynamics/source/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-temporal-dynamics/source/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-temporal-dynamics/source/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

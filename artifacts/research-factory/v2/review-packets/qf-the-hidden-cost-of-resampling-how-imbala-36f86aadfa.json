@@ -4,7 +4,7 @@
   "family_id": "qf-the-hidden-cost-of-resampling-how-imbala-36f86aadfa",
   "project_id": "qp-tmlr-tmlr-p6-60e62c7566d9",
   "title": "The Hidden Cost of Resampling: How Imbalance Correction Degrades Probability Calibration in Tree Ensembles",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
@@ -69,10 +69,10 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/.research/tmlr-p6/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/.aris/ingest_drift/20260928T102343Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/.research/tmlr-p6/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -81,7 +81,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-hidden-cost-resampling/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-hidden-cost-resampling/project.json",
     "status": "archived",
     "ledger_present": true,
     "bibliography_present": false,

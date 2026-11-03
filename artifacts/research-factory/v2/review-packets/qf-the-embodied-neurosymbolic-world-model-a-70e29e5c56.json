@@ -4,7 +4,7 @@
   "family_id": "qf-the-embodied-neurosymbolic-world-model-a-70e29e5c56",
   "project_id": "qp-enwi-b108a4f02f97",
   "title": "The Embodied Neurosymbolic World Model: A Simulation-Based Empirical Evaluation with Negative Results",
-  "primary_source": "/home/liuzewen/.research/enwi/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/enwi/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "de87c57cf070537fb972cb0d7556e0ee3a74a6930010946d68f641fe7f7efbe7",
@@ -42,7 +42,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/enwi/main.tex"
+    "<WORKSPACE_ROOT>/.research/enwi/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

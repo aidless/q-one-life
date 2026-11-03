@@ -4,7 +4,7 @@
   "family_id": "qf-no-record-in-an-audit-pipeline-can-tell--e0122da8dc",
   "project_id": "qp-n7-artifact-freshness-16b846a58202",
   "title": "No Record in an Audit Pipeline Can Tell You It Was Current:\\\\ A Measurement of What Downstream Gates Read",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/n7-artifact-freshness/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/n7-artifact-freshness/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "23fbe69eaac17373f5693389c31c03d0ee213c3c7926aabe16a4aa25766601ec",
@@ -42,7 +42,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/n7-artifact-freshness/paper/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/n7-artifact-freshness/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

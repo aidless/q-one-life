@@ -4,7 +4,7 @@
   "family_id": "qf-post-rlhf-calibration-drift-a-distributi-5152a683fc",
   "project_id": "qp-tmlr-p18-c07c27241e11",
   "title": "Post-RLHF Calibration Drift: A Distribution-Shift Perspective",
-  "primary_source": "/home/liuzewen/.research/tmlr-p18/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/tmlr-p18/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "2c951849dbb6017caf9852c9b9032a9d0a0dd02145d780d183f1f0f90c399c02",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/tmlr-p18/main.tex"
+    "<WORKSPACE_ROOT>/.research/tmlr-p18/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

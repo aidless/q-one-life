@@ -2,13 +2,13 @@
   "schema": "q-one-arxiv-candidate-package-v1",
   "generated_at": "2026-10-27T17:03:26.263620Z",
   "source": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source",
     "main_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
     "package_sha256": "252dad210ec608195b5bb65224f9eacd826bf1c6298262ddd80aed349705b210",
     "file_count": 5
   },
   "archive": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/paper6-arxiv-candidate.tar.gz",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/paper6-arxiv-candidate.tar.gz",
     "sha256": "c0e51c1b59d278a6eaa5c54637ec33e37b907640c7232f41038f580b453c6103",
     "bytes": 26848,
     "repeat_sha256": "c0e51c1b59d278a6eaa5c54637ec33e37b907640c7232f41038f580b453c6103",
@@ -43,12 +43,12 @@
   ],
   "extract_compile": {
     "exit_code": 0,
-    "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/archive-cleanroom/receipt.json",
+    "receipt": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/archive-cleanroom/receipt.json",
     "receipt_sha256": "f21f5df37e1ceba3656b3e09b3ff7b79c0f49cdbc41f6d47b038d919479290c2",
     "pdf_pages": 15,
     "pdf_sha256": "8426989b0436128efe3c0d3bc88d876d124c712cb4b9c401ae3b5d1273c42be4",
-    "command_stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/archive-cleanroom/build.stdout.log",
-    "command_stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/archive-cleanroom/build.stderr.log"
+    "command_stdout": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/archive-cleanroom/build.stdout.log",
+    "command_stderr": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/reports/package/archive-cleanroom/build.stderr.log"
   },
   "environment": {
     "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",

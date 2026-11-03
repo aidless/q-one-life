@@ -4,7 +4,7 @@
   "family_id": "qf-an-empirical-study-of-aggregation-method-819da8c6b1",
   "project_id": "qp-tmlr-paper6-consolidated-adcff53fb253",
   "title": "An Empirical Study of Aggregation Methods Under\\\\ Verifier Capture in Multi-LLM Ensembles:\\\\ When Does Majority Voting Fail, and Can We Beat It?",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "42fe9b13f6a17af326f346aaa1afb7228fa1e8f4478126fadbce0fc7cea80cc3",
@@ -69,10 +69,10 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/.research/paper6-consolidated/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/source/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/.research/paper6-consolidated/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/source/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -81,7 +81,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/project.json",
     "status": "revision",
     "ledger_present": true,
     "bibliography_present": true,

@@ -4,7 +4,7 @@
   "family_id": "qf-when-zero-does-not-mean-safe-auditing-ap-5f95685f66",
   "project_id": "qp-revision-r4-20261015-e7ffae09ead3",
   "title": "When Zero Does Not Mean Safe: Auditing Approval Logs and Task Utility Against State Changes",
-  "primary_source": "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/revision-r4-20261015/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/revision-r4-20261015/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "e761ef48f8f0a48f785a4ea0721ebc3bdd9ddc9a886e5d0cfceda993b7f9398d",
@@ -62,12 +62,12 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/_ref/main.tex",
-    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/revision-r4-20261015/paper/main.tex",
-    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/revision-r4-20261015/attempt-history/manuscript-r0/main.tex",
-    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/artifacts/approval-r4/v1/paper/main.tex",
-    "/home/liuzewen/arxiv-publication/submission-ready/approval-gates-r5.1-backup/main.tex",
-    "/home/liuzewen/arxiv-publication/submission-ready/approval-gates-r5/src/main.tex"
+    "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/_ref/main.tex",
+    "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/revision-r4-20261015/paper/main.tex",
+    "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/revision-r4-20261015/attempt-history/manuscript-r0/main.tex",
+    "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/artifacts/approval-r4/v1/paper/main.tex",
+    "<WORKSPACE_ROOT>/arxiv-publication/submission-ready/approval-gates-r5.1-backup/main.tex",
+    "<WORKSPACE_ROOT>/arxiv-publication/submission-ready/approval-gates-r5/src/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

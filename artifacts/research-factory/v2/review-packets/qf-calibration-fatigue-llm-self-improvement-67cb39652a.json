@@ -4,7 +4,7 @@
   "family_id": "qf-calibration-fatigue-llm-self-improvement-67cb39652a",
   "project_id": "qp-source-c79c67741a8d",
   "title": "Calibration Fatigue: LLM Self-Improvement Stalls After T=50 Rounds",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "cf35af58bc8502c8f5dc8a8b80bd1f8d5ed61e685d1c66f2b586e4e8c0b6e09f",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/paper/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

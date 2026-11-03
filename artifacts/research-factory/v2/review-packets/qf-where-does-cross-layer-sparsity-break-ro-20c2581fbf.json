@@ -4,7 +4,7 @@
   "family_id": "qf-where-does-cross-layer-sparsity-break-ro-20c2581fbf",
   "project_id": "qp-release-f8e3d4766076",
   "title": "Where Does Cross-Layer Sparsity Break? Robustness Boundaries of Compressed Long-Context Attention",
-  "primary_source": "/home/liuzewen/F:\\deepseek/papers/csa2_robust/release/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/papers/csa2_robust/release/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "fc3db3f28db2f13a971a8b676a226881c6cfcf61f5445be3697e1598f9a954da",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/papers/csa2_robust/release/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/papers/csa2_robust/release/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

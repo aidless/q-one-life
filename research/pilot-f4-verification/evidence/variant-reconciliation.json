@@ -10,7 +10,7 @@
   "variants": [
     {
       "role": "legacy",
-      "path": "/home/liuzewen/.research/merged-f4/main.tex",
+      "path": "<WORKSPACE_ROOT>/.research/merged-f4/main.tex",
       "description": "legacy merged source",
       "sha256": "c57d95ab13cf49470f3b8eac3e98db19d6c86b24dce8bcf590e8577af6e4e64d",
       "bytes": 27865,
@@ -19,7 +19,7 @@
     },
     {
       "role": "canonical",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
       "description": "packet primary source",
       "sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
       "bytes": 28427,
@@ -28,7 +28,7 @@
     },
     {
       "role": "ingest_drift",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/.aris/ingest_drift/20260928T102343Z/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/.aris/ingest_drift/20260928T102343Z/main.tex",
       "description": "ingest drift variant",
       "sha256": "f18181edca74a56bbb5a702bb1c0f669e43168c7371ea552630623a2034c3a76",
       "bytes": 29004,
@@ -37,7 +37,7 @@
     },
     {
       "role": "arxiv",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/arxiv/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/arxiv/main.tex",
       "description": "arXiv build variant",
       "sha256": "cd5e7f76c80dd3f6811d36b21c502ec9ddf7899598410df45822ff392481f0c0",
       "bytes": 28980,

@@ -4,7 +4,7 @@
   "family_id": "qf-what-belongs-in-engram-and-what-belongs--1c6558f8bc",
   "project_id": "qp-engram-vs-kv-6b6072c5adb9",
   "title": "What Belongs in Engram and What Belongs in KV:\\\\ A Pre-Registered Protocol for Measuring the Boundary\\\\ Between External Lookup Memory and Contextual Memory",
-  "primary_source": "/home/liuzewen/F:\\deepseek/papers/engram_vs_kv/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/papers/engram_vs_kv/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "4c3264f11cff7fe740cac9a67d72336638b04c1ed6fa065127426fa40ca7d6a2",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/papers/engram_vs_kv/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/papers/engram_vs_kv/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

@@ -6,7 +6,7 @@
   "failures": [],
   "algorithm_sha256": "4e39b2dab3f44f87a9f9ff5181c52bc816b01ea3ba123c4394523f59ec08d444",
   "negative_control": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/source/main.tex",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/source/main.tex",
     "sha256": "a9eef802faa6ef80f7916626a28aade11f1922701fb1f3b24b2f3780a69e0bb6",
     "status": "failed",
     "failures": [

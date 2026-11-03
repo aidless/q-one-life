@@ -4,7 +4,7 @@
   "family_id": "qf-when-more-data-changes-the-story-sensiti-0f5fa63054",
   "project_id": "qp-arxiv-submission-d147419fed86",
   "title": "When More Data Changes the Story:\\ -Sensitive Calibration of Tree Ensembles on Frozen LLM Embeddings",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_submission/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_submission/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "0140de4b2bcac287413a1e11ea736d3b949ac9a1393cc5e542db048cb7dcceb3",
@@ -32,7 +32,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_submission/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_submission/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

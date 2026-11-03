@@ -6,7 +6,7 @@
   "recovered_source_path": "source/WRITEUP.md",
   "recovered_source_sha256": "2ad3ce3d05303adc2adce3444c1e7d4ccf640d242b90499cd9f9d1d5022092d8",
   "recovered_source_bytes": 11672,
-  "recovered_from": "/home/liuzewen/kaggle-control-20261013/paper-evidence/toolselect-publish-v3-20261015/WRITEUP.md",
+  "recovered_from": "<WORKSPACE_ROOT>/kaggle-control-20261013/paper-evidence/toolselect-publish-v3-20261015/WRITEUP.md",
   "matches_published_source": true,
   "remote_url": "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/your-tool-selection-benchmark-may-be-scoring-wrong",
   "remote_content_state": "PUBLISHED",

@@ -4,7 +4,7 @@
   "family_id": "qf-the-agent-did-not-say-it-failed-positive-9a45117b1c",
   "project_id": "qp-a-obligation-1699e0a8c625",
   "title": "The Agent Did Not Say It Failed:\\\\ Positive Obligations Go Undisclosed,\\\\ and a Force-Disclose Prompt Does Not Fix It",
-  "primary_source": "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/a-obligation/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/a-obligation/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "29734464af552baf0ccb61822089208822452d478574e5fcc798a4e3d5afff10",
@@ -42,8 +42,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/a-obligation/main.tex",
-    "/home/liuzewen/F:\\deepseek/artifacts/manuscript-a-obligation/v1/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/a-obligation/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/artifacts/manuscript-a-obligation/v1/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

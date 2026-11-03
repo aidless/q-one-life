@@ -4,7 +4,7 @@
   "family_id": "qf-the-claim-surface-outside-the-manuscript-58d59cb7f8",
   "project_id": "qp-n6-figure-claim-surface-d68434132daf",
   "title": "The Claim Surface Outside the Manuscript:\\\\ Numbers Printed Only in Figure Text Are Invisible to Every Instrument\\\\ of an Auditing Pipeline",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/n6-figure-claim-surface/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/n6-figure-claim-surface/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "9e170931dd3984771a01b2848f6b6a87906c72e368bdca330e752f15c7c36ed8",
@@ -47,8 +47,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/n6-figure-claim-surface/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/n6-figure-claim-surface/arxiv/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/n6-figure-claim-surface/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/n6-figure-claim-surface/arxiv/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

@@ -4,7 +4,7 @@
   "family_id": "qf-from-controllable-reasoning-effort-to-co-59cf112eb3",
   "project_id": "qp-agent-effort-bbc2d6e67df5",
   "title": "From Controllable Reasoning Effort to Controllable Agent Effort: Joint Effort Allocation for Tool-Using Agents",
-  "primary_source": "/home/liuzewen/F:\\deepseek/papers/agent_effort/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/papers/agent_effort/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "17ab2b4aea21946b9c02a4633f083bbee2e817da7b023051c72483b92ddcf91c",
@@ -57,8 +57,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/papers/agent_effort/paper/main.tex",
-    "/home/liuzewen/F:\\deepseek/papers/agent_effort/submission/repo/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/papers/agent_effort/paper/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/papers/agent_effort/submission/repo/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

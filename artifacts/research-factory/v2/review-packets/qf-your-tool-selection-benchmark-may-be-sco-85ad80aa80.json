@@ -4,7 +4,7 @@
   "family_id": "qf-your-tool-selection-benchmark-may-be-sco-85ad80aa80",
   "project_id": "qp-gemma-revised-da47d4c6ca9b",
   "title": "Your Tool-Selection Benchmark May Be Scoring Wrong Calls as Correct",
-  "primary_source": "/home/liuzewen/kaggle-control-20261013/paper-evidence/GEMMA_REVISED.md",
+  "primary_source": "<WORKSPACE_ROOT>/kaggle-control-20261013/paper-evidence/GEMMA_REVISED.md",
   "source_state": {
     "exists": true,
     "sha256": "aa25d33d83b55c4bff5716f2777f420b182122faf93b26a78694b5ce9c5ea798",
@@ -39,7 +39,7 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/kaggle-control-20261013/paper-evidence/GEMMA_REVISED.md"
+    "<WORKSPACE_ROOT>/kaggle-control-20261013/paper-evidence/GEMMA_REVISED.md"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -48,7 +48,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-gemma/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-gemma/project.json",
     "status": "revision",
     "ledger_present": true,
     "bibliography_present": false,

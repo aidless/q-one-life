@@ -4,7 +4,7 @@
   "family_id": "qf-a-diagnostic-framework-and-multi-evaluat-7446aa9495",
   "project_id": "qp-tmlr-iclr-2027-df320bec8b11",
   "title": "A Diagnostic Framework and Multi-Evaluator Audit of Evaluator-Driven Preference Dynamics in Self-Adapting LLM Agents",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "962ad0c7c7669fa6f13a552ce1443155f87b2f17d9735c6f50b409726f3814c8",
@@ -57,16 +57,16 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-acl-2027/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-acl-2027/.aris/ingest_drift/20260930T052414Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-acl-2027/source/arxiv_submit/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-acl-2027/source/submission_variant/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/.aris/ingest_drift/20260930T052414Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/arxiv/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/source/submission_variant/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-2027/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-2027/.aris/ingest_drift/20260930T052414Z/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-acl-2027/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-acl-2027/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-acl-2027/source/arxiv_submit/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-acl-2027/source/submission_variant/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/arxiv/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-iclr-2027/source/submission_variant/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-2027/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-2027/.aris/ingest_drift/20260930T052414Z/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

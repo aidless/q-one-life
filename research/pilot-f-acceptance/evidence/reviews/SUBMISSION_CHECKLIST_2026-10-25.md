@@ -38,7 +38,7 @@
 | F | **arXiv 上传包** | `manuscript/f-acceptance-arxiv.tar.gz` | 6 文件 | `df63e71007538686` |
 | F | arXiv 实名参考 PDF | `manuscript/f-acceptance-arxiv/main.pdf` | 14 | `1514ff1dd2488492` |
 | F | TMLR 实名参考（**勿传**） | `manuscript/f-acceptance-tmlr/main.pdf` | 14 | `bd94bfed8a6985b0` |
-| AG | **arXiv 上传 PDF** | `/home/liuzewen/arxiv-publication/submission-ready/approval-gates-r5/Approval-Gates-R5.2.pdf` | 18 | `0ec4f010b39671e0` |
+| AG | **arXiv 上传 PDF** | `<WORKSPACE_ROOT>/arxiv-publication/submission-ready/approval-gates-r5/Approval-Gates-R5.2.pdf` | 18 | `0ec4f010b39671e0` |
 | AG | **arXiv 上传包** | `.../approval-gates-r5/Approval-Gates-R5.2-arXiv-source.tar.gz` | 9 文件 | `c851174ee9b40755` |
 
 F 三份 `main.tex`（tmlr / arxiv / dev）字节相同：
@@ -124,10 +124,10 @@ AG 校验清单：`.../approval-gates-r5/SHA256SUMS.txt`（R5.2 两件已重生�
 ## 五、复验命令（提交前可重跑）
 
 ```bash
-cd "/home/liuzewen/F:\deepseek/agent-verifiability"
+cd "<WORKSPACE_ROOT>/F:\deepseek/agent-verifiability"
 python3 wave2-F-acceptance/verify_f_v2.py --tex manuscript/f-acceptance-tmlr/main.tex
 python3 wave2-F-acceptance/verify_f_v2.py --tex manuscript/f-acceptance-arxiv/main.tex
 python3 ../scripts/pdf_anon_check.py manuscript/f-acceptance-tmlr/main_tmlr.pdf
 cd manuscript && sha256sum -c F-SUBMISSION-SHA256SUMS.txt
-cd /home/liuzewen/arxiv-publication/submission-ready/approval-gates-r5 && sha256sum -c SHA256SUMS.txt
+cd <WORKSPACE_ROOT>/arxiv-publication/submission-ready/approval-gates-r5 && sha256sum -c SHA256SUMS.txt
 ```

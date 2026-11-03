@@ -1,7 +1,7 @@
 {
   "schema": "q-one-research-plan-v1",
   "generated_at": "2026-10-27T14:57:50.708167Z",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor",
   "paper_id": "qf-reading-a-leaderboard-before-you-cite-it-96866c580c",
   "title": "Reading a Leaderboard Before You Cite It: Three Rulers for the Noise Floor of LLM-as-Judge Evaluation",
   "target": "arxiv",

@@ -4,7 +4,7 @@
   "family_id": "qf-fail-closed-auditable-promotion-gates-fo-43e1af2458",
   "project_id": "qp-paper-promotion-gate-c5218e1121c6",
   "title": "Fail-Closed Auditable Promotion Gates for Self-Evolving Prompt Policies: A Cross-Model Boundary Result",
-  "primary_source": "/home/liuzewen/F:\\deepseek/paper_promotion_gate/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/paper_promotion_gate/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "ceb7d1578595dc4bb4f60842916596bfa43a460de6bfa5c6fb4487549d514c32",
@@ -57,9 +57,9 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/paper_gate_review_r1/main.tex",
-    "/home/liuzewen/F:\\deepseek/paper_gate_review_r2/main.tex",
-    "/home/liuzewen/F:\\deepseek/paper_promotion_gate/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/paper_gate_review_r1/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/paper_gate_review_r2/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/paper_promotion_gate/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

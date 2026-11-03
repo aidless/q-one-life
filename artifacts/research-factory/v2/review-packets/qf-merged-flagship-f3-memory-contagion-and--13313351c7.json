@@ -4,7 +4,7 @@
   "family_id": "qf-merged-flagship-f3-memory-contagion-and--13313351c7",
   "project_id": "qp-merged-f3-memory-e093eaf5afbf",
   "title": "Merged Flagship F3: Memory Contagion and Retrieval-Side Leakage",
-  "primary_source": "/home/liuzewen/.research/merged-f3-memory/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/merged-f3-memory/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "80ef5286506b4e6a28985351949318ca1257b478194c1dde4fb23d921d0ea29c",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/merged-f3-memory/main.tex"
+    "<WORKSPACE_ROOT>/.research/merged-f3-memory/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

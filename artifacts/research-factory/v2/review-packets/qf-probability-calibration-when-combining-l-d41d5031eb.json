@@ -4,7 +4,7 @@
   "family_id": "qf-probability-calibration-when-combining-l-d41d5031eb",
   "project_id": "qp-tmlr-emnlp-2027-f6ec1e3a96ad",
   "title": "Probability Calibration When Combining LLM Embeddings with Tree Ensembles: A Preliminary Study",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "383cfd9e570ca0aebeb97346537e4de9902d8bbdc0c761063a8ab2b646e4bf12",
@@ -57,9 +57,9 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/.aris/ingest_drift/20260928T102343Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/paper/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/paper/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

@@ -4,7 +4,7 @@
   "family_id": "qf-what-a-passing-score-certifies-a-no-acti-21960abdfb",
   "project_id": "qp-rebuild-census-20261026-aaf11ff3e40a",
   "title": "What a Passing Score Certifies: A No-Action Census over All 97 AgentDojo Tasks in Two Suite Versions",
-  "primary_source": "/home/liuzewen/arxiv-publication/rebuild-census-20261026/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/arxiv-publication/rebuild-census-20261026/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "1078f1a85e4aaf311922af89a1eb8078187a4515e3074169fa3fa99128942bfd",
@@ -47,8 +47,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/arxiv-publication/rebuild-census-20261026/main.tex",
-    "/home/liuzewen/arxiv-publication/rebuild-census-20261026/workshop-agentverify-2027/paper/main.tex"
+    "<WORKSPACE_ROOT>/arxiv-publication/rebuild-census-20261026/main.tex",
+    "<WORKSPACE_ROOT>/arxiv-publication/rebuild-census-20261026/workshop-agentverify-2027/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

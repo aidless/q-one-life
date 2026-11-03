@@ -4,7 +4,7 @@
   "family_id": "qf-n-sensitive-calibration-of-tree-ensemble-623d15100e",
   "project_id": "qp-tmlr-resampling-calibration-632b05b06c33",
   "title": "N-Sensitive Calibration of Tree Ensembles on Frozen LLM Embeddings",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
@@ -69,13 +69,13 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/.research/resampling-calibration/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/.aris/ingest_drift/20260930T052414Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_clean/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_final/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/.research/resampling-calibration/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_clean/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_final/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -84,7 +84,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-n-sensitive-calibration/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-n-sensitive-calibration/project.json",
     "status": "archived",
     "ledger_present": true,
     "bibliography_present": false,

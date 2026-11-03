@@ -4,8 +4,8 @@
   "title": "The Name Is the Contract:\\\\ A Promotion Gate Called mcnemar\\_exact Is Not Exact ---\\\\ and, Against the Two-Sided Exact Reference,\\\\ Every Flip Favors Promotion",
   "status": "review_pending",
   "target": "arxiv",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance",
-  "origin": "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/f-acceptance-arxiv/main.tex",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance",
+  "origin": "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/f-acceptance-arxiv/main.tex",
   "manuscript": {
     "path": "source/main.tex",
     "sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",

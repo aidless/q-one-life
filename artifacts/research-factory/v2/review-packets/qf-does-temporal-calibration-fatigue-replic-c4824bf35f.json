@@ -4,7 +4,7 @@
   "family_id": "qf-does-temporal-calibration-fatigue-replic-c4824bf35f",
   "project_id": "qp-tmlr-calibration-merged-d219dc91fa0f",
   "title": "Does Temporal Calibration Fatigue Replicate? A Pre-specified Test, Two Failed Replications, and a Deterministic Simulation Grid for Multi-Agent LLM Calibration",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "fa68871be5177cfdca505ac3b5ea7865ceb0ae2368fdb3268a2bf0caf45ed6c9",
@@ -52,9 +52,9 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/CALIBRATION_SUBMISSION/main.tex",
-    "/home/liuzewen/.research/calibration-merged/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/main.tex"
+    "<WORKSPACE_ROOT>/.research/CALIBRATION_SUBMISSION/main.tex",
+    "<WORKSPACE_ROOT>/.research/calibration-merged/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

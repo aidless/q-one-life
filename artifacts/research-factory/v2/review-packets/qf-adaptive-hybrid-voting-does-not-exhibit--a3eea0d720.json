@@ -4,7 +4,7 @@
   "family_id": "qf-adaptive-hybrid-voting-does-not-exhibit--a3eea0d720",
   "project_id": "qp-f5-single-264237424399",
   "title": "Adaptive Hybrid Voting Does Not Exhibit Sign Flip Under Capture: A Secondary Analysis (Shared Data with F4)",
-  "primary_source": "/home/liuzewen/.research/f5-single/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/f5-single/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "ab0b69e57219627bb751336496241c15e425bb620bb45c71f9d146985a52abd9",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/f5-single/main.tex"
+    "<WORKSPACE_ROOT>/.research/f5-single/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

@@ -4,31 +4,31 @@
   "status": "passed",
   "inputs": [
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/source/main.tex",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/source/main.tex",
       "sha256": "a9eef802faa6ef80f7916626a28aade11f1922701fb1f3b24b2f3780a69e0bb6"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/evidence/paper-ledger-overlay.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/evidence/paper-ledger-overlay.json",
       "sha256": "7ff57a361f0a174e81ecf18652cadca9df7c9ee039ebf4a8917c36667f572fc3"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/evidence/verdict-claims-overlay.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3/evidence/verdict-claims-overlay.json",
       "sha256": "7f1c9b157edd4246811c61695b4899fc81c46e6417491293bfd8698d130c078d"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/reverse_coverage_allowlist.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/evidence/reverse_coverage_allowlist.json",
       "sha256": "015f396d83e58db0d45cf85762beea8ff3038b5e3fd447c708b70689d189307d"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/ledger_reverse_coverage.py",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/ledger_reverse_coverage.py",
       "sha256": "19b219d2995b7756586ba21d2b008afa2e76c9c7d5bd3b2a1d9218fe6de9b7cb"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/ledger_anchor_census.py",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/ledger_anchor_census.py",
       "sha256": "d9777f8dee24ece56420e81b32b9d71660550e0824212ed4ea19313056d560e8"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/check_verdict_words.py",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/check_verdict_words.py",
       "sha256": "a27c5efe15a3e1eab7e225a9dbe7ce2e7abf7cfb2c372506515c0ea0b6fc0e84"
     }
   ],

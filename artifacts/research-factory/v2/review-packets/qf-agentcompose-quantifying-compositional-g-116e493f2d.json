@@ -4,7 +4,7 @@
   "family_id": "qf-agentcompose-quantifying-compositional-g-116e493f2d",
   "project_id": "qp-tmlr-paper-tmlr-117ba3e78fb7",
   "title": "AgentCompose: Quantifying Compositional Generalization \\\\ in LLM Tool Use",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper-tmlr/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper-tmlr/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "6a5e6a1602aa7e798ee6ab111d12b0367435b7f537a0724ce4331bc948cb5b31",
@@ -57,11 +57,11 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/agent-compose/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper-tmlr/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper-tmlr/.aris/ingest_drift/20260928T102343Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper-tmlr/arxiv/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper-tmlr/source/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/.research/agent-compose/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper-tmlr/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper-tmlr/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper-tmlr/arxiv/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper-tmlr/source/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

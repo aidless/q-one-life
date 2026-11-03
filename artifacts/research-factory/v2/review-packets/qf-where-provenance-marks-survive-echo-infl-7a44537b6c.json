@@ -4,7 +4,7 @@
   "family_id": "qf-where-provenance-marks-survive-echo-infl-7a44537b6c",
   "project_id": "qp-b-provenance-26cf9194f31a",
   "title": "Where Provenance Marks Survive:\\\\ Echo Inflation and Level-Ordered Durability\\\\ in Rewritten Agent Harnesses",
-  "primary_source": "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/b-provenance/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/b-provenance/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "fb8cbb74c34298e445475d770d95235f13bd7b4a1d0c373c9249e85e0509d27c",
@@ -37,7 +37,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/b-provenance/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/b-provenance/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

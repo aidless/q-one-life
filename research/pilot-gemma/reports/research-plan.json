@@ -1,7 +1,7 @@
 {
   "schema": "q-one-research-plan-v1",
   "generated_at": "2026-10-27T14:21:26.636074Z",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-gemma",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-gemma",
   "paper_id": "qf-your-tool-selection-benchmark-may-be-sco-85ad80aa80",
   "title": "Your Tool-Selection Benchmark May Be Scoring Wrong Calls as Correct",
   "target": "arxiv",

@@ -4,7 +4,7 @@
   "family_id": "qf-scievalsuite-a-unified-reproducible-benc-e3e9fe28ba",
   "project_id": "qp-scievalsuite-293e3ac74ab7",
   "title": "SciEvalSuite: A Unified, Reproducible Benchmark for Scientific Agents Across Prediction, Workflow, and Execution",
-  "primary_source": "/home/liuzewen/.research/scievalsuite/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/scievalsuite/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "da1969c3ca7d46971a5ae911bd1c49fd5d80317f350256631e012fd1440def65",
@@ -37,7 +37,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/scievalsuite/main.tex"
+    "<WORKSPACE_ROOT>/.research/scievalsuite/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

@@ -4,7 +4,7 @@
   "family_id": "qf-four-routes-one-goal-a-mechanistic-taxon-76d578818e",
   "project_id": "qp-worldmodel-trinity-ec2aeb890978",
   "title": "Four Routes, One Goal: A Mechanistic Taxonomy, Critical Analysis, and Unified Benchmark for Embodied World Models",
-  "primary_source": "/home/liuzewen/.research/worldmodel-trinity/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/worldmodel-trinity/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "c54cb11d2ae6f94f2ca8fe705f2fc0e0de1820aedc74e0010184d49378a4cd42",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/worldmodel-trinity/main.tex"
+    "<WORKSPACE_ROOT>/.research/worldmodel-trinity/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

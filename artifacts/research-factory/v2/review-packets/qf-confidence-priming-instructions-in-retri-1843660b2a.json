@@ -4,7 +4,7 @@
   "family_id": "qf-confidence-priming-instructions-in-retri-1843660b2a",
   "project_id": "qp-f1-single-ea825f4a3469",
   "title": "Confidence-Priming Instructions in Retrieved Cache Entries Are Associated with Verbalized-Confidence Shifts on MMLU",
-  "primary_source": "/home/liuzewen/.research/f1-single/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/f1-single/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "6c8f6e0da99e0fc928e61b596f1aefceb0a693eba8f7a096cc00f7e79e12ddc9",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/f1-single/main.tex"
+    "<WORKSPACE_ROOT>/.research/f1-single/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

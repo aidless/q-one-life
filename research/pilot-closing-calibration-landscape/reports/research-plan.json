@@ -1,7 +1,7 @@
 {
   "schema": "q-one-research-plan-v1",
   "generated_at": "2026-10-28T06:46:53.863822Z",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-closing-calibration-landscape",
   "paper_id": "qf-closing-the-calibration-landscape-a-mult-99bef231e5",
   "title": "Closing the Calibration Landscape: A Reproducibility Failure Analysis of Multi-Evaluator Ensembles for Coupling Reduction",
   "target": "arxiv",

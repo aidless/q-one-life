@@ -1,7 +1,7 @@
 {
   "schema": "q-one-research-plan-v1",
   "generated_at": "2026-10-27T15:11:32.034563Z",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance",
   "paper_id": "qf-the-name-is-the-contract-a-promotion-gat-afdfe0105b",
   "title": "The Name Is the Contract:\\\\ A Promotion Gate Called mcnemar\\_exact Is Not Exact ---\\\\ and, Against the Two-Sided Exact Reference,\\\\ Every Flip Favors Promotion",
   "target": "arxiv",

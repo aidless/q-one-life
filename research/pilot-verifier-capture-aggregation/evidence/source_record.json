@@ -4,15 +4,15 @@
   "family_id": "qf-an-empirical-study-of-aggregation-method-819da8c6b1",
   "portfolio_project_id": "qp-tmlr-paper6-consolidated-adcff53fb253",
   "canonical_source": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/paper/main.tex",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/paper/main.tex",
     "sha256": "42fe9b13f6a17af326f346aaa1afb7228fa1e8f4478126fadbce0fc7cea80cc3",
     "bytes": 57721,
     "lines": 1062,
-    "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/paper/main.tex",
+    "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper6-consolidated/paper/main.tex",
     "authority": "paper/main.tex from the portfolio representative project"
   },
   "overlay_source": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source/main.tex",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source/main.tex",
     "sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
     "bytes": 47351,
     "lines": 976

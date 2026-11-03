@@ -4,7 +4,7 @@
   "family_id": "qf-do-agent-benchmarks-do-what-they-say-an--d621272a99",
   "project_id": "qp-latex-e0458d558421",
   "title": "Do Agent Benchmarks Do What They Say?\\\\ An Executable-Contract Audit of Tool-Using Agent Environments",
-  "primary_source": "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/literature/source-history/contract-audit-source/paper/latex/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/literature/source-history/contract-audit-source/paper/latex/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "dbce7850e524fb8ce93b51ccbd128f6a21e26fc14610f91a7dc4ce309c5e9485",
@@ -37,7 +37,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/literature/source-history/contract-audit-source/paper/latex/main.tex"
+    "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/literature/source-history/contract-audit-source/paper/latex/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

@@ -4,7 +4,7 @@
   "family_id": "qf-calibration-fatigue-self-evaluation-frag-caf6272827",
   "project_id": "qp-tmlr-calibration-unified-5af538041ab9",
   "title": "Calibration Fatigue, Self-Evaluation Fragility, and the Coupling-Noise Tradeoff in Multi-Agent LLM Systems",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-unified/source/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-unified/source/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "88a0c0cd1f8d54fbe3d3e31a4d294b81484577c4df38a9d6744bb94b9907fcae",
@@ -57,13 +57,13 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-unified/source/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-unified/source/arxiv_submit/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-unified/source/submission_variant/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper3/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper3/.aris/ingest_drift/20260928T102343Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper3/paper/submission_variant/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper3/source/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-unified/source/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-unified/source/arxiv_submit/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-unified/source/submission_variant/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper3/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper3/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper3/paper/submission_variant/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper3/source/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

@@ -3,7 +3,7 @@
   "generated_at": "2026-10-27T14:09:13.143071Z",
   "scope": "Q1 quantified research foundation; read-only portfolio inventory and ARC claim overlay",
   "source": {
-    "workspace": "/home/liuzewen/qone-life-work",
+    "workspace": ".",
     "head": "fed3f771a7890618bee7276a0c0efddc4e31015e",
     "dirty": true
   },
@@ -109,7 +109,7 @@
   "reproduction_commands": [
     "PYTHONPATH=src python scripts/research_portfolio.py --config research/portfolio-sources.json --artifact-dir artifacts/research-paper-portfolio/v1",
     "PYTHONPATH=src python -c 'from qone_life.cli import main; raise SystemExit(main([\"research-validate\", \"--project\", \"research/arc-paper-track\"]))'",
-    "python3 /home/liuzewen/.agents/skills/paper-writing-agent/scripts/verify_claim_ledger.py research/arc-paper-track --out research/arc-paper-track/reports/claim-ledger-verification.md",
+    "python3 <WORKSPACE_ROOT>/.agents/skills/paper-writing-agent/scripts/verify_claim_ledger.py research/arc-paper-track --out research/arc-paper-track/reports/claim-ledger-verification.md",
     "PYTHONPATH=src python -m pytest -q",
     "PYTHONPATH=src python -m unittest discover -s tests -q"
   ]

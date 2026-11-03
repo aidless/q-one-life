@@ -5,7 +5,7 @@
   "state": "passed",
   "scope": "numbers",
   "source": {
-    "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
     "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
     "sha256_after": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
     "bytes": 220650,
@@ -13,23 +13,23 @@
   },
   "inputs": [
     {
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/check_manuscript_numbers.py",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/check_manuscript_numbers.py",
       "sha256": "289fe36e5ddc6469f6d24609ae09f5621b2c6fde09543d315de9d9392172bf25"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/ledger_reverse_coverage.py",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/ledger_reverse_coverage.py",
       "sha256": "19b219d2995b7756586ba21d2b008afa2e76c9c7d5bd3b2a1d9218fe6de9b7cb"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/ledger_anchor_census.py",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/ledger_anchor_census.py",
       "sha256": "d9777f8dee24ece56420e81b32b9d71660550e0824212ed4ea19313056d560e8"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/paper-ledger.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/evidence/paper-ledger.json",
       "sha256": "47d5b7d66e8ece9ac21f6c82089f4883405689e6428fce1e70eb936236252063"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/reverse_coverage_allowlist.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/evidence/reverse_coverage_allowlist.json",
       "sha256": "015f396d83e58db0d45cf85762beea8ff3038b5e3fd447c708b70689d189307d"
     }
   ],
@@ -39,22 +39,22 @@
   },
   "commands": {
     "numbers": [
-      "/home/liuzewen/.cache/qone-desktop-runtime-20261027/bin/python",
-      "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/check_manuscript_numbers.py"
+      "<WORKSPACE_ROOT>/.cache/qone-desktop-runtime-20261027/bin/python",
+      "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/check_manuscript_numbers.py"
     ],
     "reverse": [
-      "/home/liuzewen/.cache/qone-desktop-runtime-20261027/bin/python",
-      "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/ledger_reverse_coverage.py",
+      "<WORKSPACE_ROOT>/.cache/qone-desktop-runtime-20261027/bin/python",
+      "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/ledger_reverse_coverage.py",
       "--paper",
-      "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
+      "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
       "--ledger",
-      "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/paper-ledger.json",
+      "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/evidence/paper-ledger.json",
       "--allowlist",
-      "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/reverse_coverage_allowlist.json"
+      "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/evidence/reverse_coverage_allowlist.json"
     ],
     "anchor": [
-      "/home/liuzewen/.cache/qone-desktop-runtime-20261027/bin/python",
-      "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/ledger_anchor_census.py"
+      "<WORKSPACE_ROOT>/.cache/qone-desktop-runtime-20261027/bin/python",
+      "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/ledger_anchor_census.py"
     ]
   },
   "checks": {

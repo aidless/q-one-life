@@ -4,7 +4,7 @@
   "family_id": "qf-an-empirical-characterization-of-selecti-a82a462a3a",
   "project_id": "qp-tmlr-paper-422ba0c7e653",
   "title": "An Empirical Characterization of Selective Risk Scaling in K-Verifier Ensembles",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "3f21b0397468db143221145a687d4b231fd1cdf140845bf7a0d5685075dc7be3",
@@ -57,11 +57,11 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/f2-single/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper/.aris/ingest_drift/20260930T052414Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper/arxiv_submission_20260927T084036Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper/source/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/.research/f2-single/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper/arxiv_submission_20260927T084036Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper/source/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

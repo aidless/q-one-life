@@ -4,7 +4,7 @@
   "family_id": "qf-what-do-approval-logs-and-task-scores-es-4d7911ffd4",
   "project_id": "qp-manuscript-r8-20261023-5c41f79c5a19",
   "title": "What Do Approval Logs and Task Scores Establish? A Finite Audit of Agent Evaluation",
-  "primary_source": "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/manuscript-r8-20261023/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/manuscript-r8-20261023/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "37fd33fb277e3997da94b7c2d9d466edb5a9da566f4e1237eeb1fb5987de69ea",
@@ -52,11 +52,11 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/arxiv-publication/all-papers-arxiv-20261023/packages/approval-r8-v2/source/main.tex",
-    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/manuscript-r5-20261021/paper/main.tex",
-    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/manuscript-r6-20261021/paper/main.tex",
-    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/manuscript-r7-20261021/paper/main.tex",
-    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/manuscript-r8-20261023/paper/main.tex"
+    "<WORKSPACE_ROOT>/arxiv-publication/all-papers-arxiv-20261023/packages/approval-r8-v2/source/main.tex",
+    "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/manuscript-r5-20261021/paper/main.tex",
+    "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/manuscript-r6-20261021/paper/main.tex",
+    "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/manuscript-r7-20261021/paper/main.tex",
+    "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/ranking-study-20261016/manuscript-r8-20261023/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

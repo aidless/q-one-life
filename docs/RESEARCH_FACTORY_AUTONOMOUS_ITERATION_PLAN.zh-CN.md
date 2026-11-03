@@ -102,10 +102,10 @@
 
 - Family：`qf-calibration-fatigue-self-evaluation-frag-3c06d49517`
 - Project：`qp-calibration-merged-full-from-data3-ec845c511c6b`
-- 主源：`/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex`
+- 主源：`<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex`
 - SHA-256：`b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4`
 - 优先级：P1；机器建议 `merge`；同一标题族还有
-  `/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/arxiv_clean/main.tex`。
+  `<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-calibration-merged/source/arxiv_clean/main.tex`。
 - 要求：先完成 canonical/variant 对账、merge marker 与 claim/carrier
   identity 核验，再判断补证、合并或 blocked；不得先建包。
 
@@ -254,7 +254,7 @@ P12 已通过工厂验收，下一族固定为：
 
 - Family：`qf-merged-flagship-f2-k-generalization-sele-112d818110`
 - Project：`qp-tmlr-f2-theory-c2a925d103e9`
-- 主源：`/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex`
+- 主源：`<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex`
 - SHA-256：`cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916`
 - 优先级：P1；机器建议 `merge`；人工最终处置仍为 `unreviewed`。
 - 要求：核对 3 个 packet variant；先验证 K-generalization、selective
@@ -288,7 +288,7 @@ P11 已形成可审计 blocked 处置，下一族固定为：
 
 - Family：`qf-memory-architecture-effects-on-output-le-0ea84705a9`
 - Project：`qp-tmlr-paper5-consolidated-f099458d8ecd`
-- 主源：`/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/paper/main.tex`
+- 主源：`<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper5-consolidated/paper/main.tex`
 - SHA-256：`f926cae5baf4a3a9ac4cbba11d6cce8ecf6206187ea25306f620550d7a7b2bd8`
 - 优先级：P1；机器建议 `merge`；人工最终处置仍为 `unreviewed`。
 - 要求：核对 4 个 packet variant，先验证 memory architecture 指标和
@@ -319,7 +319,7 @@ P10 已通过工厂验收，下一族固定为：
 
 - Family：`qf-conditional-communication-effects-in-mul-ad96998074`
 - Project：`qp-tmlr-paper13-merged-1fe996f84944`
-- 主源：`/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex`
+- 主源：`<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex`
 - SHA-256：`5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472`
 - 优先级：P1；机器建议 `merge`；人工最终处置仍为 `unreviewed`。
 - 要求：独立核对全部 7 个 packet variant；先冻结 canonical source，再按
@@ -350,7 +350,7 @@ P9 已通过工厂验收，因此下一族固定为：
 
 - Family：`qf-closing-the-calibration-landscape-a-mult-99bef231e5`
 - Project：`qp-tmlr-closing-landscape-133137543459`
-- 主源：`/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/main.tex`
+- 主源：`<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-closing-landscape/paper/main.tex`
 - SHA-256：`8314b7b1c2e67eb266bd08c281a4f55fd48c7e920477bae9c9794143f02f3c78`
 - 优先级：P1；机器建议 `merge`；人工最终处置仍为 `unreviewed`。
 - 要求：5 个 variant 全部独立核验；仿真 aggregate、real-API parser fallback、

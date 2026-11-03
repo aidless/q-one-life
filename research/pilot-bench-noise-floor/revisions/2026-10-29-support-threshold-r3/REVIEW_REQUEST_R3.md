@@ -43,7 +43,7 @@ parts visible:
 Verify first:
 
 ```bash
-cd '/home/liuzewen/F:\deepseek/qone-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3'
+cd '<WORKSPACE_ROOT>/F:\deepseek/qone-life/research/pilot-bench-noise-floor/revisions/2026-10-29-support-threshold-r3'
 sha256sum -c SHA256SUMS.txt
 ```
 

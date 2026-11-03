@@ -4,7 +4,7 @@
   "family_id": "qf-self-scoring-reproduction-audits-when-a--c088b2c04b",
   "project_id": "qp-gsm8k-r01-openai-gsm8k-released-solutions-bund-c7e8546c505-20261006-bfedf4761417",
   "title": "Self-Scoring Reproduction Audits:\\\\ When a Released Scorer Cannot Reproduce Its Own Released Verdicts",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/gsm8k-r01-openai-gsm8k-released-solutions.bund-C7e8546c505-20261006/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/gsm8k-r01-openai-gsm8k-released-solutions.bund-C7e8546c505-20261006/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "b8b9b918e62e0f1112eaab7fd9f983f8e3f7545d6aaa5cffeeb26212b8259559",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/gsm8k-r01-openai-gsm8k-released-solutions.bund-C7e8546c505-20261006/paper/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/gsm8k-r01-openai-gsm8k-released-solutions.bund-C7e8546c505-20261006/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

@@ -4,7 +4,7 @@
   "family_id": "qf-memory-architecture-design-for-bias-resi-0dea4cfb82",
   "project_id": "qp-tmlr-submission-arxiv-381acbf60977",
   "title": "Memory Architecture Design for Bias-Resistant Multi-Agent LLM Systems",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-submission-arxiv/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-submission-arxiv/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "c3b2ac2b44ca51523b67abe56afdff0ac1e8d41a285ecd2fd9454e8bbae9d94e",
@@ -57,13 +57,13 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/memory-architecture/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-memory-architecture/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-memory-architecture/.aris/ingest_drift/20260930T052414Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-submission/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-submission-arxiv/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-submission-arxiv/.aris/ingest_drift/20260930T052414Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-submission/.aris/ingest_drift/20260928T102343Z/main.tex"
+    "<WORKSPACE_ROOT>/.research/memory-architecture/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-memory-architecture/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-memory-architecture/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-submission/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-submission-arxiv/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-submission-arxiv/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-submission/.aris/ingest_drift/20260928T102343Z/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

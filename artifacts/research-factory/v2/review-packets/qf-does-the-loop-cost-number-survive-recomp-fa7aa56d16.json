@@ -4,7 +4,7 @@
   "family_id": "qf-does-the-loop-cost-number-survive-recomp-fa7aa56d16",
   "project_id": "qp-d-economics-8d0648f3039b",
   "title": "Does the Loop-Cost Number Survive Recomputation?\\\\ A Two-Corpus Replication of Agent Input-Cost Structure",
-  "primary_source": "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/d-economics/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/d-economics/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "3caace6f172e9d512a5616bc30604a1c465f68fc0d0538aefc7a5dd3257847d6",
@@ -42,8 +42,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/d-economics/main.tex",
-    "/home/liuzewen/F:\\deepseek/artifacts/manuscript-d-economics/v1/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/d-economics/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/artifacts/manuscript-d-economics/v1/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

@@ -4,7 +4,7 @@
   "family_id": "qf-the-verifier-bottleneck-why-capability-s-30a1389f39",
   "project_id": "qp-verifier-paper-f8d583f1a53a",
   "title": "The Verifier Bottleneck:\\\\ Why Capability Scaling Switched Axes Three Times (2017--2026),\\\\ and What It Predicts",
-  "primary_source": "/home/liuzewen/F:\\deepseek/verifier-paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/verifier-paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "3d58ec7b033ace5174df3b40e4ca496160283ac2dd43d859363284f79d2ac4a9",
@@ -42,8 +42,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/papers/verification_selfaudit/migrations/8fam-20261019/bundle-snapshot/worktree/untracked/verifier-paper/main.tex",
-    "/home/liuzewen/F:\\deepseek/verifier-paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/papers/verification_selfaudit/migrations/8fam-20261019/bundle-snapshot/worktree/untracked/verifier-paper/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/verifier-paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

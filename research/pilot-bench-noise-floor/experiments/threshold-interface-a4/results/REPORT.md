@@ -81,15 +81,15 @@ external leaderboard, and does not make the paper scientifically ready.
 ## Reproduction
 
 ```bash
-cd '/home/liuzewen/F:\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/threshold-interface-a4'
+cd '<WORKSPACE_ROOT>/F:\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/threshold-interface-a4'
 
-/home/liuzewen/.cache/qone-life-venv/bin/python run_threshold_interface.py \
-  --external-root '/home/liuzewen/F:\deepseek' \
+<WORKSPACE_ROOT>/.cache/qone-life-venv/bin/python run_threshold_interface.py \
+  --external-root '<WORKSPACE_ROOT>/F:\deepseek' \
   --preregistration preregistration.json \
   --output results/run-1.json
 
-/home/liuzewen/.cache/qone-life-venv/bin/python run_threshold_interface.py \
-  --external-root '/home/liuzewen/F:\deepseek' \
+<WORKSPACE_ROOT>/.cache/qone-life-venv/bin/python run_threshold_interface.py \
+  --external-root '<WORKSPACE_ROOT>/F:\deepseek' \
   --preregistration preregistration.json \
   --output results/run-2.json
 

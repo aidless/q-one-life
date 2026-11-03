@@ -4,7 +4,7 @@
   "family_id": "qf-what-communication-does-to-multi-agent-l-3fdbb7f4b3",
   "project_id": "qp-tmlr-tmlr-flagship-f6736735901b",
   "title": "What Communication Does to Multi-Agent LLM Systems: Strategy Consensus and Calibration Contagion",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-flagship/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-flagship/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "f580ffc8894127910188f2482bd109259ed2ddf347632b8f762c2bad7b405ee7",
@@ -57,11 +57,11 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper1/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper1/.aris/ingest_drift/20260930T052414Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper1/source/submission_variant/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-flagship/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-flagship/.aris/ingest_drift/20260930T052414Z/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper1/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper1/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper1/source/submission_variant/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-flagship/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-flagship/.aris/ingest_drift/20260930T052414Z/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

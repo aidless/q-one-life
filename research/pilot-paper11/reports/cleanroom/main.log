@@ -6,9 +6,9 @@ entering extended mode
 (./main.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
-(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+(<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/size11.clo
+(<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count276
@@ -22,20 +22,20 @@ File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen150
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2026/03/07 v6.0 Page Geometry
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2026-05-17 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count284
@@ -50,21 +50,21 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen157
 \Gm@layoutvoffset=\dimen158
 \Gm@dimlist=\toks20
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2026/05/19 v2.18d AMS math features
 \@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+(<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks21
 \ex@=\dimen159
-)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen160
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count287
@@ -114,16 +114,16 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2965.
 LaTeX Info: Redefining \] on input line 2966.
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+)) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen168
 \lightrulewidth=\dimen169
@@ -142,7 +142,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count301
 \@lastruleclass=\count302
 \@thisrulewidth=\dimen180
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/tools/array.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/tools/array.sty
 Package: array 2026/02/24 v2.7b Tabular extension package (FMi)
 \col@sep=\dimen181
 \ar@mcellbox=\box55
@@ -151,7 +151,7 @@ Package: array 2026/02/24 v2.7b Tabular extension package (FMi)
 \extratabsurround=\skip54
 \backup@length=\skip55
 \ar@cellbox=\box56
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@col@width=\dimen183
 \TX@old@table=\dimen184
@@ -160,76 +160,76 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@delta=\dimen187
 \TX@cols=\count303
 \TX@ftn=\toks27
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2026-05-17 v1.4h Standard LaTeX Graphics (DPC,SPQR)
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen188
 \Gin@req@width=\dimen189
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/float/float.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count304
 \float@exts=\toks28
 \float@box=\box57
 \@float@everytoks=\toks29
 \@floatcapt=\box58
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2026-10-09 v7.01s Hypertext links for LaTeX
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+)) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count305
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count306
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \@linkdim=\dimen190
 \Hy@linkcounter=\count307
 \Hy@pagecounter=\count308
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2026-10-09 v7.01s Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count309
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2026-10-09 v7.01s Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -242,15 +242,15 @@ Package hyperref Info: Backreferencing OFF on input line 4219.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4466.
 \c@Hy@tempcnt=\count310
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/url/url.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4805.
 \XeTeXLinkMargin=\dimen191
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count311
@@ -268,25 +268,25 @@ Package hyperref Info: PDF/A mode OFF on input line 6121.
 \c@Hfootnote=\count314
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2026-10-09 v7.01s Hyperref driver for pdfTeX
 \Fld@listcount=\count315
 \c@bookmark@seq@number=\count316
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
 )
 \Hy@SectionHShift=\skip56
-) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
+) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip57
 \bibsep=\skip58
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count317
-) (./generated_values.tex) (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def
+) (./generated_values.tex) (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def
 File: l3backend-pdftex.def 2026-09-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count318
 ) (./main.aux)
@@ -345,16 +345,16 @@ LaTeX Font Info:    ... okay on input line 23.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
- (/home/liuzewen/.TinyTeX/texmf-local/tex/latex/grfext/grfext.sty
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-local/tex/latex/grfext/grfext.sty
 Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 23.
@@ -363,15 +363,15 @@ Package hyperref Info: Link coloring OFF on input line 23.
 \openout3 = `main.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
- (/home/liuzewen/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/home/liuzewen/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+{<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 <figures/factorial-audit.pdf, id=152, 505.89pt x 191.5155pt>
 File: figures/factorial-audit.pdf Graphic file (type pdf)
 <use figures/factorial-audit.pdf>
@@ -403,7 +403,7 @@ Here is how much of TeX's memory you used:
  644980 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  74i,9n,79p,412b,459s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/liuzewen/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/liuzewen/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+ <<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> <<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> <<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> <<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> <<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> <<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> <<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> <<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> <<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> <<WORKSPACE_ROOT>/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk><<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><<WORKSPACE_ROOT>/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 Output written on main.pdf (8 pages, 203009 bytes).
 PDF statistics:
  689 PDF objects out of 1000 (max. 8388607)

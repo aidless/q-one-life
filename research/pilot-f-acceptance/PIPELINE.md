@@ -1,6 +1,6 @@
 # Research pipeline
 
-Source: `/home/liuzewen/F:\deepseek/agent-verifiability/manuscript/f-acceptance-arxiv/main.tex`
+Source: `<WORKSPACE_ROOT>/F:\deepseek/agent-verifiability/manuscript/f-acceptance-arxiv/main.tex`
 Source SHA-256: `4c59377876dfe6136c24dd016bca1111918e09a5ecbdf1a4109801795394f797`
 
 | Stage | State | Required output |

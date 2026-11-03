@@ -32,7 +32,7 @@
 
 ### A1 — 发布前必须解决：producer baseline 不是排名噪声界
 
-位置：[main.tex:140](/home/liuzewen/WorkBuddy/2026-10-23-23-32-00/arxiv/bench_noise_floor/main.tex:140)，以及引言81行和判定规则148–155行。
+位置：[main.tex:140](<WORKSPACE_ROOT>/WorkBuddy/2026-10-23-23-32-00/arxiv/bench_noise_floor/main.tex:140)，以及引言81行和判定规则148–155行。
 
 稿件定义 `floor = max_g accuracy(g, gold_without_g)`，随后把“榜首未超过该数值”解释为“顶端排序不受数据支持”。定义本身可以成立，后一个解释没有被推导或校准。
 
@@ -85,7 +85,7 @@ Proposition 4在所列条件下成立；m25和17-panel的零margin与载体一�
 
 ### B1 — 发布前必须删改：无依据的超小p值
 
-位置：[main.tex:197](/home/liuzewen/WorkBuddy/2026-10-23-23-32-00/arxiv/f_acceptance/main.tex:197)。
+位置：[main.tex:197](<WORKSPACE_ROOT>/WorkBuddy/2026-10-23-23-32-00/arxiv/f_acceptance/main.tex:197)。
 
 `2^-231`算术没有问题，但231个格子是同一确定性公式边界的枚举结果，不是231次独立随机方向试验。“每个方向各半”的零假设没有生成机制，也没有独立性依据。
 

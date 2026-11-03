@@ -26,7 +26,7 @@ replace or silently update the manuscript or Kaggle writeup.
 ## Verification
 
 ```bash
-python3 /home/liuzewen/.agents/skills/paper-writing-agent/scripts/verify_claim_ledger.py research/arc-paper-track --out research/arc-paper-track/reports/claim-ledger-verification.md
+python3 <WORKSPACE_ROOT>/.agents/skills/paper-writing-agent/scripts/verify_claim_ledger.py research/arc-paper-track --out research/arc-paper-track/reports/claim-ledger-verification.md
 ```
 
 The ledger verifier must report 0 FAIL and no uncovered numeric literals.

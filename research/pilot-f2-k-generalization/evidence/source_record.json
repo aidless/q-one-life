@@ -5,14 +5,14 @@
   "family_id": "qf-merged-flagship-f2-k-generalization-sele-112d818110",
   "project_id": "qp-tmlr-f2-theory-c2a925d103e9",
   "canonical": {
-    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
+    "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
     "bytes": 31834,
     "sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
     "title": "Merged Flagship F2: K-Generalization, Selective Prediction and Self-Evaluation",
     "role": "packet primary source"
   },
   "audit_copy": {
-    "path": "/home/liuzewen/qone-life-work/research/pilot-f2-k-generalization/evidence/upstream/paper/main.tex",
+    "path": "research/pilot-f2-k-generalization/evidence/upstream/paper/main.tex",
     "bytes": 31834,
     "sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
     "role": "byte-identical audit copy"

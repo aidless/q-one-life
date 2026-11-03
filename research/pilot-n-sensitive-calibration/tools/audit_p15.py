@@ -10,8 +10,8 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-UPSTREAM = Path('/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration')
-P12 = Path('/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p12/paper/main.tex')
+UPSTREAM = Path('<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration')
+P12 = Path('<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p12/paper/main.tex')
 OVERLAY = Path(__file__).resolve().parents[1]
 
 

@@ -11,17 +11,17 @@
   },
   "command": "python research/pilot-calibration-fatigue/tools/audit_p17.py",
   "runner": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/tools/audit_p17.py",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/tools/audit_p17.py",
     "sha256": "49150fbe399ac8735f5fc9b9763dcada9c0fbf62808ac2936fb55bb1d351d7fe",
     "bytes": 32975
   },
   "snapshot": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/snapshot.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/snapshot.json",
     "sha256": "ae5c747c6b4265168bb1f6e8489b05bbf36555f887fe4f476ba759170eabdd06",
     "bytes": 88792
   },
   "canonical": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex",
     "sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
     "bytes": 81637
   },
@@ -30,7 +30,7 @@
     "distinct_hashes": 11,
     "rows": [
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex",
         "sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
         "bytes": 81637,
         "lines": 715,
@@ -39,7 +39,7 @@
         "t50_markers": 12
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak.reviewR1.20260909_212912",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak.reviewR1.20260909_212912",
         "sha256": "461521431122f53431f4bee43ec5fa47bcfce3751182b413e101ac758c74a23d",
         "bytes": 78341,
         "lines": 714,
@@ -48,7 +48,7 @@
         "t50_markers": 12
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak.reviewR3.20260910_090551",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak.reviewR3.20260910_090551",
         "sha256": "5e17b29dfe41f1a5bad729633e46fc6cebadbaac431a0c7b5287b3de36a65ba3",
         "bytes": 80165,
         "lines": 715,
@@ -57,7 +57,7 @@
         "t50_markers": 12
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak.reviewR4.20260910_092618",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak.reviewR4.20260910_092618",
         "sha256": "e574af1d7f04ac857c4a6f02dff3e310a2b70542a98bd726d5156d878d5a5a10",
         "bytes": 80241,
         "lines": 715,
@@ -66,7 +66,7 @@
         "t50_markers": 12
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak.reviewR5.20260910_093011",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak.reviewR5.20260910_093011",
         "sha256": "d0ff525ec09ba9e6b515adaf62a264d99a53ea08ab2fe50e689035d552acca92",
         "bytes": 80858,
         "lines": 715,
@@ -75,7 +75,7 @@
         "t50_markers": 12
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak.reviewR6.20260910_093550",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak.reviewR6.20260910_093550",
         "sha256": "750a19727278e09f8651350a60fb0f95f61ebeb873fc61980d90beae8a151310",
         "bytes": 81263,
         "lines": 715,
@@ -84,7 +84,7 @@
         "t50_markers": 12
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak_kumar",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak_kumar",
         "sha256": "f3015174d3d8ecda7e76fd2e6fef6ed342facd07a901e99dc2d78285bce9a4be",
         "bytes": 44895,
         "lines": 540,
@@ -93,7 +93,7 @@
         "t50_markers": 0
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak_pre_t50",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak_pre_t50",
         "sha256": "ba65943908fea4509bffb697856344b049044625708d9d8e89ee5a6c5033b7ee",
         "bytes": 74407,
         "lines": 689,
@@ -102,7 +102,7 @@
         "t50_markers": 1
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak_preprint",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex.bak_preprint",
         "sha256": "06647f2886ee4788be5c38708ed0732f334aed71ba7ad2bff25ff4e1b030a6cd",
         "bytes": 44893,
         "lines": 540,
@@ -111,7 +111,7 @@
         "t50_markers": 0
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/arxiv_clean/main.tex",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/arxiv_clean/main.tex",
         "sha256": "06647f2886ee4788be5c38708ed0732f334aed71ba7ad2bff25ff4e1b030a6cd",
         "bytes": 44893,
         "lines": 540,
@@ -120,7 +120,7 @@
         "t50_markers": 0
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/paper/main.tex",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/paper/main.tex",
         "sha256": "cf35af58bc8502c8f5dc8a8b80bd1f8d5ed61e685d1c66f2b586e4e8c0b6e09f",
         "bytes": 16585,
         "lines": 400,
@@ -129,7 +129,7 @@
         "t50_markers": 0
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/pipeline/main.tex",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/pipeline/main.tex",
         "sha256": "fa68871be5177cfdca505ac3b5ea7865ceb0ae2368fdb3268a2bf0caf45ed6c9",
         "bytes": 93024,
         "lines": 747,
@@ -138,7 +138,7 @@
         "t50_markers": 15
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/pipeline/paper/main.tex",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/pipeline/paper/main.tex",
         "sha256": "cf35af58bc8502c8f5dc8a8b80bd1f8d5ed61e685d1c66f2b586e4e8c0b6e09f",
         "bytes": 16585,
         "lines": 400,
@@ -147,7 +147,7 @@
         "t50_markers": 0
       },
       {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/pipeline/arxiv_clean/main.tex",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/pipeline/arxiv_clean/main.tex",
         "sha256": "06647f2886ee4788be5c38708ed0732f334aed71ba7ad2bff25ff4e1b030a6cd",
         "bytes": 44893,
         "lines": 540,
@@ -166,11 +166,11 @@
   "manifests": {
     "evidence": {
       "manifest": {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/evidence/evidence_manifest.json",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/evidence/evidence_manifest.json",
         "sha256": "b799e202d05ff4aa6b7dd8f95b4d5826d65daec45101e986d34800798e8fd985",
         "bytes": 137820
       },
-      "base": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/evidence",
+      "base": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/evidence",
       "entries": 919,
       "counts": {
         "match": 919
@@ -7533,11 +7533,11 @@
     },
     "outer": {
       "manifest": {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/evidence_manifest.json",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/evidence_manifest.json",
         "sha256": "d6bfc67a64647bdf2d37baa33e3c6c975168ccc011b86fe260e0a63d6df74538",
         "bytes": 1172766
       },
-      "base": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3",
+      "base": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3",
       "entries": 4564,
       "counts": {
         "absent": 3,
@@ -44056,11 +44056,11 @@
     },
     "arxiv": {
       "manifest": {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/arxiv_clean/evidence_manifest.json",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/arxiv_clean/evidence_manifest.json",
         "sha256": "ca21c9398bbc86cea81e5e831f6839d91c7bebb7e00cc594258a61aa1c9adabd",
         "bytes": 5696
       },
-      "base": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/arxiv_clean",
+      "base": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/arxiv_clean",
       "entries": 26,
       "counts": {
         "absent": 17,
@@ -44247,11 +44247,11 @@
     },
     "arxiv_generated": {
       "manifest": {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/arxiv_clean/evidence_manifest_generated.json",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/arxiv_clean/evidence_manifest_generated.json",
         "sha256": "f2498ed41833c954d14329e702a52cf6f6cd7c6051a48892b86378a3d41e17b0",
         "bytes": 4105
       },
-      "base": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/arxiv_clean",
+      "base": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/arxiv_clean",
       "entries": 7,
       "counts": {
         "match": 6,
@@ -44321,7 +44321,7 @@
   "citations": {
     "canonical": {
       "tex": {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/main.tex",
         "sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
         "bytes": 81637
       },
@@ -44331,12 +44331,12 @@
       ],
       "bib": [
         {
-          "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/references.bib",
+          "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/references.bib",
           "sha256": "40569c45fe34d0568f5a824d6f0723354a155f64f6639dc7a9a638c14a1164ae",
           "bytes": 8282
         },
         {
-          "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/refs_added.bib",
+          "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/refs_added.bib",
           "sha256": "c63a2cff5cc8e00fcab11f0f5c2d9277492a161bf3cdbbc25eb8d388ef14037c",
           "bytes": 651
         }
@@ -44381,7 +44381,7 @@
     },
     "preprint": {
       "tex": {
-        "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/arxiv_clean/main.tex",
+        "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/arxiv_clean/main.tex",
         "sha256": "06647f2886ee4788be5c38708ed0732f334aed71ba7ad2bff25ff4e1b030a6cd",
         "bytes": 44893
       },
@@ -44391,13 +44391,13 @@
       ],
       "bib": [
         {
-          "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/arxiv_clean/references.bib",
+          "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/arxiv_clean/references.bib",
           "sha256": "d48253e693c13ff60aeb9c2d0332b4727fd791c4ee4410d0c538d0a1a5c42894",
           "bytes": 12542
         }
       ],
       "missing_bibliographies": [
-        "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/arxiv_clean/refs_added.bib"
+        "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/upstream/arxiv_clean/refs_added.bib"
       ],
       "used": [
         "bertalanic2026cost",
@@ -45130,17 +45130,17 @@
   "ece_recovery": {
     "schema": "q-one-p17-ece-recovery-v1",
     "inputs": {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/snapshot.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/snapshot.json",
       "sha256": "ae5c747c6b4265168bb1f6e8489b05bbf36555f887fe4f476ba759170eabdd06",
       "bytes": 88792
     },
     "definition_inputs": {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/recovery/ece-definition-inputs.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/recovery/ece-definition-inputs.json",
       "sha256": "5a11f61f5b0ab208ff3564d975f8be3b04a022b4ed1e8a1c4161dfb0c673b707",
       "bytes": 1616
     },
     "runner": {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/tools/audit_p17.py",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/tools/audit_p17.py",
       "sha256": "49150fbe399ac8735f5fc9b9763dcada9c0fbf62808ac2936fb55bb1d351d7fe",
       "bytes": 32975
     },

@@ -1,8 +1,8 @@
 {
   "schema": "q-one-arxiv-package-audit-v1",
   "generated_at": "2026-10-27T15:09:00.839456Z",
-  "source_dir": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source",
-  "main_file": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source/main.tex",
+  "source_dir": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source",
+  "main_file": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source/main.tex",
   "mechanical_pass": true,
   "ready_for_upload": false,
   "upload_blocker": "Mechanical packaging does not establish scientific readiness, license, metadata correctness, or user authorization.",

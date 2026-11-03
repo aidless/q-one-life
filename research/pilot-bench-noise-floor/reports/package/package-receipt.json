@@ -2,13 +2,13 @@
   "schema": "q-one-arxiv-candidate-package-v1",
   "generated_at": "2026-10-27T15:15:06.742416Z",
   "source": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source",
     "main_sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
     "package_sha256": "a54d44b673a702f06d8814387e45f6d05ec1f8c98487eb717b9713c6b1c0a04b",
     "file_count": 11
   },
   "archive": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/package/noise-floor-arxiv-candidate.tar.gz",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/package/noise-floor-arxiv-candidate.tar.gz",
     "sha256": "74218ff9f262a8a57383875faf229a93cbd6a0cf45a2738e17571b1e11900c75",
     "bytes": 107492,
     "repeat_sha256": "74218ff9f262a8a57383875faf229a93cbd6a0cf45a2738e17571b1e11900c75",
@@ -73,12 +73,12 @@
   ],
   "extract_compile": {
     "exit_code": 0,
-    "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/package/archive-cleanroom/receipt.json",
+    "receipt": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/package/archive-cleanroom/receipt.json",
     "receipt_sha256": "09d1d8f7acf3f300e43976122759e90bfedf5c4b2df9e737364f1b058303d3f1",
     "pdf_pages": 45,
     "pdf_sha256": "94f1b3ab5bd879f33c9c596c1ad615e675951ddad3a485eb786e853dbb430818",
-    "command_stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/package/archive-cleanroom/build.stdout.log",
-    "command_stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/package/archive-cleanroom/build.stderr.log"
+    "command_stdout": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/package/archive-cleanroom/build.stdout.log",
+    "command_stderr": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/package/archive-cleanroom/build.stderr.log"
   },
   "environment": {
     "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",

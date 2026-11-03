@@ -4,7 +4,7 @@
   "family_id": "qf-what-the-archive-can-certify-an-audit-of-38f833e921",
   "project_id": "qp-f4-191fd2cb3f18",
   "title": "What the Archive Can Certify: An Audit of a Six-Study Verification Bundle",
-  "primary_source": "/home/liuzewen/F:\\deepseek/flagship/f4/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/flagship/f4/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "f6e4407dc15177b91b91fe2507c87a3234fe2d68775dfb76f1fbd64ad03a6a51",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/flagship/f4/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/flagship/f4/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

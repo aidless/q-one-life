@@ -1,4 +1,4 @@
-Using Python 3.11.16 environment at: /home/liuzewen/.cache/q-one-cleanroom/resume-final-20261028-v3/.venv
+Using Python 3.11.16 environment at: <WORKSPACE_ROOT>/.cache/q-one-cleanroom/resume-final-20261028-v3/.venv
 Resolved 28 packages in 21ms
 warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
          If the cache and target directories are on different filesystems, hardlinking may not be supported.
@@ -32,19 +32,19 @@ Installed 28 packages in 862ms
  + typing-extensions==4.16.0
  + typing-inspection==0.4.4
  + uvicorn==0.34.0
-Using Python 3.11.16 environment at: /home/liuzewen/.cache/q-one-cleanroom/resume-final-20261028-v3/.venv
+Using Python 3.11.16 environment at: <WORKSPACE_ROOT>/.cache/q-one-cleanroom/resume-final-20261028-v3/.venv
 Resolved 3 packages in 6ms
-   Building q-one-core @ file:///home/liuzewen/.cache/q-one-cleanroom/resume-final-20261028-v3/deps/q-one-core
-   Building q-one-agent @ file:///home/liuzewen/.cache/q-one-cleanroom/resume-final-20261028-v3/deps/q-one-agent
-   Building q-one-life @ file:///home/liuzewen/.cache/q-one-cleanroom/resume-final-20261028-v3
-      Built q-one-agent @ file:///home/liuzewen/.cache/q-one-cleanroom/resume-final-20261028-v3/deps/q-one-agent
-      Built q-one-life @ file:///home/liuzewen/.cache/q-one-cleanroom/resume-final-20261028-v3
-      Built q-one-core @ file:///home/liuzewen/.cache/q-one-cleanroom/resume-final-20261028-v3/deps/q-one-core
+   Building q-one-core @ file://<WORKSPACE_ROOT>/.cache/q-one-cleanroom/resume-final-20261028-v3/deps/q-one-core
+   Building q-one-agent @ file://<WORKSPACE_ROOT>/.cache/q-one-cleanroom/resume-final-20261028-v3/deps/q-one-agent
+   Building q-one-life @ file://<WORKSPACE_ROOT>/.cache/q-one-cleanroom/resume-final-20261028-v3
+      Built q-one-agent @ file://<WORKSPACE_ROOT>/.cache/q-one-cleanroom/resume-final-20261028-v3/deps/q-one-agent
+      Built q-one-life @ file://<WORKSPACE_ROOT>/.cache/q-one-cleanroom/resume-final-20261028-v3
+      Built q-one-core @ file://<WORKSPACE_ROOT>/.cache/q-one-cleanroom/resume-final-20261028-v3/deps/q-one-core
 Prepared 3 packages in 724ms
 warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
          If the cache and target directories are on different filesystems, hardlinking may not be supported.
          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
 Installed 3 packages in 3ms
- + q-one-agent==0.2.0 (from file:///home/liuzewen/.cache/q-one-cleanroom/resume-final-20261028-v3/deps/q-one-agent)
- + q-one-core==0.4.1 (from file:///home/liuzewen/.cache/q-one-cleanroom/resume-final-20261028-v3/deps/q-one-core)
- + q-one-life==0.8.0.dev0 (from file:///home/liuzewen/.cache/q-one-cleanroom/resume-final-20261028-v3)
+ + q-one-agent==0.2.0 (from file://<WORKSPACE_ROOT>/.cache/q-one-cleanroom/resume-final-20261028-v3/deps/q-one-agent)
+ + q-one-core==0.4.1 (from file://<WORKSPACE_ROOT>/.cache/q-one-cleanroom/resume-final-20261028-v3/deps/q-one-core)
+ + q-one-life==0.8.0.dev0 (from file://<WORKSPACE_ROOT>/.cache/q-one-cleanroom/resume-final-20261028-v3)

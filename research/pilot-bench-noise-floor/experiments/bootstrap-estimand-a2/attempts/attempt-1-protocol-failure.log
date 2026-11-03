@@ -1,7 +1,7 @@
 # attempt 1 — failed before measurement (no results file written)
 # command:
 #   python3 run_estimand_split.py --preregistration preregistration.json \
-#     --external-root '/home/liuzewen/F:\deepseek' --votes-dir /tmp/qone-a2-votes \
+#     --external-root '<WORKSPACE_ROOT>/F:\deepseek' --votes-dir /tmp/qone-a2-votes \
 #     --output results/run-1.json
 # prerequisite (preregistered command 1) passed: rebuilt vote tables match pinned sha256
 #

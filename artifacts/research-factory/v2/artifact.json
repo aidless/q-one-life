@@ -3,30 +3,30 @@
   "name": "research-factory-triage",
   "version": 2,
   "generated_at": "2026-10-28T12:13:56.237439Z",
-  "command": "python scripts/research_factory.py --portfolio '/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-portfolio.json' --pilots '/home/liuzewen/F:\\deepseek/q-one-life/research/factory-pilots.json' --artifact-dir '/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-factory/v2'",
+  "command": "python scripts/research_factory.py --portfolio '<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-portfolio.json' --pilots '<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/factory-pilots.json' --artifact-dir '<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/artifacts/research-factory/v2'",
   "inputs": [
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-portfolio.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-portfolio.json",
       "sha256": "3a6daa6b530d7dd1b6deee6ef3806a57a0356b01e1e443fa49dcbac0bf961e2c"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/factory-pilots.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/factory-pilots.json",
       "sha256": "52707751d491ee2acafc5e91ca2f9044f78de5b7e9ca14805465267f33f868a1"
     }
   ],
   "outputs": [
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-factory/v2/triage.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/artifacts/research-factory/v2/triage.json",
       "sha256": "0465e99261d49dc1a8b98e7d8dac37b8197b83a4c05867afbb30fd8117bbc236",
       "bytes": 232676
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-factory/v2/triage.md",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/artifacts/research-factory/v2/triage.md",
       "sha256": "aafc1310e4086a8141951c41de88d93a792e58481135bd3faadc4e0252eba014",
       "bytes": 21580
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-factory/v2/triage.csv",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/artifacts/research-factory/v2/triage.csv",
       "sha256": "013d7d6f4e6bd6fac171e263a310401ded980fd5bd524f74a35f5aa297bacf58",
       "bytes": 37299
     }

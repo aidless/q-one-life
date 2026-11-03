@@ -4,7 +4,7 @@
   "family_id": "qf-the-name-is-the-contract-a-promotion-gat-9c5f678967",
   "project_id": "qp-zenodo-pkg-dcd709cb3f6c",
   "title": "The Name Is the Contract:\\\\ A Promotion Gate Called mcnemar\\_exact Is Not Exact ---\\\\ and, Against the Exact Two-Sided Reference,\\\\ Every Decision Error Favors Promotion",
-  "primary_source": "/home/liuzewen/F:\\deepseek/agent-verifiability/zenodo-pkg/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/zenodo-pkg/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "47513eab7092703d2dfa6e1cf990f3c7bab55961edfb47704a3e3ed7cee32e76",
@@ -47,13 +47,13 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/agent-verifiability/zenodo-pkg/paper/main.tex",
-    "/home/liuzewen/F:\\deepseek/artifacts/manuscript-f-acceptance-arxiv/v1/main.tex",
-    "/home/liuzewen/F:\\deepseek/artifacts/manuscript-f-acceptance-tmlr/v1/main.tex",
-    "/home/liuzewen/F:\\deepseek/artifacts/manuscript-f-acceptance-tmlr/v2/main.tex",
-    "/home/liuzewen/F:\\deepseek/artifacts/manuscript-f-acceptance/v2/main.tex",
-    "/home/liuzewen/F:\\deepseek/artifacts/manuscript-f-acceptance/v4/main.tex",
-    "/home/liuzewen/F:\\deepseek/artifacts/manuscript-f-acceptance/v5/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/zenodo-pkg/paper/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/artifacts/manuscript-f-acceptance-arxiv/v1/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/artifacts/manuscript-f-acceptance-tmlr/v1/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/artifacts/manuscript-f-acceptance-tmlr/v2/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/artifacts/manuscript-f-acceptance/v2/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/artifacts/manuscript-f-acceptance/v4/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/artifacts/manuscript-f-acceptance/v5/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

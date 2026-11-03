@@ -5,7 +5,7 @@
 | 稿 | 投递目标 | PDF | 源 |
 |---|---|---|---|
 | **F** | TMLR（主）+ arXiv（备） | `agent-verifiability/manuscript/f-acceptance-tmlr/main_tmlr.pdf`（473 441 B，13 页） | `.../main.tex`（54 050 B，966 行）+ `main.bib` |
-| **AG** | arXiv，cs.AI primary / cs.SE secondary | `/home/liuzewen/arxiv-publication/submission-ready/approval-gates-r5/Approval-Gates-R5.2.pdf`（338 862 B，18 页） | `.../src/main.tex`（49 259 B，588 行）+ `src/main.bib` |
+| **AG** | arXiv，cs.AI primary / cs.SE secondary | `<WORKSPACE_ROOT>/arxiv-publication/submission-ready/approval-gates-r5/Approval-Gates-R5.2.pdf`（338 862 B，18 页） | `.../src/main.tex`（49 259 B，588 行）+ `src/main.bib` |
 
 审稿方式：只读。凡标「我重算」的数值均由独立脚本产出（以 `scipy.stats.binomtest` 双侧精确为参照，不复用稿件代码），出处见对应段落。
 

@@ -420,112 +420,112 @@
       "expected": "bc48fc91b5727b2b385c5845232b5887a4574007453b45f98cc261895ac951cf",
       "label": "runner",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/run_estimand_split.py"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/run_estimand_split.py"
     },
     {
       "actual": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b",
       "expected": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b",
       "label": "native_audit",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/audit.py"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/tools/bench-noise-floor/audit.py"
     },
     {
       "actual": "defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236",
       "expected": "defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236",
       "label": "make_m25_votes",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/make_m25_votes.py"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/tools/bench-noise-floor/make_m25_votes.py"
     },
     {
       "actual": "5199cf0678aa1cd5d13f5532fb9ae43cd0ae7938c7cc97dd56bc26f8be37d0df",
       "expected": "5199cf0678aa1cd5d13f5532fb9ae43cd0ae7938c7cc97dd56bc26f8be37d0df",
       "label": "judgesense_factuality",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_factuality.csv"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_factuality.csv"
     },
     {
       "actual": "712b93677ba4322d62ee97e82b9a0bec123a537265760e06dee9fd6d4bba7d52",
       "expected": "712b93677ba4322d62ee97e82b9a0bec123a537265760e06dee9fd6d4bba7d52",
       "label": "judgesense_factuality_judges",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_factuality_judges.csv"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_factuality_judges.csv"
     },
     {
       "actual": "6dc1024a80d78273c66e8684106f9a3dcc00bebbfacab5eaff9df48f519542e5",
       "expected": "6dc1024a80d78273c66e8684106f9a3dcc00bebbfacab5eaff9df48f519542e5",
       "label": "judgesense_coherence",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_coherence.csv"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_coherence.csv"
     },
     {
       "actual": "b2186be3a97eeeb8d7220f633160f621b65cc6144fc8a4b8b53fab8a16cf424f",
       "expected": "b2186be3a97eeeb8d7220f633160f621b65cc6144fc8a4b8b53fab8a16cf424f",
       "label": "judgesense_coherence_judges",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_coherence_judges.csv"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_coherence_judges.csv"
     },
     {
       "actual": "699746a6e5c592495ddbfe3ac1f5aef1472676d7de1beb10d03f09bbe2f591a9",
       "expected": "699746a6e5c592495ddbfe3ac1f5aef1472676d7de1beb10d03f09bbe2f591a9",
       "label": "judgesense_relevance",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_relevance.csv"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_relevance.csv"
     },
     {
       "actual": "a15cdbc5d2e08687a4c9b7662dea9cf2a06866234d779967d9f169860bbdc919",
       "expected": "a15cdbc5d2e08687a4c9b7662dea9cf2a06866234d779967d9f169860bbdc919",
       "label": "judgesense_relevance_judges",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_relevance_judges.csv"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_relevance_judges.csv"
     },
     {
       "actual": "c746e7523b817256d56354384fb88307b2af9256ff90983cced39a8ae0df5bf4",
       "expected": "c746e7523b817256d56354384fb88307b2af9256ff90983cced39a8ae0df5bf4",
       "label": "judgesense_preference",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_preference.csv"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_preference.csv"
     },
     {
       "actual": "62555a863a784ca28430a3d9f8278f80da1f63e63640019df973d81649224781",
       "expected": "62555a863a784ca28430a3d9f8278f80da1f63e63640019df973d81649224781",
       "label": "judgesense_preference_judges",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_preference_judges.csv"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/tools/bench-noise-floor/examples/judgesense_preference_judges.csv"
     },
     {
       "actual": "6c78ab5dd51475e078a200404e1ac1d2b73dd015c77afca81f7ad992471670f7",
       "expected": "6c78ab5dd51475e078a200404e1ac1d2b73dd015c77afca81f7ad992471670f7",
       "label": "m25_summary",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/m25_summary.json"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/evidence/m25_summary.json"
     },
     {
       "actual": "e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c",
       "expected": "e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c",
       "label": "m25_factuality",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/m25_factuality.json"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/evidence/m25_factuality.json"
     },
     {
       "actual": "e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc",
       "expected": "e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc",
       "label": "m25_coherence",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/m25_coherence.json"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/evidence/m25_coherence.json"
     },
     {
       "actual": "6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d",
       "expected": "6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d",
       "label": "m25_relevance",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/m25_relevance.json"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/evidence/m25_relevance.json"
     },
     {
       "actual": "53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1",
       "expected": "53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1",
       "label": "m25_preference",
       "match": true,
-      "path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/evidence/m25_preference.json"
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/evidence/m25_preference.json"
     },
     {
       "actual": "529b3290ef633ed1b4b269ff4c2106e1584587cf27c1172d46b51da75dc56282",
@@ -559,16 +559,16 @@
   "native_rerun": {
     "ceiling_loo_macro": 93.8272,
     "command": [
-      "/home/liuzewen/.cache/qone-life-venv/bin/python",
+      "<WORKSPACE_ROOT>/.cache/qone-life-venv/bin/python",
       "-u",
-      "/home/liuzewen/F:\\deepseek/tools/bench-noise-floor/audit.py",
+      "<WORKSPACE_ROOT>/F:\\deepseek/tools/bench-noise-floor/audit.py",
       "/tmp/qone-a2-votes/judgesense_factuality_m25.csv",
       "--gold",
       "majority",
       "--n-boot",
       "2000",
       "--json",
-      "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/results/native-rerun-factuality.json"
+      "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/bootstrap-estimand-a2/results/native-rerun-factuality.json"
     ],
     "json": "native-rerun-factuality.json",
     "log": "native-rerun-factuality.log",

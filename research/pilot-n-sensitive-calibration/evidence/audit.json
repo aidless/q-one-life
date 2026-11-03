@@ -5,7 +5,7 @@
   "family_id": "qf-n-sensitive-calibration-of-tree-ensemble-623d15100e",
   "project_id": "qp-tmlr-resampling-calibration-632b05b06c33",
   "canonical": {
-    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
+    "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
     "sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
     "bytes": 66342,
     "deprecated_banner_present": true,
@@ -18,7 +18,7 @@
     "rows": [
       {
         "name": "legacy_source",
-        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/main.tex",
+        "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/main.tex",
         "sha256": "ae5c304410e6d15551e7c159dd0846c5609a5a0611bc1632d2d7d1cadb6821ab",
         "bytes": 65927,
         "synthetic_style_mentions": 16,
@@ -27,7 +27,7 @@
       },
       {
         "name": "canonical_preprint",
-        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
+        "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
         "sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
         "bytes": 66342,
         "synthetic_style_mentions": 16,
@@ -36,7 +36,7 @@
       },
       {
         "name": "ingest_backup",
-        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex.bak_20261001T0205Z_preprint",
+        "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex.bak_20261001T0205Z_preprint",
         "sha256": "6df16f28659c8b62087a030f955e0803a31a3b41c67dc2e01c9e84e09bcc1bf3",
         "bytes": 65827,
         "synthetic_style_mentions": 16,
@@ -45,7 +45,7 @@
       },
       {
         "name": "arxiv_clean",
-        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_clean/main.tex",
+        "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_clean/main.tex",
         "sha256": "cb160331ce870cc2bb4b16dbbdee6f39ffce044ed0c50f60aa1729069c54d681",
         "bytes": 68320,
         "synthetic_style_mentions": 0,
@@ -54,7 +54,7 @@
       },
       {
         "name": "arxiv_final",
-        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_final/main.tex",
+        "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_final/main.tex",
         "sha256": "a5b77bee3c20dde329c6eb3ad2f9e7cefbc4ea671014fca8d44f1944ded41358",
         "bytes": 68343,
         "synthetic_style_mentions": 0,
@@ -63,7 +63,7 @@
       },
       {
         "name": "arxiv_upload",
-        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/main.tex",
+        "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/main.tex",
         "sha256": "d0f359fad259fd49ebc68f40e9cd32f961ac0f5ab1d72a70faf71b8585752b0d",
         "bytes": 68341,
         "synthetic_style_mentions": 0,
@@ -72,7 +72,7 @@
       },
       {
         "name": "submission_variant",
-        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/submission_variant/main.tex",
+        "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/submission_variant/main.tex",
         "sha256": "fd79004ab1ab00c438d9c617acdf54e258f95855c66bfcb0b825486b6469e16b",
         "bytes": 65917,
         "synthetic_style_mentions": 16,
@@ -82,7 +82,7 @@
     ]
   },
   "merge_target": {
-    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p12/paper/main.tex",
+    "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p12/paper/main.tex",
     "sha256": "b406b923bde2bb8b6323d8079ed5edf33f9826056439bd081dcc11d731cb339f",
     "terms": {
       "N-Sensitive Calibration of Tree Ensembles": 0,
@@ -97,7 +97,7 @@
     "archive_marker_says_merged": true
   },
   "review": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-n-sensitive-calibration/evidence/upstream/REVIEW_CARD.md",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-n-sensitive-calibration/evidence/upstream/REVIEW_CARD.md",
     "sha256": "8b67f261fbbac236b2815c7de906c530ade0c7d3142949a171a08794189e7872",
     "score": "5/10",
     "disposition": "并入 tmlr_p12",
@@ -105,7 +105,7 @@
     "source_excerpt": "# REVIEW CARD — RESAMPLING_CALIBRATION（2026-09-04）\n\n## 题目\nN-Sensitive Calibration of Tree Ensembles on Frozen LLM Embeddings\n\n## 裁决：5/10（B-）→ **并入 tmlr_p12**（方向与校准族不同：树集成 N-敏感性）\n- A 证据 6：头注 DEPRECATED 并入 p12；修正 sklearn 管线 bug、补 adaptive ECE/per-N 调参，修订诚实。\n- B 兴趣 5。\n- C 清晰 6：类合并消融+多协议对比+50 种子。\n- D：内部数字口径不统一。\n\n## Major\n1. abstract \"TS 减少 RF ECE 88%\" OK 但 Finding 2a 正文 \"ECE 0.128–0.135\" vs 表 0.131 表述不一致；\"RF 优于 MLP\"（N=5000 单点）与 N-敏感性\"MLP 大胜 0.35\"并置易误导。\n2. Tab embedding_main caption 称 \"across all thr"
   },
   "e1": {
-    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/supplementary/E1_full.json",
+    "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/supplementary/E1_full.json",
     "sha256": "ede4bce3b85e8aef120109488eb8b09c45e2753e5d7bdf9cd37fe5e4e8840a06",
     "rows": 240,
     "pair_count": 6,
@@ -203,7 +203,7 @@
     }
   },
   "e6": {
-    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/supplementary/E6_class_merge.json",
+    "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/supplementary/E6_class_merge.json",
     "sha256": "fc3a8fb677b0d9f321d10b4ee9f0770d518365f6235d730046939aa8d41ed627",
     "rows": 400,
     "summary": {
@@ -326,7 +326,7 @@
     "k4_both_improve_claim_supported": false
   },
   "carrier_receipts": {
-    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/evidence/CARRIER_RECEIPTS.json",
+    "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/evidence/CARRIER_RECEIPTS.json",
     "sha256": "245f9a95c3b98207b4a88fa6d435aa423595437160b83207abe65ddd91038de7",
     "total": 201,
     "verdicts": {

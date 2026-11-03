@@ -384,7 +384,7 @@ def main() -> int:
 
     # claim ledger 校验脚本来自本机 skill 目录；路径不存在时下面会失败并被记录。
     verifier = Path(
-        "/home/liuzewen/.codex/skills/paper-writing-agent/scripts/verify_claim_ledger.py"
+        "<WORKSPACE_ROOT>/.codex/skills/paper-writing-agent/scripts/verify_claim_ledger.py"
     )
     claim_results: dict[str, Any] = {}
     for path in project_paths:
@@ -426,7 +426,7 @@ def main() -> int:
         (
             "paper11",
             Path(
-                "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/paper"
+                "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/paper"
             ),
         ),
         ("paper11-overlay", root / "research" / "pilot-paper11" / "source"),

@@ -4,7 +4,7 @@
   "family_id": "qf-eda14-15-16-eda17-cdb1f8595a",
   "project_id": "qp-eda14-15-16-revised-a3313f0e1021",
   "title": "EDA14/15/16 — 结论改写（以 EDA17 管线口径为准）",
-  "primary_source": "/home/liuzewen/.research/nfl-bdb-2027/docs/EDA14_15_16_REVISED.md",
+  "primary_source": "<WORKSPACE_ROOT>/.research/nfl-bdb-2027/docs/EDA14_15_16_REVISED.md",
   "source_state": {
     "exists": true,
     "sha256": "2a062a1f970efcef7999060608da31c1f701c0df5de37a5acb59a2a0806fe235",
@@ -37,7 +37,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/nfl-bdb-2027/docs/EDA14_15_16_REVISED.md"
+    "<WORKSPACE_ROOT>/.research/nfl-bdb-2027/docs/EDA14_15_16_REVISED.md"
   ],
   "machine_recommendation": {
     "disposition": "repair",

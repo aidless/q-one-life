@@ -4,7 +4,7 @@
   "family_id": "qf-communication-degrades-calibration-evalu-241a0f227b",
   "project_id": "qp-tmlr-research-7193d4c99bbf",
   "title": "Communication Degrades Calibration, \\ -Evaluation Immunity Is Model-Dependent, \\ Calibration Increases Noise: \\ Systematic Study of Calibration Effects in Multi-Agent LLM Systems",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-research/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-research/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "9b0e486a1fefbcb1084699addb14bb815ee2883130a804a5bf124a013590ca30",
@@ -57,8 +57,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-research/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-research/.aris/ingest_drift/20260930T052414Z/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-research/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-research/.aris/ingest_drift/20260930T052414Z/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

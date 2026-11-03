@@ -4,7 +4,7 @@
   "family_id": "qf-caliber-dependence-of-cost-claims-2pt-ev-e3c0202bb5",
   "project_id": "qp-jev-caliber-20260930-331bde0b6ff4",
   "title": "Caliber Dependence of Cost Claims:\\\\[2pt] Evidence from Decision Logs",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/jev-caliber-20260930/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/jev-caliber-20260930/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "3b5ad113fc3cefe60fd3d6f567581242cdea15b67ad203a3c7e4a204fc16c035",
@@ -52,8 +52,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/deliveries/jev-caliber/evidence-v1/bundle/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/jev-caliber-20260930/paper/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/deliveries/jev-caliber/evidence-v1/bundle/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/jev-caliber-20260930/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

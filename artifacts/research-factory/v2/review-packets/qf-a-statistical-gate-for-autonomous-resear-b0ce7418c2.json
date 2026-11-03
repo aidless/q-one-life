@@ -4,7 +4,7 @@
   "family_id": "qf-a-statistical-gate-for-autonomous-resear-b0ce7418c2",
   "project_id": "qp-arx-1452d0707511",
   "title": ": A Statistical Gate for Autonomous Research Loops\\\\ (What happened when a local LLM wrote 19 experiments)",
-  "primary_source": "/home/liuzewen/F:\\deepseek/arx/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/arx/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "3f14a0fdb30efabff89806836774743620cb33c103ac91a4ffbc274dffd4c196",
@@ -37,7 +37,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/arx/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/arx/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

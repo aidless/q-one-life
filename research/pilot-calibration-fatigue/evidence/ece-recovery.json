@@ -1,17 +1,17 @@
 {
   "schema": "q-one-p17-ece-recovery-v1",
   "inputs": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/snapshot.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/snapshot.json",
     "sha256": "ae5c747c6b4265168bb1f6e8489b05bbf36555f887fe4f476ba759170eabdd06",
     "bytes": 88792
   },
   "definition_inputs": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/recovery/ece-definition-inputs.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/evidence/recovery/ece-definition-inputs.json",
     "sha256": "5a11f61f5b0ab208ff3564d975f8be3b04a022b4ed1e8a1c4161dfb0c673b707",
     "bytes": 1616
   },
   "runner": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/tools/audit_p17.py",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue/tools/audit_p17.py",
     "sha256": "49150fbe399ac8735f5fc9b9763dcada9c0fbf62808ac2936fb55bb1d351d7fe",
     "bytes": 32975
   },

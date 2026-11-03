@@ -4,7 +4,7 @@
   "family_id": "qf-a-conditional-k-pair-surrogate-bound-for-84f2cdd1fb",
   "project_id": "qp-tmlr-p20-3c8e5ef5d392",
   "title": "A Conditional $K$-Pair Surrogate Bound for Coupling--Diversity--Precision Tradeoffs",
-  "primary_source": "/home/liuzewen/.research/tmlr-p20/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/tmlr-p20/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "ca505bbd58f336d2326e893d67b3f5e721c1bcd74ec32c699d46f1667bf0ffc0",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/tmlr-p20/main.tex"
+    "<WORKSPACE_ROOT>/.research/tmlr-p20/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

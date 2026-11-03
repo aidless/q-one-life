@@ -4,7 +4,7 @@
   "family_id": "qf-within-condition-testing-of-the-bias-rel-4962b75a8e",
   "project_id": "qp-tmlr-p14-470f10d6a88e",
   "title": "Within-Condition Testing of the Bias-Reliability Tradeoff: Experimental Protocol, Pilot Execution, and Convergence Dynamics",
-  "primary_source": "/home/liuzewen/.research/tmlr-p14/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/tmlr-p14/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "8b28c312ceeec5b70f24829f89b9a8bda932d146e43be0fc5c5df0fd587b38a1",
@@ -52,8 +52,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/tmlr-p14/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-flagship/source/arxiv_submit/main.tex"
+    "<WORKSPACE_ROOT>/.research/tmlr-p14/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-flagship/source/arxiv_submit/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

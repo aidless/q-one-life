@@ -4,7 +4,7 @@
   "marker": "agent-proposed, not human publication approval",
   "source_sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
   "driver": {
-    "path": "/home/liuzewen/qone-life-work/research/pilot-calibrating-evaluator/evidence/upstream/calibrated_ttrl.py",
+    "path": "research/pilot-calibrating-evaluator/evidence/upstream/calibrated_ttrl.py",
     "sha256": "ece3ec6bf301274d7edf5552618e33385bb3f533b8bba7fa6092669e98b57e29",
     "functions": [
       "api_call",
@@ -63,7 +63,7 @@
         "classification": "related calibration archive; not the missing P9 N=5 DeepSeek-V4-Pro/GLM5.2 output"
       },
       {
-        "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper3/paper/evidence_package/e4_30seed_calibrated.json",
+        "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper3/paper/evidence_package/e4_30seed_calibrated.json",
         "sha256": "286e9147c05cb67659567248f56228a3684c42b7a86dd84b4eef09903474f263",
         "n_seeds": 30,
         "note": "E4 30-seed expansion (run6 complete 2026-08-08 14:39; evaluator gpt-5.6-luna).",

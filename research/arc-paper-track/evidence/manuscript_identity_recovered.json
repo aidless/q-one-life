@@ -6,7 +6,7 @@
   "recovered_source_path": "source/ARC_PROPOSED.md",
   "recovered_source_sha256": "a1ff847e3361d8c6b2b21578e559baf5ab11d768c8f617bae97765691f9fd660",
   "recovered_source_bytes": 7258,
-  "recovered_from": "/home/liuzewen/kaggle-control-20261013/analyses/tracks/paper-evidence-20261015/ARC_PROPOSED.md",
+  "recovered_from": "<WORKSPACE_ROOT>/kaggle-control-20261013/analyses/tracks/paper-evidence-20261015/ARC_PROPOSED.md",
   "matches_published_source": true,
   "remote_url": "https://www.kaggle.com/competitions/arc-prize-2026-paper-track/writeups/one-rung-at-a-time-attributing-an-arc-agi-3-submi",
   "remote_content_state": "PUBLISHED",

@@ -4,7 +4,7 @@
   "family_id": "qf-self-evaluation-coupling-in-local-llms-a-815e3ebbb6",
   "project_id": "qp-tmlr-p21-8addf68ed802",
   "title": "Self-Evaluation Coupling in Local LLMs: An Observational Analysis of Format and Temperature Proxies",
-  "primary_source": "/home/liuzewen/.research/tmlr-p21/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/tmlr-p21/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "1633a59a894bfff4dd066e5d38f2cf3a1e3d925ac5d4ed24fcc4f4b52de8f0fc",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/tmlr-p21/main.tex"
+    "<WORKSPACE_ROOT>/.research/tmlr-p21/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

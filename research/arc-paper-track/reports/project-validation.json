@@ -1,6 +1,6 @@
 {
   "schema": "q-one-research-validation-v1",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/arc-paper-track",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/arc-paper-track",
   "paper_id": "arc-paper-track-2026",
   "valid": true,
   "ready": false,

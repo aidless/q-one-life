@@ -5,14 +5,14 @@
   "family_id": "qf-conditional-communication-effects-in-mul-ad96998074",
   "project_id": "qp-tmlr-paper13-merged-1fe996f84944",
   "canonical": {
-    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex",
+    "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex",
     "bytes": 111802,
     "sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
     "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
     "role": "packet primary source"
   },
   "overlay_copy": {
-    "path": "/home/liuzewen/qone-life-work/research/pilot-conditional-communication-effects/evidence/upstream/paper/main.tex",
+    "path": "research/pilot-conditional-communication-effects/evidence/upstream/paper/main.tex",
     "bytes": 111802,
     "sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",
     "role": "byte-identical audit copy"

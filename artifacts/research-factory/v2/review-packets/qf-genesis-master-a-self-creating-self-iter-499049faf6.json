@@ -4,7 +4,7 @@
   "family_id": "qf-genesis-master-a-self-creating-self-iter-499049faf6",
   "project_id": "qp-genesis-master-6ceb4bd40778",
   "title": "Genesis Master: A Self-Creating, Self-Iterating Multi-Agent System \\\\ with Four Levels of Feedback",
-  "primary_source": "/home/liuzewen/.research/genesis-master/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/genesis-master/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "0de4209168ed9dd7812b1bab9e294294e002026465ac629bb7124b4a00e20656",
@@ -42,7 +42,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/genesis-master/main.tex"
+    "<WORKSPACE_ROOT>/.research/genesis-master/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

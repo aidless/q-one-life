@@ -1,6 +1,6 @@
 # Native paper ledger audit
 
-Ledger: `/home/liuzewen/F:\deepseek/q-one-life/research/pilot-bench-noise-floor/evidence/native-paper-ledger.json`
+Ledger: `<WORKSPACE_ROOT>/F:\deepseek/q-one-life/research/pilot-bench-noise-floor/evidence/native-paper-ledger.json`
 SHA-256: `47d5b7d66e8ece9ac21f6c82089f4883405689e6428fce1e70eb936236252063`
 Mechanically valid: `True`
 Scientific ready: `False`

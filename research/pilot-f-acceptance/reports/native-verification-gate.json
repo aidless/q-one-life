@@ -5,16 +5,16 @@
   "state": "passed",
   "scope": "numbers",
   "source": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source/main.tex",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source/main.tex",
     "sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
     "sha256_after": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
     "stable_during_run": true
   },
   "command": [
-    "/home/liuzewen/.cache/qone-desktop-runtime-20261027/bin/python",
-    "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/evidence/native/wave2-F-acceptance/verify_f_v2.py",
+    "<WORKSPACE_ROOT>/.cache/qone-desktop-runtime-20261027/bin/python",
+    "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance/evidence/native/wave2-F-acceptance/verify_f_v2.py",
     "--tex",
-    "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source/main.tex"
   ],
   "runs": [
     {

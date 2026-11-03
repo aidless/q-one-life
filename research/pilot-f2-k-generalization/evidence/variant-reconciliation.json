@@ -10,7 +10,7 @@
   "variants": [
     {
       "role": "home_research",
-      "origin": "/home/liuzewen/.research/merged-f2/main.tex",
+      "origin": "<WORKSPACE_ROOT>/.research/merged-f2/main.tex",
       "origin_resolved": "/data3/Research/MERGED_FLAGSHIPS/F2_Theory/main.tex",
       "sha256": "e6749ec9bf425ef8e44e56f85b38888923b2350657b85e3958fd257c33cbbc3e",
       "bytes": 25635,
@@ -20,8 +20,8 @@
     },
     {
       "role": "canonical",
-      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
-      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
+      "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
+      "origin_resolved": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
       "sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
       "bytes": 31834,
       "title": "Merged Flagship F2: K-Generalization, Selective Prediction and Self-Evaluation",
@@ -30,8 +30,8 @@
     },
     {
       "role": "ingest_drift",
-      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/.aris/ingest_drift/20260928T102343Z/main.tex",
-      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/.aris/ingest_drift/20260928T102343Z/main.tex",
+      "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/.aris/ingest_drift/20260928T102343Z/main.tex",
+      "origin_resolved": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/.aris/ingest_drift/20260928T102343Z/main.tex",
       "sha256": "a8fee3a0002c86534b1edc148577343cf25b3896d6d4ecc4a4a74e5408c6cf43",
       "bytes": 26347,
       "title": "Merged Flagship F2: K-Generalization, Selective Prediction and Self-Evaluation",
@@ -40,8 +40,8 @@
     },
     {
       "role": "source_mirror",
-      "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/source/main.tex",
-      "origin_resolved": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/source/main.tex",
+      "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/source/main.tex",
+      "origin_resolved": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/source/main.tex",
       "sha256": "a8d9b607e954dd7010d7ccaad0dadb086fc51a4f9971d8e5d6c2635d0d833d97",
       "bytes": 25822,
       "title": "Merged Flagship F2: K-Generalization, Selective Prediction and Self-Evaluation",

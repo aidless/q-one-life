@@ -4,7 +4,7 @@
   "family_id": "qf-n-sensitivity-in-llm-evaluation-a-diagno-5cbc1237b7",
   "project_id": "qp-tmlr-paper4-consolidated-513d31090a36",
   "title": "N-Sensitivity in LLM Evaluation: A Diagnostic Framework Illustrated by Two Case Studies",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper4-consolidated/source/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper4-consolidated/source/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "0049bc62636de12ef973c11d6df62cd70f831cb3a0b72660b3695d1a9826b66d",
@@ -52,9 +52,9 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/paper4-consolidated/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper4-consolidated/source/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper4-consolidated/source/arxiv_clean/main.tex"
+    "<WORKSPACE_ROOT>/.research/paper4-consolidated/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper4-consolidated/source/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper4-consolidated/source/arxiv_clean/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

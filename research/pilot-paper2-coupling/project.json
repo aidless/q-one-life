@@ -4,8 +4,8 @@
   "title": "A Conditional Coupling--Diversity--Precision Bound for TTRL-Based LLM Evaluation",
   "status": "review_pending",
   "target": "arxiv",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling",
-  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/paper/main.tex",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling",
+  "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/paper/main.tex",
   "manuscript": {
     "path": "source/main.tex",
     "sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",

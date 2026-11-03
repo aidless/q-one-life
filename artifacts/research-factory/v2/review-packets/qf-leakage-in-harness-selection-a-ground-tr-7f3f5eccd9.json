@@ -4,7 +4,7 @@
   "family_id": "qf-leakage-in-harness-selection-a-ground-tr-7f3f5eccd9",
   "project_id": "qp-paper11-latex-a4d29d53c186",
   "title": "Leakage in Harness Selection:\\\\ A Ground-Truth-Free Protocol and Its Limits on a Discrete Benchmark",
-  "primary_source": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "c3eb50ebf2e6c17d045477aa5c0976a38efc752fd0a2c19a8dde259b9ff8a9cd",
@@ -57,8 +57,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/notes/paper11-full-draft.md",
-    "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/main.tex"
+    "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/notes/paper11-full-draft.md",
+    "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

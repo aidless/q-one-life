@@ -1,7 +1,7 @@
 {
   "schema": "q-one-research-plan-v1",
   "generated_at": "2026-10-27T15:41:28.325171Z",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling",
   "paper_id": "qf-a-conditional-coupling-diversity-precisi-7336590fb7",
   "title": "A Conditional Coupling--Diversity--Precision Bound for TTRL-Based LLM Evaluation",
   "target": "arxiv",

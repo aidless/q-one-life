@@ -2,13 +2,13 @@
   "schema": "q-one-arxiv-candidate-package-v1",
   "generated_at": "2026-10-29T08:39:57.287312Z",
   "source": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/source",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/source",
     "main_sha256": "fcafbeef57efbcad7db2f687dd4faac2f84e703dc429865fd7c7325de831433d",
     "package_sha256": "375a7506363624e931f13cf878169edd0f45d93a2f02bda37ff9f08c9ced1e6f",
     "file_count": 11
   },
   "archive": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/package/r4-consistency-candidate.tar.gz",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/package/r4-consistency-candidate.tar.gz",
     "sha256": "aba2dc5ac9a04ebcce41f5c15050d325c0966d8aa653ae7eb6f67f217a3158ea",
     "bytes": 108611,
     "repeat_sha256": "aba2dc5ac9a04ebcce41f5c15050d325c0966d8aa653ae7eb6f67f217a3158ea",
@@ -73,12 +73,12 @@
   ],
   "extract_compile": {
     "exit_code": 0,
-    "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/package/archive-cleanroom/receipt.json",
+    "receipt": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/package/archive-cleanroom/receipt.json",
     "receipt_sha256": "900797c32d8b1a8d6ccb1dcb6b2a1f2710c7497efa36611f3cc28965cb0eebde",
     "pdf_pages": 46,
     "pdf_sha256": "8fc50c3d9819ec915c908f7503137a6a473a0c61144451db40821a58e6726906",
-    "command_stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/package/archive-cleanroom/build.stdout.log",
-    "command_stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/package/archive-cleanroom/build.stderr.log"
+    "command_stdout": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/package/archive-cleanroom/build.stdout.log",
+    "command_stderr": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/revisions/2026-10-29-consistency-r4/reports/package/archive-cleanroom/build.stderr.log"
   },
   "environment": {
     "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",

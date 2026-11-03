@@ -4,7 +4,7 @@
   "family_id": "qf-approval-gates-and-safety-prompts-descri-1d749982b9",
   "project_id": "qp-approval-gates-r2-b8b6debe684d",
   "title": "Approval Gates and Safety Prompts:\\ Descriptive Audit of a Plan-Level Harness",
-  "primary_source": "/home/liuzewen/arxiv-publication/papers/approval-gates-r2/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/arxiv-publication/papers/approval-gates-r2/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "ac4fa3b96924d7444557fe31dfb989c0ce5bd5adc7f3d4c3d29688fb340ac9df",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/arxiv-publication/papers/approval-gates-r2/paper/main.tex"
+    "<WORKSPACE_ROOT>/arxiv-publication/papers/approval-gates-r2/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

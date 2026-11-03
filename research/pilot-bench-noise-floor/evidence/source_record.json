@@ -3,7 +3,7 @@
   "generated_at": "2026-10-27T14:45:42.642726Z",
   "family_id": "qf-reading-a-leaderboard-before-you-cite-it-96866c580c",
   "portfolio_project_id": "qp-bench-noise-floor-b0d4cb581fd3",
-  "source_path": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
+  "source_path": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
   "source_sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
   "source_bytes": 220650,
   "title": "Reading a Leaderboard Before You Cite It: Three Rulers for the Noise Floor of LLM-as-Judge Evaluation",

@@ -4,8 +4,8 @@
   "title": "Auditing Score Exposure and Presentation Order in LLM Harness Selection: A Matched 30-Task Case Study",
   "status": "review_pending",
   "target": "arxiv",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper11",
-  "origin": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/paper/main.tex",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper11",
+  "origin": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/paper/main.tex",
   "manuscript": {
     "path": "source/main.tex",
     "sha256": "9748c64cbd338dcc495d6ce4119365ccf8540b5369fb912c74df662f999be02a",
@@ -17,7 +17,7 @@
       "path": "evidence/source_record.json",
       "sha256": "aceb310557c3e4d0e411d3c40726bb20d69101033a154f221bee017cbf94b50f",
       "state": "candidate",
-      "origin": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/paper/main.tex",
+      "origin": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/paper/main.tex",
       "description": "Q-One source identity record; this is not manuscript recomputation."
     },
     {
@@ -31,49 +31,49 @@
       "path": "evidence/REVIEW_ACCEPTANCE.json",
       "sha256": "371c0354ffb10f54cf60da16be60cb1c5b12e76063ed95d263c5b68bc65c38bb",
       "state": "verified",
-      "origin": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/REVIEW_ACCEPTANCE.json",
+      "origin": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/REVIEW_ACCEPTANCE.json",
       "description": "copied local acceptance receipt"
     },
     {
       "path": "evidence/candidate-manifest.json",
       "sha256": "6b3aebf400871477dcd33e41d08ac44866a1e3b62ae368102e1c221277b42649",
       "state": "verified",
-      "origin": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/candidate-manifest.json",
+      "origin": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/candidate-manifest.json",
       "description": "candidate file preservation manifest"
     },
     {
       "path": "evidence/content-change-analysis.json",
       "sha256": "c3d508321a5c8e84a82c08797eee6855f9ce08bd16ab276bebe1c0a8c7ac5200",
       "state": "verified",
-      "origin": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/content-change-analysis.json",
+      "origin": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/content-change-analysis.json",
       "description": "selected-answer content change analysis"
     },
     {
       "path": "evidence/order-contract.json",
       "sha256": "b00e24f82ba435a325f05d91c50ea6e254cce34421bcc79208c01274f28e1c3e",
       "state": "verified",
-      "origin": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/order-contract.json",
+      "origin": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/order-contract.json",
       "description": "order reconstruction contract"
     },
     {
       "path": "evidence/paper11-matched-analysis.json",
       "sha256": "3ae17080669ea477df6b6031df98a10f4da9ad1110599f2f2dbccb7d1b493409",
       "state": "verified",
-      "origin": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/paper11-matched-analysis.json",
+      "origin": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/paper11-matched-analysis.json",
       "description": "matched 2x2 analysis"
     },
     {
       "path": "evidence/run-config.json",
       "sha256": "b75a0b8ed13c4cc8b2b2dbe11c2d497f704271591fc6b5e51b0d4529457048ba",
       "state": "verified",
-      "origin": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/run-config.json",
+      "origin": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/run-config.json",
       "description": "captured run configuration"
     },
     {
       "path": "evidence/score-recompute.json",
       "sha256": "2c5a1d08a5c8b2c2899bb0ee37879612d972d275a75bd9dd23cee5e37f77cdba",
       "state": "verified",
-      "origin": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/score-recompute.json",
+      "origin": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence/score-recompute.json",
       "description": "independent 90-score recomputation"
     },
     {

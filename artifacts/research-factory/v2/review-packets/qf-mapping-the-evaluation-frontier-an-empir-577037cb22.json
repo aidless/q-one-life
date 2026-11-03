@@ -4,7 +4,7 @@
   "family_id": "qf-mapping-the-evaluation-frontier-an-empir-577037cb22",
   "project_id": "qp-tmlr-p16-ac2e5f5233e0",
   "title": "Mapping the Evaluation Frontier: An Empirical Survey of the Bias-Reliability Tradeoff Across Eleven Evaluator--Agent Conditions",
-  "primary_source": "/home/liuzewen/.research/tmlr-p16/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/tmlr-p16/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "8c2dd1faaa737a55e2b07ce3083864267500400ed7615652b737e83cd94b8e88",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/tmlr-p16/main.tex"
+    "<WORKSPACE_ROOT>/.research/tmlr-p16/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

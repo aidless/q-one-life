@@ -4,7 +4,7 @@
   "family_id": "qf-calibrating-the-evaluator-does-probabili-6544cd664a",
   "project_id": "qp-tmlr-tmlr-p9-a9f202b5304f",
   "title": "Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",
@@ -69,12 +69,12 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/.research/tmlr-p9/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/p9-pilot/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/.aris/ingest_drift/20260928T102343Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/arxiv/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/.research/tmlr-p9/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/p9-pilot/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/arxiv/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -83,7 +83,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibrating-evaluator/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibrating-evaluator/project.json",
     "status": "archived",
     "ledger_present": true,
     "bibliography_present": false,

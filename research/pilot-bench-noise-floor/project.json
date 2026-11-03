@@ -4,8 +4,8 @@
   "title": "Reading a Leaderboard Before You Cite It: Three Rulers for the Noise Floor of LLM-as-Judge Evaluation",
   "status": "revision",
   "target": "arxiv",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor",
-  "origin": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor",
+  "origin": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
   "manuscript": {
     "path": "source/main.tex",
     "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",

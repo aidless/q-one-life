@@ -2,13 +2,13 @@
   "schema": "q-one-arxiv-candidate-package-v1",
   "generated_at": "2026-10-27T15:09:17.647348Z",
   "source": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance/source",
     "main_sha256": "986c0a3039e91dc31ad182a2fdaaba643454edd61407b8cfb280c64ef244d5ef",
     "package_sha256": "bdeea2c323eea75a6a3e0bf5b8674abd48deca6819001254e7704be5318bcd5f",
     "file_count": 6
   },
   "archive": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/package/f-acceptance-arxiv-candidate.tar.gz",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/package/f-acceptance-arxiv-candidate.tar.gz",
     "sha256": "cf23a62a2c2066a934bea529b6aa97d993df0b78d048c42ceb6ce96620de213a",
     "bytes": 35355,
     "repeat_sha256": "cf23a62a2c2066a934bea529b6aa97d993df0b78d048c42ceb6ce96620de213a",
@@ -48,12 +48,12 @@
   ],
   "extract_compile": {
     "exit_code": 0,
-    "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/package/archive-cleanroom/receipt.json",
+    "receipt": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/package/archive-cleanroom/receipt.json",
     "receipt_sha256": "9a792271b87e55cd8def8134c9183f9f0e35515920c57158ae7ec3d77d831364",
     "pdf_pages": 14,
     "pdf_sha256": "d6c4c8e8081448fb4d43d545d5609d271656e0e2b12045ab96b58b2fc4888fae",
-    "command_stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/package/archive-cleanroom/build.stdout.log",
-    "command_stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/package/archive-cleanroom/build.stderr.log"
+    "command_stdout": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/package/archive-cleanroom/build.stdout.log",
+    "command_stderr": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance/reports/package/archive-cleanroom/build.stderr.log"
   },
   "environment": {
     "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",

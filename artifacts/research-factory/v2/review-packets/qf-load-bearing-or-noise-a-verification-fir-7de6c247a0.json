@@ -4,7 +4,7 @@
   "family_id": "qf-load-bearing-or-noise-a-verification-fir-7de6c247a0",
   "project_id": "qp-llm-history-paper-7a3bc70bfc36",
   "title": "Load-Bearing or Noise? A Verification-First Framework\\\\ for Periodizing the Large Language Model Era (2013--2026)",
-  "primary_source": "/home/liuzewen/F:\\deepseek/llm-history-paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/llm-history-paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "9aeb74bcabe59ed8624514329660a0cc95e5eb2f0c1f160aac38a4df57e86464",
@@ -42,8 +42,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/llm-history-paper/main.tex",
-    "/home/liuzewen/F:\\deepseek/papers/verification_selfaudit/migrations/8fam-20261019/bundle-snapshot/worktree/untracked/llm-history-paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/llm-history-paper/main.tex",
+    "<WORKSPACE_ROOT>/F:\\deepseek/papers/verification_selfaudit/migrations/8fam-20261019/bundle-snapshot/worktree/untracked/llm-history-paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

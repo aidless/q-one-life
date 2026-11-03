@@ -4,7 +4,7 @@
   "family_id": "qf-how-much-staleness-can-training-tolerate-c9999765c5",
   "project_id": "qp-async-rl-2bit-29a5f97fd7f2",
   "title": "How Much Staleness Can Training Tolerate?\\\\ A Bounded-Staleness Theory for Asynchronous RL,\\\\ with a Pre-registered Bit-Width Protocol",
-  "primary_source": "/home/liuzewen/F:\\deepseek/papers/async_rl_2bit/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/papers/async_rl_2bit/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "4db62949ebac35d4963259bccac841a99c36055953f0151211f9977c5a046f57",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/papers/async_rl_2bit/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/papers/async_rl_2bit/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

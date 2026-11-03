@@ -4,7 +4,7 @@
   "family_id": "qf-calibration-leakage-from-retrieved-skill-9c35b37bdb",
   "project_id": "qp-merged-f1-preprint-16ffa2ea220d",
   "title": "Calibration Leakage from Retrieved Skill Caches: A Merged Study of Six Calibration Experiments (Preprint Full Version, 15 pages)",
-  "primary_source": "/home/liuzewen/.research/merged-f1-preprint/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/merged-f1-preprint/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "0434d6604389fde54b45dc783e72eddf6d37b1cd386d98cb2cbc7a2bd3b39959",
@@ -42,7 +42,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/merged-f1-preprint/main.tex"
+    "<WORKSPACE_ROOT>/.research/merged-f1-preprint/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

@@ -4,7 +4,7 @@
   "family_id": "qf-probability-calibration-degrades-when-co-63dcd348fc",
   "project_id": "qp-arxiv-submission-ee81c7515bf9",
   "title": "Probability Calibration Degrades When Combining LLM Embeddings with Tree Ensembles: Evidence from Three Embedding Models",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/paper/arxiv_submission/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/paper/arxiv_submission/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "0b54fa5c5ae406548428d72460b80740aa96791accbab3656b3b2305c68a6507",
@@ -26,7 +26,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/paper/arxiv_submission/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-emnlp-2027/paper/arxiv_submission/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

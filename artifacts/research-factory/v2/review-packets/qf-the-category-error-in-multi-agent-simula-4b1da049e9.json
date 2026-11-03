@@ -4,7 +4,7 @@
   "family_id": "qf-the-category-error-in-multi-agent-simula-4b1da049e9",
   "project_id": "qp-tmlr-tmlr-category-error-c07ac9f20ad7",
   "title": "The Category Error in Multi-Agent Simulation: Why Modeling Semantic Communication as Probability Blending Produces Sign-Reversed Predictions",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-category-error/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-category-error/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "d1af172d208eb2dffbcd906d5489a6ca1a25bc2a600570cad9b9427033c84b1d",
@@ -57,8 +57,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-category-error/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-category-error/.aris/ingest_drift/20260928T102343Z/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-category-error/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-category-error/.aris/ingest_drift/20260928T102343Z/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

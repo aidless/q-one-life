@@ -1,6 +1,6 @@
 # Research pipeline
 
-Source: `/home/liuzewen/WorkBuddy/2026-10-23-23-32-00/arxiv/bench_noise_floor/main.tex`
+Source: `<WORKSPACE_ROOT>/WorkBuddy/2026-10-23-23-32-00/arxiv/bench_noise_floor/main.tex`
 Source SHA-256: `971008d73d83b6b9d212bf0789987d8af84bfd92267974ecd706edccecc48d36`
 
 | Stage | State | Required output |

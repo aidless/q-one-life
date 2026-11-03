@@ -4,7 +4,7 @@
   "family_id": "qf-threshold-straddling-reported-minimum-n--424840610d",
   "project_id": "qp-n5-threshold-straddle-62f33f5937dd",
   "title": "Threshold Straddling: Reported Minimum-$N$ Values Are Undecidable at Their Own Precision",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/drafts/n5-threshold-straddle/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/drafts/n5-threshold-straddle/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "cd7af2c0e122701b8d6268a1d90a8ceff7df2ffa88972a27d8afb9c73c022e54",
@@ -32,7 +32,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/drafts/n5-threshold-straddle/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/drafts/n5-threshold-straddle/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

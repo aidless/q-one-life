@@ -1,7 +1,7 @@
 {
   "schema": "q-one-research-plan-v1",
   "generated_at": "2026-10-27T16:33:18.915811Z",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression",
   "paper_id": "qf-agent-behavior-regression-testing-for-lo-1f724f2bff",
   "title": "Agent Behavior Regression Testing for Local LLM Systems: Seed Reproducibility and Cross-Model Heterogeneity across 100 Scenarios",
   "target": "arxiv",

@@ -4,7 +4,7 @@
   "family_id": "qf-what-communication-does-to-multi-agent-l-4e26909950",
   "project_id": "qp-paper-ii-communication-memory-b4c205dc3475",
   "title": "What Communication Does to Multi-Agent LLM Systems:\\\\ Strategy Consensus, Calibration Contagion, and What Mitigates Them",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/papercorpus-anon/paper-II-communication-memory/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/papercorpus-anon/paper-II-communication-memory/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "37d89915a832a16f36fda85c3c6a0cdaac8daf8dbe4d00a9ec99a32c8aa57954",
@@ -42,8 +42,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/papercorpus-anon/paper-II-communication-memory/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/pii-communication-memory/paper/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/papercorpus-anon/paper-II-communication-memory/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/pii-communication-memory/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

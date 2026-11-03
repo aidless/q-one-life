@@ -139,7 +139,7 @@
   "falsification_condition": "H1 is rejected if any gate fails. In particular, a persistent non-zero LOO point margin on S_joint, a label mismatch, an actor-specific scored set, a non-degenerate identity bootstrap, or a zero k-fold control would count against H1.",
   "stopping_rule": "Run the frozen implementation exactly twice with the same command and output paths results/run-1.json and results/run-2.json. If the two files are not byte-identical, stop with a reproducibility failure and do not reinterpret either run. No task, seed, support definition, tolerance, or gate may be changed within version 1.0.0; any change requires a new preregistration version or a preserved attempt.",
   "execution": {
-    "command": "python run_common_support.py --external-root '/home/liuzewen/F:\\deepseek' --preregistration preregistration.json --output results/run-1.json",
+    "command": "python run_common_support.py --external-root '<WORKSPACE_ROOT>/F:\\deepseek' --preregistration preregistration.json --output results/run-1.json",
     "repeat_command": "the same command with results/run-2.json",
     "accepted_output": "q-one-a3-common-support-v1 with decision.status=passed"
   },

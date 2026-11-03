@@ -4,7 +4,7 @@
   "family_id": "qf-a-conditional-coupling-diversity-precisi-7336590fb7",
   "project_id": "qp-tmlr-paper2-consolidated-a737471ea703",
   "title": "A Conditional Coupling--Diversity--Precision Bound for TTRL-Based LLM Evaluation",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "379e1632302e979ded0c0462eeba32a07fa82653796ca72d4f9f55e46f8d5cec",
@@ -69,9 +69,9 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/.research/paper2-consolidated/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex"
+    "<WORKSPACE_ROOT>/.research/paper2-consolidated/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -80,7 +80,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/project.json",
     "status": "review_pending",
     "ledger_present": true,
     "bibliography_present": true,

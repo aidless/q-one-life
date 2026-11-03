@@ -4,7 +4,7 @@
   "family_id": "qf-agent-behavior-regression-testing-for-lo-1f724f2bff",
   "project_id": "qp-tmlr-paper35-front-drift-0c2ed0225fe5",
   "title": "Agent Behavior Regression Testing for Local LLM Systems:\\ Reproducibility and Cross-Model Heterogeneity across 100 Scenarios",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "d1eac66806754899440a12bb30446c3944ed230191a077b1bbd331a2ae7a02f0",
@@ -69,10 +69,10 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/.research/paper35-front-drift/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/.aris/ingest_drift/20260928T102343Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/.research/paper35-front-drift/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -81,7 +81,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/project.json",
     "status": "revision",
     "ledger_present": true,
     "bibliography_present": true,

@@ -2,7 +2,7 @@
 
 Title: **The Name Is the Contract:\\ A Promotion Gate Called mcnemar\_exact Is Not Exact ---\\ and, Against the Two-Sided Exact Reference,\\ Every Flip Favors Promotion**
 Target: `arxiv`
-Manuscript: `/home/liuzewen/F:\deepseek/agent-verifiability/manuscript/f-acceptance-arxiv/main.tex`
+Manuscript: `<WORKSPACE_ROOT>/F:\deepseek/agent-verifiability/manuscript/f-acceptance-arxiv/main.tex`
 Source SHA-256: `4c59377876dfe6136c24dd016bca1111918e09a5ecbdf1a4109801795394f797`
 
 The agent may:

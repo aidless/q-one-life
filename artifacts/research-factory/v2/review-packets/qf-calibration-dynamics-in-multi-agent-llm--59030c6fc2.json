@@ -4,7 +4,7 @@
   "family_id": "qf-calibration-dynamics-in-multi-agent-llm--59030c6fc2",
   "project_id": "qp-tmlr-paper3-consolidated-65ab13e34f4a",
   "title": "Calibration Dynamics in Multi-Agent LLM Systems: Empirical Fatigue, Model-Specific Self-Evaluation, and a Metric-Conditional Noise Relation",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper3-consolidated/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper3-consolidated/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "d591c9f07f13f700ee101ab9fd4f04739b2358765a57d0b1dd7e682b77d3d0f7",
@@ -57,10 +57,10 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/paper3-consolidated/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper3-consolidated/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper3-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper3-consolidated/source/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/.research/paper3-consolidated/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper3-consolidated/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper3-consolidated/.aris/ingest_drift/20260930T052414Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper3-consolidated/source/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

@@ -4,8 +4,8 @@
   "title": "Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?",
   "status": "archived",
   "target": "arxiv",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibrating-evaluator",
-  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/main.tex",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibrating-evaluator",
+  "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p9/paper/main.tex",
   "manuscript": {
     "path": "evidence/upstream/main.tex",
     "sha256": "e9487a094e1377549572faaa207cdff9f0f99a72d8903518186dac3a953e3d03",

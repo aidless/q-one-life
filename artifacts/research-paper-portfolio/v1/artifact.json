@@ -3,26 +3,26 @@
   "name": "research-paper-portfolio",
   "version": 1,
   "generated_at": "2026-10-27T14:08:01.981485Z",
-  "command": "python scripts/research_portfolio.py --config '/home/liuzewen/F:\\deepseek/q-one-life/research/portfolio-sources.json' --artifact-dir '/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1'",
+  "command": "python scripts/research_portfolio.py --config '<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/portfolio-sources.json' --artifact-dir '<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1'",
   "inputs": [
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/portfolio-sources.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/portfolio-sources.json",
       "sha256": "840d223cff5769f9259f171b4de261fd57765363bae4de93a149f545355bc5b1"
     }
   ],
   "outputs": [
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-portfolio.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-portfolio.json",
       "sha256": "3a6daa6b530d7dd1b6deee6ef3806a57a0356b01e1e443fa49dcbac0bf961e2c",
       "bytes": 2069014
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-portfolio.md",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-portfolio.md",
       "sha256": "922d47f4fc61ddc3d65c2ca9d01a898746c4ceddeee349f6bbdb02d7d4ce693e",
       "bytes": 29394
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-triage.csv",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-triage.csv",
       "sha256": "1cf8a2fbbbdfbd317e853c05b9ab8f512c9e107bdd44a5a9cf80e7c754d781e3",
       "bytes": 37846
     }

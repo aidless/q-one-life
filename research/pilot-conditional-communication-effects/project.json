@@ -4,8 +4,8 @@
   "title": "Conditional Communication Effects in Multi-Agent LLM Systems: Strategy Convergence, Calibration Fatigue, and a Metric-Conditional Noise Relation",
   "status": "blocked",
   "target": "arxiv",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-conditional-communication-effects",
-  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-conditional-communication-effects",
+  "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper13-merged/paper/main.tex",
   "manuscript": {
     "path": "evidence/upstream/paper/main.tex",
     "sha256": "5a9b0ae4dca8194e22e3a275819506f97e3c03a3214853a6aba4d852e3121472",

@@ -4,7 +4,7 @@
   "family_id": "qf-how-many-evaluation-runs-does-a-ranking--93f856fd61",
   "project_id": "qp-tmlr-n4-min-n-888fec3227a3",
   "title": "How Many Evaluation Runs Does a Ranking Claim Need?\\\\ A Measured Resolvability Band for Ranked Comparison",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-n4-min-n/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-n4-min-n/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "00270d168b9a88aff713f222f32e4c7c8c94ca62f5bc7fb37a9394154a0c8f5e",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-n4-min-n/paper/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-n4-min-n/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

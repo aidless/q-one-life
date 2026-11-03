@@ -15,7 +15,7 @@
   "variants": [
     {
       "name": "legacy_source",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/main.tex",
       "sha256": "ae5c304410e6d15551e7c159dd0846c5609a5a0611bc1632d2d7d1cadb6821ab",
       "bytes": 65927,
       "synthetic_style_mentions": 16,
@@ -24,7 +24,7 @@
     },
     {
       "name": "canonical_preprint",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
       "sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",
       "bytes": 66342,
       "synthetic_style_mentions": 16,
@@ -33,7 +33,7 @@
     },
     {
       "name": "ingest_backup",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex.bak_20261001T0205Z_preprint",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex.bak_20261001T0205Z_preprint",
       "sha256": "6df16f28659c8b62087a030f955e0803a31a3b41c67dc2e01c9e84e09bcc1bf3",
       "bytes": 65827,
       "synthetic_style_mentions": 16,
@@ -42,7 +42,7 @@
     },
     {
       "name": "arxiv_clean",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_clean/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_clean/main.tex",
       "sha256": "cb160331ce870cc2bb4b16dbbdee6f39ffce044ed0c50f60aa1729069c54d681",
       "bytes": 68320,
       "synthetic_style_mentions": 0,
@@ -51,7 +51,7 @@
     },
     {
       "name": "arxiv_final",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_final/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_final/main.tex",
       "sha256": "a5b77bee3c20dde329c6eb3ad2f9e7cefbc4ea671014fca8d44f1944ded41358",
       "bytes": 68343,
       "synthetic_style_mentions": 0,
@@ -60,7 +60,7 @@
     },
     {
       "name": "arxiv_upload",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/arxiv_upload/main.tex",
       "sha256": "d0f359fad259fd49ebc68f40e9cd32f961ac0f5ab1d72a70faf71b8585752b0d",
       "bytes": 68341,
       "synthetic_style_mentions": 0,
@@ -69,7 +69,7 @@
     },
     {
       "name": "submission_variant",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/submission_variant/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/source/submission_variant/main.tex",
       "sha256": "fd79004ab1ab00c438d9c617acdf54e258f95855c66bfcb0b825486b6469e16b",
       "bytes": 65917,
       "synthetic_style_mentions": 16,
@@ -78,7 +78,7 @@
     }
   ],
   "merge_target": {
-    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p12/paper/main.tex",
+    "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p12/paper/main.tex",
     "sha256": "b406b923bde2bb8b6323d8079ed5edf33f9826056439bd081dcc11d731cb339f",
     "terms": {
       "N-Sensitive Calibration of Tree Ensembles": 0,

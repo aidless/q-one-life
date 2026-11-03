@@ -1,7 +1,7 @@
 {
   "schema": "q-one-cleanroom-compile-v1",
   "generated_at": "2026-10-27T14:31:12.748720Z",
-  "project_root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper11",
+  "project_root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper11",
   "source": {
     "main_tex": "source/main.tex",
     "main_tex_sha256": "9748c64cbd338dcc495d6ce4119365ccf8540b5369fb912c74df662f999be02a",

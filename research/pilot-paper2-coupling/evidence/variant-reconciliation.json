@@ -5,8 +5,8 @@
   "portfolio_project_id": "qp-tmlr-paper2-consolidated-a737471ea703",
   "canonical": {
     "role": "canonical",
-    "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/paper/main.tex",
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/paper/main.tex",
+    "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper2-consolidated/paper/main.tex",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/paper/main.tex",
     "sha256": "379e1632302e979ded0c0462eeba32a07fa82653796ca72d4f9f55e46f8d5cec",
     "bytes": 56705,
     "lines": 498,
@@ -16,7 +16,7 @@
   "variants": [
     {
       "role": "arxiv",
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/variants/arxiv/main.tex",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/variants/arxiv/main.tex",
       "sha256": "379e1632302e979ded0c0462eeba32a07fa82653796ca72d4f9f55e46f8d5cec",
       "bytes": 56705,
       "lines": 498,
@@ -25,7 +25,7 @@
     },
     {
       "role": "source_old",
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/main.tex",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/main.tex",
       "sha256": "de0ec5a5fc47f3db0d69a5b1a137aacdda698018fc1aa07f18b94d83fa50ddf2",
       "bytes": 56692,
       "lines": 529,
@@ -34,7 +34,7 @@
     },
     {
       "role": "ingest_drift",
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/variants/ingest-drift/main.tex",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/variants/ingest-drift/main.tex",
       "sha256": "350b5463b0f70d3ce7af2334ee1571f05b49d9ed1cced43b0aee3819ffa733a3",
       "bytes": 55466,
       "lines": 493,
@@ -43,7 +43,7 @@
     },
     {
       "role": "legacy",
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/variants/legacy/main.tex",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/variants/legacy/main.tex",
       "sha256": "382c2b5b3da8beaaa5c2c5116569319a0025f5ebea45458816315ab9828a5f4d",
       "bytes": 65778,
       "lines": 611,

@@ -4,7 +4,7 @@
   "family_id": "qf-empirical-comparison-of-memory-architect-3084cbb481",
   "project_id": "qp-tmlr-paper5-a7b059d1cc4e",
   "title": "Empirical Comparison of Memory Architectures for Bias-Resistant Multi-Agent LLM Systems",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper5/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "d0a1ab988c89498229e605e1f797f3bcbc69d0f0bf08c0c6bb0e6acd129734de",
@@ -57,9 +57,9 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5/.aris/ingest_drift/20260928T102343Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper5/source/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper5/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper5/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper5/source/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

@@ -5,17 +5,17 @@
   "portfolio_project_id": "qp-tmlr-paper35-front-drift-0c2ed0225fe5",
   "canonical": {
     "role": "canonical",
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/paper/main.tex",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/paper/main.tex",
     "sha256": "d1eac66806754899440a12bb30446c3944ed230191a077b1bbd331a2ae7a02f0",
     "bytes": 36921,
     "lines": 679,
-    "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/main.tex",
+    "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper35-front-drift/paper/main.tex",
     "byte_identical_to_canonical": true,
     "changed_canonical_lines": 0
   },
   "overlay": {
     "role": "overlay",
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/source/main.tex",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/source/main.tex",
     "sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
     "bytes": 32735,
     "lines": 681,
@@ -25,7 +25,7 @@
   },
   "variants": [
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/variants/legacy/main.tex",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/variants/legacy/main.tex",
       "sha256": "a659cb721c190e62d462e97d97dd1fad98d5141d68983f5180f92c33a61c01a7",
       "bytes": 34451,
       "lines": 652,
@@ -35,7 +35,7 @@
       "changed_variant_lines": 1
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/variants/source-old/main.tex",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/variants/source-old/main.tex",
       "sha256": "062922010fe2075598a74602f74d1caebf01034e8d883dcbe0d6c4189223aba5",
       "bytes": 34444,
       "lines": 652,
@@ -45,7 +45,7 @@
       "changed_variant_lines": 2
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/variants/ingest-drift/main.tex",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/variants/ingest-drift/main.tex",
       "sha256": "15ab04e6437b7e3863d9a3c1a0584cd164257133b75cdf671db2fbdc1de24c45",
       "bytes": 35802,
       "lines": 672,
@@ -55,7 +55,7 @@
       "changed_variant_lines": 1
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/variants/submission-variant/main.tex",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/variants/submission-variant/main.tex",
       "sha256": "302c73543768c7b1a2a50fa07ce70ca00cf0fba65e78b92511af6dc460d53b08",
       "bytes": 34448,
       "lines": 652,
@@ -65,7 +65,7 @@
       "changed_variant_lines": 2
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/.backups/20260926T130000Z_pre_script_recovery/main.tex",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/.backups/20260926T130000Z_pre_script_recovery/main.tex",
       "sha256": "31bd483586c46a1583df0aca8b46116ada13b21c382741048fbd4c38dc1cfc3b",
       "bytes": 34458,
       "lines": 652,
@@ -75,7 +75,7 @@
       "changed_variant_lines": 1
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/main.tex",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/main.tex",
       "sha256": "062922010fe2075598a74602f74d1caebf01034e8d883dcbe0d6c4189223aba5",
       "bytes": 34444,
       "lines": 652,

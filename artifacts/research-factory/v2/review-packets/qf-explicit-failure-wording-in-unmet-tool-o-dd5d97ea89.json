@@ -4,7 +4,7 @@
   "family_id": "qf-explicit-failure-wording-in-unmet-tool-o-dd5d97ea89",
   "project_id": "qp-a-obligation-arxiv-fadfebd149fa",
   "title": "Explicit Failure Wording in Unmet Tool Obligations:\\\\ A Pre-Registered Audit, a Refuted Universal Claim,\\\\ and a Failed Force-Disclose Intervention",
-  "primary_source": "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/a-obligation-arxiv/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/a-obligation-arxiv/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "d846cabb0ee5c022db1fb265f91a7b714990dca9a7b32a7273d38c2e1ac93d26",
@@ -42,7 +42,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/a-obligation-arxiv/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/a-obligation-arxiv/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

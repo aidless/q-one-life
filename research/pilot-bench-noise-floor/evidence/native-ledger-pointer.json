@@ -1,7 +1,7 @@
 {
   "schema": "q-one-native-ledger-pointer-v1",
   "generated_at": "2026-10-27T14:45:42.642726Z",
-  "workspace_root": "/home/liuzewen/F:\\deepseek",
+  "workspace_root": "<WORKSPACE_ROOT>/F:\\deepseek",
   "ledger": "evidence/native-paper-ledger.json",
   "native_ledger_sha256": "47d5b7d66e8ece9ac21f6c82089f4883405689e6428fce1e70eb936236252063",
   "native_manifest_sha256": "827720a059a385b6fbf945f2a88cc2984d9179f3641822b12ba717b1ec15697a",

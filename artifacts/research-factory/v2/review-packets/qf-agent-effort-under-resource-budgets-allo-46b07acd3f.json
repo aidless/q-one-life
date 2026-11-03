@@ -4,7 +4,7 @@
   "family_id": "qf-agent-effort-under-resource-budgets-allo-46b07acd3f",
   "project_id": "qp-agent-effort-r1-b2ad3c931054",
   "title": "Agent Effort under Resource Budgets:\\ Allocation and Two Small-Model Case Studies",
-  "primary_source": "/home/liuzewen/arxiv-publication/papers/agent-effort-r1/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/arxiv-publication/papers/agent-effort-r1/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "fc05205e8c56f7a13e4188a443a3ad1b5291b74effe4b395160d2cc0f06fb2cd",
@@ -57,8 +57,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/arxiv-publication/papers/agent-effort-r1/paper/main.tex",
-    "/home/liuzewen/arxiv-publication/submission-ready/agent-effort-r1/src/main.tex"
+    "<WORKSPACE_ROOT>/arxiv-publication/papers/agent-effort-r1/paper/main.tex",
+    "<WORKSPACE_ROOT>/arxiv-publication/submission-ready/agent-effort-r1/src/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

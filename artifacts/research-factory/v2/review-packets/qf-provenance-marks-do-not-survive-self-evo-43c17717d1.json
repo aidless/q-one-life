@@ -4,7 +4,7 @@
   "family_id": "qf-provenance-marks-do-not-survive-self-evo-43c17717d1",
   "project_id": "qp-f-deepseek-7e1bbba861ff",
   "title": "Provenance Marks Do Not Survive Self-Evolution:\\\\ An Invalidated Survival Assay",
-  "primary_source": "/home/liuzewen/F:\\deepseek/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "a539295fd6595633eae638a7d727b0a4f492f29ff263ef0fa0a51fff06fd0724",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

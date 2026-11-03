@@ -4,7 +4,7 @@
   "family_id": "qf-probability-calibration-worsens-evaluati-ebfa2ad9ce",
   "project_id": "qp-tmlr-p15-1c9ba7189095",
   "title": "Probability Calibration Worsens Evaluation Noise: Evidence from a Canonical Comparative Study",
-  "primary_source": "/home/liuzewen/.research/tmlr-p15/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/tmlr-p15/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "c45e5fb7842224c18dcb02501e648eed45962b299b01b974475fea512f753fbe",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/tmlr-p15/main.tex"
+    "<WORKSPACE_ROOT>/.research/tmlr-p15/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

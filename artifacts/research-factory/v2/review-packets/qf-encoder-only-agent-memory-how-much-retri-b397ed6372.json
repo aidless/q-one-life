@@ -4,7 +4,7 @@
   "family_id": "qf-encoder-only-agent-memory-how-much-retri-b397ed6372",
   "project_id": "qp-encoder-memory-62f9ebbce717",
   "title": "Encoder-Only Agent Memory: How Much Retrievability Survives Session Compression, and When Must We Fall Back to the Raw Log?",
-  "primary_source": "/home/liuzewen/F:\\deepseek/papers/encoder_memory/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/papers/encoder_memory/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "2a99f88e1e0bb98c797be73c0fe514da640eb0a74a7c8a16c3f436d014849a29",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/papers/encoder_memory/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/papers/encoder_memory/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

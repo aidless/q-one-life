@@ -307,7 +307,7 @@ def main() -> int:
         "target": "arxiv",
         "root": str(root),
         "origin": (
-            "/home/liuzewen/Projects/agi-paper-pipeline/runs/"
+            "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/"
             "tmlr-paper2-consolidated/paper/main.tex"
         ),
         "manuscript": {

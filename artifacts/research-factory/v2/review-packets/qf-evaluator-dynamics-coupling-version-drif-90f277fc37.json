@@ -4,7 +4,7 @@
   "family_id": "qf-evaluator-dynamics-coupling-version-drif-90f277fc37",
   "project_id": "qp-paper-i-evaluator-dynamics-943232bac57e",
   "title": "Evaluator Dynamics:\\\\ Coupling, Version Drift, and Calibration Interventions in LLM-as-Judge Measurement",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/papercorpus-anon/paper-I-evaluator-dynamics/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/papercorpus-anon/paper-I-evaluator-dynamics/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "750c9cbb84bb7ca3c349e10a2558933332c446bf1efd85a5b4f6927c74d25eb8",
@@ -42,8 +42,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/papercorpus-anon/paper-I-evaluator-dynamics/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/pi-evaluator-dynamics/paper/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/papercorpus-anon/paper-I-evaluator-dynamics/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/pi-evaluator-dynamics/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

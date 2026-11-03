@@ -4,7 +4,7 @@
   "family_id": "qf-auditable-recursive-self-improvement-0-2-e2b788577f",
   "project_id": "qp-bi-level-pepa-9da82062f837",
   "title": "Auditable Recursive Self-Improvement:\\\\[0.2em] A PDP-style Formal Framework for Bi-Level Agent Systems",
-  "primary_source": "/home/liuzewen/.research/bi-level-pepa/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/bi-level-pepa/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "a40d6df56db984b9178bab76d70d90fea36a71d441896273d1b1ee795be44dab",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/bi-level-pepa/main.tex"
+    "<WORKSPACE_ROOT>/.research/bi-level-pepa/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

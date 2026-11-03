@@ -4,7 +4,7 @@
   "family_id": "qf-cca-agent-4ce757da70",
   "project_id": "qp-cca-agent-1d97c488a708",
   "title": "cca agent",
-  "primary_source": "/home/liuzewen/.research/cca-agent/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/cca-agent/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "2385c9130045568f66430f61ef7d2a041903ab21b524c29077bc0e09a721b026",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/cca-agent/main.tex"
+    "<WORKSPACE_ROOT>/.research/cca-agent/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

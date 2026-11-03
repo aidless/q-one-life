@@ -4,7 +4,7 @@
   "family_id": "qf-which-endpoint-is-undecidable-auditing-r-e1b9af095d",
   "project_id": "qp-n5-threshold-straddle-bd980993a2b9",
   "title": "Which Endpoint Is Undecidable? Auditing Reported Minimum-Sample-Size Claims",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/n5-threshold-straddle/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/n5-threshold-straddle/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "a0c11455254f7cdd86a9a94d1d5efb68f0d4bbf2c7cc4c92c50c8be857df745d",
@@ -47,9 +47,9 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/n5-threshold-straddle/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/n5-threshold-straddle/arxiv/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/n5-threshold-straddle/paper/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/n5-threshold-straddle/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/n5-threshold-straddle/arxiv/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/n5-threshold-straddle/paper/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

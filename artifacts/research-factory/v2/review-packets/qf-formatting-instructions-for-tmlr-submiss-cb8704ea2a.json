@@ -4,7 +4,7 @@
   "family_id": "qf-formatting-instructions-for-tmlr-submiss-cb8704ea2a",
   "project_id": "qp-tmlr-tmlr-style-file-main-5492dd09f540",
   "title": "Formatting Instructions for TMLR \\ Submissions",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-style-file-main/source/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-style-file-main/source/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "85a994256fae53477e935bbacdf45b7e0e031abff660991485a61bff9bd4704c",
@@ -42,7 +42,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-style-file-main/source/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-style-file-main/source/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

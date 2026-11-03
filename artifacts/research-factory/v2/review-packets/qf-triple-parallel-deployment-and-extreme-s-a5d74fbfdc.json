@@ -4,7 +4,7 @@
   "family_id": "qf-triple-parallel-deployment-and-extreme-s-a5d74fbfdc",
   "project_id": "qp-arxiv-autodl17273-e2b88d0818ce",
   "title": "Triple-Parallel Deployment and Extreme Stress Testing of\\\\ Small Language Models on a Consumer GPU",
-  "primary_source": "/home/liuzewen/.research/arxiv-autodl17273/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/arxiv-autodl17273/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "457565b6ad8913cdd9dc0668e9886cb38ca5dd10cfc6441f603c18eac9a8a524",
@@ -42,7 +42,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/arxiv-autodl17273/main.tex"
+    "<WORKSPACE_ROOT>/.research/arxiv-autodl17273/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

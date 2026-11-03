@@ -4,7 +4,7 @@
   "family_id": "qf-the-name-is-the-contract-a-promotion-gat-afdfe0105b",
   "project_id": "qp-f-acceptance-arxiv-f6b1399f1e5a",
   "title": "The Name Is the Contract:\\\\ A Promotion Gate Called mcnemar\\_exact Is Not Exact ---\\\\ and, Against the Two-Sided Exact Reference,\\\\ Every Flip Favors Promotion",
-  "primary_source": "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/f-acceptance-arxiv/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/f-acceptance-arxiv/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "4c59377876dfe6136c24dd016bca1111918e09a5ecbdf1a4109801795394f797",
@@ -54,8 +54,8 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/agent-verifiability/manuscript/f-acceptance-arxiv/main.tex",
-    "/home/liuzewen/WorkBuddy/2026-10-23-23-32-00/arxiv/f_acceptance/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/agent-verifiability/manuscript/f-acceptance-arxiv/main.tex",
+    "<WORKSPACE_ROOT>/WorkBuddy/2026-10-23-23-32-00/arxiv/f_acceptance/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -64,7 +64,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f-acceptance/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f-acceptance/project.json",
     "status": "review_pending",
     "ledger_present": true,
     "bibliography_present": true,

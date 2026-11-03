@@ -4,7 +4,7 @@
   "family_id": "qf-when-does-parallelising-agents-pay-deriv-c9d6889991",
   "project_id": "qp-multiagent-scaling-6b5003fcff22",
   "title": "When Does Parallelising Agents Pay?\\\\ Deriving and Pre-Registering an Amdahl-Style Scaling Law for Multi-Agent Collaboration",
-  "primary_source": "/home/liuzewen/F:\\deepseek/papers/multiagent_scaling/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/papers/multiagent_scaling/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "3cbb0df75bd11ba0f3b2f48f7979899e6b933a38c1d10301544d4f113003c3a8",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/papers/multiagent_scaling/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/papers/multiagent_scaling/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

@@ -2,7 +2,7 @@
   "schema": "q-one-paper35-carrier-audit-v1",
   "generated_at": "2026-10-27T16:40:42.233466Z",
   "source": {
-    "receipts": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/paper/evidence/CARRIER_RECEIPTS.json",
+    "receipts": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/paper/evidence/CARRIER_RECEIPTS.json",
     "receipts_sha256": "df8d2f040480f1d383886fa4a088780d1c9b350c601fd797a18883f7bff0808a",
     "overlay_main_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
     "upstream_main_sha256": "d1eac66806754899440a12bb30446c3944ed230191a077b1bbd331a2ae7a02f0"
@@ -15,7 +15,7 @@
   "receipts": [
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
       "artifact_sha256": "5df68c6d06045c1fe712559f8ea07111baf7250d5d526c522699e5da82c91847",
       "locator": "q2_by_category.A.ci[0]",
       "over": null,
@@ -32,7 +32,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
       "artifact_sha256": "5df68c6d06045c1fe712559f8ea07111baf7250d5d526c522699e5da82c91847",
       "locator": "q2_by_category.A.ci[1]",
       "over": null,
@@ -49,7 +49,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/cross_model_bds.csv",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/cross_model_bds.csv",
       "artifact_sha256": "fbb1ecf1919359c331abfd84d23a4762fa456eb22fd838e39529788fe23d21b5",
       "locator": null,
       "over": "rows[*].cross_model_bds",
@@ -66,7 +66,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/cross_model_bds.csv",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/cross_model_bds.csv",
       "artifact_sha256": "fbb1ecf1919359c331abfd84d23a4762fa456eb22fd838e39529788fe23d21b5",
       "locator": null,
       "over": "rows[*].cross_model_bds",
@@ -83,7 +83,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
       "artifact_sha256": "5df68c6d06045c1fe712559f8ea07111baf7250d5d526c522699e5da82c91847",
       "locator": "q2_by_category.R.ci[1]",
       "over": null,
@@ -100,7 +100,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
       "artifact_sha256": "5df68c6d06045c1fe712559f8ea07111baf7250d5d526c522699e5da82c91847",
       "locator": "q2_by_category.T.ci[0]",
       "over": null,
@@ -117,7 +117,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/full_run_stats_20260813.json",
       "artifact_sha256": "5df68c6d06045c1fe712559f8ea07111baf7250d5d526c522699e5da82c91847",
       "locator": "q2_by_category.X.ci[1]",
       "over": null,
@@ -134,7 +134,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/cross_model_bds.csv",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/evidence/upstream/source/evidence/cross_model_bds.csv",
       "artifact_sha256": "fbb1ecf1919359c331abfd84d23a4762fa456eb22fd838e39529788fe23d21b5",
       "locator": null,
       "over": "rows[*].cross_model_bds",

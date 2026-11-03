@@ -4,7 +4,7 @@
   "family_id": "qf-when-a-leaderboard-cannot-be-read-three--408f5f6ceb",
   "project_id": "qp-bench-noise-floor-da759749bd26",
   "title": "When a Leaderboard Cannot Be Read:\\\\ Three Rulers for the Noise Floor of\\\\ LLM-as-Judge Evaluation",
-  "primary_source": "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
@@ -47,7 +47,7 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/papers/bench_noise_floor/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/papers/bench_noise_floor/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -56,7 +56,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/project.json",
     "status": "revision",
     "ledger_present": true,
     "bibliography_present": true,

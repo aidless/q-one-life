@@ -7,10 +7,10 @@ test_interrupted_restore_rolls_back_and_keeps_a_safety_copy (test_desktop.Deskto
 test_local_model_session_secret_is_never_public_or_backed_up (test_desktop.DesktopBoundaryTests.test_local_model_session_secret_is_never_public_or_backed_up) ... ok
 test_payload_is_encrypted_with_the_random_data_key_not_the_recovery_key (test_desktop.DesktopBoundaryTests.test_payload_is_encrypted_with_the_random_data_key_not_the_recovery_key) ... ok
 test_restore_preserves_non_secret_settings_without_cloud_key (test_desktop.DesktopBoundaryTests.test_restore_preserves_non_secret_settings_without_cloud_key) ... ok
-test_sidecar_handshake_and_single_instance_lock (test_desktop.DesktopBoundaryTests.test_sidecar_handshake_and_single_instance_lock) ... /home/liuzewen/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/unittest/case.py:579: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+test_sidecar_handshake_and_single_instance_lock (test_desktop.DesktopBoundaryTests.test_sidecar_handshake_and_single_instance_lock) ... <WORKSPACE_ROOT>/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/unittest/case.py:579: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
   if method() is not None:
 ResourceWarning: Enable tracemalloc to get the object allocation traceback
-/home/liuzewen/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/unittest/case.py:579: ResourceWarning: unclosed file <_io.TextIOWrapper name=7 encoding='UTF-8'>
+<WORKSPACE_ROOT>/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/unittest/case.py:579: ResourceWarning: unclosed file <_io.TextIOWrapper name=7 encoding='UTF-8'>
   if method() is not None:
 ResourceWarning: Enable tracemalloc to get the object allocation traceback
 ok

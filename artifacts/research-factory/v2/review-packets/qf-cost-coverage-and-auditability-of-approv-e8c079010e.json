@@ -4,7 +4,7 @@
   "family_id": "qf-cost-coverage-and-auditability-of-approv-e8c079010e",
   "project_id": "qp-paper-joint-mem-forget-formal-ffcbe12c02d1",
   "title": "Cost, Coverage, and Auditability of Approval Gates versus\\ -Level Safety in Multi-Agent Tool Execution",
-  "primary_source": "/home/liuzewen/F:\\deepseek/paper_joint_mem_forget_formal/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/paper_joint_mem_forget_formal/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "a06cc3852925782d38e2d3ffb4334fa630eb820542f70f55277f617b3faef530",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/paper_joint_mem_forget_formal/paper/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/paper_joint_mem_forget_formal/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

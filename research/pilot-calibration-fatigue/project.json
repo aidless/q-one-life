@@ -4,8 +4,8 @@
   "title": "Calibration Fatigue, Self-Evaluation Fragility, and the Coupling--Noise Tradeoff in Multi-Agent LLM Systems: A Systematic Study of Calibration Effects",
   "status": "blocked",
   "target": "arxiv",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue",
-  "origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-calibration-fatigue",
+  "origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex",
   "manuscript": {
     "path": "evidence/upstream/main.tex",
     "sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",

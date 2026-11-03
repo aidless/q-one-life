@@ -4,7 +4,7 @@
   "family_id": "qf-agentcompose-a-benchmark-design-for-comp-4cca690098",
   "project_id": "qp-agentcompose-7afbca64dbc8",
   "title": "AgentCompose: A Benchmark Design for Compositional \\\\ Generalization in LLM Tool Use",
-  "primary_source": "/home/liuzewen/F:\\deepseek/flagship/agentcompose/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/flagship/agentcompose/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "2df6694f4d86585d5eb8d2d5742c3f151939c8c351ae37420fef09b8f6f97e97",
@@ -42,7 +42,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/flagship/agentcompose/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/flagship/agentcompose/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

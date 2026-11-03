@@ -3,22 +3,22 @@
   "generated_at": "2026-10-27T14:18:09.483866Z",
   "sources": [
     {
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/CLAIM_LEDGER.md",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/CLAIM_LEDGER.md",
       "sha256": "415ce2eadcd613632fa663ea8af0fefc98dc53a8c60615abf0b131ae6d20ebbf",
       "state": "candidate"
     },
     {
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/REVIEW_ACCEPTANCE.json",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/REVIEW_ACCEPTANCE.json",
       "sha256": "371c0354ffb10f54cf60da16be60cb1c5b12e76063ed95d263c5b68bc65c38bb",
       "state": "candidate"
     },
     {
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence_manifest.json",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/evidence_manifest.json",
       "sha256": "997f77031380afaa1d311286a71c9fb26c6c85b44846f630132556be3f628901",
       "state": "candidate"
     },
     {
-      "path": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/MANIFEST.json",
+      "path": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/paper11-latex/v3/MANIFEST.json",
       "sha256": "80455c2f5efce4a5870240902ee9f5e582449cf813188aa2149c668b41775238",
       "state": "candidate"
     }

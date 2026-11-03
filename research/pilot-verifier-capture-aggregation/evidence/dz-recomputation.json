@@ -1,7 +1,7 @@
 {
   "schema": "q-one-tab-dz-recomputation-v1",
-  "source_benchmark_table": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/source/source/experiments/benchmark_results/benchmark_table.json",
-  "source_main_tex": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source/main.tex",
+  "source_benchmark_table": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/source/source/experiments/benchmark_results/benchmark_table.json",
+  "source_main_tex": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/source/main.tex",
   "benchmark_table_sha256": "b2f7c090edfd86d7cf32a03bd404bc9ed1572dc74ada043a5027af67b7b9fbd2",
   "main_tex_sha256": "fdfdb030c807bcb2d9c2bedec5281f4de6d8cc5710632bc75b58898742366331",
   "formula": "d_z = mean(diff)/sd(diff, ddof=1), diff_i = ATV_acc_i - baseline_acc_i",

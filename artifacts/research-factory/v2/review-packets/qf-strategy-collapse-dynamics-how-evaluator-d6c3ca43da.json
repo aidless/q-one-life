@@ -4,7 +4,7 @@
   "family_id": "qf-strategy-collapse-dynamics-how-evaluator-d6c3ca43da",
   "project_id": "qp-tmlr-p17-9ed670afb79e",
   "title": "Strategy Collapse Dynamics: How Evaluator Preferences Reshape LLM Agent Behavior Over Time",
-  "primary_source": "/home/liuzewen/.research/tmlr-p17/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/tmlr-p17/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "a5661ba44277b5aad25611c72864f61f05b2f3a585968140702277a10e79c7fb",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/tmlr-p17/main.tex"
+    "<WORKSPACE_ROOT>/.research/tmlr-p17/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

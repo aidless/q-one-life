@@ -15,8 +15,8 @@ from pathlib import Path
 from typing import Any
 
 OVERLAY = Path(__file__).resolve().parents[1]
-UPSTREAM = Path("/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6")
-P12 = Path("/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p12/paper/main.tex")
+UPSTREAM = Path("<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6")
+P12 = Path("<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p12/paper/main.tex")
 CANONICAL = UPSTREAM / "paper/main.tex"
 CONFIGURED_DATE = "2026-10-28T00:00:00Z"
 
@@ -70,7 +70,7 @@ def main() -> int:
     files = {
         "canonical": CANONICAL,
         "preprint_backup": UPSTREAM / "paper/main.tex.bak_20261001T0205Z_preprint",
-        "legacy_research_mirror": Path("/home/liuzewen/.research/tmlr-p6/main.tex"),
+        "legacy_research_mirror": Path("<WORKSPACE_ROOT>/.research/tmlr-p6/main.tex"),
         "aris_backup": UPSTREAM / ".aris/backup/main.tex.before_literal_cites",
         "ingest_drift": UPSTREAM / ".aris/ingest_drift/20260928T102343Z/main.tex",
         "submission_variant": UPSTREAM / "source/submission_variant/main.tex",

@@ -1,6 +1,6 @@
 {
   "schema": "q-one-p17-source-record-v1",
-  "canonical_origin": "/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex",
+  "canonical_origin": "<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3/main.tex",
   "canonical_sha256": "b1de3c420d53f5333d4a522d3e3856c612520667bb209273b86f7ded2af99cd4",
   "byte_identical": true,
   "snapshot_sha256": "ae5c747c6b4265168bb1f6e8489b05bbf36555f887fe4f476ba759170eabdd06",

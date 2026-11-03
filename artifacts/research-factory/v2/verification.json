@@ -1,10 +1,10 @@
 {
   "schema": "q-one-research-factory-verification-v1",
   "generated_at": "2026-10-31T16:30:41.694438Z",
-  "command": "PYTHONPATH=/data2/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/data2/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/data2/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src /tmp/qone-venv/bin/python '/home/liuzewen/F:\\deepseek/q-one-life/scripts/research_factory_verify.py'",
+  "command": "PYTHONPATH=/data2/tmp/qone-research-test-paths-143a9e473b7d/qone-life-src:/data2/tmp/qone-research-test-paths-143a9e473b7d/q-one-core-src:/data2/tmp/qone-research-test-paths-143a9e473b7d/q-one-agent-src /tmp/qone-venv/bin/python '<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/scripts/research_factory_verify.py'",
   "scope": "Research Factory control plane, seventeen pilot overlays, claim ledgers, mechanical package audits, clean-room compilation and candidate archives",
   "source": {
-    "workspace": "/home/liuzewen/F:\\deepseek/q-one-life",
+    "workspace": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life",
     "head": "710f6db7e77ab94ec4053bee31ad805aba045c43",
     "dirty": true
   },

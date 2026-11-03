@@ -4,7 +4,7 @@
   "family_id": "qf-trust-weighted-voting-never-loses-to-maj-42ccc127d8",
   "project_id": "qp-f4-single-9ca9110403b6",
   "title": "Trust-Weighted Voting Never Loses to Majority (Within Studied Regime) Under Captured Verifiers: A Negative Result for the Sign-Flip Hypothesis",
-  "primary_source": "/home/liuzewen/.research/f4-single/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/f4-single/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "7f73a1a135cababff360a137f096330ac04400ff52e97526b326392ee7fda771",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/f4-single/main.tex"
+    "<WORKSPACE_ROOT>/.research/f4-single/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

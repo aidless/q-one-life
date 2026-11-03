@@ -4,7 +4,7 @@
   "family_id": "qf-when-the-model-says-it-checked-finite-lo-703b9d6a8b",
   "project_id": "qp-r5-verify-vs-gate-3635a0268d10",
   "title": "When the Model Says It Checked:\\ Finite Local-Effect Audit of Model-Internal Verification",
-  "primary_source": "/home/liuzewen/WorkBuddy/2026-10-21-21-24-58/r5-verify-vs-gate/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-21-21-24-58/r5-verify-vs-gate/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "a11a235bb4e75126b419021ef88b844876a2ca23860163fb1c9b938cde9d2a04",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/WorkBuddy/2026-10-21-21-24-58/r5-verify-vs-gate/paper/main.tex"
+    "<WORKSPACE_ROOT>/WorkBuddy/2026-10-21-21-24-58/r5-verify-vs-gate/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

@@ -3,11 +3,11 @@
   "generated_at": "2026-10-28T12:14:02.715527Z",
   "inputs": [
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-portfolio.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/artifacts/research-paper-portfolio/v1/paper-portfolio.json",
       "sha256": "3a6daa6b530d7dd1b6deee6ef3806a57a0356b01e1e443fa49dcbac0bf961e2c"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/artifacts/research-factory/v2/triage.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/artifacts/research-factory/v2/triage.json",
       "sha256": "0465e99261d49dc1a8b98e7d8dac37b8197b83a4c05867afbb30fd8117bbc236"
     }
   ],

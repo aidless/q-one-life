@@ -1,13 +1,13 @@
 {
   "schema": "q-one-portfolio-sources-v1",
   "roots": [
-    "/home/liuzewen/F:\\deepseek",
-    "/home/liuzewen/.research",
-    "/home/liuzewen/kaggle-control-20261013/paper-evidence",
-    "/home/liuzewen/WorkBuddy",
-    "/home/liuzewen/arxiv-publication",
-    "/home/liuzewen/arxiv-polish-20261013",
-    "/home/liuzewen/Projects/agi-paper-pipeline"
+    "<WORKSPACE_ROOT>/F:\\deepseek",
+    "<WORKSPACE_ROOT>/.research",
+    "<WORKSPACE_ROOT>/kaggle-control-20261013/paper-evidence",
+    "<WORKSPACE_ROOT>/WorkBuddy",
+    "<WORKSPACE_ROOT>/arxiv-publication",
+    "<WORKSPACE_ROOT>/arxiv-polish-20261013",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline"
   ],
   "exclude_dirs": [
     ".cache",

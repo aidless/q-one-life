@@ -2,5 +2,5 @@
   "compile_passed": true,
   "deterministic_pdf": true,
   "pages": 12,
-  "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/archive-cleanroom/receipt.json"
+  "receipt": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/archive-cleanroom/receipt.json"
 }

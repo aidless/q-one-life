@@ -2,11 +2,11 @@
   "schema": "q-one-paper2-carrier-audit-v1",
   "generated_at": "2026-10-27T15:35:00Z",
   "source": {
-    "manuscript": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/source/main.tex",
+    "manuscript": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/source/main.tex",
     "manuscript_sha256": "7eb12d1302cf935ab8e19ea425c43da2e72daa89636fd3a5a1e0759bffab8b5d",
-    "upstream": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/paper/main.tex",
+    "upstream": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/paper/main.tex",
     "upstream_sha256": "379e1632302e979ded0c0462eeba32a07fa82653796ca72d4f9f55e46f8d5cec",
-    "receipts": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/CARRIER_RECEIPTS.json",
+    "receipts": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/CARRIER_RECEIPTS.json",
     "receipts_sha256": "6f654b3c9945cbe1b67931933317814729234276d655ce76decbc6b31b48b6f3"
   },
   "summary": {
@@ -17,58 +17,58 @@
   },
   "artifact_hashes": [
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/analyses/p2_bound_decision_case_20260808.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/analyses/p2_bound_decision_case_20260808.json",
       "sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication.json",
       "sha256": "328577b0a134ce20c7f03195aaa802b2d0f61d41c1a63af8434659da6939828c"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_vs_heuristic_20260808.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_vs_heuristic_20260808.json",
       "sha256": "fcd7d01212f63c7f9ceec0d11cc162a74d46eb1b63f3ae89a71662953066d062"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_sampling_theorem_sim_20260808.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_sampling_theorem_sim_20260808.json",
       "sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T2_multiparameter.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T2_multiparameter.json",
       "sha256": "0fa1bbfbe9fd7c912e9a8b48193b4b1316e2b33c41894ce7b97290a817ef55af"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T5_minimax_envelope.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T5_minimax_envelope.json",
       "sha256": "335359894bad8190e8a690f64307125cdeb63de08964584e7481d6e0ecfe16c3"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T7_polytope.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T7_polytope.json",
       "sha256": "e5c07eab1ed6ecb8f7b38faf996ce10956c6b0d4e4b07a3d7b3ef5ffa23e8b6a"
     },
     {
-      "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387"
     }
   ],
   "receipts": [
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[*].recomputed_or_found",
       "expected": -0.9977,
@@ -94,7 +94,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[*].recomputed_or_found",
       "expected": -0.9977,
@@ -120,7 +120,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[*].recomputed_or_found",
       "expected": -0.9997,
@@ -146,7 +146,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[*].recomputed_or_found",
       "expected": -0.9963,
@@ -172,7 +172,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T2_multiparameter.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T2_multiparameter.json",
       "artifact_sha256": "0fa1bbfbe9fd7c912e9a8b48193b4b1316e2b33c41894ce7b97290a817ef55af",
       "expression": "fisher_info_per_condition[*].I_22",
       "expected": 1.1,
@@ -197,7 +197,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T2_multiparameter.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T2_multiparameter.json",
       "artifact_sha256": "0fa1bbfbe9fd7c912e9a8b48193b4b1316e2b33c41894ce7b97290a817ef55af",
       "expression": "fisher_info_per_condition[*].I_22",
       "expected": 1.1,
@@ -222,7 +222,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[57]",
       "expected": 2.3,
@@ -237,7 +237,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[11]",
       "expected": 0.157,
@@ -252,7 +252,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[58]",
       "expected": 2.42,
@@ -267,7 +267,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[60]",
       "expected": 5.477,
@@ -282,7 +282,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[50]",
       "expected": 0.999,
@@ -297,7 +297,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[3].recomputed_or_found",
       "expected": -0.9977,
@@ -312,7 +312,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[50]",
       "expected": 0.999,
@@ -327,7 +327,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[58]",
       "expected": 2.42,
@@ -342,7 +342,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[4]",
       "expected": 0.08,
@@ -357,7 +357,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[14]",
       "expected": 0.187,
@@ -372,7 +372,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[49]",
       "expected": 0.988,
@@ -387,7 +387,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[51]",
       "expected": 1.025,
@@ -402,7 +402,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[15]",
       "expected": 0.189,
@@ -417,7 +417,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[44]",
       "expected": 0.931,
@@ -432,7 +432,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[11]",
       "expected": 0.157,
@@ -447,7 +447,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[46]",
       "expected": 0.954,
@@ -462,7 +462,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[12]",
       "expected": 0.184,
@@ -477,7 +477,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[5]",
       "expected": 0.098,
@@ -492,7 +492,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[43]",
       "expected": 0.913,
@@ -507,7 +507,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[3].recomputed_or_found",
       "expected": -0.9977,
@@ -522,7 +522,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[4].recomputed_or_found",
       "expected": -0.9997,
@@ -537,7 +537,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[5].recomputed_or_found",
       "expected": -0.9963,
@@ -552,7 +552,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[4]",
       "expected": 0.08,
@@ -567,7 +567,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[50]",
       "expected": 0.999,
@@ -582,7 +582,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[58]",
       "expected": 2.42,
@@ -597,7 +597,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[14]",
       "expected": 0.187,
@@ -612,7 +612,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[57]",
       "expected": 2.3,
@@ -627,7 +627,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[60]",
       "expected": 5.477,
@@ -642,7 +642,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[57]",
       "expected": 2.306,
@@ -657,7 +657,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[38]",
       "expected": 0.587,
@@ -672,7 +672,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[9]",
       "expected": 0.145,
@@ -687,7 +687,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[36]",
       "expected": 0.511,
@@ -702,7 +702,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[22]",
       "expected": 0.26,
@@ -717,7 +717,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[27]",
       "expected": 0.328,
@@ -732,7 +732,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[25]",
       "expected": 0.324,
@@ -747,7 +747,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[19]",
       "expected": 0.208,
@@ -762,7 +762,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[35]",
       "expected": 0.417,
@@ -777,7 +777,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[11]",
       "expected": 0.157,
@@ -792,7 +792,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[60]",
       "expected": 5.477,
@@ -807,7 +807,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[22]",
       "expected": 0.26,
@@ -822,7 +822,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[60]",
       "expected": 5.477,
@@ -837,7 +837,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[57]",
       "expected": 2.306,
@@ -852,7 +852,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[38]",
       "expected": 0.587,
@@ -867,7 +867,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[29]",
       "expected": 0.355,
@@ -882,7 +882,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[9]",
       "expected": 0.145,
@@ -897,7 +897,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[36]",
       "expected": 0.511,
@@ -912,7 +912,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[22]",
       "expected": 0.26,
@@ -927,7 +927,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[27]",
       "expected": 0.328,
@@ -942,7 +942,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[25]",
       "expected": 0.324,
@@ -957,7 +957,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[26]",
       "expected": 0.325,
@@ -972,7 +972,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[19]",
       "expected": 0.208,
@@ -987,7 +987,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[35]",
       "expected": 0.417,
@@ -1002,7 +1002,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[3]",
       "expected": 0.066,
@@ -1017,7 +1017,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[23]",
       "expected": 0.286,
@@ -1032,7 +1032,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[58]",
       "expected": 2.42,
@@ -1047,7 +1047,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[11]",
       "expected": 0.157,
@@ -1062,7 +1062,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[11]",
       "expected": 0.157,
@@ -1077,7 +1077,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[58]",
       "expected": 2.42,
@@ -1092,7 +1092,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[0].N5.E_gamma_hat",
       "expected": 0.08,
@@ -1107,7 +1107,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[0].N30.E_gamma_hat",
       "expected": 0.2,
@@ -1122,7 +1122,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication.json",
       "artifact_sha256": "328577b0a134ce20c7f03195aaa802b2d0f61d41c1a63af8434659da6939828c",
       "expression": "results[2].rep",
       "expected": 3.0,
@@ -1137,7 +1137,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[2].gamma",
       "expected": 0.25,
@@ -1152,7 +1152,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[1].gamma",
       "expected": 0.186,
@@ -1167,7 +1167,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[11].recomputed_or_found",
       "expected": 0.953,
@@ -1182,7 +1182,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[0].gamma",
       "expected": 0.033,
@@ -1197,7 +1197,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "results[4].asym",
       "expected": 0.13,
@@ -1212,7 +1212,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[4].N30.Var_over_CR",
       "expected": 0.01,
@@ -1227,7 +1227,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[4].N10.Var_over_CR",
       "expected": 0.001,
@@ -1242,7 +1242,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "results[1].gTV",
       "expected": 0.76,
@@ -1257,7 +1257,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[11].recomputed_or_found",
       "expected": 0.95,
@@ -1272,7 +1272,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[0].gamma",
       "expected": 0.033,
@@ -1287,7 +1287,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[40]",
       "expected": 0.766,
@@ -1302,7 +1302,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[6]",
       "expected": 0.113,
@@ -1317,7 +1317,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[37]",
       "expected": 0.56,
@@ -1332,7 +1332,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[6].gamma",
       "expected": 1.038,
@@ -1347,7 +1347,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[10]",
       "expected": 0.148,
@@ -1362,7 +1362,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "cohens_d",
       "expected": 0.3,
@@ -1377,7 +1377,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[1].gamma",
       "expected": 0.1865,
@@ -1392,7 +1392,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[2].gamma",
       "expected": 0.9866,
@@ -1407,7 +1407,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[3].gamma",
       "expected": 0.8929,
@@ -1422,7 +1422,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[4].gamma",
       "expected": 0.7949,
@@ -1437,7 +1437,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[5].gamma",
       "expected": 0.7238,
@@ -1452,7 +1452,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[31]",
       "expected": 0.366,
@@ -1467,7 +1467,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[1].recomputed_or_found",
       "expected": 0.979,
@@ -1482,7 +1482,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[8].gamma",
       "expected": 1.0591,
@@ -1497,7 +1497,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[8]",
       "expected": 0.143,
@@ -1512,7 +1512,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "gTV_mean",
       "expected": 1.1763,
@@ -1527,7 +1527,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[2].recomputed_or_found",
       "expected": 0.936,
@@ -1542,7 +1542,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[16]",
       "expected": 0.196,
@@ -1557,7 +1557,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[40]",
       "expected": 0.766,
@@ -1572,7 +1572,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[2].gamma",
       "expected": 0.9866,
@@ -1587,7 +1587,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[0].gamma",
       "expected": 0.1,
@@ -1602,7 +1602,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[0].s",
       "expected": 0.5,
@@ -1617,7 +1617,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "ci95[1]",
       "expected": 0.15,
@@ -1632,7 +1632,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[6].s",
       "expected": 1.0,
@@ -1647,7 +1647,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "p_bootstrap",
       "expected": 0.6,
@@ -1662,7 +1662,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[17]",
       "expected": 0.197,
@@ -1677,7 +1677,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[16]",
       "expected": 0.196,
@@ -1692,7 +1692,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[2].gamma",
       "expected": 0.25,
@@ -1707,7 +1707,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "cohens_d",
       "expected": 0.3,
@@ -1722,7 +1722,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[31]",
       "expected": 0.366,
@@ -1737,7 +1737,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[2].gamma",
       "expected": 0.25,
@@ -1752,7 +1752,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[8]",
       "expected": 0.143,
@@ -1767,7 +1767,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[16]",
       "expected": 0.196,
@@ -1782,7 +1782,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[17]",
       "expected": 0.197,
@@ -1797,7 +1797,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[4].N10.Var_over_CR",
       "expected": 0.001,
@@ -1812,7 +1812,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "cohens_d",
       "expected": 0.3,
@@ -1827,7 +1827,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[0].gamma",
       "expected": 0.033,
@@ -1842,7 +1842,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[6].gamma",
       "expected": 1.038,
@@ -1857,7 +1857,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "cohens_d",
       "expected": 0.3,
@@ -1872,7 +1872,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[0].s",
       "expected": 0.5,
@@ -1887,7 +1887,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[6].s",
       "expected": 1.0,
@@ -1902,7 +1902,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[0].N10.CR_bound",
       "expected": 0.4,
@@ -1917,7 +1917,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[0].N5.CR_bound",
       "expected": 0.8,
@@ -1932,7 +1932,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T2_multiparameter.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T2_multiparameter.json",
       "artifact_sha256": "0fa1bbfbe9fd7c912e9a8b48193b4b1316e2b33c41894ce7b97290a817ef55af",
       "expression": "fisher_info_per_condition[3].gamma",
       "expected": 1.5,
@@ -1947,7 +1947,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication.json",
       "artifact_sha256": "328577b0a134ce20c7f03195aaa802b2d0f61d41c1a63af8434659da6939828c",
       "expression": "results[1].rep",
       "expected": 2.0,
@@ -1962,7 +1962,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "results[1].gTV",
       "expected": 0.76,
@@ -1977,7 +1977,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "results[4].asym",
       "expected": 0.13,
@@ -1992,7 +1992,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[11].recomputed_or_found",
       "expected": 0.95,
@@ -2007,7 +2007,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "gTV_mean",
       "expected": 1.2,
@@ -2022,7 +2022,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[5].gamma",
       "expected": 0.72,
@@ -2037,7 +2037,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "gTV_mean",
       "expected": 1.18,
@@ -2052,7 +2052,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[2].gamma",
       "expected": 0.99,
@@ -2067,7 +2067,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_vs_heuristic_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_vs_heuristic_20260808.json",
       "artifact_sha256": "fcd7d01212f63c7f9ceec0d11cc162a74d46eb1b63f3ae89a71662953066d062",
       "expression": "heur_overlap_pct",
       "expected": 76.9,
@@ -2082,7 +2082,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/analyses/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/analyses/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[0].gamma",
       "expected": 0.03,
@@ -2097,7 +2097,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[0].recomputed_or_found",
       "expected": 2.72,
@@ -2112,7 +2112,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[0].recomputed_or_found",
       "expected": 2.7,
@@ -2127,7 +2127,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "gVT_mean",
       "expected": 1.1,
@@ -2142,7 +2142,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "cohens_d",
       "expected": 0.3,
@@ -2157,7 +2157,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[6].gamma",
       "expected": 1.038,
@@ -2172,7 +2172,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_bound_decision_case_20260808.json",
       "artifact_sha256": "a686cbdbd762646d4eacad73d00558e2dae06a21702d9ea86478fa194fa95160",
       "expression": "rows[0].gamma",
       "expected": 0.033,
@@ -2187,7 +2187,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[0].gamma",
       "expected": 0.05,
@@ -2202,7 +2202,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[6].s",
       "expected": 1.0,
@@ -2217,7 +2217,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[4].N30.Var_over_CR",
       "expected": 0.01,
@@ -2232,7 +2232,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[0].s",
       "expected": 0.5,
@@ -2247,7 +2247,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_sampling_theorem_sim_20260808.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/p2_sampling_theorem_sim_20260808.json",
       "artifact_sha256": "a0c1c8eb20536cdb4b41c104ebec7af920ee4bd6001ba42f4d46e134de479387",
       "expression": "gamma_grid[0].gamma",
       "expected": 0.05,
@@ -2262,7 +2262,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "cohens_d",
       "expected": 0.3,
@@ -2277,7 +2277,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "gTV_mean",
       "expected": 1.176,
@@ -2292,7 +2292,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[16]",
       "expected": 0.196,
@@ -2307,7 +2307,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/analyses/mm_epc_gpt4o_replication_OLD.json",
       "artifact_sha256": "dea277e8196c2b5c41eb4f2a341860826f2d0ed7b4f6664a770b5e1dd608888e",
       "expression": "cohens_d",
       "expected": 0.3,
@@ -2322,7 +2322,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[6].recomputed_or_found",
       "expected": 7.305,
@@ -2337,7 +2337,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[8].recomputed_or_found",
       "expected": 2.55,
@@ -2352,7 +2352,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[9].recomputed_or_found",
       "expected": 1.009,
@@ -2367,7 +2367,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/b1_carrier_rederivation_20260927.json",
       "artifact_sha256": "af41aa7068290d2c309949aef2da634c2b99d7cbb00f99bdd7b9c8ef8581e82b",
       "expression": "entries[10].recomputed_or_found",
       "expected": 0.69,
@@ -2382,7 +2382,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T5_minimax_envelope.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T5_minimax_envelope.json",
       "artifact_sha256": "335359894bad8190e8a690f64307125cdeb63de08964584e7481d6e0ecfe16c3",
       "expression": "bootstraps_by_N.2.ci_high",
       "expected": 0.238,
@@ -2397,7 +2397,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T7_polytope.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T7_polytope.json",
       "artifact_sha256": "e5c07eab1ed6ecb8f7b38faf996ce10956c6b0d4e4b07a3d7b3ef5ffa23e8b6a",
       "expression": "cells[18].constraints.c5_lhs_rhs[1]",
       "expected": 0.18,
@@ -2412,7 +2412,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[23]",
       "expected": 0.286,
@@ -2427,7 +2427,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[3]",
       "expected": 0.066,
@@ -2442,7 +2442,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[23]",
       "expected": 0.286,
@@ -2457,7 +2457,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[56]",
       "expected": 2.236,
@@ -2472,7 +2472,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[57]",
       "expected": 2.3,
@@ -2487,7 +2487,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[51]",
       "expected": 1.025,
@@ -2502,7 +2502,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[9]",
       "expected": 0.145,
@@ -2517,7 +2517,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[36]",
       "expected": 0.511,
@@ -2532,7 +2532,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[29]",
       "expected": 0.355,
@@ -2547,7 +2547,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[51]",
       "expected": 1.025,
@@ -2562,7 +2562,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[57]",
       "expected": 2.3,
@@ -2577,7 +2577,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T7_polytope.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/experiments/T7_polytope.json",
       "artifact_sha256": "e5c07eab1ed6ecb8f7b38faf996ce10956c6b0d4e4b07a3d7b3ef5ffa23e8b6a",
       "expression": "cells[13].constraints.c2_lhs_rhs[0]",
       "expected": 0.9,
@@ -2592,7 +2592,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[56]",
       "expected": 2.236,
@@ -2607,7 +2607,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[20]",
       "expected": 0.241,
@@ -2622,7 +2622,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[28]",
       "expected": 0.336,
@@ -2637,7 +2637,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[32]",
       "expected": 0.389,
@@ -2652,7 +2652,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[30]",
       "expected": 0.357,
@@ -2667,7 +2667,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[58]",
       "expected": 2.42,
@@ -2682,7 +2682,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[38]",
       "expected": 0.587,
@@ -2697,7 +2697,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[56]",
       "expected": 2.236,
@@ -2712,7 +2712,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[20]",
       "expected": 0.241,
@@ -2727,7 +2727,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[28]",
       "expected": 0.336,
@@ -2742,7 +2742,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[32]",
       "expected": 0.389,
@@ -2757,7 +2757,7 @@
     },
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-paper2-coupling/evidence/upstream/source/evidence/table_numbers.json",
       "artifact_sha256": "15eca9da9a4638eb04c3a695ae6186feba110795ee5e15bb91fb5c6b818e7e66",
       "expression": "values[30]",
       "expected": 0.357,

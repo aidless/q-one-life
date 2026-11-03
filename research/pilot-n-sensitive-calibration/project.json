@@ -4,8 +4,8 @@
   "title": "N-Sensitive Calibration of Tree Ensembles on Frozen LLM Embeddings",
   "status": "archived",
   "target": "arxiv",
-  "root": "/home/liuzewen/F:\\\\deepseek/q-one-life/research/pilot-n-sensitive-calibration",
-  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
+  "root": "<WORKSPACE_ROOT>/F:\\\\deepseek/q-one-life/research/pilot-n-sensitive-calibration",
+  "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-resampling-calibration/paper/main.tex",
   "manuscript": {
     "path": "evidence/upstream/main.tex",
     "sha256": "4c530815218543297824cafefa9026e402c0d1fec5528c40d37aaee24b75a475",

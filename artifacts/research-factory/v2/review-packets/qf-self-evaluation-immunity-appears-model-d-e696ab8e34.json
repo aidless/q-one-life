@@ -4,7 +4,7 @@
   "family_id": "qf-self-evaluation-immunity-appears-model-d-e696ab8e34",
   "project_id": "qp-tmlr-p10-ac9a774cb675",
   "title": "Self-Evaluation Immunity Appears Model-Dependent: Calibration Reduces Coupling in One Self-Evaluation Pilot ($N=5$, Exploratory)",
-  "primary_source": "/home/liuzewen/.research/tmlr-p10/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/tmlr-p10/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "a640000cbe88eb1bcd72fe221115439a540bd98a86598aa6207115319196c17f",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/tmlr-p10/main.tex"
+    "<WORKSPACE_ROOT>/.research/tmlr-p10/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

@@ -32,7 +32,7 @@ removes those current verdict readings from the k-fold paragraph.
 
 ```bash
 python3 run_candidate_gates.py \
-  --paper-root '/home/liuzewen/F:\deepseek/papers/bench_noise_floor'
+  --paper-root '<WORKSPACE_ROOT>/F:\deepseek/papers/bench_noise_floor'
 ```
 
 The command writes the reverse-coverage, anchor-census, verdict-word and

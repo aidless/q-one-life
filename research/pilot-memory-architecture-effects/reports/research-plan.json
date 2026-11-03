@@ -1,7 +1,7 @@
 {
   "schema": "q-one-research-plan-v1",
   "generated_at": "2026-10-28T07:36:10.854135Z",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-memory-architecture-effects",
   "paper_id": "qf-memory-architecture-effects-on-output-le-0ea84705a9",
   "title": "Memory Architecture Effects on Output-Length Responses under Controlled Multi-Agent Contamination",
   "target": "arxiv",

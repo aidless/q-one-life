@@ -4,8 +4,8 @@
   "title": "The Hidden Cost of Resampling: How Imbalance Correction Degrades Probability Calibration in Tree Ensembles",
   "status": "archived",
   "target": "arxiv",
-  "root": "/home/liuzewen/F:\\\\deepseek/q-one-life/research/pilot-hidden-cost-resampling",
-  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex",
+  "root": "<WORKSPACE_ROOT>/F:\\\\deepseek/q-one-life/research/pilot-hidden-cost-resampling",
+  "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex",
   "manuscript": {
     "path": "evidence/upstream/main.tex",
     "sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",

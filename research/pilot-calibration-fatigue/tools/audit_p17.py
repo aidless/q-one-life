@@ -23,7 +23,7 @@ from scipy import stats
 OVERLAY = Path(__file__).resolve().parents[1]
 UP = OVERLAY / "evidence/upstream"
 PIPE = OVERLAY / "evidence/pipeline"
-LIVE = Path("/home/liuzewen/.research/CALIBRATION_MERGED_FULL_from_data3")
+LIVE = Path("<WORKSPACE_ROOT>/.research/CALIBRATION_MERGED_FULL_from_data3")
 FAMILY = "qf-calibration-fatigue-self-evaluation-frag-3c06d49517"
 
 

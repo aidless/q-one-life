@@ -119,7 +119,7 @@ scientific readiness.
 python research/pilot-calibration-fatigue/tools/audit_p17.py --self-test
 python research/pilot-calibration-fatigue/tools/audit_p17.py
 python research/pilot-calibration-fatigue/tools/search_carriers.py
-python /home/liuzewen/.agents/skills/paper-writing-agent/scripts/verify_claim_ledger.py \
+python <WORKSPACE_ROOT>/.agents/skills/paper-writing-agent/scripts/verify_claim_ledger.py \
   research/pilot-calibration-fatigue \
   --out research/pilot-calibration-fatigue/reports/claim-ledger-verification.md
 ```

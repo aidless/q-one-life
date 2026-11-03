@@ -1,7 +1,7 @@
 {
   "schema": "q-one-paper6-carrier-audit-v1",
   "generated_at": "2026-10-27T17:01:29.905129Z",
-  "receipt_path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/paper/evidence/CARRIER_RECEIPTS.json",
+  "receipt_path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/paper/evidence/CARRIER_RECEIPTS.json",
   "receipt_sha256": "415f88567f5d39b591b6f1b75bae087c0dd2ddf39bf7f212ab38013f77b5c28a",
   "summary": {
     "receipts": 1,
@@ -11,7 +11,7 @@
   "receipts": [
     {
       "status": "PASS",
-      "artifact": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/source/source/evidence/main_results/benchmark_table.json",
+      "artifact": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation/evidence/upstream/source/source/evidence/main_results/benchmark_table.json",
       "artifact_sha256": "b2f7c090edfd86d7cf32a03bd404bc9ed1572dc74ada043a5027af67b7b9fbd2",
       "locator": "aggregate[1][\"S4: high-honest, strong-attack\"]",
       "expected": 0.72,

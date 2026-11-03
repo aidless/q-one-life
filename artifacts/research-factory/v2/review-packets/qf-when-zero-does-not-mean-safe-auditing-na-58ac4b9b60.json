@@ -4,7 +4,7 @@
   "family_id": "qf-when-zero-does-not-mean-safe-auditing-na-58ac4b9b60",
   "project_id": "qp-checked-paper-89b2bf12c0cb",
   "title": "When Zero Does Not Mean Safe: Auditing Name/Log Proxies for Approval Gates Against Persisted Effects",
-  "primary_source": "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/revision-check-20261014/checked-paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/revision-check-20261014/checked-paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "2ec4af9cc407a26b2b5db203fdf23dafb52b06ab8d437e294b1c0f564c718e98",
@@ -57,8 +57,8 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/reproducibility-20261015/clean-tests/run-03/reproduce-20261015T121017570812Z/workspace/revision-tools/checked-paper/main.tex",
-    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/revision-check-20261014/checked-paper/main.tex"
+    "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/reproducibility-20261015/clean-tests/run-03/reproduce-20261015T121017570812Z/workspace/revision-tools/checked-paper/main.tex",
+    "<WORKSPACE_ROOT>/arxiv-publication/research-upgrade-20261013/approval/revision-check-20261014/checked-paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

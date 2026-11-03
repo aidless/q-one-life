@@ -4,7 +4,7 @@
   "family_id": "qf-the-impossibility-triangle-of-llm-evalua-36f17b1cad",
   "project_id": "qp-tmlr-paper2-0ea8debfca53",
   "title": "The Impossibility Triangle of LLM Evaluation:\\\\ A Formal Characterization of the Bias-Reliability-Coupling Tradeoff",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper2/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "f710c466340e1c7201f56279513778a9cce06ea30ace4175265f9d0bd5a4c547",
@@ -57,13 +57,13 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-impossibility-triangle-consolidated/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-impossibility-triangle-consolidated/.aris/ingest_drift/20260928T102343Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-impossibility-triangle-consolidated/paper/submission_variant/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-impossibility-triangle-consolidated/source/submission_variant/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2/.aris/ingest_drift/20260928T102343Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-paper2/paper/submission_variant/main.tex"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-impossibility-triangle-consolidated/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-impossibility-triangle-consolidated/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-impossibility-triangle-consolidated/paper/submission_variant/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-impossibility-triangle-consolidated/source/submission_variant/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper2/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper2/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-paper2/paper/submission_variant/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "merge",

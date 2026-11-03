@@ -1,7 +1,7 @@
 REVIEW_TIER=isolated-subagent cross_family_channel=absent verdict=BLOCKED
 Reviewer=research-review-REVIEW_ROUND_1-01
 Reviewed_utc=2026-09-29T07:16:37Z
-Run=runs/tmlr-f4-verification  (all paths below are relative to P=/home/liuzewen/Projects/agi-paper-pipeline)
+Run=runs/tmlr-f4-verification  (all paths below are relative to P=<WORKSPACE_ROOT>/Projects/agi-paper-pipeline)
 Round=1  first review this manuscript has received in this chain; no prior verdict for this tier exists in the slot directory.
 
 ## Live-tree integrity (open / close)
@@ -361,7 +361,7 @@ its numeric attribution; (v) rebuild rows `:150-151`, `:156-157` or drop them; (
 
 ### Commands I re-ran
 
-    cd /home/liuzewen/Projects/agi-paper-pipeline
+    cd <WORKSPACE_ROOT>/Projects/agi-paper-pipeline
     # integrity, open and close (digests above)
     python3 -c "import hashlib,os;[print(f,hashlib.sha256(open(f,'rb').read()).hexdigest()) for f in \
       ['runs/tmlr-f4-verification/paper/main.tex','runs/tmlr-f4-verification/paper/main.pdf','runs/tmlr-f4-verification/paper/evidence/CARRIER_RECEIPTS.json']]"

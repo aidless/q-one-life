@@ -4,7 +4,7 @@
   "family_id": "qf-leakage-and-order-in-harness-selection-a-179bfe16f0",
   "project_id": "qp-paper11-full-draft-v2-7cab6cc46cb2",
   "title": "Leakage and Order in Harness Selection: An Auditable Protocol and a Case Study",
-  "primary_source": "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/notes/paper11-full-draft-v2.md",
+  "primary_source": "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/notes/paper11-full-draft-v2.md",
   "source_state": {
     "exists": true,
     "sha256": "564e31f6dcdc7ba24ac2383a4c0125fbbb9a0989a9e94d14231b85212b9f80a9",
@@ -32,7 +32,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/WorkBuddy/2026-10-22-23-12-56/notes/paper11-full-draft-v2.md"
+    "<WORKSPACE_ROOT>/WorkBuddy/2026-10-22-23-12-56/notes/paper11-full-draft-v2.md"
   ],
   "machine_recommendation": {
     "disposition": "repair",

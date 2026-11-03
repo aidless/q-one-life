@@ -1,7 +1,7 @@
 {
   "schema": "q-one-research-plan-v1",
   "generated_at": "2026-10-27T14:21:26.629699Z",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/arc-paper-track",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/arc-paper-track",
   "paper_id": "arc-paper-track-2026",
   "title": "One Rung at a Time: Attributing an ARC-AGI-3 Submission When the Offline Ruler Cannot Select Arms",
   "target": "arxiv",

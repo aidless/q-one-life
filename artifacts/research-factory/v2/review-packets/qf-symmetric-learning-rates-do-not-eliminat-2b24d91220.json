@@ -4,7 +4,7 @@
   "family_id": "qf-symmetric-learning-rates-do-not-eliminat-2b24d91220",
   "project_id": "qp-tmlr-p13-4890f1a2782a",
   "title": "Symmetric Learning Rates Do Not Eliminate Preference Coupling: An Empirical Refutation",
-  "primary_source": "/home/liuzewen/.research/tmlr-p13/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/tmlr-p13/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "a028ba69dd148d5dd1860bba50a42c1445d0b1e873b404992088634ba2486232",
@@ -47,7 +47,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/tmlr-p13/main.tex"
+    "<WORKSPACE_ROOT>/.research/tmlr-p13/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

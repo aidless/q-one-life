@@ -2,13 +2,13 @@
   "schema": "q-one-arxiv-candidate-package-v1",
   "generated_at": "2026-10-27T16:43:42.079705Z",
   "source": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/source",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/source",
     "main_sha256": "77f690d40f60fdebd941cc1d2f9031354e050640d21fbef4e3a60444bb76b553",
     "package_sha256": "02a861ab06bb8db54224eafc2e541f239f92752e7c405f39094dcbf26a356158",
     "file_count": 9
   },
   "archive": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/paper35-arxiv-candidate.tar.gz",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/paper35-arxiv-candidate.tar.gz",
     "sha256": "76d6a55900454c65c76cd9456f2da52fdb69c3d2e1290b882d5d4f9254eb8a81",
     "bytes": 154412,
     "repeat_sha256": "76d6a55900454c65c76cd9456f2da52fdb69c3d2e1290b882d5d4f9254eb8a81",
@@ -63,12 +63,12 @@
   ],
   "extract_compile": {
     "exit_code": 0,
-    "receipt": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/archive-cleanroom/receipt.json",
+    "receipt": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/archive-cleanroom/receipt.json",
     "receipt_sha256": "b5deaac31f98a1e5cb8d8322deb8151d45847388c511e96195d1e56ad14c59c6",
     "pdf_pages": 12,
     "pdf_sha256": "34e160a576d9f3f5b1d20b3c5f36eb6cde3a93050212954e267b281e387739df",
-    "command_stdout": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/archive-cleanroom/build.stdout.log",
-    "command_stderr": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/archive-cleanroom/build.stderr.log"
+    "command_stdout": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/archive-cleanroom/build.stdout.log",
+    "command_stderr": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-agent-behavior-regression/reports/package/archive-cleanroom/build.stderr.log"
   },
   "environment": {
     "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",

@@ -4,7 +4,7 @@
   "family_id": "qf-calibration-leakage-from-retrieved-skill-18d88d8a2a",
   "project_id": "qp-tmlr-p19-215f46827bcc",
   "title": "Calibration Leakage from Retrieved Skill Caches in Local LLM Agents",
-  "primary_source": "/home/liuzewen/.research/tmlr-p19/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/tmlr-p19/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "8ef17c7d29c8e893c405f1d236f1acc3872feed919080ddbdf7338389de6e99d",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/tmlr-p19/main.tex"
+    "<WORKSPACE_ROOT>/.research/tmlr-p19/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

@@ -4,7 +4,7 @@
   "family_id": "qf-the-name-is-the-contract-a-promotion-gat-a3e8572d68",
   "project_id": "qp-v1-4d15aef7c327",
   "title": "The Name Is the Contract:\\\\ A Promotion Gate Called mcnemar\\_exact Is Not Exact,\\\\ and All Its Errors Favor Promotion",
-  "primary_source": "/home/liuzewen/F:\\deepseek/artifacts/manuscript-f-acceptance/v1/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/F:\\deepseek/artifacts/manuscript-f-acceptance/v1/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "37b2c8c1c6eb6f069bc0ad8003c64d0e90498f7bd59659a73c8d33a59e645046",
@@ -37,7 +37,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/F:\\deepseek/artifacts/manuscript-f-acceptance/v1/main.tex"
+    "<WORKSPACE_ROOT>/F:\\deepseek/artifacts/manuscript-f-acceptance/v1/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

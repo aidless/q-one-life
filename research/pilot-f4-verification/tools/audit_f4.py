@@ -16,13 +16,13 @@ from pathlib import Path
 from typing import Any
 
 UPSTREAM_ROOT = Path(
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification"
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f4-verification"
 )
 CANONICAL = UPSTREAM_ROOT / "paper" / "main.tex"
 VARIANTS = [
     (
         "legacy",
-        Path("/home/liuzewen/.research/merged-f4/main.tex"),
+        Path("<WORKSPACE_ROOT>/.research/merged-f4/main.tex"),
         "legacy merged source",
     ),
     ("canonical", CANONICAL, "packet primary source"),

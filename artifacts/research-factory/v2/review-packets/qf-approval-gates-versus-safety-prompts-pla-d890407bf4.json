@@ -4,7 +4,7 @@
   "family_id": "qf-approval-gates-versus-safety-prompts-pla-d890407bf4",
   "project_id": "qp-approval-gates-efea0226fd45",
   "title": "Approval Gates versus Safety Prompts:\\ Plan-Level Audit of Coverage, Cost, and Disclosure",
-  "primary_source": "/home/liuzewen/arxiv-polish-20261013/approval-gates/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/arxiv-polish-20261013/approval-gates/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "d29eb3a082ca97c66b73c6dba2a02e81eb62f449b7a603d3961c592fc1658e6b",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/arxiv-polish-20261013/approval-gates/paper/main.tex"
+    "<WORKSPACE_ROOT>/arxiv-polish-20261013/approval-gates/paper/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",

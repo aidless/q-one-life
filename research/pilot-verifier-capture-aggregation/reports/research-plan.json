@@ -1,7 +1,7 @@
 {
   "schema": "q-one-research-plan-v1",
   "generated_at": "2026-10-27T17:06:09.857042Z",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-verifier-capture-aggregation",
   "paper_id": "qf-an-empirical-study-of-aggregation-method-819da8c6b1",
   "title": "An Empirical Study of Aggregation Methods Under Verifier Capture in Multi-LLM Ensembles: When Does Majority Voting Fail, and Can We Beat It?",
   "target": "arxiv",

@@ -8,60 +8,60 @@
   "variants": [
     {
       "name": "canonical",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex",
       "sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
       "bytes": 31020
     },
     {
       "name": "preprint_backup",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex.bak_20261001T0205Z_preprint",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/paper/main.tex.bak_20261001T0205Z_preprint",
       "sha256": "19841614898fb7d3e9395317a86869cabacb4a2e54e8dbba8017e3f1077b5a77",
       "bytes": 30505
     },
     {
       "name": "legacy_research_mirror",
-      "path": "/home/liuzewen/.research/tmlr-p6/main.tex",
+      "path": "<WORKSPACE_ROOT>/.research/tmlr-p6/main.tex",
       "sha256": "43a99463a761a8017ed216b796430165f2bb617890c59e112f0ec78bae9ae5b4",
       "bytes": 28659
     },
     {
       "name": "aris_backup",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/.aris/backup/main.tex.before_literal_cites",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/.aris/backup/main.tex.before_literal_cites",
       "sha256": "40034f4c7e441530884687110190d13f4979738d498c3b823d098c7de19db881",
       "bytes": 28708
     },
     {
       "name": "ingest_drift",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/.aris/ingest_drift/20260928T102343Z/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/.aris/ingest_drift/20260928T102343Z/main.tex",
       "sha256": "9bfa00a53f33435b01ae476845a60e5287added13e320216d3cce93ab78e6bc7",
       "bytes": 28030
     },
     {
       "name": "submission_variant",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/source/submission_variant/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/source/submission_variant/main.tex",
       "sha256": "4749f683712e6c732640675d5d89cff0b6b21ba754501beef8f2acca411ade9b",
       "bytes": 28528
     },
     {
       "name": "source_mirror",
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/source/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/source/main.tex",
       "sha256": "28514cb27f23149087749a1789935d6791e887ca233196b9ee7f9f0c80585a0a",
       "bytes": 28516
     }
   ],
   "byte_identical_copies_not_counted_as_variants": [
     {
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/arxiv/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/arxiv/main.tex",
       "sha256": "b1ea39681d0b89002fd520f816dea590d5daccf1cea1c5c106a703c544fcefba",
       "duplicate_of": "canonical"
     },
     {
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/source/submission_variant/main.tex",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/source/submission_variant/main.tex",
       "sha256": "4749f683712e6c732640675d5d89cff0b6b21ba754501beef8f2acca411ade9b",
       "duplicate_of": "submission_variant"
     },
     {
-      "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/.aris/backup/main.tex.before_literal_cites_20260929T1833Z",
+      "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p6/.aris/backup/main.tex.before_literal_cites_20260929T1833Z",
       "sha256": "40034f4c7e441530884687110190d13f4979738d498c3b823d098c7de19db881",
       "duplicate_of": "aris_backup"
     }
@@ -97,7 +97,7 @@
     "conflict": true
   },
   "merge_target": {
-    "path": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p12/paper/main.tex",
+    "path": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-tmlr-p12/paper/main.tex",
     "sha256": "b406b923bde2bb8b6323d8079ed5edf33f9826056439bd081dcc11d731cb339f",
     "overlay_copy_sha256": "b406b923bde2bb8b6323d8079ed5edf33f9826056439bd081dcc11d731cb339f",
     "byte_identical_to_overlay": true,

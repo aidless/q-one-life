@@ -4,7 +4,7 @@
   "family_id": "qf-merged-flagship-f2-k-generalization-sele-112d818110",
   "project_id": "qp-tmlr-f2-theory-c2a925d103e9",
   "title": "Merged Flagship F2: K-Generalization, Selective Prediction and Self-Evaluation",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",
@@ -69,9 +69,9 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/.research/merged-f2/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/.aris/ingest_drift/20260928T102343Z/main.tex"
+    "<WORKSPACE_ROOT>/.research/merged-f2/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/.aris/ingest_drift/20260928T102343Z/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -80,7 +80,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f2-k-generalization/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f2-k-generalization/project.json",
     "status": "blocked",
     "ledger_present": true,
     "bibliography_present": true,

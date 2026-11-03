@@ -4,7 +4,7 @@
   "family_id": "qf-merged-flagship-f4-verification-trust-sc-88e8c3c2ce",
   "project_id": "qp-tmlr-f4-verification-08357385d7b0",
   "title": "Merged Flagship F4: Verification, Trust Scores and Ablation",
-  "primary_source": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "fa583f30f2e4ce1d36fdf69ec99b5b91a406a28b294e0ddb953bc29b95b80f46",
@@ -69,10 +69,10 @@
     "overlay_present": true
   },
   "variant_sources": [
-    "/home/liuzewen/.research/merged-f4/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/.aris/ingest_drift/20260928T102343Z/main.tex",
-    "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/arxiv/main.tex"
+    "<WORKSPACE_ROOT>/.research/merged-f4/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/paper/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/.aris/ingest_drift/20260928T102343Z/main.tex",
+    "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f4-verification/arxiv/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
@@ -81,7 +81,7 @@
     "authoritative": false
   },
   "overlay": {
-    "path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f4-verification/project.json",
+    "path": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f4-verification/project.json",
     "status": "blocked",
     "ledger_present": true,
     "bibliography_present": true,

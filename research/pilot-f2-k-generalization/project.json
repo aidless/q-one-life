@@ -4,8 +4,8 @@
   "title": "Merged Flagship F2: K-Generalization, Selective Prediction and Self-Evaluation",
   "status": "blocked",
   "target": "arxiv",
-  "root": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-f2-k-generalization",
-  "origin": "/home/liuzewen/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
+  "root": "<WORKSPACE_ROOT>/F:\\deepseek/q-one-life/research/pilot-f2-k-generalization",
+  "origin": "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/tmlr-f2-theory/paper/main.tex",
   "manuscript": {
     "path": "evidence/upstream/paper/main.tex",
     "sha256": "cdf8485e91fe4d1861fc473d4e8f6df3b14431ac984691f529e8a2fb4c072916",

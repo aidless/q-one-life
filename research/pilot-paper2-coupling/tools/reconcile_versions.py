@@ -70,7 +70,7 @@ def main() -> int:
         "canonical": {
             "role": "canonical",
             "origin": (
-                "/home/liuzewen/Projects/agi-paper-pipeline/runs/"
+                "<WORKSPACE_ROOT>/Projects/agi-paper-pipeline/runs/"
                 "tmlr-paper2-consolidated/paper/main.tex"
             ),
             **version_record(canonical, canonical),

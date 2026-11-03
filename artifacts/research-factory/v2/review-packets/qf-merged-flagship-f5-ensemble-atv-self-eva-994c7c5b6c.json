@@ -4,7 +4,7 @@
   "family_id": "qf-merged-flagship-f5-ensemble-atv-self-eva-994c7c5b6c",
   "project_id": "qp-merged-f5-8e67fd9efb6d",
   "title": "Merged Flagship F5: Ensemble Atv, Self-Eval and CCA-Agent System",
-  "primary_source": "/home/liuzewen/.research/merged-f5/main.tex",
+  "primary_source": "<WORKSPACE_ROOT>/.research/merged-f5/main.tex",
   "source_state": {
     "exists": true,
     "sha256": "0d53bd024a2f536acf8262630f04b6bf909a780f53d475da0741de525667e485",
@@ -52,7 +52,7 @@
     "overlay_present": false
   },
   "variant_sources": [
-    "/home/liuzewen/.research/merged-f5/main.tex"
+    "<WORKSPACE_ROOT>/.research/merged-f5/main.tex"
   ],
   "machine_recommendation": {
     "disposition": "repair",
