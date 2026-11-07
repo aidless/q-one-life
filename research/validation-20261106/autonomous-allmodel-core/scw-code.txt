@@ -1,0 +1,23 @@
+import math
+
+
+def scw_answer(responses):
+    answers = [parse_answer(response) for response in responses]
+    answers = [answer for answer in answers if answer is not None]
+    if not answers:
+        return None
+
+    embeddings = [_hash_embed(str(answer)) for answer in answers]
+    norms = [math.sqrt(sum(x * x for x in vector)) for vector in embeddings]
+
+    def total_similarity(i):
+        total = 0.0
+        for j, vector in enumerate(embeddings):
+            if i == j or norms[i] == 0 or norms[j] == 0:
+                continue
+            dot = sum(x * y for x, y in zip(embeddings[i], vector))
+            total += dot / (norms[i] * norms[j])
+        return total
+
+    best_index = max(range(len(answers)), key=total_similarity)
+    return answers[best_index]

@@ -12,7 +12,7 @@
    `self-composing-policies`（9 测试）。三份都是**手写参考实现**，不是模型生成的。
 4. `research/validation-20261106/paperbench-smoke/2026-11-07T14-34-31-GMT_run-group_direct_submission_solver/`
    证明三份提交都被 DirectSubmission 归档、dummy judge 正常读取并输出 grade。
-5. `scripts/verify_research_validation.py` 现有 72 项机器校验，全绿。
+5. `scripts/verify_research_validation.py` 现有 77 项机器校验，全绿。
 6. `src/qone_life/research_factory/project_lab.py` 新增多文件项目模式；模型生成过
    4 文件项目并通过 pytest + 主机隐藏测试（`autonomous-project-lab/`）。
 7. `autonomous-paperbench-loop/` 证明模型生成的项目被 PaperBench DirectSubmission
@@ -20,6 +20,8 @@
 8. `autonomous-full-package/` 证明一份 12 文件完整提交包通过验证、打包、归档与
    dummy judge。3 个核心函数由模型短调用生成，其余模板由宿主补齐；来源边界在
    `qone-full-receipt.json -> source_note` 明确记录。
+9. `autonomous-allmodel-core/` 把研究逻辑进一步推进到 6/6 段都由模型短调用生成，
+   宿主只拼接与补齐非研究模板文件。验证、打包、归档与 dummy judge 仍全通。
 
 ## 不能声称
 
@@ -28,13 +30,13 @@
 - `self-expansion` 没有跑 CIFAR-100 / ImageNet-R / ImageNet-A / VTAB 上的 5-20 epoch 训练。
 - `self-composing-policies` 没有跑 Meta-World / SpaceInvaders / Freeway 上的 10 seed × 1M timestep。
 - 没有用真实 PaperBench judge；那需要单独授权与 API key。
-- 三个完整复现包仍是手写参考实现；模型生成过一个 4 文件最小项目与一份模型辅助 12 文件包，
-  但后者只有 3 个核心函数来自模型，其余是宿主模板。
+- 三个完整复现包仍是手写参考实现；模型生成过 4 文件最小项目、3 函数辅助包与
+  6 段全模型核心逻辑包，但整包中的非研究模板仍由宿主补齐。
 - 模型生成项目没有复现论文表格数字，也没有接真实 judge。
 
 ## 真正卡在哪里
 
-1. **任务形状残余断层**：已验证 12 文件完整包归档，但模型只生成 3 个核心函数；
+1. **任务形状残余断层**：已验证 12 文件完整包归档，且 `src/core.py` 的 6 段研究逻辑全部来自模型；
    一次性生成完整多文件包在当前 Magpie 网关下不稳定，长代码 prompt 会挂住。
 2. **执行断层**：code lab 是 30 秒本地子进程；真实复现需要 Docker + GPU + 小时级训练。
    本机不是算力节点，长训练必须上云。
@@ -45,7 +47,7 @@
 ## 下一步（按依赖顺序，可自动化的部分）
 
 1. 扩展 `code_lab`：新增 `project` 模式，让模型生成多文件项目，受同一沙盒契约约束。
-2. 已完成：模型片段 + 宿主模板 -> 12 文件完整包 -> 隐藏测试 -> 打包 ->
+2. 已完成：6 段模型逻辑 + 宿主模板 -> 12 文件完整包 -> 隐藏测试 -> 打包 ->
    DirectSubmission + dummy judge。下一步是让模型一次性稳定生成全部文件。
 3. 把 cloud executor 接到项目模式：在 AMD / ECS / Kaggle GPU 上跑训练，产回 compact 证据。
 4. 真实 judge 与真实训练都保留在用户显式 GO 之后。

@@ -1,0 +1,1 @@
+{"code":"import hashlib\n\n\ndef _hash_embed(text):\n    \"\"\"Return a deterministic 64-dimensional unit vector for a string.\"\"\"\n    digest = hashlib.sha512(text.encode(\"utf-8\")).digest()\n    values = [byte - 127.5 for byte in digest]\n    norm = sum(value * value for value in values) ** 0.5\n    return [value / norm for value in values]\n"}

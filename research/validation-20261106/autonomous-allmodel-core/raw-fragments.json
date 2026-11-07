@@ -1,0 +1,27 @@
+{
+  "core-parse": {
+    "raw": "{\"code\":\"def parse_answer(text):\\n    marker = \\\"The answer is\\\"\\n    if marker not in text:\\n        return None\\n    answer = text.split(marker, 1)[1].strip()\\n    if answer.endswith(\\\".\\\"):\\n        answer = answer[:-1].strip()\\n    if answer.startswith(\\\"(\\\") and answer.endswith(\\\")\\\"):\\n        answer = answer[1:-1].strip()\\n    return answer\\n\"}",
+    "code": "def parse_answer(text):\n    marker = \"The answer is\"\n    if marker not in text:\n        return None\n    answer = text.split(marker, 1)[1].strip()\n    if answer.endswith(\".\"):\n        answer = answer[:-1].strip()\n    if answer.startswith(\"(\") and answer.endswith(\")\"):\n        answer = answer[1:-1].strip()\n    return answer\n"
+  },
+  "core-modal": {
+    "raw": "{\"code\":\"from collections import Counter\\n\\n\\ndef modal_answer(answers):\\n    counts = Counter(answer for answer in answers if answer is not None)\\n    return counts.most_common(1)[0][0] if counts else None\\n\"}",
+    "code": "from collections import Counter\n\n\ndef modal_answer(answers):\n    counts = Counter(answer for answer in answers if answer is not None)\n    return counts.most_common(1)[0][0] if counts else None\n"
+  },
+  "core-embed": {
+    "raw": "{\"code\":\"import hashlib\\n\\n\\ndef _hash_embed(text):\\n    \\\"\\\"\\\"Return a deterministic 64-dimensional unit vector for a string.\\\"\\\"\\\"\\n    digest = hashlib.sha512(text.encode(\\\"utf-8\\\")).digest()\\n    values = [byte - 127.5 for byte in digest]\\n    norm = sum(value * value for value in values) ** 0.5\\n    return [value / norm for value in values]\\n\"}",
+    "code": "import hashlib\n\n\ndef _hash_embed(text):\n    \"\"\"Return a deterministic 64-dimensional unit vector for a string.\"\"\"\n    digest = hashlib.sha512(text.encode(\"utf-8\")).digest()\n    values = [byte - 127.5 for byte in digest]\n    norm = sum(value * value for value in values) ** 0.5\n    return [value / norm for value in values]\n"
+  },
+  "core-cpw": {
+    "raw": "{\"code\":\"import math\\n\\n\\ndef cpw_answer(responses):\\n    \\\"\\\"\\\"Return the parsed answer closest to the embedding centroid, or None.\\\"\\\"\\\"\\n    def _l2(a, b):\\n        return math.sqrt(sum((x - y) ** 2 for x, y in zip(a, b)))\\n\\n    answers = []\\n    embeddings = []\\n    for response in responses:\\n        answer = parse_answer(response)\\n        if answer is not None:\\n            answers.append(answer)\\n            embeddings.append(list(_hash_embed(str(answer))))\\n\\n    if not answers:\\n        return None\\n\\n    count = len(embeddings)\\n    centroid = [sum(values) / count for values in zip(*embeddings)]\\n    weights = [1.0 / (_l2(embedding, centroid) + 1e-12)\\n               for embedding in embeddings]\\n    best_index = max(range(len(answers)), key=weights.__getitem__)\\n    return answers[best_index]\\n\"}",
+    "code": "import math\n\n\ndef cpw_answer(responses):\n    \"\"\"Return the parsed answer closest to the embedding centroid, or None.\"\"\"\n    def _l2(a, b):\n        return math.sqrt(sum((x - y) ** 2 for x, y in zip(a, b)))\n\n    answers = []\n    embeddings = []\n    for response in responses:\n        answer = parse_answer(response)\n        if answer is not None:\n            answers.append(answer)\n            embeddings.append(list(_hash_embed(str(answer))))\n\n    if not answers:\n        return None\n\n    count = len(embeddings)\n    centroid = [sum(values) / count for values in zip(*embeddings)]\n    weights = [1.0 / (_l2(embedding, centroid) + 1e-12)\n               for embedding in embeddings]\n    best_index = max(range(len(answers)), key=weights.__getitem__)\n    return answers[best_index]\n"
+  },
+  "core-run": {
+    "raw": "{\"code\":\"def run(data: dict) -> dict:\\n    answers = data[\\\"datasets\\\"][\\\"answers\\\"]\\n    responses = data[\\\"datasets\\\"].get(\\\"responses\\\", [])\\n    return {\\n        \\\"chosen\\\": modal_answer(answers),\\n        \\\"parsed\\\": [parse_answer(r) for r in responses],\\n        \\\"cpw\\\": cpw_answer(responses),\\n        \\\"scw\\\": scw_answer(responses),\\n    }\\n\"}",
+    "code": "def run(data: dict) -> dict:\n    answers = data[\"datasets\"][\"answers\"]\n    responses = data[\"datasets\"].get(\"responses\", [])\n    return {\n        \"chosen\": modal_answer(answers),\n        \"parsed\": [parse_answer(r) for r in responses],\n        \"cpw\": cpw_answer(responses),\n        \"scw\": scw_answer(responses),\n    }\n"
+  },
+  "core-scw": {
+    "raw": "",
+    "parsed_code_file": "/tmp/qone-allmodel/scw-code.txt",
+    "code": "import math\n\n\ndef scw_answer(responses):\n    answers = [parse_answer(response) for response in responses]\n    answers = [answer for answer in answers if answer is not None]\n    if not answers:\n        return None\n\n    embeddings = [_hash_embed(str(answer)) for answer in answers]\n    norms = [math.sqrt(sum(x * x for x in vector)) for vector in embeddings]\n\n    def total_similarity(i):\n        total = 0.0\n        for j, vector in enumerate(embeddings):\n            if i == j or norms[i] == 0 or norms[j] == 0:\n                continue\n            dot = sum(x * y for x, y in zip(embeddings[i], vector))\n            total += dot / (norms[i] * norms[j])\n        return total\n\n    best_index = max(range(len(answers)), key=total_similarity)\n    return answers[best_index]\n"
+  }
+}

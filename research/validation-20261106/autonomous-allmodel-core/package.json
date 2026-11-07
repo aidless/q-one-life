@@ -1,0 +1,10 @@
+{
+  "schema": "q-one-paperbench-package-v1",
+  "paper_id": "semantic-self-consistency",
+  "submission_dir": "/tmp/qone-final-allmodel/paperbench/semantic-self-consistency/submission",
+  "archive_path": "/tmp/qone-final-allmodel/paperbench/semantic-self-consistency-submission.tar.gz",
+  "file_count": 12,
+  "manifest_sha256": "04898f89a596fcd2b3b3f83e0719029768ae2d19e804e6f1fb09cfc07daec56b",
+  "hidden_tests_sha256": "4d47687deda811b7a58ed72719c3e44486af750198e9ab9239fe5db4a1c0ac68",
+  "verification_sha256": "4a6cadeee60fd2aa0da9c5779bc1a275090b356a7868bf72d136258f5259c41c"
+}

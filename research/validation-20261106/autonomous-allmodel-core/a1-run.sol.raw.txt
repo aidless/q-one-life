@@ -1,0 +1,1 @@
+{"code":"def run(data: dict) -> dict:\n    answers = data[\"datasets\"][\"answers\"]\n    responses = data[\"datasets\"].get(\"responses\", [])\n    return {\n        \"chosen\": modal_answer(answers),\n        \"parsed\": [parse_answer(r) for r in responses],\n        \"cpw\": cpw_answer(responses),\n        \"scw\": scw_answer(responses),\n    }\n"}

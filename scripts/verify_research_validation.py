@@ -64,6 +64,12 @@ def main() -> int:
     fullpkg_grade = next(json.loads(p.read_text()) for p in
                          (args.root / "paperbench-smoke/2026-11-07T15-26-43-GMT_run-group_direct_submission_solver")
                          .glob("semantic-self-consistency*/grade.json"))
+    allmodel_receipt = json.loads((args.root / "autonomous-allmodel-core/receipt.json").read_text())
+    allmodel_verdict = json.loads((args.root / "autonomous-allmodel-core/verdict.json").read_text())
+    allmodel_package = json.loads((args.root / "autonomous-allmodel-core/package.json").read_text())
+    allmodel_grade = next(json.loads(p.read_text()) for p in
+                          (args.root / "paperbench-smoke/2026-11-07T15-37-44-GMT_run-group_direct_submission_solver")
+                          .glob("semantic-self-consistency*/grade.json"))
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -146,6 +152,11 @@ def main() -> int:
         check("fullpkg_verification_passed", True, fullpkg_verdict["passed"]),
         check("fullpkg_package_files", 12, fullpkg_package["file_count"]),
         check("fullpkg_grade", 1.0, fullpkg_grade["score"]),
+        check("allmodel_fragments", 6, len(allmodel_receipt["model_fragments"])),
+        check("allmodel_required_files", 10, len(allmodel_receipt["required_files"])),
+        check("allmodel_verification_passed", True, allmodel_verdict["passed"]),
+        check("allmodel_package_files", 12, allmodel_package["file_count"]),
+        check("allmodel_grade", 1.0, allmodel_grade["score"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -189,6 +200,7 @@ def main() -> int:
         "project_lab_passed": proj_verdict["passed"],
         "paperbench_loop_grade": pb_loop_grade["score"],
         "fullpkg_grade": fullpkg_grade["score"],
+        "allmodel_grade": allmodel_grade["score"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

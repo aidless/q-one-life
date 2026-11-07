@@ -1,0 +1,41 @@
+{
+  "schema": "q-one-project-lab-v1",
+  "task": "Generate a PaperBench package whose entire research logic is model-generated",
+  "profile": "paperbench",
+  "required_files": [
+    "README.md",
+    "requirements.txt",
+    "reproduce.sh",
+    "run.py",
+    "src/core.py",
+    "src/datasets.py",
+    "src/embeddings.py",
+    "src/methods.py",
+    "tests/test_project.py",
+    "data/sample.json"
+  ],
+  "model": "codex/gpt-6.1-sol",
+  "generation_mode": "six short model calls, one per src/core.py logic fragment",
+  "model_fragments": {
+    "core-cpw": "f49395289356c68bce85dfca63bf285a071a03129455ded98a4cf62433daf6cd",
+    "core-embed": "7840b4999c04bcb8cf19ebfc492bc1c75cf212f8b9702c3a46d59ce717071fcb",
+    "core-modal": "eae8845cd60b018a52a6330431911b75d9a75bd2e0b44d197a57dc1c9aadb081",
+    "core-parse": "d49fe5cc08625a7bebfd46509ebe7314f7254e7d2c63ee3475a9be3de995d4e3",
+    "core-run": "a6032ab9ec4238c47754b04980564ae69fc01e1f20cc946d673986bf9bd4355e",
+    "core-scw": "95dc273f136ae1cfeb18af5d0d3bba3af67ac5b9896161542c83b11fc7ceb89f"
+  },
+  "files": {
+    "src/core.py": "def parse_answer(text):\n    marker = \"The answer is\"\n    if marker not in text:\n        return None\n    answer = text.split(marker, 1)[1].strip()\n    if answer.endswith(\".\"):\n        answer = answer[:-1].strip()\n    if answer.startswith(\"(\") and answer.endswith(\")\"):\n        answer = answer[1:-1].strip()\n    return answer\n\nfrom collections import Counter\n\n\ndef modal_answer(answers):\n    counts = Counter(answer for answer in answers if answer is not None)\n    return counts.most_common(1)[0][0] if counts else None\n\nimport hashlib\n\n\ndef _hash_embed(text):\n    \"\"\"Return a deterministic 64-dimensional unit vector for a string.\"\"\"\n    digest = hashlib.sha512(text.encode(\"utf-8\")).digest()\n    values = [byte - 127.5 for byte in digest]\n    norm = sum(value * value for value in values) ** 0.5\n    return [value / norm for value in values]\n\nimport math\n\n\ndef cpw_answer(responses):\n    \"\"\"Return the parsed answer closest to the embedding centroid, or None.\"\"\"\n    def _l2(a, b):\n        return math.sqrt(sum((x - y) ** 2 for x, y in zip(a, b)))\n\n    answers = []\n    embeddings = []\n    for response in responses:\n        answer = parse_answer(response)\n        if answer is not None:\n            answers.append(answer)\n            embeddings.append(list(_hash_embed(str(answer))))\n\n    if not answers:\n        return None\n\n    count = len(embeddings)\n    centroid = [sum(values) / count for values in zip(*embeddings)]\n    weights = [1.0 / (_l2(embedding, centroid) + 1e-12)\n               for embedding in embeddings]\n    best_index = max(range(len(answers)), key=weights.__getitem__)\n    return answers[best_index]\n\nimport math\n\n\ndef scw_answer(responses):\n    answers = [parse_answer(response) for response in responses]\n    answers = [answer for answer in answers if answer is not None]\n    if not answers:\n        return None\n\n    embeddings = [_hash_embed(str(answer)) for answer in answers]\n    norms = [math.sqrt(sum(x * x for x in vector)) for vector in embeddings]\n\n    def total_similarity(i):\n        total = 0.0\n        for j, vector in enumerate(embeddings):\n            if i == j or norms[i] == 0 or norms[j] == 0:\n                continue\n            dot = sum(x * y for x, y in zip(embeddings[i], vector))\n            total += dot / (norms[i] * norms[j])\n        return total\n\n    best_index = max(range(len(answers)), key=total_similarity)\n    return answers[best_index]\n\ndef run(data: dict) -> dict:\n    answers = data[\"datasets\"][\"answers\"]\n    responses = data[\"datasets\"].get(\"responses\", [])\n    return {\n        \"chosen\": modal_answer(answers),\n        \"parsed\": [parse_answer(r) for r in responses],\n        \"cpw\": cpw_answer(responses),\n        \"scw\": scw_answer(responses),\n    }\n",
+    "README.md": "# Model-core PaperBench package\n\nAll six research-logic fragments in src/core.py were produced by short model calls. Host templates provide the entrypoint, tests, data and packaging metadata. No real PaperBench score is claimed.\n",
+    "requirements.txt": "pytest>=8.0.0\n",
+    "reproduce.sh": "#!/bin/sh\nset -eu\npython3 run.py < data/sample.json\npython3 -m pytest -q tests\n",
+    "run.py": "import json\nimport sys\nfrom src.core import run\n\nif __name__ == \"__main__\":\n    print(json.dumps(run(json.load(sys.stdin))))\n",
+    "src/datasets.py": "import json\nfrom pathlib import Path\n\n\ndef load_sample(path=\"data/sample.json\"):\n    return json.loads(Path(path).read_text(encoding=\"utf-8\"))\n",
+    "src/embeddings.py": "from .core import _hash_embed\n\n\ndef embed_text(text):\n    return _hash_embed(text)\n",
+    "src/methods.py": "from .core import cpw_answer, scw_answer\n",
+    "tests/test_project.py": "from src.core import parse_answer, modal_answer, cpw_answer, scw_answer, run, _hash_embed\n\n\ndef test_parse_answer():\n    assert parse_answer(\"Reasoning. The answer is (19).\") == \"19\"\n\n\ndef test_parse_answer_missing():\n    assert parse_answer(\"none\") is None\n\n\ndef test_modal_answer():\n    assert modal_answer([\"1\", \"1\", \"2\", None]) == \"1\"\n\n\ndef test_hash_embed_unit():\n    vector = _hash_embed(\"hello\")\n    assert len(vector) == 64\n    assert abs(sum(x * x for x in vector) - 1.0) < 1e-9\n\n\ndef test_cpw_and_scw():\n    responses = [\"The answer is 1\", \"The answer is 1\", \"The answer is 2\"]\n    assert cpw_answer(responses) in (\"1\", \"2\")\n    assert scw_answer(responses) in (\"1\", \"2\")\n\n\ndef test_run():\n    result = run({\"datasets\": {\"answers\": [\"1\", \"1\", \"2\"], \"responses\": [\"The answer is 1\"]}})\n    assert result[\"chosen\"] == \"1\"\n    assert result[\"parsed\"] == [\"1\"]\n",
+    "data/sample.json": "{\n  \"datasets\": {\n    \"answers\": [\n      \"1\",\n      \"1\",\n      \"2\"\n    ],\n    \"responses\": [\n      \"The answer is 1\",\n      \"The answer is 1\",\n      \"The answer is 2\"\n    ]\n  }\n}\n"
+  },
+  "manifest_sha256": "04898f89a596fcd2b3b3f83e0719029768ae2d19e804e6f1fb09cfc07daec56b",
+  "source_note": "All research logic in src/core.py is model-generated. The host authored only non-research template files, orchestration and packaging metadata."
+}

@@ -1,0 +1,1 @@
+{"code":"from collections import Counter\n\n\ndef modal_answer(answers):\n    counts = Counter(answer for answer in answers if answer is not None)\n    return counts.most_common(1)[0][0] if counts else None\n"}

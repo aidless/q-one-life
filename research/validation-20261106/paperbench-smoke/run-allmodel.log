@@ -1,0 +1,70 @@
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+[2m2026-11-07T15:37:44.432693Z[0m [[32m[1minfo     [0m] [1m[1;35mWriting run group logs to /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-37-44-GMT_run-group_direct_submission_solver/group.log[0m[0m [36mcomponent[0m=[35mpaperbench.nano.eval[0m
+[2m2026-11-07T15:37:44.437694Z[0m [[32m[1minfo     [0m] [1mPreparing to run 3 tasks...   [0m [36mcomponent[0m=[35mpaperbench.nano.eval[0m
+[2m2026-11-07T15:37:44.462919Z[0m [[32m[1minfo     [0m] [1m[36m[1mEvalboard Monitor: unknown, add in pr?[0m[0m [36mcomponent[0m=[35mnanoeval.evaluation[0m
+[2m2026-11-07T15:37:44.463040Z[0m [[33m[1mwarning  [0m] [1mUnable to find model name, using fallback name='nanoeval'[0m [36mcomponent[0m=[35mnanoeval.eval[0m
+[2m2026-11-07T15:37:44.463360Z[0m [[33m[1mwarning  [0m] [1mNo slack integration configured, so not sending user notification[0m [36mcomponent[0m=[35mnanoeval.library_config[0m
+[2m2026-11-07T15:37:44.463596Z[0m [[33m[1mwarning  [0m] [1mUnable to find model name, using fallback name='nanoeval'[0m [36mcomponent[0m=[35mnanoeval.eval[0m
+[2m2026-11-07T15:37:44.463737Z[0m [[33m[1mwarning  [0m] [1mNo slack integration configured, so not using slack-tqdm[0m [36mcomponent[0m=[35mnanoeval.library_config[0m
+ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):   0%|          | 0/3 [00:00<?, ?it/s]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):   0%|          | 0/3 [00:00<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):   0%|          | 0/3 [00:01<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):   0%|          | 0/3 [00:01<?, ?it/s, corr=0, errs=0, fail=0][2m2026-11-07T15:37:46.063411Z[0m [[33m[1mwarning  [0m] [1mContainer health not available for this container, ignoring.[0m [36mcomponent[0m=[35malcatraz.clusters.local[0m
+[2m2026-11-07T15:37:46.064862Z[0m [[33m[1mwarning  [0m] [1mContainer health not available for this container, ignoring.[0m [36mcomponent[0m=[35malcatraz.clusters.local[0m
+[2m2026-11-07T15:37:46.070289Z[0m [[33m[1mwarning  [0m] [1mContainer health not available for this container, ignoring.[0m [36mcomponent[0m=[35malcatraz.clusters.local[0m
+ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):   0%|          | 0/3 [00:02<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):   0%|          | 0/3 [00:02<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):   0%|          | 0/3 [00:03<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):   0%|          | 0/3 [00:03<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):   0%|          | 0/3 [00:04<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):   0%|          | 0/3 [00:04<?, ?it/s, corr=0, errs=0, fail=0][2m2026-11-07T15:37:49.024927Z[0m [[33m[1mwarning  [0m] [1magent.env not found at: /tmp/paperbench-upstream/project/paperbench/paperbench/solvers/agent.env agent.env should be created by copying agent.env.exampleto agent.env and populating the necessary keys. agent.env is necessary for replicating some papers when using a non-dummy agent[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:37:49.033839Z[0m [[33m[1mwarning  [0m] [1magent.env not found at: /tmp/paperbench-upstream/project/paperbench/paperbench/solvers/agent.env agent.env should be created by copying agent.env.exampleto agent.env and populating the necessary keys. agent.env is necessary for replicating some papers when using a non-dummy agent[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:37:49.182795Z[0m [[33m[1mwarning  [0m] [1magent.env not found at: /tmp/paperbench-upstream/project/paperbench/paperbench/solvers/agent.env agent.env should be created by copying agent.env.exampleto agent.env and populating the necessary keys. agent.env is necessary for replicating some papers when using a non-dummy agent[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):   0%|          | 0/3 [00:05<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):   0%|          | 0/3 [00:05<?, ?it/s, corr=0, errs=0, fail=0][2m2026-11-07T15:37:50.327227Z[0m [[32m[1minfo     [0m] [1mGrading the submission for semantic-self-consistency_12b62c16-d2bc-4654-8b40-f8a63b2afc0e.0 from /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-37-44-GMT_run-group_direct_submission_solver/semantic-self-consistency_12b62c16-d2bc-4654-8b40-f8a63b2afc0e/submissions/2026-11-07T15-37-49-GMT/submission.tar.gz...[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:37:50.336496Z[0m [[32m[1minfo     [0m] [1mGrading for semantic-self-consistency_12b62c16-d2bc-4654-8b40-f8a63b2afc0e.0 finished![0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:37:50.338617Z[0m [[32m[1minfo     [0m] [1m[1;35mGrades saved to /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-37-44-GMT_run-group_direct_submission_solver/semantic-self-consistency_12b62c16-d2bc-4654-8b40-f8a63b2afc0e/grade.json[0m[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):  33%|███▎      | 1/3 [00:06<00:02,  1.00s/it, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):  33%|███▎      | 1/3 [00:06<00:02,  1.00s/it, corr=1, errs=0, fail=0]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):  33%|███▎      | 1/3 [00:07<00:02,  1.00s/it, corr=1, errs=0, fail=0][2m2026-11-07T15:37:52.199159Z[0m [[32m[1minfo     [0m] [1mGrading the submission for self-expansion_7660dd3f-78ff-46d7-9dbe-50b3467f5872.0 from /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-37-44-GMT_run-group_direct_submission_solver/self-expansion_7660dd3f-78ff-46d7-9dbe-50b3467f5872/submissions/2026-11-07T15-37-51-GMT/submission.tar.gz...[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:37:52.218220Z[0m [[32m[1minfo     [0m] [1mGrading for self-expansion_7660dd3f-78ff-46d7-9dbe-50b3467f5872.0 finished![0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:37:52.220819Z[0m [[32m[1minfo     [0m] [1m[1;35mGrades saved to /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-37-44-GMT_run-group_direct_submission_solver/self-expansion_7660dd3f-78ff-46d7-9dbe-50b3467f5872/grade.json[0m[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):  67%|██████▋   | 2/3 [00:08<00:01,  1.59s/it, corr=1, errs=0, fail=0]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval):  67%|██████▋   | 2/3 [00:08<00:01,  1.59s/it, corr=2, errs=0, fail=0][2m2026-11-07T15:37:53.323877Z[0m [[32m[1minfo     [0m] [1mGrading the submission for self-composing-policies_ec7947c0-401a-41f3-94b4-e5d37cb356a8.0 from /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-37-44-GMT_run-group_direct_submission_solver/self-composing-policies_ec7947c0-401a-41f3-94b4-e5d37cb356a8/submissions/2026-11-07T15-37-52-GMT/submission.tar.gz...[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:37:53.335050Z[0m [[32m[1minfo     [0m] [1mGrading for self-composing-policies_ec7947c0-401a-41f3-94b4-e5d37cb356a8.0 finished![0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:37:53.339725Z[0m [[32m[1minfo     [0m] [1m[1;35mGrades saved to /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-37-44-GMT_run-group_direct_submission_solver/self-composing-policies_ec7947c0-401a-41f3-94b4-e5d37cb356a8/grade.json[0m[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval): 100%|██████████| 3/3 [00:09<00:00,  1.32s/it, corr=2, errs=0, fail=0]ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval): 100%|██████████| 3/3 [00:09<00:00,  1.32s/it, corr=3, errs=0, fail=0][2m2026-11-07T15:37:53.536915Z[0m [[32m[1minfo     [0m] [1mGot back all results!         [0m [36mcomponent[0m=[35mnanoeval.evaluation[0m
+[2m2026-11-07T15:37:53.537399Z[0m [[33m[1mwarning  [0m] [1m/tmp/paperbench-upstream/project/paperbench/.venv/lib/python3.11/site-packages/numpy/_core/_methods.py:222: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+[0m [36mcomponent[0m=[35mpy.warnings[0m
+[2m2026-11-07T15:37:53.537543Z[0m [[33m[1mwarning  [0m] [1m/tmp/paperbench-upstream/project/paperbench/.venv/lib/python3.11/site-packages/numpy/_core/_methods.py:214: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+[0m [36mcomponent[0m=[35mpy.warnings[0m
+[2m2026-11-07T15:37:53.538564Z[0m [[32m[1minfo     [0m] [1mSummary:
+{'metrics': {'mean_score': 1.0,
+             'mean_score_by_paper': {'self-composing-policies': {'mean': 1.0,
+                                                                 'n_runs': 1,
+                                                                 'run_1': 1.0,
+                                                                 'std_err': nan},
+                                     'self-expansion': {'mean': 1.0,
+                                                        'n_runs': 1,
+                                                        'run_1': 1.0,
+                                                        'std_err': nan},
+                                     'semantic-self-consistency': {'mean': 1.0,
+                                                                   'n_runs': 1,
+                                                                   'run_1': 1.0,
+                                                                   'std_err': nan}},
+             'n_complete_tries': 1,
+             'std_err': nan},
+ 'other_stats': {'n_is_valid_git_repo': 0,
+                 'n_nontrivial_git_log': 0,
+                 'n_repro_script_exists': 0,
+                 'repro_mean_time': nan},
+ 'params': {'agent': 'direct_submission_solver',
+            'code_only': True,
+            'n_samples': 3,
+            'n_tries': 1,
+            'paper_split': 'dev',
+            'resources_provided': False,
+            'skip_reproduction': True},
+ 'run_group_id': '2026-11-07T15-37-44-GMT_run-group_direct_submission_solver',
+ 'run_health': {'n_gradings_failed': 0,
+                'n_reproductions_failed': 3,
+                'n_rollouts_failed': 0}}
+Evaluated 3 tasks with PaperBench-direct_submission_solver[0m [36mcomponent[0m=[35mnanoeval.evaluation[0m
+[2m2026-11-07T15:37:53.538710Z[0m [[32m[1minfo     [0m] [1m[36m[1mEvalboard Summary: unknown, add in pr?[0m[0m [36mcomponent[0m=[35mnanoeval.evaluation[0m
+ubmission_solver (r_id=261107153744NVT44VCK, m=nanoeval): 100%|██████████| 3/3 [00:09<00:00,  3.02s/it, corr=3, errs=0, fail=0]
+[2m2026-11-07T15:37:53.538930Z[0m [[33m[1mwarning  [0m] [1mUnable to find model name, using fallback name='nanoeval'[0m [36mcomponent[0m=[35mnanoeval.eval[0m
+[2m2026-11-07T15:37:53.539298Z[0m [[33m[1mwarning  [0m] [1mNo slack integration configured, so not sending user notification[0m [36mcomponent[0m=[35mnanoeval.library_config[0m

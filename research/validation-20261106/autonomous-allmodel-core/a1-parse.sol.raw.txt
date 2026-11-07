@@ -1,0 +1,1 @@
+{"code":"def parse_answer(text):\n    marker = \"The answer is\"\n    if marker not in text:\n        return None\n    answer = text.split(marker, 1)[1].strip()\n    if answer.endswith(\".\"):\n        answer = answer[:-1].strip()\n    if answer.startswith(\"(\") and answer.endswith(\")\"):\n        answer = answer[1:-1].strip()\n    return answer\n"}
