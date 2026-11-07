@@ -58,6 +58,12 @@ def main() -> int:
     pb_loop_grade = next(json.loads(p.read_text()) for p in
                          (args.root / "paperbench-smoke/2026-11-07T14-59-44-GMT_run-group_direct_submission_solver")
                          .glob("semantic-self-consistency*/grade.json"))
+    fullpkg_receipt = json.loads((args.root / "autonomous-full-package/qone-full-receipt.json").read_text())
+    fullpkg_verdict = json.loads((args.root / "autonomous-full-package/qone-full-verdict.json").read_text())
+    fullpkg_package = json.loads((args.root / "autonomous-full-package/qone-full-package.json").read_text())
+    fullpkg_grade = next(json.loads(p.read_text()) for p in
+                         (args.root / "paperbench-smoke/2026-11-07T15-26-43-GMT_run-group_direct_submission_solver")
+                         .glob("semantic-self-consistency*/grade.json"))
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -133,6 +139,13 @@ def main() -> int:
         check("project_lab_passed", True, proj_verdict["passed"]),
         check("paperbench_loop_project_passed", True, pb_loop_verdict["passed"]),
         check("paperbench_loop_grade", 1.0, pb_loop_grade["score"]),
+        check("fullpkg_file_count", 10, len(fullpkg_receipt["files"])),
+        check("fullpkg_manifest", "f02bf47bf9482d0758b1fb57b7e252bd3286d8ae7fc92686a5c3592568b59498",
+              fullpkg_receipt["manifest_sha256"]),
+        check("fullpkg_model_fragments", 3, len(fullpkg_receipt["model_fragments"])),
+        check("fullpkg_verification_passed", True, fullpkg_verdict["passed"]),
+        check("fullpkg_package_files", 12, fullpkg_package["file_count"]),
+        check("fullpkg_grade", 1.0, fullpkg_grade["score"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -175,6 +188,7 @@ def main() -> int:
         "autolab_hidden_tests_passed": autolab_verdict["passed"],
         "project_lab_passed": proj_verdict["passed"],
         "paperbench_loop_grade": pb_loop_grade["score"],
+        "fullpkg_grade": fullpkg_grade["score"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

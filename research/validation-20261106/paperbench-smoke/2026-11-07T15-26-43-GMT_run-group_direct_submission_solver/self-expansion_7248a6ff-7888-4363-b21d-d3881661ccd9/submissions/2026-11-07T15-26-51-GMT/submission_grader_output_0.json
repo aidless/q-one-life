@@ -1,0 +1,1153 @@
+{
+    "judge_type": "dummy",
+    "score": 1.0,
+    "num_leaf_nodes": 70,
+    "num_invalid_leaf_nodes": 0,
+    "graded_at": "2026-11-07T15-26-52-GMT",
+    "graded_task_tree": {
+        "id": "73912884-0711-4f49-8ee4-dc0d1bcae21b",
+        "requirements": "The paper 'Self-Expansion of Pre-trained Models with Mixture of Adapters for Continual Learning' has been reproduced",
+        "weight": 1,
+        "score": 1.0,
+        "valid_score": true,
+        "task_category": null,
+        "explanation": "Aggregated score from sub-tasks.",
+        "judge_metadata": null,
+        "sub_tasks": [
+            {
+                "id": "5b88aaa9-8bf2-4346-ad0d-4656eb6a0dd9",
+                "requirements": "Code has been implemented such that a ViT-B/16 model pretrained on ImageNet-1K can be loaded into memory",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": "Code Development",
+                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                "judge_metadata": null,
+                "sub_tasks": []
+            },
+            {
+                "id": "6bf1b973-1bab-4e6d-b95f-d5ab8a179b68",
+                "requirements": "The datasets from Section 4.1 have been imported.",
+                "weight": 2,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                    {
+                        "id": "3aabf7f3-3079-4a8b-8953-37ad230f8992",
+                        "requirements": "The train and test sets of CIFAR-100 are available",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    },
+                    {
+                        "id": "3964f08d-b6c6-4b00-ad76-1e736728aa94",
+                        "requirements": "The train and test sets of of ImageNet-R are available",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    },
+                    {
+                        "id": "b4553344-eb16-4a4d-a410-216a1d413a99",
+                        "requirements": "The train and test sets of ImageNet-A are available",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    },
+                    {
+                        "id": "f727d425-215a-486a-b0ef-9fe5b2057e23",
+                        "requirements": "The train and test sets of VTAB are available. The VTAB dataset used is the VTAB subset from the ADAM paper; only five domains are used, and the domain order is fixed to \"resisc45 10-19; dtd 20-29; pets 30-39; eurosat 40-49; flowers 50-59\". Only 10 classes are selected and used for each domain; the numbers denote the class index of the 10 classes for each domain. For example, 10-19 denotes the 10th - 19th classes are in resisc are used. The original resisc contains 45 classes.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    },
+                    {
+                        "id": "638c80be-8c5f-43a4-b24a-33bba041660d",
+                        "requirements": "Datasets (CIFAR-100, ImageNet_R, ImageNet-A) are split in a manner where each task/domain consists of 10 distinct classes",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    }
+                ]
+            },
+            {
+                "id": "520b38a4-5a12-4974-befd-ea7c9cd47f09",
+                "requirements": "The LoRA, Convpass and ADAM adapters are available",
+                "weight": 2,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                    {
+                        "id": "2fc5dc38-c1b5-419d-a2ea-4629b27b85b2",
+                        "requirements": "The LoRA adapter can be applied (it is either implemented or an existing implementation is imported)",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    },
+                    {
+                        "id": "7fa8715e-3ab6-4116-be67-eb1baeb1d8de",
+                        "requirements": "The Convpass adapter architecture has been implemented from https://github.com/JieShibo/PETL-ViT/blob/main/convpass/vtab/convpass.py and can be selected as the functional adapter",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    },
+                    {
+                        "id": "e0aa0321-72f7-447b-b98d-06527a5fa4bf",
+                        "requirements": "The ADAM \"adapter\" is implemented from https://github.com/ShoufaChen/AdaptFormer/blob/main/models/adapter.py",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    }
+                ]
+            },
+            {
+                "id": "672d5ac7-da5f-4664-bf98-805c6f88222a",
+                "requirements": "The architecture and training loop of SEMA have been implemented correctly, as in Section 3.",
+                "weight": 5,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                    {
+                        "id": "58788292-a2d4-4966-b237-b0da89093813",
+                        "requirements": "The architecture of SEMA has been implemented correctly.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                            {
+                                "id": "91d54ba7-28a9-47c6-ab6c-1eb5a7ad76fa",
+                                "requirements": "The functional adapter, representation descriptor, and router have been implemented correctly",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": null,
+                                "explanation": "Aggregated score from sub-tasks.",
+                                "judge_metadata": null,
+                                "sub_tasks": [
+                                    {
+                                        "id": "dc0de847-ec32-40f3-9f7b-3b056ba43a3e",
+                                        "requirements": "The functional adapter has been implemented correctly as described in Section 3.3, as a learnable down projection layer, then a ReLU function, then a learnable up projection layer",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "5532ed14-2850-49ca-976f-6873dcca6524",
+                                        "requirements": "The representation descriptor is implemented as an autoencoder with an encoder, non-linearity, then decoder",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": null,
+                                        "explanation": "Aggregated score from sub-tasks.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": [
+                                            {
+                                                "id": "2da70bdf-21c8-487f-83b5-091929ce056c",
+                                                "requirements": "The encoder of the representation descriptor is implemented as a linear layer that projects to 128 dimensions",
+                                                "weight": 1,
+                                                "score": 1.0,
+                                                "valid_score": true,
+                                                "task_category": "Code Development",
+                                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                                "judge_metadata": null,
+                                                "sub_tasks": []
+                                            },
+                                            {
+                                                "id": "6c7fab21-2130-4f8e-a472-1722b8fa8643",
+                                                "requirements": "LeakyReLU is applied to the output of the encoder of the representation descriptor",
+                                                "weight": 1,
+                                                "score": 1.0,
+                                                "valid_score": true,
+                                                "task_category": "Code Development",
+                                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                                "judge_metadata": null,
+                                                "sub_tasks": []
+                                            },
+                                            {
+                                                "id": "f76f7de8-b0f0-4bf6-ad9c-5c45bdf027aa",
+                                                "requirements": "The decoder of the representation descriptor is implemented as a linear layer that projects from 128 dimensions back to the original dimensionality",
+                                                "weight": 1,
+                                                "score": 1.0,
+                                                "valid_score": true,
+                                                "task_category": "Code Development",
+                                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                                "judge_metadata": null,
+                                                "sub_tasks": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "b990c55b-8d9b-47e5-ba2a-ab8050e26eb9",
+                                        "requirements": "The router has been implemented as a linear mapping function (using a learnable matrix) followed by a softmax operation",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "6ff21272-360d-4e2b-8f1e-9692fd288364",
+                                "requirements": "The functional adapter, representation descriptor and router have been correctly integrated into a transformer layer",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": null,
+                                "explanation": "Aggregated score from sub-tasks.",
+                                "judge_metadata": null,
+                                "sub_tasks": [
+                                    {
+                                        "id": "c1e41bb2-f119-4577-ab3b-6ea9cb4d7467",
+                                        "requirements": "The output of the second normalization layer (after the first normalization layer, then multi-head self-attention, then residual connection) is used as input for the representation descriptors, functional adapters, and router",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "8f70800b-dc7b-4ad2-845e-78966f029223",
+                                        "requirements": "A linear combination of the outputs of the functional adapters is computed, with the weights corresponding to the output of the router",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "7cf18f2c-1622-477d-b5b4-2c3359bec297",
+                                        "requirements": "A linear combination of the outputs of the functional adapters is added to the output of the fully connected layer and the residual layer in the transformer block to produce the output for the transformer layer",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "c9c02003-1594-4af0-9a26-25260089a611",
+                        "requirements": "The training loop of SEMA has been implemented correctly.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                            {
+                                "id": "505dd960-6d1e-4a62-8627-5da5b3b51043",
+                                "requirements": "When training SEMA, the parameters of the pretrained model (e.g. ViT) are frozen.",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            },
+                            {
+                                "id": "186e1f6a-31bb-4df7-b44e-41544010b083",
+                                "requirements": "When training SEMA, the running statistics of the mean and standard deviation of the reconstruction error are stored for each representation descriptor, using the previous 500 samples (over all tasks) that were used for training prior to the current sample",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            },
+                            {
+                                "id": "85768b74-9fe9-470f-9166-490c2a6f6eb2",
+                                "requirements": "When training SEMA, the z-score corresponding to the $k$-th representation descriptor in layer $l$ can be computed as $z_k^l = (r_k^l - u_k^l)/\\sigma_k^l$, where $r_k^l$ is the reconstruction error of the current input, $u_k^l$ is the associated running mean of the representation descriptor, and $\\sigma_k^l$ is the associated running standard deviation of the representation descriptor",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            },
+                            {
+                                "id": "39da09eb-f8fd-4cfc-82de-d159d810195d",
+                                "requirements": "When training SEMA, for a dataset containing $n_t$ samples for the $t$-th task, the SEMA algorithm has been implemented correctly to add and update adapters",
+                                "weight": 3,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": null,
+                                "explanation": "Aggregated score from sub-tasks.",
+                                "judge_metadata": null,
+                                "sub_tasks": [
+                                    {
+                                        "id": "3345ee1d-7c91-4f35-a34d-cc884f7381c7",
+                                        "requirements": "When training SEMA on the $t$-th task, before starting any training, the layers that are valid for expansion are scanned iteratively for evaluating whether layers should have adapters added, from shallowest to deepest",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "4b3a8b1d-e03e-4f93-aab0-db267899e2a1",
+                                        "requirements": "When training SEMA on the $t$-th task, when scanning each layer the reconstruction error is computed over all samples in the $t$-th task. No training occurs during this scanning, and no gradients are computed",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "ddf48454-e7b6-41ea-8133-4accd720eee6",
+                                        "requirements": "When training SEMA on the $t$-th task, when scanning each layer, if after some sample, all the z-scores of all the representation descriptors on some layer are above some pre-defined threshold, an expansion signal is triggered for such layer, and an adapter is added to such layer and trained on the task $t$. After training on the task $t$, the next deepest layer is scanned. If no deeper layer exists, the training proceeds to the next task, and the scanning restarts from the first (valid) layer",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "ac81c23b-6d25-457b-be95-e20264c29e1b",
+                                        "requirements": "When training SEMA on the $t$-th task, when scanning each layer, if no expansion signals are triggered, the task is skipped (no training is performed for such task and no adapters are added), and all existing functional adapters and representation descriptors are frozen",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "cc3e2851-ff2e-4533-bfde-8672a798f64b",
+                                        "requirements": "When training SEMA, when adding a new adapter and retraining, the parameters to freeze / update have been correctly chosen as in Section 3.5.",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": null,
+                                        "explanation": "Aggregated score from sub-tasks.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": [
+                                            {
+                                                "id": "f3854228-889d-4a91-8d17-399677173729",
+                                                "requirements": "When training SEMA, when adding a new adapter, the weights in the new adapter are learnable, and all the weights in the other adapters in all other layers are frozen.",
+                                                "weight": 1,
+                                                "score": 1.0,
+                                                "valid_score": true,
+                                                "task_category": "Code Development",
+                                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                                "judge_metadata": null,
+                                                "sub_tasks": []
+                                            },
+                                            {
+                                                "id": "2d34ab6a-eae2-4df9-845f-6d0c680dacc5",
+                                                "requirements": "When training SEMA, when adding a new adapter, the weights in the representation descriptor corresponding to the new adapter are learnable, and all the other weights in the other representation descriptors are frozen.",
+                                                "weight": 1,
+                                                "score": 1.0,
+                                                "valid_score": true,
+                                                "task_category": "Code Development",
+                                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                                "judge_metadata": null,
+                                                "sub_tasks": []
+                                            },
+                                            {
+                                                "id": "ede350f7-1ac5-4f6b-ad2c-3f97d24881f4",
+                                                "requirements": "When training SEMA, when adding a new adapter, the weights in the router corresponding to the new adapter are learnable parameters, and all the other weights in the router are frozen.",
+                                                "weight": 1,
+                                                "score": 1.0,
+                                                "valid_score": true,
+                                                "task_category": "Code Development",
+                                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                                "judge_metadata": null,
+                                                "sub_tasks": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "9aeec6b6-c3c2-40a1-b1f7-c56fda9c4983",
+                                "requirements": "When a new task is added, the classification head has been expanded to handle the new classes",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            },
+                            {
+                                "id": "01e981c9-e995-42d0-80d8-e1b3f55e3033",
+                                "requirements": "When training SEMA, the training loss and its components including the cross-entropy loss and the reconstruction loss have been implemented correctly, as defined in Section 3.",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": null,
+                                "explanation": "Aggregated score from sub-tasks.",
+                                "judge_metadata": null,
+                                "sub_tasks": [
+                                    {
+                                        "id": "061cf57d-6d29-4850-85eb-99934f8e65b3",
+                                        "requirements": "For training SEMA, the loss of the model $F$ is implemented correctly; given an input-label pair $(x, y)$, the cross entropy loss between the output of the model $F(x)$ and $y$ is computed",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "5b0fa5b0-bd67-47d4-be6b-f90527f85a49",
+                                        "requirements": "For training SEMA, the reconstruction loss for the representation descriptors is implemented correctly; given an input $x$ to the representation descriptor $g$, the loss is computed as the 2-norm of the difference between the input and output; $||x - g(x)||_2^2$",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "7c152eab-cdfd-4c02-8107-8f72fff4006b",
+                                        "requirements": "For training SEMA, the overall loss given an input-label pair $(x, y)$ is computed as the cross-entropy loss of the output of the network with the label $y$ and the sum of reconstruction losses of all representation descriptors across all layers",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "04a2b384-6ec8-4c1e-b96b-a699837708f3",
+                "requirements": "The baseline methods have been implemented, as in Section 4.1.",
+                "weight": 3,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                    {
+                        "id": "615fad10-fa3c-4891-a1e9-72a9e48cd7a2",
+                        "requirements": "The Finetune Adapter baseline has been implemented",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                            {
+                                "id": "821e4ced-2ead-46e8-bd3b-80a6b5ab3d98",
+                                "requirements": "The Finetune Adapter baseline is implemented by adding one SEMA adapter to each of all layers in the frozen ViT",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            },
+                            {
+                                "id": "213fe0b4-346f-4c1f-b7b2-23f198b3e03e",
+                                "requirements": "The Finetune Adapter baseline is trained by continually fine-tuning the SEMA adapters throughout all tasks in the task stream encountered during training",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            },
+                            {
+                                "id": "033c6646-e283-4075-923b-e16e70c3320e",
+                                "requirements": "When training the Finetune Adapter baseline, the backbone ViT is frozen and only the (parameters of the) adapters are updated continually by all tasks",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "2522988f-d45e-4537-94a9-c4748671883e",
+                        "requirements": "L2P has been implemented, using the implementation available within this repo: https://github.com/sun-hailong/LAMDA-PILOT",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    },
+                    {
+                        "id": "e40c9f90-3815-4876-a944-68673586aa1e",
+                        "requirements": "DualPrompt has been implemented, using the implementation available within this repo: https://github.com/sun-hailong/LAMDA-PILOT",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    },
+                    {
+                        "id": "65005d38-e4e9-44c5-a08c-d05e9856ed20",
+                        "requirements": "CODA-P has been implemented, using the implementation available within this repo: https://github.com/sun-hailong/LAMDA-PILOT",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    },
+                    {
+                        "id": "258321d1-3921-4d88-a955-42c4d6a75683",
+                        "requirements": "SimpleCIL has been implemented, using the official implementation at https://github.com/zhoudw-zdw/RevisitingCIL",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    },
+                    {
+                        "id": "897aae5d-6cef-4135-9266-b432afef1cf7",
+                        "requirements": "ADAM with Adapter has been implemented, using the official implementation at https://github.com/zhoudw-zdw/RevisitingCIL",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    }
+                ]
+            },
+            {
+                "id": "3b9da641-cf0e-45d4-88f9-407e9f361bb8",
+                "requirements": "The accuracy formulas are implemented correctly as in Section B.3.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                    {
+                        "id": "9b147fe2-16a2-4976-8242-e175b390510b",
+                        "requirements": "The average accuracy $A_N$ of all seen tasks after training on the $N$-th task, is computed as $A_N = \\frac{1}{N} \\sum_{i=1}^N A_{i,N}$, where $A_{i,N}$ is the accuracy of the $i$-th task after training on the $N$-th task",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    },
+                    {
+                        "id": "db420a9d-1f89-4455-b1e3-5224229785e7",
+                        "requirements": "The average incremental accuracy $\\bar{A}$ is computed as $\\bar{A} = \\frac{1}{N} \\sum_{t=1}^N A_t$, where $A_t$ is the average accuracy on all seen tasks after training on the $t$-th task",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                    }
+                ]
+            },
+            {
+                "id": "95e7fd20-9a03-4ac5-9b5b-16de4608e7e3",
+                "requirements": "All results from the paper have been replicated",
+                "weight": 10,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                    {
+                        "id": "bc74e7d3-ba2f-4adb-8666-73157f7c6e7d",
+                        "requirements": "The hyperparameters stated in Section 4.1 have been used, unless otherwise stated",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                            {
+                                "id": "06cd5080-8910-4fe1-88e7-6d75b10c6ddb",
+                                "requirements": "All adapters are trained for 5 epochs.",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            },
+                            {
+                                "id": "256cc0e7-eb7b-4514-8a17-821098949e4e",
+                                "requirements": "The representation descriptors are trained for 20 epochs.",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            },
+                            {
+                                "id": "4b60235a-76f2-4412-933b-37b370fb319d",
+                                "requirements": "The batch size is 32.",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            },
+                            {
+                                "id": "0e607305-df2a-4523-ac80-6812389f9a4b",
+                                "requirements": "SGD is used as the optimizer, and the learning rates and schedules are consistent with those in Section 4.1.",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": null,
+                                "explanation": "Aggregated score from sub-tasks.",
+                                "judge_metadata": null,
+                                "sub_tasks": [
+                                    {
+                                        "id": "5ecb2fba-990a-4b97-b510-7e26d3eb257f",
+                                        "requirements": "SGD is used as the optimizer.",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "2ca0acae-e483-4fa7-8157-881db51eb711",
+                                        "requirements": "The learning rates are correct.",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": null,
+                                        "explanation": "Aggregated score from sub-tasks.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": [
+                                            {
+                                                "id": "81f71ca5-7f2b-45b9-9c44-a8ee5da1563b",
+                                                "requirements": "The initial learning rate is set to 0.005 for adapters.",
+                                                "weight": 1,
+                                                "score": 1.0,
+                                                "valid_score": true,
+                                                "task_category": "Code Development",
+                                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                                "judge_metadata": null,
+                                                "sub_tasks": []
+                                            },
+                                            {
+                                                "id": "ed1f909f-6dbd-4622-8307-fe24e0fd22e2",
+                                                "requirements": "The initial learning rate is set to 0.01 for representational descriptors.",
+                                                "weight": 1,
+                                                "score": 1.0,
+                                                "valid_score": true,
+                                                "task_category": "Code Development",
+                                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                                "judge_metadata": null,
+                                                "sub_tasks": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "3be032fb-a0c4-47c1-9311-f17a0dcd1fd1",
+                                        "requirements": "The learning rate decays with cosine annealing.",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "39b9fadf-ef29-480e-9084-279e30bf9e0e",
+                                "requirements": "Self-expansion is only enabled in the last three transformer layers.",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            },
+                            {
+                                "id": "253a9dca-1d45-4c3f-af01-2347893e39b3",
+                                "requirements": "The adapters in SEMA and ADAM project down to a dimensionality of 48",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "b4141a28-7070-463c-b5a7-62e43e3c402c",
+                        "requirements": "The results in Section 4.3 on \"Ablation studies on module expansion and adapter composing\" have been replicated",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                            {
+                                "id": "d0381866-9003-46a7-920b-1091af4f4e37",
+                                "requirements": "The architecture variants introduced in Section 4.3 on \"Ablation studies on module expansion and adapter composing\" have been implemented",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": null,
+                                "explanation": "Aggregated score from sub-tasks.",
+                                "judge_metadata": null,
+                                "sub_tasks": [
+                                    {
+                                        "id": "794c4737-ec01-4c79-b2c3-dc79472eecd3",
+                                        "requirements": "The architecture variant \"No Expansion\" introduced in Section 4.3 on \"Ablation studies on module expansion and adapter composing\" has been implemented",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": null,
+                                        "explanation": "Aggregated score from sub-tasks.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": [
+                                            {
+                                                "id": "f4446727-6b06-4e68-b065-367ce9d5161e",
+                                                "requirements": "The architecture variant \"No Expansion\" introduced in Section 4.3 on \"Ablation studies on module expansion and adapter composing\" is a variant of SEMA that has one adapter per layer of the transformer",
+                                                "weight": 1,
+                                                "score": 1.0,
+                                                "valid_score": true,
+                                                "task_category": "Code Development",
+                                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                                "judge_metadata": null,
+                                                "sub_tasks": []
+                                            },
+                                            {
+                                                "id": "3ebfcc70-eabc-42b3-bfce-610813252204",
+                                                "requirements": "The architecture variant \"No Expansion\" introduced in Section 4.3 on \"Ablation studies on module expansion and adapter composing\" does not add adapters during training, i.e., there is no self-expansion",
+                                                "weight": 1,
+                                                "score": 1.0,
+                                                "valid_score": true,
+                                                "task_category": "Code Development",
+                                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                                "judge_metadata": null,
+                                                "sub_tasks": []
+                                            },
+                                            {
+                                                "id": "55756009-1626-491e-8875-d7ccb8b80778",
+                                                "requirements": "The architecture variant \"No Expansion\" introduced in Section 4.3 on \"Ablation studies on module expansion and adapter composing\" does train the adapters after the first task",
+                                                "weight": 1,
+                                                "score": 1.0,
+                                                "valid_score": true,
+                                                "task_category": "Code Development",
+                                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                                "judge_metadata": null,
+                                                "sub_tasks": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "952bbc57-c7f9-45e3-b440-825ad0ea994d",
+                                        "requirements": "The architecture variant \"Average Weighting\" introduced in Section 4.3 on \"Ablation studies on module expansion and adapter composing\" is implemented as a variant of the SEMA architecture that uses an average weighting of the outputs of the functional adapters (e.g. the router has the same weight for each adapter)",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "a5959da9-798c-4eb0-9579-c3a92e23191c",
+                                        "requirements": "The architecture variant \"Random Weighting\" introduced in Section 4.3 on \"Ablation studies on module expansion and adapter composing\" is implemented as a variant of the SEMA architecture that uses a linear combination (from random weights) of the outputs of the functional adapters (e.g. the router has random weights for each adapter), where the random weights are re-computed per-sample",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "4eed6ff6-738b-4515-a0fb-dfddd356b957",
+                                        "requirements": "The architecture variant \"Top-1 Selection\" introduced in Section 4.3 on \"Ablation studies on module expansion and adapter composing\" is implemented as a variant of the SEMA architecture that only uses the output of the single adapter that has the highest weight from the router during both training and inference",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "aecc19c4-4c4c-4929-a596-52080af9f789",
+                                        "requirements": "The architecture variant \"Random Selection\" introduced in Section 4.3 on \"Ablation studies on module expansion and adapter composing\" is implemented as a variant of the SEMA architecture that only uses the output of the single adapter chosen at random, where the adapter that is randomly chosen is re-computed (randomly) per-sample",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "02c22ec6-80c7-4bd1-b709-213d921c70dd",
+                                        "requirements": "The architecture variant \"Top-1 Selection\" introduced in Section 4.3 on \"Ablation studies on module expansion and adapter composing\" is implemented as a variant of the SEMA architecture that uses the standard SEMA method during training, but during inference only uses the output of the single adapter that has the highest router weight",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "6d9d8dc9-68e1-4a8d-8b72-5b826ae489c2",
+                        "requirements": "The results in Section 4.3 on \"Analysis on dynamic expansion process\" have been replicated",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                            {
+                                "id": "35bd26f2-debd-4482-813c-e20989b74fbd",
+                                "requirements": "The experiments required to replicate the results in Section 4.3 on \"Analysis on dynamic expansion process\" have been executed",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": null,
+                                "explanation": "Aggregated score from sub-tasks.",
+                                "judge_metadata": null,
+                                "sub_tasks": [
+                                    {
+                                        "id": "c35a2668-8fd3-4a0c-8012-ecbf780f84a9",
+                                        "requirements": "For the SEMA model trained for the experiment in in Section 4.3 on \"Analysis on dynamic expansion process\", self-expansion is limited to the final layer of the transformer",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "8e458cfa-d612-4672-99e3-c8996d3d0882",
+                                        "requirements": "For the SEMA model trained in Section 4.3 on \"Analysis on dynamic expansion process\", the reconstruction error from each representation descriptor is recorded for each batch",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "35daaf13-e3d2-433a-912f-464149921373",
+                        "requirements": "The results in Section 4.3 on \"Analysis on adapter usage\" have been replicated",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                            {
+                                "id": "8e1377c2-0b2f-4aa8-b3f9-476e7f7a8b09",
+                                "requirements": "Using the model trained in Section 4.3 on \"Analysis on dynamic expansion process\", the adapter usage for each task has been computed by averaging the routing weight vectors from all samples seen in tasks in the test set, then normalizing the final result such that the sum of average weights for each task sums to one",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "dc58441b-c211-4ad4-8166-405877570c1d",
+                        "requirements": "The results in Section 4.3 on \"Study of expansion threshold\" have been replicated",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                            {
+                                "id": "c67c035a-8cba-40c3-ad05-b6e5efecfaf9",
+                                "requirements": "The experiments required to replicate the results in Section 4.3 on \"Study of expansion threshold\" have been executed",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": null,
+                                "explanation": "Aggregated score from sub-tasks.",
+                                "judge_metadata": null,
+                                "sub_tasks": [
+                                    {
+                                        "id": "e416a999-41de-489d-9df7-54edfd80b866",
+                                        "requirements": "Code is implemented to count the number of adapters added to each of the last three transformer layers",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "a6727e55-a678-4b0a-ba17-5969dcea2d1c",
+                        "requirements": "The results in Section 4.3 on \"Analysis of multi-layer expansion\" have been replicated",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                            {
+                                "id": "907de1eb-df14-4a77-a095-7e0f82e4d7b3",
+                                "requirements": "The recorded metrics show that the results in Section 4.3 on \"Analysis of multi-layer expansion\" have been replicated",
+                                "weight": 2,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": null,
+                                "explanation": "Aggregated score from sub-tasks.",
+                                "judge_metadata": null,
+                                "sub_tasks": [
+                                    {
+                                        "id": "14696e47-fa4c-4f3f-9557-2e22ba3825f1",
+                                        "requirements": "The recorded metrics show that the average accuracy of SEMA trained on ImageNet-A is higher when layers 9-12 are allowed for self-expansion compared to when only layers 11-12 are allowed for self-expansion",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "bf0ca018-644d-41a7-b0a1-8d1d54690e51",
+                                        "requirements": "The recorded metrics show that the average accuracy of SEMA trained on VTAB is higher when layers 9-12 are allowed for self-expansion compared to when only layers 11-12 are allowed for self-expansion",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "30593624-21a7-44b0-ac75-8635e4d418e3",
+                                        "requirements": "The recorded metrics show that the incremental accuracy of ImageNet-A trained on VTAB is higher when layers 9-12 are allowed for self-expansion compared to when only layers 11-12 are allowed for self-expansion",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "8de7c979-b748-487b-920d-ddf4ce21fa99",
+                                        "requirements": "The recorded metrics show that the incremental accuracy of SEMA trained on VTAB is higher when layers 10-12 are allowed for self-expansion compared to when only layers 11-12 are allowed for self-expansion",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "2048f2e3-9d3a-4608-bf4f-2f58b41284de",
+                                        "requirements": "The recorded metrics show that for the SEMA model trained on ImageNet-A, more adapters are added in total when more layers are allowed for self-expansion",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    },
+                                    {
+                                        "id": "b74040f4-5aaa-432d-b18a-ea365cbb06b4",
+                                        "requirements": "The recorded metrics show that for the SEMA model trained on VTAB, more adapters are added in total when more layers are allowed for self-expansion",
+                                        "weight": 1,
+                                        "score": 1.0,
+                                        "valid_score": true,
+                                        "task_category": "Code Development",
+                                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                        "judge_metadata": null,
+                                        "sub_tasks": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "a2179131-956f-40f8-95ed-b6d2bded7dc7",
+                        "requirements": "The results in Section 4.3 on \"Sub-linear growth of parameters\" have been replicated",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                            {
+                                "id": "918b9273-aafb-4c0d-a7fe-da67f85de064",
+                                "requirements": "Code for computing the total number of parameters added by each method is implemented",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            },
+                            {
+                                "id": "da88bff7-d60f-47ea-a705-f21d74d9fba8",
+                                "requirements": "The total number of parameters added by each method is computed over the course of training at the end of each task",
+                                "weight": 1,
+                                "score": 1.0,
+                                "valid_score": true,
+                                "task_category": "Code Development",
+                                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                                "judge_metadata": null,
+                                "sub_tasks": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "completer_config": {
+        "model": "o3-mini-2025-01-31",
+        "reasoning_effort": "high",
+        "response_format": "NOT_GIVEN",
+        "temperature": "NOT_GIVEN",
+        "max_tokens": "NOT_GIVEN",
+        "top_p": "NOT_GIVEN",
+        "tools": "NOT_GIVEN",
+        "tool_choice": "NOT_GIVEN",
+        "retry_config": {
+            "wait_min": 1.0,
+            "wait_max": 300.0,
+            "stop_after": 7200.0
+        }
+    },
+    "token_usage": null
+}

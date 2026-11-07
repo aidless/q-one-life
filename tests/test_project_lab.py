@@ -1,12 +1,16 @@
 import json
 import math
+import tarfile
+from pathlib import Path
 
 import pytest
 
 from qone_life.research_factory.project_lab import (
     CodeLabError,
+    FULL_PACKAGE_REQUIRED,
     build_project,
     generate_project,
+    package_project,
     parse_project,
     verify_project,
 )
@@ -79,3 +83,38 @@ def test_build_and_verify_project_passes() -> None:
     assert receipt["passed"]
     assert receipt["pytest_returncode"] == 0
     assert receipt["run_returncode"] == 0
+
+
+def test_extract_json_from_prose_fences() -> None:
+    answer = "Here is the project:\n```json\n" + _answer(FILES) + "\n```\n"
+    assert parse_project(answer) == FILES
+
+
+def test_paperbench_profile_requires_full_package() -> None:
+    with pytest.raises(CodeLabError):
+        parse_project(_answer(FILES), required_files=FULL_PACKAGE_REQUIRED)
+
+
+def test_generate_project_retries_invalid_answers() -> None:
+    answers = iter(["not json", _answer(FILES)])
+    receipt = generate_project("Compute a mean", lambda prompt: next(answers), attempts=2)
+    assert receipt["attempts_used"] == 2
+    assert receipt["profile"] == "minimal"
+
+
+def test_package_project_creates_submission_tree_and_archive(tmp_path) -> None:
+    receipt = package_project(
+        FILES,
+        output_dir=tmp_path,
+        paper_id="semantic-self-consistency",
+        task="test task",
+    )
+    assert receipt["schema"] == "q-one-paperbench-package-v1"
+    assert Path(receipt["submission_dir"], "src/core.py").is_file()
+    assert Path(receipt["submission_dir"], "MANIFEST.json").is_file()
+    with tarfile.open(receipt["archive_path"]) as tar:
+        names = tar.getnames()
+    assert "submission/run.py" in names
+    assert "submission/MANIFEST.json" in names
+    with pytest.raises(CodeLabError):
+        package_project(FILES, output_dir=tmp_path, paper_id="semantic-self-consistency")

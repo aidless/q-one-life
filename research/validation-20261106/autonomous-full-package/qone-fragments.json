@@ -1,0 +1,5 @@
+{
+  "parse": "def parse_answer(text):\n    _, marker, answer = text.partition(\"The answer is\")\n    if not marker:\n        return None\n    answer = answer.strip().removesuffix(\".\").strip()\n    if answer.startswith(\"(\") and answer.endswith(\")\"):\n        answer = answer[1:-1].strip()\n    return answer\n",
+  "modal": "def modal_answer(answers):\n    from collections import Counter\n\n    counts = Counter(answer for answer in answers if answer is not None)\n    return counts.most_common(1)[0][0] if counts else None\n",
+  "embed": "def _hash_embed(text):\n    import hashlib\n\n    digest = hashlib.sha512(text.encode('utf-8')).digest()\n    values = [byte - 127.5 for byte in digest]\n    norm = sum(value * value for value in values) ** 0.5\n    return [value / norm for value in values]\n"
+}

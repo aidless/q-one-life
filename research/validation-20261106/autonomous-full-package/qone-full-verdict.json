@@ -1,0 +1,19 @@
+{
+  "schema": "q-one-project-lab-verification-v1",
+  "elapsed_sec": 0.2757617410097737,
+  "pytest_returncode": 0,
+  "pytest_stdout_sha256": "3ab69c44c0781c70d7a226d92c2a74efdd9fbb158b6a5cd1669d62cace44568c",
+  "pytest_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "pytest_stdout_preview": "......                                                                   [100%]\n6 passed in 0.01s\n",
+  "pytest_stderr_preview": "",
+  "run_returncode": 0,
+  "run_stdout_preview": "{\"chosen\": \"1\", \"parsed\": [\"1\", \"1\", \"2\"], \"cpw\": \"1\", \"scw\": \"1\"}\n",
+  "run_stderr_preview": "",
+  "passed": true,
+  "sandbox": {
+    "kind": "temporary_directory_subprocess",
+    "network": "not_granted",
+    "filesystem_scope": "temporary_directory",
+    "timeout_seconds": 60
+  }
+}
