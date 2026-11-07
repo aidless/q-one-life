@@ -79,6 +79,7 @@ def main() -> int:
     coverage = json.loads((args.root / "external-task-coverage/coverage.json").read_text())
     archive_summary = json.loads((args.root / "external-task-coverage/runs/archive-summary.json").read_text())
     cloud_matrix = json.loads((args.root / "external-task-coverage/cloud/matrix.json").read_text())
+    evidence_contract = json.loads((args.root / "external-task-coverage/evidence-contract.json").read_text())
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -187,6 +188,10 @@ def main() -> int:
         check("external_cloud_entry_ok", 10, cloud_matrix["summary"]["entry_ok"]),
         check("external_cloud_test_packages", 10, cloud_matrix["summary"]["test_packages"]),
         check("external_cloud_total_tests", 48, cloud_matrix["summary"]["total_tests"]),
+        check("evidence_contract_tasks", 10, evidence_contract["summary"]["tasks"]),
+        check("evidence_contract_leaves", 2776, evidence_contract["summary"]["rubric_leaves"]),
+        check("evidence_contract_verified_leaves", 0, evidence_contract["summary"]["verified_leaves"]),
+        check("evidence_contract_real_scores", 0, evidence_contract["summary"]["real_judge_scores"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -238,6 +243,7 @@ def main() -> int:
         "external_real_score_count": coverage["summary"]["real_score_count"],
         "external_archived_count": archive_summary["summary"]["graded_tasks"],
         "external_cloud_total_tests": cloud_matrix["summary"]["total_tests"],
+        "evidence_contract_leaves": evidence_contract["summary"]["rubric_leaves"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1
