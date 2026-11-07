@@ -1,0 +1,458 @@
+{
+  "schema": "qone-scc-real-data-probe-receipt-v1",
+  "canonical_sha256": "4b8a3b25158899b424e5f7117f16d5b0efc11791c1ea86b36092442fac92c522",
+  "payload": {
+    "schema": "qone-scc-real-data-probe-v1",
+    "model_used": false,
+    "paid_api_used": false,
+    "k": 10,
+    "scenarios": [
+      "all_gold",
+      "majority_gold",
+      "minority_gold",
+      "parse_noise",
+      "no_answer"
+    ],
+    "methods": [
+      "first_response",
+      "modal",
+      "cpw",
+      "scw"
+    ],
+    "datasets": {
+      "aqua_rat": {
+        "rows": 254,
+        "scenarios": {
+          "all_gold": {
+            "parse_failures": 0,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              },
+              "modal": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              },
+              "cpw": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              },
+              "scw": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              }
+            }
+          },
+          "majority_gold": {
+            "parse_failures": 0,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              },
+              "modal": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              },
+              "cpw": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              },
+              "scw": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              }
+            }
+          },
+          "minority_gold": {
+            "parse_failures": 0,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              },
+              "modal": {
+                "matches_gold": 0,
+                "answered": 254,
+                "recovery": 0.0
+              },
+              "cpw": {
+                "matches_gold": 0,
+                "answered": 254,
+                "recovery": 0.0
+              },
+              "scw": {
+                "matches_gold": 0,
+                "answered": 254,
+                "recovery": 0.0
+              }
+            }
+          },
+          "parse_noise": {
+            "parse_failures": 0,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              },
+              "modal": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              },
+              "cpw": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              },
+              "scw": {
+                "matches_gold": 254,
+                "answered": 254,
+                "recovery": 1.0
+              }
+            }
+          },
+          "no_answer": {
+            "parse_failures": 2540,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 0,
+                "answered": 0,
+                "recovery": 0.0
+              },
+              "modal": {
+                "matches_gold": 0,
+                "answered": 0,
+                "recovery": 0.0
+              },
+              "cpw": {
+                "matches_gold": 0,
+                "answered": 0,
+                "recovery": 0.0
+              },
+              "scw": {
+                "matches_gold": 0,
+                "answered": 0,
+                "recovery": 0.0
+              }
+            }
+          }
+        }
+      },
+      "svamp": {
+        "rows": 1000,
+        "scenarios": {
+          "all_gold": {
+            "parse_failures": 0,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              },
+              "modal": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              },
+              "cpw": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              },
+              "scw": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              }
+            }
+          },
+          "majority_gold": {
+            "parse_failures": 0,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              },
+              "modal": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              },
+              "cpw": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              },
+              "scw": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              }
+            }
+          },
+          "minority_gold": {
+            "parse_failures": 0,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              },
+              "modal": {
+                "matches_gold": 0,
+                "answered": 1000,
+                "recovery": 0.0
+              },
+              "cpw": {
+                "matches_gold": 0,
+                "answered": 1000,
+                "recovery": 0.0
+              },
+              "scw": {
+                "matches_gold": 0,
+                "answered": 1000,
+                "recovery": 0.0
+              }
+            }
+          },
+          "parse_noise": {
+            "parse_failures": 0,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              },
+              "modal": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              },
+              "cpw": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              },
+              "scw": {
+                "matches_gold": 1000,
+                "answered": 1000,
+                "recovery": 1.0
+              }
+            }
+          },
+          "no_answer": {
+            "parse_failures": 10000,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 0,
+                "answered": 0,
+                "recovery": 0.0
+              },
+              "modal": {
+                "matches_gold": 0,
+                "answered": 0,
+                "recovery": 0.0
+              },
+              "cpw": {
+                "matches_gold": 0,
+                "answered": 0,
+                "recovery": 0.0
+              },
+              "scw": {
+                "matches_gold": 0,
+                "answered": 0,
+                "recovery": 0.0
+              }
+            }
+          }
+        }
+      },
+      "strategyqa": {
+        "rows": 687,
+        "scenarios": {
+          "all_gold": {
+            "parse_failures": 0,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              },
+              "modal": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              },
+              "cpw": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              },
+              "scw": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              }
+            }
+          },
+          "majority_gold": {
+            "parse_failures": 0,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              },
+              "modal": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              },
+              "cpw": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              },
+              "scw": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              }
+            }
+          },
+          "minority_gold": {
+            "parse_failures": 0,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              },
+              "modal": {
+                "matches_gold": 0,
+                "answered": 687,
+                "recovery": 0.0
+              },
+              "cpw": {
+                "matches_gold": 0,
+                "answered": 687,
+                "recovery": 0.0
+              },
+              "scw": {
+                "matches_gold": 0,
+                "answered": 687,
+                "recovery": 0.0
+              }
+            }
+          },
+          "parse_noise": {
+            "parse_failures": 0,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              },
+              "modal": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              },
+              "cpw": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              },
+              "scw": {
+                "matches_gold": 687,
+                "answered": 687,
+                "recovery": 1.0
+              }
+            }
+          },
+          "no_answer": {
+            "parse_failures": 6870,
+            "exceptions": 0,
+            "methods": {
+              "first_response": {
+                "matches_gold": 0,
+                "answered": 0,
+                "recovery": 0.0
+              },
+              "modal": {
+                "matches_gold": 0,
+                "answered": 0,
+                "recovery": 0.0
+              },
+              "cpw": {
+                "matches_gold": 0,
+                "answered": 0,
+                "recovery": 0.0
+              },
+              "scw": {
+                "matches_gold": 0,
+                "answered": 0,
+                "recovery": 0.0
+              }
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "rows": 1941,
+      "scenario_rows": 9705,
+      "exceptions": 0,
+      "parse_failures_by_scenario": {
+        "all_gold": 0,
+        "majority_gold": 0,
+        "minority_gold": 0,
+        "parse_noise": 0,
+        "no_answer": 19410
+      },
+      "invariants_passed": true,
+      "problems": 0
+    },
+    "invariants": {
+      "all_gold_all_methods_recovered": true,
+      "majority_gold_modal_recovered": true,
+      "minority_gold_modal_not_recovered": true,
+      "parse_noise_no_failures": true,
+      "no_answer_all_unparsed": true,
+      "no_answer_no_method_answered": true,
+      "no_exceptions": true
+    }
+  },
+  "runtime": {
+    "host_label": "local",
+    "python_executable": "/usr/bin/python3",
+    "elapsed_sec": 37.073
+  }
+}

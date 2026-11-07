@@ -12,7 +12,7 @@
    `self-composing-policies`（9 测试）。三份都是**手写参考实现**，不是模型生成的。
 4. `research/validation-20261106/paperbench-smoke/2026-11-07T14-34-31-GMT_run-group_direct_submission_solver/`
    证明三份提交都被 DirectSubmission 归档、dummy judge 正常读取并输出 grade。
-5. `scripts/verify_research_validation.py` 现有 122 项机器校验，全绿。
+5. `scripts/verify_research_validation.py` 现有 129 项机器校验，全绿。
 6. `src/qone_life/research_factory/project_lab.py` 新增多文件项目模式；模型生成过
    4 文件项目并通过 pytest + 主机隐藏测试（`autonomous-project-lab/`）。
 7. `autonomous-paperbench-loop/` 证明模型生成的项目被 PaperBench DirectSubmission
@@ -37,6 +37,8 @@
     数据本体不入 git，恢复脚本可重跑并校验。本机与云端数据审计均 PASS，
     1941 行、0 个解析/哈希/行数问题。三个真实文件已接入主提交包，
     加载器、manifest 与隐藏契约测试同步更新。
+13. `scc-real-data-probe/` 在 1941 条真实样本 × 5 场景上跑确定性解析/聚合探针；
+    本地与云端 canonical hash 一致，双向变异自测通过。没有使用模型或付费 API。
 
 ## 不能声称
 

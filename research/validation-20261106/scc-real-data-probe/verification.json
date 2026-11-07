@@ -1,0 +1,23 @@
+{
+  "schema": "qone-scc-real-data-probe-verification-v1",
+  "summary": {
+    "gate": "PASS",
+    "not_executed": false,
+    "problems": 0,
+    "problem_list": [],
+    "canonical_sha256": "4b8a3b25158899b424e5f7117f16d5b0efc11791c1ea86b36092442fac92c522",
+    "rows": 1941,
+    "scenario_rows": 9705,
+    "expected_rows": 1941
+  },
+  "local_runtime": {
+    "host_label": "local",
+    "python_executable": "/usr/bin/python3",
+    "elapsed_sec": 37.073
+  },
+  "cloud_runtime": {
+    "host_label": "amd-cloud",
+    "python_executable": "/opt/venv/bin/python",
+    "elapsed_sec": 16.98
+  }
+}

@@ -86,6 +86,8 @@ def main() -> int:
     dataset_checks = json.loads((args.root / "datasets/semantic-self-consistency/download-checks.json").read_text())
     dataset_local_audit = json.loads((args.root / "datasets/semantic-self-consistency/local-audit.json").read_text())
     dataset_cloud_audit = json.loads((args.root / "datasets/semantic-self-consistency/cloud-audit.json").read_text())
+    scc_probe_verify = json.loads((args.root / "scc-real-data-probe/verification.json").read_text())
+    scc_probe_selftest = json.loads((args.root / "scc-real-data-probe/selftest.json").read_text())
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -229,6 +231,14 @@ def main() -> int:
             t["min_pytest_cases"] for t in json.loads(
                 (args.root / "external-task-coverage/hidden/HOST_CONTRACT.json").read_text()
             )["tasks"] if t["paper_id"] == "semantic-self-consistency")),
+        check("scc_probe_gate", "PASS", scc_probe_verify["summary"]["gate"]),
+        check("scc_probe_rows", 1941, scc_probe_verify["summary"]["rows"]),
+        check("scc_probe_scenario_rows", 9705, scc_probe_verify["summary"]["scenario_rows"]),
+        check("scc_probe_no_model", False, json.loads(
+            (args.root / "scc-real-data-probe/local-receipt.json").read_text())["payload"]["model_used"]),
+        check("scc_probe_selftest_passed", True, scc_probe_selftest["summary"]["passed"]),
+        check("scc_probe_mutation_a", 2, scc_probe_selftest["summary"]["direction_a_problems"]),
+        check("scc_probe_mutation_b", 1, scc_probe_selftest["summary"]["direction_b_problems"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -285,6 +295,7 @@ def main() -> int:
         "scc_dataset_rows": [dataset_checks[k]["rows"] for k in ("aqua_test.jsonl", "svamp.json", "strategyqa_test.json")],
         "scc_audited_rows": dataset_cloud_audit["summary"]["rows"],
         "scc_submission_real_data": True,
+        "scc_probe_canonical": scc_probe_verify["summary"]["canonical_sha256"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

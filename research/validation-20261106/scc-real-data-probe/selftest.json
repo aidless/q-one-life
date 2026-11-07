@@ -1,0 +1,60 @@
+{
+  "schema": "qone-scc-real-data-probe-verification-selftest-v1",
+  "summary": {
+    "passed": true,
+    "base_problems": 0,
+    "direction_a_problems": 2,
+    "direction_b_problems": 1,
+    "restored_problems": 0,
+    "direction_a_hash_failures": 2,
+    "direction_b_row_failures": 1,
+    "direction_a_mutation": "cloud canonical hash replaced with zeros",
+    "direction_b_mutation": "expected rows raised by one",
+    "counter_fixture_band": "actual rows equal correct expectation and are below the broken expectation"
+  },
+  "base": {
+    "gate": "PASS",
+    "not_executed": false,
+    "problems": 0,
+    "problem_list": [],
+    "canonical_sha256": "4b8a3b25158899b424e5f7117f16d5b0efc11791c1ea86b36092442fac92c522",
+    "rows": 1941,
+    "scenario_rows": 9705,
+    "expected_rows": 1941
+  },
+  "direction_a": {
+    "gate": "FAIL",
+    "not_executed": false,
+    "problems": 2,
+    "problem_list": [
+      "cloud_canonical_mismatch",
+      "receipt_hash_mismatch"
+    ],
+    "canonical_sha256": "4b8a3b25158899b424e5f7117f16d5b0efc11791c1ea86b36092442fac92c522",
+    "rows": 1941,
+    "scenario_rows": 9705,
+    "expected_rows": 1941
+  },
+  "direction_b": {
+    "gate": "FAIL",
+    "not_executed": false,
+    "problems": 1,
+    "problem_list": [
+      "rows_mismatch"
+    ],
+    "canonical_sha256": "4b8a3b25158899b424e5f7117f16d5b0efc11791c1ea86b36092442fac92c522",
+    "rows": 1941,
+    "scenario_rows": 9705,
+    "expected_rows": 1942
+  },
+  "restored": {
+    "gate": "PASS",
+    "not_executed": false,
+    "problems": 0,
+    "problem_list": [],
+    "canonical_sha256": "4b8a3b25158899b424e5f7117f16d5b0efc11791c1ea86b36092442fac92c522",
+    "rows": 1941,
+    "scenario_rows": 9705,
+    "expected_rows": 1941
+  }
+}
