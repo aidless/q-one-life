@@ -1,6 +1,6 @@
 {
   "schema": "qone-host-hidden-contract-self-test-v1",
-  "contract_sha256": "3428d071658da3c1753155b61731c7453a0543659aa545cd074b521a5e537c30",
+  "contract_sha256": "8d2b6fde1f982a452ad6d8d1ad9c68edf6b6d174afd4af22d98afe1b7bb5e6c0",
   "script_sha256": "5ce948430d599b0f7121702dfdfb5034b36e18136e1165e9f6359b367637f3c9",
   "python_executable": "/usr/bin/python3",
   "summary": {

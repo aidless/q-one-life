@@ -1,0 +1,34 @@
+{
+  "schema": "qone-scc-data-receipt-v1",
+  "counts": {
+    "aqua_rat": 254,
+    "svamp": 1000,
+    "strategyqa": 687
+  },
+  "manifest": [
+    {
+      "file": "aqua_test.jsonl",
+      "url": "https://raw.githubusercontent.com/google-deepmind/AQuA/master/test.json",
+      "rows": 254,
+      "bytes": 130192,
+      "sha256": "de41581881ef95c5588c44ddc701c77fd480839241dd422a0d181262af24520c",
+      "license": "AQuA public repository distribution"
+    },
+    {
+      "file": "svamp.json",
+      "url": "https://raw.githubusercontent.com/arkilpatel/SVAMP/main/SVAMP.json",
+      "rows": 1000,
+      "bytes": 339970,
+      "sha256": "5be77703a6d891ae476d7c082787ad361392aa02453b132516cdd5f4e7934e3e",
+      "license": "SVAMP public repository distribution"
+    },
+    {
+      "file": "strategyqa_test.json",
+      "url": "https://huggingface.co/datasets/ChilleD/StrategyQA/resolve/main/test.json",
+      "rows": 687,
+      "bytes": 176993,
+      "sha256": "6da41445f044a7abde29f987d3311757cd0c33e759ea6f37fa100917bf0a82b0",
+      "license": "MIT (ChilleD/StrategyQA mirror)"
+    }
+  ]
+}

@@ -217,6 +217,18 @@ def main() -> int:
         check("scc_cloud_audit_status", "PASS", dataset_cloud_audit["summary"]["status"]),
         check("scc_audited_rows", 1941, dataset_cloud_audit["summary"]["rows"]),
         check("scc_audit_problems", 0, dataset_cloud_audit["summary"]["problems"]),
+        check("scc_submission_real_data_manifest", True,
+              (args.root.parent / "paperbench-submissions/semantic-self-consistency/data/manifest.json").is_file()),
+        check("scc_submission_aqua_bytes", 130192,
+              (args.root.parent / "paperbench-submissions/semantic-self-consistency/data/aqua_test.jsonl").stat().st_size),
+        check("scc_submission_svamp_bytes", 339970,
+              (args.root.parent / "paperbench-submissions/semantic-self-consistency/data/svamp.json").stat().st_size),
+        check("scc_submission_sqa_bytes", 176993,
+              (args.root.parent / "paperbench-submissions/semantic-self-consistency/data/strategyqa_test.json").stat().st_size),
+        check("scc_hidden_gate_test_minimum", 10, next(
+            t["min_pytest_cases"] for t in json.loads(
+                (args.root / "external-task-coverage/hidden/HOST_CONTRACT.json").read_text()
+            )["tasks"] if t["paper_id"] == "semantic-self-consistency")),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -272,6 +284,7 @@ def main() -> int:
         "hidden_selftest_passed": hidden_selftest["summary"]["passed"],
         "scc_dataset_rows": [dataset_checks[k]["rows"] for k in ("aqua_test.jsonl", "svamp.json", "strategyqa_test.json")],
         "scc_audited_rows": dataset_cloud_audit["summary"]["rows"],
+        "scc_submission_real_data": True,
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

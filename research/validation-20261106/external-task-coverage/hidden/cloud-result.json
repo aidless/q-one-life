@@ -1,6 +1,6 @@
 {
   "schema": "qone-host-hidden-contract-result-v1",
-  "contract_sha256": "3428d071658da3c1753155b61731c7453a0543659aa545cd074b521a5e537c30",
+  "contract_sha256": "8d2b6fde1f982a452ad6d8d1ad9c68edf6b6d174afd4af22d98afe1b7bb5e6c0",
   "script_sha256": "5ce948430d599b0f7121702dfdfb5034b36e18136e1165e9f6359b367637f3c9",
   "python_executable": "/opt/venv/bin/python",
   "summary": {
@@ -22,11 +22,11 @@
       "leak_paths": [],
       "run_returncode": 0,
       "pytest_returncode": 0,
-      "pytest_cases": 9,
-      "expected_min_pytest_cases": 9,
+      "pytest_cases": 10,
+      "expected_min_pytest_cases": 10,
       "run_stdout_sha256": "8329e939468da4313e429f04efc8027190c8ccf308024ecfb8d5f4468a3b0170",
       "run_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "pytest_stdout_sha256": "ecf516e5653120f4b70ede3f7d28286f24c3a13ca292a794695a043d274548e4",
+      "pytest_stdout_sha256": "d261eaef6145f49847c4bc91dd4f7d6d6147cd35a77ab4d2d9a3a104b132dfe2",
       "pytest_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -41,7 +41,7 @@
       "expected_min_pytest_cases": 9,
       "run_stdout_sha256": "35a9867abd5e0b6e7b5f8d73bb20ed0cbb9448a9fbff22cf8a991b2985d2a83d",
       "run_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "pytest_stdout_sha256": "5101fb2c1b8ec4b689260bbc671e12a2729829348cc4f14fccf1668eed3ae852",
+      "pytest_stdout_sha256": "2bdc19aa3e909efd3c5dd9f285324dadcd418945a332806ef3465e0f26de20e4",
       "pytest_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -56,7 +56,7 @@
       "expected_min_pytest_cases": 9,
       "run_stdout_sha256": "8cbf3b48613dda76ab672c420afda34e375e0b9460a348f94fa8bb8af07d0316",
       "run_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "pytest_stdout_sha256": "86f6f1c4c62451052a119d2c9f2d8adfc1f8df96c45632fe764083562aa0f3ed",
+      "pytest_stdout_sha256": "1c972ff8d74cf4b54594f8fd4f5ecfc06d3d82fea6b1880f7ec375fef5f104b1",
       "pytest_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {

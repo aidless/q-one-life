@@ -13,7 +13,7 @@
   "tasks": [
     {
       "paper_id": "semantic-self-consistency",
-      "min_pytest_cases": 9
+      "min_pytest_cases": 10
     },
     {
       "paper_id": "self-expansion",

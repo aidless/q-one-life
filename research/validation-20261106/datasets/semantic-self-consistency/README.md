@@ -49,3 +49,17 @@ StrategyQA train 仅作为额外上下文下载，不计入论文指定的 687 t
 云端直接下载曾报 `SSL: UNEXPECTED_EOF_WHILE_READING`，失败日志保留在
 `cloud-fetch-failure.log`。云端审计使用本机已校验字节上传后的独立重算，
 没有把该失败写成「数据不可达」，也没有把上传字节直接当校验通过。
+
+## 接入提交包（2026-11-07 补充）
+
+`research/paperbench-submissions/semantic-self-consistency/` 已把三个真实公开文件
+纳入 `data/`，并在 `src/datasets.py` 中固定来源、字节数、SHA-256 与许可说明：
+
+- `fetch_data.py` 可重新下载并校验；
+- `dataset_manifest()` 暴露机器可读清单；
+- `load_aqua_rat_test()`、`load_svamp_full()`、`load_strategyqa_test()`
+  现在分别返回 254、1000、687 条真实记录；
+- 主任务测试从 9 项增加到 10 项，新增测试验证真实数据加载与 manifest。
+
+隐藏契约闸门随之把 `semantic-self-consistency` 的最小测试数从 9 提到 10：
+本机 PASS、云端 PASS，双向变异自测仍通过。

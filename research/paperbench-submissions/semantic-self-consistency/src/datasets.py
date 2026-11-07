@@ -1,20 +1,46 @@
 """Dataset loaders for Semantic Self-Consistency reproduction.
 
-- load_aqua_rat_test(): 254-sample test split
-- load_strategyqa_test(): 687-sample test split
-- load_svamp_full(): full 1000-sample set (train + dev + test)
-- fetch_data(): downloads datasets from HuggingFace if not already present
+The three target splits are the public sources verified on 2026-11-07:
+- AQuA-RAT test: 254 rows
+- SVAMP: 1000 rows
+- StrategyQA test: 687 rows
 """
 
 from __future__ import annotations
 
 import json
+import hashlib
+import urllib.request
 from pathlib import Path
 
+DATA_SOURCES = {
+    "aqua_test.jsonl": {
+        "url": "https://raw.githubusercontent.com/google-deepmind/AQuA/master/test.json",
+        "rows": 254,
+        "bytes": 130192,
+        "sha256": "de41581881ef95c5588c44ddc701c77fd480839241dd422a0d181262af24520c",
+        "license": "AQuA public repository distribution",
+    },
+    "svamp.json": {
+        "url": "https://raw.githubusercontent.com/arkilpatel/SVAMP/main/SVAMP.json",
+        "rows": 1000,
+        "bytes": 339970,
+        "sha256": "5be77703a6d891ae476d7c082787ad361392aa02453b132516cdd5f4e7934e3e",
+        "license": "SVAMP public repository distribution",
+    },
+    "strategyqa_test.json": {
+        "url": "https://huggingface.co/datasets/ChilleD/StrategyQA/resolve/main/test.json",
+        "rows": 687,
+        "bytes": 176993,
+        "sha256": "6da41445f044a7abde29f987d3311757cd0c33e759ea6f37fa100917bf0a82b0",
+        "license": "MIT (ChilleD/StrategyQA mirror)",
+    },
+}
+
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-AQUA_PATH = DATA_DIR / "AQuA-RAT.json"
-SQA_PATH = DATA_DIR / "StrategyQA.jsonl"
-SVAMP_PATH = DATA_DIR / "SVAMP.jsonl"
+AQUA_PATH = DATA_DIR / "aqua_test.jsonl"
+SQA_PATH = DATA_DIR / "strategyqa_test.json"
+SVAMP_PATH = DATA_DIR / "svamp.json"
 
 # --- k-shot prompts (verbatim-ish from Wei et al. 2022 tables 20/21/25) ---
 
@@ -110,36 +136,78 @@ def _load_jsonl(path: Path) -> list[dict]:
     return [json.loads(line) for line in lines if line]
 
 
+def _verify(path: Path) -> None:
+    meta = DATA_SOURCES[path.name]
+    data = path.read_bytes()
+    if len(data) != meta["bytes"]:
+        raise ValueError(f"{path.name}: expected {meta['bytes']} bytes, got {len(data)}")
+    digest = hashlib.sha256(data).hexdigest()
+    if digest != meta["sha256"]:
+        raise ValueError(f"{path.name}: SHA-256 mismatch")
+
+
 def load_aqua_rat_test() -> list[dict]:
     """AQuA-RAT test split (254 samples)."""
-    raw = _load_json(AQUA_PATH)
-    return [{"question": r["question"], "correct": r["answer"]} for r in raw]
+    if not AQUA_PATH.is_file():
+        raise FileNotFoundError(AQUA_PATH)
+    _verify(AQUA_PATH)
+    raw = _load_jsonl(AQUA_PATH)
+    if len(raw) != DATA_SOURCES[AQUA_PATH.name]["rows"]:
+        raise ValueError("AQuA-RAT row count mismatch")
+    return [{"question": r["question"], "correct": r["correct"]} for r in raw]
 
 
 def load_strategyqa_test() -> list[dict]:
     """StrategyQA test split (687 samples)."""
-    raw = _load_jsonl(SQA_PATH)
+    if not SQA_PATH.is_file():
+        raise FileNotFoundError(SQA_PATH)
+    _verify(SQA_PATH)
+    raw = _load_json(SQA_PATH)
+    if not isinstance(raw, list):
+        raise ValueError("StrategyQA is not a JSON array")
+    if len(raw) != DATA_SOURCES[SQA_PATH.name]["rows"]:
+        raise ValueError("StrategyQA row count mismatch")
     return [
-        {"question": r["question"], "correct": "yes" if r["answer"] else "no"}
+        {"question": r["question"], "correct": "true" if r["answer"] else "false"}
         for r in raw
     ]
 
 
 def load_svamp_full() -> list[dict]:
     """Full SVAMP (1000 samples)."""
-    raw = _load_jsonl(SVAMP_PATH)
-    return [{"question": r["question"], "correct": r["answer"]} for r in raw]
+    if not SVAMP_PATH.is_file():
+        raise FileNotFoundError(SVAMP_PATH)
+    _verify(SVAMP_PATH)
+    raw = _load_json(SVAMP_PATH)
+    if not isinstance(raw, list):
+        raise ValueError("SVAMP is not a JSON array")
+    if len(raw) != DATA_SOURCES[SVAMP_PATH.name]["rows"]:
+        raise ValueError("SVAMP row count mismatch")
+    return [{"question": r["Question"], "correct": str(r["Answer"])} for r in raw]
 
 
 def fetch_data() -> None:
-    """Download datasets from HuggingFace if not already present."""
-    from datasets import load_dataset
-    if not AQUA_PATH.exists():
-        aqua = load_dataset("lukebarousse/data_aqua_rat", split="test")
-        AQUA_PATH.write_text(json.dumps([dict(r) for r in aqua]), encoding="utf-8")
-    if not SQA_PATH.exists():
-        sq = load_dataset("boolq/StrategyQA", split="test")
-        SQA_PATH.write_text("\n".join(json.dumps(dict(r)) for r in sq), encoding="utf-8")
-    if not SVAMP_PATH.exists():
-        sv = load_dataset("deepmind/svamp", split="train")
-        SVAMP_PATH.write_text("\n".join(json.dumps(dict(r)) for r in sv), encoding="utf-8")
+    """Download and verify the three target public files."""
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    for name, meta in DATA_SOURCES.items():
+        path = DATA_DIR / name
+        if path.is_file():
+            _verify(path)
+            continue
+        data = urllib.request.urlopen(meta["url"], timeout=60).read()
+        path.write_bytes(data)
+        _verify(path)
+
+
+def dataset_manifest() -> list[dict]:
+    return [
+        {
+            "file": name,
+            "url": meta["url"],
+            "rows": meta["rows"],
+            "bytes": meta["bytes"],
+            "sha256": meta["sha256"],
+            "license": meta["license"],
+        }
+        for name, meta in DATA_SOURCES.items()
+    ]

@@ -52,3 +52,16 @@ def test_hash_embed_unit_len():
     e = _hash_embed("hello world")
     assert len(e) == 64
     assert sum(v * v for v in e) == pytest.approx(1.0, abs=1e-6)
+
+
+def test_real_dataset_manifest_and_loaders():
+    from src.datasets import dataset_manifest, load_aqua_rat_test, load_strategyqa_test, load_svamp_full
+    manifest = {row["file"]: row for row in dataset_manifest()}
+    assert manifest["aqua_test.jsonl"]["rows"] == 254
+    assert manifest["svamp.json"]["rows"] == 1000
+    assert manifest["strategyqa_test.json"]["rows"] == 687
+    assert len(load_aqua_rat_test()) == 254
+    assert len(load_svamp_full()) == 1000
+    assert len(load_strategyqa_test()) == 687
+    assert load_aqua_rat_test()[0]["correct"] == "A"
+    assert load_strategyqa_test()[0]["correct"] in ("true", "false")

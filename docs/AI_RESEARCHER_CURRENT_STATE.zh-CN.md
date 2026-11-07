@@ -12,7 +12,7 @@
    `self-composing-policies`（9 测试）。三份都是**手写参考实现**，不是模型生成的。
 4. `research/validation-20261106/paperbench-smoke/2026-11-07T14-34-31-GMT_run-group_direct_submission_solver/`
    证明三份提交都被 DirectSubmission 归档、dummy judge 正常读取并输出 grade。
-5. `scripts/verify_research_validation.py` 现有 117 项机器校验，全绿。
+5. `scripts/verify_research_validation.py` 现有 122 项机器校验，全绿。
 6. `src/qone_life/research_factory/project_lab.py` 新增多文件项目模式；模型生成过
    4 文件项目并通过 pytest + 主机隐藏测试（`autonomous-project-lab/`）。
 7. `autonomous-paperbench-loop/` 证明模型生成的项目被 PaperBench DirectSubmission
@@ -35,7 +35,8 @@
 12. `datasets/semantic-self-consistency/` 记录 AQuA-RAT 254、SVAMP 1000、
     StrategyQA test 687 的公开来源、下载脚本、SHA-256 与授权边界；
     数据本体不入 git，恢复脚本可重跑并校验。本机与云端数据审计均 PASS，
-    1941 行、0 个解析/哈希/行数问题。
+    1941 行、0 个解析/哈希/行数问题。三个真实文件已接入主提交包，
+    加载器、manifest 与隐藏契约测试同步更新。
 
 ## 不能声称
 
@@ -56,8 +57,8 @@
 2. **执行断层**：code lab 是 30 秒本地子进程；真实复现需要 Docker + GPU + 小时级训练。
    本机不是算力节点，长训练必须上云。
 3. **判分断层**：目前只有 dummy judge 和自写隐藏测试。没有真实 judge，就没有能力分数。
-4. **数据断层**：`semantic-self-consistency` 的三个目标数据规模已用公开来源
-   与哈希校验补齐；其余任务仍用采样小文件或架构桩，尚未补齐完整基准。
+4. **数据断层**：`semantic-self-consistency` 的三个目标数据已用公开来源、
+   哈希与云端审计补齐，并接入主提交包；其余任务仍用采样小文件或架构桩。
 5. **闭环残余**：生成、验证、构建、归档已单程打通；自动回填迭代与真实判分还没有接通。
 
 ## 下一步（按依赖顺序，可自动化的部分）

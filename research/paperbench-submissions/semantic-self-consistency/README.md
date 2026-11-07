@@ -46,3 +46,17 @@ python run_experiment.py --lm mock --dataset svamp --limit 2
   `OPENAI_API_KEY` and use `--lm openai --model gpt-4o-mini` etc.
 - We also add the two "any version" models: gpt-3.5-turbo and gpt-4o-mini (configurable).
 - All required hyperparameters follow the paper’s Table 2/3 descriptions.
+
+## Real data files
+
+`data/` now includes the three public files verified on 2026-11-07:
+
+- `aqua_test.jsonl` 254 rows, SHA-256 `de41581881ef95...`
+- `svamp.json` 1000 rows, SHA-256 `5be77703a6d891...`
+- `strategyqa_test.json` 687 rows, SHA-256 `6da41445f044a7...`
+
+`fetch_data.py` downloads from the recorded public URLs when files are absent
+and always checks byte length and SHA-256. `src/datasets.py` exposes
+`dataset_manifest()` with URLs, sizes, hashes and license notes.
+These are public source files, not author-packaged data; byte-level equivalence
+to the paper's preprocessing is not claimed.
