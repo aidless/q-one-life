@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import subprocess
+from subprocess import run as subprocess_run
 from pathlib import Path
 
 from scipy.stats import binomtest
@@ -11,6 +14,16 @@ from scipy.stats import binomtest
 
 def check(name: str, expected, actual) -> dict:
     return {"check": name, "expected": expected, "actual": actual, "passed": expected == actual}
+
+
+def _pytest_suite(root: Path) -> int:
+    """Run the submission's own test suite; returns pytest's exit code."""
+    if not root.exists():
+        return 1
+    proc = subprocess_run(["python3", "-m", "pytest", "-q", "tests"],
+                          cwd=root, capture_output=True, text=True,
+                          env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"})
+    return proc.returncode
 
 
 def main() -> int:
@@ -23,6 +36,15 @@ def main() -> int:
     peerread_match = json.loads((args.root / "peerread-submission-match/match.json").read_text())
     peerread_expanded = json.loads((args.root / "peerread-expanded/result.json").read_text())
     peerread_heldout = json.loads((args.root / "peerread-heldout/heldout.json").read_text())
+    paperbench_grade_path = next(
+        (args.root / "paperbench-smoke").glob(
+            "2026-11-07T10-27-44-GMT_run-group_direct_submission_solver"
+            "/*semantic-self-consistency*/grade.json"
+        ),
+        args.root / "paperbench-smoke/2026-11-07T10-27-44-GMT_run-group_direct_submission_solver"
+        / "semantic-self-consistency_609d6c0c-c270-4010-941e-3c7b0aa1ed75/grade.json",
+    )
+    paperbench_grade = json.loads(paperbench_grade_path.read_text())
     peerread_availability = json.loads((args.root / "peerread-availability/census.json").read_text())
     peerread_agreement = json.loads((args.root / "peerread-agreement/agreement.json").read_text())
     llm_tce = json.loads((args.root / "ridar-detector/result-llm-tce.json").read_text())
@@ -88,6 +110,24 @@ def main() -> int:
         check("llm_tce_recall", 0.5, llm_tce["recall"]),
         check("llm_tce_stopped_after_dev", True,
               llm_tce["stop"] == "eligible_for_new_preregistration"),
+        check("paperbench_dummy_score", 1.0, paperbench_grade["score"]),
+        check("paperbench_dummy_judge", "dummy",
+              paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
+        check("paperbench_reproduction_skipped", True,
+              paperbench_grade["paperbench_result"]["skipped_reproduction"]),
+        check("paperbench_dev_tasks_graded", 3, len(list(
+            (args.root / "paperbench-smoke/2026-11-07T14-34-31-GMT_run-group_direct_submission_solver")
+            .glob("*/grade.json")))),
+        check("paperbench_dev_min_score", 1.0, min(
+            json.loads(p.read_text())["score"] for p in
+            (args.root / "paperbench-smoke/2026-11-07T14-34-31-GMT_run-group_direct_submission_solver")
+            .glob("*/grade.json"))),
+        check("self_expansion_smoke_tests", 0, _pytest_suite(
+            args.root.parent / "paperbench-submissions/self-expansion")),
+        check("self_composing_tests", 0, _pytest_suite(
+            args.root.parent / "paperbench-submissions/self-composing-policies")),
+        check("semantic_self_consistency_tests", 0, _pytest_suite(
+            args.root.parent / "paperbench-submissions/semantic-self-consistency")),
         check("model_calls_total", 188, sum(run["model_calls"] for run in runs)),
         check("tokens_total", 804272,
               sum(run["prompt_tokens"] + run["completion_tokens"] for run in runs)),
@@ -109,6 +149,7 @@ def main() -> int:
         "peerread_expanded_rho": peerread_expanded["spearman_rho"],
         "peerread_heldout_test_rho": peerread_heldout["test"]["rho"],
         "llm_tce_confusion": llm_tce["confusion"],
+        "paperbench_dummy_score": paperbench_grade["score"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

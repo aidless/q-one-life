@@ -1,0 +1,31 @@
+{
+  "vision_backbone": "vit_base_patch16_224 (ViT-B/16, ImageNet-1K)",
+  "benchmarks": {
+    "cifar100": {
+      "tasks": 10,
+      "classes_per_task": 10,
+      "source": "torchvision.datasets.CIFAR100"
+    },
+    "imagenet-r": {
+      "tasks": 20,
+      "classes_per_task": 10,
+      "source": "hendrycks/imagenet-r"
+    },
+    "imagenet-a": {
+      "tasks": 20,
+      "classes_per_task": 10,
+      "source": "hendrycks/imagenet-a"
+    },
+    "vtab": {
+      "tasks": 5,
+      "classes_per_task": 10,
+      "domains": [
+        "dtd",
+        "eurosat",
+        "flowers",
+        "oxford_pets",
+        "resisc45"
+      ]
+    }
+  }
+}

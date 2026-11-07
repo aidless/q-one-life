@@ -1,0 +1,117 @@
+{
+  "k1": {
+    "out_shape": [
+      2,
+      6
+    ],
+    "phi_shape": [
+      2,
+      0,
+      6
+    ],
+    "h_shape": [
+      2,
+      512
+    ],
+    "trainable_tensors": 19,
+    "n_modules": 1
+  },
+  "k2": {
+    "out_shape": [
+      2,
+      6
+    ],
+    "phi_shape": [
+      2,
+      1,
+      6
+    ],
+    "h_shape": [
+      2,
+      512
+    ],
+    "trainable_tensors": 19,
+    "n_modules": 2
+  },
+  "k3": {
+    "out_shape": [
+      2,
+      6
+    ],
+    "phi_shape": [
+      2,
+      2,
+      6
+    ],
+    "h_shape": [
+      2,
+      512
+    ],
+    "trainable_tensors": 19,
+    "n_modules": 3
+  },
+  "k4": {
+    "out_shape": [
+      2,
+      6
+    ],
+    "phi_shape": [
+      2,
+      3,
+      6
+    ],
+    "h_shape": [
+      2,
+      512
+    ],
+    "trainable_tensors": 19,
+    "n_modules": 4
+  },
+  "k5": {
+    "out_shape": [
+      2,
+      6
+    ],
+    "phi_shape": [
+      2,
+      4,
+      6
+    ],
+    "h_shape": [
+      2,
+      512
+    ],
+    "trainable_tensors": 19,
+    "n_modules": 5
+  },
+  "k6": {
+    "out_shape": [
+      2,
+      6
+    ],
+    "phi_shape": [
+      2,
+      5,
+      6
+    ],
+    "h_shape": [
+      2,
+      512
+    ],
+    "trainable_tensors": 19,
+    "n_modules": 6
+  },
+  "linear_growth": true,
+  "growth": {
+    "componet_total": 624636,
+    "componet_trainable": 104106,
+    "progressive_total": 21000000,
+    "packnet_total": 1000000,
+    "ftn_total": 1000000
+  },
+  "metrics": {
+    "average_performance": 0.625,
+    "forward_transfer": 0.3999999999999999,
+    "matching_rate": 0.5
+  }
+}
