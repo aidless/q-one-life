@@ -1,0 +1,19 @@
+{
+  "datasets": {
+    "items": [
+      1,
+      2,
+      3
+    ],
+    "answers": [
+      "1",
+      "1",
+      "2"
+    ],
+    "responses": [
+      "The answer is 1",
+      "The answer is 1",
+      "The answer is 2"
+    ]
+  }
+}

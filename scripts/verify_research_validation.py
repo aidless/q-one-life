@@ -78,6 +78,7 @@ def main() -> int:
                      .read_text().splitlines() if line.strip()]
     coverage = json.loads((args.root / "external-task-coverage/coverage.json").read_text())
     archive_summary = json.loads((args.root / "external-task-coverage/runs/archive-summary.json").read_text())
+    cloud_matrix = json.loads((args.root / "external-task-coverage/cloud/matrix.json").read_text())
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -182,6 +183,10 @@ def main() -> int:
         check("external_task_archived", 10, archive_summary["summary"]["graded_tasks"]),
         check("external_task_dummy_scores", 10, archive_summary["summary"]["dummy_scores"]),
         check("external_task_real_score_zero", 0, archive_summary["summary"]["real_scores"]),
+        check("external_cloud_matrix_tasks", 10, cloud_matrix["summary"]["tasks"]),
+        check("external_cloud_entry_ok", 10, cloud_matrix["summary"]["entry_ok"]),
+        check("external_cloud_test_packages", 10, cloud_matrix["summary"]["test_packages"]),
+        check("external_cloud_total_tests", 48, cloud_matrix["summary"]["total_tests"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -232,6 +237,7 @@ def main() -> int:
         "external_task_count": coverage["summary"]["tasks"],
         "external_real_score_count": coverage["summary"]["real_score_count"],
         "external_archived_count": archive_summary["summary"]["graded_tasks"],
+        "external_cloud_total_tests": cloud_matrix["summary"]["total_tests"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

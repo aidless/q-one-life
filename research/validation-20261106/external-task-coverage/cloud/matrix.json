@@ -1,0 +1,83 @@
+{
+  "schema": "qone-10task-cloud-matrix-v1",
+  "host": "authorized AMD instance 36.150.116.206:36095",
+  "python": "/opt/venv/bin/python",
+  "rows": [
+    {
+      "paper_id": "all-in-one",
+      "pytest_passed": 3,
+      "pytest_line": "3 passed in 0.01s",
+      "run_output": "{\"paper_id\": \"all-in-one\", \"count\": 3, \"rubric_leaves\": 174, \"status\": \"architecture_stub\"}",
+      "entry_status": "ok"
+    },
+    {
+      "paper_id": "fre",
+      "pytest_passed": 3,
+      "pytest_line": "3 passed in 0.01s",
+      "run_output": "{\"paper_id\": \"fre\", \"count\": 3, \"rubric_leaves\": 437, \"status\": \"architecture_stub\"}",
+      "entry_status": "ok"
+    },
+    {
+      "paper_id": "lca-on-the-line",
+      "pytest_passed": 3,
+      "pytest_line": "3 passed in 0.01s",
+      "run_output": "{\"paper_id\": \"lca-on-the-line\", \"count\": 3, \"rubric_leaves\": 819, \"status\": \"architecture_stub\"}",
+      "entry_status": "ok"
+    },
+    {
+      "paper_id": "mechanistic-understanding",
+      "pytest_passed": 3,
+      "pytest_line": "3 passed in 0.01s",
+      "run_output": "{\"paper_id\": \"mechanistic-understanding\", \"count\": 3, \"rubric_leaves\": 96, \"status\": \"architecture_stub\"}",
+      "entry_status": "ok"
+    },
+    {
+      "paper_id": "rice",
+      "pytest_passed": 3,
+      "pytest_line": "3 passed in 0.01s",
+      "run_output": "{\"paper_id\": \"rice\", \"count\": 3, \"rubric_leaves\": 361, \"status\": \"architecture_stub\"}",
+      "entry_status": "ok"
+    },
+    {
+      "paper_id": "self-composing-policies",
+      "pytest_passed": 9,
+      "pytest_line": "9 passed in 1.64s",
+      "run_output": "{\"paper_id\": \"self-composing-policies\", \"modules\": 1, \"status\": \"smoke_entry\"}",
+      "entry_status": "ok"
+    },
+    {
+      "paper_id": "self-expansion",
+      "pytest_passed": 9,
+      "pytest_line": "9 passed, 1 warning in 7.20s",
+      "run_output": "{\"paper_id\": \"self-expansion\", \"tasks\": 10, \"status\": \"smoke_entry\"}",
+      "entry_status": "ok"
+    },
+    {
+      "paper_id": "semantic-self-consistency",
+      "pytest_passed": 9,
+      "pytest_line": "9 passed in 0.01s",
+      "run_output": "{\"paper_id\": \"semantic-self-consistency\", \"chosen\": \"1\", \"parsed\": [\"1\", \"1\", \"2\"], \"status\": \"smoke_entry\"}",
+      "entry_status": "ok"
+    },
+    {
+      "paper_id": "stay-on-topic-with-classifier-free-guidance",
+      "pytest_passed": 3,
+      "pytest_line": "3 passed in 0.01s",
+      "run_output": "{\"paper_id\": \"stay-on-topic-with-classifier-free-guidance\", \"count\": 3, \"rubric_leaves\": 121, \"status\": \"architecture_stub\"}",
+      "entry_status": "ok"
+    },
+    {
+      "paper_id": "test-time-model-adaptation",
+      "pytest_passed": 3,
+      "pytest_line": "3 passed in 0.01s",
+      "run_output": "{\"paper_id\": \"test-time-model-adaptation\", \"count\": 3, \"rubric_leaves\": 163, \"status\": \"architecture_stub\"}",
+      "entry_status": "ok"
+    }
+  ],
+  "summary": {
+    "tasks": 10,
+    "entry_ok": 10,
+    "test_packages": 10,
+    "total_tests": 48
+  }
+}

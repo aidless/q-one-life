@@ -68,3 +68,16 @@ PDF 仍是 LFS 指针；本轮只补文本，不为 10 任务下载 PDF 大文�
 
 `runs/archive-summary.json` 记录 10/10 任务都有归档回执、dummy judge 输出 1.0、
 0 个真实分数。该 1.0 仍只证明提交归档与容器基础设施，不是能力分数。
+
+## 云端 10 包矩阵（2026-11-07 补充）
+
+在已授权 AMD 实例用 `/opt/venv/bin/python` 运行统一入口契约：
+每个包都提供 `run.py`、`data/sample.json` 与 `tests/`。
+
+`cloud/matrix.log` 与 `cloud/matrix.json` 记录：
+
+- 10/10 包 `run.py < data/sample.json` 输出 JSON；
+- 10/10 包 pytest 通过，合计 48 项测试；
+- 7 个架构桩各 3 项，3 个主提交各 9 项。
+
+这证明的是**统一运行契约与短 CPU 可运行性**，不是论文复现、不是真实 judge、不是能力分数。
