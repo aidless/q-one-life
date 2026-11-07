@@ -1,0 +1,58 @@
+{
+  "schema": "qone-host-hidden-contract-self-test-v1",
+  "contract_sha256": "3428d071658da3c1753155b61731c7453a0543659aa545cd074b521a5e537c30",
+  "script_sha256": "5ce948430d599b0f7121702dfdfb5034b36e18136e1165e9f6359b367637f3c9",
+  "python_executable": "/usr/bin/python3",
+  "summary": {
+    "passed": true,
+    "base_problems": 0,
+    "direction_a_problems": 9,
+    "direction_b_problems": 10,
+    "restored_problems": 0,
+    "direction_a_paper_id_mismatches": 9,
+    "direction_b_case_count_failures": 10,
+    "direction_a_mutation": "shared cwd removes per-task isolation",
+    "direction_b_mutation": "min_pytest_cases raised by one",
+    "counter_fixture_band": "actual count equals the correct minimum and is below the broken minimum"
+  },
+  "base": {
+    "gate": "PASS",
+    "not_executed": false,
+    "problems": 0,
+    "tasks": 10,
+    "ok": 10,
+    "hidden_leaks": 0,
+    "isolate_cwd": true,
+    "min_delta": 0
+  },
+  "direction_a": {
+    "gate": "FAIL",
+    "not_executed": false,
+    "problems": 9,
+    "tasks": 10,
+    "ok": 1,
+    "hidden_leaks": 0,
+    "isolate_cwd": false,
+    "min_delta": 0
+  },
+  "direction_b": {
+    "gate": "FAIL",
+    "not_executed": false,
+    "problems": 10,
+    "tasks": 10,
+    "ok": 0,
+    "hidden_leaks": 0,
+    "isolate_cwd": true,
+    "min_delta": 1
+  },
+  "restored": {
+    "gate": "PASS",
+    "not_executed": false,
+    "problems": 0,
+    "tasks": 10,
+    "ok": 10,
+    "hidden_leaks": 0,
+    "isolate_cwd": true,
+    "min_delta": 0
+  }
+}

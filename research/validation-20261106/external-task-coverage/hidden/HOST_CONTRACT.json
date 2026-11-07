@@ -1,0 +1,56 @@
+{
+  "schema": "qone-host-hidden-contract-v1",
+  "host_only": true,
+  "never_include_in_model_prompt": true,
+  "leak_markers": [
+    "qone-host-hidden-contract-v1",
+    "qone-host-hidden-contract-result-v1"
+  ],
+  "allowed_status": [
+    "smoke_entry",
+    "architecture_stub"
+  ],
+  "tasks": [
+    {
+      "paper_id": "semantic-self-consistency",
+      "min_pytest_cases": 9
+    },
+    {
+      "paper_id": "self-expansion",
+      "min_pytest_cases": 9
+    },
+    {
+      "paper_id": "self-composing-policies",
+      "min_pytest_cases": 9
+    },
+    {
+      "paper_id": "fre",
+      "min_pytest_cases": 3
+    },
+    {
+      "paper_id": "test-time-model-adaptation",
+      "min_pytest_cases": 3
+    },
+    {
+      "paper_id": "mechanistic-understanding",
+      "min_pytest_cases": 3
+    },
+    {
+      "paper_id": "all-in-one",
+      "min_pytest_cases": 3
+    },
+    {
+      "paper_id": "stay-on-topic-with-classifier-free-guidance",
+      "min_pytest_cases": 3
+    },
+    {
+      "paper_id": "lca-on-the-line",
+      "min_pytest_cases": 3
+    },
+    {
+      "paper_id": "rice",
+      "min_pytest_cases": 3
+    }
+  ],
+  "note": "Host-side contract only. It checks uniform entrypoints, hidden leakage, test counts and status honesty. It is not a PaperBench judge."
+}

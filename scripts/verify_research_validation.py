@@ -80,6 +80,9 @@ def main() -> int:
     archive_summary = json.loads((args.root / "external-task-coverage/runs/archive-summary.json").read_text())
     cloud_matrix = json.loads((args.root / "external-task-coverage/cloud/matrix.json").read_text())
     evidence_contract = json.loads((args.root / "external-task-coverage/evidence-contract.json").read_text())
+    hidden_local = json.loads((args.root / "external-task-coverage/hidden/local-result.json").read_text())
+    hidden_cloud = json.loads((args.root / "external-task-coverage/hidden/cloud-result.json").read_text())
+    hidden_selftest = json.loads((args.root / "external-task-coverage/hidden/selftest.json").read_text())
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -192,6 +195,12 @@ def main() -> int:
         check("evidence_contract_leaves", 2776, evidence_contract["summary"]["rubric_leaves"]),
         check("evidence_contract_verified_leaves", 0, evidence_contract["summary"]["verified_leaves"]),
         check("evidence_contract_real_scores", 0, evidence_contract["summary"]["real_judge_scores"]),
+        check("hidden_gate_local_pass", "PASS", hidden_local["summary"]["gate"]),
+        check("hidden_gate_cloud_pass", "PASS", hidden_cloud["summary"]["gate"]),
+        check("hidden_gate_leaks", 0, hidden_local["summary"]["hidden_leaks"]),
+        check("hidden_selftest_passed", True, hidden_selftest["summary"]["passed"]),
+        check("hidden_mutation_a_problems", 9, hidden_selftest["summary"]["direction_a_problems"]),
+        check("hidden_mutation_b_problems", 10, hidden_selftest["summary"]["direction_b_problems"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -244,6 +253,7 @@ def main() -> int:
         "external_archived_count": archive_summary["summary"]["graded_tasks"],
         "external_cloud_total_tests": cloud_matrix["summary"]["total_tests"],
         "evidence_contract_leaves": evidence_contract["summary"]["rubric_leaves"],
+        "hidden_selftest_passed": hidden_selftest["summary"]["passed"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

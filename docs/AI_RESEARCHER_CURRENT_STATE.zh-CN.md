@@ -12,7 +12,7 @@
    `self-composing-policies`（9 测试）。三份都是**手写参考实现**，不是模型生成的。
 4. `research/validation-20261106/paperbench-smoke/2026-11-07T14-34-31-GMT_run-group_direct_submission_solver/`
    证明三份提交都被 DirectSubmission 归档、dummy judge 正常读取并输出 grade。
-5. `scripts/verify_research_validation.py` 现有 101 项机器校验，全绿。
+5. `scripts/verify_research_validation.py` 现有 107 项机器校验，全绿。
 6. `src/qone_life/research_factory/project_lab.py` 新增多文件项目模式；模型生成过
    4 文件项目并通过 pytest + 主机隐藏测试（`autonomous-project-lab/`）。
 7. `autonomous-paperbench-loop/` 证明模型生成的项目被 PaperBench DirectSubmission
@@ -30,7 +30,8 @@
     rubric 已按 LFS OID 校验，10/10 有可运行提交与 DirectSubmission 归档回执，
     10/10 dummy judge 输出 1.0，0/10 有真实分数；云端统一入口矩阵 10/10 通过，
     合计 48 项短 CPU 测试。另生成 2776 个 rubric 叶子的静态证据合约，
-    0 个叶子被标记为已验证。
+    0 个叶子被标记为已验证。主机隐藏契约闸门在本地与云端均 PASS，
+    双向变异自测通过。
 
 ## 不能声称
 
