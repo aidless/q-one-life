@@ -48,6 +48,9 @@ def main() -> int:
     peerread_availability = json.loads((args.root / "peerread-availability/census.json").read_text())
     peerread_agreement = json.loads((args.root / "peerread-agreement/agreement.json").read_text())
     llm_tce = json.loads((args.root / "ridar-detector/result-llm-tce.json").read_text())
+    autolab_code = json.loads((args.root / "autonomous-code-lab/qone-generated.json").read_text())
+    autolab_exec = json.loads((args.root / "autonomous-code-lab/qone-execution.json").read_text())
+    autolab_verdict = json.loads((args.root / "autonomous-code-lab/qone-verdict.json").read_text())
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -111,6 +114,11 @@ def main() -> int:
         check("llm_tce_stopped_after_dev", True,
               llm_tce["stop"] == "eligible_for_new_preregistration"),
         check("paperbench_dummy_score", 1.0, paperbench_grade["score"]),
+        check("autolab_code_hash", "dde4f80487ce5acd2c74599eb65a242ff08626a255bc03a6505bae338dde68b7",
+              autolab_code["code_sha256"]),
+        check("autolab_execution_returncode", 0, autolab_exec["returncode"]),
+        check("autolab_sandbox_network", "not_granted", autolab_exec["sandbox"]["network"]),
+        check("autolab_hidden_tests_passed", True, autolab_verdict["passed"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -150,6 +158,7 @@ def main() -> int:
         "peerread_heldout_test_rho": peerread_heldout["test"]["rho"],
         "llm_tce_confusion": llm_tce["confusion"],
         "paperbench_dummy_score": paperbench_grade["score"],
+        "autolab_hidden_tests_passed": autolab_verdict["passed"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

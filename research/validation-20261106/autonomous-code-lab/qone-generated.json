@@ -1,0 +1,6 @@
+{
+  "schema": "q-one-code-lab-v1",
+  "task": "Given data[\"datasets\"][\"answers\"], compute the modal answer and the number of non-None answers. Return {\"majority\": int, \"count\": int}.",
+  "code": "from collections import Counter\n\n\ndef run(data: dict) -> dict:\n    answers = data.get(\"datasets\", {}).get(\"answers\", [])\n    counts = Counter(answer for answer in answers if answer is not None)\n    count = sum(counts.values())\n    # Ties favor the first encountered answer; empty input yields 0.\n    majority = int(counts.most_common(1)[0][0]) if counts else 0\n    return {\"majority\": majority, \"count\": count}",
+  "code_sha256": "dde4f80487ce5acd2c74599eb65a242ff08626a255bc03a6505bae338dde68b7"
+}

@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "elapsed_sec": 0.02444848101004027,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_preview": "",
+  "stderr_preview": "",
+  "result": {
+    "majority": 2,
+    "count": 4
+  },
+  "sandbox": {
+    "kind": "temporary_directory_subprocess",
+    "network": "not_granted",
+    "filesystem_scope": "temporary_directory",
+    "timeout_seconds": 30,
+    "max_output_bytes": 1000000
+  },
+  "code_sha256": "dde4f80487ce5acd2c74599eb65a242ff08626a255bc03a6505bae338dde68b7"
+}

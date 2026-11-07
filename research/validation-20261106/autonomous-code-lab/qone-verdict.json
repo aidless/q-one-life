@@ -1,0 +1,28 @@
+{
+  "schema": "q-one-code-lab-hidden-tests-v1",
+  "code_sha256": "dde4f80487ce5acd2c74599eb65a242ff08626a255bc03a6505bae338dde68b7",
+  "execution_sha256": "e136e98f6e6d4378bcdabdf0a9db781bafdddeb2a59d21a963e288042b9db35a",
+  "tests": [
+    {
+      "name": "majority_is_2",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "count_is_4",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "returncode_zero",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "sandbox_isolated",
+      "passed": true,
+      "error": null
+    }
+  ],
+  "passed": true
+}
