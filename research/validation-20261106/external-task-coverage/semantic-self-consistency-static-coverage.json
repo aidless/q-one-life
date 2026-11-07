@@ -1,0 +1,801 @@
+{
+  "schema": "qone-static-rubric-coverage-v1",
+  "paper_id": "semantic-self-consistency",
+  "note": "Static keyword/mention census only. Not a PaperBench judge score.",
+  "rubric_leaves": 77,
+  "code_mentions_terms": 69,
+  "rows": [
+    {
+      "requirement": "The test split of the AQuA-RAT dataset (254 samples) is available for use.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "dataset",
+        "aqua"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The test split of the StrategyQA dataset (687 samples) is available for use.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "dataset",
+        "strategyqa"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The full SVAMP dataset (1000 samples including both the train and test split) is available for use.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "dataset",
+        "svamp"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Inference can be performed on gpt-3.5-turbo (any version)",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "Inference can be performed on gpt-4o-mini (any version)",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "All models use top-p=1. Note, the default value for top-p through the OpenAI API is 1",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models generate up to 250 max new tokens on SVAMP, 400 on AQuA-RAT, and 450 on StrategyQA",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model",
+        "aqua",
+        "svamp",
+        "strategyqa"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models use the 4-shot prompt provided in Table 21 of \"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models\" when evaluated on AQuA-RAT",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model",
+        "aqua",
+        "prompt"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models use the 6-shot prompt provided in Table 25 of \"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models\" when evaluated on StrategyQA",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model",
+        "strategyqa",
+        "prompt"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models use the 8-shot math prompt provided in Table 20 of \"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models\" when evaluated on SVAMP",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model",
+        "svamp",
+        "prompt"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The number of neighbours used is set to 5 (the \"n_neighbors\" argument is set to 6 if using the sklearn implementation of KNeighborsClassifier to return the 5 nearest neighbours, no",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The method uses the ball tree algorithm (the \"algorithm\" argument is set to \"ball_tree\" if using the sklearn implementation of KNeighborsClassifier)",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "Euclidean distance is used (the \"metric\" argument is set to \"minkowski\" if using the sklearn implementation of KNeighborsClassifier, note \"minkowski\" is the default value of this a",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "All input points are sorted by average distance to their neighbours, and the 10% of inputs to the KNN method with the largest average distances are filtered out",
+      "category": "Code Development",
+      "evidence_terms": [
+        "knn"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The number of base estimators in the ensemble is set to 200 (the \"n_estimators\" arg is set to 200 if using the sklearn implementation of IsolationForest\")",
+      "category": "Code Development",
+      "evidence_terms": [
+        "isolation"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The threshold is determined as in the original paper (the \"contamination\" arg is set to \"auto\" if using the sklearn implementation of IsolationForest\")",
+      "category": "Code Development",
+      "evidence_terms": [
+        "isolation"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The number of samples to draw from the training data to train each base estimator is set to min(256, n_samples) (the \"max_samples\" arg is set to \"auto\" if using the sklearn impleme",
+      "category": "Code Development",
+      "evidence_terms": [
+        "isolation"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A linear kernel is used (the \"kernel\" arg is set to\"linear\" if using the sklearn implementation of OneClassSVM\")",
+      "category": "Code Development",
+      "evidence_terms": [
+        "svm"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The upper bound on the fraction of training errors and the lower bound of the fraction of support vectors parameter is set to 0.01 (the \"nu\" arg is set to 0.01 if using the sklearn",
+      "category": "Code Development",
+      "evidence_terms": [
+        "svm"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "RoBERTa base (125 million parameters version) can be used to generate an embedding vector for an input string",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding",
+        "roberta"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "SciBERT (110 million parameters version) can be used to generate an embedding vector for an input string",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding",
+        "scibert"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "For SVAMP, AQuA_RAT and StrategyQA, given a response, the full string answer after the model generates \"The answer is\" is parsed as the answer, after removing for whitespace, fulls",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model",
+        "aqua",
+        "svamp",
+        "strategyqa",
+        "parse"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "When generating answers using the top prob method, only generations where an answer could be extracted should be considered when computing the various metrics in each of the experi",
+      "category": "Code Development",
+      "evidence_terms": [
+        "top prob"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "When generating answers for AQuA-RAT, only generations where an answer could be extracted should be considered when computing the various metrics in each of the experiments.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "aqua"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Given a question, the model generates a single response using greedy decoding",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The parsing extraction approach is applied to extract the models answer from the response",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Given a question, the model generates k=10 responses by sampling with temperature=0.8",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The parsing extraction approach is applied to extract the answer from each of the k responses",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The final answer is selected as the modal answer from the k answers extracted from the k responses",
+      "category": "Code Development",
+      "evidence_terms": [
+        "modal"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Given a question, the model generates k=10 responses by sampling with temperature=0.8",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The parsing extraction approach is applied to extract the answer from each of the k responses",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "An embedding is created for each of the k responses by passing it through the associated featurizer and getting the embedding at the first (\"[CLS]\") token",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The centroid for the k embeddings is computed using euclidean distance",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The normalized distance from each of the k embeddings to the centroid of the k embeddings is computed",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Each of the k embeddings has an associated weight inversely proportional to their normalized distance to the centroid of all the embeddings. The weight for embedding i is computed ",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "For each of the groups of embeddings with the same answer, the weights are summed together, and the final answer is selected as the answer that has the highest associated weight",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Given a question, the model generates k=10 responses by sampling with temperature=0.8",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The parsing extraction approach is applied to extract the answer from each of the k responses",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "An embedding is creating for each of the k responses by passing it through the associated featurizer and getting the embedding at the first (\"[CLS]\") token",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "For each embedding, the cosine similarity between it and every other embedding is summed to produce a score for such embedding",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "For each of the groups of embeddings with the same answer, the scores are summed together, and the final answer is selected as the answer that has the highest associated score",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Model answer generation with the k-Nearest Neighbours outlier removal method has been implemented. Given k generated samples for a question, the k-Nearest Neighbours method is appl",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model",
+        "self-consistency"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Model answer generation with the Isolation Forest outlier removal method has been implemented. Given k generated samples for a question, the Isolation Forest method is applied to f",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model",
+        "self-consistency",
+        "isolation"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Model answer generation with the SVM outlier removal method has been implemented. Given k generated samples for a question, the SVM method is applied to filter out some samples, th",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model",
+        "self-consistency",
+        "svm"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Code for model answer generation and grading is implemented correctly for the AQuA-RAT benchmark.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model",
+        "aqua"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All evaluations on the AQuA-RAT benchmark use SciBERT as the featurizer to produce embeddings.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding",
+        "scibert",
+        "aqua",
+        "evaluation"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Code for model answer generation and grading is implemented correctly for the SVAMP benchmark.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model",
+        "svamp"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All evaluations on the SVAMP benchmark use SciBERT as the featurizer to produce embeddings.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding",
+        "scibert",
+        "svamp",
+        "evaluation"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Code for model answer generation and grading is implemented correctly for the StrategyQA benchmark.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "model",
+        "strategyqa"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All evaluations on the StrategyQA benchmark use RoBERTa as the featurizer to produce embeddings.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "embedding",
+        "roberta",
+        "strategyqa",
+        "evaluation"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the AQuA-RAT benchmark using top prob sampling.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "top prob",
+        "aqua"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the AQuA-RAT benchmark using the self-consistency baseline.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "self-consistency",
+        "aqua"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the AQuA-RAT benchmark using the CPW method on SciBERT embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "scibert",
+        "cpw",
+        "aqua"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the AQuA-RAT benchmark using the SCW method on SciBERT embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "scibert",
+        "scw",
+        "aqua"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the SVAMP benchmark using top prob sampling.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "top prob",
+        "svamp"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the SVAMP benchmark using the self-consistency baseline.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "self-consistency",
+        "svamp"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the SVAMP benchmark using the CPW method on SciBERT embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "scibert",
+        "cpw",
+        "svamp"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the SVAMP benchmark using the SCW method on SciBERT embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "scibert",
+        "scw",
+        "svamp"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the StrategyQA benchmark using top prob sampling.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "top prob",
+        "strategyqa"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the StrategyQA benchmark using the self-consistency baseline.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "self-consistency",
+        "strategyqa"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the StrategyQA benchmark using the CPW method on RoBERTa embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "roberta",
+        "cpw",
+        "strategyqa"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the StrategyQA benchmark using the SCW method on RoBERTa embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "roberta",
+        "scw",
+        "strategyqa"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the AQuA-RAT benchmark using the Isolation Forest outlier removal method on SciBERT embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "scibert",
+        "aqua",
+        "isolation"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the AQuA-RAT benchmark using the KNN outlier removal method on SciBERT embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "scibert",
+        "aqua",
+        "knn"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the AQuA-RAT benchmark using the One-class SVM outlier removal method on SciBERT embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "scibert",
+        "aqua",
+        "svm"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the SVAMP benchmark using the Isolation Forest outlier removal method on SciBERT embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "scibert",
+        "svamp",
+        "isolation"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the SVAMP benchmark using the KNN outlier removal method on SciBERT embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "scibert",
+        "svamp",
+        "knn"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the SVAMP benchmark using the One-class SVM outlier removal method on SciBERT embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "scibert",
+        "svamp",
+        "svm"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the StrategyQA benchmark using the Isolation Forest outlier removal method on RoBERTa embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "roberta",
+        "strategyqa",
+        "isolation"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the StrategyQA benchmark using the KNN outlier removal method on RoBERTa embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "roberta",
+        "strategyqa",
+        "knn"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All models have been evaluated on the StrategyQA benchmark using the One-class SVM outlier removal method on RoBERTa embeddings.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "model",
+        "embedding",
+        "roberta",
+        "strategyqa",
+        "svm"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The SC baseline outperforms the top prob sampling baseline in all cases.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "top prob"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Across models and datasets, the SCW method outperforms the SC baseline in almost all cases.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "dataset",
+        "model",
+        "scw"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "On average across models, CPW outperforms the SC baseline on the AQuA-RAT and SVAMP, but has a negative effect on StrategyQA.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "model",
+        "cpw",
+        "aqua",
+        "svamp",
+        "strategyqa"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The One-class SVM outlier removal method outperforms the SC baseline on StrategyQA most of the time across all models.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "model",
+        "strategyqa",
+        "svm"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "gpt-4o-mini generally achieves a very small performance gain over the SC baseline for all removal methods in all 3 dataset settings",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "dataset"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "GPT-3.5 generally has much higher performance relative to the SC baseline for all removal methods in all 3 dataset settings",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "dataset"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    }
+  ]
+}

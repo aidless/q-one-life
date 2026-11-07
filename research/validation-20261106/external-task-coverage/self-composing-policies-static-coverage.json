@@ -1,0 +1,2642 @@
+{
+  "schema": "qone-static-rubric-coverage-v1",
+  "paper_id": "self-composing-policies",
+  "note": "Static keyword/mention census only. Not a PaperBench judge score.",
+  "rubric_leaves": 275,
+  "code_mentions_terms": 240,
+  "rows": [
+    {
+      "requirement": "The CNN has three convolutional layers with 32, 64 and 64 channels and filter sizes of 8, 4 and 3 respectively.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "cnn"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The CNN has a final dense layer with an output dimension of 512.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "cnn"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Logic to use a single CNN encoder per policy has been implemented, where the encoder for a new policy is initialized with the weights of the previous one, as described in Appendix ",
+      "category": "Code Development",
+      "evidence_terms": [
+        "policy",
+        "cnn",
+        "encoder"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The output of the encoder is an input to both CompoNet (actor) as well as the value function (critic).",
+      "category": "Code Development",
+      "evidence_terms": [
+        "componet",
+        "encoder"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A matrix $\\Phi^{k;s}$ of size $(k-1) \\times |A|$ is defined which stores the output vectors of all preceding $k - 1$ modules for the current state, where $k$ is the number of tasks",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "Logic to compute $h_s \\in \\mathbb{R}^{d_{\\text{enc}}}$ has been implemented, where $h_s$ is computed by the CNN encoder when encoding is needed (i.e., for the Arcade Learning Envir",
+      "category": "Code Development",
+      "evidence_terms": [
+        "cnn",
+        "encoder",
+        "meta-world"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A parameter matrix $W_{out}^Q$ is defined with shape $d_{enc} \\times d_{model}$ where $d_{enc}$ is the size of the encoded state vector and $d_{model}$ is the hidden size of the mo",
+      "category": "Code Development",
+      "evidence_terms": [
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The query vector is computed via $q = h_s W_{out}^Q$ where $h_s$ is the encoded state vector.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "A parameter matrix $W_{out}^K$ is defined with shape $|A| \\times d_{model}$ where $A$ is the action space and $d_{model}$ is the hidden size of the model.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A cosine positional embedding matrix $E_{out}$ of size $(k-1) \\times |A|$ is defined.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The key vector is computed via $(\\Phi^{k;s} + E_{out}) W_{out}^Q$.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The logic to compute the value vector for the output attention head has been implemented, which is defined as $\\Phi^{k;s}$ (the matrix of outputs from all previous modules).",
+      "category": "Code Development",
+      "evidence_terms": [
+        "attention"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The output vector $v$ for the output attention head is computed via $\\text { Attention }(\\mathbf{q}, K, V)=\\text{softmax}\\left(\\frac{q K^T}{\\sqrt{d_{\\text {model }}}}\\right) V$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "attention"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The only learnable parameters for the output attention head are $W_{out}^Q$ and $W_{out}^K$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "attention",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A matrix $P$ is defined as the row-wise concatenation of the output of the previous block (i.e., the output attention head) and $\\Phi^{k;s}$ (the matrix of outputs from all previou",
+      "category": "Code Development",
+      "evidence_terms": [
+        "attention"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A parameter matrix $W_{in}^Q$ is defined with shape $d_{enc} \\times d_{model}$ where $d_{enc}$ is the size of the encoded state vector and $d_{model}$ is the hidden size of the mod",
+      "category": "Code Development",
+      "evidence_terms": [
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The query vector is computed via $q = h_s W_{in}^Q$ where $h_s$ is the encoded state vector.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "A parameter matrix $W_{in}^K$ is defined with shape $|A| \\times d_{model}$ where $A$ is the action space and $d_{model}$ is the hidden size of the model.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A cosine positional embedding matrix $E_{in}$ of the same size as $P$ is defined.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The key vector is computed via $(P + E_{in}) W_{in}^K$.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "A parameter matrix $W_{in}^V$ is defined with shape $|A| \\times d_{model}$ where $A$ is the action space and $d_{model}$ is the hidden size of the model.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The value vector is computed via $P W_{in}^V$.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The output vector for the input attention head is computed via $\\text { Attention }(\\mathbf{q}, K, V)=\\text{softmax}\\left(\\frac{q K^T}{\\sqrt{d_{\\text {model }}}}\\right) V$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "attention"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The only learnable parameters for the input attention head are $W_{in}^Q$, $W_{in}^K$ and $W_{in}^V$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "attention",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The encoded state vector $h_s$ and the output of the input attention head module are concatenated column-wise, creating a vector of size $d_{enc} + d_{model}$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "attention"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A multi-layer feed-forward block is implemented which maps a vector of length $d_{enc} + d_{model}$ to one of length $|A|$, where |A| is the dimensionality of the action space.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The only learnable parameters for the internal policy are those in the multi-layer feed-forward block.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "policy",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "An $|A|$-dimension vector is computed by adding the output of the internal policy module, a vector of size $|A|$, to the output from the output attention head, the vector previousl",
+      "category": "Code Development",
+      "evidence_terms": [
+        "attention",
+        "policy"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Logic to normalize the summed vectors has been implemented for continuous action spaces.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The success rate for task $i$ at timestep $t$, $p_i(t)$, is available for all timesteps and is taken as an input, which corresponds to the success rate in task $i$ at time $t$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "success",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The average performance at timestep $t$ is computed as $P(t) = \\frac{1}{N} \\sum_{i=1}^N p_i(t)$",
+      "category": "Code Development",
+      "evidence_terms": [
+        "average performance",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rate for task $i$ at timestep $t$, $p_i(t)$, is available for all timesteps and is taken as an input, which corresponds to the success rate in task $i$ at time $t$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "success",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The baseline (i.e., training a randomly initialized NN for each task) success rate for each task, $p_i^b(t)$, is taken as an input, which corresponds to the success rate of the bas",
+      "category": "Code Development",
+      "evidence_terms": [
+        "success"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The area under the success curve ($\\mathrm{AUC}_i=\\frac{1}{\\Delta} \\int_{(i-1) \\cdot \\Delta}^{i \\cdot \\Delta} p_i(t) \\mathrm{d} t$) for each task is computed, as described in Equat",
+      "category": "Code Development",
+      "evidence_terms": [
+        "success"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The area under the baseline success curve ($\\mathrm{AUC}_i^b=\\frac{1}{\\Delta} \\int_0^{\\Delta} p_i^b(t) \\mathrm{d} t$) for each task is computed, as described in Equation (2) of Sec",
+      "category": "Code Development",
+      "evidence_terms": [
+        "success"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The forward transfer metric $\\mathrm{FTr}_i=\\frac{\\mathrm{AUC}_i-\\mathrm{AUC}_i^b}{1-\\mathrm{AUC}_i^b}$ has is computed, as described in Equation (2) of Section 5.1.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "forward transfer"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The forward transfers, $\\text{FTr}(j,i)$, obtained by training a model from scratch on the $j$-th task and fine-tuning it on the $i$-th task are taken as inputs for all $i$ and $j$",
+      "category": "Code Development",
+      "evidence_terms": [
+        "forward transfer"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Code for computing the reference forward transfer ($\\mathrm{RT}=\\frac{1}{N} \\sum_{i=2}^N \\max _{j<i} \\mathrm{FTr}(j, i)$) has been implemented, as described in Equation (3) of Sect",
+      "category": "Code Development",
+      "evidence_terms": [
+        "forward transfer"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The `hammer-v2` environment can be built using `gym.make`.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The `push-wall-v2` environment can be built using `gym.make`.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The `faucet-close-v2` environment can be built using `gym.make`.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The `push-back-v2` environment can be built using `gym.make`.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The `stick-pull-v2` environment can be built using `gym.make`.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The `handle-press-side-v2` environment can be built using `gym.make`.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The `push-v2` environment can be built using `gym.make`.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The `shelf-place-v2` environment can be built using `gym.make`.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The `window-close-v2` environment can be built using `gym.make`.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The `peg-unplug-side-v2` environment can be built using `gym.make`.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The logic to generate a sequence of 20 tasks (i.e., a sequence of all 10 Meta-World environments repeated repeated twice) has been implemented, as described in Section 5.2.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "meta-world"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All 10 tasks in the sequence run for 1M timesteps each for a total of 20M timesteps, as described in Section 5.2.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The Metaworld module (https://github.com/Farama-Foundation/Metaworld) is used to define the environments.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The `ALE/SpaceInvaders-v5` environment can be built using `gym.make`.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ale",
+        "spaceinvaders"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The `ALE/Freeway-v5` environment can be built using `gym.make`.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ale",
+        "freeway"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The logic to generate a sequence of 17 tasks (i.e., a sequence of all 10 playing modes of `ALE/SpaceInvaders-v5` followed by all 7 playing modes of `ALE/Freeway-v5`) has been imple",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ale",
+        "spaceinvaders",
+        "freeway"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "All 17 tasks in the sequence run for 1M timesteps each for a total of 17M timesteps, as described in Section 5.2.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The Gymnasium module (https://github.com/Farama-Foundation/Gymnasium) is used to define the environments.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The SAC implementation from Huang et al. (2022) has been adapted to use the CompoNet as an agent.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "componet",
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The SAC implementation from Huang et al. (2022) has been further adapted to be compatible with all 10 Meta-World environments used in the paper. TODO: Clarify the specific modifica",
+      "category": "Code Development",
+      "evidence_terms": [
+        "meta-world",
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The critic network has been implemented as a two-layer MLP followed by two separate output heads of a single layer corresponding to the mean and logarithm of the standard deviation",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the optimizer is set to Adam with $beta_1=0.9$ and $beta_2=0.999$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the discount rate ($\\gamma$) is set to 0.99.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the maximum and minimum standard deviations for the policy are set to $\\exp{2}$ and $\\exp{-20}, respectively.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "policy",
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the activation function is set to ReLU.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation,  the hidden dimension ($d_{\\text{model}}$) is set to 256,",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the batch size is set to 128.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the buffer size is set to $10^6$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the target smoothing coefficient ($\\tau$) is set to 0.005.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the entropy regularization coefficient ($\\alpha$) is set to 0.2.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, auto-tuning of the entropy regularization coefficient ($\\alpha$) is enabled.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the policy update frequency is set to 2.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "policy",
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the target network update frequency is set to 1.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the noise clip parameter is set to 0.5.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the number of random actions is set to $10^4$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the timestep to start learning is set to $5 \\times 10^3$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, there are 3 layers in the target network.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, there are 3 layers in the critic network.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the actors learning rate is set to $10^{-3}$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the SAC implementation, the Q-networks' learning rate is set to $10^{-3}$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "sac"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The PPO implementation from Huang et al. (2022) has been adapted to use the CompoNet as an agent.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "componet",
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The PPO implementation from Huang et al. (2022) has been further adapted to be compatible with both ALE environments used in the paper: `ALE/SpaceInvaders-v5` and `ALE/Freeway-v5`.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ale",
+        "spaceinvaders",
+        "freeway",
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Two single-layer output heads are used to generate the logits of the categorical distribution over the action space (actor) and to compute the value function (critic).",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the optimizer has been set to AdamW.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the $beta_1$ and $beta_2$ parameters of AdamW are set to 0.9 and 0.999 respectively.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the maximum gradient norm is set to 0.5.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the discount rate ($\\gamma$) has been set to 0.99.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the activation function has been set to ReLU.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the hidden dimension ($d_{model}) is set to 512.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the learning rate is set to $2.5 \\cdot 10^{-4}$.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the PPO value function coefficient is set to 0.5.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the GAE ($\\lambda$) is set to 0.95.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the number of parallel environments is set to 8.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the batch size is set to 1024.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the number of update epochs is set to 4.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the PPO clipping coefficient is set to 0.2.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the PPO entropy coefficient is set to 0.01.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, learning rate annealing is enabled.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the value loss is clipped.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, advantage estimates are normalized.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the PPO implementation, the number of steps per rollout is set to 128.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ppo"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Logic to reset the critic network at the beginning of each task has been implemented.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "In the case of the Meta-World environments, the layer maps a 39-dimensional state vector down to a single scalar.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "meta-world"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "In the case of the ALE environments, the layer maps an image of size 210x160 down to a single scalar.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ale"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The baseline method has been implemented for the Meta-World environments, which is a randomly initialized MLP that maps a 39-dimensional state vector to two separate heads: one out",
+      "category": "Code Development",
+      "evidence_terms": [
+        "meta-world"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The baseline method has been implemented for the ALE environments, which is a randomly intialized MLP mapping a 512-dimensional state vector to a 6-dimensional action space. The ne",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ale"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The baseline method has been implemented such that a randomly initialized neural network is trained from scratch for each task.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The FT-1 method has been implemented for the Meta-World environments, which is a randomly initialized MLP that maps a 39-dimensional state vector to two separate heads: one outputt",
+      "category": "Code Development",
+      "evidence_terms": [
+        "meta-world"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The FT-1 method has been implemented for the ALE environments, which is a randomly intialized MLP mapping a 512-dimensional state vector to a 6-dimensional action space. The networ",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ale"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The FT-1 method has been implemented so that it continuously fine-tune a single NN across all tasks.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "The FT-N method has been implemented for the Meta-World environments, which is a randomly initialized MLP that maps a 39-dimensional state vector to two separate heads: one outputt",
+      "category": "Code Development",
+      "evidence_terms": [
+        "meta-world"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The FT-N method has been implemented for the ALE environments, which is a randomly intialized MLP mapping a 512-dimensional state vector to a 6-dimensional action space. The networ",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ale"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The logic to save model parameters after training on each task has been implemented.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The logic to re-initialize the output heads at the beginning of each task has been implemented.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "Logic to instantiate a new network (with random initial parameters) every time the task changes has been implemented.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Logic to add lateral connections (TODO: be more specific about what a lateral connection is after asking author) between the current network and the ones learned in previous tasks ",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "Logic to freeze the parameters of the neural networks trained on previous tasks has been implemented.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Logic to save the parameters of the last neural network trained when the task changes has been implemented.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The input of every layer of the new network includes the outputs of all the layers from the networks learned in previous tasks.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "Logic to prune the trained network after each task has been implemented, selecting the weights that are most relevant for the current task, has been implemented.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "Logic to retrain the pruned network for the current task has been implemented has been implemented.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "Logic to freeze the selected parameters of the pruned network for the rest of the future tasks has been implemented.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The number of iterations to retrain the model is set to 200k steps (i.e., 20% of the 1M timestep budget of each task).",
+      "category": "Code Development",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Logic to decide how many parameters can be pruned and stored per task has been implemented, as described in Appendix E.2.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "TODO: Logic to create a sequence of 300 tasks has been implemented using X (e.g. Meta-World or ALE or both).",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ale",
+        "meta-world"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "CompoNet's inference time has been measured for an increasing number of tasks (from 1 up to 300, inclusive) whilst being trained on the Meta-World environments (TODO: Confirm this ",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "meta-world",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "ProgressiveNet's inference time has been measured for an increasing number of tasks (from 1 up to 300, inclusive) whilst being trained on the Meta-World environments (TODO: Confirm",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "meta-world",
+        "progressive",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The recorded results show that the inference time (in seconds) of ProgressiveNet grows quadratically.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "progressive",
+        "quadratic"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The recorded results show that the inference time (in seconds) of CompoNet grows slower than ProgressiveNet, with the gap widening as the number of tasks increases.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "componet",
+        "progressive"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "TODO: Logic to create a sequence of 300 tasks has been implemented using X (e.g. Meta-World or ALE or both).",
+      "category": "Code Development",
+      "evidence_terms": [
+        "ale",
+        "meta-world"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "CompoNet's total and trainable parameter counts have been measured for an increasing number of tasks (from 1 up to 300, inclusive) whilst being trained on the Meta-World environmen",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "meta-world",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "ProgressiveNet's total and trainable parameter counts have been measured for an increasing number of tasks (from 1 up to 300, inclusive) whilst being trained on the Meta-World envi",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "meta-world",
+        "progressive",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The recorded results show that the total parameter count of CompoNet grows (roughly) linearly.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "componet",
+        "parameter",
+        "linear"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The recorded results show that the trainable parameter count of CompoNet grows linearly.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "componet",
+        "parameter",
+        "linear"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The recorded results show that the total parameter count of ProgressiveNet grows quadratically.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "progressive",
+        "parameter",
+        "quadratic"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The recorded results show that the trainable parameter count of ProgressiveNet grows quadratically.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "progressive",
+        "parameter",
+        "quadratic"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The baseline method has been trained on the Meta-World sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "meta-world",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The FT-1 method has been trained on the Meta-World sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "meta-world",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The FT-N method has been trained on the Meta-World sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "meta-world",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The ProgressiveNet method has been trained on the Meta-World sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "meta-world",
+        "seed",
+        "progressive"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The PackNet method has been trained on the Meta-World sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "meta-world",
+        "seed",
+        "packnet"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The CompoNet method has been trained on the Meta-World sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "meta-world",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The baseline method has been trained on the SpaceInvaders sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "spaceinvaders",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The FT-1 method has been trained on the SpaceInvaders sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "spaceinvaders",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The FT-N method has been trained on the SpaceInvaders sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "spaceinvaders",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The ProgressiveNet method has been trained on the SpaceInvaders sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "spaceinvaders",
+        "seed",
+        "progressive"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The PackNet method has been trained on the SpaceInvaders sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "spaceinvaders",
+        "seed",
+        "packnet"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The CompoNet method has been trained on the SpaceInvaders sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "spaceinvaders",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The baseline method has been trained on the Freeway sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "freeway",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The FT-1 method has been trained on the Freeway sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "freeway",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The FT-N method has been trained on the Freeway sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "freeway",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The ProgressiveNet method has been trained on the Freeway sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "freeway",
+        "seed",
+        "progressive"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The PackNet method has been trained on the Freeway sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "freeway",
+        "seed",
+        "packnet"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 1M timesteps have been used per task.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The CompoNet method has been trained on the Freeway sequence of tasks for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "freeway",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The success rates for each task and seed has been recorded.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "success",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The average performance metric has been computed for each method and seed (i.e., 50 metrics in total).",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "average performance",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The forward transfer metric has been computed for each method and seed (i.e., 50 metrics in total).",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "forward transfer",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean and standard deviation of the average performance and forward transfer metrics have been computed for every method and every task sequence across all 10 seeds using the sa",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "forward transfer",
+        "average performance",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean average performance metrics show that CompoNet preforms at least as well as all other methods (higher is better) across all three task sequences.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "componet",
+        "average performance"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean forward transfer metrics show that CompoNet preforms at least as well as all other methods (higher is better) across all three task sequences.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "componet",
+        "forward transfer"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Code to compute and save the episodic returns at regular intervals (at least every 10k timesteps) for each seed has been implemented.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "episodic",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Code to compute whether the action with the highest probability from distribution matches the action with the highest probability from another distribution has been implemented.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "Code to compute and save the matching rate between two distributions at least every 10k timesteps for each seed has been implemented.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "matching rate",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A single informative policy (i.e., one that provides relevant knowledge for solving a future task) has been pre-trained on the 5th task (i.e., the 4th playing mode) of SpaceInvader",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "policy",
+        "spaceinvaders",
+        "sac",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Four non-informative policies have been defined and implemented to act as random policies i.e., they each sample an action from a uniform Dirichlet distribution.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "A new CompoNet module has been instantiated for the 5th task of SpaceInvaders, referencing the four non-informative modules and the single informative module as its (frozen) predec",
+      "category": "Code Development",
+      "evidence_terms": [
+        "componet",
+        "spaceinvaders",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The newly added CompoNet module has been trained for 1M timesteps on the 5th task of SpaceInvaders using the SAC algorithm, while keeping the parameters of all previous modules fro",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "spaceinvaders",
+        "sac",
+        "timestep",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The baseline method was trained on the 5th task (i.e., the 4th playing mode) of SpaceInvaders for 1M timesteps per seed using the SAC algorithm and the hyperparameters in Table E.1",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "spaceinvaders",
+        "sac",
+        "seed",
+        "timestep",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The episodic returns have been computed at regular intervals (at least every 10k timesteps) and saved during training of the baseline method for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "episodic",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The episodic returns have been computed at regular intervals (at least every 10k timesteps) and saved during training of CompoNet for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "episodic",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The saved episodic returns for CompoNet show that the mean episodic returns sharply increases within the first 200k timesteps, then plateaus at around 600.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "componet",
+        "episodic",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The saved episodic returns for the baseline method show that the mean episodic returns steadily increases over time, eventually reaching an episodic return of around 400 by the 1M ",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "episodic",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The output attention head of CompoNet has computed a probability distribution over actions at each time step for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "attention",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The output of the internal policy of CompoNet has computed a probability distribution over actions at each time step for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "policy",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The final output of CompoNet has computed a probability distribution over actions at each time step for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Whether the action with the highest probability from the final output matched the action with the highest probability from the output attention head has been computed at least ever",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "attention",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Whether the action with the highest probability from the final output matched the action with the highest probability from the internal policy has been computed at least every 10k ",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "policy",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Whether the action with the highest probability from the output attention head matched the action with the highest probability from the internal policy has been computed at least e",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "attention",
+        "policy",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The matching rate for the final output and the output attention head has been computed and saved at least every 10k timesteps for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "attention",
+        "matching rate",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The matching rate for the final output and the internal policy has been computed and saved at least every 10k timesteps for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "policy",
+        "matching rate",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The matching rate for the final output and the internal policy has been computed and saved at least every 10k timesteps for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "policy",
+        "matching rate",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean matching rate of the final output and the output head shows that, in the initial timesteps, the final output of the model matches with the result of the output attention h",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "policy",
+        "matching rate",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean matching rate of the final output and the output head shows that, after several timesteps, the internal policy learns to imitate the result of the output attention head, w",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "policy",
+        "matching rate",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The input attention head's attention distribution (i.e., the output of the softmax) over the rows of $P$ has been computed at regular intervals (at least every 10k timesteps) durin",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "attention",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The input attention head's attention distributions over the rows of $P$ has been saved at regular intervals (at least every 10k timesteps) for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "attention",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean of the input head's attention scores for all four non-informative policies drops to around 0.0 within the first 10k timesteps and stays at around 0.0 thereafter.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean input head's attention scores for the informative policy plateaus at roughly 0.16 within the first 200k timesteps and stays at roughly 0.16 thereafter.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "policy",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean input head's attention scores for the output attention head sharply increases over the first 200k timesteps then plateaus at roughly 0.8 and stays at roughly 0.8 thereafte",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The output attention head's attention distribution (i.e., the output of the softmax) over all previous policies has been computed at regular intervals (at least every 10k timesteps",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "attention",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The output attention head's attention distributions have been saved at regular intervals (at least every 10k timesteps) for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "attention",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean of the output head's attention scores for all four non-informative policies drops to around 0.0 within the first 10k timesteps and stays at around 0.0 thereafter.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean output head's attention scores for the informative policy sharply increases to 1.0 within the first 10k timesteps, plateaus at 1.0 and stays at 1.0 thereafter.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "policy",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "A total of 10 random seeds have been set before each training run.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Five non-informative policies have been defined and implemented to act as random policies i.e., they each sample an action from a uniform Dirichlet distribution.",
+      "category": "Code Development",
+      "evidence_terms": [],
+      "code_mentions_terms": false,
+      "status": null
+    },
+    {
+      "requirement": "A new CompoNet module has been instantiated for the 6th task (i.e., the 5th playing mode) of SpaceInvaders, referencing the 5 non-informative policies as its predecessors.",
+      "category": "Code Development",
+      "evidence_terms": [
+        "componet",
+        "spaceinvaders"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The newly added CompoNet module has been trained for 1M timesteps on the 6th task (i.e., the 5th playing mode) of SpaceInvaders using the SAC algorithm.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "spaceinvaders",
+        "sac",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The baseline method was trained on the 6th task (i.e., the 5th playing mode) of SpaceInvaders for 1M timesteps per seed using the SAC algorithm and the hyperparameters in Table E.1",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "spaceinvaders",
+        "sac",
+        "seed",
+        "timestep",
+        "parameter"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The episodic returns have been computed at regular intervals (at least every 10k timesteps) and saved during training of the baseline method for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "episodic",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The episodic returns have been computed at regular intervals (at least every 10k timesteps) and saved during training of CompoNet for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "episodic",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The saved episodic returns for CompoNet show that the mean episodic returns increases steadily with time, exceeding 400 by 1M timesteps.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "componet",
+        "episodic",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The saved episodic returns for the baseline method show that the mean episodic returns increases steadily with time, falling short of the mean episodic returns of CompoNet at the 1",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "componet",
+        "episodic",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The output attention head of CompoNet has computed a probability distribution over actions at each time step for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "attention",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The output of the internal policy of CompoNet has computed a probability distribution over actions at each time step for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "policy",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The final output of CompoNet has computed a probability distribution over actions at each time step for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "seed"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Whether the action with the highest probability from the final output matched the action with the highest probability from the output attention head has been computed at least ever",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "attention",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Whether the action with the highest probability from the final output matched the action with the highest probability from the internal policy has been computed at least every 10k ",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "policy",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "Whether the action with the highest probability from the output attention head matched the action with the highest probability from the internal policy has been computed at least e",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "attention",
+        "policy",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The matching rate for the final output and the output attention head has been computed and saved at least every 10k timesteps for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "attention",
+        "matching rate",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The matching rate for the final output and the internal policy has been computed and saved at least every 10k timesteps for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "policy",
+        "matching rate",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The matching rate for the final output and the internal policy has been computed and saved at least every 10k timesteps for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "policy",
+        "matching rate",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean matching rate of the final output and the output attention head sharply increases to exceed 0.8 (out of a maximum 1.0) within 10k timesteps then plateaus between 0.8 and 1",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "matching rate",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean matching rate of the final output and the internal policy is fairly stable at around 0.125 plus or minus 0.125 (out of a maximum 1.0) from the 10k timestep mark to the 300",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "policy",
+        "matching rate",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean matching rate of the output head and the internal policy is fairly stable at around 0.125 plus or minus 0.125 (out of a maximum 1.0) from the 10k timestep mark to the 300k",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "policy",
+        "matching rate",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean matching rates show that the final output of the model is completely determined by the internal policy after a few training steps, effectively overwriting the result of th",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "policy",
+        "matching rate"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The input attention head's attention distribution (i.e., the output of the softmax) over the rows of $P$ has been computed at regular intervals (at least every 10k timesteps) durin",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "attention",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The input attention head's attention distributions over the rows of $P$ has been saved at regular intervals (at least every 10k timesteps) for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "attention",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean of the input head's attention scores for all 5 non-informative policies is stable at 0.18 plus or minus 0.125 across all timesteps.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean input head's attention scores for the output attention head is stable at 0.18 plus or minus 0.125 across all timesteps.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "No one head has significantly (i.e. > 0.125) higher mean attention scores at any timestep.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The output attention head's attention distribution (i.e., the output of the softmax) over all previous policies has been computed at regular intervals (at least every 10k timesteps",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "componet",
+        "attention",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The output attention head's attention distributions have been saved at regular intervals (at least every 10k timesteps) for each seed.",
+      "category": "Code Execution",
+      "evidence_terms": [
+        "attention",
+        "seed",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "The mean of the output head's attention scores for all 5 non-informative policies is stable at 0.2 plus or minus 0.125 across all timesteps.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    },
+    {
+      "requirement": "No one head has significantly (i.e. > 0.125) higher mean attention scores at any timestep.",
+      "category": "Result Analysis",
+      "evidence_terms": [
+        "attention",
+        "timestep"
+      ],
+      "code_mentions_terms": true,
+      "status": null
+    }
+  ]
+}

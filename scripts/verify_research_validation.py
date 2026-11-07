@@ -76,6 +76,7 @@ def main() -> int:
     decision_rows = [json.loads(line) for line in
                      (args.root / "cloud-allmodel-smoke/decisions/measurements.jsonl")
                      .read_text().splitlines() if line.strip()]
+    coverage = json.loads((args.root / "external-task-coverage/coverage.json").read_text())
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -173,6 +174,10 @@ def main() -> int:
         check("cloud_decision_rows", 2, len(decision_rows)),
         check("cloud_decision_types", ["decision", "outcome"], [r["type"] for r in decision_rows]),
         check("cloud_outcome_matched", True, decision_rows[1]["payload"]["matched"]),
+        check("external_task_count", 10, coverage["summary"]["tasks"]),
+        check("external_task_text_materialised", 10, coverage["summary"]["text_materialised"]),
+        check("external_task_submissions", 3, coverage["summary"]["with_qone_submission"]),
+        check("external_task_real_scores", 0, coverage["summary"]["real_score_count"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -220,6 +225,8 @@ def main() -> int:
         "allmodel_cloud_pytest": "6 passed" in cloud_log,
         "formal_executor_state": executor_status["state"],
         "cloud_decision_hit_rate": 1.0,
+        "external_task_count": coverage["summary"]["tasks"],
+        "external_real_score_count": coverage["summary"]["real_score_count"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

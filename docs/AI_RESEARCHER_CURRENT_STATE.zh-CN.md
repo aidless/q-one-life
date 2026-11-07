@@ -12,7 +12,7 @@
    `self-composing-policies`（9 测试）。三份都是**手写参考实现**，不是模型生成的。
 4. `research/validation-20261106/paperbench-smoke/2026-11-07T14-34-31-GMT_run-group_direct_submission_solver/`
    证明三份提交都被 DirectSubmission 归档、dummy judge 正常读取并输出 grade。
-5. `scripts/verify_research_validation.py` 现有 86 项机器校验，全绿。
+5. `scripts/verify_research_validation.py` 现有 90 项机器校验，全绿。
 6. `src/qone_life/research_factory/project_lab.py` 新增多文件项目模式；模型生成过
    4 文件项目并通过 pytest + 主机隐藏测试（`autonomous-project-lab/`）。
 7. `autonomous-paperbench-loop/` 证明模型生成的项目被 PaperBench DirectSubmission
@@ -26,6 +26,8 @@
     6 项测试通过、入口输出符合预期、文件哈希回传；另经仓库自带 `CloudExecutor`
     正式提交、轮询、取回，状态 `succeeded`、退出码 0。结果已写入决策与命中回执。
     未触碰其他实验目录。
+11. `external-task-coverage/` 盘点 10 个选定 PaperBench 任务：10/10 文本与
+    rubric 已按 LFS OID 校验，3/10 有 Q-One 提交，0/10 有真实分数。
 
 ## 不能声称
 
@@ -45,16 +47,17 @@
 2. **执行断层**：code lab 是 30 秒本地子进程；真实复现需要 Docker + GPU + 小时级训练。
    本机不是算力节点，长训练必须上云。
 3. **判分断层**：目前只有 dummy judge 和自写隐藏测试。没有真实 judge，就没有能力分数。
-4. **数据断层**：三份提交的数据是 manifest 或采样小文件，不是完整基准。
+4. **数据断层**：三份提交的数据是 manifest 或采样小文件，不是完整基准；
+   10 任务覆盖表只补齐了上游论文文本与 rubric。
 5. **闭环残余**：生成、验证、构建、归档已单程打通；自动回填迭代与真实判分还没有接通。
 
 ## 下一步（按依赖顺序，可自动化的部分）
 
 1. 扩展 `code_lab`：新增 `project` 模式，让模型生成多文件项目，受同一沙盒契约约束。
 2. 已完成：6 段模型逻辑 + 宿主模板 -> 12 文件完整包 -> 隐藏测试 -> 打包 ->
-   DirectSubmission + dummy judge。下一步是让模型一次性稳定生成全部文件。
-3. 把 cloud executor 接到项目模式：在 AMD / ECS / Kaggle GPU 上跑训练，产回 compact 证据。
-4. 真实 judge 与真实训练都保留在用户显式 GO 之后。
+   DirectSubmission + dummy judge；并已由 CloudExecutor 在云端短执行、回填决策。
+3. 已完成：10 个选定外部任务的文本、rubric 与提交覆盖盘点。
+4. 剩余：为另外 7 个任务做可运行提交；GPU 真实训练、真实 judge 仍需单独 GO。
 
 ## 已有命令
 

@@ -1,6 +1,8 @@
 # 10 个外部科研任务评测计划
 
-日期：2026-11-06。状态：准备中；尚未产生任何外部 benchmark 分数。
+日期：2026-11-06；更新：2026-11-07。状态：10 个选定任务的文本与 rubric 已盘点；
+3 个任务有 Q-One 提交包；仍无任何真实外部 benchmark 分数。详见
+`external-task-coverage/REPORT.zh-CN.md`。
 
 ## 目标
 
@@ -32,25 +34,20 @@
 | `self-expansion` | dev | 论文、rubric 已就位 |
 | `self-composing-policies` | dev | 论文、rubric 已就位 |
 
-### 已验证
+### 已验证（更新后）
 
 - 上游代码 checkout 到固定 revision
-- 依赖环境可构建
-- `paper.md` 已精确下载并通过 SHA-256 校验
-- `direct submission + dummy judge + code-only` 配置可进入容器启动阶段
-- 本机 Docker、NVIDIA runtime、GPU 均可用
+- `pb-env:latest` 已构建；DirectSubmission + dummy judge + code-only 已跑通
+- 三个 dev 任务都有可运行提交包与归档回执
+- 10 个选定任务的 `paper.md` / `addendum.md` / `judge.addendum.md` 文本已按
+  Git LFS OID 下载并 SHA-256 校验
+- `external-task-coverage/coverage.json` 记录 rubric 叶子数、提交覆盖与 0 个真实分数
 
-### 阻断
+### 剩余阻断
 
-1. Docker daemon 无法访问 Docker Hub 拉取 `ubuntu:24.04`
-2. 本机已有 14 个运行中容器，不能重启 Docker daemon
-3. `pb-env:latest` 基础镜像尚未构建
-
-### 解法
-
-- 在一台可重启 Docker 或无业务容器的机器上构建 `pb-env`
-- 或预先从代理机导入 `pb-env` 镜像 tarball
-- 不需要 `paperbench` 分数，因为 dummy judge 不产生真实 benchmark 分数
+1. 剩余 7 个选定任务尚无可运行 Q-One 提交
+2. 真实 PaperBench judge 需要 API key 与费用授权
+3. 真实训练需要 GPU 与完整数据集，不能由 dummy judge 替代
 
 ## PaperBench 3 个任务
 
@@ -84,17 +81,18 @@
 | 9 | PaperBench human baseline 任务 2 | 未盘点 | 等上游数据 |
 | 10 | PaperBench testing 任务 1 | 未盘点 | 等上游数据 |
 
-## 当前结论
+## 当前结论（更新后）
 
-- 目前能立即纳入的是 PaperBench 3 个 dev 任务
-- `rice` 是 debug 任务，不适合作为能力评测
-- `lite` / `human` / `testing` 需要进一步下载和盘点
-- 没有任何一个外部任务已产生真实分数
+- 10 个选定任务已完成文本与 rubric 覆盖盘点
+- 3 个 dev 任务有提交并跑通 DirectSubmission + dummy judge 归档
+- `rice` 是 debug 任务，不作为能力样本
+- 静态关键词共现已单独审计，不能当 judge 分数
+- 仍然没有任何一个外部任务已产生真实分数
 
-## 验收
+## 验收（更新后）
 
-1. `pb-env` 镜像构建成功
-2. 3 个 dev 任务 `direct submission` 端到端跑通
-3. 用 Q-One code lab 生成真实提交代码
-4. 每个任务独立 evaluator 分数可复算
-5. 10 个任务形成完整对比表
+1. `pb-env` 镜像构建成功：已完成
+2. 3 个 dev 任务 `direct submission` 端到端跑通：已完成（dummy judge）
+3. 用 Q-One project lab 生成并归档项目：已完成
+4. 10 个任务形成覆盖表：已完成
+5. 每个任务独立 evaluator 真实分数可复算：未完成，等待真实 judge 授权
