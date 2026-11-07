@@ -1,0 +1,13 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C09",
+  "claim_text": "In a frozen synthetic construction, three perfect producers set the leave-one-out floor at 1.0; systems A and B score 0.9 and 0.5; A remains above B under all 700 single-item deletions with 280 A-only and 0 B-only paired observations; the declared gate still refuses. The positive and negative controls also match, and two accepted runs are byte-identical.",
+  "rounds": 1,
+  "models": [
+    "group/auto-gpt-6"
+  ],
+  "objections": [],
+  "inconclusive_calls": 3,
+  "verdict": "inconclusive",
+  "generated_at": "2026-11-06T03:26:49Z"
+}

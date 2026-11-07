@@ -1,0 +1,44 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C02",
+  "claim_text": "The current `source/main.tex` is byte-identical to the source recorded in the native manifest.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "I'll examine the evidence and the claim to analyze its validity and boundary conditions.\n\nFirst, let me read the native manifest file to see what hash is recorded.\n\n```bash\ncat evidence/native-manifest.json | python3 -m json.tool\n```\n\n```json\n{\n    \"paper.main.tex.sha256\": \"3f7a8e3b4c1d9e0f2a5b6c7d8",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "boundary"
+      ]
+    },
+    {
+      "text": "I'll examine the evidence to understand the claim and then check the current `source/main.tex` file.\n\nFirst, let's read the native manifest to see what SHA256 hash is recorded for `paper.main.tex`:\n\n```bash\ncat evidence/native-manifest.json\n```",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "counterexample"
+      ]
+    },
+    {
+      "text": "Looking at the evidence file `native-manifest.json`, I can read it to understand what it contains and then propose an alternative explanation.\n\nLet me read the evidence file first:\n\n```bash\ncat evidence/native-manifest.json\n```",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "alternative"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T03:35:23Z"
+}

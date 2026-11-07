@@ -1,0 +1,45 @@
+{
+  "schema": "q-one-type-rubric-v1",
+  "generated_at": "2026-11-06T13:40:14Z",
+  "manuscript_path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source/main.tex",
+  "manuscript_sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+  "paper_type": "audit",
+  "paper_type_label": "Audit / Measurement",
+  "checks": [
+    {
+      "check_id": "claim_ledger",
+      "passed": true,
+      "pattern": "\\b(claim|ledger|receipt)\\b"
+    },
+    {
+      "check_id": "evidence_binding",
+      "passed": true,
+      "pattern": "\\b(evidence|sha.?256|hash|receipt)\\b"
+    },
+    {
+      "check_id": "reproduction",
+      "passed": true,
+      "pattern": "\\b(reproduc\\w*|rerun|re-run|recompute)\\b"
+    },
+    {
+      "check_id": "baselines",
+      "passed": true,
+      "pattern": "\\b(baseline|reference)\\b"
+    },
+    {
+      "check_id": "limitations",
+      "passed": true,
+      "pattern": "\\b(limitations?|threats to validity)\\b"
+    },
+    {
+      "check_id": "citations",
+      "passed": true,
+      "pattern": "\\\\cite[a-z]*\\{"
+    }
+  ],
+  "passed": 6,
+  "total": 6,
+  "ratio": 1.0,
+  "status": "passed",
+  "note": "Structural completeness only; not an argument-quality score."
+}

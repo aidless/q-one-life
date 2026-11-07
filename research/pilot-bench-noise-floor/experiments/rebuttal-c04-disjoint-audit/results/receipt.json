@@ -1,0 +1,52 @@
+{
+  "schema": "q-one-rebuttal-experiment-v1",
+  "experiment_id": "C04-disjoint-audit",
+  "generated_at": "2026-11-06T06:09:20Z",
+  "claim_id": "C04",
+  "claim": "A real public leaderboard with a gold pool disjoint from the ranked systems has produced a READABLE verdict.",
+  "inputs": {
+    "counts": {
+      "path": "<HOME>/F:\\deepseek/papers/bench_noise_floor/evidence/calibrated/p4_ajb_counts.json",
+      "sha256": "69bcce43558c903166e075f853aabcd81491cc2e8f86b848412df7af61ed8ba5"
+    },
+    "source": {
+      "path": "<HOME>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source/main.tex",
+      "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca"
+    }
+  },
+  "counts": {
+    "arms": {
+      "p4_ajb": {
+        "MARGINAL": 71,
+        "UNREADABLE": 729
+      },
+      "p4_ajb_drop5": {
+        "MARGINAL": 37,
+        "UNREADABLE": 763
+      },
+      "p4_ajb_full7": {
+        "MARGINAL": 39,
+        "UNREADABLE": 761
+      },
+      "p4_ajb_withgt": {
+        "MARGINAL": 33,
+        "UNREADABLE": 767
+      }
+    },
+    "total_boards": 3200,
+    "unreadable": 3020,
+    "marginal": 180,
+    "readable": 0
+  },
+  "checks": {
+    "arm_sums_match_total_unreadable": true,
+    "arm_sums_match_total_marginal": true,
+    "counts_sum_to_3200": true,
+    "readable_is_zero": true,
+    "reports_zero_certifications": true,
+    "reports_never_readable": true,
+    "reports_3200_boards": true
+  },
+  "verdict": "refuted",
+  "note": "refuted 表示该 disjoint 部署没有任何 READABLE，C04 的正向主张不成立；这不否认 deployment 本身执行过。"
+}

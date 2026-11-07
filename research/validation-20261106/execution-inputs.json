@@ -1,0 +1,46 @@
+{
+  "schema": "q-one-provenance-manifest-v1",
+  "mode": "hash_pinned_archive",
+  "files": [
+    {
+      "path": "research/validation-20261106/PROTOCOL.zh-CN.md",
+      "sha256": "85f54034d1318827868e0340484f3a8359151be588e51ef0ac19c6d50340ca06"
+    },
+    {
+      "path": "research/validation-20261106/pilot-data/breast_cancer.description.txt",
+      "sha256": "3c5855182a44d12c91f1fb27388741fb70b4b92ba40fb742dca9b5e404c68f19"
+    },
+    {
+      "path": "research/validation-20261106/pilot-data/breast_cancer.json",
+      "sha256": "b9dd46490e784e2f4ed6f64740c62fdb4e4d761ff7b5812ae22b9510e4d7e701"
+    },
+    {
+      "path": "research/validation-20261106/pilot-data/diabetes.description.txt",
+      "sha256": "07dcfc13957a82485bdfce44aecffba72e7977595966d118b81f162cb827e381"
+    },
+    {
+      "path": "research/validation-20261106/pilot-data/diabetes.json",
+      "sha256": "d5cdd604eea415fcca05c8b5bb4440adf16195562d0dffa10e3b5b5d188fd957"
+    },
+    {
+      "path": "research/validation-20261106/pilot-data/manifest.json",
+      "sha256": "99c0100260caf7494ca0ad2d0ade43226af517c7860ab76a3384e86d341fef2e"
+    },
+    {
+      "path": "research/validation-20261106/pilot-data/wine.description.txt",
+      "sha256": "cece974be57e7279fddb09f3ffaccc26cf0c20087f29a9641a17756c52e25301"
+    },
+    {
+      "path": "research/validation-20261106/pilot-data/wine.json",
+      "sha256": "cb197b738d2a9897b678005737a42ff6a2401d051785cf1a2fdee3e584f3dac8"
+    },
+    {
+      "path": "research/validation-20261106/suite.json",
+      "sha256": "258b01623706317f2bab1bbccd419b776a1e512636cec7b7bb839e78f0ed7e83"
+    },
+    {
+      "path": "src/qone_life/research_factory/research_validation.py",
+      "sha256": "2d13756e2fca2b3b98098a80e1d6e93fcf4db66a6d9d13f4829d62b3500cb2b7"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C06",
+  "claim_text": "Three native numeric gates pass twice against the current source bytes: 250/250 manuscript numbers, 353 reverse-coverage reads with 0 unbound, and an anchor census with A1=0.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "I'll examine the evidence file to understand the structure and data behind this claim, then identify boundary conditions.\n\nFirst, let me read the report file:\n\n```bash\ncat reports/native-numeric-gate.json\n```",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "boundary"
+      ]
+    },
+    {
+      "text": "Looking at the evidence description, this appears to be about a cryptographic or data integrity verification system that's checking various metrics on source code or binary data.\n\nThe claim states that three native numeric gates all pass validation against the current source bytes, with specific cou",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "alternative"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T03:41:03Z"
+}

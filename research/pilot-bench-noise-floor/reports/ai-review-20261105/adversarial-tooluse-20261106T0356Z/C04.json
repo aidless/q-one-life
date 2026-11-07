@@ -1,0 +1,24 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C04",
+  "claim_text": "A real public leaderboard with a gold pool disjoint from the ranked systems has produced a READABLE verdict.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "Let me read the evidence file to understand what this claim is referencing.\n\n```bash\ncat evidence/REVIEW_INDEPENDENT_2026-10-24.md\n```",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "alternative"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T03:56:02Z"
+}

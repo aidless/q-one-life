@@ -1,0 +1,32 @@
+# cancer_extension
+
+## Question
+Scaling/regularization under a fixed three-candidate budget.
+
+## Methods
+Variant no_rebuttal; seed 23; selected on validation only.
+
+## Recorded results
+```json
+{
+  "validation": 0.9580740255486406,
+  "test": 1.0,
+  "baseline_validation": 0.9697019325253848,
+  "baseline_test": 0.9503968253968254,
+  "test_delta": 0.04960317460317465,
+  "replay_test": 1.0,
+  "metric_name": "balanced_accuracy"
+}
+```
+
+## Agent interpretation (validation only)
+**Interpretation of Classification Results (Validation Split)**
+
+All three candidate models perform below the baseline accuracy (0.9697). The logistic regression model with L2 regularization strength `strength=1.0` and feature scaling performs best on the validation set (0.9581), but still shows a noticeable gap to the baseline.
+
+*   **Performance Ranking:** The results suggest that the family and configuration of the model impact generalization. The tuned logistic regression (`strength=1.0`) generalizes best, followed by the random forest, with the weakly regularized logistic regression (`strength=0.01`) performing worst. This pattern indicates that appropriate regularization (or its tree-based equivalent) is crucial for this task.
+*   **Feature Scaling Impact:** For logistic regression, scaling features improves validation accuracy (0.9581 vs. 0.9348), which is expected for gradient-based optimization. The random forest candidate, which is scale-invariant, performed moderately without scaling.
+*   **Limitations of Analysis:** This is a **model selection** step on a single validation split. The reported metrics are point estimates without confidence intervals, so observed differences may not be statistically significant. Without test set results, these validation scores reflect performance only for the purpose of choosing among these candidates and **cannot** support claims about final model performance or superiority over the baseline. The best candidate may still overfit to the particular validation split.
+
+## Limitations
+Public small dataset; exploratory pilot; no novelty or statistical superiority claim. A numerical gain on shuffled labels is not discovery. No arbitrary code synthesis was tested.

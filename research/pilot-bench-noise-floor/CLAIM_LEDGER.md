@@ -13,7 +13,7 @@ values without rewriting the paper or claiming that named derivations were run.
 | C01 | The native ledger has 569 entries, of which 472 resolve to matching source fields, 78 use named derivations, 8 use written field waivers, 8 are unbound registers, and 3 are explicitly unrecoverable retractions. | `reports/native-ledger-audit.json -> counts.entries_total / counts.field_verified / counts.named_derivation / counts.field_waiver / counts.unbound_register / counts.unrecoverable_retraction` | 569 / 472 / 78 / 8 / 8 / 3 | Re-run `research-native-ledger` against the copied native ledger and original workspace root | verified |
 | C02 | The current `source/main.tex` is byte-identical to the source recorded in the native manifest. | `evidence/native-manifest.json -> paper.main.tex.sha256` | - | Compare the manifest source hash with the current source; mismatch blocks publication identity | blocked |
 | C03 | The producer-baseline construction measures leaderboard readability rather than only agreement with the gold producers. | `evidence/REVIEW_INDEPENDENT_2026-10-24.md` | - | Resolve the independent review's A1 construct-validity objection or narrow the paper's claim | blocked |
-| C04 | A real public leaderboard with a gold pool disjoint from the ranked systems has produced a READABLE verdict. | `evidence/REVIEW_INDEPENDENT_2026-10-24.md` | - | Run the ruler on a suitable external leaderboard and preserve the result | candidate |
+| C04 | A real public leaderboard with a gold pool disjoint from the ranked systems has produced a READABLE verdict. | `evidence/REVIEW_INDEPENDENT_2026-10-24.md`; `evidence/calibrated/p4_ajb_counts.json -> total.UNREADABLE / total.MARGINAL / total_boards` | 3020 / 180 / 3200 | C04 audit: 3,200 boards = 3,020 UNREADABLE + 180 MARGINAL + 0 READABLE; positive claim not supported | blocked |
 | C05 | The current source copy passes the mechanical LaTeX package audit. | `reports/package-audit.json -> mechanical_pass / blockers` | - | Re-run `research-package-check`; this does not establish scientific readiness | verified |
 | C06 | Three native numeric gates pass twice against the current source bytes: 250/250 manuscript numbers, 353 reverse-coverage reads with 0 unbound, and an anchor census with A1=0. | `reports/native-numeric-gate.json -> state / source.sha256 / checks.numbers / checks.reverse / checks.anchor` | 250 / 250 / 353 / 0 / 0 | Re-run `tools/run_native_numeric_gates.py`; compare both run hashes and the source hash before/after | verified |
 | C07 | The current source tree compiles twice in isolated directories to a byte-identical 45-page PDF. | `reports/cleanroom/receipt.json -> exit_codes / pdf.pages / pdf.deterministic / source.main_sha256` | 45 | Re-run `scripts/cleanroom_compile.py` against the overlay source; this does not establish scientific readiness | verified |
@@ -25,6 +25,8 @@ values without rewriting the paper or claiming that named derivations were run.
 | C12 | On the four fixed m25 carriers, the recorded leaky LOO-on-k-fold-domain margins reproduce, but on the joint main-gold, LOO-gold, fold-gold and actor support all four LOO margins are exactly zero; the k-fold margins remain 0.0 / 2.872063 / 0.616016 / 1.851852, every checked LOO label equals the full gold label, and two runs are byte-identical. The joint supports are 477 / 383 / 974 / 54, so the 54-item preference result is descriptive only. | `experiments/kfold-common-support-a3/results/reproduction.json -> byte_identical / task_summary.factuality.joint_domain / task_summary.coherence.reported_leaky_loo_margin / task_summary.coherence.kfold_reported_domain / task_summary.coherence.joint_domain / task_summary.relevance.joint_domain / task_summary.preference.joint_domain / task_summary.factuality.loo_joint_margin / task_summary.coherence.loo_joint_margin / task_summary.relevance.loo_joint_margin / task_summary.preference.loo_joint_margin / task_summary.factuality.kfold_joint_margin / task_summary.coherence.kfold_joint_margin / task_summary.relevance.kfold_joint_margin / task_summary.preference.kfold_joint_margin / task_summary.factuality.label_mismatches / task_summary.coherence.label_mismatches / task_summary.relevance.label_mismatches / task_summary.preference.label_mismatches` | true / 477 / 0.471116 / 404 / 383 / 974 / 54 / 0.0 / 0.0 / 0.0 / 0.0 / 0.0 / 2.872063 / 0.616016 / 1.851852 / 0 / 0 / 0 / 0 | Re-run the frozen A3 protocol twice and compare hashes plus all five gates; the k-fold control and support sizes limit the interpretation | verified |
 | C13 | The pinned native CLI has no delta parameter: help omits `--delta`, invoking it exits 2, and the source hard-codes the 2.0-point decision branch. A synthetic fixture with derived raw margin 2.0000000000000018 is rounded to 2.0 and classified READABLE, while the R2 candidate instructs a reader to treat equality as MARGINAL. A different fixture has point margin 13.6364 and 95% interval [-100.0, 21.124], yet remains READABLE. Domain-mismatch, two-generator floor and no-reading controls still return refusals, and two accepted runs are byte-identical. | `experiments/threshold-interface-a4/results/reproduction.json -> byte_identical / gates.F1_threshold_is_not_a_cli_parameter.passed / gates.F1_threshold_is_not_a_cli_parameter.evidence.delta_invocation_exit_code / gates.F2_equality_branch_mismatch_reproduced.derived_raw_margin_points / gates.F2_equality_branch_mismatch_reproduced.json_margin_points / gates.F2_equality_branch_mismatch_reproduced.implementation_verdict / gates.F4_confidence_interval_is_not_gating.margin_points / gates.F4_confidence_interval_is_not_gating.margin_ci.lo95 / gates.F4_confidence_interval_is_not_gating.margin_ci.hi95 / gates.F4_confidence_interval_is_not_gating.verdict / gates.F5_fail_closed_controls.passed` | true / 2 / 2.0000000000000018 / 2.0 / 13.6364 / -100.0 / 21.124 | Re-run the frozen A4 protocol twice and compare hashes plus all five gates; these are synthetic interface fixtures, not external leaderboard measurements | verified |
 | C14 | Revision candidate R3 binds the unmodified canonical source, parent candidate R2, A3/A4 evidence and candidate-specific overlays. Its source compiles twice to the same 46-page PDF, the package audit passes for 11 files, reverse coverage reads 355 tokens with 352 bound, 3 excused and 0 unbound, the anchor census is GREEN with 0 missing anchors, and the verdict-word gate passes 137/137. These facts establish candidate-level mechanical integrity only. | `revisions/2026-10-29-support-threshold-r3/reports/cleanroom/receipt.json -> pdf.pages / pdf.deterministic / pdf.sha256_run1 / pdf.sha256_run2`; `revisions/2026-10-29-support-threshold-r3/reports/candidate-gates-summary.json -> status / reverse_coverage.n_tokens / reverse_coverage.n_bound / reverse_coverage.n_excused / reverse_coverage.n_unbound / anchor_census.verdict / anchor_census.anchor_missing / verdict_word_gate.checks / verdict_word_gate.failures` | 46 / true / 355 / 352 / 3 / 0 / GREEN / 0 / 137 / 0 | Verify `revisions/2026-10-29-support-threshold-r3/SHA256SUMS.txt`, then rerun only through `run_candidate_gates.py` if a new receipt generation is intended; compilation and gate passage do not close C02/C03 or establish scientific readiness | verified |
+| C15 | The current source narrows the producer-baseline claim: the rule does not estimate a ranking error rate and does not certify that two systems are distinguishable; a readable verdict is a necessary condition for citing the top of a board, not a guarantee that the ordering below it is valid. The original strong reading is absent from the source. | `source/main.tex -> paragraph "What the rule certifies"`; `experiments/rebuttal-c03-construct-audit/results/receipt.json -> checks / verdict` | - | Re-run `audit_c03_construct.py` against the current source; this is a text-level narrowing audit, not a proof of construct validity | verified |
+| C16 | The preregistered disjoint-field deployment on AgentJudgeBench returns 3,020 UNREADABLE + 180 MARGINAL across 3,200 boards and 0 READABLE; the disjoint case is measured as a refusal, not a certification. The cloud recount reads the verdict column of the four boards CSVs directly and reaches the same counts. | `evidence/calibrated/p4_ajb_counts.json -> arms / total / total_boards`; `experiments/rebuttal-c04-disjoint-audit/results/receipt.json -> counts / checks / verdict`; `reports/cloud-20261106/ajb_recount.json -> verdicts / readable` | 3020 / 180 / 3200 / 0 | Re-run `audit_c04_disjoint.py`; cloud `cloud_ajb_recount.py` independently counts the verdict column | verified |
 
 ## Aggregate evidence
 
@@ -156,3 +158,134 @@ measured.
 original A1-A4 finding to R3 evidence and asks the reviewer to decide whether
 the remaining block is a textual revision or an external evidence requirement.
 The packet has not been sent; no independent review of R3 exists yet.
+
+## Rebuttal experiment C02 (2026-11-05)
+
+Experiment: `experiments/rebuttal-c02-hash-consistency/`.
+
+The check independently recovers
+`papers/bench_noise_floor/paper/main.tex` from git commit
+`9eb77f1b77baaa9932d8faf18da2fc50a2077f6c`, then compares it with the current
+overlay source and with `evidence/native-manifest.json`.
+
+| Item | Value |
+|---|---|
+| Manifest / recovered SHA-256 | `0d68bda378fa0fc4fe1d39c8c8d46ba39052230fae7a1e8f2fd44b41e5b7e113` (220384 bytes) |
+| Current source SHA-256 | `182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca` (220650 bytes) |
+| Manifest matches recovered | true |
+| Current matches manifest | false |
+| Diff | 8 added / 5 removed lines |
+| Diff SHA-256 | `4df5869e9040d1579c6c1817951f737d9e1363056c3d2e8d3a17a22a740b29d8` |
+| Receipt SHA-256 | `d6fdb3ef52d541c32b34f6d4bb44c6bcacb303fbbd3f1521d366d7412f8067fb` |
+| Verdict | `stands` |
+
+Result: C02 remains `blocked`. The experiment reproduces the source-lineage
+record; it does not establish publication identity and does not close C02.
+Two runs produced identical checks, diff hash, and recovered-file hash.
+
+## Rebuttal experiments C03 and C04 (2026-11-05)
+
+Both audits run against the current source
+`182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca`.
+
+### C03 — construct audit
+
+Experiment: `experiments/rebuttal-c03-construct-audit/`.
+
+The audit verifies that the current source explicitly replaces the original
+strong claim with the narrow reading recommended by independent review A1:
+the rule does not estimate a ranking error rate, does not certify that two
+systems are distinguishable, and a readable verdict is necessary rather than
+sufficient. All six checks pass; the original strong wording is absent.
+
+| Item | Value |
+|---|---|
+| Verdict | `narrowed` |
+| Receipt SHA-256 | `99e71d031c5c2ba582d381afebe82e9ed7802606295adc5b72e1c62212e83fa3` |
+
+C03 remains `blocked` as originally written; the narrowed claim is recorded
+separately as C15. This does not prove construct validity.
+
+### C04 — disjoint-field audit
+
+Experiment: `experiments/rebuttal-c04-disjoint-audit/`.
+
+The carrier `evidence/calibrated/p4_ajb_counts.json` sums to 3,020
+`UNREADABLE` + 180 `MARGINAL` = 3,200 boards, leaving 0 `READABLE`; the
+manuscript reports the same. The positive C04 claim is therefore not
+supported, and its status is corrected from `candidate` to `blocked`.
+
+| Item | Value |
+|---|---|
+| Boards | 3,200 |
+| UNREADABLE | 3,020 |
+| MARGINAL | 180 |
+| READABLE | 0 |
+| Verdict | `refuted` |
+| Receipt SHA-256 | `188347628815dab345a81dafb06268de858c9f2dcededf25e95e9bb62ec207b7` |
+
+The measured deployment is recorded as C16. It does not deny that the
+deployment ran; it denies the claim that it produced a positive verdict.
+
+## Cloud recount on SCNet (2026-11-06)
+
+Full record: `reports/cloud-20261106/CLOUD_RUN_REPORT.md`.
+
+- AJB: `cloud_ajb_recount.py` reads four boards CSVs directly:
+  3,200 boards, 3,020 UNREADABLE, 180 MARGINAL, 0 READABLE; receipt
+  `930bd0da011ad035e65fffc8a275e360564595c7906a7beadffc8f6648af28b0`.
+- A2: `run_estimand_split.py` re-runs on the cloud with 20/20 pinned hashes
+  matching and F1-F5 all PASS; receipt
+  `204c3c3148bc719bdcede1039ab86c9c483b068eaaae83cc4b03433368908a86`.
+- A3: first blocked at the runner-hash gate because the worktree runner
+  (`2a921da3…`) differs from the pinned one (`9669db54…`) by one
+  path-redaction line in `--selftest`. The pinned historical bytes were
+  recovered from `6cccc23^` and run in an isolated directory without changing
+  the worktree or preregistration; F1-F5 all PASS. Receipt
+  `21dc4b70ba9d1227b5806adbe3ba8f62189621887cd95ec517ec60c1346ebcdd`.
+
+These are independent recomputations on the cloud host, not new scientific
+claims. No paper was uploaded and no DCU/GPU compute was consumed.
+
+## Full adversarial review (2026-11-06)
+
+Model `kiro/deepseek-3.2`, one round, all 16 claims.
+
+- Clean 7: C01, C10, C11, C13, C14, C15, C16.
+- Objected 9: C02, C03, C04, C05, C06, C07, C08, C09, C12.
+- Inconclusive 0.
+- Rebuttal classification: 7 executable, 0 out_of_loop, 4 unclassified.
+- Decision: `rollback` (mechanical checks failed, 9 objections still open,
+  11 integrity checks not assessed).
+
+| Artifact | SHA-256 |
+|---|---|
+| `adversarial-full/summary.json` | `c978b77bd4f387b9a1bc61968ccc9f2ed4da0a07aed618e96813a746b85e271b` |
+| `rebuttal-plan-full.json` | `ad66a0ab81ce12fa954d7b2a6c5de6742bc3acea65facf521286673a2b9aeb19` |
+| `decision-full.json` | `984e1f384f22dc9fbaeffb984ea94e436a5f842bc8c0e5a7666fcb439ce2b46a` |
+
+The 9 objections are boundary-condition attacks, not confirmed defects.
+They remain open until a targeted rebuttal experiment or a text narrowing
+closes each one.
+
+## Rebuttal closure (2026-11-06)
+
+Experiment: `experiments/rebuttal-closure/`. Each boundary objection is mapped
+to explicit receipt fields; `closed` means the recorded values exclude the
+stated alternative reading, not that the science is settled.
+
+| Claim | Objection | Status |
+|---|---|---|
+| `C05` | `mechanical_pass`/`blockers` ambiguity | `closed` (True + empty list) |
+| `C06` | `A1=0` counter ambiguity | `closed` (250/250, 353/0, GREEN/0) |
+| `C07` | byte-identical ambiguity | `closed` (45 pages, two equal PDF hashes) |
+| `C08` | archive determinism ambiguity | `closed` (11 files, equal repeat hashes) |
+| `C09` | 700-deletion slice ambiguity | `closed` (700/700, 280/0, two identical runs) |
+| `C12` | zero joint margin could be forced | `closed` (47,200 pairs/0 mismatch, positive k-fold control) |
+
+Remaining objected after closure: C02, C03, C04.
+
+- Closure receipt: `experiments/rebuttal-closure/results/closure.json`,
+  SHA-256 `5c02cd46635b243719cc335299518db839d815a6cb038499dfafac217aa6a2ee`.
+- Updated decision: `decision-closed.json`, `rollback` (mechanical checks
+  failed, 3 objections remain, 11 integrity checks not assessed).

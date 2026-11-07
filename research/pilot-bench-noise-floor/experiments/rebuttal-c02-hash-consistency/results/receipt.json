@@ -1,0 +1,46 @@
+{
+  "schema": "q-one-rebuttal-experiment-v1",
+  "experiment_id": "C02-hash-consistency",
+  "generated_at": "2026-11-06T05:42:06Z",
+  "claim_id": "C02",
+  "objection": "The claim states current source/main.tex is byte-identical to the version recorded in the native manifest; boundary conditions include hash collisions and manifest/version drift.",
+  "inputs": {
+    "repo": "<HOME>/F:\\deepseek",
+    "commit": "9eb77f1b77baaa9932d8faf18da2fc50a2077f6c",
+    "path": "papers/bench_noise_floor/paper/main.tex",
+    "manifest": {
+      "path": "<HOME>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/evidence/native-manifest.json",
+      "sha256": "827720a059a385b6fbf945f2a88cc2984d9179f3641822b12ba717b1ec15697a"
+    },
+    "current": {
+      "path": "<HOME>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source/main.tex",
+      "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+      "bytes": 220650
+    },
+    "recovered": {
+      "path": "<HOME>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/rebuttal-c02-hash-consistency/results/recovered-main.tex",
+      "sha256": "0d68bda378fa0fc4fe1d39c8c8d46ba39052230fae7a1e8f2fd44b41e5b7e113",
+      "bytes": 220384
+    },
+    "diff": {
+      "path": "<HOME>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/rebuttal-c02-hash-consistency/results/diff.patch",
+      "sha256": "4df5869e9040d1579c6c1817951f737d9e1363056c3d2e8d3a17a22a740b29d8"
+    }
+  },
+  "recorded": {
+    "sha256": "0d68bda378fa0fc4fe1d39c8c8d46ba39052230fae7a1e8f2fd44b41e5b7e113",
+    "bytes": 220384
+  },
+  "diff": {
+    "added_lines": 8,
+    "removed_lines": 5
+  },
+  "checks": {
+    "manifest_hash_matches_recovered": true,
+    "manifest_bytes_match_recovered": true,
+    "current_matches_manifest": false,
+    "current_matches_recovered": false
+  },
+  "verdict": "stands",
+  "note": "stands 表示异议成立：当前字节与记录不一致，C02 继续 blocked。resolved 才表示可以撤回异议。"
+}

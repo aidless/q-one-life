@@ -1,0 +1,11 @@
+{
+ "train_size": 40,
+ "test_size": 20,
+ "train_acts": 40,
+ "test_acts": 14,
+ "test_trajectories": 10,
+ "meets_minimum": true,
+ "split_sha256": "aa569ddd2ce4456f8b0a123af47645d275aadd4ff2fc5b36a61bf7811e8a753d",
+ "rules_sha256": "a9be42edc30e74faff2a5838bc26c0d36990047985872984e2019de0a3a98384",
+ "annotations_sha256": "ce275b85d638eb3a511e5e248f5c21509a57627fec888ecdb1d3bd0156361571"
+}

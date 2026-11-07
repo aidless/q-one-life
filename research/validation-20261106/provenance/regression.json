@@ -1,0 +1,178 @@
+{
+  "schema": "q-one-provenance-regression-v1",
+  "generated_at": "2026-11-06T17:00:32.576687+00:00",
+  "status": "passed",
+  "commands": [
+    {
+      "command": [
+        "/home/liuzewen/.cache/qone-life-venv/bin/python",
+        "-B",
+        "/home/liuzewen/F:\\deepseek/q-one-life/tests/test_provenance_audit.py"
+      ],
+      "exit_code": 0,
+      "duration_sec": 0.5001,
+      "stdout": "",
+      "stderr": "........................\n----------------------------------------------------------------------\nRan 24 tests in 0.365s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/home/liuzewen/.cache/qone-life-venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_environment_manifest.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "duration_sec": 0.1131,
+      "stdout": "",
+      "stderr": "----------------------------------------------------------------------\nRan 8 tests in 0.008s\n\nOK\n"
+    },
+    {
+      "command": [
+        "ruff",
+        "check",
+        "--no-cache",
+        "/home/liuzewen/F:\\deepseek/q-one-life/src/qone_life/research_factory/provenance_audit.py",
+        "/home/liuzewen/F:\\deepseek/q-one-life/tests/test_provenance_audit.py"
+      ],
+      "exit_code": 0,
+      "duration_sec": 0.01,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/liuzewen/.cache/qone-life-venv/bin/python",
+        "-I",
+        "-B",
+        "/home/liuzewen/F:\\deepseek/q-one-life/src/qone_life/research_factory/provenance_audit.py",
+        "--root",
+        "/home/liuzewen/F:\\deepseek/q-one-life/research/validation-20261106/provenance/native-files",
+        "--manifest",
+        "/home/liuzewen/F:\\deepseek/q-one-life/research/validation-20261106/provenance/native-files-manifest.json",
+        "--manifest-sha256",
+        "23888b32875faf446a0d52b345e89487c447d12a6f9f22cfc7f1874dee97f987",
+        "--output",
+        "/home/liuzewen/F:\\deepseek/q-one-life/research/validation-20261106/provenance/cli-archive-acceptance.json"
+      ],
+      "exit_code": 0,
+      "duration_sec": 0.0653,
+      "stdout": "{\n  \"schema\": \"q-one-provenance-audit-v1\",\n  \"generated_at\": \"2026-11-06T17:00:32.489316+00:00\",\n  \"root\": \"/home/liuzewen/F:\\\\deepseek/q-one-life/research/validation-20261106/provenance/native-files\",\n  \"mode\": \"hash_pinned_archive\",\n  \"status\": \"passed\",\n  \"manifest_sha256\": \"23888b32875faf446a0d52b345e89487c447d12a6f9f22cfc7f1874dee97f987\",\n  \"manifest_pin_verified\": true,\n  \"commit_object_verified\": false,\n  \"origin_authenticated\": false,\n  \"working_tree_matches_commit\": null,\n  \"fresh_experiment_rerun\": false,\n  \"files_verified\": [\n    {\n      \"index\": 0,\n      \"passed\": true,\n      \"path\": \"tools/bench-noise-floor/audit.py\",\n      \"sha256\": \"2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b\",\n      \"expected_sha256\": \"2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b\"\n    },\n    {\n      \"index\": 1,\n      \"passed\": true,\n      \"path\": \"tools/bench-noise-floor/followup_common.py\",\n      \"sha256\": \"66aeb942b6bb8526f4467d244b9a04bad4d4023eaaf95b87aef0c1307912ee54\",\n      \"expected_sha256\": \"66aeb942b6bb8526f4467d244b9a04bad4d4023eaaf95b87aef0c1307912ee54\"\n    },\n    {\n      \"index\": 2,\n      \"passed\": true,\n      \"path\": \"tools/bench-noise-floor/followup_ec63_kfold.py\",\n      \"sha256\": \"e0528fa164e2b7de63fb9711686c9f1882f083d170fa777251f878f0301ee5fb\",\n      \"expected_sha256\": \"e0528fa164e2b7de63fb9711686c9f1882f083d170fa777251f878f0301ee5fb\"\n    },\n    {\n      \"index\": 3,\n      \"passed\": true,\n      \"path\": \"tools/bench-noise-floor/make_m25_votes.py\",\n      \"sha256\": \"defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236\",\n      \"expected_sha256\": \"defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236\"\n    },\n    {\n      \"index\": 4,\n      \"passed\": true,\n      \"path\": \"papers/bench_noise_floor/evidence/strict_review_followup/EC63_kfold_vs_loo.json\",\n      \"sha256\": \"f80712e34f86e71fd75d71d3c6224dfd0af466bccef244ae9c23cd31e6a62b50\",\n      \"expected_sha256\": \"f80712e34f86e71fd75d71d3c6224dfd0af466bccef244ae9c23cd31e6a62b50\"\n    },\n    {\n      \"index\": 5,\n      \"passed\": true,\n      \"path\": \"papers/bench_noise_floor/evidence/m25_factuality.json\",\n      \"sha256\": \"e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c\",\n      \"expected_sha256\": \"e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c\"\n    },\n    {\n      \"index\": 6,\n      \"passed\": true,\n      \"path\": \"papers/bench_noise_floor/evidence/m25_coherence.json\",\n      \"sha256\": \"e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc\",\n      \"expected_sha256\": \"e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc\"\n    },\n    {\n      \"index\": 7,\n      \"passed\": true,\n      \"path\": \"papers/bench_noise_floor/evidence/m25_relevance.json\",\n      \"sha256\": \"6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d\",\n      \"expected_sha256\": \"6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d\"\n    },\n    {\n      \"index\": 8,\n      \"passed\": true,\n      \"path\": \"papers/bench_noise_floor/evidence/m25_preference.json\",\n      \"sha256\": \"53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1\",\n      \"expected_sha256\": \"53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1\"\n    }\n  ],\n  \"checks\": [\n    {\n      \"check_id\": \"schema\",\n      \"passed\": true,\n      \"detail\": \"manifest schema\"\n    },\n    {\n      \"check_id\": \"manifest_digest\",\n      \"passed\": true,\n      \"detail\": \"canonical manifest SHA-256 pin\"\n    },\n    {\n      \"check_id\": \"mode\",\n      \"passed\": true,\n      \"detail\": \"explicit supported provenance mode required; no automatic downgrade\"\n    },\n    {\n      \"check_id\": \"root\",\n      \"passed\": true,\n      \"detail\": \"root opened without following symlinks\"\n    },\n    {\n      \"check_id\": \"archive_boundary\",\n      \"passed\": true,\n      \"detail\": \"archive must contain no Git metadata; a ref stub is not an archive\"\n    },\n    {\n      \"check_id\": \"files\",\n      \"passed\": true,\n      \"detail\": \"archives require a non-empty file manifest\"\n    },\n    {\n      \"check_id\": \"file:0\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:1\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:2\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:3\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:4\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:5\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:6\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:7\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:8\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    }\n  ],\n  \"failed\": [],\n  \"limitations\": [\n    \"Object existence does not authenticate repository origin or historical cloud state.\",\n    \"File hashes bind listed bytes only; unlisted files are outside this audit.\",\n    \"This audit is not a fresh experiment rerun or scientific closure.\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/liuzewen/.cache/qone-life-venv/bin/python",
+        "-I",
+        "-B",
+        "/home/liuzewen/F:\\deepseek/q-one-life/src/qone_life/research_factory/provenance_audit.py",
+        "--root",
+        "/home/liuzewen/F:\\deepseek",
+        "--manifest",
+        "/home/liuzewen/F:\\deepseek/q-one-life/research/validation-20261106/provenance/native-git-manifest.json",
+        "--manifest-sha256",
+        "ee042c30e31810d3d787fb7612236cd0cf641f67309e7c9d4a8a5220480f3e7d",
+        "--output",
+        "/home/liuzewen/F:\\deepseek/q-one-life/research/validation-20261106/provenance/cli-native-acceptance.json"
+      ],
+      "exit_code": 0,
+      "duration_sec": 0.0652,
+      "stdout": "{\n  \"schema\": \"q-one-provenance-audit-v1\",\n  \"generated_at\": \"2026-11-06T17:00:32.550719+00:00\",\n  \"root\": \"/home/liuzewen/F:\\\\deepseek\",\n  \"mode\": \"git_commit\",\n  \"status\": \"passed\",\n  \"manifest_sha256\": \"ee042c30e31810d3d787fb7612236cd0cf641f67309e7c9d4a8a5220480f3e7d\",\n  \"manifest_pin_verified\": true,\n  \"commit_object_verified\": true,\n  \"origin_authenticated\": false,\n  \"working_tree_matches_commit\": null,\n  \"fresh_experiment_rerun\": false,\n  \"files_verified\": [\n    {\n      \"index\": 0,\n      \"passed\": true,\n      \"path\": \"tools/bench-noise-floor/audit.py\",\n      \"sha256\": \"2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b\",\n      \"expected_sha256\": \"2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b\"\n    },\n    {\n      \"index\": 1,\n      \"passed\": true,\n      \"path\": \"tools/bench-noise-floor/followup_common.py\",\n      \"sha256\": \"66aeb942b6bb8526f4467d244b9a04bad4d4023eaaf95b87aef0c1307912ee54\",\n      \"expected_sha256\": \"66aeb942b6bb8526f4467d244b9a04bad4d4023eaaf95b87aef0c1307912ee54\"\n    },\n    {\n      \"index\": 2,\n      \"passed\": true,\n      \"path\": \"tools/bench-noise-floor/followup_ec63_kfold.py\",\n      \"sha256\": \"e0528fa164e2b7de63fb9711686c9f1882f083d170fa777251f878f0301ee5fb\",\n      \"expected_sha256\": \"e0528fa164e2b7de63fb9711686c9f1882f083d170fa777251f878f0301ee5fb\"\n    },\n    {\n      \"index\": 3,\n      \"passed\": true,\n      \"path\": \"tools/bench-noise-floor/make_m25_votes.py\",\n      \"sha256\": \"defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236\",\n      \"expected_sha256\": \"defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236\"\n    },\n    {\n      \"index\": 4,\n      \"passed\": true,\n      \"path\": \"papers/bench_noise_floor/evidence/strict_review_followup/EC63_kfold_vs_loo.json\",\n      \"sha256\": \"f80712e34f86e71fd75d71d3c6224dfd0af466bccef244ae9c23cd31e6a62b50\",\n      \"expected_sha256\": \"f80712e34f86e71fd75d71d3c6224dfd0af466bccef244ae9c23cd31e6a62b50\"\n    },\n    {\n      \"index\": 5,\n      \"passed\": true,\n      \"path\": \"papers/bench_noise_floor/evidence/m25_factuality.json\",\n      \"sha256\": \"e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c\",\n      \"expected_sha256\": \"e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c\"\n    },\n    {\n      \"index\": 6,\n      \"passed\": true,\n      \"path\": \"papers/bench_noise_floor/evidence/m25_coherence.json\",\n      \"sha256\": \"e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc\",\n      \"expected_sha256\": \"e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc\"\n    },\n    {\n      \"index\": 7,\n      \"passed\": true,\n      \"path\": \"papers/bench_noise_floor/evidence/m25_relevance.json\",\n      \"sha256\": \"6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d\",\n      \"expected_sha256\": \"6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d\"\n    },\n    {\n      \"index\": 8,\n      \"passed\": true,\n      \"path\": \"papers/bench_noise_floor/evidence/m25_preference.json\",\n      \"sha256\": \"53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1\",\n      \"expected_sha256\": \"53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1\"\n    }\n  ],\n  \"checks\": [\n    {\n      \"check_id\": \"schema\",\n      \"passed\": true,\n      \"detail\": \"manifest schema\"\n    },\n    {\n      \"check_id\": \"manifest_digest\",\n      \"passed\": true,\n      \"detail\": \"canonical manifest SHA-256 pin\"\n    },\n    {\n      \"check_id\": \"mode\",\n      \"passed\": true,\n      \"detail\": \"explicit supported provenance mode required; no automatic downgrade\"\n    },\n    {\n      \"check_id\": \"root\",\n      \"passed\": true,\n      \"detail\": \"root opened without following symlinks\"\n    },\n    {\n      \"check_id\": \"repository_boundary\",\n      \"passed\": true,\n      \"detail\": \"explicit repository root required; parent repository is not evidence\"\n    },\n    {\n      \"check_id\": \"commit_id\",\n      \"passed\": true,\n      \"detail\": \"full hexadecimal commit object ID required\"\n    },\n    {\n      \"check_id\": \"commit_object\",\n      \"passed\": true,\n      \"detail\": \"cat-file type, raw object digest and tree verified\"\n    },\n    {\n      \"check_id\": \"files\",\n      \"passed\": true,\n      \"detail\": \"archives require a non-empty file manifest\"\n    },\n    {\n      \"check_id\": \"file:0\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:1\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:2\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:3\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:4\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:5\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:6\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:7\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    },\n    {\n      \"check_id\": \"file:8\",\n      \"passed\": true,\n      \"detail\": \"file SHA-256 comparison\"\n    }\n  ],\n  \"failed\": [],\n  \"limitations\": [\n    \"Object existence does not authenticate repository origin or historical cloud state.\",\n    \"File hashes bind listed bytes only; unlisted files are outside this audit.\",\n    \"This audit is not a fresh experiment rerun or scientific closure.\"\n  ],\n  \"commit\": \"ab40e28abcb2a97e13242d0dab5584d42a15f94e\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "bound_existing_evidence_rechecked": [
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106/a3_cloud.json",
+      "sha256": "21dc4b70ba9d1227b5806adbe3ba8f62189621887cd95ec517ec60c1346ebcdd",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106/a3_v11_run1.json",
+      "sha256": "4fd64d0e3aa64f2f884de1295dc444574428f338da165c45c07062babd0a6ffb",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106/a3_v11_run2.json",
+      "sha256": "4fd64d0e3aa64f2f884de1295dc444574428f338da165c45c07062babd0a6ffb",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106-amd/a3_amd_run1.json",
+      "sha256": "4fd64d0e3aa64f2f884de1295dc444574428f338da165c45c07062babd0a6ffb",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106-amd/a3_amd_run2.json",
+      "sha256": "4fd64d0e3aa64f2f884de1295dc444574428f338da165c45c07062babd0a6ffb",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/preregistration.json",
+      "sha256": "ae6f12e4dfec14770f7f2121af133dec9e78eea19e5f27f621de4ad60e520323",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106/CLOUD_RUN_REPORT.md",
+      "sha256": "e62d9522bc467844bd52b44f941ef8673ab068fb305809897bd0a95e1472a195",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/experiments/rebuttal-closure/audit_closure.py",
+      "sha256": "4522611e8a32ab39759bd3e1ec0a8daa9a08a90dcdff19e2fa5c81ce91c634a3",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/experiments/rebuttal-closure/results/closure.json",
+      "sha256": "5c02cd46635b243719cc335299518db839d815a6cb038499dfafac217aa6a2ee",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/package-audit.json",
+      "sha256": "8b18113e3de64294469f52ffef7d4dc90d15f1701d1ecc08bdafc88c17d624c7",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/native-numeric-gate.json",
+      "sha256": "63783e494d0d64d6841157b4bfa090a9b0e6911aead9df9b2cb5ba82fdb6a13f",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cleanroom/receipt.json",
+      "sha256": "60bd23e6a2eb51ca9759a576e25fe02365636932576ca81e77e03fa3733dbccf",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/package/package-receipt.json",
+      "sha256": "89556e707cf15e23b88893f99db992bf5f2d85a6d2930305b3dc74bea0050d62",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/experiments/producer-baseline-counterexample/results/reproduction.json",
+      "sha256": "4e96412333a6634b5f3977fa71a447dd4e1cd743493aad113fabff98b3b6f84d",
+      "matches": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106-amd/a3_amd_run1.json",
+      "sha256": "4fd64d0e3aa64f2f884de1295dc444574428f338da165c45c07062babd0a6ffb",
+      "matches": true
+    }
+  ],
+  "source": {
+    "path": "src/qone_life/research_factory/provenance_audit.py",
+    "sha256": "26f70e2cb27655420915b86a820f41bcb61a3d95cdabb3ccc9cf6d799f4d926d"
+  },
+  "test": {
+    "path": "tests/test_provenance_audit.py",
+    "sha256": "5e86cb0d27f8d13b61c146b3cf80c517e0274217847e06c2e8b16fc897763d5d"
+  },
+  "cloud_or_model_started": false,
+  "experiment_rerun": false,
+  "prior_setup_failure": "regression-setup-failure.json",
+  "scope_limit": "Targeted provenance and adjacent environment-manifest tests only; full suite not run (contains experiment replay and Git-commit fixtures)."
+}

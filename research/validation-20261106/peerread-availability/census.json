@@ -1,0 +1,70 @@
+{
+ "schema": "qone-peerread-availability-v1",
+ "splits": {
+  "train": {
+   "papers_with_review_files": 58,
+   "parsed_pdfs": 20,
+   "papers_with_annotated_reviews": 54,
+   "usable": 16,
+   "reviewer_rows": 494,
+   "unique_reviewers": 4,
+   "usable_papers": [
+    "304",
+    "305",
+    "306",
+    "307",
+    "308",
+    "309",
+    "310",
+    "312",
+    "314",
+    "315",
+    "317",
+    "318",
+    "319",
+    "320",
+    "321",
+    "322"
+   ]
+  },
+  "dev": {
+   "papers_with_review_files": 10,
+   "parsed_pdfs": 10,
+   "papers_with_annotated_reviews": 6,
+   "usable": 6,
+   "reviewer_rows": 58,
+   "unique_reviewers": 3,
+   "usable_papers": [
+    "316",
+    "325",
+    "328",
+    "340",
+    "350",
+    "355"
+   ]
+  },
+  "test": {
+   "papers_with_review_files": 10,
+   "parsed_pdfs": 10,
+   "papers_with_annotated_reviews": 6,
+   "usable": 6,
+   "reviewer_rows": 56,
+   "unique_reviewers": 3,
+   "usable_papers": [
+    "330",
+    "333",
+    "358",
+    "363",
+    "398",
+    "400"
+   ]
+  }
+ },
+ "total_papers": 78,
+ "total_parsed": 40,
+ "total_reviewed": 66,
+ "total_usable": 28,
+ "total_reviewer_rows": 608,
+ "total_unique_reviewers": 608,
+ "claim_limit": "Only ICLR 2017 fixed-revision PeerRead tree; other venues not counted."
+}

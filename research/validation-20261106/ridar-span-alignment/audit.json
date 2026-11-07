@@ -1,0 +1,127 @@
+{
+ "schema": "qone-ridar-span-alignment-v1",
+ "spans": 3461,
+ "trajectories": 60,
+ "quoted_spans": 2635,
+ "unquoted_spans": 826,
+ "span_width_distribution": {
+  "1": 3074,
+  "2": 147,
+  "3": 51,
+  "4": 31,
+  "5": 32,
+  "6": 20,
+  "7": 13,
+  "8": 7,
+  "9": 13,
+  "10": 8
+ },
+ "single_line_share": 0.8882,
+ "start_record_type": {
+  "tool_call": 1703,
+  "tool_result": 915,
+  "reasoning": 580,
+  "assistant": 259,
+  "user": 4
+ },
+ "quote_match_at_offset": {
+  "-2": {
+   "judged": 2635,
+   "matched": 145,
+   "rate": 0.055
+  },
+  "-1": {
+   "judged": 2635,
+   "matched": 204,
+   "rate": 0.0774
+  },
+  "0": {
+   "judged": 2635,
+   "matched": 1960,
+   "rate": 0.7438
+  },
+  "1": {
+   "judged": 2635,
+   "matched": 237,
+   "rate": 0.0899
+  },
+  "2": {
+   "judged": 2635,
+   "matched": 151,
+   "rate": 0.0573
+  }
+ },
+ "quote_match_at_span": {
+  "judged": 2635,
+  "matched": 1960,
+  "rate": 0.7438
+ },
+ "by_category": {
+  "citation_fabrication": {
+   "quoted": 126,
+   "matched": 93,
+   "rate": 0.7381
+  },
+  "citation_misrepresentation": {
+   "quoted": 160,
+   "matched": 101,
+   "rate": 0.6312
+  },
+  "contribution_inflation": {
+   "quoted": 382,
+   "matched": 298,
+   "rate": 0.7801
+  },
+  "evaluator_gaming": {
+   "quoted": 43,
+   "matched": 35,
+   "rate": 0.814
+  },
+  "experiment_design_gaming": {
+   "quoted": 97,
+   "matched": 73,
+   "rate": 0.7526
+  },
+  "exploit_test_cases": {
+   "quoted": 240,
+   "matched": 203,
+   "rate": 0.8458
+  },
+  "novelty_gaming": {
+   "quoted": 41,
+   "matched": 34,
+   "rate": 0.8293
+  },
+  "novelty_verification_evasion": {
+   "quoted": 88,
+   "matched": 64,
+   "rate": 0.7273
+  },
+  "outcome_dependent_design_change": {
+   "quoted": 178,
+   "matched": 139,
+   "rate": 0.7809
+  },
+  "resource_constraint_violation": {
+   "quoted": 38,
+   "matched": 29,
+   "rate": 0.7632
+  },
+  "result_fabrication": {
+   "quoted": 96,
+   "matched": 59,
+   "rate": 0.6146
+  },
+  "scientific_reporting_manipulation": {
+   "quoted": 1057,
+   "matched": 759,
+   "rate": 0.7181
+  },
+  "selective_reporting": {
+   "quoted": 89,
+   "matched": 73,
+   "rate": 0.8202
+  }
+ },
+ "claim_limit": "Quote containment checks only literal text reuse between note and record; a miss does not prove the span is wrong, and a hit does not prove the act is real."
+}

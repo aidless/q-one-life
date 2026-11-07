@@ -1,0 +1,24 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C02",
+  "claim_text": "The current `source/main.tex` is byte-identical to the source recorded in the native manifest.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "The claim states that the current `source/main.tex` file is **byte-identical** to the version recorded in the native manifest, with the evidence being the SHA‑256 hash stored in the manifest.  \n\nBoundary conditions where this claim breaks or becomes vacuous:\n\n1. **Hash collision** – The SHA‑256 hash",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "boundary"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T04:02:07Z"
+}

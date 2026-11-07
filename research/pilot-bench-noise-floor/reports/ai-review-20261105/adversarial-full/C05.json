@@ -1,0 +1,24 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C05",
+  "claim_text": "The current source copy passes the mechanical LaTeX package audit.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "The claim states that \"the current source copy passes the mechanical LaTeX package audit.\"  \nThe evidence given is: `reports/package-audit.json -> mechanical_pass / blockers`\n\nFrom this evidence alone, \"mechanical_pass / blockers\" could mean either:\n1. The mechanical audit passed (no blockers), or  ",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "alternative"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T14:38:49Z"
+}

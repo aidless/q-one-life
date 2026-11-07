@@ -1,0 +1,13 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C16",
+  "claim_text": "The preregistered disjoint-field deployment on AgentJudgeBench returns 3,020 UNREADABLE + 180 MARGINAL across 3,200 boards and 0 READABLE; the disjoint case is measured as a refusal, not a certification. The cloud recount reads the verdict column of the four boards CSVs directly and reaches the same counts.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [],
+  "inconclusive_calls": 0,
+  "verdict": "clean",
+  "generated_at": "2026-11-06T14:45:53Z"
+}

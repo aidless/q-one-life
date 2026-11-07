@@ -1,0 +1,30 @@
+{
+ "schema": "q-one-peerread-exploratory-check-v1",
+ "model": "kiro/deepseek-3.2",
+ "status": "exploratory_unmatched_versions",
+ "claim_limit": "convenience sample of 24 parsed papers; not the reviewed submission versions; not a calibration certificate",
+ "requested": 24,
+ "usable": 24,
+ "failures": [],
+ "truncation_characters": 18000,
+ "spearman_rho": 0.5559056412195988,
+ "spearman_parametric_p": 0.004794087374979348,
+ "spearman_permutation_p": 0.004899510048995101,
+ "kendall_tau": 0.41236891568542616,
+ "kendall_p": 0.007068173849603388,
+ "bootstrap_rho_95ci": [
+  0.2080025208016981,
+  0.7852824435400844
+ ],
+ "rubric_vs_length_rho": 0.31907426696848723,
+ "human_vs_length_rho": 0.3173934426328474,
+ "rubric_vs_accept_pointbiserial": 0.55375624492635,
+ "human_vs_accept_pointbiserial": 0.8519077336324317,
+ "contamination_risk": "ICLR 2017 papers and decisions may be in the model's pretraining data",
+ "spearman_train": 0.618193171696024,
+ "n_train": 8,
+ "spearman_dev": 0.442432367978527,
+ "n_dev": 8,
+ "spearman_test": 0.42965003912270683,
+ "n_test": 8
+}

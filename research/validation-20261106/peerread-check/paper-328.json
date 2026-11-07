@@ -1,0 +1,34 @@
+{
+ "paper_id": "328",
+ "split": "dev",
+ "decision": "accepted",
+ "text_sha256": "0c1b6d44c883ae3df0f2cc9b3f42c175df8c6ecd79e00483d8361782e618d07d",
+ "text_characters": 18000,
+ "human_scores": [
+  8.0,
+  4.0,
+  7.0
+ ],
+ "human_mean": 6.333333333333333,
+ "rubric": {
+  "novelty": 4,
+  "rigor": 4,
+  "clarity": 4
+ },
+ "reason": "The paper introduces a novel multitask RNN approach for neural modeling with strong comparative evaluation, though the analysis of why RNNs outperform is somewhat preliminary and the paper's structure has some formatting issues.",
+ "usage": {
+  "completion_tokens": 78,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "prompt_tokens": 7768,
+  "prompt_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 7846
+ },
+ "error": null,
+ "elapsed_sec": 7.431673970000702,
+ "cached": true
+}

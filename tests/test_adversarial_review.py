@@ -80,6 +80,32 @@ class AttackTests(unittest.TestCase):
         summary = json.loads((self.out / "summary.json").read_text(encoding="utf-8"))
         self.assertEqual(summary["schema"], "q-one-adversarial-summary-v1")
 
+    def test_claim_filter_limits_scope(self):
+        review = AdversarialReview()
+        with patch.object(review, "_ask", return_value=None):
+            summary = review.attack(
+                self.ledger, rounds=1, models=["m"], output_dir=self.out,
+                claim_ids=["C02"],
+            )
+        self.assertEqual([c["claim_id"] for c in summary["claims"]], ["C02"])
+
+    def test_unknown_claim_filter_raises(self):
+        with self.assertRaises(AdversarialError):
+            AdversarialReview().attack(
+                self.ledger, rounds=1, models=["m"], output_dir=self.out,
+                claim_ids=["C99"],
+            )
+
+    def test_tool_use_answer_is_inconclusive(self):
+        review = AdversarialReview()
+        with patch.object(
+            review, "_ask",
+            return_value="I'll read the evidence file. ```bash cat evidence/a.json```",
+        ):
+            summary = review.attack(self.ledger, rounds=1, models=["m"], output_dir=self.out)
+        self.assertEqual(summary["inconclusive"], 2)
+        self.assertEqual(summary["objected"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()

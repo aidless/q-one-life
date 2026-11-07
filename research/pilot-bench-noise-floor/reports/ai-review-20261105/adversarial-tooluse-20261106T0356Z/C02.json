@@ -1,0 +1,34 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C02",
+  "claim_text": "The current `source/main.tex` is byte-identical to the source recorded in the native manifest.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "I'll examine the evidence to understand the claim and check for boundary conditions.\n\nFirst, let me read the native manifest file to see what it contains.\n\n```bash\ncat evidence/native-manifest.json\n```",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "boundary"
+      ]
+    },
+    {
+      "text": "I'll read the evidence file to see what we're comparing.\n\n```bash\ncat evidence/native-manifest.json\n```",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "alternative"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T03:53:48Z"
+}

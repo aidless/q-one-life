@@ -1,0 +1,24 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C06",
+  "claim_text": "Three native numeric gates pass twice against the current source bytes: 250/250 manuscript numbers, 353 reverse-coverage reads with 0 unbound, and an anchor census with A1=0.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "From the claim and evidence description:\n\n- **Three native numeric gates pass twice against the current source bytes**  \n  This implies a sequence of 250 manuscript numbers (likely source code tokens), reverse‑coverage reads with no unbound references, and an anchor census where A1=0.\n\n- **Anchor ce",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "boundary"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T14:39:11Z"
+}

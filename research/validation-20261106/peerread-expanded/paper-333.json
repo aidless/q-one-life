@@ -1,0 +1,33 @@
+{
+ "paper_id": "333",
+ "split": "test",
+ "text_sha256": "d742c628816fab910c3ddc30fdf049e3b82af176e3a9bcf9e80151c968c00df3",
+ "text_characters": 18000,
+ "human_scores": [
+  7,
+  8,
+  7,
+  8
+ ],
+ "rubric": {
+  "novelty": 5,
+  "rigor": 4,
+  "clarity": 5
+ },
+ "reason": "The paper presents a highly counterintuitive finding\u2014that a single random convolutional layer can rival state-of-the-art deep networks for texture synthesis\u2014supported by extensive experiments comparing multiple filter types, sizes, and architectures.",
+ "usage": {
+  "completion_tokens": 82,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "prompt_tokens": 7924,
+  "prompt_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 8006
+ },
+ "error": null,
+ "elapsed_sec": 6.796749154978897,
+ "cached": true
+}

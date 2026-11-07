@@ -1,0 +1,13 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C01",
+  "claim_text": "The native ledger has 569 entries, of which 472 resolve to matching source fields, 78 use named derivations, 8 use written field waivers, 8 are unbound registers, and 3 are explicitly unrecoverable retractions.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [],
+  "inconclusive_calls": 0,
+  "verdict": "clean",
+  "generated_at": "2026-11-06T14:36:34Z"
+}

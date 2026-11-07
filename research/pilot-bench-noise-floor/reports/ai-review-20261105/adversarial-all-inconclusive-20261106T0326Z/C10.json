@@ -1,0 +1,13 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C10",
+  "claim_text": "Git commit `9eb77f1b77baaa9932d8faf18da2fc50a2077f6c` recovers the source blob named by the native manifest at SHA-256 `0d68...e113`; the current source differs by 8 added and 5 removed lines, so source lineage is valid but publication identity is not established.",
+  "rounds": 1,
+  "models": [
+    "group/auto-gpt-6"
+  ],
+  "objections": [],
+  "inconclusive_calls": 3,
+  "verdict": "inconclusive",
+  "generated_at": "2026-11-06T03:26:50Z"
+}

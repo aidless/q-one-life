@@ -1,0 +1,35 @@
+{
+ "paper_id": "350",
+ "split": "dev",
+ "text_sha256": "e74201d276d9c2bc84f883d512430c354c6b5f51d525c8b08a6d2cb86345c977",
+ "text_characters": 18000,
+ "human_scores": [
+  6,
+  8,
+  8,
+  6,
+  8,
+  8
+ ],
+ "rubric": {
+  "novelty": 4,
+  "rigor": 4,
+  "clarity": 5
+ },
+ "reason": "The paper proposes a novel predictive coding neural network architecture (PredNet) that effectively learns object representations from video prediction, demonstrating strong performance and clear interpretability in experiments.",
+ "usage": {
+  "completion_tokens": 71,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "prompt_tokens": 8045,
+  "prompt_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 8116
+ },
+ "error": null,
+ "elapsed_sec": 4.839812715013977,
+ "cached": true
+}

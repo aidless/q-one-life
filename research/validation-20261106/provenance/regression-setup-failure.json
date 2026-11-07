@@ -1,0 +1,22 @@
+{
+  "schema": "q-one-provenance-validation-setup-failure-v1",
+  "command": [
+    "/home/liuzewen/.cache/qone-life-venv/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_environment_manifest.py",
+    "-q"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "======================================================================\nERROR: test_environment_manifest (unittest.loader._FailedTest.test_environment_manifest)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_environment_manifest\nTraceback (most recent call last):\n  File \"/usr/lib/python3.12/unittest/loader.py\", line 394, in _find_test_path\n    module = self._get_module_from_name(name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/unittest/loader.py\", line 337, in _get_module_from_name\n    __import__(name)\n  File \"/home/liuzewen/F:\\deepseek/q-one-life/tests/test_environment_manifest.py\", line 7, in <module>\n    from qone_life.research_factory.environment_manifest import (\nModuleNotFoundError: No module named 'qone_life'\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n",
+  "cause": "Physical checkout path contains a colon (F:\\deepseek), so PYTHONPATH splits it into different entries.",
+  "resolution": "Use the existing colon-free checkout alias for PYTHONPATH; keep audited archive roots physical.",
+  "classification": "validation_environment_setup_error",
+  "source_code_changed_to_resolve": false
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C14",
+  "claim_text": "Revision candidate R3 binds the unmodified canonical source, parent candidate R2, A3/A4 evidence and candidate-specific overlays. Its source compiles twice to the same 46-page PDF, the package audit passes for 11 files, reverse coverage reads 355 tokens with 352 bound, 3 excused and 0 unbound, the anchor census is GREEN with 0 missing anchors, and the verdict-word gate passes 137/137. These facts establish candidate-level mechanical integrity only.",
+  "rounds": 1,
+  "models": [
+    "group/auto-gpt-6"
+  ],
+  "objections": [],
+  "inconclusive_calls": 3,
+  "verdict": "inconclusive",
+  "generated_at": "2026-11-06T03:26:57Z"
+}

@@ -1,0 +1,34 @@
+{
+ "paper_id": "598",
+ "split": "dev",
+ "decision": "not_accepted",
+ "text_sha256": "d7cde95896fcc0b69002a8ea58f291bcd12cff852062089f5da3d3a97c13a77d",
+ "text_characters": 18000,
+ "human_scores": [
+  4.0,
+  6.0,
+  7.0
+ ],
+ "human_mean": 5.666666666666667,
+ "rubric": {
+  "novelty": 4,
+  "rigor": 3,
+  "clarity": 3
+ },
+ "reason": "The paper introduces a simpler, alignment-free criterion (ASG) with competitive results on a standard dataset, though its rigor is limited by missing experimental details and incomplete result reporting, and clarity suffers from an incomplete structure and unexplained figures.",
+ "usage": {
+  "completion_tokens": 86,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "prompt_tokens": 8024,
+  "prompt_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 8110
+ },
+ "error": null,
+ "elapsed_sec": 7.532521975997952,
+ "cached": true
+}

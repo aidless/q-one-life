@@ -1,0 +1,13 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C05",
+  "claim_text": "The current source copy passes the mechanical LaTeX package audit.",
+  "rounds": 1,
+  "models": [
+    "group/auto-gpt-6"
+  ],
+  "objections": [],
+  "inconclusive_calls": 3,
+  "verdict": "inconclusive",
+  "generated_at": "2026-11-06T03:26:48Z"
+}

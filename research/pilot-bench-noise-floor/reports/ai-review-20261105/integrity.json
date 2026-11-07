@@ -1,0 +1,134 @@
+{
+  "schema": "q-one-research-integrity-v1",
+  "generated_at": "2026-11-06T12:11:15Z",
+  "status": "incomplete",
+  "release": "withhold",
+  "violations": 0,
+  "not_assessed": 11,
+  "findings": [
+    {
+      "type": "RF",
+      "name": "Result fabrication",
+      "state": "not_assessed",
+      "detail": "no {{num:key}} placeholders found",
+      "evidence": null
+    },
+    {
+      "type": "CF",
+      "name": "Citation fabrication",
+      "state": "pass",
+      "detail": "40 citation keys resolve",
+      "evidence": null
+    },
+    {
+      "type": "SR",
+      "name": "Selective reporting",
+      "state": "pass",
+      "detail": "3 blocked claims disclosed in a limitations section",
+      "evidence": null
+    },
+    {
+      "type": "CV",
+      "name": "Constraint violation",
+      "state": "not_assessed",
+      "detail": "job.json not supplied",
+      "evidence": null
+    },
+    {
+      "type": "ODDC",
+      "name": "Outcome-dependent design change",
+      "state": "pass",
+      "detail": "amendment recorded with a new version and frozen parent",
+      "evidence": {
+        "from": "1.0.0",
+        "to": "1.1.0"
+      }
+    },
+    {
+      "type": "ET",
+      "name": "Evaluator tampering",
+      "state": "not_assessed",
+      "detail": "evaluator or pinned hash not supplied",
+      "evidence": null
+    },
+    {
+      "type": "CI",
+      "name": "Contribution inflation",
+      "state": "not_assessed",
+      "detail": "no deterministic checker in this module",
+      "evidence": null
+    },
+    {
+      "type": "CM",
+      "name": "Citation misrepresentation",
+      "state": "not_assessed",
+      "detail": "no deterministic checker in this module",
+      "evidence": null
+    },
+    {
+      "type": "EDG",
+      "name": "Experiment design gaming",
+      "state": "not_assessed",
+      "detail": "no deterministic checker in this module",
+      "evidence": null
+    },
+    {
+      "type": "EG",
+      "name": "Evaluator gaming",
+      "state": "not_assessed",
+      "detail": "no deterministic checker in this module",
+      "evidence": null
+    },
+    {
+      "type": "NG",
+      "name": "Novelty gaming",
+      "state": "not_assessed",
+      "detail": "no deterministic checker in this module",
+      "evidence": null
+    },
+    {
+      "type": "NVE",
+      "name": "Novelty verification evasion",
+      "state": "not_assessed",
+      "detail": "no deterministic checker in this module",
+      "evidence": null
+    },
+    {
+      "type": "SRM",
+      "name": "Scientific reporting manipulation",
+      "state": "not_assessed",
+      "detail": "no deterministic checker in this module",
+      "evidence": null
+    },
+    {
+      "type": "TCE",
+      "name": "Test-case exploitation",
+      "state": "not_assessed",
+      "detail": "no deterministic checker in this module",
+      "evidence": null
+    }
+  ],
+  "inputs": {
+    "manuscript": {
+      "path": "<HOME>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source/main.tex",
+      "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca"
+    },
+    "ledger": {
+      "path": "<HOME>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/CLAIM_LEDGER.md",
+      "sha256": "0f23b95cf0398205b196fa870ba833e73e21e8e9ade8bc66fe6da6453e9a38ae"
+    },
+    "bibliography": {
+      "path": "<HOME>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source/bibliography.tex",
+      "sha256": "3f5f5ddde88b7ec071246ecee90ff5b0ddf56f88c05b7faaee0d0395d950c119"
+    },
+    "preregistration": {
+      "path": "<HOME>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/preregistration.json",
+      "sha256": "ae6f12e4dfec14770f7f2121af133dec9e78eea19e5f27f621de4ad60e520323"
+    },
+    "frozen_preregistration": {
+      "path": "<HOME>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/amendments/preregistration-v1.0.0-frozen.json",
+      "sha256": "2ff9ddf4f97f8ec61db4b2f25243c75d835bbc8d8d6402b8c164d5b43b75bb94"
+    }
+  },
+  "note": "Only 6 RIVT types have deterministic checkers here. not_assessed means unverified, not clean; release stays withheld."
+}

@@ -1,0 +1,31 @@
+{
+ "schema": "qone-peerread-heldout-v1",
+ "model": "kiro/deepseek-3.2",
+ "weights": {
+  "novelty": 0.3333333333333333,
+  "rigor": 0.3333333333333333,
+  "clarity": 0.3333333333333333
+ },
+ "frozen": "equal weights chosen before looking at test split; no grid search",
+ "train_dev": {
+  "n": 22,
+  "rho": 0.24908527475235634,
+  "p": 0.2636311000489155,
+  "ci": [
+   -0.24267327189718135,
+   0.673557814628073
+  ]
+ },
+ "test": {
+  "n": 6,
+  "rho": 0.7882407813680822,
+  "p": 0.06251510010082874,
+  "ci": [
+   -0.10540925533894599,
+   1.0
+  ]
+ },
+ "train_dev_n": 22,
+ "test_n": 6,
+ "claim_limit": "Paper-level split; 6 test papers is too small for a calibration verdict."
+}

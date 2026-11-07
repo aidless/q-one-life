@@ -11,6 +11,7 @@ from typing import Any
 
 from .cloud_executor import CloudExecutionError, CloudExecutor, sha256_file
 from .measurement import plan_experiment
+from .rebuttal_loop import CLASS_EXECUTABLE
 
 STAGES = (
     "question",
@@ -67,6 +68,25 @@ def read_stage(root: Path, stage: str) -> dict[str, Any] | None:
     if not path.is_file():
         return None
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _write_auxiliary_receipt(
+    root: Path, name: str, payload: dict[str, Any]
+) -> dict[str, Any]:
+    """写入不占用七阶段编号的辅助回执。"""
+    body = {
+        "schema": "q-one-production-auxiliary-v1",
+        "auxiliary": name,
+        "generated_at": _now(),
+        **payload,
+    }
+    unsigned = json.dumps(body, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    body["receipt_sha256"] = hashlib.sha256(unsigned.encode("utf-8")).hexdigest()
+    directory = root / "auxiliary"
+    directory.mkdir(parents=True, exist_ok=True)
+    path = directory / f"{name}.json"
+    path.write_text(json.dumps(body, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return body
 
 
 def require_previous(root: Path, stage: str) -> None:
@@ -268,6 +288,77 @@ class ResearchProduction:
             "claim_count": len(claims),
             "claim_states": _count_states(claims),
             "inputs": [{"path": str(ledger), "sha256": sha256_file(ledger)}],
+            "outputs": [],
+        })
+
+    # ---- 辅助层：反驳计划 --------------------------------------------------
+    def attach_rebuttal_plan(self, slug: str, plan: dict[str, Any]) -> dict[str, Any]:
+        """把分类后的反驳计划写进管线目录，不推进七阶段状态。
+
+        只接受含至少一条可执行异议的计划；不伪造实验执行结果。
+        """
+        root = self._root(slug)
+        ledger_receipt = read_stage(root, "claim_ledger")
+        if not ledger_receipt or ledger_receipt.get("status") != PASSED:
+            raise ProductionError(
+                "rebuttal plan requires claim_ledger to be passed; found "
+                f"{ledger_receipt.get('status') if ledger_receipt else 'missing'}"
+            )
+        executable = [
+            item for item in plan.get("objections", [])
+            if item.get("class") == CLASS_EXECUTABLE
+        ]
+        if not executable:
+            raise ProductionError("rebuttal plan has no executable objections")
+        directory = root / "rebuttal"
+        directory.mkdir(parents=True, exist_ok=True)
+        plan_path = directory / "plan.json"
+        plan_path.write_text(
+            json.dumps(plan, ensure_ascii=False, sort_keys=True, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        lines = [
+            "# REBUTTAL_PLAN.md",
+            "",
+            f"Generated: {_now()}",
+            f"Executable: {plan.get('executable_count', len(executable))}",
+            f"Out-of-loop: {plan.get('out_of_loop_count', 0)}",
+            f"Unclassified: {plan.get('unclassified_count', 0)}",
+            "",
+            "| Claim | Class | Objection | Rebuttal check |",
+            "|---|---|---|---|",
+        ]
+        for item in plan.get("objections", []):
+            experiment = item.get("experiment") or {}
+            lines.append(
+                f"| {item.get('claim_id')} | {item.get('class')} | "
+                f"{str(item.get('objection', ''))[:120]} | "
+                f"{str(experiment.get('experiment', ''))[:160]} |"
+            )
+        lines.append("")
+        markdown_path = directory / "REBUTTAL_PLAN.md"
+        markdown_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        registrations = [
+            {
+                "claim_id": item["claim_id"],
+                "proposed_experiment": (item.get("experiment") or {}).get("experiment", ""),
+                "resource_requirement": "cloud",
+                "approval_required": True,
+            }
+            for item in executable
+        ]
+        return _write_auxiliary_receipt(root, "rebuttal", {
+            "status": PASSED,
+            "plan_path": str(plan_path),
+            "plan_sha256": sha256_file(plan_path),
+            "markdown_path": str(markdown_path),
+            "markdown_sha256": sha256_file(markdown_path),
+            "executable_count": len(executable),
+            "registrations": registrations,
+            "inputs": [
+                {"path": str(plan_path), "sha256": sha256_file(plan_path)},
+                {"path": str(markdown_path), "sha256": sha256_file(markdown_path)},
+            ],
             "outputs": [],
         })
 

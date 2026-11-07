@@ -1,0 +1,13 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C03",
+  "claim_text": "The producer-baseline construction measures leaderboard readability rather than only agreement with the gold producers.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [],
+  "inconclusive_calls": 0,
+  "verdict": "clean",
+  "generated_at": "2026-11-06T04:02:48Z"
+}

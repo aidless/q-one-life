@@ -1,0 +1,24 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C12",
+  "claim_text": "On the four fixed m25 carriers, the recorded leaky LOO-on-k-fold-domain margins reproduce, but on the joint main-gold, LOO-gold, fold-gold and actor support all four LOO margins are exactly zero; the k-fold margins remain 0.0 / 2.872063 / 0.616016 / 1.851852, every checked LOO label equals the full gold label, and two runs are byte-identical. The joint supports are 477 / 383 / 974 / 54, so the 54-item preference result is descriptive only.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "Looking at claim C12, the statement says that on **four fixed m25 carriers**, the recorded leaky LOO-on-k-fold-domain margins reproduce, but on the joint main-gold, LOO-gold, fold-gold and actor support, all four LOO margins are exactly zero.\n\nThe key boundary conditions are inherent in the evidence",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "boundary"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T14:43:50Z"
+}

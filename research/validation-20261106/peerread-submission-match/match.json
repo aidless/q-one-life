@@ -1,0 +1,489 @@
+{
+ "schema": "qone-peerread-submission-match-v1",
+ "pilot_papers": 24,
+ "raw_parsed_pdfs_available": 40,
+ "matched": 24,
+ "unmatched": [],
+ "body_identical": 23,
+ "title_match": 24,
+ "raw_section_distribution": {
+  "30": 1,
+  "11": 4,
+  "17": 3,
+  "21": 2,
+  "10": 2,
+  "14": 2,
+  "16": 4,
+  "9": 1,
+  "28": 1,
+  "8": 1,
+  "6": 1,
+  "12": 1,
+  "13": 1
+ },
+ "processed_section_distribution": {
+  "30": 1,
+  "11": 4,
+  "17": 3,
+  "21": 2,
+  "10": 2,
+  "14": 2,
+  "16": 4,
+  "9": 1,
+  "28": 1,
+  "8": 1,
+  "6": 1,
+  "12": 1,
+  "13": 1
+ },
+ "detail": [
+  {
+   "paper_id": "304",
+   "split": "train",
+   "raw_title": "MAKING NEURAL PROGRAMMING ARCHITECTURES GENERALIZE VIA RECURSION",
+   "processed_title": "MAKING NEURAL PROGRAMMING ARCHITECTURES GENERALIZE VIA RECURSION",
+   "title_match": true,
+   "raw_authors": [
+    "Jonathon Cai",
+    "Richard Shin",
+    "Dawn Song"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "acb01be79c85695c42b0bc61f7bb0aa1cda250bab93d2d162b7e3302389f4704",
+   "processed_body_sha256": "acb01be79c85695c42b0bc61f7bb0aa1cda250bab93d2d162b7e3302389f4704",
+   "body_identical": true,
+   "raw_section_count": 30,
+   "processed_section_count": 30,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/304.pdf.json"
+  },
+  {
+   "paper_id": "305",
+   "split": "train",
+   "raw_title": "END-TO-END OPTIMIZED IMAGE COMPRESSION",
+   "processed_title": "END-TO-END OPTIMIZED IMAGE COMPRESSION",
+   "title_match": true,
+   "raw_authors": [
+    "Johannes Ball\u00e9",
+    "Eero P. Simoncelli"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "61c1a3531748f267a7f673ed21c549c4a9cd5b2b984df6ccdcc5be68760d5d88",
+   "processed_body_sha256": "61c1a3531748f267a7f673ed21c549c4a9cd5b2b984df6ccdcc5be68760d5d88",
+   "body_identical": true,
+   "raw_section_count": 11,
+   "processed_section_count": 11,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/305.pdf.json"
+  },
+  {
+   "paper_id": "306",
+   "split": "train",
+   "raw_title": "",
+   "processed_title": null,
+   "title_match": true,
+   "raw_authors": [
+    "FEW-SHOT LEARNING",
+    "Sachin Ravi",
+    "Hugo Larochelle"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "db4d125ffaec2dcab79f49d2b84ab2d2682120454ce448915aa9f405c0fc7496",
+   "processed_body_sha256": "4519955a566d5f0c432a2e5ff381156da85854d8ad701fa672bc2fc27b550cd4",
+   "body_identical": false,
+   "raw_section_count": 17,
+   "processed_section_count": 17,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/306.pdf.json"
+  },
+  {
+   "paper_id": "307",
+   "split": "train",
+   "raw_title": "",
+   "processed_title": null,
+   "title_match": true,
+   "raw_authors": [],
+   "processed_authors": [],
+   "raw_body_sha256": "d66fab98bb7fd361a41512a37e3fa2d725fed12bf010d8a5b8f1fa2dcc0c1d14",
+   "processed_body_sha256": "d66fab98bb7fd361a41512a37e3fa2d725fed12bf010d8a5b8f1fa2dcc0c1d14",
+   "body_identical": true,
+   "raw_section_count": 21,
+   "processed_section_count": 21,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/307.pdf.json"
+  },
+  {
+   "paper_id": "520",
+   "split": "train",
+   "raw_title": "",
+   "processed_title": null,
+   "title_match": true,
+   "raw_authors": [
+    "CONTROLLABLE STRUCTURE",
+    "S. Reed",
+    "A. van den Oord",
+    "N. Kalchbrenner",
+    "V. Bapst",
+    "M. Botvinick",
+    "N. de Freitas"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "37c488e9ba0f2b9ab89d4292044d8ae17a04805e35d02cd619e88a9f62031472",
+   "processed_body_sha256": "37c488e9ba0f2b9ab89d4292044d8ae17a04805e35d02cd619e88a9f62031472",
+   "body_identical": true,
+   "raw_section_count": 11,
+   "processed_section_count": 11,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/520.pdf.json"
+  },
+  {
+   "paper_id": "550",
+   "split": "train",
+   "raw_title": "",
+   "processed_title": null,
+   "title_match": true,
+   "raw_authors": [
+    "DENOISING AUTO-ENCODERS",
+    "Luis Gonzalo Sanchez Giraldo"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "005c4f46e8c05df6b3675c000ab1dd4f2d7c6a14f4ea3674ad36f5c6a959c8d6",
+   "processed_body_sha256": "005c4f46e8c05df6b3675c000ab1dd4f2d7c6a14f4ea3674ad36f5c6a959c8d6",
+   "body_identical": true,
+   "raw_section_count": 10,
+   "processed_section_count": 10,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/550.pdf.json"
+  },
+  {
+   "paper_id": "600",
+   "split": "train",
+   "raw_title": "",
+   "processed_title": null,
+   "title_match": true,
+   "raw_authors": [
+    "ANSWER SETS",
+    "Mingbo Ma",
+    "Liang Huang"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "4cbcdbfc19c13a26c5d5cfc7b5a098712aa50f962c4693db8fb8c75e0e3095dd",
+   "processed_body_sha256": "4cbcdbfc19c13a26c5d5cfc7b5a098712aa50f962c4693db8fb8c75e0e3095dd",
+   "body_identical": true,
+   "raw_section_count": 10,
+   "processed_section_count": 10,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/600.pdf.json"
+  },
+  {
+   "paper_id": "680",
+   "split": "train",
+   "raw_title": "DEEP CHARACTER-LEVEL NEURAL MACHINE TRANSLATION BY LEARNING MORPHOLOGY",
+   "processed_title": "DEEP CHARACTER-LEVEL NEURAL MACHINE TRANSLATION BY LEARNING MORPHOLOGY",
+   "title_match": true,
+   "raw_authors": [
+    "Shenjian Zhao",
+    "Zhihua Zhang"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "e8224c1edc5ebe5be7bbd02c269b9f2bec383ea0281cabd96938aaa770f933f9",
+   "processed_body_sha256": "e8224c1edc5ebe5be7bbd02c269b9f2bec383ea0281cabd96938aaa770f933f9",
+   "body_identical": true,
+   "raw_section_count": 17,
+   "processed_section_count": 17,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/680.pdf.json"
+  },
+  {
+   "paper_id": "316",
+   "split": "dev",
+   "raw_title": "SEMI-SUPERVISED KNOWLEDGE TRANSFER FOR DEEP LEARNING FROM PRIVATE TRAINING DATA",
+   "processed_title": "SEMI-SUPERVISED KNOWLEDGE TRANSFER FOR DEEP LEARNING FROM PRIVATE TRAINING DATA",
+   "title_match": true,
+   "raw_authors": [
+    "Nicolas Papernot"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "e57698f484b2bd7a15cce69d614669c06cba68327e78019ed986d6d9e6f0b1f3",
+   "processed_body_sha256": "e57698f484b2bd7a15cce69d614669c06cba68327e78019ed986d6d9e6f0b1f3",
+   "body_identical": true,
+   "raw_section_count": 17,
+   "processed_section_count": 17,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/316.pdf.json"
+  },
+  {
+   "paper_id": "325",
+   "split": "dev",
+   "raw_title": "",
+   "processed_title": null,
+   "title_match": true,
+   "raw_authors": [
+    "INFUSION TRAINING",
+    "Florian Bordes",
+    "Sina Honari",
+    "Pascal Vincent"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "d02bbe58214a370fa52f98303788209a64899b1a2a49a1be0266e71e623aab86",
+   "processed_body_sha256": "d02bbe58214a370fa52f98303788209a64899b1a2a49a1be0266e71e623aab86",
+   "body_identical": true,
+   "raw_section_count": 21,
+   "processed_section_count": 21,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/325.pdf.json"
+  },
+  {
+   "paper_id": "328",
+   "split": "dev",
+   "raw_title": "MULTILAYER RECURRENT NETWORK MODELS OF PRI- MATE RETINAL GANGLION CELL RESPONSES",
+   "processed_title": "MULTILAYER RECURRENT NETWORK MODELS OF PRI- MATE RETINAL GANGLION CELL RESPONSES",
+   "title_match": true,
+   "raw_authors": [
+    "Eleanor Batty",
+    "Josh Merel",
+    "Alexander Heitman",
+    "Liam Paninski"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "66254eae9046ed1095abc3cf36b829d7a3f902e1d08d5f6d4ed9176dde0ea793",
+   "processed_body_sha256": "66254eae9046ed1095abc3cf36b829d7a3f902e1d08d5f6d4ed9176dde0ea793",
+   "body_identical": true,
+   "raw_section_count": 14,
+   "processed_section_count": 14,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/328.pdf.json"
+  },
+  {
+   "paper_id": "340",
+   "split": "dev",
+   "raw_title": "",
+   "processed_title": null,
+   "title_match": true,
+   "raw_authors": [],
+   "processed_authors": [],
+   "raw_body_sha256": "d07e2da12f4b20e2694f18cf376d05625d93a444cca7f41ef0c5b0247ac88973",
+   "processed_body_sha256": "d07e2da12f4b20e2694f18cf376d05625d93a444cca7f41ef0c5b0247ac88973",
+   "body_identical": true,
+   "raw_section_count": 16,
+   "processed_section_count": 16,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/340.pdf.json"
+  },
+  {
+   "paper_id": "537",
+   "split": "dev",
+   "raw_title": "RENDERGAN: GENERATING REALISTIC LABELED DATA",
+   "processed_title": "RENDERGAN: GENERATING REALISTIC LABELED DATA",
+   "title_match": true,
+   "raw_authors": [
+    "Leon Sixt",
+    "Benjamin Wild",
+    "Tim Landgraf"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "dd3861197660fc54c5892124fbc3cf63eeec3d9b05ef7a0d8298c8b9da87d082",
+   "processed_body_sha256": "dd3861197660fc54c5892124fbc3cf63eeec3d9b05ef7a0d8298c8b9da87d082",
+   "body_identical": true,
+   "raw_section_count": 11,
+   "processed_section_count": 11,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/537.pdf.json"
+  },
+  {
+   "paper_id": "598",
+   "split": "dev",
+   "raw_title": "SPEECH RECOGNITION SYSTEM",
+   "processed_title": "SPEECH RECOGNITION SYSTEM",
+   "title_match": true,
+   "raw_authors": [
+    "Ronan Collobert",
+    "Christian Puhrsch"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "2b89a4f25423649868b1fbda2bf1e4061df6b5bd92fd78c31d88e38d070fb8e5",
+   "processed_body_sha256": "2b89a4f25423649868b1fbda2bf1e4061df6b5bd92fd78c31d88e38d070fb8e5",
+   "body_identical": true,
+   "raw_section_count": 9,
+   "processed_section_count": 9,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/598.pdf.json"
+  },
+  {
+   "paper_id": "663",
+   "split": "dev",
+   "raw_title": "",
+   "processed_title": null,
+   "title_match": true,
+   "raw_authors": [
+    "IN E-COMMERCE",
+    "Tom Zahavy",
+    "Shie Mannor"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "5fd79d597e42505285e2313da3f1e72ff3794e3767031f30ded2cb884460572c",
+   "processed_body_sha256": "5fd79d597e42505285e2313da3f1e72ff3794e3767031f30ded2cb884460572c",
+   "body_identical": true,
+   "raw_section_count": 16,
+   "processed_section_count": 16,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/663.pdf.json"
+  },
+  {
+   "paper_id": "689",
+   "split": "dev",
+   "raw_title": "TENSORIAL MIXTURE MODELS",
+   "processed_title": "TENSORIAL MIXTURE MODELS",
+   "title_match": true,
+   "raw_authors": [
+    "Or Sharir",
+    "Ronen Tamari",
+    "Nadav Cohen"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "09a4ecfd1de97f449138b6d597dc869fcdcb437ed8ca6231d67f4b29e305b6a6",
+   "processed_body_sha256": "09a4ecfd1de97f449138b6d597dc869fcdcb437ed8ca6231d67f4b29e305b6a6",
+   "body_identical": true,
+   "raw_section_count": 28,
+   "processed_section_count": 28,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/689.pdf.json"
+  },
+  {
+   "paper_id": "330",
+   "split": "test",
+   "raw_title": "MENTS THROUGH CORRUPTION",
+   "processed_title": "MENTS THROUGH CORRUPTION",
+   "title_match": true,
+   "raw_authors": [
+    "Minmin Chen"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "0ddfee752073480975d07a525102f62a43d0a34e2d08cba8502696d70bc38bf9",
+   "processed_body_sha256": "0ddfee752073480975d07a525102f62a43d0a34e2d08cba8502696d70bc38bf9",
+   "body_identical": true,
+   "raw_section_count": 11,
+   "processed_section_count": 11,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/330.pdf.json"
+  },
+  {
+   "paper_id": "333",
+   "split": "test",
+   "raw_title": "WHAT DOES IT TAKE TO GENERATE NATURAL TEXTURES?",
+   "processed_title": "WHAT DOES IT TAKE TO GENERATE NATURAL TEXTURES?",
+   "title_match": true,
+   "raw_authors": [
+    "Ivan Ustyuzhaninov",
+    "Wieland Brendel",
+    "Leon Gatys",
+    "Matthias Bethge"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "2da2ccb5faa31c2d36590a96c07897e69a26bb4b28367ca0f74df4a6ef6878ca",
+   "processed_body_sha256": "2da2ccb5faa31c2d36590a96c07897e69a26bb4b28367ca0f74df4a6ef6878ca",
+   "body_identical": true,
+   "raw_section_count": 8,
+   "processed_section_count": 8,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/333.pdf.json"
+  },
+  {
+   "paper_id": "358",
+   "split": "test",
+   "raw_title": "",
+   "processed_title": null,
+   "title_match": true,
+   "raw_authors": [
+    "NEURAL STATISTICIAN",
+    "Harrison Edwards",
+    "Amos Storkey"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "b5936b6d76ba3fc39cf06d0b3f0fb86a455e2b55f5c8e228f59c7fb881e5110c",
+   "processed_body_sha256": "b5936b6d76ba3fc39cf06d0b3f0fb86a455e2b55f5c8e228f59c7fb881e5110c",
+   "body_identical": true,
+   "raw_section_count": 16,
+   "processed_section_count": 16,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/358.pdf.json"
+  },
+  {
+   "paper_id": "363",
+   "split": "test",
+   "raw_title": "A COMPARE-AGGREGATE MODEL FOR MATCHING TEXT SEQUENCES",
+   "processed_title": "A COMPARE-AGGREGATE MODEL FOR MATCHING TEXT SEQUENCES",
+   "title_match": true,
+   "raw_authors": [
+    "Shuohang Wang",
+    "Jing Jiang"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "89dd9c9a763c46b5ee236f63ae9dad48cd05fb225ab4015e92d633dc850b3383",
+   "processed_body_sha256": "89dd9c9a763c46b5ee236f63ae9dad48cd05fb225ab4015e92d633dc850b3383",
+   "body_identical": true,
+   "raw_section_count": 14,
+   "processed_section_count": 14,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/363.pdf.json"
+  },
+  {
+   "paper_id": "518",
+   "split": "test",
+   "raw_title": "",
+   "processed_title": null,
+   "title_match": true,
+   "raw_authors": [
+    "GENERATIVE ADVERSAR",
+    "IAL LEARNING",
+    "Dilin Wang",
+    "Qiang Liu"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "f607c5351d67263465e29234ec9b87f821d27d1792f8be30ea4a35d58d326a2b",
+   "processed_body_sha256": "f607c5351d67263465e29234ec9b87f821d27d1792f8be30ea4a35d58d326a2b",
+   "body_identical": true,
+   "raw_section_count": 6,
+   "processed_section_count": 6,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/518.pdf.json"
+  },
+  {
+   "paper_id": "566",
+   "split": "test",
+   "raw_title": "",
+   "processed_title": null,
+   "title_match": true,
+   "raw_authors": [
+    "Melanie Ducoffe",
+    "Frederic Precioso"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "a1e4e85a849091da9852140738162d09ac8c93dd9286551c9c127d9a92c00820",
+   "processed_body_sha256": "a1e4e85a849091da9852140738162d09ac8c93dd9286551c9c127d9a92c00820",
+   "body_identical": true,
+   "raw_section_count": 16,
+   "processed_section_count": 16,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/566.pdf.json"
+  },
+  {
+   "paper_id": "611",
+   "split": "test",
+   "raw_title": "",
+   "processed_title": null,
+   "title_match": true,
+   "raw_authors": [
+    "DUAL NETWORKS",
+    "Yilei Xiong",
+    "Dahua Lin",
+    "Haoying Niu",
+    "Jiefeng Cheng",
+    "Zhenguo Li"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "12d435dabf2ed9c4498fe26e5f45b255e059f79e419be3eddb9d1eb928c733d2",
+   "processed_body_sha256": "12d435dabf2ed9c4498fe26e5f45b255e059f79e419be3eddb9d1eb928c733d2",
+   "body_identical": true,
+   "raw_section_count": 12,
+   "processed_section_count": 12,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/611.pdf.json"
+  },
+  {
+   "paper_id": "648",
+   "split": "test",
+   "raw_title": "CONTEXT-CONDITIONAL GENERATIVE ADVERSARIAL NETWORKS",
+   "processed_title": "CONTEXT-CONDITIONAL GENERATIVE ADVERSARIAL NETWORKS",
+   "title_match": true,
+   "raw_authors": [
+    "Emily Denton"
+   ],
+   "processed_authors": [],
+   "raw_body_sha256": "4c537b623f5f10a55219cf613e74afaec031a0bab09256d187b33606d19590cc",
+   "processed_body_sha256": "4c537b623f5f10a55219cf613e74afaec031a0bab09256d187b33606d19590cc",
+   "body_identical": true,
+   "raw_section_count": 13,
+   "processed_section_count": 13,
+   "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/648.pdf.json"
+  }
+ ],
+ "claim_limit": "Body identity compares the pilot's processed sections against the repository's parsed_pdfs metadata. It is not proof that the PDF is the reviewed submission version."
+}

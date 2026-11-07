@@ -1,0 +1,34 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C09",
+  "claim_text": "In a frozen synthetic construction, three perfect producers set the leave-one-out floor at 1.0; systems A and B score 0.9 and 0.5; A remains above B under all 700 single-item deletions with 280 A-only and 0 B-only paired observations; the declared gate still refuses. The positive and negative controls also match, and two accepted runs are byte-identical.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "Based on the claim and evidence structure, this appears to describe a scenario where:\n\n1. **Three perfect producers** → The leave‑one‑out floor is 1.0, meaning every producer is perfectly accurate across all items.\n2. **Systems A and B have fixed accuracies** 0.9 and 0.5.\n3. **Paired discordance** s",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "boundary"
+      ]
+    },
+    {
+      "text": "Let me restate the claim and evidence in my own words to check understanding.\n\n**Claim C09:**  \nIn a specific frozen synthetic experiment, there are three perfect producers (all leave‑one‑out floors = 1.0).  \nSystem A scores 0.9 overall, System B scores 0.5 overall.  \nA remains above B under all 700",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "alternative"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T14:42:06Z"
+}

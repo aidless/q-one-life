@@ -1,0 +1,195 @@
+{
+  "attack_output": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full",
+  "attack_output_sha256": "c978b77bd4f387b9a1bc61968ccc9f2ed4da0a07aed618e96813a746b85e271b",
+  "counts": {
+    "executable": 7,
+    "out_of_loop": 0,
+    "unclassified": 4
+  },
+  "executable_count": 7,
+  "generated_at": "2026-11-06T14:46:36Z",
+  "note": "Per AppliedScientist (arXiv:2609.14738), only execution-class objections enter the rebuttal loop. Idea/novelty objections are recorded as out_of_loop and are not claimed as resolvable.",
+  "objections": [
+    {
+      "claim_id": "C02",
+      "claim_text": "The current `source/main.tex` is byte-identical to the source recorded in the native manifest.",
+      "class": "executable",
+      "count": 1,
+      "experiment": {
+        "acceptance_criteria": "Objection on C02 is resolved only if the check reproduces the reported result and the objection's concrete failure mode does not appear.",
+        "experiment": "Design and run a targeted check that refutes objection on C02: From the claim and evidence description alone:\n\nThe claim is that `source/main.tex` is byte-identical to the source recorded in the native manifest, with evidence pointing to a SHA256 hash stored in the manifest.\n\n**Boundary conditions / edge cases where this claim breaks or becomes vacuous:**\n\n1. *",
+        "rejection_criteria": "Objection on C02 stands if the check reproduces the failure mode described in the objection."
+      },
+      "kinds": [
+        "boundary"
+      ],
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "objection": "From the claim and evidence description alone:\n\nThe claim is that `source/main.tex` is byte-identical to the source recorded in the native manifest, with evidence pointing to a SHA256 hash stored in the manifest.\n\n**Boundary conditions / edge cases where this claim breaks or becomes vacuous:**\n\n1. *"
+    },
+    {
+      "claim_id": "C03",
+      "claim_text": "The producer-baseline construction measures leaderboard readability rather than only agreement with the gold producers.",
+      "class": "executable",
+      "count": 1,
+      "experiment": {
+        "acceptance_criteria": "Objection on C03 is resolved only if the check reproduces the reported result and the objection's concrete failure mode does not appear.",
+        "experiment": "Design and run a targeted check that refutes objection on C03: Based on the evidence text alone, the claim \"The producer-baseline construction measures leaderboard readability rather than only agreement with the gold producers\" breaks under the following boundary conditions:\n\n1.  **When the baseline producer is the gold producer.** If the baseline agent is *its",
+        "rejection_criteria": "Objection on C03 stands if the check reproduces the failure mode described in the objection."
+      },
+      "kinds": [
+        "boundary"
+      ],
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "objection": "Based on the evidence text alone, the claim \"The producer-baseline construction measures leaderboard readability rather than only agreement with the gold producers\" breaks under the following boundary conditions:\n\n1.  **When the baseline producer is the gold producer.** If the baseline agent is *its"
+    },
+    {
+      "claim_id": "C04",
+      "claim_text": "A real public leaderboard with a gold pool disjoint from the ranked systems has produced a READABLE verdict.",
+      "class": "unclassified",
+      "count": 1,
+      "kinds": [
+        "boundary"
+      ],
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "objection": "Based solely on the claim text and the evidence file names provided, the claim breaks or becomes vacuous under the following boundary conditions:\n\n1. **If the “real public leaderboard” is not truly independent** – If the gold pool selection, creation, or adjudication is influenced by or overlapping "
+    },
+    {
+      "claim_id": "C05",
+      "claim_text": "The current source copy passes the mechanical LaTeX package audit.",
+      "class": "unclassified",
+      "count": 1,
+      "kinds": [
+        "alternative"
+      ],
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "objection": "The claim states that \"the current source copy passes the mechanical LaTeX package audit.\"  \nThe evidence given is: `reports/package-audit.json -> mechanical_pass / blockers`\n\nFrom this evidence alone, \"mechanical_pass / blockers\" could mean either:\n1. The mechanical audit passed (no blockers), or  "
+    },
+    {
+      "claim_id": "C06",
+      "claim_text": "Three native numeric gates pass twice against the current source bytes: 250/250 manuscript numbers, 353 reverse-coverage reads with 0 unbound, and an anchor census with A1=0.",
+      "class": "executable",
+      "count": 1,
+      "experiment": {
+        "acceptance_criteria": "Objection on C06 is resolved only if the check reproduces the reported result and the objection's concrete failure mode does not appear.",
+        "experiment": "Design and run a targeted check that refutes objection on C06: From the claim and evidence description:\n\n- **Three native numeric gates pass twice against the current source bytes**  \n  This implies a sequence of 250 manuscript numbers (likely source code tokens), reverse‑coverage reads with no unbound references, and an anchor census where A1=0.\n\n- **Anchor ce",
+        "rejection_criteria": "Objection on C06 stands if the check reproduces the failure mode described in the objection."
+      },
+      "kinds": [
+        "boundary"
+      ],
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "objection": "From the claim and evidence description:\n\n- **Three native numeric gates pass twice against the current source bytes**  \n  This implies a sequence of 250 manuscript numbers (likely source code tokens), reverse‑coverage reads with no unbound references, and an anchor census where A1=0.\n\n- **Anchor ce"
+    },
+    {
+      "claim_id": "C07",
+      "claim_text": "The current source tree compiles twice in isolated directories to a byte-identical 45-page PDF.",
+      "class": "executable",
+      "count": 1,
+      "experiment": {
+        "acceptance_criteria": "Objection on C07 is resolved only if the check reproduces the reported result and the objection's concrete failure mode does not appear.",
+        "experiment": "Design and run a targeted check that refutes objection on C07: From the claim and evidence description:\n\n**Claim C07:** The source tree compiles twice in isolated directories to a byte-identical 45-page PDF.  \n**Evidence:** `reports/cleanroom/receipt.json` contains data about exit codes, PDF pages, PDF deterministic flag, and source main SHA256.\n\nAn alternative",
+        "rejection_criteria": "Objection on C07 stands if the check reproduces the failure mode described in the objection."
+      },
+      "kinds": [
+        "alternative"
+      ],
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "objection": "From the claim and evidence description:\n\n**Claim C07:** The source tree compiles twice in isolated directories to a byte-identical 45-page PDF.  \n**Evidence:** `reports/cleanroom/receipt.json` contains data about exit codes, PDF pages, PDF deterministic flag, and source main SHA256.\n\nAn alternative"
+    },
+    {
+      "claim_id": "C07",
+      "claim_text": "The current source tree compiles twice in isolated directories to a byte-identical 45-page PDF.",
+      "class": "executable",
+      "count": 1,
+      "experiment": {
+        "acceptance_criteria": "Objection on C07 is resolved only if the check reproduces the reported result and the objection's concrete failure mode does not appear.",
+        "experiment": "Design and run a targeted check that refutes objection on C07: From the claim and evidence description:\n\nThe claim states: \"The current source tree compiles twice in isolated directories to a byte-identical 45-page PDF.\"\n\nThe evidence points to a `receipt.json` that includes:\n- `exit_codes`\n- `pdf.pages`\n- `pdf.deterministic`\n- `source.main_sha256`\n\nBoundary co",
+        "rejection_criteria": "Objection on C07 stands if the check reproduces the failure mode described in the objection."
+      },
+      "kinds": [
+        "boundary"
+      ],
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "objection": "From the claim and evidence description:\n\nThe claim states: \"The current source tree compiles twice in isolated directories to a byte-identical 45-page PDF.\"\n\nThe evidence points to a `receipt.json` that includes:\n- `exit_codes`\n- `pdf.pages`\n- `pdf.deterministic`\n- `source.main_sha256`\n\nBoundary co"
+    },
+    {
+      "claim_id": "C08",
+      "claim_text": "The eleven-file source builds a deterministic candidate archive, and extracting that archive compiles to a 45-page PDF.",
+      "class": "executable",
+      "count": 1,
+      "experiment": {
+        "acceptance_criteria": "Objection on C08 is resolved only if the check reproduces the reported result and the objection's concrete failure mode does not appear.",
+        "experiment": "Design and run a targeted check that refutes objection on C08: Looking at the claim and evidence description:\n\n**Claim C08**: The eleven-file source builds a deterministic candidate archive, and extracting that archive compiles to a 45-page PDF.\n\n**Evidence description**: `reports/package/package-receipt.json -> source.file_count / archive.deterministic / extra",
+        "rejection_criteria": "Objection on C08 stands if the check reproduces the failure mode described in the objection."
+      },
+      "kinds": [
+        "boundary"
+      ],
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "objection": "Looking at the claim and evidence description:\n\n**Claim C08**: The eleven-file source builds a deterministic candidate archive, and extracting that archive compiles to a 45-page PDF.\n\n**Evidence description**: `reports/package/package-receipt.json -> source.file_count / archive.deterministic / extra"
+    },
+    {
+      "claim_id": "C09",
+      "claim_text": "In a frozen synthetic construction, three perfect producers set the leave-one-out floor at 1.0; systems A and B score 0.9 and 0.5; A remains above B under all 700 single-item deletions with 280 A-only and 0 B-only paired observations; the declared gate still refuses. The positive and negative controls also match, and two accepted runs are byte-identical.",
+      "class": "unclassified",
+      "count": 1,
+      "kinds": [
+        "boundary"
+      ],
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "objection": "Based on the claim and evidence structure, this appears to describe a scenario where:\n\n1. **Three perfect producers** → The leave‑one‑out floor is 1.0, meaning every producer is perfectly accurate across all items.\n2. **Systems A and B have fixed accuracies** 0.9 and 0.5.\n3. **Paired discordance** s"
+    },
+    {
+      "claim_id": "C09",
+      "claim_text": "In a frozen synthetic construction, three perfect producers set the leave-one-out floor at 1.0; systems A and B score 0.9 and 0.5; A remains above B under all 700 single-item deletions with 280 A-only and 0 B-only paired observations; the declared gate still refuses. The positive and negative controls also match, and two accepted runs are byte-identical.",
+      "class": "unclassified",
+      "count": 1,
+      "kinds": [
+        "alternative"
+      ],
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "objection": "Let me restate the claim and evidence in my own words to check understanding.\n\n**Claim C09:**  \nIn a specific frozen synthetic experiment, there are three perfect producers (all leave‑one‑out floors = 1.0).  \nSystem A scores 0.9 overall, System B scores 0.5 overall.  \nA remains above B under all 700"
+    },
+    {
+      "claim_id": "C12",
+      "claim_text": "On the four fixed m25 carriers, the recorded leaky LOO-on-k-fold-domain margins reproduce, but on the joint main-gold, LOO-gold, fold-gold and actor support all four LOO margins are exactly zero; the k-fold margins remain 0.0 / 2.872063 / 0.616016 / 1.851852, every checked LOO label equals the full gold label, and two runs are byte-identical. The joint supports are 477 / 383 / 974 / 54, so the 54-item preference result is descriptive only.",
+      "class": "executable",
+      "count": 1,
+      "experiment": {
+        "acceptance_criteria": "Objection on C12 is resolved only if the check reproduces the reported result and the objection's concrete failure mode does not appear.",
+        "experiment": "Design and run a targeted check that refutes objection on C12: Looking at claim C12, the statement says that on **four fixed m25 carriers**, the recorded leaky LOO-on-k-fold-domain margins reproduce, but on the joint main-gold, LOO-gold, fold-gold and actor support, all four LOO margins are exactly zero.\n\nThe key boundary conditions are inherent in the evidence",
+        "rejection_criteria": "Objection on C12 stands if the check reproduces the failure mode described in the objection."
+      },
+      "kinds": [
+        "boundary"
+      ],
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "objection": "Looking at claim C12, the statement says that on **four fixed m25 carriers**, the recorded leaky LOO-on-k-fold-domain margins reproduce, but on the joint main-gold, LOO-gold, fold-gold and actor support, all four LOO margins are exactly zero.\n\nThe key boundary conditions are inherent in the evidence"
+    }
+  ],
+  "out_of_loop_count": 0,
+  "schema": "q-one-rebuttal-plan-v1",
+  "unclassified_count": 4
+}

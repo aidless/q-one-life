@@ -1,0 +1,31 @@
+{
+ "paper_id": "309",
+ "split": "train",
+ "text_sha256": "e5e5f1f95e01f7354fcbe4a453498a759c26155c80e50cd86d16b5981399c466",
+ "text_characters": 18000,
+ "human_scores": [
+  7,
+  7
+ ],
+ "rubric": {
+  "novelty": 4,
+  "rigor": 5,
+  "clarity": 4
+ },
+ "reason": "The UNREAL agent introduces a well-motivated and experimentally validated approach to representation learning through auxiliary tasks, presenting a clear conceptual advance within reinforcement learning and demonstrating significant empirical results.",
+ "usage": {
+  "completion_tokens": 84,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "prompt_tokens": 7859,
+  "prompt_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 7943
+ },
+ "error": null,
+ "elapsed_sec": 8.800883093994344,
+ "cached": true
+}

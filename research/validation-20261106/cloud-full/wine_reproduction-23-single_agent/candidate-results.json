@@ -1,0 +1,1 @@
+{"measured": [{"candidate": {"family": "logistic", "scale": true, "strength": 0.01}, "validation": 1.0}, {"candidate": {"family": "logistic", "scale": false, "strength": 100.0}, "validation": 1.0}, {"candidate": {"family": "logistic", "scale": false, "strength": 0.1}, "validation": 1.0}], "selected": {"family": "logistic", "scale": true, "strength": 0.01}}

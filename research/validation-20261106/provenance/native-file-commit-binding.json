@@ -1,0 +1,80 @@
+{
+  "schema": "q-one-native-file-commit-binding-v1",
+  "generated_at": "2026-11-06T16:58:10.833579+00:00",
+  "source_commit": "ab40e28abcb2a97e13242d0dab5584d42a15f94e",
+  "source_root": "/home/liuzewen/F:\\deepseek",
+  "preregistration": {
+    "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/preregistration.json",
+    "sha256": "ae6f12e4dfec14770f7f2121af133dec9e78eea19e5f27f621de4ad60e520323",
+    "size_bytes": 9704
+  },
+  "measurement": "git --no-replace-objects cat-file blob <full-commit>:<relative-path>, then SHA-256",
+  "files": [
+    {
+      "path": "tools/bench-noise-floor/audit.py",
+      "expected_sha256": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b",
+      "commit_blob_sha256": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b",
+      "snapshot_sha256": "2fbb95fc6601c855e8df09df4bbd712883411d901209d5ee497cd73d7e23876b",
+      "matches": true
+    },
+    {
+      "path": "tools/bench-noise-floor/followup_common.py",
+      "expected_sha256": "66aeb942b6bb8526f4467d244b9a04bad4d4023eaaf95b87aef0c1307912ee54",
+      "commit_blob_sha256": "66aeb942b6bb8526f4467d244b9a04bad4d4023eaaf95b87aef0c1307912ee54",
+      "snapshot_sha256": "66aeb942b6bb8526f4467d244b9a04bad4d4023eaaf95b87aef0c1307912ee54",
+      "matches": true
+    },
+    {
+      "path": "tools/bench-noise-floor/followup_ec63_kfold.py",
+      "expected_sha256": "e0528fa164e2b7de63fb9711686c9f1882f083d170fa777251f878f0301ee5fb",
+      "commit_blob_sha256": "e0528fa164e2b7de63fb9711686c9f1882f083d170fa777251f878f0301ee5fb",
+      "snapshot_sha256": "e0528fa164e2b7de63fb9711686c9f1882f083d170fa777251f878f0301ee5fb",
+      "matches": true
+    },
+    {
+      "path": "tools/bench-noise-floor/make_m25_votes.py",
+      "expected_sha256": "defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236",
+      "commit_blob_sha256": "defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236",
+      "snapshot_sha256": "defa82564452cb7e933d331f230df3fda958ffa4d3587416375e81f1a0ec0236",
+      "matches": true
+    },
+    {
+      "path": "papers/bench_noise_floor/evidence/strict_review_followup/EC63_kfold_vs_loo.json",
+      "expected_sha256": "f80712e34f86e71fd75d71d3c6224dfd0af466bccef244ae9c23cd31e6a62b50",
+      "commit_blob_sha256": "f80712e34f86e71fd75d71d3c6224dfd0af466bccef244ae9c23cd31e6a62b50",
+      "snapshot_sha256": "f80712e34f86e71fd75d71d3c6224dfd0af466bccef244ae9c23cd31e6a62b50",
+      "matches": true
+    },
+    {
+      "path": "papers/bench_noise_floor/evidence/m25_factuality.json",
+      "expected_sha256": "e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c",
+      "commit_blob_sha256": "e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c",
+      "snapshot_sha256": "e9b7a6ec64cac431a647cc5e27ca027493127d992519c1d411e8c5d3dd90fa5c",
+      "matches": true
+    },
+    {
+      "path": "papers/bench_noise_floor/evidence/m25_coherence.json",
+      "expected_sha256": "e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc",
+      "commit_blob_sha256": "e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc",
+      "snapshot_sha256": "e48d8aed7189dbab863888bc769b38f0ea42056ad47e039a25f019dd1c236bcc",
+      "matches": true
+    },
+    {
+      "path": "papers/bench_noise_floor/evidence/m25_relevance.json",
+      "expected_sha256": "6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d",
+      "commit_blob_sha256": "6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d",
+      "snapshot_sha256": "6c9d0c0c361490e17410f8c38c4c5dd1df493e1bfe454c2445d22d0ae62e722d",
+      "matches": true
+    },
+    {
+      "path": "papers/bench_noise_floor/evidence/m25_preference.json",
+      "expected_sha256": "53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1",
+      "commit_blob_sha256": "53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1",
+      "snapshot_sha256": "53627f35956e90460a8dd43d1f9bf1520949b906f218a4de42a85a5efbc75fc1",
+      "matches": true
+    }
+  ],
+  "status": "passed",
+  "historical_cloud_state_verified": false,
+  "limitation": "Current local object/file correspondence is not evidence of historical cloud object existence."
+}

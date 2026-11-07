@@ -1,0 +1,13 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C11",
+  "claim_text": "On the four $m=25$ carriers the reselected-leader margin `max_s acc(s) - max_g LOO(g)` is exactly zero in every one of 2000 case-cluster bootstrap rounds, while the printed fixed-winner interval reproduces the recorded native intervals and is never positive in any round; two controls with a broken hypothesis move the same statistic to a strictly positive and a strictly negative interval.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [],
+  "inconclusive_calls": 0,
+  "verdict": "clean",
+  "generated_at": "2026-11-06T14:43:07Z"
+}

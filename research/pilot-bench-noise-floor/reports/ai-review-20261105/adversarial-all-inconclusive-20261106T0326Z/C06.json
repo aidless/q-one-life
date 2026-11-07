@@ -1,0 +1,13 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C06",
+  "claim_text": "Three native numeric gates pass twice against the current source bytes: 250/250 manuscript numbers, 353 reverse-coverage reads with 0 unbound, and an anchor census with A1=0.",
+  "rounds": 1,
+  "models": [
+    "group/auto-gpt-6"
+  ],
+  "objections": [],
+  "inconclusive_calls": 3,
+  "verdict": "inconclusive",
+  "generated_at": "2026-11-06T03:26:48Z"
+}

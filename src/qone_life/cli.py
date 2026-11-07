@@ -13,7 +13,19 @@ from .adversarial_review import AdversarialError, AdversarialReview
 from .cloud_executor import CloudExecutionError, CloudExecutor
 from .measurement import MeasurementError, MeasurementStore
 from .models import LifeValidationError, Observation, load_metric_specs, utc_now
+from .model_gateway import DEFAULT_URL as DEFAULT_MODEL_URL, make_model_call
 from .redaction import export_observations
+from .rebuttal_loop import RebuttalError, build_rebuttal_plan, write_rebuttal_plan
+from .research_factory.autopilot import AutopilotError
+from .research_factory.direction_diversity import DiversityError
+from .research_factory.environment_manifest import EnvironmentError
+from .research_factory.meta_review import MetaReviewError
+from .research_factory.outcome_predictor import PredictorError
+from .research_factory.research_integrity import IntegrityError
+from .research_factory.rubric_calibration import CalibrationError
+from .research_factory.review_rubric import ReviewRubricError
+from .research_factory.rubric_types import TYPE_RUBRICS, TypeRubricError
+from .research_factory.writer import WriterError
 from .research_production import ProductionError, ResearchProduction
 from .review import build_review
 from .scoring import score_observations
@@ -532,9 +544,122 @@ def parser() -> argparse.ArgumentParser:
     command.add_argument("--ledger", required=True)
     command.add_argument("--rounds", type=int, default=3)
     command.add_argument("--model", action="append", required=True)
+    command.add_argument("--claim", action="append", help="only attack this claim id (repeatable)")
     command.add_argument("--magpie-url", default="http://127.0.0.1:3425/v1/chat/completions")
     command.add_argument("--output", required=True)
     command.set_defaults(handler=cmd_research_adversarial)
+
+    command = commands.add_parser("research-rebuttal", help="turn adversarial objections into classified rebuttal experiments")
+    command.add_argument("--attack-output", required=True, help="output directory of research-adversarial")
+    command.add_argument("--output", required=True, help="path for REBUTTAL_PLAN.md")
+    command.add_argument("--json", dest="as_json", action="store_true", help="print the plan as JSON instead of a short summary")
+    command.add_argument("--workspace", help="optional pipeline workspace to attach the plan into")
+    command.add_argument("--slug", help="pipeline slug required when --workspace is set")
+    command.set_defaults(handler=cmd_research_rebuttal)
+
+    command = commands.add_parser("research-autopilot", help="generate candidate hypotheses for a research question")
+    command.add_argument("--question", required=True)
+    command.add_argument("--output", required=True)
+    command.add_argument("--n", type=int, default=5)
+    command.add_argument("--model", default="group/auto-gpt-6")
+    command.add_argument("--magpie-url", default=DEFAULT_MODEL_URL)
+    command.set_defaults(handler=cmd_research_autopilot)
+
+    command = commands.add_parser("research-screen", help="screen candidate hypotheses with a proxy scorer")
+    command.add_argument("--candidates", required=True)
+    command.add_argument("--output", required=True)
+    command.add_argument("--top-k", type=int, default=2)
+    command.add_argument("--model", default="group/auto-gpt-6")
+    command.add_argument("--magpie-url", default=DEFAULT_MODEL_URL)
+    command.set_defaults(handler=cmd_research_screen)
+
+    command = commands.add_parser("research-review", help="score a manuscript with mechanical checks and a model rubric")
+    command.add_argument("--manuscript", required=True)
+    command.add_argument("--ledger", required=True)
+    command.add_argument("--output", required=True)
+    command.add_argument("--model", default="group/auto-gpt-6")
+    command.add_argument("--magpie-url", default=DEFAULT_MODEL_URL)
+    command.set_defaults(handler=cmd_research_review)
+
+    command = commands.add_parser("research-write", help="render a LaTeX draft with numbers bound to a results receipt")
+    command.add_argument("--title", required=True)
+    command.add_argument("--question", required=True, help="question markdown file")
+    command.add_argument("--hypothesis", required=True, help="hypothesis JSON file")
+    command.add_argument("--claims", required=True, help="claim ledger markdown file")
+    command.add_argument("--results", required=True, help="results JSON file")
+    command.add_argument("--venue", default="arxiv")
+    command.add_argument("--output", required=True, help="output .tex path")
+    command.set_defaults(handler=cmd_research_write)
+
+    command = commands.add_parser("research-decide", help="aggregate rubric, adversarial review and rebuttal into a decision")
+    command.add_argument("--rubric", required=True)
+    command.add_argument("--adversarial", help="adversarial summary.json")
+    command.add_argument("--rebuttal", help="rebuttal plan.json")
+    command.add_argument("--integrity", help="integrity report JSON")
+    command.add_argument("--closure", help="rebuttal closure report JSON")
+    command.add_argument("--previous-total", type=float)
+    command.add_argument("--accept-threshold", type=float, default=4.0)
+    command.add_argument("--output", required=True)
+    command.set_defaults(handler=cmd_research_decide)
+
+    command = commands.add_parser("research-batch", help="run autopilot generation and screening over a list of questions")
+    command.add_argument("--items", required=True, help="JSON list of {slug, question}")
+    command.add_argument("--output-dir", required=True)
+    command.add_argument("--n", type=int, default=5)
+    command.add_argument("--top-k", type=int, default=2)
+    command.add_argument("--model", default="group/auto-gpt-6")
+    command.add_argument("--magpie-url", default=DEFAULT_MODEL_URL)
+    command.set_defaults(handler=cmd_research_batch)
+
+    command = commands.add_parser("research-calibrate", help="check rubric negative controls and human-score alignment")
+    command.add_argument("--output", required=True)
+    command.add_argument("--human-records", help="JSON list of {rubric_total, human_score}")
+    command.add_argument("--decision-records", help="JSON list of {rubric_total, decision}")
+    command.add_argument("--model", default="group/auto-gpt-6")
+    command.add_argument("--magpie-url", default=DEFAULT_MODEL_URL)
+    command.set_defaults(handler=cmd_research_calibrate)
+
+    command = commands.add_parser("research-integrity", help="audit deterministic RIVT integrity checks")
+    command.add_argument("--manuscript")
+    command.add_argument("--ledger")
+    command.add_argument("--results")
+    command.add_argument("--bibliography")
+    command.add_argument("--preregistration")
+    command.add_argument("--frozen-preregistration")
+    command.add_argument("--evaluator")
+    command.add_argument("--evaluator-sha256")
+    command.add_argument("--job")
+    command.add_argument("--output", required=True)
+    command.set_defaults(handler=cmd_research_integrity)
+
+    command = commands.add_parser("research-type-rubric", help="check type-level structural requirements")
+    command.add_argument("--manuscript", required=True)
+    command.add_argument("--type", dest="paper_type", choices=sorted(TYPE_RUBRICS))
+    command.add_argument("--output", required=True)
+    command.set_defaults(handler=cmd_research_type_rubric)
+
+    command = commands.add_parser("research-environment-check", help="validate an executable environment manifest")
+    command.add_argument("--manifest", required=True)
+    command.add_argument("--root", required=True)
+    command.add_argument("--output", required=True)
+    command.set_defaults(handler=cmd_research_environment_check)
+
+    command = commands.add_parser("research-directions", help="rank families with a direction exploration bonus")
+    command.add_argument("--items", required=True, help="JSON list of {family_id, roi, direction}")
+    command.add_argument("--capacity", type=int, default=5)
+    command.add_argument("--bonus", type=float, default=0.15)
+    command.add_argument("--open-cost", type=float, default=0.05)
+    command.add_argument("--output", required=True)
+    command.set_defaults(handler=cmd_research_directions)
+
+    command = commands.add_parser("research-screen-plans", help="rank plans by predicted outcome and mark must-run")
+    command.add_argument("--plans", required=True, help="JSON list of {plan_id, ...}")
+    command.add_argument("--predictions", required=True, help="JSON object plan_id -> {predicted:{score:..},confidence:..}")
+    command.add_argument("--metric", default="score")
+    command.add_argument("--top-k", type=int, default=2)
+    command.add_argument("--confidence-threshold", type=float, default=0.6)
+    command.add_argument("--output", required=True)
+    command.set_defaults(handler=cmd_research_screen_plans)
 
     command = commands.add_parser("research-optimize", help="rank paper families by evidence ROI")
     command.add_argument("--portfolio", required=True)
@@ -622,8 +747,287 @@ def cmd_research_adversarial(args: argparse.Namespace) -> int:
     """对论断账本运行多轮对抗式评审。"""
     review = AdversarialReview(args.magpie_url)
     receipt = review.attack(Path(args.ledger), rounds=args.rounds,
-                            models=args.model, output_dir=Path(args.output))
+                            models=args.model, output_dir=Path(args.output),
+                            claim_ids=args.claim)
     print(json.dumps(receipt, ensure_ascii=False, indent=2))
+    return 0
+
+
+def cmd_research_rebuttal(args: argparse.Namespace) -> int:
+    """把对抗评审的异议分类并生成反驳实验计划（不执行实验）。"""
+    plan = build_rebuttal_plan(args.attack_output)
+    written = write_rebuttal_plan(plan, Path(args.output))
+    attached = None
+    if args.workspace:
+        if not args.slug:
+            print("error: --slug is required when --workspace is set", file=sys.stderr)
+            return 2
+        pipeline = ResearchProduction(args.workspace)
+        attached = pipeline.attach_rebuttal_plan(args.slug, plan)
+    if args.as_json:
+        payload = {**plan, **written}
+        if attached:
+            payload["attached_receipt"] = attached
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(
+            f"wrote {written['rebuttal_plan_path']} · "
+            f"executable={plan['executable_count']} "
+            f"out_of_loop={plan['out_of_loop_count']} "
+            f"unclassified={plan['unclassified_count']}"
+        )
+        if attached:
+            print(f"attached {attached['plan_path']} ({attached['receipt_sha256'][:12]})")
+    return 0
+
+
+def cmd_research_autopilot(args: argparse.Namespace) -> int:
+    """生成候选假设并写入 JSON 回执。"""
+    from .research_factory.autopilot import generate_hypotheses, write_autopilot_report
+
+    question = Path(args.question).read_text(encoding="utf-8")
+    model_call = make_model_call(url=args.magpie_url, model=args.model)
+    report = generate_hypotheses(question, model_call, n=args.n)
+    written = write_autopilot_report(report, Path(args.output))
+    print(
+        f"wrote {written['path']} · "
+        f"candidates={len(report['candidates'])} "
+        f"sha256={written['sha256'][:12]}"
+    )
+    return 0
+
+
+def cmd_research_screen(args: argparse.Namespace) -> int:
+    """对候选假设做代理评分与 top-k 筛选。"""
+    from .research_factory.autopilot import (
+        make_hypothesis_scorer,
+        screen_hypotheses,
+        write_autopilot_report,
+    )
+
+    payload = json.loads(Path(args.candidates).read_text(encoding="utf-8"))
+    candidates = payload.get("candidates", [])
+    model_call = make_model_call(url=args.magpie_url, model=args.model)
+    report = screen_hypotheses(
+        candidates, make_hypothesis_scorer(model_call), top_k=args.top_k
+    )
+    written = write_autopilot_report(report, Path(args.output))
+    print(
+        f"wrote {written['path']} · "
+        f"status={report['status']} selected={','.join(report['selected']) or '-'}"
+    )
+    return 0
+
+
+def cmd_research_review(args: argparse.Namespace) -> int:
+    """运行机械检查 + 模型评分，产出审稿回执。"""
+    from .research_factory.review_rubric import score_manuscript, write_review_report
+
+    model_call = make_model_call(url=args.magpie_url, model=args.model)
+    report = score_manuscript(Path(args.manuscript), Path(args.ledger), model_call)
+    written = write_review_report(report, Path(args.output))
+    print(
+        f"wrote {written['path']} · "
+        f"status={report['status']} total={report['total']}"
+    )
+    return 0
+
+
+def cmd_research_write(args: argparse.Namespace) -> int:
+    """渲染数字可追溯的 LaTeX 草稿。"""
+    from .adversarial_review import parse_claims
+    from .research_factory.writer import render_draft, write_draft_receipt
+
+    question = Path(args.question).read_text(encoding="utf-8")
+    hypothesis = json.loads(Path(args.hypothesis).read_text(encoding="utf-8"))
+    claims = parse_claims(Path(args.claims).read_text(encoding="utf-8"))
+    results = json.loads(Path(args.results).read_text(encoding="utf-8"))
+    report = render_draft(
+        title=args.title,
+        question=question,
+        hypothesis=hypothesis,
+        claims=claims,
+        results=results,
+        venue=args.venue,
+    )
+    written = write_draft_receipt(report, Path(args.output))
+    print(
+        f"wrote {written['draft_path']} · "
+        f"claims={report['claim_count']} numbers={len(report['numbers_used'])}"
+    )
+    return 0
+
+
+def cmd_research_decide(args: argparse.Namespace) -> int:
+    """聚合审稿、对抗评审与反驳计划，输出继续/停止/回退。"""
+    from .research_factory.meta_review import decide, write_decision
+
+    rubric = json.loads(Path(args.rubric).read_text(encoding="utf-8"))
+    adversarial = None
+    if args.adversarial:
+        adversarial = json.loads(Path(args.adversarial).read_text(encoding="utf-8"))
+    rebuttal = None
+    if args.rebuttal:
+        rebuttal = json.loads(Path(args.rebuttal).read_text(encoding="utf-8"))
+    integrity = None
+    if args.integrity:
+        integrity = json.loads(Path(args.integrity).read_text(encoding="utf-8"))
+    closure = None
+    if args.closure:
+        closure = json.loads(Path(args.closure).read_text(encoding="utf-8"))
+    report = decide(
+        rubric=rubric,
+        adversarial=adversarial,
+        rebuttal=rebuttal,
+        integrity=integrity,
+        closure=closure,
+        previous_total=args.previous_total,
+        accept_threshold=args.accept_threshold,
+    )
+    written = write_decision(report, Path(args.output))
+    print(f"wrote {written['path']} · decision={report['decision']}")
+    for reason in report["reasons"]:
+        print(f"  - {reason}")
+    return 0
+
+
+def cmd_research_batch(args: argparse.Namespace) -> int:
+    """批量运行假设生成与筛选；单项失败不影响其他项。"""
+    from .research_factory.autopilot import run_batch
+
+    items = json.loads(Path(args.items).read_text(encoding="utf-8"))
+    model_call = make_model_call(url=args.magpie_url, model=args.model)
+    summary = run_batch(
+        items, model_call, n=args.n, top_k=args.top_k, output_dir=args.output_dir
+    )
+    print(
+        f"wrote {summary['summary_path']} · "
+        f"ok={summary['ok']} failed={summary['failed']}"
+    )
+    return 0
+
+
+def cmd_research_calibrate(args: argparse.Namespace) -> int:
+    """运行 rubric 负样本与人工评分对齐检查。"""
+    from .research_factory.rubric_calibration import calibrate, write_calibration_report
+
+    human_records = []
+    if args.human_records:
+        human_records = json.loads(
+            Path(args.human_records).read_text(encoding="utf-8")
+        )
+    decision_records = []
+    if args.decision_records:
+        decision_records = json.loads(
+            Path(args.decision_records).read_text(encoding="utf-8")
+        )
+    model_call = make_model_call(url=args.magpie_url, model=args.model)
+    report = calibrate(
+        model_call=model_call,
+        human_records=human_records,
+        decision_records=decision_records,
+    )
+    written = write_calibration_report(report, Path(args.output))
+    print(
+        f"wrote {written['path']} · status={report['status']} "
+        f"negatives={report['negative_samples']['caught']}/{report['negative_samples']['count']} "
+        f"human_pairs={report['human_alignment']['pairs']}"
+    )
+    return 0
+
+
+def cmd_research_integrity(args: argparse.Namespace) -> int:
+    """运行确定性科研诚信检查。"""
+    from .research_factory.research_integrity import audit_integrity, write_integrity_report
+
+    report = audit_integrity(
+        manuscript=args.manuscript,
+        ledger=args.ledger,
+        results=args.results,
+        bibliography=args.bibliography,
+        preregistration=args.preregistration,
+        frozen_preregistration=args.frozen_preregistration,
+        evaluator=args.evaluator,
+        evaluator_sha256=args.evaluator_sha256,
+        job=args.job,
+    )
+    written = write_integrity_report(report, Path(args.output))
+    print(
+        f"wrote {written['path']} · status={report['status']} "
+        f"release={report['release']} violations={report['violations']} "
+        f"not_assessed={report['not_assessed']}"
+    )
+    return 0
+
+
+def cmd_research_type_rubric(args: argparse.Namespace) -> int:
+    """检查论文类型的结构性要求。"""
+    from .research_factory.rubric_types import evaluate_type_rubric, write_type_rubric
+
+    report = evaluate_type_rubric(args.manuscript, paper_type=args.paper_type)
+    written = write_type_rubric(report, Path(args.output))
+    print(
+        f"wrote {written['path']} · type={report['paper_type']} "
+        f"status={report['status']} {report['passed']}/{report['total']}"
+    )
+    return 0
+
+
+def cmd_research_environment_check(args: argparse.Namespace) -> int:
+    """校验可执行环境清单。"""
+    from .research_factory.environment_manifest import (
+        validate_environment,
+        write_environment_validation,
+    )
+
+    manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
+    report = validate_environment(manifest, args.root)
+    written = write_environment_validation(report, Path(args.output))
+    print(
+        f"wrote {written['path']} · status={report['status']} "
+        f"failed={','.join(report['failed']) or '-'}"
+    )
+    return 0
+
+
+def cmd_research_directions(args: argparse.Namespace) -> int:
+    """按方向多样性排序论文家族。"""
+    from .research_factory.direction_diversity import (
+        rank_with_diversity,
+        write_direction_allocation,
+    )
+
+    items = json.loads(Path(args.items).read_text(encoding="utf-8"))
+    report = rank_with_diversity(
+        items, args.capacity,
+        exploration_bonus=args.bonus, open_cost=args.open_cost,
+    )
+    written = write_direction_allocation(report, Path(args.output))
+    print(
+        f"wrote {written['path']} · selected={','.join(x['family_id'] for x in report['selected'])} "
+        f"directions={json.dumps(report['directions'], ensure_ascii=False)}"
+    )
+    return 0
+
+
+def cmd_research_screen_plans(args: argparse.Namespace) -> int:
+    """按预测结果排序计划，并标出必须真跑的项。"""
+    from .research_factory.outcome_predictor import screen_plans, write_screen_report
+
+    plans = json.loads(Path(args.plans).read_text(encoding="utf-8"))
+    predictions = json.loads(Path(args.predictions).read_text(encoding="utf-8"))
+    report = screen_plans(
+        plans,
+        lambda plan: predictions.get(str(plan.get("plan_id"))),
+        metric=args.metric,
+        top_k=args.top_k,
+        confidence_threshold=args.confidence_threshold,
+    )
+    written = write_screen_report(report, Path(args.output))
+    print(
+        f"wrote {written['path']} · selected={','.join(report['selected'])} "
+        f"must_run={','.join(report['must_run']) or '-'}"
+    )
     return 0
 
 
@@ -645,6 +1049,6 @@ def main(argv: list[str] | None = None) -> int:
     args = parser().parse_args(argv)
     try:
         return args.handler(args)
-    except (LifeValidationError, StoreError, MeasurementError, ProductionError, AdversarialError, CloudExecutionError, FileNotFoundError, json.JSONDecodeError, ValueError) as exc:
+    except (LifeValidationError, StoreError, MeasurementError, ProductionError, AdversarialError, RebuttalError, AutopilotError, ReviewRubricError, WriterError, MetaReviewError, CalibrationError, IntegrityError, TypeRubricError, EnvironmentError, DiversityError, PredictorError, CloudExecutionError, FileNotFoundError, json.JSONDecodeError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2

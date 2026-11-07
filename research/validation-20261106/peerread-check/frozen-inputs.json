@@ -1,0 +1,170 @@
+[
+ {
+  "paper_id": "304",
+  "split": "train",
+  "text_sha256": "56948659a5b97c8fb9496de4dae58d44929e1d4c8fec221e18832e2867a667f4",
+  "text_characters": 18000,
+  "paper_sha256": "6f8bb08fc3715a3b7d30c585ebd70632d31fe68c43295da5a819536bfb301ecb"
+ },
+ {
+  "paper_id": "305",
+  "split": "train",
+  "text_sha256": "45b4e9dfd23f1b4fe933243954169e54b4ef45ebc518b9e458d1cfff1ab049d9",
+  "text_characters": 18000,
+  "paper_sha256": "71fdf3f3d4500453b65078ff7307536d1c7d6338b518420e2eed3157534f9029"
+ },
+ {
+  "paper_id": "306",
+  "split": "train",
+  "text_sha256": "d9cee5ad4d1d394457b13345fe6af04c1036b2beffaa7a6c7a3cac22cc440bff",
+  "text_characters": 18000,
+  "paper_sha256": "cfe7471306434016086ebb96137b57066bd7ea2585c84468a890efa0279b6191"
+ },
+ {
+  "paper_id": "307",
+  "split": "train",
+  "text_sha256": "075e24d073b544d89fdaf6ca2867923d85d0eea0a429aaf10d2f14b3c48550dd",
+  "text_characters": 18000,
+  "paper_sha256": "f1498ddd4a7440a13578d1b86efc08f80f9eaf25cc4d0b10bfe58289e0eee850"
+ },
+ {
+  "paper_id": "520",
+  "split": "train",
+  "text_sha256": "03f9b05158c717946c3147d2281a869241d3ac8a26f841172f11c296b830c88a",
+  "text_characters": 18000,
+  "paper_sha256": "8453463ed6297d0fa6684eae94861331025399670b40b9dacfe862c3b7ba48f8"
+ },
+ {
+  "paper_id": "550",
+  "split": "train",
+  "text_sha256": "535c2806ef819e4cdbb379449c372a2ef18a9ad9b44093f74e2a2a42a51fab0e",
+  "text_characters": 16078,
+  "paper_sha256": "3af4db964d395f093a96e818335da9a214453c5918440257e1a65971c3ec7ff8"
+ },
+ {
+  "paper_id": "600",
+  "split": "train",
+  "text_sha256": "d6cfd96e9672520177c9a73247c77fdfffb5794ea07dfd1730b77bc457f4d469",
+  "text_characters": 18000,
+  "paper_sha256": "1a946bbd96b007bed997e815b465b54eb97059638c25e108f3fe0a36432c02be"
+ },
+ {
+  "paper_id": "680",
+  "split": "train",
+  "text_sha256": "b876167aa7c6d640d70c94f11f9fc169d3e92fbe25adb2a504b797fffb0436bf",
+  "text_characters": 18000,
+  "paper_sha256": "f9c7267f9abf7072b6024e485380573fadb56be004aab0db843cae2bedd5a2bb"
+ },
+ {
+  "paper_id": "316",
+  "split": "dev",
+  "text_sha256": "acf18c8a67be783ae918d6fb6a4951334f285b40589b3548d8bbe61b44968e0b",
+  "text_characters": 18000,
+  "paper_sha256": "61f3c6e297c1d23ebe8c581c3046b99eee4eb513c9b93c86e9f180accd796937"
+ },
+ {
+  "paper_id": "325",
+  "split": "dev",
+  "text_sha256": "828c50eacfd0bcd0fc0c59a10a7e34b2984bc0afc121a4fe1d199767b30d79fa",
+  "text_characters": 18000,
+  "paper_sha256": "c40acb861421fe2370267037008a23f5605cb59ac41cc8d0254ddd744d8e242f"
+ },
+ {
+  "paper_id": "328",
+  "split": "dev",
+  "text_sha256": "0c1b6d44c883ae3df0f2cc9b3f42c175df8c6ecd79e00483d8361782e618d07d",
+  "text_characters": 18000,
+  "paper_sha256": "7031331c4fc42f1e7da97e5a06373e14f1577280bde463e692c516a026ac6314"
+ },
+ {
+  "paper_id": "340",
+  "split": "dev",
+  "text_sha256": "fe913817981f04e70c67073f54c75df120721b0441790a83767d8e75e56bb743",
+  "text_characters": 18000,
+  "paper_sha256": "1b30d2f51ee0c030f857506534890fdc2722cabeec0190ffa260737bcebf3903"
+ },
+ {
+  "paper_id": "537",
+  "split": "dev",
+  "text_sha256": "580b465261c654cd292a18cea4d2c4fd01daf97e0015533635262be460c68366",
+  "text_characters": 18000,
+  "paper_sha256": "7e191830811f4019cc14fae1e3db9b6551a06a02ed26f4cd31ca6bcaadcce88a"
+ },
+ {
+  "paper_id": "598",
+  "split": "dev",
+  "text_sha256": "d7cde95896fcc0b69002a8ea58f291bcd12cff852062089f5da3d3a97c13a77d",
+  "text_characters": 18000,
+  "paper_sha256": "aa670a6cbe133f68a6a3657bc439b57729dbe0d850b95a2f5732b6fbb04a7fb5"
+ },
+ {
+  "paper_id": "663",
+  "split": "dev",
+  "text_sha256": "48ab4aac15a933b045cd1f09d99fd3f4532897c0661436391e71ef81273585c3",
+  "text_characters": 18000,
+  "paper_sha256": "d271efdd147daf20fd0db82bded69614daf4b90fe3c9f9d72d2c538d2d7f24d3"
+ },
+ {
+  "paper_id": "689",
+  "split": "dev",
+  "text_sha256": "1845b677e52352426996177e81993befbd95042e687b3ce05bdbb377cd1004ba",
+  "text_characters": 18000,
+  "paper_sha256": "f9b755054dbaf1c518ae018498ce0c97c1efb22c73b2905ec8a9a5588642c078"
+ },
+ {
+  "paper_id": "330",
+  "split": "test",
+  "text_sha256": "a644718dc60fff6579449a0b4597e5a6cb1b4edcebd6e695244b37e9b6dea521",
+  "text_characters": 18000,
+  "paper_sha256": "d0d08d06203c22dba85edc2fcbe351497421294f794abee8cc992d148dc32d0a"
+ },
+ {
+  "paper_id": "333",
+  "split": "test",
+  "text_sha256": "53a8683f588a68c3ed91e160392ea118507f7f44525b8f9cdbf63ccf97eea005",
+  "text_characters": 18000,
+  "paper_sha256": "214117cf26f40141178b26a10945b3d29d9077f6e2992a812b164691f0487175"
+ },
+ {
+  "paper_id": "358",
+  "split": "test",
+  "text_sha256": "174eea8f5dab9815923f1baa7238781c354ac66eedadb797e4a860fcf04fb6fa",
+  "text_characters": 18000,
+  "paper_sha256": "00d7c827cbdca81eaacd6c3783810a990a97aa448bcaaff2e6c758d8404d81a4"
+ },
+ {
+  "paper_id": "363",
+  "split": "test",
+  "text_sha256": "ed639e3598363e6a4270fd7b7b6941185d5894e5a4f388a25dcda86c27fbe7bb",
+  "text_characters": 18000,
+  "paper_sha256": "adc87a1ce90950027cdc7b8b8d686bd0a45b7ece053b3bb3490e99925c2c846e"
+ },
+ {
+  "paper_id": "518",
+  "split": "test",
+  "text_sha256": "0d8e216141f559d1a09514baf8ae98c783355066e5bfbd6a1d63d58ebe13bcb0",
+  "text_characters": 18000,
+  "paper_sha256": "b9f418ff48837a8aec357814b076f906bfd8539203420cc520323a132fd10277"
+ },
+ {
+  "paper_id": "566",
+  "split": "test",
+  "text_sha256": "d76ec59dcfc84c7f62b61c3ac2e9078ce3d690d906d9fa56e059c8d91e934727",
+  "text_characters": 18000,
+  "paper_sha256": "6dabe02258d8c6872be38e19bb3f8e1eb897bd11f89aaeb39680507f3dece7fc"
+ },
+ {
+  "paper_id": "611",
+  "split": "test",
+  "text_sha256": "f4e8eff8023f087e842e92f608cd897647c2ee676f5931320dabfcb033d4bd9e",
+  "text_characters": 18000,
+  "paper_sha256": "e29f56d369b1a9e878ed3b9148b2af05092569ea9925823ab58a307d450668a7"
+ },
+ {
+  "paper_id": "648",
+  "split": "test",
+  "text_sha256": "3d5a63478ef983eb4ed3545b57834f0d65894d8dd2bfc591810c1acda0e9e292",
+  "text_characters": 18000,
+  "paper_sha256": "e2e6d85916ff33910d4c51ea9ac5d3f20ff295df9d78f70939dfa7117e5ae5b0"
+ }
+]

@@ -1,0 +1,33 @@
+{
+ "paper_id": "355",
+ "split": "dev",
+ "text_sha256": "b8960b8974150a040a8e94af4ec9806e5f0626194031aca63c6b67952dfcf395",
+ "text_characters": 18000,
+ "human_scores": [
+  4,
+  7,
+  4,
+  7
+ ],
+ "rubric": {
+  "novelty": 4,
+  "rigor": 3,
+  "clarity": 4
+ },
+ "reason": "The paper presents a strong competition-winning application of known methods (A3C, curriculum learning) to a challenging domain, with good technical detail but limited formal analysis or ablation studies.",
+ "usage": {
+  "completion_tokens": 65,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "prompt_tokens": 7925,
+  "prompt_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 7990
+ },
+ "error": null,
+ "elapsed_sec": 4.900209264014848,
+ "cached": true
+}

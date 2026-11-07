@@ -1,0 +1,127 @@
+{
+  "schema": "q-one-adversarial-summary-v1",
+  "ledger": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/CLAIM_LEDGER.md",
+  "ledger_sha256": "0f23b95cf0398205b196fa870ba833e73e21e8e9ade8bc66fe6da6453e9a38ae",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "verdict": "clean",
+      "objections": 0,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C01.json",
+      "receipt_sha256": "3c9b6cf833cff87c3a5b1741c71264341739ea6a65caadbb22398406db8a8362"
+    },
+    {
+      "claim_id": "C02",
+      "verdict": "objected",
+      "objections": 1,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C02.json",
+      "receipt_sha256": "29250b6b240282c0bf9bcb3f302c396820d56442723a16b9a9444e6ad070040f"
+    },
+    {
+      "claim_id": "C03",
+      "verdict": "objected",
+      "objections": 1,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C03.json",
+      "receipt_sha256": "67fcaf67d0526f43afce94cb355b358e4b25e11c45c91af9cf32ce7f01a0c317"
+    },
+    {
+      "claim_id": "C04",
+      "verdict": "objected",
+      "objections": 1,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C04.json",
+      "receipt_sha256": "79046af6af5c1ee64e5255956201c1aca0f9215bdb7e9d89af91a321e56fd625"
+    },
+    {
+      "claim_id": "C05",
+      "verdict": "objected",
+      "objections": 1,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C05.json",
+      "receipt_sha256": "8268de38ece3168fcc48e5f2f64d75919a4b086d42d90adc157524244bafe1ca"
+    },
+    {
+      "claim_id": "C06",
+      "verdict": "objected",
+      "objections": 1,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C06.json",
+      "receipt_sha256": "d450f92c6c9824933e609ac4fbbd3a78e6b526af7b33fe9de020f62af40eda6b"
+    },
+    {
+      "claim_id": "C07",
+      "verdict": "objected",
+      "objections": 2,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C07.json",
+      "receipt_sha256": "19dd6b158c482266836c5267cea4eefc3fe5e57d451895eb37c40f49af578ce7"
+    },
+    {
+      "claim_id": "C08",
+      "verdict": "objected",
+      "objections": 1,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C08.json",
+      "receipt_sha256": "5f9bb72c9625ff6dc1af9f64d22160b9c8f6805f7df8efccde4687af11422723"
+    },
+    {
+      "claim_id": "C09",
+      "verdict": "objected",
+      "objections": 2,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C09.json",
+      "receipt_sha256": "953c295c28c4ca99d9ade0ff15eafc00e742ea8afad59fcb0b6e195ab9c1cf6f"
+    },
+    {
+      "claim_id": "C10",
+      "verdict": "clean",
+      "objections": 0,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C10.json",
+      "receipt_sha256": "df2063c425259134dbca844cfd19ad72970042de18fee35316fa4763b4729a1f"
+    },
+    {
+      "claim_id": "C11",
+      "verdict": "clean",
+      "objections": 0,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C11.json",
+      "receipt_sha256": "9bc7d9aff157afe35b085c53c4a3643a193447e382ba1a48c176ad3b0aa98fcb"
+    },
+    {
+      "claim_id": "C12",
+      "verdict": "objected",
+      "objections": 1,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C12.json",
+      "receipt_sha256": "9da03f32cd1c2a6ed8a01778c436e497ee61c7c7eaa9b4672cd1868c1de6eee9"
+    },
+    {
+      "claim_id": "C13",
+      "verdict": "clean",
+      "objections": 0,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C13.json",
+      "receipt_sha256": "fd3227b0aad5539fe7228fac13519b150877f199f923d210fa6e2b4bd20f36dc"
+    },
+    {
+      "claim_id": "C14",
+      "verdict": "clean",
+      "objections": 0,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C14.json",
+      "receipt_sha256": "e003c9c726e6b0774844a4823acc6359636fe5d05c37b9744c94539a76db483c"
+    },
+    {
+      "claim_id": "C15",
+      "verdict": "clean",
+      "objections": 0,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C15.json",
+      "receipt_sha256": "138bdcc75f75f015abbff7fffc50b92f612405ef25680b76789da12331fec60c"
+    },
+    {
+      "claim_id": "C16",
+      "verdict": "clean",
+      "objections": 0,
+      "path": "research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial-full/C16.json",
+      "receipt_sha256": "06d07963c9ea64f2c09b7392e71490f02256d73012a2a82abaa5866b076142e7"
+    }
+  ],
+  "clean": 7,
+  "objected": 9,
+  "inconclusive": 0,
+  "generated_at": "2026-11-06T14:45:53Z"
+}

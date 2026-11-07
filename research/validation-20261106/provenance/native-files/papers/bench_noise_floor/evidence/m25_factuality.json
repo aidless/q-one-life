@@ -1,0 +1,641 @@
+{
+  "gold_method": "majority",
+  "n_items": 500,
+  "judges": [
+    "claude-haiku",
+    "claude-opus-4-7",
+    "claude-sonnet",
+    "deepseek-v4-flash",
+    "deepseek-v4-flash-ds",
+    "deepseek-v4-pro",
+    "gemini-3.7-flash",
+    "gemini-flash",
+    "gemma-4-31b",
+    "glm-5.2",
+    "kimi-k3",
+    "llama-3.3-70b",
+    "llama-4-maverick",
+    "llama-4-scout",
+    "llama3-8b",
+    "magistral-small",
+    "mistral-medium",
+    "mistral-small",
+    "qwen",
+    "qwen-3.6-flash",
+    "qwen3-14b",
+    "qwen3-32b",
+    "qwen3-8b",
+    "qwen3.7-flash",
+    "qwen3.8-27b-hf"
+  ],
+  "ceiling_inclusive_macro": 93.1727,
+  "ceiling_inclusive_macro_min": 72.49,
+  "ceiling_loo_macro": 93.8272,
+  "ceiling_loo_macro_min": 73.66,
+  "ceiling_rule": "max_over_generators",
+  "floor_basis": "judge_gold_leave_one_out",
+  "gold_tie_rule": "unmeasured",
+  "gold_tie_items": 2,
+  "gold_mean_prob_tie_items": 0,
+  "gold_tie_fraction_of_items": 0.004,
+  "loo_domain_size": 486,
+  "leaderboard_domain_size": 486,
+  "leaderboard_candidate_items": 486,
+  "leaderboard_scored_items": 486,
+  "leaderboard_scored_items_uniform": true,
+  "same_domain_as_floor": true,
+  "same_domain_as_floor_by_count": true,
+  "domain_membership_equal": true,
+  "domain_membership_off_systems": [],
+  "floor_domain_digest": "d108451f91659b4b",
+  "leaderboard_scored_digest": "d108451f91659b4b",
+  "scored_digest_by_system": {
+    "gemma-4-31b": "d108451f91659b4b",
+    "qwen3.7-flash": "d108451f91659b4b",
+    "claude-opus-4-7": "d108451f91659b4b",
+    "qwen-3.6-flash": "d108451f91659b4b",
+    "kimi-k3": "d108451f91659b4b",
+    "deepseek-v4-flash-ds": "d108451f91659b4b",
+    "gemini-3.7-flash": "d108451f91659b4b",
+    "claude-sonnet": "d108451f91659b4b",
+    "gemini-flash": "d108451f91659b4b",
+    "llama-3.3-70b": "d108451f91659b4b",
+    "deepseek-v4-flash": "d108451f91659b4b",
+    "glm-5.2": "d108451f91659b4b",
+    "deepseek-v4-pro": "d108451f91659b4b",
+    "qwen": "d108451f91659b4b",
+    "qwen3-14b": "d108451f91659b4b",
+    "llama-4-maverick": "d108451f91659b4b",
+    "claude-haiku": "d108451f91659b4b",
+    "qwen3-8b": "d108451f91659b4b",
+    "qwen3-32b": "d108451f91659b4b",
+    "mistral-medium": "d108451f91659b4b",
+    "qwen3.8-27b-hf": "d108451f91659b4b",
+    "llama-4-scout": "d108451f91659b4b",
+    "llama3-8b": "d108451f91659b4b",
+    "magistral-small": "d108451f91659b4b",
+    "mistral-small": "d108451f91659b4b"
+  },
+  "loo_generators": 25,
+  "loo_measure": "self_reproduction",
+  "loo_min_generators_for_self_reproduction": 3,
+  "loo_degenerate_identical_across_generators": false,
+  "floor_per_generator": [
+    {
+      "judge": "claude-haiku",
+      "macro": 85.14,
+      "micro": 85.14,
+      "loo_macro": 84.65,
+      "loo_n": 495,
+      "loo_macro_u": 86.21
+    },
+    {
+      "judge": "claude-opus-4-7",
+      "macro": 91.77,
+      "micro": 91.77,
+      "loo_macro": 91.28,
+      "loo_n": 493,
+      "loo_macro_u": 92.59
+    },
+    {
+      "judge": "claude-sonnet",
+      "macro": 89.56,
+      "micro": 89.56,
+      "loo_macro": 89.0,
+      "loo_n": 491,
+      "loo_macro_u": 89.92
+    },
+    {
+      "judge": "deepseek-v4-flash",
+      "macro": 88.76,
+      "micro": 88.76,
+      "loo_macro": 88.21,
+      "loo_n": 492,
+      "loo_macro_u": 89.3
+    },
+    {
+      "judge": "deepseek-v4-flash-ds",
+      "macro": 89.96,
+      "micro": 89.96,
+      "loo_macro": 89.41,
+      "loo_n": 491,
+      "loo_macro_u": 90.33
+    },
+    {
+      "judge": "deepseek-v4-pro",
+      "macro": 88.15,
+      "micro": 88.15,
+      "loo_macro": 87.55,
+      "loo_n": 490,
+      "loo_macro_u": 88.27
+    },
+    {
+      "judge": "gemini-3.7-flash",
+      "macro": 90.16,
+      "micro": 90.16,
+      "loo_macro": 89.59,
+      "loo_n": 490,
+      "loo_macro_u": 90.33
+    },
+    {
+      "judge": "gemini-flash",
+      "macro": 89.36,
+      "micro": 89.36,
+      "loo_macro": 88.82,
+      "loo_n": 492,
+      "loo_macro_u": 89.92
+    },
+    {
+      "judge": "gemma-4-31b",
+      "macro": 93.17,
+      "micro": 93.17,
+      "loo_macro": 92.68,
+      "loo_n": 492,
+      "loo_macro_u": 93.83
+    },
+    {
+      "judge": "glm-5.2",
+      "macro": 88.55,
+      "micro": 88.55,
+      "loo_macro": 88.01,
+      "loo_n": 492,
+      "loo_macro_u": 89.09
+    },
+    {
+      "judge": "kimi-k3",
+      "macro": 91.16,
+      "micro": 91.16,
+      "loo_macro": 90.65,
+      "loo_n": 492,
+      "loo_macro_u": 91.77
+    },
+    {
+      "judge": "llama-3.3-70b",
+      "macro": 87.95,
+      "micro": 87.95,
+      "loo_macro": 87.53,
+      "loo_n": 497,
+      "loo_macro_u": 89.51
+    },
+    {
+      "judge": "llama-4-maverick",
+      "macro": 85.94,
+      "micro": 85.94,
+      "loo_macro": 85.37,
+      "loo_n": 492,
+      "loo_macro_u": 86.42
+    },
+    {
+      "judge": "llama-4-scout",
+      "macro": 79.52,
+      "micro": 79.52,
+      "loo_macro": 78.99,
+      "loo_n": 495,
+      "loo_macro_u": 80.45
+    },
+    {
+      "judge": "llama3-8b",
+      "macro": 73.69,
+      "micro": 73.69,
+      "loo_macro": 73.19,
+      "loo_n": 496,
+      "loo_macro_u": 74.69
+    },
+    {
+      "judge": "magistral-small",
+      "macro": 72.49,
+      "micro": 72.49,
+      "loo_macro": 72.03,
+      "loo_n": 497,
+      "loo_macro_u": 73.66
+    },
+    {
+      "judge": "mistral-medium",
+      "macro": 82.73,
+      "micro": 82.73,
+      "loo_macro": 82.22,
+      "loo_n": 495,
+      "loo_macro_u": 83.74
+    },
+    {
+      "judge": "mistral-small",
+      "macro": 72.69,
+      "micro": 72.69,
+      "loo_macro": 72.18,
+      "loo_n": 496,
+      "loo_macro_u": 73.66
+    },
+    {
+      "judge": "qwen",
+      "macro": 87.15,
+      "micro": 87.15,
+      "loo_macro": 86.67,
+      "loo_n": 495,
+      "loo_macro_u": 88.27
+    },
+    {
+      "judge": "qwen-3.6-flash",
+      "macro": 90.76,
+      "micro": 90.76,
+      "loo_macro": 90.36,
+      "loo_n": 498,
+      "loo_macro_u": 92.59
+    },
+    {
+      "judge": "qwen3-14b",
+      "macro": 86.35,
+      "micro": 86.35,
+      "loo_macro": 85.77,
+      "loo_n": 492,
+      "loo_macro_u": 86.83
+    },
+    {
+      "judge": "qwen3-32b",
+      "macro": 83.13,
+      "micro": 83.13,
+      "loo_macro": 82.66,
+      "loo_n": 496,
+      "loo_macro_u": 84.36
+    },
+    {
+      "judge": "qwen3-8b",
+      "macro": 83.94,
+      "micro": 83.94,
+      "loo_macro": 83.5,
+      "loo_n": 497,
+      "loo_macro_u": 85.39
+    },
+    {
+      "judge": "qwen3.7-flash",
+      "macro": 92.17,
+      "micro": 92.17,
+      "loo_macro": 91.75,
+      "loo_n": 497,
+      "loo_macro_u": 93.83
+    },
+    {
+      "judge": "qwen3.8-27b-hf",
+      "macro": 82.73,
+      "micro": 82.73,
+      "loo_macro": 82.41,
+      "loo_n": 489,
+      "loo_macro_u": 82.92
+    }
+  ],
+  "judge_macro_gap": 20.68,
+  "gold_coverage": {
+    "items_total": 500,
+    "items_with_gold": 498,
+    "items_without_gold": 2,
+    "item_coverage": 0.996,
+    "rows_total": 12500,
+    "rows_scored": 12450,
+    "rows_unscored": 50,
+    "row_coverage": 0.996,
+    "policy": "rows whose item has no gold label are excluded from both numerator and denominator (unmeasured, not measured-and-wrong)",
+    "per_system": {
+      "claude-haiku": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "claude-opus-4-7": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "claude-sonnet": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "deepseek-v4-flash-ds": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "deepseek-v4-flash": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "deepseek-v4-pro": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "gemini-3.7-flash": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "gemini-flash": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "gemma-4-31b": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "glm-5.2": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "kimi-k3": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "llama-3.3-70b": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "llama-4-maverick": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "llama-4-scout": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "llama3-8b": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "magistral-small": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "mistral-medium": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "mistral-small": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "qwen-3.6-flash": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "qwen3-14b": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "qwen3-32b": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "qwen3-8b": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "qwen3.7-flash": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "qwen3.8-27b-hf": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      },
+      "qwen": {
+        "rows_total": 500,
+        "rows_scored": 498,
+        "coverage": 0.996
+      }
+    }
+  },
+  "leaderboard": [
+    {
+      "system": "gemma-4-31b",
+      "macro": 93.8272,
+      "micro": 93.8272,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "qwen3.7-flash",
+      "macro": 93.8272,
+      "micro": 93.8272,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "claude-opus-4-7",
+      "macro": 92.5926,
+      "micro": 92.5926,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "qwen-3.6-flash",
+      "macro": 92.5926,
+      "micro": 92.5926,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "kimi-k3",
+      "macro": 91.7695,
+      "micro": 91.7695,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "deepseek-v4-flash-ds",
+      "macro": 90.3292,
+      "micro": 90.3292,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "gemini-3.7-flash",
+      "macro": 90.3292,
+      "micro": 90.3292,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "claude-sonnet",
+      "macro": 89.9177,
+      "micro": 89.9177,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "gemini-flash",
+      "macro": 89.9177,
+      "micro": 89.9177,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "llama-3.3-70b",
+      "macro": 89.5062,
+      "micro": 89.5062,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "deepseek-v4-flash",
+      "macro": 89.3004,
+      "micro": 89.3004,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "glm-5.2",
+      "macro": 89.0947,
+      "micro": 89.0947,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "deepseek-v4-pro",
+      "macro": 88.2716,
+      "micro": 88.2716,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "qwen",
+      "macro": 88.2716,
+      "micro": 88.2716,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "qwen3-14b",
+      "macro": 86.8313,
+      "micro": 86.8313,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "llama-4-maverick",
+      "macro": 86.4198,
+      "micro": 86.4198,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "claude-haiku",
+      "macro": 86.214,
+      "micro": 86.214,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "qwen3-8b",
+      "macro": 85.3909,
+      "micro": 85.3909,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "qwen3-32b",
+      "macro": 84.3621,
+      "micro": 84.3621,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "mistral-medium",
+      "macro": 83.7449,
+      "micro": 83.7449,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "qwen3.8-27b-hf",
+      "macro": 82.9218,
+      "micro": 82.9218,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "llama-4-scout",
+      "macro": 80.4527,
+      "micro": 80.4527,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "llama3-8b",
+      "macro": 74.6914,
+      "micro": 74.6914,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "magistral-small",
+      "macro": 73.6626,
+      "micro": 73.6626,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    },
+    {
+      "system": "mistral-small",
+      "macro": 73.6626,
+      "micro": 73.6626,
+      "n": 486,
+      "n_rows": 486,
+      "n_items_unscored": 0
+    }
+  ],
+  "ties_vs_top": 8,
+  "compared": 24,
+  "verdict": "UNREADABLE",
+  "margin_vs_floor": 0.0,
+  "margin_ci": {
+    "lo95": -3.9018,
+    "hi95": 0.0,
+    "n_valid_rounds": 2000,
+    "n_dropped_rounds": 0,
+    "crosses_zero": true,
+    "n_boot": 2000,
+    "seed": 20261001,
+    "unit": "points"
+  },
+  "calibration": {}
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "q-one-cloud-ajb-recount-v1",
+  "generated_at": "2026-11-06T14:26:32Z",
+  "arms": {
+    "p4_ajb_boards.csv": {
+      "rows": 800,
+      "verdicts": {
+        "MARGINAL": 71,
+        "UNREADABLE": 729
+      },
+      "sha256": "1d9a7e021c8587a3aec784e77e2c74aa82d089565783a007f651f82502621fd8"
+    },
+    "p4_ajb_withgt_boards.csv": {
+      "rows": 800,
+      "verdicts": {
+        "MARGINAL": 33,
+        "UNREADABLE": 767
+      },
+      "sha256": "801a856f9bb9ee76f6ceed38132467b869dd9ab649b097ed525b7f452d6df81b"
+    },
+    "p4_ajb_full7_boards.csv": {
+      "rows": 800,
+      "verdicts": {
+        "MARGINAL": 39,
+        "UNREADABLE": 761
+      },
+      "sha256": "9c9044289f36e45831900af13af5fe5f5984850f6b769f62b190e79dfbd36734"
+    },
+    "p4_ajb_drop5_boards.csv": {
+      "rows": 800,
+      "verdicts": {
+        "MARGINAL": 37,
+        "UNREADABLE": 763
+      },
+      "sha256": "1c4ee78aca5c15b1575df588fb417432b1bb0435e750bea9e411456fa5d9ad7c"
+    }
+  },
+  "total_boards": 3200,
+  "verdicts": {
+    "MARGINAL": 180,
+    "UNREADABLE": 3020
+  },
+  "readable": 0,
+  "status": "passed"
+}

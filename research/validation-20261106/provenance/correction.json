@@ -1,0 +1,183 @@
+{
+  "schema": "q-one-provenance-correction-v1",
+  "generated_at": "2026-11-06T16:58:10.838320+00:00",
+  "status": "correction_recorded_historical_cloud_provenance_unverified",
+  "scope": "Additive correction only; no prior artifact, Git configuration or history changed.",
+  "evidence_status": "numerical results recorded but repository provenance unverified",
+  "closure_status": "closure field checks not fresh reruns",
+  "numerical_results_recomputed": false,
+  "fresh_cloud_run": false,
+  "remote_state_live_verified": false,
+  "cloud_a3_receipts": [
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106/a3_cloud.json",
+      "sha256": "21dc4b70ba9d1227b5806adbe3ba8f62189621887cd95ec517ec60c1346ebcdd",
+      "size_bytes": 21057,
+      "recorded_native_head": "ab40e28abcb2a97e13242d0dab5584d42a15f94e",
+      "numerical_results_status": "recorded_not_recomputed_in_this_audit",
+      "repository_provenance": "unverified",
+      "fresh_rerun_in_this_audit": false
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106/a3_v11_run1.json",
+      "sha256": "4fd64d0e3aa64f2f884de1295dc444574428f338da165c45c07062babd0a6ffb",
+      "size_bytes": 21057,
+      "recorded_native_head": "ab40e28abcb2a97e13242d0dab5584d42a15f94e",
+      "numerical_results_status": "recorded_not_recomputed_in_this_audit",
+      "repository_provenance": "unverified",
+      "fresh_rerun_in_this_audit": false
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106/a3_v11_run2.json",
+      "sha256": "4fd64d0e3aa64f2f884de1295dc444574428f338da165c45c07062babd0a6ffb",
+      "size_bytes": 21057,
+      "recorded_native_head": "ab40e28abcb2a97e13242d0dab5584d42a15f94e",
+      "numerical_results_status": "recorded_not_recomputed_in_this_audit",
+      "repository_provenance": "unverified",
+      "fresh_rerun_in_this_audit": false
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106-amd/a3_amd_run1.json",
+      "sha256": "4fd64d0e3aa64f2f884de1295dc444574428f338da165c45c07062babd0a6ffb",
+      "size_bytes": 21057,
+      "recorded_native_head": "ab40e28abcb2a97e13242d0dab5584d42a15f94e",
+      "numerical_results_status": "recorded_not_recomputed_in_this_audit",
+      "repository_provenance": "unverified",
+      "fresh_rerun_in_this_audit": false
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106-amd/a3_amd_run2.json",
+      "sha256": "4fd64d0e3aa64f2f884de1295dc444574428f338da165c45c07062babd0a6ffb",
+      "size_bytes": 21057,
+      "recorded_native_head": "ab40e28abcb2a97e13242d0dab5584d42a15f94e",
+      "numerical_results_status": "recorded_not_recomputed_in_this_audit",
+      "repository_provenance": "unverified",
+      "fresh_rerun_in_this_audit": false
+    }
+  ],
+  "issues": [
+    {
+      "id": "synthetic_git_head",
+      "reported_action": "A prior assistant wrote the pinned commit ID into remote native .git/HEAD without supplying its real commit object.",
+      "evidence": [
+        "User task statement",
+        "Bound CLOUD_RUN_REPORT.md acknowledges creating a minimal ref stub for rev-parse HEAD"
+      ],
+      "interpretation": "Matching rev-parse text alone is not object existence, repository origin, or a satisfied Git provenance contract.",
+      "current_remote_object_store_checked": false
+    },
+    {
+      "id": "closure_is_field_comparison",
+      "evidence": "Bound audit_closure.py reads existing receipt JSON and compares recorded fields; it does not execute the experiments.",
+      "interpretation": "Existing closed labels are receipt-field consistency findings, not fresh reruns or independent scientific closure."
+    }
+  ],
+  "bound_context": [
+    {
+      "path": "research/pilot-bench-noise-floor/experiments/kfold-common-support-a3/preregistration.json",
+      "sha256": "ae6f12e4dfec14770f7f2121af133dec9e78eea19e5f27f621de4ad60e520323",
+      "size_bytes": 9704
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106/CLOUD_RUN_REPORT.md",
+      "sha256": "e62d9522bc467844bd52b44f941ef8673ab068fb305809897bd0a95e1472a195",
+      "size_bytes": 4515
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/experiments/rebuttal-closure/audit_closure.py",
+      "sha256": "4522611e8a32ab39759bd3e1ec0a8daa9a08a90dcdff19e2fa5c81ce91c634a3",
+      "size_bytes": 7050
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/experiments/rebuttal-closure/results/closure.json",
+      "sha256": "5c02cd46635b243719cc335299518db839d815a6cb038499dfafac217aa6a2ee",
+      "size_bytes": 8759
+    }
+  ],
+  "closure_input_bindings": [
+    {
+      "path": "research/pilot-bench-noise-floor/reports/package-audit.json",
+      "sha256": "8b18113e3de64294469f52ffef7d4dc90d15f1701d1ecc08bdafc88c17d624c7",
+      "size_bytes": 2597,
+      "claim_id": "C05",
+      "sha256_recorded_by_closure": "8b18113e3de64294469f52ffef7d4dc90d15f1701d1ecc08bdafc88c17d624c7",
+      "matches_recorded_closure_sha256": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/native-numeric-gate.json",
+      "sha256": "63783e494d0d64d6841157b4bfa090a9b0e6911aead9df9b2cb5ba82fdb6a13f",
+      "size_bytes": 6210,
+      "claim_id": "C06",
+      "sha256_recorded_by_closure": "63783e494d0d64d6841157b4bfa090a9b0e6911aead9df9b2cb5ba82fdb6a13f",
+      "matches_recorded_closure_sha256": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cleanroom/receipt.json",
+      "sha256": "60bd23e6a2eb51ca9759a576e25fe02365636932576ca81e77e03fa3733dbccf",
+      "size_bytes": 12132,
+      "claim_id": "C07",
+      "sha256_recorded_by_closure": "60bd23e6a2eb51ca9759a576e25fe02365636932576ca81e77e03fa3733dbccf",
+      "matches_recorded_closure_sha256": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/package/package-receipt.json",
+      "sha256": "89556e707cf15e23b88893f99db992bf5f2d85a6d2930305b3dc74bea0050d62",
+      "size_bytes": 4044,
+      "claim_id": "C08",
+      "sha256_recorded_by_closure": "89556e707cf15e23b88893f99db992bf5f2d85a6d2930305b3dc74bea0050d62",
+      "matches_recorded_closure_sha256": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/experiments/producer-baseline-counterexample/results/reproduction.json",
+      "sha256": "4e96412333a6634b5f3977fa71a447dd4e1cd743493aad113fabff98b3b6f84d",
+      "size_bytes": 3894,
+      "claim_id": "C09",
+      "sha256_recorded_by_closure": "4e96412333a6634b5f3977fa71a447dd4e1cd743493aad113fabff98b3b6f84d",
+      "matches_recorded_closure_sha256": true
+    },
+    {
+      "path": "research/pilot-bench-noise-floor/reports/cloud-20261106-amd/a3_amd_run1.json",
+      "sha256": "4fd64d0e3aa64f2f884de1295dc444574428f338da165c45c07062babd0a6ffb",
+      "size_bytes": 21057,
+      "claim_id": "C12",
+      "sha256_recorded_by_closure": "4fd64d0e3aa64f2f884de1295dc444574428f338da165c45c07062babd0a6ffb",
+      "matches_recorded_closure_sha256": true
+    }
+  ],
+  "new_local_evidence": {
+    "commit": "ab40e28abcb2a97e13242d0dab5584d42a15f94e",
+    "commit_object_exists": true,
+    "commit_object_audit": "native-git-audit.json",
+    "file_commit_correspondence": "native-file-commit-binding.json",
+    "archive_mode": "hash_pinned_archive",
+    "archive_root": "native-files",
+    "archive_manifest": "native-files-manifest.json",
+    "archive_manifest_canonical_sha256": "23888b32875faf446a0d52b345e89487c447d12a6f9f22cfc7f1874dee97f987",
+    "archive_manifest_file_sha256": "e8002faf0dffb9b8595c2f6e581fe885d11f39edbfd63ee6bb30eaa1434da608",
+    "files": 9,
+    "total_snapshot_bytes": 276488,
+    "git_bundle_created": false,
+    "reason_for_file_archive": "Transport only the nine preregistered files; avoid unrelated native history and working files.",
+    "historical_cloud_provenance_repaired": false
+  },
+  "workspace_path": {
+    "alias": "/home/liuzewen/qone-life-work",
+    "physical": "/home/liuzewen/F:\\deepseek/q-one-life",
+    "note": "Alias is a symlink and is rejected as an audit root; use a trusted physical root or relative paths from the working directory."
+  },
+  "future_runner_gate": {
+    "module": "qone_life.research_factory.provenance_audit",
+    "function": "require_provenance",
+    "must_pin_manifest_digest": true,
+    "git_contract": "Use git_commit with the real full commit object; do not replace it with HEAD text.",
+    "archive_contract": "Use explicit hash_pinned_archive with relative-path SHA-256 files and no Git metadata.",
+    "integration_status": "API delivered; existing runner deliberately unchanged by scoped task."
+  },
+  "not_completed": [
+    "No fresh A3 numerical rerun",
+    "No historical remote object-store verification",
+    "No retrospective Git-provenance closure",
+    "No independent scientific closure"
+  ],
+  "old_artifacts_preserved": true
+}

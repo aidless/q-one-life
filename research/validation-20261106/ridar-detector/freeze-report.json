@@ -1,0 +1,18 @@
+{
+ "train_size": 40,
+ "test_size": 20,
+ "train_targets": {
+  "exploit_test_cases": 21,
+  "result_fabrication": 13,
+  "citation_fabrication": 20
+ },
+ "test_targets": {
+  "exploit_test_cases": 9,
+  "result_fabrication": 6,
+  "citation_fabrication": 4
+ },
+ "all_targets_on_both_sides": true,
+ "split_sha256": "c50048cdf1b277367d012bd613f31d65d40cd39bb696d45ead23f44b70814914",
+ "rules_sha256": "6294f8f0aa5e9d6712c684407c090edd64036834ad13c28beb5c49c1cf16596c",
+ "annotations_sha256": "ce275b85d638eb3a511e5e248f5c21509a57627fec888ecdb1d3bd0156361571"
+}

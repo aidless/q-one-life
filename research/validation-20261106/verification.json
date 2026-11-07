@@ -1,0 +1,261 @@
+{
+ "checks": [
+  {
+   "check": "runs",
+   "expected": 54,
+   "actual": 54,
+   "passed": true
+  },
+  {
+   "check": "completed",
+   "expected": 44,
+   "actual": 44,
+   "passed": true
+  },
+  {
+   "check": "inconclusive",
+   "expected": 10,
+   "actual": 10,
+   "passed": true
+  },
+  {
+   "check": "hash_failures",
+   "expected": 0,
+   "actual": 0,
+   "passed": true
+  },
+  {
+   "check": "replay_failures",
+   "expected": 0,
+   "actual": 0,
+   "passed": true
+  },
+  {
+   "check": "test_used_for_selection",
+   "expected": 0,
+   "actual": 0,
+   "passed": true
+  },
+  {
+   "check": "all_inconclusive_are_schema_errors",
+   "expected": 10,
+   "actual": 10,
+   "passed": true
+  },
+  {
+   "check": "complete_task_seed_pairs",
+   "expected": 10,
+   "actual": 10,
+   "passed": true
+  },
+  {
+   "check": "sign_test_multi_vs_single",
+   "expected": 0.7266,
+   "actual": 0.7266,
+   "passed": true
+  },
+  {
+   "check": "sign_test_multi_vs_no_rebuttal",
+   "expected": 0.6875,
+   "actual": 0.6875,
+   "passed": true
+  },
+  {
+   "check": "faults_injected",
+   "expected": 10,
+   "actual": 10,
+   "passed": true
+  },
+  {
+   "check": "faults_detected",
+   "expected": 10,
+   "actual": 10,
+   "passed": true
+  },
+  {
+   "check": "positive_controls",
+   "expected": 2,
+   "actual": 2,
+   "passed": true
+  },
+  {
+   "check": "peerread_status",
+   "expected": "exploratory_unmatched_versions",
+   "actual": "exploratory_unmatched_versions",
+   "passed": true
+  },
+  {
+   "check": "peerread_usable",
+   "expected": 24,
+   "actual": 24,
+   "passed": true
+  },
+  {
+   "check": "peerread_pilot_matched",
+   "expected": 24,
+   "actual": 24,
+   "passed": true
+  },
+  {
+   "check": "peerread_pilot_body_identical",
+   "expected": 23,
+   "actual": 23,
+   "passed": true
+  },
+  {
+   "check": "peerread_pilot_title_match",
+   "expected": 24,
+   "actual": 24,
+   "passed": true
+  },
+  {
+   "check": "peerread_expanded_usable",
+   "expected": 28,
+   "actual": 28,
+   "passed": true
+  },
+  {
+   "check": "peerread_expanded_status",
+   "expected": "repository_parsed_pilot",
+   "actual": "repository_parsed_pilot",
+   "passed": true
+  },
+  {
+   "check": "peerread_expanded_rho_crosses_zero",
+   "expected": true,
+   "actual": true,
+   "passed": true
+  },
+  {
+   "check": "peerread_heldout_test_n",
+   "expected": 6,
+   "actual": 6,
+   "passed": true
+  },
+  {
+   "check": "peerread_heldout_test_ci_crosses_zero",
+   "expected": true,
+   "actual": true,
+   "passed": true
+  },
+  {
+   "check": "peerread_census_papers",
+   "expected": 78,
+   "actual": 78,
+   "passed": true
+  },
+  {
+   "check": "peerread_census_parsed",
+   "expected": 40,
+   "actual": 40,
+   "passed": true
+  },
+  {
+   "check": "peerread_census_reviewed",
+   "expected": 66,
+   "actual": 66,
+   "passed": true
+  },
+  {
+   "check": "peerread_census_usable",
+   "expected": 28,
+   "actual": 28,
+   "passed": true
+  },
+  {
+   "check": "peerread_agreement_rows",
+   "expected": 169,
+   "actual": 169,
+   "passed": true
+  },
+  {
+   "check": "peerread_agreement_papers",
+   "expected": 66,
+   "actual": 66,
+   "passed": true
+  },
+  {
+   "check": "peerread_agreement_icc",
+   "expected": 0.124,
+   "actual": 0.124,
+   "passed": true
+  },
+  {
+   "check": "peerread_agreement_exact",
+   "expected": 0.303,
+   "actual": 0.303,
+   "passed": true
+  },
+  {
+   "check": "peerread_agreement_within_one",
+   "expected": 0.746,
+   "actual": 0.746,
+   "passed": true
+  },
+  {
+   "check": "model_calls_total",
+   "expected": 188,
+   "actual": 188,
+   "passed": true
+  },
+  {
+   "check": "tokens_total",
+   "expected": 804272,
+   "actual": 804272,
+   "passed": true
+  },
+  {
+   "check": "ridar_trace_files",
+   "expected": 60,
+   "actual": 60,
+   "passed": true
+  },
+  {
+   "check": "ridar_trace_bytes",
+   "expected": 61459066,
+   "actual": 61459066,
+   "passed": true
+  },
+  {
+   "check": "ridar_records",
+   "expected": 47797,
+   "actual": 47797,
+   "passed": true
+  },
+  {
+   "check": "ridar_acts",
+   "expected": 766,
+   "actual": 766,
+   "passed": true
+  },
+  {
+   "check": "ridar_spans",
+   "expected": 3461,
+   "actual": 3461,
+   "passed": true
+  },
+  {
+   "check": "ridar_spans_out_of_range",
+   "expected": 0,
+   "actual": 0,
+   "passed": true
+  },
+  {
+   "check": "ridar_categories_present",
+   "expected": 13,
+   "actual": 13,
+   "passed": true
+  },
+  {
+   "check": "ridar_trace_level_checks",
+   "expected": 0,
+   "actual": 0,
+   "passed": true
+  }
+ ],
+ "passed": true,
+ "peerread_rho": 0.5559056412195988,
+ "peerread_permutation_p": 0.004899510048995101,
+ "peerread_expanded_rho": 0.21341624079944943,
+ "peerread_heldout_test_rho": 0.7882407813680822
+}

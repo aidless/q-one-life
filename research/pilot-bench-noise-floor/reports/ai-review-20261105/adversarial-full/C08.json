@@ -1,0 +1,24 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C08",
+  "claim_text": "The eleven-file source builds a deterministic candidate archive, and extracting that archive compiles to a 45-page PDF.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "Looking at the claim and evidence description:\n\n**Claim C08**: The eleven-file source builds a deterministic candidate archive, and extracting that archive compiles to a 45-page PDF.\n\n**Evidence description**: `reports/package/package-receipt.json -> source.file_count / archive.deterministic / extra",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "boundary"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T14:40:37Z"
+}

@@ -1,7 +1,7 @@
 {
   "schema": "q-one-preregistration-v1",
   "experiment_id": "noise-floor-kfold-common-support-a3",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "frozen_at": "2026-10-29T04:37:11Z",
   "status": "frozen_before_execution",
   "scope": {
@@ -145,12 +145,31 @@
   },
   "implementation": {
     "path": "run_common_support.py",
-    "sha256": "9669db5401f31b10a450eafd0762ddd9bafdec77737a3d30a420ec85f977b012"
+    "sha256": "f688db9c70c01934a08eae4f343ca41a8f7656e702e89a4e53f8038c0c74a07c"
   },
   "non_claims": [
     "This experiment is a deterministic recomputation on four fixed m25 constructions; it is not an external-validity study.",
     "A zero LOO margin on the joint support does not prove k-fold restores ranking validity or closes independent review finding A4.",
     "A non-zero k-fold margin on the joint support does not establish a scientifically usable positive verdict.",
     "No manuscript, author, licence, account, or upload state is changed."
+  ],
+  "amended_at": "2026-11-06T10:48:42Z",
+  "amendments": [
+    {
+      "from_version": "1.0.0",
+      "issue": "Security redaction of an absolute path inside --selftest changed the runner bytes after v1.0.0 was frozen; worktree runner no longer matched the pinned hash.",
+      "scope": "Path-redaction only. No task, seed, support definition, tolerance, gate, bootstrap count, or accepted-output schema is changed.",
+      "frozen_v1_preregistration": {
+        "path": "amendments/preregistration-v1.0.0-frozen.json",
+        "sha256": "2ff9ddf4f97f8ec61db4b2f25243c75d835bbc8d8d6402b8c164d5b43b75bb94"
+      },
+      "v1_runner": {
+        "path": "amendments/run_common_support-v1.0.0.py",
+        "sha256": "9669db5401f31b10a450eafd0762ddd9bafdec77737a3d30a420ec85f977b012",
+        "note": "Historical pinned bytes from git 6cccc23^; used for the 2026-11-06 cloud recomputation."
+      },
+      "change": "run_common_support.py --selftest resolves the external root from QONE_WORKSPACE_ROOT instead of a literal placeholder; runner hash re-pinned.",
+      "evidence": "Cloud receipt reports/cloud-20261106/a3_cloud.json shows F1-F5 PASS under the v1.0.0 pinned runner."
+    }
   ]
 }

@@ -1,0 +1,30 @@
+{
+  "schema": "q-one-meta-review-v1",
+  "generated_at": "2026-11-06T14:46:42Z",
+  "decision": "rollback",
+  "reasons": [
+    "mechanical checks failed: no_blocked_claims",
+    "9 claims still objected",
+    "11 integrity checks not assessed"
+  ],
+  "accept_threshold": 4.0,
+  "previous_total": null,
+  "current_total": null,
+  "objected": 9,
+  "inconclusive": 0,
+  "integrity_status": "incomplete",
+  "executable_rebuttals": [
+    "C02",
+    "C03",
+    "C06",
+    "C07",
+    "C08",
+    "C12"
+  ],
+  "inputs": {
+    "rubric_sha256": "20be948b1ffe9eaec381cc5144510858ceae93689906fe25db7e834b3852d92f",
+    "adversarial_sha256": "6529e518807e4225ad89c2575e2f414ca69486919b76162a89967214114f5c76",
+    "rebuttal_sha256": "79cfe98fb934736221c500215197648faa8121d0504ae84afc07f5a9ef6507cd"
+  },
+  "note": "stop 只表示交人工审阅，不是录用结论。"
+}

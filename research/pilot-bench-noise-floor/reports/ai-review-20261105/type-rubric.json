@@ -1,0 +1,45 @@
+{
+  "schema": "q-one-type-rubric-v1",
+  "generated_at": "2026-11-06T13:40:07Z",
+  "manuscript_path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source/main.tex",
+  "manuscript_sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+  "paper_type": "benchmark",
+  "paper_type_label": "Benchmark",
+  "checks": [
+    {
+      "check_id": "task_definition",
+      "passed": true,
+      "pattern": "\\b(task|suite|benchmark)\\b"
+    },
+    {
+      "check_id": "splits",
+      "passed": true,
+      "pattern": "\\b(split|train|dev|test|held.?out)\\b"
+    },
+    {
+      "check_id": "baselines",
+      "passed": true,
+      "pattern": "\\b(baseline|reference)\\b"
+    },
+    {
+      "check_id": "metrics",
+      "passed": true,
+      "pattern": "\\b(metric|score|accuracy|pass@)\\b"
+    },
+    {
+      "check_id": "leakage_check",
+      "passed": true,
+      "pattern": "\\b(leak|contaminat|overlap)\\b"
+    },
+    {
+      "check_id": "limitations",
+      "passed": true,
+      "pattern": "\\b(limitations?|threats to validity)\\b"
+    }
+  ],
+  "passed": 6,
+  "total": 6,
+  "ratio": 1.0,
+  "status": "passed",
+  "note": "Structural completeness only; not an argument-quality score."
+}

@@ -1,0 +1,1 @@
+{"baseline_test": 0.4910714285714286, "baseline_validation": 0.48804454634785455, "metric_name": "balanced_accuracy", "replay_test": 0.4791666666666667, "test": 0.4791666666666667, "test_delta": -0.011904761904761918, "validation": 0.4975433999344907}

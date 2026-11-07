@@ -1,0 +1,4 @@
+raw/
+replay*/
+__pycache__/
+*.part

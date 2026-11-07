@@ -1,0 +1,35 @@
+{
+ "paper_id": "330",
+ "split": "test",
+ "text_sha256": "e83fa5b794217d2be1ec7d720cde60c3d637735868f7944450a8f50dec519b1b",
+ "text_characters": 18000,
+ "human_scores": [
+  7,
+  6,
+  7,
+  7,
+  6,
+  7
+ ],
+ "rubric": {
+  "novelty": 3,
+  "rigor": 4,
+  "clarity": 4
+ },
+ "reason": "The paper proposes a simple but effective corruption-based extension to word averaging for document representation, offering solid empirical evaluation and clear motivation, though the core idea of averaging embeddings is not highly novel.",
+ "usage": {
+  "completion_tokens": 74,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "prompt_tokens": 8310,
+  "prompt_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 8384
+ },
+ "error": null,
+ "elapsed_sec": 5.201334915996995,
+ "cached": true
+}

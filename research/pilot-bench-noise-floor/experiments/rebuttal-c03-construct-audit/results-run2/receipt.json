@@ -1,0 +1,29 @@
+{
+  "schema": "q-one-rebuttal-experiment-v1",
+  "experiment_id": "C03-construct-audit",
+  "generated_at": "2026-11-06T06:16:43Z",
+  "claim_id": "C03",
+  "ledger_row": "| C03 | The producer-baseline construction measures leaderboard readability rather than only agreement with the gold producers. | `evidence/REVIEW_INDEPENDENT_2026-10-24.md` | - | Resolve the independent review's A1 construct-validity objection or narrow the paper's claim | blocked |",
+  "original_claim": "measures leaderboard readability rather than only agreement with the gold producers",
+  "inputs": {
+    "source": {
+      "path": "<HOME>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source/main.tex",
+      "sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca"
+    },
+    "ledger": {
+      "path": "<HOME>/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/CLAIM_LEDGER.md",
+      "sha256": "ee6524c974b0e18b7c93124ee0edb596cdadd6d658f4f48cee887361e984f404"
+    },
+    "paragraph_sha256": "1f6d95c8e25c8d6c4308fbc71819dcfda9f87898ab5e45d66f9c84ec8c4c6a6f"
+  },
+  "checks": {
+    "does_not_estimate_ranking_error": true,
+    "does_not_certify_distinguishable": true,
+    "necessary_not_sufficient": true,
+    "perfect_gold_counterexample": true,
+    "original_claim_absent_from_source": true,
+    "paragraph_found": true
+  },
+  "verdict": "narrowed",
+  "note": "narrowed 表示当前源码采用窄主张，原 C03 强主张已被撤回；这不等于构造效度已被证明。"
+}

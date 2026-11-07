@@ -1,0 +1,13 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C13",
+  "claim_text": "The pinned native CLI has no delta parameter: help omits `--delta`, invoking it exits 2, and the source hard-codes the 2.0-point decision branch. A synthetic fixture with derived raw margin 2.0000000000000018 is rounded to 2.0 and classified READABLE, while the R2 candidate instructs a reader to treat equality as MARGINAL. A different fixture has point margin 13.6364 and 95% interval [-100.0, 21.124], yet remains READABLE. Domain-mismatch, two-generator floor and no-reading controls still return refusals, and two accepted runs are byte-identical.",
+  "rounds": 1,
+  "models": [
+    "group/auto-gpt-6"
+  ],
+  "objections": [],
+  "inconclusive_calls": 3,
+  "verdict": "inconclusive",
+  "generated_at": "2026-11-06T03:26:55Z"
+}

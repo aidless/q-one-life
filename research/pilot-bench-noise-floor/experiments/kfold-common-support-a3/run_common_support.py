@@ -389,7 +389,7 @@ def run_task(
 def selftest() -> int:
     """Known-answer fixture: LOO labels equal full labels on the joint support."""
     audit, common, _kfold, _builder = load_modules(
-        Path("<WORKSPACE_ROOT>/F:\\deepseek")
+        Path(os.environ.get("QONE_WORKSPACE_ROOT", ".")) / "F:\\deepseek"
     )
     rows = []
     judges = ["j1", "j2", "j3", "j4", "j5"]

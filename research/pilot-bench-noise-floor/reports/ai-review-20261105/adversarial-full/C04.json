@@ -1,0 +1,24 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C04",
+  "claim_text": "A real public leaderboard with a gold pool disjoint from the ranked systems has produced a READABLE verdict.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "Based solely on the claim text and the evidence file names provided, the claim breaks or becomes vacuous under the following boundary conditions:\n\n1. **If the “real public leaderboard” is not truly independent** – If the gold pool selection, creation, or adjudication is influenced by or overlapping ",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "boundary"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T14:38:24Z"
+}

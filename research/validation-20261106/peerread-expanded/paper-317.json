@@ -1,0 +1,35 @@
+{
+ "paper_id": "317",
+ "split": "train",
+ "text_sha256": "bdd1679fa003eb56d8a207890cac9869e404c32eccbd3e5049d553d8638cec30",
+ "text_characters": 18000,
+ "human_scores": [
+  8,
+  9,
+  7,
+  8,
+  9,
+  7
+ ],
+ "rubric": {
+  "novelty": 4,
+  "rigor": 3,
+  "clarity": 2
+ },
+ "reason": "The paper presents a novel theoretical framework connecting amortised MAP inference to GANs and denoising, supported by derivations, but the clarity is significantly hampered by an incomplete text that cuts off mid-sentence in the final section.",
+ "usage": {
+  "completion_tokens": 78,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "prompt_tokens": 8233,
+  "prompt_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 8311
+ },
+ "error": null,
+ "elapsed_sec": 5.219681449991185,
+ "cached": true
+}

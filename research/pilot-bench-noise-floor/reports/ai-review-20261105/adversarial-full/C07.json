@@ -1,0 +1,34 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C07",
+  "claim_text": "The current source tree compiles twice in isolated directories to a byte-identical 45-page PDF.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "From the claim and evidence description:\n\n**Claim C07:** The source tree compiles twice in isolated directories to a byte-identical 45-page PDF.  \n**Evidence:** `reports/cleanroom/receipt.json` contains data about exit codes, PDF pages, PDF deterministic flag, and source main SHA256.\n\nAn alternative",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "alternative"
+      ]
+    },
+    {
+      "text": "From the claim and evidence description:\n\nThe claim states: \"The current source tree compiles twice in isolated directories to a byte-identical 45-page PDF.\"\n\nThe evidence points to a `receipt.json` that includes:\n- `exit_codes`\n- `pdf.pages`\n- `pdf.deterministic`\n- `source.main_sha256`\n\nBoundary co",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "boundary"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T14:39:55Z"
+}

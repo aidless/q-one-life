@@ -1,0 +1,35 @@
+{
+  "schema": "q-one-rebuttal-plan-v1",
+  "generated_at": "2026-11-06T04:04:35Z",
+  "attack_output": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/reports/ai-review-20261105/adversarial",
+  "attack_output_sha256": "b30e3c332911df370a7b41aa13d77d7fe31c3b6a30ae281d91324bedff64ea87",
+  "objections": [
+    {
+      "claim_id": "C02",
+      "claim_text": "The current `source/main.tex` is byte-identical to the source recorded in the native manifest.",
+      "objection": "The claim states that the current `source/main.tex` file is **byte-identical** to the version recorded in the native manifest, with the evidence being the SHA‑256 hash stored in the manifest.  \n\nBoundary conditions where this claim breaks or becomes vacuous:\n\n1. **Hash collision** – The SHA‑256 hash",
+      "count": 1,
+      "kinds": [
+        "boundary"
+      ],
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "class": "executable",
+      "experiment": {
+        "experiment": "Design and run a targeted check that refutes objection on C02: The claim states that the current `source/main.tex` file is **byte-identical** to the version recorded in the native manifest, with the evidence being the SHA‑256 hash stored in the manifest.  \n\nBoundary conditions where this claim breaks or becomes vacuous:\n\n1. **Hash collision** – The SHA‑256 hash",
+        "acceptance_criteria": "Objection on C02 is resolved only if the check reproduces the reported result and the objection's concrete failure mode does not appear.",
+        "rejection_criteria": "Objection on C02 stands if the check reproduces the failure mode described in the objection."
+      }
+    }
+  ],
+  "counts": {
+    "executable": 1,
+    "out_of_loop": 0,
+    "unclassified": 0
+  },
+  "executable_count": 1,
+  "out_of_loop_count": 0,
+  "unclassified_count": 0,
+  "note": "Per AppliedScientist (arXiv:2609.14738), only execution-class objections enter the rebuttal loop. Idea/novelty objections are recorded as out_of_loop and are not claimed as resolvable."
+}

@@ -1,0 +1,288 @@
+{
+  "schema": "q-one-rebuttal-closure-v1",
+  "generated_at": "2026-11-06T14:48:31Z",
+  "root": "<WORKSPACE_ROOT>",
+  "results": [
+    {
+      "claim_id": "C05",
+      "status": "closed",
+      "alternative_explanation": "mechanical_pass/blockers could be read as either pass or fail",
+      "receipt": "reports/package-audit.json",
+      "receipt_sha256": "8b18113e3de64294469f52ffef7d4dc90d15f1701d1ecc08bdafc88c17d624c7",
+      "checks": [
+        {
+          "field": "mechanical_pass",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "note": "explicit pass flag"
+        },
+        {
+          "field": "blockers",
+          "expected": [],
+          "actual": [],
+          "passed": true,
+          "note": "explicit empty blocker list"
+        }
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "status": "closed",
+      "alternative_explanation": "A1=0 could refer to a different counter",
+      "receipt": "reports/native-numeric-gate.json",
+      "receipt_sha256": "63783e494d0d64d6841157b4bfa090a9b0e6911aead9df9b2cb5ba82fdb6a13f",
+      "checks": [
+        {
+          "field": "checks.numbers.passed",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "note": "numbers gate passed"
+        },
+        {
+          "field": "checks.numbers.passed_checks",
+          "expected": 250,
+          "actual": 250,
+          "passed": true,
+          "note": "250/250"
+        },
+        {
+          "field": "checks.numbers.total_checks",
+          "expected": 250,
+          "actual": 250,
+          "passed": true,
+          "note": "250/250"
+        },
+        {
+          "field": "checks.reverse.passed",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "note": "reverse gate passed"
+        },
+        {
+          "field": "checks.reverse.n_unbound",
+          "expected": 0,
+          "actual": 0,
+          "passed": true,
+          "note": "0 unbound"
+        },
+        {
+          "field": "checks.anchor.passed",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "note": "anchor gate passed"
+        },
+        {
+          "field": "checks.anchor.verdict",
+          "expected": "GREEN",
+          "actual": "GREEN",
+          "passed": true,
+          "note": "anchor census GREEN"
+        },
+        {
+          "field": "checks.anchor.anchor_missing",
+          "expected": 0,
+          "actual": 0,
+          "passed": true,
+          "note": "0 missing anchors"
+        }
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "status": "closed",
+      "alternative_explanation": "byte-identical could mean same page count only",
+      "receipt": "reports/cleanroom/receipt.json",
+      "receipt_sha256": "60bd23e6a2eb51ca9759a576e25fe02365636932576ca81e77e03fa3733dbccf",
+      "checks": [
+        {
+          "field": "pdf.pages",
+          "expected": 45,
+          "actual": 45,
+          "passed": true,
+          "note": "45 pages"
+        },
+        {
+          "field": "pdf.deterministic",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "note": "deterministic flag"
+        },
+        {
+          "field": "pdf.sha256_run1",
+          "expected": "94f1b3ab5bd879f33c9c596c1ad615e675951ddad3a485eb786e853dbb430818",
+          "actual": "94f1b3ab5bd879f33c9c596c1ad615e675951ddad3a485eb786e853dbb430818",
+          "passed": true,
+          "note": "run1 PDF hash"
+        },
+        {
+          "field": "pdf.sha256_run2",
+          "expected": "94f1b3ab5bd879f33c9c596c1ad615e675951ddad3a485eb786e853dbb430818",
+          "actual": "94f1b3ab5bd879f33c9c596c1ad615e675951ddad3a485eb786e853dbb430818",
+          "passed": true,
+          "note": "run2 PDF hash"
+        }
+      ]
+    },
+    {
+      "claim_id": "C08",
+      "status": "closed",
+      "alternative_explanation": "deterministic archive could mean same filename only",
+      "receipt": "reports/package/package-receipt.json",
+      "receipt_sha256": "89556e707cf15e23b88893f99db992bf5f2d85a6d2930305b3dc74bea0050d62",
+      "checks": [
+        {
+          "field": "source.file_count",
+          "expected": 11,
+          "actual": 11,
+          "passed": true,
+          "note": "11 source files"
+        },
+        {
+          "field": "archive.deterministic",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "note": "archive deterministic flag"
+        },
+        {
+          "field": "archive.sha256",
+          "expected": "74218ff9f262a8a57383875faf229a93cbd6a0cf45a2738e17571b1e11900c75",
+          "actual": "74218ff9f262a8a57383875faf229a93cbd6a0cf45a2738e17571b1e11900c75",
+          "passed": true,
+          "note": "archive hash"
+        },
+        {
+          "field": "archive.repeat_sha256",
+          "expected": "74218ff9f262a8a57383875faf229a93cbd6a0cf45a2738e17571b1e11900c75",
+          "actual": "74218ff9f262a8a57383875faf229a93cbd6a0cf45a2738e17571b1e11900c75",
+          "passed": true,
+          "note": "repeat archive hash"
+        }
+      ]
+    },
+    {
+      "claim_id": "C09",
+      "status": "closed",
+      "alternative_explanation": "700 stable deletions could be a different slice",
+      "receipt": "experiments/producer-baseline-counterexample/results/reproduction.json",
+      "receipt_sha256": "4e96412333a6634b5f3977fa71a447dd4e1cd743493aad113fabff98b3b6f84d",
+      "checks": [
+        {
+          "field": "byte_identical",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "note": "two runs byte-identical"
+        },
+        {
+          "field": "all_expected_signatures_met",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "note": "all signatures met"
+        },
+        {
+          "field": "condition_summary.0.producer_floor",
+          "expected": 1.0,
+          "actual": 1.0,
+          "passed": true,
+          "note": "perfect producer floor"
+        },
+        {
+          "field": "condition_summary.0.system_accuracies.A",
+          "expected": 0.9,
+          "actual": 0.9,
+          "passed": true,
+          "note": "A=0.9"
+        },
+        {
+          "field": "condition_summary.0.system_accuracies.B",
+          "expected": 0.5,
+          "actual": 0.5,
+          "passed": true,
+          "note": "B=0.5"
+        },
+        {
+          "field": "condition_summary.0.single_item_deletions_stable",
+          "expected": 700,
+          "actual": 700,
+          "passed": true,
+          "note": "700/700 stable"
+        },
+        {
+          "field": "condition_summary.0.gate_readable",
+          "expected": false,
+          "actual": false,
+          "passed": true,
+          "note": "gate refuses"
+        },
+        {
+          "field": "condition_summary.0.paired_discordance.first_only_correct",
+          "expected": 280,
+          "actual": 280,
+          "passed": true,
+          "note": "280 A-only"
+        },
+        {
+          "field": "condition_summary.0.paired_discordance.second_only_correct",
+          "expected": 0,
+          "actual": 0,
+          "passed": true,
+          "note": "0 B-only"
+        }
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "status": "closed",
+      "alternative_explanation": "zero joint margin could be forced by the support fix",
+      "receipt": "reports/cloud-20261106-amd/a3_amd_run1.json",
+      "receipt_sha256": "4fd64d0e3aa64f2f884de1295dc444574428f338da165c45c07062babd0a6ffb",
+      "checks": [
+        {
+          "field": "gates.F2_loo_label_identity_on_joint_support.passed",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "note": "label identity"
+        },
+        {
+          "field": "gates.F2_loo_label_identity_on_joint_support.mismatches",
+          "expected": 0,
+          "actual": 0,
+          "passed": true,
+          "note": "0 mismatches"
+        },
+        {
+          "field": "gates.F2_loo_label_identity_on_joint_support.pairs",
+          "expected": 47200,
+          "actual": 47200,
+          "passed": true,
+          "note": "47,200 pairs"
+        },
+        {
+          "field": "gates.F3_joint_support_margin_zero.passed",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "note": "joint margin zero"
+        },
+        {
+          "field": "gates.F5_kfold_control_has_teeth.passed",
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "note": "k-fold control positive"
+        }
+      ]
+    }
+  ],
+  "closed": 6,
+  "open": 0,
+  "note": "closed means the recorded fields exclude the stated alternative reading; it does not settle the scientific claim."
+}

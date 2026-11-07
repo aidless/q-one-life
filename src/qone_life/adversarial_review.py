@@ -16,19 +16,30 @@ DEFAULT_URL = "http://127.0.0.1:3425/v1/chat/completions"
 ATTACK_TEMPLATES = (
     (
         "counterexample",
-        "Construct a concrete counterexample that falsifies this claim. If none exists, say NO_COUNTEREXAMPLE and explain why.",
+        "Construct a concrete counterexample that falsifies this claim. If none exists, say NO_COUNTEREXAMPLE and explain why. Do not use tools or read files; answer from the claim and evidence text only.",
     ),
     (
         "boundary",
-        "Identify the boundary conditions or edge cases where this claim breaks or becomes vacuous. If it holds universally, say NO_BOUNDARY_RISK.",
+        "Identify the boundary conditions or edge cases where this claim breaks or becomes vacuous. If it holds universally, say NO_BOUNDARY_RISK. Do not use tools or read files; answer from the claim and evidence text only.",
     ),
     (
         "alternative",
-        "Propose an alternative explanation that produces the same observation without this claim being true. If impossible, say NO_ALTERNATIVE.",
+        "Propose an alternative explanation that produces the same observation without this claim being true. If impossible, say NO_ALTERNATIVE. Do not use tools or read files; answer from the claim and evidence text only.",
     ),
 )
 
 CLEAN_MARKERS = ("NO_COUNTEREXAMPLE", "NO_BOUNDARY_RISK", "NO_ALTERNATIVE")
+NON_ANSWER_MARKERS = (
+    "```bash",
+    "<tool_call>",
+    "<tool_name>",
+    "let me read",
+    "let me examine",
+    "i'll read",
+    "i will read",
+    "i'll examine",
+    "i will examine",
+)
 
 
 class AdversarialError(RuntimeError):
@@ -83,6 +94,7 @@ class AdversarialReview:
 
     def attack(
         self, ledger_path: Path, *, rounds: int, models: list[str], output_dir: Path,
+        claim_ids: list[str] | None = None,
     ) -> dict[str, Any]:
         if rounds < 1:
             raise AdversarialError("rounds must be at least 1")
@@ -94,6 +106,13 @@ class AdversarialReview:
         claims = parse_claims(ledger_path.read_text(encoding="utf-8"))
         if not claims:
             raise AdversarialError(f"no claims parsed from {ledger_path}")
+        if claim_ids:
+            wanted = set(claim_ids)
+            claims = [claim for claim in claims if claim["claim_id"] in wanted]
+            if not claims:
+                raise AdversarialError(
+                    f"none of the requested claims were found: {sorted(wanted)}"
+                )
 
         output_dir.mkdir(parents=True, exist_ok=True)
         per_claim = []
@@ -109,6 +128,13 @@ class AdversarialReview:
                         )
                         answer = self._ask(model, prompt)
                         if answer is None:
+                            inconclusive_rounds += 1
+                            continue
+                        lowered_answer = answer.lower()
+                        if any(
+                            marker in lowered_answer
+                            for marker in NON_ANSWER_MARKERS
+                        ):
                             inconclusive_rounds += 1
                             continue
                         # 模型明确表示"无懈可击"时视为本轮无异议。

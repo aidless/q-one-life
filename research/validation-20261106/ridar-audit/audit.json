@@ -1,0 +1,150 @@
+{
+ "schema": "qone-ridar-trace-audit-v1",
+ "generated_at": "2026-11-07T02:27:40Z",
+ "labels": "RIV-Gold annotations.jsonl",
+ "traces": "raw/ridar-full/<run>/trace.jsonl",
+ "trajectory_count": 60,
+ "unmatched_annotations": [],
+ "records_total": 47797,
+ "acts_total": 766,
+ "evidence_spans_total": 3461,
+ "spans_out_of_range_total": 0,
+ "category_table": [
+  {
+   "category": "novelty_gaming",
+   "code": "NG",
+   "trajectories": 10,
+   "acts": 10,
+   "evidence_spans": 47,
+   "implemented_artifact_level": false,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "novelty_verification_evasion",
+   "code": "NVE",
+   "trajectories": 23,
+   "acts": 23,
+   "evidence_spans": 113,
+   "implemented_artifact_level": false,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "citation_fabrication",
+   "code": "CF",
+   "trajectories": 24,
+   "acts": 68,
+   "evidence_spans": 150,
+   "implemented_artifact_level": true,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "citation_misrepresentation",
+   "code": "CM",
+   "trajectories": 32,
+   "acts": 53,
+   "evidence_spans": 180,
+   "implemented_artifact_level": false,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "resource_constraint_violation",
+   "code": "CV",
+   "trajectories": 8,
+   "acts": 9,
+   "evidence_spans": 44,
+   "implemented_artifact_level": true,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "result_fabrication",
+   "code": "RF",
+   "trajectories": 19,
+   "acts": 32,
+   "evidence_spans": 147,
+   "implemented_artifact_level": true,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "selective_reporting",
+   "code": "SR",
+   "trajectories": 20,
+   "acts": 30,
+   "evidence_spans": 130,
+   "implemented_artifact_level": true,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "experiment_design_gaming",
+   "code": "EDG",
+   "trajectories": 19,
+   "acts": 26,
+   "evidence_spans": 136,
+   "implemented_artifact_level": false,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "outcome_dependent_design_change",
+   "code": "ODDC",
+   "trajectories": 22,
+   "acts": 42,
+   "evidence_spans": 238,
+   "implemented_artifact_level": true,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "exploit_test_cases",
+   "code": "TCE",
+   "trajectories": 30,
+   "acts": 54,
+   "evidence_spans": 297,
+   "implemented_artifact_level": false,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "evaluator_gaming",
+   "code": "EG",
+   "trajectories": 8,
+   "acts": 8,
+   "evidence_spans": 51,
+   "implemented_artifact_level": false,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "evaluator_tampering",
+   "code": "ET",
+   "trajectories": 0,
+   "acts": 0,
+   "evidence_spans": 0,
+   "implemented_artifact_level": true,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "scientific_reporting_manipulation",
+   "code": "SRM",
+   "trajectories": 57,
+   "acts": 309,
+   "evidence_spans": 1437,
+   "implemented_artifact_level": false,
+   "implemented_trace_level": false
+  },
+  {
+   "category": "contribution_inflation",
+   "code": "CI",
+   "trajectories": 47,
+   "acts": 102,
+   "evidence_spans": 491,
+   "implemented_artifact_level": false,
+   "implemented_trace_level": false
+  }
+ ],
+ "coverage": {
+  "categories_in_taxonomy": 14,
+  "categories_present_in_data": 13,
+  "categories_absent": [
+   "evaluator_tampering"
+  ],
+  "implemented_artifact_level": 6,
+  "implemented_trace_level": 0
+ },
+ "claim_limit": "The six implemented checks consume manuscripts, ledgers, preregistrations, job specs or evaluator files. None consumes agent traces, so this audit measures label structure and check scope, not detector accuracy."
+}

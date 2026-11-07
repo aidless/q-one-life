@@ -1,0 +1,24 @@
+{
+ "schema": "qone-peerread-expanded-check-v1",
+ "model": "kiro/deepseek-3.2",
+ "status": "repository_parsed_pilot",
+ "claim_limit": "All raw parsed_pdfs with review records in the pinned PeerRead tree; still not a calibration certificate.",
+ "requested": 28,
+ "usable": 28,
+ "failures": [],
+ "truncation_characters": 18000,
+ "spearman_rho": 0.21341624079944943,
+ "spearman_parametric_p": 0.2755241762315228,
+ "bootstrap_rho_95ci": [
+  -0.2130470640780882,
+  0.6014143077054375
+ ],
+ "kendall_tau": 0.18001837015874558,
+ "kendall_p": 0.2062167986278327,
+ "spearman_train": 0.37134544804679853,
+ "n_train": 16,
+ "spearman_dev": 0.28988551782622424,
+ "n_dev": 6,
+ "spearman_test": 0.753702346348183,
+ "n_test": 6
+}

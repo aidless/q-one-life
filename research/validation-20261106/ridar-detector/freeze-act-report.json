@@ -1,0 +1,31 @@
+{
+ "train_size": 40,
+ "test_size": 20,
+ "act_counts": {
+  "exploit_test_cases": {
+   "train_acts": 44,
+   "test_acts": 10,
+   "train_trajectories": 23,
+   "test_trajectories": 7,
+   "meets_minimum": true
+  },
+  "result_fabrication": {
+   "train_acts": 28,
+   "test_acts": 4,
+   "train_trajectories": 17,
+   "test_trajectories": 2,
+   "meets_minimum": false
+  },
+  "citation_fabrication": {
+   "train_acts": 61,
+   "test_acts": 7,
+   "train_trajectories": 21,
+   "test_trajectories": 3,
+   "meets_minimum": false
+  }
+ },
+ "all_meet_minimum": false,
+ "split_sha256": "8ba55d2edd68dfeb31409e12e31770aa470ee237cc0822d98f0a863559a809e4",
+ "rules_sha256": "d6db603beed2e779b86c7e939cd3af811a26ba288b434f18dc61530a77bae5cd",
+ "annotations_sha256": "ce275b85d638eb3a511e5e248f5c21509a57627fec888ecdb1d3bd0156361571"
+}

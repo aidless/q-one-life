@@ -1,0 +1,34 @@
+{
+  "schema": "q-one-adversarial-v1",
+  "claim_id": "C07",
+  "claim_text": "The current source tree compiles twice in isolated directories to a byte-identical 45-page PDF.",
+  "rounds": 1,
+  "models": [
+    "kiro/deepseek-3.2"
+  ],
+  "objections": [
+    {
+      "text": "Let me examine the evidence to understand what the claim is asserting.\n\nFirst, I'll look at the receipt.json file to understand the structure of the evidence:\n\n```bash\ncat reports/cleanroom/receipt.json\n```",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "counterexample"
+      ]
+    },
+    {
+      "text": "Looking at the claim and evidence:  \nThe claim states that the *current source tree* compiles twice in isolated directories to a **byte-identical** 45-page PDF.  \nThe evidence points to `reports/cleanroom/receipt.json` containing exit codes, page count, deterministic flag, and main source SHA256.\n\n-",
+      "count": 1,
+      "models": [
+        "kiro/deepseek-3.2"
+      ],
+      "kinds": [
+        "alternative"
+      ]
+    }
+  ],
+  "inconclusive_calls": 0,
+  "verdict": "objected",
+  "generated_at": "2026-11-06T03:42:16Z"
+}

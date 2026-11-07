@@ -1,0 +1,30 @@
+{
+ "schema": "qone-peerread-reviewer-agreement-v1",
+ "papers_with_reviews": 66,
+ "papers_with_at_least_two_reviews": 64,
+ "review_rows": 169,
+ "reviewer_count_distribution": {
+  "1": 2,
+  "2": 25,
+  "3": 39
+ },
+ "mean_within_paper_spread": 1.421875,
+ "median_within_paper_spread": 1.0,
+ "spread_distribution": {
+  "0": 10,
+  "1": 30,
+  "2": 14,
+  "3": 7,
+  "4": 3
+ },
+ "pairwise_exact_agreement": 0.3028169014084507,
+ "pairwise_within_one_point": 0.7464788732394366,
+ "pairwise_count": 142,
+ "icc_1_1": 0.12410920353676895,
+ "rubric_inside_human_range": {
+  "compared": 0,
+  "inside": 0,
+  "rate": null
+ },
+ "claim_limit": "Descriptor of label noise in PeerRead; ICC(1,1) for unbalanced groups. Not a rubric calibration result."
+}

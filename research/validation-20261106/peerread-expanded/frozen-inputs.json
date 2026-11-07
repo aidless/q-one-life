@@ -1,0 +1,226 @@
+[
+ {
+  "paper_id": "304",
+  "split": "train",
+  "text_sha256": "81a8c84918e1104a58154dc11643cb491b72e86e9eaf6d3c2345bfe46d015eea",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/304.pdf.json",
+  "review_count": 4
+ },
+ {
+  "paper_id": "305",
+  "split": "train",
+  "text_sha256": "d7db7825f6d215a54c5b00837d19aef7367e74f176017580949a69ee95204a19",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/305.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "306",
+  "split": "train",
+  "text_sha256": "8e7b4d7b89bee601cea17d5bbc499f8630ebcf93f70dbe093f47120838b21a39",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/306.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "307",
+  "split": "train",
+  "text_sha256": "9487089145d6dd1d1ee5aac13543859d674518d3709ad10a967f2ad11428b3a2",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/307.pdf.json",
+  "review_count": 4
+ },
+ {
+  "paper_id": "308",
+  "split": "train",
+  "text_sha256": "1f37e014ebc6eae48cdad01cb48c06118ad34d7e1fb77caf0ec3ef83918314bf",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/308.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "309",
+  "split": "train",
+  "text_sha256": "e5e5f1f95e01f7354fcbe4a453498a759c26155c80e50cd86d16b5981399c466",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/309.pdf.json",
+  "review_count": 2
+ },
+ {
+  "paper_id": "310",
+  "split": "train",
+  "text_sha256": "59dfa47d0131bb1c67f88a1e453a1ab958e2171bbc9ae8aae04324d0d59e82b7",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/310.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "312",
+  "split": "train",
+  "text_sha256": "e7792cab4a023a5d3df6e0d943c8f3d7354b10a2760554f031ade33aba891700",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/312.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "314",
+  "split": "train",
+  "text_sha256": "2f6653ea10cd8d55a68865b0e129453de0c10dcbe4439add4ac5335e77d2b36f",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/314.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "315",
+  "split": "train",
+  "text_sha256": "7e7d5c45c04517417ed070f00065fd50185d5a5c0bcb4c88a2596894640d27a2",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/315.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "317",
+  "split": "train",
+  "text_sha256": "bdd1679fa003eb56d8a207890cac9869e404c32eccbd3e5049d553d8638cec30",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/317.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "318",
+  "split": "train",
+  "text_sha256": "9cfec129274551b8c7cc9da82908915c24ed7b4c038b92804fee0563feeefa27",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/318.pdf.json",
+  "review_count": 4
+ },
+ {
+  "paper_id": "319",
+  "split": "train",
+  "text_sha256": "6e47851da4af7f45ac5d53a42c269135c93e5594fde466517e1f67945bd40705",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/319.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "320",
+  "split": "train",
+  "text_sha256": "6a7cba4b9eaf214f6baed144c701f9d012cf38a30b8afa8c06e6957584d85a63",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/320.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "321",
+  "split": "train",
+  "text_sha256": "5190e6b586a8f849d14a8678955a700ce4d1626da82c48f96f35ac3e3d6a712b",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/321.pdf.json",
+  "review_count": 4
+ },
+ {
+  "paper_id": "322",
+  "split": "train",
+  "text_sha256": "12b4826a8e208883ed53b1707bec32e4807c1bf8a9dab5dfd1ec8e568e8e5633",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/train/parsed_pdfs/322.pdf.json",
+  "review_count": 4
+ },
+ {
+  "paper_id": "316",
+  "split": "dev",
+  "text_sha256": "00af69872d6055db3d2c5a71202f1ee6d9ec6040901be041778d595c4b4be0b4",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/316.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "325",
+  "split": "dev",
+  "text_sha256": "276a22e198ba46237b61e89334abda9459385aaf7e996bef0735a5be728de30b",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/325.pdf.json",
+  "review_count": 4
+ },
+ {
+  "paper_id": "328",
+  "split": "dev",
+  "text_sha256": "dbbe0c63e23fa7165b679acfaef755a99cb205476f025a54706d5164a9014c0b",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/328.pdf.json",
+  "review_count": 4
+ },
+ {
+  "paper_id": "340",
+  "split": "dev",
+  "text_sha256": "48ba787db96204119bf559d5235242f58fc3a72b9f3b14352170fbb66fa52504",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/340.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "350",
+  "split": "dev",
+  "text_sha256": "e74201d276d9c2bc84f883d512430c354c6b5f51d525c8b08a6d2cb86345c977",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/350.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "355",
+  "split": "dev",
+  "text_sha256": "b8960b8974150a040a8e94af4ec9806e5f0626194031aca63c6b67952dfcf395",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/dev/parsed_pdfs/355.pdf.json",
+  "review_count": 4
+ },
+ {
+  "paper_id": "330",
+  "split": "test",
+  "text_sha256": "e83fa5b794217d2be1ec7d720cde60c3d637735868f7944450a8f50dec519b1b",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/330.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "333",
+  "split": "test",
+  "text_sha256": "d742c628816fab910c3ddc30fdf049e3b82af176e3a9bcf9e80151c968c00df3",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/333.pdf.json",
+  "review_count": 4
+ },
+ {
+  "paper_id": "358",
+  "split": "test",
+  "text_sha256": "636affd2232dba29384ec8e04bea544d1434f95512e8be92a0d8ffa52961faa6",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/358.pdf.json",
+  "review_count": 4
+ },
+ {
+  "paper_id": "363",
+  "split": "test",
+  "text_sha256": "2de6746d8a75dcc37f95ef086a554ac53b7fe259dde91977703244e657e57b5f",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/363.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "398",
+  "split": "test",
+  "text_sha256": "b15868d6b0c5ced222eadbad5a6bc0f419d03363257ca6eb08057e3ec378ead9",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/398.pdf.json",
+  "review_count": 6
+ },
+ {
+  "paper_id": "400",
+  "split": "test",
+  "text_sha256": "b2635633ec8e4d49b957cf3ac2d27725cad1ca3e1618eab338e2544a5996f0b0",
+  "text_characters": 18000,
+  "raw_path": "research/validation-20261106/datasets/raw/peerread/data/iclr_2017/test/parsed_pdfs/400.pdf.json",
+  "review_count": 4
+ }
+]

@@ -1,0 +1,81 @@
+{
+  "schema": "q-one-review-rubric-v1",
+  "generated_at": "2026-11-06T03:25:36Z",
+  "manuscript_path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/source/main.tex",
+  "manuscript_sha256": "182822cffdc2d754daef26894231e46c4ba4346f6b3f913215fe5263b2273aca",
+  "ledger_path": "/home/liuzewen/F:\\deepseek/q-one-life/research/pilot-bench-noise-floor/CLAIM_LEDGER.md",
+  "ledger_sha256": "a58c0f13c1b6ee2bc57503cd2e05437cec3c09beaa868018dc9b5d6e3029f5e3",
+  "mechanical": {
+    "claim_counts": {
+      "verified": 11,
+      "candidate": 1,
+      "inconclusive": 0,
+      "blocked": 2
+    },
+    "total_claims": 14,
+    "verified_ratio": 0.7857,
+    "checks": [
+      {
+        "check_id": "claims_present",
+        "passed": true,
+        "detail": "14 claims parsed from ledger"
+      },
+      {
+        "check_id": "no_blocked_claims",
+        "passed": false,
+        "detail": "2 blocked claims"
+      },
+      {
+        "check_id": "verified_ratio",
+        "passed": true,
+        "detail": "verified ratio 0.79"
+      },
+      {
+        "check_id": "limitations_section",
+        "passed": true,
+        "detail": "limitations section present"
+      },
+      {
+        "check_id": "reproducibility_statement",
+        "passed": true,
+        "detail": "reproducibility or artifact statement present"
+      },
+      {
+        "check_id": "citations_present",
+        "passed": true,
+        "detail": "LaTeX citation commands present"
+      }
+    ],
+    "all_passed": false
+  },
+  "dimensions": [
+    {
+      "dimension": "novelty",
+      "weight": 0.3,
+      "score": 3,
+      "state": "scored",
+      "justification": "The manuscript offers a moderately novel synthesis of leave-one-out judge baselines, explicit refusal rules, and calibration for leaderboard auditing, but its core statistical tools are established and its principal structural findings largely follow directly from its chosen scoring conventions.",
+      "prompt_sha256": "f3bcac931153c02eb3cda4b605ba3ab818e0584b7230449669775a61d1c760ff"
+    },
+    {
+      "dimension": "rigor",
+      "weight": 0.4,
+      "score": 2,
+      "state": "scored",
+      "justification": "Despite extensive sensitivity analyses, clustered resampling, mutation testing, and candid limitations, rigor is undermined by an inadequately justified interpretation of agreement as a necessary ranking threshold, inconsistent definitions and decision rules, statistical errors, and validation that often tests structural identities or a different target from the claimed certification.",
+      "prompt_sha256": "036f736f6c0217a6aa6bc059ce56e44dc87ed6f2cb5bfce61bc2d3dc52c98f44"
+    },
+    {
+      "dimension": "clarity",
+      "weight": 0.3,
+      "score": 2,
+      "state": "scored",
+      "justification": "The manuscript provides explicit definitions and structured methods, but excessive repetition, dense sentences, extensive implementation and revision history, and contradictory statements about applicability, verdicts, and measured cases make its central argument and findings difficult to follow.",
+      "prompt_sha256": "54ecebdc4e7dd051ee021c1bfabe3a1ac071e134c343f58d4f961ab685ec98b3"
+    }
+  ],
+  "all_dimensions_scored": true,
+  "total": null,
+  "status": "inconclusive",
+  "note": "总分只在机械检查全过且三个维度均有评分时计算；该分数不是录用结论。"
+}

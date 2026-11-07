@@ -1,0 +1,33 @@
+{
+ "paper_id": "328",
+ "split": "dev",
+ "text_sha256": "dbbe0c63e23fa7165b679acfaef755a99cb205476f025a54706d5164a9014c0b",
+ "text_characters": 18000,
+ "human_scores": [
+  8,
+  4,
+  8,
+  4
+ ],
+ "rubric": {
+  "novelty": 4,
+  "rigor": 5,
+  "clarity": 5
+ },
+ "reason": "The paper directly fits RNNs to neural spiking data, which is a novel application of deep learning in neuroscience, and it is exceptionally rigorous in its experimental methods, model comparisons, and performance analysis, with a highly clear and well-structured presentation.",
+ "usage": {
+  "completion_tokens": 83,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "prompt_tokens": 7816,
+  "prompt_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 7899
+ },
+ "error": null,
+ "elapsed_sec": 9.001755959994625,
+ "cached": true
+}

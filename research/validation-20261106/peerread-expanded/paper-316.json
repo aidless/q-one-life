@@ -1,0 +1,35 @@
+{
+ "paper_id": "316",
+ "split": "dev",
+ "text_sha256": "00af69872d6055db3d2c5a71202f1ee6d9ec6040901be041778d595c4b4be0b4",
+ "text_characters": 18000,
+ "human_scores": [
+  9,
+  7,
+  9,
+  9,
+  7,
+  9
+ ],
+ "rubric": {
+  "novelty": 5,
+  "rigor": 4,
+  "clarity": 5
+ },
+ "reason": "The paper introduces the novel PATE framework for differentially private learning via teacher ensembles and semi-supervised GAN-based knowledge transfer, presents a rigorous differential privacy analysis using the moments accountant, and is exceptionally clearly written and structured.",
+ "usage": {
+  "completion_tokens": 88,
+  "completion_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "prompt_tokens": 7676,
+  "prompt_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 7764
+ },
+ "error": null,
+ "elapsed_sec": 7.061983130988665,
+ "cached": true
+}
