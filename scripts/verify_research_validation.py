@@ -22,7 +22,8 @@ def _pytest_suite(root: Path) -> int:
         return 1
     proc = subprocess_run(["python3", "-m", "pytest", "-q", "tests"],
                           cwd=root, capture_output=True, text=True,
-                          env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"})
+                          env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1",
+                               "HF_HUB_OFFLINE": "1"})
     return proc.returncode
 
 
@@ -51,6 +52,8 @@ def main() -> int:
     autolab_code = json.loads((args.root / "autonomous-code-lab/qone-generated.json").read_text())
     autolab_exec = json.loads((args.root / "autonomous-code-lab/qone-execution.json").read_text())
     autolab_verdict = json.loads((args.root / "autonomous-code-lab/qone-verdict.json").read_text())
+    proj_receipt = json.loads((args.root / "autonomous-project-lab/qone-project-receipt.json").read_text())
+    proj_verdict = json.loads((args.root / "autonomous-project-lab/qone-project-verdict.json").read_text())
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -119,6 +122,11 @@ def main() -> int:
         check("autolab_execution_returncode", 0, autolab_exec["returncode"]),
         check("autolab_sandbox_network", "not_granted", autolab_exec["sandbox"]["network"]),
         check("autolab_hidden_tests_passed", True, autolab_verdict["passed"]),
+        check("project_lab_schema", "q-one-project-lab-v1", proj_receipt["schema"]),
+        check("project_lab_file_count", 4, len(proj_receipt["files"])),
+        check("project_lab_pytest_passed", 0, proj_verdict["pytest_returncode"]),
+        check("project_lab_run_passed", 0, proj_verdict["run_returncode"]),
+        check("project_lab_passed", True, proj_verdict["passed"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -159,6 +167,7 @@ def main() -> int:
         "llm_tce_confusion": llm_tce["confusion"],
         "paperbench_dummy_score": paperbench_grade["score"],
         "autolab_hidden_tests_passed": autolab_verdict["passed"],
+        "project_lab_passed": proj_verdict["passed"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

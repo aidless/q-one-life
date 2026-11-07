@@ -20,6 +20,7 @@ from .rebuttal_loop import RebuttalError, build_rebuttal_plan, write_rebuttal_pl
 from .redaction import export_observations
 from .research_factory.autopilot import AutopilotError
 from .research_factory.code_lab import CodeLabError, execute_code, generate_code, run_hidden_tests
+from .research_factory.project_lab import build_project, generate_project, parse_project, verify_project
 from .research_factory.direction_diversity import DiversityError
 from .research_factory.environment_manifest import EnvironmentError
 from .research_factory.meta_review import MetaReviewError
@@ -682,6 +683,17 @@ def parser() -> argparse.ArgumentParser:
     command.add_argument("--magpie-url", default=DEFAULT_MODEL_URL)
     command.add_argument("--output", required=True)
     command.set_defaults(handler=cmd_research_code)
+    project = commands.add_parser("research-project", help="generate and verify a multi-file research project")
+    project.add_argument("action", choices=["generate", "build", "verify"])
+    project.add_argument("--task", help="research task for generate")
+    project.add_argument("--receipt", help="project receipt JSON")
+    project.add_argument("--output-dir", help="directory to materialise the project")
+    project.add_argument("--output", help="output receipt path")
+    project.add_argument("--input", help="input data JSON for verify")
+    project.add_argument("--hidden-tests", help="python source of host hidden tests")
+    project.add_argument("--model", default="group/auto-gpt-6")
+    project.add_argument("--magpie-url", default=DEFAULT_MODEL_URL)
+    project.set_defaults(handler=cmd_research_project)
 
     return root
 
@@ -1070,6 +1082,32 @@ def cmd_research_code(args: argparse.Namespace) -> int:
         receipt = run_hidden_tests(code_payload["code"], execution, tests)
     Path(args.output).write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps(receipt, ensure_ascii=False, indent=2))
+    return 0
+
+
+def cmd_research_project(args: argparse.Namespace) -> int:
+    """Generate, materialise or verify a bounded multi-file research project."""
+    if args.action == "generate":
+        receipt = generate_project(
+            args.task or "",
+            make_model_call(model=args.model, url=args.magpie_url),
+        )
+        Path(args.output).write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
+    elif args.action == "build":
+        files = parse_project(Path(args.receipt).read_text(encoding="utf-8"))
+        build_project(files, Path(args.output_dir))
+        receipt = {"schema": "q-one-project-lab-build-v1", "output_dir": args.output_dir,
+                   "files": sorted(files)}
+    else:
+        payload = json.loads(Path(args.receipt).read_text(encoding="utf-8"))
+        files = payload.get("files") if isinstance(payload, dict) else None
+        if not isinstance(files, dict):
+            raise CodeLabError("project receipt must contain files")
+        data = json.loads(Path(args.input).read_text(encoding="utf-8"))
+        hidden = Path(args.hidden_tests).read_text(encoding="utf-8")
+        receipt = verify_project(files, input_data=data, hidden_tests=hidden)
+        Path(args.output).write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
+    print(json.dumps({k: v for k, v in receipt.items() if k != "files"}, ensure_ascii=False, indent=2))
     return 0
 
 
