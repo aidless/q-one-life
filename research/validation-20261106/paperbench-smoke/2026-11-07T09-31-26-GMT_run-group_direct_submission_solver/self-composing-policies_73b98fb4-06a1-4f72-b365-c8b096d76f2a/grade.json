@@ -1,0 +1,17 @@
+{
+  "paperbench_result": {
+    "paper_id": "self-composing-policies",
+    "run_id": "self-composing-policies_73b98fb4-06a1-4f72-b365-c8b096d76f2a",
+    "submission_exists": false,
+    "skipped_reproduction": true,
+    "code_only": true,
+    "resources_provided": false,
+    "agent_output": null,
+    "judge_output": null,
+    "reproduction_metadata": null,
+    "monitor_result": null,
+    "monitor_ran": false
+  },
+  "score": 0.0,
+  "grader_log": "No checkpoint exists, skipping grading!"
+}

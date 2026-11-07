@@ -1,0 +1,5 @@
+{'component': 'paperbench.solvers.base', 'event': 'Attempting to start a computer instance. This may take a while...'}
+{'component': 'paperbench.nano.task', '_print': True, 'event': 'agent.env not found at: /tmp/paperbench-upstream/project/paperbench/paperbench/solvers/agent.env agent.env should be created by copying agent.env.exampleto agent.env and populating the necessary keys. agent.env is necessary for replicating some papers when using a non-dummy agent'}
+{'component': 'paperbench.solvers.base', 'event': 'An error occurred while running the agent: not all arguments converted during string formatting'}
+{'component': 'paperbench.nano.task', 'exc_info': True, 'event': 'No checkpoint exists, skipping grading!'}
+{'component': 'paperbench.nano.task', '_print': True, 'event': '\x1b[1;35mGrades saved to /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T09-31-26-GMT_run-group_direct_submission_solver/self-composing-policies_73b98fb4-06a1-4f72-b365-c8b096d76f2a/grade.json\x1b[0m'}

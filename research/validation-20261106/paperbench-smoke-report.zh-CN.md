@@ -1,7 +1,7 @@
 # PaperBench dev 容器冒烟报告
 
-日期：2026-11-06。结论：**任务包与上游代码已准备好；容器启动阶段被
-Docker Hub 拉取 `pb-env:latest` 阻断。没有 PaperBench 分数。**
+日期：2026-11-06。状态：已被 2026-11-07 的成功冒烟取代。
+见 `paperbench-smoke/REPORT.zh-CN.md`。
 
 ## 已完成
 
@@ -19,7 +19,7 @@ Docker Hub 拉取 `pb-env:latest` 阻断。没有 PaperBench 分数。**
    dummy judge 不会发起付费模型调用。
 8. 进程进入 Alcatraz 容器启动阶段，卡在 `_pull_image("pb-env:latest")`。
 
-## 阻断
+## 旧阻断（已解决）
 
 ```
 docker.errors.APIError:
@@ -33,14 +33,12 @@ failed to resolve reference "docker.io/library/pb-env:latest"
 2. 当前本机没有 `pb-env:latest`。
 3. 构建脚本从 `ubuntu:24.04` 开始。
 4. Docker daemon 访问 `registry-1.docker.io` 超时。
-5. 本机有 14 个正在运行的容器，不能重启 Docker daemon 配置代理。
+5. 通过手工导入 `ubuntu:24.04` 和 `alpine/socat:latest` 解决；
+   `pb-env:latest` 已构建成功。
 
 ## 不能声称
 
-- 不能声称 PaperBench 已跑通。
-- 不能声称 `pb-env` 已构建。
-- 不能声称任何 PaperBench 分数。
-- 不能声称 direct submission 链路已端到端完成。
+- 不能声称真实 PaperBench 能力分数；dummy score 1.0 只证明基础设施。
 
 ## 最小恢复路径
 

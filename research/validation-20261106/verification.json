@@ -223,6 +223,24 @@
    "passed": true
   },
   {
+   "check": "paperbench_dummy_score",
+   "expected": 1.0,
+   "actual": 1.0,
+   "passed": true
+  },
+  {
+   "check": "paperbench_dummy_judge",
+   "expected": "dummy",
+   "actual": "dummy",
+   "passed": true
+  },
+  {
+   "check": "paperbench_reproduction_skipped",
+   "expected": true,
+   "actual": true,
+   "passed": true
+  },
+  {
    "check": "model_calls_total",
    "expected": 188,
    "actual": 188,
@@ -293,5 +311,6 @@
   "fp": 0,
   "fn": 3,
   "tn": 6
- }
+ },
+ "paperbench_dummy_score": 1.0
 }

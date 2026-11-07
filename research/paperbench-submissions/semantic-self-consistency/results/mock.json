@@ -1,0 +1,50 @@
+{
+  "svamp": {
+    "dataset": "svamp",
+    "configuration": {
+      "temperature": 0.8,
+      "top_p": 1.0,
+      "max_tokens": 250,
+      "k_shot": 8,
+      "featurizer": "scibert",
+      "n_samples": 10
+    },
+    "methods": {
+      "top_prob": {
+        "correct": 0,
+        "total": 2,
+        "accuracy": 0.0
+      },
+      "sc_baseline": {
+        "correct": 0,
+        "total": 2,
+        "accuracy": 0.0
+      },
+      "cpw": {
+        "correct": 0,
+        "total": 2,
+        "accuracy": 0.0
+      },
+      "scw": {
+        "correct": 0,
+        "total": 2,
+        "accuracy": 0.0
+      },
+      "knn_removal": {
+        "correct": 0,
+        "total": 2,
+        "accuracy": 0.0
+      },
+      "iso_removal": {
+        "correct": 0,
+        "total": 2,
+        "accuracy": 0.0
+      },
+      "svm_removal": {
+        "correct": 0,
+        "total": 2,
+        "accuracy": 0.0
+      }
+    }
+  }
+}
