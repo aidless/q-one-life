@@ -1,0 +1,114 @@
+{
+  "schema": "qone-scc-dataset-audit-v1",
+  "summary": {
+    "files": 3,
+    "expected_files": 3,
+    "rows": 1941,
+    "problems": 0,
+    "problem_list": [],
+    "status": "PASS"
+  },
+  "datasets": [
+    {
+      "file": "aqua_test.jsonl",
+      "rows": 254,
+      "sha256": "de41581881ef95c5588c44ddc701c77fd480839241dd422a0d181262af24520c",
+      "fields": {
+        "correct": 254,
+        "options": 254,
+        "question": 254,
+        "rationale": 254
+      },
+      "missing_top_level_fields": {},
+      "question_char_stats": {
+        "n": 254,
+        "min": 12.0,
+        "max": 491.0,
+        "mean": 191.86220472440945,
+        "median": 184.5,
+        "p95": 343.0
+      },
+      "answer_type_counts": {
+        "str": 254
+      },
+      "answer_value_top10": {
+        "A": 63,
+        "B": 58,
+        "D": 53,
+        "C": 46,
+        "E": 34
+      },
+      "answer_value_cardinality": 5,
+      "parse_failures": 0
+    },
+    {
+      "file": "svamp.json",
+      "rows": 1000,
+      "sha256": "5be77703a6d891ae476d7c082787ad361392aa02453b132516cdd5f4e7934e3e",
+      "fields": {
+        "Answer": 1000,
+        "Body": 1000,
+        "Equation": 1000,
+        "ID": 1000,
+        "Question": 1000,
+        "Type": 1000
+      },
+      "missing_top_level_fields": {},
+      "question_char_stats": {
+        "n": 1000,
+        "min": 22.0,
+        "max": 96.0,
+        "mean": 48.089,
+        "median": 46.0,
+        "p95": 78.0
+      },
+      "answer_type_counts": {
+        "float": 1000
+      },
+      "answer_value_top10": {
+        "2.0": 77,
+        "1.0": 76,
+        "3.0": 52,
+        "4.0": 39,
+        "5.0": 33,
+        "7.0": 31,
+        "10.0": 29,
+        "14.0": 27,
+        "6.0": 26,
+        "8.0": 25
+      },
+      "answer_value_cardinality": 273,
+      "parse_failures": 0
+    },
+    {
+      "file": "strategyqa_test.json",
+      "rows": 687,
+      "sha256": "6da41445f044a7abde29f987d3311757cd0c33e759ea6f37fa100917bf0a82b0",
+      "fields": {
+        "answer": 687,
+        "description": 687,
+        "qid": 687,
+        "question": 687,
+        "term": 687
+      },
+      "missing_top_level_fields": {},
+      "question_char_stats": {
+        "n": 687,
+        "min": 19.0,
+        "max": 105.0,
+        "mean": 56.001455604075694,
+        "median": 55.0,
+        "p95": 85.0
+      },
+      "answer_type_counts": {
+        "bool": 687
+      },
+      "answer_value_top10": {
+        "False": 354,
+        "True": 333
+      },
+      "answer_value_cardinality": 2,
+      "parse_failures": 0
+    }
+  ]
+}

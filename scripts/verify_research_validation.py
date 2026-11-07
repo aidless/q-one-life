@@ -84,6 +84,8 @@ def main() -> int:
     hidden_cloud = json.loads((args.root / "external-task-coverage/hidden/cloud-result.json").read_text())
     hidden_selftest = json.loads((args.root / "external-task-coverage/hidden/selftest.json").read_text())
     dataset_checks = json.loads((args.root / "datasets/semantic-self-consistency/download-checks.json").read_text())
+    dataset_local_audit = json.loads((args.root / "datasets/semantic-self-consistency/local-audit.json").read_text())
+    dataset_cloud_audit = json.loads((args.root / "datasets/semantic-self-consistency/cloud-audit.json").read_text())
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -211,6 +213,10 @@ def main() -> int:
               dataset_checks["svamp.json"]["sha256"]),
         check("scc_strategyqa_sha256", "6da41445f044a7abde29f987d3311757cd0c33e759ea6f37fa100917bf0a82b0",
               dataset_checks["strategyqa_test.json"]["sha256"]),
+        check("scc_local_audit_status", "PASS", dataset_local_audit["summary"]["status"]),
+        check("scc_cloud_audit_status", "PASS", dataset_cloud_audit["summary"]["status"]),
+        check("scc_audited_rows", 1941, dataset_cloud_audit["summary"]["rows"]),
+        check("scc_audit_problems", 0, dataset_cloud_audit["summary"]["problems"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -265,6 +271,7 @@ def main() -> int:
         "evidence_contract_leaves": evidence_contract["summary"]["rubric_leaves"],
         "hidden_selftest_passed": hidden_selftest["summary"]["passed"],
         "scc_dataset_rows": [dataset_checks[k]["rows"] for k in ("aqua_test.jsonl", "svamp.json", "strategyqa_test.json")],
+        "scc_audited_rows": dataset_cloud_audit["summary"]["rows"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

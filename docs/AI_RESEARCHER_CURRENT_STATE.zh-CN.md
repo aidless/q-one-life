@@ -12,7 +12,7 @@
    `self-composing-policies`（9 测试）。三份都是**手写参考实现**，不是模型生成的。
 4. `research/validation-20261106/paperbench-smoke/2026-11-07T14-34-31-GMT_run-group_direct_submission_solver/`
    证明三份提交都被 DirectSubmission 归档、dummy judge 正常读取并输出 grade。
-5. `scripts/verify_research_validation.py` 现有 113 项机器校验，全绿。
+5. `scripts/verify_research_validation.py` 现有 117 项机器校验，全绿。
 6. `src/qone_life/research_factory/project_lab.py` 新增多文件项目模式；模型生成过
    4 文件项目并通过 pytest + 主机隐藏测试（`autonomous-project-lab/`）。
 7. `autonomous-paperbench-loop/` 证明模型生成的项目被 PaperBench DirectSubmission
@@ -34,7 +34,8 @@
     双向变异自测通过。
 12. `datasets/semantic-self-consistency/` 记录 AQuA-RAT 254、SVAMP 1000、
     StrategyQA test 687 的公开来源、下载脚本、SHA-256 与授权边界；
-    数据本体不入 git，恢复脚本可重跑并校验。
+    数据本体不入 git，恢复脚本可重跑并校验。本机与云端数据审计均 PASS，
+    1941 行、0 个解析/哈希/行数问题。
 
 ## 不能声称
 
