@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import os
 import sys
@@ -12,18 +13,20 @@ from typing import Any
 from .adversarial_review import AdversarialError, AdversarialReview
 from .cloud_executor import CloudExecutionError, CloudExecutor
 from .measurement import MeasurementError, MeasurementStore
+from .model_gateway import DEFAULT_URL as DEFAULT_MODEL_URL
+from .model_gateway import make_model_call
 from .models import LifeValidationError, Observation, load_metric_specs, utc_now
-from .model_gateway import DEFAULT_URL as DEFAULT_MODEL_URL, make_model_call
-from .redaction import export_observations
 from .rebuttal_loop import RebuttalError, build_rebuttal_plan, write_rebuttal_plan
+from .redaction import export_observations
 from .research_factory.autopilot import AutopilotError
+from .research_factory.code_lab import CodeLabError, execute_code, generate_code, run_hidden_tests
 from .research_factory.direction_diversity import DiversityError
 from .research_factory.environment_manifest import EnvironmentError
 from .research_factory.meta_review import MetaReviewError
 from .research_factory.outcome_predictor import PredictorError
 from .research_factory.research_integrity import IntegrityError
-from .research_factory.rubric_calibration import CalibrationError
 from .research_factory.review_rubric import ReviewRubricError
+from .research_factory.rubric_calibration import CalibrationError
 from .research_factory.rubric_types import TYPE_RUBRICS, TypeRubricError
 from .research_factory.writer import WriterError
 from .research_production import ProductionError, ResearchProduction
@@ -668,6 +671,18 @@ def parser() -> argparse.ArgumentParser:
     command.add_argument("--output", required=True)
     command.set_defaults(handler=cmd_research_optimize)
 
+    command = commands.add_parser("research-code", help="generate and run bounded research code")
+    command.add_argument("action", choices=["generate", "execute", "test"])
+    command.add_argument("--task", help="research task for generate")
+    command.add_argument("--code", help="code receipt JSON for execute/test")
+    command.add_argument("--data", help="input data JSON for execute")
+    command.add_argument("--execution", help="execution receipt JSON for test")
+    command.add_argument("--tests", help="path::function returning the hidden test list")
+    command.add_argument("--model", default="group/auto-gpt-6")
+    command.add_argument("--magpie-url", default=DEFAULT_MODEL_URL)
+    command.add_argument("--output", required=True)
+    command.set_defaults(handler=cmd_research_code)
+
     return root
 
 
@@ -1031,6 +1046,33 @@ def cmd_research_screen_plans(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_research_code(args: argparse.Namespace) -> int:
+    """Generate and execute bounded research code with hidden tests."""
+    if args.action == "generate":
+        receipt = generate_code(
+            args.task,
+            lambda prompt: make_model_call(prompt, model=args.model, url=args.magpie_url),
+        )
+    elif args.action == "execute":
+        receipt = execute_code(_load_json(args.code)["code"], _load_json(args.data))
+    else:
+        code_payload = _load_json(args.code)
+        execution = _load_json(args.execution)
+        module_path, function_name = args.tests.rsplit("::", 1)
+        spec = importlib.util.spec_from_file_location("qone_hidden_tests", module_path)
+        if spec is None or spec.loader is None:
+            raise CodeLabError("hidden tests module cannot be loaded")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        tests = getattr(module, function_name)
+        if not isinstance(tests, list):
+            raise CodeLabError("tests must be a JSON list")
+        receipt = run_hidden_tests(code_payload["code"], execution, tests)
+    Path(args.output).write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
+    print(json.dumps(receipt, ensure_ascii=False, indent=2))
+    return 0
+
+
 def cmd_research_optimize(args: argparse.Namespace) -> int:
     """按证据 ROI 对论文族排序。"""
     from .research_factory import optimize_portfolio
@@ -1049,6 +1091,6 @@ def main(argv: list[str] | None = None) -> int:
     args = parser().parse_args(argv)
     try:
         return args.handler(args)
-    except (LifeValidationError, StoreError, MeasurementError, ProductionError, AdversarialError, RebuttalError, AutopilotError, ReviewRubricError, WriterError, MetaReviewError, CalibrationError, IntegrityError, TypeRubricError, EnvironmentError, DiversityError, PredictorError, CloudExecutionError, FileNotFoundError, json.JSONDecodeError, ValueError) as exc:
+    except (LifeValidationError, StoreError, MeasurementError, ProductionError, AdversarialError, RebuttalError, AutopilotError, CodeLabError, ReviewRubricError, WriterError, MetaReviewError, CalibrationError, IntegrityError, TypeRubricError, EnvironmentError, DiversityError, PredictorError, CloudExecutionError, FileNotFoundError, json.JSONDecodeError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2

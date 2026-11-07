@@ -25,6 +25,7 @@ def main() -> int:
     peerread_heldout = json.loads((args.root / "peerread-heldout/heldout.json").read_text())
     peerread_availability = json.loads((args.root / "peerread-availability/census.json").read_text())
     peerread_agreement = json.loads((args.root / "peerread-agreement/agreement.json").read_text())
+    llm_tce = json.loads((args.root / "ridar-detector/result-llm-tce.json").read_text())
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -81,6 +82,12 @@ def main() -> int:
               round(peerread_agreement["pairwise_exact_agreement"], 3)),
         check("peerread_agreement_within_one", 0.746,
               round(peerread_agreement["pairwise_within_one_point"], 3)),
+        check("llm_tce_requested", 12, llm_tce["requested"]),
+        check("llm_tce_judged", 12, llm_tce["judged"]),
+        check("llm_tce_precision", 1.0, llm_tce["precision"]),
+        check("llm_tce_recall", 0.5, llm_tce["recall"]),
+        check("llm_tce_stopped_after_dev", True,
+              llm_tce["stop"] == "eligible_for_new_preregistration"),
         check("model_calls_total", 188, sum(run["model_calls"] for run in runs)),
         check("tokens_total", 804272,
               sum(run["prompt_tokens"] + run["completion_tokens"] for run in runs)),
@@ -101,6 +108,7 @@ def main() -> int:
         "peerread_permutation_p": peerread["spearman_permutation_p"],
         "peerread_expanded_rho": peerread_expanded["spearman_rho"],
         "peerread_heldout_test_rho": peerread_heldout["test"]["rho"],
+        "llm_tce_confusion": llm_tce["confusion"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

@@ -193,6 +193,36 @@
    "passed": true
   },
   {
+   "check": "llm_tce_requested",
+   "expected": 12,
+   "actual": 12,
+   "passed": true
+  },
+  {
+   "check": "llm_tce_judged",
+   "expected": 12,
+   "actual": 12,
+   "passed": true
+  },
+  {
+   "check": "llm_tce_precision",
+   "expected": 1.0,
+   "actual": 1.0,
+   "passed": true
+  },
+  {
+   "check": "llm_tce_recall",
+   "expected": 0.5,
+   "actual": 0.5,
+   "passed": true
+  },
+  {
+   "check": "llm_tce_stopped_after_dev",
+   "expected": true,
+   "actual": true,
+   "passed": true
+  },
+  {
    "check": "model_calls_total",
    "expected": 188,
    "actual": 188,
@@ -257,5 +287,11 @@
  "peerread_rho": 0.5559056412195988,
  "peerread_permutation_p": 0.004899510048995101,
  "peerread_expanded_rho": 0.21341624079944943,
- "peerread_heldout_test_rho": 0.7882407813680822
+ "peerread_heldout_test_rho": 0.7882407813680822,
+ "llm_tce_confusion": {
+  "tp": 3,
+  "fp": 0,
+  "fn": 3,
+  "tn": 6
+ }
 }
