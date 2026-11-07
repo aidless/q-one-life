@@ -1,0 +1,7 @@
+Build a minimal reproduction project for the PaperBench task semantic-self-consistency.
+It must include src/core.py with run(data: dict) -> dict implementing:
+  parse_answer(text) -> str or None, modal_answer(answers) -> str or None,
+  cpw_answer(responses) -> str or None, scw_answer(responses) -> str or None.
+Use only the Python standard library. Include tests/test_project.py with 3 unit tests
+and run.py which reads JSON from stdin and prints {"chosen": <modal_answer result>}.
+The input data is {"datasets": {"answers": ["1", "1", "2"]}}.

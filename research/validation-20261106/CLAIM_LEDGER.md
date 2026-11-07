@@ -62,3 +62,4 @@ no row may be cited without re-reading that carrier.
 - No claim that the fault battery covers RIDAR's violation taxonomy.
 - No claim that trajectory-level integrity detection was measured; the frozen
   protocol stopped before any detector code was written.
+| V46 | A model-generated multi-file project was built, archived by PaperBench DirectSubmission and graded by the dummy judge | `autonomous-paperbench-loop/REPORT.zh-CN.md`; `paperbench-smoke/2026-11-07T14-59-44-GMT_run-group_direct_submission_solver/semantic-self-consistency_674b0899-43c0-4b08*/grade.json` | archived / dummy 1.0 | verified |

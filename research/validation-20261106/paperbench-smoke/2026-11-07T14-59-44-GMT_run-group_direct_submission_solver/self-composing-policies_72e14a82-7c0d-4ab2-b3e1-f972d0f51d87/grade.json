@@ -1,0 +1,2492 @@
+{
+  "paperbench_result": {
+    "paper_id": "self-composing-policies",
+    "run_id": "self-composing-policies_72e14a82-7c0d-4ab2-b3e1-f972d0f51d87",
+    "submission_exists": true,
+    "skipped_reproduction": true,
+    "code_only": true,
+    "resources_provided": false,
+    "agent_output": null,
+    "judge_output": {
+      "judge_type": "dummy",
+      "score": 1.0,
+      "num_leaf_nodes": 151,
+      "num_invalid_leaf_nodes": 0,
+      "graded_at": "2026-11-07T14-59-54-GMT",
+      "graded_task_tree": {
+        "id": "6fa267fe-5014-4fc2-b49f-2758b0cf3545",
+        "requirements": "The core contributions of the paper have been reproduced.",
+        "weight": 1,
+        "score": 1.0,
+        "valid_score": true,
+        "task_category": null,
+        "explanation": "Aggregated score from sub-tasks.",
+        "judge_metadata": null,
+        "sub_tasks": [
+          {
+            "id": "48768a7c-03e3-44b3-a703-73429e76ad3c",
+            "requirements": "A convolutional neural network (CNN) has been implemented to encode the state of the ALE environments, as described in Section 4.1 and Appendix E.1.",
+            "weight": 1,
+            "score": 1.0,
+            "valid_score": true,
+            "task_category": null,
+            "explanation": "Aggregated score from sub-tasks.",
+            "judge_metadata": null,
+            "sub_tasks": [
+              {
+                "id": "4747029a-a3db-4abe-8610-8727dbc34456",
+                "requirements": "A CNN has been implemented and is used to encode the state of both ALE environments to a low-dimensional vector.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "d92c7aa0-6a11-4141-a8f3-bc9b12bf4d37",
+                    "requirements": "The CNN has three convolutional layers with 32, 64 and 64 channels and filter sizes of 8, 4 and 3 respectively.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  },
+                  {
+                    "id": "2eaeb892-c348-4acd-b603-30cbdd9f8ffc",
+                    "requirements": "The CNN has a final dense layer with an output dimension of 512.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  }
+                ]
+              },
+              {
+                "id": "2c2ef685-8326-4773-bb21-68f3e7a527b3",
+                "requirements": "Logic to use a single CNN encoder per policy has been implemented, where the encoder for a new policy is initialized with the weights of the previous one, as described in Appendix E.2.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": "Code Development",
+                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                "judge_metadata": null,
+                "sub_tasks": []
+              },
+              {
+                "id": "1f4b310c-b311-42e0-a8f6-4e4e931cb6a5",
+                "requirements": "The output of the encoder is an input to both CompoNet (actor) as well as the value function (critic).",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": "Code Development",
+                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                "judge_metadata": null,
+                "sub_tasks": []
+              }
+            ]
+          },
+          {
+            "id": "d72e33eb-e03b-4b11-a71c-f8f534802dca",
+            "requirements": "The CompoNet architecture has been implemented, as described in Section 4.",
+            "weight": 4,
+            "score": 1.0,
+            "valid_score": true,
+            "task_category": null,
+            "explanation": "Aggregated score from sub-tasks.",
+            "judge_metadata": null,
+            "sub_tasks": [
+              {
+                "id": "dbbb11b3-c045-4e46-b2cc-cc1f652d84bf",
+                "requirements": "A matrix $\\Phi^{k;s}$ of size $(k-1) \\times |A|$ is defined which stores the output vectors of all preceding $k - 1$ modules for the current state, where $k$ is the number of tasks seen so far (including the current one) and $A$ is the action space.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": "Code Development",
+                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                "judge_metadata": null,
+                "sub_tasks": []
+              },
+              {
+                "id": "f0afda32-51d9-434d-be8e-5eb3ab5e72d3",
+                "requirements": "Logic to compute $h_s \\in \\mathbb{R}^{d_{\\text{enc}}}$ has been implemented, where $h_s$ is computed by the CNN encoder when encoding is needed (i.e., for the Arcade Learning Environment tasks) and $h_s = s$ when no encoder is needed (i.e., for the Meta-World tasks).",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": "Code Development",
+                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                "judge_metadata": null,
+                "sub_tasks": []
+              },
+              {
+                "id": "7033f8ba-4a41-422b-a2ba-446a70419dc7",
+                "requirements": "The output attention head has been implemented, as described in Section 4.2 -- \"Output Attention Head\".",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "e2b6885f-18d8-415f-a1c8-7988de3b8f55",
+                    "requirements": "The logic to compute the query vector for the output attention head has been implemented.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "dda77699-d443-4fbf-90f4-59841597db57",
+                        "requirements": "A parameter matrix $W_{out}^Q$ is defined with shape $d_{enc} \\times d_{model}$ where $d_{enc}$ is the size of the encoded state vector and $d_{model}$ is the hidden size of the model.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "7ce56b99-e970-469c-8031-09d4697acf3e",
+                        "requirements": "The query vector is computed via $q = h_s W_{out}^Q$ where $h_s$ is the encoded state vector.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "78f79c80-50ea-4798-9630-3f2eacbc37c7",
+                    "requirements": "The logic to compute the key vector for the output attention head has been implemented.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "060b1284-6e1b-4692-bd53-64e043c07fd3",
+                        "requirements": "A parameter matrix $W_{out}^K$ is defined with shape $|A| \\times d_{model}$ where $A$ is the action space and $d_{model}$ is the hidden size of the model.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "cde1da9b-47ce-4d8d-80c4-ab2a0cb678b0",
+                        "requirements": "A cosine positional embedding matrix $E_{out}$ of size $(k-1) \\times |A|$ is defined.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "0b8be057-bf1b-44fe-9d9f-0f4ca535d12b",
+                        "requirements": "The key vector is computed via $(\\Phi^{k;s} + E_{out}) W_{out}^Q$.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "48b73614-82f1-4d32-b2af-427ab51924b9",
+                    "requirements": "The logic to compute the value vector for the output attention head has been implemented, which is defined as $\\Phi^{k;s}$ (the matrix of outputs from all previous modules).",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  },
+                  {
+                    "id": "76fa75da-2e3e-4260-9e2f-09ad3e0e9259",
+                    "requirements": "The output vector $v$ for the output attention head is computed via $\\text { Attention }(\\mathbf{q}, K, V)=\\text{softmax}\\left(\\frac{q K^T}{\\sqrt{d_{\\text {model }}}}\\right) V$.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  },
+                  {
+                    "id": "bd7db785-3a65-42bc-bbf8-f3818a19700a",
+                    "requirements": "The only learnable parameters for the output attention head are $W_{out}^Q$ and $W_{out}^K$.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  }
+                ]
+              },
+              {
+                "id": "3bb3588c-fd1c-48af-bd78-6ea28892e8d3",
+                "requirements": "The input attention head has been implemented, as described in Section 4.2 -- \"Input Attention Head\".",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "d68e4314-52f6-4e6d-9aa3-a85f0bd9706d",
+                    "requirements": "A matrix $P$ is defined as the row-wise concatenation of the output of the previous block (i.e., the output attention head) and $\\Phi^{k;s}$ (the matrix of outputs from all previous modules).",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  },
+                  {
+                    "id": "96caed0d-028e-4809-8cc4-c498a1e574be",
+                    "requirements": "The logic to compute the query vector for the input attention head has been implemented.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "cf3c7ec9-b96a-4a89-a688-b7ba1bb56148",
+                        "requirements": "A parameter matrix $W_{in}^Q$ is defined with shape $d_{enc} \\times d_{model}$ where $d_{enc}$ is the size of the encoded state vector and $d_{model}$ is the hidden size of the model.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "ef07a797-146a-479d-9b9f-cfb2bef36599",
+                        "requirements": "The query vector is computed via $q = h_s W_{in}^Q$ where $h_s$ is the encoded state vector.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "68916539-efd7-40d0-8cd9-7d4a38db4b24",
+                    "requirements": "The logic to compute the key vector for the input attention head has been implemented.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "83e80a16-d7bb-4e57-809b-be04bccacd9a",
+                        "requirements": "A parameter matrix $W_{in}^K$ is defined with shape $|A| \\times d_{model}$ where $A$ is the action space and $d_{model}$ is the hidden size of the model.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "b40e5cba-8422-4aa1-a638-44e515d99f27",
+                        "requirements": "A cosine positional embedding matrix $E_{in}$ of the same size as $P$ is defined.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "a75ab485-bbc2-4932-ab22-6be8c55498e3",
+                        "requirements": "The key vector is computed via $(P + E_{in}) W_{in}^K$.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "b6563c0b-6d8c-4d2d-a77d-4f00d422daf1",
+                    "requirements": "The logic to compute the value vector for the input attention head has been implemented.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "eeb5aa73-4d41-49f5-ad43-05cfc3246084",
+                        "requirements": "A parameter matrix $W_{in}^V$ is defined with shape $|A| \\times d_{model}$ where $A$ is the action space and $d_{model}$ is the hidden size of the model.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "467eb0c9-00c4-4aea-b508-4a7c2669f31b",
+                        "requirements": "The value vector is computed via $P W_{in}^V$.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "2c041f24-2aed-4128-ba54-b27407f67db8",
+                    "requirements": "The output vector for the input attention head is computed via $\\text { Attention }(\\mathbf{q}, K, V)=\\text{softmax}\\left(\\frac{q K^T}{\\sqrt{d_{\\text {model }}}}\\right) V$.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  },
+                  {
+                    "id": "a6657076-1593-46c2-bac7-c83f69d44797",
+                    "requirements": "The only learnable parameters for the input attention head are $W_{in}^Q$, $W_{in}^K$ and $W_{in}^V$.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  }
+                ]
+              },
+              {
+                "id": "60dbb6d0-f111-481e-96ca-37097c01f418",
+                "requirements": "The internal policy has been implemented, as described in Section 4.2 -- \"Internal Policy\"",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "d861366a-340a-4fc8-9c02-ce0ad39c844e",
+                    "requirements": "The encoded state vector $h_s$ and the output of the input attention head module are concatenated column-wise, creating a vector of size $d_{enc} + d_{model}$.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  },
+                  {
+                    "id": "0d54e498-4838-450f-a17b-59ac2155855b",
+                    "requirements": "A multi-layer feed-forward block is implemented which maps a vector of length $d_{enc} + d_{model}$ to one of length $|A|$, where |A| is the dimensionality of the action space.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  },
+                  {
+                    "id": "b2387837-a2b3-41d0-8866-0516d7cb1067",
+                    "requirements": "The only learnable parameters for the internal policy are those in the multi-layer feed-forward block.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  }
+                ]
+              },
+              {
+                "id": "5eb4989c-fa80-497f-935d-b27397ce63b8",
+                "requirements": "An $|A|$-dimension vector is computed by adding the output of the internal policy module, a vector of size $|A|$, to the output from the output attention head, the vector previously denoted as $v$.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": "Code Development",
+                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                "judge_metadata": null,
+                "sub_tasks": []
+              },
+              {
+                "id": "74545ee1-9594-4d2f-89f0-374f8f48c745",
+                "requirements": "Logic to normalize the summed vectors has been implemented for continuous action spaces.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": "Code Development",
+                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                "judge_metadata": null,
+                "sub_tasks": []
+              }
+            ]
+          },
+          {
+            "id": "22c628c1-8d24-486d-9b64-728c87cb37f5",
+            "requirements": "The evaluation metrics and experimental setup has been implemented, as described in Section 5.",
+            "weight": 2,
+            "score": 1.0,
+            "valid_score": true,
+            "task_category": null,
+            "explanation": "Aggregated score from sub-tasks.",
+            "judge_metadata": null,
+            "sub_tasks": [
+              {
+                "id": "a05a315c-973f-4b0a-bf6a-0a41c4186a4e",
+                "requirements": "The average performance, forward transfer and reference forward transfer metrics have been implemented, as described in Section 5.1.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "78a7d9d6-a74d-42a0-95ac-3ce39fe31dae",
+                    "requirements": "The average performance metric has been computed, as described in Section 5.1 -- \"Average Performance\".",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "37d0398b-02ff-45cb-a378-9229584fcfb3",
+                        "requirements": "The success rate for task $i$ at timestep $t$, $p_i(t)$, is available for all timesteps and is taken as an input, which corresponds to the success rate in task $i$ at time $t$.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "0f95bb2e-1c2f-4394-a367-3d61dc8de2c4",
+                        "requirements": "The average performance at timestep $t$ is computed as $P(t) = \\frac{1}{N} \\sum_{i=1}^N p_i(t)$",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "feb94a88-a1da-4059-ac19-1e4bc992ea62",
+                    "requirements": "The forward transfer metric has been implemented, as described in Section 5.1 -- \"Forward Transfer\".",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "09cd146f-2424-4bb1-b844-a3268856492d",
+                        "requirements": "The success rate for task $i$ at timestep $t$, $p_i(t)$, is available for all timesteps and is taken as an input, which corresponds to the success rate in task $i$ at time $t$.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "3f61bfcd-04a9-4b08-a4c9-614b901315c0",
+                        "requirements": "The baseline (i.e., training a randomly initialized NN for each task) success rate for each task, $p_i^b(t)$, is taken as an input, which corresponds to the success rate of the baseline method in task $i$ at time $t$.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "07c21e51-90f4-43c4-986f-4d572829ffef",
+                        "requirements": "The area under the success curve ($\\mathrm{AUC}_i=\\frac{1}{\\Delta} \\int_{(i-1) \\cdot \\Delta}^{i \\cdot \\Delta} p_i(t) \\mathrm{d} t$) for each task is computed, as described in Equation (2) of Section 5.1.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "dbe45d3b-284d-40d2-9422-c3f4c75b1540",
+                        "requirements": "The area under the baseline success curve ($\\mathrm{AUC}_i^b=\\frac{1}{\\Delta} \\int_0^{\\Delta} p_i^b(t) \\mathrm{d} t$) for each task is computed, as described in Equation (2) of Section 5.1.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "a16438be-02e0-49b4-b3d4-bbbe6f53b6af",
+                        "requirements": "The forward transfer metric $\\mathrm{FTr}_i=\\frac{\\mathrm{AUC}_i-\\mathrm{AUC}_i^b}{1-\\mathrm{AUC}_i^b}$ has is computed, as described in Equation (2) of Section 5.1.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "95be9084-519d-4d14-ad6e-1cf9c747bcca",
+                    "requirements": "The reference forward transfer metric has been implemented, as described in Section 5.1 -- \"Reference Forward Transfer\".",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "05714e8d-caa5-4f88-b903-8595f1692b34",
+                        "requirements": "The forward transfers, $\\text{FTr}(j,i)$, obtained by training a model from scratch on the $j$-th task and fine-tuning it on the $i$-th task are taken as inputs for all $i$ and $j$ such that $1 \\leq j < i \\leq N$.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "c76c362b-3f12-4420-a651-49cce1f7aac4",
+                        "requirements": "Code for computing the reference forward transfer ($\\mathrm{RT}=\\frac{1}{N} \\sum_{i=2}^N \\max _{j<i} \\mathrm{FTr}(j, i)$) has been implemented, as described in Equation (3) of Section 5.1.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "f63fe199-5c7c-42f4-bff5-156ba3356dd6",
+                "requirements": "All tasks from Meta-World and the Arcade Learning Environment (ALE) have been configured and can built, as described in Section 5.2 and Appendix D.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "9a641d0b-b6f7-4294-9c10-2f102fe5feb4",
+                    "requirements": "All Meta-World environments described in Section 5.2 and Appendix D are accessible in code using their correct state and action spaces, as described in Section 5.2 and Appendix D.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "b4a291ec-3107-47c4-9b0e-c52296727875",
+                        "requirements": "All 10 Meta-World environments can be built and use the correct state and action spaces, as described in Appendix D.1.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "6ddede73-5b5b-43aa-b780-71d757075a38",
+                            "requirements": "The `hammer-v2` environment can be built using `gym.make`.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "58e40d55-b575-48cd-83c5-5052aaca3a32",
+                            "requirements": "The `push-wall-v2` environment can be built using `gym.make`.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "cf4a1d8a-cb3f-4643-a38c-1c37f99999a0",
+                            "requirements": "The `faucet-close-v2` environment can be built using `gym.make`.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "ec9d8fb8-eb16-4226-877b-0d6a0a597338",
+                            "requirements": "The `push-back-v2` environment can be built using `gym.make`.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "6c4b5eda-8a21-46f1-a779-46daf3012377",
+                            "requirements": "The `stick-pull-v2` environment can be built using `gym.make`.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "e40a1748-6930-40b5-9031-7568c443be95",
+                            "requirements": "The `handle-press-side-v2` environment can be built using `gym.make`.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "55a82758-0e16-4f6e-ac19-a0d69103c53e",
+                            "requirements": "The `push-v2` environment can be built using `gym.make`.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "0ada4859-64de-4816-9c5a-c858a74b368f",
+                            "requirements": "The `shelf-place-v2` environment can be built using `gym.make`.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "86d36b98-9296-4c21-a4ee-397f8d7cce0f",
+                            "requirements": "The `window-close-v2` environment can be built using `gym.make`.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "f2ed8992-c22f-46a6-8fa6-faf86b3698c4",
+                            "requirements": "The `peg-unplug-side-v2` environment can be built using `gym.make`.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "d1f984f0-9a75-451d-9fe2-a20e1a445909",
+                        "requirements": "The logic to generate a sequence of 20 tasks (i.e., a sequence of all 10 Meta-World environments repeated repeated twice) has been implemented, as described in Section 5.2.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "09240921-d50d-4490-b1df-84f206fe7eb5",
+                        "requirements": "All 10 tasks in the sequence run for 1M timesteps each for a total of 20M timesteps, as described in Section 5.2.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "915fdd73-cc58-4166-bea6-b729a159383d",
+                        "requirements": "The Metaworld module (https://github.com/Farama-Foundation/Metaworld) is used to define the environments.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "8f85639e-037f-4ac3-9149-e186c0ae1d0e",
+                    "requirements": "All ALE environments are accessible in code with the correct observation and action spaces, as described in Section 5.2 and Appendix D.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "46b2113b-4bd6-447d-8db0-07f57fedf9e3",
+                        "requirements": "All ALE environments can be built, use the correct observation and action spaces and have all playing modes available, as described in Appendix D.2 and Appendix D.3.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "65452b97-b69a-4045-ac89-90d44bfa2fc9",
+                            "requirements": "The `ALE/SpaceInvaders-v5` environment can be built using `gym.make`.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "5b6e2970-2c60-4199-8fec-63070948738f",
+                            "requirements": "The `ALE/Freeway-v5` environment can be built using `gym.make`.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "f7c172f9-372e-4d43-8fa0-64d692abf65c",
+                        "requirements": "The logic to generate a sequence of 17 tasks (i.e., a sequence of all 10 playing modes of `ALE/SpaceInvaders-v5` followed by all 7 playing modes of `ALE/Freeway-v5`) has been implemented, as described in Section 5.2.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "e4ba16c0-4d0e-4340-9624-cef226ae7d17",
+                        "requirements": "All 17 tasks in the sequence run for 1M timesteps each for a total of 17M timesteps, as described in Section 5.2.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "db4ec248-1f0a-4cea-8716-8bd96e347c05",
+                        "requirements": "The Gymnasium module (https://github.com/Farama-Foundation/Gymnasium) is used to define the environments.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "093428b8-d3c3-45b7-8864-731224f07b51",
+                "requirements": "The SAC and PPO algorithms have been implemented by adapting the implementation from Huang et al. (2022), as described in Appendix E.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "8359b6e6-433e-4cab-8540-0526799f2b50",
+                    "requirements": "The SAC algorithm has been implemented by adapting the implementation from Huang et al. (2022), as described in Appendix E.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "b57de4fc-b531-48b4-b4ab-c685126baf65",
+                        "requirements": "The SAC implementation from Huang et al. (2022) has been adapted to use the CompoNet as an agent.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "d99f41a7-6157-4ba6-9b5c-52f5ac11c5d3",
+                        "requirements": "The SAC implementation from Huang et al. (2022) has been further adapted to be compatible with all 10 Meta-World environments used in the paper. TODO: Clarify the specific modifications made with the author.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "9fe63a30-dd3d-4889-a8c3-8dd04a57c8f1",
+                        "requirements": "The critic network has been implemented as a two-layer MLP followed by two separate output heads of a single layer corresponding to the mean and logarithm of the standard deviation of a normal distribution.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "8e3005cb-80b8-4a8c-a333-134c85dfed37",
+                        "requirements": "The hyperparameters for SAC have been set to those stated in Table E.1.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "520bdc4d-1240-4e8a-8f4d-ce3690d5c246",
+                            "requirements": "In the SAC implementation, the optimizer is set to Adam with $beta_1=0.9$ and $beta_2=0.999$.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "0be98dd1-1403-4cc1-9c4c-000d06187801",
+                            "requirements": "In the SAC implementation, the discount rate ($\\gamma$) is set to 0.99.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "e7a7f7c3-6d53-4c68-8a58-bcb39249fdc5",
+                            "requirements": "In the SAC implementation, the maximum and minimum standard deviations for the policy are set to $\\exp{2}$ and $\\exp{-20}, respectively.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "b3569d2d-1799-4842-8bc8-a9edbc5d2043",
+                            "requirements": "In the SAC implementation, the activation function is set to ReLU.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "83b0ab19-62d1-4eff-982d-53a73493a824",
+                            "requirements": "In the SAC implementation,  the hidden dimension ($d_{\\text{model}}$) is set to 256,",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "1144f4b3-0db8-4b1b-8845-b3577b6115fd",
+                            "requirements": "In the SAC implementation, the batch size is set to 128.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "ad325742-df92-4160-8ed3-d4879f63c22f",
+                            "requirements": "In the SAC implementation, the buffer size is set to $10^6$.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "18b4b952-24c1-4a53-bbc9-024a56978135",
+                            "requirements": "In the SAC implementation, the target smoothing coefficient ($\\tau$) is set to 0.005.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "1c84cd05-a435-4fe1-ad81-fa4dc3f0bd4c",
+                            "requirements": "In the SAC implementation, the entropy regularization coefficient ($\\alpha$) is set to 0.2.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "a735bab4-0624-404a-aca4-b87842654474",
+                            "requirements": "In the SAC implementation, auto-tuning of the entropy regularization coefficient ($\\alpha$) is enabled.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "b49c1a3a-e280-41f7-bb65-a1568fa173a3",
+                            "requirements": "In the SAC implementation, the policy update frequency is set to 2.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "72f5c11c-ec26-4fdc-be40-ea41351c560f",
+                            "requirements": "In the SAC implementation, the target network update frequency is set to 1.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "330eea86-52b8-4511-9123-b66a3857db0e",
+                            "requirements": "In the SAC implementation, the noise clip parameter is set to 0.5.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "eac55aec-805d-4b31-8ae3-7b9158a40d6c",
+                            "requirements": "In the SAC implementation, the number of random actions is set to $10^4$.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "1fb99226-8c58-4097-9a98-85dc6f64aaf1",
+                            "requirements": "In the SAC implementation, the timestep to start learning is set to $5 \\times 10^3$.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "1df005b8-7e5f-4161-bd38-bca97c72a061",
+                            "requirements": "In the SAC implementation, there are 3 layers in the target network.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "98c55d23-669d-4f17-9b96-a47318faadd8",
+                            "requirements": "In the SAC implementation, there are 3 layers in the critic network.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "652d8621-d466-400c-a2b8-100c02f042d6",
+                            "requirements": "In the SAC implementation, the actors learning rate is set to $10^{-3}$.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "85760c29-b7fc-4d86-9555-e40cf1607d6f",
+                            "requirements": "In the SAC implementation, the Q-networks' learning rate is set to $10^{-3}$.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "5e1d17c1-a0bf-4e08-83ee-e5e86f68404e",
+                    "requirements": "The PPO algorithm has been implemented by adapting the implementation from Huang et al. (2022), as described in Appendix E.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "90f271f7-eba5-4a1e-a105-2212eb5f351f",
+                        "requirements": "The PPO implementation from Huang et al. (2022) has been adapted to use the CompoNet as an agent.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "4f2a00e0-423d-4bc2-b674-03e970b79568",
+                        "requirements": "The PPO implementation from Huang et al. (2022) has been further adapted to be compatible with both ALE environments used in the paper: `ALE/SpaceInvaders-v5` and `ALE/Freeway-v5`. TODO: Clarify the specific modifications made with the author.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "93d94ac7-8757-47cd-88da-cbedb56ca63b",
+                        "requirements": "Two single-layer output heads are used to generate the logits of the categorical distribution over the action space (actor) and to compute the value function (critic).",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "8ce79c32-bc21-469d-86cb-238b5b0551cd",
+                        "requirements": "The hyperparameters for PPO have been set to those stated in Table E.2.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "04a582b9-5473-4d89-a2ff-c7e924acfd55",
+                            "requirements": "In the PPO implementation, the optimizer has been set to AdamW.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "b5c20ebb-50da-4022-aed6-4cf969d67ad9",
+                            "requirements": "In the PPO implementation, the $beta_1$ and $beta_2$ parameters of AdamW are set to 0.9 and 0.999 respectively.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "24277bc2-8e61-457e-af20-c13d18cab57a",
+                            "requirements": "In the PPO implementation, the maximum gradient norm is set to 0.5.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "b181f0b9-54d1-4030-8ed3-b52ef0f54b1a",
+                            "requirements": "In the PPO implementation, the discount rate ($\\gamma$) has been set to 0.99.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "529ab85f-d8a7-40f3-a3a9-b1b3d34d6cc6",
+                            "requirements": "In the PPO implementation, the activation function has been set to ReLU.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "61cf8fe3-10e8-414e-9b01-5f12b6e89bf1",
+                            "requirements": "In the PPO implementation, the hidden dimension ($d_{model}) is set to 512.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "9d838de5-2888-4431-8b57-5bb00dffe3a0",
+                            "requirements": "In the PPO implementation, the learning rate is set to $2.5 \\cdot 10^{-4}$.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "d8b7555f-3b55-4214-908b-e588e394c1cc",
+                            "requirements": "In the PPO implementation, the PPO value function coefficient is set to 0.5.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "0193f558-fbfb-407d-acc5-5f122c306beb",
+                            "requirements": "In the PPO implementation, the GAE ($\\lambda$) is set to 0.95.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "940b2a8a-03be-4bfd-8cbe-abb88206f55c",
+                            "requirements": "In the PPO implementation, the number of parallel environments is set to 8.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "27f990db-3c95-4443-a9e0-74cae3cc7798",
+                            "requirements": "In the PPO implementation, the batch size is set to 1024.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "eda94d3e-be8e-476b-a1b1-fc4034bd69f7",
+                            "requirements": "In the PPO implementation, the number of update epochs is set to 4.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "97903a43-5146-4ed5-8fdf-73aa04792903",
+                            "requirements": "In the PPO implementation, the PPO clipping coefficient is set to 0.2.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "b159646a-15bb-41a2-b041-455aadb3819e",
+                            "requirements": "In the PPO implementation, the PPO entropy coefficient is set to 0.01.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "c68146ee-62e0-436e-981c-afe6a4b5f65f",
+                            "requirements": "In the PPO implementation, learning rate annealing is enabled.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "23e124f9-b156-4da0-80ba-b6fdaea6e4bc",
+                            "requirements": "In the PPO implementation, the value loss is clipped.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "a06953ec-2fd7-4806-96c0-831260cd57ed",
+                            "requirements": "In the PPO implementation, advantage estimates are normalized.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "f7bb6f64-757c-441d-9ae3-1df0adf3135e",
+                            "requirements": "In the PPO implementation, the number of steps per rollout is set to 128.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "610e3c57-b4db-4628-89fb-1d47ad8c7d23",
+                    "requirements": "The critic network has been implemented and configured correctly.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "f94431f2-3d7d-482c-bf47-119f41e084d1",
+                        "requirements": "Logic to reset the critic network at the beginning of each task has been implemented.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "6e11bcd2-0a64-48b5-a9dc-7a345f615917",
+                        "requirements": "The value function (critic) has been implemented as a single fully connected layer.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "e78a823d-9418-4df4-ab5a-af008c73b952",
+                            "requirements": "In the case of the Meta-World environments, the layer maps a 39-dimensional state vector down to a single scalar.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          },
+                          {
+                            "id": "9db10e5b-a00b-4a6e-b011-fdd7d1c56e6d",
+                            "requirements": "In the case of the ALE environments, the layer maps an image of size 210x160 down to a single scalar.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "a19f6d48-f429-49e6-a39f-c9a021a20362",
+                "requirements": "All benchmark methods have been implemented, as described in Section 5.2 and Appendix E.2.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "e59457f1-81e5-49ee-967a-cc429248107b",
+                    "requirements": "The baseline method has been implemented for the Meta-World and ALE environments, as described in Section 5.2 and Appendix E.2.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "97ddc4c5-192e-4faf-9fb0-628b63411a87",
+                        "requirements": "The baseline method has been implemented for the Meta-World environments, which is a randomly initialized MLP that maps a 39-dimensional state vector to two separate heads: one outputting the mean of a Gaussian distribution for each of the 4 actions and another outputting the log standard deviations.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "0345c389-bef7-4968-98bd-7c76912dffa5",
+                        "requirements": "The baseline method has been implemented for the ALE environments, which is a randomly intialized MLP mapping a 512-dimensional state vector to a 6-dimensional action space. The network outputs logits for a categorical distribution over these 6 actions.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "96dbde05-2acb-4fde-a279-74e326a2254d",
+                        "requirements": "The baseline method has been implemented such that a randomly initialized neural network is trained from scratch for each task.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "ed765c12-a43b-42fe-9105-382ecabf068b",
+                    "requirements": "FT-1 has been implemented for the Meta-World and ALE environments, as described in Section 5.2 and Appendix E.2.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "63030bd7-0708-45a6-b40d-c8ab3f46b88f",
+                        "requirements": "The FT-1 method has been implemented for the Meta-World environments, which is a randomly initialized MLP that maps a 39-dimensional state vector to two separate heads: one outputting the mean of a Gaussian distribution for each of the 4 actions and another outputting the log standard deviations.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "73ae5d74-de2e-4427-82af-1b1d7f5217e8",
+                        "requirements": "The FT-1 method has been implemented for the ALE environments, which is a randomly intialized MLP mapping a 512-dimensional state vector to a 6-dimensional action space. The network outputs logits for a categorical distribution over these 6 actions.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "798a234f-1e95-4d27-8d74-4b1eaee220a1",
+                        "requirements": "The FT-1 method has been implemented so that it continuously fine-tune a single NN across all tasks.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "f11da3aa-15e5-422f-aaf3-c1c7f2a26c62",
+                    "requirements": "FT-N has been implemented for the Meta-World and ALE environments, as described in Section 5.2 and Appendix E.2.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "de8d83b9-639e-4c95-b473-6a8dea90ee08",
+                        "requirements": "The FT-N method has been implemented for the Meta-World environments, which is a randomly initialized MLP that maps a 39-dimensional state vector to two separate heads: one outputting the mean of a Gaussian distribution for each of the 4 actions and another outputting the log standard deviations.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "4fd52a4e-a799-428b-8910-cd799727240e",
+                        "requirements": "The FT-N method has been implemented for the ALE environments, which is a randomly intialized MLP mapping a 512-dimensional state vector to a 6-dimensional action space. The network outputs logits for a categorical distribution over these 6 actions.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "1b7ece23-8d81-446a-8af4-d468526c81e6",
+                        "requirements": "The logic to save model parameters after training on each task has been implemented.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "bce385fe-76ec-46e5-a00a-dc45d2eb984e",
+                        "requirements": "The logic to re-initialize the output heads at the beginning of each task has been implemented.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "f5efdade-f457-4936-b4ef-4d83d95d7708",
+                    "requirements": "ProgressiveNet has been implemented, as described in Section 5.2 and Appendix E.2. TODO: Remove and replace with GitHub repo if existing implementation was adapted.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "b7dccfee-06e4-4f55-959a-05ce7545efa7",
+                        "requirements": "Logic to instantiate a new network (with random initial parameters) every time the task changes has been implemented.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "b363705b-edc3-4a6c-8d74-1883abb02bb6",
+                        "requirements": "Logic to add lateral connections (TODO: be more specific about what a lateral connection is after asking author) between the current network and the ones learned in previous tasks when a new network is added has been implemented.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "9ff4ad97-4f13-4af4-a1c0-e1dd19981e83",
+                        "requirements": "Logic to freeze the parameters of the neural networks trained on previous tasks has been implemented.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "21b4d6bc-062e-43ab-86a7-f3c98daf996e",
+                        "requirements": "Logic to save the parameters of the last neural network trained when the task changes has been implemented.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "a39fe09d-59d5-4ad8-876b-5e2c34006f9e",
+                        "requirements": "The input of every layer of the new network includes the outputs of all the layers from the networks learned in previous tasks.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "7b779283-7691-4a59-b4d5-334359cc482a",
+                    "requirements": "PackNet has been implemented, as described in Section 5.2 and Appendix E.2. TODO: Remove and replace with GitHub repo if existing implementation was adapted.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "1cbbd1d1-e58f-4b33-907d-2d59fd9e1ca3",
+                        "requirements": "Logic to prune the trained network after each task has been implemented, selecting the weights that are most relevant for the current task, has been implemented.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "60c403cd-23cd-41d6-9a7b-a2713a5a33a5",
+                        "requirements": "Logic to retrain the pruned network for the current task has been implemented has been implemented.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "b4f5acb5-4faa-4346-bd80-cbc3f65bc5d7",
+                        "requirements": "Logic to freeze the selected parameters of the pruned network for the rest of the future tasks has been implemented.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "c5ff509c-087d-4cae-a1ff-63dad10de6b1",
+                        "requirements": "The number of iterations to retrain the model is set to 200k steps (i.e., 20% of the 1M timestep budget of each task).",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      },
+                      {
+                        "id": "57420140-abf8-45c7-ad1e-457a5f211253",
+                        "requirements": "Logic to decide how many parameters can be pruned and stored per task has been implemented, as described in Appendix E.2.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ab934d15-7238-4a54-bec7-dc9b90783aac",
+            "requirements": "Figure 3 has been reproduced.",
+            "weight": 1,
+            "score": 1.0,
+            "valid_score": true,
+            "task_category": null,
+            "explanation": "Aggregated score from sub-tasks.",
+            "judge_metadata": null,
+            "sub_tasks": [
+              {
+                "id": "ce7fdbb1-91a1-4f8b-9a59-5dda7e46240e",
+                "requirements": "The inference time (left) sub-figure has been reproduced.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "82e6b6ac-73f7-4c6c-963f-7bf20db11ff2",
+                    "requirements": "TODO: Logic to create a sequence of 300 tasks has been implemented using X (e.g. Meta-World or ALE or both).",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  }
+                ]
+              },
+              {
+                "id": "690d1cd8-b21b-4d4a-80b4-1add3177ada1",
+                "requirements": "The growth of the number of parameters (right) sub-figure has been reproduced.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "8b74b662-4ec5-4b9c-a9ab-9f3276d75913",
+                    "requirements": "TODO: Logic to create a sequence of 300 tasks has been implemented using X (e.g. Meta-World or ALE or both).",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "52b8fb91-2c17-47ab-a4f7-41e628ebe09d",
+            "requirements": "Table 1 has been reproduced.",
+            "weight": 1,
+            "score": 1.0,
+            "valid_score": true,
+            "task_category": null,
+            "explanation": "Aggregated score from sub-tasks.",
+            "judge_metadata": null,
+            "sub_tasks": [
+              {
+                "id": "b86dd7bc-a34f-4a8b-b132-80b5c6f3bc87",
+                "requirements": "All methods have been trained on the three task sequences (Meta-World, SpaceInvaders, Freeway) for 10 random seeds each, and the final metrics (average performance and forward transfer) have been saved.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "7786f030-aa87-4034-a2d6-0a124929ab5f",
+                    "requirements": "All methods have been trained on the Meta-World sequence with 10 random seeds and the success rates for all methods, tasks and seeds have been saved.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "2c8982ab-c4f7-46c4-9086-f3e184898e3d",
+                        "requirements": "The baseline method has been trained on the Meta-World sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "dabaeb40-3ffd-48d6-a28d-b04ccbf351b5",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "7b3aaf9a-8e8e-48f2-b0c0-bd75b232bb69",
+                        "requirements": "The FT-1 method has been trained on the Meta-World sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "eb472db9-5135-44d7-af2c-c21a4cbbfe21",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "57a49715-812b-4b02-af91-f3b593f1e12c",
+                        "requirements": "The FT-N method has been trained on the Meta-World sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "700e4ef4-e38b-4803-907d-f4a9c7cf2b8b",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "1beb6db7-2673-4edb-9647-f2bb3b14d551",
+                        "requirements": "The ProgressiveNet method has been trained on the Meta-World sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "30625bbc-8a06-4668-9436-322778e96ea4",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "0c8dd556-bf7a-404c-8bfd-f5fb3cc673f1",
+                        "requirements": "The PackNet method has been trained on the Meta-World sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "9d20e815-7686-4924-841b-40463fa1b1c2",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "52434944-70a2-4e55-b372-bdadc772734f",
+                        "requirements": "The CompoNet method has been trained on the Meta-World sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "7718e9e1-71a0-4d1e-9d90-76d4b0212af1",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "1fa28c28-0dfb-4e20-96df-dab9ec5cef5f",
+                    "requirements": "All methods have been trained on the SpaceInvaders sequence with 10 random seeds and the success rates for all methods, tasks and seeds have been saved.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "6e621861-c8bf-4448-aba2-c9d860195677",
+                        "requirements": "The baseline method has been trained on the SpaceInvaders sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "4cae0a3a-f411-4486-8abb-d4ba75b08db3",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "1b9d1597-e758-4df8-ad9b-bd148ff3652f",
+                        "requirements": "The FT-1 method has been trained on the SpaceInvaders sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "2bd5f28c-0d6b-46f1-a7f8-18aabf02d6bc",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "5ee95ffe-e7a4-4d50-b967-606c14562b34",
+                        "requirements": "The FT-N method has been trained on the SpaceInvaders sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "fe1faf1b-aa2f-413d-9a1d-157c73d2912c",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "5e354259-957d-49c3-b8ac-50637aadeab0",
+                        "requirements": "The ProgressiveNet method has been trained on the SpaceInvaders sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "b773c1d6-8a03-45a6-86d4-258f83e283f7",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "01c5217a-bea7-461a-88e8-ef6a578ee592",
+                        "requirements": "The PackNet method has been trained on the SpaceInvaders sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "b5fee7bc-a717-447e-95f7-8e2f26d18f39",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "f58ecbeb-6c59-46a8-b9ba-e45bb6a75059",
+                        "requirements": "The CompoNet method has been trained on the SpaceInvaders sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "68554bdf-415c-4d26-9b61-67aeaebc83f6",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "d6c1e02a-1252-4245-b144-d5cfc3099567",
+                    "requirements": "All methods have been trained on the Freeway sequence with 10 random seeds and the success rates for all methods, tasks and seeds have been saved.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "6c60304f-84b5-4351-8d8d-82854bbf1eeb",
+                        "requirements": "The baseline method has been trained on the Freeway sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "7a67fb64-e1ec-4b8a-b851-627d13c09be6",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "a6799061-ab7c-4e00-9c29-be54fc4998ce",
+                        "requirements": "The FT-1 method has been trained on the Freeway sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "01488f67-5d87-4099-926b-facc9d36cc36",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "ad36ddc9-2593-4c5d-b5f6-4ef9b3fee93c",
+                        "requirements": "The FT-N method has been trained on the Freeway sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "d61db658-ea2a-4ac1-acb4-fb3e20209685",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "86418d10-1038-4276-b124-0f6e82c26147",
+                        "requirements": "The ProgressiveNet method has been trained on the Freeway sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "61cb9780-690b-4089-ace0-d0ec3d3f97a8",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "386b8609-c410-4a81-bc65-7d6506982c7c",
+                        "requirements": "The PackNet method has been trained on the Freeway sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "7ea912da-7f8b-43a5-8324-03e9e202bcda",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "78fb7f2b-d3c9-4cab-bc21-5b12b4b89fbd",
+                        "requirements": "The CompoNet method has been trained on the Freeway sequence of tasks, and the success rates have been saved.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": null,
+                        "explanation": "Aggregated score from sub-tasks.",
+                        "judge_metadata": null,
+                        "sub_tasks": [
+                          {
+                            "id": "dd047fca-a742-4f6f-90a8-2fe069df3ead",
+                            "requirements": "A total of 10 random seeds have been set before each training run.",
+                            "weight": 1,
+                            "score": 1.0,
+                            "valid_score": true,
+                            "task_category": "Code Development",
+                            "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                            "judge_metadata": null,
+                            "sub_tasks": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dcd25435-fa83-4ab3-bd28-6eedaec93fa4",
+            "requirements": "Figure 4 has been reproduced.",
+            "weight": 1,
+            "score": 1.0,
+            "valid_score": true,
+            "task_category": null,
+            "explanation": "Aggregated score from sub-tasks.",
+            "judge_metadata": null,
+            "sub_tasks": [
+              {
+                "id": "96bf2ae6-8194-4535-9b25-7d078434ddb2",
+                "requirements": "Code to compute and save the episodic returns at regular intervals (at least every 10k timesteps) for each seed has been implemented.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": "Code Development",
+                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                "judge_metadata": null,
+                "sub_tasks": []
+              },
+              {
+                "id": "6995dcdb-e1fb-443b-a5cf-f9a51e1d04b0",
+                "requirements": "Code to compute whether the action with the highest probability from distribution matches the action with the highest probability from another distribution has been implemented.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": "Code Development",
+                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                "judge_metadata": null,
+                "sub_tasks": []
+              },
+              {
+                "id": "985db9fe-0c97-4b2e-8025-a27d5f446ca3",
+                "requirements": "Code to compute and save the matching rate between two distributions at least every 10k timesteps for each seed has been implemented.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": "Code Development",
+                "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                "judge_metadata": null,
+                "sub_tasks": []
+              },
+              {
+                "id": "3b2fc657-f884-4f7a-8196-9c1aba02da5b",
+                "requirements": "Figures 4 (a) - (d) have been reproduced. CompoNet is trained on the 5th task (i.e., the 4th playing mode) of SpaceInvaders with four non-informative previous policies and one policy trained to solve the current task. The relevant plots (episodic return, matching rate, input attention head, and output attention head) have been generated, matching Figures 4(a)-(d).",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "4dca3b7d-1188-4337-961e-dd6a0d5ac1f7",
+                    "requirements": "A total of 10 random seeds have been set before each training run.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  },
+                  {
+                    "id": "feec8fca-32d5-47d1-b5f5-6c9e0f5338b0",
+                    "requirements": "Four non-informative policies have been defined and implemented to act as random policies i.e., they each sample an action from a uniform Dirichlet distribution.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  },
+                  {
+                    "id": "d6f3c887-c749-4481-b0a8-018e64e6041b",
+                    "requirements": "CompoNet was trained on the 5th task (i.e., the 4th playing mode) of SpaceInvaders for 1M timesteps per seed using the SAC algorithm, the hyperparameters in Table E.1 (TODO: Confirm with the author), and the five previous policies (four non-informative and one informative) as input, with the parameters of all previous policies kept frozen.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "5f0ec7d2-cc32-4378-bea1-56b1ff9883c9",
+                        "requirements": "A new CompoNet module has been instantiated for the 5th task of SpaceInvaders, referencing the four non-informative modules and the single informative module as its (frozen) predecessors, ensuring the parameters of all previous modules are frozen.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "df72e036-546f-4f3c-bf5e-cbed1ef2345f",
+                "requirements": "Figures 4 (e) - (h) have been reproduced. CompoNet is trained on the 6th task (i.e., the 5th playing mode) of SpaceInvaders with five non-informative previous policies.",
+                "weight": 1,
+                "score": 1.0,
+                "valid_score": true,
+                "task_category": null,
+                "explanation": "Aggregated score from sub-tasks.",
+                "judge_metadata": null,
+                "sub_tasks": [
+                  {
+                    "id": "a52a28e5-be1f-40f3-9784-734978d353d8",
+                    "requirements": "A total of 10 random seeds have been set before each training run.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  },
+                  {
+                    "id": "a16cd6bb-5d47-45b0-995f-81f3485997bd",
+                    "requirements": "Five non-informative policies have been defined and implemented to act as random policies i.e., they each sample an action from a uniform Dirichlet distribution.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": "Code Development",
+                    "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                    "judge_metadata": null,
+                    "sub_tasks": []
+                  },
+                  {
+                    "id": "64396b89-af34-4d26-a422-f6d557245518",
+                    "requirements": "CompoNet was trained on the 6th task (i.e., the 5th playing mode) of SpaceInvaders for 1M timesteps per seed using the SAC algorithm, the hyperparameters in Table E.1 (TODO: Confirm with the author, remove once confirmed), and the five previous policies (four non-informative and one informative) as input, with the parameters of all previous policies kept frozen.",
+                    "weight": 1,
+                    "score": 1.0,
+                    "valid_score": true,
+                    "task_category": null,
+                    "explanation": "Aggregated score from sub-tasks.",
+                    "judge_metadata": null,
+                    "sub_tasks": [
+                      {
+                        "id": "a377e3c6-61c8-405f-8459-699347bef89a",
+                        "requirements": "A new CompoNet module has been instantiated for the 6th task (i.e., the 5th playing mode) of SpaceInvaders, referencing the 5 non-informative policies as its predecessors.",
+                        "weight": 1,
+                        "score": 1.0,
+                        "valid_score": true,
+                        "task_category": "Code Development",
+                        "explanation": "This is a dummy judge that always gives a score of 1.0.",
+                        "judge_metadata": null,
+                        "sub_tasks": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "completer_config": {
+        "model": "o3-mini-2025-01-31",
+        "reasoning_effort": "high",
+        "response_format": "NOT_GIVEN",
+        "temperature": "NOT_GIVEN",
+        "max_tokens": "NOT_GIVEN",
+        "top_p": "NOT_GIVEN",
+        "tools": "NOT_GIVEN",
+        "tool_choice": "NOT_GIVEN",
+        "retry_config": {
+          "wait_min": 1.0,
+          "wait_max": 300.0,
+          "stop_after": 7200.0
+        }
+      },
+      "token_usage": null
+    },
+    "reproduction_metadata": null,
+    "monitor_result": null,
+    "monitor_ran": false
+  },
+  "score": 1.0,
+  "grader_log": "Grading completed successfully"
+}

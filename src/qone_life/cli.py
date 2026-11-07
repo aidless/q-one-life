@@ -1094,7 +1094,13 @@ def cmd_research_project(args: argparse.Namespace) -> int:
         )
         Path(args.output).write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
     elif args.action == "build":
-        files = parse_project(Path(args.receipt).read_text(encoding="utf-8"))
+        payload = json.loads(Path(args.receipt).read_text(encoding="utf-8"))
+        files = payload.get("files") if isinstance(payload, dict) else None
+        if not isinstance(files, dict):
+            raise CodeLabError("project receipt must contain files")
+        for path, content in files.items():
+            if not isinstance(path, str) or not isinstance(content, str):
+                raise CodeLabError("project receipt files must be string pairs")
         build_project(files, Path(args.output_dir))
         receipt = {"schema": "q-one-project-lab-build-v1", "output_dir": args.output_dir,
                    "files": sorted(files)}

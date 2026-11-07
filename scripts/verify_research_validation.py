@@ -54,6 +54,10 @@ def main() -> int:
     autolab_verdict = json.loads((args.root / "autonomous-code-lab/qone-verdict.json").read_text())
     proj_receipt = json.loads((args.root / "autonomous-project-lab/qone-project-receipt.json").read_text())
     proj_verdict = json.loads((args.root / "autonomous-project-lab/qone-project-verdict.json").read_text())
+    pb_loop_verdict = json.loads((args.root / "autonomous-paperbench-loop/qone-pb-verdict.json").read_text())
+    pb_loop_grade = next(json.loads(p.read_text()) for p in
+                         (args.root / "paperbench-smoke/2026-11-07T14-59-44-GMT_run-group_direct_submission_solver")
+                         .glob("semantic-self-consistency*/grade.json"))
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -127,6 +131,8 @@ def main() -> int:
         check("project_lab_pytest_passed", 0, proj_verdict["pytest_returncode"]),
         check("project_lab_run_passed", 0, proj_verdict["run_returncode"]),
         check("project_lab_passed", True, proj_verdict["passed"]),
+        check("paperbench_loop_project_passed", True, pb_loop_verdict["passed"]),
+        check("paperbench_loop_grade", 1.0, pb_loop_grade["score"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -168,6 +174,7 @@ def main() -> int:
         "paperbench_dummy_score": paperbench_grade["score"],
         "autolab_hidden_tests_passed": autolab_verdict["passed"],
         "project_lab_passed": proj_verdict["passed"],
+        "paperbench_loop_grade": pb_loop_grade["score"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1
