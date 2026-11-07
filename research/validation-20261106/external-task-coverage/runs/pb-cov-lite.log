@@ -1,0 +1,13 @@
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+Error:
+Could not interpret argument 'lite' provided for param 'paperbench.paper_split'...
+
+- Failed to interpret it as a value:
+Could not cast 'lite' to Literal['debug', 'dev', 'human', 'testing', 'all']
+
+- Failed to interpret it as a factory for polymorphic construction:
+Could not produce a Literal['debug', 'dev', 'human', 'testing', 'all'] instance from 'lite'

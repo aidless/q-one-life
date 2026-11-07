@@ -12,7 +12,7 @@
    `self-composing-policies`（9 测试）。三份都是**手写参考实现**，不是模型生成的。
 4. `research/validation-20261106/paperbench-smoke/2026-11-07T14-34-31-GMT_run-group_direct_submission_solver/`
    证明三份提交都被 DirectSubmission 归档、dummy judge 正常读取并输出 grade。
-5. `scripts/verify_research_validation.py` 现有 90 项机器校验，全绿。
+5. `scripts/verify_research_validation.py` 现有 93 项机器校验，全绿。
 6. `src/qone_life/research_factory/project_lab.py` 新增多文件项目模式；模型生成过
    4 文件项目并通过 pytest + 主机隐藏测试（`autonomous-project-lab/`）。
 7. `autonomous-paperbench-loop/` 证明模型生成的项目被 PaperBench DirectSubmission
@@ -27,7 +27,8 @@
     正式提交、轮询、取回，状态 `succeeded`、退出码 0。结果已写入决策与命中回执。
     未触碰其他实验目录。
 11. `external-task-coverage/` 盘点 10 个选定 PaperBench 任务：10/10 文本与
-    rubric 已按 LFS OID 校验，3/10 有 Q-One 提交，0/10 有真实分数。
+    rubric 已按 LFS OID 校验，10/10 有可运行提交与 DirectSubmission 归档回执，
+    10/10 dummy judge 输出 1.0，0/10 有真实分数。
 
 ## 不能声称
 
@@ -36,7 +37,8 @@
 - `self-expansion` 没有跑 CIFAR-100 / ImageNet-R / ImageNet-A / VTAB 上的 5-20 epoch 训练。
 - `self-composing-policies` 没有跑 Meta-World / SpaceInvaders / Freeway 上的 10 seed × 1M timestep。
 - 没有用真实 PaperBench judge；那需要单独授权与 API key。
-- 三个完整复现包仍是手写参考实现；模型生成过 4 文件最小项目、3 函数辅助包与
+- 三个完整复现包仍是手写参考实现；另 7 个任务是架构/接口级最小桩，不覆盖
+  各自 rubric 的训练与结果叶子。模型生成过 4 文件最小项目、3 函数辅助包与
   6 段全模型核心逻辑包，但整包中的非研究模板仍由宿主补齐。
 - 模型生成项目没有复现论文表格数字，也没有接真实 judge。
 
@@ -47,8 +49,8 @@
 2. **执行断层**：code lab 是 30 秒本地子进程；真实复现需要 Docker + GPU + 小时级训练。
    本机不是算力节点，长训练必须上云。
 3. **判分断层**：目前只有 dummy judge 和自写隐藏测试。没有真实 judge，就没有能力分数。
-4. **数据断层**：三份提交的数据是 manifest 或采样小文件，不是完整基准；
-   10 任务覆盖表只补齐了上游论文文本与 rubric。
+4. **数据断层**：三份主提交的数据是 manifest 或采样小文件；另 7 个任务是桩，
+   10 任务覆盖表只补齐了上游论文文本、rubric 与归档回执。
 5. **闭环残余**：生成、验证、构建、归档已单程打通；自动回填迭代与真实判分还没有接通。
 
 ## 下一步（按依赖顺序，可自动化的部分）
@@ -57,7 +59,8 @@
 2. 已完成：6 段模型逻辑 + 宿主模板 -> 12 文件完整包 -> 隐藏测试 -> 打包 ->
    DirectSubmission + dummy judge；并已由 CloudExecutor 在云端短执行、回填决策。
 3. 已完成：10 个选定外部任务的文本、rubric 与提交覆盖盘点。
-4. 剩余：为另外 7 个任务做可运行提交；GPU 真实训练、真实 judge 仍需单独 GO。
+4. 已完成：另外 7 个任务的可运行架构桩与 10 任务 dummy 归档。
+   剩余：GPU 真实训练、真实 judge、逐 rubric 叶子复现仍需单独 GO。
 
 ## 已有命令
 

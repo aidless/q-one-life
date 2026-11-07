@@ -56,3 +56,15 @@ PDF 仍是 LFS 指针；本轮只补文本，不为 10 任务下载 PDF 大文�
 2. 接真实 judge 前必须获得 API key 与费用授权。
 3. 若只做无成本的覆盖，可继续用 DirectSubmission + dummy judge 验证归档链路，
    但仍须把结果写成「基础设施通过」，不能写成能力分数。
+
+## 10 任务归档验证（2026-11-07 补充）
+
+为剩余 7 个任务补了「架构/接口级最小复现」提交包，各自 `run.py` 与
+`tests/test_project.py` 可运行；这些包不声称复现论文结果。
+
+按上游允许 split 分四组执行 DirectSubmission + dummy judge：
+`dev`（3）、`human`（5，等价覆盖 `lite` 的 5 个任务）、`testing`（1）、`debug`（1）。
+`lite` 不是上游 CLI 允许值，调用被拒绝，已保留失败日志 `runs/pb-cov-lite.log`。
+
+`runs/archive-summary.json` 记录 10/10 任务都有归档回执、dummy judge 输出 1.0、
+0 个真实分数。该 1.0 仍只证明提交归档与容器基础设施，不是能力分数。

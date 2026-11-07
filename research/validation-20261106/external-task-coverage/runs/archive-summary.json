@@ -1,0 +1,81 @@
+{
+  "schema": "qone-external-task-archive-v1",
+  "note": "All scores are dummy-judge infrastructure scores, not capability scores.",
+  "rows": [
+    {
+      "paper_id": "self-composing-policies",
+      "score": 1.0,
+      "judge": "dummy",
+      "tar_entries": 16,
+      "run_group": "2026-11-07T15-37-44-GMT_run-group_direct_submission_solver"
+    },
+    {
+      "paper_id": "self-expansion",
+      "score": 1.0,
+      "judge": "dummy",
+      "tar_entries": 20,
+      "run_group": "2026-11-07T15-37-44-GMT_run-group_direct_submission_solver"
+    },
+    {
+      "paper_id": "semantic-self-consistency",
+      "score": 1.0,
+      "judge": "dummy",
+      "tar_entries": 16,
+      "run_group": "2026-11-07T15-37-44-GMT_run-group_direct_submission_solver"
+    },
+    {
+      "paper_id": "lca-on-the-line",
+      "score": 1.0,
+      "judge": "dummy",
+      "tar_entries": 20,
+      "run_group": "2026-11-07T15-55-03-GMT_run-group_direct_submission_solver"
+    },
+    {
+      "paper_id": "rice",
+      "score": 1.0,
+      "judge": "dummy",
+      "tar_entries": 20,
+      "run_group": "2026-11-07T15-55-13-GMT_run-group_direct_submission_solver"
+    },
+    {
+      "paper_id": "all-in-one",
+      "score": 1.0,
+      "judge": "dummy",
+      "tar_entries": 20,
+      "run_group": "2026-11-07T15-55-38-GMT_run-group_direct_submission_solver"
+    },
+    {
+      "paper_id": "fre",
+      "score": 1.0,
+      "judge": "dummy",
+      "tar_entries": 20,
+      "run_group": "2026-11-07T15-55-38-GMT_run-group_direct_submission_solver"
+    },
+    {
+      "paper_id": "mechanistic-understanding",
+      "score": 1.0,
+      "judge": "dummy",
+      "tar_entries": 20,
+      "run_group": "2026-11-07T15-55-38-GMT_run-group_direct_submission_solver"
+    },
+    {
+      "paper_id": "stay-on-topic-with-classifier-free-guidance",
+      "score": 1.0,
+      "judge": "dummy",
+      "tar_entries": 20,
+      "run_group": "2026-11-07T15-55-38-GMT_run-group_direct_submission_solver"
+    },
+    {
+      "paper_id": "test-time-model-adaptation",
+      "score": 1.0,
+      "judge": "dummy",
+      "tar_entries": 20,
+      "run_group": "2026-11-07T15-55-38-GMT_run-group_direct_submission_solver"
+    }
+  ],
+  "summary": {
+    "graded_tasks": 10,
+    "dummy_scores": 10,
+    "real_scores": 0
+  }
+}

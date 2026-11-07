@@ -14,7 +14,8 @@
       "rubric_sha256": "d3fadf651538",
       "qone_submission": true,
       "qone_submission_files": 19,
-      "real_score": null
+      "real_score": null,
+      "archive_checked": true
     },
     {
       "split": "dev",
@@ -27,7 +28,8 @@
       "rubric_sha256": "11aa33097f9b",
       "qone_submission": true,
       "qone_submission_files": 15,
-      "real_score": null
+      "real_score": null,
+      "archive_checked": true
     },
     {
       "split": "dev",
@@ -40,7 +42,8 @@
       "rubric_sha256": "5325cf6096ba",
       "qone_submission": true,
       "qone_submission_files": 12,
-      "real_score": null
+      "real_score": null,
+      "archive_checked": true
     },
     {
       "split": "lite",
@@ -51,9 +54,10 @@
       "lfs_pointers_remaining": 0,
       "paper_md_sha256": "4ac92f6c9bfd",
       "rubric_sha256": "49a735252f2f",
-      "qone_submission": false,
-      "qone_submission_files": 0,
-      "real_score": null
+      "qone_submission": true,
+      "qone_submission_files": 13,
+      "real_score": null,
+      "archive_checked": true
     },
     {
       "split": "lite",
@@ -64,9 +68,10 @@
       "lfs_pointers_remaining": 0,
       "paper_md_sha256": "550dc8d3594c",
       "rubric_sha256": "7e1869911636",
-      "qone_submission": false,
-      "qone_submission_files": 0,
-      "real_score": null
+      "qone_submission": true,
+      "qone_submission_files": 13,
+      "real_score": null,
+      "archive_checked": true
     },
     {
       "split": "lite",
@@ -77,9 +82,10 @@
       "lfs_pointers_remaining": 0,
       "paper_md_sha256": "0a8847ea3f6a",
       "rubric_sha256": "8985de861b44",
-      "qone_submission": false,
-      "qone_submission_files": 0,
-      "real_score": null
+      "qone_submission": true,
+      "qone_submission_files": 13,
+      "real_score": null,
+      "archive_checked": true
     },
     {
       "split": "lite",
@@ -90,9 +96,10 @@
       "lfs_pointers_remaining": 0,
       "paper_md_sha256": "4dc3ecabd26f",
       "rubric_sha256": "eb125d701612",
-      "qone_submission": false,
-      "qone_submission_files": 0,
-      "real_score": null
+      "qone_submission": true,
+      "qone_submission_files": 13,
+      "real_score": null,
+      "archive_checked": true
     },
     {
       "split": "lite",
@@ -103,9 +110,10 @@
       "lfs_pointers_remaining": 0,
       "paper_md_sha256": "521f484e62ca",
       "rubric_sha256": "153a9b1655eb",
-      "qone_submission": false,
-      "qone_submission_files": 0,
-      "real_score": null
+      "qone_submission": true,
+      "qone_submission_files": 13,
+      "real_score": null,
+      "archive_checked": true
     },
     {
       "split": "testing",
@@ -116,9 +124,10 @@
       "lfs_pointers_remaining": 0,
       "paper_md_sha256": "c1453e747bad",
       "rubric_sha256": "edc1d72f1af8",
-      "qone_submission": false,
-      "qone_submission_files": 0,
-      "real_score": null
+      "qone_submission": true,
+      "qone_submission_files": 13,
+      "real_score": null,
+      "archive_checked": true
     },
     {
       "split": "debug",
@@ -129,16 +138,18 @@
       "lfs_pointers_remaining": 0,
       "paper_md_sha256": "e69c502c0c16",
       "rubric_sha256": "53ed8933515f",
-      "qone_submission": false,
-      "qone_submission_files": 0,
-      "real_score": null
+      "qone_submission": true,
+      "qone_submission_files": 13,
+      "real_score": null,
+      "archive_checked": true
     }
   ],
   "summary": {
     "tasks": 10,
     "text_materialised": 10,
-    "with_qone_submission": 3,
+    "with_qone_submission": 10,
     "lfs_pointers_remaining": 0,
-    "real_score_count": 0
+    "real_score_count": 0,
+    "archive_checked": 10
   }
 }

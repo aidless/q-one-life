@@ -1,0 +1,4 @@
+{'component': 'paperbench.nano.eval', '_print': True, 'event': 'Preparing to run 1 tasks...'}
+{'component': 'paperbench.nano.task', '_print': True, 'event': 'Grading the submission for rice_9fe95858-3276-447c-b2dc-8896efaa87ed.0 from /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-13-GMT_run-group_direct_submission_solver/rice_9fe95858-3276-447c-b2dc-8896efaa87ed/submissions/2026-11-07T15-55-20-GMT/submission.tar.gz...'}
+{'component': 'paperbench.nano.task', '_print': True, 'event': 'Grading for rice_9fe95858-3276-447c-b2dc-8896efaa87ed.0 finished!'}
+{'component': 'paperbench.nano.task', '_print': True, 'event': '\x1b[1;35mGrades saved to /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-13-GMT_run-group_direct_submission_solver/rice_9fe95858-3276-447c-b2dc-8896efaa87ed/grade.json\x1b[0m'}

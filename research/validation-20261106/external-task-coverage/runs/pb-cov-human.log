@@ -1,0 +1,88 @@
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+[2m2026-11-07T15:55:38.782137Z[0m [[32m[1minfo     [0m] [1m[1;35mWriting run group logs to /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-38-GMT_run-group_direct_submission_solver/group.log[0m[0m [36mcomponent[0m=[35mpaperbench.nano.eval[0m
+[2m2026-11-07T15:55:38.790033Z[0m [[32m[1minfo     [0m] [1mPreparing to run 5 tasks...   [0m [36mcomponent[0m=[35mpaperbench.nano.eval[0m
+[2m2026-11-07T15:55:39.115341Z[0m [[32m[1minfo     [0m] [1m[36m[1mEvalboard Monitor: unknown, add in pr?[0m[0m [36mcomponent[0m=[35mnanoeval.evaluation[0m
+[2m2026-11-07T15:55:39.115497Z[0m [[33m[1mwarning  [0m] [1mUnable to find model name, using fallback name='nanoeval'[0m [36mcomponent[0m=[35mnanoeval.eval[0m
+[2m2026-11-07T15:55:39.115855Z[0m [[33m[1mwarning  [0m] [1mNo slack integration configured, so not sending user notification[0m [36mcomponent[0m=[35mnanoeval.library_config[0m
+[2m2026-11-07T15:55:39.116115Z[0m [[33m[1mwarning  [0m] [1mUnable to find model name, using fallback name='nanoeval'[0m [36mcomponent[0m=[35mnanoeval.eval[0m
+[2m2026-11-07T15:55:39.116258Z[0m [[33m[1mwarning  [0m] [1mNo slack integration configured, so not using slack-tqdm[0m [36mcomponent[0m=[35mnanoeval.library_config[0m
+ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:00<?, ?it/s]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:00<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:01<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:01<?, ?it/s, corr=0, errs=0, fail=0][2m2026-11-07T15:55:40.967194Z[0m [[33m[1mwarning  [0m] [1mContainer health not available for this container, ignoring.[0m [36mcomponent[0m=[35malcatraz.clusters.local[0m
+[2m2026-11-07T15:55:40.968785Z[0m [[33m[1mwarning  [0m] [1mContainer health not available for this container, ignoring.[0m [36mcomponent[0m=[35malcatraz.clusters.local[0m
+[2m2026-11-07T15:55:40.974898Z[0m [[33m[1mwarning  [0m] [1mContainer health not available for this container, ignoring.[0m [36mcomponent[0m=[35malcatraz.clusters.local[0m
+[2m2026-11-07T15:55:40.990677Z[0m [[33m[1mwarning  [0m] [1mContainer health not available for this container, ignoring.[0m [36mcomponent[0m=[35malcatraz.clusters.local[0m
+[2m2026-11-07T15:55:40.992365Z[0m [[33m[1mwarning  [0m] [1mContainer health not available for this container, ignoring.[0m [36mcomponent[0m=[35malcatraz.clusters.local[0m
+ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:02<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:02<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:03<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:03<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:04<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:04<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:05<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:05<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:06<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:06<?, ?it/s, corr=0, errs=0, fail=0][2m2026-11-07T15:55:45.239961Z[0m [[33m[1mwarning  [0m] [1magent.env not found at: /tmp/paperbench-upstream/project/paperbench/paperbench/solvers/agent.env agent.env should be created by copying agent.env.exampleto agent.env and populating the necessary keys. agent.env is necessary for replicating some papers when using a non-dummy agent[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:45.253603Z[0m [[33m[1mwarning  [0m] [1magent.env not found at: /tmp/paperbench-upstream/project/paperbench/paperbench/solvers/agent.env agent.env should be created by copying agent.env.exampleto agent.env and populating the necessary keys. agent.env is necessary for replicating some papers when using a non-dummy agent[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:45.345186Z[0m [[33m[1mwarning  [0m] [1magent.env not found at: /tmp/paperbench-upstream/project/paperbench/paperbench/solvers/agent.env agent.env should be created by copying agent.env.exampleto agent.env and populating the necessary keys. agent.env is necessary for replicating some papers when using a non-dummy agent[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:45.410974Z[0m [[33m[1mwarning  [0m] [1magent.env not found at: /tmp/paperbench-upstream/project/paperbench/paperbench/solvers/agent.env agent.env should be created by copying agent.env.exampleto agent.env and populating the necessary keys. agent.env is necessary for replicating some papers when using a non-dummy agent[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:45.428738Z[0m [[33m[1mwarning  [0m] [1magent.env not found at: /tmp/paperbench-upstream/project/paperbench/paperbench/solvers/agent.env agent.env should be created by copying agent.env.exampleto agent.env and populating the necessary keys. agent.env is necessary for replicating some papers when using a non-dummy agent[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:07<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:07<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:08<?, ?it/s, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):   0%|          | 0/5 [00:08<?, ?it/s, corr=0, errs=0, fail=0][2m2026-11-07T15:55:47.546703Z[0m [[32m[1minfo     [0m] [1mGrading the submission for test-time-model-adaptation_cb857e5b-0769-4feb-a1fa-e5c054b0d00e.0 from /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-38-GMT_run-group_direct_submission_solver/test-time-model-adaptation_cb857e5b-0769-4feb-a1fa-e5c054b0d00e/submissions/2026-11-07T15-55-46-GMT/submission.tar.gz...[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:47.595903Z[0m [[32m[1minfo     [0m] [1mGrading for test-time-model-adaptation_cb857e5b-0769-4feb-a1fa-e5c054b0d00e.0 finished![0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:47.599608Z[0m [[32m[1minfo     [0m] [1m[1;35mGrades saved to /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-38-GMT_run-group_direct_submission_solver/test-time-model-adaptation_cb857e5b-0769-4feb-a1fa-e5c054b0d00e/grade.json[0m[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):  20%|██        | 1/5 [00:09<00:04,  1.03s/it, corr=0, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):  20%|██        | 1/5 [00:09<00:04,  1.03s/it, corr=1, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):  20%|██        | 1/5 [00:10<00:04,  1.03s/it, corr=1, errs=0, fail=0][2m2026-11-07T15:55:49.731545Z[0m [[32m[1minfo     [0m] [1mGrading the submission for mechanistic-understanding_db20410c-0fb0-4f36-9033-217b6bfde348.0 from /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-38-GMT_run-group_direct_submission_solver/mechanistic-understanding_db20410c-0fb0-4f36-9033-217b6bfde348/submissions/2026-11-07T15-55-48-GMT/submission.tar.gz...[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:49.768689Z[0m [[32m[1minfo     [0m] [1mGrading for mechanistic-understanding_db20410c-0fb0-4f36-9033-217b6bfde348.0 finished![0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:49.771664Z[0m [[32m[1minfo     [0m] [1m[1;35mGrades saved to /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-38-GMT_run-group_direct_submission_solver/mechanistic-understanding_db20410c-0fb0-4f36-9033-217b6bfde348/grade.json[0m[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):  40%|████      | 2/5 [00:11<00:05,  1.68s/it, corr=1, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):  40%|████      | 2/5 [00:11<00:05,  1.68s/it, corr=2, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):  40%|████      | 2/5 [00:12<00:05,  1.68s/it, corr=2, errs=0, fail=0][2m2026-11-07T15:55:51.754356Z[0m [[32m[1minfo     [0m] [1mGrading the submission for fre_9b273e1b-a6c0-4de5-b098-540073e62e46.0 from /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-38-GMT_run-group_direct_submission_solver/fre_9b273e1b-a6c0-4de5-b098-540073e62e46/submissions/2026-11-07T15-55-50-GMT/submission.tar.gz...[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:51.776371Z[0m [[32m[1minfo     [0m] [1mGrading for fre_9b273e1b-a6c0-4de5-b098-540073e62e46.0 finished![0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:51.806116Z[0m [[32m[1minfo     [0m] [1m[1;35mGrades saved to /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-38-GMT_run-group_direct_submission_solver/fre_9b273e1b-a6c0-4de5-b098-540073e62e46/grade.json[0m[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):  60%|██████    | 3/5 [00:13<00:03,  1.86s/it, corr=2, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):  60%|██████    | 3/5 [00:13<00:03,  1.86s/it, corr=3, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):  60%|██████    | 3/5 [00:14<00:03,  1.86s/it, corr=3, errs=0, fail=0][2m2026-11-07T15:55:54.216822Z[0m [[32m[1minfo     [0m] [1mGrading the submission for stay-on-topic-with-classifier-free-guidance_c5453c79-248e-4cf7-a5d6-193beaaf409f.0 from /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-38-GMT_run-group_direct_submission_solver/stay-on-topic-with-classifier-free-guidance_c5453c79-248e-4cf7-a5d6-193beaaf409f/submissions/2026-11-07T15-55-53-GMT/submission.tar.gz...[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:54.242983Z[0m [[32m[1minfo     [0m] [1mGrading for stay-on-topic-with-classifier-free-guidance_c5453c79-248e-4cf7-a5d6-193beaaf409f.0 finished![0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:54.246064Z[0m [[32m[1minfo     [0m] [1m[1;35mGrades saved to /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-38-GMT_run-group_direct_submission_solver/stay-on-topic-with-classifier-free-guidance_c5453c79-248e-4cf7-a5d6-193beaaf409f/grade.json[0m[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):  80%|████████  | 4/5 [00:15<00:01,  1.91s/it, corr=3, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval):  80%|████████  | 4/5 [00:15<00:01,  1.91s/it, corr=4, errs=0, fail=0][2m2026-11-07T15:55:55.310654Z[0m [[32m[1minfo     [0m] [1mGrading the submission for all-in-one_86c52d11-7ce0-4a72-a29c-c23e0cbe761f.0 from /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-38-GMT_run-group_direct_submission_solver/all-in-one_86c52d11-7ce0-4a72-a29c-c23e0cbe761f/submissions/2026-11-07T15-55-54-GMT/submission.tar.gz...[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:55.319719Z[0m [[32m[1minfo     [0m] [1mGrading for all-in-one_86c52d11-7ce0-4a72-a29c-c23e0cbe761f.0 finished![0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+[2m2026-11-07T15:55:55.322708Z[0m [[32m[1minfo     [0m] [1m[1;35mGrades saved to /tmp/paperbench-upstream/project/paperbench/runs/2026-11-07T15-55-38-GMT_run-group_direct_submission_solver/all-in-one_86c52d11-7ce0-4a72-a29c-c23e0cbe761f/grade.json[0m[0m [36mcomponent[0m=[35mpaperbench.nano.task[0m
+ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval): 100%|██████████| 5/5 [00:16<00:00,  1.60s/it, corr=4, errs=0, fail=0]ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval): 100%|██████████| 5/5 [00:16<00:00,  1.60s/it, corr=5, errs=0, fail=0][2m2026-11-07T15:55:55.528353Z[0m [[32m[1minfo     [0m] [1mGot back all results!         [0m [36mcomponent[0m=[35mnanoeval.evaluation[0m
+[2m2026-11-07T15:55:55.528753Z[0m [[33m[1mwarning  [0m] [1m/tmp/paperbench-upstream/project/paperbench/.venv/lib/python3.11/site-packages/numpy/_core/_methods.py:222: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+[0m [36mcomponent[0m=[35mpy.warnings[0m
+[2m2026-11-07T15:55:55.528893Z[0m [[33m[1mwarning  [0m] [1m/tmp/paperbench-upstream/project/paperbench/.venv/lib/python3.11/site-packages/numpy/_core/_methods.py:214: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+[0m [36mcomponent[0m=[35mpy.warnings[0m
+[2m2026-11-07T15:55:55.530244Z[0m [[32m[1minfo     [0m] [1mSummary:
+{'metrics': {'mean_score': 1.0,
+             'mean_score_by_paper': {'all-in-one': {'mean': 1.0,
+                                                    'n_runs': 1,
+                                                    'run_1': 1.0,
+                                                    'std_err': nan},
+                                     'fre': {'mean': 1.0,
+                                             'n_runs': 1,
+                                             'run_1': 1.0,
+                                             'std_err': nan},
+                                     'mechanistic-understanding': {'mean': 1.0,
+                                                                   'n_runs': 1,
+                                                                   'run_1': 1.0,
+                                                                   'std_err': nan},
+                                     'stay-on-topic-with-classifier-free-guidance': {'mean': 1.0,
+                                                                                     'n_runs': 1,
+                                                                                     'run_1': 1.0,
+                                                                                     'std_err': nan},
+                                     'test-time-model-adaptation': {'mean': 1.0,
+                                                                    'n_runs': 1,
+                                                                    'run_1': 1.0,
+                                                                    'std_err': nan}},
+             'n_complete_tries': 1,
+             'std_err': nan},
+ 'other_stats': {'n_is_valid_git_repo': 0,
+                 'n_nontrivial_git_log': 0,
+                 'n_repro_script_exists': 0,
+                 'repro_mean_time': nan},
+ 'params': {'agent': 'direct_submission_solver',
+            'code_only': True,
+            'n_samples': 5,
+            'n_tries': 1,
+            'paper_split': 'human',
+            'resources_provided': False,
+            'skip_reproduction': True},
+ 'run_group_id': '2026-11-07T15-55-38-GMT_run-group_direct_submission_solver',
+ 'run_health': {'n_gradings_failed': 0,
+                'n_reproductions_failed': 5,
+                'n_rollouts_failed': 0}}
+Evaluated 5 tasks with PaperBench-direct_submission_solver[0m [36mcomponent[0m=[35mnanoeval.evaluation[0m
+[2m2026-11-07T15:55:55.530485Z[0m [[32m[1minfo     [0m] [1m[36m[1mEvalboard Summary: unknown, add in pr?[0m[0m [36mcomponent[0m=[35mnanoeval.evaluation[0m
+ubmission_solver (r_id=261107155539C4A2KXNP, m=nanoeval): 100%|██████████| 5/5 [00:16<00:00,  3.28s/it, corr=5, errs=0, fail=0]
+[2m2026-11-07T15:55:55.530706Z[0m [[33m[1mwarning  [0m] [1mUnable to find model name, using fallback name='nanoeval'[0m [36mcomponent[0m=[35mnanoeval.eval[0m
+[2m2026-11-07T15:55:55.531168Z[0m [[33m[1mwarning  [0m] [1mNo slack integration configured, so not sending user notification[0m [36mcomponent[0m=[35mnanoeval.library_config[0m
