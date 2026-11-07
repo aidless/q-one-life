@@ -12,7 +12,7 @@
    `self-composing-policies`（9 测试）。三份都是**手写参考实现**，不是模型生成的。
 4. `research/validation-20261106/paperbench-smoke/2026-11-07T14-34-31-GMT_run-group_direct_submission_solver/`
    证明三份提交都被 DirectSubmission 归档、dummy judge 正常读取并输出 grade。
-5. `scripts/verify_research_validation.py` 现有 77 项机器校验，全绿。
+5. `scripts/verify_research_validation.py` 现有 86 项机器校验，全绿。
 6. `src/qone_life/research_factory/project_lab.py` 新增多文件项目模式；模型生成过
    4 文件项目并通过 pytest + 主机隐藏测试（`autonomous-project-lab/`）。
 7. `autonomous-paperbench-loop/` 证明模型生成的项目被 PaperBench DirectSubmission
@@ -22,6 +22,10 @@
    `qone-full-receipt.json -> source_note` 明确记录。
 9. `autonomous-allmodel-core/` 把研究逻辑进一步推进到 6/6 段都由模型短调用生成，
    宿主只拼接与补齐非研究模板文件。验证、打包、归档与 dummy judge 仍全通。
+10. `cloud-allmodel-smoke/` 证明该包在已授权 AMD 云端独立 venv 中短执行成功：
+    6 项测试通过、入口输出符合预期、文件哈希回传；另经仓库自带 `CloudExecutor`
+    正式提交、轮询、取回，状态 `succeeded`、退出码 0。结果已写入决策与命中回执。
+    未触碰其他实验目录。
 
 ## 不能声称
 

@@ -70,6 +70,12 @@ def main() -> int:
     allmodel_grade = next(json.loads(p.read_text()) for p in
                           (args.root / "paperbench-smoke/2026-11-07T15-37-44-GMT_run-group_direct_submission_solver")
                           .glob("semantic-self-consistency*/grade.json"))
+    cloud_log = (args.root / "cloud-allmodel-smoke/result.log").read_text()
+    executor_status = json.loads((args.root / "cloud-allmodel-smoke/executor/status.json").read_text())
+    executor_result = json.loads((args.root / "cloud-allmodel-smoke/executor/outputs/result.json").read_text())
+    decision_rows = [json.loads(line) for line in
+                     (args.root / "cloud-allmodel-smoke/decisions/measurements.jsonl")
+                     .read_text().splitlines() if line.strip()]
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -157,6 +163,16 @@ def main() -> int:
         check("allmodel_verification_passed", True, allmodel_verdict["passed"]),
         check("allmodel_package_files", 12, allmodel_package["file_count"]),
         check("allmodel_grade", 1.0, allmodel_grade["score"]),
+        check("allmodel_cloud_pytest", True, "6 passed" in cloud_log),
+        check("allmodel_cloud_run_output", True, '"chosen": "1"' in cloud_log),
+        check("allmodel_cloud_core_hash", True,
+              "7a8de9ac7b8b015ec5341378ec030585341e22ba8d852a413375bbab25258ac4" in cloud_log),
+        check("formal_executor_state", "succeeded", executor_status["state"]),
+        check("formal_executor_exit_code", 0, executor_status["exit_code"]),
+        check("formal_executor_result_state", "ok", executor_result["state"]),
+        check("cloud_decision_rows", 2, len(decision_rows)),
+        check("cloud_decision_types", ["decision", "outcome"], [r["type"] for r in decision_rows]),
+        check("cloud_outcome_matched", True, decision_rows[1]["payload"]["matched"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -201,6 +217,9 @@ def main() -> int:
         "paperbench_loop_grade": pb_loop_grade["score"],
         "fullpkg_grade": fullpkg_grade["score"],
         "allmodel_grade": allmodel_grade["score"],
+        "allmodel_cloud_pytest": "6 passed" in cloud_log,
+        "formal_executor_state": executor_status["state"],
+        "cloud_decision_hit_rate": 1.0,
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

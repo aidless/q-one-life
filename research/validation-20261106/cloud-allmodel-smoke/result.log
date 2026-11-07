@@ -1,0 +1,5 @@
+......                                                                   [100%]
+6 passed in 0.01s
+{"chosen": "1", "parsed": ["1", "1", "2"], "cpw": "1", "scw": "1"}
+7a8de9ac7b8b015ec5341378ec030585341e22ba8d852a413375bbab25258ac4  src/core.py
+b2fe328dc4bace8c152a35c3a2f8b32ea36daf96a8aad403e43b5655f703dd92  MANIFEST.json
