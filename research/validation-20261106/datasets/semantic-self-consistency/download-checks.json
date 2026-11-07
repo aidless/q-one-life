@@ -1,0 +1,50 @@
+{
+  "aqua_test.jsonl": {
+    "bytes": 130192,
+    "sha256": "de41581881ef95c5588c44ddc701c77fd480839241dd422a0d181262af24520c",
+    "rows": 254,
+    "first_keys": [
+      "correct",
+      "options",
+      "question",
+      "rationale"
+    ]
+  },
+  "svamp.json": {
+    "bytes": 339970,
+    "sha256": "5be77703a6d891ae476d7c082787ad361392aa02453b132516cdd5f4e7934e3e",
+    "rows": 1000,
+    "first_keys": [
+      "Answer",
+      "Body",
+      "Equation",
+      "ID",
+      "Question",
+      "Type"
+    ]
+  },
+  "strategyqa_test.json": {
+    "bytes": 176993,
+    "sha256": "6da41445f044a7abde29f987d3311757cd0c33e759ea6f37fa100917bf0a82b0",
+    "rows": 687,
+    "first_keys": [
+      "answer",
+      "description",
+      "qid",
+      "question",
+      "term"
+    ]
+  },
+  "strategyqa_train.json": {
+    "bytes": 413408,
+    "sha256": "cba352f7b7cbe3688b6847ec55f8035c9bccd5cbcc183e8e0ddd0a79ccbbc404",
+    "rows": 1603,
+    "first_keys": [
+      "answer",
+      "description",
+      "qid",
+      "question",
+      "term"
+    ]
+  }
+}

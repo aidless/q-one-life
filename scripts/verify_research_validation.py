@@ -83,6 +83,7 @@ def main() -> int:
     hidden_local = json.loads((args.root / "external-task-coverage/hidden/local-result.json").read_text())
     hidden_cloud = json.loads((args.root / "external-task-coverage/hidden/cloud-result.json").read_text())
     hidden_selftest = json.loads((args.root / "external-task-coverage/hidden/selftest.json").read_text())
+    dataset_checks = json.loads((args.root / "datasets/semantic-self-consistency/download-checks.json").read_text())
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -201,6 +202,15 @@ def main() -> int:
         check("hidden_selftest_passed", True, hidden_selftest["summary"]["passed"]),
         check("hidden_mutation_a_problems", 9, hidden_selftest["summary"]["direction_a_problems"]),
         check("hidden_mutation_b_problems", 10, hidden_selftest["summary"]["direction_b_problems"]),
+        check("scc_aqua_rows", 254, dataset_checks["aqua_test.jsonl"]["rows"]),
+        check("scc_svamp_rows", 1000, dataset_checks["svamp.json"]["rows"]),
+        check("scc_strategyqa_test_rows", 687, dataset_checks["strategyqa_test.json"]["rows"]),
+        check("scc_aqua_sha256", "de41581881ef95c5588c44ddc701c77fd480839241dd422a0d181262af24520c",
+              dataset_checks["aqua_test.jsonl"]["sha256"]),
+        check("scc_svamp_sha256", "5be77703a6d891ae476d7c082787ad361392aa02453b132516cdd5f4e7934e3e",
+              dataset_checks["svamp.json"]["sha256"]),
+        check("scc_strategyqa_sha256", "6da41445f044a7abde29f987d3311757cd0c33e759ea6f37fa100917bf0a82b0",
+              dataset_checks["strategyqa_test.json"]["sha256"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -254,6 +264,7 @@ def main() -> int:
         "external_cloud_total_tests": cloud_matrix["summary"]["total_tests"],
         "evidence_contract_leaves": evidence_contract["summary"]["rubric_leaves"],
         "hidden_selftest_passed": hidden_selftest["summary"]["passed"],
+        "scc_dataset_rows": [dataset_checks[k]["rows"] for k in ("aqua_test.jsonl", "svamp.json", "strategyqa_test.json")],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1
