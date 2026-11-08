@@ -32,6 +32,9 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--images", type=int, default=200)
     parser.add_argument("--seed", type=int, default=20261108)
+    parser.add_argument("--device", default="auto", choices=("auto", "cpu", "cuda"))
+    parser.add_argument("--batch-size", type=int, default=32)
+    parser.add_argument("--checkpoint-every", type=int, default=200)
     args = parser.parse_args()
 
     import numpy as np
@@ -42,11 +45,16 @@ def main() -> int:
     from torchvision import transforms
 
     started = time.monotonic()
+    if args.device == "auto":
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+    else:
+        device = args.device
     cfg = timm.get_pretrained_cfg("convnext_tiny.fb_in22k_ft_in1k")
     model = timm.create_model("convnext_tiny", pretrained=False,
                               num_classes=cfg.num_classes, pretrained_cfg=cfg)
     state = load_file(str(args.weights))
     model.load_state_dict(state, strict=False)
+    model.to(device)
     model.eval()
 
     data_cfg = timm.data.resolve_model_data_config(model)
@@ -62,6 +70,10 @@ def main() -> int:
             transforms.functional.adjust_brightness(image, 1.25)),
         "center_crop": lambda image: base_transform(
             transforms.functional.center_crop(image, (48, 48))),
+        "grayscale": lambda image: base_transform(
+            transforms.functional.rgb_to_grayscale(image, num_output_channels=3)),
+        "contrast": lambda image: base_transform(
+            transforms.functional.adjust_contrast(image, 1.5)),
     }
 
     with zipfile.ZipFile(args.zip) as archive:
@@ -74,18 +86,24 @@ def main() -> int:
         for index, name in enumerate(selected):
             raw = archive.read(name)
             image = Image.open(io.BytesIO(raw)).convert("RGB")
-            per_image = {"path": name, "sha256": hashlib.sha256(raw).hexdigest()}
+            row = {"path": name, "sha256": hashlib.sha256(raw).hexdigest()}
+            tensors = []
             for corruption, transform in transforms_by_corruption.items():
-                tensor = transform(image).unsqueeze(0)
-                with torch.no_grad():
-                    logits = model(tensor)
-                    probabilities = torch.softmax(logits, dim=-1)[0]
-                    confidence, prediction = probabilities.max(dim=-1)
-                per_image[corruption] = {
-                    "prediction": int(prediction),
-                    "confidence": round(float(confidence), 6),
+                tensors.append(transform(image))
+            batch = torch.stack(tensors, dim=0).to(device)
+            with torch.no_grad():
+                logits = model(batch)
+                probabilities = torch.softmax(logits, dim=-1)
+                confidence, prediction = probabilities.max(dim=-1)
+            for corruption_index, corruption in enumerate(transforms_by_corruption):
+                row[corruption] = {
+                    "prediction": int(prediction[corruption_index]),
+                    "confidence": round(float(confidence[corruption_index]), 6),
                 }
-            rows.append(per_image)
+            rows.append(row)
+            if (index + 1) % args.checkpoint_every == 0:
+                print(json.dumps({"done": index + 1, "total": len(selected),
+                                  "elapsed_s": round(time.monotonic() - started, 1)}), flush=True)
 
     clean_hits = {
         corruption: sum(row[corruption]["prediction"] == row["clean"]["prediction"] for row in rows)
@@ -112,6 +130,8 @@ def main() -> int:
         "zip_sha256": sha256_file(args.zip),
         "official": False,
         "images": len(rows),
+        "device": device,
+        "batch_size_per_image": len(transforms_by_corruption),
         "corruptions": list(transforms_by_corruption),
         "clean_prediction_agreement": clean_hits,
         "mean_confidence": mean_confidence,

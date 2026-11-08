@@ -111,6 +111,9 @@ def main() -> int:
     mechanistic_ext = json.loads((args.root.parent / "validation-20261108/tasks/mechanistic-understanding/pplm-svd-slice.json").read_text())
     vision_matrix = json.loads((args.root.parent / "validation-20261108/tiny-imagenet-tta-lca-matrix.json").read_text())
     kitchen_bc = json.loads((args.root.parent / "validation-20261108/d4rl-kitchen-bc-baseline.json").read_text())
+    vision_2000 = json.loads((args.root.parent / "validation-20261108/tiny-imagenet-2000-gpu.json").read_text())
+    kitchen_sweep = json.loads((args.root.parent / "validation-20261108/d4rl-kitchen-bc-sweep.json").read_text())
+    mechanistic_512 = json.loads((args.root.parent / "validation-20261108/tasks/mechanistic-understanding/pplm-svd-512.json").read_text())
     mech_data_bytes = (
         args.root / "datasets/mechanistic-understanding/train.csv"
     ).stat().st_size
@@ -364,6 +367,19 @@ def main() -> int:
         check("kitchen_bc_val_rows", 13695, kitchen_bc["val_rows"]),
         check("kitchen_bc_final_val_mse", 0.0332668162882328,
               kitchen_bc["final_val_mse"]),
+        check("vision_2000_images", 2000, vision_2000["images"]),
+        check("vision_2000_device", "cuda", vision_2000["device"]),
+        check("vision_2000_clean", 2000,
+              vision_2000["clean_prediction_agreement"]["clean"]),
+        check("vision_2000_grayscale_agreement", 1084,
+              vision_2000["clean_prediction_agreement"]["grayscale"]),
+        check("kitchen_sweep_runs", 25, len(kitchen_sweep["runs"])),
+        check("kitchen_sweep_best_mean_mse", 0.023699197545647623,
+              kitchen_sweep["summary"]["512x3"]["mean_val_mse"]),
+        check("mechanistic_512_rows", 512, mechanistic_512["rows"]),
+        check("mechanistic_512_greedy", 512, mechanistic_512["greedy_generated"]),
+        check("mechanistic_512_dpo_trained", False,
+              mechanistic_512["dpo_model_trained"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,

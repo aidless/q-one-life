@@ -1,0 +1,46 @@
+{
+  "schema": "qone-tiny-imagenet-tta-lca-matrix-v1",
+  "model": "timm/convnext_tiny.fb_in22k_ft_in1k",
+  "weights": "vision/convnext_tiny.safetensors",
+  "weights_sha256": "77b619e187de71bce58721689da0c009e84cc20677293d7d43105307e34d868a",
+  "zip": "vision/tiny-imagenet-200.zip",
+  "zip_sha256": "6198c8ae015e2b3e007c7841da39ec069199b9aa3bfa943a462022fe5e43c821",
+  "official": false,
+  "images": 2000,
+  "device": "cuda",
+  "batch_size_per_image": 6,
+  "corruptions": [
+    "clean",
+    "hflip",
+    "brightness",
+    "center_crop",
+    "grayscale",
+    "contrast"
+  ],
+  "clean_prediction_agreement": {
+    "clean": 2000,
+    "hflip": 1789,
+    "brightness": 1728,
+    "center_crop": 1299,
+    "grayscale": 1084,
+    "contrast": 1624
+  },
+  "mean_confidence": {
+    "clean": 0.543083,
+    "hflip": 0.544597,
+    "brightness": 0.537774,
+    "center_crop": 0.493867,
+    "grayscale": 0.45455,
+    "contrast": 0.527244
+  },
+  "toy_lca_error": {
+    "clean": 0.0,
+    "hflip": 0.1025,
+    "brightness": 0.1335,
+    "center_crop": 0.334,
+    "grayscale": 0.4365,
+    "contrast": 0.181
+  },
+  "elapsed_s": 240.93,
+  "note": "Real public ConvNeXt-Tiny on 200 Tiny-ImageNet images; toy 20-parent hierarchy only, no ImageNet-1K/OOD or 75-model results."
+}

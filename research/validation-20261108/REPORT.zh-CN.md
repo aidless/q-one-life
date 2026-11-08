@@ -190,6 +190,26 @@
 - 当前 ledger 保持 `verified=3`、`waived=22`、`blocked=2751`、
   `unverified=0`、`gate=BLOCKED`。
 
+## 2026-11-08 AMD 云端持续负载
+
+- 把 Tiny-ImageNet-200 zip（248,100,043 字节）与 ConvNeXt-Tiny 权重
+  （114,374,272 字节）传到 `/root/qone-paperbench-full10/vision/`，验证 GPU
+  `torch.cuda.is_available()`。
+- 云端正式跑 2000 张 × 6 种扰动（clean / hflip / brightness / center_crop /
+  grayscale / contrast）ConvNeXt-Tiny 推理，`device=cuda`、240.93 秒。
+  clean agreement：2000 / 1789 / 1728 / 1299 / 1084 / 1624；
+  toy LCA error：0 / 0.1025 / 0.1335 / 0.334 / 0.4365 / 0.181。
+  回执 `tiny-imagenet-2000-gpu.json`。
+- 云端把 RTP / GPT-2-medium 扩展切片从 24 条扩到 512 条 greedy
+  continuations + PPLM-style steering + 5 层 SVD，207.17 秒，
+  `dpo_model_trained=false`。回执
+  `tasks/mechanistic-understanding/pplm-svd-512.json`。
+- D4RL BC sweep 在本机 CPU 完成（5 架构 × 5 seed = 25 runs，187.26 秒，
+  最佳 `512x3` mean val MSE 0.023699）。云端 h5py 安装被 PyPI 通道卡住，
+  没有让它空等；保留失败记录，改本机完成并用云端跑 GPU 线。
+- 主验证闸新增 9 项检查，合计 **198 项全绿**；full10 仍 `BLOCKED`，
+  没有因为计算量增加而把窄证据升为 `verified`。
+
 ## 不能声称
 
 - 没有完成 10 任务全复现，没有 `full_reproduction`。
