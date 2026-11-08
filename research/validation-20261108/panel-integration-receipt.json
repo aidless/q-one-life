@@ -1,0 +1,285 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "e2dd445a7f521f32",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "probe-leaf-a",
+    "probe-leaf-b",
+    "probe-leaf-c"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "probe-leaf-a",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "Evidence shows only a PASS gate; it does not explicitly confirm 0 exceptions or a matching local/cloud canonical hash.",
+      "raw_response_sha256": "820f7083674a7184b5f6d29f904eac74c44829c9dd0882c7ea0977ff0ef542b6",
+      "usage": {
+        "completion_tokens": 234,
+        "completion_tokens_details": {
+          "reasoning_tokens": 194
+        },
+        "prompt_tokens": 721,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 955
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "probe-leaf-a",
+      "status": "scored",
+      "score": 0.8,
+      "explanation": "Gate PASS on verification artifact, though the evidence does not explicitly detail the 0 exceptions or canonical hash match.",
+      "raw_response_sha256": "d9af3ecec4f08f050e1cc8dd8325aac97c488b71b3680cefecee7be5b3c6c29d",
+      "usage": {
+        "prompt_tokens": 130,
+        "completion_tokens": 1929,
+        "total_tokens": 2059,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2258,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "probe-leaf-a",
+      "status": "scored",
+      "score": 0.95,
+      "explanation": "The verification artifact reports a PASS gate with no exceptions, indicating the deterministic smoke test succeeded and the canonical hash matched between local and cloud environments.",
+      "raw_response_sha256": "87242589e7d053bb1d44d205eead523d122eb8e731a6e69d828182507cccfc5e",
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 41,
+        "total_tokens": 187,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "probe-leaf-b",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "The only evidence is a PASS gate in verification.json, which suggests the requirement was checked, but no raw response records or recomputation details are provided to independently confirm model provenance or accuracy reproducibility.",
+      "raw_response_sha256": "cfa7fbb8d199a5f8780a57b322aebb5d90ea5ac9bb4ec4ff36e901948e147d1c",
+      "usage": {
+        "completion_tokens": 302,
+        "completion_tokens_details": {
+          "reasoning_tokens": 249
+        },
+        "prompt_tokens": 749,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1051
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "probe-leaf-b",
+      "status": "scored",
+      "score": 0.8,
+      "explanation": "Verification gate passed, but evidence does not explicitly confirm raw-response recomputability.",
+      "raw_response_sha256": "124b89911e363e009f056c4baff26bfcf1a440d354d26cce78c3c4aa45830f23",
+      "usage": {
+        "prompt_tokens": 130,
+        "completion_tokens": 1241,
+        "total_tokens": 1371,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1455,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "probe-leaf-b",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The gate is FAIL, indicating the verification did not pass. A score of 0.0 is assigned because the artifact reports a failed gate despite the evidence text stating 'PASS', which is a contradiction. The requirement that all reported accuracies be recomputable from raw records cannot be satisfied under a failed gate.",
+      "raw_response_sha256": "0346822f538c184a4ec19538762b43d793f052e176c6142f28c825ca06a98e24",
+      "usage": {
+        "prompt_tokens": 147,
+        "completion_tokens": 78,
+        "total_tokens": 225,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 3,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "probe-leaf-c",
+      "status": "scored",
+      "score": 0.55,
+      "explanation": "Only evidence is an embedding-verification artifact with gate PASS; it indicates a verification step passed but does not explicitly confirm that real SciBERT and RoBERTa encoders were loaded offline or that CPW/SCW were recomputed on stored responses.",
+      "raw_response_sha256": "26926102e90c7251b0d603b4c6d600d834c2a8b37d8d716e46efde135f7e1888",
+      "usage": {
+        "completion_tokens": 178,
+        "completion_tokens_details": {
+          "reasoning_tokens": 112
+        },
+        "prompt_tokens": 757,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 640
+        },
+        "total_tokens": 935
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "probe-leaf-c",
+      "status": "scored",
+      "score": 0.8,
+      "explanation": "Gate PASS on scc-real-model-probe/embedding-verification.json supports the check, though evidence does not fully detail the offline SciBERT/RoBERTa and CPW/SCW recomputation.",
+      "raw_response_sha256": "1dfb79a2cf113c9941e63376d0132d66326ecf922b6d2a84ee639f8b7c04c761",
+      "usage": {
+        "prompt_tokens": 136,
+        "completion_tokens": 914,
+        "total_tokens": 1050,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1004,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "probe-leaf-c",
+      "status": "scored",
+      "score": 1.0,
+      "explanation": "The gate is PASS, indicating that the CPW/SCW computation on stored model responses for the Real SciBERT and RoBERTa encoders passed verification.",
+      "raw_response_sha256": "d3b9330b887eb4360cbc6322cf70d4ecf03d4182e3f70089ee7f3fb96de46821",
+      "usage": {
+        "prompt_tokens": 157,
+        "completion_tokens": 49,
+        "total_tokens": 206,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "d7f1f38944dda9159357c68c754a55a799866e92d11e3a1758ff3bf9b98b5f00"
+}

@@ -6,6 +6,7 @@ from pathlib import Path
 from qone_life.research_factory.free_judge_panel import (
     CANDIDATE_MODELS,
     PanelConfig,
+    build_messages,
     canonical_sha256,
     grade_batch,
     parse_judge_response,
@@ -56,6 +57,13 @@ class FreeJudgePanelTests(unittest.TestCase):
                      '{"score": 0.5}', 'not json'):
             with self.subTest(text=text), self.assertRaises(Exception):
                 parse_judge_response(text)
+
+    def test_prompt_disallows_tools_and_requires_json_only(self):
+        messages = build_messages("leaf", "requirement", {"carrier": "x"})
+        joined = " ".join(message["content"] for message in messages)
+        self.assertIn("No tools", joined)
+        self.assertIn("one JSON object", joined)
+        self.assertEqual(messages[0]["role"], "system")
 
     def test_three_models_same_leaf_batch(self):
         client = FakeClient(lambda model_id, call: response(

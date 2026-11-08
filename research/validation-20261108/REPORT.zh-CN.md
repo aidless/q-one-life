@@ -33,6 +33,23 @@
 - `pre-go-blocked.json` 证明没有逐模型 GO 时不发任何评分调用，
   回执为 `complete=false`、`blocked_reasons=missing_user_go:*`。
 
+## 用户 GO 与集成评分（2026-11-08 续）
+
+- 用户明确"可以全部同意"，已对 3 个锁定模型写入 `go-receipts.json`，
+  `batch=full10-20261108`、`budget=free-only`、`official=false`；不含 key。
+- 首次真实集成评分遇到 `opencode-zen-free/deepseek-v4.1-flash-free` 对某 leaf
+  返回 `tool_calls` 而 `content=null`：模型把评分当成了查文件任务。随后在
+  `build_messages` 固定 system 指令禁用工具/文件访问，并请求
+  `response_format=json_object`、`tool_choice=none`；新增回归测试。
+- 修复后 `panel-integration-receipt.json` 对 3 个 probe leaf 完成 3 模型 ×
+  3 leaf = 9 个结构化分数，`complete=true`、`official=false`、无错误。
+  这是**通道集成证据**，不是任务 rubric 分数；没有复制到任务级 receipt，
+  避免门禁误把它当真实 leaf 批次。
+- `magpie-vendor-probe.json` 补充实测 Magpie 的 NVIDIA / AMD 相关候选：
+  `openrouter/nvidia/nemotron-3.5-super-vl:free` 可用，
+  `nvidia/deepseek-ai/deepseek-v4.1-flash` 与 `deepseek-ai/deepseek-v4.1-flash`
+  均 60 秒超时。主面板按锁定规则不替换。
+
 ## 资产与阻塞审计
 
 - `asset-channel-audit.json`：Jigsaw、AI2 ARC、BoolQ、SciQ、LAMBADA、
@@ -57,6 +74,9 @@
 | real judge scores | 0 |
 | official PaperBench score | 0 |
 
+注：上表的 `real judge scores` 指任务 rubric 分数；通道集成回执里的 9 个
+分数只验证三模型通道，不计入 2776 叶、不算 PaperBench 能力分数。
+
 ## 不能声称
 
 - 没有完成 10 任务全复现，没有 `full_reproduction`。
@@ -66,7 +86,7 @@
 
 ## 恢复点
 
-1. 对三个锁定模型分别给出逐线 GO，写入 `go-receipts.json`。
+1. 逐模型 GO 已完成；任务级评分仍缺 10 份真实 leaf 批次 receipt。
 2. 解除 401 门控数据或改用公开等价数据，并给出 GPU 预算与逐项下载确认。
 3. 每任务按 `ASSETS.json → 云端实验 → carrier ledger → panel grade → gate`
    推进；`verify_paperbench_full10.py` 从 `BLOCKED` 退出即表示可继续。

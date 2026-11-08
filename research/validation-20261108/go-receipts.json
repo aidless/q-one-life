@@ -1,0 +1,26 @@
+{
+  "schema": "qone-free-judge-go-v1",
+  "receipts": {
+    "opencode-zen-free/deepseek-v4.1-flash-free": {
+      "go": true,
+      "batch": "full10-20261108",
+      "budget": "free-only",
+      "official": false,
+      "note": "explicit user GO; no key value stored"
+    },
+    "openrouter/recursive/flint-v1.0:free": {
+      "go": true,
+      "batch": "full10-20261108",
+      "budget": "free-only",
+      "official": false,
+      "note": "explicit user GO; no key value stored"
+    },
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free": {
+      "go": true,
+      "batch": "full10-20261108",
+      "budget": "free-only",
+      "official": false,
+      "note": "explicit user GO; no key value stored"
+    }
+  }
+}

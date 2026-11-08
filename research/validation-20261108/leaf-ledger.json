@@ -20,8 +20,32 @@
       "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
     ],
     "locked": true,
-    "user_go": {},
-    "locked_from": "panel-probe.json"
+    "user_go": {
+      "opencode-zen-free/deepseek-v4.1-flash-free": {
+        "go": true,
+        "batch": "full10-20261108",
+        "budget": "free-only",
+        "official": false,
+        "note": "explicit user GO; no key value stored"
+      },
+      "openrouter/recursive/flint-v1.0:free": {
+        "go": true,
+        "batch": "full10-20261108",
+        "budget": "free-only",
+        "official": false,
+        "note": "explicit user GO; no key value stored"
+      },
+      "openrouter/xingchen-agi/xing4.0-29b-a4b:free": {
+        "go": true,
+        "batch": "full10-20261108",
+        "budget": "free-only",
+        "official": false,
+        "note": "explicit user GO; no key value stored"
+      }
+    },
+    "locked_from": "panel-probe.json",
+    "integration_receipt": "panel-integration-receipt.json",
+    "supplementary_vendor_probe": "magpie-vendor-probe.json"
   },
   "tasks": [
     {
@@ -49875,5 +49899,5 @@
     "unverified": 0,
     "gate": "BLOCKED"
   },
-  "canonical_sha256": "7e9fa47cbd5055c409f49820934ff514d8757664bed65ae69fdcc6b618771259"
+  "canonical_sha256": "267ecb1dbe88eff2b3ac28de82bca60ee79f8cb00ae13dc3e20c7544c424da0b"
 }

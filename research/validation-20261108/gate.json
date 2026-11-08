@@ -45,14 +45,11 @@
     {
       "check": "problems",
       "expected": 0,
-      "actual": 13,
+      "actual": 10,
       "passed": false
     }
   ],
   "problems": [
-    "missing_user_go:opencode-zen-free/deepseek-v4.1-flash-free",
-    "missing_user_go:openrouter/recursive/flint-v1.0:free",
-    "missing_user_go:openrouter/xingchen-agi/xing4.0-29b-a4b:free",
     "missing_panel_receipt:semantic-self-consistency",
     "missing_panel_receipt:self-expansion",
     "missing_panel_receipt:self-composing-policies",
@@ -75,9 +72,9 @@
   "selftest": {
     "summary": {
       "passed": true,
-      "direction_a_problems": 38,
-      "direction_b_problems": 39,
-      "restored_problems": 17
+      "direction_a_problems": 35,
+      "direction_b_problems": 36,
+      "restored_problems": 14
     }
   }
 }

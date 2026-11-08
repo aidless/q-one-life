@@ -1,0 +1,67 @@
+{
+  "schema": "qone-free-judge-panel-probe-v1",
+  "base_url": "http://127.0.0.1:3425/v1",
+  "official": false,
+  "candidate_queue": [
+    "openrouter/nvidia/nemotron-3.5-super-vl:free",
+    "nvidia/deepseek-ai/deepseek-v4.1-flash",
+    "deepseek-ai/deepseek-v4.1-flash",
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free"
+  ],
+  "lock_rule": "first_three_passed",
+  "passed": [
+    "openrouter/nvidia/nemotron-3.5-super-vl:free",
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free"
+  ],
+  "locked_model_ids": [
+    "openrouter/nvidia/nemotron-3.5-super-vl:free",
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free"
+  ],
+  "complete": true,
+  "details": [
+    {
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "state": "passed",
+      "attempts": 1,
+      "score": 0.0,
+      "explanation_sha256": "de9ab28a44aae1932894919789eb7cb3d3d6c4083217e88b7e328669faa92fa4",
+      "raw_response_sha256": "28e7d5574ec75c3b29b9805bde0562acd41b566ef610712f021129be73567cf2"
+    },
+    {
+      "model_id": "nvidia/deepseek-ai/deepseek-v4.1-flash",
+      "state": "blocked",
+      "attempts": 2,
+      "error": "ReadTimeout: timed out",
+      "raw_response_sha256": ""
+    },
+    {
+      "model_id": "deepseek-ai/deepseek-v4.1-flash",
+      "state": "blocked",
+      "attempts": 2,
+      "error": "ReadTimeout: timed out",
+      "raw_response_sha256": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "state": "passed",
+      "attempts": 1,
+      "score": 0.1,
+      "explanation_sha256": "61cc294fe7426c5ed645fed81f4670599c1fcb53bd38f4dc11bfb032af66136b",
+      "raw_response_sha256": "a952b97c7491c6c0319010c70a584bebf5e0456d8a24d32a871899a54a16152b"
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "state": "passed",
+      "attempts": 1,
+      "score": 0.0,
+      "explanation_sha256": "cf5c0205d373d30c433230f9ed4f16a02dc12ac58626961d7a070306e87d918e",
+      "raw_response_sha256": "3f6c1974d5da0fc073b820a28182bd92cc1231781927e82e865029f85b6d7d7c"
+    }
+  ],
+  "user_go_required": true,
+  "canonical_sha256": "164bd0ea6623b2c261c3bf8a6ee7faa8b3a67c0869305ead24735387dd252de7",
+  "note": "Supplementary Magpie NVIDIA/AMD-adjacent channel probe; does not replace the locked panel."
+}

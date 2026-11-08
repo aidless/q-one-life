@@ -147,12 +147,17 @@ def parse_judge_response(text: str) -> tuple[float, str]:
 def build_messages(leaf_id: str, requirements: str, evidence: dict[str, Any]) -> list[dict[str, str]]:
     evidence_text = json.dumps(evidence, sort_keys=True, ensure_ascii=False)[:12000]
     prompt = (
-        "You are grading one PaperBench rubric leaf. Return JSON only: "
+        "You are a stateless grading function. Do not use tools, do not inspect files, "
+        "do not write code, and do not ask for more evidence. Return one JSON object only: "
         '{"score": <float 0..1>, "explanation": "<short evidence-grounded reason>"}.\n'
+        "Use only the evidence text provided below.\n"
         f"leaf_id: {leaf_id}\nrequirements: {requirements}\n"
         f"evidence: {evidence_text}"
     )
-    return [{"role": "user", "content": prompt}]
+    return [
+        {"role": "system", "content": "Output strictly one JSON object. No tools. No prose."},
+        {"role": "user", "content": prompt},
+    ]
 
 
 class OpenAICompatibleClient:
@@ -168,7 +173,13 @@ class OpenAICompatibleClient:
         response = httpx.post(
             f"{self.base_url}/chat/completions",
             headers={"Authorization": f"Bearer {PLACEHOLDER_KEY}"},
-            json={"model": model_id, "messages": messages, "temperature": 0.0},
+            json={
+                "model": model_id,
+                "messages": messages,
+                "temperature": 0.0,
+                "response_format": {"type": "json_object"},
+                "tool_choice": "none",
+            },
             timeout=timeout_s,
         )
         response.raise_for_status()
