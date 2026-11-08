@@ -1,0 +1,285 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "9f5c323ec4e2e85b",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "6103dd0e-8fd8-4b5f-b4f2-88c553815a15",
+    "bc1168ce-1669-4aa8-9f2c-d806a8941d27",
+    "bcec9a7d-70da-45a0-a588-abba95fa574b"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "6103dd0e-8fd8-4b5f-b4f2-88c553815a15",
+      "status": "scored",
+      "score": 0.55,
+      "explanation": "Evidence shows a local cfg.py carrier and public logits artifact for the task, supporting that CFG inference exists, but it does not explicitly verify equation 7 details or GPT2-family runnability; only small-slice evidence is provided.",
+      "raw_response_sha256": "6abb176199c36980f723636c74bffab18cf186a31bb5b8bbaf7581d08f17d0c5",
+      "usage": {
+        "completion_tokens": 213,
+        "completion_tokens_details": {
+          "reasoning_tokens": 148
+        },
+        "prompt_tokens": 842,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1055
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "6103dd0e-8fd8-4b5f-b4f2-88c553815a15",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "The named carrier exists and supports the narrow CFG requirement via cfg.py and validation logits, but the evidence is small-slice only and not a full paper reproduction.",
+      "raw_response_sha256": "580dd5557d7adbc532a4559d26cacabad27b82383808a8b92244f2f507ffc532",
+      "usage": {
+        "prompt_tokens": 240,
+        "completion_tokens": 276,
+        "total_tokens": 516,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 264,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "6103dd0e-8fd8-4b5f-b4f2-88c553815a15",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "The evidence confirms that a local carrier path exists at research/paperbench-submissions/stay-on-topic-with-classifier-free-guidance/src/cfg.py and a public logits file exists at research/validation-20261108/tasks/stay-on-topic-with-classifier-free-guidance/cfg-public-logits.json. The claim states the named local carrier exists and supports the narrow requirement, with small-slice evidence only. However, the evidence does not confirm that CFG is implemented per equation 7 in Section 2.2 of the paper, nor that it runs on the GPT2 family of models. The existence of the file and logits file supports partial compliance but not full implementation verification.",
+      "raw_response_sha256": "f80ce159464aa99666406782eb6702153dcfbd583565d58b9b6ffc779b461791",
+      "usage": {
+        "prompt_tokens": 295,
+        "completion_tokens": 179,
+        "total_tokens": 474,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 3,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "bc1168ce-1669-4aa8-9f2c-d806a8941d27",
+      "status": "scored",
+      "score": 0.55,
+      "explanation": "Evidence only cites the existence of src/cfg.py and a self-asserted claim that it supports the narrow requirement; no shown code confirms a mutable, non-hardcoded guidance-strength hyper-parameter, so support is partial and unverified.",
+      "raw_response_sha256": "0e04ffec28c715b3d87ef108aeabbedb7db3343670f8b17b9dff51f6d6c5445f",
+      "usage": {
+        "completion_tokens": 170,
+        "completion_tokens_details": {
+          "reasoning_tokens": 105
+        },
+        "prompt_tokens": 838,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 640
+        },
+        "total_tokens": 1008
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "bc1168ce-1669-4aa8-9f2c-d806a8941d27",
+      "status": "scored",
+      "score": 0.7,
+      "explanation": "The named local carrier exists and supports the narrow requirement, but the evidence is small-slice only and not full paper reproduction, so confidence is limited.",
+      "raw_response_sha256": "64ce647f172fb50dbe73d9f78bdb8e66e7a9107d3e775e38643d69c25aecefb2",
+      "usage": {
+        "prompt_tokens": 211,
+        "completion_tokens": 486,
+        "total_tokens": 697,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 556,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "bc1168ce-1669-4aa8-9f2c-d806a8941d27",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "The evidence confirms that a local carrier file `cfg.py` exists at the specified path and the claim states it supports the narrow requirement of a mutable guidance strength hyper-parameter for CFG used with GPT2 models. However, the evidence is explicitly described as 'small-slice evidence only, not full paper reproduction,' meaning it does not constitute complete verification of the implementation. The existence of the carrier file and its stated support for the requirement provides moderate but incomplete evidence.",
+      "raw_response_sha256": "e1c331392d0aaf82ffe681ffa50b45d222944c2f137615c445aa43e2a5f20085",
+      "usage": {
+        "prompt_tokens": 251,
+        "completion_tokens": 109,
+        "total_tokens": 360,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "bcec9a7d-70da-45a0-a588-abba95fa574b",
+      "status": "scored",
+      "score": 0.65,
+      "explanation": "Evidence identifies cfg.py as the carrier and explicitly claims it supports the narrow CFG unconditional-prompt requirement, but provides no code details confirming use of the initial prompt's last token.",
+      "raw_response_sha256": "39281d644974c2c3a1dfdc816b60205dd8452ecafc9d3eff7c81e8c18125d2ca",
+      "usage": {
+        "completion_tokens": 225,
+        "completion_tokens_details": {
+          "reasoning_tokens": 174
+        },
+        "prompt_tokens": 852,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 640
+        },
+        "total_tokens": 1077
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "bcec9a7d-70da-45a0-a588-abba95fa574b",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "The evidence only identifies a carrier path and makes a narrow claim of support, with small-slice evidence only and not full paper reproduction.",
+      "raw_response_sha256": "a862cb2755621f352fe10b0bc5b30a144044f861d87f52131e6becb43b1a8b6f",
+      "usage": {
+        "prompt_tokens": 227,
+        "completion_tokens": 401,
+        "total_tokens": 628,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 418,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "bcec9a7d-70da-45a0-a588-abba95fa574b",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "The evidence confirms that a local carrier file (cfg.py) exists at the specified path and supports the narrow requirement that CFG implementation starts the unconditional prompt with the last token of the initial prompt. However, the evidence is limited to a small-slice code snippet rather than full paper reproduction, so the claim is partially supported but not fully verified.",
+      "raw_response_sha256": "e350f2b833f2ebae61b504f374db805a77004894498a1eb5cb3691d94e4e9429",
+      "usage": {
+        "prompt_tokens": 268,
+        "completion_tokens": 84,
+        "total_tokens": 352,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "71e450fc2a1fecd33c01b112dad942d0695d0b7fd0a3c2ae6407dead49da2bda"
+}

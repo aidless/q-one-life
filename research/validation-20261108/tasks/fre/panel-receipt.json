@@ -1,0 +1,285 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "f7c60e15fde83286",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "595c44a3-25a3-4f38-80d1-d3376b12476e",
+    "5b3ccceb-d946-4ce3-96f1-6cb9c3ef8030",
+    "bccaf966-1315-49b8-9d49-df1b0f30d109"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "595c44a3-25a3-4f38-80d1-d3376b12476e",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "Evidence only asserts that a local executable algorithm/interface carrier exists (src/core.py, asset-channel-audit.json) and explicitly disclaims proof of the full result; no evidence confirms loading or use of the antmaze-large-diverse-v2 D4RL dataset for offline training.",
+      "raw_response_sha256": "df14b664e539635158337656813f123996c7c23b40291a683922187a60143f2a",
+      "usage": {
+        "completion_tokens": 174,
+        "completion_tokens_details": {
+          "reasoning_tokens": 101
+        },
+        "prompt_tokens": 827,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 640
+        },
+        "total_tokens": 1001
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "595c44a3-25a3-4f38-80d1-d3376b12476e",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "The evidence only indicates a local executable carrier exists and does not prove the full paper result, and it does not address whether the antmaze-large-diverse-v2 dataset can be used for offline training.",
+      "raw_response_sha256": "dd67869b5e1c8db28829ac7513f94a41cec951e70d44f1ac5f1439ddb70de450",
+      "usage": {
+        "prompt_tokens": 204,
+        "completion_tokens": 396,
+        "total_tokens": 600,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 396,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "595c44a3-25a3-4f38-80d1-d3376b12476e",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only confirms that a local executable carrier exists (core.py and an audit JSON), but provides no proof that the `antmaze-large-diverse-v2` dataset from D4RL is actually used or accessible in the code. No evidence of dataset loading, download, or usage is present.",
+      "raw_response_sha256": "f2ff0e3a9079178b2d4c4b46dc64a24eef380d372a8ca3275bfd3116fb64ab37",
+      "usage": {
+        "prompt_tokens": 245,
+        "completion_tokens": 80,
+        "total_tokens": 325,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "5b3ccceb-d946-4ce3-96f1-6cb9c3ef8030",
+      "status": "scored",
+      "score": 0.1,
+      "explanation": "Evidence only shows a local executable algorithm/interface carrier exists and explicitly does not prove the paper result. It provides no evidence that the D4RL Ant Maze environment is implemented or usable for online evaluation.",
+      "raw_response_sha256": "1388c527ef818541c39e0259aed2b5583044c82008c0d10e4f4e84a3497cf8c6",
+      "usage": {
+        "completion_tokens": 159,
+        "completion_tokens_details": {
+          "reasoning_tokens": 103
+        },
+        "prompt_tokens": 845,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 640
+        },
+        "total_tokens": 1004
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "5b3ccceb-d946-4ce3-96f1-6cb9c3ef8030",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only states that a local executable algorithm/interface carrier exists and does not prove the full paper result, and it does not address implementation of the D4RL Ant Maze online evaluation requirement.",
+      "raw_response_sha256": "3d0f42f289b04091cb7b806fccc2b96ef358c99361fecfb26e000a7c89a141d8",
+      "usage": {
+        "prompt_tokens": 247,
+        "completion_tokens": 319,
+        "total_tokens": 566,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 323,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "5b3ccceb-d946-4ce3-96f1-6cb9c3ef8030",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only lists two carrier paths: core.py and an asset-channel audit JSON. Neither is the D4RL Ant Maze environment implementation, nor does it demonstrate that the environment can be used for online evaluation of sequential decision making agents. The claim itself is unsupported by any code or environment setup evidence.",
+      "raw_response_sha256": "ff148a8ac07af26d9d1565a3d953b84506de5fe2798b884a76d1c7166fac54f5",
+      "usage": {
+        "prompt_tokens": 296,
+        "completion_tokens": 78,
+        "total_tokens": 374,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 288,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "bccaf966-1315-49b8-9d49-df1b0f30d109",
+      "status": "scored",
+      "score": 0.15,
+      "explanation": "Evidence only indicates an executable algorithm/interface carrier exists (core.py and an asset audit file). It does not show implementation or successful use of the cheetah RND dataset from ExORL for offline training, and explicitly disclaims proof of the full result.",
+      "raw_response_sha256": "38ab7788a60396b4d5157a5cec6feb1284b77ee1ac3a4c674d7c6583197084e9",
+      "usage": {
+        "completion_tokens": 166,
+        "completion_tokens_details": {
+          "reasoning_tokens": 97
+        },
+        "prompt_tokens": 813,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 979
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "bccaf966-1315-49b8-9d49-df1b0f30d109",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The provided evidence only mentions a local executable carrier and task fre, and does not address the required cheetah (RND) ExORL dataset for offline training.",
+      "raw_response_sha256": "85c400eba63cca604b708acb287da863f388a23a3b7e3aa824f6cba9258fa16f",
+      "usage": {
+        "prompt_tokens": 217,
+        "completion_tokens": 308,
+        "total_tokens": 525,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 303,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "bccaf966-1315-49b8-9d49-df1b0f30d109",
+      "status": "scored",
+      "score": 0.15,
+      "explanation": "The evidence only confirms that a local executable carrier exists (core.py and an asset-channel-audit.json), but does not demonstrate that the cheetah (RND) dataset from ExORL can be used for offline training of sequential decision making agents. No code, dataset, or training pipeline evidence is provided.",
+      "raw_response_sha256": "1915fdfbdf02cd29f944effa1a564e522de7e36cc497caa8b7b881dff6010259",
+      "usage": {
+        "prompt_tokens": 253,
+        "completion_tokens": 81,
+        "total_tokens": 334,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "bd00041b94545dd12e0dcd4323cc373816059292e29dc514fe369dad07497f1c"
+}

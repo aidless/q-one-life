@@ -1,0 +1,285 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "d8ba0c37527b4189",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "c8ce16bb-cbcb-4a1f-86c5-41c101d5267c",
+    "c4731d7a-bd08-4745-99be-a07f57f2ec9f",
+    "2f25c14f-36c1-4ff5-a22c-87dac652d647"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "c8ce16bb-cbcb-4a1f-86c5-41c101d5267c",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "Evidence only shows a local executable carrier exists (core.py, asset-channel-audit.json) and explicitly disclaims proving the full paper result; it contains no direct evidence that policy network agents for MuJoCo environments were implemented.",
+      "raw_response_sha256": "fd02257989055d1f27b420a65f882465cebae90a1f01bfc9c828b4e501b5d74a",
+      "usage": {
+        "completion_tokens": 155,
+        "completion_tokens_details": {
+          "reasoning_tokens": 93
+        },
+        "prompt_tokens": 781,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 936
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "c8ce16bb-cbcb-4a1f-86c5-41c101d5267c",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "The evidence only states that a local executable carrier exists and does not prove the full paper result, which does not directly confirm MuJoCo policy network agent implementation.",
+      "raw_response_sha256": "34810f230fffd8c19fd8ae7f2356dd77682b801dca4dfa5ebbcbbc20f794209a",
+      "usage": {
+        "prompt_tokens": 185,
+        "completion_tokens": 361,
+        "total_tokens": 546,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 378,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "c8ce16bb-cbcb-4a1f-86c5-41c101d5267c",
+      "status": "scored",
+      "score": 0.15,
+      "explanation": "The evidence only confirms that a local executable algorithm/interface carrier exists (a local executable algorithm/interface carrier exists), but explicitly states this does not prove the full paper result. The claim is about a 'local executable algorithm/interface carrier' rather than the paper's actual research contribution or results. No evidence is provided for the policy network agents implementation, the MuJoCo environments setup, or any substantive scientific claims. The score reflects that the evidence is insufficient to support the requirements.",
+      "raw_response_sha256": "79bc2240bd8af540059187a4dbb104315a1fe421b5cc34755d12a2d60422b4f7",
+      "usage": {
+        "prompt_tokens": 218,
+        "completion_tokens": 110,
+        "total_tokens": 328,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "c4731d7a-bd08-4745-99be-a07f57f2ec9f",
+      "status": "scored",
+      "score": 0.05,
+      "explanation": "Evidence only asserts a local executable algorithm/interface carrier exists and explicitly does not prove the full result. It provides no support for a selfish mining environment, PPO agents, or the specified 4-layer 128-unit MLP architecture.",
+      "raw_response_sha256": "5d16ef94a74429142ff3e014af536f117372be20496e4f998e249265146fd1ca",
+      "usage": {
+        "completion_tokens": 186,
+        "completion_tokens_details": {
+          "reasoning_tokens": 123
+        },
+        "prompt_tokens": 824,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1010
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "c4731d7a-bd08-4745-99be-a07f57f2ec9f",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only states that a local executable carrier exists and does not prove the full paper result, so it does not support the requirement about the PPO MLP implementation.",
+      "raw_response_sha256": "be4142aa199c49fe687f63146fa601d5464934fb1f7cb3f1433027b111dc3c76",
+      "usage": {
+        "prompt_tokens": 226,
+        "completion_tokens": 434,
+        "total_tokens": 660,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 446,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "c4731d7a-bd08-4745-99be-a07f57f2ec9f",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only confirms that a local executable carrier (core.py) exists for the selfish mining environment, but provides no proof that the PPO agent with the specified 4-layer MLP architecture (hidden sizes 128,128,128,128) was actually implemented or tested. The claim explicitly states this does not prove the full paper result. No evidence of model training, evaluation, or results is present.",
+      "raw_response_sha256": "fb1ed7322ba2a60bc6c7f04797d81fd8d3c0046268e312ecb14fa696d7e9d017",
+      "usage": {
+        "prompt_tokens": 272,
+        "completion_tokens": 107,
+        "total_tokens": 379,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 256,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "2f25c14f-36c1-4ff5-a22c-87dac652d647",
+      "status": "scored",
+      "score": 0.3,
+      "explanation": "Evidence shows only that a local executable carrier path exists (research/paperbench-submissions/rice/src/core.py plus an asset audit JSON), and the claim itself concedes it does not prove the full result. No direct evidence confirms that policy network agents for the network defence environment were implemented, so the requirement is only weakly supported.",
+      "raw_response_sha256": "12b931fa4f87aa5ab1cceb3f817c6ee29e9a4196e15370197acbb8c2fa9a1d18",
+      "usage": {
+        "completion_tokens": 183,
+        "completion_tokens_details": {
+          "reasoning_tokens": 101
+        },
+        "prompt_tokens": 780,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 640
+        },
+        "total_tokens": 963
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "2f25c14f-36c1-4ff5-a22c-87dac652d647",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence mentions a carrier and does not prove the full paper result, but it does not address implementation of the policy network agents.",
+      "raw_response_sha256": "1842535db4e8fd501cf118bbd89c22a77b2c8fa1f2cf2edcbf87ccfafc84b080",
+      "usage": {
+        "prompt_tokens": 184,
+        "completion_tokens": 276,
+        "total_tokens": 460,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 280,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "2f25c14f-36c1-4ff5-a22c-87dac652d647",
+      "status": "scored",
+      "score": 0.3,
+      "explanation": "The evidence only confirms that a local executable carrier (core.py) and an asset-channel audit JSON exist, but explicitly states this does not prove the full paper result. No evidence is provided for the policy network agents being implemented in the network defence environment, nor any evidence of actual deployment, testing, or validation of these agents. The claim is weakly supported at best.",
+      "raw_response_sha256": "68d516ad8a75e790d3ccb387df9e94919b8a9edadbe44da542c8af28f4d8a163",
+      "usage": {
+        "prompt_tokens": 219,
+        "completion_tokens": 87,
+        "total_tokens": 306,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "6bef3ee1b723704bbf159609e1f601d20966af46db1d75b5acbea19bbac4108f"
+}

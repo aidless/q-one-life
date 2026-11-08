@@ -139,11 +139,17 @@
       "terminal_state": "blocked",
       "carrier_paths": [],
       "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "recompute_command": "python3 scripts/verify_scc_real_embeddings.py --root research/validation-20261106/scc-real-model-probe/embedding-runs",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.9,
+        "openrouter/recursive/flint-v1.0:free": 0.85,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
-      "blocked_reason": "paid GPT-3.5-turbo and GPT-4o-mini inference plus exact 4/6/8-shot prompts are not authorized by the free-only plan",
-      "addendum_waivers": []
+      "blocked_reason": "judge panel disagreement > 0.25; not promoted to verified; no full10 promotion",
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/semantic-self-consistency/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "8006761a-19e1-4990-92fa-778b6ee89266",
@@ -154,11 +160,17 @@
       "terminal_state": "blocked",
       "carrier_paths": [],
       "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "recompute_command": "python3 scripts/verify_scc_real_embeddings.py --root research/validation-20261106/scc-real-model-probe/embedding-runs",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 1.0,
+        "openrouter/recursive/flint-v1.0:free": 0.85,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
-      "blocked_reason": "paid GPT-3.5-turbo and GPT-4o-mini inference plus exact 4/6/8-shot prompts are not authorized by the free-only plan",
-      "addendum_waivers": []
+      "blocked_reason": "judge panel disagreement > 0.25; not promoted to verified; no full10 promotion",
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/semantic-self-consistency/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "067da205-f599-4a40-92fe-4cfc3f635c41",
@@ -169,11 +181,17 @@
       "terminal_state": "blocked",
       "carrier_paths": [],
       "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "recompute_command": "python3 scripts/verify_scc_real_embeddings.py --root research/validation-20261106/scc-real-model-probe/embedding-runs",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.5,
+        "openrouter/recursive/flint-v1.0:free": 0.2,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
-      "blocked_reason": "paid GPT-3.5-turbo and GPT-4o-mini inference plus exact 4/6/8-shot prompts are not authorized by the free-only plan",
-      "addendum_waivers": []
+      "blocked_reason": "judge panel disagreement > 0.25; not promoted to verified; no full10 promotion",
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/semantic-self-consistency/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "5096c429-1bd2-45ef-acf9-edadd7c9286b",
@@ -424,11 +442,17 @@
       "terminal_state": "blocked",
       "carrier_paths": [],
       "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "recompute_command": "python3 scripts/verify_scc_real_embeddings.py --root research/validation-20261106/scc-real-model-probe/embedding-runs",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.45,
+        "openrouter/recursive/flint-v1.0:free": 0.5,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
-      "blocked_reason": "paid GPT-3.5-turbo and GPT-4o-mini inference plus exact 4/6/8-shot prompts are not authorized by the free-only plan",
-      "addendum_waivers": []
+      "blocked_reason": "judge panel disagreement > 0.25; not promoted to verified; no full10 promotion",
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/semantic-self-consistency/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "0dffe1c8-da0c-4829-9bb6-033512baada3",
@@ -439,11 +463,17 @@
       "terminal_state": "blocked",
       "carrier_paths": [],
       "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "recompute_command": "python3 scripts/verify_scc_real_embeddings.py --root research/validation-20261106/scc-real-model-probe/embedding-runs",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.5,
+        "openrouter/recursive/flint-v1.0:free": 0.4,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
-      "blocked_reason": "paid GPT-3.5-turbo and GPT-4o-mini inference plus exact 4/6/8-shot prompts are not authorized by the free-only plan",
-      "addendum_waivers": []
+      "blocked_reason": "judge panel disagreement > 0.25; not promoted to verified; no full10 promotion",
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/semantic-self-consistency/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "42296ab8-386b-4645-9fbf-4cd635f4fd81",
@@ -1295,10 +1325,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.3,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.15
+      },
       "waiver": {},
       "blocked_reason": "CIFAR-100, ImageNet-R/A, VTAB and 5-20 epoch training not present in the current free-only scope",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/self-expansion/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "3aabf7f3-3079-4a8b-8953-37ad230f8992",
@@ -1400,10 +1436,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.2,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.15
+      },
       "waiver": {},
       "blocked_reason": "CIFAR-100, ImageNet-R/A, VTAB and 5-20 epoch training not present in the current free-only scope",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/self-expansion/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "e0aa0321-72f7-447b-b98d-06527a5fa4bf",
@@ -1430,10 +1472,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.2,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
       "blocked_reason": "CIFAR-100, ImageNet-R/A, VTAB and 5-20 epoch training not present in the current free-only scope",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/self-expansion/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "2da70bdf-21c8-487f-83b5-091929ce056c",
@@ -5120,10 +5168,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.1,
+        "openrouter/recursive/flint-v1.0:free": 0.2,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.15
+      },
       "waiver": {},
       "blocked_reason": "Meta-World, SpaceInvaders, Freeway and 10 seeds x 1M timesteps require RL environments and long GPU training",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/self-composing-policies/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "1f4b310c-b311-42e0-a8f6-4e4e931cb6a5",
@@ -5165,10 +5219,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.2,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.15
+      },
       "waiver": {},
       "blocked_reason": "Meta-World, SpaceInvaders, Freeway and 10 seeds x 1M timesteps require RL environments and long GPU training",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/self-composing-policies/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "dda77699-d443-4fbf-90f4-59841597db57",
@@ -5255,10 +5315,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.25,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.35
+      },
       "waiver": {},
       "blocked_reason": "Meta-World, SpaceInvaders, Freeway and 10 seeds x 1M timesteps require RL environments and long GPU training",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/self-composing-policies/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "76fa75da-2e3e-4260-9e2f-09ad3e0e9259",
@@ -9215,7 +9281,11 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.2,
+        "openrouter/recursive/flint-v1.0:free": 0.2,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
       "blocked_reason": "D4RL resolve returned HTTP 401; AntMaze/Kitchen/ExORL and offline RL training are gated",
       "addendum_waivers": [
@@ -9226,7 +9296,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/fre/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "5b3ccceb-d946-4ce3-96f1-6cb9c3ef8030",
@@ -9238,7 +9310,11 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.1,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
       "blocked_reason": "D4RL resolve returned HTTP 401; AntMaze/Kitchen/ExORL and offline RL training are gated",
       "addendum_waivers": [
@@ -9249,7 +9325,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/fre/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "bccaf966-1315-49b8-9d49-df1b0f30d109",
@@ -9261,7 +9339,11 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.15,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.15
+      },
       "waiver": {},
       "blocked_reason": "D4RL resolve returned HTTP 401; AntMaze/Kitchen/ExORL and offline RL training are gated",
       "addendum_waivers": [
@@ -9272,7 +9354,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/fre/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "15a0dc98-8a9f-4173-a7a0-ba07770200f2",
@@ -19266,10 +19350,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.1,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.15
+      },
       "waiver": {},
       "blocked_reason": "ImageNet-1K resolve returned HTTP 401; timm weights and five TTA baselines are not available without gated access",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/test-time-model-adaptation/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "resnet50",
@@ -19281,10 +19371,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.2,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.15
+      },
       "waiver": {},
       "blocked_reason": "ImageNet-1K resolve returned HTTP 401; timm weights and five TTA baselines are not available without gated access",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/test-time-model-adaptation/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "visionmamba",
@@ -19296,10 +19392,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.2,
+        "openrouter/recursive/flint-v1.0:free": 0.2,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.15
+      },
       "waiver": {},
       "blocked_reason": "ImageNet-1K resolve returned HTTP 401; timm weights and five TTA baselines are not available without gated access",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/test-time-model-adaptation/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "quantized-models",
@@ -21731,12 +21833,20 @@
       "requirements": "The Jigsaw toxic comment classification dataset has been split into 90:10 training and validation sets.",
       "scope": "in_scope",
       "terminal_state": "blocked",
-      "carrier_paths": [],
-      "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "carrier_paths": [
+        "research/validation-20261106/datasets/mechanistic-understanding/full-slice.json"
+      ],
+      "carrier_sha256": [
+        "7ae8e68c4ad689cfca779b2c82f88bd2a8326080877da7e91d06a0fb2f4d8111"
+      ],
+      "recompute_command": "QONE_REPO_ROOT=/home/liuzewen/qone-life-work python3 -m pytest -q tests",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.5,
+        "openrouter/recursive/flint-v1.0:free": 0.6,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.5
+      },
       "waiver": {},
-      "blocked_reason": "GPT-2-medium residual features, PPLM pair generation, DPO fine-tuning and RealToxicityPrompts evaluation require model weights and GPU training not present in the authorized free-only scope",
+      "blocked_reason": "judge panel mean < 0.8; not promoted to verified; no full10 promotion",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/mechanistic-understanding/addendum.md",
@@ -21745,7 +21855,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/mechanistic-understanding/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "14994612-f5c9-4578-91ca-d9670a4b42c2",
@@ -21777,12 +21889,22 @@
       "requirements": "The classifier takes as input, x, the residual stream in the last layer, averaged across all timesteps.",
       "scope": "in_scope",
       "terminal_state": "blocked",
-      "carrier_paths": [],
-      "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "carrier_paths": [
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-probe.json",
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-residual-features.json"
+      ],
+      "carrier_sha256": [
+        "b6256f85b9bd595ff4dd867a8bd801c023ea74dca94b2fb03759b7adf7bca8da",
+        "daea6ed688af72b97c12d7f1918e2cad2535b951e3f231afffa724d2d8f50a0d"
+      ],
+      "recompute_command": "QONE_REPO_ROOT=/home/liuzewen/qone-life-work python3 -m pytest -q tests",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.55,
+        "openrouter/recursive/flint-v1.0:free": 0.4,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
-      "blocked_reason": "GPT-2-medium residual features, PPLM pair generation, DPO fine-tuning and RealToxicityPrompts evaluation require model weights and GPU training not present in the authorized free-only scope",
+      "blocked_reason": "judge panel disagreement > 0.25; not promoted to verified; no full10 promotion",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/mechanistic-understanding/addendum.md",
@@ -21791,7 +21913,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/mechanistic-understanding/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "5614c277-43cb-4f54-afef-2af137f8e4a2",
@@ -21823,12 +21947,20 @@
       "requirements": "The code for training the linear probe model has been implemented.",
       "scope": "in_scope",
       "terminal_state": "blocked",
-      "carrier_paths": [],
-      "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "carrier_paths": [
+        "research/paperbench-submissions/mechanistic-understanding/src/pipeline.py"
+      ],
+      "carrier_sha256": [
+        "40f1c8c401b4f5dff61dbcc2143a4020b9c2ae9e55b877072fa29abb5e0d4dce"
+      ],
+      "recompute_command": "QONE_REPO_ROOT=/home/liuzewen/qone-life-work python3 -m pytest -q tests",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.4,
+        "openrouter/recursive/flint-v1.0:free": 0.4,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.3
+      },
       "waiver": {},
-      "blocked_reason": "GPT-2-medium residual features, PPLM pair generation, DPO fine-tuning and RealToxicityPrompts evaluation require model weights and GPU training not present in the authorized free-only scope",
+      "blocked_reason": "judge panel mean < 0.8; not promoted to verified; no full10 promotion",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/mechanistic-understanding/addendum.md",
@@ -21837,7 +21969,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/mechanistic-understanding/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "39489fa7-b2de-4220-b625-b7929b0e3587",
@@ -21846,12 +21980,20 @@
       "requirements": "The linear probe model was trained on the training set of the Jigsaw toxic comment classification dataset.",
       "scope": "in_scope",
       "terminal_state": "blocked",
-      "carrier_paths": [],
-      "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "carrier_paths": [
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-probe.json"
+      ],
+      "carrier_sha256": [
+        "b6256f85b9bd595ff4dd867a8bd801c023ea74dca94b2fb03759b7adf7bca8da"
+      ],
+      "recompute_command": "QONE_REPO_ROOT=/home/liuzewen/qone-life-work python3 -m pytest -q tests",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.72,
+        "openrouter/recursive/flint-v1.0:free": 0.2,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.5
+      },
       "waiver": {},
-      "blocked_reason": "GPT-2-medium residual features, PPLM pair generation, DPO fine-tuning and RealToxicityPrompts evaluation require model weights and GPU training not present in the authorized free-only scope",
+      "blocked_reason": "judge panel disagreement > 0.25; not promoted to verified; no full10 promotion",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/mechanistic-understanding/addendum.md",
@@ -21860,7 +22002,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/mechanistic-understanding/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "b203fdd2-cd9e-434b-85b5-1ffa488ca445",
@@ -21869,12 +22013,20 @@
       "requirements": "The linear probe model was evaluated on the validation set of the Jigsaw toxic comment classification dataset.",
       "scope": "in_scope",
       "terminal_state": "blocked",
-      "carrier_paths": [],
-      "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "carrier_paths": [
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-probe.json"
+      ],
+      "carrier_sha256": [
+        "b6256f85b9bd595ff4dd867a8bd801c023ea74dca94b2fb03759b7adf7bca8da"
+      ],
+      "recompute_command": "QONE_REPO_ROOT=/home/liuzewen/qone-life-work python3 -m pytest -q tests",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.8,
+        "openrouter/recursive/flint-v1.0:free": 0.25,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
-      "blocked_reason": "GPT-2-medium residual features, PPLM pair generation, DPO fine-tuning and RealToxicityPrompts evaluation require model weights and GPU training not present in the authorized free-only scope",
+      "blocked_reason": "judge panel disagreement > 0.25; not promoted to verified; no full10 promotion",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/mechanistic-understanding/addendum.md",
@@ -21883,7 +22035,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/mechanistic-understanding/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "a359ba32-d92d-4021-b904-9d8e0abbb1c3",
@@ -24324,10 +24478,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.25,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.25
+      },
       "waiver": {},
       "blocked_reason": "Simformer training, sbi NPE/NRE/NLE, four benchmark tasks and C2ST require additional packages and GPU training",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/all-in-one/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "23d6d4c9-f750-4f5d-8965-b9c2277d5c6a",
@@ -26756,12 +26916,22 @@
       "requirements": "Classifier-Free Guidance (CFG) inference is implemented as described in equation 7 in Section 2.2 such that it can be run on the GPT2 family of models",
       "scope": "in_scope",
       "terminal_state": "blocked",
-      "carrier_paths": [],
-      "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "carrier_paths": [
+        "research/paperbench-submissions/stay-on-topic-with-classifier-free-guidance/src/cfg.py",
+        "research/validation-20261108/tasks/stay-on-topic-with-classifier-free-guidance/cfg-public-logits.json"
+      ],
+      "carrier_sha256": [
+        "671f2a1d759a92a1a533d63db0fd45e14ab53483145ef122fe939d17c4705835",
+        "9a2736aa00a0db4c045db9cf715512191f225153fc9e12ce4b9f3e279ef7d681"
+      ],
+      "recompute_command": "python3 -m pytest -q tests",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.55,
+        "openrouter/recursive/flint-v1.0:free": 0.5,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.5
+      },
       "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "blocked_reason": "judge panel mean < 0.8; not promoted to verified; no full10 promotion",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -26770,7 +26940,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/stay-on-topic-with-classifier-free-guidance/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "bc1168ce-1669-4aa8-9f2c-d806a8941d27",
@@ -26779,12 +26951,20 @@
       "requirements": "The implementation of CFG which can be used for the GPT2 family of models includes a mutable (not hardcoded) hyper-parameter which can be used to specify the guidance strength",
       "scope": "in_scope",
       "terminal_state": "blocked",
-      "carrier_paths": [],
-      "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "carrier_paths": [
+        "research/paperbench-submissions/stay-on-topic-with-classifier-free-guidance/src/cfg.py"
+      ],
+      "carrier_sha256": [
+        "671f2a1d759a92a1a533d63db0fd45e14ab53483145ef122fe939d17c4705835"
+      ],
+      "recompute_command": "python3 -m pytest -q tests",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.55,
+        "openrouter/recursive/flint-v1.0:free": 0.7,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.5
+      },
       "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "blocked_reason": "judge panel mean < 0.8; not promoted to verified; no full10 promotion",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -26793,7 +26973,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/stay-on-topic-with-classifier-free-guidance/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "bcec9a7d-70da-45a0-a588-abba95fa574b",
@@ -26802,12 +26984,20 @@
       "requirements": "As outlined in Section 3.1, the implementation of CFG which can be used for the GPT2 family of models starts the unconditional prompt $\\log p_{\\theta}(w_i | w_{j < i})$ with the last token of the initial prompt",
       "scope": "in_scope",
       "terminal_state": "blocked",
-      "carrier_paths": [],
-      "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "carrier_paths": [
+        "research/paperbench-submissions/stay-on-topic-with-classifier-free-guidance/src/cfg.py"
+      ],
+      "carrier_sha256": [
+        "671f2a1d759a92a1a533d63db0fd45e14ab53483145ef122fe939d17c4705835"
+      ],
+      "recompute_command": "python3 -m pytest -q tests",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.65,
+        "openrouter/recursive/flint-v1.0:free": 0.2,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.5
+      },
       "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "blocked_reason": "judge panel disagreement > 0.25; not promoted to verified; no full10 promotion",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -26816,7 +27006,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/stay-on-topic-with-classifier-free-guidance/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "89d93abb-87b9-43fc-a58f-e222c879b3a2",
@@ -28088,14 +28280,20 @@
       "task_id": "stay-on-topic-with-classifier-free-guidance",
       "split": "lite",
       "requirements": "Classifier-Free Guidance (CFG) inference is implemented as described in equation 7 in Section 2.2 such that it can be run on the CodeGen family of models (CodeGen-350M-mono, CodeGen-2B-mono, CodeGen-6B-mono)",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
+        "addendum_sha256": "b44b6a7db7ccf85d63e6068617d24bdf82c229b5371b41bec5c6b1be4d7e3e5f",
+        "quote": "The experiments described in Appendix D.1 with GPT-J and CodeGen which are mentioned at the start of Section 3.3.1 are out of scope for reproduction and may be ignored.",
+        "sha256": "06177c67217a8a841630adb48150039843ac7f5cecbda6179a31422948ab538c",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -28111,14 +28309,20 @@
       "task_id": "stay-on-topic-with-classifier-free-guidance",
       "split": "lite",
       "requirements": "The implementation of CFG which can be used for the CodeGen family of models (CodeGen-350M-mono, CodeGen-2B-mono, CodeGen-6B-mono) includes a mutable (not hardcoded) hyper-parameter which can be used to specify the guidance strength",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
+        "addendum_sha256": "b44b6a7db7ccf85d63e6068617d24bdf82c229b5371b41bec5c6b1be4d7e3e5f",
+        "quote": "The experiments described in Appendix D.1 with GPT-J and CodeGen which are mentioned at the start of Section 3.3.1 are out of scope for reproduction and may be ignored.",
+        "sha256": "06177c67217a8a841630adb48150039843ac7f5cecbda6179a31422948ab538c",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -28134,14 +28338,20 @@
       "task_id": "stay-on-topic-with-classifier-free-guidance",
       "split": "lite",
       "requirements": "As outlined in Section 3.1, the implementation of CFG which can be used for the CodeGen family of models (CodeGen-350M-mono, CodeGen-2B-mono, CodeGen-6B-mono) starts the unconditional prompt $\\log p_{\\theta}(w_i | w_{j < i})$ with the last token of the initial prompt.",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
+        "addendum_sha256": "b44b6a7db7ccf85d63e6068617d24bdf82c229b5371b41bec5c6b1be4d7e3e5f",
+        "quote": "The experiments described in Appendix D.1 with GPT-J and CodeGen which are mentioned at the start of Section 3.3.1 are out of scope for reproduction and may be ignored.",
+        "sha256": "06177c67217a8a841630adb48150039843ac7f5cecbda6179a31422948ab538c",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -28157,14 +28367,20 @@
       "task_id": "stay-on-topic-with-classifier-free-guidance",
       "split": "lite",
       "requirements": "Code has been implemented such that the CodeGen model family can be evaluated on HumanEval with guidance strengths [1.0, 1.1, 1.25, 1.5, 1.75, 2.0] as outlined in Footnote 3",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
+        "addendum_sha256": "b44b6a7db7ccf85d63e6068617d24bdf82c229b5371b41bec5c6b1be4d7e3e5f",
+        "quote": "The experiments described in Appendix D.1 with GPT-J and CodeGen which are mentioned at the start of Section 3.3.1 are out of scope for reproduction and may be ignored.",
+        "sha256": "06177c67217a8a841630adb48150039843ac7f5cecbda6179a31422948ab538c",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -28180,14 +28396,20 @@
       "task_id": "stay-on-topic-with-classifier-free-guidance",
       "split": "lite",
       "requirements": "Code has been implemented such that the CodeGen model family can be evaluated on HumanEval with a sampling temperatures of [0.2, 0.6, 0.8] as outlined in Figure 3.",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
+        "addendum_sha256": "b44b6a7db7ccf85d63e6068617d24bdf82c229b5371b41bec5c6b1be4d7e3e5f",
+        "quote": "The experiments described in Appendix D.1 with GPT-J and CodeGen which are mentioned at the start of Section 3.3.1 are out of scope for reproduction and may be ignored.",
+        "sha256": "06177c67217a8a841630adb48150039843ac7f5cecbda6179a31422948ab538c",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -28203,14 +28425,20 @@
       "task_id": "stay-on-topic-with-classifier-free-guidance",
       "split": "lite",
       "requirements": "Code has been implemented such that the CodeGen model family performance on HumanEval can be measured with pass@k, for k = 1, 10, 100 as outlined in Section 3.3.1 and in Footnote 4.",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
+        "addendum_sha256": "b44b6a7db7ccf85d63e6068617d24bdf82c229b5371b41bec5c6b1be4d7e3e5f",
+        "quote": "The experiments described in Appendix D.1 with GPT-J and CodeGen which are mentioned at the start of Section 3.3.1 are out of scope for reproduction and may be ignored.",
+        "sha256": "06177c67217a8a841630adb48150039843ac7f5cecbda6179a31422948ab538c",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -28226,14 +28454,20 @@
       "task_id": "stay-on-topic-with-classifier-free-guidance",
       "split": "lite",
       "requirements": "Code for measuring the number of wins, ties and losses across HumanEval Samples between CFG (\\gamma=1.25) and no CFG (\\gamma=1) has been implemented for CodeGen-350M-mono for temperatures 0.2, 0.6, 0.8 has been implemented. A win is when CFG answers a sample correctly while no CFG does not, a loss is the reciprocal case, and a tie is when CFG and no CFG both get the sample correct or both get the sample incorrect.",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
+        "addendum_sha256": "b44b6a7db7ccf85d63e6068617d24bdf82c229b5371b41bec5c6b1be4d7e3e5f",
+        "quote": "The experiments described in Appendix D.1 with GPT-J and CodeGen which are mentioned at the start of Section 3.3.1 are out of scope for reproduction and may be ignored.",
+        "sha256": "06177c67217a8a841630adb48150039843ac7f5cecbda6179a31422948ab538c",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -28249,14 +28483,20 @@
       "task_id": "stay-on-topic-with-classifier-free-guidance",
       "split": "lite",
       "requirements": "The CodeGen model family(CodeGen-350M-mono, CodeGen-2B-mono, CodeGen-6B-mono) has been evaluted on HumanEval at guidance strengths of [1.0, 1.1, 1.25, 1.5, 1.75, 2.0], and various sampling temperatures at [0.2, 0.6, 0.8]. The pass@k performance has been measured for k=1,10, 100. As outlined in Section 3.3.",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
+        "addendum_sha256": "b44b6a7db7ccf85d63e6068617d24bdf82c229b5371b41bec5c6b1be4d7e3e5f",
+        "quote": "The experiments described in Appendix D.1 with GPT-J and CodeGen which are mentioned at the start of Section 3.3.1 are out of scope for reproduction and may be ignored.",
+        "sha256": "06177c67217a8a841630adb48150039843ac7f5cecbda6179a31422948ab538c",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -28272,14 +28512,20 @@
       "task_id": "stay-on-topic-with-classifier-free-guidance",
       "split": "lite",
       "requirements": "The number of wins, ties and losses across HumanEval samples between CFG (\\gamma=1.25) and no CFG (\\gamma=1) for CodeGen-350M-mono across temperatures 0.2, 0.6, 0.8 has been measured",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
+        "addendum_sha256": "b44b6a7db7ccf85d63e6068617d24bdf82c229b5371b41bec5c6b1be4d7e3e5f",
+        "quote": "The experiments described in Appendix D.1 with GPT-J and CodeGen which are mentioned at the start of Section 3.3.1 are out of scope for reproduction and may be ignored.",
+        "sha256": "06177c67217a8a841630adb48150039843ac7f5cecbda6179a31422948ab538c",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -28364,14 +28610,20 @@
       "task_id": "stay-on-topic-with-classifier-free-guidance",
       "split": "lite",
       "requirements": "In terms of win rate, for CodeGen-350M-mono, CFG with gamma = 1.25 is found to outperform CFG with gamma=1 on HumanEval tasks at pass@1, across all temperatures 0.2, 0.6 and 0.8, roughly matching the results in Figure 3 (NOT Table 3 as written in the paper - this is an error)",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
+        "addendum_sha256": "b44b6a7db7ccf85d63e6068617d24bdf82c229b5371b41bec5c6b1be4d7e3e5f",
+        "quote": "The experiments described in Appendix D.1 with GPT-J and CodeGen which are mentioned at the start of Section 3.3.1 are out of scope for reproduction and may be ignored.",
+        "sha256": "06177c67217a8a841630adb48150039843ac7f5cecbda6179a31422948ab538c",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/stay-on-topic-with-classifier-free-guidance/addendum.md",
@@ -29312,10 +29564,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.7,
+        "openrouter/recursive/flint-v1.0:free": 0.5,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
       "blocked_reason": "36 VMs, 39 VLMs, ImageNet and five OOD test sets require gated data and large-scale evaluation",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/lca-on-the-line/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "b78b143f-cd83-43ef-a578-9b36e31ef873",
@@ -29342,10 +29600,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.2,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
       "blocked_reason": "36 VMs, 39 VLMs, ImageNet and five OOD test sets require gated data and large-scale evaluation",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/lca-on-the-line/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "339d75bc-44dc-454b-8ba3-876955340d44",
@@ -29357,10 +29621,16 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.4,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.3
+      },
       "waiver": {},
       "blocked_reason": "36 VMs, 39 VLMs, ImageNet and five OOD test sets require gated data and large-scale evaluation",
-      "addendum_waivers": []
+      "addendum_waivers": [],
+      "judge_panel_receipt": "tasks/lca-on-the-line/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "00438d76-0175-42b3-848b-a2f799e5d5d6",
@@ -42057,7 +42327,11 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.2,
+        "openrouter/recursive/flint-v1.0:free": 0.2,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.15
+      },
       "waiver": {},
       "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
       "addendum_waivers": [
@@ -42068,7 +42342,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/rice/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "a87331ac-4973-473a-b323-791133ed37a9",
@@ -42126,7 +42402,11 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.05,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+      },
       "waiver": {},
       "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
       "addendum_waivers": [
@@ -42137,7 +42417,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/rice/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "4f388c37-1aea-4ea4-a576-bbf5df58a531",
@@ -42195,7 +42477,11 @@
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
-      "judge_scores": {},
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.3,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.3
+      },
       "waiver": {},
       "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
       "addendum_waivers": [
@@ -42206,7 +42492,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/rice/panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "a928c866-fcc6-45ea-b3ed-849ba18aeb2c",
@@ -43708,14 +43996,20 @@
       "task_id": "rice",
       "split": "debug",
       "requirements": "For each of the non-sparse MuJoCo environments, the \"StateMask\" explanation method has been trained",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
+        "addendum_sha256": "d62c727e9aaac69165d0bbeb2b1c4df7f1c8a183c5906d9b0e44cf9401153b43",
+        "quote": "The refining results of the Sparse-Walker2d game and the hyper-parameter\nsensitivity results of all sparse MuJoCo games are out of scope for the\nreproduction of this paper.",
+        "sha256": "f92d9fb8cce51fde949ae9ed8047373c2e370becfc98f11c650f73dfaa721827",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
@@ -43731,14 +44025,20 @@
       "task_id": "rice",
       "split": "debug",
       "requirements": "For each of the non-sparse MuJoCo environments, the \"StateMask\" explanation method has been used to identify the top K most critical time steps. This has been repeated for K = 10%, 20%, 30% and 40%",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
+        "addendum_sha256": "d62c727e9aaac69165d0bbeb2b1c4df7f1c8a183c5906d9b0e44cf9401153b43",
+        "quote": "The refining results of the Sparse-Walker2d game and the hyper-parameter\nsensitivity results of all sparse MuJoCo games are out of scope for the\nreproduction of this paper.",
+        "sha256": "f92d9fb8cce51fde949ae9ed8047373c2e370becfc98f11c650f73dfaa721827",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
@@ -43754,14 +44054,20 @@
       "task_id": "rice",
       "split": "debug",
       "requirements": "For each of the the non-sparse MuJoCo environments, for the \"StateMask\" explanation method, the fidelity score metric has been measured for each K across 500 trajectories",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
+        "addendum_sha256": "d62c727e9aaac69165d0bbeb2b1c4df7f1c8a183c5906d9b0e44cf9401153b43",
+        "quote": "The refining results of the Sparse-Walker2d game and the hyper-parameter\nsensitivity results of all sparse MuJoCo games are out of scope for the\nreproduction of this paper.",
+        "sha256": "f92d9fb8cce51fde949ae9ed8047373c2e370becfc98f11c650f73dfaa721827",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
@@ -43777,14 +44083,20 @@
       "task_id": "rice",
       "split": "debug",
       "requirements": "For each of the non-sparse MuJoCo environments, the methodology explained in Experiment I using \"StateMask\" (training \"StateMask\", identifying the top K most critical time steps, and measuring the fidelity score) has been repeated for a total of 3 different random seeds",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
+        "addendum_sha256": "d62c727e9aaac69165d0bbeb2b1c4df7f1c8a183c5906d9b0e44cf9401153b43",
+        "quote": "The refining results of the Sparse-Walker2d game and the hyper-parameter\nsensitivity results of all sparse MuJoCo games are out of scope for the\nreproduction of this paper.",
+        "sha256": "f92d9fb8cce51fde949ae9ed8047373c2e370becfc98f11c650f73dfaa721827",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
@@ -43800,14 +44112,20 @@
       "task_id": "rice",
       "split": "debug",
       "requirements": "For the non-sparse MuJoCo environments, for the \"StateMask\" explanation method, code for measuring training time throughout training as outlined in Appendix C.3 and Table 4 has been implemented.",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
+        "addendum_sha256": "d62c727e9aaac69165d0bbeb2b1c4df7f1c8a183c5906d9b0e44cf9401153b43",
+        "quote": "The refining results of the Sparse-Walker2d game and the hyper-parameter\nsensitivity results of all sparse MuJoCo games are out of scope for the\nreproduction of this paper.",
+        "sha256": "f92d9fb8cce51fde949ae9ed8047373c2e370becfc98f11c650f73dfaa721827",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
@@ -43823,14 +44141,20 @@
       "task_id": "rice",
       "split": "debug",
       "requirements": "For the non-sparse MuJoCo environments, for the \"StateMask\" explanation method, training time has been measured throughout as outlined in Section 4.2",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
+        "addendum_sha256": "d62c727e9aaac69165d0bbeb2b1c4df7f1c8a183c5906d9b0e44cf9401153b43",
+        "quote": "The refining results of the Sparse-Walker2d game and the hyper-parameter\nsensitivity results of all sparse MuJoCo games are out of scope for the\nreproduction of this paper.",
+        "sha256": "f92d9fb8cce51fde949ae9ed8047373c2e370becfc98f11c650f73dfaa721827",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
@@ -43846,14 +44170,20 @@
       "task_id": "rice",
       "split": "debug",
       "requirements": "For each of the non-sparse MuJoCo environments, the \"Ours\" explanation method has been trained",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
+        "addendum_sha256": "d62c727e9aaac69165d0bbeb2b1c4df7f1c8a183c5906d9b0e44cf9401153b43",
+        "quote": "The refining results of the Sparse-Walker2d game and the hyper-parameter\nsensitivity results of all sparse MuJoCo games are out of scope for the\nreproduction of this paper.",
+        "sha256": "f92d9fb8cce51fde949ae9ed8047373c2e370becfc98f11c650f73dfaa721827",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
@@ -43869,14 +44199,20 @@
       "task_id": "rice",
       "split": "debug",
       "requirements": "For each of the non-sparse MuJoCo environments, the \"Ours\" explanation method has been used to identify the top K most critical time steps. This has been repeated for K = 10%, 20%, 30% and 40%",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
+        "addendum_sha256": "d62c727e9aaac69165d0bbeb2b1c4df7f1c8a183c5906d9b0e44cf9401153b43",
+        "quote": "The refining results of the Sparse-Walker2d game and the hyper-parameter\nsensitivity results of all sparse MuJoCo games are out of scope for the\nreproduction of this paper.",
+        "sha256": "f92d9fb8cce51fde949ae9ed8047373c2e370becfc98f11c650f73dfaa721827",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
@@ -43892,14 +44228,20 @@
       "task_id": "rice",
       "split": "debug",
       "requirements": "For each of the the non-sparse MuJoCo environments, for the \"Ours\" explanation method, the fidelity score metric has been measured for each K across 500 trajectories",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
+        "addendum_sha256": "d62c727e9aaac69165d0bbeb2b1c4df7f1c8a183c5906d9b0e44cf9401153b43",
+        "quote": "The refining results of the Sparse-Walker2d game and the hyper-parameter\nsensitivity results of all sparse MuJoCo games are out of scope for the\nreproduction of this paper.",
+        "sha256": "f92d9fb8cce51fde949ae9ed8047373c2e370becfc98f11c650f73dfaa721827",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
@@ -43915,14 +44257,20 @@
       "task_id": "rice",
       "split": "debug",
       "requirements": "For each of the non-sparse MuJoCo environments, the methodology explained in Experiment I using \"Ours\" (training \"Ours\", identifying the top K most critical time steps, and measuring the fidelity score) has been repeated for a total of 3 different random seeds",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
+        "addendum_sha256": "d62c727e9aaac69165d0bbeb2b1c4df7f1c8a183c5906d9b0e44cf9401153b43",
+        "quote": "The refining results of the Sparse-Walker2d game and the hyper-parameter\nsensitivity results of all sparse MuJoCo games are out of scope for the\nreproduction of this paper.",
+        "sha256": "f92d9fb8cce51fde949ae9ed8047373c2e370becfc98f11c650f73dfaa721827",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
@@ -43938,14 +44286,20 @@
       "task_id": "rice",
       "split": "debug",
       "requirements": "For the non-sparse MuJoCo environments, for the \"Ours\" explanation method, code for measuring training time throughout training as outlined in Appendix C.3 and Table 4 has been implemented.",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
+        "addendum_sha256": "d62c727e9aaac69165d0bbeb2b1c4df7f1c8a183c5906d9b0e44cf9401153b43",
+        "quote": "The refining results of the Sparse-Walker2d game and the hyper-parameter\nsensitivity results of all sparse MuJoCo games are out of scope for the\nreproduction of this paper.",
+        "sha256": "f92d9fb8cce51fde949ae9ed8047373c2e370becfc98f11c650f73dfaa721827",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
@@ -43961,14 +44315,20 @@
       "task_id": "rice",
       "split": "debug",
       "requirements": "For the non-sparse MuJoCo environments, for the \"Ours\" explanation method, training time has been measured throughout as outlined in Section 4.2",
-      "scope": "in_scope",
-      "terminal_state": "blocked",
+      "scope": "out_of_scope",
+      "terminal_state": "out_of_scope_waived",
       "carrier_paths": [],
       "carrier_sha256": [],
       "recompute_command": "",
       "judge_scores": {},
-      "waiver": {},
-      "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
+      "waiver": {
+        "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
+        "addendum_sha256": "d62c727e9aaac69165d0bbeb2b1c4df7f1c8a183c5906d9b0e44cf9401153b43",
+        "quote": "The refining results of the Sparse-Walker2d game and the hyper-parameter\nsensitivity results of all sparse MuJoCo games are out of scope for the\nreproduction of this paper.",
+        "sha256": "f92d9fb8cce51fde949ae9ed8047373c2e370becfc98f11c650f73dfaa721827",
+        "reason": "exact addendum clause matched leaf requirement"
+      },
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/rice/addendum.md",
@@ -49894,10 +50254,10 @@
   "summary": {
     "total_leaves": 2776,
     "verified": 0,
-    "out_of_scope_waived": 0,
-    "blocked": 2776,
+    "out_of_scope_waived": 22,
+    "blocked": 2754,
     "unverified": 0,
     "gate": "BLOCKED"
   },
-  "canonical_sha256": "267ecb1dbe88eff2b3ac28de82bca60ee79f8cb00ae13dc3e20c7544c424da0b"
+  "canonical_sha256": "2ab54f09364437396d8996b21180e8ce002453e4d2e8a2c757da6192bc9ab174"
 }

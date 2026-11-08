@@ -1,0 +1,56 @@
+{
+  "schema": "qone-free-judge-panel-probe-v1",
+  "base_url": "http://127.0.0.1:3425/v1",
+  "official": false,
+  "candidate_queue": [
+    "openrouter/nvidia/nemotron-3.5-super-vl:free",
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+    "commandcode/stealth/glyph-cluster:free",
+    "opencode-go/beam-free",
+    "opencode-go/iceman-contributor-free",
+    "workbuddy/hy4free"
+  ],
+  "lock_rule": "first_three_passed",
+  "passed": [
+    "openrouter/nvidia/nemotron-3.5-super-vl:free",
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free"
+  ],
+  "locked_model_ids": [
+    "openrouter/nvidia/nemotron-3.5-super-vl:free",
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free"
+  ],
+  "complete": true,
+  "details": [
+    {
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "state": "passed",
+      "attempts": 1,
+      "score": 0.0,
+      "explanation_sha256": "abb9f374e6eb9e219b94924c906c879fb3e548abbd7acd60a99e8aed9539990c",
+      "raw_response_sha256": "89dad3598dba2dd2f8bfa1c4afbf2e8eef1a8d011a2638636ca4c100c95c4c99"
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "state": "passed",
+      "attempts": 1,
+      "score": 0.15,
+      "explanation_sha256": "3ac786708f1e942af87ccdd58b169f82ef171607205964952078805087f37792",
+      "raw_response_sha256": "2a3ce7eadfba426dae6e9a8cf4989f8d02ce089d90dc564657cc79d2cabed5c5"
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "state": "passed",
+      "attempts": 1,
+      "score": 0.0,
+      "explanation_sha256": "cf5c0205d373d30c433230f9ed4f16a02dc12ac58626961d7a070306e87d918e",
+      "raw_response_sha256": "92d33f0dfcd6ab292cc37a7e99df2f788e8cd90a47e41531134940d70b4d70dd"
+    }
+  ],
+  "user_go_required": true,
+  "canonical_sha256": "3402a17d49565db08e2c145e50dd80b4bb27e126d2550216ba061e564150f88d",
+  "note": "Expanded free-channel inventory requested by user; slow but free models included."
+}

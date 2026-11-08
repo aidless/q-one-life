@@ -1,0 +1,463 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "69b652e77d9100cc",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "43f23e0e-2c5b-4a2b-80ab-6cc9c62723f1",
+    "8006761a-19e1-4990-92fa-778b6ee89266",
+    "067da205-f599-4a40-92fe-4cfc3f635c41",
+    "8519dd43-eaf9-42dd-b96e-cda00b737479",
+    "0dffe1c8-da0c-4829-9bb6-033512baada3"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "43f23e0e-2c5b-4a2b-80ab-6cc9c62723f1",
+      "status": "scored",
+      "score": 0.9,
+      "explanation": "Evidence shows aqua_test.jsonl plus a local audit file, with the claim that the named public data is available and hash-verified locally; it supports availability but does not explicitly confirm the 254-sample count.",
+      "raw_response_sha256": "6c0a2ff37b4baa97c252dbce0e243a20fdf522813ffa490c68e538922c0a3db0",
+      "usage": {
+        "completion_tokens": 243,
+        "completion_tokens_details": {
+          "reasoning_tokens": 185
+        },
+        "prompt_tokens": 834,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1077
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "43f23e0e-2c5b-4a2b-80ab-6cc9c62723f1",
+      "status": "scored",
+      "score": 0.85,
+      "explanation": "Evidence cites aqua_test.jsonl and a local audit, with a claim of locally hash-verified public data, supporting AQuA-RAT test availability, though the 254-sample count is not explicitly confirmed.",
+      "raw_response_sha256": "8dcd3c9bc0f350c405cc6115e3e745b31eabc9eb3259fd4430262239b80d2e4e",
+      "usage": {
+        "prompt_tokens": 205,
+        "completion_tokens": 647,
+        "total_tokens": 852,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 680,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "43f23e0e-2c5b-4a2b-80ab-6cc9c62723f1",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence states that the AQuA-RAT test split (254 samples) is available for use, but no actual file contents or hash verification results are provided. The carrier_paths list only contains two paths (a JSONL data file and a validation JSON), with no evidence of successful loading, parsing, or hash verification of the 254-sample split. Without confirmed access to the dataset, no claim about its availability can be verified.",
+      "raw_response_sha256": "952492aa07406d46aa6eff1de0262d87d910c2c7e0deba1d4c40480ed77231f6",
+      "usage": {
+        "prompt_tokens": 249,
+        "completion_tokens": 109,
+        "total_tokens": 358,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "8006761a-19e1-4990-92fa-778b6ee89266",
+      "status": "scored",
+      "score": 1.0,
+      "explanation": "Evidence includes a local strategyqa_test.json path plus a hash-verification audit claim, supporting that the StrategyQA test split is available for use; the exact 687-sample count is not explicitly stated.",
+      "raw_response_sha256": "384daf59d9f95bd3d60aa55e7e4cd78823d6f36647f6238f706deba3da7e8314",
+      "usage": {
+        "completion_tokens": 244,
+        "completion_tokens_details": {
+          "reasoning_tokens": 187
+        },
+        "prompt_tokens": 798,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1042
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "8006761a-19e1-4990-92fa-778b6ee89266",
+      "status": "scored",
+      "score": 0.85,
+      "explanation": "Evidence cites the StrategyQA test file path and claims the named public data is available and hash-verified locally, supporting the requirement.",
+      "raw_response_sha256": "ec67c97fe99022b9d232d3addb71c8fb82845186b27c6bec82db4d6f9a4e279f",
+      "usage": {
+        "prompt_tokens": 195,
+        "completion_tokens": 728,
+        "total_tokens": 923,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 829,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "8006761a-19e1-4990-92fa-778b6ee89266",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only confirms that the StrategyQA test split file exists at the specified path and is hash-verified locally. It does not provide any evidence of successful execution, output, or results from the semantic self-consistency task. No score can be derived from this evidence alone.",
+      "raw_response_sha256": "41459f85628b2c0b030a21f0a52844103da896c7f855cffb35bdca207f621129",
+      "usage": {
+        "prompt_tokens": 244,
+        "completion_tokens": 72,
+        "total_tokens": 316,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "067da205-f599-4a40-92fe-4cfc3f635c41",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "Evidence shows an SVAMP data file and a local audit artifact, and claims hash-verified local availability, but it does not demonstrate that the full 1000 samples and both train/test splits are present.",
+      "raw_response_sha256": "da0da3aae142c7b8ff99cb9bac3165caefc56c3c5107b8434594198656787ca4",
+      "usage": {
+        "completion_tokens": 180,
+        "completion_tokens_details": {
+          "reasoning_tokens": 124
+        },
+        "prompt_tokens": 828,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 640
+        },
+        "total_tokens": 1008
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "067da205-f599-4a40-92fe-4cfc3f635c41",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "The evidence only cites SVAMP-related paths and a claim of local availability/hash verification, but does not confirm that the full 1000-sample train and test split is available.",
+      "raw_response_sha256": "cb44b3b70df2d603a93b96ae26bb7a6dcb1526d936a49c6b479777d68d3c023d",
+      "usage": {
+        "prompt_tokens": 198,
+        "completion_tokens": 306,
+        "total_tokens": 504,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 298,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "067da205-f599-4a40-92fe-4cfc3f635c41",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence states that the SVAMP dataset is available at two carrier paths, but no actual file contents or hash verification results are provided in the evidence text. The claim asserts availability and hash-verification, but the evidence does not include any file hashes, file sizes, or any other concrete proof of integrity. Without verifiable evidence, the claim cannot be confirmed.",
+      "raw_response_sha256": "48e7617ffc58665e70fc3b055d3bb70e1468063e7d4a1dc164292b4113d78043",
+      "usage": {
+        "prompt_tokens": 246,
+        "completion_tokens": 88,
+        "total_tokens": 334,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "8519dd43-eaf9-42dd-b96e-cda00b737479",
+      "status": "scored",
+      "score": 0.45,
+      "explanation": "Evidence references an embedding run artifact (real-embedding-roberta.json) under an embedding-runs directory and asserts the encoder is available and hash-verified locally, which partially supports RoBERTa being usable for embeddings. However, it does not confirm the specific 'base' 125M parameter variant, nor provide the actual embedding vector output or model metadata, so support is indirect.",
+      "raw_response_sha256": "505e1a20673be3e54ea1202ec96562f044c4a6ec819c18dd804fd96cc68dba23",
+      "usage": {
+        "completion_tokens": 259,
+        "completion_tokens_details": {
+          "reasoning_tokens": 167
+        },
+        "prompt_tokens": 811,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1070
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "8519dd43-eaf9-42dd-b96e-cda00b737479",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "Evidence supports local availability/hash verification of the RoBERTa embedding run, but does not directly establish that RoBERTa base can generate an embedding vector.",
+      "raw_response_sha256": "d87a66e44f6f5f458556d7c67bbeb49b8d10d1f1246c4158006e45cc1564aec2",
+      "usage": {
+        "prompt_tokens": 187,
+        "completion_tokens": 572,
+        "total_tokens": 759,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 642,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "8519dd43-eaf9-42dd-b96e-cda00b737479",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only confirms that a JSON metadata file exists at the specified path, but provides no actual data, model weights, or hash verification details. Without the verified carrier data, no embedding vector can be generated.",
+      "raw_response_sha256": "b8d01cfc392e5a86c277fcbe3ce594aae788700e2d5409cea661674a908c8917",
+      "usage": {
+        "prompt_tokens": 232,
+        "completion_tokens": 57,
+        "total_tokens": 289,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "0dffe1c8-da0c-4829-9bb6-033512baada3",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "Evidence points to a SciBERT embedding-run artifact (real-embedding-scibert.json) and claims the encoder is available and hash-verified locally, but it does not explicitly confirm the 110M parameter version or that an embedding vector was generated for an input string.",
+      "raw_response_sha256": "248af0727624b3c69100f518dda0746c36401a61c1dfdb4080e25222df6a1156",
+      "usage": {
+        "completion_tokens": 233,
+        "completion_tokens_details": {
+          "reasoning_tokens": 162
+        },
+        "prompt_tokens": 786,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1019
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "0dffe1c8-da0c-4829-9bb6-033512baada3",
+      "status": "scored",
+      "score": 0.4,
+      "explanation": "Evidence only cites a real SciBERT embedding run path and a claim of local hash-verified availability, not direct confirmation of SciBERT 110M embedding capability.",
+      "raw_response_sha256": "5d42d95f303a76d365469469a0ad0b78aa1bedcc096eebb5202b6f50e37e44bc",
+      "usage": {
+        "prompt_tokens": 189,
+        "completion_tokens": 1398,
+        "total_tokens": 1587,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1612,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "0dffe1c8-da0c-4829-9bb6-033512baada3",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only confirms that a JSON file exists at the specified path, but does not provide any information about whether SciBERT's model weights, encoder, or public data are available and hash-verified locally. No claim about SciBERT's availability or hash verification is substantiated by the provided evidence.",
+      "raw_response_sha256": "38ed0fb85c65a2af9cb6d4a0d193f99d36a149e08f29b50dd6035afb99844d58",
+      "usage": {
+        "prompt_tokens": 227,
+        "completion_tokens": 79,
+        "total_tokens": 306,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "ec2ec2b2e940c3babace1685bd458b5a551b2ba494e6d1e633744975c99b4cba"
+}

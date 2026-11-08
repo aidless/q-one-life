@@ -1,0 +1,285 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "d40cd1346aec4ba8",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "2c2ef685-8326-4773-bb21-68f3e7a527b3",
+    "f0afda32-51d9-434d-be8e-5eb3ab5e72d3",
+    "48b73614-82f1-4d32-b2af-427ab51924b9"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "2c2ef685-8326-4773-bb21-68f3e7a527b3",
+      "status": "scored",
+      "score": 0.1,
+      "explanation": "The evidence only states that a local executable algorithm/interface carrier exists and explicitly says it does not prove the full paper result. It provides no evidence that a single CNN encoder per policy was implemented or that a new policy's encoder is initialized from the previous policy's weights as described in Appendix E.2.",
+      "raw_response_sha256": "d86fa492906cfbb6c5829ecc2de6e83bdf39573ab216a06d46c09ec8218ec9ab",
+      "usage": {
+        "completion_tokens": 139,
+        "completion_tokens_details": {
+          "reasoning_tokens": 62
+        },
+        "prompt_tokens": 815,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 640
+        },
+        "total_tokens": 954
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "2c2ef685-8326-4773-bb21-68f3e7a527b3",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "The evidence only indicates a local executable algorithm/interface carrier exists and explicitly does not prove the full paper result, so it does not support the claimed CNN encoder initialization logic.",
+      "raw_response_sha256": "44aa84bcabe38484ae6759a3ee9e67a5cd6967e64b3c01c4a0fc5c6a4587373f",
+      "usage": {
+        "prompt_tokens": 216,
+        "completion_tokens": 317,
+        "total_tokens": 533,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 323,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "2c2ef685-8326-4773-bb21-68f3e7a527b3",
+      "status": "scored",
+      "score": 0.15,
+      "explanation": "The evidence confirms that a local executable carrier (core.py and matrix.json) exists for the self-composing-policies task, but it only proves that a local executable algorithm/interface carrier was created. It does not provide any evidence that the full paper result — specifically, the logic to use a single CNN encoder per policy with initialization from the previous policy's weights as described in Appendix E.2 — has been implemented or verified. The claim explicitly states this limitation. No code inspection or additional evidence is available to confirm the actual implementation of the single-CNN-encoder-per-policy approach.",
+      "raw_response_sha256": "e755820d8c10207b261acd9b35fe83bcea45a1f9b3b7820805e47c8cc6cdf8ab",
+      "usage": {
+        "prompt_tokens": 263,
+        "completion_tokens": 141,
+        "total_tokens": 404,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "f0afda32-51d9-434d-be8e-5eb3ab5e72d3",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "Evidence only asserts that an executable algorithm/interface carrier exists at two paths and explicitly states it does not prove the full result. There is no direct evidence that the conditional h_s computation (CNN encoder for ALE tasks, h_s = s for Meta-World tasks) is implemented.",
+      "raw_response_sha256": "db78210cd714b7dc3a54070cac596e4a26d169810e5ec47f6dba8ece91d2a5f2",
+      "usage": {
+        "completion_tokens": 169,
+        "completion_tokens_details": {
+          "reasoning_tokens": 98
+        },
+        "prompt_tokens": 876,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1045
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "f0afda32-51d9-434d-be8e-5eb3ab5e72d3",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only states that a local executable carrier exists and does not prove the full paper result, so it does not verify the required h_s CNN-encoder logic.",
+      "raw_response_sha256": "4118e334761f540f8529331ab045f69e7018d3ae30e9dc637df69b7782a6e010",
+      "usage": {
+        "prompt_tokens": 250,
+        "completion_tokens": 524,
+        "total_tokens": 774,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 540,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "f0afda32-51d9-434d-be8e-5eb3ab5e72d3",
+      "status": "scored",
+      "score": 0.15,
+      "explanation": "The evidence only confirms that a local executable carrier (core.py and matrix.json) exists for the self-composing-policies submission. It does not provide any evidence that the CNN encoder computes h_s as specified, nor that h_s = s is correctly implemented for Meta-World tasks. The claim explicitly states this does not prove the full paper result. No code inspection was performed per instructions.",
+      "raw_response_sha256": "6ab2684aaaede3a2b9bb5c3f54b2e3cc7e2fdad615d5fd627706455763424107",
+      "usage": {
+        "prompt_tokens": 301,
+        "completion_tokens": 101,
+        "total_tokens": 402,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "48b73614-82f1-4d32-b2af-427ab51924b9",
+      "status": "scored",
+      "score": 0.25,
+      "explanation": "Evidence only lists carrier file paths and a self-limited claim that 'a local executable algorithm/interface carrier exists' while explicitly noting it does not prove the full paper result. No code or interface content demonstrates the defined Phi^{k;s} value-vector computation for the output attention head, so the requirement is largely unsubstantiated.",
+      "raw_response_sha256": "bd519899812a89ccd2f377b20875c333688c5a24d7f511273fdea82184d9346c",
+      "usage": {
+        "completion_tokens": 222,
+        "completion_tokens_details": {
+          "reasoning_tokens": 141
+        },
+        "prompt_tokens": 838,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1060
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "48b73614-82f1-4d32-b2af-427ab51924b9",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only states that a local executable carrier exists and does not prove the full paper result, so it does not establish the required value-vector logic implementation.",
+      "raw_response_sha256": "19e9a986e4e61233949e8751936ead9065c0e3703337933f6437e5b5077acd10",
+      "usage": {
+        "prompt_tokens": 213,
+        "completion_tokens": 323,
+        "total_tokens": 536,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 328,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "48b73614-82f1-4d32-b2af-427ab51924b9",
+      "status": "scored",
+      "score": 0.35,
+      "explanation": "The evidence confirms that a local executable carrier (core.py) and a matrix.json exist, but the claim explicitly states this does not prove the full paper result. The requirement is about implementing the logic for computing the output attention head value vector Φ^{k;s}, which is a specific algorithmic component. The presence of carriers only shows that code exists, not that it correctly implements or is verified to implement the required logic. No evidence confirms the implementation is correct, complete, or tested against the stated requirement.",
+      "raw_response_sha256": "09166c93bbf584675341dd191a9f1ac1e6da8b523143672e5dc60e426219dd40",
+      "usage": {
+        "prompt_tokens": 262,
+        "completion_tokens": 120,
+        "total_tokens": 382,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "a284e61c771d224a9474fc59abe41a47a011759856bae126ff673c4264f61c88"
+}

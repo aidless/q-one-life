@@ -1,0 +1,107 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "0e0d9c3039df5a59",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "7c953e3a-a3ec-4c91-a897-c6691ed60a80"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "7c953e3a-a3ec-4c91-a897-c6691ed60a80",
+      "status": "scored",
+      "score": 0.25,
+      "explanation": "Evidence only points to a carrier file (src/vesde.py) and a receipt, with the claim explicitly stating it proves only that a local executable algorithm/interface exists and 'does not prove the full paper result.' No evidence text confirms Euler-Maruyama backward diffusion sampling for Simformer specifically.",
+      "raw_response_sha256": "0af2e8bc4a8e99b36178401ed731689c6e425c7ddf43594bd759b1154e5a96a6",
+      "usage": {
+        "completion_tokens": 202,
+        "completion_tokens_details": {
+          "reasoning_tokens": 126
+        },
+        "prompt_tokens": 793,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 995
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "7c953e3a-a3ec-4c91-a897-c6691ed60a80",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only references a local carrier path and explicitly notes it does not prove the full paper result, with no direct support for Euler-Maruyama backward diffusion for Simformer.",
+      "raw_response_sha256": "1a1a3377576a1d94af1488fa9fa83623605628d22e268309341fa9dfb4c5de9b",
+      "usage": {
+        "prompt_tokens": 196,
+        "completion_tokens": 278,
+        "total_tokens": 474,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 273,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "7c953e3a-a3ec-4c91-a897-c6691ed60a80",
+      "status": "scored",
+      "score": 0.25,
+      "explanation": "The evidence confirms that a local executable carrier (vesde.py) exists and that the claim explicitly states it 'does not prove the full paper result.' The requirement is that Euler-Maruyama discretization has been implemented to run the diffusion process backward for Simformer. While a carrier path is present, there is no direct evidence in the provided text that the Euler-Maruyama backward diffusion implementation was actually implemented or verified. The claim itself admits the carrier does not prove the full result, indicating significant gap between what is claimed and what is evidenced.",
+      "raw_response_sha256": "2d629b95f2c22ea1d131a5b62869d879adac38d730c3fe6122430e7c5d30f709",
+      "usage": {
+        "prompt_tokens": 243,
+        "completion_tokens": 128,
+        "total_tokens": 371,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "86dc52351e924ca72f74c9127c88fe0ccb9283d0ababd4dc7e95eefb486643a1"
+}

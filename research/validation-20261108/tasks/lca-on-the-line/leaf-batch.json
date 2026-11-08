@@ -1,0 +1,40 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "4fe131d4-617e-4407-9aeb-fd4c9ee71939",
+      "requirements": "Code has been written to find the lowest common ancestor of two nodes, $N_{L C A}\\left(y^{\\prime}, y\\right)$.",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/lca-on-the-line/src/lca.py",
+          "research/validation-20261106/lca-algorithm-slice/receipt.json"
+        ],
+        "task_id": "lca-on-the-line",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    },
+    {
+      "leaf_id": "54f426ad-c2c8-48d1-83c7-911b447095f7",
+      "requirements": "Code to compute the information content of a node, $y$, has been implemented via $-\\log_2 p(y)$.",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/lca-on-the-line/src/lca.py",
+          "research/validation-20261106/lca-algorithm-slice/receipt.json"
+        ],
+        "task_id": "lca-on-the-line",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    },
+    {
+      "leaf_id": "339d75bc-44dc-454b-8ba3-876955340d44",
+      "requirements": "Code has been written to compute the depth of a node $x$ in a tree $T$.",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/lca-on-the-line/src/lca.py",
+          "research/validation-20261106/lca-algorithm-slice/receipt.json"
+        ],
+        "task_id": "lca-on-the-line",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    }
+  ]
+}

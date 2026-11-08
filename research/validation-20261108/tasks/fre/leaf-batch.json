@@ -1,0 +1,40 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "595c44a3-25a3-4f38-80d1-d3376b12476e",
+      "requirements": "Code has been implemented such that the `antmaze-large-diverse-v2` dataset from D4RL can be used for offline training of sequential decision making agents",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/fre/src/core.py",
+          "research/validation-20261108/asset-channel-audit.json"
+        ],
+        "task_id": "fre",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    },
+    {
+      "leaf_id": "5b3ccceb-d946-4ce3-96f1-6cb9c3ef8030",
+      "requirements": "Code has been implemented such that the D4RL Ant Maze environment (https://github.com/Farama-Foundation/D4RL/blob/71a9549f2091accff93eeff68f1f3ab2c0e0a288/d4rl/locomotion/ant.py or equivalent) can be used for online evaluation of sequential decision making agents",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/fre/src/core.py",
+          "research/validation-20261108/asset-channel-audit.json"
+        ],
+        "task_id": "fre",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    },
+    {
+      "leaf_id": "bccaf966-1315-49b8-9d49-df1b0f30d109",
+      "requirements": "Code has been implemented such that the `cheetah` (RND) dataset from ExORL (https://github.com/denisyarats/exorl)  can be used for offline training of sequential decision making agents",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/fre/src/core.py",
+          "research/validation-20261108/asset-channel-audit.json"
+        ],
+        "task_id": "fre",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    }
+  ]
+}

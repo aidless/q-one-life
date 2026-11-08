@@ -1,0 +1,38 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "6103dd0e-8fd8-4b5f-b4f2-88c553815a15",
+      "requirements": "Classifier-Free Guidance (CFG) inference is implemented as described in equation 7 in Section 2.2 such that it can be run on the GPT2 family of models",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/stay-on-topic-with-classifier-free-guidance/src/cfg.py",
+          "research/validation-20261108/tasks/stay-on-topic-with-classifier-free-guidance/cfg-public-logits.json"
+        ],
+        "task_id": "stay-on-topic-with-classifier-free-guidance",
+        "claim": "the named local carrier exists and supports the narrow requirement; small-slice evidence only, not full paper reproduction"
+      }
+    },
+    {
+      "leaf_id": "bc1168ce-1669-4aa8-9f2c-d806a8941d27",
+      "requirements": "The implementation of CFG which can be used for the GPT2 family of models includes a mutable (not hardcoded) hyper-parameter which can be used to specify the guidance strength",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/stay-on-topic-with-classifier-free-guidance/src/cfg.py"
+        ],
+        "task_id": "stay-on-topic-with-classifier-free-guidance",
+        "claim": "the named local carrier exists and supports the narrow requirement; small-slice evidence only, not full paper reproduction"
+      }
+    },
+    {
+      "leaf_id": "bcec9a7d-70da-45a0-a588-abba95fa574b",
+      "requirements": "As outlined in Section 3.1, the implementation of CFG which can be used for the GPT2 family of models starts the unconditional prompt $\\log p_{\\theta}(w_i | w_{j < i})$ with the last token of the initial prompt",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/stay-on-topic-with-classifier-free-guidance/src/cfg.py"
+        ],
+        "task_id": "stay-on-topic-with-classifier-free-guidance",
+        "claim": "the named local carrier exists and supports the narrow requirement; small-slice evidence only, not full paper reproduction"
+      }
+    }
+  ]
+}

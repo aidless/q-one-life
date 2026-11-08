@@ -1,0 +1,200 @@
+{
+  "schema": "qone-public-benchmark-sample-audit-v1",
+  "note": "Five-row samples from HF datasets-server; not full benchmark downloads",
+  "results": [
+    {
+      "name": "ARC-c",
+      "dataset": "allenai/ai2_arc",
+      "config": "ARC-Challenge",
+      "split": "test",
+      "status": "downloaded",
+      "rows": 5,
+      "bytes": 3067,
+      "sha256": "c18fbbc731187b08490c26281e316e8219e02bcd3123f4ee19c922e6ad0e1f7d",
+      "columns": [
+        "answerKey",
+        "choices",
+        "id",
+        "question"
+      ],
+      "elapsed_s": 1.1
+    },
+    {
+      "name": "ARC-e",
+      "dataset": "allenai/ai2_arc",
+      "config": "ARC-Easy",
+      "split": "test",
+      "status": "downloaded",
+      "rows": 5,
+      "bytes": 2222,
+      "sha256": "bac5fa06a164ca3a75c717c985b5c3f437f2c4b83a0d15285aae00795cdf58dd",
+      "columns": [
+        "answerKey",
+        "choices",
+        "id",
+        "question"
+      ],
+      "elapsed_s": 1.1
+    },
+    {
+      "name": "BoolQ",
+      "dataset": "google/boolq",
+      "config": "default",
+      "split": "validation",
+      "status": "downloaded",
+      "rows": 5,
+      "bytes": 4835,
+      "sha256": "b558d141af4a6d787738bd0ae7173c4526c0b91ace8a45e424a2e807ae5e097a",
+      "columns": [
+        "answer",
+        "passage",
+        "question"
+      ],
+      "elapsed_s": 1.06
+    },
+    {
+      "name": "SciQ",
+      "dataset": "allenai/sciq",
+      "config": "default",
+      "split": "validation",
+      "status": "downloaded",
+      "rows": 5,
+      "bytes": 2143,
+      "sha256": "007595b25207e63923c05ff38eda55cbfbf118f18119a80ff62a8572e7494166",
+      "columns": [
+        "correct_answer",
+        "distractor1",
+        "distractor2",
+        "distractor3",
+        "question",
+        "support"
+      ],
+      "elapsed_s": 1.34
+    },
+    {
+      "name": "TriviaQA",
+      "dataset": "mandarjoshi/trivia_qa",
+      "config": "rc.nocontext",
+      "split": "validation",
+      "status": "downloaded",
+      "rows": 5,
+      "bytes": 6758,
+      "sha256": "6b923eb67900d5e5fbdc709a207578713a9807250635134da8a9693196fd07fb",
+      "columns": [
+        "answer",
+        "entity_pages",
+        "question",
+        "question_id",
+        "question_source",
+        "search_results"
+      ],
+      "elapsed_s": 1.11
+    },
+    {
+      "name": "WinoGrande",
+      "dataset": "allenai/winogrande",
+      "config": "winogrande_xl",
+      "split": "validation",
+      "status": "downloaded",
+      "rows": 5,
+      "bytes": 1332,
+      "sha256": "685de40b14e393fed8f2e02f98fc266c329c691374bce231a01436f2d1aa8aea",
+      "columns": [
+        "answer",
+        "option1",
+        "option2",
+        "sentence"
+      ],
+      "elapsed_s": 1.38
+    },
+    {
+      "name": "LAMBADA",
+      "dataset": "EleutherAI/lambada_openai",
+      "config": "default",
+      "split": "test",
+      "status": "downloaded",
+      "rows": 5,
+      "bytes": 2149,
+      "sha256": "11debf326424a933013848ba073f3b52d7a122fa441531002bedea302772adf2",
+      "columns": [
+        "text"
+      ],
+      "elapsed_s": 1.72
+    },
+    {
+      "name": "GSM8K",
+      "dataset": "openai/gsm8k",
+      "config": "main",
+      "split": "test",
+      "status": "downloaded",
+      "rows": 5,
+      "bytes": 2707,
+      "sha256": "a7974b2ca5c9e51a17f91d9ff71900207b4f389d03345dd83f393c470318cf13",
+      "columns": [
+        "answer",
+        "question"
+      ],
+      "elapsed_s": 1.17
+    },
+    {
+      "name": "P3",
+      "dataset": "bigscience/P3",
+      "config": "default",
+      "split": "train",
+      "status": "blocked",
+      "error": "HTTPError:HTTP Error 500: Internal Server Error",
+      "elapsed_s": 1.05
+    },
+    {
+      "name": "HellaSwag",
+      "dataset": "Rowan/hellaswag",
+      "config": "default",
+      "split": "validation",
+      "status": "downloaded",
+      "rows": 5,
+      "bytes": 3607,
+      "sha256": "866f2dd76f518c634dc5d7aecc334e92fbbf6ea8c6ab7fdbd2df5a99ff5e34e5",
+      "columns": [
+        "activity_label",
+        "ctx",
+        "ctx_a",
+        "ctx_b",
+        "endings",
+        "ind",
+        "label",
+        "source_id",
+        "split",
+        "split_type"
+      ],
+      "elapsed_s": 1.19
+    },
+    {
+      "name": "PiQA",
+      "dataset": "ybisk/piqa",
+      "config": "plain_text",
+      "split": "validation",
+      "status": "blocked",
+      "error": "HTTPError:HTTP Error 404: Not Found",
+      "elapsed_s": 1.02
+    },
+    {
+      "name": "StrategyQA",
+      "dataset": "ChilleD/StrategyQA",
+      "config": "default",
+      "split": "test",
+      "status": "downloaded",
+      "rows": 5,
+      "bytes": 2756,
+      "sha256": "0c6a6272ba7c759f439dfb2fec18eefb3d86606e92af4472c601c082bd44b020",
+      "columns": [
+        "answer",
+        "description",
+        "facts",
+        "qid",
+        "question",
+        "term"
+      ],
+      "elapsed_s": 1.4
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "5b88aaa9-8bf2-4346-ad0d-4656eb6a0dd9",
+      "requirements": "Code has been implemented such that a ViT-B/16 model pretrained on ImageNet-1K can be loaded into memory",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/self-expansion/src/core.py",
+          "research/validation-20261106/external-task-coverage/cloud/matrix.json"
+        ],
+        "task_id": "self-expansion",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    },
+    {
+      "leaf_id": "7fa8715e-3ab6-4116-be67-eb1baeb1d8de",
+      "requirements": "The Convpass adapter architecture has been implemented from https://github.com/JieShibo/PETL-ViT/blob/main/convpass/vtab/convpass.py and can be selected as the functional adapter",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/self-expansion/src/core.py",
+          "research/validation-20261106/external-task-coverage/cloud/matrix.json"
+        ],
+        "task_id": "self-expansion",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    },
+    {
+      "leaf_id": "dc0de847-ec32-40f3-9f7b-3b056ba43a3e",
+      "requirements": "The functional adapter has been implemented correctly as described in Section 3.3, as a learnable down projection layer, then a ReLU function, then a learnable up projection layer",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/self-expansion/src/core.py",
+          "research/validation-20261106/external-task-coverage/cloud/matrix.json"
+        ],
+        "task_id": "self-expansion",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    }
+  ]
+}

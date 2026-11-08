@@ -1,0 +1,40 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "c8ce16bb-cbcb-4a1f-86c5-41c101d5267c",
+      "requirements": "For the MuJoCo environments, the policy network agents has been implemented",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/rice/src/core.py",
+          "research/validation-20261108/asset-channel-audit.json"
+        ],
+        "task_id": "rice",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    },
+    {
+      "leaf_id": "c4731d7a-bd08-4745-99be-a07f57f2ec9f",
+      "requirements": "For the selfish mining environment, the policy network agents has been implemented.  The network architecture of the PPO agent is a 4-layer Multi-Layer Perceptron (MLP) with a hidden size of 128, 128, 128, and 128 in each layer",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/rice/src/core.py",
+          "research/validation-20261108/asset-channel-audit.json"
+        ],
+        "task_id": "rice",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    },
+    {
+      "leaf_id": "2f25c14f-36c1-4ff5-a22c-87dac652d647",
+      "requirements": "For the network defence environment, the policy network agents has been implemented",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/rice/src/core.py",
+          "research/validation-20261108/asset-channel-audit.json"
+        ],
+        "task_id": "rice",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    }
+  ]
+}

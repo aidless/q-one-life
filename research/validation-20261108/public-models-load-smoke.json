@@ -1,0 +1,1 @@
+{"schema": "qone-public-model-load-smoke-v1", "official": false, "results": [{"model": "pythia-70m", "loaded": true, "vocab_size": 50277, "logits_shape": [1, 3, 50304], "params": 70426624}, {"model": "gpt2-medium", "loaded": true, "vocab_size": 50257, "logits_shape": [1, 3, 50257], "params": 354823168}]}

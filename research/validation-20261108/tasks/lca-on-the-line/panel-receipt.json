@@ -1,0 +1,285 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "997fe3fc0a9242a4",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "4fe131d4-617e-4407-9aeb-fd4c9ee71939",
+    "54f426ad-c2c8-48d1-83c7-911b447095f7",
+    "339d75bc-44dc-454b-8ba3-876955340d44"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "4fe131d4-617e-4407-9aeb-fd4c9ee71939",
+      "status": "scored",
+      "score": 0.7,
+      "explanation": "Evidence shows an executable LCA code carrier at src/lca.py plus a receipt, supporting that code was written; however, it does not confirm correctness or specifically that N_LCA(y', y) is computed.",
+      "raw_response_sha256": "d3f41618f5b0a08cc151d5a84e6ded64ca683e170ca7260919193407019d61d8",
+      "usage": {
+        "completion_tokens": 271,
+        "completion_tokens_details": {
+          "reasoning_tokens": 213
+        },
+        "prompt_tokens": 833,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 640
+        },
+        "total_tokens": 1104
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "4fe131d4-617e-4407-9aeb-fd4c9ee71939",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "Evidence only confirms a local executable LCA carrier exists and explicitly does not prove the full paper result, so support is partial.",
+      "raw_response_sha256": "e135301006b42ed3fc7239eafad4eb8c6e4447de443e941e83480868f26e89fe",
+      "usage": {
+        "prompt_tokens": 208,
+        "completion_tokens": 581,
+        "total_tokens": 789,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 637,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "4fe131d4-617e-4407-9aeb-fd4c9ee71939",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only confirms that a local executable carrier (a Python file and a receipt JSON) exists for the LCA algorithm, but it does not provide any proof of correctness, performance, or completeness of the paper's result. The claim explicitly states this does not prove the full paper result. No actual algorithm output, test results, or correctness verification is provided.",
+      "raw_response_sha256": "9e955f8e49e17e8788558bf923c24d4416a42fbb66dc05e005d822fde0692318",
+      "usage": {
+        "prompt_tokens": 256,
+        "completion_tokens": 88,
+        "total_tokens": 344,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "54f426ad-c2c8-48d1-83c7-911b447095f7",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "Evidence only shows that a local executable carrier exists for lca-on-the-line; it does not show that the information-content computation -log2 p(y) was implemented.",
+      "raw_response_sha256": "feec3f2c1759f870125c948865ba0f06e6bb5b1bdf1ce22a2c7aa7671451ff26",
+      "usage": {
+        "completion_tokens": 155,
+        "completion_tokens_details": {
+          "reasoning_tokens": 106
+        },
+        "prompt_tokens": 829,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 984
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "54f426ad-c2c8-48d1-83c7-911b447095f7",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence concerns an LCA carrier and does not support the requirement for code computing information content via -log2 p(y).",
+      "raw_response_sha256": "feb4574f90e9c20b6b4a95398e2d383ddd31de07f36a484efbeda1d279abe89e",
+      "usage": {
+        "prompt_tokens": 204,
+        "completion_tokens": 363,
+        "total_tokens": 567,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 378,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "54f426ad-c2c8-48d1-83c7-911b447095f7",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only confirms that a local executable algorithm/interface carrier exists (lca.py and receipt.json), but explicitly states this does not prove the full paper result. The task requires computing information content via -log2 p(y), which is a mathematical property of the paper's result, not merely an implementation artifact. No evidence is provided that the information-content computation was actually implemented or verified against the paper's claims.",
+      "raw_response_sha256": "82c33b3e8d1b40f3b9d0afb66ae9f4c2779f530206a33bae12416f9f1fd28dcb",
+      "usage": {
+        "prompt_tokens": 252,
+        "completion_tokens": 104,
+        "total_tokens": 356,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "339d75bc-44dc-454b-8ba3-876955340d44",
+      "status": "scored",
+      "score": 0.4,
+      "explanation": "The evidence only asserts that a local algorithm/interface carrier exists at src/lca.py and explicitly disclaims proving the full paper result. It provides no direct evidence that depth computation for node x in tree T is actually implemented, so the requirement is only weakly supported.",
+      "raw_response_sha256": "b40934434d7dddd7a049a59ed705f754b7492829516c37b30bad065e7c5dad74",
+      "usage": {
+        "completion_tokens": 150,
+        "completion_tokens_details": {
+          "reasoning_tokens": 82
+        },
+        "prompt_tokens": 820,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 970
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "339d75bc-44dc-454b-8ba3-876955340d44",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only indicates a local executable algorithm/interface carrier exists and explicitly does not prove the full paper result, so it does not establish that code for computing node depth was written.",
+      "raw_response_sha256": "a1db12f8bf57c89b9ede036ac5bd47762b96ea2d3002ef847d75063e5e9c30b5",
+      "usage": {
+        "prompt_tokens": 197,
+        "completion_tokens": 440,
+        "total_tokens": 637,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 479,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "339d75bc-44dc-454b-8ba3-876955340d44",
+      "status": "scored",
+      "score": 0.3,
+      "explanation": "The evidence shows a local executable carrier (lca.py) and a receipt.json exist, but the claim explicitly states this does not prove the full paper result. The task is to verify whether the code correctly computes the depth of a node in a tree, yet the evidence only confirms the existence of a carrier, not correctness or completeness of the implementation.",
+      "raw_response_sha256": "287b9373eaff0456a0ab8ec1b0859db0aa466b7b79dfdd03fbca2e5fc0364dc3",
+      "usage": {
+        "prompt_tokens": 245,
+        "completion_tokens": 87,
+        "total_tokens": 332,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "1fec33fda1a245b591364b4a42a286cb7a12301d235101e336dd0dccdf1db319"
+}

@@ -1,0 +1,285 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "2dc04613096d74bf",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "vit-base",
+    "resnet50",
+    "visionmamba"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "vit-base",
+      "status": "scored",
+      "score": 0.1,
+      "explanation": "The provided evidence only shows that local carrier files exist and explicitly states it does not prove the full result; it contains no evidence that ViT-Base ImageNet-1K pre-trained weights can be loaded via timm.",
+      "raw_response_sha256": "c439601a03443c67fc8e84a6c7ed89c67f86d53ca6e7fb142ebb4d13678ad419",
+      "usage": {
+        "completion_tokens": 169,
+        "completion_tokens_details": {
+          "reasoning_tokens": 109
+        },
+        "prompt_tokens": 810,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 768
+        },
+        "total_tokens": 979
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "vit-base",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "Evidence only indicates a local executable algorithm/interface carrier exists and does not prove the full paper result; it does not confirm ViT-Base ImageNet-1K loading via timm.",
+      "raw_response_sha256": "9c03dfd9d9f8cc16f1ad5d35b37ea07d14fcf052f9c52d2f19aa0f509a2b1267",
+      "usage": {
+        "prompt_tokens": 188,
+        "completion_tokens": 728,
+        "total_tokens": 916,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 764,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "vit-base",
+      "status": "scored",
+      "score": 0.15,
+      "explanation": "The evidence only confirms that a ViT-Base model can be loaded via timm, but does not demonstrate that the paper's actual algorithm or interface is implemented. The claim explicitly states this only proves a local executable carrier exists, not the full paper result. No evidence of the adaptation algorithm, evaluation results, or end-to-end system functionality is provided.",
+      "raw_response_sha256": "00329825b76b203af05d7fdd6dbba6c00713350f81b6a3f9b1b6739006161ff5",
+      "usage": {
+        "prompt_tokens": 220,
+        "completion_tokens": 90,
+        "total_tokens": 310,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "resnet50",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "Evidence only shows a local executable carrier exists (src/core.py, asset-channel-audit.json) and explicitly disclaims proving the full result; it contains no text confirming ResNet-50 ImageNet-1K weights are actually loaded into memory.",
+      "raw_response_sha256": "b418a1f053269b3313056a53f99d3c0af8705f6a6789840038596519df431113",
+      "usage": {
+        "completion_tokens": 243,
+        "completion_tokens_details": {
+          "reasoning_tokens": 177
+        },
+        "prompt_tokens": 779,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 768
+        },
+        "total_tokens": 1022
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "resnet50",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only states that a local executable algorithm/interface carrier exists and does not prove the full paper result; it does not address whether a ResNet-50 pre-trained on ImageNet-1K can be loaded into memory.",
+      "raw_response_sha256": "53ff989c236cb1ad43af4669f4e2230f868389afdf692ad9de8ee0e7fdf2a85d",
+      "usage": {
+        "prompt_tokens": 184,
+        "completion_tokens": 328,
+        "total_tokens": 512,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 301,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "resnet50",
+      "status": "scored",
+      "score": 0.15,
+      "explanation": "The evidence only confirms that a carrier path exists for a ResNet-50 model pre-trained on ImageNet-1K, but explicitly states it does not prove the full paper result. The claim is about test-time model adaptation, which requires evidence of actual adaptation behavior (e.g., fine-tuning, updating weights at inference), not merely loading a pretrained model. No evidence is provided for any adaptation mechanism, experimental results, or claims related to test-time adaptation. The score reflects minimal support: only the existence of a code carrier and a model loading capability, without substantiation of the paper's core claims.",
+      "raw_response_sha256": "a8a94de7d8e94fcecdcd99f844d3e508ccda50e7347712ec65335c91f17cc2c2",
+      "usage": {
+        "prompt_tokens": 217,
+        "completion_tokens": 145,
+        "total_tokens": 362,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "visionmamba",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "Evidence only confirms an executable carrier exists at src/core.py plus an asset audit file; it explicitly does not prove the required VisionMamba ImageNet-1K loading behavior or paper result.",
+      "raw_response_sha256": "43b34270e2ee536e344a1ae520bf42f70fb5f7fcd2f781f86e3f01c5ae49263a",
+      "usage": {
+        "completion_tokens": 124,
+        "completion_tokens_details": {
+          "reasoning_tokens": 71
+        },
+        "prompt_tokens": 805,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 768
+        },
+        "total_tokens": 929
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "visionmamba",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "The evidence only confirms a local executable carrier exists and explicitly does not prove the full paper result, so it is insufficient to verify that the VisionMamba model pre-trained on ImageNet-1K was implemented to be loaded into memory.",
+      "raw_response_sha256": "859a505cfe17d83fedc5911f9b5386d4e3c7ba6534d89f3a014924a7bb180ba9",
+      "usage": {
+        "prompt_tokens": 183,
+        "completion_tokens": 395,
+        "total_tokens": 578,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 381,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "visionmamba",
+      "status": "scored",
+      "score": 0.15,
+      "explanation": "The evidence only confirms that a local executable carrier (core.py and a JSON asset) exists for the VisionMamba model, but does not demonstrate that a VisionMamba model pre-trained on ImageNet-1K can actually be loaded into memory or that the paper's full result is achieved. The claim itself admits this limitation: 'this does not prove the full paper result.' The evidence is insufficient to verify the core requirement of loading a pre-trained ImageNet-1K VisionMamba model.",
+      "raw_response_sha256": "3c90b304d16610f9efb27c74c8ad1b1bbb2e0a1668f315bad472e5c434a01412",
+      "usage": {
+        "prompt_tokens": 214,
+        "completion_tokens": 120,
+        "total_tokens": 334,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "6990fedd33fc19012f2c3f23d7719d32b3b50893d42a694f3f685f1a89e9f452"
+}

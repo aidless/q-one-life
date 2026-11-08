@@ -1,0 +1,16 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "7c953e3a-a3ec-4c91-a897-c6691ed60a80",
+      "requirements": "Euler-Maruyama discretization has been implemented to run the diffusion process backward for Simformer",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/all-in-one/src/vesde.py",
+          "research/validation-20261106/all-in-one-vesde-slice/receipt.json"
+        ],
+        "task_id": "all-in-one",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    }
+  ]
+}

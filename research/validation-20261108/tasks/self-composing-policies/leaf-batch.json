@@ -1,0 +1,40 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "2c2ef685-8326-4773-bb21-68f3e7a527b3",
+      "requirements": "Logic to use a single CNN encoder per policy has been implemented, where the encoder for a new policy is initialized with the weights of the previous one, as described in Appendix E.2.",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/self-composing-policies/src/core.py",
+          "research/validation-20261106/external-task-coverage/cloud/matrix.json"
+        ],
+        "task_id": "self-composing-policies",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    },
+    {
+      "leaf_id": "f0afda32-51d9-434d-be8e-5eb3ab5e72d3",
+      "requirements": "Logic to compute $h_s \\in \\mathbb{R}^{d_{\\text{enc}}}$ has been implemented, where $h_s$ is computed by the CNN encoder when encoding is needed (i.e., for the Arcade Learning Environment tasks) and $h_s = s$ when no encoder is needed (i.e., for the Meta-World tasks).",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/self-composing-policies/src/core.py",
+          "research/validation-20261106/external-task-coverage/cloud/matrix.json"
+        ],
+        "task_id": "self-composing-policies",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    },
+    {
+      "leaf_id": "48b73614-82f1-4d32-b2af-427ab51924b9",
+      "requirements": "The logic to compute the value vector for the output attention head has been implemented, which is defined as $\\Phi^{k;s}$ (the matrix of outputs from all previous modules).",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/self-composing-policies/src/core.py",
+          "research/validation-20261106/external-task-coverage/cloud/matrix.json"
+        ],
+        "task_id": "self-composing-policies",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    }
+  ]
+}

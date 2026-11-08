@@ -77,6 +77,39 @@
 注：上表的 `real judge scores` 指任务 rubric 分数；通道集成回执里的 9 个
 分数只验证三模型通道，不计入 2776 叶、不算 PaperBench 能力分数。
 
+## 2026-11-08 "全做"续报
+
+- 用户确认"可以全部同意"，3 个锁定免费模型的逐线 GO 已写入
+  `go-receipts.json`；Magpie 宽探针另确认
+  `openrouter/nvidia/nemotron-3.5-super-vl:free` 可用，两个 NVIDIA/DeepSeek
+  通道超时，不替换锁定面板。
+- 公开资产实下载：`public-benchmark-samples/` 取到 10 个 benchmark 的
+  5 行样本（PiQA / P3 为 blocked），记录字节数、SHA-256 与列结构；
+  `public-models-ASSET_RECEIPT.json` 记录 Pythia-70m（166,029,852 字节）
+  与 GPT-2-medium（1,519,984,962 字节）公开权重全部文件的哈希。
+- AMD 云端真实加载 smoke 通过：Pythia-70m 70,426,624 参数、
+  GPT-2-medium 354,823,168 参数，均产出 logits（`public-models-load-smoke.json`）。
+- 真实小样本切片：`cfg-public-logits.json` 给出两模型在 gamma=1/1.5 下的
+  真实 CFG top-token 变化；`free-model-benchmark-smoke.json` 用免费模型在
+  15 行公开样本上得 12/15；`gpt2-medium-jigsaw-probe.json` 用真实 GPT-2-medium
+  残差特征在 200 行 Jigsaw 上训练线性探针，160/40 划分、准确率 0.9。
+  三者都不是论文表格复现。
+- 10 个任务均生成任务级 `panel-receipt.json`；其中
+  `test-time-model-adaptation` 一度因 DeepSeek Free 429 连续阻塞，冷却重试后
+  最终 `complete=true`。9 个任务首次完成，1 个任务经 3 次重试完成。
+- `leaf-ledger.json` 对 32 个有证据的叶子记录三模型分数；22 个叶子按
+  addendum 精确引用标记 `out_of_scope_waived`；其余 2754 个保持 `blocked`。
+  `verified=0`：证据覆盖的是窄声明/小样本/接口载体，不满足全复现标准。
+- `gate=BLOCKED`、退出码 4，问题列表为空；这表示所有叶子都有终态、
+  所有任务回执齐全，但全 10 任务仍未达到 PASS 的 `verified` 门槛。
+
+### 本轮不能声称
+
+- 没有把 32 个叶子的三模型分数取平均或多数投票后说成 `verified`。
+- 没有把 15 行公开样本、200 行 Jigsaw 或 toy logits 说成论文 benchmark。
+- 没有把 gated ImageNet-1K / D4RL 的 401 用凭据绕过。
+- 没有使用 `o3-mini` 或任何付费 judge；所有 judge 分数 `official=false`。
+
 ## 不能声称
 
 - 没有完成 10 任务全复现，没有 `full_reproduction`。

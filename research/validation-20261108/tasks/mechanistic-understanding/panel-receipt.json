@@ -1,0 +1,463 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "5822fefab1c793e0",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "89eae18e-3abb-424c-b18d-8ddc210806e0",
+    "627f8d87-0aed-4cb5-a29e-8208c3bc9871",
+    "b54834e0-a42b-4a51-84cf-8fb9d185dd07",
+    "39489fa7-b2de-4220-b625-b7929b0e3587",
+    "b203fdd2-cd9e-434b-85b5-1ffa488ca445"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "89eae18e-3abb-424c-b18d-8ddc210806e0",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "Evidence confirms a local carrier path exists and claims narrow support, but does not explicitly verify the 90:10 training/validation split and is limited to small-slice evidence.",
+      "raw_response_sha256": "33fb6b58301305d7a77481d665da423a25e09f0748822009b4f3f797c86556e0",
+      "usage": {
+        "completion_tokens": 168,
+        "completion_tokens_details": {
+          "reasoning_tokens": 118
+        },
+        "prompt_tokens": 811,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 979
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "89eae18e-3abb-424c-b18d-8ddc210806e0",
+      "status": "scored",
+      "score": 0.6,
+      "explanation": "The named carrier exists and is claimed to support the narrow requirement, but the evidence is small-slice only and not full paper reproduction.",
+      "raw_response_sha256": "d776fc077f3c8be3b32d17fcc7fac7b69db28aead4b0dddf508f96031cdef895",
+      "usage": {
+        "prompt_tokens": 186,
+        "completion_tokens": 492,
+        "total_tokens": 678,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 556,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "89eae18e-3abb-424c-b18d-8ddc210806e0",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "The evidence confirms that a local carrier file exists at the specified path and that it supports the narrow requirement of verifying the 90:10 train/validation split for the Jigsaw dataset. However, the evidence is explicitly limited to 'small-slice evidence only, not full paper reproduction,' meaning it does not provide complete proof of the split ratio or full dataset validation. The claim is accurate about what the evidence supports, but the scope is narrow. A score of 0.5 reflects partial confidence: the existence and relevance of the carrier are confirmed, but the evidence does not fully substantiate the requirement beyond a small slice.",
+      "raw_response_sha256": "ec0347e08cd8301213658a2b0766915b41af9805dd1753a6088e6f59a139d743",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 139,
+        "total_tokens": 364,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "627f8d87-0aed-4cb5-a29e-8208c3bc9871",
+      "status": "scored",
+      "score": 0.55,
+      "explanation": "Evidence names local carrier files for the mechanistic-understanding probe and claims support for the narrow requirement, but does not explicitly show that the classifier input is the last-layer residual stream averaged across all timesteps, and is only small-slice evidence.",
+      "raw_response_sha256": "b0f0b78c076caeadbc60dc707db156a4d02644f523868396da5f4dc889e8dd3e",
+      "usage": {
+        "completion_tokens": 335,
+        "completion_tokens_details": {
+          "reasoning_tokens": 271
+        },
+        "prompt_tokens": 844,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 640
+        },
+        "total_tokens": 1179
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "627f8d87-0aed-4cb5-a29e-8208c3bc9871",
+      "status": "scored",
+      "score": 0.4,
+      "explanation": "Evidence only supports a small-slice claim and not full reproduction, so it does not fully establish the classifier requirement.",
+      "raw_response_sha256": "06adb10ffbc5c4f9964d6efc63efeaf8d74c9bc6e19942362ebe6377f992e25b",
+      "usage": {
+        "prompt_tokens": 218,
+        "completion_tokens": 552,
+        "total_tokens": 770,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 648,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "627f8d87-0aed-4cb5-a29e-8208c3bc9871",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence provides only two carrier paths (gpt2-medium-jigsaw-probe.json and gpt2-medium-residual-features.json) with a claim that the named local carrier exists and supports the narrow requirement, but no actual content from these files is provided. Without inspecting the file contents, I cannot verify whether the residual stream in the last layer of gpt2-medium is used as input x, or whether any local carrier path exists that supports this narrow requirement. The claim states 'small-slice evidence only, not full paper reproduction' which further indicates insufficient evidence to confirm the requirement.",
+      "raw_response_sha256": "2d1e727ec908da7d6b5ea3e2ece72c81a201f42a4fbf59ba7557108a7bcb9390",
+      "usage": {
+        "prompt_tokens": 268,
+        "completion_tokens": 142,
+        "total_tokens": 410,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "b54834e0-a42b-4a51-84cf-8fb9d185dd07",
+      "status": "scored",
+      "score": 0.4,
+      "explanation": "Evidence only confirms that the carrier file research/paperbench-submissions/mechanistic-understanding/src/pipeline.py exists and is claimed to support the narrow requirement; no code content or specifics about linear probe training are provided, and the evidence is explicitly small-slice rather than full reproduction.",
+      "raw_response_sha256": "82f0fd1c4e86b6c1c1d7e00a9bc80ac70696522a89583b0a149775a1bbb8fe2a",
+      "usage": {
+        "completion_tokens": 112,
+        "completion_tokens_details": {
+          "reasoning_tokens": 39
+        },
+        "prompt_tokens": 771,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 883
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "b54834e0-a42b-4a51-84cf-8fb9d185dd07",
+      "status": "scored",
+      "score": 0.4,
+      "explanation": "The evidence notes a named local carrier exists and only narrowly supports the requirement, but it is small-slice evidence and not a full paper reproduction, so it does not sufficiently confirm the linear probe training code was implemented.",
+      "raw_response_sha256": "490dc88aa3e5d2a4181757d06d83aca48937cc4d7cb124f3ba108718310994fc",
+      "usage": {
+        "prompt_tokens": 179,
+        "completion_tokens": 450,
+        "total_tokens": 629,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 506,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "b54834e0-a42b-4a51-84cf-8fb9d185dd07",
+      "status": "scored",
+      "score": 0.3,
+      "explanation": "The evidence confirms that a carrier path exists at research/paperbench-submissions/mechanistic-understanding/src/pipeline.py, which is the training code for a linear probe model. However, the evidence explicitly states this is only small-slice evidence and not full paper reproduction. The requirement asks for complete implementation of training code, but the evidence does not confirm that the full training pipeline is implemented or verified end-to-end. The score reflects partial fulfillment: the code location is confirmed but completeness beyond a small slice is not established.",
+      "raw_response_sha256": "53258a4c5f7d59702ca50cd97ee103dce59d73bb695d98dae1880dd34451c666",
+      "usage": {
+        "prompt_tokens": 207,
+        "completion_tokens": 123,
+        "total_tokens": 330,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "39489fa7-b2de-4220-b625-b7929b0e3587",
+      "status": "scored",
+      "score": 0.72,
+      "explanation": "The carrier file exists and is claimed to support the narrow requirement that a linear probe was trained on the Jigsaw training set, but the evidence is explicitly small-slice and not a full reproduction.",
+      "raw_response_sha256": "97d4d903639c37197f91610dabc522d661bab161c41e84f3628a7a51ca73163e",
+      "usage": {
+        "completion_tokens": 163,
+        "completion_tokens_details": {
+          "reasoning_tokens": 109
+        },
+        "prompt_tokens": 811,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 640
+        },
+        "total_tokens": 974
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "39489fa7-b2de-4220-b625-b7929b0e3587",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "The evidence does not establish that the linear probe was trained on the Jigsaw training set; it only cites a carrier path and characterizes the support as small-slice evidence, not full paper reproduction.",
+      "raw_response_sha256": "f79edb7df6427f2a83b8dc6451fb1402026055de27dc8924ee8ee004346d47ef",
+      "usage": {
+        "prompt_tokens": 190,
+        "completion_tokens": 544,
+        "total_tokens": 734,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 616,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "39489fa7-b2de-4220-b625-b7929b0e3587",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "The evidence confirms that a local carrier file exists at the specified path and that it supports the narrow requirement of the linear probe model being trained on the Jigsaw toxic comment classification dataset. However, the evidence explicitly states 'small-slice evidence only, not full paper reproduction,' meaning the claim is supported but not fully verified through complete reproduction of the paper's findings.",
+      "raw_response_sha256": "53d5226202355fdcc7084430fd46acab8ab4045aa78571ec1de56aba98ac2790",
+      "usage": {
+        "prompt_tokens": 230,
+        "completion_tokens": 88,
+        "total_tokens": 318,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 3,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "b203fdd2-cd9e-434b-85b5-1ffa488ca445",
+      "status": "scored",
+      "score": 0.8,
+      "explanation": "The carrier path includes 'validation-20261108' and 'gpt2-medium-jigsaw-probe', and the claim states it supports the narrow requirement. However, the evidence is described as small-slice only and does not explicitly confirm full validation-set evaluation.",
+      "raw_response_sha256": "cc161b8e9206ec81826e2160bda9ba1f717542736a06b829e69cad1fe6facc54",
+      "usage": {
+        "completion_tokens": 420,
+        "completion_tokens_details": {
+          "reasoning_tokens": 352
+        },
+        "prompt_tokens": 813,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1233
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "b203fdd2-cd9e-434b-85b5-1ffa488ca445",
+      "status": "scored",
+      "score": 0.25,
+      "explanation": "The evidence does not directly confirm the linear probe was evaluated on the Jigsaw validation set; it only notes a named local carrier supports the narrow requirement with small-slice evidence, not full reproduction.",
+      "raw_response_sha256": "5d6d7594cc980b2c83ea196ad3c29a1314a923ab49584da85807825ec5c5be94",
+      "usage": {
+        "prompt_tokens": 189,
+        "completion_tokens": 538,
+        "total_tokens": 727,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 620,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "b203fdd2-cd9e-434b-85b5-1ffa488ca445",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence states the named local carrier path exists and supports the narrow requirement, but it only provides small-slice evidence, not full paper reproduction. The claim itself is not directly stated in the evidence text; it is an inference about what the carrier supports. Since the evidence does not explicitly confirm that the linear probe model was evaluated on the validation set of the Jigsaw toxic comment classification dataset, the claim cannot be verified from the provided text.",
+      "raw_response_sha256": "d2cf8deaca4d45c3243ce1bfb00439c2b406bf172411feeef5eece66f3d4aa01",
+      "usage": {
+        "prompt_tokens": 227,
+        "completion_tokens": 103,
+        "total_tokens": 330,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 3,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "89f94b9f8eae096762157d28c1346a449f371601b52568a904d7e6eb891efcb9"
+}

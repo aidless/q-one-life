@@ -1,0 +1,176 @@
+{
+  "schema": "qone-free-model-public-benchmark-smoke-v1",
+  "model": "opencode-zen-free/deepseek-v4.1-flash-free",
+  "official": false,
+  "note": "10 public sample rows only; not a paper benchmark reproduction",
+  "rows": 15,
+  "correct": 12,
+  "accuracy": 0.8,
+  "results": [
+    {
+      "dataset": "ARC-c",
+      "question": "An astronomer observes that a planet rotates faster after a meteorite impact. Which is the most likely effect of this increase in rotation?\nA) Planetary density will decrease.\nB) Planetary years will become longer.\nC) Planetary days will become shorter.\nD) Planetary gravity will become stronger.",
+      "gold": "C",
+      "kind": "letter",
+      "answer": "c",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "f497436bfefefd736470d328994d512ef815f2d8bb0d0e8def3d6b90193ec29a",
+      "elapsed_s": 2.5
+    },
+    {
+      "dataset": "ARC-c",
+      "question": "A group of engineers wanted to know how different building designs would respond during an earthquake. They made several models of buildings and tested each for its ability to withstand earthquake conditions. Which will most likely result from testing different building designs?\nA) buildings will be built faster\nB) buildings will be made safer\nC) building designs will look nicer\nD) building materials will be cheaper",
+      "gold": "B",
+      "kind": "letter",
+      "answer": "b",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "bb9d86c44dc64643abb90f529b500a0026adbebabba4c9cc4a53186160dd8e11",
+      "elapsed_s": 1.54
+    },
+    {
+      "dataset": "ARC-c",
+      "question": "The end result in the process of photosynthesis is the production of sugar and oxygen. Which step signals the beginning of photosynthesis?\nA) Chemical energy is absorbed through the roots.\nB) Light energy is converted to chemical energy.\nC) Chlorophyll in the leaf captures light energy.\nD) Sunlight is converted into chlorophyll.",
+      "gold": "C",
+      "kind": "letter",
+      "answer": "c",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "8ba83b6da5f93b9cb7b23fd73fca0ffd2ae5e016fec9c88243e85580ab60b651",
+      "elapsed_s": 3.67
+    },
+    {
+      "dataset": "ARC-c",
+      "question": "A physicist wants to determine the speed a car must reach to jump over a ramp. The physicist conducts three trials. In trials two and three, the speed of the car is increased by 20 miles per hour. What is the physicist investigating when he changes the speed?\nA) the control\nB) the hypothesis statement\nC) the dependent (responding) variable\nD) the independent (manipulated) variable",
+      "gold": "D",
+      "kind": "letter",
+      "answer": "d",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "dfa4d2ae98867c9fc8f5017005d0ee73b4e40e2835d248c1cd84abde5b15796c",
+      "elapsed_s": 1.59
+    },
+    {
+      "dataset": "ARC-c",
+      "question": "An astronaut drops a 1.0 kg object and a 5.0 kg object on the Moon. Both objects fall a total distance of 2.0 m vertically. Which of the following best describes the objects after they have fallen a distance of 1.0 m?\nA) They have each lost kinetic energy.\nB) They have each gained the same amount of potential energy.\nC) They have each lost the same amount of potential energy.\nD) They have each gained one-half of their maximum kinetic energy.",
+      "gold": "D",
+      "kind": "letter",
+      "answer": "d",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "e01083a7968f48bdff94b2eb6d54ec752642741b0e521c4dd147fd94b2d07a9f",
+      "elapsed_s": 2.2
+    },
+    {
+      "dataset": "BoolQ",
+      "question": "Passage: All biomass goes through at least some of these steps: it needs to be grown, collected, dried, fermented, distilled, and burned. All of these steps require resources and an infrastructure. The total amount of energy input into the process compared to the energy released by burning the resulting ethanol fuel is known as the energy balance (or ``energy returned on energy invested''). Figures compiled in a 2007 report by National Geographic Magazine point to modest results for corn ethanol produced in the US: one unit of fossil-fuel energy is required to create 1.3 energy units from the resulting\nQuestion: does ethanol take more energy make that produces Answer True or False.",
+      "gold": "False",
+      "kind": "tf",
+      "answer": "false",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "b0c4f7743c0b451bcd2e6f9f579ce61092e1c1b4a1b82a9ec1d55cb152c68b4d",
+      "elapsed_s": 1.81
+    },
+    {
+      "dataset": "BoolQ",
+      "question": "Passage: Property tax or 'house tax' is a local tax on buildings, along with appurtenant land. It is and imposed on the Possessor (not the custodian of property as per 1978, 44th amendment of constitution). It resembles the US-type wealth tax and differs from the excise-type UK rate. The tax power is vested in the states and is delegated to local bodies, specifying the valuation method, rate band, and collection procedures. The tax base is the annual rental value (ARV) or area-based rating. Owner-occupied and other properties not producing rent are assessed on cost and then converted into ARV by applyi\nQuestion: is house tax and property tax are same Answer True or False.",
+      "gold": "True",
+      "kind": "tf",
+      "answer": "true",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "6ffd9ebdf6ae1660c08d7384f01192a0b2cec3e38b5c6a918ad98f21f8b70b54",
+      "elapsed_s": 4.05
+    },
+    {
+      "dataset": "BoolQ",
+      "question": "Passage: Phantom pain sensations are described as perceptions that an individual experiences relating to a limb or an organ that is not physically part of the body. Limb loss is a result of either removal by amputation or congenital limb deficiency. However, phantom limb sensations can also occur following nerve avulsion or spinal cord injury.\nQuestion: is pain experienced in a missing body part or paralyzed area Answer True or False.",
+      "gold": "True",
+      "kind": "tf",
+      "answer": "true",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "229a1032fad0db2a7e267084b5fd5a9f5d1fbaa21a9c554bb5dcc60bb8fd3468",
+      "elapsed_s": 3.0
+    },
+    {
+      "dataset": "BoolQ",
+      "question": "Passage: Harry Potter and the Escape from Gringotts is an indoor steel roller coaster at Universal Studios Florida, a theme park located within the Universal Orlando Resort. Similar to dark rides, the roller coaster utilizes special effects in a controlled-lighting environment and also employs motion-based 3-D projection of both animation and live-action sequences to enhance the experience. The ride, which is themed to the Gringotts Wizarding Bank, became the flagship attraction for the expanded Wizarding World of Harry Potter when it opened on July 8, 2014.\nQuestion: is harry potter and the escape from gringotts a roller coaster ride Answer True or False.",
+      "gold": "True",
+      "kind": "tf",
+      "answer": "true",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "fc5c53b07e7828b9cde933f8fd49fdccf5ae2bd9a3d9050e77b0e8642bc83c53",
+      "elapsed_s": 1.82
+    },
+    {
+      "dataset": "BoolQ",
+      "question": "Passage: Hydroxyzine preparations require a doctor's prescription. The drug is available in two formulations, the pamoate and the dihydrochloride or hydrochloride salts. Vistaril, Equipose, Masmoran, and Paxistil are preparations of the pamoate salt, while Atarax, Alamon, Aterax, Durrax, Tran-Q, Orgatrax, Quiess, and Tranquizine are of the hydrochloride salt.\nQuestion: is there a difference between hydroxyzine hcl and hydroxyzine pam Answer True or False.",
+      "gold": "True",
+      "kind": "tf",
+      "answer": "true",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "652a7169d4325379d5a0e5d8309a1d2441df49da85b4c82b40d8742ca8483bf9",
+      "elapsed_s": 1.48
+    },
+    {
+      "dataset": "StrategyQA",
+      "question": "Was ship that recovered Apollo 13 named after a World War II battle? Answer True or False.",
+      "gold": "True",
+      "kind": "tf",
+      "answer": "true",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "032a2828feff1d758b3478c5404a3f2637ee75714d54a77f52dc21476e8e8315",
+      "elapsed_s": 1.91
+    },
+    {
+      "dataset": "StrategyQA",
+      "question": "Is the tibia necessary to win the Stanley Cup? Answer True or False.",
+      "gold": "True",
+      "kind": "tf",
+      "answer": "false",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "1b5d3fa44e82757a650e4a9e4d25d236ce023187a516bd04983b457a4b85c2de",
+      "elapsed_s": 50.22
+    },
+    {
+      "dataset": "StrategyQA",
+      "question": "Could the Powepuff Girls make the background to the Azerbaijani flag? Answer True or False.",
+      "gold": "True",
+      "kind": "tf",
+      "answer": "false",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "7284f1405e55ac1e4f386aaed62effdf99bbfb878ff17e4c935cf17527aa79ab",
+      "elapsed_s": 2.05
+    },
+    {
+      "dataset": "StrategyQA",
+      "question": "Are eagles and young bears both used as labels for skills-training youth groups? Answer True or False.",
+      "gold": "True",
+      "kind": "tf",
+      "answer": "true",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "fd34838a462afe1f56cdfc7e6d66124da0a7c7563ee3b147cff84029ec10a7b1",
+      "elapsed_s": 20.06
+    },
+    {
+      "dataset": "StrategyQA",
+      "question": "Would an Olympic athlete be tired out after running a mile? Answer True or False.",
+      "gold": "False",
+      "kind": "tf",
+      "answer": "true",
+      "state": "answered",
+      "error": "",
+      "raw_sha256": "cf34e5aaacfdee1af55c5e543afcc4b0e0398175c6fa5f4a87699f5c6873974f",
+      "elapsed_s": 1.46
+    }
+  ]
+}

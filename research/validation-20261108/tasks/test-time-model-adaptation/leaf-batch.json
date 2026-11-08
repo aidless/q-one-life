@@ -1,0 +1,40 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "vit-base",
+      "requirements": "Code has been implemented such that a ViT-Base model pre-trained on ImageNet-1K can be loaded into memory using the timm repository",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/test-time-model-adaptation/src/core.py",
+          "research/validation-20261108/asset-channel-audit.json"
+        ],
+        "task_id": "test-time-model-adaptation",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    },
+    {
+      "leaf_id": "resnet50",
+      "requirements": "Code has been implemented such that a ResNet-50 model pre-trained on ImageNet-1K can be loaded into memory",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/test-time-model-adaptation/src/core.py",
+          "research/validation-20261108/asset-channel-audit.json"
+        ],
+        "task_id": "test-time-model-adaptation",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    },
+    {
+      "leaf_id": "visionmamba",
+      "requirements": "Code has been implemented such that a VisionMamba model pre-trained on ImageNet-1K can be loaded into memory",
+      "evidence": {
+        "carrier_paths": [
+          "research/paperbench-submissions/test-time-model-adaptation/src/core.py",
+          "research/validation-20261108/asset-channel-audit.json"
+        ],
+        "task_id": "test-time-model-adaptation",
+        "claim": "a local executable algorithm/interface carrier exists; this does not prove the full paper result"
+      }
+    }
+  ]
+}

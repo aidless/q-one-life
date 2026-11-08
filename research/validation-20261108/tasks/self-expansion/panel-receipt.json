@@ -1,0 +1,285 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "e1f10f4da1e1b692",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "5b88aaa9-8bf2-4346-ad0d-4656eb6a0dd9",
+    "7fa8715e-3ab6-4116-be67-eb1baeb1d8de",
+    "dc0de847-ec32-40f3-9f7b-3b056ba43a3e"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "5b88aaa9-8bf2-4346-ad0d-4656eb6a0dd9",
+      "status": "scored",
+      "score": 0.3,
+      "explanation": "Evidence only shows that carrier paths (src/core.py, matrix.json) exist, supporting the weak claim that a local executable algorithm/interface carrier exists. It explicitly states this does not prove the full paper result, and no evidence demonstrates a ViT-B/16 ImageNet-1K pretrained checkpoint is actually loadable into memory.",
+      "raw_response_sha256": "b078cc939c3dab3c1eaebc4f7be0f84d9485218d0bc474e9faccab026c0e07e0",
+      "usage": {
+        "completion_tokens": 201,
+        "completion_tokens_details": {
+          "reasoning_tokens": 118
+        },
+        "prompt_tokens": 800,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1001
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "5b88aaa9-8bf2-4346-ad0d-4656eb6a0dd9",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only states that a local executable algorithm/interface carrier exists and does not prove the full paper result, so it does not support the ViT-B/16 ImageNet-1K loading requirement.",
+      "raw_response_sha256": "429cfe175089b8ec26051b97d920a634f5a6e3799d8f81bf79e1a74815bd21b3",
+      "usage": {
+        "prompt_tokens": 201,
+        "completion_tokens": 318,
+        "total_tokens": 519,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 288,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "5b88aaa9-8bf2-4346-ad0d-4656eb6a0dd9",
+      "status": "scored",
+      "score": 0.15,
+      "explanation": "The evidence only confirms that a carrier path exists for a local executable algorithm/interface, but it does not demonstrate that a ViT-B/16 model pretrained on ImageNet-1K can actually be loaded into memory. The claim explicitly states this does not prove the full paper result. No code inspection or runtime verification is provided, so the core requirement remains unmet.",
+      "raw_response_sha256": "a289f0d62ba93b347548e1af7d306d5d3af1bc434b30532f16bc0872881a62e9",
+      "usage": {
+        "prompt_tokens": 239,
+        "completion_tokens": 90,
+        "total_tokens": 329,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 3,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "7fa8715e-3ab6-4116-be67-eb1baeb1d8de",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "Evidence only asserts a generic local executable algorithm/interface carrier exists and explicitly disclaims proving the full result; it never mentions ConvPass, the PETL-ViT source URL, or selection as a functional adapter, so the requirement is unsupported.",
+      "raw_response_sha256": "a8a731cc04b3f5d66204f9c9c69a40648775844624d6134ca57d70b6f6bc4a36",
+      "usage": {
+        "completion_tokens": 141,
+        "completion_tokens_details": {
+          "reasoning_tokens": 75
+        },
+        "prompt_tokens": 816,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 640
+        },
+        "total_tokens": 957
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "7fa8715e-3ab6-4116-be67-eb1baeb1d8de",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only states that a local executable carrier exists and does not prove the full paper result, so it does not confirm the required Convpass adapter implementation or functional adapter selection.",
+      "raw_response_sha256": "b7e80ba16fa0143b774dc0d16d5ac78bb900f9dbd8b764c681157c5dfb75d6cf",
+      "usage": {
+        "prompt_tokens": 216,
+        "completion_tokens": 301,
+        "total_tokens": 517,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 320,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "7fa8715e-3ab6-4116-be67-eb1baeb1d8de",
+      "status": "scored",
+      "score": 0.15,
+      "explanation": "The evidence only confirms that a local executable carrier path exists for the Convpass adapter implementation, but does not provide any evidence of successful execution, integration, or paper-level results. The claim explicitly states this does not prove the full paper result. No evidence of functional correctness, integration success, or empirical validation is provided.",
+      "raw_response_sha256": "dff9c6ffeaee38ed625d2f67cbfa560a30bf2ec5f7afd60d9da91246871a6a2f",
+      "usage": {
+        "prompt_tokens": 258,
+        "completion_tokens": 80,
+        "total_tokens": 338,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "dc0de847-ec32-40f3-9f7b-3b056ba43a3e",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "Evidence only asserts that a local executable algorithm/interface carrier exists (src/core.py) and explicitly states it does not prove the full paper result; it provides no confirmation of the required down projection -> ReLU -> up projection functional adapter structure in Section 3.3.",
+      "raw_response_sha256": "af44069b48f802db9d8780e19d0f414680adc72b01f6058586140b4525cc1ee4",
+      "usage": {
+        "completion_tokens": 162,
+        "completion_tokens_details": {
+          "reasoning_tokens": 92
+        },
+        "prompt_tokens": 811,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 973
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "dc0de847-ec32-40f3-9f7b-3b056ba43a3e",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only states that a local executable carrier exists and does not prove the full paper result, with no support for the required learnable down projection, ReLU, and learnable up projection adapter implementation.",
+      "raw_response_sha256": "1b2ce390ea0256078d40c0e4532505dc60d57dc98f3dbbd18b38fcb3e6ca847f",
+      "usage": {
+        "prompt_tokens": 210,
+        "completion_tokens": 307,
+        "total_tokens": 517,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 306,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "dc0de847-ec32-40f3-9f7b-3b056ba43a3e",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only confirms that a carrier path exists (a local executable algorithm/interface file), but provides no proof that the functional adapter was implemented correctly as a learnable down projection layer, ReLU, then learnable up projection layer as described in Section 3.3. The claim explicitly states this does not prove the full paper result.",
+      "raw_response_sha256": "e8292188ede289fc8ff37ab8d5dc2b4e02e121ce79cb54bcbcd8062f0af24c5f",
+      "usage": {
+        "prompt_tokens": 249,
+        "completion_tokens": 83,
+        "total_tokens": 332,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "373d94e0bfc606db8875cf3c272192c74bf0163b99a84c1c727a56ebc311ef9c"
+}

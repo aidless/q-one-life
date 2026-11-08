@@ -140,6 +140,36 @@ class FreeJudgePanelTests(unittest.TestCase):
             self.assertTrue(payload["receipts"][self.models[0]]["go"])
             self.assertNotIn("key", path.read_text(encoding="utf-8").lower().replace("key value", ""))
 
+    def test_verifier_rejects_judge_disagreement(self):
+        import tempfile
+        from scripts import verify_paperbench_full10
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            ledger = {
+                "leaves": [{
+                    "leaf_id": "one", "task_id": "task", "scope": "in_scope",
+                    "terminal_state": "verified", "carrier_paths": ["a"],
+                    "carrier_sha256": ["h"], "recompute_command": "true",
+                    "judge_scores": {"a": 0.9, "b": 0.8, "c": 0.0},
+                    "waiver": {}, "blocked_reason": "",
+                }],
+                "tasks": [{"task_id": "task", "asset_manifest": "tasks/task/ASSETS.json",
+                           "checkpoint": "tasks/task/CHECKPOINT.json"}],
+                "panel": {"official": False, "judge_type": "free_multimodel",
+                          "model_ids": list(self.models), "locked": True,
+                          "user_go": self.go},
+            }
+            (root / "tasks" / "task").mkdir(parents=True)
+            (root / "tasks" / "task" / "ASSETS.json").write_text("{}", encoding="utf-8")
+            (root / "tasks" / "task" / "CHECKPOINT.json").write_text("{}", encoding="utf-8")
+            (root / "tasks" / "task" / "panel-receipt.json").write_text(
+                json.dumps({"judge_type": "free_multimodel", "official": False,
+                            "complete": True, "model_ids": list(self.models)}), encoding="utf-8")
+            (root / "leaf-ledger.json").write_text(json.dumps(ledger), encoding="utf-8")
+            report = verify_paperbench_full10.verify(root)
+            self.assertTrue(any("judge_disagreement" in problem for problem in report["problems"]))
+
 
 if __name__ == "__main__":
     unittest.main()

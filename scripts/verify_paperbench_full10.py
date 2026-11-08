@@ -62,6 +62,11 @@ def verify(root: Path) -> dict:
                 problems.append(f"verified_without_recompute:{leaf.get('leaf_id')}")
             if len(leaf.get("judge_scores") or {}) != 3:
                 problems.append(f"verified_without_three_judges:{leaf.get('leaf_id')}")
+            scores = list((leaf.get("judge_scores") or {}).values())
+            if len(scores) == 3 and any(not isinstance(value, (int, float)) for value in scores):
+                problems.append(f"verified_with_non_numeric_judge:{leaf.get('leaf_id')}")
+            elif len(scores) == 3 and max(scores) - min(scores) > 0.25:
+                problems.append(f"verified_with_judge_disagreement:{leaf.get('leaf_id')}")
         elif leaf.get("terminal_state") == "out_of_scope_waived":
             waiver = leaf.get("waiver") or {}
             if not waiver.get("addendum_path") or not waiver.get("quote") or not waiver.get("sha256"):
@@ -109,8 +114,10 @@ def verify(root: Path) -> dict:
             receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
             if receipt.get("judge_type") != "free_multimodel" or receipt.get("official") is not False:
                 problems.append(f"receipt_not_free:{task_id}")
-            if not receipt.get("complete") or len(receipt.get("model_ids") or []) != 3:
+            if receipt.get("complete") is True and len(receipt.get("model_ids") or []) != 3:
                 problems.append(f"receipt_incomplete:{task_id}")
+            if receipt.get("complete") is not True:
+                problems.append(f"receipt_blocked:{task_id}")
             if receipt.get("model_ids") != model_ids:
                 problems.append(f"receipt_panel_mismatch:{task_id}")
 
@@ -132,10 +139,12 @@ def verify(root: Path) -> dict:
         check("unverified_leaves", 0, sum(v for k, v in states.items() if k != "verified" and k != "out_of_scope_waived")),
         check("panel_models", 3, len(model_ids)),
         check("panel_official", False, panel.get("official")),
+        check("judge_disagreement_problems", 0,
+              sum(problem.startswith("verified_with_judge_disagreement:") for problem in problems)),
         check("problems", 0, len(problems)),
     ]
     passed = all(row["passed"] for row in checks) and not problems
-    blocked = (not passed and states.get("blocked", 0) > 0
+    blocked = (not passed and (states.get("blocked", 0) > 0 or any(p.startswith("receipt_blocked:") for p in problems))
                and sum(value for key, value in states.items() if key not in {"blocked", "verified", "out_of_scope_waived"}) == 0
                and all(not problem.startswith("nonterminal_state:") for problem in problems))
     return {
