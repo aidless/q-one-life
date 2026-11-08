@@ -152,6 +152,44 @@
   `unverified=0`、`gate=BLOCKED`。这是第一个真实 `verified` 突破，但不等于
   任务 full_reproduction；DPO、SVD、PPLM、GPT-2 干预实验仍未做。
 
+## 2026-11-08 三条实验线扩展
+
+### 1. mechanistic-understanding：RTP / PPLM-style / SVD 切片
+
+- 完整下载公开 `allenai/real-toxicity-prompts/prompts.jsonl`：
+  67,690,996 字节，SHA-256 `4b680887…`。
+- `run_mechanistic_extensions.py` 在 AMD 云端用 GPT-2-medium 生成 24 条 RTP
+  greedy continuations、0.1 强度的 PPLM-style hidden-state steering、
+  5 层 MLP value-vector SVD（`[1024,128]`）。回执
+  `tasks/mechanistic-understanding/pplm-svd-slice.json` 明确
+  `dpo_model_trained=false`、负样本 0 条、没有毒性评分，因此只作数据/SVD 形状证据。
+
+### 2. Tiny-ImageNet + ConvNeXt TTA / toy LCA 小矩阵
+
+- 用本地公开的 `timm/convnext_tiny.fb_in22k_ft_in1k` 权重
+  （114,374,272 字节，SHA-256 `77b619e1…`）在 200 张 Tiny-ImageNet 图片上跑
+  clean / hflip / brightness / center_crop 四种扰动。
+- `clean_prediction_agreement` 为 200 / 172 / 174 / 133；toy 20-parent
+  `lca_error` 为 0 / 0.14 / 0.125 / 0.33。回执
+  `tiny-imagenet-tta-lca-matrix.json`。这不是 ImageNet-1K、5 个 OOD 数据集
+  或 75 模型结果。
+
+### 3. D4RL Kitchen 行为克隆
+
+- `run_d4rl_kitchen_bc.py` 在完整 Kitchen HDF5 上训练 2×256 MLP 行为克隆：
+  136,950 transitions、123,255 train / 13,695 val、5 epoch。
+- `final_val_mse=0.0332668`、`final_val_mae=0.125186`、5.81 秒。
+  没有在线 rollout、没有环境 return，不能当 RL 成功率。
+
+### Judge 与判定
+
+- 5 个实验批次首次全部因 DeepSeek Free 429 `BLOCKED`；按用户规则只冷却
+  重试、不换锁定模型、不发布部分分数。重试后 5 批 `complete=true`。
+- 三模型对这批窄证据普遍给低分或分歧（多数 mean < 0.8 或 spread > 0.25），
+  因此**没有新增 verified 叶子**。全部原始分数与回执保留。
+- 当前 ledger 保持 `verified=3`、`waived=22`、`blocked=2751`、
+  `unverified=0`、`gate=BLOCKED`。
+
 ## 不能声称
 
 - 没有完成 10 任务全复现，没有 `full_reproduction`。

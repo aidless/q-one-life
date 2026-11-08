@@ -1,0 +1,15 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "5b3ccceb-evidence",
+      "requirements": "A behavior-cloning baseline was trained on held-out D4RL Kitchen transitions.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/d4rl-kitchen-bc-baseline.json"
+        ],
+        "task_id": "fre",
+        "claim": "new narrow experimental evidence; not full paper reproduction"
+      }
+    }
+  ]
+}

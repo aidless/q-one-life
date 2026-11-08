@@ -1,0 +1,52 @@
+{
+  "schema": "qone-d4rl-kitchen-bc-baseline-v1",
+  "data": "/tmp/qone-d4rl/kitchen_microwave_kettle_bottomburner_light-v0.hdf5",
+  "data_sha256": "a30382a50278fdaea2e2d88e5f2836a95bcf9b581d252617872fd6537302721b",
+  "rows": 136950,
+  "obs_dim": 60,
+  "action_dim": 9,
+  "reward_mean": 1.352055549621582,
+  "terminals": 601,
+  "timeouts": 12,
+  "train_rows": 123255,
+  "val_rows": 13695,
+  "epochs": 5,
+  "batch_size": 1024,
+  "history": [
+    {
+      "epoch": 1,
+      "train_mse": 0.08789296639113386,
+      "val_mse": 0.06679632514715195,
+      "val_mae": 0.17864063382148743
+    },
+    {
+      "epoch": 2,
+      "train_mse": 0.056216813439180044,
+      "val_mse": 0.049325283616781235,
+      "val_mae": 0.15404635667800903
+    },
+    {
+      "epoch": 3,
+      "train_mse": 0.044028501618992195,
+      "val_mse": 0.03977622836828232,
+      "val_mae": 0.1377367079257965
+    },
+    {
+      "epoch": 4,
+      "train_mse": 0.03738210485740141,
+      "val_mse": 0.03574860468506813,
+      "val_mae": 0.12982141971588135
+    },
+    {
+      "epoch": 5,
+      "train_mse": 0.033877278224003216,
+      "val_mse": 0.0332668162882328,
+      "val_mae": 0.12518638372421265
+    }
+  ],
+  "final_val_mse": 0.0332668162882328,
+  "final_val_mae": 0.12518638372421265,
+  "elapsed_s": 5.81,
+  "official": false,
+  "note": "Behavior-cloning MLP on held-out transitions from one public D4RL Kitchen HDF5. No online rollout, no environment return, no RL result."
+}

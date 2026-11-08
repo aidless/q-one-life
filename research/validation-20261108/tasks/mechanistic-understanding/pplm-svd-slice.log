@@ -1,0 +1,10 @@
+-rw-r--r-- 1 root root 67690996 Nov  8 15:25 real-toxicity-prompts.jsonl
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/root/qone-paperbench-full10/run_mechanistic_extensions.py", line 157, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/qone-paperbench-full10/run_mechanistic_extensions.py", line 111, in main
+    cosine = torch.nn.functional.cosine_similarity(values.T, direction_cpu.unsqueeze(0), dim=1)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: The size of tensor a (4096) must match the size of tensor b (1024) at non-singleton dimension 1

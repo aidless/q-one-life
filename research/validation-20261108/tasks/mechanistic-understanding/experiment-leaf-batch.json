@@ -1,0 +1,37 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "1a8266f6-evidence",
+      "requirements": "SVD over GPT-2 MLP value vectors was performed.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tasks/mechanistic-understanding/pplm-svd-slice.json"
+        ],
+        "task_id": "mechanistic-understanding",
+        "claim": "new narrow experimental evidence; not full paper reproduction"
+      }
+    },
+    {
+      "leaf_id": "a626e8d3-evidence",
+      "requirements": "Top token-like MLP value vectors across several GPT-2 layers were computed.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tasks/mechanistic-understanding/pplm-svd-slice.json"
+        ],
+        "task_id": "mechanistic-understanding",
+        "claim": "new narrow experimental evidence; not full paper reproduction"
+      }
+    },
+    {
+      "leaf_id": "3c36d4c4-evidence",
+      "requirements": "Greedy continuations for RealToxicityPrompts were generated.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tasks/mechanistic-understanding/pplm-svd-slice.json"
+        ],
+        "task_id": "mechanistic-understanding",
+        "claim": "new narrow experimental evidence; not full paper reproduction"
+      }
+    }
+  ]
+}

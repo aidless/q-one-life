@@ -58,7 +58,15 @@
       "d4rl_profile": "d4rl-kitchen-data-profile.json",
       "tiny_imagenet": "tiny-imagenet-public-alternative.json",
       "tiny_imagenet_sample": "tiny-imagenet-sample.json"
-    }
+    },
+    "experiment_panel_receipts": [
+      "tasks/fre/experiment-panel-receipt.json",
+      "tasks/lca-on-the-line/experiment-panel-receipt.json",
+      "tasks/mechanistic-understanding/experiment-panel-receipt.json",
+      "tasks/rice/experiment-panel-receipt.json",
+      "tasks/test-time-model-adaptation/experiment-panel-receipt.json"
+    ],
+    "experiment_panel_note": "All three locked free models completed after 429 cooldown; low or divergent scores are retained, no leaf promoted from these narrow-evidence batches."
   },
   "tasks": [
     {
@@ -50318,5 +50326,5 @@
     "unverified": 0,
     "gate": "BLOCKED"
   },
-  "canonical_sha256": "2deb78aa15f9bf488d0e6feba11b58a505652e51ecc84a22d7392f97ea14bdad"
+  "canonical_sha256": "208197690562561fcacdb81697f80e5e296a39e8cf319d6de65f14b0890c7cde"
 }

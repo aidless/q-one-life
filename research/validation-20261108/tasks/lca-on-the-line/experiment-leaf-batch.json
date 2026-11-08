@@ -1,0 +1,15 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "525020fa-evidence",
+      "requirements": "A toy hierarchical LCA-style error was computed across visual perturbations.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tiny-imagenet-tta-lca-matrix.json"
+        ],
+        "task_id": "lca-on-the-line",
+        "claim": "new narrow experimental evidence; not full paper reproduction"
+      }
+    }
+  ]
+}

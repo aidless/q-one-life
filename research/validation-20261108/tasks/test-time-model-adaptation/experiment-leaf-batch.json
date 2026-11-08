@@ -1,0 +1,15 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "45191ae5-evidence",
+      "requirements": "Classification accuracy under four visual perturbations was computed on a public Tiny-ImageNet sample.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tiny-imagenet-tta-lca-matrix.json"
+        ],
+        "task_id": "test-time-model-adaptation",
+        "claim": "new narrow experimental evidence; not full paper reproduction"
+      }
+    }
+  ]
+}

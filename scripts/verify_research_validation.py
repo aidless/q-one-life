@@ -108,6 +108,9 @@ def main() -> int:
     vesde_receipt = json.loads((args.root / "all-in-one-vesde-slice/receipt.json").read_text())
     cfg_receipt = json.loads((args.root / "cfg-slice/receipt.json").read_text())
     gpt2_full = json.loads((args.root.parent / "validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json").read_text())
+    mechanistic_ext = json.loads((args.root.parent / "validation-20261108/tasks/mechanistic-understanding/pplm-svd-slice.json").read_text())
+    vision_matrix = json.loads((args.root.parent / "validation-20261108/tiny-imagenet-tta-lca-matrix.json").read_text())
+    kitchen_bc = json.loads((args.root.parent / "validation-20261108/d4rl-kitchen-bc-baseline.json").read_text())
     mech_data_bytes = (
         args.root / "datasets/mechanistic-understanding/train.csv"
     ).stat().st_size
@@ -347,6 +350,20 @@ def main() -> int:
         check("gpt2_jigsaw_full_roc_auc", 0.957871336136155,
               gpt2_full["roc_auc"]),
         check("gpt2_jigsaw_full_segments", 20, gpt2_full["segments"]),
+        check("mechanistic_ext_rows", 24, mechanistic_ext["rows"]),
+        check("mechanistic_ext_greedy", 24, mechanistic_ext["greedy_generated"]),
+        check("mechanistic_ext_dpo_trained", False, mechanistic_ext["dpo_model_trained"]),
+        check("mechanistic_ext_svd_layers", 5, len(mechanistic_ext["svd_layers"])),
+        check("vision_matrix_images", 200, vision_matrix["images"]),
+        check("vision_matrix_clean_agreement", 200,
+              vision_matrix["clean_prediction_agreement"]["clean"]),
+        check("vision_matrix_crop_agreement", 133,
+              vision_matrix["clean_prediction_agreement"]["center_crop"]),
+        check("kitchen_bc_rows", 136950, kitchen_bc["rows"]),
+        check("kitchen_bc_train_rows", 123255, kitchen_bc["train_rows"]),
+        check("kitchen_bc_val_rows", 13695, kitchen_bc["val_rows"]),
+        check("kitchen_bc_final_val_mse", 0.0332668162882328,
+              kitchen_bc["final_val_mse"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,

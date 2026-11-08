@@ -1,0 +1,107 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "ec1c3c34e7a191e3",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "525020fa-evidence"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "525020fa-evidence",
+      "status": "scored",
+      "score": 0.8,
+      "explanation": "The Tiny-ImageNet TTA LCA matrix file and claim of new narrow experimental evidence indicate a toy LCA-style error was computed across visual perturbations, though full paper reproduction is explicitly not claimed.",
+      "raw_response_sha256": "fb5a980ed3bc002a21ea4f0914fcaf352e515488eee36cae0bc82fd44b91fb9d",
+      "usage": {
+        "completion_tokens": 294,
+        "completion_tokens_details": {
+          "reasoning_tokens": 239
+        },
+        "prompt_tokens": 775,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1069
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "525020fa-evidence",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "The evidence only points to an LCA task and claims narrow experimental evidence, not a full reproduction, and does not directly confirm the required toy hierarchical LCA-style error across visual perturbations.",
+      "raw_response_sha256": "3995501f8aa60730a283aa0167705530154b4b7ea66644b75305404b3445f4a5",
+      "usage": {
+        "prompt_tokens": 153,
+        "completion_tokens": 382,
+        "total_tokens": 535,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 415,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "525020fa-evidence",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence provides only a file path to a JSON artifact and a vague claim that it is 'new narrow experimental evidence; not full paper reproduction.' No actual data, error values, or results are included in the evidence text. Without any quantitative or qualitative content, no meaningful grading can be performed.",
+      "raw_response_sha256": "71bd2e8d6cb33108943a5deefe9ee884a90343897fd46440c3bdfa77f6b25c49",
+      "usage": {
+        "prompt_tokens": 186,
+        "completion_tokens": 74,
+        "total_tokens": 260,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "2f806a53676560064eecf3edc8ea97d772c6ce0ff2e9750485a72f0e668d6235"
+}

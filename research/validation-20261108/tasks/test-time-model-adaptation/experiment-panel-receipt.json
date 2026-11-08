@@ -1,0 +1,107 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "92b86d409359c610",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "45191ae5-evidence"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "45191ae5-evidence",
+      "status": "scored",
+      "score": 0.25,
+      "explanation": "The evidence only cites a plausibly relevant Tiny-ImageNet TTA matrix file and describes narrow experimental evidence, but does not confirm classification accuracy under four visual perturbations or that a public Tiny-ImageNet sample was used.",
+      "raw_response_sha256": "40a5901466b3e0ba69bf2955276c7d514e91babc5473b8ddced6818e3fc95e15",
+      "usage": {
+        "completion_tokens": 322,
+        "completion_tokens_details": {
+          "reasoning_tokens": 263
+        },
+        "prompt_tokens": 781,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1103
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "45191ae5-evidence",
+      "status": "scored",
+      "score": 0.25,
+      "explanation": "Evidence only reports new narrow experimental results on a public Tiny-ImageNet sample and explicitly disclaims full paper reproduction, so it weakly satisfies the classification-accuracy requirement.",
+      "raw_response_sha256": "c36fde64bca4d23041e6bd3a3cd00e2ff0b2ec97b42f87cc95668c69813d663b",
+      "usage": {
+        "prompt_tokens": 160,
+        "completion_tokens": 427,
+        "total_tokens": 587,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 482,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "45191ae5-evidence",
+      "status": "scored",
+      "score": 0.3,
+      "explanation": "The evidence provides a single JSON file path and a claim that it is 'new narrow experimental evidence; not full paper reproduction.' No actual accuracy numbers under four visual perturbations are reported, so the core requirement of classification accuracy under four perturbations is not substantiated by any quantitative data.",
+      "raw_response_sha256": "b67688bc9269c39e500ff1ecc7c7b96e4cb43d9802c1d5dee8e4b4011bf6625f",
+      "usage": {
+        "prompt_tokens": 189,
+        "completion_tokens": 67,
+        "total_tokens": 256,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "1f2f18addda4b7d6ce052dfa80643cb77d7cc3b7d1130862ad9a40127df123e8"
+}

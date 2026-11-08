@@ -1,0 +1,285 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "f292736395b7dd98",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "1a8266f6-evidence",
+    "a626e8d3-evidence",
+    "3c36d4c4-evidence"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "1a8266f6-evidence",
+      "status": "scored",
+      "score": 0.25,
+      "explanation": "Evidence consists only of a carrier path name containing 'svd' (pplm-svd-slice.json) and a meta-claim of 'new narrow experimental evidence; not full paper reproduction.' No text explicitly states SVD was performed over GPT-2 MLP value vectors, so the requirement is only weakly and indirectly implied by the filename.",
+      "raw_response_sha256": "22a9ac381af13d80a8c899b8a75e7885dfe5b18962d113b408609d2211ec9cb9",
+      "usage": {
+        "completion_tokens": 218,
+        "completion_tokens_details": {
+          "reasoning_tokens": 134
+        },
+        "prompt_tokens": 780,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 998
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "1a8266f6-evidence",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "The evidence references a PPLM-SVD slice path and mechanistic-understanding task, but the claim only notes new narrow experimental evidence rather than directly confirming SVD over GPT-2 MLP value vectors was performed.",
+      "raw_response_sha256": "283c4ba75ecc76aae7f4996305d008bdd00047260cd93d422f8cd0b1311bba33",
+      "usage": {
+        "prompt_tokens": 158,
+        "completion_tokens": 1316,
+        "total_tokens": 1474,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1498,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "1a8266f6-evidence",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence states that SVD was performed over GPT-2 MLP value vectors, but the carrier_paths field only lists a single JSON file path and provides no actual SVD results, metrics, or quantitative findings. The claim explicitly notes this is 'new narrow experimental evidence; not full paper reproduction,' meaning the evidence is incomplete for grading purposes. Without any SVD output data, there is no verifiable evidence to support the requirement.",
+      "raw_response_sha256": "9a71abb10e5c0b26920b58db807ad10542c35b04fa18268994f141d233038349",
+      "usage": {
+        "prompt_tokens": 187,
+        "completion_tokens": 104,
+        "total_tokens": 291,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "a626e8d3-evidence",
+      "status": "scored",
+      "score": 0.55,
+      "explanation": "The evidence cites a carrier file 'pplm-svd-slice.json' under the mechanistic-understanding task, whose SVD-slice naming is consistent with computing top token-like MLP value vectors, and it is labeled new narrow experimental evidence. However, the text never explicitly states GPT-2 layers or that multiple layers were covered, so support is partial and indirect.",
+      "raw_response_sha256": "7a0f95fe2bf6f666d517da8d07eca1568b17baa6fe45711255371749fbd38a71",
+      "usage": {
+        "completion_tokens": 261,
+        "completion_tokens_details": {
+          "reasoning_tokens": 172
+        },
+        "prompt_tokens": 782,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1043
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "a626e8d3-evidence",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "The evidence only references a narrow experimental carrier path and disclaims full paper reproduction, so it does not confirm that top token-like MLP value vectors across several GPT-2 layers were computed.",
+      "raw_response_sha256": "96872c124117c3d469ba21eb3c98a4e949284c9e7de0bf23300560c4623c60a2",
+      "usage": {
+        "prompt_tokens": 161,
+        "completion_tokens": 340,
+        "total_tokens": 501,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 358,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "a626e8d3-evidence",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence provides only a file path and a claim that the data is 'new narrow experimental evidence; not full paper reproduction.' No actual token-like MLP value vectors, layer-wise values, or quantitative results are present in the evidence text. The requirement asks for 'Top token-like MLP value vectors across several GPT-2 layers,' but no such data is provided. The evidence is insufficient to verify any claim.",
+      "raw_response_sha256": "59716372c2dae329d978359c4ff05c43b0a475685da61dc501c1285d3c2b6959",
+      "usage": {
+        "prompt_tokens": 190,
+        "completion_tokens": 102,
+        "total_tokens": 292,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "3c36d4c4-evidence",
+      "status": "scored",
+      "score": 0.1,
+      "explanation": "Evidence only points to a pplm-svd-slice.json carrier path and a generic claim of 'new narrow experimental evidence; not full paper reproduction'; it does not mention RealToxicityPrompts or greedy continuations, so the requirement is unsupported.",
+      "raw_response_sha256": "13a601c682d010b560477af5a963fe39084bda8a1930cd02248bbf7aee055c55",
+      "usage": {
+        "completion_tokens": 192,
+        "completion_tokens_details": {
+          "reasoning_tokens": 124
+        },
+        "prompt_tokens": 783,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 975
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "3c36d4c4-evidence",
+      "status": "scored",
+      "score": 0.8,
+      "explanation": "The evidence states greedy continuations for RealToxicityPrompts were generated, but frames it as new narrow experimental evidence rather than full paper reproduction.",
+      "raw_response_sha256": "a7a4e04f67965b46d6b913fed5559562cef5eb58599c49fe88697873a930153e",
+      "usage": {
+        "prompt_tokens": 160,
+        "completion_tokens": 558,
+        "total_tokens": 718,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 651,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "3c36d4c4-evidence",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence states that Greedy continuations for RealToxicityPrompts were generated, but the carrier_path points to a mechanistic-understanding task file (pplm-svd-slice.json), which is not the standard location for RealToxicityPrompt evaluation results. The claim explicitly notes this is 'new narrow experimental evidence; not full paper reproduction,' indicating the evidence is incomplete and does not constitute full reproduction of the original paper's results.",
+      "raw_response_sha256": "3b1990439267faef4f0a826c677d8689e74be7b7eaf41379e38738329b6815af",
+      "usage": {
+        "prompt_tokens": 188,
+        "completion_tokens": 111,
+        "total_tokens": 299,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 3,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "f30cb050ddf480921961f7d2a6e92fbabf5d5208e6672c22cdf19c9efc857cfa"
+}

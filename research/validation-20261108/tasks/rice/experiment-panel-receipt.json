@@ -1,0 +1,107 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "4fbc77786c23c9f1",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "c8ce16bb-evidence"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "c8ce16bb-evidence",
+      "status": "scored",
+      "score": 0.55,
+      "explanation": "Carrier filename d4rl-kitchen-bc-baseline.json indicates a behavioral-cloning (supervised) baseline on D4RL Kitchen, but the evidence text only claims 'new narrow experimental evidence; not full paper reproduction' and does not explicitly confirm a held-out evaluation split or public-data provenance, so the requirement is only partially substantiated.",
+      "raw_response_sha256": "9ad7e0c7adc9e42e4e5ee9a45b79a84ad83e03f1b613a436e5e2b03bd52be35d",
+      "usage": {
+        "completion_tokens": 302,
+        "completion_tokens_details": {
+          "reasoning_tokens": 215
+        },
+        "prompt_tokens": 775,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1077
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "c8ce16bb-evidence",
+      "status": "scored",
+      "score": 0.4,
+      "explanation": "Evidence references a D4RL Kitchen BC baseline file but only as narrow experimental evidence, not clearly confirming a held-out supervised policy baseline trained on public D4RL Kitchen data.",
+      "raw_response_sha256": "807faa6b852bb510d2cdd63e637a4d76733f035e7489198263f4044019c0a489",
+      "usage": {
+        "prompt_tokens": 153,
+        "completion_tokens": 646,
+        "total_tokens": 799,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 720,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "c8ce16bb-evidence",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence provides only a carrier path to a single held-out baseline JSON file, not the actual training logs, metrics, or results. No score, no error rates, no success metrics are reported. A held-out supervised baseline is mentioned as context but no evidence of its performance is given. The claim itself is explicitly 'new narrow experimental evidence; not full paper reproduction', confirming this is insufficient to evaluate any claim about supervised policy performance.",
+      "raw_response_sha256": "6a051ba2ac016b04645c55729850d39a2a10abccff3ba439d13ec5ad221e2d6b",
+      "usage": {
+        "prompt_tokens": 178,
+        "completion_tokens": 104,
+        "total_tokens": 282,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "d44a1cebc482d387721baf5b068d580c3f148decaf652424886cfab2bf5f682b"
+}
