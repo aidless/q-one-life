@@ -14,6 +14,7 @@ import copy
 import hashlib
 import json
 import re
+import tempfile
 from pathlib import Path
 
 EXIT_OK = 0
@@ -159,22 +160,24 @@ def selftest(root: Path) -> dict:
         {k: v for k, v in direction_a.items() if k != "canonical_sha256"})
     a_path = root / "leaf-ledger.selftest-a.json"
     a_path.write_text(json.dumps(direction_a, ensure_ascii=False) + "\n", encoding="utf-8")
-    temp_root = root / "selftest-a"
-    temp_root.mkdir(exist_ok=True)
+    temp_root = Path(tempfile.mkdtemp(prefix="qone-full10-selftest-a-"))
     (temp_root / "leaf-ledger.json").write_text(json.dumps(direction_a, ensure_ascii=False) + "\n",
                                                 encoding="utf-8")
     a = verify(temp_root)
     a_path.unlink()
+    (temp_root / "leaf-ledger.json").unlink()
+    temp_root.rmdir()
 
     direction_b = copy.deepcopy(original)
     direction_b["panel"]["official"] = True
     direction_b["canonical_sha256"] = canonical_sha256(
         {k: v for k, v in direction_b.items() if k != "canonical_sha256"})
-    temp_root_b = root / "selftest-b"
-    temp_root_b.mkdir(exist_ok=True)
+    temp_root_b = Path(tempfile.mkdtemp(prefix="qone-full10-selftest-b-"))
     (temp_root_b / "leaf-ledger.json").write_text(json.dumps(direction_b, ensure_ascii=False) + "\n",
                                                   encoding="utf-8")
     b = verify(temp_root_b)
+    (temp_root_b / "leaf-ledger.json").unlink()
+    temp_root_b.rmdir()
     restored = verify(root)
     return {
         "summary": {
