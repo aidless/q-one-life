@@ -13,6 +13,9 @@ def summarize_rubric() -> dict:
 
 
 def run(data: dict) -> dict:
+    if data.get("cfg_slice"):
+        from .cfg import run_cfg_slice
+        return run_cfg_slice(**data["cfg_slice"])
     items = data.get("datasets", {}).get("items", [])
     return {"paper_id": 'stay-on-topic-with-classifier-free-guidance', "count": len(items),
             "rubric_leaves": RUBRIC_LEAVES, "status": "architecture_stub"}

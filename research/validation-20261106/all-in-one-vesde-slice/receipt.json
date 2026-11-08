@@ -1,0 +1,21 @@
+{
+  "paper_id": "all-in-one",
+  "status": "vesde_formula_slice",
+  "sigma_min": 0.0001,
+  "sigma_max": 15.0,
+  "time_interval": [
+    1e-05,
+    1.0
+  ],
+  "checks": {
+    "drift_zero": true,
+    "diffusion_t0": 0.0004882292611689388,
+    "sigma_t0": 0.0001,
+    "sigma_t1": 15.0,
+    "kernel_mean": 3.0,
+    "kernel_std_t05": 0.03872983346207417,
+    "sample_zero_noise": 3.0
+  },
+  "note": "Pure formulas only; no Simformer, sbi, training or judge.",
+  "canonical_sha256": "fd7ec50b5f57781e7cfa197c65c165b7c9e879a219aaec4ad40e90f504ee3b5e"
+}

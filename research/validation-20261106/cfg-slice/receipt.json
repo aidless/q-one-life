@@ -1,0 +1,71 @@
+{
+  "paper_id": "stay-on-topic-with-classifier-free-guidance",
+  "status": "cfg_inference_slice",
+  "gamma": 1.5,
+  "unconditional_start_index": 3,
+  "guided_logits": [
+    [
+      1.25,
+      2.75,
+      4.25
+    ]
+  ],
+  "benchmarks": [
+    {
+      "name": "ARC-c",
+      "url": "https://huggingface.co/datasets/allenai/ai2_arc",
+      "available": false,
+      "reason": "not downloaded; GPT-2/Pythia evaluation requires separate authorization"
+    },
+    {
+      "name": "ARC-e",
+      "url": "https://huggingface.co/datasets/allenai/ai2_arc",
+      "available": false,
+      "reason": "not downloaded; GPT-2/Pythia evaluation requires separate authorization"
+    },
+    {
+      "name": "BoolQ",
+      "url": "https://huggingface.co/datasets/google/boolq",
+      "available": false,
+      "reason": "not downloaded; GPT-2/Pythia evaluation requires separate authorization"
+    },
+    {
+      "name": "HellaSwag",
+      "url": "https://rowanzellers.com/hellaswag/",
+      "available": false,
+      "reason": "not downloaded; GPT-2/Pythia evaluation requires separate authorization"
+    },
+    {
+      "name": "PiQA",
+      "url": "https://github.com/ybisk/ybisk.github.io/tree/master/piqa",
+      "available": false,
+      "reason": "not downloaded; GPT-2/Pythia evaluation requires separate authorization"
+    },
+    {
+      "name": "SciQ",
+      "url": "https://huggingface.co/datasets/allenai/sciq",
+      "available": false,
+      "reason": "not downloaded; GPT-2/Pythia evaluation requires separate authorization"
+    },
+    {
+      "name": "TriviaQA",
+      "url": "https://huggingface.co/datasets/mandarjoshi/trivia_qa",
+      "available": false,
+      "reason": "not downloaded; GPT-2/Pythia evaluation requires separate authorization"
+    },
+    {
+      "name": "WinoGrande",
+      "url": "https://huggingface.co/datasets/allenai/winogrande",
+      "available": false,
+      "reason": "not downloaded; GPT-2/Pythia evaluation requires separate authorization"
+    },
+    {
+      "name": "LAMBADA",
+      "url": "https://huggingface.co/datasets/EleutherAI/lambada_openai",
+      "available": false,
+      "reason": "not downloaded; GPT-2/Pythia evaluation requires separate authorization"
+    }
+  ],
+  "note": "Toy logits only; no GPT-2/Pythia, no benchmark evaluation, no judge.",
+  "canonical_sha256": "2166eb18d5c4a4204d0db7e8c59e0d0e2393df63b680f5f55d4e60f48a4bb397"
+}

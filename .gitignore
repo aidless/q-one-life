@@ -23,3 +23,5 @@ desktop/node_modules/
 # 历史快照仅作本地回溯，不入库
 artifacts/**/history/
 research/validation-20261106/datasets/semantic-self-consistency/raw/
+research/validation-20261106/datasets/mechanistic-understanding/train.csv
+research/paperbench-submissions/mechanistic-understanding/data/jigsaw_train.csv

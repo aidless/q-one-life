@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import subprocess
@@ -102,6 +103,22 @@ def main() -> int:
     scc_model_fewshot_aqua = scc_model_by_mode[("fewshot_replay", "aqua")]
     scc_model_instr_svamp = scc_model_by_mode[("instruction", "svamp")]
     scc_model_fewshot_svamp = scc_model_by_mode[("fewshot_replay", "svamp")]
+    mech_slice = json.loads((args.root / "datasets/mechanistic-understanding/full-slice.json").read_text())
+    lca_receipt = json.loads((args.root / "lca-algorithm-slice/receipt.json").read_text())
+    vesde_receipt = json.loads((args.root / "all-in-one-vesde-slice/receipt.json").read_text())
+    cfg_receipt = json.loads((args.root / "cfg-slice/receipt.json").read_text())
+    mech_data_bytes = (
+        args.root / "datasets/mechanistic-understanding/train.csv"
+    ).stat().st_size
+    mech_data_hash = hashlib.sha256(
+        (args.root / "datasets/mechanistic-understanding/train.csv").read_bytes()
+    ).hexdigest()
+    embedding_verify = json.loads(
+        (args.root / "scc-real-model-probe/embedding-verification.json").read_text()
+    )
+    embedding_selftest = json.loads(
+        (args.root / "scc-real-model-probe/embedding-selftest.json").read_text()
+    )
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -285,6 +302,40 @@ def main() -> int:
               all(run[metric] == 0.0
                   for run in (scc_model_instr_svamp, scc_model_fewshot_svamp)
                   for metric in ("top_prob", "sc", "cpw", "scw"))),
+        check("mech_jigsaw_bytes", 68802655, mech_data_bytes),
+        check("mech_jigsaw_sha256",
+              "bd4084611bd27c939ba98e5e63bc3e5a2c1a4e99477dcba46c829e4c986c429d",
+              mech_data_hash),
+        check("mech_slice_rows", 159571, mech_slice["rows_loaded"]),
+        check("mech_slice_train_rows", 143614, mech_slice["split"]["train_rows"]),
+        check("mech_slice_val_rows", 15957, mech_slice["split"]["val_rows"]),
+        check("mech_slice_accuracy", 0.9595161997869274,
+              mech_slice["split"]["accuracy"]),
+        check("mech_slice_features_not_gpt2", True,
+              "NOT GPT-2" in mech_slice["split"]["features"]),
+        check("mech_slice_targeted_leaves", 6,
+              len(mech_slice["rubric_leaves_targeted"])),
+        check("scc_real_embedding_gate", "PASS", embedding_verify["summary"]["gate"]),
+        check("scc_real_embedding_cells", 6, embedding_verify["summary"]["cells"]),
+        check("scc_real_embedding_selftest", True,
+              embedding_selftest["summary"]["passed"]),
+        check("lca_slice_status", "algorithm_slice", lca_receipt["status"]),
+        check("lca_slice_leaves", 4, len(lca_receipt["leaves"])),
+        check("lca_slice_lca_dog_cat", "animal", lca_receipt["lca_dog_cat"]),
+        check("lca_slice_depth_dog_car", 4, lca_receipt["distance_depth_dog_car"]),
+        check("lca_slice_ce_loss", 0.962801661095164,
+              lca_receipt["alignment_loss_ce"]),
+        check("vesde_slice_status", "vesde_formula_slice", vesde_receipt["status"]),
+        check("vesde_sigma_min", 0.0001, vesde_receipt["sigma_min"]),
+        check("vesde_sigma_max", 15.0, vesde_receipt["sigma_max"]),
+        check("vesde_drift_zero", True, vesde_receipt["checks"]["drift_zero"]),
+        check("cfg_slice_status", "cfg_inference_slice", cfg_receipt["status"]),
+        check("cfg_slice_gamma", 1.5, cfg_receipt["gamma"]),
+        check("cfg_slice_guided_logits", [[1.25, 2.75, 4.25]],
+              cfg_receipt["guided_logits"]),
+        check("cfg_slice_benchmarks", 9, len(cfg_receipt["benchmarks"])),
+        check("cfg_slice_benchmarks_unavailable", True,
+              all(row["available"] is False for row in cfg_receipt["benchmarks"])),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,

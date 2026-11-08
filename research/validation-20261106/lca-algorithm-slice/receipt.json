@@ -1,0 +1,19 @@
+{
+  "paper_id": "lca-on-the-line",
+  "status": "algorithm_slice",
+  "leaves": [
+    "car",
+    "cat",
+    "dog",
+    "truck"
+  ],
+  "lca_dog_cat": "animal",
+  "depth_dog": 2,
+  "information_content_animal": 1.0,
+  "distance_information_dog_car": 0.0,
+  "distance_depth_dog_car": 4,
+  "alignment_loss_ce": 0.962801661095164,
+  "alignment_loss_bce": 1.49338351545198,
+  "note": "Toy taxonomy only; no ImageNet, no 75 models, no real judge score.",
+  "canonical_sha256": "23df63e4c0ac3212444ccfdb9266171b7d0bf7f6ba1674e43cbe1821ea3f65ea"
+}

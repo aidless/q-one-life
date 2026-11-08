@@ -13,6 +13,10 @@ def summarize_rubric() -> dict:
 
 
 def run(data: dict) -> dict:
+    limit = data.get("limit")
+    if isinstance(limit, int) and limit > 0:
+        from .pipeline import run_reproduction_slice
+        return run_reproduction_slice(limit=limit)
     items = data.get("datasets", {}).get("items", [])
     return {"paper_id": 'mechanistic-understanding', "count": len(items),
             "rubric_leaves": RUBRIC_LEAVES, "status": "architecture_stub"}

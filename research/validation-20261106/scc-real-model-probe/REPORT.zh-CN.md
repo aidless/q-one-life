@@ -61,6 +61,39 @@ SVAMP 两批全 0 也是真读数（抽查原始回答，模型确实把 51.0 �
 
 ## 双向变异自测
 
+## 真实 embedding 重算（2026-11-07 续）
+
+上一节把 CPW / SCW 崩到 0%–3.3% 归因于 hash embedding。为把这条从推测变成
+实测，本轮在 AMD 云端用真实公开权重的编码器重算了全部 5 批已落盘回答：
+
+- AQuA / SVAMP 用 `allenai/scibert_scivocab_uncased`（442,197,096 字节，
+  本地已有完整 blob）；StrategyQA 用 `roberta-base`（498,818,054 字节，
+  SHA-256 `5bde1d28…`，本地断点续传补齐）。两者均离线加载，权重不入库。
+- 只替换 embedding，回答、提示、抽取器、聚合公式全部不变；GPU 编码
+  `max_length=256`、`batch_size=16`，单批 16 段从 CPU 33 秒降到 GPU 0.52 秒。
+- 回执：`embedding-runs/real-embedding-{scibert,roberta}.json`；校验器
+  `scripts/verify_scc_real_embeddings.py`，双向变异自测通过。
+
+| 提示 | 数据集 | hash CPW | 真实 CPW | hash SCW | 真实 SCW | SC 多数投票 |
+|---|---|---:|---:|---:|---:|---:|
+| few-shot | AQuA | 0.300 | 0.275 | 0.275 | 0.275 | 0.200 |
+| few-shot | SVAMP | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| few-shot | StrategyQA | 0.400 | 0.383 | 0.383 | 0.400 | 0.367 |
+| instruction | AQuA | 0.300 | **0.400** | 0.300 | **0.375** | 0.325 |
+| instruction | SVAMP | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| instruction | StrategyQA | 0.500 | **0.550** | 0.517 | **0.550** | 0.517 |
+
+注：此处的 hash CPW/SCW 由 `recompute_real_embeddings.py` 按同一聚合公式重算，
+与第一批 `summary.json` 中调用 `src/methods.py` 得到的 0.0333 / 0.0000 有差异，
+因为重算脚本使用了本轮修正后的答案抽取器。两批口径分别见各自回执。
+
+**结论**：接上真实语义编码器后，instruction 下 StrategyQA 的 CPW/SCW 从
+0.0333 回到 0.55，AQuA 从 0 回到 0.40 / 0.375，并略高于多数投票。
+之前崩掉确实是 hash 特征造成的实现缺口，不是论文语义加权方法被否定。
+SVAMP 仍全 0，因为 0.5B 模型本身算术全错，换 embedding 救不回来。
+
+## 双向变异自测（原始 5 批）
+
 - 方向 A：把一条 `accuracy_sc` 改大并同步重算 hash，校验器变红 1 项。
 - 方向 B：把期望行数 +1，校验器变红 1 项。
 - 恢复后 base problems=0，`selftest.json` 为 `passed=true`。

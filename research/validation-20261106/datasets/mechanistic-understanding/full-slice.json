@@ -1,0 +1,27 @@
+{
+  "paper_id": "mechanistic-understanding",
+  "status": "partial_reproduction_slice",
+  "dataset": "Jigsaw toxic comment classification (public mirror)",
+  "rows_loaded": 159571,
+  "split": {
+    "classifier": "softmax(Wx) via sklearn.LogisticRegression",
+    "features": "TF-IDF word n-grams (NOT GPT-2 residual stream)",
+    "train_rows": 143614,
+    "val_rows": 15957,
+    "coef_shape": [
+      1,
+      20000
+    ],
+    "accuracy": 0.9595161997869274,
+    "note": "Not comparable to the paper's ~94% GPT-2 residual-stream probe."
+  },
+  "rubric_leaves_targeted": [
+    "cfcf4e45-a955-4064-8c12-17bc3787bed7",
+    "89eae18e-3abb-424c-b18d-8ddc210806e0",
+    "14994612",
+    "b54834e0",
+    "39489fa7",
+    "b203fdd2"
+  ],
+  "elapsed_seconds": 14.25
+}

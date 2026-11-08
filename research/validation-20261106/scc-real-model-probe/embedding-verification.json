@@ -1,0 +1,20 @@
+{
+  "summary": {
+    "gate": "PASS",
+    "receipts": 2,
+    "cells": 6,
+    "problems": 0
+  },
+  "checks": {
+    "scibert": {
+      "problems": [],
+      "passed": true,
+      "changed_cells": 2
+    },
+    "roberta": {
+      "problems": [],
+      "passed": true,
+      "changed_cells": 2
+    }
+  }
+}

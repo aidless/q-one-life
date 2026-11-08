@@ -1,0 +1,38 @@
+{
+  "weights_root": "weights",
+  "models": {
+    "scibert": "allenai/scibert_scivocab_uncased",
+    "roberta": "roberta-base"
+  },
+  "device": "cuda",
+  "max_length": 256,
+  "batch_size": 16,
+  "results": [
+    {
+      "prompt_mode": "fewshot_replay",
+      "dataset": "strategyqa",
+      "rows": 60,
+      "embedder": "roberta",
+      "device": "cuda",
+      "accuracy_sc_modal": 0.36666666666666664,
+      "accuracy_hash_cpw": 0.4,
+      "accuracy_hash_scw": 0.38333333333333336,
+      "accuracy_real_cpw": 0.38333333333333336,
+      "accuracy_real_scw": 0.4
+    },
+    {
+      "prompt_mode": "instruction",
+      "dataset": "strategyqa",
+      "rows": 60,
+      "embedder": "roberta",
+      "device": "cuda",
+      "accuracy_sc_modal": 0.5166666666666667,
+      "accuracy_hash_cpw": 0.5,
+      "accuracy_hash_scw": 0.5166666666666667,
+      "accuracy_real_cpw": 0.55,
+      "accuracy_real_scw": 0.55
+    }
+  ],
+  "note": "Real encoders replace the offline hash featurizer for CPW/SCW only; responses and prompts are unchanged from the recorded real 0.5B model batches.",
+  "canonical_sha256": "c0b14a9ddc7779cdbd4424677a547145b6cf6af6b11e4a442455a2aa5323af4e"
+}

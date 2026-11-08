@@ -12,7 +12,7 @@
    `self-composing-policies`（9 测试）。三份都是**手写参考实现**，不是模型生成的。
 4. `research/validation-20261106/paperbench-smoke/2026-11-07T14-34-31-GMT_run-group_direct_submission_solver/`
    证明三份提交都被 DirectSubmission 归档、dummy judge 正常读取并输出 grade。
-5. `scripts/verify_research_validation.py` 现有 146 项机器校验，全绿。
+5. `scripts/verify_research_validation.py` 现有 171 项机器校验，全绿。
 6. `src/qone_life/research_factory/project_lab.py` 新增多文件项目模式；模型生成过
    4 文件项目并通过 pytest + 主机隐藏测试（`autonomous-project-lab/`）。
 7. `autonomous-paperbench-loop/` 证明模型生成的项目被 PaperBench DirectSubmission
@@ -44,6 +44,26 @@
     的真实模型读数。5 批全部验收（StrategyQA / SVAMP / AQuA × 2 提示），
     全部数字由 `summary.raw.jsonl` 重算。详见
     `scc-real-model-probe/REPORT.zh-CN.md`。
+15. 同一批回答已用真实 SciBERT / RoBERTa 编码器在 AMD GPU 上重算 CPW / SCW；
+    接上语义向量后 instruction 下 StrategyQA 达到 0.55、AQuA 达到 0.40/0.375，
+    证明此前低分是 hash embedding 的实现缺口。6 个单元格回执与双向变异自测全绿。
+16. `mechanistic-understanding` 从架构桩升级为部分可运行切片：验证过的公开
+    Jigsaw `train.csv`（159,571 行）做确定性 90:10 划分，TF-IDF + `softmax(Wx)`
+    探针在 15,957 行验证集上实测 0.9595。明确标注这是词袋分类器，不是论文的
+    GPT-2 残差流探针；DPO / SVD / PPLM / 真实 judge 仍未复现。
+17. `lca-on-the-line` 与 `all-in-one` 各补一组无需大模型/大数据的真实算法切片：
+    前者 9 项测试（LCA、信息量、深度、Algorithm 1 CE/BCE 对齐损失），后者 8 项
+    测试（VESDE 漂移、扩散、扰动核）。`test-time-model-adaptation` / `rice` /
+    `fre` 经盘点仍是架构桩，缺口与所需资源登记在
+    `remaining-task-gaps/README.md`，不写空壳冒充实现。
+18. 真实 PaperBench judge 的授权与通道已核对：两台机器都没有
+    `GRADER_OPENAI_API_KEY`，上游硬断言该变量且默认需要 o3-mini 类
+    `chat.completions.parse` 端点；见 `paperbench-real-judge-gate.md`。
+    真实 judge 分数仍为 0。
+19. `stay-on-topic-with-classifier-free-guidance` 补上 Eq.7 CFG 推理切片：
+    可变 gamma、无条件分支从 prompt 最后 token 开始、9 个 benchmark 的官方
+    来源契约（全部 `available=false`）；12 项测试通过。未跑 GPT-2/Pythia 与
+    9 个数据集的 zero-shot 表格。
 
 ## 不能声称
 

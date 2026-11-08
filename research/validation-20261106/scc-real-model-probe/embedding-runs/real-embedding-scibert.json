@@ -1,0 +1,62 @@
+{
+  "weights_root": "weights",
+  "models": {
+    "scibert": "allenai/scibert_scivocab_uncased",
+    "roberta": "roberta-base"
+  },
+  "device": "cuda",
+  "max_length": 256,
+  "batch_size": 16,
+  "results": [
+    {
+      "prompt_mode": "fewshot_replay",
+      "dataset": "aqua",
+      "rows": 40,
+      "embedder": "scibert",
+      "device": "cuda",
+      "accuracy_sc_modal": 0.2,
+      "accuracy_hash_cpw": 0.3,
+      "accuracy_hash_scw": 0.275,
+      "accuracy_real_cpw": 0.275,
+      "accuracy_real_scw": 0.275
+    },
+    {
+      "prompt_mode": "fewshot_replay",
+      "dataset": "svamp",
+      "rows": 60,
+      "embedder": "scibert",
+      "device": "cuda",
+      "accuracy_sc_modal": 0.0,
+      "accuracy_hash_cpw": 0.0,
+      "accuracy_hash_scw": 0.0,
+      "accuracy_real_cpw": 0.0,
+      "accuracy_real_scw": 0.0
+    },
+    {
+      "prompt_mode": "instruction",
+      "dataset": "aqua",
+      "rows": 40,
+      "embedder": "scibert",
+      "device": "cuda",
+      "accuracy_sc_modal": 0.325,
+      "accuracy_hash_cpw": 0.3,
+      "accuracy_hash_scw": 0.3,
+      "accuracy_real_cpw": 0.4,
+      "accuracy_real_scw": 0.375
+    },
+    {
+      "prompt_mode": "instruction",
+      "dataset": "svamp",
+      "rows": 60,
+      "embedder": "scibert",
+      "device": "cuda",
+      "accuracy_sc_modal": 0.0,
+      "accuracy_hash_cpw": 0.0,
+      "accuracy_hash_scw": 0.0,
+      "accuracy_real_cpw": 0.0,
+      "accuracy_real_scw": 0.0
+    }
+  ],
+  "note": "Real encoders replace the offline hash featurizer for CPW/SCW only; responses and prompts are unchanged from the recorded real 0.5B model batches.",
+  "canonical_sha256": "bf2236cb1d206e6db4d646cc6b4fb07115a0c6177f537308edd15d53040793db"
+}
