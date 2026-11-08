@@ -133,6 +133,25 @@
   ledger 仍为 `verified=0`、`out_of_scope_waived=22`、`blocked=2754`、
   `gate=BLOCKED`，问题列表为空。
 
+## 2026-11-08 全量 Jigsaw 探针
+
+- 新增 `run_gpt2_jigsaw_full.py` 与 `run_gpt2_jigsaw_sharded.sh`。首次单进程
+  在 158,416/159,571 行处遇 AMD ROCm `hipErrorIllegalAddress` / `Error code 719`；
+  保留失败日志，改用 20 个独立 8,000 行进程、`max_length=64`、`batch_size=8`
+  绕过长时 GPU kernel 故障。
+- 全量完成：159,571 行、143,614 train / 15,957 val、16,225 positives、
+  `[159571, 1024]` GPT-2-medium 残差特征、20 段；
+  `accuracy=0.9480478787`、`balanced_accuracy=0.813025`、
+  `roc_auc=0.957871`、`elapsed_s=124.37`。
+  sklearn lbfgs 有未收敛警告，已如实保留在日志，不删除。
+- 7 个相关 rubric 叶子重新交给锁定三模型 judge，首次 429、冷却重试后
+  `complete=true`。按 `spread <= 0.25` 且 `mean >= 0.8` 规则，
+  3 个叶子升为 `verified`：Jigsaw 已切分、线性探针已评估、约 94% 验证表现。
+  另外 4 个因分歧过大保留 `blocked`。
+- 当前 ledger：`verified=3`、`out_of_scope_waived=22`、`blocked=2751`、
+  `unverified=0`、`gate=BLOCKED`。这是第一个真实 `verified` 突破，但不等于
+  任务 full_reproduction；DPO、SVD、PPLM、GPT-2 干预实验仍未做。
+
 ## 不能声称
 
 - 没有完成 10 任务全复现，没有 `full_reproduction`。

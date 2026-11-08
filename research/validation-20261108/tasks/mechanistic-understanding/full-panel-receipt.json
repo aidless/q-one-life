@@ -1,0 +1,641 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "1ea9d84505e208fd",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "cfcf4e45-a955-4064-8c12-17bc3787bed7",
+    "89eae18e-3abb-424c-b18d-8ddc210806e0",
+    "627f8d87-0aed-4cb5-a29e-8208c3bc9871",
+    "b54834e0-a42b-4a51-84cf-8fb9d185dd07",
+    "39489fa7-b2de-4220-b625-b7929b0e3587",
+    "b203fdd2-cd9e-434b-85b5-1ffa488ca445",
+    "a359ba32-d92d-4021-b904-9d8e0abbb1c3"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "cfcf4e45-a955-4064-8c12-17bc3787bed7",
+      "status": "scored",
+      "score": 0.9,
+      "explanation": "Evidence references a full Jigsaw 90:10 GPT-2-medium run with validation accuracy 0.9480 and supporting result/log/script paths, indicating the 90:10 train/validation split code was implemented and executed; the claim does not explicitly describe the split code itself, so not full certainty.",
+      "raw_response_sha256": "5584bd535f0382d0ce02d5b09b9a8669abe2fca6d93f4ef834262f459cd3ad6f",
+      "usage": {
+        "completion_tokens": 177,
+        "completion_tokens_details": {
+          "reasoning_tokens": 99
+        },
+        "prompt_tokens": 871,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1048
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "cfcf4e45-a955-4064-8c12-17bc3787bed7",
+      "status": "scored",
+      "score": 0.2,
+      "explanation": "Evidence mentions a full Jigsaw 90:10 GPT-2-medium probe and run artifacts, but does not directly confirm that the train/validation split code was implemented.",
+      "raw_response_sha256": "943a9d40c9c1bb7a4a53d9486bd82c179c8afdf951ed97cc02f44667fcc0a681",
+      "usage": {
+        "prompt_tokens": 245,
+        "completion_tokens": 963,
+        "total_tokens": 1208,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1049,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "cfcf4e45-a955-4064-8c12-17bc3787bed7",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "The evidence indicates a full Jigsaw 90:10 split was run with GPT-2-medium, achieving 0.9480 accuracy. However, the claim is explicitly 'narrow mechanistic slice, not DPO/SVD/PPLM paper reproduction,' meaning this does not validate the broader claim that the code correctly implements the 90:10 split. The 0.9480 result could reflect a narrow slice rather than the full dataset split, so the evidence is insufficient to confirm the requirement is met.",
+      "raw_response_sha256": "5cf5a1a08efd5e84ace17bdcb22c998a0310756e96b5a751515600a070dfc4bd",
+      "usage": {
+        "prompt_tokens": 317,
+        "completion_tokens": 128,
+        "total_tokens": 445,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "89eae18e-3abb-424c-b18d-8ddc210806e0",
+      "status": "scored",
+      "score": 1.0,
+      "explanation": "Evidence explicitly states a full Jigsaw 90:10 GPT-2-medium residual probe ran, directly confirming the 90:10 training/validation split.",
+      "raw_response_sha256": "06f6821f5d0b0db7e39d0254ab6360a510d6741d079336ada2192d7d93d7490f",
+      "usage": {
+        "completion_tokens": 131,
+        "completion_tokens_details": {
+          "reasoning_tokens": 85
+        },
+        "prompt_tokens": 871,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1002
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "89eae18e-3abb-424c-b18d-8ddc210806e0",
+      "status": "scored",
+      "score": 0.9,
+      "explanation": "The evidence references a full Jigsaw 90:10 GPT-2-medium residual probe, which supports the 90:10 training/validation split requirement, though it frames the result as a narrow mechanistic slice.",
+      "raw_response_sha256": "9d6a26d5b1a47bae98a994283f75611bf5e40037a5d5fe754f13d7ebe920b3a5",
+      "usage": {
+        "prompt_tokens": 243,
+        "completion_tokens": 564,
+        "total_tokens": 807,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 568,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "89eae18e-3abb-424c-b18d-8ddc210806e0",
+      "status": "scored",
+      "score": 0.948,
+      "explanation": "The evidence states the full Jigsaw 90:10 GPT-2-medium residual probe achieved accuracy 0.9480, which directly matches the task requirement of a 90:10 split with a mechanistic understanding task.",
+      "raw_response_sha256": "72534225884c59dd8bde6ac6d888d5efe542203d86db3a73b6a794a93f30d3bc",
+      "usage": {
+        "prompt_tokens": 317,
+        "completion_tokens": 70,
+        "total_tokens": 387,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "627f8d87-0aed-4cb5-a29e-8208c3bc9871",
+      "status": "scored",
+      "score": 0.35,
+      "explanation": "Evidence confirms a GPT-2-medium residual-stream probe (accuracy 0.9480) on full Jigsaw 90:10, but nowhere specifies that features come from the last layer or are averaged across all timesteps; it only states this is a narrow mechanistic slice, not a DPO/SVD/PPLM reproduction, so the exact pooling/site requirement is unverified.",
+      "raw_response_sha256": "7357d31c0a7cbc9ffcef99328c80bda42317f1d2b2aa26d42f7272f6231241c2",
+      "usage": {
+        "completion_tokens": 227,
+        "completion_tokens_details": {
+          "reasoning_tokens": 134
+        },
+        "prompt_tokens": 876,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1103
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "627f8d87-0aed-4cb5-a29e-8208c3bc9871",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "Evidence mentions a GPT-2-medium residual probe and accuracy, but does not state the input was the last-layer residual stream averaged across all timesteps.",
+      "raw_response_sha256": "ce116c3cf8aa6da9f678f8775d96a89fad0a21238b2283c1c3d4bb0efadfbd6c",
+      "usage": {
+        "prompt_tokens": 248,
+        "completion_tokens": 1135,
+        "total_tokens": 1383,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1286,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "627f8d87-0aed-4cb5-a29e-8208c3bc9871",
+      "status": "scored",
+      "score": 0.95,
+      "explanation": "The evidence states that a full Jigsaw 90:10 GPT-2-medium residual probe achieved accuracy 0.9480, which is very high and indicates the classifier works well on the residual stream. The claim explicitly notes this is a narrow mechanistic slice rather than a reproduction of DPO/SVD/PPLM papers, suggesting the result is genuine but focused on a specific mechanism rather than broad model understanding.",
+      "raw_response_sha256": "55c5e74b0606ee8bb1ffdac0383888b00d7e8bf7957ad1d7b7d66f42b270ec58",
+      "usage": {
+        "prompt_tokens": 319,
+        "completion_tokens": 106,
+        "total_tokens": 425,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 288,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "b54834e0-a42b-4a51-84cf-8fb9d185dd07",
+      "status": "scored",
+      "score": 0.9,
+      "explanation": "Evidence states the full Jigsaw 90:10 GPT-2-medium residual probe ran and achieved 0.9480 accuracy, with carrier JSON/log and a run script, supporting that linear probe training was implemented and executed.",
+      "raw_response_sha256": "c37aa0485c4172c07716270f95a241bed28b9a95fc0c575ce84a402c3437ebee",
+      "usage": {
+        "completion_tokens": 167,
+        "completion_tokens_details": {
+          "reasoning_tokens": 106
+        },
+        "prompt_tokens": 836,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1003
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "b54834e0-a42b-4a51-84cf-8fb9d185dd07",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence does not confirm that the linear probe training code was implemented; it only references probe run results and task files.",
+      "raw_response_sha256": "fc317624d90038b878070729ea5f6c5c50e8a8d98f3ee460f96ba811f7c7ff1f",
+      "usage": {
+        "prompt_tokens": 238,
+        "completion_tokens": 235,
+        "total_tokens": 473,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 228,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "b54834e0-a42b-4a51-84cf-8fb9d185dd07",
+      "status": "scored",
+      "score": 0.95,
+      "explanation": "The evidence confirms that a full Jigsaw 90:10 GPT-2-medium residual probe was trained and achieved 0.9480 accuracy, which is a strong result for this task. The claim explicitly states it is a narrow mechanistic slice rather than a DPO/SVD/PPLM paper reproduction, indicating the implementation is genuine and not a copy of existing work.",
+      "raw_response_sha256": "2959004b79133398ccfa4569793c62bbcd9e076f336fd41aa4d829b03d035311",
+      "usage": {
+        "prompt_tokens": 307,
+        "completion_tokens": 98,
+        "total_tokens": 405,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "39489fa7-b2de-4220-b625-b7929b0e3587",
+      "status": "scored",
+      "score": 0.9,
+      "explanation": "Evidence states a full Jigsaw 90:10 GPT-2-medium residual probe ran with accuracy 0.9480, which supports training on the Jigsaw training split; it is characterized as a narrow mechanistic slice rather than a full paper reproduction.",
+      "raw_response_sha256": "1c52a19ed0e1369ff1f67eb2c1a130c1503a70ecf8b7d7185213863dac2df7e1",
+      "usage": {
+        "completion_tokens": 270,
+        "completion_tokens_details": {
+          "reasoning_tokens": 205
+        },
+        "prompt_tokens": 868,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 768
+        },
+        "total_tokens": 1138
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "39489fa7-b2de-4220-b625-b7929b0e3587",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence does not state that the linear probe was trained on the Jigsaw training set; it only mentions a full Jigsaw 90:10 GPT-2-medium residual probe accuracy.",
+      "raw_response_sha256": "669e8985d520d94c2e76a9d9e05aaa901681823d9f8494270afb8ade3cfd4c58",
+      "usage": {
+        "prompt_tokens": 242,
+        "completion_tokens": 569,
+        "total_tokens": 811,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 598,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "39489fa7-b2de-4220-b625-b7929b0e3587",
+      "status": "scored",
+      "score": 0.95,
+      "explanation": "The claim states that a full Jigsaw 90:10 GPT-2-medium residual probe achieved accuracy 0.9480 on the training set, which directly satisfies the requirement that the linear probe model was trained on the training set of the Jigsaw toxic comment classification dataset.",
+      "raw_response_sha256": "01fd97fa8145fcb209d238fd02bde51d0fa3aeb90584e0a0d59fd171c381da75",
+      "usage": {
+        "prompt_tokens": 316,
+        "completion_tokens": 77,
+        "total_tokens": 393,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 2,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "b203fdd2-cd9e-434b-85b5-1ffa488ca445",
+      "status": "scored",
+      "score": 0.9,
+      "explanation": "Evidence states a full Jigsaw 90:10 GPT-2-medium residual probe ran with accuracy 0.9480, supporting evaluation of a probe on the Jigsaw dataset; validation split is implied by 90:10 but not explicitly named.",
+      "raw_response_sha256": "c4140b30987f602642b5a25d058dd82b0eb0ea63f7998f271d969c3aeeeaae67",
+      "usage": {
+        "completion_tokens": 166,
+        "completion_tokens_details": {
+          "reasoning_tokens": 101
+        },
+        "prompt_tokens": 870,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 768
+        },
+        "total_tokens": 1036
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "b203fdd2-cd9e-434b-85b5-1ffa488ca445",
+      "status": "scored",
+      "score": 0.85,
+      "explanation": "Evidence cites a full Jigsaw 90:10 GPT-2-medium residual probe run with accuracy 0.9480 via validation task carriers, supporting evaluation on the Jigsaw validation set, though framed as a mechanistic slice.",
+      "raw_response_sha256": "4ded3b7faea26cc904eca3d83625bb175b5c61146a2fad63bceba74052c6c4c5",
+      "usage": {
+        "prompt_tokens": 241,
+        "completion_tokens": 1101,
+        "total_tokens": 1342,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1226,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "b203fdd2-cd9e-434b-85b5-1ffa488ca445",
+      "status": "scored",
+      "score": 0.948,
+      "explanation": "The linear probe model achieved 0.9480 accuracy on the Jigsaw validation set, which is a strong result for a residual probe approach. The evidence confirms this was a full Jigsaw 90:10 GPT-2-medium residual probe (not DPO/SVD/PPLM), indicating a legitimate mechanistic understanding evaluation rather than a paper reproduction.",
+      "raw_response_sha256": "2120b41d11095b725959aefaf150329a7008ffe9b5c50d10c705a70857b58a2a",
+      "usage": {
+        "prompt_tokens": 313,
+        "completion_tokens": 95,
+        "total_tokens": 408,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "a359ba32-d92d-4021-b904-9d8e0abbb1c3",
+      "status": "scored",
+      "score": 0.95,
+      "explanation": "Evidence states the GPT-2-medium Jigsaw residual probe achieved 0.9480 accuracy (94.8%), closely matching the required ~94% validation performance; it does not explicitly label the metric as validation, so not perfect.",
+      "raw_response_sha256": "167779a4c4828ea77490e31b98b0f68fa9f5b20f9d9a0fd163246f4cfa288355",
+      "usage": {
+        "completion_tokens": 152,
+        "completion_tokens_details": {
+          "reasoning_tokens": 89
+        },
+        "prompt_tokens": 840,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 992
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "a359ba32-d92d-4021-b904-9d8e0abbb1c3",
+      "status": "scored",
+      "score": 1.0,
+      "explanation": "The evidence reports a GPT-2-medium Jigsaw residual probe accuracy of 0.9480, which is approximately 94% and satisfies the validation performance requirement.",
+      "raw_response_sha256": "b85ac6d3689df72f17c41e71f5bdf4ee252ba0f33d2b30a35b6c5123e8d566b1",
+      "usage": {
+        "prompt_tokens": 242,
+        "completion_tokens": 326,
+        "total_tokens": 568,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 290,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "a359ba32-d92d-4021-b904-9d8e0abbb1c3",
+      "status": "scored",
+      "score": 0.948,
+      "explanation": "The evidence directly states the classifier achieved accuracy 0.9480 on the full Jigsaw 90:10 task, which is approximately 94% as required.",
+      "raw_response_sha256": "47b2c199e7132f245eade6ffc29cc765a9c582c49bcbe4b62a30e4ebcb34a950",
+      "usage": {
+        "prompt_tokens": 312,
+        "completion_tokens": 55,
+        "total_tokens": 367,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "310b4af686a227e3b74fbf2adea66cb939ff91b2d531d985b7a7e17d2922f992"
+}

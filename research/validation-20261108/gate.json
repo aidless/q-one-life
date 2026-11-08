@@ -15,19 +15,19 @@
     {
       "check": "verified_leaves",
       "expected": 2776,
-      "actual": 22,
+      "actual": 25,
       "passed": false
     },
     {
       "check": "blocked_leaves",
       "expected": 0,
-      "actual": 2754,
+      "actual": 2751,
       "passed": false
     },
     {
       "check": "unverified_leaves",
       "expected": 0,
-      "actual": 2754,
+      "actual": 2751,
       "passed": false
     },
     {
@@ -57,7 +57,8 @@
   ],
   "problems": [],
   "state_counts": {
-    "blocked": 2754,
+    "blocked": 2751,
+    "verified": 3,
     "out_of_scope_waived": 22
   },
   "summary": {

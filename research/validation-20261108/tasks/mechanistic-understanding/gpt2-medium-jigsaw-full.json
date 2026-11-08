@@ -1,0 +1,23 @@
+{
+  "schema": "qone-gpt2-medium-jigsaw-full-probe-v1",
+  "model": "public-models/gpt2-medium",
+  "data": "jigsaw_train.csv",
+  "data_sha256": "bd4084611bd27c939ba98e5e63bc3e5a2c1a4e99477dcba46c829e4c986c429d",
+  "official": false,
+  "rows": 159571,
+  "train_rows": 143614,
+  "val_rows": 15957,
+  "positive_rows": 16225,
+  "feature_shape": [
+    159571,
+    1024
+  ],
+  "max_length": 64,
+  "batch_size": 8,
+  "segments": 20,
+  "accuracy": 0.9480478786739363,
+  "balanced_accuracy": 0.8130249757360568,
+  "roc_auc": 0.957871336136155,
+  "elapsed_s": 124.37,
+  "note": "Full Jigsaw 90:10 GPT-2-medium residual probe, sharded to avoid long ROCm HIP kernel failures; not a paper-table reproduction."
+}

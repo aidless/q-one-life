@@ -107,6 +107,7 @@ def main() -> int:
     lca_receipt = json.loads((args.root / "lca-algorithm-slice/receipt.json").read_text())
     vesde_receipt = json.loads((args.root / "all-in-one-vesde-slice/receipt.json").read_text())
     cfg_receipt = json.loads((args.root / "cfg-slice/receipt.json").read_text())
+    gpt2_full = json.loads((args.root.parent / "validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json").read_text())
     mech_data_bytes = (
         args.root / "datasets/mechanistic-understanding/train.csv"
     ).stat().st_size
@@ -336,6 +337,16 @@ def main() -> int:
         check("cfg_slice_benchmarks", 9, len(cfg_receipt["benchmarks"])),
         check("cfg_slice_benchmarks_unavailable", True,
               all(row["available"] is False for row in cfg_receipt["benchmarks"])),
+        check("gpt2_jigsaw_full_rows", 159571, gpt2_full["rows"]),
+        check("gpt2_jigsaw_full_train_rows", 143614, gpt2_full["train_rows"]),
+        check("gpt2_jigsaw_full_val_rows", 15957, gpt2_full["val_rows"]),
+        check("gpt2_jigsaw_full_feature_shape", [159571, 1024],
+              gpt2_full["feature_shape"]),
+        check("gpt2_jigsaw_full_accuracy", 0.9480478786739363,
+              gpt2_full["accuracy"]),
+        check("gpt2_jigsaw_full_roc_auc", 0.957871336136155,
+              gpt2_full["roc_auc"]),
+        check("gpt2_jigsaw_full_segments", 20, gpt2_full["segments"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,

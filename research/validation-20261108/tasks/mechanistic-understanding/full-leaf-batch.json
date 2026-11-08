@@ -1,0 +1,95 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "cfcf4e45-a955-4064-8c12-17bc3787bed7",
+      "requirements": "Code for splitting Jigsaw toxic comment classification dataset into 90:10 training and validation sets has been implemented.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+          "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
+        ],
+        "task_id": "mechanistic-understanding",
+        "claim": "full Jigsaw 90:10 GPT-2-medium residual probe ran with accuracy 0.9480; narrow mechanistic slice, not DPO/SVD/PPLM paper reproduction"
+      }
+    },
+    {
+      "leaf_id": "89eae18e-3abb-424c-b18d-8ddc210806e0",
+      "requirements": "The Jigsaw toxic comment classification dataset has been split into 90:10 training and validation sets.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+          "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
+        ],
+        "task_id": "mechanistic-understanding",
+        "claim": "full Jigsaw 90:10 GPT-2-medium residual probe ran with accuracy 0.9480; narrow mechanistic slice, not DPO/SVD/PPLM paper reproduction"
+      }
+    },
+    {
+      "leaf_id": "627f8d87-0aed-4cb5-a29e-8208c3bc9871",
+      "requirements": "The classifier takes as input, x, the residual stream in the last layer, averaged across all timesteps.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+          "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
+        ],
+        "task_id": "mechanistic-understanding",
+        "claim": "full Jigsaw 90:10 GPT-2-medium residual probe ran with accuracy 0.9480; narrow mechanistic slice, not DPO/SVD/PPLM paper reproduction"
+      }
+    },
+    {
+      "leaf_id": "b54834e0-a42b-4a51-84cf-8fb9d185dd07",
+      "requirements": "The code for training the linear probe model has been implemented.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+          "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
+        ],
+        "task_id": "mechanistic-understanding",
+        "claim": "full Jigsaw 90:10 GPT-2-medium residual probe ran with accuracy 0.9480; narrow mechanistic slice, not DPO/SVD/PPLM paper reproduction"
+      }
+    },
+    {
+      "leaf_id": "39489fa7-b2de-4220-b625-b7929b0e3587",
+      "requirements": "The linear probe model was trained on the training set of the Jigsaw toxic comment classification dataset.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+          "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
+        ],
+        "task_id": "mechanistic-understanding",
+        "claim": "full Jigsaw 90:10 GPT-2-medium residual probe ran with accuracy 0.9480; narrow mechanistic slice, not DPO/SVD/PPLM paper reproduction"
+      }
+    },
+    {
+      "leaf_id": "b203fdd2-cd9e-434b-85b5-1ffa488ca445",
+      "requirements": "The linear probe model was evaluated on the validation set of the Jigsaw toxic comment classification dataset.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+          "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
+        ],
+        "task_id": "mechanistic-understanding",
+        "claim": "full Jigsaw 90:10 GPT-2-medium residual probe ran with accuracy 0.9480; narrow mechanistic slice, not DPO/SVD/PPLM paper reproduction"
+      }
+    },
+    {
+      "leaf_id": "a359ba32-d92d-4021-b904-9d8e0abbb1c3",
+      "requirements": "The trained classifier achieves a performance of approximately 94% in the validation set.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+          "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+          "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
+        ],
+        "task_id": "mechanistic-understanding",
+        "claim": "full Jigsaw 90:10 GPT-2-medium residual probe ran with accuracy 0.9480; narrow mechanistic slice, not DPO/SVD/PPLM paper reproduction"
+      }
+    }
+  ]
+}

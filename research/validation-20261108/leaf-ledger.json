@@ -21823,12 +21823,24 @@
       "requirements": "Code for splitting Jigsaw toxic comment classification dataset into 90:10 training and validation sets has been implemented.",
       "scope": "in_scope",
       "terminal_state": "blocked",
-      "carrier_paths": [],
-      "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "carrier_paths": [
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+        "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
+      ],
+      "carrier_sha256": [
+        "b11136e19297a3e128ccaf1c6254f6dc6f3923e10355b751c9f6a4098189240c",
+        "beebbc74d740c1975bf8990956fa0e2dbe33d77549e2341508a4ca84c19e090f",
+        "8f92fd16bfa110ec77afa8ec3b39fdc5a30ca212caa805f4733db8460f3daee5"
+      ],
+      "recompute_command": "cd /root/qone-paperbench-full10 && ./run_gpt2_jigsaw_sharded.sh",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.9,
+        "openrouter/recursive/flint-v1.0:free": 0.2,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.5
+      },
       "waiver": {},
-      "blocked_reason": "GPT-2-medium residual features, PPLM pair generation, DPO fine-tuning and RealToxicityPrompts evaluation require model weights and GPU training not present in the authorized free-only scope",
+      "blocked_reason": "judge spread > 0.25 or mean < 0.8; not promoted to verified",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/mechanistic-understanding/addendum.md",
@@ -21837,7 +21849,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/mechanistic-understanding/full-panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "89eae18e-3abb-424c-b18d-8ddc210806e0",
@@ -21845,21 +21859,25 @@
       "split": "lite",
       "requirements": "The Jigsaw toxic comment classification dataset has been split into 90:10 training and validation sets.",
       "scope": "in_scope",
-      "terminal_state": "blocked",
+      "terminal_state": "verified",
       "carrier_paths": [
-        "research/validation-20261106/datasets/mechanistic-understanding/full-slice.json"
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+        "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
       ],
       "carrier_sha256": [
-        "7ae8e68c4ad689cfca779b2c82f88bd2a8326080877da7e91d06a0fb2f4d8111"
+        "b11136e19297a3e128ccaf1c6254f6dc6f3923e10355b751c9f6a4098189240c",
+        "beebbc74d740c1975bf8990956fa0e2dbe33d77549e2341508a4ca84c19e090f",
+        "8f92fd16bfa110ec77afa8ec3b39fdc5a30ca212caa805f4733db8460f3daee5"
       ],
-      "recompute_command": "QONE_REPO_ROOT=/home/liuzewen/qone-life-work python3 -m pytest -q tests",
+      "recompute_command": "cd /root/qone-paperbench-full10 && ./run_gpt2_jigsaw_sharded.sh",
       "judge_scores": {
-        "opencode-zen-free/deepseek-v4.1-flash-free": 0.5,
-        "openrouter/recursive/flint-v1.0:free": 0.6,
-        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.5
+        "opencode-zen-free/deepseek-v4.1-flash-free": 1.0,
+        "openrouter/recursive/flint-v1.0:free": 0.9,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.948
       },
       "waiver": {},
-      "blocked_reason": "judge panel mean < 0.8; not promoted to verified; no full10 promotion",
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/mechanistic-understanding/addendum.md",
@@ -21869,7 +21887,7 @@
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
       ],
-      "judge_panel_receipt": "tasks/mechanistic-understanding/panel-receipt.json",
+      "judge_panel_receipt": "tasks/mechanistic-understanding/full-panel-receipt.json",
       "judge_panel_complete": true
     },
     {
@@ -21903,21 +21921,23 @@
       "scope": "in_scope",
       "terminal_state": "blocked",
       "carrier_paths": [
-        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-probe.json",
-        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-residual-features.json"
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+        "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
       ],
       "carrier_sha256": [
-        "b6256f85b9bd595ff4dd867a8bd801c023ea74dca94b2fb03759b7adf7bca8da",
-        "daea6ed688af72b97c12d7f1918e2cad2535b951e3f231afffa724d2d8f50a0d"
+        "b11136e19297a3e128ccaf1c6254f6dc6f3923e10355b751c9f6a4098189240c",
+        "beebbc74d740c1975bf8990956fa0e2dbe33d77549e2341508a4ca84c19e090f",
+        "8f92fd16bfa110ec77afa8ec3b39fdc5a30ca212caa805f4733db8460f3daee5"
       ],
-      "recompute_command": "QONE_REPO_ROOT=/home/liuzewen/qone-life-work python3 -m pytest -q tests",
+      "recompute_command": "cd /root/qone-paperbench-full10 && ./run_gpt2_jigsaw_sharded.sh",
       "judge_scores": {
-        "opencode-zen-free/deepseek-v4.1-flash-free": 0.55,
-        "openrouter/recursive/flint-v1.0:free": 0.4,
-        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.35,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.95
       },
       "waiver": {},
-      "blocked_reason": "judge panel disagreement > 0.25; not promoted to verified; no full10 promotion",
+      "blocked_reason": "judge spread > 0.25 or mean < 0.8; not promoted to verified",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/mechanistic-understanding/addendum.md",
@@ -21927,7 +21947,7 @@
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
       ],
-      "judge_panel_receipt": "tasks/mechanistic-understanding/panel-receipt.json",
+      "judge_panel_receipt": "tasks/mechanistic-understanding/full-panel-receipt.json",
       "judge_panel_complete": true
     },
     {
@@ -21961,19 +21981,23 @@
       "scope": "in_scope",
       "terminal_state": "blocked",
       "carrier_paths": [
-        "research/paperbench-submissions/mechanistic-understanding/src/pipeline.py"
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+        "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
       ],
       "carrier_sha256": [
-        "40f1c8c401b4f5dff61dbcc2143a4020b9c2ae9e55b877072fa29abb5e0d4dce"
+        "b11136e19297a3e128ccaf1c6254f6dc6f3923e10355b751c9f6a4098189240c",
+        "beebbc74d740c1975bf8990956fa0e2dbe33d77549e2341508a4ca84c19e090f",
+        "8f92fd16bfa110ec77afa8ec3b39fdc5a30ca212caa805f4733db8460f3daee5"
       ],
-      "recompute_command": "QONE_REPO_ROOT=/home/liuzewen/qone-life-work python3 -m pytest -q tests",
+      "recompute_command": "cd /root/qone-paperbench-full10 && ./run_gpt2_jigsaw_sharded.sh",
       "judge_scores": {
-        "opencode-zen-free/deepseek-v4.1-flash-free": 0.4,
-        "openrouter/recursive/flint-v1.0:free": 0.4,
-        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.3
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.9,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.95
       },
       "waiver": {},
-      "blocked_reason": "judge panel mean < 0.8; not promoted to verified; no full10 promotion",
+      "blocked_reason": "judge spread > 0.25 or mean < 0.8; not promoted to verified",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/mechanistic-understanding/addendum.md",
@@ -21983,7 +22007,7 @@
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
       ],
-      "judge_panel_receipt": "tasks/mechanistic-understanding/panel-receipt.json",
+      "judge_panel_receipt": "tasks/mechanistic-understanding/full-panel-receipt.json",
       "judge_panel_complete": true
     },
     {
@@ -21994,19 +22018,23 @@
       "scope": "in_scope",
       "terminal_state": "blocked",
       "carrier_paths": [
-        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-probe.json"
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+        "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
       ],
       "carrier_sha256": [
-        "b6256f85b9bd595ff4dd867a8bd801c023ea74dca94b2fb03759b7adf7bca8da"
+        "b11136e19297a3e128ccaf1c6254f6dc6f3923e10355b751c9f6a4098189240c",
+        "beebbc74d740c1975bf8990956fa0e2dbe33d77549e2341508a4ca84c19e090f",
+        "8f92fd16bfa110ec77afa8ec3b39fdc5a30ca212caa805f4733db8460f3daee5"
       ],
-      "recompute_command": "QONE_REPO_ROOT=/home/liuzewen/qone-life-work python3 -m pytest -q tests",
+      "recompute_command": "cd /root/qone-paperbench-full10 && ./run_gpt2_jigsaw_sharded.sh",
       "judge_scores": {
-        "opencode-zen-free/deepseek-v4.1-flash-free": 0.72,
-        "openrouter/recursive/flint-v1.0:free": 0.2,
-        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.5
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.9,
+        "openrouter/recursive/flint-v1.0:free": 0.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.95
       },
       "waiver": {},
-      "blocked_reason": "judge panel disagreement > 0.25; not promoted to verified; no full10 promotion",
+      "blocked_reason": "judge spread > 0.25 or mean < 0.8; not promoted to verified",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/mechanistic-understanding/addendum.md",
@@ -22016,7 +22044,7 @@
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
       ],
-      "judge_panel_receipt": "tasks/mechanistic-understanding/panel-receipt.json",
+      "judge_panel_receipt": "tasks/mechanistic-understanding/full-panel-receipt.json",
       "judge_panel_complete": true
     },
     {
@@ -22025,21 +22053,25 @@
       "split": "lite",
       "requirements": "The linear probe model was evaluated on the validation set of the Jigsaw toxic comment classification dataset.",
       "scope": "in_scope",
-      "terminal_state": "blocked",
+      "terminal_state": "verified",
       "carrier_paths": [
-        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-probe.json"
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+        "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
       ],
       "carrier_sha256": [
-        "b6256f85b9bd595ff4dd867a8bd801c023ea74dca94b2fb03759b7adf7bca8da"
+        "b11136e19297a3e128ccaf1c6254f6dc6f3923e10355b751c9f6a4098189240c",
+        "beebbc74d740c1975bf8990956fa0e2dbe33d77549e2341508a4ca84c19e090f",
+        "8f92fd16bfa110ec77afa8ec3b39fdc5a30ca212caa805f4733db8460f3daee5"
       ],
-      "recompute_command": "QONE_REPO_ROOT=/home/liuzewen/qone-life-work python3 -m pytest -q tests",
+      "recompute_command": "cd /root/qone-paperbench-full10 && ./run_gpt2_jigsaw_sharded.sh",
       "judge_scores": {
-        "opencode-zen-free/deepseek-v4.1-flash-free": 0.8,
-        "openrouter/recursive/flint-v1.0:free": 0.25,
-        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.0
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.9,
+        "openrouter/recursive/flint-v1.0:free": 0.85,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.948
       },
       "waiver": {},
-      "blocked_reason": "judge panel disagreement > 0.25; not promoted to verified; no full10 promotion",
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/mechanistic-understanding/addendum.md",
@@ -22049,7 +22081,7 @@
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
       ],
-      "judge_panel_receipt": "tasks/mechanistic-understanding/panel-receipt.json",
+      "judge_panel_receipt": "tasks/mechanistic-understanding/full-panel-receipt.json",
       "judge_panel_complete": true
     },
     {
@@ -22058,13 +22090,25 @@
       "split": "lite",
       "requirements": "The trained classifier achieves a performance of approximately 94% in the validation set.",
       "scope": "in_scope",
-      "terminal_state": "blocked",
-      "carrier_paths": [],
-      "carrier_sha256": [],
-      "recompute_command": "",
-      "judge_scores": {},
+      "terminal_state": "verified",
+      "carrier_paths": [
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.json",
+        "research/validation-20261108/tasks/mechanistic-understanding/gpt2-medium-jigsaw-full.log",
+        "research/validation-20261108/run_gpt2_jigsaw_sharded.sh"
+      ],
+      "carrier_sha256": [
+        "b11136e19297a3e128ccaf1c6254f6dc6f3923e10355b751c9f6a4098189240c",
+        "beebbc74d740c1975bf8990956fa0e2dbe33d77549e2341508a4ca84c19e090f",
+        "8f92fd16bfa110ec77afa8ec3b39fdc5a30ca212caa805f4733db8460f3daee5"
+      ],
+      "recompute_command": "cd /root/qone-paperbench-full10 && ./run_gpt2_jigsaw_sharded.sh",
+      "judge_scores": {
+        "opencode-zen-free/deepseek-v4.1-flash-free": 0.95,
+        "openrouter/recursive/flint-v1.0:free": 1.0,
+        "openrouter/xingchen-agi/xing4.0-29b-a4b:free": 0.948
+      },
       "waiver": {},
-      "blocked_reason": "GPT-2-medium residual features, PPLM pair generation, DPO fine-tuning and RealToxicityPrompts evaluation require model weights and GPU training not present in the authorized free-only scope",
+      "blocked_reason": "",
       "addendum_waivers": [
         {
           "addendum_path": "/tmp/paperbench-upstream/project/paperbench/data/papers/mechanistic-understanding/addendum.md",
@@ -22073,7 +22117,9 @@
           "scope": "out_of_scope",
           "note": "candidate only; each waived leaf must cite its exact clause"
         }
-      ]
+      ],
+      "judge_panel_receipt": "tasks/mechanistic-understanding/full-panel-receipt.json",
+      "judge_panel_complete": true
     },
     {
       "leaf_id": "bbdb4b01-fdf3-4879-bc5c-c59bcc6c12c2",
@@ -50266,11 +50312,11 @@
   ],
   "summary": {
     "total_leaves": 2776,
-    "verified": 0,
+    "verified": 3,
     "out_of_scope_waived": 22,
-    "blocked": 2754,
+    "blocked": 2751,
     "unverified": 0,
     "gate": "BLOCKED"
   },
-  "canonical_sha256": "715dd70b0280a09b32fd72e874eb2dc0cec64794a9baea3fde7e1f9ccf5f295e"
+  "canonical_sha256": "2deb78aa15f9bf488d0e6feba11b58a505652e51ecc84a22d7392f97ea14bdad"
 }
