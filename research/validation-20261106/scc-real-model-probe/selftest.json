@@ -1,0 +1,14 @@
+{
+  "summary": {
+    "passed": true,
+    "direction_a_problems": 1,
+    "direction_b_problems": 1,
+    "restored_problems": 0
+  },
+  "direction_a": [
+    "raw_missing"
+  ],
+  "direction_b": [
+    "row_count:aqua"
+  ]
+}

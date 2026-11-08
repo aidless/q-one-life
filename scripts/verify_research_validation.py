@@ -88,6 +88,20 @@ def main() -> int:
     dataset_cloud_audit = json.loads((args.root / "datasets/semantic-self-consistency/cloud-audit.json").read_text())
     scc_probe_verify = json.loads((args.root / "scc-real-data-probe/verification.json").read_text())
     scc_probe_selftest = json.loads((args.root / "scc-real-data-probe/selftest.json").read_text())
+    scc_model_verify = json.loads((args.root / "scc-real-model-probe/verification.json").read_text())
+    scc_model_selftest = json.loads((args.root / "scc-real-model-probe/selftest.json").read_text())
+    scc_model_runs = scc_model_verify["runs"]
+    scc_model_by_mode = {
+        (run["prompt_mode"], name): values
+        for run in scc_model_runs
+        for name, values in run["datasets"].items()
+    }
+    scc_model_fewshot_sqa = scc_model_by_mode[("fewshot_replay", "strategyqa")]
+    scc_model_instr_sqa = scc_model_by_mode[("instruction", "strategyqa")]
+    scc_model_instr_aqua = scc_model_by_mode[("instruction", "aqua")]
+    scc_model_fewshot_aqua = scc_model_by_mode[("fewshot_replay", "aqua")]
+    scc_model_instr_svamp = scc_model_by_mode[("instruction", "svamp")]
+    scc_model_fewshot_svamp = scc_model_by_mode[("fewshot_replay", "svamp")]
     ridar_files = json.loads((args.root / "datasets/ridar-full-manifest.json").read_text())
     ridar_audit = json.loads((args.root / "ridar-audit/audit.json").read_text())
     runs = results["runs"]
@@ -239,6 +253,38 @@ def main() -> int:
         check("scc_probe_selftest_passed", True, scc_probe_selftest["summary"]["passed"]),
         check("scc_probe_mutation_a", 2, scc_probe_selftest["summary"]["direction_a_problems"]),
         check("scc_probe_mutation_b", 1, scc_probe_selftest["summary"]["direction_b_problems"]),
+        check("scc_model_probe_gate", "PASS", scc_model_verify["summary"]["gate"]),
+        check("scc_model_probe_runs", 5, scc_model_verify["summary"]["runs"]),
+        check("scc_model_probe_model_is_open_0p5b", True, all(
+            "Qwen2.5-0.5B-Instruct" in json.loads(p.read_text())["model_family"]
+            for p in sorted((args.root / "scc-real-model-probe/runs").glob("*/summary.json"))
+        )),
+        check("scc_model_probe_selftest_passed", True, scc_model_selftest["summary"]["passed"]),
+        check("scc_model_probe_fewshot_sqa_n", 60, scc_model_fewshot_sqa["rows"]),
+        check("scc_model_probe_fewshot_sqa_top", 0.2, scc_model_fewshot_sqa["top_prob"]),
+        check("scc_model_probe_fewshot_sqa_sc", 0.366666666667,
+              scc_model_fewshot_sqa["sc"]),
+        check("scc_model_probe_instruction_sqa_n", 60, scc_model_instr_sqa["rows"]),
+        check("scc_model_probe_instruction_sqa_top", 0.566666666667,
+              scc_model_instr_sqa["top_prob"]),
+        check("scc_model_probe_instruction_sqa_sc", 0.516666666667,
+              scc_model_instr_sqa["sc"]),
+        check("scc_model_probe_instruction_sqa_parse_rate", 0.9483333333333334,
+              scc_model_instr_sqa["parse_rate_sc"]),
+        check("scc_model_probe_instruction_aqua_n", 40, scc_model_instr_aqua["rows"]),
+        check("scc_model_probe_instruction_aqua_top", 0.125,
+              scc_model_instr_aqua["top_prob"]),
+        check("scc_model_probe_instruction_aqua_sc", 0.325,
+              scc_model_instr_aqua["sc"]),
+        check("scc_model_probe_fewshot_aqua_sc", 0.2,
+              scc_model_fewshot_aqua["sc"]),
+        check("scc_model_probe_aqua_sc_beats_greedy", True,
+              scc_model_instr_aqua["sc"] > scc_model_instr_aqua["top_prob"]
+              and scc_model_fewshot_aqua["sc"] > scc_model_fewshot_aqua["top_prob"]),
+        check("scc_model_probe_svamp_all_zero", True,
+              all(run[metric] == 0.0
+                  for run in (scc_model_instr_svamp, scc_model_fewshot_svamp)
+                  for metric in ("top_prob", "sc", "cpw", "scw"))),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
@@ -296,6 +342,14 @@ def main() -> int:
         "scc_audited_rows": dataset_cloud_audit["summary"]["rows"],
         "scc_submission_real_data": True,
         "scc_probe_canonical": scc_probe_verify["summary"]["canonical_sha256"],
+        "scc_model_probe_gate": scc_model_verify["summary"]["gate"],
+        "scc_model_probe_runs": scc_model_verify["summary"]["runs"],
+        "scc_model_fewshot_sqa_top": scc_model_fewshot_sqa["top_prob"],
+        "scc_model_instruction_sqa_top": scc_model_instr_sqa["top_prob"],
+        "scc_model_instruction_sqa_parse_rate": scc_model_instr_sqa["parse_rate_sc"],
+        "scc_model_instruction_aqua_top": scc_model_instr_aqua["top_prob"],
+        "scc_model_instruction_aqua_sc": scc_model_instr_aqua["sc"],
+        "scc_model_svamp_top_prob": scc_model_instr_svamp["top_prob"],
     }
     print(json.dumps(report, indent=1))
     return 0 if report["passed"] else 1

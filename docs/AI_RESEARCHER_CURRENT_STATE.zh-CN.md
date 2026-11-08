@@ -12,7 +12,7 @@
    `self-composing-policies`（9 测试）。三份都是**手写参考实现**，不是模型生成的。
 4. `research/validation-20261106/paperbench-smoke/2026-11-07T14-34-31-GMT_run-group_direct_submission_solver/`
    证明三份提交都被 DirectSubmission 归档、dummy judge 正常读取并输出 grade。
-5. `scripts/verify_research_validation.py` 现有 129 项机器校验，全绿。
+5. `scripts/verify_research_validation.py` 现有 146 项机器校验，全绿。
 6. `src/qone_life/research_factory/project_lab.py` 新增多文件项目模式；模型生成过
    4 文件项目并通过 pytest + 主机隐藏测试（`autonomous-project-lab/`）。
 7. `autonomous-paperbench-loop/` 证明模型生成的项目被 PaperBench DirectSubmission
@@ -39,6 +39,11 @@
     加载器、manifest 与隐藏契约测试同步更新。
 13. `scc-real-data-probe/` 在 1941 条真实样本 × 5 场景上跑确定性解析/聚合探针；
     本地与云端 canonical hash 一致，双向变异自测通过。没有使用模型或付费 API。
+14. `scc-real-model-probe/` 在 AMD 云端用机器上已有的 `Qwen2.5-0.5B-Instruct`
+    生成真实回答，接入同一提交包的 top-prob / SC / CPW / SCW，得到第一批可复算
+    的真实模型读数。5 批全部验收（StrategyQA / SVAMP / AQuA × 2 提示），
+    全部数字由 `summary.raw.jsonl` 重算。详见
+    `scc-real-model-probe/REPORT.zh-CN.md`。
 
 ## 不能声称
 

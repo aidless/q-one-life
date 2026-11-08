@@ -1,0 +1,32 @@
+{
+  "host_label": "cloud",
+  "model": "/root/models/Qwen2.5-0.5B-Instruct",
+  "model_family": "Qwen2.5-0.5B-Instruct (open, NOT the paper's models)",
+  "embedder": "hash",
+  "prompt_mode": "instruction",
+  "datasets": {
+    "strategyqa": {
+      "rows": 60,
+      "k": 10,
+      "accuracy_top_prob": 0.5666666666666667,
+      "accuracy_sc": 0.5166666666666667,
+      "accuracy_cpw": 0.03333333333333333,
+      "accuracy_scw": 0.03333333333333333,
+      "parse_rate_sc": 0.9483333333333334,
+      "extract_rules": {
+        "greedy:tf_leading": 59,
+        "tf_leading": 481,
+        "tf_tail": 79,
+        "unparsed": 31,
+        "tf_tag": 9,
+        "greedy:tf_tag": 1
+      }
+    }
+  },
+  "k": 10,
+  "seed": 20261107,
+  "limit_per_dataset": 60,
+  "elapsed_seconds": 1585.69,
+  "note": "Accuracy here is a real open-model readout on a subset, using an instruction prompt. It is not comparable to the paper's reported numbers for GPT-3.5/Llama/Mistral/GPT-4o-mini.",
+  "canonical_sha256": "e3df6ad40e2e7a366a12837ebe8d7ddeecff569b287cb12ed24589854c4c85ed"
+}

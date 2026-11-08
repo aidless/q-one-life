@@ -1,0 +1,97 @@
+{
+  "summary": {
+    "gate": "PASS",
+    "runs": 5,
+    "problems": 0
+  },
+  "runs": [
+    {
+      "run": "fewshot_replay-aqua",
+      "prompt_mode": "fewshot_replay",
+      "datasets": {
+        "aqua": {
+          "rows": 40,
+          "top_prob": 0.05,
+          "sc": 0.2,
+          "cpw": 0.1,
+          "scw": 0.1,
+          "parse_rate_sc": 0.35
+        }
+      },
+      "problems": [],
+      "passed": true
+    },
+    {
+      "run": "fewshot_replay-qa-svamp",
+      "prompt_mode": "fewshot_replay",
+      "datasets": {
+        "strategyqa": {
+          "rows": 60,
+          "top_prob": 0.2,
+          "sc": 0.366666666667,
+          "cpw": 0.366666666667,
+          "scw": 0.333333333333,
+          "parse_rate_sc": 0.44666666666666666
+        },
+        "svamp": {
+          "rows": 60,
+          "top_prob": 0.0,
+          "sc": 0.0,
+          "cpw": 0.0,
+          "scw": 0.0,
+          "parse_rate_sc": 0.26666666666666666
+        }
+      },
+      "problems": [],
+      "passed": true
+    },
+    {
+      "run": "instruction-aqua",
+      "prompt_mode": "instruction",
+      "datasets": {
+        "aqua": {
+          "rows": 40,
+          "top_prob": 0.125,
+          "sc": 0.325,
+          "cpw": 0.0,
+          "scw": 0.0,
+          "parse_rate_sc": 0.39
+        }
+      },
+      "problems": [],
+      "passed": true
+    },
+    {
+      "run": "instruction-strategyqa",
+      "prompt_mode": "instruction",
+      "datasets": {
+        "strategyqa": {
+          "rows": 60,
+          "top_prob": 0.566666666667,
+          "sc": 0.516666666667,
+          "cpw": 0.033333333333,
+          "scw": 0.033333333333,
+          "parse_rate_sc": 0.9483333333333334
+        }
+      },
+      "problems": [],
+      "passed": true
+    },
+    {
+      "run": "instruction-svamp",
+      "prompt_mode": "instruction",
+      "datasets": {
+        "svamp": {
+          "rows": 60,
+          "top_prob": 0.0,
+          "sc": 0.0,
+          "cpw": 0.0,
+          "scw": 0.0,
+          "parse_rate_sc": 0.24166666666666667
+        }
+      },
+      "problems": [],
+      "passed": true
+    }
+  ]
+}
