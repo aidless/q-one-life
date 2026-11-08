@@ -1,0 +1,107 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "6e43bf8d210b96ab",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "asset-lca-on-the-line-vm"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "asset-lca-on-the-line-vm",
+      "status": "scored",
+      "score": 0.9,
+      "explanation": "Evidence states a public Tiny-ImageNet alternative asset exists and is hash-verified via the listed carrier paths, though it notes this is not the full paper dataset.",
+      "raw_response_sha256": "4dcaf9e6f85b66370572b4b46d9abd58474ce13608fa46793548d0e6ca0c23f8",
+      "usage": {
+        "completion_tokens": 215,
+        "completion_tokens_details": {
+          "reasoning_tokens": 166
+        },
+        "prompt_tokens": 771,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 986
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "asset-lca-on-the-line-vm",
+      "status": "scored",
+      "score": 1.0,
+      "explanation": "Evidence confirms the public Tiny-ImageNet alternative exists and is hash-verified, satisfying the requirement.",
+      "raw_response_sha256": "16f7aac64e55f370015ea7c2228ffb81de6f0edbf68eeb97d559863ee92bcb16",
+      "usage": {
+        "prompt_tokens": 174,
+        "completion_tokens": 1807,
+        "total_tokens": 1981,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2105,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "asset-lca-on-the-line-vm",
+      "status": "scored",
+      "score": 1.0,
+      "explanation": "The evidence confirms a public Tiny-ImageNet alternative asset exists at the specified carrier paths, is hash-verified, and is explicitly described as not being the full paper dataset — matching the requirement exactly.",
+      "raw_response_sha256": "7e64bf122d6a66d02fc5ad3356a7efdeace3d5665f8cb4842e62d6c7f8bdacaa",
+      "usage": {
+        "prompt_tokens": 216,
+        "completion_tokens": 56,
+        "total_tokens": 272,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "c9f881c1c1371b028d41c1ea1a5e1ed01cc899aa3ed089f1dcd22c2d44eb1e53"
+}

@@ -9,6 +9,7 @@
   "unverified_leaves": 361,
   "elapsed_gpu_hours": 0.0,
   "note": "Infrastructure checkpoint; not a reproduction result.",
-  "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available",
-  "last_checked": "2026-11-08"
+  "blocked_reason": "Public D4RL Kitchen alternative downloaded and parsed; full training/evaluation not done.",
+  "last_checked": "2026-11-08",
+  "asset_status": "PUBLIC_ALTERNATIVE_PARTIAL"
 }

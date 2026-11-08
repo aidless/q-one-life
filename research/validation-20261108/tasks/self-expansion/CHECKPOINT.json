@@ -9,6 +9,7 @@
   "unverified_leaves": 253,
   "elapsed_gpu_hours": 0.0,
   "note": "Infrastructure checkpoint; not a reproduction result.",
-  "blocked_reason": "CIFAR-100, ImageNet-R/A, VTAB and 5-20 epoch training not present in the current free-only scope",
-  "last_checked": "2026-11-08"
+  "blocked_reason": "Public Tiny-ImageNet-200 downloaded and verified; full ImageNet-1K/OOD model evaluation and training are not complete.",
+  "last_checked": "2026-11-08",
+  "asset_status": "PUBLIC_ALTERNATIVE_PARTIAL"
 }

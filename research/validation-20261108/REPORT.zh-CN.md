@@ -110,6 +110,29 @@
 - 没有把 gated ImageNet-1K / D4RL 的 401 用凭据绕过。
 - 没有使用 `o3-mini` 或任何付费 judge；所有 judge 分数 `official=false`。
 
+## 2026-11-08 合规公开替代续报
+
+- `ILSVRC/imagenet-1k` 与 `timm/imagenet-1k-wds` 的 resolve 都实测返回 401 /
+  "restricted, must be authenticated"，因此没有作为合规替代。
+- 改用 Stanford Tiny-ImageNet-200：完整下载 248,100,043 字节，
+  SHA-256 `6198c8ae…`，120,609 个 zip entries、120,000 张 64×64 图片；
+  抽样 200 张覆盖 128 个类，`tiny-imagenet-sample.json` 可复算。已同步到
+  `test-time-model-adaptation` / `self-expansion` / `lca-on-the-line` 的资产清单。
+  它是公开视觉替代，**不是** ImageNet-1K 全量或 5 个 OOD 测试集。
+- D4RL 的 HuggingFace/Minari 镜像仍 401；Berkeley 官方原始目录
+  `rail.eecs.berkeley.edu/datasets/offline_rl/` 公开可达。AntMaze、Kitchen、
+  MuJoCo 三个文件的 1MB Range 请求均返回 206；其中 Kitchen HDF5
+  （19,560,760 字节，SHA-256 `a30382a5…`）已完整下载并解析：
+  136,950 transitions、60 维观测、9 维动作、reward mean 1.3521、
+  601 terminals、12 timeouts。见 `d4rl-kitchen-hdf5-structure.json`
+  与 `d4rl-kitchen-data-profile.json`。
+- 用 5 个公开替代资产窄声明生成 `asset-leaf-batch.json` 与对应
+  `asset-panel-receipt.json`，三模型全部 `complete=true`。这些 synthetic
+  asset leaf IDs 不计入 2776 rubric 叶分母。
+- 所有任务资产清单已把"完全不可得"细化为"公开替代已得，训练/全量评测未完成"。
+  ledger 仍为 `verified=0`、`out_of_scope_waived=22`、`blocked=2754`、
+  `gate=BLOCKED`，问题列表为空。
+
 ## 不能声称
 
 - 没有完成 10 任务全复现，没有 `full_reproduction`。

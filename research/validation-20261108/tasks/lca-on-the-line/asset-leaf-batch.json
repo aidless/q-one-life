@@ -1,0 +1,16 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "asset-lca-on-the-line-vm",
+      "requirements": "A public Tiny-ImageNet visual alternative is downloaded and hash-verified.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/tiny-imagenet-public-alternative.json",
+          "research/validation-20261108/tiny-imagenet-sample.json"
+        ],
+        "task_id": "lca-on-the-line",
+        "claim": "public alternative asset exists and is hash-verified; not full paper dataset"
+      }
+    }
+  ]
+}

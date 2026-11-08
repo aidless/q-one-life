@@ -10,10 +10,19 @@
     "5 OOD datasets",
     "linear probes"
   ],
-  "status": "BLOCKED_OR_PARTIAL",
+  "status": "PUBLIC_ALTERNATIVE_PARTIAL",
   "public_download_allowed": true,
   "cloud_root": "/root/qone-paperbench-full10/lca-on-the-line",
   "downloads": [],
   "note": "Asset inventory only; no weights or datasets in git.",
-  "blocked_reason": "36 VMs, 39 VLMs, ImageNet and five OOD test sets require gated data and large-scale evaluation"
+  "blocked_reason": "Public Tiny-ImageNet-200 downloaded and verified; full ImageNet-1K/OOD model evaluation and training are not complete.",
+  "public_alternative": {
+    "file": "tiny-imagenet-public-alternative.json",
+    "bytes": 248100043,
+    "sha256": "6198c8ae015e2b3e007c7841da39ec069199b9aa3bfa943a462022fe5e43c821",
+    "images": 120000,
+    "classes": 200,
+    "note": "Public Tiny-ImageNet-200 alternative; not ImageNet-1K full dataset",
+    "gated": false
+  }
 }

@@ -1,0 +1,61 @@
+{
+  "schema": "qone-d4rl-hdf5-structure-v1",
+  "file": "kitchen_microwave_kettle_bottomburner_light-v0.hdf5",
+  "sha256": "a30382a50278fdaea2e2d88e5f2836a95bcf9b581d252617872fd6537302721b",
+  "root_keys": [
+    "actions",
+    "infos",
+    "observations",
+    "rewards",
+    "terminals",
+    "timeouts"
+  ],
+  "metadata": {},
+  "datasets": [
+    {
+      "name": "actions",
+      "shape": [
+        136950,
+        9
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "infos",
+      "shape": [
+        136950
+      ],
+      "dtype": "int64"
+    },
+    {
+      "name": "observations",
+      "shape": [
+        136950,
+        60
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "rewards",
+      "shape": [
+        136950
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "terminals",
+      "shape": [
+        136950
+      ],
+      "dtype": "bool"
+    },
+    {
+      "name": "timeouts",
+      "shape": [
+        136950
+      ],
+      "dtype": "bool"
+    }
+  ],
+  "dataset_count": 6
+}

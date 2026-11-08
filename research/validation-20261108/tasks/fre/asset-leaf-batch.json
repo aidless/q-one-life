@@ -1,0 +1,16 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "asset-fre-5b3ccceb",
+      "requirements": "D4RL AntMaze/Kitchen public alternative is available.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/d4rl-public-alternative.json",
+          "research/validation-20261108/d4rl-kitchen-data-profile.json"
+        ],
+        "task_id": "fre",
+        "claim": "public alternative asset exists and is hash-verified; not full paper dataset"
+      }
+    }
+  ]
+}

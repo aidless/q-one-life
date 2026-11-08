@@ -1,0 +1,10 @@
+{
+  "schema": "qone-d4rl-public-alternative-v1",
+  "source": "https://rail.eecs.berkeley.edu/datasets/offline_rl/kitchen/",
+  "file": "kitchen_microwave_kettle_bottomburner_light-v0.hdf5",
+  "bytes": 19560760,
+  "sha256": "a30382a50278fdaea2e2d88e5f2836a95bcf9b581d252617872fd6537302721b",
+  "status": "downloaded_public",
+  "note": "Full Kitchen HDF5 from Berkeley public directory; not HuggingFace D4RL mirror",
+  "gated": false
+}

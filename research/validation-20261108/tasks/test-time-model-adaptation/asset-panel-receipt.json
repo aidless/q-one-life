@@ -1,0 +1,107 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "b362ff2c5582ce4f",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "asset-test-time-model-adaptation-vit-base"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "asset-test-time-model-adaptation-vit-base",
+      "status": "scored",
+      "score": 0.85,
+      "explanation": "Evidence cites two carrier JSON records and explicitly claims a public Tiny-ImageNet alternative exists and is hash-verified, though no hash values or direct verification details are shown.",
+      "raw_response_sha256": "565aa3b8448fe5f5f676e2ef976420bb49caa7f8c0153e82cfbc5ec108800cb9",
+      "usage": {
+        "completion_tokens": 257,
+        "completion_tokens_details": {
+          "reasoning_tokens": 207
+        },
+        "prompt_tokens": 774,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1031
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "asset-test-time-model-adaptation-vit-base",
+      "status": "scored",
+      "score": 0.85,
+      "explanation": "Evidence claims the public Tiny-ImageNet alternative exists and is hash-verified, satisfying the download/hash requirement, though it notes it is not the full paper dataset.",
+      "raw_response_sha256": "dd32f8f51c6cf2b37ab0483bf50b88d4156dbee45f7a82f71f1f068fdb46af0f",
+      "usage": {
+        "prompt_tokens": 178,
+        "completion_tokens": 537,
+        "total_tokens": 715,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 600,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "asset-test-time-model-adaptation-vit-base",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence states a public Tiny-ImageNet alternative asset exists and is hash-verified, but the claim explicitly notes it is not the full paper dataset. The requirement demands a public Tiny-ImageNet visual alternative that is hash-verified, which appears to be met by the existence of the alternative asset. However, the evidence does not provide any hash value or verification details to confirm the hash check was actually performed; only that the asset exists and is described as hash-verified. Without concrete hash verification evidence, the claim cannot be independently confirmed.",
+      "raw_response_sha256": "2dc83ad68b557b90950440f0b881d000689c6d69d6045dff34cd7aa5d9a0b214",
+      "usage": {
+        "prompt_tokens": 218,
+        "completion_tokens": 127,
+        "total_tokens": 345,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "a425d2c7908f2a7172295bcb43ce22d6c8b0779df165d94521f7312c7f041336"
+}

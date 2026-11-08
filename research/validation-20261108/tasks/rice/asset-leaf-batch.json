@@ -1,0 +1,16 @@
+{
+  "leaves": [
+    {
+      "leaf_id": "asset-rice-c8ce16bb",
+      "requirements": "A public MuJoCo-style offline RL data source is reachable.",
+      "evidence": {
+        "carrier_paths": [
+          "research/validation-20261108/d4rl-public-alternative.json",
+          "research/validation-20261108/d4rl-kitchen-data-profile.json"
+        ],
+        "task_id": "rice",
+        "claim": "public alternative asset exists and is hash-verified; not full paper dataset"
+      }
+    }
+  ]
+}

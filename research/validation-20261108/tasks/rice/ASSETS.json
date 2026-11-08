@@ -10,10 +10,20 @@
     "StateMask",
     "StateMask-R"
   ],
-  "status": "BLOCKED_OR_PARTIAL",
+  "status": "PUBLIC_ALTERNATIVE_PARTIAL",
   "public_download_allowed": true,
   "cloud_root": "/root/qone-paperbench-full10/rice",
   "downloads": [],
   "note": "Asset inventory only; no weights or datasets in git.",
-  "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available"
+  "blocked_reason": "D4RL Kitchen public alternative is available, but full offline RL training and evaluation for all required environments are not complete.",
+  "public_alternative": {
+    "file": "d4rl-public-alternative.json",
+    "structure": "d4rl-kitchen-hdf5-structure.json",
+    "bytes": 19560760,
+    "sha256": "a30382a50278fdaea2e2d88e5f2836a95bcf9b581d252617872fd6537302721b",
+    "rows": 136950,
+    "observation_dim": 60,
+    "action_dim": 9,
+    "note": "Berkeley public D4RL Kitchen HDF5 is downloaded and parsed; AntMaze and MuJoCo only range-checked, not fully downloaded."
+  }
 }

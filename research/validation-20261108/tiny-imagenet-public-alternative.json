@@ -1,0 +1,22 @@
+{
+  "schema": "qone-tiny-imagenet-public-alternative-v1",
+  "source": "http://cs231n.stanford.edu/tiny-imagenet-200.zip",
+  "bytes": 248100043,
+  "sha256": "6198c8ae015e2b3e007c7841da39ec069199b9aa3bfa943a462022fe5e43c821",
+  "entries": 120609,
+  "images": 120000,
+  "sample_entries": [
+    "tiny-imagenet-200/",
+    "tiny-imagenet-200/words.txt",
+    "tiny-imagenet-200/wnids.txt",
+    "tiny-imagenet-200/test/",
+    "tiny-imagenet-200/test/images/",
+    "tiny-imagenet-200/test/images/test_1860.JPEG",
+    "tiny-imagenet-200/test/images/test_613.JPEG",
+    "tiny-imagenet-200/test/images/test_6272.JPEG",
+    "tiny-imagenet-200/test/images/test_2289.JPEG",
+    "tiny-imagenet-200/test/images/test_3408.JPEG"
+  ],
+  "note": "Public Tiny-ImageNet-200; not ImageNet-1K full dataset",
+  "gated": false
+}
