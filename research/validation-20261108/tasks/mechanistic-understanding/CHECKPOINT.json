@@ -1,0 +1,14 @@
+{
+  "schema": "qone-paperbench-checkpoint-v1",
+  "task_id": "mechanistic-understanding",
+  "order": 2,
+  "status": "BLOCKED",
+  "verified_leaves": 0,
+  "waived_leaves": 0,
+  "blocked_leaves": 0,
+  "unverified_leaves": 96,
+  "elapsed_gpu_hours": 0.0,
+  "note": "Infrastructure checkpoint; not a reproduction result.",
+  "blocked_reason": "GPT-2-medium residual features, PPLM pair generation, DPO fine-tuning and RealToxicityPrompts evaluation require model weights and GPU training not present in the authorized free-only scope",
+  "last_checked": "2026-11-08"
+}

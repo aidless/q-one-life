@@ -1,0 +1,19 @@
+{
+  "schema": "qone-paperbench-assets-v1",
+  "task_id": "self-composing-policies",
+  "order": 7,
+  "rubric_leaves": 275,
+  "required": [
+    "Meta-World",
+    "SpaceInvaders",
+    "Freeway",
+    "10 seeds",
+    "1M timesteps"
+  ],
+  "status": "BLOCKED_OR_PARTIAL",
+  "public_download_allowed": true,
+  "cloud_root": "/root/qone-paperbench-full10/self-composing-policies",
+  "downloads": [],
+  "note": "Asset inventory only; no weights or datasets in git.",
+  "blocked_reason": "Meta-World, SpaceInvaders, Freeway and 10 seeds x 1M timesteps require RL environments and long GPU training"
+}

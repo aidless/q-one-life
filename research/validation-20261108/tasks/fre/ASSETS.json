@@ -1,0 +1,21 @@
+{
+  "schema": "qone-paperbench-assets-v1",
+  "task_id": "fre",
+  "order": 9,
+  "rubric_leaves": 437,
+  "required": [
+    "D4RL AntMaze",
+    "D4RL Kitchen",
+    "ExORL",
+    "FRE",
+    "GC-IQL",
+    "GC-BC",
+    "OPAL"
+  ],
+  "status": "BLOCKED_OR_PARTIAL",
+  "public_download_allowed": true,
+  "cloud_root": "/root/qone-paperbench-full10/fre",
+  "downloads": [],
+  "note": "Asset inventory only; no weights or datasets in git.",
+  "blocked_reason": "D4RL resolve returned HTTP 401; AntMaze/Kitchen/ExORL and offline RL training are gated"
+}

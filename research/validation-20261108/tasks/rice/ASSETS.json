@@ -1,0 +1,19 @@
+{
+  "schema": "qone-paperbench-assets-v1",
+  "task_id": "rice",
+  "order": 8,
+  "rubric_leaves": 361,
+  "required": [
+    "7 non-sparse RL environments",
+    "2 sparse RL environments",
+    "PPO policies",
+    "StateMask",
+    "StateMask-R"
+  ],
+  "status": "BLOCKED_OR_PARTIAL",
+  "public_download_allowed": true,
+  "cloud_root": "/root/qone-paperbench-full10/rice",
+  "downloads": [],
+  "note": "Asset inventory only; no weights or datasets in git.",
+  "blocked_reason": "7 non-sparse and 2 sparse RL environments, PPO policies and StateMask training are not available"
+}

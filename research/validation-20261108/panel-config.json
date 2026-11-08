@@ -1,0 +1,16 @@
+{
+  "schema": "qone-free-multimodel-panel-config-v1",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "base_url": "http://127.0.0.1:3425/v1",
+  "timeout_s": 60.0,
+  "retries": 3,
+  "max_concurrency": 3,
+  "official": false,
+  "locked_from": "panel-probe.json",
+  "locked_rule": "first_three_passed",
+  "user_go_required": true
+}

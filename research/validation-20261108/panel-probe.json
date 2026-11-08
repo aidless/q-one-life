@@ -1,0 +1,63 @@
+{
+  "schema": "qone-free-judge-panel-probe-v1",
+  "base_url": "http://127.0.0.1:3425/v1",
+  "official": false,
+  "candidate_queue": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "opencode-zen-free/crouton-alpha-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+    "openrouter/nvidia/nemotron-3.5-super-vl:free",
+    "opencode-go/beam-free",
+    "opencode-go/iceman-contributor-free",
+    "workbuddy/hy4free",
+    "workbuddy-ai/hy4free"
+  ],
+  "lock_rule": "first_three_passed",
+  "passed": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "locked_model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "complete": true,
+  "details": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "state": "passed",
+      "attempts": 1,
+      "score": 0.0,
+      "explanation_sha256": "90fdd52a52ba4044941b3a37a68d40487cc1991dcb5ba907d1cb344f8bc58927",
+      "raw_response_sha256": "51e9a734b0aff12eb4c673f0f95ee546cb346d3bd59ff7f879aa4a0911184fbc"
+    },
+    {
+      "model_id": "opencode-zen-free/crouton-alpha-free",
+      "state": "blocked",
+      "attempts": 3,
+      "error": "HTTPStatusError: Client error '403 Forbidden' for url 'http://127.0.0.1:3425/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+      "raw_response_sha256": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "state": "passed",
+      "attempts": 1,
+      "score": 0.0,
+      "explanation_sha256": "8b23a70ce360e798a441dc725bb328450d9d77ee8518f3b4af1adc1ae3da5fde",
+      "raw_response_sha256": "5c817e847b210f3f577815ce8798a39cd91bffdadd4d2320c139053b5a7ece06"
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "state": "passed",
+      "attempts": 1,
+      "score": 0.0,
+      "explanation_sha256": "b1e966a282e7e96b29e8b17da91197e3220c5c440967585fba84407b74547972",
+      "raw_response_sha256": "6520e4353d91066e1c01cc055159afdd31d8e1dcb7959262db3241b6dd477fb9"
+    }
+  ],
+  "user_go_required": true,
+  "canonical_sha256": "9d2b8d9b64eb306276cded15d080b18f01e67b59cc669fde47e7feea766a2358"
+}

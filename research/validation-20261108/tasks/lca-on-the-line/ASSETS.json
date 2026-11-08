@@ -1,0 +1,19 @@
+{
+  "schema": "qone-paperbench-assets-v1",
+  "task_id": "lca-on-the-line",
+  "order": 10,
+  "rubric_leaves": 819,
+  "required": [
+    "36 vision models",
+    "39 vision-language models",
+    "ImageNet test",
+    "5 OOD datasets",
+    "linear probes"
+  ],
+  "status": "BLOCKED_OR_PARTIAL",
+  "public_download_allowed": true,
+  "cloud_root": "/root/qone-paperbench-full10/lca-on-the-line",
+  "downloads": [],
+  "note": "Asset inventory only; no weights or datasets in git.",
+  "blocked_reason": "36 VMs, 39 VLMs, ImageNet and five OOD test sets require gated data and large-scale evaluation"
+}

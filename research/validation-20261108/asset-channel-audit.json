@@ -1,0 +1,63 @@
+{
+  "schema": "qone-public-asset-channel-audit-v1",
+  "checked_at": "2026-11-08",
+  "results": {
+    "jigsaw": {
+      "status": "reachable",
+      "http": 200,
+      "bytes_sample": 2048,
+      "sha256_sample": "9061438a1471c7f7",
+      "elapsed": 2.9
+    },
+    "ai2_arc": {
+      "status": "reachable",
+      "http": 200,
+      "bytes_sample": 2048,
+      "sha256_sample": "c9bc866108f50d48",
+      "elapsed": 1.16
+    },
+    "boolq": {
+      "status": "reachable",
+      "http": 200,
+      "bytes_sample": 2048,
+      "sha256_sample": "22b320e1f7d0993f",
+      "elapsed": 1.12
+    },
+    "sciq": {
+      "status": "reachable",
+      "http": 200,
+      "bytes_sample": 2048,
+      "sha256_sample": "48f487071d7fb514",
+      "elapsed": 0.96
+    },
+    "lambada": {
+      "status": "reachable",
+      "http": 200,
+      "bytes_sample": 2048,
+      "sha256_sample": "4ab681a77ed6c52c",
+      "elapsed": 1.63
+    },
+    "gsm8k": {
+      "status": "reachable",
+      "http": 200,
+      "bytes_sample": 2048,
+      "sha256_sample": "31c14dc4dba221e1",
+      "elapsed": 1.12
+    },
+    "sbi": {
+      "status": "reachable",
+      "http": 200,
+      "bytes_sample": 2048,
+      "sha256_sample": "66f3c1d2946e98e0",
+      "elapsed": 1.01
+    },
+    "imagenet": {
+      "status": "reachable",
+      "http": 200,
+      "bytes_sample": 2048,
+      "sha256_sample": "caaf4c6e93f3ac37",
+      "elapsed": 1.23
+    }
+  },
+  "note": "HEAD-like reachability only; no dataset downloaded"
+}

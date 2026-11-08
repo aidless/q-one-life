@@ -1,0 +1,18 @@
+{
+  "schema": "qone-paperbench-assets-v1",
+  "task_id": "semantic-self-consistency",
+  "order": 1,
+  "rubric_leaves": 77,
+  "required": [
+    "three verified public datasets",
+    "SciBERT",
+    "RoBERTa",
+    "paper model matrix"
+  ],
+  "status": "BLOCKED_OR_PARTIAL",
+  "public_download_allowed": true,
+  "cloud_root": "/root/qone-paperbench-full10/semantic-self-consistency",
+  "downloads": [],
+  "note": "Asset inventory only; no weights or datasets in git.",
+  "blocked_reason": "paid GPT-3.5-turbo and GPT-4o-mini inference plus exact 4/6/8-shot prompts are not authorized by the free-only plan"
+}

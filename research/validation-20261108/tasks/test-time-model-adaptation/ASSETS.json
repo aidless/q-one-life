@@ -1,0 +1,25 @@
+{
+  "schema": "qone-paperbench-assets-v1",
+  "task_id": "test-time-model-adaptation",
+  "order": 5,
+  "rubric_leaves": 163,
+  "required": [
+    "ImageNet-1K",
+    "timm ViT-Base",
+    "ResNet50",
+    "VisionMamba",
+    "LAME",
+    "T3A",
+    "TENT",
+    "CoTTA",
+    "SAR",
+    "CMA-ES",
+    "FOA"
+  ],
+  "status": "BLOCKED_OR_PARTIAL",
+  "public_download_allowed": true,
+  "cloud_root": "/root/qone-paperbench-full10/test-time-model-adaptation",
+  "downloads": [],
+  "note": "Asset inventory only; no weights or datasets in git.",
+  "blocked_reason": "ImageNet-1K resolve returned HTTP 401; timm weights and five TTA baselines are not available without gated access"
+}

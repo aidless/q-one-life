@@ -1,0 +1,22 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "pre-go-04ab439d582e",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "probe-hidden-leaf-001"
+  ],
+  "results": [],
+  "complete": false,
+  "blocked_reasons": [
+    "missing_user_go:opencode-zen-free/deepseek-v4.1-flash-free",
+    "missing_user_go:openrouter/recursive/flint-v1.0:free",
+    "missing_user_go:openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "1b27f784b0a4731296b06d3096d02c2b56cc5a0a8228a17b47f043fa96ea3452"
+}

@@ -1,0 +1,83 @@
+{
+  "checks": [
+    {
+      "check": "leaf_count",
+      "expected": 2776,
+      "actual": 2776,
+      "passed": true
+    },
+    {
+      "check": "task_count",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "check": "verified_leaves",
+      "expected": 2776,
+      "actual": 0,
+      "passed": false
+    },
+    {
+      "check": "blocked_leaves",
+      "expected": 0,
+      "actual": 2776,
+      "passed": false
+    },
+    {
+      "check": "unverified_leaves",
+      "expected": 0,
+      "actual": 2776,
+      "passed": false
+    },
+    {
+      "check": "panel_models",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "check": "panel_official",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "check": "problems",
+      "expected": 0,
+      "actual": 13,
+      "passed": false
+    }
+  ],
+  "problems": [
+    "missing_user_go:opencode-zen-free/deepseek-v4.1-flash-free",
+    "missing_user_go:openrouter/recursive/flint-v1.0:free",
+    "missing_user_go:openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+    "missing_panel_receipt:semantic-self-consistency",
+    "missing_panel_receipt:self-expansion",
+    "missing_panel_receipt:self-composing-policies",
+    "missing_panel_receipt:fre",
+    "missing_panel_receipt:test-time-model-adaptation",
+    "missing_panel_receipt:mechanistic-understanding",
+    "missing_panel_receipt:all-in-one",
+    "missing_panel_receipt:stay-on-topic-with-classifier-free-guidance",
+    "missing_panel_receipt:lca-on-the-line",
+    "missing_panel_receipt:rice"
+  ],
+  "state_counts": {
+    "blocked": 2776
+  },
+  "summary": {
+    "gate": "BLOCKED",
+    "passed": false,
+    "blocked": true
+  },
+  "selftest": {
+    "summary": {
+      "passed": true,
+      "direction_a_problems": 38,
+      "direction_b_problems": 39,
+      "restored_problems": 17
+    }
+  }
+}

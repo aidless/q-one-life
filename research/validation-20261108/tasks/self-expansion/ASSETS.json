@@ -1,0 +1,19 @@
+{
+  "schema": "qone-paperbench-assets-v1",
+  "task_id": "self-expansion",
+  "order": 6,
+  "rubric_leaves": 253,
+  "required": [
+    "CIFAR-100",
+    "ImageNet-R",
+    "ImageNet-A",
+    "VTAB",
+    "adapter mixture training"
+  ],
+  "status": "BLOCKED_OR_PARTIAL",
+  "public_download_allowed": true,
+  "cloud_root": "/root/qone-paperbench-full10/self-expansion",
+  "downloads": [],
+  "note": "Asset inventory only; no weights or datasets in git.",
+  "blocked_reason": "CIFAR-100, ImageNet-R/A, VTAB and 5-20 epoch training not present in the current free-only scope"
+}

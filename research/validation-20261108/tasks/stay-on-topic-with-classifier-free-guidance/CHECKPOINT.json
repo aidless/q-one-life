@@ -1,0 +1,14 @@
+{
+  "schema": "qone-paperbench-checkpoint-v1",
+  "task_id": "stay-on-topic-with-classifier-free-guidance",
+  "order": 3,
+  "status": "BLOCKED",
+  "verified_leaves": 0,
+  "waived_leaves": 0,
+  "blocked_leaves": 0,
+  "unverified_leaves": 121,
+  "elapsed_gpu_hours": 0.0,
+  "note": "Infrastructure checkpoint; not a reproduction result.",
+  "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits",
+  "last_checked": "2026-11-08"
+}

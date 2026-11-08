@@ -1,0 +1,26 @@
+{
+  "schema": "qone-paperbench-assets-v1",
+  "task_id": "stay-on-topic-with-classifier-free-guidance",
+  "order": 3,
+  "rubric_leaves": 121,
+  "required": [
+    "GPT-2 family",
+    "Pythia family",
+    "ARC-c/e",
+    "BoolQ",
+    "HellaSwag",
+    "PiQA",
+    "SciQ",
+    "TriviaQA",
+    "WinoGrande",
+    "LAMBADA",
+    "GSM8K",
+    "AQuA"
+  ],
+  "status": "BLOCKED_OR_PARTIAL",
+  "public_download_allowed": true,
+  "cloud_root": "/root/qone-paperbench-full10/stay-on-topic-with-classifier-free-guidance",
+  "downloads": [],
+  "note": "Asset inventory only; no weights or datasets in git.",
+  "blocked_reason": "GPT-2/Pythia weight matrix and 9 benchmark zero-shot evaluation require model downloads and GPU runs; current slice only implements Eq.7 logits"
+}

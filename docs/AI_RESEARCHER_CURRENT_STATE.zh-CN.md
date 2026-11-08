@@ -2,6 +2,12 @@
 
 日期：2026-11-07。本文只记录已落盘、可复算的状态。
 
+2026-11-08 续：全 10 任务复现计划的基础设施在
+`research/validation-20261108/`，当前 `gate=BLOCKED`（2776 叶全部 blocked、
+3 个免费 judge 已锁定但缺逐模型 GO、ImageNet/D4RL 直链 401）。详见
+`research/validation-20261108/REPORT.zh-CN.md`。本状态不替代下方 171 项
+主验证闸。
+
 ## 已完成（有证据）
 
 1. `src/qone_life/research_factory/code_lab.py` 提供有界代码生成、隔离子进程执行和主机隐藏测试；7 项仓库测试通过。

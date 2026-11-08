@@ -1,0 +1,19 @@
+{
+  "schema": "qone-paperbench-assets-v1",
+  "task_id": "mechanistic-understanding",
+  "order": 2,
+  "rubric_leaves": 96,
+  "required": [
+    "Jigsaw train.csv",
+    "GPT-2-medium",
+    "RealToxicityPrompts",
+    "PPLM",
+    "DPO"
+  ],
+  "status": "BLOCKED_OR_PARTIAL",
+  "public_download_allowed": true,
+  "cloud_root": "/root/qone-paperbench-full10/mechanistic-understanding",
+  "downloads": [],
+  "note": "Asset inventory only; no weights or datasets in git.",
+  "blocked_reason": "GPT-2-medium residual features, PPLM pair generation, DPO fine-tuning and RealToxicityPrompts evaluation require model weights and GPU training not present in the authorized free-only scope"
+}
