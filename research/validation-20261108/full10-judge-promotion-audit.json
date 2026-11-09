@@ -1,0 +1,60 @@
+{
+  "schema": "qone-full10-judge-promotion-audit-v1",
+  "official": false,
+  "judge_type": "free_multimodel",
+  "criteria": {
+    "complete": true,
+    "max_score_spread": 0.25,
+    "min_mean_score": 0.8,
+    "required_carriers": true,
+    "required_recompute_command": true
+  },
+  "audited_receipts": [
+    "tasks/mechanistic-understanding/full-panel-receipt.json",
+    "tasks/mechanistic-understanding/toxicity-panel-receipt.json",
+    "tasks/test-time-model-adaptation/vision-load-panel-receipt.json"
+  ],
+  "results": [
+    {
+      "leaf_id": "89eae18e-3abb-424c-b18d-8ddc210806e0",
+      "state": "already_verified",
+      "source": "tasks/mechanistic-understanding/full-panel-receipt.json"
+    },
+    {
+      "leaf_id": "b203fdd2-cd9e-434b-85b5-1ffa488ca445",
+      "state": "already_verified",
+      "source": "tasks/mechanistic-understanding/full-panel-receipt.json"
+    },
+    {
+      "leaf_id": "a359ba32-d92d-4021-b904-9d8e0abbb1c3",
+      "state": "already_verified",
+      "source": "tasks/mechanistic-understanding/full-panel-receipt.json"
+    },
+    {
+      "leaf_id": "d8ae7965-5f7e-4f85-a486-80c1cf0ef214",
+      "state": "blocked",
+      "reason": "locked panel score_spread > 0.25 across repeated complete batches",
+      "source": "tasks/mechanistic-understanding/toxicity-panel-receipt.json"
+    },
+    {
+      "leaf_id": "vit-base",
+      "state": "blocked",
+      "reason": "locked panel score_spread > 0.25 across repeated complete batches",
+      "source": "tasks/test-time-model-adaptation/vision-load-panel-receipt.json"
+    },
+    {
+      "leaf_id": "resnet50",
+      "state": "blocked",
+      "reason": "locked panel score_spread > 0.25 across repeated complete batches",
+      "source": "tasks/test-time-model-adaptation/vision-load-panel-receipt.json"
+    }
+  ],
+  "new_verified_leaves": 0,
+  "ledger_state": {
+    "verified": 3,
+    "out_of_scope_waived": 22,
+    "blocked": 2751,
+    "unverified": 0
+  },
+  "note": "No partial score averaging, model replacement or unverified promotion. This audit records the final decision from the locked free-judge receipts."
+}
