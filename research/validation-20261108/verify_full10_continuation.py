@@ -31,6 +31,7 @@ def main() -> int:
     toxicity = json.loads((root / "mechanistic-toxicity-dpo.json").read_text(encoding="utf-8"))
     d4rl = json.loads((root / "d4rl-multi-bc.json").read_text(encoding="utf-8"))
     linear_probe = json.loads((root / "tiny-imagenet-linear-probe.json").read_text(encoding="utf-8"))
+    probe_matrix = json.loads((root / "tiny-imagenet-linear-probe-matrix.json").read_text(encoding="utf-8"))
 
     timm_states = {row["state"] for row in assets["timm"].values()}
     toxicity_states = {row["state"] for row in assets["toxicity_classifier"].values()}
@@ -91,6 +92,20 @@ def main() -> int:
                       for row in linear_probe["history"])),
         check("linear_probe_not_paper_claim", True,
               "not ImageNet-1K" in linear_probe["note"]),
+        check("linear_probe_matrix_schema", "qone-tiny-imagenet-linear-probe-matrix-v1",
+              probe_matrix["schema"]),
+        check("linear_probe_matrix_official", False, probe_matrix["official"]),
+        check("linear_probe_matrix_completed", 4, probe_matrix["completed"]),
+        check("linear_probe_matrix_blocked", 0, probe_matrix["blocked"]),
+        check("linear_probe_matrix_train_images", 5000,
+              probe_matrix["train_images_per_model"]),
+        check("linear_probe_matrix_val_images", 1000,
+              probe_matrix["val_images_per_model"]),
+        check("linear_probe_matrix_epochs", 2, probe_matrix["epochs"]),
+        check("linear_probe_matrix_all_trained", True, all(
+              row["status"] == "completed"
+              and isinstance(row.get("final_val_accuracy"), (int, float))
+              for row in probe_matrix["models"])),
     ]
     report = {"checks": checks, "passed": all(row["passed"] for row in checks),
               "summary": {"gate": "PASS" if all(row["passed"] for row in checks) else "FAIL",

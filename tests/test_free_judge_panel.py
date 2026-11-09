@@ -170,6 +170,16 @@ class FreeJudgePanelTests(unittest.TestCase):
             report = verify_paperbench_full10.verify(root)
             self.assertTrue(any("judge_disagreement" in problem for problem in report["problems"]))
 
+    def test_verifier_ignores_env_var_reference_but_detects_real_key_shape(self):
+        from scripts import verify_paperbench_full10
+
+        self.assertFalse(verify_paperbench_full10.has_secret_shaped_literal(
+            'GRADER_OPENAI_API_KEY="$GRADER_OPENAI_API_KEY"'))
+        self.assertFalse(verify_paperbench_full10.has_secret_shaped_literal(
+            "OPENAI_API_KEY='${OPENAI_API_KEY}'"))
+        self.assertTrue(verify_paperbench_full10.has_secret_shaped_literal(
+            'OPENAI_API_KEY="sk-abcdefghijklmnop"'))
+
 
 if __name__ == "__main__":
     unittest.main()

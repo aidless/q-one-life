@@ -209,12 +209,60 @@
       "expected": true,
       "actual": true,
       "passed": true
+    },
+    {
+      "check": "linear_probe_matrix_schema",
+      "expected": "qone-tiny-imagenet-linear-probe-matrix-v1",
+      "actual": "qone-tiny-imagenet-linear-probe-matrix-v1",
+      "passed": true
+    },
+    {
+      "check": "linear_probe_matrix_official",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "check": "linear_probe_matrix_completed",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    },
+    {
+      "check": "linear_probe_matrix_blocked",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "linear_probe_matrix_train_images",
+      "expected": 5000,
+      "actual": 5000,
+      "passed": true
+    },
+    {
+      "check": "linear_probe_matrix_val_images",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "check": "linear_probe_matrix_epochs",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "check": "linear_probe_matrix_all_trained",
+      "expected": true,
+      "actual": true,
+      "passed": true
     }
   ],
   "passed": true,
   "summary": {
     "gate": "PASS",
-    "checks": 35
+    "checks": 43
   },
   "selftest": {
     "summary": {

@@ -28,6 +28,19 @@ SECRET_PATTERN = re.compile(
     r"(?:GRADER_OPENAI_API_KEY|OPENAI_API_KEY)\s*[:=]\s*['\"][^'\"]{12,}['\"]",
     re.IGNORECASE,
 )
+ENV_VAR_REFERENCE = re.compile(r"\$[A-Z_][A-Z0-9_]*|\$\{[A-Z_][A-Z0-9_]*\}")
+
+
+def has_secret_shaped_literal(text: str) -> bool:
+    """Ignore shell environment-variable references while retaining key detection."""
+    for match in SECRET_PATTERN.finditer(text):
+        token = match.group(0)
+        if ENV_VAR_REFERENCE.fullmatch(token.strip("'\"")):
+            continue
+        if "$" in token and ENV_VAR_REFERENCE.search(token):
+            continue
+        return True
+    return False
 
 
 def canonical_sha256(payload) -> str:
@@ -128,7 +141,7 @@ def verify(root: Path) -> dict:
             text = path.read_text(encoding="utf-8")
         except UnicodeDecodeError:
             continue
-        if SECRET_PATTERN.search(text) and "PLACEHOLDER" not in text.upper():
+        if has_secret_shaped_literal(text) and "PLACEHOLDER" not in text.upper():
             problems.append(f"secret_shaped_literal:{path.relative_to(root)}")
 
     checks = [

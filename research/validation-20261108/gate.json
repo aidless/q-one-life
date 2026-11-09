@@ -51,13 +51,11 @@
     {
       "check": "problems",
       "expected": 0,
-      "actual": 1,
-      "passed": false
+      "actual": 0,
+      "passed": true
     }
   ],
-  "problems": [
-    "secret_shaped_literal:official-judge-go-card.md"
-  ],
+  "problems": [],
   "state_counts": {
     "blocked": 2751,
     "verified": 3,
@@ -73,7 +71,7 @@
       "passed": true,
       "direction_a_problems": 35,
       "direction_b_problems": 36,
-      "restored_problems": 5
+      "restored_problems": 3
     }
   }
 }

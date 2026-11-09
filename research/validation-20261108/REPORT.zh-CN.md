@@ -270,3 +270,20 @@
   PaperBench 分数。
 - continuation 门禁扩到 **35 项全绿**，主验证闸扩到 **211 项全绿**；
   Full10 仍 `BLOCKED`，没有因新增训练或 judge GO 卡改动任何叶子状态。
+
+## 2026-11-08 “全做”续报
+
+- 修复 `verify_paperbench_full10.py` 的环境变量引用误报：新增
+  `has_secret_shaped_literal()`，保留真实 key 字面量检测，新增两方向测试；
+  Full10 门禁 `problems=0`，仍因 2751 个叶子真实阻塞而 `BLOCKED`。
+- 新做 `tasks/semantic-self-consistency/dataset-leaf-batch.json`：把 AQuA-RAT
+  254、StrategyQA 687、SVAMP 1000 三条公开数据可用性叶子交给锁定三模型
+  judge。三次完整批次均因第三个模型持续给 0 分、spread=1.0 而不能升档；
+  `dataset-panel-receipt.json` 和 `full10-judge-promotion-audit.json` 保留原始
+  负证据，`new_verified_leaves=0`。
+- AMD 云端新增四模型真实线性探针训练矩阵：ResNet50 / ViT-Base /
+  ConvNeXt-Tiny / ConvNeXt-Small 冻结特征，各 5,000 训练图、1,000 验证图、
+  2 epoch，4/4 完成、0 阻塞、361.62 秒。最终验证准确率 0.080 /
+  0.797 / 0.631 / 0.724。明确不是 ImageNet-1K、论文 OOD 或官方 judge。
+- continuation 门禁扩到 **43 项全绿**，主验证闸扩到 **213 项全绿**；
+  Full10 仍 `BLOCKED`（3 verified / 22 waived / 2751 blocked / 0 unverified）。

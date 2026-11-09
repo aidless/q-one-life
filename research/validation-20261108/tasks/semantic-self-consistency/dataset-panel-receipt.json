@@ -1,0 +1,285 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "b85440dde6b77361",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "43f23e0e-2c5b-4a2b-80ab-6cc9c62723f1",
+    "8006761a-19e1-4990-92fa-778b6ee89266",
+    "067da205-f599-4a40-92fe-4cfc3f635c41"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "43f23e0e-2c5b-4a2b-80ab-6cc9c62723f1",
+      "status": "scored",
+      "score": 0.55,
+      "explanation": "The claim explicitly states the AQuA-RAT test split has 254 rows and was downloaded, SHA-256 checked, audited locally/on AMD cloud, and connected to the data loader. Carrier paths are listed, but the evidence text provides no row counts, hashes, or audit outputs, so the requirement is only partially substantiated.",
+      "raw_response_sha256": "cc9682d1f24b226c06681d5b4de39770a855473ab7d8b395b78937b7b3fbfc07",
+      "usage": {
+        "completion_tokens": 385,
+        "completion_tokens_details": {
+          "reasoning_tokens": 300
+        },
+        "prompt_tokens": 922,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 896
+        },
+        "total_tokens": 1307
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "43f23e0e-2c5b-4a2b-80ab-6cc9c62723f1",
+      "status": "scored",
+      "score": 1.0,
+      "explanation": "The evidence states the AQuA-RAT test split with exactly 254 rows was downloaded from a public source, SHA-256 checked, audited locally and on the authorized AMD cloud, and connected to the data loader, matching the availability requirement within the stated scope.",
+      "raw_response_sha256": "840df36ee8c8f18d2002f100b87339898394115bda55f3d78a23408add0fbcaa",
+      "usage": {
+        "prompt_tokens": 282,
+        "completion_tokens": 789,
+        "total_tokens": 1071,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 256,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 845,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "43f23e0e-2c5b-4a2b-80ab-6cc9c62723f1",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only documents that the AQuA-RAT test split (254 rows) was downloaded, SHA-256 verified, and audited locally and on AMD cloud. It does not provide any evidence that GPT-3.5 or GPT-4o-mini reproduced the paper's results, nor any evidence about semantic self-consistency of model outputs. The claim is narrowly scoped to dataset availability and integrity verification, which is not what the task requires.",
+      "raw_response_sha256": "ea96d1c9e8d4aaf8a8995b40eea7c6f938bca6b90f193f567299ad7e00781e2f",
+      "usage": {
+        "prompt_tokens": 351,
+        "completion_tokens": 115,
+        "total_tokens": 466,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 320,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "8006761a-19e1-4990-92fa-778b6ee89266",
+      "status": "scored",
+      "score": 0.6,
+      "explanation": "Evidence lists download-check, local-audit, and cloud-audit artifacts and claims a 687-row StrategyQA test split was downloaded, SHA-256 checked, audited locally and on cloud, and wired to the data loader. However, no artifact contents or row counts are shown, so exact availability and integrity cannot be independently confirmed from the provided text.",
+      "raw_response_sha256": "ac3cfa56b6e147cefc8c8a946ba8c2ed59353b696d0a11a57046d3688061e1db",
+      "usage": {
+        "completion_tokens": 338,
+        "completion_tokens_details": {
+          "reasoning_tokens": 249
+        },
+        "prompt_tokens": 882,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 768
+        },
+        "total_tokens": 1220
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "8006761a-19e1-4990-92fa-778b6ee89266",
+      "status": "scored",
+      "score": 1.0,
+      "explanation": "The evidence states the StrategyQA test split with exactly 687 rows was downloaded from a public source and SHA-256 checked/audited, matching the public dataset availability requirement; scope limits address only availability.",
+      "raw_response_sha256": "2fe23639100606995e428c8a0cf26f66d8424d9946467f8d7ed1ef697e77b84d",
+      "usage": {
+        "prompt_tokens": 269,
+        "completion_tokens": 742,
+        "total_tokens": 1011,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 256,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 850,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "8006761a-19e1-4990-92fa-778b6ee89266",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only confirms that the StrategyQA test split (687 rows) was downloaded, SHA-256 verified, and audited locally and on the authorized AMD cloud. It provides no evidence of successful data loading into the submission's data loader, no evidence of any model evaluation or result computation, and no evidence of reproduction of GPT-3.5/GPT-4o-mini results. The claim is about dataset availability and integrity, not about the submission's evaluation pipeline or outputs.",
+      "raw_response_sha256": "d5ec1adef0a6bcd7316e62be8d345b64afd3193b6909a585a8c28cda0be23c57",
+      "usage": {
+        "prompt_tokens": 343,
+        "completion_tokens": 119,
+        "total_tokens": 462,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 320,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "067da205-f599-4a40-92fe-4cfc3f635c41",
+      "status": "scored",
+      "score": 0.85,
+      "explanation": "The evidence directly claims the full 1000-row SVAMP dataset was downloaded from a public source, checksummed, locally and cloud audited, and connected to the data loader. Carrier audit paths are provided, but their contents are not included, so the claim is only indirectly verifiable.",
+      "raw_response_sha256": "ec44ad6b6cbbecf323820dc2ecfaa73971f6439d558c494ad42c3c8bb4a52337",
+      "usage": {
+        "completion_tokens": 280,
+        "completion_tokens_details": {
+          "reasoning_tokens": 206
+        },
+        "prompt_tokens": 915,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 896
+        },
+        "total_tokens": 1195
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "067da205-f599-4a40-92fe-4cfc3f635c41",
+      "status": "scored",
+      "score": 1.0,
+      "explanation": "The evidence confirms the full SVAMP split with exactly 1000 rows was downloaded from a public source, SHA-256 checked, audited locally and on the authorized AMD cloud, and connected to the data loader, supporting the availability requirement.",
+      "raw_response_sha256": "b5dd7b1940836f7abf50d1a77acb312946ec398408e8b0ef9a174a9853b54843",
+      "usage": {
+        "prompt_tokens": 274,
+        "completion_tokens": 671,
+        "total_tokens": 945,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 256,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 731,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "067da205-f599-4a40-92fe-4cfc3f635c41",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only lists carrier paths for a semantic-self-consistency audit and a claim about downloading the full SVAMP split (1000 rows) from a public source with SHA-256 checking, local and cloud auditing, and loader connection. No evidence text is provided that confirms the actual download, checksum verification, or any data-loading steps. The evidence is purely metadata about the audit process, not proof of successful execution. Score 0.0 because no verifiable evidence is present.",
+      "raw_response_sha256": "384c4012cf87f3a3fe278095cd76c4d90a8118e195e7941abe5833710241a5b3",
+      "usage": {
+        "prompt_tokens": 348,
+        "completion_tokens": 118,
+        "total_tokens": 466,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 320,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "8609053ccb13964239e9173e1408daf43f2206e206ce4a361833d0352f8e5cce"
+}

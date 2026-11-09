@@ -119,6 +119,7 @@ def main() -> int:
     toxicity_dpo = json.loads((args.root.parent / "validation-20261108/mechanistic-toxicity-dpo.json").read_text())
     d4rl_multi = json.loads((args.root.parent / "validation-20261108/d4rl-multi-bc.json").read_text())
     linear_probe = json.loads((args.root.parent / "validation-20261108/tiny-imagenet-linear-probe.json").read_text())
+    probe_matrix = json.loads((args.root.parent / "validation-20261108/tiny-imagenet-linear-probe-matrix.json").read_text())
     continuation_verify = json.loads((args.root.parent / "validation-20261108/full10-continuation-verification.json").read_text())
     mech_data_bytes = (
         args.root / "datasets/mechanistic-understanding/train.csv"
@@ -398,8 +399,10 @@ def main() -> int:
         check("linear_probe_train_images", 10000, linear_probe["train_images"]),
         check("linear_probe_val_images", 2000, linear_probe["val_images"]),
         check("linear_probe_epochs", 3, linear_probe["epochs"]),
+        check("linear_probe_matrix_completed", 4, probe_matrix["completed"]),
+        check("linear_probe_matrix_blocked", 0, probe_matrix["blocked"]),
         check("full10_continuation_gate", "PASS", continuation_verify["summary"]["gate"]),
-        check("full10_continuation_checks", 35, continuation_verify["summary"]["checks"]),
+        check("full10_continuation_checks", 43, continuation_verify["summary"]["checks"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,

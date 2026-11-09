@@ -1,0 +1,203 @@
+{
+  "schema": "qone-tiny-imagenet-linear-probe-matrix-v1",
+  "official": false,
+  "zip": "/root/qone-paperbench-full10/vision/tiny-imagenet-200.zip",
+  "zip_sha256": "6198c8ae015e2b3e007c7841da39ec069199b9aa3bfa943a462022fe5e43c821",
+  "train_images_per_model": 5000,
+  "val_images_per_model": 1000,
+  "epochs": 2,
+  "models": [
+    {
+      "model": "timm/resnet50.a1_in1k",
+      "weights": "/root/qone-paperbench-full10/vision/resnet50.a1_in1k.safetensors",
+      "command": [
+        "/opt/venv/bin/python",
+        "/root/qone-paperbench-full10/local-scripts/run_tiny_imagenet_linear_probe.py",
+        "--zip",
+        "/root/qone-paperbench-full10/vision/tiny-imagenet-200.zip",
+        "--weights",
+        "/root/qone-paperbench-full10/vision/resnet50.a1_in1k.safetensors",
+        "--model-name",
+        "resnet50.a1_in1k",
+        "--output",
+        "/root/qone-paperbench-full10/runs/linear-probe-matrix/resnet50.a1_in1k.json",
+        "--train-images",
+        "5000",
+        "--val-images",
+        "1000",
+        "--epochs",
+        "2",
+        "--device",
+        "cuda"
+      ],
+      "output": "/root/qone-paperbench-full10/runs/linear-probe-matrix/resnet50.a1_in1k.json",
+      "log": "/root/qone-paperbench-full10/runs/linear-probe-matrix/resnet50.a1_in1k.log",
+      "weights_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "returncode": 0,
+      "elapsed_s": 67.47,
+      "status": "completed",
+      "feature_dim": 2048,
+      "train_images": 5000,
+      "val_images": 1000,
+      "final_val_accuracy": 0.07999999821186066,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 5.286063904571534,
+          "val_accuracy": 0.020999999716877937
+        },
+        {
+          "epoch": 2,
+          "train_loss": 5.218231585693359,
+          "val_accuracy": 0.07999999821186066
+        }
+      ],
+      "receipt_sha256": "150f4a7691b3356e9e338378fb0f002b2e5b725b17b51d1db2adaddceb8244f1"
+    },
+    {
+      "model": "timm/vit_base_patch16_224.augreg_in21k_ft_in1k",
+      "weights": "/root/qone-paperbench-full10/vision/vit_base_patch16_224.augreg_in21k_ft_in1k.safetensors",
+      "command": [
+        "/opt/venv/bin/python",
+        "/root/qone-paperbench-full10/local-scripts/run_tiny_imagenet_linear_probe.py",
+        "--zip",
+        "/root/qone-paperbench-full10/vision/tiny-imagenet-200.zip",
+        "--weights",
+        "/root/qone-paperbench-full10/vision/vit_base_patch16_224.augreg_in21k_ft_in1k.safetensors",
+        "--model-name",
+        "vit_base_patch16_224.augreg_in21k_ft_in1k",
+        "--output",
+        "/root/qone-paperbench-full10/runs/linear-probe-matrix/vit_base_patch16_224.augreg_in21k_ft_in1k.json",
+        "--train-images",
+        "5000",
+        "--val-images",
+        "1000",
+        "--epochs",
+        "2",
+        "--device",
+        "cuda"
+      ],
+      "output": "/root/qone-paperbench-full10/runs/linear-probe-matrix/vit_base_patch16_224.augreg_in21k_ft_in1k.json",
+      "log": "/root/qone-paperbench-full10/runs/linear-probe-matrix/vit_base_patch16_224.augreg_in21k_ft_in1k.log",
+      "weights_sha256": "c401d219603ac3e20b6373c7b198c78d3a733f80b755d148bda3bc320ae69800",
+      "returncode": 0,
+      "elapsed_s": 112.43,
+      "status": "completed",
+      "feature_dim": 768,
+      "train_images": 5000,
+      "val_images": 1000,
+      "final_val_accuracy": 0.796999990940094,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 3.5463763370513917,
+          "val_accuracy": 0.7509999871253967
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.53485418176651,
+          "val_accuracy": 0.796999990940094
+        }
+      ],
+      "receipt_sha256": "2ef993fce27647cd9fbbdc6f37ae3a5ae315423123c1f2315d2d839d0fdf87d6"
+    },
+    {
+      "model": "timm/convnext_tiny.fb_in22k_ft_in1k",
+      "weights": "/root/qone-paperbench-full10/vision/convnext_tiny.safetensors",
+      "command": [
+        "/opt/venv/bin/python",
+        "/root/qone-paperbench-full10/local-scripts/run_tiny_imagenet_linear_probe.py",
+        "--zip",
+        "/root/qone-paperbench-full10/vision/tiny-imagenet-200.zip",
+        "--weights",
+        "/root/qone-paperbench-full10/vision/convnext_tiny.safetensors",
+        "--model-name",
+        "convnext_tiny.fb_in22k_ft_in1k",
+        "--output",
+        "/root/qone-paperbench-full10/runs/linear-probe-matrix/convnext_tiny.fb_in22k_ft_in1k.json",
+        "--train-images",
+        "5000",
+        "--val-images",
+        "1000",
+        "--epochs",
+        "2",
+        "--device",
+        "cuda"
+      ],
+      "output": "/root/qone-paperbench-full10/runs/linear-probe-matrix/convnext_tiny.fb_in22k_ft_in1k.json",
+      "log": "/root/qone-paperbench-full10/runs/linear-probe-matrix/convnext_tiny.fb_in22k_ft_in1k.log",
+      "weights_sha256": "77b619e187de71bce58721689da0c009e84cc20677293d7d43105307e34d868a",
+      "returncode": 0,
+      "elapsed_s": 69.79,
+      "status": "completed",
+      "feature_dim": 768,
+      "train_images": 5000,
+      "val_images": 1000,
+      "final_val_accuracy": 0.6309999823570251,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 4.970146467590332,
+          "val_accuracy": 0.35100001096725464
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.993287064743042,
+          "val_accuracy": 0.6309999823570251
+        }
+      ],
+      "receipt_sha256": "6cc3b38b1a7d96366a7b6ca78b522bd2edc74aaa09f765a01c004ebecbd7e739"
+    },
+    {
+      "model": "timm/convnext_small.fb_in22k_ft_in1k",
+      "weights": "/root/qone-paperbench-full10/vision/convnext_small.fb_in22k_ft_in1k.safetensors",
+      "command": [
+        "/opt/venv/bin/python",
+        "/root/qone-paperbench-full10/local-scripts/run_tiny_imagenet_linear_probe.py",
+        "--zip",
+        "/root/qone-paperbench-full10/vision/tiny-imagenet-200.zip",
+        "--weights",
+        "/root/qone-paperbench-full10/vision/convnext_small.fb_in22k_ft_in1k.safetensors",
+        "--model-name",
+        "convnext_small.fb_in22k_ft_in1k",
+        "--output",
+        "/root/qone-paperbench-full10/runs/linear-probe-matrix/convnext_small.fb_in22k_ft_in1k.json",
+        "--train-images",
+        "5000",
+        "--val-images",
+        "1000",
+        "--epochs",
+        "2",
+        "--device",
+        "cuda"
+      ],
+      "output": "/root/qone-paperbench-full10/runs/linear-probe-matrix/convnext_small.fb_in22k_ft_in1k.json",
+      "log": "/root/qone-paperbench-full10/runs/linear-probe-matrix/convnext_small.fb_in22k_ft_in1k.log",
+      "weights_sha256": "2457488bec2ffcb2061b9e3fdd63360114549615e3e35ef6dc5c5efe549cbbc9",
+      "returncode": 0,
+      "elapsed_s": 111.1,
+      "status": "completed",
+      "feature_dim": 768,
+      "train_images": 5000,
+      "val_images": 1000,
+      "final_val_accuracy": 0.7239999771118164,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 4.882285702514649,
+          "val_accuracy": 0.45100000500679016
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.5788821882247923,
+          "val_accuracy": 0.7239999771118164
+        }
+      ],
+      "receipt_sha256": "513af00a3a0b743308016e90c7fa7b48c3db76fa5a100ded3095cb307f8b2100"
+    }
+  ],
+  "completed": 4,
+  "blocked": 0,
+  "elapsed_s": 361.62,
+  "note": "Real frozen public timm features with trained linear probes on Tiny-ImageNet-200; not ImageNet-1K, paper-level OOD or official judge."
+}
