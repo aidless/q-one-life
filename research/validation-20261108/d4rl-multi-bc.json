@@ -3,7 +3,7 @@
   "official": false,
   "datasets": [
     {
-      "path": "/tmp/qone-d4rl-public/hopper_medium-v2.hdf5",
+      "path": "/root/qone-paperbench-full10/d4rl/hopper_medium-v2.hdf5",
       "sha256": "5bdf1bc4a713c82941de44633df669b36c89850b652a25985166796d25cf71a0",
       "rows": 100000,
       "observation_dim": 11,
@@ -25,21 +25,21 @@
       "summary": {
         "128": {
           "runs": 3,
-          "mean_val_mse": 0.18320100009441376,
-          "best_val_mse": 0.1791440099477768,
-          "mean_val_mae": 0.3353983561197917
+          "mean_val_mse": 0.18319959938526154,
+          "best_val_mse": 0.17914222180843353,
+          "mean_val_mae": 0.3353964289029439
         },
         "256": {
           "runs": 3,
-          "mean_val_mse": 0.16221303741137186,
-          "best_val_mse": 0.15899735689163208,
-          "mean_val_mae": 0.3124593198299408
+          "mean_val_mse": 0.16222083568572998,
+          "best_val_mse": 0.1589972823858261,
+          "mean_val_mae": 0.31245988607406616
         },
         "512": {
           "runs": 3,
-          "mean_val_mse": 0.14983414113521576,
-          "best_val_mse": 0.14944975078105927,
-          "mean_val_mae": 0.2966553767522176
+          "mean_val_mse": 0.149811123808225,
+          "best_val_mse": 0.14934273064136505,
+          "mean_val_mae": 0.2966170310974121
         }
       },
       "runs": [
@@ -47,70 +47,70 @@
           "width": 128,
           "depth": 2,
           "seed": 1,
-          "val_mse": 0.1817784309387207,
-          "val_mae": 0.3355262577533722
+          "val_mse": 0.1817738562822342,
+          "val_mae": 0.33552202582359314
         },
         {
           "width": 128,
           "depth": 2,
           "seed": 2,
-          "val_mse": 0.1791440099477768,
-          "val_mae": 0.33101627230644226
+          "val_mse": 0.17914222180843353,
+          "val_mae": 0.3310154974460602
         },
         {
           "width": 128,
           "depth": 2,
           "seed": 3,
-          "val_mse": 0.18868055939674377,
-          "val_mae": 0.33965253829956055
+          "val_mse": 0.18868272006511688,
+          "val_mae": 0.33965176343917847
         },
         {
           "width": 256,
           "depth": 2,
           "seed": 1,
-          "val_mse": 0.15899735689163208,
-          "val_mae": 0.30842161178588867
+          "val_mse": 0.1589972823858261,
+          "val_mae": 0.3084217309951782
         },
         {
           "width": 256,
           "depth": 2,
           "seed": 2,
-          "val_mse": 0.16221430897712708,
-          "val_mae": 0.31212908029556274
+          "val_mse": 0.1622200757265091,
+          "val_mae": 0.31214481592178345
         },
         {
           "width": 256,
           "depth": 2,
           "seed": 3,
-          "val_mse": 0.16542744636535645,
-          "val_mae": 0.31682726740837097
+          "val_mse": 0.16544514894485474,
+          "val_mae": 0.3168131113052368
         },
         {
           "width": 512,
           "depth": 2,
           "seed": 1,
-          "val_mse": 0.14944975078105927,
-          "val_mae": 0.2948997914791107
+          "val_mse": 0.14934273064136505,
+          "val_mae": 0.2948795258998871
         },
         {
           "width": 512,
           "depth": 2,
           "seed": 2,
-          "val_mse": 0.1502346396446228,
-          "val_mae": 0.29687628149986267
+          "val_mse": 0.15025457739830017,
+          "val_mae": 0.29680898785591125
         },
         {
           "width": 512,
           "depth": 2,
           "seed": 3,
-          "val_mse": 0.1498180329799652,
-          "val_mae": 0.29819005727767944
+          "val_mse": 0.14983606338500977,
+          "val_mae": 0.298162579536438
         }
       ],
       "status": "completed"
     },
     {
-      "path": "/tmp/qone-d4rl-public/hopper_medium_replay-v2.hdf5",
+      "path": "/root/qone-paperbench-full10/d4rl/hopper_medium_replay-v2.hdf5",
       "sha256": "e121c5f7c9857a307baa9edc6a2c3b48e85fedb9ac316ecddd0f48ca7ef4e39b",
       "rows": 100000,
       "observation_dim": 11,
@@ -132,21 +132,21 @@
       "summary": {
         "128": {
           "runs": 3,
-          "mean_val_mse": 0.2642872929573059,
+          "mean_val_mse": 0.2642805178960164,
           "best_val_mse": 0.2622467875480652,
-          "mean_val_mae": 0.4183115065097809
+          "mean_val_mae": 0.4183157682418823
         },
         "256": {
           "runs": 3,
-          "mean_val_mse": 0.246183971563975,
-          "best_val_mse": 0.2448742389678955,
-          "mean_val_mae": 0.3989005784193675
+          "mean_val_mse": 0.24621443450450897,
+          "best_val_mse": 0.2448819875717163,
+          "mean_val_mae": 0.39893054962158203
         },
         "512": {
           "runs": 3,
-          "mean_val_mse": 0.23353651662667593,
-          "best_val_mse": 0.23277105391025543,
-          "mean_val_mae": 0.38406384984652203
+          "mean_val_mse": 0.23353279630343118,
+          "best_val_mse": 0.23271529376506805,
+          "mean_val_mae": 0.38428860902786255
         }
       },
       "runs": [
@@ -154,70 +154,70 @@
           "width": 128,
           "depth": 2,
           "seed": 1,
-          "val_mse": 0.2623760402202606,
-          "val_mae": 0.4147469401359558
+          "val_mse": 0.2623615264892578,
+          "val_mae": 0.4147406816482544
         },
         {
           "width": 128,
           "depth": 2,
           "seed": 2,
           "val_mse": 0.2622467875480652,
-          "val_mae": 0.4173749089241028
+          "val_mae": 0.4173748791217804
         },
         {
           "width": 128,
           "depth": 2,
           "seed": 3,
-          "val_mse": 0.2682390511035919,
-          "val_mae": 0.42281267046928406
+          "val_mse": 0.2682332396507263,
+          "val_mae": 0.4228317439556122
         },
         {
           "width": 256,
           "depth": 2,
           "seed": 1,
-          "val_mse": 0.24556715786457062,
-          "val_mae": 0.3978204131126404
+          "val_mse": 0.2455604076385498,
+          "val_mae": 0.39781874418258667
         },
         {
           "width": 256,
           "depth": 2,
           "seed": 2,
-          "val_mse": 0.2448742389678955,
-          "val_mae": 0.39674076437950134
+          "val_mse": 0.2448819875717163,
+          "val_mae": 0.3967939019203186
         },
         {
           "width": 256,
           "depth": 2,
           "seed": 3,
-          "val_mse": 0.24811051785945892,
-          "val_mae": 0.4021405577659607
+          "val_mse": 0.2482009083032608,
+          "val_mae": 0.4021790027618408
         },
         {
           "width": 512,
           "depth": 2,
           "seed": 1,
-          "val_mse": 0.23277105391025543,
-          "val_mae": 0.3833801746368408
+          "val_mse": 0.23271529376506805,
+          "val_mae": 0.38334721326828003
         },
         {
           "width": 512,
           "depth": 2,
           "seed": 2,
-          "val_mse": 0.23472805321216583,
-          "val_mae": 0.38334715366363525
+          "val_mse": 0.234711691737175,
+          "val_mae": 0.3835428059101105
         },
         {
           "width": 512,
           "depth": 2,
           "seed": 3,
-          "val_mse": 0.2331104427576065,
-          "val_mae": 0.38546422123908997
+          "val_mse": 0.23317140340805054,
+          "val_mae": 0.38597580790519714
         }
       ],
       "status": "completed"
     },
     {
-      "path": "/tmp/qone-d4rl-public/kitchen_microwave_kettle_light_slider-v0.hdf5",
+      "path": "/root/qone-paperbench-full10/d4rl/kitchen_microwave_kettle_light_slider-v0.hdf5",
       "sha256": "57bfd9c5fe88a7cf702bbaf8b7cd800d30cd869e7f73416007238d26cd859800",
       "rows": 100000,
       "observation_dim": 60,
@@ -239,21 +239,21 @@
       "summary": {
         "128": {
           "runs": 3,
-          "mean_val_mse": 0.08624859402577083,
-          "best_val_mse": 0.08519258350133896,
-          "mean_val_mae": 0.2029270182053248
+          "mean_val_mse": 0.08625076214472453,
+          "best_val_mse": 0.08519095927476883,
+          "mean_val_mae": 0.20292885601520538
         },
         "256": {
           "runs": 3,
-          "mean_val_mse": 0.07121948649485906,
-          "best_val_mse": 0.06892571598291397,
-          "mean_val_mae": 0.18533678849538168
+          "mean_val_mse": 0.07122562577327092,
+          "best_val_mse": 0.06892929971218109,
+          "mean_val_mae": 0.18533908327420553
         },
         "512": {
           "runs": 3,
-          "mean_val_mse": 0.06225267921884855,
-          "best_val_mse": 0.06099601835012436,
-          "mean_val_mae": 0.17333238323529562
+          "mean_val_mse": 0.06220760941505432,
+          "best_val_mse": 0.061018358916044235,
+          "mean_val_mae": 0.1732497662305832
         }
       },
       "runs": [
@@ -261,70 +261,70 @@
           "width": 128,
           "depth": 2,
           "seed": 1,
-          "val_mse": 0.08519258350133896,
-          "val_mae": 0.2012099176645279
+          "val_mse": 0.08519095927476883,
+          "val_mae": 0.2012096345424652
         },
         {
           "width": 128,
           "depth": 2,
           "seed": 2,
-          "val_mse": 0.08697696030139923,
-          "val_mae": 0.2038036435842514
+          "val_mse": 0.08697719126939774,
+          "val_mae": 0.20380383729934692
         },
         {
           "width": 128,
           "depth": 2,
           "seed": 3,
-          "val_mse": 0.08657623827457428,
-          "val_mae": 0.20376749336719513
+          "val_mse": 0.08658413589000702,
+          "val_mae": 0.20377309620380402
         },
         {
           "width": 256,
           "depth": 2,
           "seed": 1,
-          "val_mse": 0.07273826748132706,
-          "val_mae": 0.18757134675979614
+          "val_mse": 0.07274593412876129,
+          "val_mae": 0.187599778175354
         },
         {
           "width": 256,
           "depth": 2,
           "seed": 2,
-          "val_mse": 0.06892571598291397,
-          "val_mae": 0.18249674141407013
+          "val_mse": 0.06892929971218109,
+          "val_mae": 0.18248027563095093
         },
         {
           "width": 256,
           "depth": 2,
           "seed": 3,
-          "val_mse": 0.07199447602033615,
-          "val_mae": 0.18594227731227875
+          "val_mse": 0.07200164347887039,
+          "val_mae": 0.18593719601631165
         },
         {
           "width": 512,
           "depth": 2,
           "seed": 1,
-          "val_mse": 0.06099601835012436,
-          "val_mae": 0.17147739231586456
+          "val_mse": 0.061018358916044235,
+          "val_mae": 0.17149724066257477
         },
         {
           "width": 512,
           "depth": 2,
           "seed": 2,
-          "val_mse": 0.06359834223985672,
-          "val_mae": 0.17528191208839417
+          "val_mse": 0.06337106972932816,
+          "val_mae": 0.17495685815811157
         },
         {
           "width": 512,
           "depth": 2,
           "seed": 3,
-          "val_mse": 0.06216367706656456,
-          "val_mae": 0.1732378453016281
+          "val_mse": 0.06223339959979057,
+          "val_mae": 0.17329519987106323
         }
       ],
       "status": "completed"
     },
     {
-      "path": "/tmp/qone-d4rl-public/mini_kitchen_microwave_kettle_light_slider-v0.hdf5",
+      "path": "/root/qone-paperbench-full10/d4rl/mini_kitchen_microwave_kettle_light_slider-v0.hdf5",
       "sha256": "cd797c38cd52dfbe3f960cef73935cc724847abd189e47a703a7a2315ed60a81",
       "rows": 3680,
       "observation_dim": 60,
@@ -348,18 +348,18 @@
           "runs": 3,
           "mean_val_mse": 0.12678863108158112,
           "best_val_mse": 0.12513186037540436,
-          "mean_val_mae": 0.24835064510504404
+          "mean_val_mae": 0.24835066000620523
         },
         "256": {
           "runs": 3,
-          "mean_val_mse": 0.12427192429701488,
+          "mean_val_mse": 0.12427192678054173,
           "best_val_mse": 0.12403660267591476,
-          "mean_val_mae": 0.24647720654805502
+          "mean_val_mae": 0.24647721151510874
         },
         "512": {
           "runs": 3,
-          "mean_val_mse": 0.12094501405954361,
-          "best_val_mse": 0.12002638727426529,
+          "mean_val_mse": 0.12094501654307048,
+          "best_val_mse": 0.12002637982368469,
           "mean_val_mae": 0.23879732191562653
         }
       },
@@ -369,7 +369,7 @@
           "depth": 2,
           "seed": 1,
           "val_mse": 0.12513186037540436,
-          "val_mae": 0.2470838874578476
+          "val_mae": 0.24708393216133118
         },
         {
           "width": 128,
@@ -389,7 +389,7 @@
           "width": 256,
           "depth": 2,
           "seed": 1,
-          "val_mse": 0.12473774701356888,
+          "val_mse": 0.12473775446414948,
           "val_mae": 0.24924948811531067
         },
         {
@@ -404,13 +404,13 @@
           "depth": 2,
           "seed": 3,
           "val_mse": 0.12403660267591476,
-          "val_mae": 0.24475029110908508
+          "val_mae": 0.24475030601024628
         },
         {
           "width": 512,
           "depth": 2,
           "seed": 1,
-          "val_mse": 0.12156448513269424,
+          "val_mse": 0.12156450003385544,
           "val_mae": 0.24162188172340393
         },
         {
@@ -424,20 +424,127 @@
           "width": 512,
           "depth": 2,
           "seed": 3,
-          "val_mse": 0.12002638727426529,
+          "val_mse": 0.12002637982368469,
           "val_mae": 0.23705309629440308
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "path": "/root/qone-paperbench-full10/kitchen_microwave_kettle_bottomburner_light-v0.hdf5",
+      "sha256": "a30382a50278fdaea2e2d88e5f2836a95bcf9b581d252617872fd6537302721b",
+      "rows": 100000,
+      "observation_dim": 60,
+      "action_dim": 9,
+      "train_rows": 90000,
+      "val_rows": 10000,
+      "epochs": 2,
+      "batch_size": 2048,
+      "widths": [
+        128,
+        256,
+        512
+      ],
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "summary": {
+        "128": {
+          "runs": 3,
+          "mean_val_mse": 0.08448764930168788,
+          "best_val_mse": 0.08340106159448624,
+          "mean_val_mae": 0.20189921061197916
+        },
+        "256": {
+          "runs": 3,
+          "mean_val_mse": 0.07007638116677602,
+          "best_val_mse": 0.06838762760162354,
+          "mean_val_mae": 0.18424218396345773
+        },
+        "512": {
+          "runs": 3,
+          "mean_val_mse": 0.06027399251858393,
+          "best_val_mse": 0.05943438038229942,
+          "mean_val_mae": 0.17039279639720917
+        }
+      },
+      "runs": [
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.08340106159448624,
+          "val_mae": 0.20016202330589294
+        },
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.08415286242961884,
+          "val_mae": 0.201200470328331
+        },
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.08590902388095856,
+          "val_mae": 0.20433513820171356
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.07119565457105637,
+          "val_mae": 0.18585963547229767
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.06838762760162354,
+          "val_mae": 0.18235594034194946
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.07064586132764816,
+          "val_mae": 0.1845109760761261
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.06060486659407616,
+          "val_mae": 0.17108379304409027
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.06078273057937622,
+          "val_mae": 0.17088474333286285
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.05943438038229942,
+          "val_mae": 0.16920985281467438
         }
       ],
       "status": "completed"
     }
   ],
-  "completed": 4,
+  "completed": 5,
   "blocked": 0,
-  "elapsed_s": 27.15,
+  "elapsed_s": 1144.83,
   "note": "Supervised action prediction only; no online rollout or environment return.",
   "execution": {
-    "host_label": "local_control_evidence",
-    "reason": "cloud D4RL queue contended on shared output path; compact local control completed with same public HDF5 files and script",
-    "cloud_attempt_log": "research/validation-20261108/amd-full10-queue.log"
+    "host_label": "amd_cloud",
+    "reason": "isolated h5py-only dependency with cloud NumPy 2.1.2; final cloud queue output",
+    "local_control_receipt": "research/validation-20261108/d4rl-multi-bc-local-control.json"
   }
 }

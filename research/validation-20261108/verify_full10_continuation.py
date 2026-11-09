@@ -70,11 +70,11 @@ def main() -> int:
               and toxicity["dpo"].get("steps") == 1),
         check("d4rl_schema", "qone-d4rl-multi-bc-v1", d4rl["schema"]),
         check("d4rl_official", False, d4rl["official"]),
-        check("d4rl_completed", 4, d4rl["completed"]),
+        check("d4rl_completed", 5, d4rl["completed"]),
         check("d4rl_blocked", 0, d4rl["blocked"]),
         check("d4rl_no_rollout_claim", True,
               "no online rollout" in d4rl["note"]),
-        check("d4rl_dataset_count", 4, len(d4rl_paths)),
+        check("d4rl_dataset_count", 5, len(d4rl_paths)),
     ]
     report = {"checks": checks, "passed": all(row["passed"] for row in checks),
               "summary": {"gate": "PASS" if all(row["passed"] for row in checks) else "FAIL",

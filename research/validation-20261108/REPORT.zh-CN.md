@@ -242,10 +242,12 @@
   7 对满足负样本更毒。首次 DPO 切片出现 half-precision NaN，保留失败；
   fp32 诊断重跑仍在第 1 步停止于 `non_finite_loss`，因此 `enabled=false`，
   不声称完成 DPO 训练，也不把 PPLM 式偏置说成论文 PPLM。
-- `d4rl-multi-bc.json`：4 个公开 D4RL HDF5（Hopper medium / medium-replay、
-  两个 Kitchen 变体）用同一 BC 脚本与种子完成 4/4 数据集 × 3 宽度 × 3 seed，
-  27.15 秒。云端队列因两个进程共用输出路径未落最终 JSON，故该回执明确标为
-  `local_control_evidence`；没有在线 rollout、没有环境 return。
+- `d4rl-multi-bc.json`：最终 AMD 云端队列用隔离的 h5py-only 依赖完成
+  5 个公开 D4RL HDF5（Hopper medium / medium-replay、两个 Kitchen 变体与
+  原始 Kitchen）的 BC 矩阵，5/5 数据集 × 3 宽度 × 3 seed，1144.83 秒。
+  此前两个云端进程共用输出路径造成延迟，保留日志；另留
+  `d4rl-multi-bc-local-control.json` 作为 4 数据集、27.15 秒的本地对照。
+  两者都只有监督动作预测，没有在线 rollout、没有环境 return。
 - 新增 `full10-continuation-verification.json`：27 项独立检查全绿，双向变异
   自测通过。主验证闸同步新增 10 项，合计 **208 项全绿**。
 - 两批窄 leaf 的锁定免费 judge（视觉模型加载 2 叶、RTP 毒性评分 1 叶）

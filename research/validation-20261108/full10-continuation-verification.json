@@ -140,8 +140,8 @@
     },
     {
       "check": "d4rl_completed",
-      "expected": 4,
-      "actual": 4,
+      "expected": 5,
+      "actual": 5,
       "passed": true
     },
     {
@@ -158,8 +158,8 @@
     },
     {
       "check": "d4rl_dataset_count",
-      "expected": 4,
-      "actual": 4,
+      "expected": 5,
+      "actual": 5,
       "passed": true
     }
   ],

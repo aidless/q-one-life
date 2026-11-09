@@ -392,7 +392,7 @@ def main() -> int:
         check("toxicity_dpo_rows", 128, toxicity_dpo["rows"]),
         check("toxicity_dpo_negative_generated", 128,
               toxicity_dpo["negative_samples_generated"]),
-        check("d4rl_multi_completed", 4, d4rl_multi["completed"]),
+        check("d4rl_multi_completed", 5, d4rl_multi["completed"]),
         check("d4rl_multi_blocked", 0, d4rl_multi["blocked"]),
         check("full10_continuation_gate", "PASS", continuation_verify["summary"]["gate"]),
         check("full10_continuation_checks", 27, continuation_verify["summary"]["checks"]),
