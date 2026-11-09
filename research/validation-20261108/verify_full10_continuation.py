@@ -30,6 +30,7 @@ def main() -> int:
     vision = json.loads((root / "vision-multimodel.json").read_text(encoding="utf-8"))
     toxicity = json.loads((root / "mechanistic-toxicity-dpo.json").read_text(encoding="utf-8"))
     d4rl = json.loads((root / "d4rl-multi-bc.json").read_text(encoding="utf-8"))
+    linear_probe = json.loads((root / "tiny-imagenet-linear-probe.json").read_text(encoding="utf-8"))
 
     timm_states = {row["state"] for row in assets["timm"].values()}
     toxicity_states = {row["state"] for row in assets["toxicity_classifier"].values()}
@@ -75,6 +76,21 @@ def main() -> int:
         check("d4rl_no_rollout_claim", True,
               "no online rollout" in d4rl["note"]),
         check("d4rl_dataset_count", 5, len(d4rl_paths)),
+        check("linear_probe_schema", "qone-tiny-imagenet-linear-probe-v1",
+              linear_probe["schema"]),
+        check("linear_probe_official", False, linear_probe["official"]),
+        check("linear_probe_frozen_backbone", True,
+              linear_probe["frozen_backbone"]),
+        check("linear_probe_train_images", 10000,
+              linear_probe["train_images"]),
+        check("linear_probe_val_images", 2000, linear_probe["val_images"]),
+        check("linear_probe_epochs", 3, linear_probe["epochs"]),
+        check("linear_probe_trained", True,
+              len(linear_probe["history"]) == 3
+              and all(isinstance(row["val_accuracy"], (int, float))
+                      for row in linear_probe["history"])),
+        check("linear_probe_not_paper_claim", True,
+              "not ImageNet-1K" in linear_probe["note"]),
     ]
     report = {"checks": checks, "passed": all(row["passed"] for row in checks),
               "summary": {"gate": "PASS" if all(row["passed"] for row in checks) else "FAIL",

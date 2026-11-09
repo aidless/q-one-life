@@ -1,0 +1,39 @@
+{
+  "schema": "qone-tiny-imagenet-linear-probe-v1",
+  "official": false,
+  "model": "timm/resnet50.a1_in1k",
+  "weights": "/root/qone-paperbench-full10/vision/resnet50.a1_in1k.safetensors",
+  "weights_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+  "zip": "/root/qone-paperbench-full10/vision/tiny-imagenet-200.zip",
+  "zip_sha256": "6198c8ae015e2b3e007c7841da39ec069199b9aa3bfa943a462022fe5e43c821",
+  "device": "cuda",
+  "seed": 20261108,
+  "frozen_backbone": true,
+  "feature_dim": 2048,
+  "classes": 200,
+  "train_images": 10000,
+  "val_images": 2000,
+  "epochs": 3,
+  "batch_size": 256,
+  "learning_rate": 0.01,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 5.2596259124755855,
+      "val_accuracy": 0.08449999988079071
+    },
+    {
+      "epoch": 2,
+      "train_loss": 5.122329761505127,
+      "val_accuracy": 0.23100000619888306
+    },
+    {
+      "epoch": 3,
+      "train_loss": 4.982022142791748,
+      "val_accuracy": 0.2955000102519989
+    }
+  ],
+  "final_val_accuracy": 0.2955000102519989,
+  "elapsed_s": 102.11,
+  "note": "Real frozen ResNet-50 features and trained linear probe on public Tiny-ImageNet-200; not ImageNet-1K, not paper-level OOD results, and not an official PaperBench judge score."
+}

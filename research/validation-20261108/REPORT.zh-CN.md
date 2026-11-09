@@ -256,3 +256,17 @@
 - Full10 仍为 `BLOCKED`：`verified=3`、`out_of_scope_waived=22`、
   `blocked=2751`、`unverified=0`。新增实验是公开替代证据，不是 10 任务
   全复现，也不是官方 PaperBench 分数。
+
+## 2026-11-08 用户“同意”后的执行
+
+- `official-judge-go-card.md` 把官方 judge 的额度、key、parse 端点、单 leaf
+  对表与 10 任务扩展拆成 5 条逐线 GO。当前 key 为空、Magpie 132 个模型里
+  没有 `o3-mini`、普通 `chat.completions` 不能替代 `chat.completions.parse`，
+  因此 `official_judge_status=BLOCKED`、`official_scores=0`。
+- AMD 云端新增真实训练：`tiny-imagenet-linear-probe.json` 使用冻结的公开
+  ResNet-50 特征，在 10,000 训练图 / 2,000 验证图 / 200 类上训练线性探针
+  3 个 epoch，102.11 秒。验证准确率 0.0845 → 0.2310 → 0.2955，训练损失
+  5.2596 → 5.1223 → 4.9820。明确不是 ImageNet-1K、论文 OOD 结果或官方
+  PaperBench 分数。
+- continuation 门禁扩到 **35 项全绿**，主验证闸扩到 **211 项全绿**；
+  Full10 仍 `BLOCKED`，没有因新增训练或 judge GO 卡改动任何叶子状态。

@@ -15,6 +15,11 @@
 `research/validation-20261108/REPORT.zh-CN.md`。没有 push、没有付费 API、
 没有把公开替代实验写成论文复现。
 
+2026-11-08 用户“同意”后续：官方 judge 仍因缺付费 key、`o3-mini` 与
+`chat.completions.parse` 端点而 `BLOCKED`，已写成 5 条逐线 GO 卡；AMD 云端
+新增冻结 ResNet-50 特征上的真实线性探针训练（3 epoch、最终验证准确率
+0.2955）。主验证闸增至 211 项全绿，Full10 仍 `BLOCKED`。
+
 ## 已完成（有证据）
 
 1. `src/qone_life/research_factory/code_lab.py` 提供有界代码生成、隔离子进程执行和主机隐藏测试；7 项仓库测试通过。
