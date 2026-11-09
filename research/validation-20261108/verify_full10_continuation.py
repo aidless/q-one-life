@@ -32,6 +32,9 @@ def main() -> int:
     d4rl = json.loads((root / "d4rl-multi-bc.json").read_text(encoding="utf-8"))
     linear_probe = json.loads((root / "tiny-imagenet-linear-probe.json").read_text(encoding="utf-8"))
     probe_matrix = json.loads((root / "tiny-imagenet-linear-probe-matrix.json").read_text(encoding="utf-8"))
+    checkpoint_sync = json.loads((root / "full10-checkpoint-sync.json").read_text(encoding="utf-8"))
+    gap_matrix = json.loads((root / "full10-gap-matrix.json").read_text(encoding="utf-8"))
+    audit_verify = json.loads((root / "full10-audit-verification.json").read_text(encoding="utf-8"))
 
     timm_states = {row["state"] for row in assets["timm"].values()}
     toxicity_states = {row["state"] for row in assets["toxicity_classifier"].values()}
@@ -106,6 +109,13 @@ def main() -> int:
               row["status"] == "completed"
               and isinstance(row.get("final_val_accuracy"), (int, float))
               for row in probe_matrix["models"])),
+        check("checkpoint_sync_tasks", 10, checkpoint_sync["summary"]["tasks"]),
+        check("checkpoint_sync_problems", 0, checkpoint_sync["summary"]["problems"]),
+        check("gap_matrix_total_leaves", 2776, gap_matrix["total_leaves"]),
+        check("gap_matrix_blocked_leaves", 2751, gap_matrix["blocked_leaves"]),
+        check("gap_matrix_promotions", 0, gap_matrix["summary"]["promoted_leaves"]),
+        check("full10_audit_gate", "PASS", audit_verify["summary"]["gate"]),
+        check("full10_audit_checks", 18, audit_verify["summary"]["checks"]),
     ]
     report = {"checks": checks, "passed": all(row["passed"] for row in checks),
               "summary": {"gate": "PASS" if all(row["passed"] for row in checks) else "FAIL",

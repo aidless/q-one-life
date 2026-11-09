@@ -4,12 +4,13 @@
   "order": 8,
   "status": "BLOCKED",
   "verified_leaves": 0,
-  "waived_leaves": 0,
-  "blocked_leaves": 0,
-  "unverified_leaves": 361,
+  "waived_leaves": 12,
+  "blocked_leaves": 349,
+  "unverified_leaves": 0,
   "elapsed_gpu_hours": 0.0,
-  "note": "Infrastructure checkpoint; not a reproduction result.",
+  "note": "Checkpoint counters synchronized from leaf-ledger.json; not a reproduction result.",
   "blocked_reason": "Public D4RL Kitchen alternative downloaded and parsed; full training/evaluation not done.",
   "last_checked": "2026-11-08",
-  "asset_status": "PUBLIC_ALTERNATIVE_PARTIAL"
+  "asset_status": "PUBLIC_ALTERNATIVE_PARTIAL",
+  "ledger_state": "counts_from_leaf_ledger"
 }

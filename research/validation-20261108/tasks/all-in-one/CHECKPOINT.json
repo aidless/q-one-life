@@ -5,10 +5,11 @@
   "status": "BLOCKED",
   "verified_leaves": 0,
   "waived_leaves": 0,
-  "blocked_leaves": 0,
-  "unverified_leaves": 174,
+  "blocked_leaves": 174,
+  "unverified_leaves": 0,
   "elapsed_gpu_hours": 0.0,
-  "note": "Infrastructure checkpoint; not a reproduction result.",
+  "note": "Checkpoint counters synchronized from leaf-ledger.json; not a reproduction result.",
   "blocked_reason": "Simformer training, sbi NPE/NRE/NLE, four benchmark tasks and C2ST require additional packages and GPU training",
-  "last_checked": "2026-11-08"
+  "last_checked": "2026-11-08",
+  "ledger_state": "counts_from_leaf_ledger"
 }

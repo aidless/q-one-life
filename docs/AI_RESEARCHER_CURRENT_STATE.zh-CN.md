@@ -25,6 +25,10 @@
 AMD 云端完成四模型冻结特征线性探针训练矩阵（4/4、361.62 秒）。continuation
 门禁 43 项、主验证闸 213 项全绿，Full10 仍 `BLOCKED` 且叶子状态未变。
 
+2026-11-08 “全部批准”后续：完成 checkpoint 计数同步、2776 叶缺口矩阵、
+18 项审计闸与预注册真实编码器 judge 负证据；continuation 50 项、主验证 216
+项全绿。Full10 仍 `BLOCKED`，0 个新叶子升档，官方 judge 仍缺 key/parse 端点。
+
 ## 已完成（有证据）
 
 1. `src/qone_life/research_factory/code_lab.py` 提供有界代码生成、隔离子进程执行和主机隐藏测试；7 项仓库测试通过。

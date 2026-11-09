@@ -1,0 +1,149 @@
+{
+  "checks": [
+    {
+      "check": "ledger_leaves",
+      "expected": 2776,
+      "actual": 2776,
+      "passed": true
+    },
+    {
+      "check": "ledger_verified",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "check": "ledger_waived",
+      "expected": 22,
+      "actual": 22,
+      "passed": true
+    },
+    {
+      "check": "ledger_blocked",
+      "expected": 2751,
+      "actual": 2751,
+      "passed": true
+    },
+    {
+      "check": "ledger_unverified",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "sync_schema",
+      "expected": "qone-full10-checkpoint-sync-v1",
+      "actual": "qone-full10-checkpoint-sync-v1",
+      "passed": true
+    },
+    {
+      "check": "sync_tasks",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "check": "sync_problems",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "sync_canonical",
+      "expected": "cf083cd97872297fc6f77c0a7e91dd7af464624105c129e4092259b07e612c5b",
+      "actual": "cf083cd97872297fc6f77c0a7e91dd7af464624105c129e4092259b07e612c5b",
+      "passed": true
+    },
+    {
+      "check": "checkpoint_mismatches",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "gap_schema",
+      "expected": "qone-full10-gap-matrix-v1",
+      "actual": "qone-full10-gap-matrix-v1",
+      "passed": true
+    },
+    {
+      "check": "gap_total_leaves",
+      "expected": 2776,
+      "actual": 2776,
+      "passed": true
+    },
+    {
+      "check": "gap_blocked_leaves",
+      "expected": 2751,
+      "actual": 2751,
+      "passed": true
+    },
+    {
+      "check": "gap_state_counts",
+      "expected": [
+        [
+          "blocked",
+          2751
+        ],
+        [
+          "out_of_scope_waived",
+          22
+        ],
+        [
+          "verified",
+          3
+        ]
+      ],
+      "actual": [
+        [
+          "blocked",
+          2751
+        ],
+        [
+          "out_of_scope_waived",
+          22
+        ],
+        [
+          "verified",
+          3
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "check": "gap_rows",
+      "expected": 2776,
+      "actual": 2776,
+      "passed": true
+    },
+    {
+      "check": "gap_promotions",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "gap_gate",
+      "expected": "REVIEW_ONLY",
+      "actual": "REVIEW_ONLY",
+      "passed": true
+    },
+    {
+      "check": "gap_canonical",
+      "expected": "91319548992107ffbc7160f049e0016cc0b2a87147ec65b107f8c424d8165bfa",
+      "actual": "91319548992107ffbc7160f049e0016cc0b2a87147ec65b107f8c424d8165bfa",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "summary": {
+    "gate": "PASS",
+    "checks": 18
+  },
+  "selftest": {
+    "summary": {
+      "passed": true,
+      "direction": "blocked_leaf_count_mutation"
+    }
+  }
+}

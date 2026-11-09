@@ -287,3 +287,23 @@
   0.797 / 0.631 / 0.724。明确不是 ImageNet-1K、论文 OOD 或官方 judge。
 - continuation 门禁扩到 **43 项全绿**，主验证闸扩到 **213 项全绿**；
   Full10 仍 `BLOCKED`（3 verified / 22 waived / 2751 blocked / 0 unverified）。
+
+## 2026-11-08 “全部批准”后的审阅执行
+
+- `scripts/sync_full10_checkpoints.py` 从权威 `leaf-ledger.json` 重算 10 个
+  `CHECKPOINT.json` 的 verified / waived / blocked / unverified 计数；只同步计数，
+  不改任何叶子状态。`full10-checkpoint-sync.json` 记录 10/10 同步、0 问题。
+- `scripts/build_full10_gap_matrix.py` 对 2776 个叶子生成确定性缺口矩阵：
+  1235 gated/licensed data、1062 long RL training、268 model/weights、
+  108 benchmark/dataset、72 paid inference、6 judge evidence、22 waived、
+  3 verified。矩阵明确 `gate=REVIEW_ONLY`、`promoted_leaves=0`。
+- `scripts/verify_full10_audit.py` 增加 18 项审计检查和双向变异自测；
+  `full10-audit-verification.json` 为 PASS。continuation 扩到 **50 项全绿**，
+  主验证闸扩到 **216 项全绿**。
+- 预注册 `embedding-leaf-batch.json` 把 SciBERT / RoBERTa 两条编码器可用性
+  叶子交给锁定三模型 judge；`embedding-panel-receipt.json` 完整返回但第三模型
+  持续给 0，spread 分别为 1.0 与 0.95。按 `spread<=0.25` 规则保留 blocked，
+  负证据写入 `full10-judge-promotion-audit.json`，`new_verified_leaves=0`。
+- Full10 仍 `BLOCKED`：3 verified / 22 waived / 2751 blocked / 0 unverified；
+  `problems=0`。官方 judge 仍缺运行时 key、预算、`o3-mini` 类 parse 端点、
+  单 leaf 对表和 10 任务扩展逐线 GO。

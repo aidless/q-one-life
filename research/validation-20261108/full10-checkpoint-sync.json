@@ -1,0 +1,106 @@
+{
+  "schema": "qone-full10-checkpoint-sync-v1",
+  "source_ledger": "research/validation-20261108/leaf-ledger.json",
+  "tasks": [
+    {
+      "task_id": "semantic-self-consistency",
+      "path": "semantic-self-consistency/CHECKPOINT.json",
+      "rubric_leaves": 77,
+      "state_counts": {
+        "blocked": 77
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "task_id": "self-expansion",
+      "path": "self-expansion/CHECKPOINT.json",
+      "rubric_leaves": 253,
+      "state_counts": {
+        "blocked": 253
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "task_id": "self-composing-policies",
+      "path": "self-composing-policies/CHECKPOINT.json",
+      "rubric_leaves": 275,
+      "state_counts": {
+        "blocked": 275
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "task_id": "fre",
+      "path": "fre/CHECKPOINT.json",
+      "rubric_leaves": 437,
+      "state_counts": {
+        "blocked": 437
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "task_id": "test-time-model-adaptation",
+      "path": "test-time-model-adaptation/CHECKPOINT.json",
+      "rubric_leaves": 163,
+      "state_counts": {
+        "blocked": 163
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "task_id": "mechanistic-understanding",
+      "path": "mechanistic-understanding/CHECKPOINT.json",
+      "rubric_leaves": 96,
+      "state_counts": {
+        "blocked": 93,
+        "verified": 3
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "task_id": "all-in-one",
+      "path": "all-in-one/CHECKPOINT.json",
+      "rubric_leaves": 174,
+      "state_counts": {
+        "blocked": 174
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "task_id": "stay-on-topic-with-classifier-free-guidance",
+      "path": "stay-on-topic-with-classifier-free-guidance/CHECKPOINT.json",
+      "rubric_leaves": 121,
+      "state_counts": {
+        "blocked": 111,
+        "out_of_scope_waived": 10
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "task_id": "lca-on-the-line",
+      "path": "lca-on-the-line/CHECKPOINT.json",
+      "rubric_leaves": 819,
+      "state_counts": {
+        "blocked": 819
+      },
+      "status": "BLOCKED"
+    },
+    {
+      "task_id": "rice",
+      "path": "rice/CHECKPOINT.json",
+      "rubric_leaves": 361,
+      "state_counts": {
+        "blocked": 349,
+        "out_of_scope_waived": 12
+      },
+      "status": "BLOCKED"
+    }
+  ],
+  "problems": [],
+  "summary": {
+    "tasks": 10,
+    "problems": 0,
+    "synced": true
+  },
+  "canonical_sha256": "cf083cd97872297fc6f77c0a7e91dd7af464624105c129e4092259b07e612c5b"
+}

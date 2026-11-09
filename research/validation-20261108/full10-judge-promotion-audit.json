@@ -13,7 +13,8 @@
     "tasks/mechanistic-understanding/full-panel-receipt.json",
     "tasks/mechanistic-understanding/toxicity-panel-receipt.json",
     "tasks/test-time-model-adaptation/vision-load-panel-receipt.json",
-    "tasks/semantic-self-consistency/dataset-panel-receipt.json"
+    "tasks/semantic-self-consistency/dataset-panel-receipt.json",
+    "tasks/semantic-self-consistency/embedding-panel-receipt.json"
   ],
   "results": [
     {
@@ -66,6 +67,18 @@
       "state": "blocked",
       "reason": "locked panel score_spread > 0.25 across repeated complete batches",
       "source": "tasks/semantic-self-consistency/dataset-panel-receipt.json"
+    },
+    {
+      "leaf_id": "0dffe1c8-da0c-4829-9bb6-033512baada3",
+      "state": "blocked",
+      "reason": "locked panel score_spread=1.0; not promoted to verified",
+      "source": "tasks/semantic-self-consistency/embedding-panel-receipt.json"
+    },
+    {
+      "leaf_id": "8519dd43-eaf9-42dd-b96e-cda00b737479",
+      "state": "blocked",
+      "reason": "locked panel score_spread=0.95; not promoted to verified",
+      "source": "tasks/semantic-self-consistency/embedding-panel-receipt.json"
     }
   ],
   "new_verified_leaves": 0,

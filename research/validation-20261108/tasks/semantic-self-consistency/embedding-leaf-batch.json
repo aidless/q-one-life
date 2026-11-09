@@ -1,0 +1,33 @@
+{
+  "schema": "qone-full10-leaf-batch-v1",
+  "task_id": "semantic-self-consistency",
+  "batch": "public-embedding-carriers-20261108",
+  "leaves": [
+    {
+      "leaf_id": "0dffe1c8-da0c-4829-9bb6-033512baada3",
+      "requirements": "SciBERT (110 million parameters version) can be used to generate an embedding vector for an input string",
+      "evidence": {
+        "task_id": "semantic-self-consistency",
+        "claim": "Real allenai/scibert_scivocab_uncased weights were loaded on the authorized AMD GPU and used to recompute CPW/SCW embeddings for four recorded 0.5B-model batches; two cells changed from hash embeddings and the verification gate passed.",
+        "carrier_paths": [
+          "research/validation-20261106/scc-real-model-probe/embedding-runs/real-embedding-scibert.json",
+          "research/validation-20261106/scc-real-model-probe/embedding-verification.json"
+        ],
+        "scope_limit": "Public encoder embedding capability only; no paper benchmark result and no GPT-3.5/GPT-4o-mini inference"
+      }
+    },
+    {
+      "leaf_id": "8519dd43-eaf9-42dd-b96e-cda00b737479",
+      "requirements": "RoBERTa base (125 million parameters version) can be used to generate an embedding vector for an input string",
+      "evidence": {
+        "task_id": "semantic-self-consistency",
+        "claim": "Real roberta-base weights were loaded on the authorized AMD GPU and used to recompute CPW/SCW embeddings for two recorded 0.5B-model StrategyQA batches; two cells changed from hash embeddings and the verification gate passed.",
+        "carrier_paths": [
+          "research/validation-20261106/scc-real-model-probe/embedding-runs/real-embedding-roberta.json",
+          "research/validation-20261106/scc-real-model-probe/embedding-verification.json"
+        ],
+        "scope_limit": "Public encoder embedding capability only; no paper benchmark result and no GPT-3.5/GPT-4o-mini inference"
+      }
+    }
+  ]
+}

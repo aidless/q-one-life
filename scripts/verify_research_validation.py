@@ -120,6 +120,8 @@ def main() -> int:
     d4rl_multi = json.loads((args.root.parent / "validation-20261108/d4rl-multi-bc.json").read_text())
     linear_probe = json.loads((args.root.parent / "validation-20261108/tiny-imagenet-linear-probe.json").read_text())
     probe_matrix = json.loads((args.root.parent / "validation-20261108/tiny-imagenet-linear-probe-matrix.json").read_text())
+    checkpoint_sync = json.loads((args.root.parent / "validation-20261108/full10-checkpoint-sync.json").read_text())
+    gap_matrix = json.loads((args.root.parent / "validation-20261108/full10-gap-matrix.json").read_text())
     continuation_verify = json.loads((args.root.parent / "validation-20261108/full10-continuation-verification.json").read_text())
     mech_data_bytes = (
         args.root / "datasets/mechanistic-understanding/train.csv"
@@ -401,8 +403,11 @@ def main() -> int:
         check("linear_probe_epochs", 3, linear_probe["epochs"]),
         check("linear_probe_matrix_completed", 4, probe_matrix["completed"]),
         check("linear_probe_matrix_blocked", 0, probe_matrix["blocked"]),
+        check("checkpoint_sync_problems", 0, checkpoint_sync["summary"]["problems"]),
+        check("gap_matrix_blocked", 2751, gap_matrix["blocked_leaves"]),
+        check("gap_matrix_promotions", 0, gap_matrix["summary"]["promoted_leaves"]),
         check("full10_continuation_gate", "PASS", continuation_verify["summary"]["gate"]),
-        check("full10_continuation_checks", 43, continuation_verify["summary"]["checks"]),
+        check("full10_continuation_checks", 50, continuation_verify["summary"]["checks"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,

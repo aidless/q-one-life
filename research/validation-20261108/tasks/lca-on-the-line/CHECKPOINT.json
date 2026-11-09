@@ -5,11 +5,12 @@
   "status": "BLOCKED",
   "verified_leaves": 0,
   "waived_leaves": 0,
-  "blocked_leaves": 0,
-  "unverified_leaves": 819,
+  "blocked_leaves": 819,
+  "unverified_leaves": 0,
   "elapsed_gpu_hours": 0.0,
-  "note": "Infrastructure checkpoint; not a reproduction result.",
+  "note": "Checkpoint counters synchronized from leaf-ledger.json; not a reproduction result.",
   "blocked_reason": "Public Tiny-ImageNet-200 downloaded and verified; full ImageNet-1K/OOD model evaluation and training are not complete.",
   "last_checked": "2026-11-08",
-  "asset_status": "PUBLIC_ALTERNATIVE_PARTIAL"
+  "asset_status": "PUBLIC_ALTERNATIVE_PARTIAL",
+  "ledger_state": "counts_from_leaf_ledger"
 }

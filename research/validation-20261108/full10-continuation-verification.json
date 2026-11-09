@@ -257,12 +257,54 @@
       "expected": true,
       "actual": true,
       "passed": true
+    },
+    {
+      "check": "checkpoint_sync_tasks",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "check": "checkpoint_sync_problems",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "gap_matrix_total_leaves",
+      "expected": 2776,
+      "actual": 2776,
+      "passed": true
+    },
+    {
+      "check": "gap_matrix_blocked_leaves",
+      "expected": 2751,
+      "actual": 2751,
+      "passed": true
+    },
+    {
+      "check": "gap_matrix_promotions",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "full10_audit_gate",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true
+    },
+    {
+      "check": "full10_audit_checks",
+      "expected": 18,
+      "actual": 18,
+      "passed": true
     }
   ],
   "passed": true,
   "summary": {
     "gate": "PASS",
-    "checks": 43
+    "checks": 50
   },
   "selftest": {
     "summary": {

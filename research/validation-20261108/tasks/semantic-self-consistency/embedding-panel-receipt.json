@@ -1,0 +1,196 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "523f2d8df856ded1",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "0dffe1c8-da0c-4829-9bb6-033512baada3",
+    "8519dd43-eaf9-42dd-b96e-cda00b737479"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "0dffe1c8-da0c-4829-9bb6-033512baada3",
+      "status": "scored",
+      "score": 1.0,
+      "explanation": "Evidence states real allenai/scibert_scivocab_uncased weights were loaded and used to recompute embeddings, directly supporting that the 110M SciBERT model can generate embedding vectors for input strings.",
+      "raw_response_sha256": "4cb62ac074397b7076b1cd38fd60361d53836ccd7b3cbfc7e03e747fda6778d0",
+      "usage": {
+        "completion_tokens": 127,
+        "completion_tokens_details": {
+          "reasoning_tokens": 69
+        },
+        "prompt_tokens": 907,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 1034
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "0dffe1c8-da0c-4829-9bb6-033512baada3",
+      "status": "scored",
+      "score": 1.0,
+      "explanation": "The evidence confirms real SciBERT weights were loaded and used to recompute embeddings, supporting the public encoder embedding capability requirement.",
+      "raw_response_sha256": "13fb2d9b7618160a636d06e61ed0aa4d56e5c38172f5b2bfa826299dd0477fb3",
+      "usage": {
+        "prompt_tokens": 277,
+        "completion_tokens": 821,
+        "total_tokens": 1098,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 920,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "0dffe1c8-da0c-4829-9bb6-033512baada3",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only confirms that SciBERT weights were loaded and used to recompute embeddings for a 0.5B-model probe, not that SciBERT itself can generate an embedding vector for an arbitrary input string. The claim is about a real-model embedding run, which is outside the stated scope of 'Public encoder embedding capability.' No evidence demonstrates SciBERT's general ability to produce an embedding vector for any input string.",
+      "raw_response_sha256": "59659b4dd1dd344c4382b5c0b77ac76f874eba412b3780476e345f015f1d5f29",
+      "usage": {
+        "prompt_tokens": 334,
+        "completion_tokens": 104,
+        "total_tokens": 438,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "8519dd43-eaf9-42dd-b96e-cda00b737479",
+      "status": "scored",
+      "score": 0.95,
+      "explanation": "Evidence states real roberta-base weights were loaded on an authorized AMD GPU and used to recompute embeddings for recorded batches, with changed cells and a passed verification gate, supporting RoBERTa base embedding generation for input strings.",
+      "raw_response_sha256": "d0fbc4d2bbd8f9e9673587320b8ec95193ab2140fa4e15749b2aa6207c3ed60c",
+      "usage": {
+        "completion_tokens": 169,
+        "completion_tokens_details": {
+          "reasoning_tokens": 110
+        },
+        "prompt_tokens": 898,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 768
+        },
+        "total_tokens": 1067
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "8519dd43-eaf9-42dd-b96e-cda00b737479",
+      "status": "scored",
+      "score": 0.95,
+      "explanation": "The evidence states real RoBERTa-base weights were loaded and used to recompute embeddings, and the verification gate passed, supporting the embedding capability.",
+      "raw_response_sha256": "c32d04f17a2873a1a38f708f6f0f42d0a4c258e571f042a2cc405197f5c0bd72",
+      "usage": {
+        "prompt_tokens": 269,
+        "completion_tokens": 348,
+        "total_tokens": 617,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 373,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "8519dd43-eaf9-42dd-b96e-cda00b737479",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence only confirms that roberta-base weights were loaded and used to recompute CPW/SCW embeddings for StrategyQA batches, but it does not demonstrate that RoBERTa can generate an embedding vector for an arbitrary input string. The scope is limited to a specific recorded batch and a particular embedding scheme (CPW/SCW), not the general capability of producing embeddings for input strings. No evidence of the embedding function's output or behavior for general inputs is provided.",
+      "raw_response_sha256": "8931f7b4c55479cd5e89dd463e0f1aa07997e65857a8c905373c39b18e08dd4c",
+      "usage": {
+        "prompt_tokens": 332,
+        "completion_tokens": 114,
+        "total_tokens": 446,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "434e7985ab955c49fd5b594e31c522f8d4bda8c6ad74a4a490867b94a88e5099"
+}
