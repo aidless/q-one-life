@@ -1,0 +1,42 @@
+{
+  "schema": "qone-magpie-simplejudge-panel-readout-v1",
+  "official": false,
+  "panel": "free_magpie_parse",
+  "task_id": "semantic-self-consistency",
+  "leaf_id": "43f23e0e-2c5b-4a2b-80ab-6cc9c62723f1",
+  "leaf_requirements": "The test split of the AQuA-RAT dataset (254 samples) is available for use.",
+  "judge_type": "simple",
+  "models": [
+    {
+      "model": "openrouter/recursive/flint-v1.0:free",
+      "status": "PASS",
+      "score": 1,
+      "valid_score": true,
+      "grade_leaf_s": 169.66
+    },
+    {
+      "model": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "status": "PASS",
+      "score": 0,
+      "valid_score": true,
+      "grade_leaf_s": 81.29
+    },
+    {
+      "model": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "status": "CHANNEL_INCOMPATIBLE",
+      "score": null,
+      "valid_score": null,
+      "error": "Magpie injects a shell tool; judge/file-ranking prompts return finish_reason=tool_calls with content=None"
+    }
+  ],
+  "scores_present": 2,
+  "spread": 1,
+  "decision": "BLOCKED",
+  "decision_reasons": [
+    "only 2 of the 3 locked models can produce a SimpleJudge score",
+    "spread=1.0 exceeds the locked 0.25 threshold"
+  ],
+  "promoted_leaves": 0,
+  "note": "Single-leaf non-official readout from upstream SimpleJudge via the local Magpie gateway; not an official PaperBench score and not a capability score.",
+  "readout_sha256": "760a604db45afa0d4b2126c586e8decc0aa86dcc199c93b5d5871637a8e74245"
+}

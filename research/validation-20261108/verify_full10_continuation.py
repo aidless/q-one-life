@@ -38,6 +38,7 @@ def main() -> int:
     smoke_dir = root / "magpie-simplejudge-smoke"
     smoke_text = (smoke_dir / "receipt.json").read_text(encoding="utf-8")
     smoke = json.loads(smoke_text)
+    panel = json.loads((smoke_dir / "panel-readout.json").read_text(encoding="utf-8"))
     locked_panel = {"opencode-zen-free/deepseek-v4.1-flash-free",
                     "openrouter/recursive/flint-v1.0:free",
                     "openrouter/xingchen-agi/xing4.0-29b-a4b:free"}
@@ -139,6 +140,15 @@ def main() -> int:
               len(smoke["submission_sha256_manifest"])),
         check("magpie_smoke_real_data_present", True,
               "data/aqua_test.jsonl" in smoke["submission_sha256_manifest"]),
+        check("magpie_panel_schema", "qone-magpie-simplejudge-panel-readout-v1",
+              panel["schema"]),
+        check("magpie_panel_official", False, panel["official"]),
+        check("magpie_panel_scores_present", 2, panel["scores_present"]),
+        check("magpie_panel_spread", 1.0, panel["spread"]),
+        check("magpie_panel_decision", "BLOCKED", panel["decision"]),
+        check("magpie_panel_no_promotion", 0, panel["promoted_leaves"]),
+        check("magpie_panel_incompatible_model", "CHANNEL_INCOMPATIBLE",
+              panel["models"][2]["status"]),
     ]
     report = {"checks": checks, "passed": all(row["passed"] for row in checks),
               "summary": {"gate": "PASS" if all(row["passed"] for row in checks) else "FAIL",

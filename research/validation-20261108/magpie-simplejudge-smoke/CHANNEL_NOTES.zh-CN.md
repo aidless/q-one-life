@@ -43,3 +43,15 @@ GRADER_OPENAI_API_KEY=<nonempty-placeholder> OPENAI_BASE_URL=http://127.0.0.1:34
 ```
 
 回执：`receipt.json`（含 28 个提交文件的 sha256 清单、叶子 id、模型 id、耗时与 token 用量）。
+
+## 双模型读数（同一叶子）
+
+| 模型 | 结果 | 耗时 |
+|---|---|---|
+| `openrouter/recursive/flint-v1.0:free` | `score=1`, `valid_score=true` | grade_leaf 169.66s |
+| `openrouter/xingchen-agi/xing4.0-29b-a4b:free` | `score=0`, `valid_score=true` | grade_leaf 81.29s |
+| `opencode-zen-free/deepseek-v4.1-flash-free` | 通道不兼容，无法出分 | — |
+
+spread=1.0，且只有 2/3 模型可用 → `panel-readout.json` 判 `BLOCKED`，
+`promoted_leaves=0`。上游 `SimpleJudge` 因此无法完成锁定三模型面板；
+替换模型属于锁定决策变更，需用户明确授权。

@@ -359,12 +359,54 @@
       "expected": true,
       "actual": true,
       "passed": true
+    },
+    {
+      "check": "magpie_panel_schema",
+      "expected": "qone-magpie-simplejudge-panel-readout-v1",
+      "actual": "qone-magpie-simplejudge-panel-readout-v1",
+      "passed": true
+    },
+    {
+      "check": "magpie_panel_official",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "check": "magpie_panel_scores_present",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "check": "magpie_panel_spread",
+      "expected": 1.0,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "magpie_panel_decision",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "magpie_panel_no_promotion",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "magpie_panel_incompatible_model",
+      "expected": "CHANNEL_INCOMPATIBLE",
+      "actual": "CHANNEL_INCOMPATIBLE",
+      "passed": true
     }
   ],
   "passed": true,
   "summary": {
     "gate": "PASS",
-    "checks": 60
+    "checks": 67
   },
   "selftest": {
     "summary": {

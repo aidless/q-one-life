@@ -139,6 +139,7 @@ def main() -> None:
     ap.add_argument("--max-tokens", type=int, default=2048)
     ap.add_argument("--paper-chars", type=int, default=16000)
     ap.add_argument("--wall-clock-s", type=int, default=1800)
+    ap.add_argument("--out-name", default="receipt.json")
     args = ap.parse_args()
 
     OUT.mkdir(parents=True, exist_ok=True)
@@ -161,7 +162,7 @@ def main() -> None:
         secret = os.environ.get(var, "")
         if secret and secret in text:
             raise SystemExit(f"refusing to write receipt: {var} value detected")
-    (OUT / "receipt.json").write_text(text + "\n")
+    (OUT / args.out_name).write_text(text + "\n")
     print(json.dumps({k: receipt.get(k) for k in ("status", "model", "judge_type_actual", "score", "valid_score", "grade_leaf_s", "error")}, ensure_ascii=False))
 
 

@@ -338,3 +338,12 @@
 - 判分质量：Flint 给出正确分数但错误理由（称缺少 `data/aqua_test.jsonl`，
   实际存在 130192 字节）。因此本回执只证明通道可用，**不晋级任何叶子**，
   也不计入能力分数。continuation 闸扩到 **60 项全绿**。
+
+## 同一叶子的双模型读数与面板判决
+
+- 同一叶子、同一提交、同一提示下：Flint `score=1`，Xing4 `score=0`，
+  spread=1.0；第三个锁定模型 DeepSeek Free 因工具注入无法产出 SimpleJudge 分数。
+- 结论 `BLOCKED`：三模型不齐且 spread 超 0.25，`promoted_leaves=0`。
+  证据在 `magpie-simplejudge-smoke/panel-readout.json`。
+- 这说明**用上游 SimpleJudge 无法完成锁定三模型面板**。可选项需要用户裁决：
+  接受两模型（永久 BLOCKED）、按通道兼容性而非分数替换一个模型、或维持现状。
