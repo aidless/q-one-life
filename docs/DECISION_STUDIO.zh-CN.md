@@ -39,10 +39,10 @@ QONE_OLLAMA_CPU_ONLY=1 bash scripts/run.sh
 
 截图为明确标记的规则草案界面，不冒充模型生成结果：
 
-- [桌面简报](images/studio-desktop.png)
-- [手机简报](images/studio-mobile.png)
-- [首次使用的空白空间](images/studio-empty.png)
-- [完成后的行动说明与预算](images/studio-completed.png)
+- [合成验收 · 桌面简报](images/studio-desktop.png)
+- [合成验收 · 手机简报](images/studio-mobile.png)
+- [合成验收 · 首次使用的空白空间](images/studio-empty.png)
+- [合成验收 · 完成后的行动说明与预算](images/studio-completed.png)
 - [浏览器验收回执](evidence/studio-ui-20261024.json)
 - [采纳与完成回执](evidence/studio-feedback-20261024.json)：剩余预算75→50分钟，任务说明保留；勾选完成后预算仍为50，长期目标保持活跃。交互验收阶段仅在合成空间将模型地址切换到未监听的本地端口，避免继续占用共享推理服务。
 

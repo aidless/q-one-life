@@ -116,6 +116,24 @@ class PlannerTests(unittest.TestCase):
         self.assertEqual(state["items"][0]["source"], "rules")
         self.assertEqual(state["error"], "连接失败")
 
+    def test_failed_refresh_does_not_relabel_previous_model_cards_as_rules(self):
+        self.repo.goal(GOAL)
+        self.planner.tick()
+        source = self.planner.state()["items"][0]["source"]
+        self.assertTrue(source.startswith("fixture:"))
+
+        def fail(snapshot, config):
+            self.calls.append(snapshot)
+            raise ProviderError("连接失败")
+
+        self.planner.runner = fail
+        self.planner.attempt_sha = None
+        self.planner.tick()
+        state = self.planner.state()
+        self.assertEqual(state["items"][0]["source"], source)
+        self.assertEqual(state["status"], "error")
+        self.assertEqual(state["error"], "连接失败")
+
     def test_paused_or_busy_planner_does_not_call_model(self):
         self.repo.goal(GOAL)
         self.config["auto_recommend_enabled"] = False

@@ -1,0 +1,23 @@
+name: model script check, no model is run
+# Manual only. A green run does not start a model and is not a quality result.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  local-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Point at the local script and do not start Ollama
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          text = Path("scripts/model_smoke.py").read_text(encoding="utf-8")
+          if "not a benchmark or calibration study" not in text:
+              raise SystemExit("model_smoke.py lost its scope line")
+          print("This job does not start Ollama, Laya, or a cloud model.")
+          print("On a machine you control, start the app, then run:")
+          print("python scripts/model_smoke.py --provider ollama --output /tmp/ollama-smoke.json")
+          print("A green run of this workflow is not a model-quality result.")
+          PY
