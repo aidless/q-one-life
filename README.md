@@ -1,5 +1,7 @@
 # Q-One · 个人决策工作台
 
+[![CI](https://github.com/aidless/q-one-life/actions/workflows/checks.yml/badge.svg)](https://github.com/aidless/q-one-life/actions/workflows/checks.yml)
+
 **保存目标 → 系统自动推荐下一步 → 采纳为今日重点 → 完成行动 → 自动调整后续建议。**
 
 这是本项目独立交付的一套完整个人应用，包含中文界面、本地数据存储、真实模型接口和备份恢复。`q-one-core`、`q-one-agent` 是它的内部依赖；三个仓库不代表用户要求的三个独立方案。其他 AI 的实现不在本次交付范围内。
