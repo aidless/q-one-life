@@ -1,0 +1,109 @@
+{
+  "schema": "qone-full10-public-assets-v1",
+  "root": "/root/qone-paperbench-full10",
+  "official": false,
+  "hf_mirror": "https://hf-mirror.com",
+  "d4rl_base": "https://rail.eecs.berkeley.edu/datasets/offline_rl",
+  "timm": {
+    "resnet50.a1_in1k": {
+      "url": "https://hf-mirror.com/timm/resnet50.a1_in1k/resolve/main/model.safetensors",
+      "path": "/root/qone-paperbench-full10/vision/resnet50.a1_in1k.safetensors",
+      "state": "downloaded",
+      "bytes": 102469840,
+      "sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "elapsed_s": 2.28
+    },
+    "vit_base_patch16_224.augreg_in21k_ft_in1k": {
+      "url": "https://hf-mirror.com/timm/vit_base_patch16_224.augreg_in21k_ft_in1k/resolve/main/model.safetensors",
+      "path": "/root/qone-paperbench-full10/vision/vit_base_patch16_224.augreg_in21k_ft_in1k.safetensors",
+      "state": "downloaded",
+      "bytes": 346284714,
+      "sha256": "c401d219603ac3e20b6373c7b198c78d3a733f80b755d148bda3bc320ae69800",
+      "elapsed_s": 9.71
+    },
+    "convnext_small.fb_in22k_ft_in1k": {
+      "url": "https://hf-mirror.com/timm/convnext_small.fb_in22k_ft_in1k/resolve/main/model.safetensors",
+      "path": "/root/qone-paperbench-full10/vision/convnext_small.fb_in22k_ft_in1k.safetensors",
+      "state": "downloaded",
+      "bytes": 200928946,
+      "sha256": "2457488bec2ffcb2061b9e3fdd63360114549615e3e35ef6dc5c5efe549cbbc9",
+      "elapsed_s": 3.42
+    }
+  },
+  "toxicity_classifier": {
+    "config.json": {
+      "url": "https://hf-mirror.com/unitary/unbiased-toxic-roberta/resolve/main/config.json",
+      "path": "/root/qone-paperbench-full10/public-models/unbiased-toxic-roberta/config.json",
+      "state": "downloaded",
+      "bytes": 1381,
+      "sha256": "ec3a47e5c4bd713a8ec190cc696cf4ae247959fbe95921199805d5704bda6031",
+      "elapsed_s": 4.1
+    },
+    "pytorch_model.bin": {
+      "url": "https://hf-mirror.com/unitary/unbiased-toxic-roberta/resolve/main/pytorch_model.bin",
+      "path": "/root/qone-paperbench-full10/public-models/unbiased-toxic-roberta/pytorch_model.bin",
+      "state": "downloaded",
+      "bytes": 498719497,
+      "sha256": "f1cfe8f98a22fff5cf77c150d76ea0328575995aa9b7eb0f566f624842379ba5",
+      "elapsed_s": 6.91
+    },
+    "vocab.json": {
+      "url": "https://hf-mirror.com/unitary/unbiased-toxic-roberta/resolve/main/vocab.json",
+      "path": "/root/qone-paperbench-full10/public-models/unbiased-toxic-roberta/vocab.json",
+      "state": "downloaded",
+      "bytes": 898822,
+      "sha256": "06b4d46c8e752d410213d9548eb27a54db70fda0319b6271fb8d59dead5e1cab",
+      "elapsed_s": 6.14
+    },
+    "merges.txt": {
+      "url": "https://hf-mirror.com/unitary/unbiased-toxic-roberta/resolve/main/merges.txt",
+      "path": "/root/qone-paperbench-full10/public-models/unbiased-toxic-roberta/merges.txt",
+      "state": "downloaded",
+      "bytes": 456318,
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+      "elapsed_s": 5.03
+    },
+    "special_tokens_map.json": {
+      "url": "https://hf-mirror.com/unitary/unbiased-toxic-roberta/resolve/main/special_tokens_map.json",
+      "path": "/root/qone-paperbench-full10/public-models/unbiased-toxic-roberta/special_tokens_map.json",
+      "state": "downloaded",
+      "bytes": 772,
+      "sha256": "c611b1f7d416eb001ee4f293d903ea8c88e703463f1d403f1866a0352743fd00",
+      "elapsed_s": 4.45
+    },
+    "tokenizer_config.json": {
+      "url": "https://hf-mirror.com/unitary/unbiased-toxic-roberta/resolve/main/tokenizer_config.json",
+      "path": "/root/qone-paperbench-full10/public-models/unbiased-toxic-roberta/tokenizer_config.json",
+      "state": "downloaded",
+      "bytes": 997,
+      "sha256": "5619b18c2e1bbf39d9300424cb904b5d0b0d266835adb915aeee8ac3d385fd9d",
+      "elapsed_s": 4.78
+    }
+  },
+  "d4rl": {
+    "d4rl/kitchen_microwave_kettle_light_slider-v0.hdf5": {
+      "url": "https://rail.eecs.berkeley.edu/datasets/offline_rl/kitchen/kitchen_microwave_kettle_light_slider-v0.hdf5",
+      "path": "/root/qone-paperbench-full10/d4rl/kitchen_microwave_kettle_light_slider-v0.hdf5",
+      "state": "blocked",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    "d4rl/mini_kitchen_microwave_kettle_light_slider-v0.hdf5": {
+      "url": "https://rail.eecs.berkeley.edu/datasets/offline_rl/kitchen/mini_kitchen_microwave_kettle_light_slider-v0.hdf5",
+      "path": "/root/qone-paperbench-full10/d4rl/mini_kitchen_microwave_kettle_light_slider-v0.hdf5",
+      "state": "blocked",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    "d4rl/hopper_medium-v2.hdf5": {
+      "url": "https://rail.eecs.berkeley.edu/datasets/offline_rl/gym_mujoco_v2/hopper_medium-v2.hdf5",
+      "path": "/root/qone-paperbench-full10/d4rl/hopper_medium-v2.hdf5",
+      "state": "blocked",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    "d4rl/hopper_medium_replay-v2.hdf5": {
+      "url": "https://rail.eecs.berkeley.edu/datasets/offline_rl/gym_mujoco_v2/hopper_medium_replay-v2.hdf5",
+      "path": "/root/qone-paperbench-full10/d4rl/hopper_medium_replay-v2.hdf5",
+      "state": "blocked",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+2026-11-09T02:25:10Z START asset-download
+2026-11-09T02:25:57Z BLOCKED asset-download exit=3
+2026-11-09T02:25:57Z START vision-matrix
+2026-11-09T02:37:10Z DONE vision-matrix
+2026-11-09T02:37:10Z START toxicity-dpo
+2026-11-09T02:43:58Z DONE toxicity-dpo
+2026-11-09T02:43:58Z START d4rl-bc
+2026-11-09T02:50:45Z START toxicity-dpo-fp32
+2026-11-09T02:55:25Z DONE toxicity-dpo-fp32
+2026-11-09T02:55:25Z START d4rl-bc-fixed

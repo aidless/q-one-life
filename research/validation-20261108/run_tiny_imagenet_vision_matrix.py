@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tiny-ImageNet TTA/LCA-style small matrix with a public ConvNeXt-Tiny checkpoint.
+"""Tiny-ImageNet TTA/LCA-style small matrix with a public timm checkpoint.
 
 This is a real vision-model matrix on 200 public images. It is not the paper's
 ImageNet-1K / ImageNet-OOD model zoo and does not claim paper-level results.
@@ -29,6 +29,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--zip", type=Path, required=True)
     parser.add_argument("--weights", type=Path, required=True)
+    parser.add_argument("--model-name", default="convnext_tiny.fb_in22k_ft_in1k")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--images", type=int, default=200)
     parser.add_argument("--seed", type=int, default=20261108)
@@ -49,8 +50,8 @@ def main() -> int:
         device = "cuda" if torch.cuda.is_available() else "cpu"
     else:
         device = args.device
-    cfg = timm.get_pretrained_cfg("convnext_tiny.fb_in22k_ft_in1k")
-    model = timm.create_model("convnext_tiny", pretrained=False,
+    cfg = timm.get_pretrained_cfg(args.model_name)
+    model = timm.create_model(cfg.architecture, pretrained=False,
                               num_classes=cfg.num_classes, pretrained_cfg=cfg)
     state = load_file(str(args.weights))
     model.load_state_dict(state, strict=False)
@@ -123,7 +124,7 @@ def main() -> int:
     }
     receipt = {
         "schema": "qone-tiny-imagenet-tta-lca-matrix-v1",
-        "model": "timm/convnext_tiny.fb_in22k_ft_in1k",
+        "model": f"timm/{args.model_name}",
         "weights": str(args.weights),
         "weights_sha256": sha256_file(args.weights),
         "zip": str(args.zip),
@@ -138,8 +139,8 @@ def main() -> int:
         "toy_lca_error": lca_errors,
         "elapsed_s": round(time.monotonic() - started, 2),
         "note": (
-            "Real public ConvNeXt-Tiny on 200 Tiny-ImageNet images; toy 20-parent "
-            "hierarchy only, no ImageNet-1K/OOD or 75-model results."
+            f"Real public timm/{args.model_name} on Tiny-ImageNet images; toy "
+            "20-parent hierarchy only, no ImageNet-1K/OOD or paper-level results."
         ),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

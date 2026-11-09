@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+"""Verify compact continuation receipts without claiming full paper reproduction."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+
+
+def check(name: str, expected, actual) -> dict:
+    return {"check": name, "expected": expected, "actual": actual,
+            "passed": expected == actual}
+
+
+def canonical_sha256(payload) -> str:
+    return hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(",", ":"),
+                                     ensure_ascii=False).encode("utf-8")).hexdigest()
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--selftest", action="store_true")
+    args = parser.parse_args()
+    root = args.root
+    assets = json.loads((root / "public-assets.json").read_text(encoding="utf-8"))
+    vision = json.loads((root / "vision-multimodel.json").read_text(encoding="utf-8"))
+    toxicity = json.loads((root / "mechanistic-toxicity-dpo.json").read_text(encoding="utf-8"))
+    d4rl = json.loads((root / "d4rl-multi-bc.json").read_text(encoding="utf-8"))
+
+    timm_states = {row["state"] for row in assets["timm"].values()}
+    toxicity_states = {row["state"] for row in assets["toxicity_classifier"].values()}
+    vision_models = {row["model"] for row in vision["models"] if row["status"] == "completed"}
+    d4rl_paths = {row["path"] for row in d4rl["datasets"] if row["status"] == "completed"}
+    checks = [
+        check("assets_schema", "qone-full10-public-assets-v1", assets["schema"]),
+        check("timm_download_states", True, timm_states <= {"downloaded", "present"}),
+        check("timm_count", 3, len(assets["timm"])),
+        check("toxicity_classifier_files", 6, len(assets["toxicity_classifier"])),
+        check("toxicity_classifier_states", True,
+              toxicity_states <= {"downloaded", "present"}),
+        check("d4rl_cloud_direct_blocked", True, all(
+            row.get("state") == "blocked" and "403" in row.get("error", "")
+            for row in assets["d4rl"].values())),
+        check("vision_schema", "qone-vision-multimodel-matrix-v1", vision["schema"]),
+        check("vision_official", False, vision["official"]),
+        check("vision_models", 4, len(vision_models)),
+        check("vision_completed", 4, vision["completed"]),
+        check("vision_blocked", 0, vision["blocked"]),
+        check("vision_images", 2000, vision["images_per_model"]),
+        check("vision_tiny_imagenet_sha",
+              "6198c8ae015e2b3e007c7841da39ec069199b9aa3bfa943a462022fe5e43c821",
+              vision["zip_sha256"]),
+        check("toxicity_schema", "qone-mechanistic-toxicity-dpo-slice-v1", toxicity["schema"]),
+        check("toxicity_official", False, toxicity["official"]),
+        check("toxicity_rows", 128, toxicity["rows"]),
+        check("toxicity_positive_samples", 128, toxicity["positive_samples_generated"]),
+        check("toxicity_negative_samples", 128, toxicity["negative_samples_generated"]),
+        check("toxicity_classifier_is_public_roberta", True,
+              "unbiased-toxic-roberta" in toxicity["classifier"]),
+        check("toxicity_dpo_not_paper_finetune", True,
+              "not full paper DPO fine-tuning" in toxicity["note"]),
+        check("toxicity_dpo_failure_diagnosed", True,
+              toxicity["dpo"].get("enabled") is False
+              and toxicity["dpo"].get("reason") == "non_finite_loss"
+              and isinstance(toxicity["dpo"].get("first_loss"), (int, float))
+              and toxicity["dpo"].get("steps") == 1),
+        check("d4rl_schema", "qone-d4rl-multi-bc-v1", d4rl["schema"]),
+        check("d4rl_official", False, d4rl["official"]),
+        check("d4rl_completed", 4, d4rl["completed"]),
+        check("d4rl_blocked", 0, d4rl["blocked"]),
+        check("d4rl_no_rollout_claim", True,
+              "no online rollout" in d4rl["note"]),
+        check("d4rl_dataset_count", 4, len(d4rl_paths)),
+    ]
+    report = {"checks": checks, "passed": all(row["passed"] for row in checks),
+              "summary": {"gate": "PASS" if all(row["passed"] for row in checks) else "FAIL",
+                          "checks": len(checks)}}
+    if args.selftest:
+        mutated = json.loads((root / "vision-multimodel.json").read_text(encoding="utf-8"))
+        mutated["official"] = True
+        checks_bad = [check("vision_official", False, mutated["official"])]
+        report["selftest"] = {"summary": {"passed": not checks_bad[0]["passed"],
+                                           "direction": "official_flag_mutation"}}
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n",
+                           encoding="utf-8")
+    print(json.dumps(report["summary"]))
+    return 0 if report["passed"] else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

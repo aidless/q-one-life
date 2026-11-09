@@ -223,3 +223,34 @@
 2. 解除 401 门控数据或改用公开等价数据，并给出 GPU 预算与逐项下载确认。
 3. 每任务按 `ASSETS.json → 云端实验 → carrier ledger → panel grade → gate`
    推进；`verify_paperbench_full10.py` 从 `BLOCKED` 退出即表示可继续。
+
+## 2026-11-08 AMD 持续负载与公开替代续报
+
+- 新增公开资产清单 `public-assets.json`：3 个 timm 权重（ResNet50、
+  ViT-Base、ConvNeXt-Small）和 `unitary/unbiased-toxic-roberta` 的 6 个文件
+  均从公开镜像下载并记录字节数与 SHA-256。D4RL 直链在 AMD 云端实测
+  `403 Forbidden`，4 个公开 HDF5 改由控制机下载后复制到云端，哈希原样保留；
+  失败原因没有删除。
+- `vision-multimodel.json`：4 个公开 timm 模型在 AMD GPU 上各跑
+  2,000 张 Tiny-ImageNet × 6 种扰动，4/4 完成、0 阻塞、672.56 秒。
+  ConvNeXt-Tiny / ResNet50 / ViT-Base / ConvNeXt-Small 的 grayscale
+  clean agreement 分别为 1084 / 851 / 1233 / 1187。明确不是 ImageNet-1K、
+  5 个 OOD 数据集或论文 75 模型结果。
+- `mechanistic-toxicity-dpo.json`：GPT-2-medium 与公开 unbiased-toxic-roberta
+  在 128 条 RealToxicityPrompts 上生成 128 条 greedy 正样本、128 条
+  toxic-token-bias 负样本并逐条评分；平均毒性 0.01343 → 0.02659，
+  7 对满足负样本更毒。首次 DPO 切片出现 half-precision NaN，保留失败；
+  fp32 诊断重跑仍在第 1 步停止于 `non_finite_loss`，因此 `enabled=false`，
+  不声称完成 DPO 训练，也不把 PPLM 式偏置说成论文 PPLM。
+- `d4rl-multi-bc.json`：4 个公开 D4RL HDF5（Hopper medium / medium-replay、
+  两个 Kitchen 变体）用同一 BC 脚本与种子完成 4/4 数据集 × 3 宽度 × 3 seed，
+  27.15 秒。云端队列因两个进程共用输出路径未落最终 JSON，故该回执明确标为
+  `local_control_evidence`；没有在线 rollout、没有环境 return。
+- 新增 `full10-continuation-verification.json`：27 项独立检查全绿，双向变异
+  自测通过。主验证闸同步新增 10 项，合计 **208 项全绿**。
+- 两批窄 leaf 的锁定免费 judge（视觉模型加载 2 叶、RTP 毒性评分 1 叶）
+  均 `complete=true`，但三模型分歧持续超过 0.25，按规则保留 `blocked`，
+  没有发布部分分数、没有替换锁定模型、没有新增 `verified`。
+- Full10 仍为 `BLOCKED`：`verified=3`、`out_of_scope_waived=22`、
+  `blocked=2751`、`unverified=0`。新增实验是公开替代证据，不是 10 任务
+  全复现，也不是官方 PaperBench 分数。

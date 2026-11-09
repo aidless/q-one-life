@@ -8,6 +8,13 @@
 `research/validation-20261108/REPORT.zh-CN.md`。本状态不替代下方 171 项
 主验证闸。
 
+2026-11-08 再续：AMD 云端持续负载已跑完 4 个公开视觉模型的 Tiny-ImageNet
+扰动矩阵，并补齐 RTP 毒性评分与 4 个公开 D4RL 数据集的 BC 对照；
+主验证闸增至 208 项全绿，Full10 仍 `BLOCKED`（3 verified / 22 waived /
+2751 blocked）。新增证据和失败诊断见
+`research/validation-20261108/REPORT.zh-CN.md`。没有 push、没有付费 API、
+没有把公开替代实验写成论文复现。
+
 ## 已完成（有证据）
 
 1. `src/qone_life/research_factory/code_lab.py` 提供有界代码生成、隔离子进程执行和主机隐藏测试；7 项仓库测试通过。

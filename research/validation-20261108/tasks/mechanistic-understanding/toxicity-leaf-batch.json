@@ -1,0 +1,20 @@
+{
+  "schema": "qone-full10-leaf-batch-v1",
+  "task_id": "mechanistic-understanding",
+  "batch": "toxicity-dpo-continuation-20261108",
+  "leaves": [
+    {
+      "leaf_id": "d8ae7965-5f7e-4f85-a486-80c1cf0ef214",
+      "requirements": "RealToxicityPrompts have been used to elicit toxic outputs from the language models and calculating toxicity scores.",
+      "evidence": {
+        "task_id": "mechanistic-understanding",
+        "claim": "128 public RealToxicityPrompts were used with GPT-2-medium and unbiased-toxic-roberta; generated positive and toxic-biased continuations and calculated toxicity scores for each.",
+        "carrier_paths": [
+          "research/validation-20261108/mechanistic-toxicity-dpo.json",
+          "research/validation-20261108/run_mechanistic_toxicity_dpo.py"
+        ],
+        "scope_limit": "128 prompts, PPLM-style toxic-token bias, bounded DPO slice, not Wikitext-2 or the paper's full DPO/PPLM recipe"
+      }
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "checks": [
+    {
+      "check": "assets_schema",
+      "expected": "qone-full10-public-assets-v1",
+      "actual": "qone-full10-public-assets-v1",
+      "passed": true
+    },
+    {
+      "check": "timm_download_states",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "timm_count",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "check": "toxicity_classifier_files",
+      "expected": 6,
+      "actual": 6,
+      "passed": true
+    },
+    {
+      "check": "toxicity_classifier_states",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "d4rl_cloud_direct_blocked",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "vision_schema",
+      "expected": "qone-vision-multimodel-matrix-v1",
+      "actual": "qone-vision-multimodel-matrix-v1",
+      "passed": true
+    },
+    {
+      "check": "vision_official",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "check": "vision_models",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    },
+    {
+      "check": "vision_completed",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    },
+    {
+      "check": "vision_blocked",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "vision_images",
+      "expected": 2000,
+      "actual": 2000,
+      "passed": true
+    },
+    {
+      "check": "vision_tiny_imagenet_sha",
+      "expected": "6198c8ae015e2b3e007c7841da39ec069199b9aa3bfa943a462022fe5e43c821",
+      "actual": "6198c8ae015e2b3e007c7841da39ec069199b9aa3bfa943a462022fe5e43c821",
+      "passed": true
+    },
+    {
+      "check": "toxicity_schema",
+      "expected": "qone-mechanistic-toxicity-dpo-slice-v1",
+      "actual": "qone-mechanistic-toxicity-dpo-slice-v1",
+      "passed": true
+    },
+    {
+      "check": "toxicity_official",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "check": "toxicity_rows",
+      "expected": 128,
+      "actual": 128,
+      "passed": true
+    },
+    {
+      "check": "toxicity_positive_samples",
+      "expected": 128,
+      "actual": 128,
+      "passed": true
+    },
+    {
+      "check": "toxicity_negative_samples",
+      "expected": 128,
+      "actual": 128,
+      "passed": true
+    },
+    {
+      "check": "toxicity_classifier_is_public_roberta",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "toxicity_dpo_not_paper_finetune",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "toxicity_dpo_failure_diagnosed",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "d4rl_schema",
+      "expected": "qone-d4rl-multi-bc-v1",
+      "actual": "qone-d4rl-multi-bc-v1",
+      "passed": true
+    },
+    {
+      "check": "d4rl_official",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "check": "d4rl_completed",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    },
+    {
+      "check": "d4rl_blocked",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "d4rl_no_rollout_claim",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "d4rl_dataset_count",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "summary": {
+    "gate": "PASS",
+    "checks": 27
+  },
+  "selftest": {
+    "summary": {
+      "passed": true,
+      "direction": "official_flag_mutation"
+    }
+  }
+}

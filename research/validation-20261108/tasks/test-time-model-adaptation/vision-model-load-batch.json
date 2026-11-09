@@ -1,0 +1,33 @@
+{
+  "schema": "qone-full10-leaf-batch-v1",
+  "task_id": "test-time-model-adaptation",
+  "batch": "public-model-load-continuation-20261108",
+  "leaves": [
+    {
+      "leaf_id": "vit-base",
+      "requirements": "Code has been implemented such that a ViT-Base model pre-trained on ImageNet-1K can be loaded into memory using the timm repository",
+      "evidence": {
+        "task_id": "test-time-model-adaptation",
+        "claim": "Public timm/vit_base_patch16_224.augreg_in21k_ft_in1k weights were loaded by timm and evaluated on Tiny-ImageNet corruptions with a GPU matrix.",
+        "carrier_paths": [
+          "research/validation-20261108/vision-multimodel.json",
+          "research/validation-20261108/run_tiny_imagenet_vision_matrix.py"
+        ],
+        "scope_limit": "Tiny-ImageNet public alternative and toy hierarchy; no ImageNet-1K/OOD or full TTA paper methods"
+      }
+    },
+    {
+      "leaf_id": "resnet50",
+      "requirements": "Code has been implemented such that a ResNet-50 model pre-trained on ImageNet-1K can be loaded into memory",
+      "evidence": {
+        "task_id": "test-time-model-adaptation",
+        "claim": "Public timm/resnet50.a1_in1k weights were loaded by timm and evaluated on Tiny-ImageNet corruptions with a GPU matrix.",
+        "carrier_paths": [
+          "research/validation-20261108/vision-multimodel.json",
+          "research/validation-20261108/run_tiny_imagenet_vision_matrix.py"
+        ],
+        "scope_limit": "Tiny-ImageNet public alternative and toy hierarchy; no ImageNet-1K/OOD or full TTA paper methods"
+      }
+    }
+  ]
+}

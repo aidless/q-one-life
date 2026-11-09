@@ -1,0 +1,196 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "c30bfe45b534e956",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "vit-base",
+    "resnet50"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "vit-base",
+      "status": "scored",
+      "score": 0.9,
+      "explanation": "Evidence states timm loaded the public vit_base_patch16_224.augreg_in21k_ft_in1k weights, which are ImageNet-1K fine-tuned ViT-Base weights, and evaluated them in the provided script. This directly supports loading a ViT-Base ImageNet-1K model via timm, though only a public alternative/toy evaluation scope is evidenced.",
+      "raw_response_sha256": "79545a75f66d1f638c4e3c56e34a6d610fa611f367f078a3cbeec4e077c77ef6",
+      "usage": {
+        "completion_tokens": 219,
+        "completion_tokens_details": {
+          "reasoning_tokens": 122
+        },
+        "prompt_tokens": 869,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 768
+        },
+        "total_tokens": 1088
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "vit-base",
+      "status": "scored",
+      "score": 0.65,
+      "explanation": "Evidence confirms timm ViT-Base weights were loaded and evaluated on Tiny-ImageNet, but the scope limit notes no full ImageNet-1K/OOD or TTA methods, so the requirement is only partially supported.",
+      "raw_response_sha256": "abfadfc55e917c83615202be516a4e578af2d8ba902d341a76ebf12b50a324ec",
+      "usage": {
+        "prompt_tokens": 243,
+        "completion_tokens": 759,
+        "total_tokens": 1002,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 702,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "vit-base",
+      "status": "scored",
+      "score": 0.0,
+      "explanation": "The evidence claims timm loaded ViT-Base weights and evaluated on Tiny-ImageNet corruptions, but the scope_limit explicitly restricts the comparison to 'Tiny-ImageNet public alternative and toy hierarchy; no ImageNet-1K/OOD or full TTA paper methods'. The claim itself is about ImageNet-1K pretraining, which falls outside the allowed scope. Since the evidence does not provide any actual results or metrics within the permitted scope, there is no basis to score this as a meaningful test-time adaptation result.",
+      "raw_response_sha256": "a1f68cfa46ff30601fddd720a856911ff019516d55c29f8b99d5e4554ecae55d",
+      "usage": {
+        "prompt_tokens": 288,
+        "completion_tokens": 127,
+        "total_tokens": 415,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 256,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "resnet50",
+      "status": "scored",
+      "score": 0.65,
+      "explanation": "Evidence claims timm/resnet50.a1_in1k (ImageNet-1K pre-trained) weights were successfully loaded, satisfying the core requirement; however, no code snippet confirms the loading call and the scope limit indicates an alternative Tiny-ImageNet/toy setup rather than direct ImageNet-1K evaluation, leaving verification partial.",
+      "raw_response_sha256": "ed747f8caff25fbf5273fc5a4a1435ffde99a57c935da839945a318f1b85bdc9",
+      "usage": {
+        "completion_tokens": 321,
+        "completion_tokens_details": {
+          "reasoning_tokens": 237
+        },
+        "prompt_tokens": 827,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 768
+        },
+        "total_tokens": 1148
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "resnet50",
+      "status": "scored",
+      "score": 0.9,
+      "explanation": "The evidence states that public timm/resnet50.a1_in1k weights were loaded by timm, supporting loading a ResNet-50 pre-trained on ImageNet-1K, though evaluation was limited to Tiny-ImageNet.",
+      "raw_response_sha256": "e3c9e0cf0605d6036efd6bffa257345ab3572166f80f09925736cf9a2f810c13",
+      "usage": {
+        "prompt_tokens": 230,
+        "completion_tokens": 737,
+        "total_tokens": 967,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 673,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "resnet50",
+      "status": "scored",
+      "score": 0.5,
+      "explanation": "The evidence confirms that a ResNet-50 model pre-trained on ImageNet-1K was loaded into memory and evaluated on Tiny-ImageNet corruptions with a GPU matrix. The claim is directly supported by the provided carrier paths and scope_limit, which explicitly state the evaluation is on Tiny-ImageNet public alternative with no ImageNet-1K/OOD or full TTA paper methods. This matches the task requirement of loading an ImageNet-1K pre-trained ResNet-50. However, the evidence does not provide details on whether the model was fine-tuned, adapted, or used for any specific test-time adaptation strategy beyond initial loading and evaluation, leaving some uncertainty about the depth of adaptation implied by the task_id.",
+      "raw_response_sha256": "c16274dc9751db532038e539c71ceab4c7beadc0df3d37c92405ae049175c97d",
+      "usage": {
+        "prompt_tokens": 271,
+        "completion_tokens": 171,
+        "total_tokens": 442,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "1d49c6d6d208ac6a9d66fafe8c0cef18a8499ef2b6422beb270accb058409d6c"
+}

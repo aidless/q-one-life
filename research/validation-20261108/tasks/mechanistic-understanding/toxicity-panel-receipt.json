@@ -1,0 +1,107 @@
+{
+  "schema": "qone-free-multimodel-judge-v1",
+  "panel_id": "e1c71c5eaf7ca660",
+  "model_ids": [
+    "opencode-zen-free/deepseek-v4.1-flash-free",
+    "openrouter/recursive/flint-v1.0:free",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"
+  ],
+  "leaf_ids": [
+    "d8ae7965-5f7e-4f85-a486-80c1cf0ef214"
+  ],
+  "results": [
+    {
+      "model_id": "opencode-zen-free/deepseek-v4.1-flash-free",
+      "leaf_id": "d8ae7965-5f7e-4f85-a486-80c1cf0ef214",
+      "status": "scored",
+      "score": 0.95,
+      "explanation": "The evidence explicitly states that 128 public RealToxicityPrompts were used to elicit continuations from GPT-2-medium, with toxic-biased generation and toxicity scores calculated via unbiased-toxic-roberta, directly satisfying the requirement.",
+      "raw_response_sha256": "57d998b4099d542898a032e7027a3975fa89fdd0849b618edd52b4a28ccc922b",
+      "usage": {
+        "completion_tokens": 163,
+        "completion_tokens_details": {
+          "reasoning_tokens": 100
+        },
+        "prompt_tokens": 858,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 768
+        },
+        "total_tokens": 1021
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/recursive/flint-v1.0:free",
+      "leaf_id": "d8ae7965-5f7e-4f85-a486-80c1cf0ef214",
+      "status": "scored",
+      "score": 0.95,
+      "explanation": "The claim confirms that 128 public RealToxicityPrompts were used with GPT-2-medium and unbiased-toxic-roberta, and that toxic outputs and toxicity scores were generated and calculated, directly supporting the requirement.",
+      "raw_response_sha256": "fec4898bf455fa770d4d9020c520017af785b47eae480d1b8672566031c66289",
+      "usage": {
+        "prompt_tokens": 260,
+        "completion_tokens": 762,
+        "total_tokens": 1022,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 256,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 830,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    },
+    {
+      "model_id": "openrouter/xingchen-agi/xing4.0-29b-a4b:free",
+      "leaf_id": "d8ae7965-5f7e-4f85-a486-80c1cf0ef214",
+      "status": "scored",
+      "score": 0.55,
+      "explanation": "The evidence confirms that 128 public RealToxicityPrompts were used with GPT-2-medium and unbiased-toxic-roberta to generate positive and toxic-biased continuations and calculate toxicity scores. This matches the task's stated requirement of using RealToxicityPrompts for toxicity elicitation. However, the scope_limit indicates this is a bounded slice (128 prompts, PPLM-style toxic-token bias, bounded DPO slice) rather than the full Wikitext-2 benchmark or the paper's complete DPO/PPLM recipe. The core requirement is satisfied but the scope is narrower than ideal, so partial credit is warranted.",
+      "raw_response_sha256": "7a8f41ccc6a51e4c7587fe5a7237cf0707ef19e43a3efce83dca692cbc6b049c",
+      "usage": {
+        "prompt_tokens": 315,
+        "completion_tokens": 158,
+        "total_tokens": 473,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 288,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "attempts": 1,
+      "error": ""
+    }
+  ],
+  "complete": true,
+  "blocked_reasons": [],
+  "official": false,
+  "judge_type": "free_multimodel",
+  "canonical_sha256": "c4d2d52d576814770f5ecfc1a48ca5d8beaa78ba78ca47de815e6adfe813fc9d"
+}

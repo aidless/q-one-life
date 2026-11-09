@@ -1,0 +1,222 @@
+{
+  "schema": "qone-vision-multimodel-matrix-v1",
+  "official": false,
+  "zip": "/root/qone-paperbench-full10/vision/tiny-imagenet-200.zip",
+  "zip_sha256": "6198c8ae015e2b3e007c7841da39ec069199b9aa3bfa943a462022fe5e43c821",
+  "images_per_model": 2000,
+  "device": "cuda",
+  "models": [
+    {
+      "model": "timm/convnext_tiny.fb_in22k_ft_in1k",
+      "weights": "/root/qone-paperbench-full10/vision/convnext_tiny.safetensors",
+      "command": [
+        "/opt/venv/bin/python",
+        "/root/qone-paperbench-full10/local-scripts/run_tiny_imagenet_vision_matrix.py",
+        "--zip",
+        "/root/qone-paperbench-full10/vision/tiny-imagenet-200.zip",
+        "--weights",
+        "/root/qone-paperbench-full10/vision/convnext_tiny.safetensors",
+        "--output",
+        "/root/qone-paperbench-full10/runs/vision-multimodel/convnext_tiny.fb_in22k_ft_in1k.json",
+        "--model-name",
+        "convnext_tiny.fb_in22k_ft_in1k",
+        "--images",
+        "2000",
+        "--device",
+        "cuda"
+      ],
+      "output": "/root/qone-paperbench-full10/runs/vision-multimodel/convnext_tiny.fb_in22k_ft_in1k.json",
+      "log": "/root/qone-paperbench-full10/runs/vision-multimodel/convnext_tiny.fb_in22k_ft_in1k.log",
+      "weights_sha256": "77b619e187de71bce58721689da0c009e84cc20677293d7d43105307e34d868a",
+      "returncode": 0,
+      "elapsed_s": 144.67,
+      "status": "completed",
+      "images": 2000,
+      "clean_prediction_agreement": {
+        "clean": 2000,
+        "hflip": 1789,
+        "brightness": 1728,
+        "center_crop": 1299,
+        "grayscale": 1084,
+        "contrast": 1624
+      },
+      "mean_confidence": {
+        "clean": 0.543083,
+        "hflip": 0.544597,
+        "brightness": 0.537774,
+        "center_crop": 0.493867,
+        "grayscale": 0.45455,
+        "contrast": 0.527244
+      },
+      "toy_lca_error": {
+        "clean": 0.0,
+        "hflip": 0.1025,
+        "brightness": 0.1335,
+        "center_crop": 0.334,
+        "grayscale": 0.4365,
+        "contrast": 0.181
+      },
+      "receipt_sha256": "5c152a2fce266677edb358c86cacf228f7e5d71e3581a41491fa859ef2cb8ffd"
+    },
+    {
+      "model": "timm/resnet50.a1_in1k",
+      "weights": "/root/qone-paperbench-full10/vision/resnet50.a1_in1k.safetensors",
+      "command": [
+        "/opt/venv/bin/python",
+        "/root/qone-paperbench-full10/local-scripts/run_tiny_imagenet_vision_matrix.py",
+        "--zip",
+        "/root/qone-paperbench-full10/vision/tiny-imagenet-200.zip",
+        "--weights",
+        "/root/qone-paperbench-full10/vision/resnet50.a1_in1k.safetensors",
+        "--output",
+        "/root/qone-paperbench-full10/runs/vision-multimodel/resnet50.a1_in1k.json",
+        "--model-name",
+        "resnet50.a1_in1k",
+        "--images",
+        "2000",
+        "--device",
+        "cuda"
+      ],
+      "output": "/root/qone-paperbench-full10/runs/vision-multimodel/resnet50.a1_in1k.json",
+      "log": "/root/qone-paperbench-full10/runs/vision-multimodel/resnet50.a1_in1k.log",
+      "weights_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "returncode": 0,
+      "elapsed_s": 109.45,
+      "status": "completed",
+      "images": 2000,
+      "clean_prediction_agreement": {
+        "clean": 2000,
+        "hflip": 1527,
+        "brightness": 1604,
+        "center_crop": 1122,
+        "grayscale": 851,
+        "contrast": 1456
+      },
+      "mean_confidence": {
+        "clean": 0.630817,
+        "hflip": 0.634212,
+        "brightness": 0.620342,
+        "center_crop": 0.565815,
+        "grayscale": 0.528178,
+        "contrast": 0.612996
+      },
+      "toy_lca_error": {
+        "clean": 0.0,
+        "hflip": 0.2275,
+        "brightness": 0.1905,
+        "center_crop": 0.424,
+        "grayscale": 0.555,
+        "contrast": 0.2645
+      },
+      "receipt_sha256": "003642cf837400654ba431702818b9f94bda0e9c48ba7f704bd70d2e0ec98e4a"
+    },
+    {
+      "model": "timm/vit_base_patch16_224.augreg_in21k_ft_in1k",
+      "weights": "/root/qone-paperbench-full10/vision/vit_base_patch16_224.augreg_in21k_ft_in1k.safetensors",
+      "command": [
+        "/opt/venv/bin/python",
+        "/root/qone-paperbench-full10/local-scripts/run_tiny_imagenet_vision_matrix.py",
+        "--zip",
+        "/root/qone-paperbench-full10/vision/tiny-imagenet-200.zip",
+        "--weights",
+        "/root/qone-paperbench-full10/vision/vit_base_patch16_224.augreg_in21k_ft_in1k.safetensors",
+        "--output",
+        "/root/qone-paperbench-full10/runs/vision-multimodel/vit_base_patch16_224.augreg_in21k_ft_in1k.json",
+        "--model-name",
+        "vit_base_patch16_224.augreg_in21k_ft_in1k",
+        "--images",
+        "2000",
+        "--device",
+        "cuda"
+      ],
+      "output": "/root/qone-paperbench-full10/runs/vision-multimodel/vit_base_patch16_224.augreg_in21k_ft_in1k.json",
+      "log": "/root/qone-paperbench-full10/runs/vision-multimodel/vit_base_patch16_224.augreg_in21k_ft_in1k.log",
+      "weights_sha256": "c401d219603ac3e20b6373c7b198c78d3a733f80b755d148bda3bc320ae69800",
+      "returncode": 0,
+      "elapsed_s": 207.12,
+      "status": "completed",
+      "images": 2000,
+      "clean_prediction_agreement": {
+        "clean": 2000,
+        "hflip": 1818,
+        "brightness": 1780,
+        "center_crop": 1482,
+        "grayscale": 1233,
+        "contrast": 1666
+      },
+      "mean_confidence": {
+        "clean": 0.653422,
+        "hflip": 0.652135,
+        "brightness": 0.649176,
+        "center_crop": 0.608733,
+        "grayscale": 0.553436,
+        "contrast": 0.647202
+      },
+      "toy_lca_error": {
+        "clean": 0.0,
+        "hflip": 0.087,
+        "brightness": 0.106,
+        "center_crop": 0.2485,
+        "grayscale": 0.368,
+        "contrast": 0.1635
+      },
+      "receipt_sha256": "8437ab6a117f4b23ec224bc87d539372ca877b084cb39cf9e5494bbf103619a3"
+    },
+    {
+      "model": "timm/convnext_small.fb_in22k_ft_in1k",
+      "weights": "/root/qone-paperbench-full10/vision/convnext_small.fb_in22k_ft_in1k.safetensors",
+      "command": [
+        "/opt/venv/bin/python",
+        "/root/qone-paperbench-full10/local-scripts/run_tiny_imagenet_vision_matrix.py",
+        "--zip",
+        "/root/qone-paperbench-full10/vision/tiny-imagenet-200.zip",
+        "--weights",
+        "/root/qone-paperbench-full10/vision/convnext_small.fb_in22k_ft_in1k.safetensors",
+        "--output",
+        "/root/qone-paperbench-full10/runs/vision-multimodel/convnext_small.fb_in22k_ft_in1k.json",
+        "--model-name",
+        "convnext_small.fb_in22k_ft_in1k",
+        "--images",
+        "2000",
+        "--device",
+        "cuda"
+      ],
+      "output": "/root/qone-paperbench-full10/runs/vision-multimodel/convnext_small.fb_in22k_ft_in1k.json",
+      "log": "/root/qone-paperbench-full10/runs/vision-multimodel/convnext_small.fb_in22k_ft_in1k.log",
+      "weights_sha256": "2457488bec2ffcb2061b9e3fdd63360114549615e3e35ef6dc5c5efe549cbbc9",
+      "returncode": 0,
+      "elapsed_s": 210.66,
+      "status": "completed",
+      "images": 2000,
+      "clean_prediction_agreement": {
+        "clean": 2000,
+        "hflip": 1805,
+        "brightness": 1774,
+        "center_crop": 1414,
+        "grayscale": 1187,
+        "contrast": 1698
+      },
+      "mean_confidence": {
+        "clean": 0.616318,
+        "hflip": 0.615916,
+        "brightness": 0.605941,
+        "center_crop": 0.563016,
+        "grayscale": 0.510688,
+        "contrast": 0.596121
+      },
+      "toy_lca_error": {
+        "clean": 0.0,
+        "hflip": 0.0935,
+        "brightness": 0.11,
+        "center_crop": 0.282,
+        "grayscale": 0.393,
+        "contrast": 0.1455
+      },
+      "receipt_sha256": "5f36882fb7632e410d1ea8ce5d60d436c844b4ce21aee7cf7c167fe84360f85b"
+    }
+  ],
+  "completed": 4,
+  "blocked": 0,
+  "elapsed_s": 672.56,
+  "note": "Real public timm checkpoints on Tiny-ImageNet corruptions; toy 20-parent hierarchy only, not ImageNet-1K/OOD or paper reproduction."
+}

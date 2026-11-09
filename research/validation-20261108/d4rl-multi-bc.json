@@ -1,0 +1,443 @@
+{
+  "schema": "qone-d4rl-multi-bc-v1",
+  "official": false,
+  "datasets": [
+    {
+      "path": "/tmp/qone-d4rl-public/hopper_medium-v2.hdf5",
+      "sha256": "5bdf1bc4a713c82941de44633df669b36c89850b652a25985166796d25cf71a0",
+      "rows": 100000,
+      "observation_dim": 11,
+      "action_dim": 3,
+      "train_rows": 90000,
+      "val_rows": 10000,
+      "epochs": 2,
+      "batch_size": 2048,
+      "widths": [
+        128,
+        256,
+        512
+      ],
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "summary": {
+        "128": {
+          "runs": 3,
+          "mean_val_mse": 0.18320100009441376,
+          "best_val_mse": 0.1791440099477768,
+          "mean_val_mae": 0.3353983561197917
+        },
+        "256": {
+          "runs": 3,
+          "mean_val_mse": 0.16221303741137186,
+          "best_val_mse": 0.15899735689163208,
+          "mean_val_mae": 0.3124593198299408
+        },
+        "512": {
+          "runs": 3,
+          "mean_val_mse": 0.14983414113521576,
+          "best_val_mse": 0.14944975078105927,
+          "mean_val_mae": 0.2966553767522176
+        }
+      },
+      "runs": [
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.1817784309387207,
+          "val_mae": 0.3355262577533722
+        },
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.1791440099477768,
+          "val_mae": 0.33101627230644226
+        },
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.18868055939674377,
+          "val_mae": 0.33965253829956055
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.15899735689163208,
+          "val_mae": 0.30842161178588867
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.16221430897712708,
+          "val_mae": 0.31212908029556274
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.16542744636535645,
+          "val_mae": 0.31682726740837097
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.14944975078105927,
+          "val_mae": 0.2948997914791107
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.1502346396446228,
+          "val_mae": 0.29687628149986267
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.1498180329799652,
+          "val_mae": 0.29819005727767944
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "path": "/tmp/qone-d4rl-public/hopper_medium_replay-v2.hdf5",
+      "sha256": "e121c5f7c9857a307baa9edc6a2c3b48e85fedb9ac316ecddd0f48ca7ef4e39b",
+      "rows": 100000,
+      "observation_dim": 11,
+      "action_dim": 3,
+      "train_rows": 90000,
+      "val_rows": 10000,
+      "epochs": 2,
+      "batch_size": 2048,
+      "widths": [
+        128,
+        256,
+        512
+      ],
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "summary": {
+        "128": {
+          "runs": 3,
+          "mean_val_mse": 0.2642872929573059,
+          "best_val_mse": 0.2622467875480652,
+          "mean_val_mae": 0.4183115065097809
+        },
+        "256": {
+          "runs": 3,
+          "mean_val_mse": 0.246183971563975,
+          "best_val_mse": 0.2448742389678955,
+          "mean_val_mae": 0.3989005784193675
+        },
+        "512": {
+          "runs": 3,
+          "mean_val_mse": 0.23353651662667593,
+          "best_val_mse": 0.23277105391025543,
+          "mean_val_mae": 0.38406384984652203
+        }
+      },
+      "runs": [
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.2623760402202606,
+          "val_mae": 0.4147469401359558
+        },
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.2622467875480652,
+          "val_mae": 0.4173749089241028
+        },
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.2682390511035919,
+          "val_mae": 0.42281267046928406
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.24556715786457062,
+          "val_mae": 0.3978204131126404
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.2448742389678955,
+          "val_mae": 0.39674076437950134
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.24811051785945892,
+          "val_mae": 0.4021405577659607
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.23277105391025543,
+          "val_mae": 0.3833801746368408
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.23472805321216583,
+          "val_mae": 0.38334715366363525
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.2331104427576065,
+          "val_mae": 0.38546422123908997
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "path": "/tmp/qone-d4rl-public/kitchen_microwave_kettle_light_slider-v0.hdf5",
+      "sha256": "57bfd9c5fe88a7cf702bbaf8b7cd800d30cd869e7f73416007238d26cd859800",
+      "rows": 100000,
+      "observation_dim": 60,
+      "action_dim": 9,
+      "train_rows": 90000,
+      "val_rows": 10000,
+      "epochs": 2,
+      "batch_size": 2048,
+      "widths": [
+        128,
+        256,
+        512
+      ],
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "summary": {
+        "128": {
+          "runs": 3,
+          "mean_val_mse": 0.08624859402577083,
+          "best_val_mse": 0.08519258350133896,
+          "mean_val_mae": 0.2029270182053248
+        },
+        "256": {
+          "runs": 3,
+          "mean_val_mse": 0.07121948649485906,
+          "best_val_mse": 0.06892571598291397,
+          "mean_val_mae": 0.18533678849538168
+        },
+        "512": {
+          "runs": 3,
+          "mean_val_mse": 0.06225267921884855,
+          "best_val_mse": 0.06099601835012436,
+          "mean_val_mae": 0.17333238323529562
+        }
+      },
+      "runs": [
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.08519258350133896,
+          "val_mae": 0.2012099176645279
+        },
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.08697696030139923,
+          "val_mae": 0.2038036435842514
+        },
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.08657623827457428,
+          "val_mae": 0.20376749336719513
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.07273826748132706,
+          "val_mae": 0.18757134675979614
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.06892571598291397,
+          "val_mae": 0.18249674141407013
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.07199447602033615,
+          "val_mae": 0.18594227731227875
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.06099601835012436,
+          "val_mae": 0.17147739231586456
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.06359834223985672,
+          "val_mae": 0.17528191208839417
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.06216367706656456,
+          "val_mae": 0.1732378453016281
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "path": "/tmp/qone-d4rl-public/mini_kitchen_microwave_kettle_light_slider-v0.hdf5",
+      "sha256": "cd797c38cd52dfbe3f960cef73935cc724847abd189e47a703a7a2315ed60a81",
+      "rows": 3680,
+      "observation_dim": 60,
+      "action_dim": 9,
+      "train_rows": 3312,
+      "val_rows": 368,
+      "epochs": 2,
+      "batch_size": 2048,
+      "widths": [
+        128,
+        256,
+        512
+      ],
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "summary": {
+        "128": {
+          "runs": 3,
+          "mean_val_mse": 0.12678863108158112,
+          "best_val_mse": 0.12513186037540436,
+          "mean_val_mae": 0.24835064510504404
+        },
+        "256": {
+          "runs": 3,
+          "mean_val_mse": 0.12427192429701488,
+          "best_val_mse": 0.12403660267591476,
+          "mean_val_mae": 0.24647720654805502
+        },
+        "512": {
+          "runs": 3,
+          "mean_val_mse": 0.12094501405954361,
+          "best_val_mse": 0.12002638727426529,
+          "mean_val_mae": 0.23879732191562653
+        }
+      },
+      "runs": [
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.12513186037540436,
+          "val_mae": 0.2470838874578476
+        },
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.12744596600532532,
+          "val_mae": 0.24813832342624664
+        },
+        {
+          "width": 128,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.12778806686401367,
+          "val_mae": 0.2498297244310379
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.12473774701356888,
+          "val_mae": 0.24924948811531067
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.12404142320156097,
+          "val_mae": 0.2454318404197693
+        },
+        {
+          "width": 256,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.12403660267591476,
+          "val_mae": 0.24475029110908508
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 1,
+          "val_mse": 0.12156448513269424,
+          "val_mae": 0.24162188172340393
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 2,
+          "val_mse": 0.1212441697716713,
+          "val_mae": 0.23771698772907257
+        },
+        {
+          "width": 512,
+          "depth": 2,
+          "seed": 3,
+          "val_mse": 0.12002638727426529,
+          "val_mae": 0.23705309629440308
+        }
+      ],
+      "status": "completed"
+    }
+  ],
+  "completed": 4,
+  "blocked": 0,
+  "elapsed_s": 27.15,
+  "note": "Supervised action prediction only; no online rollout or environment return.",
+  "execution": {
+    "host_label": "local_control_evidence",
+    "reason": "cloud D4RL queue contended on shared output path; compact local control completed with same public HDF5 files and script",
+    "cloud_attempt_log": "research/validation-20261108/amd-full10-queue.log"
+  }
+}

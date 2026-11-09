@@ -114,6 +114,11 @@ def main() -> int:
     vision_2000 = json.loads((args.root.parent / "validation-20261108/tiny-imagenet-2000-gpu.json").read_text())
     kitchen_sweep = json.loads((args.root.parent / "validation-20261108/d4rl-kitchen-bc-sweep.json").read_text())
     mechanistic_512 = json.loads((args.root.parent / "validation-20261108/tasks/mechanistic-understanding/pplm-svd-512.json").read_text())
+    public_assets = json.loads((args.root.parent / "validation-20261108/public-assets.json").read_text())
+    vision_multimodel = json.loads((args.root.parent / "validation-20261108/vision-multimodel.json").read_text())
+    toxicity_dpo = json.loads((args.root.parent / "validation-20261108/mechanistic-toxicity-dpo.json").read_text())
+    d4rl_multi = json.loads((args.root.parent / "validation-20261108/d4rl-multi-bc.json").read_text())
+    continuation_verify = json.loads((args.root.parent / "validation-20261108/full10-continuation-verification.json").read_text())
     mech_data_bytes = (
         args.root / "datasets/mechanistic-understanding/train.csv"
     ).stat().st_size
@@ -380,6 +385,17 @@ def main() -> int:
         check("mechanistic_512_greedy", 512, mechanistic_512["greedy_generated"]),
         check("mechanistic_512_dpo_trained", False,
               mechanistic_512["dpo_model_trained"]),
+        check("public_assets_timm_count", 3, len(public_assets["timm"])),
+        check("public_assets_toxicity_files", 6, len(public_assets["toxicity_classifier"])),
+        check("vision_multimodel_count", 4, vision_multimodel["completed"]),
+        check("vision_multimodel_images", 2000, vision_multimodel["images_per_model"]),
+        check("toxicity_dpo_rows", 128, toxicity_dpo["rows"]),
+        check("toxicity_dpo_negative_generated", 128,
+              toxicity_dpo["negative_samples_generated"]),
+        check("d4rl_multi_completed", 4, d4rl_multi["completed"]),
+        check("d4rl_multi_blocked", 0, d4rl_multi["blocked"]),
+        check("full10_continuation_gate", "PASS", continuation_verify["summary"]["gate"]),
+        check("full10_continuation_checks", 27, continuation_verify["summary"]["checks"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,
