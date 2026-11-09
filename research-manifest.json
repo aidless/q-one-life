@@ -2,8 +2,10 @@
   "project": {
     "title": "Q-One Life",
     "domain": "local personal ontology and review workflows",
-    "status": "active",
-    "version": "0.1.0"
+    "status": "work-in-progress",
+    "version": "0.7.1",
+    "external_validation": false,
+    "note": "version matches pyproject.toml. experiments is empty. This file is not a user count, an efficacy result, or an external evaluation."
   },
   "research_question": "Can a dimension vector support reflection without collapsing a person's life into one score?",
   "hypotheses": [

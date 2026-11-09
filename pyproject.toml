@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "q-one-life"
 version = "0.7.1"
-description = "A local personal ontology and review layer for the Q-One system."
+description = "Local single-user decision workbench. Not medical or financial advice, and it does not execute consequential acts."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}

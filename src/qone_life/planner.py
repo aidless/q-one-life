@@ -215,7 +215,11 @@ class Planner:
         except ProviderError as exc:
             with self.lock:
                 if not self.stopping.is_set():
-                    self.model_status, self.error = "rules", str(exc)
+                    # A first failure still shows the rule draft. A later failure must not
+                    # relabel the previous model card as that draft.
+                    sources = {card.get("source") for card in self.cards}
+                    self.model_status = "rules" if sources == {"rules"} else "error"
+                    self.error = str(exc)
                     self.repo.put("runs", {"id": run_id, "started_at": started, "status": "failed", "kind": "real_model",
                         "purpose": "automatic_recommendation", "provider": config["auto_recommend_provider"], "error": str(exc), "input_sha256": input_sha})
         finally:
