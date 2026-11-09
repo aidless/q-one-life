@@ -321,3 +321,20 @@
   `free_channel_parse_status=CHANNEL_PROVEN` 并存。Magpie 可支持非官方
   `simple` judge 的通道对表，但没有跑 10 任务批量 judge，免费通道分数仍为 0，
   也不能冒充官方 o3-mini 分数。GO 卡已同步修改。
+
+## Magpie 单叶子 SimpleJudge 冒烟（非官方，PASS）
+
+- 用上游 `SimpleJudge`（`judge_type=simple`，非 dummy scaffold）对
+  `semantic-self-consistency` 叶子 `43f23e0e-...62723f1`
+  （"AQuA-RAT test split 254 样本可用"）评分，经本地 Magpie 网关调用
+  `openrouter/recursive/flint-v1.0:free`，返回 `score=1`、`valid_score=true`。
+- 耗时：文件选择 20.07s，`grade_leaf` 169.66s；主评测与结构化 parse 两次调用均正常。
+- 回执 `magpie-simplejudge-smoke/receipt.json` 记录叶子 id、模型 id、28 个提交
+  文件的 sha256 清单、论文截断哈希与 token 用量；`run_smoke.py` 为复算入口，
+  `CHANNEL_NOTES.zh-CN.md` 记录通道适配。
+- 通道适配结论：DeepSeek Free 因 Magpie 注入 shell 工具而在 judge 提示上返回
+  `tool_calls` / 空 content，不能用于 SimpleJudge；Flint 是推理模型，
+  `max_tokens=2048` 会被 reasoning 吃满，需 8192。
+- 判分质量：Flint 给出正确分数但错误理由（称缺少 `data/aqua_test.jsonl`，
+  实际存在 130192 字节）。因此本回执只证明通道可用，**不晋级任何叶子**，
+  也不计入能力分数。continuation 闸扩到 **60 项全绿**。

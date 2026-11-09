@@ -68,6 +68,16 @@ uv run python -m paperbench.nano.entrypoint \
 - `official_judge_status=BLOCKED`
 - `free_channel_parse_status=CHANNEL_PROVEN`
 - `official_scores=0`
-- `free_channel_scores=0`
+- `free_channel_scores=0`（有 1 个非官方单叶子冒烟读数 `score=1`，见
+  `magpie-simplejudge-smoke/receipt.json`，不计入批量分数、不晋级叶子）
 - `dummy_scores_remain_infrastructure_only=true`
 - 本卡不改变 `leaf-ledger.json`，不提升任何叶子，不调用付费 API。
+
+## 通道对表结果（2026-11-08）
+
+- 用上游 `SimpleJudge` 经 Magpie 对叶子 `43f23e0e-...62723f1` 评分成功：
+  `judge_type=simple`、`score=1`、`valid_score=true`。
+- 可用模型：`openrouter/recursive/flint-v1.0:free`（`max_tokens` 需 8192）；
+  `opencode-zen-free/deepseek-v4.1-flash-free` 因工具注入返回空 content，已排除。
+- 该读数只证明非官方 `simple` judge 通道可执行，不改变官方 `BLOCKED` 判定，
+  也不满足三模型面板的晋级门槛。

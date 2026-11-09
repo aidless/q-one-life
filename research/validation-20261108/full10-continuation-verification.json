@@ -299,17 +299,77 @@
       "expected": 18,
       "actual": 18,
       "passed": true
+    },
+    {
+      "check": "magpie_smoke_status",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true
+    },
+    {
+      "check": "magpie_smoke_official",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "check": "magpie_smoke_panel",
+      "expected": "free_magpie_parse",
+      "actual": "free_magpie_parse",
+      "passed": true
+    },
+    {
+      "check": "magpie_smoke_judge_type",
+      "expected": "simple",
+      "actual": "simple",
+      "passed": true
+    },
+    {
+      "check": "magpie_smoke_model_in_locked_panel",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "magpie_smoke_valid_score",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "magpie_smoke_paper_hash",
+      "expected": "ca9eeeace43ce9cbe16db51cabb1417bd0d6ea7f65b5b63638ca0326b55865a7",
+      "actual": "ca9eeeace43ce9cbe16db51cabb1417bd0d6ea7f65b5b63638ca0326b55865a7",
+      "passed": true
+    },
+    {
+      "check": "magpie_smoke_no_secret",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "magpie_smoke_submission_manifest",
+      "expected": 28,
+      "actual": 28,
+      "passed": true
+    },
+    {
+      "check": "magpie_smoke_real_data_present",
+      "expected": true,
+      "actual": true,
+      "passed": true
     }
   ],
   "passed": true,
   "summary": {
     "gate": "PASS",
-    "checks": 50
+    "checks": 60
   },
   "selftest": {
     "summary": {
       "passed": true,
-      "direction": "official_flag_mutation"
+      "direction": "official_and_dummy_mutation"
     }
   }
 }

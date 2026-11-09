@@ -407,7 +407,7 @@ def main() -> int:
         check("gap_matrix_blocked", 2751, gap_matrix["blocked_leaves"]),
         check("gap_matrix_promotions", 0, gap_matrix["summary"]["promoted_leaves"]),
         check("full10_continuation_gate", "PASS", continuation_verify["summary"]["gate"]),
-        check("full10_continuation_checks", 50, continuation_verify["summary"]["checks"]),
+        check("full10_continuation_checks", 60, continuation_verify["summary"]["checks"]),
         check("paperbench_dummy_judge", "dummy",
               paperbench_grade["paperbench_result"]["judge_output"]["judge_type"]),
         check("paperbench_reproduction_skipped", True,

@@ -1,0 +1,12 @@
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+WARN `pyproject.toml` does not contain a `project` table: /tmp/paperbench-upstream/pyproject.toml
+2026-11-08 23:07:25 [warning  ] Model openrouter/recursive/flint-v1.0:free not found in tiktoken, using o200k_base component=preparedness_turn_completer.oai_completions_turn_completer
+2026-11-08 23:07:26 [warning  ] Model openrouter/recursive/flint-v1.0:free not found in tiktoken, using o200k_base component=preparedness_turn_completer.oai_completions_turn_completer
+2026-11-08 23:07:26 [warning  ] Model openrouter/recursive/flint-v1.0:free not found in tiktoken, using o200k_base component=preparedness_turn_completer.oai_completions_turn_completer
+[23:07:26] before_grading done in 0.01s
+[23:07:46] file selection + prompt build done in 20.07s
+[23:10:36] grade_leaf done in 169.66s status=PASS
+{"status": "PASS", "model": "openrouter/recursive/flint-v1.0:free", "judge_type_actual": "simple", "score": 1, "valid_score": true, "grade_leaf_s": 169.66, "error": null}

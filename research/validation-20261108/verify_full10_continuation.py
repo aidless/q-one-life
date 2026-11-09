@@ -35,6 +35,12 @@ def main() -> int:
     checkpoint_sync = json.loads((root / "full10-checkpoint-sync.json").read_text(encoding="utf-8"))
     gap_matrix = json.loads((root / "full10-gap-matrix.json").read_text(encoding="utf-8"))
     audit_verify = json.loads((root / "full10-audit-verification.json").read_text(encoding="utf-8"))
+    smoke_dir = root / "magpie-simplejudge-smoke"
+    smoke_text = (smoke_dir / "receipt.json").read_text(encoding="utf-8")
+    smoke = json.loads(smoke_text)
+    locked_panel = {"opencode-zen-free/deepseek-v4.1-flash-free",
+                    "openrouter/recursive/flint-v1.0:free",
+                    "openrouter/xingchen-agi/xing4.0-29b-a4b:free"}
 
     timm_states = {row["state"] for row in assets["timm"].values()}
     toxicity_states = {row["state"] for row in assets["toxicity_classifier"].values()}
@@ -116,6 +122,23 @@ def main() -> int:
         check("gap_matrix_promotions", 0, gap_matrix["summary"]["promoted_leaves"]),
         check("full10_audit_gate", "PASS", audit_verify["summary"]["gate"]),
         check("full10_audit_checks", 18, audit_verify["summary"]["checks"]),
+        check("magpie_smoke_status", "PASS", smoke["status"]),
+        check("magpie_smoke_official", False, smoke["official"]),
+        check("magpie_smoke_panel", "free_magpie_parse", smoke["panel"]),
+        check("magpie_smoke_judge_type", "simple", smoke["judge_type_actual"]),
+        check("magpie_smoke_model_in_locked_panel", True, smoke["model"] in locked_panel),
+        check("magpie_smoke_valid_score", True,
+              smoke["valid_score"] is True and smoke["score"] in (0, 1)),
+        check("magpie_smoke_paper_hash",
+              "ca9eeeace43ce9cbe16db51cabb1417bd0d6ea7f65b5b63638ca0326b55865a7",
+              smoke["paper_md_original_sha256"]),
+        check("magpie_smoke_no_secret", True,
+              not any(token in smoke_text for token in
+                      ("api_key", "Authorization", "sk-proj", "Bearer "))),
+        check("magpie_smoke_submission_manifest", 28,
+              len(smoke["submission_sha256_manifest"])),
+        check("magpie_smoke_real_data_present", True,
+              "data/aqua_test.jsonl" in smoke["submission_sha256_manifest"]),
     ]
     report = {"checks": checks, "passed": all(row["passed"] for row in checks),
               "summary": {"gate": "PASS" if all(row["passed"] for row in checks) else "FAIL",
@@ -124,8 +147,14 @@ def main() -> int:
         mutated = json.loads((root / "vision-multimodel.json").read_text(encoding="utf-8"))
         mutated["official"] = True
         checks_bad = [check("vision_official", False, mutated["official"])]
-        report["selftest"] = {"summary": {"passed": not checks_bad[0]["passed"],
-                                           "direction": "official_flag_mutation"}}
+        mutated_smoke = json.loads(smoke_text)
+        mutated_smoke["official"] = True
+        mutated_smoke["judge_type_actual"] = "dummy"
+        checks_bad += [check("magpie_smoke_official", False, mutated_smoke["official"]),
+                       check("magpie_smoke_judge_type", "simple",
+                             mutated_smoke["judge_type_actual"])]
+        report["selftest"] = {"summary": {"passed": all(not row["passed"] for row in checks_bad),
+                                           "direction": "official_and_dummy_mutation"}}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n",
                            encoding="utf-8")
