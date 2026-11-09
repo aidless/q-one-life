@@ -1,0 +1,27 @@
+{
+  "schema": "qone-magpie-parse-probe-v1",
+  "base_url": "http://127.0.0.1:3425/v1",
+  "official": false,
+  "api_shape": "chat.completions.parse",
+  "placeholder_key_used": true,
+  "models": {
+    "opencode-zen-free/deepseek-v4.1-flash-free": "PASS",
+    "openrouter/recursive/flint-v1.0:free": "PASS",
+    "openrouter/xingchen-agi/xing4.0-29b-a4b:free": "PASS",
+    "workbuddy/hy4free": "PASS",
+    "openrouter/nvidia/nemotron-3.5-super-vl:free": "PASS",
+    "opencode-zen-free/crouton-alpha-free": "BLOCKED region_403",
+    "workbuddy-ai/hy4free": "BLOCKED rate_limit_429",
+    "commandcode/stealth/glyph-cluster:free": "BLOCKED auth_401",
+    "o3-mini-2025-01-31": "BLOCKED unknown_model_404",
+    "openai/gpt-6.1-terra": "BLOCKED region_403"
+  },
+  "provider_audit": {
+    "providers_total": 37,
+    "plugin_free_providers": 19,
+    "plugin_auth_entries": 27,
+    "plain_key_present_providers": 19,
+    "note": "Provider key fields and plugin-auth login states were inspected read-only; no credential value was printed, copied or stored."
+  },
+  "conclusion": "Magpie can serve structured chat.completions.parse for several free models, but no o3-mini model is exposed; results are non-official free-channel judge scores only."
+}

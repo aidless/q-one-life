@@ -307,3 +307,17 @@
 - Full10 仍 `BLOCKED`：3 verified / 22 waived / 2751 blocked / 0 unverified；
   `problems=0`。官方 judge 仍缺运行时 key、预算、`o3-mini` 类 parse 端点、
   单 leaf 对表和 10 任务扩展逐线 GO。
+
+## 2026-11-08 Magpie 免费 key 与 parse 通道复核
+
+- 按用户提示只读检查 Magpie 配置：37 个 provider、19 个 free 插件 provider、
+  27 条插件登录态。普通 `key` 字段为空的 provider 不能据此判定不可用；
+  没有打印、复制或提交任何凭据值。
+- 本地 Magpie 占位 key 下实测 `chat.completions.parse`：5 个免费模型返回结构化
+  `parsed`，包括 DeepSeek Free、Flint Free、Xing4 Free、WorkBuddy hy4free 与
+  NVIDIA Nemotron Free。`o3-mini-2025-01-31` 仍为 404，区域/额度/过期登录态
+  分别保留在 `magpie-parse-probe.json`。
+- 结论更新为：`official_judge_status=BLOCKED` 与
+  `free_channel_parse_status=CHANNEL_PROVEN` 并存。Magpie 可支持非官方
+  `simple` judge 的通道对表，但没有跑 10 任务批量 judge，免费通道分数仍为 0，
+  也不能冒充官方 o3-mini 分数。GO 卡已同步修改。
