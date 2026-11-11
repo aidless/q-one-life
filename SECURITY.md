@@ -1,5 +1,11 @@
-# Security and privacy
+# Security Policy
 
-Q-One Life stores potentially sensitive personal information. It does not provide encryption, authentication, secure deletion, or multi-user access control.
+## Supported Versions
 
-Protect the data directory with operating-system permissions and encrypted backups. Keep integrations opt-in, minimize fields sent to external services, and rotate credentials outside the repository. Report suspected leaks or integrity failures privately before public disclosure.
+This is a personal research project; only the latest commit on the default branch is supported.
+
+## Reporting a Vulnerability
+
+If you discover a security issue, please **open a private GitHub security advisory** via this repository's **Security → Report a vulnerability** button (https://github.com/aidless/q-one-life/security/advisories/new), or contact the maintainer through their GitHub profile. Please do not open a public issue for exploit details.
+
+You can expect an initial response within 7 days.
