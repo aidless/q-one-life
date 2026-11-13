@@ -4,6 +4,8 @@
 [![desktop foundation](https://github.com/aidless/q-one-life/actions/workflows/desktop.yml/badge.svg)](https://github.com/aidless/q-one-life/actions/workflows/desktop.yml)
 [![MIT](https://img.shields.io/badge/license-MIT-17382c.svg)](LICENSE)
 
+**保存目标 → 系统自动推荐下一步 → 采纳为今日重点 → 完成行动 → 自动调整后续建议。**
+
 > 普通 Agent 给出建议；Q-One 同时要求建议绑定输入、来源和可复算回执，失败时回退规则，无法验证时拒绝发布。
 
 ![Q-One architecture](docs/images/qone-evidence-runtime-architecture.png)
