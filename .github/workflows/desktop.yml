@@ -70,7 +70,7 @@ jobs:
           workspace="$(cygpath -u "$GITHUB_WORKSPACE" 2>/dev/null || printf '%s' "$GITHUB_WORKSPACE")"
           git -C q-one-agent apply \
             "$workspace/q-one-life/desktop/patches/q-one-agent-local-provider.patch"
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Verify fixed source baseline and integration patch
