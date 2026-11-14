@@ -51,15 +51,15 @@ jobs:
             electron: desktop/node_modules/electron/dist/electron.exe
     runs-on: ${{ matrix.runner }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           path: q-one-life
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: aidless/q-one-core
           ref: b1f41dea59eb9d26b66e812f3fc167b83c23d7cf
           path: q-one-core
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: aidless/q-one-agent
           ref: 79a951ac4e4f77239a227cfe28ffdc0fb30bc19f
