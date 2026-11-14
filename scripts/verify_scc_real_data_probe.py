@@ -7,7 +7,6 @@ import argparse
 import copy
 import hashlib
 import json
-import sys
 from pathlib import Path
 from typing import Any
 

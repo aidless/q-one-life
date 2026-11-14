@@ -1,5 +1,5 @@
 import pytest
-from src.methods import cpw_answer, scw_answer, modal_answer, _cos_sim, _l2_dist
+from src.methods import modal_answer, _cos_sim, _l2_dist
 from src.utils import parse_answer
 
 

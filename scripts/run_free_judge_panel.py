@@ -18,7 +18,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from qone_life.research_factory.free_judge_panel import (  # noqa: E402
     CANDIDATE_MODELS,
-    PanelConfig,
     grade_batch,
     load_config,
     probe_candidates,

@@ -1,6 +1,5 @@
 import argparse
 import collections
-import csv
 import hashlib
 import html
 import json

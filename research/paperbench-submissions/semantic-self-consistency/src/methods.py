@@ -30,7 +30,6 @@ TOP_P = 1.0
 
 def sample_top_prob(question: str, prompt: str, lm, max_tokens: int) -> list[str]:
     """Greedy (temperature=0) single response per the 'top prob' method."""
-    import openai
     msg = [{"role": "user", "content": prompt}]
     resp = lm.call(messages=msg, temperature=0.0, top_p=TOP_P, max_tokens=max_tokens)
     return [resp.text] if resp.text else []
@@ -38,7 +37,6 @@ def sample_top_prob(question: str, prompt: str, lm, max_tokens: int) -> list[str
 
 def sample_self_consistency(question: str, prompt: str, lm, max_tokens: int) -> list[str]:
     """Use the SC baseline: sample k=10 with temperature 0.8, modal answer."""
-    import random
     out: list[str] = []
     for _ in range(10):
         resp = lm.call(

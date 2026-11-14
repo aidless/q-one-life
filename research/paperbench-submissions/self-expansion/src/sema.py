@@ -11,7 +11,6 @@ Rubric anchors:
 
 from __future__ import annotations
 
-import torch
 
 from .descriptor import scan_for_expansion, should_skip_task, update_running_stats
 from .trainer import evaluate, train_task

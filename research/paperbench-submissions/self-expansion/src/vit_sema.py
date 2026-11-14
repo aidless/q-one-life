@@ -14,9 +14,8 @@ from __future__ import annotations
 
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
-from .adapters import ADAPTER_HIDDEN_DIM, FunctionalAdapter, RepresentationDescriptor
+from .adapters import FunctionalAdapter, RepresentationDescriptor
 
 
 class BlockWithAdapters(nn.Module):

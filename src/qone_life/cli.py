@@ -26,7 +26,6 @@ from .research_factory.project_lab import (
     generate_project,
     generate_project_receipt_hash,
     package_project,
-    parse_project,
     verify_project,
 )
 from .research_factory.direction_diversity import DiversityError

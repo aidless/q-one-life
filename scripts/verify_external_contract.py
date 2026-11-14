@@ -336,7 +336,7 @@ def main() -> int:
         return EXIT_NOT_EXECUTED
     except OSError as exc:
         write_not_executed(args.output, f"os error: {exc}")
-        print(f"gate=NOT_EXECUTED problems=unavailable note=gate_did_not_execute_not_equal_pass reason=os_error")
+        print("gate=NOT_EXECUTED problems=unavailable note=gate_did_not_execute_not_equal_pass reason=os_error")
         return EXIT_NOT_EXECUTED
 
     contract_sha256 = sha256_bytes(args.contract.read_bytes())

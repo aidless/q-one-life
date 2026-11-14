@@ -251,7 +251,7 @@ def main():
     alpha_levels = [0.0, 0.5, 1.0, 2.0]
     tau_levels = [0.5, 1.0, 2.0]
     
-    print(f"P15 v5: Canonical Calibration Study + Confidence-Gating")
+    print("P15 v5: Canonical Calibration Study + Confidence-Gating")
     print(f"  Methods: {methods}")
     print(f"  {len(alpha_levels)*len(tau_levels)} (α,τ) × {len(methods)} methods")
     print(f"  Calibration: {N_SEEDS_CAL} seeds | Test: {N_SEEDS_TEST} seeds")
@@ -389,7 +389,7 @@ def main():
         json.dump(all_results, f, indent=2)
     
     print(f"\n{'='*80}")
-    print(f"KEY QUESTION: Does confidence-gating increase CV like classical methods?")
+    print("KEY QUESTION: Does confidence-gating increase CV like classical methods?")
     cg_dcv = np.mean([(next(r for r in all_results if r['alpha']==a and r['tau']==t and r['method']=='conf_gating')['CV_N5'] - 
                         next(r for r in all_results if r['alpha']==a and r['tau']==t and r['method']=='none')['CV_N5']) / 
                        max(next(r for r in all_results if r['alpha']==a and r['tau']==t and r['method']=='none')['CV_N5'], 0.001) * 100
@@ -403,17 +403,17 @@ def main():
     print(f"  Classical methods mean ΔCV: {classical_dcv:+.1f}%")
     
     if cg_dcv > 0:
-        print(f"\n  → Confidence-gating ALSO increases CV. The ECE-CV dissociation generalizes.")
-        print(f"    The hypothesized tradeoff (γ↓ vs CV↑) may be structural after all.")
+        print("\n  → Confidence-gating ALSO increases CV. The ECE-CV dissociation generalizes.")
+        print("    The hypothesized tradeoff (γ↓ vs CV↑) may be structural after all.")
     else:
-        print(f"\n  → Confidence-gating does NOT increase CV. The tradeoff is method-specific!")
-        print(f"    Confidence-gating may be a 'free lunch' for coupling reduction.")
+        print("\n  → Confidence-gating does NOT increase CV. The tradeoff is method-specific!")
+        print("    Confidence-gating may be a 'free lunch' for coupling reduction.")
     
     print(f"\nDone in {time.time()-t0:.1f}s → {output_path}")
     
     # Quick summary table for paper
     print(f"\n{'='*80}")
-    print(f"PAPER-READY SUMMARY TABLE")
+    print("PAPER-READY SUMMARY TABLE")
     print(f"{'='*80}")
     print(f"{'Method':>15s} | {'ΔECE':>8s} | {'CV↓rate':>10s} | {'p':>6s} | {'ΔCV':>8s}")
     print(f"{'-'*15}-+-{'-'*8}-+-{'-'*10}-+-{'-'*6}-+-{'-'*8}")

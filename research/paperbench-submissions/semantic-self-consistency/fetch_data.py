@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
 from src.datasets import DATA_DIR, dataset_manifest, fetch_data, load_aqua_rat_test, load_strategyqa_test, load_svamp_full
 

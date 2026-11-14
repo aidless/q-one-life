@@ -6,7 +6,6 @@ category bootstrap CIs, and Bonferroni-corrected pairwise Mann-Whitney tests.
 Outputs are written to experiments/full_run/analysis/.
 """
 import json, sys
-from collections import defaultdict
 from itertools import combinations
 from pathlib import Path
 import numpy as np

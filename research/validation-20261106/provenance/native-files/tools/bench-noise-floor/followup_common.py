@@ -824,7 +824,6 @@ def selftest() -> int:
     ok("percentile CI all-nan",
        bool(np.isnan(percentile_ci(np.full(4, np.nan))[0])))
     # -- mutation checks (must come out red) ------------------------------------
-    import copy
     ok("mutation: verdict chain would accept a wrong equal-arm",
        verdict_judge_chain(60.0, 60.0 + 1e-12, True, 4) == "UNREADABLE")
     ok("mutation: above-arm",

@@ -8,11 +8,9 @@
 
 from __future__ import annotations
 
-import torch
 import torch.nn as nn
 
 from .adapters import FunctionalAdapter
-from .trainer import BATCH_SIZE, ADAPTER_LR, train_task
 
 
 class FinetuneAdapterModel(nn.Module):

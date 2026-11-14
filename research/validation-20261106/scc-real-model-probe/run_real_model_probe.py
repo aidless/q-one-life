@@ -17,7 +17,6 @@ import argparse
 import hashlib
 import json
 import os
-import random
 import re
 import sys
 import time
@@ -257,7 +256,6 @@ def main() -> int:
         load_svamp_full,
     )
     from src import methods as M  # noqa: E402
-    from src.utils import parse_answer  # noqa: E402
 
     # AQuA rows carry options; the submission's loader drops them, so read them
     # straight from the verified file for prompt construction only.

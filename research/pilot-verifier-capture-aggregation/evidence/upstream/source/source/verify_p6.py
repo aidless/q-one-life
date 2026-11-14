@@ -288,7 +288,7 @@ def main(argv: list[str] | None = None) -> int:
     PAPER6_DIR = Path(__file__).parent.resolve()
     main_tex = PAPER6_DIR / "main.tex"
 
-    print(f"=== verify_p6.py ===")
+    print("=== verify_p6.py ===")
     print(f"PAPER6 dir: {PAPER6_DIR}")
     print(f"main.tex exists: {main_tex.exists()}")
     print(f"main.tex size: {main_tex.stat().st_size if main_tex.exists() else 0} bytes")
@@ -299,7 +299,7 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     print(f"Registered checks: {len(CHECKS)}")
-    print(f"W3 status: C1-C8 + C10-C12 implemented; C9 stubbed.")
+    print("W3 status: C1-C8 + C10-C12 implemented; C9 stubbed.")
     print()
 
     passed = 0

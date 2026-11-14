@@ -14,10 +14,8 @@ F9 T=50 完整分析脚本
 """
 import json
 import os
-import sys
 import numpy as np
 from scipy import stats
-from pathlib import Path
 from datetime import datetime
 
 # ============ 配置 ============
@@ -397,7 +395,7 @@ def main():
     # T=30 vs T=50 对比
     t30_comm = t30_t50.get('gamma', {}).get('T=30', {})
     t50_comm = t30_t50.get('gamma', {}).get('T=50', {})
-    print(f"\n3. R26-30 Comm 效应对比:")
+    print("\n3. R26-30 Comm 效应对比:")
     print(f"   T=30: d={t30_comm.get('d', 0):.3f}, p={t30_comm.get('p', 1):.4f}")
     print(f"   T=50: d={t50_comm.get('d', 0):.3f}, p={t50_comm.get('p', 1):.4f}")
     

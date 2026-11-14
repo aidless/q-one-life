@@ -6,7 +6,6 @@ import argparse
 import hashlib
 import json
 import os
-import subprocess
 from subprocess import run as subprocess_run
 from pathlib import Path
 

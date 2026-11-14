@@ -14,7 +14,7 @@ import json
 import random
 import hashlib
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict
 
 
 # ---------- 40 carried-over scenarios (PAPER5-inherited) ----------

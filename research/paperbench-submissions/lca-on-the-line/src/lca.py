@@ -12,7 +12,6 @@ vision-language models and does NOT download ImageNet or any OOD test set.
 from __future__ import annotations
 
 import math
-from collections import Counter
 
 
 class Tree:

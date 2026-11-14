@@ -981,9 +981,9 @@ def run_external_gold(args) -> dict:
     mixed_domain = not common
     if mixed_domain:
         df_aligned = df
-        P(f"  [同域失败] 各判官题集**没有交集** -> 无法收敛到同一题域；"
-          f"榜单仍按各判官自身题集列出，但所有两两比较标为『不可比』，"
-          f"群体中位数混了分母、**不可引用**")
+        P("  [同域失败] 各判官题集**没有交集** -> 无法收敛到同一题域；"
+          "榜单仍按各判官自身题集列出，但所有两两比较标为『不可比』，"
+          "群体中位数混了分母、**不可引用**")
     else:
         df_aligned = df[df["item_id"].isin(common)]
     if not mixed_domain and df_aligned["item_id"].nunique() != hit_item:
@@ -1082,7 +1082,7 @@ def run_external_gold(args) -> dict:
             f"以中位 MDE={med_mde:.2f} 点、SE=MDE/1.96 反推，δ=2.0 点处的近似功效为 "
             f"{multi['power_at_delta']:.2f}。功效 <0.8 意味着「本研究的 MDE 已超过判决"
             f"门槛 δ=2.0」，此时 δ 档的判决没有统计效力，只能报 UNDECIDABLE。")
-        P(f"\n[10c] 多重比较与可检测下限")
+        P("\n[10c] 多重比较与可检测下限")
         P(f"  Holm-Bonferroni（{holm['n_tests']} 个配对检验，FWER 控制）："
           f"校正后显著 {holm['n_rejected']} 个，同一批 p 值逐个读不校正显著 "
           f"{holm['n_rejected_uncorrected']} 个")
@@ -1188,7 +1188,7 @@ def run_external_gold(args) -> dict:
                 {"actor": k, "abstain_pct": v["abstain_pct"], "n_items": v["n_items"]}
                 for k, v in ranked[:3]
             ]
-            P(f"  弃权率（answer 不在金标取值域内）最高的判官："
+            P("  弃权率（answer 不在金标取值域内）最高的判官："
               + ", ".join(f"{e['actor']} {e['abstain_pct']:.1f}%"
                           for e in cluster_stats["abstention_worst"]))
             # ICC 的 item 级 bootstrap CI（审稿 3.7 要求）。
@@ -1204,8 +1204,8 @@ def run_external_gold(args) -> dict:
             P(f"  ICC(agree, 判官间) = {icc_between['icc']:.4f}"
               f"（n={n_t} items × k={k_t} judges；相对一致 ICC = "
               f"{icc_between['icc_relative']:.4f}）")
-            P(f"  [口径] 判官间一致，非同判官重测 —— 本库无重复测量，"
-              f"该值含题目异质性，不可当重测信度引用。")
+            P("  [口径] 判官间一致，非同判官重测 —— 本库无重复测量，"
+              "该值含题目异质性，不可当重测信度引用。")
             P(f"  设计效应 deff(k={k_t}) = {cluster_stats['design_effect_judges']:.3f}")
         else:
             P("  [WARN] 共同题域或判官数不足 2，ICC 不可算。")
@@ -1308,8 +1308,8 @@ def run_external_gold(args) -> dict:
     elif margin >= 2.0:
         verdict = "ABOVE_MEDIAN_ACTOR"
         P(f"  VERDICT = ABOVE_MEDIAN_ACTOR（榜首比群体中位数高 {margin:.2f} 点）")
-        P(f"    注意：这里的『下限』是参照基线（群体中位数），**不是**判官自复现率；"
-          f"外部金标下不存在后者。")
+        P("    注意：这里的『下限』是参照基线（群体中位数），**不是**判官自复现率；"
+          "外部金标下不存在后者。")
         P(f"    另有 {n_tie}/{len(sig_vs_top)} 组对榜首平局 -> 报『第 N 名』"
           f"前先看是否落在同一不可区分组里。")
     else:
@@ -1684,9 +1684,9 @@ def run_one(args, method: str) -> dict:
               f"{len(loo_domain)} 题上算，榜首只能在 {len(loo_domain)-n_loo_only} 题上算：")
             P("    两侧分母不同，margin 无意义。注意这**不是**取交集能修的："
               "在两生成器投合的题上 c^- 恒等于生成器自己的答案，")
-            P(f"    取交集会让地板塌成 100.00%（决策档实测），比原来更糟。"
-              f"要把地板与榜单压到同一批题上，")
-            P(f"    唯一办法是换平票口径（--tie-rule lexicographic）。")
+            P("    取交集会让地板塌成 100.00%（决策档实测），比原来更糟。"
+              "要把地板与榜单压到同一批题上，")
+            P("    唯一办法是换平票口径（--tie-rule lexicographic）。")
     # 地板侧的逐行数组只留在内存里，不进 floor_rows —— 那份字典要被 JSON 序列化，
     # numpy 数组进去会让 json.dump 炸掉。判决用的 margin 需要对地板做重采样，
     # 而重采样必须拿到与榜首同一套 (slice, case, hit) 三元组。

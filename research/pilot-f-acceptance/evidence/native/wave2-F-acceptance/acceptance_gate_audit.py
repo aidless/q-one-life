@@ -49,7 +49,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from mcnemar_audit import mcnemar_exact, exact_p, _require_scipy, ALPHA  # noqa: E402
+from mcnemar_audit import exact_p, _require_scipy, ALPHA  # noqa: E402
 
 # Formula-exactness tolerance: generous enough for 4-decimal output rounding,
 # far tighter than any real approximation error (observed >= 8e-3).
